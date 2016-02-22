@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_dcc00c2d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-22T18:24:13Z",
+      "side": 1,
+      "message": "In fact, I decided to made some similar  with what we made on the get subtree operations (https://github.com/openstack/keystone/blob/2bad130bf457ab4b23b65f9b407a8cc8bde300fe/keystone/resource/core.py#L497). So, answering your question, yes, we are doing this to fail more quickly, If a user doesn\u0027t have role in the subtree, he can\u0027t perform the cascade action.\n\nI don\u0027t agree with the idea to user be able to perform cascade operations without have role on all of them. \nThis goes against with we are doing at this point (for example: for example a user can\u0027t perform the list_subtree without have role on all of them). This can impact some reseller use cases in the future.",
+      "parentUuid": "bae84128_065a254f",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 62
+      },
+      "revId": "c3331fc2d6a07593cbf6db9763ac005e054fc9a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_a16403e5",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
