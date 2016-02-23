@@ -22,6 +22,30 @@
       "revId": "ba38a71f6e860d84f4102f39a489e64a21d0b5b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f39cf30f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-23T13:38:43Z",
+      "side": 1,
+      "message": "We can remove this step.",
+      "parentUuid": "bae84128_b3ef0b86",
+      "range": {
+        "startLine": 311,
+        "startChar": 0,
+        "endLine": 319,
+        "endChar": 54
+      },
+      "revId": "ba38a71f6e860d84f4102f39a489e64a21d0b5b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
