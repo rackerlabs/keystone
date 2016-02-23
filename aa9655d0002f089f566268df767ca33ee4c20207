@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_1d053245",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-23T09:54:13Z",
+      "side": 1,
+      "message": "not sure if there is any easy way to check the `cascade` is effective, but the testcase like this can only pass with 90 upgrade scripts.",
+      "revId": "aa9655d0002f089f566268df767ca33ee4c20207",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
