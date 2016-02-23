@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_5ca155f7",
+        "filename": "keystone/credential/algorithms/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-02-23T21:49:43Z",
+      "side": 1,
+      "message": "This code is used exclusively by the TOTP plugin right? If its not shared, there\u0027s no reason to park it outside of the plugin itself.",
+      "parentUuid": "bae84128_cb3f61b2",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 30
+      },
+      "revId": "3d32d9eb03143dcdf37d125191b362d1b0fcd2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_94d61bef",
         "filename": "keystone/credential/algorithms/totp.py",
         "patchSetId": 1
