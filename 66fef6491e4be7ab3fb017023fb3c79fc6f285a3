@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_5cda234d",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-23T07:06:55Z",
+      "side": 0,
+      "message": "i\u0027m not clear on why this had to change?",
+      "range": {
+        "startLine": 441,
+        "startChar": 18,
+        "endLine": 441,
+        "endChar": 44
+      },
+      "revId": "66fef6491e4be7ab3fb017023fb3c79fc6f285a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3cf0ffc8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3514,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-23T07:06:55Z",
+      "side": 0,
+      "message": "removing this line should mean you didn\u0027t have to make the change in core.py",
+      "range": {
+        "startLine": 3514,
+        "startChar": 16,
+        "endLine": 3514,
+        "endChar": 57
+      },
+      "revId": "66fef6491e4be7ab3fb017023fb3c79fc6f285a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
