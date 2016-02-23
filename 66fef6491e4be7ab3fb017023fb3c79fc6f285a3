@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_9f281a88",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-23T08:52:33Z",
+      "side": 0,
+      "message": "redelegated_trust_id is a read only attribute that is set by the api. Newly created trust should not populate this attribute.",
+      "parentUuid": "bae84128_5cda234d",
+      "range": {
+        "startLine": 441,
+        "startChar": 18,
+        "endLine": 441,
+        "endChar": 44
+      },
+      "revId": "66fef6491e4be7ab3fb017023fb3c79fc6f285a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3cf0ffc8",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
