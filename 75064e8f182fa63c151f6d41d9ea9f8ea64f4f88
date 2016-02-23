@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_7891daf0",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-23T15:29:15Z",
+      "side": 0,
+      "message": "totp-auth.rst documentation should be updated since base32 padding is not being added.",
+      "revId": "75064e8f182fa63c151f6d41d9ea9f8ea64f4f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
