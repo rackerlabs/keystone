@@ -1,5 +1,5 @@
 ==================
-OpenStack Keystone
+OpenStack keystone
 ==================
 
 Keystone provides authentication, authorization and service discovery
