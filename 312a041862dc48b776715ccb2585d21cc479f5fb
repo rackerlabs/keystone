@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_b34eeb6c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-23T13:29:02Z",
+      "side": 1,
+      "message": "I had to play with this a little to figure out what it does. sqlalchemy will turn a filter on \"name\u003d?\" into a join of the user and local_user tables.",
+      "revId": "312a041862dc48b776715ccb2585d21cc479f5fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_017f8466",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 39
