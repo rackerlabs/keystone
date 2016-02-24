@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_a0048114",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T16:03:07Z",
+      "side": 1,
+      "message": "I\u0027d like to not do this if we are using a domain scoped token",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 62
+      },
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bd978aea",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T16:03:07Z",
+      "side": 1,
+      "message": "so we need to take into account this could be a domain scoped token or a project scoped token. If it is a domain scoped token I would suggest you DON\u0027T modify the creds each time.",
+      "range": {
+        "startLine": 316,
+        "startChar": 0,
+        "endLine": 320,
+        "endChar": 49
+      },
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1dae762d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T16:03:07Z",
+      "side": 1,
+      "message": "Suggest we also build a target_attr containing the (sub)project in question.\n\nI\u0027d also like to pass in the fact that we are in a cascade operation (not sure if this is best in the creds or the target)",
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
