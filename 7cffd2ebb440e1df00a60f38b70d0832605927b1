@@ -22,6 +22,30 @@
       "revId": "7cffd2ebb440e1df00a60f38b70d0832605927b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9929248d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4770,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-02-24T03:12:25Z",
+      "side": 1,
+      "message": "hmm, that\u0027s why it passed locally but failed the gate. thanks, Steve :)",
+      "parentUuid": "bae84128_43532d39",
+      "range": {
+        "startLine": 4770,
+        "startChar": 8,
+        "endLine": 4770,
+        "endChar": 75
+      },
+      "revId": "7cffd2ebb440e1df00a60f38b70d0832605927b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
