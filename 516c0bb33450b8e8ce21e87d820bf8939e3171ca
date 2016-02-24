@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_dd840ed4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-24T15:59:16Z",
+      "side": 1,
+      "message": "henry-nash: remove this (comments in a previous version of another patch)",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 12
+      },
+      "revId": "516c0bb33450b8e8ce21e87d820bf8939e3171ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
