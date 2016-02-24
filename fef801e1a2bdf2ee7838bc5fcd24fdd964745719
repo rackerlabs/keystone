@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_13e5c507",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T16:27:26Z",
+      "side": 1,
+      "message": "i don\u0027t understand why there is display_name here. Why not use user.name ?",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_13f6658e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T16:27:26Z",
+      "side": 1,
+      "message": "what if the user is federated and I\u0027d like to get his name? I should call .display_name I think?\nBTW - still don\u0027t get why it\u0027s display_name for federated users.",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_531aadc6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T16:27:26Z",
+      "side": 1,
+      "message": "typo.",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_934f1591",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T16:27:26Z",
+      "side": 1,
+      "message": "you are not even using user_id in the method body. I think you are even calling this method with federated_dict only?",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b365f91e",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T16:27:26Z",
+      "side": 1,
+      "message": "I am just thinking - is there a way to create another exception like FederatedUserNotFound? My concern is that if you pass unique_id it doesn\u0027t tell you with what {idp,proto} the problem arose.",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
