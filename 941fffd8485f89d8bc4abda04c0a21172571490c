@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_a0cc8135",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-24T16:11:42Z",
+      "side": 1,
+      "message": "This is likely a bit of cleanup we should do as a followup.",
+      "parentUuid": "dae33548_67b3bd98",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_f1a96225",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
