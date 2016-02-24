@@ -2,6 +2,239 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_80ee8bb2",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "This needs a comment what it\u0027s doing here.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bb6140d6",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "what does \"ref\" mean? reference? A project is referenced by its ID. \"dict\" would make sense.",
+      "range": {
+        "startLine": 52,
+        "startChar": 28,
+        "endLine": 52,
+        "endChar": 31
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_db3a4498",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "this could just be\n\n description \u003d extra.pop(\u0027description\u0027, None)",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9b471c4b",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "why _ref?",
+      "range": {
+        "startLine": 64,
+        "startChar": 15,
+        "endLine": 64,
+        "endChar": 19
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bb6b0085",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "what\u0027s up with this? Could use a comment.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1b24acad",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "if this wasn\u0027t a separate function the previous comment would be easier to understand.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_9bed5cf2",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "How would this happen? Needs a comment.\n\nIf you want to skip domains where the id is !\u003d NULL_DOMAIN_ID then put that in the where clause of the select above.\n\nAlso, could avoid some indenting by\n\n  if domain.id \u003d\u003d NULL_DOMAIN_ID:\n    continue\n\nThis comment also applies to code in the next loop.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bbe4a0ac",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "put these criteria into the were clause of the select statement.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_db2ec4f9",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "project.id \u003d\u003d NULL_DOMAIN_ID? How could this happen? Needs a comment.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_163f61d7",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "comments should say why rather than what. The code already shows what\u0027s being done. What readers don\u0027t understand is why this is being done.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_566449e4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "This needs a docstring. It\u0027s not obvious why it\u0027s here.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_36b3850c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "This docstring needs to be update with the new behavior.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_16e121ff",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "this needs to either be parent_ref[\u0027is_domain\u0027] or parent_ref.get(\u0027is_domain\u0027, False) since parent_is_domain should be a bool and not None.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_1dd024c9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -13,6 +246,125 @@
       "writtenOn": "2016-02-24T20:28:01Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b69e7561",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "Can parent_ref not have a domain_id? If so then this can be None and the exception message is going to look strange. If not, change it to []",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_36e6e5e8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "is it possible for project_ref to not have a parent_id field? If not, use [] instead of .get()",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_161001a8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "this is only used at line 191 so suggest move it down there, otherwise might get an exception rather than the one at line 186.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3611c55e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "revert this change it\u0027s unrelated, and there\u0027s enough changes in this review already.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3108af28",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t explain anything. Why do I need to know this?",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_319eef07",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "use .get(\u0027is_domain\u0027) or [\u0027is_domain\u0027] consistently (see line 479).",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_71f877c5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T21:43:49Z",
+      "side": 1,
+      "message": "we shouldn\u0027t have separate project and domain caches.",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
