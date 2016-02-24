@@ -135,6 +135,24 @@
       "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_c7342dfd",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:54:56Z",
+      "side": 1,
+      "message": "I find it odd that None is returned for name, but nonetheless, this would be an improvement: http://cdn.pasteraw.com/aw9d9gblpzww7qv9qa0vr94u8ufw8bj",
+      "parentUuid": "bae84128_5ac3d58a",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
