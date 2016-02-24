@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_fbc5880a",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-24T21:04:39Z",
+      "side": 1,
+      "message": "i think we should revert this change because it is adding a length limitation to the ldap backend.",
+      "range": {
+        "startLine": 22,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "98750c437fa7fbf806ebcfd3dbe8a1f1826877f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_dbf1a46c",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-02-24T21:04:39Z",
+      "side": 1,
+      "message": "i think we should not set a maxLength. What do you think?",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 24
+      },
+      "revId": "98750c437fa7fbf806ebcfd3dbe8a1f1826877f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
