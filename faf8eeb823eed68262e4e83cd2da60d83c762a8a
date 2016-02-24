@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_79fd1db0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T14:46:29Z",
+      "side": 1,
+      "message": "specifically, it\u0027s \"import only modules\"",
+      "parentUuid": "bae84128_0ed94557",
+      "revId": "faf8eeb823eed68262e4e83cd2da60d83c762a8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_ee198123",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 44
