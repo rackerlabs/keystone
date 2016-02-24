@@ -816,6 +816,15 @@ class SqlUpgradeTests(SqlMigrateBase):
                                          password_table)
         self.assertListEqual(expected_users, actual_users)
 
+    def test_switch_index_order_in_token_table(self):
+        self.upgrade(92)
+        table = sqlalchemy.Table('token', self.metadata, autoload=True)
+        index_data = [(idx.name, list(idx.columns.keys()))
+                      for idx in table.indexes]
+        self.assertNotIn(('ix_token_expires_valid', ['expires', 'valid']),
+                         index_data)
+        self.assertIn(('ix_token_valid_expires', ['valid', 'expires']),
+                      index_data)
 
 class VersionTests(SqlMigrateBase):
 
