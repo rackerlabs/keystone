@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_ab2bc780",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-24T15:43:50Z",
+      "side": 1,
+      "message": "Correct, but for compatibility of out-of-tree drivers/custom drivers we can\u0027t remove them.",
+      "parentUuid": "dae33548_f1a96225",
+      "revId": "941fffd8485f89d8bc4abda04c0a21172571490c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_ac449d49",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
