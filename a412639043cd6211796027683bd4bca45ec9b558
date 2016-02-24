@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_a63dd52c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-24T10:09:16Z",
+      "side": 1,
+      "message": "++ it\u0027s more clear.",
+      "parentUuid": "dae33548_9f5eb310",
+      "range": {
+        "startLine": 372,
+        "startChar": 24,
+        "endLine": 373,
+        "endChar": 46
+      },
+      "revId": "a412639043cd6211796027683bd4bca45ec9b558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_3cb175e2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-16T02:12:27Z",
       "side": 1,
       "message": "should here insert the description of exception processing?",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 11
+      },
+      "revId": "a412639043cd6211796027683bd4bca45ec9b558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_86dc1147",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-24T10:09:16Z",
+      "side": 1,
+      "message": "++ nice to see the the desc of exceptions here.",
+      "parentUuid": "dae33548_3cb175e2",
       "range": {
         "startLine": 375,
         "startChar": 0,
