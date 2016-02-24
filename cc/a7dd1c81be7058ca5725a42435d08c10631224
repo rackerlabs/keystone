@@ -1,0 +1,12 @@
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: werner mendizabal <nonameentername@gmail.com>
+Code-Review+1: Tom Cocozzello <tjcocozz@us.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 24 Feb 2016 03:28:03 +0000
+Reviewed-on: https://review.openstack.org/283521
+Project: openstack/keystone
+Branch: refs/heads/master
