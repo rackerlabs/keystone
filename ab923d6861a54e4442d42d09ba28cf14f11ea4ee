@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_831ed56d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 55
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "I think we need a few more :-)",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7e2c0699",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "(nit) needs a newline",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7e05260f",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "(nit) needs a newline",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_7e536617",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "Why a string None?",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_bee96eb9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "I thought domain_id was not nullable and that\u0027s why you needed the null domain id",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b43d0ddf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "Are the changes in this module backward compatible for people that have their own drivers?",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_d40b717b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 4766,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T03:33:59Z",
+      "side": 1,
+      "message": "What about these? I know the driver methods will be removed later, but I think the tests should be updated in the patch to test the changed behavior.",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
