@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "bae84128_29ca431b",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T07:59:47Z",
+      "side": 1,
+      "message": "this will need to be renamed to 093",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7e2c0699",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -30,6 +47,24 @@
       "writtenOn": "2016-02-24T03:33:59Z",
       "side": 1,
       "message": "(nit) needs a newline",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_a905b346",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T07:59:47Z",
+      "side": 1,
+      "message": "new line between json and sqlalchemy, since one is standard lib and the other is 3rd party lib.\n\nalso, if you are using json, may as well use oslo.serialization:\n\n  from oslo_serialization import json_utils",
+      "parentUuid": "bae84128_7e2c0699",
       "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +88,29 @@
     },
     {
       "key": {
+        "uuid": "bae84128_ef921bf5",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T07:59:47Z",
+      "side": 1,
+      "message": "nit: you\u0027re not \"getting\" anything...\n\n  _domain_to_project(domain):",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 32
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7e536617",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -64,6 +122,52 @@
       "writtenOn": "2016-02-24T03:33:59Z",
       "side": 1,
       "message": "Why a string None?",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2fb9a3cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T07:59:47Z",
+      "side": 1,
+      "message": "what if there was additional metadata in the extra field, IIRC, this could be anything, like `key\u003dvalue`\n\n(venv) stevemar@ubuntu:/opt/stack/python-openstackclient$ curl -s \\\n\u003e   -H \"X-Auth-Token: c2ed16b83b90405c92788f492f9c6104\" \\\n\u003e   -H \"Content-Type: application/json\" \\\n\u003e   -d \u0027{ \"domain\": { \"name\": \"newdomain\", \"key\": \"value\"}}\u0027 \\\n\u003e   http://localhost:5000/v3/domains | python -mjson.tool\n{\n    \"domain\": {\n        \"enabled\": true,\n        \"id\": \"853668d91bc546c0b26073aaafcd5c8b\",\n        \"key\": \"value\",\n        \"links\": {\n            \"self\": \"http://localhost:5000/v3/domains/853668d91bc546c0b26073aaafcd5c8b\"\n        },\n        \"name\": \"newdomain\"\n    }\n}\n\nand in sql....\n\nmysql\u003e select * from domain;\n+----------------------------------+--------------------------+---------+-----------------------------------------------------------------------------------------+\n| id                               | name                     | enabled | extra                                                                                   |\n+----------------------------------+--------------------------+---------+-----------------------------------------------------------------------------------------+\n| 853668d91bc546c0b26073aaafcd5c8b | newdomain                |       1 | {\"key\": \"value\"}                                                                        |",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 70
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2fe083cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T07:59:47Z",
+      "side": 1,
+      "message": "this might need to be the result of extra - description",
+      "range": {
+        "startLine": 67,
+        "startChar": 21,
+        "endLine": 67,
+        "endChar": 25
+      },
       "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
