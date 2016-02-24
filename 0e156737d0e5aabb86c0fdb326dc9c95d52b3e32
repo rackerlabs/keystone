@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_cc10de02",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T16:58:39Z",
+      "side": 1,
+      "message": "This indentation is allowed by pep8?!",
+      "revId": "0e156737d0e5aabb86c0fdb326dc9c95d52b3e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_73753130",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2016-02-24T16:22:22Z",
       "side": 1,
       "message": "whoopse, this should be reverted if another patchset is needed.",
+      "revId": "0e156737d0e5aabb86c0fdb326dc9c95d52b3e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0c1e460b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T16:58:39Z",
+      "side": 1,
+      "message": "Meh, keep it.",
+      "parentUuid": "bae84128_73753130",
       "revId": "0e156737d0e5aabb86c0fdb326dc9c95d52b3e32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
