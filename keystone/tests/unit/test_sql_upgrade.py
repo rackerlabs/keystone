@@ -1446,6 +1446,16 @@ class SqlUpgradeTests(SqlMigrateBase):
                                           autoload=True)
         self.assertTrue(password_table.c.password.nullable)
 
+    def test_migration_107_switch_index_order_in_token_table(self):
+        self.upgrade(107)
+        table = sqlalchemy.Table('token', self.metadata, autoload=True)
+        index_data = [(idx.name, list(idx.columns.keys()))
+                      for idx in table.indexes]
+        self.assertNotIn(('ix_token_expires_valid', ['expires', 'valid']),
+                         index_data)
+        self.assertIn(('ix_token_valid_expires', ['valid', 'expires']),
+                      index_data)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
