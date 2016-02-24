@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_203a1fe8",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-24T20:47:51Z",
+      "side": 0,
+      "message": "The redelegated_trust_id is only set because the API determines it from the  authentication context when the trust is created. \n\nhttps://github.com/openstack/keystone/blob/d37af165d0850b9e56576a9b524e59ee6b9eb462/keystone/trust/controllers.py#L125-L133\n\nSo - if you create a trust with a trust-scoped token, the trust API should detect that and set redelegated_trust_id for you. We shouldn\u0027t be passing redelegated_trust_id in the actually body of the POST trust reference.",
+      "parentUuid": "bae84128_9f281a88",
+      "revId": "66fef6491e4be7ab3fb017023fb3c79fc6f285a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3cf0ffc8",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 7
