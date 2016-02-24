@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_bd4caa9e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-24T16:01:47Z",
+      "side": 1,
+      "message": "Actually, is it possible to get a project scoped token with no roles in that project? I don\u0027t think so, so we should keep it like this and not ask the policy engine (as it doesnt\u0027 happen in a normal workflow)",
+      "parentUuid": "bae84128_fda91291",
+      "range": {
+        "startLine": 304,
+        "startChar": 20,
+        "endLine": 312,
+        "endChar": 62
+      },
+      "revId": "2f12820426d0dcb7b23c2190d6eafc9bb68a23ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_a5a016f5",
         "filename": "keystone/common/controller.py",
         "patchSetId": 3
