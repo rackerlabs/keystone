@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_1dd024c9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T20:28:01Z",
+      "side": 1,
+      "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
