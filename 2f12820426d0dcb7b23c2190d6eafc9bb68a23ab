@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_c54f1a69",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T15:37:28Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to do this bit...just let the policy engine do its stuff",
+      "range": {
+        "startLine": 304,
+        "startChar": 20,
+        "endLine": 312,
+        "endChar": 62
+      },
+      "revId": "2f12820426d0dcb7b23c2190d6eafc9bb68a23ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_a5a016f5",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T15:37:28Z",
+      "side": 1,
+      "message": "isn\u0027t this the roles from the token?",
+      "range": {
+        "startLine": 320,
+        "startChar": 38,
+        "endLine": 320,
+        "endChar": 48
+      },
+      "revId": "2f12820426d0dcb7b23c2190d6eafc9bb68a23ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
