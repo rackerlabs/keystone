@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_67d0c1f8",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "there shouldn\u0027t be anything \"temp\" about this anymore... we might need to more deeply integrate into the setup_username() method, or simply refactor it so it\u0027s just outputting the unique_id and display_name and not doing any \"setup\" (which it\u0027s really not doing anyway)",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_87a9857e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "if this is all the \"federated_dict\" is being used for, then it\u0027d make more sense to make those 4 values explicit arguments of the shadow_fedearted_user() method",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_67f8c1c5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "+1",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_fa474975",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "I\u0027d recommend following the convention in this file like you\u0027re doing, but this could be more simply written as:\n\n  \u0027idp_id\u0027: idp_id or \u0027ORG_IDP\u0027,",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_da2fe5a5",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "and:\n\n  \u0027protocol_id\u0027: protocol_id or \u0027saml2\u0027,",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1a3aede7",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "And then skipping the if blocks.",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_faebc976",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "Make an assertion about the user ID as well. Perhaps that two get calls return the same ID consistently, and mutating any one of the inputs will return a different user ID.",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_5ac3d58a",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-24T19:53:54Z",
+      "side": 1,
+      "message": "This is returning 3 other attributes you can test against as well: enabled, domain_id, and name. You should be able to make assertions about their values, and also test that there are no more surprises in the dict with\n\n  self.assertEqual(len(user_dict.keys()), 4)",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
