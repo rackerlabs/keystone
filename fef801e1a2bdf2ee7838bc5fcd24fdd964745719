@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_16adb3e8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-24T17:12:11Z",
+      "side": 1,
+      "message": "Yes, you would use display_name",
+      "parentUuid": "bae84128_13f6658e",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_531aadc6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 47
