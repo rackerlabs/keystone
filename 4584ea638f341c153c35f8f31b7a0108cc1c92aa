@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_1a34ad48",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-24T19:23:01Z",
+      "side": 1,
+      "message": "This needs a comment what it\u0027s for.",
+      "revId": "4584ea638f341c153c35f8f31b7a0108cc1c92aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
