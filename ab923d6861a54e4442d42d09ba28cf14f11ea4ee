@@ -424,6 +424,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_d5bfcfcd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-24T13:59:55Z",
+      "side": 1,
+      "message": "I\u0027m more worried about the actual calls themselves. For example, calling api.create_domain() previously called the custom driver\u0027s create_domain() method. Will the adapter\u0027s create_project look for the is_domain boolean and call create_domain on the driver?",
+      "parentUuid": "bae84128_8f942f8b",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_d40b717b",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 55
