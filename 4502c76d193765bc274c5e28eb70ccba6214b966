@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_a03121a4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-24T16:07:12Z",
+      "side": 1,
+      "message": "sure, agreed! not for domain scoped tokens, but for project ones we need, so we only call oslo.policy if it\u0027s like a real project scoped token (WITH roles)",
+      "parentUuid": "bae84128_a0048114",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 62
+      },
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_bd978aea",
         "filename": "keystone/common/controller.py",
         "patchSetId": 23
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_601439e8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-24T16:07:12Z",
+      "side": 1,
+      "message": "exactly! ++",
+      "parentUuid": "bae84128_bd978aea",
+      "range": {
+        "startLine": 316,
+        "startChar": 0,
+        "endLine": 320,
+        "endChar": 49
+      },
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_1dae762d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 23
@@ -59,6 +107,24 @@
       "writtenOn": "2016-02-24T16:03:07Z",
       "side": 1,
       "message": "Suggest we also build a target_attr containing the (sub)project in question.\n\nI\u0027d also like to pass in the fact that we are in a cascade operation (not sure if this is best in the creds or the target)",
+      "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_c0bc25de",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-24T16:07:12Z",
+      "side": 1,
+      "message": "yes we can do that too",
+      "parentUuid": "bae84128_1dae762d",
       "revId": "4502c76d193765bc274c5e28eb70ccba6214b966",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
