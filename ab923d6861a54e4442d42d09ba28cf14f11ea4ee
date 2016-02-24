@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_140af289",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 55
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Christmas pass-the-parcel!",
+      "parentUuid": "bae84128_831ed56d",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_29ca431b",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-24T07:59:47Z",
       "side": 1,
       "message": "this will need to be renamed to 093",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f7e14d2b",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_29ca431b",
       "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,42 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6f1f2b5b",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "is that true?",
+      "parentUuid": "bae84128_7e2c0699",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_97c9e1ae",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "ah, got it",
+      "parentUuid": "bae84128_a905b346",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_7e05260f",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_4f2227a4",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_7e05260f",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_ef921bf5",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -99,6 +189,30 @@
       "writtenOn": "2016-02-24T07:59:47Z",
       "side": 1,
       "message": "nit: you\u0027re not \"getting\" anything...\n\n  _domain_to_project(domain):",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 32
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_d7c7e993",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_ef921bf5",
       "range": {
         "startLine": 49,
         "startChar": 8,
@@ -151,6 +265,48 @@
     },
     {
       "key": {
+        "uuid": "bae84128_af3db3c5",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_7e536617",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_77289d33",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Agreed, will re-write - and beef up the tests for the upgrade",
+      "parentUuid": "bae84128_2fb9a3cc",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 70
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_2fe083cc",
         "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
         "patchSetId": 55
@@ -162,6 +318,30 @@
       "writtenOn": "2016-02-24T07:59:47Z",
       "side": 1,
       "message": "this might need to be the result of extra - description",
+      "range": {
+        "startLine": 67,
+        "startChar": 21,
+        "endLine": 67,
+        "endChar": 25
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b7e5050a",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_migrate_domains_to_projects.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "bae84128_2fe083cc",
       "range": {
         "startLine": 67,
         "startChar": 21,
@@ -191,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6f6d6bcb",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "At the API level (and manager level) the domain_id will be None (for projects acting as a domain). It\u0027s only at the driver level we substitute a special value to allow the integrity constraints to keep working.",
+      "parentUuid": "bae84128_bee96eb9",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_b43d0ddf",
         "filename": "keystone/resource/core.py",
         "patchSetId": 55
@@ -208,6 +406,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_8f942f8b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "so in terms of the format and use of the data fields, then yes - i.e. the legacy driver wrapper will ensure that they do not see null domain_id\u0027s for instance. What I didn\u0027t do was reverse the whole process in the wrapper and ensure domains are still stored in the domain table.",
+      "parentUuid": "bae84128_b43d0ddf",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_d40b717b",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 55
@@ -219,6 +435,24 @@
       "writtenOn": "2016-02-24T03:33:59Z",
       "side": 1,
       "message": "What about these? I know the driver methods will be removed later, but I think the tests should be updated in the patch to test the changed behavior.",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_8fdb8f7b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 4766,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:49:06Z",
+      "side": 1,
+      "message": "good catch, these sneaked in since the patch was last updated.....",
+      "parentUuid": "bae84128_d40b717b",
       "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
