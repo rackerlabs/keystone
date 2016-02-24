@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_43532d39",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4770,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-24T01:51:35Z",
+      "side": 1,
+      "message": "i think you need a new line between this and the next line.. \n\nwe recently merged: https://github.com/openstack/keystone/commit/2bad130bf457ab4b23b65f9b407a8cc8bde300fe which enforces a consistent pattern for docstrings.\n\nyou can test this locally by running $ tox -e pep8.\n\nnote, you may have to rebase against master, and remove the .tox directory..",
+      "range": {
+        "startLine": 4770,
+        "startChar": 8,
+        "endLine": 4770,
+        "endChar": 75
+      },
+      "revId": "7cffd2ebb440e1df00a60f38b70d0832605927b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
