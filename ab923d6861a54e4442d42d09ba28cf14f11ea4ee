@@ -456,6 +456,46 @@
       "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f7994d7a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:50:38Z",
+      "side": 1,
+      "message": "I am adding adding tests/checks in here for the upgrade of the \"extra\" attribute",
+      "range": {
+        "startLine": 849,
+        "startChar": 8,
+        "endLine": 849,
+        "endChar": 45
+      },
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_b77a2522",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-24T08:50:38Z",
+      "side": 1,
+      "message": "should also check name. enabled etc.",
+      "revId": "ab923d6861a54e4442d42d09ba28cf14f11ea4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
