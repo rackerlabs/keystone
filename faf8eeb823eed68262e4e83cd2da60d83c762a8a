@@ -305,6 +305,64 @@
       "revId": "faf8eeb823eed68262e4e83cd2da60d83c762a8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_50574657",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 1213,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T15:39:42Z",
+      "side": 1,
+      "message": "is \u0027shadow\u0027 here used as a verb? :-)",
+      "parentUuid": "bae84128_ce70fd42",
+      "range": {
+        "startLine": 1213,
+        "startChar": 4,
+        "endLine": 1213,
+        "endChar": 52
+      },
+      "revId": "faf8eeb823eed68262e4e83cd2da60d83c762a8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_301e020c",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T15:39:42Z",
+      "side": 1,
+      "message": "you are not even using user_id in the method body. I think you are even calling this method with federated_dict only?",
+      "revId": "faf8eeb823eed68262e4e83cd2da60d83c762a8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f09ada60",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-24T15:39:42Z",
+      "side": 1,
+      "message": "I am just thinking - is there a way to create another exception like FederatedUserNotFound? My concern is that if you pass unique_id it doesn\u0027t tell you with what {idp,proto} the problem arose.",
+      "revId": "faf8eeb823eed68262e4e83cd2da60d83c762a8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
