@@ -638,10 +638,6 @@ class BaseProvider(provider.Provider):
             }
         }
 
-        if project_id or domain_id:
-            self.v3_token_data_helper.populate_roles_for_groups(
-                token_data, group_ids, project_id, domain_id, user_id)
-
         return token_data
 
     def _verify_token_ref(self, token_ref):
