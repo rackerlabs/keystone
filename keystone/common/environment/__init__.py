@@ -56,7 +56,7 @@ def configure_once(name):
 
 
 @configure_once('eventlet')
-def use_eventlet(monkeypatch_thread=None):
+def use_eventlet(monkeypatch_thread=True):
     global httplib, subprocess, Server
 
     # This must be set before the initial import of eventlet because if
@@ -69,9 +69,6 @@ def use_eventlet(monkeypatch_thread=None):
     from eventlet.green import subprocess as _subprocess
 
     from keystone.common.environment import eventlet_server
-
-    if monkeypatch_thread is None:
-        monkeypatch_thread = not os.getenv('STANDARD_THREADS')
 
     # Raise the default from 8192 to accommodate large tokens
     eventlet.wsgi.MAX_HEADER_LINE = 16384

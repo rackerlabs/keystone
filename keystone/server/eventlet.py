@@ -108,7 +108,7 @@ def _get_workers(worker_type_config_opt):
 
 
 def configure_threading():
-    monkeypatch_thread = not CONF.standard_threads
+    monkeypatch_thread = True
     pydev_debug_url = utils.setup_remote_pydev_debug()
     if pydev_debug_url:
         # in order to work around errors caused by monkey patching we have to
