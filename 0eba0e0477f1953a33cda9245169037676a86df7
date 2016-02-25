@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_fa861b64",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-25T22:28:56Z",
+      "side": 0,
+      "message": "this change is unrelated",
+      "revId": "0eba0e0477f1953a33cda9245169037676a86df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_fa9f3bb2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-25T22:28:56Z",
+      "side": 0,
+      "message": "this change is unrelated.",
+      "revId": "0eba0e0477f1953a33cda9245169037676a86df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

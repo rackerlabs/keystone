@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_d7c4d241",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-25T22:28:56Z",
+      "side": 1,
+      "message": "(typo) change to explicitly",
+      "range": {
+        "startLine": 79,
+        "startChar": 37,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "a455aed16b1cc6e477828189203ed761706b91a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_b774aefd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-25T22:28:56Z",
+      "side": 1,
+      "message": "switch to / for consistency.",
+      "range": {
+        "startLine": 88,
+        "startChar": 46,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "a455aed16b1cc6e477828189203ed761706b91a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_b7902eee",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-25T22:28:56Z",
+      "side": 1,
+      "message": "change to \"on the\"",
+      "range": {
+        "startLine": 413,
+        "startChar": 67,
+        "endLine": 413,
+        "endChar": 70
+      },
+      "revId": "a455aed16b1cc6e477828189203ed761706b91a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
