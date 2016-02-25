@@ -2584,11 +2584,6 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
 
 
 class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
-    """Test for federated users
-
-    Tests new shadow users functionality
-
-    """
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
@@ -2602,13 +2597,61 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.load_federation_sample_data()
 
     def test_user_id_persistense(self):
-        """Ensure user_id is persistend for multiple federated authn calls."""
+        # ensure user_id is persistend for multiple federated authn calls
         r = self._issue_unscoped_token()
         user_id = r.json_body['token']['user']['id']
 
         r = self._issue_unscoped_token()
         user_id2 = r.json_body['token']['user']['id']
         self.assertEqual(user_id, user_id2)
+
+    def test_user_role_assignment(self):
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        # authenticate with unscoped token; resulting in unauthorized
+        unscoped_token = r.headers['X-Subject-Token']
+        v3_scope_request = self._scope_request(unscoped_token, 'project',
+                                               project_ref['id'])
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.UNAUTHORIZED)
+
+        # assign project role to federated user
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        # authenticate with unscoped token; resulting in a project-scoped token
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.CREATED)
+
+        # ensure user can access resource based on role assignment
+        scoped_token = r.headers['X-Subject-Token']
+        path = '/projects/%(project_id)s' % {'project_id': project_ref['id']}
+        r = self.v3_request(path=path, method='GET',
+                            expected_status=http_client.OK,
+                            token=scoped_token)
+        self.assertValidProjectResponse(r, project_ref)
+
+        # create a 2nd project
+        project_ref2 = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref2['id'], project_ref2)
+
+        # ensure the user cannot access the 2nd resource (forbidden)
+        path = '/projects/%(project_id)s' % {'project_id': project_ref2['id']}
+        r = self.v3_request(path=path, method='GET',
+                            expected_status=http_client.FORBIDDEN,
+                            token=scoped_token)
 
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
