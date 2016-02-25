@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_56671025",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_80ee8bb2",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_bb6140d6",
         "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
         "patchSetId": 57
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "what does \"ref\" mean? reference? A project is referenced by its ID. \"dict\" would make sense.",
+      "range": {
+        "startLine": 52,
+        "startChar": 28,
+        "endLine": 52,
+        "endChar": 31
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_e3ff85a8",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_bb6140d6",
       "range": {
         "startLine": 52,
         "startChar": 28,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_e3edc5f0",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_db3a4498",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_9b471c4b",
         "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
         "patchSetId": 57
@@ -70,6 +130,30 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "why _ref?",
+      "range": {
+        "startLine": 64,
+        "startChar": 15,
+        "endLine": 64,
+        "endChar": 19
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_03c4293e",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Just turned this into a return statement!",
+      "parentUuid": "bae84128_9b471c4b",
       "range": {
         "startLine": 64,
         "startChar": 15,
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_c3c9a15c",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Have now explained this with a comment where NULL_DOMAIN_ID is defined.",
+      "parentUuid": "bae84128_bb6b0085",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_1b24acad",
         "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
         "patchSetId": 57
@@ -110,6 +212,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "if this wasn\u0027t a separate function the previous comment would be easier to understand.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_c6c36f89",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Agreed, was just following convention, may come back in and improve this.",
+      "parentUuid": "bae84128_1b24acad",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +253,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_a6646be5",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_9bed5cf2",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_bbe4a0ac",
         "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
         "patchSetId": 57
@@ -144,6 +282,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "put these criteria into the were clause of the select statement.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_e6e31332",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "I\u0027ll come back in a performance improve this ahead of Mitaka release.",
+      "parentUuid": "bae84128_bbe4a0ac",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -167,6 +323,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_c6952f89",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_db2ec4f9",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_163f61d7",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 57
@@ -178,6 +352,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "comments should say why rather than what. The code already shows what\u0027s being done. What readers don\u0027t understand is why this is being done.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_c64a4f27",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_163f61d7",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -201,6 +393,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_35c1912f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "This isn\u0027t new, it was here before, albeit modified - have added one. The method above is new, and I added a doc string to that too.",
+      "parentUuid": "bae84128_566449e4",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_36b3850c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -212,6 +422,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "This docstring needs to be update with the new behavior.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_aba3844e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_36b3850c",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -235,6 +463,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_8b620015",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_16e121ff",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_1dd024c9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -246,6 +492,24 @@
       "writtenOn": "2016-02-24T20:28:01Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_0ee71e13",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Test added.",
+      "parentUuid": "bae84128_1dd024c9",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -269,6 +533,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_187c841f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "If the parent is not a domain, then it will have a domain_id",
+      "parentUuid": "bae84128_b69e7561",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_36e6e5e8",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -280,6 +562,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "is it possible for project_ref to not have a parent_id field? If not, use [] instead of .get()",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_18a3e49f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_36e6e5e8",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -303,6 +603,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_58060c21",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_161001a8",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_3611c55e",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -314,6 +632,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "revert this change it\u0027s unrelated, and there\u0027s enough changes in this review already.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_cb08882b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_3611c55e",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -337,6 +673,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6ba5fcb3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "modifed",
+      "parentUuid": "bae84128_3108af28",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_319eef07",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -354,6 +708,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_8bb5e0d1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_319eef07",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_71f877c5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -365,6 +737,24 @@
       "writtenOn": "2016-02-24T21:43:49Z",
       "side": 1,
       "message": "we shouldn\u0027t have separate project and domain caches.",
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_2b7494fb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "So that\u0027s a good question...of course the entities returned (for a project acting as a domain) are different depending on whether you call update_domain or update_project (for API backward compatibility) - so to have a single cache we would need to have that \"under\" the code that massages the resulting entity. I\u0027d be happy to look at this as a follow up.",
+      "parentUuid": "bae84128_71f877c5",
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -394,6 +784,30 @@
     },
     {
       "key": {
+        "uuid": "bae84128_6bcb3c1f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_27ba2a6f",
+      "range": {
+        "startLine": 744,
+        "startChar": 55,
+        "endLine": 744,
+        "endChar": 58
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_a71c7ac2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 57
@@ -405,6 +819,30 @@
       "writtenOn": "2016-02-25T01:16:07Z",
       "side": 1,
       "message": "nit: projects",
+      "range": {
+        "startLine": 1264,
+        "startChar": 20,
+        "endLine": 1264,
+        "endChar": 28
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_abd544ba",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-25T14:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bae84128_a71c7ac2",
       "range": {
         "startLine": 1264,
         "startChar": 20,
