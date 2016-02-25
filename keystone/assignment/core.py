@@ -251,9 +251,6 @@ class Manager(manager.Manager):
                 self.driver.remove_role_from_user_and_project(user_id,
                                                               tenant_id,
                                                               role_id)
-                self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
-                                                project_id=tenant_id)
-
             except exception.RoleNotFound:
                 LOG.debug("Removing role %s failed because it does not exist.",
                           role_id)
@@ -311,8 +308,6 @@ class Manager(manager.Manager):
             self._emit_invalidate_grant_token_persistence(user_id, project_id)
         else:
             self.identity_api.emit_invalidate_user_token_persistence(user_id)
-        self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
-                                        project_id=project_id)
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self._remove_role_from_user_and_project_adapter(
@@ -381,25 +376,11 @@ class Manager(manager.Manager):
                      domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
         if group_id is None:
-            self.revoke_api.revoke_by_grant(user_id=user_id,
-                                            role_id=role_id,
-                                            domain_id=domain_id,
-                                            project_id=project_id)
             self._emit_revoke_user_grant(
                 role_id, user_id, domain_id, project_id,
                 inherited_to_projects, context)
         else:
             try:
-                # Group may contain a lot of users so revocation will be
-                # by role & domain/project
-                if domain_id is None:
-                    self.revoke_api.revoke_by_project_role_assignment(
-                        project_id, role_id
-                    )
-                else:
-                    self.revoke_api.revoke_by_domain_role_assignment(
-                        domain_id, role_id
-                    )
                 if CONF.token.revoke_by_id:
                     # NOTE(morganfainberg): The user ids are the important part
                     # for invalidating tokens below, so extract them here.
@@ -834,7 +815,6 @@ class Manager(manager.Manager):
                     inherited_refs = self.driver.list_role_assignments(
                         role_id=role_id, user_id=user_id, group_ids=group_ids,
                         inherited_to_projects=True)
-
             return non_inherited_refs + inherited_refs
 
         # If filtering by group or inherited domain assignment the list is
