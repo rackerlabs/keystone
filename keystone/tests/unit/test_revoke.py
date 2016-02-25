@@ -17,7 +17,6 @@ import uuid
 import mock
 from oslo_utils import timeutils
 from six.moves import range
-from testtools import matchers
 
 from keystone.common import utils
 from keystone import exception
@@ -67,46 +66,25 @@ def _matches(event, token_values):
     :returns: True if the token matches the revocation event, indicating the
     token has been revoked
     """
-    # The token has three attributes that can match the user_id
+    # The token has two attributes that can match the user_id
     if event.user_id is not None:
-        for attribute_name in ['user_id', 'trustor_id', 'trustee_id']:
+        for attribute_name in ['user_id', 'trustee_id']:
             if event.user_id == token_values[attribute_name]:
                 break
         else:
-            return False
-
-    # The token has two attributes that can match the domain_id
-    if event.domain_id is not None:
-        for attribute_name in ['identity_domain_id', 'assignment_domain_id']:
-            if event.domain_id == token_values[attribute_name]:
-                break
-        else:
-            return False
-
-    if event.domain_scope_id is not None:
-        if event.domain_scope_id != token_values['assignment_domain_id']:
             return False
 
     # If any one check does not match, the while token does
     # not match the event. The numerous return False indicate
     # that the token is still valid and short-circuits the
     # rest of the logic.
-    attribute_names = ['project_id',
-                       'expires_at', 'trust_id', 'consumer_id',
-                       'access_token_id', 'audit_id', 'audit_chain_id']
+    attribute_names = ['audit_id', 'audit_chain_id']
     for attribute_name in attribute_names:
         if getattr(event, attribute_name) is not None:
             if (getattr(event, attribute_name) !=
                     token_values[attribute_name]):
                         return False
 
-    if event.role_id is not None:
-        roles = token_values['roles']
-        for role in roles:
-            if event.role_id == role:
-                break
-        else:
-            return False
     if token_values['issued_at'] > event.issued_before:
         return False
     return True
@@ -129,15 +107,6 @@ class RevokeTests(object):
         future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
         self.assertEqual(0,
                          len(self.revoke_api.list_events(last_fetch=future)))
-
-    def test_past_expiry_are_removed(self):
-        user_id = 1
-        self.revoke_api.revoke_by_expiration(user_id, _future_time())
-        self.assertEqual(1, len(self.revoke_api.list_events()))
-        event = revoke_model.RevokeEvent()
-        event.revoked_at = _past_time()
-        self.revoke_api.revoke(event)
-        self.assertEqual(1, len(self.revoke_api.list_events()))
 
     @mock.patch.object(timeutils, 'utcnow')
     def test_expired_events_removed_validate_token_success(self, mock_utcnow):
@@ -165,20 +134,8 @@ class RevokeTests(object):
         # Move our clock forward by 2h, build a new token and validate it.
         # 'synchronize' should now be exercised and remove old expired events
         mock_utcnow.return_value = now_plus_2h
-        self.revoke_api.revoke_by_expiration(_new_id(), now_plus_2h)
-        # should no longer throw an exception
+        token_values = _sample_token_values()
         self.revoke_api.check_token(token_values)
-
-    def test_revoke_by_expiration_project_and_domain_fails(self):
-        user_id = _new_id()
-        expires_at = utils.isotime(_future_time(), subsecond=True)
-        domain_id = _new_id()
-        project_id = _new_id()
-        self.assertThat(
-            lambda: self.revoke_api.revoke_by_expiration(
-                user_id, expires_at, domain_id=domain_id,
-                project_id=project_id),
-            matchers.raises(exception.UnexpectedError))
 
 
 class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
@@ -221,30 +178,19 @@ class RevokeListTests(unit.TestCase):
         i = len(project_tokens)
         project_tokens.append(_sample_blank_token())
         project_tokens[i]['user_id'] = user_ids[0]
-        project_tokens[i]['project_id'] = project_ids[0]
-        project_tokens[i]['roles'] = [role_ids[1]]
 
         i = len(project_tokens)
         project_tokens.append(_sample_blank_token())
         project_tokens[i]['user_id'] = user_ids[1]
-        project_tokens[i]['project_id'] = project_ids[0]
-        project_tokens[i]['roles'] = [role_ids[0]]
 
         i = len(project_tokens)
         project_tokens.append(_sample_blank_token())
         project_tokens[i]['user_id'] = user_ids[0]
-        project_tokens[i]['project_id'] = project_ids[1]
-        project_tokens[i]['roles'] = [role_ids[0]]
 
         token_to_revoke = _sample_blank_token()
         token_to_revoke['user_id'] = user_ids[0]
-        token_to_revoke['project_id'] = project_ids[0]
-        token_to_revoke['roles'] = [role_ids[0]]
 
-        self.project_tokens = project_tokens
         self.user_ids = user_ids
-        self.project_ids = project_ids
-        self.role_ids = role_ids
         self.token_to_revoke = token_to_revoke
 
     def _assertTokenRevoked(self, token_data):
@@ -282,54 +228,6 @@ class RevokeListTests(unit.TestCase):
         self.events.append(event)
         return event
 
-    def _revoke_by_expiration(self, user_id, expires_at, project_id=None,
-                              domain_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     expires_at=expires_at,
-                                     project_id=project_id,
-                                     domain_id=domain_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_grant(self, role_id, user_id=None,
-                         domain_id=None, project_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     role_id=role_id,
-                                     domain_id=domain_id,
-                                     project_id=project_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_user_and_project(self, user_id, project_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(project_id=project_id,
-                                                   user_id=user_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_project_role_assignment(self, project_id, role_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(project_id=project_id,
-                                                   role_id=role_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_domain_role_assignment(self, domain_id, role_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(domain_id=domain_id,
-                                                   role_id=role_id))
-        self.events.append(event)
-        return event
-
-    def _revoke_by_domain(self, domain_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(domain_id=domain_id))
-        self.events.append(event)
-
     def _user_field_test(self, field_name):
         user_id = _new_id()
         event = self._revoke_by_user(user_id)
@@ -349,29 +247,6 @@ class RevokeListTests(unit.TestCase):
 
     def test_revoke_by_user_matches_trustee(self):
         self._user_field_test('trustee_id')
-
-    def test_revoke_by_user_matches_trustor(self):
-        self._user_field_test('trustor_id')
-
-    def test_by_user_expiration(self):
-        future_time = _future_time()
-
-        user_id = 1
-        event = self._revoke_by_expiration(user_id, future_time)
-        token_data_1 = _sample_blank_token()
-        token_data_1['user_id'] = user_id
-        token_data_1['expires_at'] = future_time.replace(microsecond=0)
-        self._assertTokenRevoked(token_data_1)
-
-        token_data_2 = _sample_blank_token()
-        token_data_2['user_id'] = user_id
-        expire_delta = datetime.timedelta(seconds=2000)
-        future_time = timeutils.utcnow() + expire_delta
-        token_data_2['expires_at'] = future_time
-        self._assertTokenNotRevoked(token_data_2)
-
-        self.remove_event(event)
-        self._assertTokenNotRevoked(token_data_1)
 
     def test_revoke_by_audit_id(self):
         audit_id = provider.audit_info(parent_audit_id=None)[0]
@@ -412,157 +287,9 @@ class RevokeListTests(unit.TestCase):
         self._assertTokenNotRevoked(token_data_1)
         self._assertTokenNotRevoked(token_data_2)
 
-    def test_by_user_project(self):
-        # When a user has a project-scoped token and the project-scoped token
-        # is revoked then the token is revoked.
-
-        user_id = _new_id()
-        project_id = _new_id()
-
-        future_time = _future_time()
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['project_id'] = project_id
-        token_data['expires_at'] = future_time.replace(microsecond=0)
-
-        self._revoke_by_expiration(user_id, future_time, project_id=project_id)
-        self._assertTokenRevoked(token_data)
-
-    def test_by_user_domain(self):
-        # When a user has a domain-scoped token and the domain-scoped token
-        # is revoked then the token is revoked.
-
-        user_id = _new_id()
-        domain_id = _new_id()
-
-        future_time = _future_time()
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['assignment_domain_id'] = domain_id
-        token_data['expires_at'] = future_time.replace(microsecond=0)
-
-        self._revoke_by_expiration(user_id, future_time, domain_id=domain_id)
-        self._assertTokenRevoked(token_data)
-
     def remove_event(self, event):
         self.events.remove(event)
         remove_event(self.revoke_events, event)
-
-    def test_by_project_grant(self):
-        token_to_revoke = self.token_to_revoke
-        tokens = self.project_tokens
-
-        self._assertTokenNotRevoked(token_to_revoke)
-        for token in tokens:
-            self._assertTokenNotRevoked(token)
-
-        event = self._revoke_by_grant(role_id=self.role_ids[0],
-                                      user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
-
-        self._assertTokenRevoked(token_to_revoke)
-        for token in tokens:
-            self._assertTokenNotRevoked(token)
-
-        self.remove_event(event)
-
-        self._assertTokenNotRevoked(token_to_revoke)
-        for token in tokens:
-            self._assertTokenNotRevoked(token)
-
-        token_to_revoke['roles'] = [self.role_ids[0],
-                                    self.role_ids[1],
-                                    self.role_ids[2]]
-
-        event = self._revoke_by_grant(role_id=self.role_ids[0],
-                                      user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
-        self._assertTokenRevoked(token_to_revoke)
-        self.remove_event(event)
-        self._assertTokenNotRevoked(token_to_revoke)
-
-        event = self._revoke_by_grant(role_id=self.role_ids[1],
-                                      user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
-        self._assertTokenRevoked(token_to_revoke)
-        self.remove_event(event)
-        self._assertTokenNotRevoked(token_to_revoke)
-
-        self._revoke_by_grant(role_id=self.role_ids[0],
-                              user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
-        self._revoke_by_grant(role_id=self.role_ids[1],
-                              user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
-        self._revoke_by_grant(role_id=self.role_ids[2],
-                              user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
-        self._assertTokenRevoked(token_to_revoke)
-
-    def test_by_project_and_user_and_role(self):
-        user_id1 = _new_id()
-        user_id2 = _new_id()
-        project_id = _new_id()
-        self.events.append(self._revoke_by_user(user_id1))
-        self.events.append(
-            self._revoke_by_user_and_project(user_id2, project_id))
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id2
-        token_data['project_id'] = project_id
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_user(self):
-        # If revoke a domain, then a token for a user in the domain is revoked
-
-        user_id = _new_id()
-        domain_id = _new_id()
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = domain_id
-
-        self._revoke_by_domain(domain_id)
-
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_project(self):
-        # If revoke a domain, then a token scoped to a project in the domain
-        # is revoked.
-
-        user_id = _new_id()
-        user_domain_id = _new_id()
-
-        project_id = _new_id()
-        project_domain_id = _new_id()
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = user_domain_id
-        token_data['project_id'] = project_id
-        token_data['assignment_domain_id'] = project_domain_id
-
-        self._revoke_by_domain(project_domain_id)
-
-        self._assertTokenRevoked(token_data)
-
-    def test_by_domain_domain(self):
-        # If revoke a domain, then a token scoped to the domain is revoked.
-
-        user_id = _new_id()
-        user_domain_id = _new_id()
-
-        domain_id = _new_id()
-
-        token_data = _sample_blank_token()
-        token_data['user_id'] = user_id
-        token_data['identity_domain_id'] = user_domain_id
-        token_data['assignment_domain_id'] = domain_id
-
-        self._revoke_by_domain(domain_id)
-
-        self._assertTokenRevoked(token_data)
 
     def _assertEmpty(self, collection):
         return self.assertEqual(0, len(collection), "collection not empty")
@@ -571,14 +298,7 @@ class RevokeListTests(unit.TestCase):
         events = self.events
         self._assertEmpty(self.revoke_events)
         for i in range(0, 10):
-            events.append(
-                self._revoke_by_project_role_assignment(_new_id(), _new_id()))
-            events.append(
-                self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
-            events.append(
-                self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
-            events.append(
-                self._revoke_by_user_and_project(_new_id(), _new_id()))
+            events.append(self._revoke_by_user(_new_id()))
 
         for event in self.events:
             remove_event(self.revoke_events, event)

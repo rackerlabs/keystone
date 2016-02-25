@@ -388,7 +388,6 @@ class Auth(controller.V3Controller):
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in context['query_string']
-
         try:
             auth_info = AuthInfo.create(context, auth=auth)
             auth_context = AuthContext(extras={},
@@ -410,7 +409,6 @@ class Auth(controller.V3Controller):
             metadata_ref = None
 
             token_audit_id = auth_context.get('audit_id')
-
             (token_id, token_data) = self.token_provider_api.issue_v3_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
                 domain_id, auth_context, trust, metadata_ref, include_catalog,

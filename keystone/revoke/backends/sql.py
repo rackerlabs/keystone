@@ -21,14 +21,9 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
 
     # The id field is not going to be exposed to the outside world.
     # It is, however, necessary for SQLAlchemy.
+    # The table may have many other columns but they are no longer used
     id = sql.Column(sql.Integer, primary_key=True, nullable=False)
-    domain_id = sql.Column(sql.String(64))
-    project_id = sql.Column(sql.String(64))
     user_id = sql.Column(sql.String(64))
-    role_id = sql.Column(sql.String(64))
-    trust_id = sql.Column(sql.String(64))
-    consumer_id = sql.Column(sql.String(64))
-    access_token_id = sql.Column(sql.String(64))
     issued_before = sql.Column(sql.DateTime(), nullable=False)
     expires_at = sql.Column(sql.DateTime())
     revoked_at = sql.Column(sql.DateTime(), nullable=False, index=True)

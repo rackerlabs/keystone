@@ -18,16 +18,10 @@ from keystone.common import utils
 
 # The set of attributes common between the RevokeEvent
 # and the dictionaries created from the token Data.
-_NAMES = ['trust_id',
-          'consumer_id',
-          'access_token_id',
-          'audit_id',
+_NAMES = ['audit_id',
           'audit_chain_id',
           'expires_at',
-          'domain_id',
-          'project_id',
-          'user_id',
-          'role_id']
+          'user_id']
 
 
 # Additional arguments for creating a RevokeEvent
@@ -35,24 +29,16 @@ _EVENT_ARGS = ['issued_before', 'revoked_at']
 
 # Names of attributes in the RevocationEvent, including "virtual" attributes.
 # Virtual attributes are those added based on other values.
-_EVENT_NAMES = _NAMES + ['domain_scope_id']
+_EVENT_NAMES = _NAMES
 
 # Values that will be in the token data but not in the event.
 # These will compared with event values that have different names.
-# For example: both trustor_id and trustee_id are compared against user_id
-_TOKEN_KEYS = ['identity_domain_id',
-               'assignment_domain_id',
-               'issued_at',
-               'trustor_id',
-               'trustee_id']
+_TOKEN_KEYS = ['issued_at', 'trustee_id']
 
 # Alternative names to be checked in token for every field in
 # revoke tree.
 ALTERNATIVES = {
-    'user_id': ['user_id', 'trustor_id', 'trustee_id'],
-    'domain_id': ['identity_domain_id', 'assignment_domain_id'],
-    # For a domain-scoped token, the domain is in assignment_domain_id.
-    'domain_scope_id': ['assignment_domain_id', ],
+    'user_id': ['user_id', 'trustee_id'],
 }
 
 
@@ -75,20 +61,10 @@ class RevokeEvent(object):
         for k in REVOKE_KEYS:
             v = kwargs.get(k)
             setattr(self, k, v)
-
-        if self.domain_id and self.expires_at:
-            # This is revoking a domain-scoped token.
-            self.domain_scope_id = self.domain_id
-            self.domain_id = None
-        else:
-            # This is revoking all tokens for a domain.
-            self.domain_scope_id = None
-
         if self.expires_at is not None:
             # Trim off the expiration time because MySQL timestamps are only
             # accurate to the second.
             self.expires_at = self.expires_at.replace(microsecond=0)
-
         if self.revoked_at is None:
             self.revoked_at = timeutils.utcnow()
         if self.issued_before is None:
@@ -96,21 +72,11 @@ class RevokeEvent(object):
 
     def to_dict(self):
         keys = ['user_id',
-                'role_id',
-                'domain_id',
-                'domain_scope_id',
-                'project_id',
                 'audit_id',
                 'audit_chain_id',
                 ]
         event = {key: self.__dict__[key] for key in keys
                  if self.__dict__[key] is not None}
-        if self.trust_id is not None:
-            event['OS-TRUST:trust_id'] = self.trust_id
-        if self.consumer_id is not None:
-            event['OS-OAUTH1:consumer_id'] = self.consumer_id
-        if self.consumer_id is not None:
-            event['OS-OAUTH1:access_token_id'] = self.access_token_id
         if self.expires_at is not None:
             event['expires_at'] = utils.isotime(self.expires_at)
         if self.issued_before is not None:
@@ -136,10 +102,8 @@ def is_revoked(events, token_data):
 
     :param events: a list data structure of events
     :param token_data: map based on a flattened view of the token. The required
-                       fields are `expires_at`,`user_id`, `project_id`,
-                       `identity_domain_id`, `assignment_domain_id`,
-                       `trust_id`, `trustor_id`, `trustee_id` `consumer_id` and
-                       `access_token_id`
+                       fields are `expires_at`,`user_id`, 'audit_id', and
+                                   'audit_chain_id'
     :returns: True if the token matches an existing revocation event, meaning
               the token is revoked. False is returned if the token does not
               match any revocation events, meaning the token is considered
@@ -172,35 +136,17 @@ def matches(event, token_values):
     # The token has three attributes that can match the user_id
     if event.user_id is not None:
         if all(event.user_id != token_values[attribute_name]
-               for attribute_name in ['user_id', 'trustor_id', 'trustee_id']):
-            return False
-
-    # The token has two attributes that can match the domain_id
-    if event.domain_id is not None:
-        if all(event.domain_id != token_values[attribute_name]
-                for attribute_name in ['identity_domain_id',
-                                       'assignment_domain_id']):
-            return False
-
-    if event.domain_scope_id is not None:
-        if event.domain_scope_id != token_values['assignment_domain_id']:
+               for attribute_name in ['user_id', 'trustee_id']):
             return False
 
     # If an event specifies an attribute name, but it does not  match,
     # the token is not revoked.
-    attribute_names = ['project_id',
-                       'expires_at', 'trust_id', 'consumer_id',
-                       'access_token_id', 'audit_id', 'audit_chain_id']
+    attribute_names = ['audit_id', 'audit_chain_id']
     for attribute_name in attribute_names:
         if getattr(event, attribute_name) is not None:
             if (getattr(event, attribute_name) !=
                     token_values[attribute_name]):
                         return False
-
-    if event.role_id is not None:
-        roles = token_values['roles']
-        if all(event.role_id != role for role in roles):
-            return False
 
     if token_values['issued_at'] > event.issued_before:
         return False
@@ -226,34 +172,12 @@ def build_token_values_v2(access, default_domain_id):
 
     token_values['user_id'] = access.get('user', {}).get('id')
 
-    project = token_data.get('tenant')
-    if project is not None:
-        token_values['project_id'] = project['id']
-    else:
-        token_values['project_id'] = None
-
-    token_values['identity_domain_id'] = default_domain_id
-    token_values['assignment_domain_id'] = default_domain_id
-
     trust = token_data.get('trust')
     if trust is None:
-        token_values['trust_id'] = None
-        token_values['trustor_id'] = None
         token_values['trustee_id'] = None
     else:
-        token_values['trust_id'] = trust['id']
-        token_values['trustor_id'] = trust['trustor_id']
         token_values['trustee_id'] = trust['trustee_id']
 
-    token_values['consumer_id'] = None
-    token_values['access_token_id'] = None
-
-    role_list = []
-    # Roles are by ID in metadata and by name in the user section
-    roles = access.get('metadata', {}).get('roles', [])
-    for role in roles:
-        role_list.append(role)
-    token_values['roles'] = role_list
     return token_values
 
 
@@ -276,50 +200,13 @@ def build_token_values(token_data):
     user = token_data.get('user')
     if user is not None:
         token_values['user_id'] = user['id']
-        # Federated users do not have a domain, be defensive and get the user
-        # domain set to None in the federated user case.
-        token_values['identity_domain_id'] = user.get('domain', {}).get('id')
     else:
         token_values['user_id'] = None
-        token_values['identity_domain_id'] = None
-
-    project = token_data.get('project', token_data.get('tenant'))
-    if project is not None:
-        token_values['project_id'] = project['id']
-        # The domain_id of projects acting as domains is None
-        token_values['assignment_domain_id'] = (
-            project['domain']['id'] if project['domain'] else None)
-    else:
-        token_values['project_id'] = None
-
-        domain = token_data.get('domain')
-        if domain is not None:
-            token_values['assignment_domain_id'] = domain['id']
-        else:
-            token_values['assignment_domain_id'] = None
-
-    role_list = []
-    roles = token_data.get('roles')
-    if roles is not None:
-        for role in roles:
-            role_list.append(role['id'])
-    token_values['roles'] = role_list
 
     trust = token_data.get('OS-TRUST:trust')
     if trust is None:
-        token_values['trust_id'] = None
-        token_values['trustor_id'] = None
         token_values['trustee_id'] = None
     else:
-        token_values['trust_id'] = trust['id']
-        token_values['trustor_id'] = trust['trustor_user']['id']
         token_values['trustee_id'] = trust['trustee_user']['id']
 
-    oauth1 = token_data.get('OS-OAUTH1')
-    if oauth1 is None:
-        token_values['consumer_id'] = None
-        token_values['access_token_id'] = None
-    else:
-        token_values['consumer_id'] = oauth1['consumer_id']
-        token_values['access_token_id'] = oauth1['access_token_id']
     return token_values

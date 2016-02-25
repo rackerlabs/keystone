@@ -239,7 +239,10 @@ class V3TokenDataHelper(object):
 
     def _get_filtered_domain(self, domain_id):
         domain_ref = self.resource_api.get_domain(domain_id)
-        return {'id': domain_ref['id'], 'name': domain_ref['name']}
+        if domain_ref['enabled']:
+            return {'id': domain_ref['id'], 'name': domain_ref['name']}
+        else:
+            raise exception.DomainNotFound(domain_id=domain_id)
 
     def _get_filtered_project(self, project_id):
         project_ref = self.resource_api.get_project(project_id)
@@ -249,6 +252,10 @@ class V3TokenDataHelper(object):
         if project_ref['domain_id'] is not None:
             filtered_project['domain'] = (
                 self._get_filtered_domain(project_ref['domain_id']))
+            if project_ref['enabled']:
+                return filtered_project
+            else:
+                raise exception.ProjectNotFound(project_id=project_id)
         else:
             # Projects acting as a domain do not have a domain_id attribute
             filtered_project['domain'] = None
@@ -509,9 +516,15 @@ class V3TokenDataHelper(object):
             for x in ('roles', 'user', 'catalog', 'project', 'domain'):
                 if x in token:
                     token_data[x] = token[x]
-
         if bind:
-            token_data['bind'] = bind
+            # TODO(ayoung): This is a work around for the bind
+            # data coming back as a tuple sometimes.  Why?
+            try:
+                bind_data = bind[0]
+            except KeyError:
+                bind_data = bind
+            if bind_data:
+                token_data['bind'] = bind_data
 
         self._populate_scope(token_data, domain_id, project_id)
         if token_data.get('project'):
@@ -703,25 +716,14 @@ class BaseProvider(provider.Provider):
         try:
             self._assert_is_not_federation_token(token_ref)
             self._assert_default_domain(token_ref)
-            # FIXME(gyee): performance or correctness? Should we return the
-            # cached token or reconstruct it? Obviously if we are going with
-            # the cached token, any role, project, or domain name changes
-            # will not be reflected. One may argue that with PKI tokens,
-            # we are essentially doing cached token validation anyway.
-            # Lets go with the cached token strategy. Since token
-            # management layer is now pluggable, one can always provide
-            # their own implementation to suit their needs.
-            token_data = token_ref.get('token_data')
-            if (self.get_token_version(token_data) != token.provider.V2):
-                # Validate the V3 token as V2
-                token_data = self.v2_token_data_helper.v3_to_v2_token(
-                    token_data)
+            # Reconstruct the token.  If any of the values
+            # are no longer valid, the token will be denied.
+            # if the role assignements have changed, this
+            # validation will show the new set of roles
 
-            trust_id = token_data['access'].get('trust', {}).get('id')
-            if trust_id:
-                msg = ('Unable to validate trust-scoped tokens using version '
-                       'v2.0 API.')
-                raise exception.Unauthorized(msg)
+            token_data = self.validate_v3_token(token_ref)
+            token_data = self.v2_token_data_helper.v3_to_v2_token(
+                token_data)
 
             return token_data
         except exception.ValidationError:
@@ -759,50 +761,105 @@ class BaseProvider(provider.Provider):
         if access_token_id:
             access_token = self.oauth_api.get_access_token(access_token_id)
 
-        return self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names=methods,
-            domain_id=domain_id,
-            project_id=project_id,
-            issued_at=created_at,
-            expires=expires_at,
-            trust=trust_ref,
-            token=token_dict,
-            access_token=access_token,
-            audit_info=audit_ids)
+        try:
+            return self.v3_token_data_helper.get_token_data(
+                user_id,
+                method_names=methods,
+                domain_id=domain_id,
+                project_id=project_id,
+                issued_at=created_at,
+                expires=expires_at,
+                trust=trust_ref,
+                token=token_dict,
+                access_token=access_token,
+                audit_info=audit_ids)
+        except exception.NotFound:
+            raise exception.TokenNotFound(token_id=token_id)
+        except exception.Unauthorized:
+            raise exception.TokenNotFound(token_id=token_id)
+        except exception.Forbidden:
+            raise exception.TokenNotFound(token_id=token_id)
+
+    def _validate_trust(self, token_ref):
+        trust_id = token_ref.get('trust_id')
+        trust = None
+        if trust_id:
+            try:
+                trust = self.trust_api.get_trust(trust_id)
+                self.identity_api.assert_user_enabled(trust['trustor_user_id'])
+            except exception.TrustNotFound:
+                raise exception.TokenNotFound(token_id=token_ref['id'])
+            except AssertionError:
+                raise exception.TokenNotFound(token_id=token_ref['id'])
+
+        return trust
 
     def validate_v3_token(self, token_ref):
-        # FIXME(gyee): performance or correctness? Should we return the
-        # cached token or reconstruct it? Obviously if we are going with
-        # the cached token, any role, project, or domain name changes
-        # will not be reflected. One may argue that with PKI tokens,
-        # we are essentially doing cached token validation anyway.
-        # Lets go with the cached token strategy. Since token
-        # management layer is now pluggable, one can always provide
-        # their own implementation to suit their needs.
+        # Reconstruct the token.  If any of the values
+        # are no longer valid, the token will be denied.
+        # if the role assignements have changed, this
+        # validation will show the new set of roles
 
-        trust_id = token_ref.get('trust_id')
-        if trust_id:
-            # token trust validation
-            self.trust_api.get_trust(trust_id)
+        trust = self._validate_trust(token_ref)
+        token_data = token_ref.get('token_data', {}).get('token')
+        access_token = None
 
-        token_data = token_ref.get('token_data')
-        if not token_data or 'token' not in token_data:
+        if not token_data:
             # token ref is created by V2 API
             project_id = None
             project_ref = token_ref.get('tenant')
             if project_ref:
                 project_id = project_ref['id']
-
+            domain_id = None
+            user_id = token_ref['user']['id']
+            expires = token_ref['expires']
             issued_at = token_ref['token_data']['access']['token']['issued_at']
             audit = token_ref['token_data']['access']['token'].get('audit_ids')
+            bind = token_ref.get('bind'),
+            methods = ['password', 'token']
+            new_token_data = None
 
-            token_data = self.v3_token_data_helper.get_token_data(
-                token_ref['user']['id'],
-                ['password', 'token'],
+        else:
+            user_id = token_data['user']['id']
+            project_id = token_data.get('project', {}).get('id')
+            domain_id = token_data.get('domain', {}).get('id')
+            expires = token_data['expires_at']
+            issued_at = token_data['issued_at']
+            bind = token_data.get('bind')
+            audit = token_data.get('audit_ids')
+            methods = token_data['methods']
+            try:
+                # by default let the helper populate the user
+                # as it also populates the trust info
+                self.identity_api.get_user(user_id)
+                new_token_data = {}
+            except exception.UserNotFound:
+                # TODO(ayoung): Federation populates the user info,
+                # which cannot be  recreated here. Once Shadow users
+                # merges, remove this check and let the helper do it
+                new_token_data = {'user': token_data['user']}
+
+            # oauth supported for V3 only
+            access_token_id = token_data.get(
+                'OS-OAUTH1', {}).get('access_token_id')
+            if access_token_id is not None:
+                access_token = self.oauth_api.get_access_token(access_token_id)
+
+        try:
+            new_token_data = self.v3_token_data_helper.get_token_data(
+                user_id,
+                methods,
                 project_id=project_id,
-                bind=token_ref.get('bind'),
-                expires=token_ref['expires'],
+                domain_id=domain_id,
+                bind=bind,
+                expires=expires,
                 issued_at=issued_at,
-                audit_info=audit)
-        return token_data
+                audit_info=audit,
+                trust=trust,
+                token=new_token_data,
+                access_token=access_token)
+        except exception.Unauthorized:
+            raise exception.TokenNotFound(token_id=token_ref['id'])
+        except exception.Forbidden:
+            raise exception.TokenNotFound(token_id=token_ref['id'])
+        return new_token_data
