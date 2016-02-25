@@ -127,7 +127,7 @@ def audit_info(parent_audit_id):
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('resource_api', 'assignment_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -257,6 +257,26 @@ class Manager(manager.Manager):
         except KeyError:
             raise exception.TokenNotFound(_('Failed to validate token'))
         token_values = self.revoke_api.model.build_token_values(token_data)
+
+        trust = token_data.get('trust')
+        if trust is not None:
+            try:
+                trust_ref = self.trust_api.get_trust(trust['id'])
+                if trust_ref is None:
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+            except exception.Forbidden:
+                raise exception.TokenNotFound(_('Failed to validate token'))
+
+        project = token_data.get('project', token_data.get('tenant'))
+        if project is not None:
+            try:
+                self.resource_api.assert_project_enabled(
+                    project['id'])
+                self.resource_api.assert_domain_enabled(
+                    project['domain']['id'])
+            except AssertionError:
+                raise exception.TokenNotFound(_('Failed to validate token'))
         self.revoke_api.check_token(token_values)
 
     def check_revocation(self, token):
@@ -289,11 +309,6 @@ class Manager(manager.Manager):
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
 
-    @MEMOIZE_TOKENS
-    def validate_non_persistent_token(self, token_id):
-        return self.driver.validate_non_persistent_token(token_id)
-
-    @MEMOIZE_TOKENS
     def _validate_token(self, token_id):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
@@ -314,11 +329,12 @@ class Manager(manager.Manager):
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
 
-    @MEMOIZE_TOKENS
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
-    @MEMOIZE_TOKENS
+    def _validate_v2_token(self, token_id):
+        return self.driver.validate_v2_token(token_id)
+
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
@@ -448,13 +464,7 @@ class Manager(manager.Manager):
         # consulted before accepting a token as valid.  For now we will
         # do the explicit individual token invalidation.
 
-        self._validate_token.invalidate(self, token_id)
-        self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v3_token.invalidate(self, token_id)
-        # This method isn't actually called in the case of non-persistent
-        # tokens, but we include the invalidation in case this ever changes
-        # in the future.
-        self.validate_non_persistent_token.invalidate(self, token_id)
+        pass
 
     def revoke_token(self, token_id, revoke_chain=False):
         token_ref = token_model.KeystoneToken(

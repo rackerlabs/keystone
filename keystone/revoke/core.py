@@ -14,6 +14,7 @@
 
 from oslo_log import versionutils
 
+
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
@@ -85,59 +86,8 @@ class Manager(manager.Manager):
                        payload):
         self.revoke_by_user(payload['resource_info'])
 
-    def _role_callback(self, service, resource_type, operation,
-                       payload):
-        self.revoke(
-            revoke_model.RevokeEvent(role_id=payload['resource_info']))
-
-    def _project_callback(self, service, resource_type, operation,
-                          payload):
-        self.revoke(
-            revoke_model.RevokeEvent(project_id=payload['resource_info']))
-
-    def _domain_callback(self, service, resource_type, operation,
-                         payload):
-        self.revoke(
-            revoke_model.RevokeEvent(domain_id=payload['resource_info']))
-
-    def _trust_callback(self, service, resource_type, operation,
-                        payload):
-        self.revoke(
-            revoke_model.RevokeEvent(trust_id=payload['resource_info']))
-
-    def _consumer_callback(self, service, resource_type, operation,
-                           payload):
-        self.revoke(
-            revoke_model.RevokeEvent(consumer_id=payload['resource_info']))
-
-    def _access_token_callback(self, service, resource_type, operation,
-                               payload):
-        self.revoke(
-            revoke_model.RevokeEvent(access_token_id=payload['resource_info']))
-
-    def _role_assignment_callback(self, service, resource_type, operation,
-                                  payload):
-        info = payload['resource_info']
-        self.revoke_by_grant(role_id=info['role_id'], user_id=info['user_id'],
-                             domain_id=info.get('domain_id'),
-                             project_id=info.get('project_id'))
-
     def _register_listeners(self):
         callbacks = {
-            notifications.ACTIONS.deleted: [
-                ['OS-TRUST:trust', self._trust_callback],
-                ['OS-OAUTH1:consumer', self._consumer_callback],
-                ['OS-OAUTH1:access_token', self._access_token_callback],
-                ['role', self._role_callback],
-                ['user', self._user_callback],
-                ['project', self._project_callback],
-                ['role_assignment', self._role_assignment_callback]
-            ],
-            notifications.ACTIONS.disabled: [
-                ['user', self._user_callback],
-                ['project', self._project_callback],
-                ['domain', self._domain_callback],
-            ],
             notifications.ACTIONS.internal: [
                 [notifications.INVALIDATE_USER_TOKEN_PERSISTENCE,
                  self._user_callback],
@@ -166,32 +116,9 @@ class Manager(manager.Manager):
     def revoke_by_audit_chain_id(self, audit_chain_id, project_id=None,
                                  domain_id=None):
 
-        self._assert_not_domain_and_project_scoped(domain_id=domain_id,
-                                                   project_id=project_id)
-
         self.revoke(revoke_model.RevokeEvent(audit_chain_id=audit_chain_id,
                                              domain_id=domain_id,
                                              project_id=project_id))
-
-    def revoke_by_grant(self, role_id, user_id=None,
-                        domain_id=None, project_id=None):
-        self.revoke(
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     role_id=role_id,
-                                     domain_id=domain_id,
-                                     project_id=project_id))
-
-    def revoke_by_user_and_project(self, user_id, project_id):
-        self.revoke(
-            revoke_model.RevokeEvent(project_id=project_id, user_id=user_id))
-
-    def revoke_by_project_role_assignment(self, project_id, role_id):
-        self.revoke(revoke_model.RevokeEvent(project_id=project_id,
-                                             role_id=role_id))
-
-    def revoke_by_domain_role_assignment(self, domain_id, role_id):
-        self.revoke(revoke_model.RevokeEvent(domain_id=domain_id,
-                                             role_id=role_id))
 
     def check_token(self, token_values):
         """Check the values from a token against the revocation list.

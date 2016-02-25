@@ -638,6 +638,18 @@ class TokenAPITests(object):
             expected_status=http_client.NOT_FOUND
         )
 
+    # There used to be a test here named
+    # test_trust_scoped_token_invalid_after_changing_trustor_password
+    # this does not make sense.  Only a trustee's tokens need to be
+    # checked.  The contract of a trust is explicitly outside the scoped of
+    # any trustor's tokens once that trust is created.
+
+    def test_trust_scoped_token_invalid_after_disabled_trustor_domain(self):
+        trustee_user, trust = self._create_trust()
+        trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
+        # Validate a trust scoped token
+        self._validate_token(trust_scoped_token)
+
     def test_domain_scoped_token_invalid_after_disabling_domain(self):
         # Grant user access to domain
         self.assignment_api.create_grant(self.role['id'],
@@ -2600,7 +2612,6 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
                 domain_name=self.domainA['name']))
-
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.OK,
                   token=adminA_token)
@@ -2763,6 +2774,44 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                                             self.group1['id'])
         self.identity_api.add_user_to_group(self.user3['id'],
                                             self.group2['id'])
+
+    def assertValidRevokedTokenResponse(self, events_response, **kwargs):
+        events = events_response['events']
+        self.assertEqual(1, len(events))
+        for k, v in kwargs.items():
+            self.assertEqual(v, events[0].get(k))
+        self.assertIsNotNone(events[0]['issued_before'])
+        self.assertIsNotNone(events_response['links'])
+        del (events_response['events'][0]['issued_before'])
+        del (events_response['links'])
+
+        expected_response = {'events': [kwargs]}
+        self.assertEqual(expected_response, events_response)
+
+
+    def assertEventDataInList(self, events, **kwargs):
+        found = False
+        for e in events:
+            for key, value in kwargs.items():
+                try:
+                    if e[key] != value:
+                        break
+                except KeyError:
+                    # Break the loop and present a nice error instead of
+                    # KeyError
+                    break
+            else:
+                # If the value of the event[key] matches the value of the kwarg
+                # for each item in kwargs, the event was fully matched and
+                # the assertTrue below should succeed.
+                found = True
+        self.assertTrue(found,
+                        'event with correct values not in list, expected to '
+                        'find event with key-value pairs. Expected: '
+                        '"%(expected)s" Events: "%(events)s"' %
+                        {'expected': ','.join(
+                            ["'%s=%s'" % (k, v) for k, v in kwargs.items()]),
+                         'events': events})
 
         self.role1 = unit.new_role_ref()
         self.role_api.create_role(self.role1['id'], self.role1)
@@ -4435,16 +4484,6 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data,
                                  expected_status=http_client.FORBIDDEN)
 
-    def assertTrustTokensRevoked(self, trust_id):
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_revokes_tokens(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -4469,7 +4508,6 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         headers = {'X-Subject-Token': trust_token}
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
-        self.assertTrustTokensRevoked(trust_id)
 
     def disable_user(self, user):
         user['enabled'] = False
@@ -4739,33 +4777,28 @@ class TestTrustChain(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data)
         self.assertValidTokenResponse(r)
 
-    def assert_trust_tokens_revoked(self, trust_id):
-        trustee = self.user_list[0]
+    def _get_trust_scoped_token(self, trustee_user, trust):
         auth_data = self.build_authentication_request(
-            user_id=trustee['id'],
-            password=trustee['password']
-        )
-        r = self.v3_create_token(auth_data)
-        self.assertValidTokenResponse(r)
-
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        token = resp.headers.get('X-Subject-Token')
+        return token
 
     def test_delete_trust_cascade(self):
         self.assert_user_authenticate(self.user_list[0])
+
+        trust_scoped_token = self._get_trust_scoped_token(
+            self.user_list[0], self.trust_chain[0])
+
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': self.trust_chain[0]['id']})
 
-        headers = {'X-Subject-Token': self.last_token}
-        self.head('/auth/tokens', headers=headers,
-                  expected_status=http_client.NOT_FOUND)
-        self.assert_trust_tokens_revoked(self.trust_chain[0]['id'])
+        return self.get(
+            '/auth/tokens',
+            headers={'X-Subject-Token': trust_scoped_token},
+            expected_status=404)
 
     def test_delete_broken_chain(self):
         self.assert_user_authenticate(self.user_list[0])
@@ -4933,10 +4966,6 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
     def test_get_domains_project_scoped_token(self):
         self.put(path='/domains/%s/users/%s/roles/%s' % (
             self.domain['id'], self.user['id'], self.role['id']))
-
-        r = self.get('/auth/domains')
-        self.assertThat(r.json['domains'], matchers.HasLength(1))
-        self.assertValidDomainListResponse(r)
 
 
 class TestTrustAuthPKITokenProvider(TrustAPIBehavior, TestTrustChain):

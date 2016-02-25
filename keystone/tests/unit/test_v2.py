@@ -189,13 +189,13 @@ class CoreApiTests(object):
         self.assertValidAuthenticationResponse(r)
 
     def test_remove_role_revokes_token(self):
+
         self.md_foobar = self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])
 
-        token = self.get_scoped_token(
-            tenant_id=default_fixtures.SERVICE_TENANT_ID)
+        token = self.get_scoped_token(tenant_id=self.tenant_service['id'])
         r = self.admin_request(
             path='/v2.0/tokens/%s' % token,
             token=token)
