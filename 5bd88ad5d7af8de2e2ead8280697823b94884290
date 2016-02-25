@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bae84128_7625f4ac",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-25T09:48:11Z",
+      "side": 1,
+      "message": "actually, should catch exception.Unauthorized instead of exception.Forbidden.\n\nexception.Unauthorized:  code \u003d\u003d 401\nexception.Forbidden: code \u003d\u003d 403",
+      "range": {
+        "startLine": 287,
+        "startChar": 8,
+        "endLine": 287,
+        "endChar": 35
+      },
+      "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_5208d228",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
