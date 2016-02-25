@@ -16,6 +16,24 @@
       "revId": "a7fef0c4eb93e4910970d269ae01b5d04f510f9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2237d0e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-25T17:04:12Z",
+      "side": 1,
+      "message": "You must allow impersonation in order to redelegate a trust.",
+      "parentUuid": "bae84128_db92444b",
+      "revId": "a7fef0c4eb93e4910970d269ae01b5d04f510f9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
