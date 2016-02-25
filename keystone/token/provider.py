@@ -391,7 +391,7 @@ class Manager(manager.Manager):
             # all we care are the role IDs
 
             # FIXME(gyee): is there really a need to store roles in metadata?
-            role_ids = [r['id'] for r in token_data['token']['roles']]
+            role_ids = [r for r in token_data['token']['roles']]
             metadata_ref = {'roles': role_ids}
 
         if trust:
