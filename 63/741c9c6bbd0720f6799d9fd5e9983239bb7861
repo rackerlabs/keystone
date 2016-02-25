@@ -1,0 +1,11 @@
+Code-Review+1: Eric Brown <browne@vmware.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Workflow+1: Marek Denis <marek.denis@cern.ch>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 25 Feb 2016 16:48:28 +0000
+Reviewed-on: https://review.openstack.org/278136
+Project: openstack/keystone
+Branch: refs/heads/master
