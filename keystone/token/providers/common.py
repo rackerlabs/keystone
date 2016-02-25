@@ -503,7 +503,6 @@ class V3TokenDataHelper(object):
             for x in ('roles', 'user', 'catalog', 'project', 'domain'):
                 if x in token:
                     token_data[x] = token[x]
-
         if bind:
             token_data['bind'] = bind
 
@@ -766,37 +765,46 @@ class BaseProvider(provider.Provider):
             audit_info=audit_ids)
 
     def validate_v3_token(self, token_ref):
-        # FIXME(gyee): performance or correctness? Should we return the
-        # cached token or reconstruct it? Obviously if we are going with
-        # the cached token, any role, project, or domain name changes
-        # will not be reflected. One may argue that with PKI tokens,
-        # we are essentially doing cached token validation anyway.
-        # Lets go with the cached token strategy. Since token
-        # management layer is now pluggable, one can always provide
-        # their own implementation to suit their needs.
+        # Reconstruct the token.  If any of the values
+        # are no longer valid, the token will be denied.
+        # if the role assignements have changed, this
+        # validation will show the new set of roles
 
         trust_id = token_ref.get('trust_id')
         if trust_id:
             # token trust validation
             self.trust_api.get_trust(trust_id)
 
-        token_data = token_ref.get('token_data')
-        if not token_data or 'token' not in token_data:
+        token_data = token_ref.get('token_data', {}).get('token')
+
+        if not token_data:
             # token ref is created by V2 API
             project_id = None
             project_ref = token_ref.get('tenant')
             if project_ref:
                 project_id = project_ref['id']
-
+            domain_id = None
+            user_id = token_ref['user']['id']
+            expires = token_ref['expires']
             issued_at = token_ref['token_data']['access']['token']['issued_at']
             audit = token_ref['token_data']['access']['token'].get('audit_ids')
+            bind = token_ref.get('bind'),
+        else:
+            user_id = token_data['user']['id']
+            project_id = token_data.get('project', {}).get('id')
+            domain_id = token_data.get('domain', {}).get('id')
+            expires = token_data['expires_at']
+            issued_at = token_data['issued_at']
+            bind = token_data.get('bind')
+            audit = token_data.get('audit_ids')
 
-            token_data = self.v3_token_data_helper.get_token_data(
-                token_ref['user']['id'],
-                ['password', 'token'],
-                project_id=project_id,
-                bind=token_ref.get('bind'),
-                expires=token_ref['expires'],
-                issued_at=issued_at,
-                audit_info=audit)
+        token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            ['password', 'token'],
+            project_id=project_id,
+            domain_id=domain_id,
+            bind=bind,
+            expires=expires,
+            issued_at=issued_at,
+            audit_info=audit)
         return token_data

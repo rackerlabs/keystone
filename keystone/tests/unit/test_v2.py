@@ -186,7 +186,13 @@ class CoreApiTests(object):
             token=token)
         self.assertValidAuthenticationResponse(r)
 
-    def test_remove_role_revokes_token(self):
+    def test_remove_role_does_not_show_in_token(self):
+
+        self.md_foobar = self.assignment_api.add_role_to_user_and_project(
+            self.user_foo['id'],
+            self.tenant_service['id'],
+            self.role_member['id'])
+
         self.md_foobar = self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'],
             self.tenant_service['id'],
@@ -205,8 +211,7 @@ class CoreApiTests(object):
 
         r = self.admin_request(
             path='/v2.0/tokens/%s' % token,
-            token=token,
-            expected_status=http_client.UNAUTHORIZED)
+            token=token)
 
     def test_validate_token_belongs_to(self):
         token = self.get_scoped_token()
