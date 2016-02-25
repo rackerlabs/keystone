@@ -2579,11 +2579,6 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
 
 
 class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
-    """Tests for federated users
-
-    Tests new shadow users functionality
-
-    """
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
@@ -2604,6 +2599,47 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         r = self._issue_unscoped_token()
         user_id2 = r.json_body['token']['user']['id']
         self.assertEqual(user_id, user_id2)
+
+    def test_user_role_assignment(self):
+        """Test assigning roles to federated users.
+
+        1. authenticate via saml
+        2. get back a user ID
+        3. have an admin user directly assign that user a role in a project
+        4. have the federated user get a token for the project
+        5. ensure user can access resource based on role assignment and the
+        feeling is like we are querying for standard user.
+
+        """
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        role_ref = unit.new_role_ref()
+
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        v3_scope_request = self._scope_request(r.headers['X-Subject-Token'],
+                                               'project', project_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
+        print('r before: ')
+        print(r)
+
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
+        print('r before: ')
+        print(r)
+        token_resp = r.result['token']
+        print('token_resp: ')
+        print(token_resp)
 
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
