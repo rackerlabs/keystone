@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_c11a2017",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-25T16:19:25Z",
+      "side": 1,
+      "message": "i think you meant \u0027display_name\u0027 or actually thought about user_name in line 143.",
+      "revId": "a16e9b622af106a326991054616af7bb6156eb48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_219cac5c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-25T16:19:25Z",
+      "side": 1,
+      "message": "i am actually unsure you can change public function to a private one. \n\nIn general same applies for arguments passed to the function and return values (which you are changing here).",
+      "revId": "a16e9b622af106a326991054616af7bb6156eb48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
