@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_786dc931",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T19:33:14Z",
+      "side": 1,
+      "message": "display_name and user.name are not the same things.  display_name would be more like a first name and last name.",
+      "parentUuid": "bae84128_42993578",
+      "revId": "fef801e1a2bdf2ee7838bc5fcd24fdd964745719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_13f6658e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 47
