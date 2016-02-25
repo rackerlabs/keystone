@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bae84128_9f451619",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T17:55:08Z",
+      "side": 1,
+      "message": "The display name would not replace, nor is the same thing, as the user.name.  The display_name would only be for a FederatedUser.",
+      "parentUuid": "bae84128_d1220a01",
+      "revId": "5fed576da8ef834ab4f6695447fe42bf32bf759f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_f153ce6a",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 50
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-25T09:17:08Z",
       "side": 1,
       "message": "by passing user_id only you loose information about the user causing the problems.See my comment in 47.",
+      "revId": "5fed576da8ef834ab4f6695447fe42bf32bf759f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_b38cd036",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T17:55:08Z",
+      "side": 1,
+      "message": "What problems would it cause?  The get_user_name() method does something similar, not passing in the domain_id:\nraise exception.UserNotFound(user_id\u003duser_name)",
+      "parentUuid": "bae84128_f153ce6a",
       "revId": "5fed576da8ef834ab4f6695447fe42bf32bf759f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
