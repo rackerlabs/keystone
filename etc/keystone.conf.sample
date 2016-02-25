@@ -159,15 +159,6 @@
 # is set. (boolean value)
 #use_syslog = false
 
-# Enables or disables syslog rfc5424 format for logging. If enabled, prefixes
-# the MSG part of the syslog message with APP-NAME (RFC5424). This option is
-# ignored if log_config_append is set. (boolean value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: The format without the APP-NAME is deprecated in Kilo, and will be
-# removed in Mitaka, along with this option.
-#use_syslog_rfc_format = true
-
 # Syslog facility to receive log lines. This option is ignored if
 # log_config_append is set. (string value)
 #syslog_log_facility = LOG_USER
@@ -310,8 +301,8 @@
 
 # Enable eventlet backdoor, using the provided path as a unix socket that can
 # receive connections. This option is mutually exclusive with 'backdoor_port'
-# in that only one should be be provided. If both are provided then the
-# existence of this option overrides the usage of that option. (string value)
+# in that only one should be provided. If both are provided then the existence
+# of this option overrides the usage of that option. (string value)
 #backdoor_socket = <None>
 
 # Enables or disables logging values of all registered options when starting a
@@ -592,7 +583,7 @@
 # If set, use this value for max_overflow with SQLAlchemy. (integer value)
 # Deprecated group/name - [DEFAULT]/sql_max_overflow
 # Deprecated group/name - [DATABASE]/sqlalchemy_max_overflow
-#max_overflow = <None>
+#max_overflow = 50
 
 # Verbosity of SQL debugging information: 0=None, 100=Everything. (integer
 # value)
