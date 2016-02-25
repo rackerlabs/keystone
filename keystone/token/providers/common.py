@@ -286,6 +286,18 @@ class V3TokenDataHelper(object):
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
+    def extend_roles_for_groups(self, token_data, group_ids,
+                                project_id=None, domain_id=None,
+                                user_id=None):
+        token_ref = {}
+        self.populate_roles_for_groups(token_ref, group_ids,
+                                       project_id=project_id,
+                                       domain_id=domain_id,
+                                       user_id=user_id)
+        if 'roles' not in token_data:
+            token_data['roles'] = []
+        token_data['roles'].extend(token_ref.get('roles', []))
+
     def populate_roles_for_groups(self, token_data, group_ids,
                                   project_id=None, domain_id=None,
                                   user_id=None):
