@@ -14,9 +14,11 @@
 import migrate
 from oslo_log import log
 import sqlalchemy as sql
+from sqlalchemy import orm
 
 from keystone.assignment.backends import sql as assignment_sql
 from keystone.common import sql as ks_sql
+from keystone.common.sql import migration_helpers
 from keystone.identity.mapping_backends import mapping as mapping_backend
 
 
@@ -315,3 +317,8 @@ def upgrade(migrate_engine):
         migrate.ForeignKeyConstraint(columns=fkey['columns'],
                                      refcolumns=fkey['references'],
                                      name=fkey.get('name')).create()
+
+    # Create the default domain.
+    session = orm.sessionmaker(bind=migrate_engine)()
+    domain.insert(migration_helpers.get_default_domain()).execute()
+    session.commit()
