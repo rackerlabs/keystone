@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_e0c02ee3",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-25T23:34:43Z",
+      "side": 1,
+      "message": "why not just use:\n\n  import threading\n  _CONTEXT \u003d threading.local()",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 203,
+        "endChar": 42
+      },
+      "revId": "8441617d420771c7aa56a26a58cac66670ba6da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
