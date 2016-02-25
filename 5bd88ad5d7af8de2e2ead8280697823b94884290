@@ -25,6 +25,41 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_375ffe73",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-25T22:23:43Z",
+      "side": 1,
+      "message": "++, this shows the occurrences of Forbidden in the token provider.\n\nhttp://cdn.pasteraw.com/eeg2pr4irihdi4jgtfwbn12vtqg52uc\n\nI think we want those Forbidden\u0027s to bubble up the user and we want to catch the Unauthorized exceptions and return NotFound.\n\nhttp://cdn.pasteraw.com/8xvlifnvrve8j776b18bx53507cxzto",
+      "parentUuid": "bae84128_7625f4ac",
+      "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_17dd9a14",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-25T22:23:43Z",
+      "side": 1,
+      "message": "This comment could probably be removed now that this patch is fixing bug 1541621",
+      "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_5208d228",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
@@ -54,6 +89,40 @@
       "side": 1,
       "message": "ops, sorry, I\u0027ll revert it",
       "parentUuid": "bae84128_5208d228",
+      "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_b77e6eac",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-25T22:23:43Z",
+      "side": 1,
+      "message": "did this need to change?",
+      "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_57444273",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-02-25T22:23:43Z",
+      "side": 1,
+      "message": "same comment here",
       "revId": "5bd88ad5d7af8de2e2ead8280697823b94884290",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
