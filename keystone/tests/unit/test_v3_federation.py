@@ -2608,6 +2608,85 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         user_id2 = r.json_body['token']['user']['id']
         self.assertEqual(user_id, user_id2)
 
+    def test_user_role_assignment(self):
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        # exchange an unscoped token for a scoped token; resulting in
+        # unauthorized because the user doesn't have any role assignments
+        unscoped_token = r.headers['X-Subject-Token']
+        v3_scope_request = self._scope_request(unscoped_token, 'project',
+                                               project_ref['id'])
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.UNAUTHORIZED)
+
+        # assign project role to federated user
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        # exchange an unscoped token for a scoped token
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.CREATED)
+        scoped_token = r.headers['X-Subject-Token']
+
+        # ensure user can access resource based on role assignment
+        path = '/projects/%(project_id)s' % {'project_id': project_ref['id']}
+        r = self.v3_request(path=path, method='GET',
+                            expected_status=http_client.OK,
+                            token=scoped_token)
+        self.assertValidProjectResponse(r, project_ref)
+
+        # create a 2nd project
+        project_ref2 = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref2['id'], project_ref2)
+
+        # ensure the user cannot access the 2nd resource (forbidden)
+        path = '/projects/%(project_id)s' % {'project_id': project_ref2['id']}
+        r = self.v3_request(path=path, method='GET',
+                            expected_status=http_client.FORBIDDEN,
+                            token=scoped_token)
+
+    def test_auth_projects_matches_federation_projects(self):
+        # create project and role
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        # authenticate via saml get back a user id
+        r = self._issue_unscoped_token()
+        unscoped_token = r.headers['X-Subject-Token']
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        # assign project role to federated user
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        # get auth projects
+        r = self.get('/auth/projects', token=unscoped_token)
+        auth_projects = r.result['projects']
+
+        # get federation projects
+        r = self.get('/OS-FEDERATION/projects', token=unscoped_token)
+        fed_projects = r.result['projects']
+
+        # compare
+        self.assertItemsEqual(auth_projects, fed_projects)
+
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
