@@ -2548,6 +2548,43 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
         self._check_project_scoped_token_attributes(token_resp, project['id'])
 
 
+class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
+    """Test federated user...
+
+    Test...
+
+    """
+
+    def auth_plugin_config_override(self):
+        methods = ['saml2']
+        super(FederatedUserTests, self).auth_plugin_config_override(methods)
+    
+    def setUp(self):
+        super(FederatedUserTests, self).setUp()
+
+    def load_fixtures(self, fixtures):
+        super(FederatedUserTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def test_user_role_assignment(self):
+        """Test 'standard' workflow for granting access tokens.
+
+        * Issue unscoped token
+        * List available projects based on groups
+        * Scope token to one of available projects
+
+        """
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        print(token_resp)
+        #1. authenticate via saml ->
+        #2. get back a user ID ->
+        #3. have an admin user directly assign that user a role in a project ->
+        #4. have the federated user get a token for the project ->
+        #5. show that it's a regular, non-federated token that contains the assigned tenant + role pair
+
+
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'
