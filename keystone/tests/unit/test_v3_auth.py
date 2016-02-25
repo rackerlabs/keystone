@@ -1224,36 +1224,52 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': scoped_token},
                   expected_status=http_client.OK)
 
-    def test_deleting_user_grant_revokes_token(self):
+    def test_deleting_user_grant_removes_role_from_validation(self):
         """Test deleting a user grant revokes token.
 
-        Test Plan:
-
+         Test Plan:
+        - create new role
+        - assign to user
         - Get a token for user1, scoped to ProjectA
+        - Check role is in token
         - Delete the grant user1 has on ProjectA
-        - Check token is no longer valid
+        - Check validation of the token shows the role removed
 
         """
+        self.role1 = unit.new_role_ref()
+        role = self.role_api.create_role(self.role1['id'], self.role1)
+        test_role = {'id': role['id'], 'name': role['name']}
+
+        grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': self.projectA['id'],
+                'user_id': self.user1['id'],
+                'role_id': test_role['id']})
+        self.put(grant_url)
+
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
             project_id=self.projectA['id'])
         token = self.get_requested_token(auth_data)
         # Confirm token is valid
-        self.head('/auth/tokens',
-                  headers={'X-Subject-Token': token},
-                  expected_status=http_client.OK)
-        # Delete the grant, which should invalidate the token
+        response = self.get('/auth/tokens',
+                            headers={'X-Subject-Token': token},
+                            expected_status=http_client.OK)
+        self.assertIn(test_role, response.json_body['token']['roles'])
+
+        # Delete the grant, which should remove the role from the token
         grant_url = (
             '/projects/%(project_id)s/users/%(user_id)s/'
             'roles/%(role_id)s' % {
                 'project_id': self.projectA['id'],
                 'user_id': self.user1['id'],
-                'role_id': self.role1['id']})
+                'role_id': test_role['id']})
         self.delete(grant_url)
-        self.head('/auth/tokens',
-                  headers={'X-Subject-Token': token},
-                  expected_status=http_client.NOT_FOUND)
+        response = self.get('/auth/tokens',
+                            headers={'X-Subject-Token': token})
+        self.assertNotIn(test_role, response.json_body['token']['roles'])
 
     def role_data_fixtures(self):
         self.projectC = unit.new_project_ref(domain_id=self.domainA['id'])
@@ -1464,29 +1480,47 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
 
         Test Plan:
 
-        - Get a token for user1, scoped to ProjectA
-        - Get a token for user2, scoped to ProjectA
-        - Get a token for user3, scoped to ProjectA
-        - Delete the grant group1 has on ProjectA
+        - Get a token for user1, scoped to test_project
+        - Get a token for user2, scoped to test_project
+        - Get a token for user3, scoped to test_project
+        - Delete the grant group1 has on test_project
         - Check tokens for user1 & user2 are no longer valid,
           since user1 and user2 are members of group1
-        - Check token for user3 is invalid too
+        - Check token for user3 is valid
 
         """
+        project = unit.new_project_ref(domain_id=self.domain_id)
+        test_project = self.resource_api.create_project(project['id'], project)
+        group_grant_url = (
+            '/projects/%(project_id)s/groups/%(group_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': test_project['id'],
+                'group_id': self.group1['id'],
+                'role_id': self.role1['id']})
+        self.put(group_grant_url)
+
+        user_grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': test_project['id'],
+                'user_id': self.user3['id'],
+                'role_id': self.role1['id']})
+        self.put(user_grant_url)
+
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            project_id=test_project['id'])
         token1 = self.get_requested_token(auth_data)
         auth_data = self.build_authentication_request(
             user_id=self.user2['id'],
             password=self.user2['password'],
-            project_id=self.projectA['id'])
+            project_id=test_project['id'])
         token2 = self.get_requested_token(auth_data)
         auth_data = self.build_authentication_request(
             user_id=self.user3['id'],
             password=self.user3['password'],
-            project_id=self.projectA['id'])
+            project_id=test_project['id'])
         token3 = self.get_requested_token(auth_data)
         # Confirm tokens are valid
         self.head('/auth/tokens',
@@ -1500,24 +1534,17 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   expected_status=http_client.OK)
         # Delete the group grant, which should invalidate the
         # tokens for user1 and user2
-        grant_url = (
-            '/projects/%(project_id)s/groups/%(group_id)s/'
-            'roles/%(role_id)s' % {
-                'project_id': self.projectA['id'],
-                'group_id': self.group1['id'],
-                'role_id': self.role1['id']})
-        self.delete(grant_url)
+        self.delete(group_grant_url)
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token1},
                   expected_status=http_client.NOT_FOUND)
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token2},
                   expected_status=http_client.NOT_FOUND)
-        # But user3's token should be invalid too as revocation is done for
-        # scope role & project
+        # But user3's token should be valid
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token3},
-                  expected_status=http_client.NOT_FOUND)
+                  expected_status=http_client.OK)
 
     def test_domain_group_role_assignment_maintains_token(self):
         """Test domain-group role assignment maintains existing token.
@@ -1789,6 +1816,40 @@ class TestTokenRevokeByAssignment(TestTokenRevokeById):
             provider='uuid',
             revoke_by_id=True)
 
+    def test_deleting_user_grant_removes_role_from_validation(self):
+        self.skipTest('Different logic for RevokeByAssignment')
+
+    def test_deleting_user_grant_revokes_token(self):
+        """Test deleting a user grant revokes token.
+
+        Test Plan:
+
+        - Get a token for user1, scoped to ProjectA
+        - Delete the grant user1 has on ProjectA
+        - Check token is no longer valid
+
+        """
+        auth_data = self.build_authentication_request(
+            user_id=self.user1['id'],
+            password=self.user1['password'],
+            project_id=self.projectA['id'])
+        token = self.get_requested_token(auth_data)
+        # Confirm token is valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': token},
+                  expected_status=http_client.OK)
+        # Delete the grant, which should invalidate the token
+        grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': self.projectA['id'],
+                'user_id': self.user1['id'],
+                'role_id': self.role1['id']})
+        self.delete(grant_url)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': token},
+                  expected_status=http_client.NOT_FOUND)
+        
     def test_removing_role_assignment_keeps_other_project_token_groups(self):
         """Test assignment isolation.
 
@@ -1849,28 +1910,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
             provider='pki',
             revoke_by_id=False)
 
-    def assertValidDeletedProjectResponse(self, events_response, project_id):
-        events = events_response['events']
-        self.assertEqual(1, len(events))
-        self.assertEqual(project_id, events[0]['project_id'])
-        self.assertIsNotNone(events[0]['issued_before'])
-        self.assertIsNotNone(events_response['links'])
-        del (events_response['events'][0]['issued_before'])
-        del (events_response['links'])
-        expected_response = {'events': [{'project_id': project_id}]}
-        self.assertEqual(expected_response, events_response)
-
-    def assertDomainInList(self, events_response, domain_id):
-        events = events_response['events']
-        self.assertEqual(1, len(events))
-        self.assertEqual(domain_id, events[0]['domain_id'])
-        self.assertIsNotNone(events[0]['issued_before'])
-        self.assertIsNotNone(events_response['links'])
-        del (events_response['events'][0]['issued_before'])
-        del (events_response['links'])
-        expected_response = {'events': [{'domain_id': domain_id}]}
-        self.assertEqual(expected_response, events_response)
-
     def assertValidRevokedTokenResponse(self, events_response, **kwargs):
         events = events_response['events']
         self.assertEqual(1, len(events))
@@ -1913,29 +1952,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
     def test_revoke_by_id_false_returns_gone(self):
         self.get('/auth/tokens/OS-PKI/revoked',
                  expected_status=http_client.GONE)
-
-    def test_list_delete_project_shows_in_event_list(self):
-        self.role_data_fixtures()
-        events = self.get('/OS-REVOKE/events').json_body['events']
-        self.assertEqual([], events)
-        self.delete(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
-        events_response = self.get('/OS-REVOKE/events').json_body
-
-        self.assertValidDeletedProjectResponse(events_response,
-                                               self.projectA['id'])
-
-    def test_disable_domain_shows_in_event_list(self):
-        events = self.get('/OS-REVOKE/events').json_body['events']
-        self.assertEqual([], events)
-        disable_body = {'domain': {'enabled': False}}
-        self.patch(
-            '/domains/%(project_id)s' % {'project_id': self.domainA['id']},
-            body=disable_body)
-
-        events = self.get('/OS-REVOKE/events').json_body
-
-        self.assertDomainInList(events, self.domainA['id'])
 
     def assertEventDataInList(self, events, **kwargs):
         found = False
@@ -2894,7 +2910,6 @@ class TestAuth(test_v3.RestfulTestCase):
         headers = {'X-Subject-Token': v2_token_id}
         resp = self.get('/auth/tokens', headers=headers)
         token_data = resp.result
-
         self.assertDictEqual(v2_token_data['access']['token']['bind'],
                              token_data['token']['bind'])
 
@@ -3551,15 +3566,6 @@ class TestTrustChain(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data)
         self.assertValidTokenResponse(r)
 
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_cascade(self):
         self.assert_user_authenticate(self.user_list[0])
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
@@ -3887,16 +3893,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data,
                                  expected_status=http_client.FORBIDDEN)
 
-    def assertTrustTokensRevoked(self, trust_id):
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_revokes_tokens(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -3921,7 +3917,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         headers = {'X-Subject-Token': trust_token}
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
-        self.assertTrustTokensRevoked(trust_id)
 
     def disable_user(self, user):
         user['enabled'] = False
@@ -4551,20 +4546,6 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase):
         trustor_update_ref = dict(enabled=False)
         self.identity_api.update_user(self.user['id'], trustor_update_ref)
         # Ensure validating a token for a disabled user fails
-        self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_token,
-                          trust_scoped_token)
-
-    def test_trust_scoped_token_invalid_after_changing_trustor_password(self):
-        trustee_user, trust = self._create_trust()
-        trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        # Validate a trust scoped token
-        self._validate_token(trust_scoped_token)
-
-        # Change trustor's password
-        trustor_update_ref = dict(password='Password1')
-        self.identity_api.update_user(self.user['id'], trustor_update_ref)
-        # Ensure updating trustor's password revokes existing user's tokens
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
