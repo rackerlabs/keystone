@@ -187,12 +187,24 @@ class CoreApiTests(object):
         self.assertValidAuthenticationResponse(r)
 
     def test_remove_role_revokes_token(self):
+
+        # These tests are a little leacky, and this one sometimes fails if
+        # it uses the fixtures, due to the number of roles assigned.
+        # So force this one to work with a brand new project.
+        project_ref = {'id': uuid.uuid4().hex,
+                       'name': uuid.uuid4().hex,
+                       'description': uuid.uuid4().hex,
+                       'domain_id': 'default',
+                       'enabled': True}
+        test_project = self.resource_api.create_project(
+            project_ref['id'], project_ref)
+
         self.md_foobar = self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'],
-            self.tenant_service['id'],
+            test_project['id'],
             self.role_service['id'])
 
-        token = self.get_scoped_token(tenant_id='service')
+        token = self.get_scoped_token(tenant_id=test_project['id'])
         r = self.admin_request(
             path='/v2.0/tokens/%s' % token,
             token=token)
@@ -200,7 +212,7 @@ class CoreApiTests(object):
 
         self.assignment_api.remove_role_from_user_and_project(
             self.user_foo['id'],
-            self.tenant_service['id'],
+            test_project['id'],
             self.role_service['id'])
 
         r = self.admin_request(
