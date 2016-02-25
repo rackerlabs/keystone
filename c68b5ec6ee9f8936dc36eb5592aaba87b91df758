@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_93f26c99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T18:00:57Z",
+      "side": 1,
+      "message": "Not following.  But see the foreign key relationships and let me know if it doesn\u0027t make sense:\nhttps://review.openstack.org/#/c/279162/54/keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
+      "parentUuid": "dae33548_2c05e8c1",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 25
+      },
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_ac261814",
         "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
         "patchSetId": 16
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_93e54caa",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T18:00:57Z",
+      "side": 1,
+      "message": "Yes, deleting the idp, would delete the federated user. There isn\u0027t audit requirement in scope for this.",
+      "parentUuid": "dae33548_ac261814",
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_2c604835",
         "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
         "patchSetId": 16
@@ -53,6 +95,24 @@
       "writtenOn": "2016-02-15T10:20:30Z",
       "side": 1,
       "message": "Regardless what we do with constraints between idp_id and user you should keep same constraints for protocol_id. \nSo either both idp_id will have ondelete\u003d\u0027CASCADE\u0027 constraint or neither.",
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_136dbc04",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T18:00:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_2c604835",
       "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +147,24 @@
       "writtenOn": "2016-02-15T10:20:30Z",
       "side": 1,
       "message": "why \u0027display_name\u0027 not \u0027name\u0027?",
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_d3499490",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T18:00:57Z",
+      "side": 1,
+      "message": "display_name is not the same thing as user.name",
+      "parentUuid": "dae33548_cca71c4e",
       "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
