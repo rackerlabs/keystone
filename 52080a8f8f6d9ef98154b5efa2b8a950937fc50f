@@ -22,6 +22,30 @@
       "revId": "52080a8f8f6d9ef98154b5efa2b8a950937fc50f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_4df78cf5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-25T03:18:24Z",
+      "side": 1,
+      "message": "Done, this is done in this review - https://review.openstack.org/284510.",
+      "parentUuid": "bae84128_f5a8fadd",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "52080a8f8f6d9ef98154b5efa2b8a950937fc50f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
