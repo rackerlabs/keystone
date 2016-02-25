@@ -200,7 +200,7 @@ class Routers(wsgi.RoutersBase):
             mapper, project_controller,
             path=self._construct_url('projects'),
             new_path='/auth/projects',
-            get_action='list_projects_for_groups',
+            get_action='list_projects_for_user',
             rel=build_resource_relation(resource_name='projects'))
 
         # Auth operations
