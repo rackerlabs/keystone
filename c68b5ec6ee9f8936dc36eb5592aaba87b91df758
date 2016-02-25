@@ -136,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_fef738f3",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_add_federated_identity_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T19:28:49Z",
+      "side": 1,
+      "message": "see the latest table definition and let me know if you still have questions/concerns",
+      "parentUuid": "dae33548_0cf3c474",
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_cca71c4e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -182,6 +200,24 @@
       "writtenOn": "2016-02-15T10:20:30Z",
       "side": 1,
       "message": "could also be:\n\u0027idp_id\u0027: idp_id or uuid.uuid4().hex,\n[...]\n\u0027protocol_id\u0027: protocol_id or uuid.uuid4().hex",
+      "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1ecadca1",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T19:28:49Z",
+      "side": 1,
+      "message": "see the latest code, I\u0027ve changed this",
+      "parentUuid": "dae33548_a713d35b",
       "revId": "c68b5ec6ee9f8936dc36eb5592aaba87b91df758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
