@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_d1220a01",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-25T09:17:08Z",
+      "side": 1,
+      "message": "In patch 47 you agreed that for federated users one would use display_name attribute yet I don\u0027t see it changed here. Could you explain (in the comment) where display_name should be called? If I don\u0027t know this now people who will code on top of those properties will probably not know either.....",
+      "revId": "5fed576da8ef834ab4f6695447fe42bf32bf759f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_f153ce6a",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-25T09:17:08Z",
+      "side": 1,
+      "message": "by passing user_id only you loose information about the user causing the problems.See my comment in 47.",
+      "revId": "5fed576da8ef834ab4f6695447fe42bf32bf759f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
