@@ -35,6 +35,16 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
+def _get_project_from_domain(domain_ref):
+    """Creates a project ref from the provided domain ref."""
+    project_ref = domain_ref.copy()
+    project_ref['is_domain'] = True
+    project_ref['domain_id'] = None
+    project_ref['parent_id'] = None
+
+    return project_ref
+
+
 @dependency.provider('resource_api')
 @dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
                      'identity_api', 'revoke_api')
