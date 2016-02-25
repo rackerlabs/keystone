@@ -229,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_4525bec0",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-25T17:33:50Z",
+      "side": 1,
+      "message": "And yeah, that makes sense.  Thanks.",
+      "parentUuid": "9aed3d3a_c2b9c4ee",
+      "revId": "9b50c3e99b9ade4c399c76936a1c5c143314cde8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bae84128_5ac3d58a",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 48
