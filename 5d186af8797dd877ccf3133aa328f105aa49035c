@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_cd455cb4",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-25T03:27:54Z",
+      "side": 1,
+      "message": "ah, the testcase for this is gating, will rebase on that.",
+      "range": {
+        "startLine": 212,
+        "startChar": 24,
+        "endLine": 212,
+        "endChar": 46
+      },
+      "revId": "5d186af8797dd877ccf3133aa328f105aa49035c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
