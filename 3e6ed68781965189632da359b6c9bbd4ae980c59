@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_8513345c",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-25T22:47:28Z",
+      "side": 1,
+      "message": "I\u0027m inclined to say we don\u0027t revoke trust scoped tokens on V2 when the trust is deleted. New trust scoped tokens wont be issued. but We already probably have a gap here.\n\nI think this only handles the impersonation case, not the normal trust case. Recommend just not revoking v2 trust tokens.",
+      "revId": "3e6ed68781965189632da359b6c9bbd4ae980c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
