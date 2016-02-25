@@ -72,6 +72,7 @@ def use_eventlet(monkeypatch_thread=None):
 
     if monkeypatch_thread is None:
         monkeypatch_thread = not os.getenv('STANDARD_THREADS')
+    LOG.debug('monkeypatch_thread is %r', monkeypatch_thread)
 
     # Raise the default from 8192 to accommodate large tokens
     eventlet.wsgi.MAX_HEADER_LINE = 16384

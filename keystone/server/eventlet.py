@@ -25,6 +25,8 @@ from oslo_service import systemd
 import pbr.version
 
 
+LOG = logging.getLogger(__name__)
+
 # NOTE(dstanek): i18n.enable_lazy() must be called before
 # keystone.i18n._() is called to ensure it has the desired lazy lookup
 # behavior. This includes cases, like keystone.exceptions, where
@@ -109,6 +111,8 @@ def _get_workers(worker_type_config_opt):
 
 def configure_threading():
     monkeypatch_thread = not CONF.standard_threads
+    LOG.debug('configure_threading with standard_threads : %r',
+              CONF.standard_threads)
     pydev_debug_url = utils.setup_remote_pydev_debug()
     if pydev_debug_url:
         # in order to work around errors caused by monkey patching we have to
@@ -116,6 +120,8 @@ def configure_threading():
         # http://lists.openstack.org/pipermail/openstack-dev/2012-August/
         # 000794.html
         monkeypatch_thread = False
+    LOG.debug('configure_threading with monkeypatch_thread : %r',
+              monkeypatch_thread)
     environment.use_eventlet(monkeypatch_thread)
 
 

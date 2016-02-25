@@ -19,7 +19,6 @@ CONF() because it sets up configuration options.
 
 """
 import functools
-import threading
 
 from oslo_config import cfg
 from oslo_db import exception as db_exception
@@ -192,15 +191,25 @@ def get_session():
     return _get_main_context_manager().get_legacy_facade().get_session()
 
 
-_CONTEXT = threading.local()
+_CONTEXT = None
+
+
+def _get_context():
+    global _CONTEXT
+    if _CONTEXT is None:
+        # NOTE(dims): Delay the `threading.local` import to allow for
+        # eventlet/gevent monkeypatching to happen
+        import threading
+        _CONTEXT = threading.local()
+    return _CONTEXT
 
 
 def session_for_read():
-    return _get_main_context_manager().reader.using(_CONTEXT)
+    return _get_main_context_manager().reader.using(_get_context())
 
 
 def session_for_write():
-    return _get_main_context_manager().writer.using(_CONTEXT)
+    return _get_main_context_manager().writer.using(_get_context())
 
 
 def truncated(f):
