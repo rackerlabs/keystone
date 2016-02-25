@@ -1698,7 +1698,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     def test_issue_unscoped_token_with_remote_unavailable(self):
         self.config_fixture.config(group='federation',
                                    remote_id_attribute=self.REMOTE_ID_ATTR)
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Unauthorized,
                           self._issue_unscoped_token,
                           idp=self.IDP_WITH_REMOTE,
                           environment={
@@ -2579,11 +2579,6 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
 
 
 class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
-    """Tests for federated users
-
-    Tests new shadow users functionality
-
-    """
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
@@ -2604,6 +2599,47 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         r = self._issue_unscoped_token()
         user_id2 = r.json_body['token']['user']['id']
         self.assertEqual(user_id, user_id2)
+
+    def test_user_role_assignment(self):
+        """Test assigning roles to federated users.
+
+        1. authenticate via saml
+        2. get back a user ID
+        3. have an admin user directly assign that user a role in a project
+        4. have the federated user get a token for the project
+        5. ensure user can access resource based on role assignment and the
+        feeling is like we are querying for standard user.
+
+        """
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        role_ref = unit.new_role_ref()
+
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        v3_scope_request = self._scope_request(r.headers['X-Subject-Token'],
+                                               'project', project_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
+        print('r before: ')
+        print(r)
+
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
+        print('r before: ')
+        print(r)
+        token_resp = r.result['token']
+        print('token_resp: ')
+        print(token_resp)
 
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
@@ -3264,6 +3300,15 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
             return '/OS-FEDERATION/service_providers/' + str(suffix)
         return '/OS-FEDERATION/service_providers'
 
+    def _create_default_sp(self, body=None):
+        """Create default Service Provider."""
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        if body is None:
+            body = self.sp_ref()
+        resp = self.put(url, body={'service_provider': body},
+                        expected_status=http_client.CREATED)
+        return resp
+
     def test_get_service_provider(self):
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         resp = self.get(url)
@@ -3412,6 +3457,56 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
     def test_delete_service_provider_returns_not_found(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
         self.delete(url, expected_status=http_client.NOT_FOUND)
+
+    def test_filter_list_sp_by_id(self):
+        def get_id(resp):
+            sp = resp.result.get('service_provider')
+            return sp.get('id')
+
+        sp1_id = get_id(self._create_default_sp())
+        sp2_id = get_id(self._create_default_sp())
+
+        # list the SP, should get SPs.
+        url = self.base_url()
+        resp = self.get(url)
+        sps = resp.result.get('service_providers')
+        entities_ids = [e['id'] for e in sps]
+        self.assertIn(sp1_id, entities_ids)
+        self.assertIn(sp2_id, entities_ids)
+
+        # filter the SP by 'id'. Only SP1 should appear.
+        url = self.base_url() + '?id=' + sp1_id
+        resp = self.get(url)
+        sps = resp.result.get('service_providers')
+        entities_ids = [e['id'] for e in sps]
+        self.assertIn(sp1_id, entities_ids)
+        self.assertNotIn(sp2_id, entities_ids)
+
+    def test_filter_list_sp_by_enabled(self):
+        def get_id(resp):
+            sp = resp.result.get('service_provider')
+            return sp.get('id')
+
+        sp1_id = get_id(self._create_default_sp())
+        sp2_ref = self.sp_ref()
+        sp2_ref['enabled'] = False
+        sp2_id = get_id(self._create_default_sp(body=sp2_ref))
+
+        # list the SP, should get two SPs.
+        url = self.base_url()
+        resp = self.get(url)
+        sps = resp.result.get('service_providers')
+        entities_ids = [e['id'] for e in sps]
+        self.assertIn(sp1_id, entities_ids)
+        self.assertIn(sp2_id, entities_ids)
+
+        # filter the SP by 'enabled'. Only SP1 should appear.
+        url = self.base_url() + '?enabled=True'
+        resp = self.get(url)
+        sps = resp.result.get('service_providers')
+        entities_ids = [e['id'] for e in sps]
+        self.assertIn(sp1_id, entities_ids)
+        self.assertNotIn(sp2_id, entities_ids)
 
 
 class WebSSOTests(FederatedTokenTests):
