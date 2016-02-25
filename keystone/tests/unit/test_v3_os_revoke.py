@@ -21,7 +21,6 @@ from testtools import matchers
 from keystone.common import utils
 from keystone.models import revoke_model
 from keystone.tests.unit import test_v3
-from keystone.token import provider
 
 
 def _future_time_string():
@@ -73,38 +72,11 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
     def test_revoked_token_in_list(self):
         user_id = uuid.uuid4().hex
-        expires_at = provider.default_expire_time()
         sample = self._blank_event()
         sample['user_id'] = six.text_type(user_id)
-        sample['expires_at'] = six.text_type(utils.isotime(expires_at))
         before_time = timeutils.utcnow()
-        self.revoke_api.revoke_by_expiration(user_id, expires_at)
-        resp = self.get('/OS-REVOKE/events')
-        events = resp.json_body['events']
-        self.assertEqual(1, len(events))
-        self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
-    def test_disabled_project_in_list(self):
-        project_id = uuid.uuid4().hex
-        sample = dict()
-        sample['project_id'] = six.text_type(project_id)
-        before_time = timeutils.utcnow()
-        self.revoke_api.revoke(
-            revoke_model.RevokeEvent(project_id=project_id))
-
-        resp = self.get('/OS-REVOKE/events')
-        events = resp.json_body['events']
-        self.assertEqual(1, len(events))
-        self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
-
-    def test_disabled_domain_in_list(self):
-        domain_id = uuid.uuid4().hex
-        sample = dict()
-        sample['domain_id'] = six.text_type(domain_id)
-        before_time = timeutils.utcnow()
-        self.revoke_api.revoke(
-            revoke_model.RevokeEvent(domain_id=domain_id))
-
+        self.revoke_api.revoke_by_user(user_id)
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
         self.assertEqual(1, len(events))
