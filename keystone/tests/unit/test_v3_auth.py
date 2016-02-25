@@ -1224,7 +1224,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': scoped_token},
                   expected_status=http_client.OK)
 
-    def test_deleting_user_grant_revokes_token(self):
+    def test_deleting_user_grant_removes_role_from_token_validation(self):
         """Test deleting a user grant revokes token.
 
         Test Plan:
@@ -1234,26 +1234,42 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         - Check token is no longer valid
 
         """
+        test_role = {'id': self.role2['id'],
+                     'name': self.role2['name']}
+
+        grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': self.projectA['id'],
+                'user_id': self.user1['id'],
+                'role_id': self.role2['id']})
+        self.put(grant_url)
+
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
             project_id=self.projectA['id'])
         token = self.get_requested_token(auth_data)
-        # Confirm token is valid
-        self.head('/auth/tokens',
-                  headers={'X-Subject-Token': token},
-                  expected_status=http_client.OK)
+        # Confirm token is valid and has the new role
+        response_with = self.get('/auth/tokens',
+                                 headers={'X-Subject-Token': token},
+                                 expected_status=http_client.OK)
+
+        self.assertIn(test_role, response_with.json_body['token']['roles'])
+
         # Delete the grant, which should invalidate the token
         grant_url = (
             '/projects/%(project_id)s/users/%(user_id)s/'
             'roles/%(role_id)s' % {
                 'project_id': self.projectA['id'],
                 'user_id': self.user1['id'],
-                'role_id': self.role1['id']})
+                'role_id': self.role2['id']})
         self.delete(grant_url)
-        self.head('/auth/tokens',
-                  headers={'X-Subject-Token': token},
-                  expected_status=http_client.NOT_FOUND)
+        response_without = self.get('/auth/tokens',
+                                    headers={'X-Subject-Token': token},
+                                    expected_status=http_client.OK)
+        self.assertNotIn(test_role,
+                         response_without.json_body['token']['roles'])
 
     def role_data_fixtures(self):
         self.projectC = unit.new_project_ref(domain_id=self.domainA['id'])
@@ -3551,15 +3567,6 @@ class TestTrustChain(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data)
         self.assertValidTokenResponse(r)
 
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_cascade(self):
         self.assert_user_authenticate(self.user_list[0])
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
@@ -3887,16 +3894,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         r = self.v3_create_token(auth_data,
                                  expected_status=http_client.FORBIDDEN)
 
-    def assertTrustTokensRevoked(self, trust_id):
-        revocation_response = self.get('/OS-REVOKE/events')
-        revocation_events = revocation_response.json_body['events']
-        found = False
-        for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
-                found = True
-        self.assertTrue(found, 'event with trust_id %s not found in list' %
-                        trust_id)
-
     def test_delete_trust_revokes_tokens(self):
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
@@ -3921,7 +3918,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         headers = {'X-Subject-Token': trust_token}
         self.head('/auth/tokens', headers=headers,
                   expected_status=http_client.NOT_FOUND)
-        self.assertTrustTokensRevoked(trust_id)
 
     def disable_user(self, user):
         user['enabled'] = False
