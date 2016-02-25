@@ -368,6 +368,52 @@
       "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_27ba2a6f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-02-25T01:16:07Z",
+      "side": 1,
+      "message": "nit: API",
+      "range": {
+        "startLine": 744,
+        "startChar": 55,
+        "endLine": 744,
+        "endChar": 58
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_a71c7ac2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 57
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-02-25T01:16:07Z",
+      "side": 1,
+      "message": "nit: projects",
+      "range": {
+        "startLine": 1264,
+        "startChar": 20,
+        "endLine": 1264,
+        "endChar": 28
+      },
+      "revId": "5ab5d11360d6412142313ddbadb612b127913c90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
