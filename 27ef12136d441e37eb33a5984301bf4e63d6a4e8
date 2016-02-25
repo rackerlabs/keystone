@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_3eecec8e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-25T05:42:03Z",
+      "side": 1,
+      "message": "there\u0027s gotta be a cleaner way to do this... hmm",
+      "range": {
+        "startLine": 1228,
+        "startChar": 4,
+        "endLine": 1228,
+        "endChar": 34
+      },
+      "revId": "27ef12136d441e37eb33a5984301bf4e63d6a4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_1eeda88e",
+        "filename": "setup.cfg",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-25T05:42:03Z",
+      "side": 1,
+      "message": "indentation is off here",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 59
+      },
+      "revId": "27ef12136d441e37eb33a5984301bf4e63d6a4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
