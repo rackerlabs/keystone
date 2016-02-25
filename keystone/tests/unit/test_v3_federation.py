@@ -2548,6 +2548,97 @@ class FederatedTokenTestsMethodToken(FederatedTokenTests):
         self._check_project_scoped_token_attributes(token_resp, project['id'])
 
 
+class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
+    """Ensure role assignments on shadow federated users work."""
+
+    def auth_plugin_config_override(self):
+        methods = ['saml2']
+        super(FederatedUserTests, self).auth_plugin_config_override(methods)
+
+    def setUp(self):
+        super(FederatedUserTests, self).setUp()
+
+    def load_fixtures(self, fixtures):
+        super(FederatedUserTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def test_unique_id_persist(self):
+
+        r1 = self._issue_unscoped_token()
+        t1_resp = r1.json_body['token']
+
+        r2 = self._issue_unscoped_token()
+        t2_resp = r2.json_body['token']
+
+        self.assertEqual(t1_resp['user']['id'], t2_resp['user']['id'])
+
+    def test_user_role_assignment(self):
+        """Test assigning role assignments to shadow federated users.
+
+        1. authenticate via saml
+        2. get back a user ID
+        3. have an admin user directly assign that user a role in a project
+        4. have the federated user get a token for the project
+        5. ensure user can access resource based on role assignment and the
+        feeling is like we are querying for standard user.
+
+        """
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        role_ref = unit.new_role_ref()
+
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        v3_scope_request = self._scope_request(r.headers['X-Subject-Token'],
+                                               'project', project_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
+
+        self.assignment_api.add_role_to_user_and_project(
+            user_id, project_ref['id'], role_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
+        token_resp = r.result['token']
+
+    def test_role_assignment_local_group(self):
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body['token']
+        self.assertValidMappedUser(token_resp)
+        user_id = token_resp['user']['id']
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        v3_scope_request = self._scope_request(r.headers['X-Subject-Token'],
+                                               'project', project_ref['id'])
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
+
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+
+        group_ref = unit.new_group_ref(CONF.identity.default_domain_id)
+        group_ref = self.identity_api.create_group(group_ref)
+
+        self.assignment_api.create_grant(role_ref['id'],
+                                         project_id=project_ref['id'],
+                                         group_id=group_ref['id'])
+        self.identity_api.add_user_to_group(user_id, group_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
+
+        self.assignment_api.delete_grant(role_ref['id'],
+                                         project_id=project_ref['id'],
+                                         group_id=group_ref['id'])
+
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
+
+
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'
