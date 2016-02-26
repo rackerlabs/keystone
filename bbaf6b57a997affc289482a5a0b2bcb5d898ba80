@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_b79f935e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-26T17:07:01Z",
+      "side": 1,
+      "message": "Why try to create every time? would it be better to get default domain and create it if it doesn\u0027t exist",
+      "revId": "bbaf6b57a997affc289482a5a0b2bcb5d898ba80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
