@@ -99,8 +99,7 @@ bash script called `lib/keystone`_
 Installing from packages: Ubuntu
 --------------------------------
 
-Ubuntu is providing packages for Keystone for Precise. To install keystone
-on Ubuntu:
+To install Keystone on Ubuntu:
 
 .. code-block:: bash
 
