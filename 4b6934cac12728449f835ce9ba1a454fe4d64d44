@@ -261,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_c3ba14e1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T20:32:46Z",
+      "side": 1,
+      "message": "ah, sorry, get your point!",
+      "parentUuid": "9aed3d3a_0c7d516e",
+      "range": {
+        "startLine": 177,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_d4e1359c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 60
@@ -320,6 +344,30 @@
       "side": 1,
       "message": "See https://review.openstack.org/#/c/285495 as an example, I don\u0027t think that call should show unexpected, I guess we need to test all the cases for retriving projects/domains",
       "parentUuid": "9aed3d3a_6a3cc2e2",
+      "range": {
+        "startLine": 743,
+        "startChar": 18,
+        "endLine": 743,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e38638da",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T20:32:46Z",
+      "side": 1,
+      "message": "OK, it\u0027s a fair cop, guv! I agree - either we add checks to the variou domain specific calls for when someone passes them a valid non-domain project id....or we make this DomainNotFound. The later seems easier!",
+      "parentUuid": "9aed3d3a_0c45516f",
       "range": {
         "startLine": 743,
         "startChar": 18,
