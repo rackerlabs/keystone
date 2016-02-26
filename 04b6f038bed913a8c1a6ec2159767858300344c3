@@ -22,6 +22,29 @@
       "revId": "04b6f038bed913a8c1a6ec2159767858300344c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_781bf31b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T20:03:47Z",
+      "side": 1,
+      "message": "nit: call this password_table",
+      "range": {
+        "startLine": 823,
+        "startChar": 12,
+        "endLine": 823,
+        "endChar": 18
+      },
+      "revId": "04b6f038bed913a8c1a6ec2159767858300344c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
