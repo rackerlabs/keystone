@@ -802,6 +802,29 @@ class SqlUpgradeTests(SqlMigrateBase):
                                          password_table)
         self.assertListEqual(expected_users, actual_users)
 
+    def test_migrate_user_with_null_password_to_password_tables(self):
+        USER_TABLE_NAME = 'user'
+        LOCAL_USER_TABLE_NAME = 'local_user'
+        PASSWORD_TABLE_NAME = 'password'
+        self.upgrade(90)
+        # only the mandatory fields are given.
+        user_ref = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'domain_id': uuid.uuid4().hex}
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        user_table = sqlalchemy.Table(USER_TABLE_NAME, meta, autoload=True)
+        user_table.insert(user_ref).values().execute()
+
+        self.upgrade(91)
+        # migration should be successful.
+        self.assertTableCountsMatch(USER_TABLE_NAME, LOCAL_USER_TABLE_NAME)
+        # no new entry was added to the password table because the
+        # user doesn't have a password.
+        password_table = self.select_table(PASSWORD_TABLE_NAME)
+        session = self.Session()
+        rows = session.execute(password_table.count()).scalar()
+        self.assertEqual(0, rows)
+
     def test_implied_roles_fk_on_delete_cascade(self):
         if self.engine.name == 'sqlite':
             self.skipTest('sqlite backend does not support foreign keys')
