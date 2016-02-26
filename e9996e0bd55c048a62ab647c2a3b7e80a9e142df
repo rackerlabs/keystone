@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_943b2d38",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-26T17:24:43Z",
+      "side": 1,
+      "message": "This change broke the \"test_belongs_to_no_tenant\" https://github.com/openstack/keystone/blob/0811526cea2a9adaae7234e9dc6132b111d5438c/keystone/tests/unit/test_auth.py#L395-L409\n\nSince token_data will not have project_id information. \nBesides, we are change this to v3 concept? How this should work with v2 API?",
+      "range": {
+        "startLine": 348,
+        "startChar": 15,
+        "endLine": 348,
+        "endChar": 37
+      },
+      "revId": "e9996e0bd55c048a62ab647c2a3b7e80a9e142df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
