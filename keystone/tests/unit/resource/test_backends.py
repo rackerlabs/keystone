@@ -772,6 +772,7 @@ class ResourceTests(object):
         subtree = self.resource_api.list_projects_in_subtree(project3['id'])
         self.assertEqual(0, len(subtree))
 
+<<<<<<< HEAD
     def test_get_projects_in_subtree_as_ids_with_large_tree(self):
         """Check project hierarchy is returned correctly in large tree.
 
@@ -819,6 +820,9 @@ class ResourceTests(object):
         self.assertDictEqual(expected_projects, prjs_hierarchy)
 
     def test_list_projects_in_subtree_with_circular_reference(self):
+=======
+    def test_update_project_with_circular_reference(self):
+>>>>>>> Closure table for HMT
         project1 = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
         project1 = self.resource_api.create_project(project1['id'], project1)
@@ -835,12 +839,9 @@ class ResourceTests(object):
         # reference.
         self.resource_api.driver.update_project(project1['id'], project1)
 
-        subtree = self.resource_api.list_projects_in_subtree(project1['id'])
-
-        # NOTE(dstanek): If a cyclic reference is detected the code bails
-        # and returns None instead of falling into the infinite
-        # recursion trap.
-        self.assertIsNone(subtree)
+        project1_updated = self.resource_api.get_project(project1['id'])
+        self.assertNotEqual(project1['parent_id'],
+                            project1_updated['parent_id'])
 
     def test_list_projects_in_subtree_invalid_project_id(self):
         self.assertRaises(exception.ValidationError,
