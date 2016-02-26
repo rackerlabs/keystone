@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_cb1b5d1a",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-26T15:30:06Z",
+      "side": 1,
+      "message": "Another option, would be to add a where clause in the select to only query passwords that are not null. This would be slightly more efficient.",
+      "range": {
+        "startLine": 43,
+        "startChar": 16,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "04b6f038bed913a8c1a6ec2159767858300344c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
