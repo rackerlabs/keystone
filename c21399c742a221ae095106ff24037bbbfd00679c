@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_f6ac53ef",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T12:35:07Z",
+      "side": 1,
+      "message": "This code needs to be updated to be in accordance with the docstring above. For now, it doesn\u0027t address domain scoped tokens, neither federation or trust workflows.",
+      "range": {
+        "startLine": 300,
+        "startChar": 4,
+        "endLine": 359,
+        "endChar": 28
+      },
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
