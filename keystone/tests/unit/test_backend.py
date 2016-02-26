@@ -585,6 +585,14 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertDictEqual(self.tenant_bar, tenant_ref)
 
     @unit.skip_if_no_multiple_domains_support
+    def test_get_domain_by_name_with_regular_project(self):
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        project = self.resource_api.create_project(project['id'], project)
+
+        self.resource_api.list_domains_from_ids([project['id']])
+
+    @unit.skip_if_no_multiple_domains_support
     def test_get_project_by_name_for_project_acting_as_a_domain(self):
         """Tests get_project_by_name works when the domain_id is None."""
         project = unit.new_project_ref(
