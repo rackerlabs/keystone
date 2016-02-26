@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_e6e9211c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-26T22:51:39Z",
+      "side": 1,
+      "message": "With the changes that I\u0027ve made to this class and method, I think the name is a better fit.",
+      "parentUuid": "9aed3d3a_ec07577f",
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_bda3d69d",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 54
@@ -107,6 +125,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_666991be",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 1551,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-26T22:51:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_61ba56e3",
+      "range": {
+        "startLine": 1551,
+        "startChar": 49,
+        "endLine": 1551,
+        "endChar": 54
+      },
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_9df53285",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 54
@@ -118,6 +160,30 @@
       "writtenOn": "2016-02-26T09:18:11Z",
       "side": 1,
       "message": "marek mentioned this already, we probably want to raise the user_id here, since the \"unique_id\" is just a URL safe version of the username.",
+      "range": {
+        "startLine": 47,
+        "startChar": 41,
+        "endLine": 47,
+        "endChar": 58
+      },
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e6d00156",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-26T22:51:39Z",
+      "side": 1,
+      "message": "Per our IRC conversation, I\u0027m leaving this as is",
+      "parentUuid": "9aed3d3a_9df53285",
       "range": {
         "startLine": 47,
         "startChar": 41,
