@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_61ba56e3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 1551,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T05:50:22Z",
+      "side": 1,
+      "message": "i think we still want to use a config option for this.. CONF.shadow_users.driver\n\nsimilar to the id_mapping\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L202-L206",
+      "range": {
+        "startLine": 1551,
+        "startChar": 49,
+        "endLine": 1551,
+        "endChar": 54
+      },
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
