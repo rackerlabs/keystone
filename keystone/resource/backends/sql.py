@@ -11,6 +11,8 @@
 # under the License.
 
 from oslo_log import log
+from sqlalchemy import orm
+import uuid
 
 from keystone.common import clean
 from keystone.common import driver_hints
@@ -112,44 +114,52 @@ class Resource(keystone_resource.ResourceDriverV9):
 
     def list_projects_in_subtree(self, project_id):
         with sql.session_for_read() as session:
-            children = self._get_children(session, [project_id])
-            subtree = []
-            examined = set([project_id])
-            while children:
-                children_ids = set()
-                for ref in children:
-                    if ref['id'] in examined:
-                        msg = _LE('Circular reference or a repeated '
-                                  'entry found in projects hierarchy - '
-                                  '%(project_id)s.')
-                        LOG.error(msg, {'project_id': ref['id']})
-                        return
-                    children_ids.add(ref['id'])
-
-                examined.update(children_ids)
-                subtree += children
-                children = self._get_children(session, children_ids)
+            project = session.query(Project).get(project_id)
+            subtree = [ref.to_dict() for ref in project.children]
             return subtree
+            #
+            # children = self._get_children(session, [project_id])
+            # subtree = []
+            # examined = set([project_id])
+            # while children:
+            #     children_ids = set()
+            #     for ref in children:
+            #         if ref['id'] in examined:
+            #             msg = _LE('Circular reference or a repeated '
+            #                       'entry found in projects hierarchy - '
+            #                       '%(project_id)s.')
+            #             LOG.error(msg, {'project_id': ref['id']})
+            #             return
+            #         children_ids.add(ref['id'])
+            #
+            #     examined.update(children_ids)
+            #     subtree += children
+            #     children = self._get_children(session, children_ids)
+            # return subtree
 
     def list_project_parents(self, project_id):
         with sql.session_for_read() as session:
-            project = self._get_project(session, project_id).to_dict()
-            parents = []
-            examined = set()
-            while project.get('parent_id') is not None:
-                if project['id'] in examined:
-                    msg = _LE('Circular reference or a repeated '
-                              'entry found in projects hierarchy - '
-                              '%(project_id)s.')
-                    LOG.error(msg, {'project_id': project['id']})
-                    return
-
-                examined.add(project['id'])
-                parent_project = self._get_project(
-                    session, project['parent_id']).to_dict()
-                parents.append(parent_project)
-                project = parent_project
+            project = session.query(Project).get(project_id)
+            parents = [ref.to_dict() for ref in project.parents]
             return parents
+            #
+            # project = self._get_project(session, project_id).to_dict()
+            # parents = []
+            # examined = set()
+            # while project.get('parent_id') is not None:
+            #     if project['id'] in examined:
+            #         msg = _LE('Circular reference or a repeated '
+            #                   'entry found in projects hierarchy - '
+            #                   '%(project_id)s.')
+            #         LOG.error(msg, {'project_id': project['id']})
+            #         return
+            #
+            #     examined.add(project['id'])
+            #     parent_project = self._get_project(
+            #         session, project['parent_id']).to_dict()
+            #     parents.append(parent_project)
+            #     project = parent_project
+            # return parents
 
     def is_leaf_project(self, project_id):
         with sql.session_for_read() as session:
@@ -164,7 +174,28 @@ class Resource(keystone_resource.ResourceDriverV9):
         with sql.session_for_write() as session:
             project_ref = Project.from_dict(new_project)
             session.add(project_ref)
-            return project_ref.to_dict()
+            if project['parent_id']:
+                parent_links = (session.query(ProjectHierarchy.parent_id,
+                                              ProjectHierarchy.depth)
+                                .filter_by(child_id=project['parent_id']))
+                for link_parent_id, depth in parent_links:
+                    new_link_ref = {
+                        'id': uuid.uuid4().hex,
+                        'parent_id': link_parent_id,
+                        'child_id': project_id,
+                        'depth': depth + 1
+                    }
+                    session.add(ProjectHierarchy.from_dict(new_link_ref))
+                # Add the lowest parent to child link
+                new_link_ref = {
+                    'id': uuid.uuid4().hex,
+                    'parent_id': project['parent_id'],
+                    'child_id': project_id,
+                    'depth': 1
+                }
+                session.add(ProjectHierarchy.from_dict(new_link_ref))
+
+        return project_ref.to_dict()
 
     @sql.handle_conflicts(conflict_type='project')
     def update_project(self, project_id, project):
@@ -288,6 +319,24 @@ class Domain(sql.ModelBase, sql.DictBase):
     __table_args__ = (sql.UniqueConstraint('name'),)
 
 
+class ProjectHierarchy(sql.ModelBase, sql.DictBase):
+
+    __tablename__ = 'project_hierarchy'
+    attributes = ['id', 'parent_id', 'child_id', 'depth']
+
+    id = sql.Column(sql.String(64), primary_key=True)
+    parent_id = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('project.id', onupdate='CASCADE', ondelete='CASCADE'),
+        nullable=False)
+    child_id = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('project.id', onupdate='CASCADE', ondelete='CASCADE'),
+        nullable=False)
+    depth = sql.Column(sql.Integer, nullable=False, default=1)
+    extra = sql.Column(sql.JsonBlob())
+
+
 class Project(sql.ModelBase, sql.DictBase):
     # NOTE(henry-nash): From the manager and above perspective, the domain_id
     # is nullable.  However, to ensure uniqueness in multi-process
@@ -319,3 +368,11 @@ class Project(sql.ModelBase, sql.DictBase):
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'),)
+
+    parents = orm.relationship(
+        'Project', backref='children', secondary='project_hierarchy',
+        primaryjoin="Project.id==ProjectHierarchy.child_id",
+        secondaryjoin="Project.id==ProjectHierarchy.parent_id",
+        innerjoin=True,
+        foreign_keys=[ProjectHierarchy.parent_id,
+                      ProjectHierarchy.child_id])
