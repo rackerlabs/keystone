@@ -86,6 +86,24 @@
       "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_09270365",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-02-26T18:24:10Z",
+      "side": 1,
+      "message": "This value should not be set default in code since it\u0027s just an example.",
+      "parentUuid": "9aed3d3a_0b9c25bf",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
