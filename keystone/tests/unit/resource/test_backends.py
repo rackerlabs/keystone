@@ -835,12 +835,9 @@ class ResourceTests(object):
         # reference.
         self.resource_api.driver.update_project(project1['id'], project1)
 
-        subtree = self.resource_api.list_projects_in_subtree(project1['id'])
-
-        # NOTE(dstanek): If a cyclic reference is detected the code bails
-        # and returns None instead of falling into the infinite
-        # recursion trap.
-        self.assertIsNone(subtree)
+        project1_updated = self.resource_api.get_project(project1['id'])
+        self.assertNotEqual(project1['parent_id'],
+                            project1_updated['parent_id'])
 
     def test_list_projects_in_subtree_invalid_project_id(self):
         self.assertRaises(exception.ValidationError,
