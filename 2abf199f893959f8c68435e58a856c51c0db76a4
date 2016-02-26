@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_20bae86e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T15:23:36Z",
+      "side": 1,
+      "message": "The config generator just creates the sample configuration file... is this adequate to actually allow configuration through the config file?",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8b14b544",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T15:23:36Z",
+      "side": 1,
+      "message": "this should have no default since we don\u0027t know how they\u0027ve deployed their ui.\n\nThis applies to the allowed_origin in cors.subdomain, too.",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0b9c25bf",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T15:23:36Z",
+      "side": 1,
+      "message": "I\u0027m guessing this is it. This isn\u0027t going to work for anybody so it shouldn\u0027t be the default.",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
