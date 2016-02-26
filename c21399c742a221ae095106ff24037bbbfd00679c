@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_af038e72",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T13:26:35Z",
+      "side": 1,
+      "message": "I wouldn\u0027t care about subset of roles, the only thing we need to ensure is that the user would be able to do the same operation in the subprojects by getting a token on them. It doesn\u0027t matter if the policy rule will pass thanks to other roles he has there.\n\nWe only ensure he has powers to do the same there.",
+      "parentUuid": "9aed3d3a_4f63e2dc",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 27
+      },
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_f6ac53ef",
         "filename": "keystone/common/controller.py",
         "patchSetId": 25
