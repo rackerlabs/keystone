@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_66a0b691",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T00:22:04Z",
+      "side": 1,
+      "message": "nothing here? yet the test passes.. hmm",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 44
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e6be86d3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T00:22:04Z",
+      "side": 1,
+      "message": "the description was changed recently...\n\nhttps://github.com/openstack/keystone/commit/52080a8f8f6d9ef98154b5efa2b8a950937fc50f",
+      "range": {
+        "startLine": 807,
+        "startChar": 0,
+        "endLine": 808,
+        "endChar": 45
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c676e23d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T00:22:04Z",
+      "side": 1,
+      "message": "O release? it needs 2 cycles",
+      "range": {
+        "startLine": 815,
+        "startChar": 37,
+        "endLine": 815,
+        "endChar": 38
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
