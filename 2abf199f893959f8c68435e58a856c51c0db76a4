@@ -104,6 +104,24 @@
       "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_cf123bb4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 9717
+      },
+      "writtenOn": "2016-02-26T19:09:13Z",
+      "side": 1,
+      "message": "@werner- We\u0027ve got two different situations here. One is set_default as a tool solely to drive oslo-generate-config. The second is to set_default in order to change the behavior of the system. This particular patch doesn\u0027t include any code paths for the latter, it only addresses the former. There\u0027s an open question in the main patch discussion on whether it makes sense to do one, both, or neither.",
+      "parentUuid": "9aed3d3a_09270365",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
