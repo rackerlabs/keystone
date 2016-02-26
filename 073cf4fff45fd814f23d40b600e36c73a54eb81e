@@ -91,6 +91,30 @@
       "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c0350147",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T14:08:41Z",
+      "side": 1,
+      "message": "If this code path is used then this isn\u0027t a V3 specific deployment, so the description is different.",
+      "parentUuid": "9aed3d3a_46e772e4",
+      "range": {
+        "startLine": 50,
+        "startChar": 28,
+        "endLine": 51,
+        "endChar": 39
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
