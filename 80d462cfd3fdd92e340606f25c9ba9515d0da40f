@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_f9bf125e",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-26T17:28:18Z",
+      "side": 1,
+      "message": "nit: The",
+      "revId": "80d462cfd3fdd92e340606f25c9ba9515d0da40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_74a66911",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-26T17:28:18Z",
+      "side": 1,
+      "message": "This is only for V3, there is no need to attempt to fall back to V2. \ntoken_data.get(\u0027project\u0027, None)",
+      "revId": "80d462cfd3fdd92e340606f25c9ba9515d0da40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_343861a0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-26T17:28:18Z",
+      "side": 1,
+      "message": "A comment would be helpful saying that this also checks the enabled status of the project\u0027s domain.",
+      "revId": "80d462cfd3fdd92e340606f25c9ba9515d0da40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_94f4cd87",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-02-26T17:28:18Z",
+      "side": 1,
+      "message": "Will this fail if the token can\u0027t be rebuild? Will it bubble up the correct exception?",
+      "revId": "80d462cfd3fdd92e340606f25c9ba9515d0da40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
