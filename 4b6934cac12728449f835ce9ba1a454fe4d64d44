@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0c7d516e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T18:51:23Z",
+      "side": 1,
+      "message": "list_project_parents(project_ref[\u0027id\u0027]) would include parent_ref, which is what we\u0027re adding at L180. We don\u0027t add the project_ref passed as argument to the list",
+      "parentUuid": "9aed3d3a_e90c5f3d",
+      "range": {
+        "startLine": 177,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_d4e1359c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 60
@@ -272,6 +296,30 @@
       "side": 1,
       "message": "It\u0027s Unexpected, since if we hit this it is a coding error on our part - since we should have caught this way before here.....this is here to make sure we haven\u0027t goofed.",
       "parentUuid": "9aed3d3a_d4e1359c",
+      "range": {
+        "startLine": 743,
+        "startChar": 18,
+        "endLine": 743,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0c45516f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T18:51:23Z",
+      "side": 1,
+      "message": "See https://review.openstack.org/#/c/285495 as an example, I don\u0027t think that call should show unexpected, I guess we need to test all the cases for retriving projects/domains",
+      "parentUuid": "9aed3d3a_6a3cc2e2",
       "range": {
         "startLine": 743,
         "startChar": 18,
