@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_416ef796",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "the only change to this file should have been:\n\nuser_ref \u003d identity_api.shadow_federated_user(identity_provider,\n                                                      protocol, user[\u0027id\u0027],\n                                                      user[\u0027name\u0027])",
+      "range": {
+        "startLine": 146,
+        "startChar": 12,
+        "endLine": 148,
+        "endChar": 67
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a1bf03fa",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "i find this refactoring unnecessary, the \u0027user\u0027 dictionary that was previously there had both the unique_id and display_name in the form of user[\u0027id\u0027] and user[\u0027name\u0027]. i\u0027m not saying this is wrong, just makes the review that much harder.",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 240,
+        "endChar": 36
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8168ff88",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "thanks for including this!",
+      "range": {
+        "startLine": 237,
+        "startChar": 4,
+        "endLine": 242,
+        "endChar": 6
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c1a4c7ba",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 1589,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "is there a reason we have an update now?",
+      "range": {
+        "startLine": 1589,
+        "startChar": 8,
+        "endLine": 1589,
+        "endChar": 42
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_01b86fe4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 1591,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "copy pasta",
+      "range": {
+        "startLine": 1591,
+        "startChar": 11,
+        "endLine": 1591,
+        "endChar": 60
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_01afcf94",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 1596,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "this doesn\u0027t return anything",
+      "range": {
+        "startLine": 1596,
+        "startChar": 8,
+        "endLine": 1596,
+        "endChar": 52
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_01eb4fb1",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "what about the display_name check",
+      "range": {
+        "startLine": 539,
+        "startChar": 8,
+        "endLine": 539,
+        "endChar": 45
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a1c5433d",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 58
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T23:27:45Z",
+      "side": 1,
+      "message": "what about the display_name check",
+      "range": {
+        "startLine": 584,
+        "startChar": 8,
+        "endLine": 584,
+        "endChar": 42
+      },
+      "revId": "70dae95dbeebd7627015ad97486e04fc47116bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
