@@ -285,6 +285,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_9e34dffb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T21:06:16Z",
+      "side": 1,
+      "message": "...arrrhhh! So there is a reason you can\u0027t do what you suggest...and that is this is called on create_project, so the project_ref does not yet exist in the DB, so you have to be careful not to call anything that will do a get_project() on it!!!",
+      "parentUuid": "9aed3d3a_c3ba14e1",
+      "range": {
+        "startLine": 177,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_d4e1359c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 60
