@@ -829,6 +829,18 @@ class SqlUpgradeTests(SqlMigrateBase):
         implied_roles = self.role_api.list_implied_roles(role_id_list[0])
         self.assertThat(implied_roles, matchers.HasLength(0))
 
+    def test_add_project_hierarchy(self):
+        project_hierarchy_table = 'project_hierarchy'
+        # TODO(amakarov): create project hierarchy
+        self.upgrade(93)
+        self.assertTableColumns(project_hierarchy_table,
+                                ['id',
+                                 'parent_id',
+                                 'child_id',
+                                 'depth'])
+        self.does_fk_exist(project_hierarchy_table, 'parent_id')
+        self.does_fk_exist(project_hierarchy_table, 'child_id')
+
 
 class VersionTests(SqlMigrateBase):
 
