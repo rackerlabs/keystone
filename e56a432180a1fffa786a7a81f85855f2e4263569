@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aed3d3a_6431c40b",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-26T06:25:46Z",
+      "side": 1,
+      "message": "@Eric, really no need to do this update, afaict, this is changed to `keystone` intentionally, it\u0027s required to be `keystone` to follow the name convention.",
+      "range": {
+        "startLine": 102,
+        "startChar": 11,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "e56a432180a1fffa786a7a81f85855f2e4263569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_84d688c3",
         "filename": "doc/source/installing.rst",
         "patchSetId": 1
