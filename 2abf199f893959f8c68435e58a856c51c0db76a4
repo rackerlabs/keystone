@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_f14d709a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9717
+      },
+      "writtenOn": "2016-02-26T16:06:06Z",
+      "side": 1,
+      "message": "Yes. The remaining component is the \"oslo_config_project \u003d keystone\" line in paste.ini, which instructs the middleware to try to use oslo_config to discover the keystone.conf file.",
+      "parentUuid": "9aed3d3a_20bae86e",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8b14b544",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-26T15:23:36Z",
       "side": 1,
       "message": "this should have no default since we don\u0027t know how they\u0027ve deployed their ui.\n\nThis applies to the allowed_origin in cors.subdomain, too.",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_71696025",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 9717
+      },
+      "writtenOn": "2016-02-26T16:06:06Z",
+      "side": 1,
+      "message": "I disagree.... sortof.  There is utility in demonstrating an example value, since misformatting this could result in deployer frustration. There\u0027s a related patch that updates the config comments to provide an example value: https://review.openstack.org/#/c/285387/\n\nIf that patch manages to still get into Mitaka (unlikely), then I don\u0027t mind switching this to \u003cnone\u003e. Otherwise, I would prefer that we keep a sane demo value here.",
+      "parentUuid": "9aed3d3a_8b14b544",
       "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
