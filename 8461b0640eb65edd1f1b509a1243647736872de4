@@ -16,6 +16,24 @@
       "revId": "8461b0640eb65edd1f1b509a1243647736872de4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ef4c6472",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T17:33:01Z",
+      "side": 1,
+      "message": "It doesn\u0027t need to be. Deployments that want a different description can use PATCH /v3/domains to change the description for however they want to actually use it. Or they can create a default domain themselves beforehand.",
+      "parentUuid": "9aed3d3a_d6fdbd3b",
+      "revId": "8461b0640eb65edd1f1b509a1243647736872de4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
