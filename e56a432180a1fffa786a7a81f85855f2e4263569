@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0f49f15f",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-26T06:29:34Z",
+      "side": 1,
+      "message": "So is \"keystone\" here referring to the package? If so, you\u0027re right, should stay as \"keystone\".",
+      "parentUuid": "9aed3d3a_6431c40b",
+      "range": {
+        "startLine": 102,
+        "startChar": 11,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "e56a432180a1fffa786a7a81f85855f2e4263569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_84d688c3",
         "filename": "doc/source/installing.rst",
         "patchSetId": 1
