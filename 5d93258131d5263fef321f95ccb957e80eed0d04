@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_ec07577f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-26T16:19:01Z",
+      "side": 1,
+      "message": "... are you suggesting that setup_username() was a more appropriate name for a method that returns a user ID and name and does no actual \"setup\"?",
+      "parentUuid": "9aed3d3a_ddc5fa5b",
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_bda3d69d",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 54
@@ -42,6 +60,24 @@
         "endLine": 226,
         "endChar": 30
       },
+      "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_cc21b3fd",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-26T16:19:01Z",
+      "side": 1,
+      "message": "Are you asking for a change here? Yes, the unique_id is only supposed to be unique within the scope of the IdP.",
+      "parentUuid": "9aed3d3a_bda3d69d",
       "revId": "5d93258131d5263fef321f95ccb957e80eed0d04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

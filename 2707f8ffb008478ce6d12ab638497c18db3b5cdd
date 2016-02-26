@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_acf8af4a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 54
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-02-26T16:19:01Z",
+      "side": 0,
+      "message": "Can anyone (Steve? Marek?) explain why this won\u0027t work?\n\n  unique_id \u003d mapped_properties[\u0027user\u0027][\u0027id\u0027]\n  display_name \u003d mapped_properties[\u0027user\u0027][\u0027name\u0027]\n\nThe fallback on the context if mapping failed to produce the one thing it\u0027s required to produce (a uniquely identifying attribute of the user) makes no sense to me.",
+      "revId": "2707f8ffb008478ce6d12ab638497c18db3b5cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
