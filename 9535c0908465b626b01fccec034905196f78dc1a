@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_f93a7297",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T17:05:55Z",
+      "side": 1,
+      "message": "should be able to do if not _CONTEXT here.",
+      "revId": "9535c0908465b626b01fccec034905196f78dc1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
