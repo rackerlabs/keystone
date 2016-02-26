@@ -16,6 +16,24 @@
       "revId": "27f4e187997c276ec75c93a9bb607ff1537a3542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_5636cd52",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T16:56:13Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t make sense now. \"instructions are recommended that\"",
+      "parentUuid": "9aed3d3a_448da030",
+      "revId": "27f4e187997c276ec75c93a9bb607ff1537a3542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
