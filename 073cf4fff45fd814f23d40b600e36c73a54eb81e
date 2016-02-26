@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_606875f6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T14:10:54Z",
+      "side": 1,
+      "message": "This is only used with V2 operations, so if this domain is created then it\u0027s because it\u0027s not a V3-only deployment. So the description is different.",
+      "parentUuid": "9aed3d3a_e6be86d3",
+      "range": {
+        "startLine": 807,
+        "startChar": 0,
+        "endLine": 808,
+        "endChar": 45
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c676e23d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2016-02-26T00:22:04Z",
       "side": 1,
       "message": "O release? it needs 2 cycles",
+      "range": {
+        "startLine": 815,
+        "startChar": 37,
+        "endLine": 815,
+        "endChar": 38
+      },
+      "revId": "073cf4fff45fd814f23d40b600e36c73a54eb81e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c06d0106",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-26T14:10:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_c676e23d",
       "range": {
         "startLine": 815,
         "startChar": 37,
