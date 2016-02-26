@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_ef511664",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-26T13:28:22Z",
+      "side": 1,
+      "message": "I think the idea here is use current context, change the project_id( keep same roles, users and so on) and request a new token.",
+      "parentUuid": "9aed3d3a_af038e72",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 27
+      },
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_f6ac53ef",
         "filename": "keystone/common/controller.py",
         "patchSetId": 25
