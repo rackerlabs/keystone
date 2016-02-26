@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_c8e1ded2",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-26T02:48:29Z",
+      "side": 1,
+      "message": "When does the domain get create with this id?",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0803c674",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-26T02:48:29Z",
+      "side": 1,
+      "message": "Why would there not be a domain_id?",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4ebb0473",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-26T02:48:29Z",
+      "side": 1,
+      "message": "This is not backward compatible with third party driver expectations",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
