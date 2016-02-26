@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_1640d7a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "samueldmq@gmail.com",
+      "range": {
+        "startLine": 18,
+        "startChar": 44,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6cc194e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "Let\u0027s use \"Implements\" for tracking purposes in launchpad; we may create another bp for the other phases if needed",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_057d3b1c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "Agreed, but we need to update the config option to say this too!",
+      "range": {
+        "startLine": 103,
+        "startChar": 47,
+        "endLine": 103,
+        "endChar": 51
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8005b9c3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "\"its\" (we only check on the immediate parent)",
+      "range": {
+        "startLine": 137,
+        "startChar": 70,
+        "endLine": 137,
+        "endChar": 73
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_60651544",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "Why not get parent list from the current project instead of its parent and adding parent after:\n\n    parents_list \u003d self.list_project_parents(project_ref[\u0027id\u0027])\n\nTHis should replace all these lines",
+      "range": {
+        "startLine": 177,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_d4e1359c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "I\u0027d argue this should be exception.DomainNotFound\n\nThe way it is, if I ask get_domain(simple_project_id) it will throw unexpected, when it sould be domainNotFound\n\nAnd actually it may have different meanings depending on the caller; e.g if the caller is create_domain, we don\u0027t want neither a DomainNotFound or a UnexpectedError",
+      "range": {
+        "startLine": 743,
+        "startChar": 18,
+        "endLine": 743,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0f143a42",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "replacing by \"is nullable for projects\" may make sense as well",
+      "range": {
+        "startLine": 19,
+        "startChar": 30,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6c0a34d4",
+        "filename": "keystone/revoke/model.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "I\u0027d say \"top level projects\", thus this comment will still be valid once we have submdomains",
+      "range": {
+        "startLine": 337,
+        "startChar": 27,
+        "endLine": 337,
+        "endChar": 35
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_39750cf9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-26T17:30:41Z",
+      "side": 1,
+      "message": "I find the following more readable:\n\n    if project_ref[\u0027domain_id\u0027] is not None:\n        filtered_project[\u0027domain\u0027] \u003d self._get_filtered_domain(...)\n    else:\n        # Top level domain projects do not have a domain_id\n        filtered_project[\u0027domain\u0027] \u003d None",
+      "range": {
+        "startLine": 247,
+        "startChar": 8,
+        "endLine": 248,
+        "endChar": 75
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
