@@ -40,8 +40,9 @@ def upgrade(migrate_engine):
     user_rows = sel.execute()
     password_values = []
     for row in user_rows:
-        password_values.append({'local_user_id': row['local_user_id'],
-                                'password': row['user_password']})
+        if row['user_password']:
+            password_values.append({'local_user_id': row['local_user_id'],
+                                    'password': row['user_password']})
     if password_values:
         password_table.insert().values(password_values).execute()
 
