@@ -49,6 +49,7 @@ from testtools import matchers
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import exception
+from keystone.resource.backends import sql as resource_sql
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
@@ -1022,6 +1023,38 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'protocol_id',
                                  'unique_id',
                                  'display_name'])
+
+    def test_add_project_hierarchy(self):
+        project_hierarchy_table = 'project_hierarchy'
+        self.upgrade(104)
+        project1_ref = unit.new_project_ref(domain_id='default')
+        project2_ref = unit.new_project_ref(domain_id='default',
+                                            parent_id=project1_ref['id'])
+        project3_ref = unit.new_project_ref(domain_id='default',
+                                            parent_id=project2_ref['id'])
+        with sql.session_for_write() as session:
+            project1 = resource_sql.Project.from_dict(project1_ref)
+            session.add(project1)
+        with sql.session_for_write() as session:
+            project2 = resource_sql.Project.from_dict(project2_ref)
+            session.add(project2)
+        with sql.session_for_write() as session:
+            project3 = resource_sql.Project.from_dict(project3_ref)
+            session.add(project3)
+
+        self.upgrade(105)
+        self.assertTableColumns(project_hierarchy_table,
+                                ['id',
+                                 'parent_id',
+                                 'child_id',
+                                 'depth',
+                                 'extra'])
+        self.does_fk_exist(project_hierarchy_table, 'parent_id')
+        self.does_fk_exist(project_hierarchy_table, 'child_id')
+
+        with sql.session_for_read() as session:
+            session.add(project3)
+            self.assertIn(project1.id, [p['id'] for p in project3.parents])
 
     def test_add_int_pkey_to_revocation_event_table(self):
         meta = sqlalchemy.MetaData()
