@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_a4ad8733",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T08:22:52Z",
+      "side": 1,
+      "message": "It was in a previous patch, see: https://review.openstack.org/#/c/264533/",
+      "parentUuid": "9aed3d3a_c8e1ded2",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_0803c674",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 59
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_848323cc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T08:22:52Z",
+      "side": 1,
+      "message": "you are correct, we can assume the attribute is present (but it might be None)",
+      "parentUuid": "9aed3d3a_0803c674",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_4ebb0473",
         "filename": "keystone/resource/core.py",
         "patchSetId": 59
@@ -47,6 +83,24 @@
       "writtenOn": "2016-02-26T02:48:29Z",
       "side": 1,
       "message": "This is not backward compatible with third party driver expectations",
+      "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c426cb15",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T08:22:52Z",
+      "side": 1,
+      "message": "...but if you look in the V8wrapper, we map this BACK onto the driver domain call....so I think we are providing backward compatibility",
+      "parentUuid": "9aed3d3a_4ebb0473",
       "revId": "a2eeb2ab5854288a03cf56b2b70ccac75393e167",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
