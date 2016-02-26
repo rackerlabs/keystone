@@ -19,6 +19,7 @@ from oslo_cache import core as cache
 from oslo_config import cfg
 from oslo_log import log
 import oslo_messaging
+from oslo_middleware import cors
 import passlib.utils
 
 from keystone import exception
@@ -1218,3 +1219,28 @@ def list_opts():
     :returns: a list of (group_name, opts) tuples
     """
     return list(FILE_OPTIONS.items())
+
+
+def update_middleware_defaults():
+    """Update default configuration options for oslo.middleware."""
+    # CORS Defaults
+    cfg.set_defaults(cors.CORS_OPTS,
+                     allowed_origin=['https://horizon.example.com'],
+                     allow_headers=['X-Auth-Token',
+                                    'X-Openstack-Request-Id',
+                                    'X-Subject-Token',
+                                    'X-Project-Id',
+                                    'X-Project-Name',
+                                    'X-Project-Domain-Id',
+                                    'X-Project-Domain-Name',
+                                    'X-Domain-Id',
+                                    'X-Domain-Name'],
+                     expose_headers=['X-Auth-Token',
+                                     'X-Openstack-Request-Id',
+                                     'X-Subject-Token'],
+                     allow_methods=['GET',
+                                    'PUT',
+                                    'POST',
+                                    'DELETE',
+                                    'PATCH']
+                     )
