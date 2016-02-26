@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_7f48302e",
+        "filename": "releasenotes/notes/ldap-conn-pool-enabled-90df94652f1ded53.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-26T03:52:37Z",
+      "side": 1,
+      "message": "this needs to look like:\n\n  - \u003e\n     `[ldap] use_pool` and ...",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 16
+      },
+      "revId": "f73663c5696b233ba27dd8a7758c128eb88f6521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
