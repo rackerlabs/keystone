@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aed3d3a_ef6f5690",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T13:22:49Z",
+      "side": 1,
+      "message": "Loving the long doc string!!!!!",
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4f63e2dc",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T13:22:49Z",
+      "side": 1,
+      "message": "So my one bit of unease about this, is that it feels odd that if I have a token for Project A, with roles X, Y in it, that as I run down the hierarchy, I might call policy on a subproject with MORE roles that I had in the original token (i.e. if I also had role Z on subproject B, then I\u0027d call policy with roles X, Y and Z). This feels wrong.\n\nHow about saying that the roles you pass to policy will always be a subset of the ones in the initial token (where subset \u003d the same or less roles)?",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 27
+      },
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_f6ac53ef",
         "filename": "keystone/common/controller.py",
         "patchSetId": 25
