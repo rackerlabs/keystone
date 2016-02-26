@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_eceaadab",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-26T18:46:28Z",
+      "side": 1,
+      "message": "Maybe I should just change this to log config file.  It does sound weird.",
+      "parentUuid": "9aed3d3a_239cadbf",
+      "revId": "045e3588c14e1b6e88334ae9573fb1112548ae4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8392d99d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2016-02-26T16:53:46Z",
       "side": 1,
       "message": "I wonder what a Server application is?",
+      "range": {
+        "startLine": 1260,
+        "startChar": 15,
+        "endLine": 1260,
+        "endChar": 33
+      },
+      "revId": "045e3588c14e1b6e88334ae9573fb1112548ae4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4cf91980",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-02-26T18:46:28Z",
+      "side": 1,
+      "message": "Good question.",
+      "parentUuid": "9aed3d3a_8392d99d",
       "range": {
         "startLine": 1260,
         "startChar": 15,
