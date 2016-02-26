@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0578898e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_1640d7a4",
+      "range": {
+        "startLine": 18,
+        "startChar": 44,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_6cc194e4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 60
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-26T17:30:41Z",
       "side": 1,
       "message": "Let\u0027s use \"Implements\" for tracking purposes in launchpad; we may create another bp for the other phases if needed",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2575cd97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_6cc194e4",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_65107502",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_057d3b1c",
+      "range": {
+        "startLine": 103,
+        "startChar": 47,
+        "endLine": 103,
+        "endChar": 51
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8005b9c3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 60
@@ -82,6 +154,30 @@
       "writtenOn": "2016-02-26T17:30:41Z",
       "side": 1,
       "message": "\"its\" (we only check on the immediate parent)",
+      "range": {
+        "startLine": 137,
+        "startChar": 70,
+        "endLine": 137,
+        "endChar": 73
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e50485c1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_8005b9c3",
       "range": {
         "startLine": 137,
         "startChar": 70,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_e90c5f3d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "...although list_project_parents(project_id) does not put the starting project in the list....",
+      "parentUuid": "9aed3d3a_60651544",
+      "range": {
+        "startLine": 177,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_d4e1359c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 60
@@ -128,6 +248,30 @@
       "writtenOn": "2016-02-26T17:30:41Z",
       "side": 1,
       "message": "I\u0027d argue this should be exception.DomainNotFound\n\nThe way it is, if I ask get_domain(simple_project_id) it will throw unexpected, when it sould be domainNotFound\n\nAnd actually it may have different meanings depending on the caller; e.g if the caller is create_domain, we don\u0027t want neither a DomainNotFound or a UnexpectedError",
+      "range": {
+        "startLine": 743,
+        "startChar": 18,
+        "endLine": 743,
+        "endChar": 43
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6a3cc2e2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "It\u0027s Unexpected, since if we hit this it is a coding error on our part - since we should have caught this way before here.....this is here to make sure we haven\u0027t goofed.",
+      "parentUuid": "9aed3d3a_d4e1359c",
       "range": {
         "startLine": 743,
         "startChar": 18,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_255f8de6",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_0f143a42",
+      "range": {
+        "startLine": 19,
+        "startChar": 30,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_6c0a34d4",
         "filename": "keystone/revoke/model.py",
         "patchSetId": 60
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_853db9bd",
+        "filename": "keystone/revoke/model.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Although I agree, for now i\u0027d rather leave it as is, since we often talk about \"top level projects\" before this patch as meaning a regular project with no parents.",
+      "parentUuid": "9aed3d3a_6c0a34d4",
+      "range": {
+        "startLine": 337,
+        "startChar": 27,
+        "endLine": 337,
+        "endChar": 35
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_39750cf9",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 60
@@ -197,6 +389,30 @@
       "writtenOn": "2016-02-26T17:30:41Z",
       "side": 1,
       "message": "I find the following more readable:\n\n    if project_ref[\u0027domain_id\u0027] is not None:\n        filtered_project[\u0027domain\u0027] \u003d self._get_filtered_domain(...)\n    else:\n        # Top level domain projects do not have a domain_id\n        filtered_project[\u0027domain\u0027] \u003d None",
+      "range": {
+        "startLine": 247,
+        "startChar": 8,
+        "endLine": 248,
+        "endChar": 75
+      },
+      "revId": "4b6934cac12728449f835ce9ba1a454fe4d64d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e55645d1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-26T18:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_39750cf9",
       "range": {
         "startLine": 247,
         "startChar": 8,
