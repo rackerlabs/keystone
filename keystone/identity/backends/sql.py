@@ -26,8 +26,7 @@ from keystone import identity
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
-    attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
+    attributes = ['id', 'enabled', 'default_project_id']
     id = sql.Column(sql.String(64), primary_key=True)
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())

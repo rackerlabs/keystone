@@ -790,6 +790,9 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         # upgrade to migration and test
         self.upgrade(91)
+        self.assertTableColumns(
+            user_table_name,
+            ['id', 'enabled', 'default_project_id', 'extra'])
         self.assertTableCountsMatch(user_table_name, local_user_table_name)
         self.assertTableCountsMatch(local_user_table_name, password_table_name)
         meta.clear()
