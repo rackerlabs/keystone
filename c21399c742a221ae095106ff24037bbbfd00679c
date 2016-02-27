@@ -90,6 +90,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_fc708ede",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-27T00:18:38Z",
+      "side": 1,
+      "message": "i agree with henry, the subset is the safer way to do things. but i\u0027m willing to fix that behaviour as a bug and not hold up the rest of this code.",
+      "parentUuid": "9aed3d3a_ef511664",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 27
+      },
+      "revId": "c21399c742a221ae095106ff24037bbbfd00679c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_f6ac53ef",
         "filename": "keystone/common/controller.py",
         "patchSetId": 25
