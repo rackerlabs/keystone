@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_041fc15f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-28T14:27:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_b0873dd6",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e6f58fcb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-27T16:45:13Z",
       "side": 1,
       "message": "change to \"does not have\"\n\nAlso, why is there no need have an entry in the password table?",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 34
+      },
+      "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_44754996",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-28T14:27:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_e6f58fcb",
       "range": {
         "startLine": 14,
         "startChar": 18,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_b15a954e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-28T14:27:39Z",
+      "side": 1,
+      "message": "yes, i tried this in the first proposal (https://review.openstack.org/#/c/285152/1/keystone/tests/unit/test_sql_upgrade.py) but I was stuck there. I just cannot figure out an approach to purge the outdated user table from the session.",
+      "parentUuid": "9aed3d3a_66997f1f",
+      "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_a671c7e2",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_8eb130e4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-28T14:27:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_a671c7e2",
+      "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e673cfe5",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -93,6 +177,24 @@
       "writtenOn": "2016-02-27T16:45:13Z",
       "side": 1,
       "message": "no need to change the exception in the test. Remove this code it makes the test unnecessarily complicated.",
+      "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_31f20570",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-02-28T14:27:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_e673cfe5",
       "revId": "94cecd5a0a31677e0ae24a3a6213da0e85ba9043",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
