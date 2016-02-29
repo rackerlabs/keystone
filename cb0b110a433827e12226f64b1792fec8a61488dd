@@ -91,6 +91,30 @@
       "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_d88becc1",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 11215
+      },
+      "writtenOn": "2016-02-29T07:40:12Z",
+      "side": 1,
+      "message": "We do have this driver @\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L1789\nclass DomainConfigDriverV8(object):",
+      "parentUuid": "dae33548_d7f6d65b",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 50
+      },
+      "revId": "cb0b110a433827e12226f64b1792fec8a61488dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
