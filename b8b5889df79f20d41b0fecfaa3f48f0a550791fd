@@ -245,6 +245,23 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_74b45234",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:34:30Z",
+      "side": 1,
+      "message": "I think the reason the above checks were added here was to make sure the correct errors here raised and/or attributes checked....I\u0027ll take a closer look",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_ad017a07",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
