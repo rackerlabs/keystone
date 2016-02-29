@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_0df854c2",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 0,
+      "message": "unnecessary change?",
+      "revId": "7c6556ce18eb170fd8102168b33a50272b22ec5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8d32a4a5",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 0,
+      "message": "and here",
+      "revId": "7c6556ce18eb170fd8102168b33a50272b22ec5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

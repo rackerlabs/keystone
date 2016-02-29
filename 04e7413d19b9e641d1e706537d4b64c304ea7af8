@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_8da104fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "Instead",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 6
+      },
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8d88e472",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "deactivation",
+      "range": {
+        "startLine": 9,
+        "startChar": 32,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2d98b8bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "impossible",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 39
+      },
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4de25c30",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "token",
+      "range": {
+        "startLine": 16,
+        "startChar": 42,
+        "endLine": 16,
+        "endChar": 47
+      },
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0d1fb408",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 10
+      },
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ad4b2886",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T17:31:57Z",
+      "side": 1,
+      "message": "remove this lines?",
+      "revId": "04e7413d19b9e641d1e706537d4b64c304ea7af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
