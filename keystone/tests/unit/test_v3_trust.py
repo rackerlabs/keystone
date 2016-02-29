@@ -99,11 +99,9 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
             impersonation=False,
-            expires=dict(minutes=1),
+            expires=unit.FUTURE_EXPIRY_STR,
             role_ids=[self.role_id])
         for i in range(3):
-            ref['expires_at'] = datetime.datetime.utcnow().replace(
-                year=2032).strftime(unit.TIME_FORMAT)
             r = self.post('/OS-TRUST/trusts', body={'trust': ref})
             self.assertValidTrustResponse(r, ref)
 

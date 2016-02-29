@@ -85,6 +85,7 @@ log.register_options(CONF)
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
+FUTURE_EXPIRY_STR = '2031-02-18T18:10:00Z'
 
 exception._FATAL_EXCEPTION_FORMAT_ERRORS = True
 os.makedirs(TMPDIR)
