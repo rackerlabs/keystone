@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_cd9b0c65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "I think theses lines are too long",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c8d49a21",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "Out of curiosity, why was this changed?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_28c9c659",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "Why do you need this? Can\u0027t you just use the ModelDictMixin instead?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c8de5a10",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "no newline needed",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_086b22f2",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "I know this is be auto increment for mysql. IIRC you had to do something else for postgres. Is that true and if so do we care?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_08420268",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "no newline needed",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a3885972",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "What is the difference between this an idp_id? Below the unique_id is said to be for the user...is this just a copy-pasta issue?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_03f14501",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 1562,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "You should be versioning your driver. This would be V9. Right now just changing the class name would be enough. Example: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/core.py#n1616",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_43a50da0",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "This is a little odd to me that the federated user will have to create its own parent... not sure what to do about it other than to move the create of the parent up a level",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_43d34d04",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "This needs a docstring. Why do you have to do all of the joining here?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6dbc8006",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "Why isn\u0027t this the method default?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2d4d583e",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T17:59:06Z",
+      "side": 1,
+      "message": "...or this",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
