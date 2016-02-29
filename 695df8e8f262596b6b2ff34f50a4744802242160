@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_c6b76138",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2573,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-29T21:13:34Z",
+      "side": 1,
+      "message": "i don\u0027t see the value in this test, i think it would have been the same before shadow users were stored in sql...",
+      "range": {
+        "startLine": 2565,
+        "startChar": 0,
+        "endLine": 2573,
+        "endChar": 70
+      },
+      "revId": "695df8e8f262596b6b2ff34f50a4744802242160",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
