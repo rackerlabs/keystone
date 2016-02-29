@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_aa894e28",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-02-29T21:31:34Z",
+      "side": 1,
+      "message": "scary that projects or domains can be mutable at all.",
+      "revId": "753509c7b6088d9a190c19892e6f5c8def1fb6d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
