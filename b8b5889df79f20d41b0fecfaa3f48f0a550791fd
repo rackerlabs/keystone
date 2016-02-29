@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_34dc8a72",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_767bc4f5",
+      "range": {
+        "startLine": 150,
+        "startChar": 11,
+        "endLine": 150,
+        "endChar": 27
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_96ebe877",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -129,6 +153,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_34f80ac3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "that\u0027s not quite true either...it\u0027s top level projects (i.e. who\u0027s parents are the domain)",
+      "parentUuid": "9aed3d3a_ca5b04f5",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_ca294439",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -163,6 +205,30 @@
       "writtenOn": "2016-02-29T13:46:15Z",
       "side": 1,
       "message": "This code has been added to update_project method, thus can be removed from here",
+      "range": {
+        "startLine": 786,
+        "startChar": 8,
+        "endLine": 786,
+        "endChar": 59
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_05eaf2ab",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_4ae1b499",
       "range": {
         "startLine": 786,
         "startChar": 8,
@@ -245,6 +311,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_45d07af6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_6afbd847",
+      "range": {
+        "startLine": 794,
+        "startChar": 8,
+        "endLine": 795,
+        "endChar": 71
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_74b45234",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -262,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0501526a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "I have moved all this to _update_project",
+      "parentUuid": "9aed3d3a_74b45234",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_ad017a07",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -273,6 +381,30 @@
       "writtenOn": "2016-02-29T13:46:15Z",
       "side": 1,
       "message": "This didn\u0027t need to be a new method in the drivers ... why not just add the is_domain hint here and call list_projects directly ? (it\u0027s what the driver does)",
+      "range": {
+        "startLine": 899,
+        "startChar": 27,
+        "endLine": 899,
+        "endChar": 57
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a5a86621",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "I\u0027m still old school...drivers don\u0027t technically have to support hints",
+      "parentUuid": "9aed3d3a_ad017a07",
       "range": {
         "startLine": 899,
         "startChar": 27,
@@ -449,6 +581,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0015c047",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "I wasn\u0027t catching ValidationError in the assert in test_backed_ldap...fixed that now, so this can be removed",
+      "parentUuid": "9aed3d3a_035e7743",
+      "range": {
+        "startLine": 2145,
+        "startChar": 4,
+        "endLine": 2145,
+        "endChar": 45
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_fe120656",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 61
@@ -460,6 +616,24 @@
       "writtenOn": "2016-02-29T14:13:32Z",
       "side": 1,
       "message": "maybe check on the returned projects ?",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_d46f19fa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2655,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_fe120656",
       "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -559,6 +733,30 @@
       "side": 1,
       "message": "you may be right!",
       "parentUuid": "9aed3d3a_3e162ef1",
+      "range": {
+        "startLine": 1594,
+        "startChar": 8,
+        "endLine": 1594,
+        "endChar": 52
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_20dba450",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T17:09:31Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "9aed3d3a_2e0b9b2b",
       "range": {
         "startLine": 1594,
         "startChar": 8,
