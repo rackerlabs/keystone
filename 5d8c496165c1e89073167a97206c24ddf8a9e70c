@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_7df7098b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_cd9b0c65",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c8d49a21",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 62
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-29T17:59:06Z",
       "side": 1,
       "message": "Out of curiosity, why was this changed?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1dbebd64",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Previously this was creating a user dict. Now, I\u0027m only using this method to set the unique_id and display_name; the user dict is being created from the shadow users create method.",
+      "parentUuid": "9aed3d3a_c8d49a21",
       "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_5d6b25f1",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_28c9c659",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c8de5a10",
         "filename": "keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
         "patchSetId": 62
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-29T17:59:06Z",
       "side": 1,
       "message": "no newline needed",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_7d76e9d7",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_c8de5a10",
       "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_00d7764b",
+        "filename": "keystone/common/sql/migrate_repo/versions/093_add_federated_user_table.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Not 100% sure, was trusting SQLAlchemy to automatically set AUTO_INCREMENT by default.",
+      "parentUuid": "9aed3d3a_086b22f2",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_08420268",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 62
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_a0c68a97",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_08420268",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_a3885972",
         "filename": "keystone/identity/core.py",
         "patchSetId": 62
@@ -115,6 +223,24 @@
       "writtenOn": "2016-02-29T17:59:06Z",
       "side": 1,
       "message": "What is the difference between this an idp_id? Below the unique_id is said to be for the user...is this just a copy-pasta issue?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a0fb2ac0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Essentially, \"idp_id\" is the id for the identity provider.  And \"unique_id\" is the user\u0027s id that is unique within the identity provider.\n\nEdited the doc string.",
+      "parentUuid": "9aed3d3a_a3885972",
       "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_400fbe87",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "I could change the name, but essentially this method creates a user and maps it to a federated user.",
+      "parentUuid": "9aed3d3a_43a50da0",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_43d34d04",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 62
@@ -166,6 +310,24 @@
       "writtenOn": "2016-02-29T17:59:06Z",
       "side": 1,
       "message": "This needs a docstring. Why do you have to do all of the joining here?",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2301e405",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "The reason for the joins is that I am returning a \"User\" object which has a relationship to \"LocalUser\" and FederatedUser:\n\nUser -\u003e LocalUser\n     -\u003e FederatedUser",
+      "parentUuid": "9aed3d3a_43d34d04",
       "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0354a0fc",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "Not following?",
+      "parentUuid": "9aed3d3a_6dbc8006",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_2d4d583e",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 62
@@ -200,6 +380,24 @@
       "writtenOn": "2016-02-29T17:59:06Z",
       "side": 1,
       "message": "...or this",
+      "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e349bc61",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 62
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-02-29T19:05:37Z",
+      "side": 1,
+      "message": "?",
+      "parentUuid": "9aed3d3a_2d4d583e",
       "revId": "5d8c496165c1e89073167a97206c24ddf8a9e70c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
