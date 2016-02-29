@@ -122,6 +122,24 @@
       "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_094d0dc4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-29T05:59:15Z",
+      "side": 1,
+      "message": "the sample config should mirror the actual defaults.\n\nPlease do not use bogus values here that are not actually the default values in reality (or planned default values)",
+      "parentUuid": "9aed3d3a_cf123bb4",
+      "revId": "2abf199f893959f8c68435e58a856c51c0db76a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
