@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_572f8b87",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-29T16:52:28Z",
+      "side": 1,
+      "message": "2031? wasn\u0027t that what caused the issue in the first place? or am i missing some subtly timezone difference?",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 25
+      },
+      "revId": "18acc018dc4139f593ce6f81df1b99d692dc6caf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
