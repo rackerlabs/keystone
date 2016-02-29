@@ -22,6 +22,30 @@
       "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_628aeb1c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T10:00:40Z",
+      "side": 1,
+      "message": "it was always called here, but defined at the manager level.  It is no longer used at the manager level.",
+      "parentUuid": "9aed3d3a_27c3d539",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 0
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
