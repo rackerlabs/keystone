@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_02ff9faa",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T09:58:55Z",
+      "side": 1,
+      "message": "There are a couple of options even with this:\n\na) We call policy with those roles in the token, but only if you have at least the roles from the token\nb) we call policy with those roles in the token which are ALSO assigned for that user on the subproject\nc) We call policy with the roles the user has on the subproject\n\nI think we rejected c) for now - and the proposal was for b). I think this makes sense for the normal token case. For trust tokens, however, I can imagine doing either a) above (this is how trusts with implies roles works - i.e. you MUST have at least the roles in trust, no partial set of roles), or as the docstring states, we check if you have a specific trust for each subproject. I haven\u0027t quiet worked out what we should do with federation.",
+      "range": {
+        "startLine": 276,
+        "startChar": 53,
+        "endLine": 277,
+        "endChar": 45
+      },
+      "revId": "7e41428a57e3df41ed7ca76c5e553232be1411fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
