@@ -69,6 +69,24 @@
       "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a9182e76",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-29T21:23:43Z",
+      "side": 1,
+      "message": "I\u0027m ok with the code working like this. We can update in N.",
+      "parentUuid": "9aed3d3a_46b4f180",
+      "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
