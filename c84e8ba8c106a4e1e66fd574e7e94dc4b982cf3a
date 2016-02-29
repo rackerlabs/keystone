@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_666c9ad0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 65
+      },
+      "lineNbr": 1562,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T19:37:01Z",
+      "side": 1,
+      "message": "Still not versioned",
+      "revId": "c84e8ba8c106a4e1e66fd574e7e94dc4b982cf3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_46851605",
+        "filename": "setup.cfg",
+        "patchSetId": 65
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-02-29T19:37:01Z",
+      "side": 1,
+      "message": "Is there any reason we are not extending the existing driver interface for users?",
+      "revId": "c84e8ba8c106a4e1e66fd574e7e94dc4b982cf3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
