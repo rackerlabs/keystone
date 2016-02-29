@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aed3d3a_d5ef011c",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-29T23:09:58Z",
+      "side": 0,
+      "message": "This isn\u0027t testing revoke_by_expiration, it\u0027s testing that expired events are removed. So the test needs to stay here but be changed... probably just revoke by audit ID instead.",
+      "revId": "116e0fa52808861bd4979163ac917cccf8f2c9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_75c3f8ed",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 9
