@@ -16,6 +16,24 @@
       "revId": "abd302acf3f94fa9609d1b3a7cb7bf639237b3ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_5d8165c2",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 0,
+      "message": "i am passing access_token to populate_roles() in line 623",
+      "parentUuid": "9aed3d3a_08f16201",
+      "revId": "abd302acf3f94fa9609d1b3a7cb7bf639237b3ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

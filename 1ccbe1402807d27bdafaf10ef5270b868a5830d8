@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_f90cceed",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2573,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "this should be in https://review.openstack.org/#/c/27916",
+      "parentUuid": "9aed3d3a_6d75a0f8",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_cdb82c78",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 1
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_3da8e1da",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_48b1aa46",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_a864b6b8",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -81,6 +117,24 @@
       "writtenOn": "2016-02-29T17:39:17Z",
       "side": 1,
       "message": "nit: old style exceptions",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_9db12d4a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_a864b6b8",
       "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_ddf0d593",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "I am unsure if we can remove raising exception.Unauthorized from methods like _populate_roles() or _populate_roles_from_groups() and handle that situation in a layer up (if roles is None or not roles: raise Unatuhorized()) I am just fearing that somewhere in the code somebody may be depending that those functions would raise exception themselves.",
+      "parentUuid": "9aed3d3a_48fb6ac1",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_a8a156fa",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -115,6 +187,24 @@
       "writtenOn": "2016-02-29T17:39:17Z",
       "side": 1,
       "message": "nit: random whitespace",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ddb73538",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_a8a156fa",
       "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_5df16500",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_28f8a6c2",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_286706ea",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -149,6 +257,24 @@
       "writtenOn": "2016-02-29T17:39:17Z",
       "side": 1,
       "message": "nit: random whitespace",
+      "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1dd23d5c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-02-29T18:43:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_286706ea",
       "revId": "1ccbe1402807d27bdafaf10ef5270b868a5830d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
