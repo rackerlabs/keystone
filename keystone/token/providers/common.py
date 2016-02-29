@@ -280,6 +280,18 @@ class V3TokenDataHelper(object):
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
+    def extend_roles_for_groups(self, token_data, group_ids,
+                                project_id=None, domain_id=None,
+                                user_id=None):
+        token_ref = {}
+        self.populate_roles_for_groups(token_ref, group_ids,
+                                       project_id=project_id,
+                                       domain_id=domain_id,
+                                       user_id=user_id)
+        if 'roles' not in token_data:
+            token_data['roles'] = []
+        token_data['roles'].extend(token_ref.get('roles', []))
+
     def populate_roles_for_groups(self, token_data, group_ids,
                                   project_id=None, domain_id=None,
                                   user_id=None):
@@ -316,12 +328,13 @@ class V3TokenDataHelper(object):
             # Since no roles were found a user is not authorized to
             # perform any operations. Raise an exception with
             # appropriate error message.
+
             raise exception.Unauthorized(msg)
 
         roles = self.assignment_api.get_roles_for_groups(group_ids,
                                                          project_id,
                                                          domain_id)
-        check_roles(roles, user_id, project_id, domain_id)
+        # check_roles(roles, user_id, project_id, domain_id)
         token_data['roles'] = roles
 
     def _populate_user(self, token_data, user_id, trust):
@@ -591,15 +604,33 @@ class BaseProvider(provider.Provider):
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden(_('User is not a trustee.'))
 
+        access_token = None
+        if 'oauth1' in method_names:
+            access_token_id = auth_context['access_token_id']
+            access_token = self.oauth_api.get_access_token(access_token_id)
+
         token_ref = None
         if auth_context and self._is_mapped_token(auth_context):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
 
-        access_token = None
-        if 'oauth1' in method_names:
-            access_token_id = auth_context['access_token_id']
-            access_token = self.oauth_api.get_access_token(access_token_id)
+            if project_id or domain_id:
+                try:
+                    self.v3_token_data_helper._populate_roles(
+                        token_ref, user_id, domain_id, project_id, trust,
+                        access_token)
+                except exception.Unauthorized:
+                    pass
+
+                try:
+                    self.v3_token_data_helper.extend_roles_for_groups(
+                        token_ref, auth_context['group_ids'],
+                        project_id, domain_id, user_id)
+                except exception.Unauthorized:
+                    pass
+
+                if token_ref is None or not token_ref.get('roles'):
+                    raise exception.Unauthorized("Authorization failed")
 
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
@@ -637,10 +668,6 @@ class BaseProvider(provider.Provider):
                 }
             }
         }
-
-        if project_id or domain_id:
-            self.v3_token_data_helper.populate_roles_for_groups(
-                token_data, group_ids, project_id, domain_id, user_id)
 
         return token_data
 
