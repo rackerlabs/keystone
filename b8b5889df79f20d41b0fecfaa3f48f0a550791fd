@@ -310,6 +310,218 @@
       "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_035e7743",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2145,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "why does this need this annotation now?",
+      "range": {
+        "startLine": 2145,
+        "startChar": 4,
+        "endLine": 2145,
+        "endChar": 45
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_fe120656",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2655,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "maybe check on the returned projects ?",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1e99aac4",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2996,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "(nit) A small comment here ( as below in L3004 ) would be useful",
+      "range": {
+        "startLine": 2996,
+        "startChar": 8,
+        "endLine": 2996,
+        "endChar": 42
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_9e077ac9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "unrelated?",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_3e162ef1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "where is this used? I couldn\u0027t find any occurrence of it here or in test_backend",
+      "range": {
+        "startLine": 1594,
+        "startChar": 8,
+        "endLine": 1594,
+        "endChar": 52
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_fea20698",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 3107,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "Why is this skipped here ? The original at test_backend is already annotated with @unit.skip_if_no_multiple_domains_support",
+      "range": {
+        "startLine": 3107,
+        "startChar": 8,
+        "endLine": 3107,
+        "endChar": 43
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1ecd2a66",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "This should still be DomainNotFound; the method\u0027s name is list_projects_in_*domain*",
+      "range": {
+        "startLine": 532,
+        "startChar": 40,
+        "endLine": 532,
+        "endChar": 55
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_9e62da3c",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "could we have a similar test to _exercise_project_api(None) ?\nSince None is valid a manager level?",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_59e6ac44",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "we shoudl fail somehow if no domain matches the provided project",
+      "range": {
+        "startLine": 877,
+        "startChar": 16,
+        "endLine": 877,
+        "endChar": 43
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_1e7a4abd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T14:13:32Z",
+      "side": 1,
+      "message": "Perhaps we need tests for tokens on is_domain projects ?",
+      "range": {
+        "startLine": 252,
+        "startChar": 12,
+        "endLine": 252,
+        "endChar": 45
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
