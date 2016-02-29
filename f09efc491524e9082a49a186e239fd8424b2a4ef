@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_b4ea550d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T16:43:09Z",
+      "side": 1,
+      "message": "In the comments on this bug report, lbragstad said: \"Going to abandon this per IRC discussion with morganfainberg and jamielennox in #openstack-keystone on Freenode.\n\nService name shouldn\u0027t be required since service type is already a required attribute of service and *should* be unique.\n\nA patch should be proposed to make service type completely unique.\"",
+      "parentUuid": "9aed3d3a_0f0fb637",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_b406d5cb",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T16:43:09Z",
+      "side": 1,
+      "message": "remove whitespaces",
+      "range": {
+        "startLine": 846,
+        "startChar": 0,
+        "endLine": 846,
+        "endChar": 1
+      },
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_cf814ec5",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 3
@@ -36,6 +83,24 @@
       "writtenOn": "2016-02-29T14:52:53Z",
       "side": 1,
       "message": "I don\u0027t quite understand what is being tested here. Could you please explain?",
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_d428b935",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-02-29T16:43:09Z",
+      "side": 1,
+      "message": "We have some tests cases here: https://review.openstack.org/#/c/138130/1/keystone/tests/test_sql_upgrade.py (lbragtad tried to fix that before)",
+      "parentUuid": "9aed3d3a_cf814ec5",
       "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
