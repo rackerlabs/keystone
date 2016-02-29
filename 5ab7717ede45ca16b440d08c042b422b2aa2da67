@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_a37e9416",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-29T19:14:26Z",
+      "side": 1,
+      "message": "No need to do this here since middleware isn\u0027t used when doing keystone-manage.",
+      "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4338683d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-29T19:14:26Z",
+      "side": 1,
+      "message": "oslo_middleware.cors should provide a function for this. I\u0027m worried that the config option names will change or move to another section name option name.",
+      "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
