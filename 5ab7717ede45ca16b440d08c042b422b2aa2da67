@@ -33,6 +33,24 @@
       "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a68b3d67",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-02-29T21:08:14Z",
+      "side": 1,
+      "message": "A valid concern. this may be something that has to be a followup when CORS/oslo middleware supports it.",
+      "parentUuid": "9aed3d3a_4338683d",
+      "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
