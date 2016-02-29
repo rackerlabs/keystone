@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_0f0fb637",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-29T14:52:53Z",
+      "side": 1,
+      "message": "The bugreport says about non-unique name, not about non-unique type. Please refer to another bugreport.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_cf814ec5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 880,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-29T14:52:53Z",
+      "side": 1,
+      "message": "I don\u0027t quite understand what is being tested here. Could you please explain?",
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ef8892c7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-02-29T14:52:53Z",
+      "side": 1,
+      "message": "There needs to be a test showing what will happen if there are already 2 services with the same type.",
+      "revId": "f09efc491524e9082a49a186e239fd8424b2a4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
