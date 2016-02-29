@@ -46,6 +46,270 @@
       "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_767bc4f5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "(nit) just \"parent_ref[\u0027is_domain\u0027]\" would be clearer to me",
+      "range": {
+        "startLine": 150,
+        "startChar": 11,
+        "endLine": 150,
+        "endChar": 27
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_96ebe877",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "(nit) althought unrelated to this patch: \"enfoce what constraints?\" let\u0027s consider adding docstrings to these methods",
+      "range": {
+        "startLine": 171,
+        "startChar": 8,
+        "endLine": 171,
+        "endChar": 36
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_aa3960a6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "(nit) might want to add a comment saying it\u0027s for update of a project between domains",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ca5b04f5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "\"for domain projects\" would be a more meaningful message",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ca294439",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "(nit) this method\u0027s name could be more suggestive .. it isn\u0027t effectivelly disabling any domain",
+      "range": {
+        "startLine": 427,
+        "startChar": 21,
+        "endLine": 427,
+        "endChar": 36
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4ae1b499",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "This code has been added to update_project method, thus can be removed from here",
+      "range": {
+        "startLine": 786,
+        "startChar": 8,
+        "endLine": 786,
+        "endChar": 59
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8ac3bcec",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "We need to put this logic in update_proejct too. The calls to domains at the manager level should not implement additional logic, just call project calls instead",
+      "range": {
+        "startLine": 790,
+        "startChar": 8,
+        "endLine": 793,
+        "endChar": 78
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6afbd847",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "Same as above, this code is present in update_project method ... can be removed frm here",
+      "range": {
+        "startLine": 794,
+        "startChar": 8,
+        "endLine": 795,
+        "endChar": 71
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_ad017a07",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "This didn\u0027t need to be a new method in the drivers ... why not just add the is_domain hint here and call list_projects directly ? (it\u0027s what the driver does)",
+      "range": {
+        "startLine": 899,
+        "startChar": 27,
+        "endLine": 899,
+        "endChar": 57
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e30a7378",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "new driver doesnt\u0027 call domains anymore, so we don\u0027t need to care about these right?",
+      "range": {
+        "startLine": 1312,
+        "startChar": 0,
+        "endLine": 1331,
+        "endChar": 44
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_037cb71d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1392,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "list_projects_in_domain(None) would give me top level projects in a legacy driver, while in the new driver it will give me is_domain projects right ?",
+      "range": {
+        "startLine": 1392,
+        "startChar": 8,
+        "endLine": 1392,
+        "endChar": 31
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e380b3f9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-02-29T13:46:15Z",
+      "side": 1,
+      "message": "list_projects_in_subtree(None) would give me all the tree starting at the top level projects in a legacy driver, while in the new driver it starts at the is_domain projects right ?",
+      "range": {
+        "startLine": 1455,
+        "startChar": 8,
+        "endLine": 1455,
+        "endChar": 32
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
