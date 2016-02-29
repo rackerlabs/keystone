@@ -16,6 +16,24 @@
       "revId": "428cbeec71aa063fe627ea89b23d77a1d4556763",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_f10eb48a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3414,
+      "author": {
+        "id": 2750
+      },
+      "writtenOn": "2016-02-29T15:27:25Z",
+      "side": 1,
+      "message": "yep, probably, we never got that far, and I couldn\u0027t run tests locally because of ldap issues.",
+      "parentUuid": "9aed3d3a_79da904d",
+      "revId": "428cbeec71aa063fe627ea89b23d77a1d4556763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
