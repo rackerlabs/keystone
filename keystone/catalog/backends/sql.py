@@ -58,6 +58,8 @@ class Service(sql.ModelBase, sql.DictBase):
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
     endpoints = sqlalchemy.orm.relationship("Endpoint", backref="service")
+    __table_args__ = (sql.UniqueConstraint(
+                    'type', name='add_service_type_unique'),)
 
 
 class Endpoint(sql.ModelBase, sql.DictBase):

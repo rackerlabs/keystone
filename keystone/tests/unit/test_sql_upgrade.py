@@ -832,6 +832,52 @@ class SqlUpgradeTests(SqlMigrateBase):
         implied_roles = self.role_api.list_implied_roles(role_id_list[0])
         self.assertThat(implied_roles, matchers.HasLength(0))
 
+    def test_add_service_type_unique_constraint_upgrade(self):
+        self.upgrade(93)
+        inspector = reflection.Inspector.from_engine(self.engine)
+        constraints = inspector.get_unique_constraints('service')
+        constraint_names = [constraint['name'] for constraint in constraints]
+        self.assertIn('add_service_type_unique', constraint_names)
+
+    def test_service_type_is_unique(self):
+        """Migration 93 should make the service `type` column unique."""
+        self.upgrade(92)
+        session = self.Session()
+ 
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+            return service_id
+ 
+        first_service_id = add_service('compute')
+        second_service_id = add_service('image')
+ 
+        self.upgrade(93)
+ 
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def get_service(service_id):
+            cols = [service_table.c.id, service_table.c.type]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep
+ 
+        service = get_service(first_service_id)
+        self.assertEqual(first_service_id, service.id)
+        self.assertEqual('compute', service.type)
+ 
+        service = get_service(second_service_id)
+        self.assertEqual(second_service_id, service.id)
+        self.assertEqual('image', service.type)
+
 
 class VersionTests(SqlMigrateBase):
 
