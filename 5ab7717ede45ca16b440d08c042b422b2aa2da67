@@ -51,6 +51,24 @@
       "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_46b4f180",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 9717
+      },
+      "writtenOn": "2016-02-29T21:20:38Z",
+      "side": 1,
+      "message": "....says the man who -2\u0027d the patch that adds this feature ;)\n\nhttps://review.openstack.org/#/c/285368/",
+      "parentUuid": "9aed3d3a_4338683d",
+      "revId": "5ab7717ede45ca16b440d08c042b422b2aa2da67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
