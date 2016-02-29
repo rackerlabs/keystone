@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_90c3c756",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-02-29T23:43:16Z",
+      "side": 1,
+      "message": "This should describe what the change actually does. oslo-config-generator doesn\u0027t configure anything.\n\nThe same comment applies to the body of the commit message.",
+      "revId": "3b8668ca041fe2e45cfdfd821b9d1a67778dbb9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
