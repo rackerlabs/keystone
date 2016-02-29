@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0eb21706",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 0,
+      "message": "well, is_domain wasn\u0027t interpreted before, so yes we now interpret this new_project as being as sub_domain, which we don\u0027t support.",
+      "parentUuid": "9aed3d3a_831f276b",
+      "range": {
+        "startLine": 925,
+        "startChar": 8,
+        "endLine": 925,
+        "endChar": 37
+      },
+      "revId": "432f5f23486342d26d42643ff1d6c974f411cace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_5e3332f6",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 61
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_4ea53fa0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2671,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 0,
+      "message": "yes, as the earlier example",
+      "parentUuid": "9aed3d3a_fe404636",
+      "range": {
+        "startLine": 2670,
+        "startChar": 39,
+        "endLine": 2671,
+        "endChar": 70
+      },
+      "revId": "432f5f23486342d26d42643ff1d6c974f411cace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_3e510ed9",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 61
@@ -82,6 +130,30 @@
       "writtenOn": "2016-02-29T14:13:32Z",
       "side": 0,
       "message": "This shouldn\u0027t be possible to have domain ID \u003d\u003d project ID right ? Otherwise this whole implementation is now crashed (migration won\u0027t work)",
+      "range": {
+        "startLine": 4743,
+        "startChar": 8,
+        "endLine": 4743,
+        "endChar": 57
+      },
+      "revId": "432f5f23486342d26d42643ff1d6c974f411cace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_eeea5373",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 4743,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 0,
+      "message": "correct",
+      "parentUuid": "9aed3d3a_3e510ed9",
       "range": {
         "startLine": 4743,
         "startChar": 8,

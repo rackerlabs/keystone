@@ -198,6 +198,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_8e53c7e1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "The logic is in _update_project.",
+      "parentUuid": "9aed3d3a_8ac3bcec",
+      "range": {
+        "startLine": 790,
+        "startChar": 8,
+        "endLine": 793,
+        "endChar": 78
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_6afbd847",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -267,6 +291,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_237a9bbd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "Correct, but was leaving cleanup for another patch",
+      "parentUuid": "9aed3d3a_e30a7378",
+      "range": {
+        "startLine": 1312,
+        "startChar": 0,
+        "endLine": 1331,
+        "endChar": 44
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_037cb71d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -290,6 +338,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_0e6cd7ce",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1392,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "Well, this is an internal-only method and not exposed via the API, so it should never be called with domain_id\u003dNone",
+      "parentUuid": "9aed3d3a_037cb71d",
+      "range": {
+        "startLine": 1392,
+        "startChar": 8,
+        "endLine": 1392,
+        "endChar": 31
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e380b3f9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 61
@@ -301,6 +373,30 @@
       "writtenOn": "2016-02-29T13:46:15Z",
       "side": 1,
       "message": "list_projects_in_subtree(None) would give me all the tree starting at the top level projects in a legacy driver, while in the new driver it starts at the is_domain projects right ?",
+      "range": {
+        "startLine": 1455,
+        "startChar": 8,
+        "endLine": 1455,
+        "endChar": 32
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_030cb73f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "I don\u0027t think so, the manager call for list_projects_in_subtree checks that project_id !\u003d None",
+      "parentUuid": "9aed3d3a_e380b3f9",
       "range": {
         "startLine": 1455,
         "startChar": 8,
@@ -393,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_ce32ef0f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "no, this is required, since we are going to update project, and otherwise the parent_id won\u0027t be set in it.",
+      "parentUuid": "9aed3d3a_9e077ac9",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_3e162ef1",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 61
@@ -404,6 +518,30 @@
       "writtenOn": "2016-02-29T14:13:32Z",
       "side": 1,
       "message": "where is this used? I couldn\u0027t find any occurrence of it here or in test_backend",
+      "range": {
+        "startLine": 1594,
+        "startChar": 8,
+        "endLine": 1594,
+        "endChar": 52
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_2e0b9b2b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "you may be right!",
+      "parentUuid": "9aed3d3a_3e162ef1",
       "range": {
         "startLine": 1594,
         "startChar": 8,
@@ -462,6 +600,30 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_d1b730d6",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "9aed3d3a_1ecd2a66",
+      "range": {
+        "startLine": 532,
+        "startChar": 40,
+        "endLine": 532,
+        "endChar": 55
+      },
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_9e62da3c",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 61
@@ -473,6 +635,24 @@
       "writtenOn": "2016-02-29T14:13:32Z",
       "side": 1,
       "message": "could we have a similar test to _exercise_project_api(None) ?\nSince None is valid a manager level?",
+      "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_916ac87f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-02-29T15:32:32Z",
+      "side": 1,
+      "message": "project_id of None is not valid at the manager level.",
+      "parentUuid": "9aed3d3a_9e62da3c",
       "revId": "b8b5889df79f20d41b0fecfaa3f48f0a550791fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
