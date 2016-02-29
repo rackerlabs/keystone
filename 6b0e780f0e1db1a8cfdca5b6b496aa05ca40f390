@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_201a7a7d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-29T19:10:03Z",
+      "side": 1,
+      "message": "i think we\u0027ve been using the \u0027sql.ForeignKey\u0027 pattern, like on line 174..., but this should work too",
+      "range": {
+        "startLine": 147,
+        "startChar": 8,
+        "endLine": 147,
+        "endChar": 39
+      },
+      "revId": "6b0e780f0e1db1a8cfdca5b6b496aa05ca40f390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c31598e5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-02-29T19:10:03Z",
+      "side": 1,
+      "message": "we still need a config option here, it was in an earlier patch",
+      "range": {
+        "startLine": 1543,
+        "startChar": 49,
+        "endLine": 1543,
+        "endChar": 55
+      },
+      "revId": "6b0e780f0e1db1a8cfdca5b6b496aa05ca40f390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
