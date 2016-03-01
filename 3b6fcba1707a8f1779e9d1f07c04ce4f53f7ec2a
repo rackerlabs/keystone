@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_39bf3562",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-01T08:32:00Z",
+      "side": 1,
+      "message": "why do we need to wrap this? it\u0027s already covered by _validate_token",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 12
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_f992edf4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-01T08:32:00Z",
+      "side": 1,
+      "message": "why do we need to wrap this? it\u0027s already covered by _validate_token",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 12
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_799edd07",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-01T08:32:00Z",
+      "side": 1,
+      "message": "validate_vX_token is already done here\n\nedit -- oh, i think we do this because of the tests? that\u0027s not ideal...",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 63
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
