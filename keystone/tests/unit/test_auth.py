@@ -180,15 +180,16 @@ class AuthBadRequests(AuthTest):
 
     def test_authenticate_user_id_too_large(self):
         """Verify sending large 'userId' raises the right exception."""
-        body_dict = _build_user_auth(user_id='0' * 65, username='FOO',
-                                     password='foo2')
+        body_dict = _build_user_auth(user_id='0' * (CONF.max_param_size + 1),
+                                     username='FOO', password='foo2')
         self.assertRaises(exception.ValidationSizeError,
                           self.controller.authenticate,
                           {}, body_dict)
 
     def test_authenticate_username_too_large(self):
         """Verify sending large 'username' raises the right exception."""
-        body_dict = _build_user_auth(username='0' * 65, password='foo2')
+        body_dict = _build_user_auth(username='0' * (CONF.max_param_size + 1),
+                                     password='foo2')
         self.assertRaises(exception.ValidationSizeError,
                           self.controller.authenticate,
                           {}, body_dict)
