@@ -1,0 +1,11 @@
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Clenimar Filemon <clenimar@lsd.ufcg.edu.br>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 01 Mar 2016 12:41:41 +0000
+Reviewed-on: https://review.openstack.org/231289
+Project: openstack/keystone
+Branch: refs/heads/master
