@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_09529c13",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T16:34:07Z",
+      "side": 1,
+      "message": "we\u0027ll want to clean up here, too.",
+      "revId": "af48ad1f1fe88fb79f52c0304a9d8ecbbe477c24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a941e83b",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T16:34:07Z",
+      "side": 1,
+      "message": "should clean up here, too.",
+      "revId": "af48ad1f1fe88fb79f52c0304a9d8ecbbe477c24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_69a52003",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T16:34:07Z",
+      "side": 1,
+      "message": "clean up here, too.",
+      "revId": "af48ad1f1fe88fb79f52c0304a9d8ecbbe477c24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a9af28e2",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T16:34:07Z",
+      "side": 1,
+      "message": "clean up here, too.",
+      "revId": "af48ad1f1fe88fb79f52c0304a9d8ecbbe477c24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
