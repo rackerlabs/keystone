@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_3f04dc7c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T20:33:28Z",
+      "side": 0,
+      "message": "Why can\u0027t this just be changed to 255 instead if introducing another config option? The purpose of both seem very similar.",
+      "revId": "8c4a19300a0fb905b032fb0fb45df067d1b4bbab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
