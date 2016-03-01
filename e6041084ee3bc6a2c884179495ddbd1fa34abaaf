@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_4112be63",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-01T17:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_39dd3843",
+      "range": {
+        "startLine": 229,
+        "startChar": 19,
+        "endLine": 229,
+        "endChar": 20
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_99aa8c6f",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 20
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-01T13:47:28Z",
       "side": 1,
       "message": "looks unrelated to me",
+      "range": {
+        "startLine": 276,
+        "startChar": 8,
+        "endLine": 276,
+        "endChar": 24
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_1d7936fd",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-01T17:31:05Z",
+      "side": 1,
+      "message": "it\u0027s not unrelated, we explained on the commit message.",
+      "parentUuid": "7af24918_99aa8c6f",
       "range": {
         "startLine": 276,
         "startChar": 8,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_5dd1fecc",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-01T17:31:05Z",
+      "side": 1,
+      "message": "I added a test raising a conflict on this case.",
+      "parentUuid": "7af24918_596ac41b",
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b94e68bf",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 20
@@ -76,6 +142,30 @@
       "writtenOn": "2016-03-01T13:47:28Z",
       "side": 1,
       "message": "i wonder why changes like this were required",
+      "range": {
+        "startLine": 514,
+        "startChar": 46,
+        "endLine": 514,
+        "endChar": 56
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_546569df",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-01T17:31:05Z",
+      "side": 1,
+      "message": "because we use \u0027public\u0027 by default in new_endpoint_ref, so if we keep this same interface, the constraint will fail on this tests.",
+      "parentUuid": "7af24918_b94e68bf",
       "range": {
         "startLine": 514,
         "startChar": 46,
