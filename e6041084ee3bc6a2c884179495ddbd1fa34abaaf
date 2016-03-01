@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_39dd3843",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-01T13:47:28Z",
+      "side": 1,
+      "message": "doesn\u0027t tox dislike this?\ncould you please fix this little nit?",
+      "range": {
+        "startLine": 229,
+        "startChar": 19,
+        "endLine": 229,
+        "endChar": 20
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_99aa8c6f",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-01T13:47:28Z",
+      "side": 1,
+      "message": "looks unrelated to me",
+      "range": {
+        "startLine": 276,
+        "startChar": 8,
+        "endLine": 276,
+        "endChar": 24
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_596ac41b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-01T13:47:28Z",
+      "side": 1,
+      "message": "something seems to be missing here",
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b94e68bf",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-01T13:47:28Z",
+      "side": 1,
+      "message": "i wonder why changes like this were required",
+      "range": {
+        "startLine": 514,
+        "startChar": 46,
+        "endLine": 514,
+        "endChar": 56
+      },
+      "revId": "e6041084ee3bc6a2c884179495ddbd1fa34abaaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
