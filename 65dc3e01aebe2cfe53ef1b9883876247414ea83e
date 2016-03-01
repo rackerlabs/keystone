@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_3b0c0594",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-01T15:37:53Z",
+      "side": 1,
+      "message": "See my previous comment regarding adding a where clause to this select statement",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 45
+      },
+      "revId": "65dc3e01aebe2cfe53ef1b9883876247414ea83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_ea780cfb",
         "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
         "patchSetId": 10
