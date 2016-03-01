@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_f354c6ca",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-01T10:17:16Z",
+      "side": 1,
+      "message": "else return an explicit False, as we do in \"def domain_scoped\" below",
+      "revId": "44833d1cbad7e942f8eff3c2942be475450304ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
