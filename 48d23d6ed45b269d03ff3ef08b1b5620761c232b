@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_6cec00c8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T20:12:41Z",
+      "side": 1,
+      "message": "The commit message says that this change isn\u0027t Fernet-specific. This test should live in TokenAPITests: \n\nhttps://github.com/openstack/keystone/blob/f39ac2e8a8026c54c085235eea4c9e0aa3d6f6c5/keystone/tests/unit/test_v3_auth.py#L122\n\nIt will be run against the Fernet provider here: \n\nhttps://github.com/openstack/keystone/blob/f39ac2e8a8026c54c085235eea4c9e0aa3d6f6c5/keystone/tests/unit/test_v3_auth.py#L948-L949",
+      "revId": "48d23d6ed45b269d03ff3ef08b1b5620761c232b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
