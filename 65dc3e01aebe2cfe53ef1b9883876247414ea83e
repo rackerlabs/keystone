@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_ea780cfb",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T14:53:24Z",
+      "side": 1,
+      "message": "change to \"rows that already exist\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 15,
+        "endLine": 29,
+        "endChar": 42
+      },
+      "revId": "65dc3e01aebe2cfe53ef1b9883876247414ea83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_ca7d50e9",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T14:53:24Z",
+      "side": 1,
+      "message": "change to \"there is\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 20,
+        "endLine": 30,
+        "endChar": 28
+      },
+      "revId": "65dc3e01aebe2cfe53ef1b9883876247414ea83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_8ad8681f",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T14:53:24Z",
+      "side": 1,
+      "message": "this is unnecessarily complicated. To check if an entry exists just select id where id \u003d \u0027whatever\u0027 and see if there\u0027s a row returned. There should be a function to check if the user already exists in the table to make the code more readable.",
+      "revId": "65dc3e01aebe2cfe53ef1b9883876247414ea83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_0aed788b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T14:53:24Z",
+      "side": 1,
+      "message": "these tests shouldn\u0027t be using new_user_ref since that creates dicts that work for the controller/manager/backend. new_user_ref is not meant to create dicts that work for database insertion.",
+      "revId": "65dc3e01aebe2cfe53ef1b9883876247414ea83e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
