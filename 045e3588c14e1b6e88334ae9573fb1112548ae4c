@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_f8b60a3c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:16:47Z",
+      "side": 1,
+      "message": "++ maybe logging configuration?",
+      "parentUuid": "9aed3d3a_eceaadab",
+      "revId": "045e3588c14e1b6e88334ae9573fb1112548ae4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8392d99d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
