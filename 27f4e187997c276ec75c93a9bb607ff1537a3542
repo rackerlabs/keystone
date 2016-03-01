@@ -34,6 +34,24 @@
       "revId": "27f4e187997c276ec75c93a9bb607ff1537a3542",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_18bf76fc",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:19:16Z",
+      "side": 1,
+      "message": "++ suggest rewording, possibly like:\n\n    The instructions recommend that you have installed Keystone into\n    a virtualenv.\n\nOr even: \n\n    It is recommended...",
+      "parentUuid": "9aed3d3a_5636cd52",
+      "revId": "27f4e187997c276ec75c93a9bb607ff1537a3542",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
