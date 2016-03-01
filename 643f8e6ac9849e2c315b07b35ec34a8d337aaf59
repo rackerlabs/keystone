@@ -16,6 +16,23 @@
       "revId": "643f8e6ac9849e2c315b07b35ec34a8d337aaf59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b3aca3ee",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:35:03Z",
+      "side": 1,
+      "message": "This was also setup by oslotest, right?",
+      "revId": "643f8e6ac9849e2c315b07b35ec34a8d337aaf59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
