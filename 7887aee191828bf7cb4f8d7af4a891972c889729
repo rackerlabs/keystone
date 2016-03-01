@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_5888de22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "nit: add a space between . and In.",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_9899c671",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "Identity*",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_d8a34e9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "nit: add a space after the comma.",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_f84baaae",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "These could all be simplified into a single loop:\n\n    for invalid_name in [True, 24, \u0027 \u0027]:\n        request_to_validate \u003d {\u0027name\u0027: invalid_name}\n        self.assertRaises(exception.SchemaValidationError,\n                          self.create_project_validator.validate,\n                          request_to_validate)",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_18abf61e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "Since these values are used multiple times we should store them in a variable instead of redefining them every time.\n\n     _INVALID_NAMES \u003d [True, 24, \u0027 \u0027]",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_389a3215",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "same comments here as above.",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b88642b7",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:32:01Z",
+      "side": 1,
+      "message": "same comments here as above.",
+      "revId": "7887aee191828bf7cb4f8d7af4a891972c889729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
