@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_c22246b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_12792efd",
+      "range": {
+        "startLine": 9,
+        "startChar": 22,
+        "endLine": 9,
+        "endChar": 30
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_92db7eed",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-01T15:18:55Z",
       "side": 1,
       "message": "remove particularly",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 74
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_22304a01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_92db7eed",
       "range": {
         "startLine": 10,
         "startChar": 62,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_62189285",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_b24b1ab0",
+      "range": {
+        "startLine": 13,
+        "startChar": 26,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_529f3603",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
@@ -82,6 +154,24 @@
       "writtenOn": "2016-03-01T15:18:55Z",
       "side": 1,
       "message": "tokens aren\u0027t removed from the token backend when using uuid, they\u0027re marked as invalid. tokens are only removed from the backend when cleaning up expired tokens through keystone-manage token_flush",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c53ed0b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_529f3603",
       "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_2277aa3b",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "I don\u0027t think we can do that because expected_status is for validate error response only. Its not part of the request itself. Otherwise, we would have to pop it before passing kwargs down to request().",
+      "parentUuid": "7af24918_b51ae46c",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_95dd2873",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 9
@@ -116,6 +224,24 @@
       "writtenOn": "2016-03-01T15:18:55Z",
       "side": 1,
       "message": "this test change is showing that this change is changing the behavior of the keystone server in a non-backwards compatible way, which is not allowed by OpenStack API stability guidelines.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a59f4402",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "isn\u0027t correcting error code still allow? I am not clear on that one.",
+      "parentUuid": "7af24918_95dd2873",
       "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -219,6 +345,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_e8c48393",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like it. See\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L552",
+      "parentUuid": "9aed3d3a_f992edf4",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 12
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_799edd07",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
@@ -230,6 +380,30 @@
       "writtenOn": "2016-03-01T08:32:00Z",
       "side": 1,
       "message": "validate_vX_token is already done here\n\nedit -- oh, i think we do this because of the tests? that\u0027s not ideal...",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 63
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c86f0791",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-01T18:18:55Z",
+      "side": 1,
+      "message": "I agreed. This stuff needs more refactoring. In fact, we need to refactor the entire token backend. Newton release perhaps?",
+      "parentUuid": "9aed3d3a_799edd07",
       "range": {
         "startLine": 308,
         "startChar": 0,
