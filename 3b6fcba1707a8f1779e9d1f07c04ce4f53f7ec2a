@@ -2,6 +2,177 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_12792efd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "validated",
+      "range": {
+        "startLine": 9,
+        "startChar": 22,
+        "endLine": 9,
+        "endChar": 30
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_92db7eed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "remove particularly",
+      "range": {
+        "startLine": 10,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 74
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b24b1ab0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "in the backend",
+      "range": {
+        "startLine": 13,
+        "startChar": 26,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_529f3603",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "tokens aren\u0027t removed from the token backend when using uuid, they\u0027re marked as invalid. tokens are only removed from the backend when cleaning up expired tokens through keystone-manage token_flush",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b51ae46c",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "expected_status should be added to the function arguments.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_95dd2873",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "this test change is showing that this change is changing the behavior of the keystone server in a non-backwards compatible way, which is not allowed by OpenStack API stability guidelines.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b569448e",
+        "filename": "keystone/tests/unit/test_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "this argument isn\u0027t used so it doesn\u0027t matter what\u0027s passed in and it\u0027s going to be confusing for users.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_55828001",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "adding an argument that\u0027s ignored is going to be confusing since test writers and reviewers will assume that the function actually validates that the status is as expected and we\u0027ll wind up with bugs.\n\nThis applies to all these changes to assertValidErrorResponse.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_f5c0ece2",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T15:18:55Z",
+      "side": 1,
+      "message": "this can\u0027t change without breaking our API stability guarantees. this applies to all these changes.",
+      "revId": "3b6fcba1707a8f1779e9d1f07c04ce4f53f7ec2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_39bf3562",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
