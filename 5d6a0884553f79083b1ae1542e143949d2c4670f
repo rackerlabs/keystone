@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_c1ad2e8a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-01T16:17:07Z",
+      "side": 0,
+      "message": "this test should be changed to use the project interface to accomplish the same validation.\n\notherwise, explain in the commit message why keystone doesn\u0027t need to support this anymore.",
+      "revId": "5d6a0884553f79083b1ae1542e143949d2c4670f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
