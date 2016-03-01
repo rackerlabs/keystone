@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_7cd6d528",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-01T03:51:10Z",
+      "side": 1,
+      "message": "why did these change?\n\nedit -- ah, they were \u0027public\u0027 by default in new_endpoint_ref..",
+      "revId": "ea6559b9d47903944b552b871d3243bdff17ad17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
