@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_ce3a64cd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:52:24Z",
+      "side": 1,
+      "message": "This seems strange to have a separate call in the manager that is specific to emitting notifications. We don\u0027t have this pattern anywhere else do we?",
+      "revId": "0e4e5656535d73973230719adb0e5aebc49e52c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
