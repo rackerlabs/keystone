@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_53d0bf53",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-01T21:38:05Z",
+      "side": 1,
+      "message": "nit: most IDs issued by keystone look like this.",
+      "revId": "2e9beba414b1cdb06bb94f5a236aaf63678eabf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_58ae8ae6",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 1
