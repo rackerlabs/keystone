@@ -26,9 +26,6 @@ consumer_create = {
 consumer_update = {
     'type': 'object',
     'properties': _consumer_properties,
-    'not': {
-        'required': ['secret']
-    },
     'minProperties': 1,
     'additionalProperties': True
 }
