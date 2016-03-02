@@ -630,6 +630,7 @@ class RoutersBase(object):
 
     def __init__(self):
         self.v3_resources = []
+        self.v3_paths = []
 
     def append_v3_routers(self, mapper, routers):
         """Append v3 routers.
@@ -645,38 +646,138 @@ class RoutersBase(object):
                       delete_action=None, get_post_action=None,
                       path_vars=None, status=json_home.Status.STABLE,
                       new_path=None):
+
+        pathitem = {
+        }
+
         if get_head_action:
             getattr(controller, get_head_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_head_action,
                            conditions=dict(method=['GET', 'HEAD']))
+
+            pathitem['get'] = {
+                'summary': 'TODO GET %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+            pathitem['head'] = {
+                'summary': 'TODO HEAD %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if get_action:
             getattr(controller, get_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_action,
                            conditions=dict(method=['GET']))
+
+            pathitem['get'] = {
+                'summary': 'TODO GET %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if head_action:
             getattr(controller, head_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=head_action,
                            conditions=dict(method=['HEAD']))
+
+            pathitem['head'] = {
+                'summary': 'TODO HEAD %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if put_action:
             getattr(controller, put_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=put_action,
                            conditions=dict(method=['PUT']))
+
+            pathitem['put'] = {
+                'summary': 'TODO PUT %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if post_action:
             getattr(controller, post_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=post_action,
                            conditions=dict(method=['POST']))
+
+            pathitem['post'] = {
+                'summary': 'TODO POST %s' % path,
+                'responses': {
+                    '201': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if patch_action:
             getattr(controller, patch_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=patch_action,
                            conditions=dict(method=['PATCH']))
+
+            pathitem['patch'] = {
+                'summary': 'TODO PATCH %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if delete_action:
             getattr(controller, delete_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=delete_action,
                            conditions=dict(method=['DELETE']))
+
+            pathitem['delete'] = {
+                'summary': 'TODO DELETE %s' % path,
+                'responses': {
+                    '204': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
         if get_post_action:
             getattr(controller, get_post_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_post_action,
                            conditions=dict(method=['GET', 'POST']))
+
+            pathitem['get'] = {
+                'summary': 'TODO GET %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
+
+            pathitem['post'] = {
+                'summary': 'TODO POST %s' % path,
+                'responses': {
+                    '200': {
+                        'description': 'TODO %s' % path,
+                    }
+                },
+            }
 
         resource_data = dict()
 
@@ -690,12 +791,27 @@ class RoutersBase(object):
 
         self.v3_resources.append((rel, resource_data))
 
+        # Swagger
+        if path_vars:
+            parameters = []
+            for var in path_vars:
+                parameters.append({
+                    'name': var,
+                    'in': 'path',
+                    'type': 'string',
+                    'required': True,
+                })
+            pathitem['parameters'] = parameters
+
+        self.v3_paths.append(('/v3%s' % path, pathitem))
+
 
 class V3ExtensionRouter(ExtensionRouter, RoutersBase):
     """Base class for V3 extension router."""
 
     def __init__(self, application, mapper=None):
         self.v3_resources = list()
+        self.v3_paths = list()
         super(V3ExtensionRouter, self).__init__(application, mapper)
 
     def _update_version_response(self, response_data):
