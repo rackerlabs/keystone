@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_ddb01546",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-02T18:52:51Z",
+      "side": 1,
+      "message": "I put it here because I did not see any matching URLs in the assignment file. All of the machinery was in place for the test here.\n\nI can move it if that is the consensus.",
+      "parentUuid": "7af24918_f59c215f",
+      "range": {
+        "startLine": 957,
+        "startChar": 8,
+        "endLine": 957,
+        "endChar": 38
+      },
+      "revId": "32ca58c9786d481cc21a7481d55730dea42b3f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b563b940",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-02T14:24:59Z",
       "side": 1,
       "message": "according to the API spec, this is a key-only query param: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#list-user-projects - I guess we have a bug in the spec?",
+      "range": {
+        "startLine": 968,
+        "startChar": 34,
+        "endLine": 968,
+        "endChar": 47
+      },
+      "revId": "32ca58c9786d481cc21a7481d55730dea42b3f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_5d836556",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-02T18:52:51Z",
+      "side": 1,
+      "message": "My bad, I misread it.",
+      "parentUuid": "7af24918_b563b940",
       "range": {
         "startLine": 968,
         "startChar": 34,
