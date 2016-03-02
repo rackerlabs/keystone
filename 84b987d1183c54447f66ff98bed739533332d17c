@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_abd6dcc2",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-02T04:16:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_d57a6187",
+      "revId": "84b987d1183c54447f66ff98bed739533332d17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_75dd55df",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-29T23:09:58Z",
       "side": 1,
       "message": "this should be moved down to line 423.",
+      "revId": "84b987d1183c54447f66ff98bed739533332d17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c1f34709",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-02T04:16:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_75dd55df",
       "revId": "84b987d1183c54447f66ff98bed739533332d17c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_61eeb323",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-02T04:16:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_5553f16a",
+      "revId": "84b987d1183c54447f66ff98bed739533332d17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_f59685ee",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
@@ -64,6 +118,30 @@
       "writtenOn": "2016-02-29T23:09:58Z",
       "side": 1,
       "message": "this should be moved into the \"if revoke_chain\" block since it\u0027s not used otherwise.",
+      "range": {
+        "startLine": 413,
+        "startChar": 0,
+        "endLine": 416,
+        "endChar": 43
+      },
+      "revId": "84b987d1183c54447f66ff98bed739533332d17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_2b912cf1",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-02T04:16:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aed3d3a_f59685ee",
       "range": {
         "startLine": 413,
         "startChar": 0,

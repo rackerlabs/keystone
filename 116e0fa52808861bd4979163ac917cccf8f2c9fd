@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_81d01f55",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-02T04:16:44Z",
+      "side": 0,
+      "message": "Done... sorta... i end up just basically calling revok_by_audit_chain_id and it\u0027s over",
+      "parentUuid": "9aed3d3a_d5ef011c",
+      "revId": "116e0fa52808861bd4979163ac917cccf8f2c9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a5ae5dd_75c3f8ed",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 9
