@@ -18,6 +18,7 @@ import functools
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.trust import controllers
+from keystone.trust import schema
 
 
 _build_resource_relation = functools.partial(
@@ -38,7 +39,9 @@ class Routers(wsgi.RoutersBase):
             path='/OS-TRUST/trusts',
             get_action='list_trusts',
             post_action='create_trust',
-            rel=_build_resource_relation(resource_name='trusts'))
+            rel=_build_resource_relation(resource_name='trusts'),
+            tags=['trusts'],
+            post_schema=('trust', schema.trust_create))
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}',
@@ -47,7 +50,8 @@ class Routers(wsgi.RoutersBase):
             rel=_build_resource_relation(resource_name='trust'),
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['trusts'])
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles',
@@ -55,7 +59,8 @@ class Routers(wsgi.RoutersBase):
             rel=_build_resource_relation(resource_name='trust_roles'),
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['trusts'])
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
@@ -64,4 +69,5 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'trust_id': TRUST_ID_PARAMETER_RELATION,
                 'role_id': json_home.Parameters.ROLE_ID,
-            })
+            },
+            tags=['trusts'])

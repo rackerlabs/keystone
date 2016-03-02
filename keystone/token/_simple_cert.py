@@ -61,12 +61,14 @@ class Routers(wsgi.RoutersBase):
             mapper, controller,
             path=self._construct_url('ca'),
             get_action='get_ca_certificate',
-            rel=build_resource_relation(resource_name='ca_certificate'))
+            rel=build_resource_relation(resource_name='ca_certificate'),
+            tags=['simple_cert'])
         self._add_resource(
             mapper, controller,
             path=self._construct_url('certificates'),
             get_action='list_certificates',
-            rel=build_resource_relation(resource_name='certificates'))
+            rel=build_resource_relation(resource_name='certificates'),
+            tags=['simple_cert'])
 
 
 @dependency.requires('token_provider_api')
