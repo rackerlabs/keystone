@@ -24,6 +24,7 @@ from keystone.assignment import routers as assignment_routers
 from keystone.auth import routers as auth_routers
 from keystone.catalog import routers as catalog_routers
 from keystone.common import wsgi
+from keystone.common import swagger
 from keystone.credential import routers as credential_routers
 from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
@@ -152,10 +153,11 @@ def v3_app_factory(global_conf, **local_conf):
         all_api_routers.append(endpoint_policy_routers)
 
     for api_routers in all_api_routers:
-        routers_instance = api_routers.Routers()
+        routers_instance = api_routers.Routers(swagger.SWAGGER_DOC)
         _routers.append(routers_instance)
         routers_instance.append_v3_routers(mapper, sub_routers)
 
     # Add in the v3 version api
-    sub_routers.append(routers.VersionV3('public', _routers))
+    sub_routers.append(routers.VersionV3('public', _routers,
+                                         swagger.SWAGGER_DOC))
     return wsgi.ComposingRouter(mapper, sub_routers)

@@ -14,6 +14,7 @@
 
 from oslo_serialization import jsonutils
 import webob
+import yaml
 
 from keystone.common import extension
 from keystone.common import json_home
@@ -88,6 +89,7 @@ def register_version(version):
 class MimeTypes(object):
     JSON = 'application/json'
     JSON_HOME = 'application/json-home'
+    SWAGGER = 'application/swagger'
 
 
 def v3_mime_type_best_match(context):
@@ -98,15 +100,16 @@ def v3_mime_type_best_match(context):
     if not accept_header:
         return MimeTypes.JSON
 
-    SUPPORTED_TYPES = [MimeTypes.JSON, MimeTypes.JSON_HOME]
+    SUPPORTED_TYPES = [MimeTypes.JSON, MimeTypes.JSON_HOME, MimeTypes.SWAGGER]
     return accept_header.best_match(SUPPORTED_TYPES)
 
 
 class Version(wsgi.Application):
 
-    def __init__(self, version_type, routers=None):
+    def __init__(self, version_type, routers=None, swagger_doc=None):
         self.endpoint_url_type = version_type
         self._routers = routers
+        self._swagger_doc = swagger_doc
 
         super(Version, self).__init__()
 
@@ -207,6 +210,17 @@ class Version(wsgi.Application):
                 return wsgi.render_response(
                     body=self._get_json_home_v3(),
                     headers=(('Content-Type', MimeTypes.JSON_HOME),))
+
+            if req_mime_type == MimeTypes.SWAGGER:
+                swagger = yaml.dump(
+                    dict(self._swagger_doc),
+                    default_flow_style=False)
+
+                # swagger = jsonutils.dumps(self._get_swagger_v3())
+
+                return wsgi.render_response(
+                    body=swagger,
+                    headers=(('Content-Type', MimeTypes.SWAGGER),))
 
             return wsgi.render_response(body={
                 'version': versions['v3']

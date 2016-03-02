@@ -20,13 +20,15 @@ class Router(wsgi.ComposableRouter):
     def __init__(self, controller, collection_key, key,
                  resource_descriptions=None,
                  is_entity_implemented=True,
-                 method_template=None):
+                 method_template=None,
+                 swagger_doc=None):
         self.controller = controller
         self.key = key
         self.collection_key = collection_key
         self._resource_descriptions = resource_descriptions
         self._is_entity_implemented = is_entity_implemented
         self.method_template = method_template or '%s'
+        self._swagger_doc = swagger_doc
 
     def add_routes(self, mapper):
         collection_path = '/%(collection_key)s' % {
@@ -80,3 +82,61 @@ class Router(wsgi.ComposableRouter):
                 },
             }
             self._resource_descriptions.append((entity_rel, entity_rel_data))
+
+        # SWAGGER
+        if self._swagger_doc is not None:
+            collection_pathitem = {
+                'get': {
+                    'summary': 'List %s' % self.collection_key,
+                    'responses': {
+                        '200': {
+                            'description': 'List of %s' % self.collection_key,
+                        },
+                    },
+                    'tags': [self.collection_key],
+                },
+                'post': {
+                    'summary': 'Create %s' % self.key,
+                    'responses': {
+                        '201': {
+                            'description': 'Details for %s' % self.key,
+                        },
+                    },
+                    'tags': [self.collection_key],
+                },
+            }
+            self._swagger_doc.register_path('/v3%s' % collection_path,
+                                            collection_pathitem)
+
+            if self._is_entity_implemented:
+                path_parameters = [{
+                    'name': '%s_id' % self.key,
+                    'in': 'path',
+                    'type': 'string',
+                    'required': True,
+                }]
+
+                entity_pathitem = {
+                    'parameters': path_parameters,
+                    'get': {
+                        'summary': 'Details for %s' % self.key,
+                        'responses': {
+                            '200': {
+                                'description': 'Details for %s' % self.key,
+                            }
+                        },
+                        'tags': [self.collection_key],
+                    },
+                    'patch': {
+                        'summary': 'Update %s' % self.key,
+                        'responses': {
+                            '200': {
+                                'description': 'Details for %s' % self.key,
+                            },
+                        },
+                        'tags': [self.collection_key],
+                    },
+                }
+
+                self._swagger_doc.register_path('/v3%s' % entity_path,
+                                                entity_pathitem)
