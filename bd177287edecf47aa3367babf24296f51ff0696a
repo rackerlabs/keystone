@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_64869766",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T16:23:05Z",
+      "side": 1,
+      "message": "this also needs to be called from an entry point like:\n\nhttps://review.openstack.org/#/c/285308/5/setup.cfg\n\nBut for osprofiler",
+      "revId": "bd177287edecf47aa3367babf24296f51ff0696a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_64d4d746",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T16:23:05Z",
+      "side": 1,
+      "message": "Nope, don\u0027t do this here. Make sure to add osprofiler to the config generator.conf",
+      "revId": "bd177287edecf47aa3367babf24296f51ff0696a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_beff2300",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 36
@@ -13,6 +47,24 @@
       "writtenOn": "2016-03-02T12:29:53Z",
       "side": 1,
       "message": "it\u0027s a wrong approach, need to fix it",
+      "revId": "bd177287edecf47aa3367babf24296f51ff0696a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c1131d65",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T16:23:05Z",
+      "side": 1,
+      "message": "++ otherwise looking close",
+      "parentUuid": "7af24918_beff2300",
       "revId": "bd177287edecf47aa3367babf24296f51ff0696a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
