@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_d14aebab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-02T09:56:32Z",
+      "side": 1,
+      "message": "which test is removed?",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b14c7f43",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-02T09:56:32Z",
+      "side": 1,
+      "message": "this can be removed.",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_51109ba8",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-02T09:56:32Z",
+      "side": 1,
+      "message": "comment should say it\u0027s unicode string to differentiate with L53.",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 34
+      },
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
