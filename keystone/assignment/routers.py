@@ -72,7 +72,8 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.RoleV3(), 'roles', 'role',
                           resource_descriptions=self.v3_resources,
-                          method_template='%s_wrapper'))
+                          method_template='%s_wrapper',
+                          path_descriptions=self.v3_paths))
 
         implied_roles_controller = controllers.ImpliedRolesV3()
         self._add_resource(

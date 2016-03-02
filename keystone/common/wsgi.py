@@ -630,6 +630,7 @@ class RoutersBase(object):
 
     def __init__(self):
         self.v3_resources = []
+        self.v3_paths = []
 
     def append_v3_routers(self, mapper, routers):
         """Append v3 routers.
@@ -690,12 +691,15 @@ class RoutersBase(object):
 
         self.v3_resources.append((rel, resource_data))
 
+        self.v3_paths.append(('/v3%s' % path, {}))
+
 
 class V3ExtensionRouter(ExtensionRouter, RoutersBase):
     """Base class for V3 extension router."""
 
     def __init__(self, application, mapper=None):
         self.v3_resources = list()
+        self.v3_paths = list()
         super(V3ExtensionRouter, self).__init__(application, mapper)
 
     def _update_version_response(self, response_data):
