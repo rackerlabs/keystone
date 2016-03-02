@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_b4fa7873",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-02T22:18:00Z",
+      "side": 0,
+      "message": "this test should be changed to revoke a token by audit_id since there isn\u0027t one in this class.",
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
