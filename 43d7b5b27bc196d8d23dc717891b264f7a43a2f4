@@ -16,6 +16,23 @@
       "revId": "43d7b5b27bc196d8d23dc717891b264f7a43a2f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_4b03a30d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T17:34:24Z",
+      "side": 1,
+      "message": "This... doesn\u0027t affect *any* unit test except this one and it\u0027s mocked.",
+      "revId": "43d7b5b27bc196d8d23dc717891b264f7a43a2f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
