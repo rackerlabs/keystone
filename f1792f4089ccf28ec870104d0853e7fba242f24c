@@ -100,6 +100,24 @@
       "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_88075b17",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T23:23:19Z",
+      "side": 1,
+      "message": "I pushed this through, we can address specific followup on this line as a followup since this doesn\u0027t look to be duplicatable.",
+      "parentUuid": "7af24918_a51c0b14",
+      "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
