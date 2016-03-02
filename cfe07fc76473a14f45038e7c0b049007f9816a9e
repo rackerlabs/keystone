@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_6a3de7ba",
+        "filename": "keystone/tests/common/auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-02T07:07:54Z",
+      "side": 1,
+      "message": "Since we are running in multi-process mode, this is fine, but be aware that this is not always the correct way to do things in threaded Py3, this is not an atomic operation:\n\nhttp://blog.labix.org/2008/06/27/watch-out-for-listdictkeys-in-python-3\n\nJust be aware if we\u0027re trying to handle threaded cases in the future.",
+      "revId": "cfe07fc76473a14f45038e7c0b049007f9816a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
