@@ -59,6 +59,8 @@ class Ec2Extension(wsgi.ExtensionRouter):
 
 class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
 
+    tags = ['ec2']
+
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
         # validation

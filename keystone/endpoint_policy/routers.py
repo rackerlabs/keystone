@@ -27,6 +27,7 @@ build_resource_relation = functools.partial(
 class Routers(wsgi.RoutersBase):
 
     PATH_PREFIX = '/OS-ENDPOINT-POLICY'
+    tags = ['endpoint_policy']
 
     def append_v3_routers(self, mapper, routers):
         endpoint_policy_controller = controllers.EndpointPolicyV3Controller()
