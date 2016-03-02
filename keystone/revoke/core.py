@@ -185,6 +185,8 @@ class Manager(manager.Manager):
                                              domain_id=domain_id,
                                              project_id=project_id))
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.MITAKA,
+                             remove_in=0)
     def revoke_by_grant(self, role_id, user_id=None,
                         domain_id=None, project_id=None):
         self.revoke(
@@ -193,14 +195,20 @@ class Manager(manager.Manager):
                                      domain_id=domain_id,
                                      project_id=project_id))
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.MITAKA,
+                             remove_in=0)
     def revoke_by_user_and_project(self, user_id, project_id):
         self.revoke(
             revoke_model.RevokeEvent(project_id=project_id, user_id=user_id))
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.MITAKA,
+                             remove_in=0)
     def revoke_by_project_role_assignment(self, project_id, role_id):
         self.revoke(revoke_model.RevokeEvent(project_id=project_id,
                                              role_id=role_id))
 
+    @versionutils.deprecated(as_of=versionutils.deprecated.MITAKA,
+                             remove_in=0)
     def revoke_by_domain_role_assignment(self, domain_id, role_id):
         self.revoke(revoke_model.RevokeEvent(domain_id=domain_id,
                                              role_id=role_id))
