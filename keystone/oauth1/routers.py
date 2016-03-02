@@ -17,6 +17,7 @@ import functools
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.oauth1 import controllers
+from keystone.oauth1 import schema
 
 
 build_resource_relation = functools.partial(
@@ -63,6 +64,9 @@ class Routers(wsgi.RoutersBase):
 
     """
 
+    tags = ['oauth1']
+    key = 'consumer'
+
     def append_v3_routers(self, mapper, routers):
         consumer_controller = controllers.ConsumerCrudV3()
         access_token_controller = controllers.AccessTokenCrudV3()
@@ -75,7 +79,8 @@ class Routers(wsgi.RoutersBase):
             path='/OS-OAUTH1/consumers',
             get_action='list_consumers',
             post_action='create_consumer',
-            rel=build_resource_relation(resource_name='consumers'))
+            rel=build_resource_relation(resource_name='consumers'),
+            post_schema=schema.consumer_create)
         self._add_resource(
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers/{consumer_id}',
@@ -86,7 +91,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'consumer_id':
                 build_parameter_relation(parameter_name='consumer_id'),
-            })
+            },
+            patch_schema=schema.consumer_update)
 
         # user access token crud
         self._add_resource(

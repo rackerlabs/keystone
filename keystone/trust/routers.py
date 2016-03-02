@@ -18,6 +18,7 @@ import functools
 from keystone.common import json_home
 from keystone.common import wsgi
 from keystone.trust import controllers
+from keystone.trust import schema
 
 
 _build_resource_relation = functools.partial(
@@ -30,6 +31,9 @@ TRUST_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
 
 class Routers(wsgi.RoutersBase):
 
+    tags = ['trusts']
+    key = 'trust'
+
     def append_v3_routers(self, mapper, routers):
         trust_controller = controllers.TrustV3()
 
@@ -38,7 +42,8 @@ class Routers(wsgi.RoutersBase):
             path='/OS-TRUST/trusts',
             get_action='list_trusts',
             post_action='create_trust',
-            rel=_build_resource_relation(resource_name='trusts'))
+            rel=_build_resource_relation(resource_name='trusts'),
+            post_schema=schema.trust_create)
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}',
