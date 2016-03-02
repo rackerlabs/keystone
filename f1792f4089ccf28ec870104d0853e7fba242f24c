@@ -64,6 +64,24 @@
       "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c6584b35",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-02T17:20:02Z",
+      "side": 1,
+      "message": "AFAICT, v3 validate token does not go through this code path. See\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L552\n\nLooking at the code, it seems only token revoke and v2 token auth is using this code path.\n\nDave, for your test, please make sure you are using two separate accounts. For example, make sure your X-Auth-Token and X-Subject-Token are not from the same user and same scope. Otherwise, you\u0027ll get a 401 for your X-Auth-Token first.",
+      "parentUuid": "7af24918_c37208ad",
+      "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
