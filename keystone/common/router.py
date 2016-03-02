@@ -20,13 +20,15 @@ class Router(wsgi.ComposableRouter):
     def __init__(self, controller, collection_key, key,
                  resource_descriptions=None,
                  is_entity_implemented=True,
-                 method_template=None):
+                 method_template=None,
+                 path_descriptions=None):
         self.controller = controller
         self.key = key
         self.collection_key = collection_key
         self._resource_descriptions = resource_descriptions
         self._is_entity_implemented = is_entity_implemented
         self.method_template = method_template or '%s'
+        self._path_descriptions = path_descriptions
 
     def add_routes(self, mapper):
         collection_path = '/%(collection_key)s' % {
@@ -68,6 +70,11 @@ class Router(wsgi.ComposableRouter):
             self.collection_key)
         rel_data = {'href': collection_path, }
         self._resource_descriptions.append((collection_rel, rel_data))
+
+        # FIXME: also set these.
+        if self._path_descriptions is not None:
+            self._path_descriptions.append(('/v3%s' % collection_path, {}))
+            self._path_descriptions.append(('/v3%s' % entity_path, {}))
 
         if self._is_entity_implemented:
             entity_rel = json_home.build_v3_resource_relation(self.key)

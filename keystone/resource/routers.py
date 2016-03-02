@@ -41,7 +41,8 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.DomainV3(),
                           'domains', 'domain',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          path_descriptions=self.v3_paths))
 
         config_controller = controllers.DomainConfigV3()
 

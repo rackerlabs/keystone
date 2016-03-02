@@ -80,7 +80,8 @@ class Routers(wsgi.RoutersBase):
             controllers.ProjectEndpointGroupV3Controller())
         routers.append(router.Router(regions_controller,
                                      'regions', 'region',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     path_descriptions=self.v3_paths))
 
         # Need to add an additional route to support PUT /regions/{region_id}
         mapper.connect(
@@ -91,10 +92,12 @@ class Routers(wsgi.RoutersBase):
 
         routers.append(router.Router(controllers.ServiceV3(),
                                      'services', 'service',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     path_descriptions=self.v3_paths))
         routers.append(router.Router(controllers.EndpointV3(),
                                      'endpoints', 'endpoint',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     path_descriptions=self.v3_paths))
 
         self._add_resource(
             mapper, endpoint_filter_controller,

@@ -14,6 +14,7 @@
 
 from oslo_serialization import jsonutils
 import webob
+import yaml
 
 from keystone.common import extension
 from keystone.common import json_home
@@ -88,6 +89,7 @@ def register_version(version):
 class MimeTypes(object):
     JSON = 'application/json'
     JSON_HOME = 'application/json-home'
+    SWAGGER = 'application/swagger'
 
 
 def v3_mime_type_best_match(context):
@@ -98,7 +100,7 @@ def v3_mime_type_best_match(context):
     if not accept_header:
         return MimeTypes.JSON
 
-    SUPPORTED_TYPES = [MimeTypes.JSON, MimeTypes.JSON_HOME]
+    SUPPORTED_TYPES = [MimeTypes.JSON, MimeTypes.JSON_HOME, MimeTypes.SWAGGER]
     return accept_header.best_match(SUPPORTED_TYPES)
 
 
@@ -171,6 +173,13 @@ class Version(wsgi.Application):
                 body=v3_json_home,
                 headers=(('Content-Type', MimeTypes.JSON_HOME),))
 
+        if req_mime_type == MimeTypes.SWAGGER:
+            swagger_doc = {'swagger': '2.0'}
+            swagger = yaml.dump(swagger_doc, default_flow_style=False)
+            return wsgi.render_response(
+                body=swagger,
+                headers=(('Content-Type', MimeTypes.SWAGGER),))
+
         versions = self._get_versions_list(context)
         return wsgi.render_response(status=(300, 'Multiple Choices'), body={
             'versions': {
@@ -198,6 +207,23 @@ class Version(wsgi.Application):
             'resources': dict(all_resources())
         }
 
+    def _get_swagger_v3(self):
+        def all_paths():
+            for router in self._routers:
+                for path in router.v3_paths:
+                    yield path
+
+        swagger_doc = {
+            'swagger': '2.0',
+            'info': {
+                'title': 'OpenStack Identity API V3',
+                'version': '3.6',
+            },
+            'paths': dict(all_paths())
+        }
+
+        return swagger_doc
+
     def get_version_v3(self, context):
         versions = self._get_versions_list(context)
         if 'v3' in _VERSIONS:
@@ -207,6 +233,14 @@ class Version(wsgi.Application):
                 return wsgi.render_response(
                     body=self._get_json_home_v3(),
                     headers=(('Content-Type', MimeTypes.JSON_HOME),))
+
+            if req_mime_type == MimeTypes.SWAGGER:
+                swagger = yaml.dump(
+                    self._get_swagger_v3(),
+                    default_flow_style=False)
+                return wsgi.render_response(
+                    body=swagger,
+                    headers=(('Content-Type', MimeTypes.SWAGGER),))
 
             return wsgi.render_response(body={
                 'version': versions['v3']
