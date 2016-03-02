@@ -13,8 +13,10 @@
 import functools
 
 from keystone.common import json_home
+from keystone.common import swagger
 from keystone.common import wsgi
 from keystone.federation import controllers
+from keystone.federation import schema
 
 
 build_resource_relation = functools.partial(
@@ -68,7 +70,7 @@ class Routers(wsgi.RoutersBase):
         DELETE /OS-FEDERATION/service_providers/{sp_id}
         PATCH /OS-FEDERATION/service_providers/{sp_id}
 
-        GET /OS-FEDERATION/identity_providers/{idp_id}/
+        GET /OS-FEDERATION/identity_providers/{idp_id}
             protocols/{protocol_id}/auth
         POST /OS-FEDERATION/identity_providers/{idp_id}/
             protocols/{protocol_id}/auth
@@ -91,6 +93,8 @@ class Routers(wsgi.RoutersBase):
              ?origin=https%3A//horizon.example.com
 
     """
+
+    tags = ['federation']
 
     def _construct_url(self, suffix):
         return "/OS-FEDERATION/%s" % suffix
@@ -117,7 +121,11 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='identity_provider'),
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
-            })
+            },
+            key='identity_provider',
+            put_schema=schema.identity_provider_create,
+            patch_schema=schema.identity_provider_update
+        )
         self._add_resource(
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
@@ -139,7 +147,10 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            key='protocol',
+            put_schema=schema.federation_protocol_schema,
+            patch_schema=schema.federation_protocol_schema)
         self._add_resource(
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols'),
@@ -182,7 +193,10 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='service_provider'),
             path_vars={
                 'sp_id': SP_ID_PARAMETER_RELATION,
-            })
+            },
+            key='service_provider',
+            put_schema=schema.service_provider_create,
+            patch_schema=schema.service_provider_update)
 
         self._add_resource(
             mapper, sp_controller,
@@ -190,20 +204,32 @@ class Routers(wsgi.RoutersBase):
             get_action='list_service_providers',
             rel=build_resource_relation(resource_name='service_providers'))
 
+        operation_object = swagger.OperationObject(
+            'Get authorized domains', tags=['auth', 'federation'])
+        operation_object.responses['200'] = (
+            swagger.ResponseObject('List of domains'))
         self._add_resource(
             mapper, domain_controller,
             path=self._construct_url('domains'),
             new_path='/auth/domains',
             get_action='list_domains_for_groups',
-            rel=build_resource_relation(resource_name='domains'))
+            rel=build_resource_relation(resource_name='domains'),
+            tags=['auth', 'federation'],
+            get_operation=operation_object)
         self._add_resource(
             mapper, project_controller,
             path=self._construct_url('projects'),
             new_path='/auth/projects',
             get_action='list_projects_for_groups',
-            rel=build_resource_relation(resource_name='projects'))
+            rel=build_resource_relation(resource_name='projects'),
+            tags=['auth', 'federation'])
 
         # Auth operations
+        operation_object = swagger.OperationObject(
+            'Authenticate from dedicated URL endpoint',
+            tags=['auth', 'federation'])
+        operation_object.responses['200'] = (
+            swagger.ResponseObject('Token data'))
         self._add_resource(
             mapper, auth_controller,
             path=self._construct_url('identity_providers/{idp_id}/'
@@ -214,17 +240,24 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'],
+            get_operation=operation_object,
+            post_operation=operation_object)
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
-            rel=build_resource_relation(resource_name='saml2'))
+            rel=build_resource_relation(resource_name='saml2'),
+            tags=['auth', 'federation'],
+            key='auth', post_schema=schema.saml_create)
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2/ecp'),
             post_action='create_ecp_assertion',
-            rel=build_resource_relation(resource_name='ecp'))
+            rel=build_resource_relation(resource_name='ecp'),
+            tags=['auth', 'federation'],
+            key='auth', post_schema=schema.saml_create)
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('websso/{protocol_id}'),
@@ -232,7 +265,8 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='websso'),
             path_vars={
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url(
@@ -242,7 +276,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'])
 
         # Keystone-Identity-Provider metadata endpoint
         self._add_resource(

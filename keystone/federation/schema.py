@@ -33,7 +33,10 @@ saml_create = {
             'properties': {
                 'token': basic_property_id,
                 'methods': {
-                    'type': 'array'
+                    'type': 'array',
+                    'items': {
+                        'type': 'string',
+                    },
                 }
             },
             'required': ['token'],

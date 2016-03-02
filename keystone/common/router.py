@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone.common import json_home
+from keystone.common import swagger
 from keystone.common import wsgi
 
 
@@ -20,13 +21,19 @@ class Router(wsgi.ComposableRouter):
     def __init__(self, controller, collection_key, key,
                  resource_descriptions=None,
                  is_entity_implemented=True,
-                 method_template=None):
+                 method_template=None,
+                 swagger_doc=None,
+                 create_schema=None,
+                 update_schema=None):
         self.controller = controller
         self.key = key
         self.collection_key = collection_key
         self._resource_descriptions = resource_descriptions
         self._is_entity_implemented = is_entity_implemented
         self.method_template = method_template or '%s'
+        self._swagger_doc = swagger_doc
+        self._create_schema = create_schema
+        self._update_schema = update_schema
 
     def add_routes(self, mapper):
         collection_path = '/%(collection_key)s' % {
@@ -80,3 +87,67 @@ class Router(wsgi.ComposableRouter):
                 },
             }
             self._resource_descriptions.append((entity_rel, entity_rel_data))
+
+        # SWAGGER
+
+        def create_schema(key, schema):
+            return {
+                'type': 'object',
+                'properties': {
+                    key: schema
+                },
+                'required': [key]
+            }
+
+        if self._swagger_doc is not None:
+            collection_pathitem = swagger.PathItem()
+
+            collection_pathitem.get = swagger.OperationObject(
+                'List %s' % self.collection_key,
+                tags=[self.collection_key])
+            collection_pathitem.get.responses['200'] = swagger.ResponseObject(
+                'List of %s' % self.collection_key)
+
+            collection_pathitem.post = swagger.OperationObject(
+                'Create %s' % self.key,
+                tags=[self.collection_key])
+            if self._create_schema:
+                collection_pathitem.post['parameters'] = [
+                    swagger.BodyParameter(
+                        name=self.key,
+                        schema=create_schema(self.key, self._create_schema))
+                ]
+            collection_pathitem.post.responses['200'] = swagger.ResponseObject(
+                'Details for %s' % self.key)
+
+            self._swagger_doc.register_path('/v3%s' % collection_path,
+                                            collection_pathitem)
+
+            if self._is_entity_implemented:
+                entity_pathitem = swagger.PathItem()
+                entity_pathitem.parameters = [
+                    swagger.ParameterObject(
+                        name='%s_id' % self.key, in_='path', type_='string')
+                ]
+
+                entity_pathitem.get = swagger.OperationObject(
+                    'Details for %s' % self.key,
+                    tags=[self.collection_key])
+                entity_pathitem.get.responses['200'] = swagger.ResponseObject(
+                    'Details for %s' % self.key)
+
+                entity_pathitem.patch = swagger.OperationObject(
+                    'Update %s' % self.key,
+                    tags=[self.collection_key])
+                if self._update_schema:
+                    entity_pathitem.patch['parameters'] = [
+                        swagger.BodyParameter(
+                            name=self.key,
+                            schema=create_schema(self.key,
+                                                 self._update_schema))
+                    ]
+                entity_pathitem.patch.responses['200'] = (
+                    swagger.ResponseObject('Details for %s' % self.key))
+
+                self._swagger_doc.register_path('/v3%s' % entity_path,
+                                                entity_pathitem)

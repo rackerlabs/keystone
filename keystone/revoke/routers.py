@@ -18,6 +18,7 @@ from keystone.revoke import controllers
 class Routers(wsgi.RoutersBase):
 
     PATH_PREFIX = '/OS-REVOKE'
+    tags = ['revoke']
 
     def append_v3_routers(self, mapper, routers):
         revoke_controller = controllers.RevokeController()

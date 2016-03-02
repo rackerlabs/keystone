@@ -20,6 +20,7 @@ import functools
 from oslo_config import cfg
 
 from keystone.assignment import controllers
+from keystone.assignment import schema
 from keystone.common import json_home
 from keystone.common import router
 from keystone.common import wsgi
@@ -48,14 +49,18 @@ class Admin(wsgi.ComposableRouter):
         mapper.connect('/tenants/{tenant_id}/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET']),
+                       path_parameters=['tenant_id', 'user_id'])
         mapper.connect('/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET']),
+                       path_parameters=['user_id'])
 
 
 class Routers(wsgi.RoutersBase):
+
+    tags = ['role_assignments']
 
     def append_v3_routers(self, mapper, routers):
 
@@ -72,7 +77,10 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.RoleV3(), 'roles', 'role',
                           resource_descriptions=self.v3_resources,
-                          method_template='%s_wrapper'))
+                          method_template='%s_wrapper',
+                          swagger_doc=self.swagger_doc,
+                          create_schema=schema.role_create,
+                          update_schema=schema.role_update))
 
         implied_roles_controller = controllers.ImpliedRolesV3()
         self._add_resource(
@@ -83,7 +91,8 @@ class Routers(wsgi.RoutersBase):
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
                 'prior_role_id': json_home.Parameters.ROLE_ID,
-            }
+            },
+            tags=['roles']
         )
 
         self._add_resource(
@@ -98,7 +107,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'prior_role_id': json_home.Parameters.ROLE_ID,
                 'implied_role_id': json_home.Parameters.ROLE_ID
-            }
+            },
+            tags=['roles']
         )
         self._add_resource(
             mapper, implied_roles_controller,
@@ -106,7 +116,8 @@ class Routers(wsgi.RoutersBase):
             get_action='list_role_inference_rules',
             rel=json_home.build_v3_resource_relation('role_inferences'),
             status=json_home.Status.EXPERIMENTAL,
-            path_vars={}
+            path_vars={},
+            tags=['roles']
         )
 
         grant_controller = controllers.GrantAssignmentV3()
