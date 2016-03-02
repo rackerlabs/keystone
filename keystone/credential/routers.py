@@ -25,4 +25,5 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.CredentialV3(),
                           'credentials', 'credential',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc))
