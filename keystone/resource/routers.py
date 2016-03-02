@@ -19,6 +19,7 @@ from keystone.common import json_home
 from keystone.common import router
 from keystone.common import wsgi
 from keystone.resource import controllers
+from keystone.resource import schema
 
 
 class Admin(wsgi.ComposableRouter):
@@ -37,11 +38,16 @@ class Admin(wsgi.ComposableRouter):
 
 class Routers(wsgi.RoutersBase):
 
+    tags = ['domain_config']
+
     def append_v3_routers(self, mapper, routers):
         routers.append(
             router.Router(controllers.DomainV3(),
                           'domains', 'domain',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc,
+                          create_schema=schema.domain_create,
+                          update_schema=schema.domain_update))
 
         config_controller = controllers.DomainConfigV3()
 
@@ -122,4 +128,7 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.ProjectV3(),
                           'projects', 'project',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc,
+                          create_schema=schema.project_create,
+                          update_schema=schema.project_update))

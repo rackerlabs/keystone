@@ -15,6 +15,7 @@
 import functools
 
 from keystone.catalog import controllers
+from keystone.catalog import schema
 from keystone.common import json_home
 from keystone.common import router
 from keystone.common import wsgi
@@ -72,6 +73,9 @@ class Routers(wsgi.RoutersBase):
     PATH_ENDPOINT_GROUP_PROJECTS = PATH_ENDPOINT_GROUPS + (
         '/projects/{project_id}')
 
+    tags = ['endpoint_filtering']
+    key = 'endpoint_group'
+
     def append_v3_routers(self, mapper, routers):
         regions_controller = controllers.RegionV3()
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
@@ -80,7 +84,10 @@ class Routers(wsgi.RoutersBase):
             controllers.ProjectEndpointGroupV3Controller())
         routers.append(router.Router(regions_controller,
                                      'regions', 'region',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     swagger_doc=self.swagger_doc,
+                                     create_schema=schema.region_create,
+                                     update_schema=schema.region_update))
 
         # Need to add an additional route to support PUT /regions/{region_id}
         mapper.connect(
@@ -91,10 +98,16 @@ class Routers(wsgi.RoutersBase):
 
         routers.append(router.Router(controllers.ServiceV3(),
                                      'services', 'service',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     swagger_doc=self.swagger_doc,
+                                     create_schema=schema.service_create,
+                                     update_schema=schema.service_update))
         routers.append(router.Router(controllers.EndpointV3(),
                                      'endpoints', 'endpoint',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     swagger_doc=self.swagger_doc,
+                                     create_schema=schema.endpoint_create,
+                                     update_schema=schema.endpoint_update))
 
         self._add_resource(
             mapper, endpoint_filter_controller,
@@ -137,7 +150,8 @@ class Routers(wsgi.RoutersBase):
             path=self.PATH_PREFIX + '/endpoint_groups',
             get_action='list_endpoint_groups',
             post_action='create_endpoint_group',
-            rel=build_resource_relation(resource_name='endpoint_groups'))
+            rel=build_resource_relation(resource_name='endpoint_groups'),
+            post_schema=schema.endpoint_group_create)
         self._add_resource(
             mapper, endpoint_group_controller,
             path=self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS,

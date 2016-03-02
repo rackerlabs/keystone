@@ -51,6 +51,8 @@ build_resource_relation = functools.partial(
 
 class Routers(wsgi.RoutersBase):
 
+    tags = ['simple_cert']
+
     def _construct_url(self, suffix):
         return "/OS-SIMPLE-CERT/%s" % suffix
 
