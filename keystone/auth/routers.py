@@ -29,29 +29,34 @@ class Routers(wsgi.RoutersBase):
             head_action='check_token',
             post_action='authenticate_for_token',
             delete_action='revoke_token',
-            rel=json_home.build_v3_resource_relation('auth_tokens'))
+            rel=json_home.build_v3_resource_relation('auth_tokens'),
+            tags=['auth'])
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/tokens/OS-PKI/revoked',
             get_action='revocation_list',
             rel=json_home.build_v3_extension_resource_relation(
-                'OS-PKI', '1.0', 'revocations'))
+                'OS-PKI', '1.0', 'revocations'),
+            tags=['auth'])
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/catalog',
             get_action='get_auth_catalog',
-            rel=json_home.build_v3_resource_relation('auth_catalog'))
+            rel=json_home.build_v3_resource_relation('auth_catalog'),
+            tags=['auth'])
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/projects',
             get_action='get_auth_projects',
-            rel=json_home.build_v3_resource_relation('auth_projects'))
+            rel=json_home.build_v3_resource_relation('auth_projects'),
+            tags=['auth'])
 
         self._add_resource(
             mapper, auth_controller,
             path='/auth/domains',
             get_action='get_auth_domains',
-            rel=json_home.build_v3_resource_relation('auth_domains'))
+            rel=json_home.build_v3_resource_relation('auth_domains'),
+            tags=['auth'])

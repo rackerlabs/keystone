@@ -117,12 +117,14 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='identity_provider'),
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['federation'])
         self._add_resource(
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
             get_action='list_identity_providers',
-            rel=build_resource_relation(resource_name='identity_providers'))
+            rel=build_resource_relation(resource_name='identity_providers'),
+            tags=['federation'])
 
         # Protocol CRUD operations
 
@@ -139,7 +141,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['federation'])
         self._add_resource(
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols'),
@@ -148,7 +151,8 @@ class Routers(wsgi.RoutersBase):
                 resource_name='identity_provider_protocols'),
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['federation'])
 
         # Mapping CRUD operations
 
@@ -163,12 +167,14 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'mapping_id': build_parameter_relation(
                     parameter_name='mapping_id'),
-            })
+            },
+            tags=['federation'])
         self._add_resource(
             mapper, mapping_controller,
             path=self._construct_url('mappings'),
             get_action='list_mappings',
-            rel=build_resource_relation(resource_name='mappings'))
+            rel=build_resource_relation(resource_name='mappings'),
+            tags=['federation'])
 
         # Service Providers CRUD operations
 
@@ -182,26 +188,30 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='service_provider'),
             path_vars={
                 'sp_id': SP_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['federation'])
 
         self._add_resource(
             mapper, sp_controller,
             path=self._construct_url('service_providers'),
             get_action='list_service_providers',
-            rel=build_resource_relation(resource_name='service_providers'))
+            rel=build_resource_relation(resource_name='service_providers'),
+            tags=['federation'])
 
         self._add_resource(
             mapper, domain_controller,
             path=self._construct_url('domains'),
             new_path='/auth/domains',
             get_action='list_domains_for_groups',
-            rel=build_resource_relation(resource_name='domains'))
+            rel=build_resource_relation(resource_name='domains'),
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, project_controller,
             path=self._construct_url('projects'),
             new_path='/auth/projects',
             get_action='list_projects_for_groups',
-            rel=build_resource_relation(resource_name='projects'))
+            rel=build_resource_relation(resource_name='projects'),
+            tags=['auth', 'federation'])
 
         # Auth operations
         self._add_resource(
@@ -214,17 +224,20 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
-            rel=build_resource_relation(resource_name='saml2'))
+            rel=build_resource_relation(resource_name='saml2'),
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('saml2/ecp'),
             post_action='create_ecp_assertion',
-            rel=build_resource_relation(resource_name='ecp'))
+            rel=build_resource_relation(resource_name='ecp'),
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url('websso/{protocol_id}'),
@@ -232,7 +245,8 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='websso'),
             path_vars={
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'])
         self._add_resource(
             mapper, auth_controller,
             path='/auth' + self._construct_url(
@@ -242,11 +256,13 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'idp_id': IDP_ID_PARAMETER_RELATION,
                 'protocol_id': PROTOCOL_ID_PARAMETER_RELATION,
-            })
+            },
+            tags=['auth', 'federation'])
 
         # Keystone-Identity-Provider metadata endpoint
         self._add_resource(
             mapper, saml_metadata_controller,
             path=self._construct_url('saml2/metadata'),
             get_action='get_metadata',
-            rel=build_resource_relation(resource_name='metadata'))
+            rel=build_resource_relation(resource_name='metadata'),
+            tags=['federation'])

@@ -14,6 +14,7 @@
 from keystone.common import router
 from keystone.common import wsgi
 from keystone.policy import controllers
+from keystone.policy import schema
 
 
 class Routers(wsgi.RoutersBase):
@@ -21,4 +22,7 @@ class Routers(wsgi.RoutersBase):
     def append_v3_routers(self, mapper, routers):
         policy_controller = controllers.PolicyV3()
         routers.append(router.Router(policy_controller, 'policies', 'policy',
-                                     resource_descriptions=self.v3_resources))
+                                     resource_descriptions=self.v3_resources,
+                                     swagger_doc=self.swagger_doc,
+                                     create_schema=schema.policy_create,
+                                     update_schema=schema.policy_update))

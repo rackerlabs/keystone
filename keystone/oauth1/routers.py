@@ -75,7 +75,8 @@ class Routers(wsgi.RoutersBase):
             path='/OS-OAUTH1/consumers',
             get_action='list_consumers',
             post_action='create_consumer',
-            rel=build_resource_relation(resource_name='consumers'))
+            rel=build_resource_relation(resource_name='consumers'),
+            tags=['oauth1'])
         self._add_resource(
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers/{consumer_id}',
@@ -86,7 +87,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'consumer_id':
                 build_parameter_relation(parameter_name='consumer_id'),
-            })
+            },
+            tags=['oauth1'])
 
         # user access token crud
         self._add_resource(
@@ -96,7 +98,8 @@ class Routers(wsgi.RoutersBase):
             rel=build_resource_relation(resource_name='user_access_tokens'),
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['oauth1'])
         self._add_resource(
             mapper, access_token_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}',
@@ -106,7 +109,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'access_token_id': ACCESS_TOKEN_ID_PARAMETER_RELATION,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['oauth1'])
         self._add_resource(
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
@@ -117,7 +121,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'access_token_id': ACCESS_TOKEN_ID_PARAMETER_RELATION,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['oauth1'])
         self._add_resource(
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
@@ -129,19 +134,22 @@ class Routers(wsgi.RoutersBase):
                 'access_token_id': ACCESS_TOKEN_ID_PARAMETER_RELATION,
                 'role_id': json_home.Parameters.ROLE_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['oauth1'])
 
         # oauth flow calls
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/request_token',
             post_action='create_request_token',
-            rel=build_resource_relation(resource_name='request_tokens'))
+            rel=build_resource_relation(resource_name='request_tokens'),
+            tags=['oauth1'])
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/access_token',
             post_action='create_access_token',
-            rel=build_resource_relation(resource_name='access_tokens'))
+            rel=build_resource_relation(resource_name='access_tokens'),
+            tags=['oauth1'])
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/authorize/{request_token_id}',
@@ -151,4 +159,5 @@ class Routers(wsgi.RoutersBase):
             },
             put_action='authorize_request_token',
             rel=build_resource_relation(
-                resource_name='authorize_request_token'))
+                resource_name='authorize_request_token'),
+            tags=['oauth1'])
