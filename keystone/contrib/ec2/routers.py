@@ -66,7 +66,8 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
             mapper, ec2_controller,
             path='/ec2tokens',
             post_action='authenticate',
-            rel=build_resource_relation(resource_name='ec2tokens'))
+            rel=build_resource_relation(resource_name='ec2tokens'),
+            tags=['ec2'])
 
         # crud
         self._add_resource(
@@ -77,7 +78,8 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
             rel=build_resource_relation(resource_name='user_credentials'),
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['ec2'])
         self._add_resource(
             mapper, ec2_controller,
             path='/users/{user_id}/credentials/OS-EC2/{credential_id}',
@@ -88,4 +90,5 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
                 'credential_id':
                 json_home.build_v3_parameter_relation('credential_id'),
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['ec2'])

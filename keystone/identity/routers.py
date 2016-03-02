@@ -36,7 +36,8 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(user_controller,
                           'users', 'user',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc))
 
         self._add_resource(
             mapper, user_controller,
@@ -45,7 +46,8 @@ class Routers(wsgi.RoutersBase):
             rel=json_home.build_v3_resource_relation('user_change_password'),
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['users'])
 
         self._add_resource(
             mapper, user_controller,
@@ -54,7 +56,8 @@ class Routers(wsgi.RoutersBase):
             rel=json_home.build_v3_resource_relation('group_users'),
             path_vars={
                 'group_id': json_home.Parameters.GROUP_ID,
-            })
+            },
+            tags=['groups', 'users'])
 
         self._add_resource(
             mapper, user_controller,
@@ -66,13 +69,15 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'group_id': json_home.Parameters.GROUP_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['groups', 'users'])
 
         group_controller = controllers.GroupV3()
         routers.append(
             router.Router(group_controller,
                           'groups', 'group',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc))
 
         self._add_resource(
             mapper, group_controller,
@@ -81,4 +86,5 @@ class Routers(wsgi.RoutersBase):
             rel=json_home.build_v3_resource_relation('user_groups'),
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['groups', 'users'])

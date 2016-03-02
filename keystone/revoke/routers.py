@@ -26,4 +26,5 @@ class Routers(wsgi.RoutersBase):
             path=self.PATH_PREFIX + '/events',
             get_action='list_revoke_events',
             rel=json_home.build_v3_extension_resource_relation(
-                'OS-REVOKE', '1.0', 'events'))
+                'OS-REVOKE', '1.0', 'events'),
+            tags=['revoke'])

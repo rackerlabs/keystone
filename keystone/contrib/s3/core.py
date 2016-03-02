@@ -63,7 +63,8 @@ class S3Extension(wsgi.V3ExtensionRouter):
             path='/s3tokens',
             post_action='authenticate',
             rel=json_home.build_v3_extension_resource_relation(
-                's3tokens', '1.0', 's3tokens'))
+                's3tokens', '1.0', 's3tokens'),
+            tags=['s3'])
 
 
 class S3Controller(controllers.Ec2Controller):

@@ -41,7 +41,8 @@ class Routers(wsgi.RoutersBase):
         routers.append(
             router.Router(controllers.DomainV3(),
                           'domains', 'domain',
-                          resource_descriptions=self.v3_resources))
+                          resource_descriptions=self.v3_resources,
+                          swagger_doc=self.swagger_doc))
 
         config_controller = controllers.DomainConfigV3()
 
@@ -56,7 +57,8 @@ class Routers(wsgi.RoutersBase):
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID
-            })
+            },
+            tags=['domain_config'])
 
         config_group_param = (
             json_home.build_v3_parameter_relation('config_group'))
@@ -71,7 +73,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group': config_group_param
-            })
+            },
+            tags=['domain_config'])
 
         self._add_resource(
             mapper, config_controller,
@@ -86,14 +89,16 @@ class Routers(wsgi.RoutersBase):
                 'group': config_group_param,
                 'option': json_home.build_v3_parameter_relation(
                     'config_option')
-            })
+            },
+            tags=['domain_config'])
 
         self._add_resource(
             mapper, config_controller,
             path='/domains/config/default',
             get_action='get_domain_config_default',
             rel=json_home.build_v3_resource_relation('domain_config_default'),
-            status=json_home.Status.EXPERIMENTAL)
+            status=json_home.Status.EXPERIMENTAL,
+            tags=['domain_config'])
 
         self._add_resource(
             mapper, config_controller,
@@ -104,7 +109,8 @@ class Routers(wsgi.RoutersBase):
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
                 'group': config_group_param
-            })
+            },
+            tags=['domain_config'])
 
         self._add_resource(
             mapper, config_controller,
@@ -117,7 +123,8 @@ class Routers(wsgi.RoutersBase):
                 'group': config_group_param,
                 'option': json_home.build_v3_parameter_relation(
                     'config_option')
-            })
+            },
+            tags=['domain_config'])
 
         routers.append(
             router.Router(controllers.ProjectV3(),

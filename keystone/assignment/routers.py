@@ -67,12 +67,14 @@ class Routers(wsgi.RoutersBase):
             rel=json_home.build_v3_resource_relation('user_projects'),
             path_vars={
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['role_assignments'])
 
         routers.append(
             router.Router(controllers.RoleV3(), 'roles', 'role',
                           resource_descriptions=self.v3_resources,
-                          method_template='%s_wrapper'))
+                          method_template='%s_wrapper',
+                          swagger_doc=self.swagger_doc))
 
         implied_roles_controller = controllers.ImpliedRolesV3()
         self._add_resource(
@@ -83,7 +85,8 @@ class Routers(wsgi.RoutersBase):
             status=json_home.Status.EXPERIMENTAL,
             path_vars={
                 'prior_role_id': json_home.Parameters.ROLE_ID,
-            }
+            },
+            tags=['roles']
         )
 
         self._add_resource(
@@ -98,7 +101,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'prior_role_id': json_home.Parameters.ROLE_ID,
                 'implied_role_id': json_home.Parameters.ROLE_ID
-            }
+            },
+            tags=['roles']
         )
         self._add_resource(
             mapper, implied_roles_controller,
@@ -106,7 +110,8 @@ class Routers(wsgi.RoutersBase):
             get_action='list_role_inference_rules',
             rel=json_home.build_v3_resource_relation('role_inferences'),
             status=json_home.Status.EXPERIMENTAL,
-            path_vars={}
+            path_vars={},
+            tags=['roles']
         )
 
         grant_controller = controllers.GrantAssignmentV3()
@@ -121,7 +126,9 @@ class Routers(wsgi.RoutersBase):
                 'project_id': json_home.Parameters.PROJECT_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/projects/{project_id}/groups/{group_id}/roles/{role_id}',
@@ -133,7 +140,9 @@ class Routers(wsgi.RoutersBase):
                 'group_id': json_home.Parameters.GROUP_ID,
                 'project_id': json_home.Parameters.PROJECT_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/projects/{project_id}/users/{user_id}/roles',
@@ -142,7 +151,9 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'project_id': json_home.Parameters.PROJECT_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/projects/{project_id}/groups/{group_id}/roles',
@@ -151,7 +162,9 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'group_id': json_home.Parameters.GROUP_ID,
                 'project_id': json_home.Parameters.PROJECT_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/domains/{domain_id}/users/{user_id}/roles/{role_id}',
@@ -163,7 +176,9 @@ class Routers(wsgi.RoutersBase):
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
@@ -175,7 +190,9 @@ class Routers(wsgi.RoutersBase):
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group_id': json_home.Parameters.GROUP_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/domains/{domain_id}/users/{user_id}/roles',
@@ -184,7 +201,9 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'user_id': json_home.Parameters.USER_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
         self._add_resource(
             mapper, grant_controller,
             path='/domains/{domain_id}/groups/{group_id}/roles',
@@ -193,13 +212,17 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group_id': json_home.Parameters.GROUP_ID,
-            })
+            },
+            tags=['role_assignments']
+        )
 
         self._add_resource(
             mapper, controllers.RoleAssignmentV3(),
             path='/role_assignments',
             get_action='list_role_assignments_wrapper',
-            rel=json_home.build_v3_resource_relation('role_assignments'))
+            rel=json_home.build_v3_resource_relation('role_assignments'),
+            tags=['role_assignments']
+        )
 
         if CONF.os_inherit.enabled:
             self._add_resource(
@@ -215,7 +238,9 @@ class Routers(wsgi.RoutersBase):
                     'domain_id': json_home.Parameters.DOMAIN_ID,
                     'role_id': json_home.Parameters.ROLE_ID,
                     'user_id': json_home.Parameters.USER_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
             self._add_resource(
                 mapper, grant_controller,
                 path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
@@ -229,7 +254,9 @@ class Routers(wsgi.RoutersBase):
                     'domain_id': json_home.Parameters.DOMAIN_ID,
                     'group_id': json_home.Parameters.GROUP_ID,
                     'role_id': json_home.Parameters.ROLE_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
             self._add_resource(
                 mapper, grant_controller,
                 path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
@@ -240,7 +267,9 @@ class Routers(wsgi.RoutersBase):
                 path_vars={
                     'domain_id': json_home.Parameters.DOMAIN_ID,
                     'group_id': json_home.Parameters.GROUP_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
             self._add_resource(
                 mapper, grant_controller,
                 path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
@@ -251,7 +280,9 @@ class Routers(wsgi.RoutersBase):
                 path_vars={
                     'domain_id': json_home.Parameters.DOMAIN_ID,
                     'user_id': json_home.Parameters.USER_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
             self._add_resource(
                 mapper, grant_controller,
                 path='/OS-INHERIT/projects/{project_id}/users/{user_id}/roles/'
@@ -265,7 +296,9 @@ class Routers(wsgi.RoutersBase):
                     'project_id': json_home.Parameters.PROJECT_ID,
                     'user_id': json_home.Parameters.USER_ID,
                     'role_id': json_home.Parameters.ROLE_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
             self._add_resource(
                 mapper, grant_controller,
                 path='/OS-INHERIT/projects/{project_id}/groups/{group_id}/'
@@ -279,4 +312,6 @@ class Routers(wsgi.RoutersBase):
                     'project_id': json_home.Parameters.PROJECT_ID,
                     'group_id': json_home.Parameters.GROUP_ID,
                     'role_id': json_home.Parameters.ROLE_ID,
-                })
+                },
+                tags=['role_assignments']
+            )
