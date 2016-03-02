@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_202802e2",
+        "filename": "releasenotes/notes/projects_as_domains-3ea8a58b4c2965e1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-02T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_c045de17",
+      "range": {
+        "startLine": 4,
+        "startChar": 25,
+        "endLine": 4,
+        "endChar": 29
+      },
+      "revId": "87785b74551798359518caddb1b1561760c8923e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_40eeeeec",
         "filename": "releasenotes/notes/projects_as_domains-3ea8a58b4c2965e1.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-02T15:11:23Z",
       "side": 1,
       "message": "accessed sounds like just lookup options, maybe something like \"accessed, created and modified\" (or we",
+      "range": {
+        "startLine": 5,
+        "startChar": 67,
+        "endLine": 5,
+        "endChar": 75
+      },
+      "revId": "87785b74551798359518caddb1b1561760c8923e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c0103eab",
+        "filename": "releasenotes/notes/projects_as_domains-3ea8a58b4c2965e1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-02T15:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_40eeeeec",
       "range": {
         "startLine": 5,
         "startChar": 67,
