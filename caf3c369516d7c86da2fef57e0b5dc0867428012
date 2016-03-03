@@ -77,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_6c6aaab4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T17:14:46Z",
+      "side": 1,
+      "message": "I agree with it needed to be configurable as well as the default being lowercase \nkeystone\u0027",
+      "parentUuid": "7af24918_340c763a",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b42fe686",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -140,6 +158,41 @@
       "side": 1,
       "message": "I think we need to make it so that the user has to explicitly set the region or explicitly say they want no region. As in, make this required. Could use an empty string for no region or have another argument for --no-region.\n\nExpect that users are going to take the default as what they should use and I don\u0027t think we can recommend one or the other.",
       "parentUuid": "9aed3d3a_c9fa0575",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_ecd19a58",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T17:14:46Z",
+      "side": 1,
+      "message": "the default region in all the docs is RegionOne, seems like a sane default to me. I would be ok with it as the default",
+      "parentUuid": "7af24918_f4c04e52",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_6cd0ea1f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T17:14:46Z",
+      "side": 1,
+      "message": "I question the need to still have public and internal and admin options. Why not just \u0027interface\u0027 and \u0027url\u0027 like the api?\n\nOr is this actually creating the endpoints in a v2 accessible way?",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
