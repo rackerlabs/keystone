@@ -208,6 +208,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_ad37864b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T19:59:26Z",
+      "side": 1,
+      "message": "@Lance doesnt that mean they don\u0027t need the keystone one to begin with? Whats the harm in making this configurable",
+      "parentUuid": "7af24918_6d7a9e89",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b42fe686",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -349,6 +367,23 @@
     },
     {
       "key": {
+        "uuid": "7af24918_ad6f86fa",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T19:59:26Z",
+      "side": 1,
+      "message": "You say \u0027or\u0027 here, but all three options are required to be set to be used below",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_ed706e74",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -395,6 +430,24 @@
       "side": 1,
       "message": "maybe we have this thingy called standard catalog?",
       "parentUuid": "7af24918_6cd0ea1f",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_adeae671",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-03T19:59:26Z",
+      "side": 1,
+      "message": "Are you asking a question or being sarcastic?",
+      "parentUuid": "7af24918_49a7ddbc",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
