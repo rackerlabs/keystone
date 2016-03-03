@@ -22,6 +22,24 @@
       "revId": "6e1b1de15c2b39ab3e9dc1ed066cbec2d37eb189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b4286a9b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T22:27:55Z",
+      "side": 1,
+      "message": "Good catch Henry. Done.",
+      "parentUuid": "7af24918_b4c7ca94",
+      "revId": "6e1b1de15c2b39ab3e9dc1ed066cbec2d37eb189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
