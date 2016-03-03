@@ -41,6 +41,8 @@ class ExternalAuthNotApplicable(Exception):
 
     pass
 
+MAX_USERNAME_SIZE = 255  # Value used for validation of the username attribute
+
 
 @dependency.requires('assignment_api', 'catalog_api', 'identity_api',
                      'resource_api', 'role_api', 'token_provider_api',
@@ -285,9 +287,9 @@ class Auth(controller.V2Controller):
         username = auth['passwordCredentials'].get('username', '')
 
         if username:
-            if len(username) > CONF.max_param_size:
+            if len(username) > MAX_USERNAME_SIZE:
                 raise exception.ValidationSizeError(attribute='username',
-                                                    size=CONF.max_param_size)
+                                                    size=MAX_USERNAME_SIZE)
             try:
                 user_ref = self.identity_api.get_user_by_name(
                     username, CONF.identity.default_domain_id)
