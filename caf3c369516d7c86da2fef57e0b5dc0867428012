@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_a9b5c17e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-03T17:55:29Z",
+      "side": 1,
+      "message": "How about this?\n\nTo enable the bootstrapped admin user to perform identity operations we must also bootstrap the identity endpoints.",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 10,
+        "endChar": 66
+      },
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_6942a769",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -36,6 +59,24 @@
       "writtenOn": "2016-03-03T15:02:35Z",
       "side": 1,
       "message": "This needs an example so users know what the format is.",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e6ded6db",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-03T17:55:29Z",
+      "side": 1,
+      "message": "You mean like versioned or versionless? The users, more precisely deployers or cloud operators, who use this CLI should be abundantly clear on what an identity admin url is I would think.",
+      "parentUuid": "7af24918_541e625f",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +130,24 @@
       "side": 1,
       "message": "I agree with it needed to be configurable as well as the default being lowercase \nkeystone\u0027",
       "parentUuid": "7af24918_340c763a",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c65c7a4d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-03T17:55:29Z",
+      "side": 1,
+      "message": "Yeah, if clients (keystoneauth) always teeing off on \u0027keystone\u0027 then we don\u0027t need to make this configurable. Did we also have a standard catalog across the board now?",
+      "parentUuid": "7af24918_6c6aaab4",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -182,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_2606fe1f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-03T17:55:29Z",
+      "side": 1,
+      "message": "I disagree on setting a default region. Region is *optional* in the service catalog. Lets keep it that way.",
+      "parentUuid": "7af24918_ecd19a58",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_6cd0ea1f",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -193,6 +270,24 @@
       "writtenOn": "2016-03-03T17:14:46Z",
       "side": 1,
       "message": "I question the need to still have public and internal and admin options. Why not just \u0027interface\u0027 and \u0027url\u0027 like the api?\n\nOr is this actually creating the endpoints in a v2 accessible way?",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_49a7ddbc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-03T17:55:29Z",
+      "side": 1,
+      "message": "maybe we have this thingy called standard catalog?",
+      "parentUuid": "7af24918_6cd0ea1f",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
