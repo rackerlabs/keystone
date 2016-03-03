@@ -34,6 +34,23 @@
       "revId": "f2cd9a88e21699a3930d34cc7f2e8d76852ab604",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e05cf64c",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:24:48Z",
+      "side": 1,
+      "message": "so - does this mean we can remove these now?",
+      "revId": "f2cd9a88e21699a3930d34cc7f2e8d76852ab604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
