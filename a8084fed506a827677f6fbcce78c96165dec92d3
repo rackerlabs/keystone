@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_ca32c6f1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-03T15:51:44Z",
+      "side": 1,
+      "message": "(nit) indentation",
+      "revId": "a8084fed506a827677f6fbcce78c96165dec92d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
