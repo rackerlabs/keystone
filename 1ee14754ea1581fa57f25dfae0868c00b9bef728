@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_6d964840",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T14:08:26Z",
+      "side": 0,
+      "message": "why remove this testcase? this doesn\u0027t looks like relevant with `audit_id` or `audit_chain_id`.",
+      "range": {
+        "startLine": 338,
+        "startChar": 4,
+        "endLine": 338,
+        "endChar": 38
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_3edd7ae0",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T14:08:26Z",
+      "side": 0,
+      "message": "now that `_revoke_by_expiration` is still used by test_cleanup, should we just keep it here? otherwise remove `_revoke_by_expiration` and the reference from cleanup?",
+      "range": {
+        "startLine": 342,
+        "startChar": 8,
+        "endLine": 342,
+        "endChar": 64
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_8db8f4c9",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T14:08:26Z",
+      "side": 0,
+      "message": "same here, this is not much clear why this is removed.",
+      "range": {
+        "startLine": 397,
+        "startChar": 4,
+        "endLine": 399,
+        "endChar": 46
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_cdae7c80",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T14:08:26Z",
+      "side": 0,
+      "message": "same here.",
+      "range": {
+        "startLine": 414,
+        "startChar": 4,
+        "endLine": 414,
+        "endChar": 34
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b4fa7873",
         "filename": "keystone/tests/unit/test_v3_os_revoke.py",
         "patchSetId": 10
