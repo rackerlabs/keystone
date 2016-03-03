@@ -39,6 +39,23 @@
       "revId": "1bf9de508357c78a2b756cfde45f8132b9cf1066",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_0ad5ce1a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4381,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T16:37:52Z",
+      "side": 1,
+      "message": "revert this change it\u0027s unnecessary.",
+      "revId": "1bf9de508357c78a2b756cfde45f8132b9cf1066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
