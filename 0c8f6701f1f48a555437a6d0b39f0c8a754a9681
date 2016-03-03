@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_99079ec9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-03-03T08:29:15Z",
+      "side": 1,
+      "message": "i think it would be better to use \"import threading\"",
+      "revId": "0c8f6701f1f48a555437a6d0b39f0c8a754a9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_590236b5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-03-03T08:29:15Z",
+      "side": 1,
+      "message": "lock \u003d threading.Lock()",
+      "revId": "0c8f6701f1f48a555437a6d0b39f0c8a754a9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_79e452e0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-03-03T08:29:15Z",
+      "side": 1,
+      "message": "remove these spaces",
+      "range": {
+        "startLine": 439,
+        "startChar": 0,
+        "endLine": 439,
+        "endChar": 8
+      },
+      "revId": "0c8f6701f1f48a555437a6d0b39f0c8a754a9681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
