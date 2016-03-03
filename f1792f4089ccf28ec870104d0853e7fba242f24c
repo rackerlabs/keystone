@@ -118,6 +118,42 @@
       "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a958568b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T01:58:22Z",
+      "side": 1,
+      "message": "@guang, code path is @controller.protected() -\u003e token_provider_api.validate_token(...) -\u003e self._validate_token(unique_id) -\u003e self.driver.validate_non_persistent_token(token_id) -\u003e raise exception.Unauthorized",
+      "parentUuid": "7af24918_c6584b35",
+      "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_09e18a9a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-03T01:58:22Z",
+      "side": 1,
+      "message": "@Lance, I did exactly the same as you with fernet token, will check it again if i got a chance, thanks for double check.",
+      "parentUuid": "7af24918_a51c0b14",
+      "revId": "f1792f4089ccf28ec870104d0853e7fba242f24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
