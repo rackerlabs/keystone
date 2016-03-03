@@ -93,6 +93,30 @@
       "revId": "a412639043cd6211796027683bd4bca45ec9b558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_72ce272f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 16523
+      },
+      "writtenOn": "2016-03-03T09:34:54Z",
+      "side": 1,
+      "message": "++, Add\n:raises keystone.exception.validationError: \n:raises keystone.exception.Forbidden:",
+      "parentUuid": "bae84128_86dc1147",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 11
+      },
+      "revId": "a412639043cd6211796027683bd4bca45ec9b558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
