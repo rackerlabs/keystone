@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_674dbc3d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-03T11:57:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is guaranteed to catch all of the cases.  What if all the roles were deleted for a user on a project, but the project was still listed as the default project for the user?\n\nI would suggest a more robust solution is simply to each though the user records for one that reference the project in the default project id attribute. The only issue with this is that it might be expensive -if we are concerned about that, then may need to provide a dedicated driver method to do it.",
+      "range": {
+        "startLine": 538,
+        "startChar": 8,
+        "endLine": 539,
+        "endChar": 70
+      },
+      "revId": "a8a16a4753c57c33dd0d0b4a5b37879c692225f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c795b033",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-03T11:57:07Z",
+      "side": 1,
+      "message": "see my comment in identity/core.py - if we take the approach I suggest, then you won\u0027t need to move this...",
+      "range": {
+        "startLine": 491,
+        "startChar": 8,
+        "endLine": 491,
+        "endChar": 73
+      },
+      "revId": "a8a16a4753c57c33dd0d0b4a5b37879c692225f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
