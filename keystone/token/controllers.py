@@ -278,16 +278,16 @@ class Auth(controller.V2Controller):
                 target='passwordCredentials')
 
         user_id = auth['passwordCredentials'].get('userId')
-        if user_id and len(user_id) > CONF.max_param_size:
+        if user_id and len(user_id) > CONF.max_uuid_size:
             raise exception.ValidationSizeError(attribute='userId',
-                                                size=CONF.max_param_size)
+                                                size=CONF.max_uuid_size)
 
         username = auth['passwordCredentials'].get('username', '')
 
         if username:
-            if len(username) > CONF.max_param_size:
+            if len(username) > CONF.max_name_size:
                 raise exception.ValidationSizeError(attribute='username',
-                                                    size=CONF.max_param_size)
+                                                    size=CONF.max_name_size)
             try:
                 user_ref = self.identity_api.get_user_by_name(
                     username, CONF.identity.default_domain_id)
@@ -357,14 +357,14 @@ class Auth(controller.V2Controller):
         Returns a valid tenant_id if it exists, or None if not specified.
         """
         tenant_id = auth.get('tenantId')
-        if tenant_id and len(tenant_id) > CONF.max_param_size:
+        if tenant_id and len(tenant_id) > CONF.max_uuid_size:
             raise exception.ValidationSizeError(attribute='tenantId',
-                                                size=CONF.max_param_size)
+                                                size=CONF.max_uuid_size)
 
         tenant_name = auth.get('tenantName')
-        if tenant_name and len(tenant_name) > CONF.max_param_size:
+        if tenant_name and len(tenant_name) > CONF.max_uuid_size:
             raise exception.ValidationSizeError(attribute='tenantName',
-                                                size=CONF.max_param_size)
+                                                size=CONF.max_uuid_size)
 
         if tenant_name:
             if (CONF.resource.project_name_url_safe == 'strict' and

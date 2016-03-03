@@ -83,8 +83,10 @@ FILE_OPTIONS = {
                         'the project acting as a domain at the top of the '
                         'hierarchy. WARNING: setting it to a large value may '
                         'adversely impact  performance.'),
-        cfg.IntOpt('max_param_size', default=64,
+        cfg.IntOpt('max_uuid_size', default=64,
                    help='Limit the sizes of user & project ID/names.'),
+        cfg.IntOpt('max_name_size', default=255,
+                   help='Limt the size of username'),
         # we allow tokens to be a bit larger to accommodate PKI
         cfg.IntOpt('max_token_size', default=8192,
                    help='Similar to max_param_size, but provides an '
