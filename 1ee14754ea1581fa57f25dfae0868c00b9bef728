@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_d6ef0f1c",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T16:49:21Z",
+      "side": 0,
+      "message": "revoking by expiration isn\u0027t supported anymore so no need to test this.",
+      "parentUuid": "7af24918_6d964840",
+      "range": {
+        "startLine": 338,
+        "startChar": 4,
+        "endLine": 338,
+        "endChar": 38
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_3edd7ae0",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 11
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_76df1b69",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T16:49:21Z",
+      "side": 0,
+      "message": "keep what here?",
+      "parentUuid": "7af24918_3edd7ae0",
+      "range": {
+        "startLine": 342,
+        "startChar": 8,
+        "endLine": 342,
+        "endChar": 64
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_8db8f4c9",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 11
@@ -59,6 +107,30 @@
       "writtenOn": "2016-03-03T14:08:26Z",
       "side": 0,
       "message": "same here, this is not much clear why this is removed.",
+      "range": {
+        "startLine": 397,
+        "startChar": 4,
+        "endLine": 399,
+        "endChar": 46
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_96b90718",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T16:49:21Z",
+      "side": 0,
+      "message": "this was testing revoking by expiration which isn\u0027t supported anymore.",
+      "parentUuid": "7af24918_8db8f4c9",
       "range": {
         "startLine": 397,
         "startChar": 4,

@@ -22,6 +22,23 @@
       "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_767efb19",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T16:49:21Z",
+      "side": 1,
+      "message": "why doesn\u0027t this pass the token project_id and domain_id anymore? I guess there\u0027s no tests for it so not sure why the scope is needed.\n\nAlso, now revoke_by_audit_chain_id in the revoke manager should be changed to not take the project_id and domain_id.",
+      "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
