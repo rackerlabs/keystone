@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_6942a769",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "an entry point as in stevedore?",
+      "range": {
+        "startLine": 11,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_541e625f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "This needs an example so users know what the format is.",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_4906f586",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -19,6 +59,58 @@
     },
     {
       "key": {
+        "uuid": "7af24918_340c763a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "The default should be \"keystone\" (lowercase)\n\nAlso, I don\u0027t think this needs to be configurable. If we need to make it configurable then that can be a separate commit.",
+      "parentUuid": "9aed3d3a_4906f586",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b42fe686",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "This needs an example so users know what the format is.",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_144fba6b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "This needs an example so users know what the format is.",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c9fa0575",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -30,6 +122,24 @@
       "writtenOn": "2016-02-29T05:56:53Z",
       "side": 1,
       "message": "Select a default region name (RegionOne?).",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_f4c04e52",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-03T15:02:35Z",
+      "side": 1,
+      "message": "I think we need to make it so that the user has to explicitly set the region or explicitly say they want no region. As in, make this required. Could use an empty string for no region or have another argument for --no-region.\n\nExpect that users are going to take the default as what they should use and I don\u0027t think we can recommend one or the other.",
+      "parentUuid": "9aed3d3a_c9fa0575",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
