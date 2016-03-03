@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_9c9e3ab7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-03-03T21:11:10Z",
+      "side": 1,
+      "message": "can this be other than group?",
+      "range": {
+        "startLine": 172,
+        "startChar": 30,
+        "endLine": 172,
+        "endChar": 40
+      },
+      "revId": "a26f894877a639f699aff15c89d3b5995f33b61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
