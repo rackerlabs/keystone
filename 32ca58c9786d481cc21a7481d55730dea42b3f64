@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_cac2c633",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-03T15:55:02Z",
+      "side": 1,
+      "message": "I agree with moving the test since this isn\u0027t about policy. If the setUp machinery doesn\u0027t exist there then we should make a new test class and include it.",
+      "parentUuid": "7af24918_ddb01546",
+      "range": {
+        "startLine": 957,
+        "startChar": 8,
+        "endLine": 957,
+        "endChar": 38
+      },
+      "revId": "32ca58c9786d481cc21a7481d55730dea42b3f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b563b940",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 4
