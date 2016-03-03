@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_fb282b9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "I\u0027d add a \"because\" piece in here somewhere too.",
+      "parentUuid": "7af24918_a9b5c17e",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_6942a769",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -77,6 +95,24 @@
       "side": 1,
       "message": "You mean like versioned or versionless? The users, more precisely deployers or cloud operators, who use this CLI should be abundantly clear on what an identity admin url is I would think.",
       "parentUuid": "7af24918_541e625f",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_cdc932ae",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7af24918_e6ded6db",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -154,6 +190,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_6d7a9e89",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "If people want an authentication service with a different service name than \u0027keystone\u0027 can\u0027t they create that after?",
+      "parentUuid": "7af24918_c65c7a4d",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b42fe686",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -171,6 +225,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_8dd3aa5f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7af24918_b42fe686",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_144fba6b",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -182,6 +254,24 @@
       "writtenOn": "2016-03-03T15:02:35Z",
       "side": 1,
       "message": "This needs an example so users know what the format is.",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_6dd61e50",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7af24918_144fba6b",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -253,6 +343,23 @@
       "side": 1,
       "message": "I disagree on setting a default region. Region is *optional* in the service catalog. Lets keep it that way.",
       "parentUuid": "7af24918_ecd19a58",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_ed706e74",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-03T19:50:30Z",
+      "side": 1,
+      "message": "All validation on URL is going to be done by the catalog_api, right?",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
