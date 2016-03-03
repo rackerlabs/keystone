@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_291a5117",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-03T17:43:27Z",
+      "side": 1,
+      "message": "Sure, we can do this as a next step for this patches :)",
+      "parentUuid": "7af24918_716a85b4",
+      "revId": "1bf9de508357c78a2b756cfde45f8132b9cf1066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_2145af6f",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 1
