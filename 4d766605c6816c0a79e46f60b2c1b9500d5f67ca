@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_45b963cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-03-04T06:42:22Z",
+      "side": 1,
+      "message": "The first line should be limited to 50 characters.",
+      "revId": "4d766605c6816c0a79e46f60b2c1b9500d5f67ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_059f5b5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-03-04T06:42:22Z",
+      "side": 1,
+      "message": "It is necessary to be a new line at 72 characters.",
+      "revId": "4d766605c6816c0a79e46f60b2c1b9500d5f67ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
