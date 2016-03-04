@@ -109,12 +109,12 @@ class Audit(object):
     """
 
     @classmethod
-    def _emit(cls, operation, resource_type, resource_id, initiator, public):
+    def _emit(cls, operation, resource_type, resource, initiator, public):
         """Directly send an event notification.
 
         :param operation: one of the values from ACTIONS
         :param resource_type: type of resource being affected
-        :param resource_id: ID of the resource affected
+        :param resource: dicitonary containing the resource reference
         :param initiator: CADF representation of the user that created the
                           request
         :param public: If True (default), the event will be sent to the
@@ -129,36 +129,36 @@ class Audit(object):
         _send_notification(
             operation,
             resource_type,
-            resource_id,
+            resource,
             public=public)
 
         if CONF.notification_format == 'cadf' and public:
             outcome = taxonomy.OUTCOME_SUCCESS
-            _create_cadf_payload(operation, resource_type, resource_id,
+            _create_cadf_payload(operation, resource_type, resource,
                                  outcome, initiator)
 
     @classmethod
-    def created(cls, resource_type, resource_id, initiator=None,
+    def created(cls, resource_type, resource, initiator=None,
                 public=True):
-        cls._emit(ACTIONS.created, resource_type, resource_id, initiator,
+        cls._emit(ACTIONS.created, resource_type, resource, initiator,
                   public)
 
     @classmethod
-    def updated(cls, resource_type, resource_id, initiator=None,
+    def updated(cls, resource_type, resource, initiator=None,
                 public=True):
-        cls._emit(ACTIONS.updated, resource_type, resource_id, initiator,
+        cls._emit(ACTIONS.updated, resource_type, resource, initiator,
                   public)
 
     @classmethod
-    def disabled(cls, resource_type, resource_id, initiator=None,
+    def disabled(cls, resource_type, resource, initiator=None,
                  public=True):
-        cls._emit(ACTIONS.disabled, resource_type, resource_id, initiator,
+        cls._emit(ACTIONS.disabled, resource_type, resource, initiator,
                   public)
 
     @classmethod
-    def deleted(cls, resource_type, resource_id, initiator=None,
+    def deleted(cls, resource_type, resource, initiator=None,
                 public=True):
-        cls._emit(ACTIONS.deleted, resource_type, resource_id, initiator,
+        cls._emit(ACTIONS.deleted, resource_type, resource, initiator,
                   public)
 
 
@@ -412,8 +412,8 @@ def reset_notifier():
     _notifier = None
 
 
-def _create_cadf_payload(operation, resource_type, resource_id,
-                         outcome, initiator):
+def _create_cadf_payload(operation, resource_type, resource_ref, outcome,
+                         initiator):
     """Prepare data for CADF audit notifier.
 
     Transform the arguments into content to be consumed by the function that
@@ -431,7 +431,7 @@ def _create_cadf_payload(operation, resource_type, resource_id,
 
     :param operation: operation being performed (created, updated, or deleted)
     :param resource_type: type of resource being operated on (role, user, etc)
-    :param resource_id: ID of resource being operated on
+    :param resource_ref: dictionary containing the resource reference
     :param outcome: outcomes of the operation (SUCCESS, FAILURE, etc)
     :param initiator: CADF representation of the user that created the request
     """
@@ -440,9 +440,11 @@ def _create_cadf_payload(operation, resource_type, resource_id,
     else:
         target_uri = CADF_TYPE_MAP.get(resource_type)
     target = resource.Resource(typeURI=target_uri,
-                               id=resource_id)
+                               id=resource_ref['id'])
 
-    audit_kwargs = {'resource_info': resource_id}
+    audit_kwargs = {'resource_info': resource_ref['id']}
+    if resource_ref.get('name'):
+        audit_kwargs['resource_name'] = resource_ref['name']
     cadf_action = '%s.%s' % (operation, resource_type)
     event_type = '%s.%s.%s' % (SERVICE, resource_type, operation)
 
@@ -450,20 +452,22 @@ def _create_cadf_payload(operation, resource_type, resource_id,
                              target, event_type, **audit_kwargs)
 
 
-def _send_notification(operation, resource_type, resource_id, public=True):
+def _send_notification(operation, resource_type, resource, public=True):
     """Send notification to inform observers about the affected resource.
 
     This method doesn't raise an exception when sending the notification fails.
 
     :param operation: operation being performed (created, updated, or deleted)
     :param resource_type: type of resource being operated on
-    :param resource_id: ID of resource being operated on
+    :param resource: dictionary containing the resource reference
     :param public:  if True (default), the event will be sent
                     to the notifier API.
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
+    payload = {'resource_info': resource['id']}
+    if resource.get('name'):
+        payload['resource_name'] = resource['name']
 
     notify_event_callbacks(SERVICE, resource_type, operation, payload)
 
@@ -485,7 +489,7 @@ def _send_notification(operation, resource_type, resource_id, public=True):
             except Exception:
                 LOG.exception(_LE(
                     'Failed to send %(res_id)s %(event_type)s notification'),
-                    {'res_id': resource_id, 'event_type': event_type})
+                    {'res_id': resource['id'], 'event_type': event_type})
 
 
 def _get_request_audit_info(context, user_id=None):

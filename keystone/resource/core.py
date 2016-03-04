@@ -242,9 +242,9 @@ class Manager(manager.Manager):
                 details=self._generate_project_name_conflict_msg(project))
 
         if project.get('is_domain'):
-            notifications.Audit.created(self._DOMAIN, project_id, initiator)
+            notifications.Audit.created(self._DOMAIN, project, initiator)
         else:
-            notifications.Audit.created(self._PROJECT, project_id, initiator)
+            notifications.Audit.created(self._PROJECT, project, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, project_id)
             self.get_project_by_name.set(ret, self, ret['name'],
@@ -301,7 +301,6 @@ class Manager(manager.Manager):
         if not project.get('enabled', True):
             raise AssertionError(_('Project is disabled: %s') % project_id)
 
-    @notifications.disabled(_PROJECT, public=False)
     def _disable_project(self, project_id):
         """Emit a notification to the callback system project is been disabled.
 
@@ -312,7 +311,9 @@ class Manager(manager.Manager):
         :param project_id: project identifier
         :type project_id: string
         """
-        pass
+        project = self.get_project(project_id)
+        project['enabled'] = False
+        notifications.Audit.disabled(self._PROJECT, project, public=False)
 
     def _assert_all_parents_are_enabled(self, project_id):
         parents_list = self.list_project_parents(project_id)
@@ -428,9 +429,9 @@ class Manager(manager.Manager):
                 type='project',
                 details=self._generate_project_name_conflict_msg(project))
 
-        notifications.Audit.updated(self._PROJECT, project_id, initiator)
+        notifications.Audit.updated(self._PROJECT, ret, initiator)
         if original_project['is_domain']:
-            notifications.Audit.updated(self._DOMAIN, project_id, initiator)
+            notifications.Audit.updated(self._DOMAIN, ret, initiator)
             # If the domain is being disabled, issue the disable notification
             # as well
             if original_project_enabled and not project_enabled:
@@ -496,7 +497,7 @@ class Manager(manager.Manager):
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(project_id)
-        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
+        notifications.Audit.deleted(self._PROJECT, project, initiator)
         # Invalidate user role assignments cache region, as it may
         # be caching role assignments where the target is
         # the specified project
@@ -770,7 +771,6 @@ class Manager(manager.Manager):
                    for project in projects]
         return domains
 
-    @notifications.disabled(_DOMAIN, public=False)
     def _disable_domain(self, domain_id):
         """Emit a notification to the callback system domain is been disabled.
 
@@ -781,7 +781,9 @@ class Manager(manager.Manager):
         :param domain_id: domain identifier
         :type domain_id: string
         """
-        pass
+        domain = self.get_domain(domain_id)
+        domain['enabled'] = False
+        notifications.Audit.disabled(self._DOMAIN, domain, public=False)
 
     def update_domain(self, domain_id, domain, initiator=None):
         # TODO(henry-nash): We shouldn't have to check for the federated domain
@@ -831,7 +833,7 @@ class Manager(manager.Manager):
         # other domains - so we should delete these here by making a call
         # to the backend to delete all assignments for this domain.
         # (see Bug #1277847)
-        notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
+        notifications.Audit.deleted(self._DOMAIN, domain, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
 

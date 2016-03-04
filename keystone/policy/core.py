@@ -46,7 +46,7 @@ class Manager(manager.Manager):
 
     def create_policy(self, policy_id, policy, initiator=None):
         ref = self.driver.create_policy(policy_id, policy)
-        notifications.Audit.created(self._POLICY, policy_id, initiator)
+        notifications.Audit.created(self._POLICY, ref, initiator)
         return ref
 
     def get_policy(self, policy_id):
@@ -62,7 +62,7 @@ class Manager(manager.Manager):
             ref = self.driver.update_policy(policy_id, policy)
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
-        notifications.Audit.updated(self._POLICY, policy_id, initiator)
+        notifications.Audit.updated(self._POLICY, ref, initiator)
         return ref
 
     @manager.response_truncated
@@ -74,10 +74,11 @@ class Manager(manager.Manager):
 
     def delete_policy(self, policy_id, initiator=None):
         try:
+            policy = self.get_policy(policy_id)
             ret = self.driver.delete_policy(policy_id)
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
-        notifications.Audit.deleted(self._POLICY, policy_id, initiator)
+        notifications.Audit.deleted(self._POLICY, policy, initiator)
         return ret
 
 
