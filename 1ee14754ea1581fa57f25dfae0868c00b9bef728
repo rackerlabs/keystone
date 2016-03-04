@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7af24918_9bf6205b",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-03-04T12:39:15Z",
+      "side": 0,
+      "message": "so that _revoke_by_expiration is only referenced in the test_cleanup, don\u0027t think this is needed anymore, the method can be removed and from the test_cleanup as well.",
+      "parentUuid": "7af24918_76df1b69",
+      "range": {
+        "startLine": 342,
+        "startChar": 8,
+        "endLine": 342,
+        "endChar": 64
+      },
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_8db8f4c9",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 11
