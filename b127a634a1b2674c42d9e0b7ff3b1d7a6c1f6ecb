@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_b4497f33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-04T15:24:43Z",
+      "side": 1,
+      "message": "Could add: \n\n    Related-Bug: #1506473\n\nSince it contains context about the patch.",
+      "revId": "b127a634a1b2674c42d9e0b7ff3b1d7a6c1f6ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
