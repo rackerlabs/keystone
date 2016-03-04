@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_2708782d",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-04T18:21:29Z",
+      "side": 1,
+      "message": "This is unused. Remove it.",
+      "revId": "95ecc0ef5317a6a22523867992ed9fea175f716c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
