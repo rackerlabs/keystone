@@ -22,6 +22,24 @@
       "revId": "a26f894877a639f699aff15c89d3b5995f33b61f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_2e29a18a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-04T00:32:00Z",
+      "side": 1,
+      "message": "yep, this can be any type that gets passed from a Manager.",
+      "parentUuid": "7af24918_9c9e3ab7",
+      "revId": "a26f894877a639f699aff15c89d3b5995f33b61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
