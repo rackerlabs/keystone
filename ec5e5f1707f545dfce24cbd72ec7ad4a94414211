@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_42de5ddd",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 19197
+      },
+      "writtenOn": "2016-03-04T15:34:47Z",
+      "side": 0,
+      "message": "This patch is to clean up the undesired code that `assertValidErrorResponse` from test_v2/test_v3 has different function signature with its parent\u0027s in rest.py",
+      "parentUuid": "7af24918_9f1d6275",
+      "revId": "ec5e5f1707f545dfce24cbd72ec7ad4a94414211",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_1f0af225",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 3
