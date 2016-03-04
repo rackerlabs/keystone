@@ -45,6 +45,29 @@
       "revId": "a8a16a4753c57c33dd0d0b4a5b37879c692225f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_f44c999f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2665,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-04T11:36:31Z",
+      "side": 1,
+      "message": "This doesn\u0027t really test the new fucntionality",
+      "range": {
+        "startLine": 2665,
+        "startChar": 8,
+        "endLine": 2665,
+        "endChar": 43
+      },
+      "revId": "a8a16a4753c57c33dd0d0b4a5b37879c692225f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
