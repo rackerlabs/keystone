@@ -861,7 +861,7 @@ class Manager(manager.Manager):
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
         ref = driver.create_user(user['id'], user)
-        notifications.Audit.created(self._USER, user['id'], initiator)
+        notifications.Audit.created(self._USER, user, initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -951,7 +951,12 @@ class Manager(manager.Manager):
 
         ref = driver.update_user(entity_id, user)
 
-        notifications.Audit.updated(self._USER, user_id, initiator)
+        # NOTE(lbragstad): We use `ref` here because it contains the entire
+        # user reference as keystone knows about it. The notification module
+        # might require certain things to be in the reference and the only way
+        # we can ensure it is able to do its job is by sending the whole
+        # reference after the update.
+        notifications.Audit.updated(self._USER, ref, initiator)
 
         enabled_change = ((user.get('enabled') is False) and
                           user['enabled'] != old_user_ref.get('enabled'))
@@ -975,7 +980,7 @@ class Manager(manager.Manager):
                                          user_old['domain_id'])
         self.credential_api.delete_credentials_for_user(user_id)
         self.id_mapping_api.delete_id_mapping(user_id)
-        notifications.Audit.deleted(self._USER, user_id, initiator)
+        notifications.Audit.deleted(self._USER, user_old, initiator)
 
         # Invalidate user role assignments cache region, as it may be caching
         # role assignments where the actor is the specified user
@@ -999,7 +1004,7 @@ class Manager(manager.Manager):
         group['id'] = uuid.uuid4().hex
         ref = driver.create_group(group['id'], group)
 
-        notifications.Audit.created(self._GROUP, group['id'], initiator)
+        notifications.Audit.created(self._GROUP, group, initiator)
 
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
@@ -1035,13 +1040,14 @@ class Manager(manager.Manager):
         group = self._clear_domain_id_if_domain_unaware(driver, group)
         ref = driver.update_group(entity_id, group)
         self.get_group.invalidate(self, group_id)
-        notifications.Audit.updated(self._GROUP, group_id, initiator)
+        notifications.Audit.updated(self._GROUP, group, initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
     @domains_configured
     @exception_translated('group')
     def delete_group(self, group_id, initiator=None):
+        group = self.get_group(group_id)
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
         user_ids = (u['id'] for u in self.list_users_in_group(group_id))
@@ -1050,7 +1056,7 @@ class Manager(manager.Manager):
         self.id_mapping_api.delete_id_mapping(group_id)
         self.assignment_api.delete_group_assignments(group_id)
 
-        notifications.Audit.deleted(self._GROUP, group_id, initiator)
+        notifications.Audit.deleted(self._GROUP, group, initiator)
 
         for uid in user_ids:
             self.emit_invalidate_user_token_persistence(uid)

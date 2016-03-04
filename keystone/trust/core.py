@@ -164,7 +164,8 @@ class Manager(manager.Manager):
         trust.setdefault('redelegation_count', max_redelegation_count)
         ref = self.driver.create_trust(trust_id, trust, roles)
 
-        notifications.Audit.created(self._TRUST, trust_id, initiator=initiator)
+        notifications.Audit.created(self._TRUST, {'id': trust_id},
+                                    initiator=initiator)
 
         return ref
 
@@ -192,7 +193,7 @@ class Manager(manager.Manager):
         # end recursion
         self.driver.delete_trust(trust_id)
 
-        notifications.Audit.deleted(self._TRUST, trust_id, initiator)
+        notifications.Audit.deleted(self._TRUST, {'id': trust_id}, initiator)
 
 
 @six.add_metaclass(abc.ABCMeta)

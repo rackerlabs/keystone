@@ -161,7 +161,11 @@ class Manager(manager.Manager):
             parent_region_id = region_ref.get('parent_region_id')
             raise exception.RegionNotFound(region_id=parent_region_id)
 
-        notifications.Audit.created(self._REGION, ret['id'], initiator)
+        # FIXME(lbragstad): The rest of the keystone subsystems pass the
+        # original reference to the notification module, not the return value
+        # from the backend. Why is regions special and can we make it
+        # consistent with the rest of the keystone APIs?
+        notifications.Audit.created(self._REGION, ret, initiator)
         COMPUTED_CATALOG_REGION.invalidate()
         return ret
 
@@ -179,7 +183,7 @@ class Manager(manager.Manager):
         if 'description' in region_ref and region_ref['description'] is None:
             region_ref['description'] = ''
         ref = self.driver.update_region(region_id, region_ref)
-        notifications.Audit.updated(self._REGION, region_id, initiator)
+        notifications.Audit.updated(self._REGION, ref, initiator)
         self.get_region.invalidate(self, region_id)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
@@ -187,7 +191,8 @@ class Manager(manager.Manager):
     def delete_region(self, region_id, initiator=None):
         try:
             ret = self.driver.delete_region(region_id)
-            notifications.Audit.deleted(self._REGION, region_id, initiator)
+            notifications.Audit.deleted(self._REGION, {'id': region_id},
+                                        initiator)
             self.get_region.invalidate(self, region_id)
             COMPUTED_CATALOG_REGION.invalidate()
             return ret
@@ -202,7 +207,7 @@ class Manager(manager.Manager):
         service_ref.setdefault('enabled', True)
         service_ref.setdefault('name', '')
         ref = self.driver.create_service(service_id, service_ref)
-        notifications.Audit.created(self._SERVICE, service_id, initiator)
+        notifications.Audit.created(self._SERVICE, service_ref, initiator)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
 
@@ -215,7 +220,7 @@ class Manager(manager.Manager):
 
     def update_service(self, service_id, service_ref, initiator=None):
         ref = self.driver.update_service(service_id, service_ref)
-        notifications.Audit.updated(self._SERVICE, service_id, initiator)
+        notifications.Audit.updated(self._SERVICE, ref, initiator)
         self.get_service.invalidate(self, service_id)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
@@ -223,8 +228,9 @@ class Manager(manager.Manager):
     def delete_service(self, service_id, initiator=None):
         try:
             endpoints = self.list_endpoints()
+            service = self.get_service(service_id)
             ret = self.driver.delete_service(service_id)
-            notifications.Audit.deleted(self._SERVICE, service_id, initiator)
+            notifications.Audit.deleted(self._SERVICE, service, initiator)
             self.get_service.invalidate(self, service_id)
             for endpoint in endpoints:
                 if endpoint['service_id'] == service_id:
@@ -259,7 +265,7 @@ class Manager(manager.Manager):
         self._assert_service_exists(endpoint_ref['service_id'])
         ref = self.driver.create_endpoint(endpoint_id, endpoint_ref)
 
-        notifications.Audit.created(self._ENDPOINT, endpoint_id, initiator)
+        notifications.Audit.created(self._ENDPOINT, endpoint_ref, initiator)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
 
@@ -267,7 +273,7 @@ class Manager(manager.Manager):
         self._assert_region_exists(endpoint_ref.get('region_id'))
         self._assert_service_exists(endpoint_ref.get('service_id'))
         ref = self.driver.update_endpoint(endpoint_id, endpoint_ref)
-        notifications.Audit.updated(self._ENDPOINT, endpoint_id, initiator)
+        notifications.Audit.updated(self._ENDPOINT, ref, initiator)
         self.get_endpoint.invalidate(self, endpoint_id)
         COMPUTED_CATALOG_REGION.invalidate()
         return ref
@@ -275,7 +281,8 @@ class Manager(manager.Manager):
     def delete_endpoint(self, endpoint_id, initiator=None):
         try:
             ret = self.driver.delete_endpoint(endpoint_id)
-            notifications.Audit.deleted(self._ENDPOINT, endpoint_id, initiator)
+            notifications.Audit.deleted(self._ENDPOINT, {'id': endpoint_id},
+                                        initiator)
             self.get_endpoint.invalidate(self, endpoint_id)
             COMPUTED_CATALOG_REGION.invalidate()
             return ret

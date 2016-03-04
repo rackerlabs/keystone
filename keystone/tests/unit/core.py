@@ -284,6 +284,8 @@ def new_endpoint_ref(service_id, interface='public',
     else:
         ref['region_id'] = region_id
     ref.update(kwargs)
+    # endpoints do not have names
+    del ref['name']
     return ref
 
 
@@ -444,6 +446,8 @@ def new_policy_ref(**kwargs):
     }
 
     ref.update(kwargs)
+    # policies don't have names
+    del ref['name']
     return ref
 
 
