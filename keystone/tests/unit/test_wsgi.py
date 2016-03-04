@@ -30,6 +30,7 @@ import webob
 from keystone.common import environment
 from keystone.common import wsgi
 from keystone import exception
+from keystone.server.wsgi import get_config_files
 from keystone.tests import unit
 
 
@@ -310,6 +311,77 @@ class ApplicationTest(BaseWSGITest):
                             'SCRIPT_NAME': '/identity/v3'})
         resp = req.get_response(FakeApp())
         self.assertEqual(b"http://foo/identity", resp.body)
+
+
+class WSGIAppConfigTest(unit.TestCase):
+    def setUp(self):
+        super(WSGIAppConfigTest, self).setUp()
+
+    def test_config_files_have_default_values(self):
+        config_files = get_config_files()
+        self.assertIn('/etc/keystone/keystone.conf', config_files)
+        self.assertIn('/etc/keystone/keystone-dist.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_FILES'] = '  '
+        env['OS_KEYSTONE_CONFIG_DIR'] = '  '
+        config_files = get_config_files(env)
+        self.assertIn('/etc/keystone/keystone.conf', config_files)
+        self.assertIn('/etc/keystone/keystone-dist.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+    def test_can_change_config_files_under_default_config_dir(self):
+        env = {}
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf'
+        config_files = get_config_files(env)
+        self.assertIn('/etc/keystone/kst.conf', config_files)
+        self.assertEqual(1, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf;kst2.conf'
+        config_files = get_config_files(env)
+        self.assertIn('/etc/keystone/kst.conf', config_files)
+        self.assertIn('/etc/keystone/kst2.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf;kst2.conf;; ; '
+        config_files = get_config_files(env)
+        self.assertIn('/etc/keystone/kst.conf', config_files)
+        self.assertIn('/etc/keystone/kst2.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+    def test_can_change_config_dir(self):
+        env = {}
+        env['OS_KEYSTONE_CONFIG_DIR'] = '/etc/kst/'
+        config_files = get_config_files(env)
+        self.assertIn('/etc/kst/keystone.conf', config_files)
+        self.assertIn('/etc/kst/keystone-dist.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_DIR'] = '/etc/kst/'
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf'
+        config_files = get_config_files(env)
+        self.assertIn('/etc/kst/kst.conf', config_files)
+        self.assertEqual(1, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_DIR'] = '/etc/kst/'
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf;kst2.conf'
+        config_files = get_config_files(env)
+        self.assertIn('/etc/kst/kst.conf', config_files)
+        self.assertIn('/etc/kst/kst2.conf', config_files)
+        self.assertEqual(2, len(config_files))
+
+        env = {}
+        env['OS_KEYSTONE_CONFIG_DIR'] = '/etc/kst/'
+        env['OS_KEYSTONE_CONFIG_FILES'] = 'kst.conf;kst2.conf;; ; '
+        config_files = get_config_files(env)
+        self.assertIn('/etc/kst/kst.conf', config_files)
+        self.assertIn('/etc/kst/kst2.conf', config_files)
+        self.assertEqual(2, len(config_files))
 
 
 class ExtensionRouterTest(BaseWSGITest):
