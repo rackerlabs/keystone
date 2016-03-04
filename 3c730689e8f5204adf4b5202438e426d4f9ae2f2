@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_b17511cc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-04T03:34:13Z",
+      "side": 1,
+      "message": "nit: AVAs*?",
+      "revId": "3c730689e8f5204adf4b5202438e426d4f9ae2f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_713d49dc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-04T03:34:13Z",
+      "side": 1,
+      "message": "nit: add return doc string (even though you\u0027ve clearly stated it in the doc title).",
+      "revId": "3c730689e8f5204adf4b5202438e426d4f9ae2f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_f129599c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-04T03:34:13Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "3c730689e8f5204adf4b5202438e426d4f9ae2f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
