@@ -14,6 +14,7 @@
 
 import logging
 
+import os
 from oslo_config import cfg
 import oslo_i18n
 
@@ -34,8 +35,10 @@ from keystone.version import service as keystone_service
 CONF = cfg.CONF
 
 
-def initialize_application(name, post_log_configured_function=lambda: None):
-    common.configure()
+def initialize_application(name,
+                           post_log_configured_function=lambda: None,
+                           config_files=None):
+    common.configure(config_files=config_files)
 
     # Log the options used when starting if we're in debug mode...
     if CONF.debug:
@@ -54,9 +57,31 @@ def initialize_application(name, post_log_configured_function=lambda: None):
     return application
 
 
+def get_config_files(env=None):
+    if env is None:
+        env = os.environ
+
+    dirname = env.get("OS_KEYSTONE_CONFIG_DIR", "").strip()
+    if not dirname:
+        dirname = "/etc/keystone/"
+
+    files = [s.strip() for s in
+             env.get("OS_KEYSTONE_CONFIG_FILES", "").split(';')]
+    files = filter(lambda s: s, files)
+    if not files:
+        files = ['keystone.conf', 'keystone-dist.conf']
+
+    config_files = files
+    config_files.extend([os.path.join(dirname, fname) for fname in files])
+
+    return filter(lambda fpath: fpath.startswith('/'), config_files)
+
+
 def initialize_admin_application():
-    return initialize_application('admin')
+    return initialize_application(name='admin',
+                                  config_files=get_config_files())
 
 
 def initialize_public_application():
-    return initialize_application('main')
+    return initialize_application(name='main',
+                                  config_files=get_config_files())
