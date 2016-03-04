@@ -1477,7 +1477,7 @@ class RoleManager(manager.Manager):
 
     def create_role(self, role_id, role, initiator=None):
         ret = self.driver.create_role(role_id, role)
-        notifications.Audit.created(self._ROLE, role_id, initiator)
+        notifications.Audit.created(self._ROLE, ret, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_role.set(ret, self, role_id)
         return ret
@@ -1494,15 +1494,16 @@ class RoleManager(manager.Manager):
                 message=_('Update of `domain_id` is not allowed.'))
 
         ret = self.driver.update_role(role_id, role)
-        notifications.Audit.updated(self._ROLE, role_id, initiator)
+        notifications.Audit.updated(self._ROLE, ret, initiator)
         self.get_role.invalidate(self, role_id)
         return ret
 
     def delete_role(self, role_id, initiator=None):
         self.assignment_api.delete_tokens_for_role_assignments(role_id)
         self.assignment_api.delete_role_assignments(role_id)
+        role = self.get_role(role_id)
         self.driver.delete_role(role_id)
-        notifications.Audit.deleted(self._ROLE, role_id, initiator)
+        notifications.Audit.deleted(self._ROLE, role, initiator)
         self.get_role.invalidate(self, role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
