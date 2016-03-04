@@ -164,38 +164,38 @@ class Manager(manager.Manager):
         consumer_ref = consumer_ref.copy()
         consumer_ref['secret'] = uuid.uuid4().hex
         ret = self.driver.create_consumer(consumer_ref)
-        notifications.Audit.created(self._CONSUMER, ret['id'], initiator)
+        notifications.Audit.created(self._CONSUMER, ret, initiator)
         return ret
 
     def update_consumer(self, consumer_id, consumer_ref, initiator=None):
         ret = self.driver.update_consumer(consumer_id, consumer_ref)
-        notifications.Audit.updated(self._CONSUMER, consumer_id, initiator)
+        notifications.Audit.updated(self._CONSUMER, ret, initiator)
         return ret
 
     def delete_consumer(self, consumer_id, initiator=None):
         ret = self.driver.delete_consumer(consumer_id)
-        notifications.Audit.deleted(self._CONSUMER, consumer_id, initiator)
+        payload = {'id': consumer_id}
+        notifications.Audit.deleted(self._CONSUMER, payload, initiator)
         return ret
 
     def create_access_token(self, request_id, access_token_duration,
                             initiator=None):
         ret = self.driver.create_access_token(request_id,
                                               access_token_duration)
-        notifications.Audit.created(self._ACCESS_TOKEN, ret['id'], initiator)
+        notifications.Audit.created(self._ACCESS_TOKEN, ret, initiator)
         return ret
 
     def delete_access_token(self, user_id, access_token_id, initiator=None):
         ret = self.driver.delete_access_token(user_id, access_token_id)
-        notifications.Audit.deleted(self._ACCESS_TOKEN, access_token_id,
-                                    initiator)
+        payload = {'id': access_token_id}
+        notifications.Audit.deleted(self._ACCESS_TOKEN, payload, initiator)
         return ret
 
     def create_request_token(self, consumer_id, requested_project,
                              request_token_duration, initiator=None):
         ret = self.driver.create_request_token(
             consumer_id, requested_project, request_token_duration)
-        notifications.Audit.created(self._REQUEST_TOKEN, ret['id'],
-                                    initiator)
+        notifications.Audit.created(self._REQUEST_TOKEN, ret, initiator)
         return ret
 
 
