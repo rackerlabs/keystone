@@ -307,8 +307,10 @@ class Manager(manager.Manager):
             role_id, user_id=user_id, project_id=tenant_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
-    @notifications.internal(notifications.INVALIDATE_USER_TOKEN_PERSISTENCE)
     def _emit_invalidate_user_token_persistence(self, user_id):
+        notifications.Audit.internal(
+            notifications.INVALIDATE_USER_TOKEN_PERSISTENCE, user_id
+        )
         self.identity_api.emit_invalidate_user_token_persistence(user_id)
 
     def _emit_invalidate_grant_token_persistence(self, user_id, project_id):
@@ -1070,13 +1072,13 @@ class Manager(manager.Manager):
                 {'user_id': user_id,
                  'project_id': project_id})
 
-    @notifications.internal(
-        notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
     def _emit_invalidate_user_project_tokens_notification(self, payload):
         # This notification's payload is a dict of user_id and
         # project_id so the token provider can invalidate the tokens
         # from persistence if persistence is enabled.
-        pass
+        notifications.Audit.internal(
+            notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE, payload
+        )
 
 
 # The AssignmentDriverBase class is the set of driver methods from earlier

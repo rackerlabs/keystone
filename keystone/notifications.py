@@ -161,6 +161,12 @@ class Audit(object):
         cls._emit(ACTIONS.deleted, resource_type, resource_id, initiator,
                   public)
 
+    @classmethod
+    def internal(cls, resource_type, resource_id, initiator=None,
+                 public=False):
+        cls._emit(ACTIONS.internal, resource_type, resource_id, initiator,
+                  public)
+
 
 class ManagerNotificationWrapper(object):
     """Send event notifications for ``Manager`` methods.
