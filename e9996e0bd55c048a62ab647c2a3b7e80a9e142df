@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_6de38134",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-04T18:50:50Z",
+      "side": 1,
+      "message": "The problem is that we are trying to use this on v3 tokens, this sounds like the wrong way to to that.",
+      "range": {
+        "startLine": 342,
+        "startChar": 7,
+        "endLine": 342,
+        "endChar": 38
+      },
+      "revId": "e9996e0bd55c048a62ab647c2a3b7e80a9e142df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_943b2d38",
         "filename": "keystone/token/provider.py",
         "patchSetId": 26
