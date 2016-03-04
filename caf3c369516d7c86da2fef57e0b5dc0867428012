@@ -420,6 +420,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_efc21052",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-04T04:58:12Z",
+      "side": 1,
+      "message": "my apologies, i see the definitions uptop so self.*_url will be defined as None",
+      "parentUuid": "7af24918_6359028e",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_ed706e74",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -502,6 +520,24 @@
       "side": 1,
       "message": "Mostly being sarcastic. We have been in this constant struggle between flexibility and standardization. With Keystone v3, in theory, an endpoint is not limited to \"admin\", \"public\", or \"internal\". One can also define a \"foo\" interface. But that won\u0027t work with some of the existing clients out there. Now that we are in the standardization mode, I suspect we will only be recognizing those three going forward. See\n\nhttps://review.openstack.org/#/c/181393/17/specs/service-catalog.rst\n\nline 171",
       "parentUuid": "7af24918_adeae671",
+      "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_4f92244d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 14119
+      },
+      "writtenOn": "2016-03-04T04:58:12Z",
+      "side": 1,
+      "message": "I suppose this is one way to enforce that. I am not sure this code would have been my first choice but at the end of the day as long as I don\u0027t have to do crazy things to bootstrap the environment ill be happy.",
+      "parentUuid": "7af24918_4e84ed09",
       "revId": "caf3c369516d7c86da2fef57e0b5dc0867428012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
