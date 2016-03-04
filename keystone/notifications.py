@@ -183,6 +183,12 @@ class Audit(object):
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
                   actor_dict=actor_dict)
 
+    @classmethod
+    def internal(cls, resource_type, resource_id, initiator=None,
+                 public=False):
+        cls._emit(ACTIONS.internal, resource_type, resource_id, initiator,
+                  public)
+
 
 class ManagerNotificationWrapper(object):
     """Send event notifications for ``Manager`` methods.
