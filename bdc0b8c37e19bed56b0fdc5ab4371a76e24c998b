@@ -22,6 +22,30 @@
       "revId": "bdc0b8c37e19bed56b0fdc5ab4371a76e24c998b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_320d4a38",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-04T23:54:07Z",
+      "side": 1,
+      "message": "this is removed in a follow-on patch",
+      "parentUuid": "7af24918_0f30e706",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 72
+      },
+      "revId": "bdc0b8c37e19bed56b0fdc5ab4371a76e24c998b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
