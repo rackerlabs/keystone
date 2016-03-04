@@ -248,6 +248,30 @@
       "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_ca77109e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2805,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-04T22:29:17Z",
+      "side": 1,
+      "message": "sorry for the delay on replying here.\n\nreturn all vs return none is not what the API spec says for the subtree_as_list param: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3.rst#get-project\n\nthe list returns all projects that the caller has access, example: X-\u003eA-\u003eB-\u003eC. If a user has get_project() permissions only in projects A and C, only them will be returned calling the subtree_as_list from X (B should not be included). That was the whole reason why we have the \"subtree_as_ids\" and \"parent_as_ids\" calls.",
+      "parentUuid": "dae33548_11b2f3e4",
+      "range": {
+        "startLine": 2804,
+        "startChar": 51,
+        "endLine": 2805,
+        "endChar": 35
+      },
+      "revId": "e83d4e26b336495056efcbd168ea3f94c67c85e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
