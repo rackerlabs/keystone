@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_8f723a48",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2776,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-04T22:21:15Z",
+      "side": 1,
+      "message": "why create 3 of them if you are going to perform the exact same call? If you are not creating a more complex user/role/project/domain relationship, think 1 is enough",
+      "range": {
+        "startLine": 2776,
+        "startChar": 10,
+        "endLine": 2776,
+        "endChar": 33
+      },
+      "revId": "6b0efbce1dbd612efb40459ffb27556ccbb3ba13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_5469e924",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2828,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-04T22:21:15Z",
+      "side": 1,
+      "message": "I think that comparing just the returned length is not enough here, you need to make sure that the project which the user has an assignment was returned.\n\n(same for the tests below)",
+      "range": {
+        "startLine": 2828,
+        "startChar": 12,
+        "endLine": 2828,
+        "endChar": 61
+      },
+      "revId": "6b0efbce1dbd612efb40459ffb27556ccbb3ba13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
