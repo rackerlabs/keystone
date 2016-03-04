@@ -878,13 +878,13 @@ class Manager(manager.Manager):
     def get_project_by_name(self, project_name, domain_id):
         return self.driver.get_project_by_name(project_name, domain_id)
 
-    @notifications.internal(
-        notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
     def _emit_invalidate_user_project_tokens_notification(self, payload):
         # This notification's payload is a dict of user_id and
         # project_id so the token provider can invalidate the tokens
         # from persistence if persistence is enabled.
-        pass
+        notifications.Audit.internal(
+            notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE, payload
+        )
 
     def ensure_default_domain_exists(self):
         """Creates the default domain if it doesn't exist.
