@@ -1,0 +1,10 @@
+Code-Review+1: Sean Perry <sean.perry@hpe.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 05 Mar 2016 06:19:00 +0000
+Reviewed-on: https://review.openstack.org/269133
+Project: openstack/keystone
+Branch: refs/heads/master
