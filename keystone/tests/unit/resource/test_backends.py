@@ -1589,3 +1589,20 @@ class ResourceTests(object):
 
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(updated_project_ref, project_ref)
+
+
+class ResourceDriverTests(object):
+    """Tests for the resource driver.
+
+    Subclasses must set self.driver to the driver instance.
+
+    """
+
+    def test_create_project(self):
+        project_id = uuid.uuid4().hex
+        project = {
+            'name': uuid.uuid4().hex,
+            'id': project_id,
+            'domain_id': uuid.uuid4().hex,
+        }
+        self.driver.create_project(project_id, project)
