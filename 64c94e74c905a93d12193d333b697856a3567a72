@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_e62b2f32",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-07T10:08:23Z",
+      "side": 1,
+      "message": "lack of a sane default for a region name still worries me. whats the use case for creating a service without a region id?",
+      "range": {
+        "startLine": 118,
+        "startChar": 29,
+        "endLine": 118,
+        "endChar": 50
+      },
+      "revId": "64c94e74c905a93d12193d333b697856a3567a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
