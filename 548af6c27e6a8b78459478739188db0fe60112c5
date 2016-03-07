@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_b53bf4ea",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-07T18:16:32Z",
+      "side": 1,
+      "message": "thought the change was only for \"username\"",
+      "range": {
+        "startLine": 199,
+        "startChar": 53,
+        "endLine": 199,
+        "endChar": 78
+      },
+      "revId": "548af6c27e6a8b78459478739188db0fe60112c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_b56db406",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-07T18:16:32Z",
+      "side": 1,
+      "message": "don\u0027t use a magic number here, it should be a constant with a meaningful name and with some comments to explain it",
+      "range": {
+        "startLine": 288,
+        "startChar": 31,
+        "endLine": 288,
+        "endChar": 34
+      },
+      "revId": "548af6c27e6a8b78459478739188db0fe60112c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
