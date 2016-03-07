@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_9999ca71",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-03-07T21:14:06Z",
+      "side": 1,
+      "message": "you have the \"fails\" word duplicated in all tests. I suggest keeping only the last one: test_validate_domain_create_with_invalid_name_fails",
+      "range": {
+        "startLine": 638,
+        "startChar": 36,
+        "endLine": 638,
+        "endChar": 41
+      },
+      "revId": "720515db287391b3788eb6a27b42d3ed654a9df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_39e236d6",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-03-07T21:14:06Z",
+      "side": 1,
+      "message": "suggestion: too much repetition of this. If you want, you can create a method to do this, and pass the callable as a parameter",
+      "revId": "720515db287391b3788eb6a27b42d3ed654a9df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
