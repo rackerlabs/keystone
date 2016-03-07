@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_830f99e0",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-07T20:39:42Z",
+      "side": 1,
+      "message": "maybe cite the db schema here",
+      "range": {
+        "startLine": 44,
+        "startChar": 25,
+        "endLine": 44,
+        "endChar": 78
+      },
+      "revId": "cee735486c07dd474b837ef0be5c3323261fc6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
