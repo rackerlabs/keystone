@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5aef4532_79cb2c73",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-07T16:54:41Z",
+      "side": 1,
+      "message": "May want to consider removing the version as we are moving toward versionless endpoints. Till it works anyway.",
+      "range": {
+        "startLine": 107,
+        "startChar": 62,
+        "endLine": 107,
+        "endChar": 68
+      },
+      "revId": "64c94e74c905a93d12193d333b697856a3567a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_e62b2f32",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -13,6 +36,30 @@
       "writtenOn": "2016-03-07T10:08:23Z",
       "side": 1,
       "message": "lack of a sane default for a region name still worries me. whats the use case for creating a service without a region id?",
+      "range": {
+        "startLine": 118,
+        "startChar": 29,
+        "endLine": 118,
+        "endChar": 50
+      },
+      "revId": "64c94e74c905a93d12193d333b697856a3567a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_391404f4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-07T16:54:41Z",
+      "side": 1,
+      "message": "region_id is optional as specified in the API spec. Be careful with the \"sane defaults\", they have a funny way of becoming \"the standard\". :-)",
+      "parentUuid": "5aef4532_e62b2f32",
       "range": {
         "startLine": 118,
         "startChar": 29,
