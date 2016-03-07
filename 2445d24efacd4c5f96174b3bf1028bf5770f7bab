@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_32140c43",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-07T22:26:38Z",
+      "side": 0,
+      "message": "This was indented too much in patchset 1, which caused a bunch of test failures (when driver methods started returning None, because f() wasn\u0027t being called at all).",
+      "revId": "2445d24efacd4c5f96174b3bf1028bf5770f7bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
