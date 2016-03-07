@@ -16,6 +16,24 @@
       "revId": "2d33a4e77b2c5e38ac75a9a55fce92a3221675e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_4168f6f5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-07T17:10:18Z",
+      "side": 1,
+      "message": "oh - sure that makes sense. I\u0027ll post another version. Do we only notify on success?",
+      "parentUuid": "5aef4532_21e84a10",
+      "revId": "2d33a4e77b2c5e38ac75a9a55fce92a3221675e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
