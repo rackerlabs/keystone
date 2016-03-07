@@ -23,9 +23,11 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import extension as keystone_extension
+from keystone.common.validation import validators
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import rest
+from keystone.tests.unit import schema
 
 
 CONF = cfg.CONF
@@ -1153,6 +1155,12 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             self.assertIsNotNone(endpoint.get('internalURL'))
             self.assertIsNotNone(endpoint.get('adminURL'))
 
+    def assertValidScopeTokenResponse(self, r):
+        token = r.json()['access']
+        validator_object = validators.SchemaValidator(
+            schema.scope_token_v2_schema)
+        validator_object.validate(token)
+
     def get_user_from_response(self, r):
         return r.result.get('user')
 
@@ -1480,11 +1488,12 @@ class TestFernetTokenProviderV2(RestfulTestCase):
         path = ('/v2.0/tokens/%s?belongsTo=%s' % (member_token,
                 project2_ref['id']))
         # Validate token belongs to project
-        self.admin_request(
+        resp = self.admin_request(
             method='GET',
             path=path,
             token=admin_token,
             expected_status=http_client.OK)
+        self.assertValidScopeTokenResponse(resp)
 
     def test_token_authentication_and_validation(self):
         """Test token authentication for Fernet token provider.
