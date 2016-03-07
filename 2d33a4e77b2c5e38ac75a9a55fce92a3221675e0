@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_21e84a10",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-07T16:59:06Z",
+      "side": 1,
+      "message": "This issue here is that not if like 314 fails no notification happens Is that desired? If not then you may need something like:\ntry:\n  # line 314\nexcept X as e:\n  notify a failure\nelse:\n  notify a success",
+      "revId": "2d33a4e77b2c5e38ac75a9a55fce92a3221675e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
