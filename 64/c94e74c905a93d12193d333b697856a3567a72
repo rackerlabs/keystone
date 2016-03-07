@@ -1,0 +1,11 @@
+Code-Review+1: Sam Yaple <sam@yaple.net>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 07 Mar 2016 18:17:26 +0000
+Reviewed-on: https://review.openstack.org/285102
+Project: openstack/keystone
+Branch: refs/heads/master
