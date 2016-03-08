@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_e623e6a5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-08T13:53:17Z",
+      "side": 1,
+      "message": "This will break backward compatibility. The point of this class is to adapt an old driver to the new interface. Since the old driver didn\u0027t have this method I think we can safely just pass here with a comment saying why.",
+      "revId": "95bde16ce21d2e5f8a1c261796ca949b62af0d4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_a661deaa",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2562,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-08T13:53:17Z",
+      "side": 1,
+      "message": "Why do we need this if it\u0027s just calling the parent? The methods above have a comment saying they are overriding the parent\u0027s implementation.",
+      "revId": "95bde16ce21d2e5f8a1c261796ca949b62af0d4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
