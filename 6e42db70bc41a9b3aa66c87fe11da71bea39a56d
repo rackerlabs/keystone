@@ -101,6 +101,23 @@
       "revId": "6e42db70bc41a9b3aa66c87fe11da71bea39a56d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_1b2100a0",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T17:13:55Z",
+      "side": 1,
+      "message": "if this line doesn\u0027t have any impact, remove it?",
+      "revId": "6e42db70bc41a9b3aa66c87fe11da71bea39a56d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
