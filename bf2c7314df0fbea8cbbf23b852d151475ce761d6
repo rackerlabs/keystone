@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_17471e1e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4373,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-08T14:47:45Z",
+      "side": 1,
+      "message": "move this back where it was so this is easier to review.",
+      "revId": "bf2c7314df0fbea8cbbf23b852d151475ce761d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_374cda41",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4380,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-08T14:47:45Z",
+      "side": 1,
+      "message": "move this back where it was so this is easier to review.",
+      "revId": "bf2c7314df0fbea8cbbf23b852d151475ce761d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_97ecce2a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-08T14:47:45Z",
+      "side": 1,
+      "message": "move this back where it was so this is easier to review.",
+      "revId": "bf2c7314df0fbea8cbbf23b852d151475ce761d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
