@@ -16,7 +16,7 @@ from keystone.common import sql
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit.backend import core_sql
-from keystone.tests.unit.backend.role import core
+from keystone.tests.unit.assignment import test_core
 
 
 class SqlRoleModels(core_sql.BaseBackendSqlModels):
@@ -28,7 +28,7 @@ class SqlRoleModels(core_sql.BaseBackendSqlModels):
         self.assertExpectedSchema('role', cols)
 
 
-class SqlRole(core_sql.BaseBackendSqlTests, core.RoleTests):
+class SqlRole(core_sql.BaseBackendSqlTests, test_core.RoleTests):
 
     def test_create_null_role_name(self):
         role = unit.new_role_ref(name=None)
