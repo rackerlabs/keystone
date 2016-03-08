@@ -164,8 +164,8 @@
     "identity:update_mapping": "rule:admin_required",
 
     "identity:create_service_provider": "rule:admin_required",
-    "identity:list_service_providers": "rule:admin_required",
-    "identity:get_service_provider": "rule:admin_required",
+    "identity:list_service_providers": "",
+    "identity:get_service_provider": "",
     "identity:update_service_provider": "rule:admin_required",
     "identity:delete_service_provider": "rule:admin_required",
 
