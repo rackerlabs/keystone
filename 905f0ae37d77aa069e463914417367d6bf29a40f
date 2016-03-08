@@ -16,6 +16,29 @@
       "revId": "905f0ae37d77aa069e463914417367d6bf29a40f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_6297b990",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-08T16:25:49Z",
+      "side": 1,
+      "message": "suggest to check the domain_id in the role_assignments is indeed the ID from the remaining domain",
+      "range": {
+        "startLine": 2456,
+        "startChar": 24,
+        "endLine": 2456,
+        "endChar": 40
+      },
+      "revId": "905f0ae37d77aa069e463914417367d6bf29a40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
