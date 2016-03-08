@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_2ee90fe7",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T20:49:39Z",
+      "side": 1,
+      "message": "Yes, I think so. One is provided for backwards compatibility.",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_aebb5fe4",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T20:49:39Z",
+      "side": 1,
+      "message": "minItems: 1",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_aed4ff1f",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T20:49:39Z",
+      "side": 1,
+      "message": "++",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_ce9d0b5b",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T20:49:39Z",
+      "side": 1,
+      "message": "use copy.deepcopy() to minimize duplication between scoped_ and unscoped_ ?",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
