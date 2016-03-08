@@ -206,7 +206,7 @@ class Manager(manager.Manager):
                      'within a domain with the same name : %s'
                      ) % project['name']
 
-    def _create_project(self, project_id, project, initiator=None):
+    def create_project(self, project_id, project, initiator=None):
         project = project.copy()
 
         if (CONF.resource.project_name_url_safe != 'off' and
@@ -250,11 +250,6 @@ class Manager(manager.Manager):
             self.get_project_by_name.set(ret, self, ret['name'],
                                          ret['domain_id'])
         return ret
-
-    def create_project(self, project_id, project, initiator=None):
-        project = self._create_project(project_id, project, initiator)
-
-        return project
 
     def assert_domain_enabled(self, domain_id, domain=None):
         """Assert the Domain is enabled.
@@ -315,8 +310,8 @@ class Manager(manager.Manager):
         subtree_enabled = [ref.get('enabled', True) for ref in subtree_list]
         return (not any(subtree_enabled))
 
-    def _update_project(self, project_id, project, initiator=None,
-                        cascade=False):
+    def update_project(self, project_id, project, initiator=None,
+                       cascade=False):
         # Use the driver directly to prevent using old cached value.
         original_project = self.driver.get_project(project_id)
         project = project.copy()
@@ -436,6 +431,10 @@ class Manager(manager.Manager):
             # assignments from the old domain to the specified project
             assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
+        if ret['is_domain']:
+            self.get_domain.invalidate(self, project_id)
+            self.get_domain_by_name.invalidate(self, ret['name'])
+
         return ret
 
     def _only_allow_enabled_to_update_cascade(self, project, original_project):
@@ -462,15 +461,6 @@ class Manager(manager.Manager):
                                              public=False)
 
             self.driver.update_project(child['id'], child)
-
-    def update_project(self, project_id, project, initiator=None,
-                       cascade=False):
-        ret = self._update_project(project_id, project, initiator, cascade)
-        if ret['is_domain']:
-            self.get_domain.invalidate(self, project_id)
-            self.get_domain_by_name.invalidate(self, ret['name'])
-
-        return ret
 
     def _pre_delete_cleanup_project(self, project_id, project, initiator=None):
         project_user_ids = (
@@ -748,7 +738,7 @@ class Manager(manager.Manager):
                 utils.is_not_url_safe(domain['name'])):
             self._raise_reserved_character_exception('Domain', domain['name'])
         project_from_domain = _get_project_from_domain(domain)
-        is_domain_project = self._create_project(
+        is_domain_project = self.create_project(
             domain_id, project_from_domain, initiator)
 
         return self._get_domain_from_project(is_domain_project)
@@ -768,7 +758,7 @@ class Manager(manager.Manager):
         project = _get_project_from_domain(domain)
         try:
             original_domain = self.driver.get_project(domain_id)
-            project = self._update_project(domain_id, project, initiator)
+            project = self.update_project(domain_id, project, initiator)
         except exception.ProjectNotFound:
             raise exception.DomainNotFound(domain_id=domain_id)
 
