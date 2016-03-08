@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5aef4532_c22fad3c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1395,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-08T16:27:43Z",
+      "side": 1,
+      "message": "So in fact, we do remove all the assignments on the domain for user who are also in that domain. What this method is used for is to catch any assignments that are for users owned by other domains.",
+      "range": {
+        "startLine": 1394,
+        "startChar": 38,
+        "endLine": 1395,
+        "endChar": 34
+      },
+      "revId": "905f0ae37d77aa069e463914417367d6bf29a40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_cfbfd65e",
         "filename": "keystone/tests/unit/assignment/test_backends.py",
         "patchSetId": 25
