@@ -300,7 +300,7 @@ class TokenAPITests(object):
         r = self.get('/auth/tokens', headers={'X-Subject-Token': v2_token})
         # FIXME(dolph): Due to bug 1476329, v2 tokens validated on v3 are
         # missing timezones, so they will not pass this assertion.
-        # self.assertValidUnscopedTokenResponse(r)
+        self.assertValidUnscopedTokenResponse(r)
         v3_token_data = r.result
 
         self.assertEqual(v2_token_data['access']['user']['id'],
@@ -329,7 +329,7 @@ class TokenAPITests(object):
         r = self.get('/auth/tokens', headers={'X-Subject-Token': v2_token})
         # FIXME(dolph): Due to bug 1476329, v2 tokens validated on v3 are
         # missing timezones, so they will not pass this assertion.
-        # self.assertValidProjectScopedTokenResponse(r)
+        self.assertValidProjectScopedTokenResponse(r)
         v3_token_data = r.result
 
         self.assertEqual(v2_token_data['access']['user']['id'],
