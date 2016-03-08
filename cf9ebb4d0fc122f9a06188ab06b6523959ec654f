@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_bb6f1ec4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T22:26:42Z",
+      "side": 1,
+      "message": "If this wasn\u0027t a stable backport, I\u0027d suggesting skipping the try/except with:\n\n  return getattr(self, \u0027conf\u0027, CONF)",
+      "revId": "cf9ebb4d0fc122f9a06188ab06b6523959ec654f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
