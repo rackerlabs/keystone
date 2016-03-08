@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_bb427e0e",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T22:30:49Z",
+      "side": 1,
+      "message": "As keystone convention we don\u0027t really import functions, we usually approach imports like the following: \n\n    from keystone.service import wsgi as server_wsgi\n    ...\n    server_wsgi.get_config_files()",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_bb36fe4f",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T22:30:49Z",
+      "side": 1,
+      "message": "We shouldn\u0027t need this unless we are planning on setting things up specifically for these tests. The parent setUp method should get called by default.",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_bbdefe3c",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T22:30:49Z",
+      "side": 1,
+      "message": "These strings could be pulled out into variables since they are used more than once.",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_db782a2e",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T22:30:49Z",
+      "side": 1,
+      "message": "This seems like it\u0027s own test because it\u0027s testing that the default config values are assumed if the environment variables are empty (versus not present like the above case).",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_3b1cae11",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T22:30:49Z",
+      "side": 1,
+      "message": "This test seems like it could be broken up a bit since it has four logical situations.",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
