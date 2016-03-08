@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_cfbfd65e",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2422,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T16:19:00Z",
+      "side": 1,
+      "message": "Nice test",
+      "revId": "905f0ae37d77aa069e463914417367d6bf29a40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
