@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_7b611639",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T22:32:03Z",
+      "side": 1,
+      "message": "Technically accurate enough for me, but does sound weird.",
+      "parentUuid": "7af24918_f8b60a3c",
+      "revId": "045e3588c14e1b6e88334ae9573fb1112548ae4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8392d99d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
