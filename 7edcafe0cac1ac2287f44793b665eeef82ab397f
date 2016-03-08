@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5aef4532_8205977b",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T21:22:10Z",
+      "side": 1,
+      "message": "Should we name this the v2 schema?",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_2ee90fe7",
         "filename": "keystone/tests/unit/schema.py",
         "patchSetId": 6
@@ -71,6 +88,41 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_02d0671e",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T21:22:10Z",
+      "side": 1,
+      "message": "how come?",
+      "parentUuid": "5aef4532_aed4ff1f",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_8290f744",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T21:22:10Z",
+      "side": 1,
+      "message": "is this never populated but just here because?",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_ce9d0b5b",
         "filename": "keystone/tests/unit/schema.py",
         "patchSetId": 6
@@ -82,6 +134,40 @@
       "writtenOn": "2016-03-08T20:49:39Z",
       "side": 1,
       "message": "use copy.deepcopy() to minimize duplication between scoped_ and unscoped_ ?",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_c29aff62",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T21:22:10Z",
+      "side": 1,
+      "message": "same here?",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_a287f3d5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-08T21:22:10Z",
+      "side": 1,
+      "message": "so we no longer return \u0027id\u0027 in our response, but we never did with v3, right?",
       "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
