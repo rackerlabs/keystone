@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_4d391c41",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-08T12:23:51Z",
+      "side": 1,
+      "message": "I think you need only one function, not individual ones for projects, domains, users, roles... (the code is the same)",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 679,
+        "endChar": 50
+      },
+      "revId": "41bac9cf19eca32e826268076618e41c8be35055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
