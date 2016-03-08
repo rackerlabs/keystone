@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_989ebbb6",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-08T15:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_b7958ae5",
+      "revId": "275979e0f2e15d59b6f5a6318e0233d91dea326b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_b7bc6a6d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-08T14:58:43Z",
       "side": 1,
       "message": "We are removing a role_id that we already expose?",
+      "revId": "275979e0f2e15d59b6f5a6318e0233d91dea326b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_98a4fbb9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-08T15:43:59Z",
+      "side": 1,
+      "message": "A Uuid token object in v2 only has a list of role names under the user object and a list of role ids under the metadata object. This change allows to have matching responses between uuid and fernet.",
+      "parentUuid": "5aef4532_b7bc6a6d",
       "revId": "275979e0f2e15d59b6f5a6318e0233d91dea326b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
