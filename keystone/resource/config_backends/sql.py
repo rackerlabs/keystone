@@ -56,15 +56,23 @@ class DomainConfig(resource.DomainConfigDriverV8):
         else:
             return WhiteListedConfig
 
-    @sql.handle_conflicts(conflict_type='domain_config')
-    def create_config_option(self, domain_id, group, option, value,
-                             sensitive=False):
+    def _create_config_option(
+            self, session, domain_id, group, option, sensitive, value):
+        config_table = self.choose_table(sensitive)
+        ref = config_table(domain_id=domain_id, group=group, option=option,
+                           value=value)
+        session.add(ref)
+
+    def create_config_options(self, domain_id, option_list):
         with sql.session_for_write() as session:
-            config_table = self.choose_table(sensitive)
-            ref = config_table(domain_id=domain_id, group=group,
-                               option=option, value=value)
-            session.add(ref)
-            return ref.to_dict()
+            for config_table in [WhiteListedConfig, SensitiveConfig]:
+                query = session.query(config_table)
+                query = query.filter_by(domain_id=domain_id)
+                query.delete(False)
+            for option in option_list:
+                self._create_config_option(
+                    session, domain_id, option['group'],
+                    option['option'], option['sensitive'], option['value'])
 
     def _get_config_option(self, session, domain_id, group, option, sensitive):
         try:
@@ -97,16 +105,26 @@ class DomainConfig(resource.DomainConfigDriverV8):
                     query = query.filter_by(option=option)
             return [ref.to_dict() for ref in query.all()]
 
-    def update_config_option(self, domain_id, group, option, value,
-                             sensitive=False):
+    def update_config_options(self, domain_id, option_list):
         with sql.session_for_write() as session:
-            ref = self._get_config_option(session, domain_id, group, option,
-                                          sensitive)
-            ref.value = value
-            return ref.to_dict()
+            for option in option_list:
+                self._delete_config_options(
+                    session, domain_id, option['group'], option['option'])
+                self._create_config_option(
+                    session, domain_id, option['group'], option['option'],
+                    option['sensitive'], option['value'])
 
-    def delete_config_options(self, domain_id, group=None, option=None,
-                              sensitive=False):
+    def _delete_config_options(self, session, domain_id, group, option):
+        for config_table in [WhiteListedConfig, SensitiveConfig]:
+            query = session.query(config_table)
+            query = query.filter_by(domain_id=domain_id)
+            if group:
+                query = query.filter_by(group=group)
+                if option:
+                    query = query.filter_by(option=option)
+            query.delete(False)
+
+    def delete_config_options(self, domain_id, group=None, option=None):
         """Deletes config options that match the filter parameters.
 
         Since the public API is broken down into calls for delete in both the
@@ -115,14 +133,7 @@ class DomainConfig(resource.DomainConfigDriverV8):
 
         """
         with sql.session_for_write() as session:
-            config_table = self.choose_table(sensitive)
-            query = session.query(config_table)
-            query = query.filter_by(domain_id=domain_id)
-            if group:
-                query = query.filter_by(group=group)
-                if option:
-                    query = query.filter_by(option=option)
-            query.delete(False)
+            self._delete_config_options(session, domain_id, group, option)
 
     def obtain_registration(self, domain_id, type):
         try:
