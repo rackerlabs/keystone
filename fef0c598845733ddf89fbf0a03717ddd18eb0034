@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_963839a2",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-08T22:47:20Z",
+      "side": 1,
+      "message": "This lost a check which is that the token length is \u003c 255.",
+      "revId": "fef0c598845733ddf89fbf0a03717ddd18eb0034",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
