@@ -1,0 +1,11 @@
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+1: Henrique Truta <henrique@lsd.ufcg.edu.br>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 08 Mar 2016 14:10:47 +0000
+Reviewed-on: https://review.openstack.org/182569
+Project: openstack/keystone
+Branch: refs/heads/master
