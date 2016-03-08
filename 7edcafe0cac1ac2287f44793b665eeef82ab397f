@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_eee8c7b6",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-08T20:50:15Z",
+      "side": 1,
+      "message": "for a scoped token ^ ... else 0 roles for an unscoped token",
+      "parentUuid": "5aef4532_aebb5fe4",
+      "revId": "7edcafe0cac1ac2287f44793b665eeef82ab397f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_aed4ff1f",
         "filename": "keystone/tests/unit/schema.py",
         "patchSetId": 6
