@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_722150fb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-08T15:28:58Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5aef4532_e623e6a5",
+      "revId": "95bde16ce21d2e5f8a1c261796ca949b62af0d4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_a661deaa",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-08T13:53:17Z",
       "side": 1,
       "message": "Why do we need this if it\u0027s just calling the parent? The methods above have a comment saying they are overriding the parent\u0027s implementation.",
+      "revId": "95bde16ce21d2e5f8a1c261796ca949b62af0d4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_dde035fd",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2562,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-08T15:28:58Z",
+      "side": 1,
+      "message": "I think it\u0027s the same deal - we are trying to call the original class in LDAPIdenitty, here overriding the override that is in BaseLDAPIdentity",
+      "parentUuid": "5aef4532_a661deaa",
       "revId": "95bde16ce21d2e5f8a1c261796ca949b62af0d4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
