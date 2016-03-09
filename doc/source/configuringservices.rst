@@ -58,6 +58,13 @@ A user password must also be supplied. This can be passed in as either
 ``--bootstrap-password``, or set as an environment variable using
 ``OS_BOOTSTRAP_PASSWORD``.
 
+Optionally, if specified by ``--bootstrap-public-url``,
+``--bootstrap-admin-url`` and/or ``--bootstrap-internal-url`` or the equivalent
+environment variables bootstrap will create an identity service with the
+specified endpoint information. You may also configure the
+``--bootstrap-region-id`` and ``--bootstrap-service-name`` for the endpoints to
+your deployment's requirements.
+
 Minimally, keystone can be bootstrapped with:
 
 .. code-block:: bash
@@ -66,29 +73,14 @@ Minimally, keystone can be bootstrapped with:
 
 This will create an ``admin`` user with the ``admin`` role on the ``admin``
 project. The user will have the password specified in the command. Note that
-both the user and the project will be created in the ``default`` domain.
+both the user and the project will be created in the ``default`` domain. By not
+creating an endpoint in the catalog users will need to provide endpoint
+overrides to perform additional identity operations.
 
-To retrieve a token using these new values, a user can use OpenStackClient CLI:
-
-.. code-block:: bash
-
-    $ openstack token issue --os-username admin --os-project-name admin \
-        --os-user-domain-id default --os-project-domain-id default \
-        --os-identity-api-version 3 --os-auth-url http://localhost:5000/v3 \
-        --os-password s3cr3t
-
-With the newly returned token, a user may perform actions to create services
-and endpoints.
-
-.. code-block:: bash
-
-    $ openstack service create identity --name keystone --os-token $token_id
-        --os-url http://localhost:5000/v3
-
-Using this technique, deployers will be able to authenticate as the ``admin``
-user and configure endpoints and services; never having to use or configure
-the ``admin_token`` (described below).
-
+By creating an admin user and an identity endpoint deployers may authenticate
+to keystone and perform identity operations like creating additional services
+and endpoints using that ``admin`` user. This will preclude the need to ever
+use or configure the ``admin_token`` (described below).
 
 Setting up credentials with Admin Token
 =======================================
