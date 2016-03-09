@@ -16,6 +16,24 @@
       "revId": "e0790a9652da4fdc4ea41b3192585edd073d8f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_c9b2ee05",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-09T16:29:38Z",
+      "side": 1,
+      "message": "so agree with you for the driver api under test (in this case domain_config), so the tests below should be changed. create-domain() is not part of that api, so I would think this line is OK (as it is part of setup needed to execute the actual driver tests)",
+      "parentUuid": "5aef4532_2e54381f",
+      "revId": "e0790a9652da4fdc4ea41b3192585edd073d8f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
