@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_51d32804",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-03-09T16:41:55Z",
+      "side": 1,
+      "message": "Great commit message!",
+      "revId": "e28fb14a7c20713278a54064f3b8d7de24b90574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
