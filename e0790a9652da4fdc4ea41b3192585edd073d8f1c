@@ -34,6 +34,24 @@
       "revId": "e0790a9652da4fdc4ea41b3192585edd073d8f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_31013c39",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:43:54Z",
+      "side": 1,
+      "message": "How can it be required that there\u0027s a driver in the resource backend for the domain_config backend to work? what if resource driver is not sql?",
+      "parentUuid": "5aef4532_c9b2ee05",
+      "revId": "e0790a9652da4fdc4ea41b3192585edd073d8f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
