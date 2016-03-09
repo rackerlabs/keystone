@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_ff0b0dd4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T20:25:49Z",
+      "side": 1,
+      "message": "Isn\u0027t this the default? Or are we just putting this here for verbosity? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L245-L248",
+      "revId": "d1d1ec24a084d593f535c8aceebd8ad1b6c1427c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
