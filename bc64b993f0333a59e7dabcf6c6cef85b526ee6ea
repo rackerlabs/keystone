@@ -16,6 +16,41 @@
       "revId": "bc64b993f0333a59e7dabcf6c6cef85b526ee6ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_a5fb34c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-03-09T21:09:44Z",
+      "side": 1,
+      "message": "Nit:  So it would be helpful to mention in the commit statement what it is motivating the need to have an inline invocation option available.  While in general I understand that the inline option is more flexible with regards to placement than the decorator, if you look at all the examples you added it does not appear there existed a good example of you using the inline option in way that the existing decorator would not have worked.",
+      "parentUuid": "5aef4532_fa0cc4ed",
+      "revId": "bc64b993f0333a59e7dabcf6c6cef85b526ee6ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_82242ec5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-03-09T21:09:44Z",
+      "side": 1,
+      "message": "Great comment!",
+      "revId": "bc64b993f0333a59e7dabcf6c6cef85b526ee6ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
