@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_447eb719",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T19:59:07Z",
+      "side": 1,
+      "message": "nit: Ensure validating a token for a disabled user\u0027s domain fails",
+      "revId": "9b0cd7d633ec7a8f4e40c52619ba93e4e231b40b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
