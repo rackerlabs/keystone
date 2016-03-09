@@ -198,18 +198,30 @@ data for use with keystone:
 
 .. code-block:: bash
 
-    $ OS_TOKEN=ADMIN tools/sample_data.sh
+    $ OS_TOKEN=<token> tools/sample_data.sh
 
-Notice it requires a service token read from an environment variable for
-authentication.  The default value "ADMIN" is from the ``admin_token``
-option in the ``[DEFAULT]`` section in ``etc/keystone.conf``.
+Notice it requires a token read from an environment variable for
+authentication. To get this token, you must first bootstrap the admin user:
+
+.. code-block:: bash
+
+    $ keystone-manage bootstrap --os-password s3cr3t
+
+Then get a session token ID:
+
+.. code-block:: bash
+
+    $ openstack token issue --os-username admin --os-project-name admin \
+        --os-user-domain-id default --os-project-domain-id default \
+        --os-identity-api-version 3 --os-auth-url http://localhost:5000/v3 \
+        --os-password s3cr3t
 
 Once run, you can see the sample data that has been created by using the
 `openstackclient`_ command-line interface:
 
 .. code-block:: bash
 
-    $ openstack --os-token ADMIN --os-url http://127.0.0.1:35357/v2.0/ user list
+    $ openstack user list --os-token <token> --os-url http://localhost:5000/v3
 
 The `openstackclient`_ can be installed using the following:
 
