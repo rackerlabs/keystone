@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "5aef4532_53122c0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:21:21Z",
+      "side": 1,
+      "message": "re-write this to:\n\n  Closes-Bug: #1552397",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 21
+      },
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_9625c20a",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:21:21Z",
+      "side": 1,
+      "message": "group this with `logging` as it is standard library not 3rd party",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_76fc7672",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:21:21Z",
+      "side": 1,
+      "message": "we should mark this as private, so prefix it with an underscore (_)",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 20
+      },
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_36df8e0e",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:21:21Z",
+      "side": 1,
+      "message": "we need to document this somewhere or it won\u0027t be useful",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 64
+      },
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_bb427e0e",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 4
@@ -13,6 +105,24 @@
       "writtenOn": "2016-03-08T22:30:49Z",
       "side": 1,
       "message": "As keystone convention we don\u0027t really import functions, we usually approach imports like the following: \n\n    from keystone.service import wsgi as server_wsgi\n    ...\n    server_wsgi.get_config_files()",
+      "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_d61bcac8",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:21:21Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5aef4532_bb427e0e",
       "revId": "809dcba8fa2d49f67cf453fa36f643d9b8a0ef3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
