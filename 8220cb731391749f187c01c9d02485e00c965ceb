@@ -22,6 +22,52 @@
       "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_ead08e21",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-09T12:29:27Z",
+      "side": 1,
+      "message": "shouldn\u0027t this test be written to fail?",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 45
+      },
+      "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_ea56ce5a",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-09T12:29:27Z",
+      "side": 1,
+      "message": "there is already a test for this behavior (and some others including the domain_id update): https://github.com/openstack/keystone/blob/master/keystone/tests/unit/resource/test_backends.py#L91-L100\n\nI guess it is better to rename the existing test",
+      "range": {
+        "startLine": 1632,
+        "startChar": 0,
+        "endLine": 1651,
+        "endChar": 46
+      },
+      "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
