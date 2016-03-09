@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_86fe0cac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T18:55:14Z",
+      "side": 1,
+      "message": "I should have included that on the commit body, but its is_domain, and project_parent_id.",
+      "parentUuid": "5aef4532_f0fa3874",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_381642f1",
         "filename": "keystone/tests/unit/schema.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-09T16:08:06Z",
       "side": 1,
       "message": "These should all be moved into schema/v2.py rather put \"v2\" in the name of all the symbols.",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_4b76cdd7",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T18:55:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_381642f1",
       "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_2b6b81f2",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T18:55:14Z",
+      "side": 1,
+      "message": "No, this is an integer denoted as 0 or 1.",
+      "parentUuid": "5aef4532_d842be67",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_137fe915",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 8
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_abab1174",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1432,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T18:55:14Z",
+      "side": 1,
+      "message": "Removed, its not needed.",
+      "parentUuid": "5aef4532_137fe915",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_93df790c",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 8
@@ -98,6 +170,24 @@
       "writtenOn": "2016-03-09T16:08:06Z",
       "side": 1,
       "message": "shouldn\u0027t need to create a new one of these every time this function is called.",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_cbbc9dbd",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1443,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2016-03-09T18:55:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_93df790c",
       "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
