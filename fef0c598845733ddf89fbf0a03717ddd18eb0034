@@ -16,6 +16,24 @@
       "revId": "fef0c598845733ddf89fbf0a03717ddd18eb0034",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_ed69e3bf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T01:55:42Z",
+      "side": 1,
+      "message": "That check is still being made at line 1083 here - https://review.openstack.org/#/c/286906/3/keystone/tests/unit/test_v3_auth.py",
+      "parentUuid": "5aef4532_963839a2",
+      "revId": "fef0c598845733ddf89fbf0a03717ddd18eb0034",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
