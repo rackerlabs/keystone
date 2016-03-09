@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_0f54e31e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T14:24:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_3c392da5",
+      "range": {
+        "startLine": 1245,
+        "startChar": 27,
+        "endLine": 1245,
+        "endChar": 56
+      },
+      "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_ead08e21",
         "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-09T12:29:27Z",
       "side": 1,
       "message": "shouldn\u0027t this test be written to fail?",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 45
+      },
+      "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_6f1ac77e",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T14:24:21Z",
+      "side": 1,
+      "message": "No, because we don\u0027t know what the driver is going to do. It might work or it might fail. The SQL driver will fail, but if somebody writes their own driver it might work.",
+      "parentUuid": "5aef4532_ead08e21",
       "range": {
         "startLine": 70,
         "startChar": 4,
