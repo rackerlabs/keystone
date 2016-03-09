@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_f54a41c4",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T09:15:02Z",
+      "side": 1,
+      "message": "why not put these changes under:\n\nkeystone/tests/unit/resource/config_backends/test_core.py?",
+      "revId": "10d60e347a769dc831d2ffbaf3f2e47cc9640cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
