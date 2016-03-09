@@ -74,6 +74,24 @@
       "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_0b47a577",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T17:49:50Z",
+      "side": 1,
+      "message": "This is \"if the init_version is less than 0\" which doesn\u0027t include if the init_version is 0. If that\u0027s what we want then we\u0027d have to do:\n\n    if init_version \u003c\u003d 0:",
+      "parentUuid": "5aef4532_c1d02222",
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
