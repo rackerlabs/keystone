@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "5aef4532_210c66ec",
+        "filename": "keystone/common/sql/migrate_repo/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:35:28Z",
+      "side": 1,
+      "message": "i think you\u0027re leaving a single blank line in this file? it should be marked for deletion, but i\u0027m not seeing that in gerrit. weird!",
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_01196a22",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:35:28Z",
+      "side": 1,
+      "message": "nit: we can mark this as private with an underscore",
+      "range": {
+        "startLine": 139,
+        "startChar": 4,
+        "endLine": 139,
+        "endChar": 20
+      },
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_a1719678",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 22
@@ -13,6 +53,24 @@
       "writtenOn": "2016-03-09T10:31:16Z",
       "side": 1,
       "message": "whether the init_version can be zero?",
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_c1d02222",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:35:28Z",
+      "side": 1,
+      "message": "this is if \"init_version\" is 0, which would be the first migration, so returning None is fine here. I don\u0027t think we\u0027ll ever hit this condition.",
+      "parentUuid": "5aef4532_a1719678",
       "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
