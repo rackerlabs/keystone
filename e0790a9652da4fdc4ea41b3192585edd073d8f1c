@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_2e54381f",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:24:50Z",
+      "side": 1,
+      "message": "driver tests shouldn\u0027t need any managers.\n\nThis applies to all these tests. They should be able to use self.driver.create_config_option(), etc.",
+      "revId": "e0790a9652da4fdc4ea41b3192585edd073d8f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
