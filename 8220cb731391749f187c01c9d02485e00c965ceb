@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_3c392da5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-09T10:46:09Z",
+      "side": 1,
+      "message": "nit: the wording is inconsistent between the v9 and v8 doc strings:\n\nThis parameter is ignored vs This parameter can be ignored",
+      "range": {
+        "startLine": 1245,
+        "startChar": 27,
+        "endLine": 1245,
+        "endChar": 56
+      },
+      "revId": "8220cb731391749f187c01c9d02485e00c965ceb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
