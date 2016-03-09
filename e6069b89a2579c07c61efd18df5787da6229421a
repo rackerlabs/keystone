@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_60748867",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-09T17:31:04Z",
+      "side": 1,
+      "message": "oops, should remove this",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 46
+      },
+      "revId": "e6069b89a2579c07c61efd18df5787da6229421a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
