@@ -33,6 +33,15 @@ class SqlDomainConfigModels(core_sql.BaseBackendSqlModels):
         self.assertExpectedSchema('sensitive_config', cols)
 
 
+class SqlDomainConfigDriver(core_sql.BaseBackendSqlTests,
+                            test_core.DomainConfigDriverTests):
+    def setUp(self):
+        super(SqlDomainConfigDriver, self).setUp()
+        # test_core.DomainConfigDriverTests is effectively a mixin class,
+        # so make sure we call its setup
+        test_core.DomainConfigDriverTests.setUp(self)
+
+
 class SqlDomainConfig(core_sql.BaseBackendSqlTests,
                       test_core.DomainConfigTests):
     def setUp(self):

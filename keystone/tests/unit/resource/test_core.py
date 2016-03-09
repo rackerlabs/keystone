@@ -95,7 +95,7 @@ class TestResourceManagerNoFixtures(unit.SQLDriverOverrides, unit.TestCase):
                           self.resource_api.ensure_default_domain_exists)
 
 
-class DomainConfigTests(object):
+class DomainConfigDriverTests(object):
 
     def setUp(self):
         self.domain = unit.new_domain_ref()
@@ -286,6 +286,22 @@ class DomainConfigTests(object):
         res = self.domain_config_api.list_config_options(
             domain['id'], sensitive=True)
         self.assertThat(res, matchers.HasLength(0))
+
+
+class DomainConfigTests(object):
+
+    def setUp(self):
+        self.domain = unit.new_domain_ref()
+        self.resource_api.create_domain(self.domain['id'], self.domain)
+        self.addCleanup(self.clean_up_domain)
+
+    def clean_up_domain(self):
+        # NOTE(henry-nash): Deleting the domain will also delete any domain
+        # configs for this domain.
+        self.domain['enabled'] = False
+        self.resource_api.update_domain(self.domain['id'], self.domain)
+        self.resource_api.delete_domain(self.domain['id'])
+        del self.domain
 
     def test_create_domain_config_including_sensitive_option(self):
         config = {'ldap': {'url': uuid.uuid4().hex,
