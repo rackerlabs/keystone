@@ -86,6 +86,24 @@
       "revId": "6b22bd4f2d583226dc62c443d0e1abd1930056b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_b0a390ff",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T14:51:03Z",
+      "side": 0,
+      "message": "We could also add an assertion making sure that the issued_at time is timezone aware.",
+      "parentUuid": "5aef4532_95cda6b9",
+      "revId": "6b22bd4f2d583226dc62c443d0e1abd1930056b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
