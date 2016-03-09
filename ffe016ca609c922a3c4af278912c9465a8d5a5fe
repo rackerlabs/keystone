@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_2897f9ec",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T21:33:26Z",
+      "side": 1,
+      "message": "I would consider this test behavior and it should be included in the test class.",
+      "revId": "ffe016ca609c922a3c4af278912c9465a8d5a5fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
