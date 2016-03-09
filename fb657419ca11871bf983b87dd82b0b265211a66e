@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_8ec29e32",
+        "filename": "keystone/common/sql/migrate_repo/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-09T19:23:29Z",
+      "side": 1,
+      "message": "ls -l  keystone/common/sql/migrate_repo/__init__.py\n-rw-rw-r-- 1 perryse perryse 0 Mar  9 11:11 keystone/common/sql/migrate_repo/__init__.py\n\nLooks empty to me......\n\nWe do not want it deleted, we need the file so this directory is still a valid Python import.",
+      "parentUuid": "5aef4532_210c66ec",
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_01196a22",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 22
@@ -30,6 +48,30 @@
       "writtenOn": "2016-03-09T10:35:28Z",
       "side": 1,
       "message": "nit: we can mark this as private with an underscore",
+      "range": {
+        "startLine": 139,
+        "startChar": 4,
+        "endLine": 139,
+        "endChar": 20
+      },
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_0e816ec3",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-09T19:23:29Z",
+      "side": 1,
+      "message": "I had not because I was considering also using this code with the extensions in a subsequent patch. No need to hard code the initial version as 0 there.",
+      "parentUuid": "5aef4532_01196a22",
       "range": {
         "startLine": 139,
         "startChar": 4,
@@ -89,6 +131,24 @@
       "side": 1,
       "message": "This is \"if the init_version is less than 0\" which doesn\u0027t include if the init_version is 0. If that\u0027s what we want then we\u0027d have to do:\n\n    if init_version \u003c\u003d 0:",
       "parentUuid": "5aef4532_c1d02222",
+      "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_aecdda32",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-09T19:23:29Z",
+      "side": 1,
+      "message": "If \u00271\u0027 is the first script number then \u00270\u0027 is the initial version. \u00270\u0027 is valid if rare. I\u0027d rather save None to match the function\u0027s comment where it means no data found.",
+      "parentUuid": "5aef4532_0b47a577",
       "revId": "fb657419ca11871bf983b87dd82b0b265211a66e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
