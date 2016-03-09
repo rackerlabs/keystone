@@ -69,6 +69,23 @@
       "revId": "6b22bd4f2d583226dc62c443d0e1abd1930056b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_95cda6b9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-09T14:39:35Z",
+      "side": 0,
+      "message": "We could add an assertion here that proves the token expires_at isn\u0027t subsecond-aware: \n\nhttp://cdn.pasteraw.com/qp2ohfeabe8dl5j8cfs4w635rp49zah\n\nThat way the behavior is clearly documented in the test. The same comment applies to the project-scoped test.",
+      "revId": "6b22bd4f2d583226dc62c443d0e1abd1930056b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
