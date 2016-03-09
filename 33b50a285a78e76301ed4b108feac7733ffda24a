@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_f0fa3874",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "what are the extra attibutes?",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_381642f1",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "These should all be moved into schema/v2.py rather put \"v2\" in the name of all the symbols.",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_b8d412bd",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "referring to properties in _project_v2_properties from here just make the code harder to understand.",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_d842be67",
+        "filename": "keystone/tests/unit/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "uhh, boolean?",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_137fe915",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "why does this need to make a copy?",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_93df790c",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1443,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-09T16:08:06Z",
+      "side": 1,
+      "message": "shouldn\u0027t need to create a new one of these every time this function is called.",
+      "revId": "33b50a285a78e76301ed4b108feac7733ffda24a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
