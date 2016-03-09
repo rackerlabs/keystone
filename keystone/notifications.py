@@ -170,7 +170,7 @@ class Audit(object):
                  initiator=None, public=True):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
-                      'operation': 'added'}
+                      'actor_operation': 'added'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
                   actor_dict=actor_dict)
 
@@ -179,7 +179,7 @@ class Audit(object):
                      initiator=None, public=True):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
-                      'operation': 'removed'}
+                      'actor_operation': 'removed'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
                   actor_dict=actor_dict)
 
@@ -492,7 +492,7 @@ def _send_notification(operation, resource_type, resource_id, actor_dict=None,
     if actor_dict:
         payload['actor_id'] = actor_dict['id']
         payload['actor_type'] = actor_dict['type']
-        payload['operation'] = actor_dict['operation']
+        payload['actor_operation'] = actor_dict['actor_operation']
 
     notify_event_callbacks(SERVICE, resource_type, operation, payload)
 

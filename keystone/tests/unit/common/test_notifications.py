@@ -300,7 +300,7 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
             if actor_dict:
                 note['actor_id'] = actor_dict.get('id')
                 note['actor_type'] = actor_dict.get('type')
-                note['actor_operation'] = actor_dict.get('operation')
+                note['actor_operation'] = actor_dict.get('actor_operation')
             self._notifications.append(note)
 
         self.useFixture(mockpatch.PatchObject(
