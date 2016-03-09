@@ -16,6 +16,24 @@
       "revId": "53a6dc0e6a95f74905106d51f650bf4c2014bc08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_e7e3c503",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-09T00:22:52Z",
+      "side": 1,
+      "message": "Lance, I don\u0027t think its available in the stable/liberty branch.\n\nhttps://github.com/openstack/keystone/blob/stable/liberty/keystone/tests/unit/core.py\n\nOnly available in master.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/core.py#L493",
+      "parentUuid": "5aef4532_93edf027",
+      "revId": "53a6dc0e6a95f74905106d51f650bf4c2014bc08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
