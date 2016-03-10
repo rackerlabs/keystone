@@ -16,6 +16,24 @@
       "revId": "21941ac3dbcbde7bc5976475bbcf81337c4dfb73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_b5ae9d2b",
+        "filename": "keystone/tests/unit/resource/test_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-10T14:33:25Z",
+      "side": 1,
+      "message": "so there is no manager call get_config_option(), so was just making in clear that this was a driver call to check where the data was actually being stored.",
+      "parentUuid": "5aef4532_c89db067",
+      "revId": "21941ac3dbcbde7bc5976475bbcf81337c4dfb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
