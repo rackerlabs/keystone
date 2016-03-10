@@ -147,8 +147,12 @@ def handle_unscoped_token(context, auth_payload, auth_context,
                                                       protocol, unique_id,
                                                       display_name)
             user_id = user['id']
-            group_ids = mapped_properties['group_ids']
-            utils.validate_groups_cardinality(group_ids, mapping_id)
+
+            # Only check group cardinality if group_ids is not None
+            if mapped_properties['group_ids']:
+                group_ids = mapped_properties['group_ids']
+                utils.validate_groups_cardinality(group_ids, mapping_id)
+
             build_ephemeral_user_context(auth_context, user,
                                          mapped_properties,
                                          identity_provider, protocol)
@@ -195,14 +199,15 @@ def apply_mapping_filter(identity_provider, protocol, assertion,
     # ``mapping_id`` was used as well as idenity_api and resource_api
     # objects.
     group_ids = mapped_properties['group_ids']
-    utils.validate_groups_in_backend(group_ids,
-                                     mapping_id,
-                                     identity_api)
-    group_ids.extend(
-        utils.transform_to_group_ids(
-            mapped_properties['group_names'], mapping_id,
-            identity_api, resource_api))
-    mapped_properties['group_ids'] = list(set(group_ids))
+    if group_ids:
+        utils.validate_groups_in_backend(group_ids,
+                                         mapping_id,
+                                         identity_api)
+        group_ids.extend(
+            utils.transform_to_group_ids(
+                mapped_properties['group_names'], mapping_id,
+                identity_api, resource_api))
+        mapped_properties['group_ids'] = list(set(group_ids))
     return mapped_properties, mapping_id
 
 
