@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_e2b5177e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T10:16:52Z",
+      "side": 1,
+      "message": "this seems like a complete fix to me",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 7
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_dd0efee3",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T10:16:52Z",
+      "side": 1,
+      "message": "also, i\u0027d feel more comfortable if we sent the initiator information... just call:\n\n  initiator \u003d notifications._get_request_audit_info(context)\n\nthe context is hanging around anyway",
+      "range": {
+        "startLine": 101,
+        "startChar": 58,
+        "endLine": 101,
+        "endChar": 62
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_025da346",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T10:16:52Z",
+      "side": 1,
+      "message": "i don\u0027t believe we need a notification on create for handling revoked tokens, but it is probably a good thing to add anyway",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 63
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_6dfaa676",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T10:16:52Z",
+      "side": 1,
+      "message": "token_contains_idp?",
+      "range": {
+        "startLine": 320,
+        "startChar": 8,
+        "endLine": 320,
+        "endChar": 24
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_3d18c274",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T10:16:52Z",
+      "side": 1,
+      "message": "nit: idp[\u0027id\u0027] in this case, if it had the other stuff, it\u0027ll have ID.\n\nalso you catch the keyError anyway",
+      "range": {
+        "startLine": 323,
+        "startChar": 19,
+        "endLine": 323,
+        "endChar": 33
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
