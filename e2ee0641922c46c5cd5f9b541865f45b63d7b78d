@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_41a4a906",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-03-10T18:54:12Z",
+      "side": 0,
+      "message": "This was removed because it was never used correct?  Might have been nice to mention you removed this unused function in the commit message",
+      "revId": "e2ee0641922c46c5cd5f9b541865f45b63d7b78d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
