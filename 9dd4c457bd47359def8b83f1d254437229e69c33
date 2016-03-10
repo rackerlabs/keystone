@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_5d565706",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-10T16:22:29Z",
+      "side": 1,
+      "message": "nit: We should be passing this as a kwarg since abs_path is a kwarg in the method signature, right?",
+      "revId": "9dd4c457bd47359def8b83f1d254437229e69c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_bd45db43",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-10T16:22:29Z",
+      "side": 1,
+      "message": "Same comment applies here.",
+      "revId": "9dd4c457bd47359def8b83f1d254437229e69c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
