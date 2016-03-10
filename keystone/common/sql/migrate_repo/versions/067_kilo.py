@@ -15,7 +15,7 @@ import migrate
 from oslo_log import log
 import sqlalchemy as sql
 
-from keystone.assignment.backends import sql as assignment_sql
+from keystone.assignment import utils as assignment_utils
 from keystone.common import sql as ks_sql
 from keystone.identity.mapping_backends import mapping as mapping_backend
 
@@ -186,10 +186,10 @@ def upgrade(migrate_engine):
         'assignment',
         meta,
         sql.Column('type', sql.Enum(
-            assignment_sql.AssignmentType.USER_PROJECT,
-            assignment_sql.AssignmentType.GROUP_PROJECT,
-            assignment_sql.AssignmentType.USER_DOMAIN,
-            assignment_sql.AssignmentType.GROUP_DOMAIN,
+            assignment_utils.AssignmentType.USER_PROJECT,
+            assignment_utils.AssignmentType.GROUP_PROJECT,
+            assignment_utils.AssignmentType.USER_DOMAIN,
+            assignment_utils.AssignmentType.GROUP_DOMAIN,
             name='type'),
             nullable=False),
         sql.Column('actor_id', sql.String(64), nullable=False),
