@@ -71,6 +71,54 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_b575ef32",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-10T17:51:11Z",
+      "side": 1,
+      "message": "It seemed odd to only have updated and deleted.",
+      "parentUuid": "5aef4532_025da346",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 63
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_5593cb5a",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-10T17:51:11Z",
+      "side": 1,
+      "message": "Thank you for that. I was going to ask about it.",
+      "parentUuid": "5aef4532_dd0efee3",
+      "range": {
+        "startLine": 101,
+        "startChar": 58,
+        "endLine": 101,
+        "endChar": 62
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_6dfaa676",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 3
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_553d8b29",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-10T17:51:11Z",
+      "side": 1,
+      "message": "The author was matching the style of the other names.",
+      "parentUuid": "5aef4532_6dfaa676",
+      "range": {
+        "startLine": 320,
+        "startChar": 8,
+        "endLine": 320,
+        "endChar": 24
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_3d18c274",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 3
@@ -105,6 +177,30 @@
       "writtenOn": "2016-03-10T10:16:52Z",
       "side": 1,
       "message": "nit: idp[\u0027id\u0027] in this case, if it had the other stuff, it\u0027ll have ID.\n\nalso you catch the keyError anyway",
+      "range": {
+        "startLine": 323,
+        "startChar": 19,
+        "endLine": 323,
+        "endChar": 33
+      },
+      "revId": "149f281522ae484fc88b96ba279fa6f6bb271544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_f52db7fe",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-10T17:51:11Z",
+      "side": 1,
+      "message": "I (and the original author) was mimicing the style in the function just above it.",
+      "parentUuid": "5aef4532_3d18c274",
       "range": {
         "startLine": 323,
         "startChar": 19,
