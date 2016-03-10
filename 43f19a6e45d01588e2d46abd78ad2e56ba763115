@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_12df993a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-10T17:28:05Z",
+      "side": 1,
+      "message": "just remove the \"self\" here and this is fine imho",
+      "parentUuid": "5aef4532_d24d36c5",
+      "revId": "43f19a6e45d01588e2d46abd78ad2e56ba763115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_efe209d4",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 33
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I agree.",
       "parentUuid": "5aef4532_efe209d4",
+      "revId": "43f19a6e45d01588e2d46abd78ad2e56ba763115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_d231b1a3",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-10T17:28:05Z",
+      "side": 1,
+      "message": "it is the *same* code, why repeat it if we can use a single common method?",
+      "parentUuid": "5aef4532_b2b86a12",
       "revId": "43f19a6e45d01588e2d46abd78ad2e56ba763115",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
