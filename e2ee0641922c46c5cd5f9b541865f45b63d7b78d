@@ -16,6 +16,24 @@
       "revId": "e2ee0641922c46c5cd5f9b541865f45b63d7b78d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_bc6b1484",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-10T19:16:16Z",
+      "side": 0,
+      "message": "Yep, good call. Done in latest.",
+      "parentUuid": "5aef4532_41a4a906",
+      "revId": "e2ee0641922c46c5cd5f9b541865f45b63d7b78d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
