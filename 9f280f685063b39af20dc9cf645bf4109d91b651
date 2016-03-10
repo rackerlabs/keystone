@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_4b4e7f3b",
+        "filename": "keystone/common/sql/migrate_repo/versions/095_add_idp_id_to_token_column.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-10T21:24:46Z",
+      "side": 1,
+      "message": "What about a foreign key constraint to the identity_provider table?",
+      "range": {
+        "startLine": 25,
+        "startChar": 70,
+        "endLine": 25,
+        "endChar": 71
+      },
+      "revId": "9f280f685063b39af20dc9cf645bf4109d91b651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_cbd56f1c",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-10T21:24:46Z",
+      "side": 1,
+      "message": "Shouldn\u0027t there be some tests where idp_id is not None?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 16
+      },
+      "revId": "9f280f685063b39af20dc9cf645bf4109d91b651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_cb8a8f1a",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-10T21:24:46Z",
+      "side": 1,
+      "message": "idp_id foreign key constraint",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 18
+      },
+      "revId": "9f280f685063b39af20dc9cf645bf4109d91b651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
