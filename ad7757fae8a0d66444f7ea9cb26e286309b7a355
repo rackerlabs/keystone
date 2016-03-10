@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_3cb5447d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-10T19:27:38Z",
+      "side": 1,
+      "message": "Nit: why not just log the warning in the if statement above (ln 774)?  And return true else return false.",
+      "range": {
+        "startLine": 779,
+        "startChar": 8,
+        "endLine": 779,
+        "endChar": 10
+      },
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
