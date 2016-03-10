@@ -25,6 +25,7 @@ from oslo_log import versionutils
 
 from keystone.assignment.backends import base
 from keystone.assignment.role_backends import base as role_base
+from keystone.common import authorization
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -99,7 +100,10 @@ class Manager(manager.Manager):
         # driver, then wrap it.
         if isinstance(self.driver, base.AssignmentDriverV8):
             self.driver = base.V9AssignmentWrapperForV8Driver(self.driver)
-        elif not isinstance(self.driver, base.AssignmentDriverV9):
+            self.driver = base.V10AssignmentWrapperForV9Driver(self.driver)
+        elif isinstance(self.driver, base.AssignmentDriverV9):
+            self.driver = base.V10AssignmentWrapperForV9Driver(self.driver)
+        elif not isinstance(self.driver, base.AssignmentDriverV10):
             raise exception.UnsupportedDriverVersion(driver=assignment_driver)
 
         self.event_callbacks = {
@@ -248,13 +252,9 @@ class Manager(manager.Manager):
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
 
         """
-        self.resource_api.get_project(tenant_id)
+
         try:
             self.role_api.get_role(CONF.member_role_id)
-            self.driver.add_role_to_user_and_project(
-                user_id,
-                tenant_id,
-                CONF.member_role_id)
         except exception.RoleNotFound:
             LOG.info(_LI("Creating the default role %s "
                          "because it does not exist."),
@@ -267,11 +267,14 @@ class Manager(manager.Manager):
                 LOG.info(_LI("Creating the default role %s failed because it "
                              "was already created"),
                          CONF.member_role_id)
-            # now that default role exists, the add should succeed
-            self.driver.add_role_to_user_and_project(
-                user_id,
-                tenant_id,
-                CONF.member_role_id)
+
+        self.resource_api.get_project(tenant_id)
+
+        self.driver.add_role_to_user_and_project(
+            user_id,
+            tenant_id,
+            CONF.member_role_id)
+
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.role_assignment('created')
@@ -285,9 +288,23 @@ class Manager(manager.Manager):
         # create_grant so that the notifications.role_assignment decorator
         # will work.
 
+        if context:
+            environment = context.get('environment', {})
+            auth_context = environment.get(authorization.AUTH_CONTEXT_ENV, {})
+            agent_id = auth_context.get('user_id')
+        else:
+            request_context = oslo_context.get_current()
+            agent_id = request_context.user
+
+        redelegated_id = self._detect_redelegated(role_id, agent_id,
+                                                  domain_id, project_id)
+
         self.resource_api.get_project(project_id)
         self.role_api.get_role(role_id)
-        self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
+
+        self.driver.add_role_to_user_and_project(user_id, project_id, role_id,
+                                                 agent_id, redelegated_id)
+        # self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self._add_role_to_user_and_project_adapter(
@@ -403,8 +420,22 @@ class Manager(manager.Manager):
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
+
+        if context:
+            environment = context.get('environment', {})
+            auth_context = environment.get(authorization.AUTH_CONTEXT_ENV, {})
+            agent_id = auth_context.get('user_id')
+        else:
+            request_context = oslo_context.get_current()
+            agent_id = request_context.user
+
+        redelegated_id = self._detect_redelegated(role_id, agent_id,
+                                                  domain_id, project_id)
+
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
+                                 project_id, inherited_to_projects,
+                                 agent_id, redelegated_id)
+
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
