@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_ba65d345",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-10T20:32:37Z",
+      "side": 1,
+      "message": "the only reason this method exists is to provide a function to wrap. Get rid of this function and have the caller do the notification itself.",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_ba9af311",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-10T20:32:37Z",
+      "side": 1,
+      "message": "what\u0027s a grant token? Is this supposed to be Brant\u0027s tokens?",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_fa3c7be2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-10T20:32:37Z",
+      "side": 1,
+      "message": "remove this function and just have the caller send the notification.",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
