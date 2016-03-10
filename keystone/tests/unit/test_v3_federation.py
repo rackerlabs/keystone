@@ -1531,6 +1531,15 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': mapping})
 
+    def test_create_mapping_with_local_user_and_local_domain(self):
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        resp = self.put(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN},
+                  expected_status=http_client.CREATED)
+        self.assertValidMappingResponse(
+            resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
+
 
 class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
