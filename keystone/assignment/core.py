@@ -344,6 +344,32 @@ class Manager(manager.Manager):
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
+
+        if hasattr(self.driver, 'discover_parent_delegations'):
+            # Delegation driver is used and requires parent delegation
+            # Honor implied roles:
+            # find all parents of the requested role
+            implied_roles = self.role_api.list_implied_roles(role_id)
+            roles = [r['id'] for r in implied_roles]
+            roles.append(role_id)
+            # Consider HMT
+            if project_id:
+                project_ancestry = [project_id]
+                if inherited_to_projects:
+                    project_ancestry.extend(
+                        (p['id'] for p in
+                         self.resource_api.list_project_parents(project_id)))
+            elif domain_id:
+                project_ancestry = None
+            else:
+                raise exception.ValidationError(
+                    "Either domain_id or project_id is required")
+
+            # Perform parental discovery and store candidates
+            # in thread local context
+            self.driver.discover_parent_delegations(
+                roles, domain_id, project_ancestry)
+
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
