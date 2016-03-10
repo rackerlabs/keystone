@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_39345fdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T06:14:14Z",
+      "side": 1,
+      "message": "add Closes-Bug: 1555403",
+      "revId": "002b5f30bbe0f0b65cc8a657cc7ec1233cd3d920",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_592ccb98",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-10T06:14:14Z",
+      "side": 1,
+      "message": "i wouldn\u0027t mind seeing another test for self.rules since it\u0027s huge.\nor a test for each mapping in mapping_fixtures",
+      "range": {
+        "startLine": 1534,
+        "startChar": 4,
+        "endLine": 1541,
+        "endChar": 67
+      },
+      "revId": "002b5f30bbe0f0b65cc8a657cc7ec1233cd3d920",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
