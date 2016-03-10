@@ -14,7 +14,7 @@ import migrate
 import sqlalchemy as sql
 from sqlalchemy.orm import sessionmaker
 
-from keystone.assignment.backends import sql as assignment_sql
+from keystone.assignment import utils as assignment_utils
 
 
 def upgrade(migrate_engine):
@@ -43,10 +43,10 @@ def upgrade(migrate_engine):
         new_assignment_table = sql.Table(
             TMP_ASSIGNMENT_TABLE_NAME, metadata,
             sql.Column('type', sql.Enum(
-                assignment_sql.AssignmentType.USER_PROJECT,
-                assignment_sql.AssignmentType.GROUP_PROJECT,
-                assignment_sql.AssignmentType.USER_DOMAIN,
-                assignment_sql.AssignmentType.GROUP_DOMAIN,
+                assignment_utils.AssignmentType.USER_PROJECT,
+                assignment_utils.AssignmentType.GROUP_PROJECT,
+                assignment_utils.AssignmentType.USER_DOMAIN,
+                assignment_utils.AssignmentType.GROUP_DOMAIN,
                 name='type'),
                 nullable=False),
             sql.Column('actor_id', sql.String(64), nullable=False),
