@@ -4,7 +4,7 @@
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
@@ -13,35 +13,13 @@
 # under the License.
 
 from keystone import assignment as keystone_assignment
+from keystone.assignment import utils as assignment_utils
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
 
 
-class AssignmentType(object):
-    USER_PROJECT = 'UserProject'
-    GROUP_PROJECT = 'GroupProject'
-    USER_DOMAIN = 'UserDomain'
-    GROUP_DOMAIN = 'GroupDomain'
-
-    @classmethod
-    def calculate_type(cls, user_id, group_id, project_id, domain_id):
-        if user_id:
-            if project_id:
-                return cls.USER_PROJECT
-            if domain_id:
-                return cls.USER_DOMAIN
-        if group_id:
-            if project_id:
-                return cls.GROUP_PROJECT
-            if domain_id:
-                return cls.GROUP_DOMAIN
-        # Invalid parameters combination
-        raise exception.AssignmentTypeCalculationError(**locals())
-
-
 class Assignment(keystone_assignment.AssignmentDriverV9):
-
     def default_role_driver(self):
         return 'sql'
 
@@ -52,7 +30,7 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
 
-        assignment_type = AssignmentType.calculate_type(
+        assignment_type = assignment_utils.AssignmentType.calculate_type(
             user_id, group_id, project_id, domain_id)
         try:
             with sql.session_for_write() as session:
@@ -119,7 +97,7 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
         try:
             with sql.session_for_write() as session:
                 session.add(RoleAssignment(
-                    type=AssignmentType.USER_PROJECT,
+                    type=assignment_utils.AssignmentType.USER_PROJECT,
                     actor_id=user_id, target_id=tenant_id,
                     role_id=role_id, inherited=False))
         except sql.DBDuplicateEntry:
@@ -135,20 +113,24 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
             q = q.filter_by(role_id=role_id)
             if q.delete() == 0:
                 raise exception.RoleNotFound(message=_(
-                    'Cannot remove role that has not been granted, %s') %
-                    role_id)
+                    'Cannot remove role that has not been granted, %s'
+                ) % role_id)
 
     def _get_user_assignment_types(self):
-        return [AssignmentType.USER_PROJECT, AssignmentType.USER_DOMAIN]
+        return [assignment_utils.AssignmentType.USER_PROJECT,
+                assignment_utils.AssignmentType.USER_DOMAIN]
 
     def _get_group_assignment_types(self):
-        return [AssignmentType.GROUP_PROJECT, AssignmentType.GROUP_DOMAIN]
+        return [assignment_utils.AssignmentType.GROUP_PROJECT,
+                assignment_utils.AssignmentType.GROUP_DOMAIN]
 
     def _get_project_assignment_types(self):
-        return [AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT]
+        return [assignment_utils.AssignmentType.USER_PROJECT,
+                assignment_utils.AssignmentType.GROUP_PROJECT]
 
     def _get_domain_assignment_types(self):
-        return [AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN]
+        return [assignment_utils.AssignmentType.USER_DOMAIN,
+                assignment_utils.AssignmentType.GROUP_DOMAIN]
 
     def _get_assignment_types(self, user, group, project, domain):
         """Returns a list of role assignment types based on provided entities
@@ -197,22 +179,21 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
 
         def denormalize_role(ref):
             assignment = {}
-            if ref.type == AssignmentType.USER_PROJECT:
+            if ref.type == assignment_utils.AssignmentType.USER_PROJECT:
                 assignment['user_id'] = ref.actor_id
                 assignment['project_id'] = ref.target_id
-            elif ref.type == AssignmentType.USER_DOMAIN:
+            elif ref.type == assignment_utils.AssignmentType.USER_DOMAIN:
                 assignment['user_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
-            elif ref.type == AssignmentType.GROUP_PROJECT:
+            elif ref.type == assignment_utils.AssignmentType.GROUP_PROJECT:
                 assignment['group_id'] = ref.actor_id
                 assignment['project_id'] = ref.target_id
-            elif ref.type == AssignmentType.GROUP_DOMAIN:
+            elif ref.type == assignment_utils.AssignmentType.GROUP_DOMAIN:
                 assignment['group_id'] = ref.actor_id
                 assignment['domain_id'] = ref.target_id
             else:
                 raise exception.Error(message=_(
-                    'Unexpected assignment type encountered, %s') %
-                    ref.type)
+                    'Unexpected assignment type encountered, %s') % ref.type)
             assignment['role_id'] = ref.role_id
             if ref.inherited:
                 assignment['inherited_to_projects'] = 'projects'
@@ -253,8 +234,9 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(target_id=project_id).filter(
-                RoleAssignment.type.in_((AssignmentType.USER_PROJECT,
-                                         AssignmentType.GROUP_PROJECT))
+                RoleAssignment.type.in_(
+                    (assignment_utils.AssignmentType.USER_PROJECT,
+                     assignment_utils.AssignmentType.GROUP_PROJECT))
             )
             q.delete(False)
 
@@ -268,16 +250,19 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter(RoleAssignment.target_id == domain_id).filter(
-                (RoleAssignment.type == AssignmentType.USER_DOMAIN) |
-                (RoleAssignment.type == AssignmentType.GROUP_DOMAIN))
+                (RoleAssignment.type ==
+                 assignment_utils.AssignmentType.USER_DOMAIN) |
+                (RoleAssignment.type ==
+                 assignment_utils.AssignmentType.GROUP_DOMAIN))
             q.delete(False)
 
     def delete_user_assignments(self, user_id):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=user_id).filter(
-                RoleAssignment.type.in_((AssignmentType.USER_PROJECT,
-                                         AssignmentType.USER_DOMAIN))
+                RoleAssignment.type.in_(
+                    (assignment_utils.AssignmentType.USER_PROJECT,
+                     assignment_utils.AssignmentType.USER_DOMAIN))
             )
             q.delete(False)
 
@@ -285,8 +270,9 @@ class Assignment(keystone_assignment.AssignmentDriverV9):
         with sql.session_for_write() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=group_id).filter(
-                RoleAssignment.type.in_((AssignmentType.GROUP_PROJECT,
-                                         AssignmentType.GROUP_DOMAIN))
+                RoleAssignment.type.in_(
+                    (assignment_utils.AssignmentType.GROUP_PROJECT,
+                     assignment_utils.AssignmentType.GROUP_DOMAIN))
             )
             q.delete(False)
 
@@ -296,8 +282,10 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
     attributes = ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
     # NOTE(henry-nash): Postgres requires a name to be defined for an Enum
     type = sql.Column(
-        sql.Enum(AssignmentType.USER_PROJECT, AssignmentType.GROUP_PROJECT,
-                 AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
+        sql.Enum(assignment_utils.AssignmentType.USER_PROJECT,
+                 assignment_utils.AssignmentType.GROUP_PROJECT,
+                 assignment_utils.AssignmentType.USER_DOMAIN,
+                 assignment_utils.AssignmentType.GROUP_DOMAIN,
                  name='type'),
         nullable=False)
     actor_id = sql.Column(sql.String(64), nullable=False)

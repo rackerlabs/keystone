@@ -228,6 +228,8 @@ class Manager(manager.Manager):
 
         self.resource_api.get_project(project_id)
         self.role_api.get_role(role_id)
+        self._populate_delegation_context(domain_id, project_id, role_id,
+                                          inherited_to_projects)
         self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
@@ -335,6 +337,33 @@ class Manager(manager.Manager):
             {'user_id': user_id, 'project_id': project_id}
         )
 
+    def _populate_delegation_context(self, domain_id, project_id, role_id,
+                                     inherited_to_projects=False):
+        if hasattr(self.driver, 'discover_parent_delegations'):
+            # Delegation driver is used and requires parent delegation
+            # Honor implied roles:
+            # find all parents of the requested role
+            implied_roles = self.role_api.list_implied_roles(role_id)
+            roles = [r['id'] for r in implied_roles]
+            roles.append(role_id)
+            # Consider HMT
+            if project_id:
+                project_ancestry = [project_id]
+                if inherited_to_projects:
+                    project_ancestry.extend(
+                        (p['id'] for p in
+                         self.resource_api.list_project_parents(project_id)))
+            elif domain_id:
+                project_ancestry = None
+            else:
+                raise exception.ValidationError(
+                    "Either domain_id or project_id is required")
+
+            # Perform parental discovery and store candidates
+            # in thread local context
+            self.driver.discover_parent_delegations(
+                roles, domain_id, project_ancestry)
+
     @notifications.role_assignment('created')
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
@@ -344,6 +373,10 @@ class Manager(manager.Manager):
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
+
+        self._populate_delegation_context(domain_id, project_id, role_id,
+                                          inherited_to_projects)
+
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
