@@ -34,6 +34,24 @@
       "revId": "ffe016ca609c922a3c4af278912c9465a8d5a5fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_272f0840",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-10T12:14:47Z",
+      "side": 1,
+      "message": "Actually...\n\nWe have several classes here, one option is to have this like that (maybe change the method name to \"_assert_valid_entity_name\") or have it replicated across the classes.",
+      "parentUuid": "5aef4532_73dc5673",
+      "revId": "ffe016ca609c922a3c4af278912c9465a8d5a5fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
