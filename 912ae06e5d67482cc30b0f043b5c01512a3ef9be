@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_1281678f",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-10T14:13:37Z",
+      "side": 1,
+      "message": "is there a reason this is not in the LimitTests class?",
+      "range": {
+        "startLine": 996,
+        "startChar": 8,
+        "endLine": 996,
+        "endChar": 47
+      },
+      "revId": "912ae06e5d67482cc30b0f043b5c01512a3ef9be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_32c2a3e9",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-10T14:13:37Z",
+      "side": 1,
+      "message": "this will be silent in cases of non multi-domain ldap....maybe better to explicitly skip here (so that the test output will show when we skipped or ran the full test",
+      "range": {
+        "startLine": 1000,
+        "startChar": 12,
+        "endLine": 1000,
+        "endChar": 18
+      },
+      "revId": "912ae06e5d67482cc30b0f043b5c01512a3ef9be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
