@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_b26185d5",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-10T17:24:54Z",
+      "side": 1,
+      "message": "No properties are required?",
+      "revId": "f82fa39834f0283c31f0f1a7b08369c1534d539a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
