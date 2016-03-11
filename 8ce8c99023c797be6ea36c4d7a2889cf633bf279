@@ -22,6 +22,30 @@
       "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_7c7e8eaf",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-11T14:20:08Z",
+      "side": 1,
+      "message": "so we are going to delete all the existing configs for this domain and create new ones, all in one transaction....do you think we can have a conflict?",
+      "parentUuid": "5aef4532_83f18298",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 7
+      },
+      "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
