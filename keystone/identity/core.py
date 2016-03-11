@@ -1255,7 +1255,28 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class IdentityDriverV8(object):
-    """Interface description for an Identity driver."""
+    """Interface description for an Identity driver.
+
+    User schema::
+
+        type: object
+        properties:
+            id:
+                type: string
+            name:
+                type: string
+            domain_id:
+                type: string
+            password:
+                type: string
+            enabled:
+                type: boolean
+            default_project_id:
+                type: string
+        required: [id]
+        additionalProperties: True
+
+    """
 
     def _get_conf(self):
         try:
@@ -1271,7 +1292,7 @@ class IdentityDriverV8(object):
                 CONF.identity.list_limit or CONF.list_limit)
 
     def is_domain_aware(self):
-        """Indicates if Driver supports domains."""
+        """Indicates if the driver supports domains."""
         return True
 
     def default_assignment_driver(self):
@@ -1308,6 +1329,14 @@ class IdentityDriverV8(object):
     def create_user(self, user_id, user):
         """Creates a new user.
 
+        :param str user_id: user ID. The driver can ignore this value.
+        :param dict user: user info. See user schema in
+                          :class:`~.IdentityDriverV8`.
+
+        :returns: user, matching the user schema. The driver must not return
+                  the password.
+        :rtype: dict
+
         :raises keystone.exception.Conflict: If a duplicate user exists.
 
         """
@@ -1319,8 +1348,10 @@ class IdentityDriverV8(object):
 
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :type hints: keystone.common.driver_hints.Hints
 
-        :returns: a list of user_refs or an empty list.
+        :returns: a list of user_refs or an empty list. See user schema in
+                  :class:`~.IdentityDriverV8`.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1342,7 +1373,9 @@ class IdentityDriverV8(object):
     def get_user(self, user_id):
         """Get a user by ID.
 
-        :returns: user_ref
+        :param str user_id: User ID.
+
+        :returns: user_ref. See user schema in :class:`~.IdentityDriverV8`.
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
 
         """
@@ -1351,6 +1384,13 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def update_user(self, user_id, user):
         """Updates an existing user.
+
+        :param str user_id: User ID.
+        :param dict user: User modification. See user schema in
+            :class:`~.IdentityDriverV8`. Properties set to None will be
+            removed. Required properties cannot be removed.
+
+        :returns: user_ref. See user schema in :class:`~.IdentityDriverV8`.
 
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
         :raises keystone.exception.Conflict: If a duplicate user exists.

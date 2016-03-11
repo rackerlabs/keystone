@@ -20,6 +20,7 @@ import mock
 from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 
+from keystone.common import driver_hints
 from keystone import exception
 from keystone import identity
 from keystone.tests import unit
@@ -174,3 +175,138 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+
+
+class IdentityDriverV8Tests(object):
+    driver = None  # subclasses must override driver to the actual driver.
+
+    expected_is_domain_aware = True
+    # Subclasses must override this to indicate whether it's domain-aware or
+    # not.
+
+    expected_default_assignment_driver = 'sql'
+    # Subclasses must override this to the expected default assignment driver.
+
+    expected_is_sql = False
+    # Subclasses must override this to the expected is_sql value.
+
+    expected_generates_uuids = True
+    # Subclasses must override this to the expected expected_generates_uuids
+    # value.
+
+    def test_is_domain_aware(self):
+        self.assertIs(self.expected_is_domain_aware,
+                      self.driver.is_domain_aware())
+
+    def test_default_assignment_driver(self):
+        self.assertEqual(self.expected_default_assignment_driver,
+                         self.driver.default_assignment_driver())
+
+    def test_is_sql(self):
+        self.assertIs(self.expected_is_sql, self.driver.is_sql)
+
+    def test_generates_uuids(self):
+        self.assertIs(self.expected_generates_uuids,
+                      self.driver.generates_uuids())
+
+    def test_create_user(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id
+        }
+        ret = self.driver.create_user(user_id, user)
+        self.assertEqual(user_id, ret['id'])
+
+    def test_create_user_all_attributes(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id,
+            'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex,
+            'enabled': True,
+            'default_project_id': uuid.uuid4().hex,
+        }
+        ret = self.driver.create_user(user_id, user)
+        exp_user = user.copy()
+        del exp_user['password']
+        self.assertEqual(exp_user, ret)
+
+    def test_create_user_same_id_exc(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id
+        }
+        self.driver.create_user(user_id, user)
+        self.assertRaises(exception.Conflict,
+                          self.driver.create_user, user_id, user)
+
+    def test_create_user_same_name_and_domain_exc(self):
+        user1_id = uuid.uuid4().hex
+        name = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        user = {
+            'id': user1_id,
+            'name': name,
+            'domain_id': domain_id,
+        }
+        self.driver.create_user(user1_id, user)
+
+        user2_id = uuid.uuid4().hex
+        user = {
+            'id': user2_id,
+            'name': name,
+            'domain_id': domain_id,
+        }
+        self.assertRaises(exception.Conflict,
+                          self.driver.create_user, user2_id, user)
+
+    def test_list_users_no_users(self):
+        hints = driver_hints.Hints()
+        self.assertEqual([], self.driver.list_users(hints))
+
+    def test_list_users_when_users(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id
+        }
+        self.driver.create_user(user_id, user)
+
+        hints = driver_hints.Hints()
+        users = self.driver.list_users(hints)
+        user_ids = [u['id'] for u in users]
+        self.assertEqual([user_id], user_ids)
+
+    def test_get_user(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id
+        }
+        self.driver.create_user(user_id, user)
+
+        user = self.driver.get_user(user_id)
+        self.assertEqual(user_id, user['id'])
+
+    def test_get_user_no_user_exc(self):
+        self.assertRaises(exception.UserNotFound,
+                          self.driver.get_user, uuid.uuid4().hex)
+
+    def test_update_user(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id,
+            'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex
+        }
+        self.driver.create_user(user_id, user)
+
+        user_mod = {'enabled': False}
+        user_res = self.driver.update_user(user_id, user_mod)
+        self.assertEqual(user_id, user_res['id'])
+        self.assertIs(False, user_res['enabled'])
+
+    def test_update_user_no_user_exc(self):
+        user_id = uuid.uuid4().hex
+        user_mod = {'enabled': False}
+        self.assertRaises(exception.UserNotFound,
+                          self.driver.update_user, user_id, user_mod)
