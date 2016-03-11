@@ -421,3 +421,95 @@ class AssignmentDriver(assignment_core.AssignmentDriverV9):
             q = session.query(DelegationModel)
             q = q.filter_by(group_id=group_id)
             q.delete(False)
+
+
+class TrustDriver(object):
+
+    def create_trust(self, trust_id, trust, roles):
+
+        # Detect the delegating agent
+        context = oslo_context.get_current()
+        agent_id = context.user
+
+        # Remember to check for the trust in the auth_token
+        auth_token = context.auth_token
+        auth_context = context.get('environment',
+                                   {}).get('KEYSTONE_AUTH_CONTEXT', {})
+
+        # Check if delegated via trust
+        if auth_context.get('is_delegated_auth'):
+            # Redelegation case
+            src_trust_id = auth_context['trust_id']
+            if not src_trust_id:
+                raise exception.Forbidden(
+                    _('Redelegation allowed for delegated by trust only'))
+
+            redelegated_trust = self.trust_api.get_trust(src_trust_id)
+        else:
+            redelegated_trust = None
+
+        # Find the best match for requested grant to be derived from
+        with sql.session_for_read() as session:
+            # Find delegations where agent is a trustee and scope matches
+            # the requested
+            # TBD(amakarov): decide who has the right to inherit a delegation
+            # not being a trustee
+            query = (session.query(DelegationModel,
+                                   DelegationModel.role_links.role_id)
+                     .filter(DelegationModel.user_id == agent_id))
+
+            query = query.filter(
+                DelegationModel.project_id == trust['project_id'])
+
+            # TODO(amakarov): deal with implied roles somehow
+            for instance in query.all():
+                instance_roles = set(instance.role_links.role_id)
+
+            roles = [role_id]
+            query = query.filter(
+                DelegationModel.role_links.role_id.in_(roles))
+
+            candidates = [inst.to_dict() for inst in query]
+
+            # TODO(amakarov): choose the best matching candidate
+            try:
+                redelegated = candidates[0]
+            except IndexError:
+                raise exception.NotFound(target="matching delegation")
+
+        with sql.session_for_write() as session:
+            delegation = {
+                'trustor_id': trust['trustor_user_id'],
+                'agent_id': agent_id,
+                'redelegated_id': redelegated.id,
+                'impersonation': trust['impersonation'],
+                'strict_ancestry': True,
+                'sealed': False,
+                'executable': True,
+                'inherited_to_projects': False,
+                'user_id': trust['trustee_user_id'],
+                'group_id': None,
+                'project_id': trust['project_id'],
+                'domain_id': None,
+                'remaining_uses': trust['remaining_uses'],
+                'expires_at': trust['expires_at']
+            }
+
+            ref = DelegationModel.from_dict(delegation)
+
+
+            # ref = TrustModel.from_dict(trust)
+            ref['id'] = trust_id
+            if ref.get('expires_at') and ref['expires_at'].tzinfo is not None:
+                ref['expires_at'] = timeutils.normalize_time(ref['expires_at'])
+            session.add(ref)
+            added_roles = []
+            for role in roles:
+                trust_role = TrustRole()
+                trust_role.trust_id = trust_id
+                trust_role.role_id = role['id']
+                added_roles.append({'id': role['id']})
+                session.add(trust_role)
+            trust_dict = ref.to_dict()
+            trust_dict['roles'] = added_roles
+            return trust_dict
