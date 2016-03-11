@@ -46,6 +46,29 @@
       "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_839ea261",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-11T06:05:31Z",
+      "side": 1,
+      "message": "What happened between patch #6 and #7? There used to be pretty good logging here indicated how many config files found and how many were successfully uploaded. What was the reason to take those out?",
+      "range": {
+        "startLine": 782,
+        "startChar": 22,
+        "endLine": 782,
+        "endChar": 23
+      },
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
