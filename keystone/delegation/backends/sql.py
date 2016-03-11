@@ -10,11 +10,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import time
+
+from oslo_context import context as oslo_context
+from oslo_utils import timeutils
+
 from keystone.assignment.backends import base as assignment_base
 from keystone.common import sql
 from keystone.delegation.backends import sql_model as model
 from keystone import exception
 from keystone.i18n import _
+from keystone.trust.backends import base as trust_base
+
+# The maximum number of iterations that will be attempted for optimistic
+# locking on consuming a limited-use trust.
+MAXIMUM_CONSUME_ATTEMPTS = 10
 
 
 class AssignmentDriver(assignment_base.AssignmentDriverV9):
@@ -297,3 +307,181 @@ class AssignmentDriver(assignment_base.AssignmentDriverV9):
             q = session.query(model.Delegation)
             q = q.filter_by(domain_id=domain_id)
             q.delete(False)
+
+
+class TrustDriver(trust_base.TrustDriverV8):
+
+    @staticmethod
+    def _format_trust_dict(delegation):
+        with sql.session_for_read() as session:
+            session.add(delegation)
+            return {'id': delegation.id,
+                    'trustor_user_id': delegation.trustor_id,
+                    'trustee_user_id': delegation.user_id,
+                    'project_id': delegation.project_id,
+                    'impersonation': delegation.impersonation,
+                    'expires_at': delegation.expires_at,
+                    'remaining_uses': delegation.remaining_uses,
+                    'deleted_at': delegation.deleted_at,
+                    'redelegated_trust_id': delegation.redelegated_id,
+                    'redelegation_count': delegation.redelegation_count,
+                    'roles': [{'id': r.role_id}
+                              for r in delegation.role_links]}
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def create_trust(self, trust_id, trust, roles):
+
+        # Detect the delegating agent
+        context = oslo_context.get_current()
+        agent_id = context.user
+
+        redelegated_id = trust.get('redelegated_trust_id')
+        if redelegated_id:
+            with sql.session_for_read() as session:
+                session.query(model.Delegation).get(redelegated_id)
+        else:
+            # Trust to redelegate isn't provided, things have got complicated
+            if not context.is_admin:
+                raise exception.Forbidden(
+                    _("Only admin can create initial trust"))
+
+        with sql.session_for_write() as session:
+            delegation = {
+                'id': trust_id,
+                'trustor_id': trust['trustor_user_id'],
+                'agent_id': agent_id,
+                'redelegated_id': redelegated_id,
+                'impersonation': trust['impersonation'],
+                'strict_ancestry': True,
+                'sealed': False,
+                'executable': True,
+                'inherited_to_projects': False,
+                'user_id': trust['trustee_user_id'],
+                'group_id': None,
+                'project_id': trust['project_id'],
+                'domain_id': None,
+                'remaining_uses': trust['remaining_uses'],
+                'expires_at': trust['expires_at'],
+                'redelegation_count': trust['redelegation_count']
+            }
+
+            ref = model.Delegation.from_dict(delegation)
+
+            if ref.get('expires_at') and ref['expires_at'].tzinfo is not None:
+                ref['expires_at'] = timeutils.normalize_time(ref['expires_at'])
+            session.add(ref)
+
+        with sql.session_for_write() as session:
+            for role in roles:
+                role_link_ref = model.RoleDelegation(delegation_id=ref.id,
+                                                     role_id=role['id'])
+                session.add(role_link_ref)
+
+        trust_dict = self._format_trust_dict(ref)
+        return trust_dict
+
+    def get_trust(self, trust_id, deleted=False):
+
+        with sql.session_for_read() as session:
+            query = session.query(model.Delegation).filter_by(id=trust_id)
+
+            if not deleted:
+                query = query.filter_by(deleted_at=None)
+
+            ref = query.first()
+            if ref is None:
+                raise exception.TrustNotFound(trust_id=trust_id)
+
+            if ref.expires_at is not None and not deleted:
+                now = timeutils.utcnow()
+                if now > ref.expires_at:
+                    raise exception.TrustNotFound(trust_id=trust_id)
+
+            # Do not return trusts that can't be used anymore
+            if ref.remaining_uses is not None and not deleted:
+                if ref.remaining_uses <= 0:
+                    raise exception.TrustNotFound(trust_id=trust_id)
+
+            trust_dict = self._format_trust_dict(ref)
+            return trust_dict
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def consume_use(self, trust_id):
+
+        for attempt in range(MAXIMUM_CONSUME_ATTEMPTS):
+            with sql.session_for_write() as session:
+                try:
+                    query_result = (
+                        session.query(model.Delegation.remaining_uses)
+                        .filter_by(id=trust_id, deleted_at=None).one()
+                    )
+                except sql.NotFound:
+                    raise exception.TrustNotFound(trust_id=trust_id)
+
+                remaining_uses = query_result.remaining_uses
+
+                if remaining_uses is None:
+                    # unlimited uses, do nothing
+                    break
+                elif remaining_uses > 0:
+                    # NOTE(morganfainberg): use an optimistic locking method
+                    # to ensure we only ever update a trust that has the
+                    # expected number of remaining uses.
+                    rows_affected = (
+                        session.query(model.Delegation).
+                        filter_by(id=trust_id).
+                        filter_by(deleted_at=None).
+                        filter_by(remaining_uses=remaining_uses).
+                        update({'remaining_uses': (remaining_uses - 1)},
+                               synchronize_session=False))
+                    if rows_affected == 1:
+                        # Successfully consumed a single limited-use trust.
+                        # Since trust_id is the PK on the Trust table, there is
+                        # no case we should match more than 1 row in the
+                        # update. We either update 1 row or 0 rows.
+                        break
+                else:
+                    raise exception.TrustUseLimitReached(trust_id=trust_id)
+            # NOTE(morganfainberg): Ensure we have a yield point for eventlet
+            # here. This should cost us nothing otherwise. This can be removed
+            # if/when oslo_db cleanly handles yields on db calls.
+            time.sleep(0)
+        else:
+            # NOTE(morganfainberg): In the case the for loop is not prematurely
+            # broken out of, this else block is executed. This means the trust
+            # was not unlimited nor was it consumed (we hit the maximum
+            # iteration limit). This is just an indicator that we were unable
+            # to get the optimistic lock rather than silently failing or
+            # incorrectly indicating a trust was consumed.
+            raise exception.TrustConsumeMaximumAttempt(trust_id=trust_id)
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def list_trusts(self):
+        with sql.session_for_read() as session:
+            delegations = session.query(model.Delegation).filter_by(
+                deleted_at=None)
+            return [self._format_trust_dict(d) for d in delegations]
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def list_trusts_for_trustee(self, trustee_user_id):
+        with sql.session_for_read() as session:
+            delegations = (session.query(model.Delegation)
+                           .filter_by(deleted_at=None,
+                                      user_id=trustee_user_id))
+            return [self._format_trust_dict(d) for d in delegations]
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def list_trusts_for_trustor(self, trustor_user_id):
+        with sql.session_for_read() as session:
+            delegations = (session.query(model.Delegation)
+                           .filter_by(deleted_at=None,
+                                      trustor_id=trustor_user_id))
+            return [self._format_trust_dict(d) for d in delegations]
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def delete_trust(self, trust_id):
+        with sql.session_for_write() as session:
+            ref = session.query(model.Delegation).get(trust_id)
+            if not ref:
+                raise exception.TrustNotFound(trust_id=trust_id)
+            ref.deleted_at = timeutils.utcnow()
