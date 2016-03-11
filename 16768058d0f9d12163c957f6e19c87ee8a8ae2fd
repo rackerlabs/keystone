@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_091bb573",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-11T22:29:01Z",
+      "side": 1,
+      "message": "Comparing with the change, I think this should be \"oslo.middleware\". However this doen\u0027t invalidate the change, right ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 68
+      },
+      "revId": "16768058d0f9d12163c957f6e19c87ee8a8ae2fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
