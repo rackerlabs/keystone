@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_29ae7185",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-11T22:42:25Z",
+      "side": 1,
+      "message": "an internal notification should never be public, so get rid of the argument.\n\nAlso, remove initiator since it\u0027s never used.",
+      "revId": "5ec91140704541a0af437cecb4fa3735ca96969c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
