@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3afc51ec_60d08e54",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-11T21:29:30Z",
+      "side": 1,
+      "message": "has_been_called is no longer referenced so remove it... apparently it wasn\u0027t checked anyways.",
+      "revId": "0939073b21e58f0b66b9d8f3c978181853fa7006",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_83268e14",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 4
