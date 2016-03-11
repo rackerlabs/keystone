@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_00e54a36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-11T21:19:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_ba65d345",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_ba9af311",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_a0ca969f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-11T21:19:23Z",
+      "side": 1,
+      "message": "No idea - maybe something for another patch.",
+      "parentUuid": "5aef4532_ba9af311",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_fa3c7be2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2016-03-10T20:32:37Z",
       "side": 1,
       "message": "remove this function and just have the caller send the notification.",
+      "revId": "172c1f436828f22d96effcd4878544c868022d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_604d2e72",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-11T21:19:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_fa3c7be2",
       "revId": "172c1f436828f22d96effcd4878544c868022d3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
