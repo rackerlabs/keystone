@@ -174,3 +174,43 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+
+
+class IdentityDriverV8Tests(object):
+    driver = None  # subclasses must override driver to the actual driver.
+
+    expect_is_domain_aware = True
+    # Subclasses must override this to indicate whether it's domain-aware or
+    # not.
+
+    expected_default_assignment_driver = 'sql'
+    # Subclasses must override this to the expected default assignment driver.
+
+    expected_is_sql = False
+    # Subclasses must override this to the expected is_sql value.
+
+    expected_generates_uuids = True
+    # Subclasses must override this to the expected expected_generates_uuids
+    # value.
+
+    def test_is_domain_aware(self):
+        self.assertIs(self.expect_is_domain_aware,
+                      self.driver.is_domain_aware())
+
+    def test_default_assignment_driver(self):
+        self.assertEqual(self.expected_default_assignment_driver,
+                         self.driver.default_assignment_driver())
+
+    def test_is_sql(self):
+        self.assertIs(self.expected_is_sql, self.driver.is_sql)
+
+    def test_generates_uuids(self):
+        self.assertIs(self.expected_generates_uuids,
+                      self.driver.generates_uuids())
+
+    def test_create_user(self):
+        user_id = uuid.uuid4().hex
+        user = {
+            'id': user_id
+        }
+        self.driver.create_user(user_id, user)
