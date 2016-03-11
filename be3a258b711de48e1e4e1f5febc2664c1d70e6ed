@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_f1f76af3",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8358
+      },
+      "writtenOn": "2016-03-11T12:50:28Z",
+      "side": 1,
+      "message": "Why leave a blank line?",
+      "revId": "be3a258b711de48e1e4e1f5febc2664c1d70e6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
