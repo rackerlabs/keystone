@@ -20,6 +20,7 @@ from oslo_config import cfg
 from oslo_log import log
 import oslo_messaging
 from oslo_middleware import cors
+from osprofiler import opts as profiler
 import passlib.utils
 
 from keystone import exception
@@ -1191,6 +1192,9 @@ def configure(conf=None):
         cfg.PortOpt('pydev-debug-port',
                     help='Port to connect to for remote debugger.'))
 
+    # configure OSprofiler options
+    set_profiler_defaults()
+
     for section in FILE_OPTIONS:
         for option in FILE_OPTIONS[section]:
             if section:
@@ -1257,3 +1261,8 @@ def set_config_defaults():
     """Override all configuration default values for keystone."""
     set_default_for_default_log_levels()
     set_middleware_defaults()
+
+
+def set_profiler_defaults():
+    # configure OSprofiler options
+    profiler.set_defaults(CONF, enabled=False, trace_sqlalchemy=False)
