@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_83268e14",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 994,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-11T17:47:29Z",
+      "side": 1,
+      "message": "is this comment still valid ?",
+      "range": {
+        "startLine": 987,
+        "startChar": 8,
+        "endLine": 994,
+        "endChar": 49
+      },
+      "revId": "0939073b21e58f0b66b9d8f3c978181853fa7006",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
