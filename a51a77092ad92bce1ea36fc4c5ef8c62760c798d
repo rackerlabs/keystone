@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_6395513f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 39
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-11T13:17:37Z",
+      "side": 1,
+      "message": "You don\u0027t need to change the sample - we have a job to auto-generate it/propose it as the bot as well as in the documents.",
+      "revId": "a51a77092ad92bce1ea36fc4c5ef8c62760c798d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_6372717e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-11T13:17:37Z",
+      "side": 1,
+      "message": "This likely needs to be \"set_osprofiler_defaults\" it can\u0027t be duplicating set_middleware_defaults\n\nThis also needs to set / override the defaults as discussed see the above method, so you need to actually set the values for osprofiler.",
+      "revId": "a51a77092ad92bce1ea36fc4c5ef8c62760c798d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_03e28d03",
+        "filename": "setup.cfg",
+        "patchSetId": 39
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-11T13:17:37Z",
+      "side": 1,
+      "message": "This moves up under line 179 so it looks like:\n\n    oslo.config.opts.defaults \u003d\n        oslo.middleware \u003d keystone.common.config:set_middleware_defaults\n        osprofiler \u003d keystone.common.config:set_profiler_defaults",
+      "revId": "a51a77092ad92bce1ea36fc4c5ef8c62760c798d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
