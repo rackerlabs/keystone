@@ -22,6 +22,30 @@
       "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_a52da7ff",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-11T03:37:52Z",
+      "side": 1,
+      "message": "true, could just log:\n\n  domain config %s %s not uploaded % filename, domain_name\n\nat line 777",
+      "parentUuid": "5aef4532_3cb5447d",
+      "range": {
+        "startLine": 779,
+        "startChar": 8,
+        "endLine": 779,
+        "endChar": 10
+      },
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
