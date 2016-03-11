@@ -1255,7 +1255,43 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class IdentityDriverV8(object):
-    """Interface description for an Identity driver."""
+    """Interface description for an Identity driver.
+
+    User schema::
+
+        type: object
+        properties:
+            id:
+                type: string
+            name:
+                type: string
+            domain_id:
+                type: string
+            password:
+                type: string
+            enabled:
+                type: boolean
+            default_project_id:
+                type: string
+        required: [id]
+        additionalProperties: True
+
+    Group schema::
+
+        type: object
+        properties:
+            id:
+                type: string
+            name:
+                type: string
+            domain_id:
+                type: string
+            description:
+                type: string
+        required: [id, name, domain_id]
+        additionalProperties: True
+
+    """
 
     def _get_conf(self):
         try:
@@ -1271,7 +1307,7 @@ class IdentityDriverV8(object):
                 CONF.identity.list_limit or CONF.list_limit)
 
     def is_domain_aware(self):
-        """Indicates if Driver supports domains."""
+        """Indicates if the driver supports domains."""
         return True
 
     def default_assignment_driver(self):
@@ -1308,6 +1344,14 @@ class IdentityDriverV8(object):
     def create_user(self, user_id, user):
         """Creates a new user.
 
+        :param str user_id: user ID. The driver can ignore this value.
+        :param dict user: user info. See user schema in
+                          :class:`~.IdentityDriverV8`.
+
+        :returns: user, matching the user schema. The driver must not return
+                  the password.
+        :rtype: dict
+
         :raises keystone.exception.Conflict: If a duplicate user exists.
 
         """
@@ -1319,8 +1363,10 @@ class IdentityDriverV8(object):
 
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :type hints: keystone.common.driver_hints.Hints
 
-        :returns: a list of user_refs or an empty list.
+        :returns: a list of user_refs or an empty list. See user schema in
+                  :class:`~.IdentityDriverV8`.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1329,11 +1375,15 @@ class IdentityDriverV8(object):
     def list_users_in_group(self, group_id, hints):
         """List users in a group.
 
-        :param group_id: the group in question
+        :param str group_id: the group in question
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :type hints: keystone.common.driver_hints.Hints
 
-        :returns: a list of user_refs or an empty list.
+        :returns: a list of user_refs or an empty list. See user schema in
+                  :class:`~.IdentityDriverV8`.
+
+        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1342,7 +1392,9 @@ class IdentityDriverV8(object):
     def get_user(self, user_id):
         """Get a user by ID.
 
-        :returns: user_ref
+        :param str user_id: User ID.
+
+        :returns: user_ref. See user schema in :class:`~.IdentityDriverV8`.
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
 
         """
@@ -1352,8 +1404,16 @@ class IdentityDriverV8(object):
     def update_user(self, user_id, user):
         """Updates an existing user.
 
+        :param str user_id: User ID.
+        :param dict user: User modification. See user schema in
+            :class:`~.IdentityDriverV8`. Properties set to None will be
+            removed. Required properties cannot be removed.
+
+        :returns: user_ref. See user schema in :class:`~.IdentityDriverV8`.
+
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
-        :raises keystone.exception.Conflict: If a duplicate user exists.
+        :raises keystone.exception.Conflict: If a duplicate user exists in the
+            same domain.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1361,6 +1421,9 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def add_user_to_group(self, user_id, group_id):
         """Adds a user to a group.
+
+        :param str user_id: User ID.
+        :param str group_id: Group ID.
 
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
@@ -1372,6 +1435,11 @@ class IdentityDriverV8(object):
     def check_user_in_group(self, user_id, group_id):
         """Checks if a user is a member of a group.
 
+        :param str user_id: User ID.
+        :param str group_id: Group ID.
+
+        :raises keystone.exception.NotFound: If the user is not a member of the
+                                             group.
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
 
@@ -1382,7 +1450,10 @@ class IdentityDriverV8(object):
     def remove_user_from_group(self, user_id, group_id):
         """Removes a user from a group.
 
-        :raises keystone.exception.NotFound: If the entity not found.
+        :param str user_id: User ID.
+        :param str group_id: Group ID.
+
+        :raises keystone.exception.NotFound: If the user is not in the group.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1412,6 +1483,13 @@ class IdentityDriverV8(object):
     def create_group(self, group_id, group):
         """Creates a new group.
 
+        :param str group_id: group ID. The driver can ignore this value.
+        :param dict group: group info. See group schema in
+                           :class:`~.IdentityDriverV8`.
+
+        :returns: group, matching the group schema.
+        :rtype: dict
+
         :raises keystone.exception.Conflict: If a duplicate group exists.
 
         """
@@ -1423,8 +1501,10 @@ class IdentityDriverV8(object):
 
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :type hints: keystone.common.driver_hints.Hints
 
-        :returns: a list of group_refs or an empty list.
+        :returns: a list of group_refs or an empty list. See group schema in
+                  :class:`~.IdentityDriverV8`.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1433,11 +1513,15 @@ class IdentityDriverV8(object):
     def list_groups_for_user(self, user_id, hints):
         """List groups a user is in
 
-        :param user_id: the user in question
+        :param str user_id: the user in question
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :type hints: keystone.common.driver_hints.Hints
 
-        :returns: a list of group_refs or an empty list.
+        :returns: a list of group_refs or an empty list. See group schema in
+                  :class:`~.IdentityDriverV8`.
+
+        :raises keystone.exception.UserNotFound: If the user doesn't exist.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1446,7 +1530,10 @@ class IdentityDriverV8(object):
     def get_group(self, group_id):
         """Get a group by ID.
 
-        :returns: group_ref
+        :param str group_id: group ID.
+
+        :returns: group info. See group schema in :class:`~.IdentityDriverV8`.
+        :rtype: dict
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
 
         """
@@ -1456,7 +1543,11 @@ class IdentityDriverV8(object):
     def get_group_by_name(self, group_name, domain_id):
         """Get a group by name.
 
-        :returns: group_ref
+        :param str group_name: group name.
+        :param str domain_id: domain ID.
+
+        :returns: group info. See group schema in :class:`~.IdentityDriverV8`.
+        :rtype: dict
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
 
         """
@@ -1465,6 +1556,13 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def update_group(self, group_id, group):
         """Updates an existing group.
+
+        :param str group_id: Group ID.
+        :param dict group: Group modification. See group schema in
+            :class:`~.IdentityDriverV8`. Required properties cannot be removed.
+
+        :returns: group, matching the group schema.
+        :rtype: dict
 
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
         :raises keystone.exception.Conflict: If a duplicate group exists.
@@ -1475,6 +1573,8 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def delete_group(self, group_id):
         """Deletes an existing group.
+
+        :param str group_id: Group ID.
 
         :raises keystone.exception.GroupNotFound: If the group doesn't exist.
 
