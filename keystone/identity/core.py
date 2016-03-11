@@ -1269,7 +1269,7 @@ class IdentityDriverV8(object):
                 CONF.identity.list_limit or CONF.list_limit)
 
     def is_domain_aware(self):
-        """Indicates if Driver supports domains."""
+        """Indicates if the driver supports domains."""
         return True
 
     def default_assignment_driver(self):
@@ -1305,6 +1305,28 @@ class IdentityDriverV8(object):
     @abc.abstractmethod
     def create_user(self, user_id, user):
         """Creates a new user.
+
+        `user` schema::
+
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                domain_id:
+                    type: string
+                password:
+                    type: string
+                enabled:
+                    type: boolean
+                default_project_id:
+                    type: string
+            required: [id]
+            additionalProperties: True
+
+        :param str user_id: user ID. The driver can ignore this value.
+        :param dict user: user info.
 
         :raises keystone.exception.Conflict: If a duplicate user exists.
 
