@@ -16,6 +16,7 @@ from oslo_context import context as oslo_context
 
 from keystone.tests import unit
 from keystone.tests.unit import test_v3_assignment
+from keystone.tests.unit import test_v3_auth
 
 
 class DelegationAssignmentTestCase(test_v3_assignment.AssignmentTestCase):
@@ -35,3 +36,13 @@ class DelegationAssignmentTestCase(test_v3_assignment.AssignmentTestCase):
         context = oslo_context.get_current()
         context.user = user['id']
         super(DelegationAssignmentTestCase, self).load_sample_data()
+
+
+class DelegationTrustTestCase(test_v3_auth.TrustAPIBehavior,
+                              test_v3_auth.TestTrustChain):
+
+    def config_overrides(self):
+        super(DelegationTrustTestCase, self).config_overrides()
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.delegation.backends.sql.TrustDriver')
