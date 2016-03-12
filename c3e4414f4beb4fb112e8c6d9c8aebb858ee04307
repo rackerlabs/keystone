@@ -34,6 +34,24 @@
       "revId": "c3e4414f4beb4fb112e8c6d9c8aebb858ee04307",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_b2049a7e",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2016-03-12T16:48:09Z",
+      "side": 1,
+      "message": "hehe. Will update it to Newton. \n\nI\u0027m okay with removing or updating, but I think updating will be clearer to users that try to use the keystone CLI and fail. That might serve as a motivation to use OSC instead of other services clients",
+      "parentUuid": "3afc51ec_ea2c74ad",
+      "revId": "c3e4414f4beb4fb112e8c6d9c8aebb858ee04307",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
