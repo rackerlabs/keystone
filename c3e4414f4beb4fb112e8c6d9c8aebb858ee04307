@@ -16,6 +16,24 @@
       "revId": "c3e4414f4beb4fb112e8c6d9c8aebb858ee04307",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_ea2c74ad",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-12T03:25:53Z",
+      "side": 1,
+      "message": "Nelson? :)\n\nI agree with the comment though\n\nso there isn\u0027t much left in this document, should we just remove it entirely?",
+      "parentUuid": "3afc51ec_236330de",
+      "revId": "c3e4414f4beb4fb112e8c6d9c8aebb858ee04307",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
