@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_fb0c3d96",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-03-12T23:54:11Z",
+      "side": 1,
+      "message": "Its easier to review when line lengths are kept under 80 width. Not sure if there is also an rst restriction on line wideth.",
+      "range": {
+        "startLine": 22,
+        "startChar": 77,
+        "endLine": 22,
+        "endChar": 91
+      },
+      "revId": "9f116aa06282f57f2f63948eaf9408af86c21687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_9b17f9a2",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-03-12T23:54:11Z",
+      "side": 1,
+      "message": "two spaces",
+      "range": {
+        "startLine": 23,
+        "startChar": 37,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "9f116aa06282f57f2f63948eaf9408af86c21687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
