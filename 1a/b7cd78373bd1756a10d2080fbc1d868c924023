@@ -1,0 +1,13 @@
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: bruce-benjamin <bruce.benjamin@jhuapl.edu>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+1: zhangguoqing <zhang.guoqing@99cloud.net>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 12 Mar 2016 00:22:11 +0000
+Reviewed-on: https://review.openstack.org/286291
+Project: openstack/keystone
+Branch: refs/heads/master
