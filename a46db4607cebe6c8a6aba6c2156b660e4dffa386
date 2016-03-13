@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_481e3e64",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "nope, just looks at create role:\n\n  ret \u003d self.driver.create_role(role_id, role)\n  notifications.Audit.created(self._ROLE, ret, initiator)\n\ngetting the value from the backend it probably way safer for update and create -- i believe delete doesn\u0027t return much from the backends most of the time, so you have to perform a get call to find the most recent resource in the backend before deleting it, so you can find the name.",
+      "range": {
+        "startLine": 164,
+        "startChar": 28,
+        "endLine": 165,
+        "endChar": 28
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_c8f36e09",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "why user_id? for credentials?",
+      "range": {
+        "startLine": 389,
+        "startChar": 4,
+        "endLine": 389,
+        "endChar": 31
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_68a05af5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "i don\u0027t think we need a special case for consumer ID; it\u0027ll already be the resource_type + id. good enough.",
+      "range": {
+        "startLine": 391,
+        "startChar": 4,
+        "endLine": 392,
+        "endChar": 73
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_88e9661d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "we could do this pattern for everything",
+      "range": {
+        "startLine": 393,
+        "startChar": 4,
+        "endLine": 393,
+        "endChar": 77
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_288e5278",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "additionally, we *must* check for domain_name / domain_id for users/groups/projects. name is not unique.",
+      "range": {
+        "startLine": 396,
+        "startChar": 4,
+        "endLine": 396,
+        "endChar": 28
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_e893caa1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-13T21:19:10Z",
+      "side": 1,
+      "message": "all the other info is under \"resource_info\"\n\nshould this be [resource_info][resource_name] ?",
+      "range": {
+        "startLine": 397,
+        "startChar": 8,
+        "endLine": 397,
+        "endChar": 51
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
