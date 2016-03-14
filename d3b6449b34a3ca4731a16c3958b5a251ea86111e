@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_c464c0e6",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-14T21:23:28Z",
+      "side": 1,
+      "message": "since this isn\u0027t sql specific there should be no importing of sql.",
+      "revId": "d3b6449b34a3ca4731a16c3958b5a251ea86111e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
