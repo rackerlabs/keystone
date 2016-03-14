@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_9e2b5c30",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-03-14T00:24:42Z",
+      "side": 1,
+      "message": "nit: dictionary",
+      "range": {
+        "startLine": 117,
+        "startChar": 25,
+        "endLine": 117,
+        "endChar": 35
+      },
+      "revId": "a46db4607cebe6c8a6aba6c2156b660e4dffa386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_c8f36e09",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
