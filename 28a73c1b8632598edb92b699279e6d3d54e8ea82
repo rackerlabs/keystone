@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_550987dc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-03-14T17:41:15Z",
+      "side": 1,
+      "message": "s/role %(role)s/%(role)s/",
+      "range": {
+        "startLine": 251,
+        "startChar": 56,
+        "endLine": 251,
+        "endChar": 64
+      },
+      "revId": "28a73c1b8632598edb92b699279e6d3d54e8ea82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_3505dbbb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-03-14T17:41:15Z",
+      "side": 1,
+      "message": "project %(project)s",
+      "revId": "28a73c1b8632598edb92b699279e6d3d54e8ea82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
