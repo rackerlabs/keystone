@@ -9,7 +9,7 @@ security:
     to the use of a proper username/password. Historically
     the admin_token filter has been left enabled in
     Keystone after initialization due to the way CMS
-    systems work. Moving to an out-of-band initialization
-    will eliminate the security concerns around a static
-    shared string that conveys admin access to Keystone
+    systems work. Moving to an out-of-band initialization using
+    ``keystone-manage bootstrap`` will eliminate the security concerns around
+    a static shared string that conveys admin access to keystone
     and therefore to the entire installation.
