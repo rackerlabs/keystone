@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_7f13c4b8",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-14T17:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_1c4d5f6c",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 59
+      },
+      "revId": "a6f0b469d538d2b8ba5c3dffb05000afa2420c14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_0fc06329",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 1
@@ -59,6 +83,24 @@
       "writtenOn": "2016-03-09T14:18:15Z",
       "side": 1,
       "message": "nit: put admin in backticks",
+      "revId": "a6f0b469d538d2b8ba5c3dffb05000afa2420c14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_1f4600bf",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-14T17:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aef4532_0fc06329",
       "revId": "a6f0b469d538d2b8ba5c3dffb05000afa2420c14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
