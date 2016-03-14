@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_f5c5338e",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-14T17:33:27Z",
+      "side": 1,
+      "message": "--bootstrap-region-id is also an option",
+      "revId": "9e038fcb6b191e9c5e87a9c3a16ddc52aec232d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
