@@ -28,7 +28,7 @@ from testtools import matchers
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
-from keystone.identity.backends import sql as identity_sql
+from keystone.identity.backends import sql_model as model
 from keystone.resource.backends import base as resource
 from keystone.tests import unit
 from keystone.tests.unit.assignment import test_backends as assignment_tests
@@ -413,7 +413,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         with sql.session_for_read() as session:
-            query = session.query(identity_sql.User)
+            query = session.query(model.User)
             query = query.filter_by(id=user['id'])
             raw_user_ref = query.one()
             self.assertIsNone(raw_user_ref.default_project_id)
