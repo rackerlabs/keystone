@@ -182,16 +182,22 @@ class BootStrap(BaseApp):
             'description': 'The default domain'
         }
         try:
+            self.resource_manager.get_domain(default_domain['id'])
+            LOG.info(_LI('Domain %s already exists, skipping creation.'),
+                     default_domain['id'])
+        except exception.DomainNotFound:
             self.resource_manager.create_domain(
                 domain_id=default_domain['id'],
                 domain=default_domain)
             LOG.info(_LI('Created domain %s'), default_domain['id'])
-        except exception.Conflict:
-            # NOTE(morganfainberg): Domain already exists, continue on.
-            LOG.info(_LI('Domain %s already exists, skipping creation.'),
-                     default_domain['id'])
 
         try:
+            project = self.resource_manager.get_project_by_name(
+                self.project_name, default_domain['id'])
+            self.project_id = project['id']
+            LOG.info(_LI('Project %s already exists, skipping creation.'),
+                     self.project_name)
+        except exception.ProjectNotFound:
             self.resource_manager.create_project(
                 project_id=self.project_id,
                 project={'enabled': True,
@@ -202,15 +208,14 @@ class BootStrap(BaseApp):
                          'name': self.project_name}
             )
             LOG.info(_LI('Created project %s'), self.project_name)
-        except exception.Conflict:
-            LOG.info(_LI('Project %s already exists, skipping creation.'),
-                     self.project_name)
-            project = self.resource_manager.get_project_by_name(
-                self.project_name, default_domain['id'])
-            self.project_id = project['id']
 
         # NOTE(morganfainberg): Do not create the user if it already exists.
         try:
+            user = self.identity_manager.get_user_by_name(self.username,
+                                                          default_domain['id'])
+            LOG.info(_LI('User %s already exists, skipping creation.'),
+                     self.username)
+        except exception.UserNotFound:
             user = self.identity_manager.create_user(
                 user_ref={'name': self.username,
                           'enabled': True,
@@ -219,33 +224,36 @@ class BootStrap(BaseApp):
                           }
             )
             LOG.info(_LI('Created user %s'), self.username)
-        except exception.Conflict:
-            LOG.info(_LI('User %s already exists, skipping creation.'),
-                     self.username)
-            user = self.identity_manager.get_user_by_name(self.username,
-                                                          default_domain['id'])
 
+        # NOTE(davechen): There is no backend method to get the role
+        # by name, so build the hints to list the roles and filter by
+        # name instead.
+        hints = driver_hints.Hints()
+        hints.add_filter('name', self.role_name)
+        role = self.role_manager.list_roles(hints)
         # NOTE(morganfainberg): Do not create the role if it already exists.
-        try:
+        if role:
+            self.role_id = role[0]['id']
+            LOG.info(_LI('Role %s exists, skipping creation.'), self.role_name)
+        else:
             self.role_manager.create_role(
                 role_id=self.role_id,
                 role={'name': self.role_name,
                       'id': self.role_id},
             )
             LOG.info(_LI('Created Role %s'), self.role_name)
-        except exception.Conflict:
-            LOG.info(_LI('Role %s exists, skipping creation.'), self.role_name)
-            # NOTE(davechen): There is no backend method to get the role
-            # by name, so build the hints to list the roles and filter by
-            # name instead.
-            hints = driver_hints.Hints()
-            hints.add_filter('name', self.role_name)
-            role = self.role_manager.list_roles(hints)
-            self.role_id = role[0]['id']
 
         # NOTE(morganfainberg): Handle the case that the role assignment has
         # already occurred.
-        try:
+        roles = self.assignment_manager.\
+            get_roles_for_user_and_project(user['id'], self.project_id)
+        if roles and self.role_id in roles:
+            LOG.info(_LI('User %(username)s already has %(role)s on '
+                         '%(project)s.'),
+                     {'username': self.username,
+                      'role': self.role_name,
+                      'project': self.project_name})
+        else:
             self.assignment_manager.add_role_to_user_and_project(
                 user_id=user['id'],
                 tenant_id=self.project_id,
@@ -256,22 +264,17 @@ class BootStrap(BaseApp):
                      {'role': self.role_name,
                       'project': self.project_name,
                       'username': self.username})
-        except exception.Conflict:
-            LOG.info(_LI('User %(username)s already has %(role)s on '
-                         '%(project)s.'),
-                     {'username': self.username,
-                      'role': self.role_name,
-                      'project': self.project_name})
 
         if self.region_id:
             try:
+                self.catalog_manager.get_region(self.region_id)
+                LOG.info(_LI('Region %s exists, skipping creation.'),
+                         self.region_id)
+            except exception.RegionNotFound:
                 self.catalog_manager.create_region(
                     region_ref={'id': self.region_id}
                 )
                 LOG.info(_LI('Created Region %s'), self.region_id)
-            except exception.Conflict:
-                LOG.info(_LI('Region %s exists, skipping creation.'),
-                         self.region_id)
 
         if self.public_url or self.admin_url or self.internal_url:
             hints = driver_hints.Hints()
