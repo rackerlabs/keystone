@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_0ecc1069",
+        "filename": "keystone/version/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-14T18:23:25Z",
+      "side": 1,
+      "message": "First day planned for Mitaka release (see http://releases.openstack.org/mitaka/schedule.html)",
+      "range": {
+        "startLine": 148,
+        "startChar": 28,
+        "endLine": 148,
+        "endChar": 38
+      },
+      "revId": "1cf5d06301dd25cad41c2cec1b5378e7f3cb955a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
