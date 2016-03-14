@@ -15,7 +15,7 @@ import uuid
 from keystone.common import sql
 from keystone import exception
 from keystone import identity
-from keystone.identity.backends import sql as model
+from keystone.identity.backends import model
 
 
 class ShadowUsers(identity.ShadowUsersDriverV9):
