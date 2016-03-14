@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_64a5f3b3",
+        "filename": "releasenotes/notes/add-bootstrap-cli-192500228cc6e574.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-14T18:59:11Z",
+      "side": 1,
+      "message": "add a link to launchpad: https://blueprints.launchpad.net/keystone/+spec/bootstrap",
+      "range": {
+        "startLine": 3,
+        "startChar": 3,
+        "endLine": 3,
+        "endChar": 54
+      },
+      "revId": "5121d356e71b1f4892f67d1cafbfcb0db8df6284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
