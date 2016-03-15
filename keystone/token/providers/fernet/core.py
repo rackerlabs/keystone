@@ -124,7 +124,7 @@ class Provider(common.BaseProvider):
                                        user_id, project_id, domain_id):
         """Populate roles based on (groups, project/domain) pair.
 
-        We must populate roles from (groups, project/domain) as ephemeral users
+        We must populate roles from (groups, project/domain) as federated users
         don't exist in the backend. Upon success, a ``roles`` key will be added
         to ``token_dict``.
 
