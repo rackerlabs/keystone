@@ -1,0 +1,13 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+1: Henrique Truta <henrique@lsd.ufcg.edu.br>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 15 Mar 2016 17:44:43 +0000
+Reviewed-on: https://review.openstack.org/288799
+Project: openstack/keystone
+Branch: refs/heads/master
