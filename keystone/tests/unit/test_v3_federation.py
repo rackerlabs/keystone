@@ -1543,19 +1543,19 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         self.assertValidMappingResponse(
             resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
 
-    def test_create_mapping_with_ephemeral(self):
+    def test_create_mapping_with_federated(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         resp = self.put(
             url,
-            body={'mapping': mapping_fixtures.MAPPING_EPHEMERAL_USER},
+            body={'mapping': mapping_fixtures.MAPPING_FEDERATED_USER},
             expected_status=http_client.CREATED)
         self.assertValidMappingResponse(
-            resp, mapping_fixtures.MAPPING_EPHEMERAL_USER)
+            resp, mapping_fixtures.MAPPING_FEDERATED_USER)
 
     def test_create_mapping_with_bad_user_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         # get a copy of a known good map
-        bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_EPHEMERAL_USER)
+        bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_FEDERATED_USER)
         # now sabotage the user type
         bad_mapping['rules'][0]['local'][0]['user']['type'] = uuid.uuid4().hex
         self.put(url, expected_status=http_client.BAD_REQUEST,
@@ -2283,7 +2283,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Set mapping rules for existing IdP with an empty whitelist
            that whould discard any values from the assertion
          - Try issuing unscoped token, expect server to raise
-           ``exception.MissingGroups`` as no groups were matched and ephemeral
+           ``exception.MissingGroups`` as no groups were matched and federated
            user does not have any group assigned.
 
         """
@@ -2344,7 +2344,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Create group ``EXISTS``
          - Set mapping rules for existing IdP with an empty whitelist
            that whould discard any values from the assertion
-         - Issue an unscoped token and make sure ephemeral user is a member of
+         - Issue an unscoped token and make sure federated user is a member of
            two groups.
 
         """

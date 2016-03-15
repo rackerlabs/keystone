@@ -162,7 +162,7 @@ has ``Subject DN`` as ``CN=alex,OU=eng,O=nice-network,L=Sunnyvale,
 ST=California,C=US``, in the following examples, ``user_name`` will be
 mapped to``alex`` and ``domain_name`` will be mapped to ``nice-network``.
 And it has user's ``type`` set to ``local``. If user's ``type`` is not
-defined, it defaults to ``ephemeral``.
+defined, it defaults to ``federated``.
 
 Please refer to `mod_ssl`_ for the detailed mapping attributes.
 
@@ -198,7 +198,7 @@ Please refer to `mod_ssl`_ for the detailed mapping attributes.
         }
     }
 
-When user's ``type`` is not defined or set to ``ephemeral``, the mapped user
+When user's ``type`` is not defined or set to ``federated``, the mapped user
 does not have to be a valid local user but the mapping must yield at least
 one valid local group. For example:
 
@@ -212,7 +212,7 @@ one valid local group. For example:
                          {
                             "user": {
                                 "name": "{0}",
-                                "type": "ephemeral"
+                                "type": "federated"
                             }
                          },
                          {
@@ -239,7 +239,7 @@ it can be any string as opposed to IdP ID.
 
     curl -k -s -H "X-Auth-Token: <TOKEN>" \
          -H "Content-Type: application/json" \
-         -d '{"mapping": {"rules": [{"local": [{"user": {"name": "{0}","type": "ephemeral"}},{"group": {"id": "<GROUPID>"}}],"remote": [{"type": "SSL_CLIENT_S_DN_CN"}]}]}}' \
+         -d '{"mapping": {"rules": [{"local": [{"user": {"name": "{0}","type": "federated"}},{"group": {"id": "<GROUPID>"}}],"remote": [{"type": "SSL_CLIENT_S_DN_CN"}]}]}}' \
          -X PUT https://<HOSTNAME>:<PORT>/v3/OS-FEDERATION/mappings/<MAPPING ID>
 
 

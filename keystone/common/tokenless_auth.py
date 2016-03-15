@@ -126,10 +126,10 @@ class TokenlessAuthHelper(object):
             user_domain_id = None
             user_domain_name = None
 
-        # if user is ephemeral type, we don't care if the user exists
+        # if user is federated type, we don't care if the user exists
         # or not, but just care if the mapped group(s) is valid.
-        if user_type == utils.UserType.EPHEMERAL:
-            user_ref = {'type': utils.UserType.EPHEMERAL}
+        if user_type == utils.UserType.FEDERATED:
+            user_ref = {'type': utils.UserType.FEDERATED}
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_in_backend(group_ids,
                                              mapping_id,

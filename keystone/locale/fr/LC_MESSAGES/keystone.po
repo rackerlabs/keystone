@@ -465,7 +465,7 @@ msgid "Could not find: %(target)s"
 msgstr "N'est pas trouvé:  %(target)s"
 
 msgid ""
-"Could not map user while setting ephemeral user identity. Either mapping "
+"Could not map user while setting federated user identity. Either mapping "
 "rules must specify user id/name or REMOTE_USER environment variable must be "
 "set."
 msgstr ""

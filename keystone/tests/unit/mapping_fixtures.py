@@ -584,7 +584,7 @@ MAPPING_GROUP_NAMES = {
     ]
 }
 
-MAPPING_EPHEMERAL_USER = {
+MAPPING_FEDERATED_USER = {
     "rules": [
         {
             "local": [
@@ -594,7 +594,7 @@ MAPPING_EPHEMERAL_USER = {
                         "domain": {
                             "id": FEDERATED_DOMAIN
                         },
-                        "type": "ephemeral"
+                        "type": "federated"
                     }
                 }
             ],
@@ -644,7 +644,7 @@ MAPPING_GROUPS_WHITELIST = {
     ]
 }
 
-MAPPING_EPHEMERAL_USER_LOCAL_DOMAIN = {
+MAPPING_FEDERATED_USER_LOCAL_DOMAIN = {
     "rules": [
         {
             "local": [
@@ -654,7 +654,7 @@ MAPPING_EPHEMERAL_USER_LOCAL_DOMAIN = {
                         "domain": {
                             "id": LOCAL_DOMAIN
                         },
-                        "type": "ephemeral"
+                        "type": "federated"
                     }
                 }
             ],
@@ -1199,14 +1199,14 @@ MAPPING_WITH_USERID_ONLY = {
     ]
 }
 
-MAPPING_FOR_EPHEMERAL_USER = {
+MAPPING_FOR_FEDERATED_USER = {
     'rules': [
         {
             'local': [
                 {
                     'user': {
                         'name': '{0}',
-                        'type': 'ephemeral'
+                        'type': 'federated'
                     },
                     'group': {
                         'id': 'dummy'
@@ -1222,7 +1222,7 @@ MAPPING_FOR_EPHEMERAL_USER = {
     ]
 }
 
-MAPPING_FOR_DEFAULT_EPHEMERAL_USER = {
+MAPPING_FOR_DEFAULT_FEDERATED_USER = {
     'rules': [
         {
             'local': [
