@@ -296,7 +296,7 @@ If a mapping is valid you will receive the following output:
                 {
                     "id": "Federated" or "<local-domain-id>"
                 },
-            "type": "ephemeral" or "local",
+            "type": "federated" or "local",
             "name": "<local-user-name>",
             "id": "<local-user-id>"
             },
@@ -326,14 +326,14 @@ If a mapping is valid you will receive the following output:
     }
 
 The ``type`` parameter specifies the type of user being mapped. The 2 possible
-user types are ``local`` and ``ephemeral``.``local`` is displayed if the user
+user types are ``local`` and ``federated``.``local`` is displayed if the user
 has a domain specified. The user is treated as existing in the backend, hence
-the server will fetch user details (id, name, roles, groups).``ephemeral`` is
+the server will fetch user details (id, name, roles, groups).``federated`` is
 displayed for a user that does not exist in the backend.
 
 The ``id`` parameter in the service domain specifies the domain a user belongs
 to. ``Federated`` will be displayed if no domain is specified in the local rule.
-User is deemed ephemeral and becomes a member of service domain named ``Federated``.
+User is deemed federated and becomes a member of service domain named ``Federated``.
 If the domain is specified the local domain's id will be displayed.
 If the mapped user is local, mapping engine will discard further group
 assigning and return set of roles configured for the user.
