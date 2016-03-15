@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_0891ea99",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-15T22:48:25Z",
+      "side": 1,
+      "message": "That is fine. But the fact that you can turn it on with a known, insecure default was the reason I asked for the default to be \u003cnone\u003e and profiling not work unless it is enabled \u0026 a key is set.\n\nI wont -2 over this, and will concede the point if other cores are willing to accept it.\n\nThis really is the last issue in my mind that prevents including osprofiler in keystone (and the config default setting specifics with the entry point in setup.cfg)",
+      "parentUuid": "1af94dfe_81ca0c4e",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_26d790c0",
         "filename": "setup.cfg",
         "patchSetId": 42
