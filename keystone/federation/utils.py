@@ -27,12 +27,14 @@ from keystone.i18n import _, _LW
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+# supporting ephemeral user type to be backwards compatible
+DEPRECATED_USER_TYPE = 'ephemeral'
 
 
 class UserType(object):
     """User mapping type."""
 
-    EPHEMERAL = 'ephemeral'
+    FEDERATED = 'federated'
     LOCAL = 'local'
 
 
@@ -70,8 +72,9 @@ MAPPING_SCHEMA = {
                                         },
                                         "type": {
                                             "type": "string",
-                                            "enum": [UserType.EPHEMERAL,
-                                                     UserType.LOCAL]
+                                            "enum": [UserType.FEDERATED,
+                                                     UserType.LOCAL,
+                                                     DEPRECATED_USER_TYPE]
                                         }
                                     },
                                     "additionalProperties": False
@@ -579,16 +582,16 @@ class RuleProcessor(object):
         def normalize_user(user):
             """Parse and validate user mapping."""
             user_type = user.get('type')
-
-            if user_type and user_type not in (UserType.EPHEMERAL,
-                                               UserType.LOCAL):
+            if user_type and user_type not in (UserType.FEDERATED,
+                                               UserType.LOCAL,
+                                               DEPRECATED_USER_TYPE):
                 msg = _("User type %s not supported") % user_type
                 raise exception.ValidationError(msg)
 
-            if user_type is None:
-                user_type = user['type'] = UserType.EPHEMERAL
+            if user_type is None or user_type == DEPRECATED_USER_TYPE:
+                user_type = user['type'] = UserType.FEDERATED
 
-            if user_type == UserType.EPHEMERAL:
+            if user_type == UserType.FEDERATED:
                 user['domain'] = {
                     'id': CONF.federation.federated_domain_name
                 }
