@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_690c0c43",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-15T15:33:47Z",
+      "side": 1,
+      "message": "the secret key should be unset and if the secret key is unset the osprofiler should not work (even if enabled). this was the point of the overrides.\n\nthe default of \"SECRET_KEY\" is bad as it is insecure - it is a \"known\" default password. Insecure defaults are bad. This was something i commented on a while back.\n\nThis is one of the reasons why we changed how admin_token works.",
+      "parentUuid": "3afc51ec_ec71d045",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_26d790c0",
         "filename": "setup.cfg",
         "patchSetId": 42
