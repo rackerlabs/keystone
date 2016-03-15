@@ -87,6 +87,24 @@
       "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_8dcec381",
+        "filename": "setup.cfg",
+        "patchSetId": 42
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-15T15:36:06Z",
+      "side": 1,
+      "message": "http://lists.openstack.org/pipermail/openstack-dev/2016-March/089123.html",
+      "parentUuid": "3afc51ec_ac94e842",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
