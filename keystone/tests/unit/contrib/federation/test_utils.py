@@ -30,12 +30,12 @@ class MappingRuleEngineTests(unit.BaseTestCase):
     """A class for testing the mapping rule engine."""
 
     def assertValidMappedUserObject(self, mapped_properties,
-                                    user_type='ephemeral',
+                                    user_type='federated',
                                     domain_id=None):
         """Check whether mapped properties object has 'user' within.
 
         According to today's rules, RuleProcessor does not have to issue user's
-        id or name. What's actually required is user's type and for ephemeral
+        id or name. What's actually required is user's type and for federated
         users that would be service domain named 'Federated'.
         """
         self.assertIn('user', mapped_properties,
@@ -453,18 +453,38 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertEqual('tbo', mapped_properties['user']['name'])
 
     def test_mapping_federated_domain_specified(self):
-        """Test mapping engine when domain 'ephemeral' is explicitly set.
+        """Test mapping engine when domain 'federated' is explicitly set.
 
-        For that, we use mapping rule MAPPING_EPHEMERAL_USER and assertion
+        For that, we use mapping rule MAPPING_FEDERATED_USER and assertion
         EMPLOYEE_ASSERTION
 
         """
-        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping = mapping_fixtures.MAPPING_FEDERATED_USER
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertValidMappedUserObject(mapped_properties)
+
+    def test_mapping_federated_user_with_deprecated_user_type(self):
+        """Test mapping when deprecated 'ephemeral' user type is set.
+
+        If 'ephemeral' is set, the user type should get set to 'federated'
+
+        """
+        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        validation_exception_raised = False
+        try:
+            mapping_utils.validate_mapping_structure(mapping)
+        except exception.ValidationError:
+            validation_exception_raised = True
+        self.assertFalse(validation_exception_raised)
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        assertion = mapping_fixtures.CONTRACTOR_ASSERTION
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        self.assertValidMappedUserObject(mapped_properties,
+                                         user_type='federated')
 
     def test_create_user_object_with_bad_mapping(self):
         """Test if user object is created even with bad mapping.
@@ -478,7 +498,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         whereas value from assertion is 'tbo'.
 
         """
-        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping = mapping_fixtures.MAPPING_FEDERATED_USER
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
@@ -488,15 +508,15 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         self.assertNotIn('id', mapped_properties['user'])
         self.assertNotIn('name', mapped_properties['user'])
 
-    def test_set_ephemeral_domain_to_ephemeral_users(self):
-        """Test auto assigning service domain to ephemeral users.
+    def test_set_federated_domain_to_federated_users(self):
+        """Test auto assigning service domain to federated users.
 
-        Test that ephemeral users will always become members of federated
+        Test that federated users will always become members of federated
         service domain. The check depends on ``type`` value which must be set
-        to ``ephemeral`` in case of ephemeral user.
+        to ``federated`` in case of federated user.
 
         """
-        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER_LOCAL_DOMAIN
+        mapping = mapping_fixtures.MAPPING_FEDERATED_USER_LOCAL_DOMAIN
         rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
@@ -521,7 +541,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         Test plan:
         - Check if the user has proper domain ('federated') set
-        - Check if the user has property type set ('ephemeral')
+        - Check if the user has property type set ('federated')
         - Check if user's name is properly mapped from the assertion
         - Check if unique_id is properly set and equal to display_name,
         as it was not explicitly specified in the mapping.
@@ -546,7 +566,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         Test plan:
         - Check if the user has proper domain ('federated') set
-        - Check if the user has propert type set ('ephemeral')
+        - Check if the user has propert type set ('federated')
         - Check if user's name is properly mapped from the assertion
         - Check if the unique_id and display_name are properly set
 
@@ -569,7 +589,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         Test plan:
         - Check if the user has proper domain ('federated') set
-        - Check if the user has propert type set ('ephemeral')
+        - Check if the user has propert type set ('federated')
         - Check if user's display_name is properly set and equal to unique_id,
         as it was not explicitly specified in the mapping.
 
@@ -593,7 +613,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         Test plan:
         - Check if the user has proper domain ('federated') set
-        - Check if the user has proper type set ('ephemeral')
+        - Check if the user has proper type set ('federated')
         - Check if display_name is properly set from the assertion
         - Check if unique_id is properly set and and equal to value hardcoded
         in the mapping
