@@ -72,6 +72,29 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_b63f8724",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-15T17:18:00Z",
+      "side": 1,
+      "message": "so this unfortunately throws an execution if there is no value or default set for the option in question....",
+      "range": {
+        "startLine": 1256,
+        "startChar": 28,
+        "endLine": 1256,
+        "endChar": 69
+      },
+      "revId": "a75b81fc2a95e5fd9ac9cd2f6e71e015b6d946f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_2251fed8",
         "filename": "keystone/resource/core.py",
         "patchSetId": 1
