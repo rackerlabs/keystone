@@ -32,7 +32,7 @@ LOG = log.getLogger(__name__)
 class UserType(object):
     """User mapping type."""
 
-    EPHEMERAL = 'ephemeral'
+    FEDERATED = 'federated'
     LOCAL = 'local'
 
 
@@ -70,7 +70,7 @@ MAPPING_SCHEMA = {
                                         },
                                         "type": {
                                             "type": "string",
-                                            "enum": [UserType.EPHEMERAL,
+                                            "enum": [UserType.FEDERATED,
                                                      UserType.LOCAL]
                                         }
                                     },
@@ -580,15 +580,15 @@ class RuleProcessor(object):
             """Parse and validate user mapping."""
             user_type = user.get('type')
 
-            if user_type and user_type not in (UserType.EPHEMERAL,
+            if user_type and user_type not in (UserType.FEDERATED,
                                                UserType.LOCAL):
                 msg = _("User type %s not supported") % user_type
                 raise exception.ValidationError(msg)
 
             if user_type is None:
-                user_type = user['type'] = UserType.EPHEMERAL
+                user_type = user['type'] = UserType.FEDERATED
 
-            if user_type == UserType.EPHEMERAL:
+            if user_type == UserType.FEDERATED:
                 user['domain'] = {
                     'id': CONF.federation.federated_domain_name
                 }
