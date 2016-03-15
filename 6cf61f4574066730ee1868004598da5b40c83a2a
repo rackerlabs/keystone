@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_81ca0c4e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-03-15T16:21:27Z",
+      "side": 1,
+      "message": "so even with these defaults set, profiling won\u0027t work. And even if all is set to enabled it won\u0027t work without the key passed from the client, using the service.",
+      "parentUuid": "1af94dfe_c1c89477",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_26d790c0",
         "filename": "setup.cfg",
         "patchSetId": 42
