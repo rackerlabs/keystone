@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_c1c89477",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-03-15T16:19:35Z",
+      "side": 1,
+      "message": "Morgan, even if the key is defined in keystone conf, and even if the profiling is enabled in conf, you need client to pass specific headers to trigger the profiling.",
+      "parentUuid": "1af94dfe_690c0c43",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_26d790c0",
         "filename": "setup.cfg",
         "patchSetId": 42
