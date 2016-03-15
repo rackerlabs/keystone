@@ -34,6 +34,24 @@
       "revId": "d3b6449b34a3ca4731a16c3958b5a251ea86111e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_67484b88",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-15T00:39:32Z",
+      "side": 1,
+      "message": "And just to add, ShadowUsers depends on the User model for all identity drivers (sql, ldap...), which is the main reason for the separation.  You could also argue that separating the driver from the model is a cleaner implementation.",
+      "parentUuid": "3afc51ec_64efac87",
+      "revId": "d3b6449b34a3ca4731a16c3958b5a251ea86111e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
