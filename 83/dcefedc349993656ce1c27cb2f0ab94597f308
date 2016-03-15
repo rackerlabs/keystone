@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: lei zhang <zhang.lei@99cloud.net>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 15 Mar 2016 17:37:32 +0000
+Reviewed-on: https://review.openstack.org/292680
+Project: openstack/keystone
+Branch: refs/heads/master
