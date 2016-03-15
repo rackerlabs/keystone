@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_ec71d045",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-03-15T11:03:49Z",
+      "side": 1,
+      "message": "Default secret key is set to SECRET_KEY - take a look https://github.com/openstack/osprofiler/blob/master/osprofiler/opts.py#L67\n\nother defaults are: disabled profiler by default and disabled DB tracing by default.",
+      "parentUuid": "3afc51ec_66f8784a",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_26d790c0",
         "filename": "setup.cfg",
         "patchSetId": 42
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-14T11:23:37Z",
       "side": 1,
       "message": "based on a recent change, it looks like all the defaults need to be set in one entry point. Let\u0027s confirm with Doug Hellmann",
+      "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_ac94e842",
+        "filename": "setup.cfg",
+        "patchSetId": 42
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-03-15T11:03:49Z",
+      "side": 1,
+      "message": "ack, let\u0027s wait for a response from Doug.",
+      "parentUuid": "3afc51ec_26d790c0",
       "revId": "6cf61f4574066730ee1868004598da5b40c83a2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
