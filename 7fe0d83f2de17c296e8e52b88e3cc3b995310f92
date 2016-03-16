@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1af94dfe_1a3bbf39",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8726
+      },
+      "writtenOn": "2016-03-16T16:56:38Z",
+      "side": 1,
+      "message": "It should be great to add the same command that was included for wsgi.py\n\n# setup OSprofiler notifier and enable the profiling if that is configured\n# in Keystone configuration file.",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 30
+      },
+      "revId": "7fe0d83f2de17c296e8e52b88e3cc3b995310f92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_ee7f3d64",
         "filename": "setup.cfg",
         "patchSetId": 44
