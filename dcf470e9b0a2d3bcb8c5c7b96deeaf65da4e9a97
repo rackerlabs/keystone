@@ -34,6 +34,24 @@
       "revId": "dcf470e9b0a2d3bcb8c5c7b96deeaf65da4e9a97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_e06f3cc3",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-03-16T19:49:04Z",
+      "side": 1,
+      "message": "Thanks, Looks like request does work for us",
+      "parentUuid": "1af94dfe_13de053f",
+      "revId": "dcf470e9b0a2d3bcb8c5c7b96deeaf65da4e9a97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
