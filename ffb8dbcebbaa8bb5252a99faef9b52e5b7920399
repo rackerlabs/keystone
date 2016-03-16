@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_32d511b9",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T14:14:49Z",
+      "side": 1,
+      "message": "i don\u0027t think this is necessary, it already logs it in utils",
+      "range": {
+        "startLine": 119,
+        "startChar": 7,
+        "endLine": 124,
+        "endChar": 55
+      },
+      "revId": "ffb8dbcebbaa8bb5252a99faef9b52e5b7920399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_72695925",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T14:14:49Z",
+      "side": 1,
+      "message": "if user_ref[\u0027type\u0027] \u003d\u003d utils.UserType.FEDERATED or user_ref[\u0027type\u0027] \u003d\u003d  utils.UserType.DEPRECATED_EPHEMERAL):",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 129,
+        "endChar": 56
+      },
+      "revId": "ffb8dbcebbaa8bb5252a99faef9b52e5b7920399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
