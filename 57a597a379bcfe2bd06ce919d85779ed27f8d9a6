@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_127a95f1",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-16T14:17:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_63db27ed",
+      "range": {
+        "startLine": 601,
+        "startChar": 19,
+        "endLine": 601,
+        "endChar": 20
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_03a91324",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 18
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_d2214dfd",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-16T14:17:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_03a91324",
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_c601c906",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 18
@@ -53,6 +95,24 @@
       "writtenOn": "2016-02-12T04:07:22Z",
       "side": 1,
       "message": "self.assertFalse(store.is_configured)",
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_72fe7939",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-16T14:17:40Z",
+      "side": 1,
+      "message": "This isn\u0027t required here as this test verifies the exception raised.",
+      "parentUuid": "3a57f1b5_c601c906",
       "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_b5b58b32",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-16T14:17:40Z",
+      "side": 1,
+      "message": "Brant Knudson asked for it a patch earlier:\n\"You should be able to test calling Token.__init__ twice. Override kvs.get_key_value_store to return a mock.Mock and check if configure() is called again.\"",
+      "parentUuid": "3a57f1b5_e33877f1",
+      "range": {
+        "startLine": 613,
+        "startChar": 0,
+        "endLine": 613,
+        "endChar": 46
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_a3eb5f77",
         "filename": "keystone/tests/unit/test_kvs.py",
         "patchSetId": 18
@@ -93,6 +177,30 @@
       "writtenOn": "2016-02-12T04:07:22Z",
       "side": 1,
       "message": "(nit) capitalize",
+      "range": {
+        "startLine": 614,
+        "startChar": 11,
+        "endLine": 614,
+        "endChar": 12
+      },
+      "revId": "57a597a379bcfe2bd06ce919d85779ed27f8d9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_55588732",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-16T14:17:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_a3eb5f77",
       "range": {
         "startLine": 614,
         "startChar": 11,
