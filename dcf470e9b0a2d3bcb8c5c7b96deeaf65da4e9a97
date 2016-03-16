@@ -16,6 +16,24 @@
       "revId": "dcf470e9b0a2d3bcb8c5c7b96deeaf65da4e9a97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_13de053f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-03-16T18:44:12Z",
+      "side": 1,
+      "message": "I\u0027m not sure it matters? http://docs.webob.org/en/latest/reference.html#headers",
+      "parentUuid": "1af94dfe_f118b986",
+      "revId": "dcf470e9b0a2d3bcb8c5c7b96deeaf65da4e9a97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
