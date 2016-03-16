@@ -16,6 +16,24 @@
       "revId": "979813fa58c34626231ff076a7cd679a48458e0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_f9b425f3",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-03-16T16:20:56Z",
+      "side": 1,
+      "message": "Only if Keystone is running in debug mode. Otherwise, it will appear in the logs only.",
+      "parentUuid": "1af94dfe_253b083a",
+      "revId": "979813fa58c34626231ff076a7cd679a48458e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
