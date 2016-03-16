@@ -456,7 +456,7 @@ def _get_request_audit_info(context, user_id=None):
 
     if context and 'environment' in context and context['environment']:
         environment = context['environment']
-        remote_addr = environment.get('REMOTE_ADDR')
+        remote_addr = context['remote_address']
         http_user_agent = environment.get('HTTP_USER_AGENT')
         if not user_id:
             user_id = environment.get('KEYSTONE_AUTH_CONTEXT',
