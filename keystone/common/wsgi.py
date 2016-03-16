@@ -226,6 +226,13 @@ class Application(BaseApplication):
         # set is not yet known.
         context['environment'] = req.environ
         context['accept_header'] = req.accept
+
+        # Get the remote address, even if it is proxied, store it in context
+        remote_address = req.remote_addr
+        if CONF.use_forwarded_for:
+            remote_address = req.headers.get('X-Forwarded-For', remote_address)
+        context['remote_address'] = remote_address
+
         req.environ = None
 
         params.update(arg_dict)
@@ -251,7 +258,7 @@ class Application(BaseApplication):
             LOG.warning(
                 _LW("Authorization failed. %(exception)s from "
                     "%(remote_addr)s"),
-                {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
+                {'exception': e, 'remote_addr': context['remote_address']})
             return render_exception(e, context=context,
                                     user_locale=best_match_language(req))
         except exception.Error as e:
