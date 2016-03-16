@@ -1,0 +1,12 @@
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 16 Mar 2016 20:01:42 +0000
+Reviewed-on: https://review.openstack.org/291584
+Project: openstack/keystone
+Branch: refs/heads/master
