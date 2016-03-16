@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_eb71efa9",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-16T15:50:00Z",
+      "side": 1,
+      "message": "It might be good to use the ENV var for bootstrap here since it is the better form. but i\u0027m good with this as is.",
+      "revId": "f3238d47820047b2e2a78f26045352de195bc704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
