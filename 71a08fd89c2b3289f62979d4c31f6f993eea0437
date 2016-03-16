@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_fc2c3cad",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T02:01:19Z",
+      "side": 1,
+      "message": "another potential follow up would be to remove this, as it is only used once and can be replaced with `openstack user show admin -f value -c id` @ line 242",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 1
+      },
+      "revId": "71a08fd89c2b3289f62979d4c31f6f993eea0437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
