@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_6beddfee",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-16T15:54:37Z",
+      "side": 1,
+      "message": "based on the bug, this should also be in a try / except block and should fail completely if the user cannot be created with a more friendly error IMO saying that the user doesn\u0027t exist *and* cannot be created.\n\nI would be ok with the change to include changing all try/excepts for bootstrap to be a get and if notfound create pattern.",
+      "range": {
+        "startLine": 219,
+        "startChar": 12,
+        "endLine": 226,
+        "endChar": 59
+      },
+      "revId": "6ecd7b6965c4441a9590a6751dc1818703672965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
