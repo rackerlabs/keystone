@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_f118b986",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-03-16T17:24:39Z",
+      "side": 1,
+      "message": "HTTP headers are lower case and webservers are not guarented to preserve the case. It is always better to use lower case  when fetching",
+      "revId": "dcf470e9b0a2d3bcb8c5c7b96deeaf65da4e9a97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
