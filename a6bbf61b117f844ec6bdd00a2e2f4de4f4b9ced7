@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_572c2b4a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T02:18:44Z",
+      "side": 1,
+      "message": "federated x2",
+      "range": {
+        "startLine": 536,
+        "startChar": 65,
+        "endLine": 537,
+        "endChar": 34
+      },
+      "revId": "a6bbf61b117f844ec6bdd00a2e2f4de4f4b9ced7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
