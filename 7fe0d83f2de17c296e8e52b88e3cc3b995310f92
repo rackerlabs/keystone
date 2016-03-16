@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_ee7f3d64",
+        "filename": "setup.cfg",
+        "patchSetId": 44
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-16T16:03:26Z",
+      "side": 1,
+      "message": "Let me check on this, but i think we need to have a single function in keystone to set all defaults (so make set_middleware_defaults into \"set_external_library_defaults\" which does all the extern config setting).\n\nLooks good otherwise.",
+      "revId": "7fe0d83f2de17c296e8e52b88e3cc3b995310f92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
