@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_be72ac7a",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T01:31:48Z",
+      "side": 1,
+      "message": "we should nuke this in a follow on patch, since it\u0027ll be removed when we remove eventlet",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 2
+      },
+      "revId": "3024e493ebd72d69af931623db4ffa2ab74a0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_9c41b80e",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T01:31:48Z",
+      "side": 1,
+      "message": "you should be able to unset this and OS_URL if you make the change i noted below",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 46
+      },
+      "revId": "3024e493ebd72d69af931623db4ffa2ab74a0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_1c5648d2",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T01:31:48Z",
+      "side": 1,
+      "message": "i have no idea why DISABLE_ENDPOINTS would even be an option",
+      "range": {
+        "startLine": 107,
+        "startChar": 11,
+        "endLine": 107,
+        "endChar": 28
+      },
+      "revId": "3024e493ebd72d69af931623db4ffa2ab74a0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_9cca58a0",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T01:31:48Z",
+      "side": 1,
+      "message": "let\u0027s incorporate this into the bootstrap command:\n\n$ keystone-manage bootstrap --bootstrap-password s3cr3t\n    --bootstrap-region-id RegionOne \\\n    --bootstrap-admin-url http://$CONTROLLER_PUBLIC_ADDRESS:\\$(public_port)s/v3 \\\n    --bootstrap-public-url http://$CONTROLLER_ADMIN_ADDRESS:\\$(admin_port)s/v3 \\\n    --bootstrap-internal-url http://$CONTROLLER_INTERNAL_ADDRESS:$(public_port)s/v3",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 2
+      },
+      "revId": "3024e493ebd72d69af931623db4ffa2ab74a0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
