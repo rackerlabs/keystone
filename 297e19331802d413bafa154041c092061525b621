@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_31deca6d",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T04:10:20Z",
+      "side": 1,
+      "message": "put this on line 39?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "297e19331802d413bafa154041c092061525b621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_71bfb2fb",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T04:10:20Z",
+      "side": 1,
+      "message": "add another IF here to check if the deprecated version is passed in and issue a message stating we\u0027ll remove it in O or P",
+      "range": {
+        "startLine": 582,
+        "startChar": 12,
+        "endLine": 582,
+        "endChar": 26
+      },
+      "revId": "297e19331802d413bafa154041c092061525b621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_715692d3",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T04:10:20Z",
+      "side": 1,
+      "message": "this would also need to be updated to include deprecated version",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 56
+      },
+      "revId": "297e19331802d413bafa154041c092061525b621",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
