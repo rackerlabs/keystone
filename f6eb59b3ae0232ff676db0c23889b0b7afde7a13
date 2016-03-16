@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_f1a58204",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T04:05:53Z",
+      "side": 1,
+      "message": "suggestion: \"Could not map any federated user properties to identity values. Check debug logs or the mapping used for additional details.\"\n\nI like leaving the user with an idea of how to fix the problem",
+      "range": {
+        "startLine": 605,
+        "startChar": 21,
+        "endLine": 605,
+        "endChar": 59
+      },
+      "revId": "f6eb59b3ae0232ff676db0c23889b0b7afde7a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
