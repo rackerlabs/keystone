@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_98c9927b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-16T18:39:39Z",
+      "side": 1,
+      "message": "Done. Good catch.",
+      "parentUuid": "3afc51ec_60d08e54",
+      "revId": "0939073b21e58f0b66b9d8f3c978181853fa7006",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_83268e14",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 4
@@ -30,6 +48,30 @@
       "writtenOn": "2016-03-11T17:47:29Z",
       "side": 1,
       "message": "is this comment still valid ?",
+      "range": {
+        "startLine": 987,
+        "startChar": 8,
+        "endLine": 994,
+        "endChar": 49
+      },
+      "revId": "0939073b21e58f0b66b9d8f3c978181853fa7006",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_9391759c",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 994,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-16T18:39:39Z",
+      "side": 1,
+      "message": "Yes, it\u0027s just describing what an unbound method is.",
+      "parentUuid": "3afc51ec_83268e14",
       "range": {
         "startLine": 987,
         "startChar": 8,
