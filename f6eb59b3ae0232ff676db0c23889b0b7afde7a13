@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_21d49d1e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T15:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1af94dfe_9a188e86",
+      "revId": "f6eb59b3ae0232ff676db0c23889b0b7afde7a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_f1a58204",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 1
@@ -54,6 +72,30 @@
       "side": 1,
       "message": "++",
       "parentUuid": "1af94dfe_f1a58204",
+      "range": {
+        "startLine": 605,
+        "startChar": 21,
+        "endLine": 605,
+        "endChar": 59
+      },
+      "revId": "f6eb59b3ae0232ff676db0c23889b0b7afde7a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_01d7e123",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-16T15:15:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1af94dfe_5d1e0064",
       "range": {
         "startLine": 605,
         "startChar": 21,
