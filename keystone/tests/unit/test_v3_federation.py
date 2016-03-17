@@ -27,6 +27,7 @@ from oslotest import mockpatch
 import saml2
 from saml2 import saml
 from saml2 import sigver
+import six
 from six.moves import http_client
 from six.moves import range, urllib, zip
 xmldsig = importutils.try_import("saml2.xmldsig")
@@ -1097,8 +1098,11 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         idp_id = default_idp.get('id')
         url = self.base_url(suffix=idp_id)
         resp = self.get(url)
+        # Strip keys out of body dictionary this is done
+        # to be python 3 compatable
+        body_keys = list(body)
         self.assertValidResponse(resp, 'identity_provider',
-                                 dummy_validator, keys_to_check=body.keys(),
+                                 dummy_validator, keys_to_check=body_keys,
                                  ref=body)
 
     def test_get_nonexisting_idp(self):
@@ -1299,9 +1303,12 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         resp = self.get(url)
 
         reference = {'id': proto_id}
+        # Strip keys out of body dictionary this is done
+        # to be python 3 compatable
+        reference_keys = list(reference)
         self.assertValidResponse(resp, 'protocol',
                                  dummy_validator,
-                                 keys_to_check=reference.keys(),
+                                 keys_to_check=reference_keys,
                                  ref=reference)
 
     def test_list_protocols(self):
@@ -2525,7 +2532,8 @@ class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         v3_scope_request = self._scope_request(unscoped_token,
                                                'project', project['id'])
-
+        # TODO(tjcocozz): In test_v3.admin_request(), findout why
+        # webTest.app:do_request is returning 500
         resp = self.v3_create_token(v3_scope_request)
         token_resp = resp.result['token']
         self._check_project_scoped_token_attributes(token_resp, project['id'])
@@ -2798,6 +2806,8 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                self.ROLES, self.PROJECT,
                                                self.PROJECT_DOMAIN)
             assertion_xml = response.assertion.to_string()
+            # `to_string()` will be `str` in Python 2 and `bytes` in Python 3
+            assertion_xml = six.text_type(assertion_xml)
             # make sure we have the proper tag and prefix for the assertion
             # namespace
             self.assertIn('<saml:Assertion', assertion_xml)
@@ -2905,6 +2915,24 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
 
         with mock.patch.object(keystone_idp, '_sign_assertion',
                                return_value=self.signed_assertion):
+            """
+            TODO tjcocozz: webtest is called and a 400 is returned
+                execution:
+
+                self.post <- below
+                test_v3:RestfulTestCase.post()
+                test_v3:RestfulTestCase.v3_request
+                test_v3:RestfulTestCase.get_scoped_token
+                rest:RestfulTestCase.admin_request
+                rest:RestfulTestCase._request
+                rest:RestfulTestCase.restful_request
+                rest:RestfulTestCase.request
+                .webtest.app:request()
+                .
+                .
+                .
+                webTest.app:do_request is returning 400
+            """
             http_response = self.post(self.SAML_GENERATION_ROUTE, body=body,
                                       response_content_type='text/xml',
                                       expected_status=http_client.OK)
@@ -3019,7 +3047,6 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
             http_response = self.post(self.ECP_GENERATION_ROUTE, body=body,
                                       response_content_type='text/xml',
                                       expected_status=http_client.OK)
-
         env_response = etree.fromstring(http_response.result)
         header = env_response[0]
 
@@ -3224,11 +3251,17 @@ class IdPMetadataGenerationTests(test_v3.RestfulTestCase):
     def test_get_metadata(self):
         self.config_fixture.config(
             group='saml', idp_metadata_path=XMLDIR + '/idp_saml2_metadata.xml')
-        r = self.get(self.METADATA_URL, response_content_type='text/xml')
-        self.assertEqual('text/xml', r.headers.get('Content-Type'))
+        ra = self.get(self.METADATA_URL, response_content_type='text/xml')
+        self.assertEqual('text/xml', ra.headers.get('Content-Type'))
 
         reference_file = _load_xml('idp_saml2_metadata.xml')
-        self.assertEqual(reference_file, r.result)
+
+        # both `reference_file` and `ra.result` need to be converted
+        # to bytes since `ra.result` has escape characters and is
+        # `bytes` in Python 3 so when its converted to string it escapes
+        # all the escape charaters instead of leaving them alone.
+        reference_file = str.encode(reference_file)
+        self.assertEqual(reference_file, ra.result)
 
 
 class ServiceProviderTests(test_v3.RestfulTestCase):
@@ -3495,11 +3528,15 @@ class WebSSOTests(FederatedTokenTests):
             sso_callback_template=self.SSO_TEMPLATE_PATH,
             remote_id_attribute=self.REMOTE_ID_ATTR)
 
+    # Tom
     def test_render_callback_template(self):
         token_id = uuid.uuid4().hex
+
         resp = self.api.render_html_response(self.TRUSTED_DASHBOARD, token_id)
-        self.assertIn(token_id, resp.body)
-        self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
+        # `resp.body` will be `str` in Python 2 and `bytes` in Python 3
+        body = six.text_type(resp.body)
+        self.assertIn(token_id, body)
+        self.assertIn(self.TRUSTED_DASHBOARD, body)
 
     def test_federated_sso_auth(self):
         environment = {self.REMOTE_ID_ATTR: self.REMOTE_IDS[0]}
@@ -3507,7 +3544,9 @@ class WebSSOTests(FederatedTokenTests):
         query_string = {'origin': self.ORIGIN}
         self._inject_assertion(context, 'EMPLOYEE_ASSERTION', query_string)
         resp = self.api.federated_sso_auth(context, self.PROTOCOL)
-        self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
+        # `resp.body` will be `str` in Python 2 and `bytes` in Python 3
+        body = six.text_type(resp.body)
+        self.assertIn(self.TRUSTED_DASHBOARD, body)
 
     def test_get_sso_origin_host_case_insensitive(self):
         # test lowercase hostname in trusted_dashboard
@@ -3534,7 +3573,9 @@ class WebSSOTests(FederatedTokenTests):
         query_string = {'origin': self.ORIGIN}
         self._inject_assertion(context, 'EMPLOYEE_ASSERTION', query_string)
         resp = self.api.federated_sso_auth(context, self.PROTOCOL)
-        self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
+        # `resp.body` will be `str` in Python 2 and `bytes` in Python 3
+        body = six.text_type(resp.body)
+        self.assertIn(self.TRUSTED_DASHBOARD, body)
 
     def test_federated_sso_auth_bad_remote_id(self):
         environment = {self.REMOTE_ID_ATTR: self.IDP}
@@ -3595,7 +3636,9 @@ class WebSSOTests(FederatedTokenTests):
         resp = self.api.federated_idp_specific_sso_auth(context,
                                                         self.idp['id'],
                                                         self.PROTOCOL)
-        self.assertIn(self.TRUSTED_DASHBOARD, resp.body)
+        # `resp.body` will be `str` in Python 2 and `bytes` in Python 3
+        body = six.text_type(resp.body)
+        self.assertIn(self.TRUSTED_DASHBOARD, body)
 
 
 class K2KServiceCatalogTests(test_v3.RestfulTestCase):
