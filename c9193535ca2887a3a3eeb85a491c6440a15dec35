@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_ffd040f8",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-17T18:27:25Z",
+      "side": 1,
+      "message": "It would be nice to reuse this logic since it\u0027s in at least two places. I think that can happen in a later patch if desired.",
+      "revId": "c9193535ca2887a3a3eeb85a491c6440a15dec35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
