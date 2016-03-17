@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_f0886fc7",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-17T19:29:01Z",
+      "side": 1,
+      "message": "You should probably also have the delete here like the other environments.",
+      "revId": "671e540b917747d16fc607d16d98c720f5b58cea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
