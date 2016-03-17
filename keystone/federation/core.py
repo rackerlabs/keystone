@@ -21,6 +21,7 @@ import six
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
+from keystone.common import sql
 from keystone import exception
 from keystone.federation import utils
 
@@ -549,7 +550,10 @@ class V9FederationWrapperForV8Driver(FederationDriverV9):
         return self.driver.get_idp_from_remote_id(remote_id)
 
     def update_idp(self, idp_id, idp):
-        return self.driver.update_idp(idp_id, idp)
+        try:
+            return self.driver.update_idp(idp_id, idp)
+        except sql.DBDuplicateEntry as e:
+            self.handle_conflict(e)
 
     def create_protocol(self, idp_id, protocol_id, protocol):
         return self.driver.create_protocol(idp_id, protocol_id, protocol)
