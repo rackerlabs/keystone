@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_c4ef701c",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-17T22:49:37Z",
+      "side": 1,
+      "message": "yay!",
+      "revId": "f7983d4bdf4da1c21da4a37229ea8fca28072cc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
