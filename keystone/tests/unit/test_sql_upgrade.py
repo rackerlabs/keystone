@@ -39,6 +39,7 @@ from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
+from oslo_db.sqlalchemy import test_base
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from sqlalchemy import schema
@@ -1052,6 +1053,167 @@ class SqlUpgradeTests(SqlMigrateBase):
                                                   meta, autoload=True)
         # assert id column is an integer (after)
         self.assertEqual('INTEGER', str(revocation_event_table.c.id.type))
+
+
+class SqlUpgradeTests2(object):
+    _initial_db_version = migration_helpers.get_init_version()
+
+    def setUp(self):
+        database.initialize_sql_session()
+        self.repo_path = migration_helpers.find_migrate_repo(
+            self.repo_package())
+        self.schema_ = versioning_api.ControlledSchema.create(
+            self.engine,
+            self.repo_path,
+            self._initial_db_version)
+
+    def repo_package(self):
+        return sql
+
+    def initialize_sql(self):
+        self.metadata = sqlalchemy.MetaData()
+        self.metadata.bind = self.engine
+
+    def select_table(self, name):
+        table = sqlalchemy.Table(name,
+                                 self.metadata,
+                                 autoload=True)
+        s = sqlalchemy.select([table])
+        return s
+
+    def upgrade(self, *args, **kwargs):
+        self._migrate(*args, **kwargs)
+
+    def _migrate(self, version, repository=None, downgrade=False,
+                 current_schema=None):
+        repository = repository or self.repo_path
+        err = ''
+        version = versioning_api._migrate_version(self.schema_,
+                                                  version,
+                                                  not downgrade,
+                                                  err)
+        if not current_schema:
+            current_schema = self.schema_
+        changeset = current_schema.changeset(version)
+        for ver, change in changeset:
+            self.schema_.runchange(ver, change, changeset.step)
+        self.assertEqual(self.schema_.version, version)
+
+    def assertTableDoesNotExist(self, table_name):
+        """Asserts that a given table exists cannot be selected by name."""
+        # Switch to a different metadata otherwise you might still
+        # detect renamed or dropped tables
+        try:
+            temp_metadata = sqlalchemy.MetaData()
+            temp_metadata.bind = self.engine
+            sqlalchemy.Table(table_name, temp_metadata, autoload=True)
+        except sqlalchemy.exc.NoSuchTableError:
+            pass
+        else:
+            raise AssertionError('Table "%s" already exists' % table_name)
+
+    def assertTableColumns(self, table_name, expected_cols):
+        """Asserts that the table contains the expected set of columns."""
+        self.initialize_sql()
+        table = self.select_table(table_name)
+        actual_cols = [col.name for col in table.columns]
+        # Check if the columns are equal, but allow for a different order,
+        # which might occur after an upgrade followed by a downgrade
+        self.assertItemsEqual(expected_cols, actual_cols,
+                              '%s table' % table_name)
+
+    def check_initial_table_structure(self):
+        for table in INITIAL_TABLE_STRUCTURE:
+            self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
+
+    def does_fk_exist(self, table, fk_column):
+        inspector = reflection.Inspector.from_engine(self.engine)
+        for fk in inspector.get_foreign_keys(table):
+            if fk_column in fk['constrained_columns']:
+                return True
+        return False
+
+    def does_index_exist(self, table_name, index_name):
+        meta = sqlalchemy.MetaData(bind=self.engine)
+        table = sqlalchemy.Table(table_name, meta, autoload=True)
+        return index_name in [idx.name for idx in table.indexes]
+
+    def test_blank_db_to_start(self):
+        self.assertTableDoesNotExist('user')
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+    def test_upgrade_add_initial_tables(self):
+        self.upgrade(self._initial_db_version + 1)
+        self.check_initial_table_structure()
+
+    def test_kilo_squash(self):
+        self.initialize_sql()
+
+        self.upgrade(67)
+
+        # In 053 the size of ID and parent region ID columns were changed
+        table = sqlalchemy.Table('region', self.metadata, autoload=True)
+        self.assertEqual(255, table.c.id.type.length)
+        self.assertEqual(255, table.c.parent_region_id.type.length)
+        table = sqlalchemy.Table('endpoint', self.metadata, autoload=True)
+        self.assertEqual(255, table.c.region_id.type.length)
+
+        # In 054 an index was created for the actor_id of the assignment table
+        table = sqlalchemy.Table('assignment', self.metadata, autoload=True)
+        index_data = [(idx.name, list(idx.columns.keys()))
+                      for idx in table.indexes]
+        self.assertIn(('ix_actor_id', ['actor_id']), index_data)
+
+        # In 055 indexes were created for user and trust IDs in the token table
+        table = sqlalchemy.Table('token', self.metadata, autoload=True)
+        index_data = [(idx.name, list(idx.columns.keys()))
+                      for idx in table.indexes]
+        self.assertIn(('ix_token_user_id', ['user_id']), index_data)
+        self.assertIn(('ix_token_trust_id', ['trust_id']), index_data)
+
+        # In 062 the role ID foreign key was removed from the assignment table
+        if self.engine.name == "mysql":
+            self.assertFalse(self.does_fk_exist('assignment', 'role_id'))
+
+        # In 064 the domain ID FK was removed from the group and user tables
+        if self.engine.name != 'sqlite':
+            # sqlite does not support FK deletions (or enforcement)
+            self.assertFalse(self.does_fk_exist('group', 'domain_id'))
+            self.assertFalse(self.does_fk_exist('user', 'domain_id'))
+
+        # In 067 the role ID index was removed from the assignment table
+        if self.engine.name == "mysql":
+            self.assertFalse(self.does_index_exist('assignment',
+                                                   'assignment_role_id_fkey'))
+
+
+class SqlUpgradeMySQLOpportunisticTestCase(
+        test_base.MySQLOpportunisticTestCase, SqlUpgradeTests2):
+    def setUp(self):
+        super(SqlUpgradeMySQLOpportunisticTestCase, self).setUp()
+        SqlUpgradeTests2.setUp(self)
+
+
+class SqlUpgradePostgreSQLOpportunisticTestCase(
+        test_base.PostgreSQLOpportunisticTestCase, SqlUpgradeTests2):
+    def setUp(self):
+        super(SqlUpgradePostgreSQLOpportunisticTestCase, self).setUp()
+        SqlUpgradeTests2.setUp(self)
+
+
+class SqlUpgradeDbTestCase(
+        test_base.DbTestCase, SqlUpgradeTests2):
+    def setUp(self):
+        super(SqlUpgradeDbTestCase, self).setUp()
+        SqlUpgradeTests2.setUp(self)
 
 
 class VersionTests(SqlMigrateBase):
