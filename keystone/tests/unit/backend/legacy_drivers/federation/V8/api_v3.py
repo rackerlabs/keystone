@@ -81,6 +81,33 @@ class FederatedIdentityProviderTestsV8(
         self.put(url, body={'identity_provider': body},
                  expected_status=http_client.CONFLICT)
 
+    def test_update_idp_remote_repeated(self):
+        """Update IdP to match ID of an existing IdP.
+
+        Expect HTTP 500 ISE code for the latter call.
+
+        Note: V9 drivers raise an HTTP 409 Conflict error, however the V8
+        driver raises an HTTP 500 ISE error.
+        """
+        # Create first identity provider
+        body = self.default_body.copy()
+        repeated_remote_id = uuid.uuid4().hex
+        body['remote_ids'] = [uuid.uuid4().hex,
+                              repeated_remote_id]
+        self._create_default_idp(body=body)
+
+        # Create second identity provider (without remote_ids)
+        body = self.default_body.copy()
+        default_resp = self._create_default_idp(body=body)
+        default_idp = self._fetch_attribute_from_response(default_resp,
+                                                          'identity_provider')
+        idp_id = default_idp.get('id')
+        url = self.base_url(suffix=idp_id)
+
+        body['remote_ids'] = [repeated_remote_id]
+        self.patch(url, body={'identity_provider': body},
+                   expected_status=http_client.INTERNAL_SERVER_ERROR)
+
 
 class MappingCRUDTestsV8(
         test_v3_federation.MappingCRUDTests,
