@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_d10b877b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T16:05:56Z",
+      "side": 1,
+      "message": "environment*",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_917c5fed",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T16:05:56Z",
+      "side": 1,
+      "message": "Could we add a comment as to why we need to do this?\n\n    find keystone -type f -name \"*.pyc\" -delete",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
