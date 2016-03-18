@@ -27,6 +27,7 @@ from oslo_db.sqlalchemy import enginefacade
 from oslo_db.sqlalchemy import models
 from oslo_log import log
 from oslo_serialization import jsonutils
+import osprofiler.sqlalchemy
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
@@ -169,9 +170,6 @@ _main_context_manager = None
 
 
 def _get_main_context_manager():
-    # todo(DinaBelova): add DB profiling
-    # this requires oslo.db modification for proper format and functionality
-    # will be done in Newton timeframe
     global _main_context_manager
 
     if not _main_context_manager:
@@ -200,11 +198,19 @@ def _get_context():
 
 
 def session_for_read():
-    return _get_main_context_manager().reader.using(_get_context())
+    return _wrap_session(_get_main_context_manager().reader.using(
+        _get_context()))
 
 
 def session_for_write():
-    return _get_main_context_manager().writer.using(_get_context())
+    return _wrap_session(_get_main_context_manager().writer.using(
+        _get_context()))
+
+
+def _wrap_session(sess):
+    if CONF.profiler.enabled and CONF.profiler.trace_sqlalchemy:
+        sess = osprofiler.sqlalchemy.wrap_session(sql, sess)
+    return sess
 
 
 def truncated(f):
