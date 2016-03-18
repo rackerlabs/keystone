@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_8970c5a5",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-18T12:48:23Z",
+      "side": 1,
+      "message": "Keystone already have a decorator to skip tests if \"no multiple domain support\"\nfor example on this case:\nhttps://github.com/openstack/keystone/blob/2a24e359c6af26e4da6c2b4b2dc40a958acc59ad/keystone/tests/unit/resource/test_backends.py#L150\n\ncan you use this decorator here?",
+      "range": {
+        "startLine": 997,
+        "startChar": 0,
+        "endLine": 1000,
+        "endChar": 56
+      },
+      "revId": "f038d424cc1da6e933752b3839cb5e49fbf92733",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_296c119b",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-03-18T12:48:23Z",
+      "side": 1,
+      "message": "I suggest create a another method for this code, something like create_domain(domain_count, domain_name), so we can reuse this code for new tests.",
+      "range": {
+        "startLine": 1002,
+        "startChar": 0,
+        "endLine": 1009,
+        "endChar": 37
+      },
+      "revId": "f038d424cc1da6e933752b3839cb5e49fbf92733",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
