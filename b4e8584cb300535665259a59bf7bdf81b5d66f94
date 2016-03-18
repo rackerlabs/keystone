@@ -16,6 +16,24 @@
       "revId": "b4e8584cb300535665259a59bf7bdf81b5d66f94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_95944a8b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-18T16:08:14Z",
+      "side": 0,
+      "message": "It never ran because we don\u0027t test with mysql. I only found it because I\u0027m working on running this with mysql.",
+      "parentUuid": "1af94dfe_56f2cd9a",
+      "revId": "b4e8584cb300535665259a59bf7bdf81b5d66f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
