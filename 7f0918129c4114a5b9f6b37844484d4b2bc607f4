@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_e87b28bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-18T20:47:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1af94dfe_d10b877b",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_917c5fed",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Yeah i\u0027m not sure if there is a reason or not. I don\u0027t think we need it.  But i am not 100% sure.",
       "parentUuid": "1af94dfe_68df183a",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_28f4f058",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-18T20:47:00Z",
+      "side": 1,
+      "message": "So lance. It looks like its more of a precaution more than anything, there is not just 1 reason for doing it.",
+      "parentUuid": "1af94dfe_a8cf6054",
       "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
