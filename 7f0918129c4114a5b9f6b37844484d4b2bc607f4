@@ -33,6 +33,24 @@
       "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_7bfd2d6d",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-18T16:48:01Z",
+      "side": 1,
+      "message": "Lance i just looked through all the other projects and i am not 100% sure why it is needed (no one has comments other than \"# Cleanup *pyc\".  Looking at oslo_debug_helper there is no clean up there. We might not need it since it looks like its running it in a tmp directory https://github.com/openstack/oslotest/blob/master/tools/oslo_debug_helper#L13-L17  I will look into it farther to double check it is needed or not\n\n\nWe are the only team that is deleting *.pyc before \"oslo_debug_helper {posargs}\"  Aka in `debug`",
+      "parentUuid": "1af94dfe_917c5fed",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
