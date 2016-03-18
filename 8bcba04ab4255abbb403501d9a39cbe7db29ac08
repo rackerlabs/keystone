@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_d2753b64",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:57:36Z",
+      "side": 1,
+      "message": "nit: suggest making this a private method",
+      "revId": "8bcba04ab4255abbb403501d9a39cbe7db29ac08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_126cc39a",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:57:36Z",
+      "side": 1,
+      "message": "nit: suggest making this a private method",
+      "revId": "8bcba04ab4255abbb403501d9a39cbe7db29ac08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
