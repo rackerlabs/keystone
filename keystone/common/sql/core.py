@@ -169,9 +169,6 @@ _main_context_manager = None
 
 
 def _get_main_context_manager():
-    # todo(DinaBelova): add DB profiling
-    # this requires oslo.db modification for proper format and functionality
-    # will be done in Newton timeframe
     global _main_context_manager
 
     if not _main_context_manager:
@@ -200,11 +197,15 @@ def _get_context():
 
 
 def session_for_read():
-    return _get_main_context_manager().reader.using(_get_context())
+    return _get_main_context_manager().reader.using(
+        _get_context(),
+        profile=CONF.profiler.enabled and CONF.profiler.trace_sqlalchemy)
 
 
 def session_for_write():
-    return _get_main_context_manager().writer.using(_get_context())
+    return _get_main_context_manager().writer.using(
+        _get_context(),
+        profile=CONF.profiler.enabled and CONF.profiler.trace_sqlalchemy)
 
 
 def truncated(f):
