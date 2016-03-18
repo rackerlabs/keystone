@@ -51,6 +51,24 @@
       "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_68df183a",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T20:33:04Z",
+      "side": 1,
+      "message": "Ah - just figured it would be good to document the technical reasoning behind it.",
+      "parentUuid": "1af94dfe_7bfd2d6d",
+      "revId": "7f0918129c4114a5b9f6b37844484d4b2bc607f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
