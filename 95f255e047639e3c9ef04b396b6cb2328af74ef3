@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_8a24210d",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T18:27:25Z",
+      "side": 1,
+      "message": "Maybe we change the name of this module to be something like sql_model.py? It seems that would be fitting because the model is SQL specific - can this be used with LDAP?",
+      "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
