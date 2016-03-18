@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_3ef42e59",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2524,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:00:41Z",
+      "side": 0,
+      "message": "Can we do the same test above but down here to show that it\u0027s broken for Fernet as well? Or inherit the FederatedTokenTests class and run it that way.",
+      "revId": "862068d0ef87d9e68f37dfcdf048c4f42f7b25b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

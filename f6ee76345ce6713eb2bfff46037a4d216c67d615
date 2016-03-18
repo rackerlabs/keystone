@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_de570a56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:00:41Z",
+      "side": 1,
+      "message": "This behavior will only ever be observed for UUID tokens. If we want to fix this for Fernet tokens I think we\u0027ll have to use revocation events.",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_7ed356d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:00:41Z",
+      "side": 1,
+      "message": "Suggest changing this to Partial-Bug since we still have to approach this with Fernet.",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_5e92da4c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2482,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:00:41Z",
+      "side": 1,
+      "message": "I don\u0027t think this test will work against the Fernet provider since it is relying on the functionality of the _persistence backend.",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_9e0bc27c",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T19:00:41Z",
+      "side": 1,
+      "message": "This isn\u0027t used in the method anywhere - does it need to be passed to self._list_tokens()?",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
