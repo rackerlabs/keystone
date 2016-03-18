@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_aa28fd9a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T18:36:19Z",
+      "side": 1,
+      "message": "This is an interesting test case - should we add it to the list of invalid types? \n\n    _INVALID_NAMES \u003d [True, 24, \u0027 \u0027, \u0027\u0027]",
+      "revId": "915ce26e2cc3d56561c64c4f662138b8ba0431ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_0a1e516f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1916,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T18:36:19Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "915ce26e2cc3d56561c64c4f662138b8ba0431ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
