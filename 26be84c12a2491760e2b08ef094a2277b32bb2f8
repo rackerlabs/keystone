@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_76a1c9f7",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-18T15:38:34Z",
+      "side": 0,
+      "message": "I assume we can\u0027t remove the clean module from: \n\nhttps://github.com/openstack/keystone/blob/b4e8584cb300535665259a59bf7bdf81b5d66f94/keystone/resource/V8_backends/sql.py#L15 \n\nbecause it\u0027s an older driver interface, right?",
+      "revId": "26be84c12a2491760e2b08ef094a2277b32bb2f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
