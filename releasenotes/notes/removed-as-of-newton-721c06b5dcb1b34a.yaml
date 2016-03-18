@@ -5,3 +5,9 @@ other:
     Removed the backend and route from ``keystone.contrib.endpoint_policy``.
     The package has been moved to ``keystone.endpoint_policy``. This was
     deprecated in the Liberty release.
+  - >
+    [`blueprint removed-as-of-newton <https://blueprints.launchpad.net/keystone/+spec/removed-as-of-newton>`_]
+    Calls to create users, groups and projects will now require a domain ID to
+    be specified or a domain scoped token to be used. Previously, the
+    ``default_domain_id`` option from the config file would be used as a
+    fallback. This was deprecated in the Liberty release.
