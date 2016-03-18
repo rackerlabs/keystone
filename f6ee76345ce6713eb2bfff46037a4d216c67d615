@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_6a70ab72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-18T22:07:48Z",
+      "side": 1,
+      "message": "Understood.",
+      "parentUuid": "1af94dfe_de570a56",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_7ed356d5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-18T19:00:41Z",
       "side": 1,
       "message": "Suggest changing this to Partial-Bug since we still have to approach this with Fernet.",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_aa6633b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-18T22:07:48Z",
+      "side": 1,
+      "message": "Agreed, I will revert it to Partial.",
+      "parentUuid": "1af94dfe_7ed356d5",
       "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1af94dfe_4a25ef59",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2482,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-18T22:07:48Z",
+      "side": 1,
+      "message": "Ok, will make it UUID specific.",
+      "parentUuid": "1af94dfe_5e92da4c",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_9e0bc27c",
         "filename": "keystone/token/persistence/core.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2016-03-18T19:00:41Z",
       "side": 1,
       "message": "This isn\u0027t used in the method anywhere - does it need to be passed to self._list_tokens()?",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_aac2b350",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-03-18T22:07:48Z",
+      "side": 1,
+      "message": "I think the original author did it for consistency. Agreed it is not needed currently.",
+      "parentUuid": "1af94dfe_9e0bc27c",
       "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
