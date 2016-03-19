@@ -16,6 +16,24 @@
       "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_bb704341",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-19T00:31:55Z",
+      "side": 1,
+      "message": "Good suggestion Lance, it is SQL specific. And it will be used with LDAP when we shadow LDAP users, which will be implemented in Newton.",
+      "parentUuid": "1af94dfe_8a24210d",
+      "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
