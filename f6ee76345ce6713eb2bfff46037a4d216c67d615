@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "fa0719c6_e3d5e0b9",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_add_idp_id_to_token_column.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-20T13:06:25Z",
+      "side": 1,
+      "message": "bump this to 101, we merged the placeholders",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_5e92da4c",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
