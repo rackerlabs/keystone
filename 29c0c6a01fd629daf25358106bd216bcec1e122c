@@ -46,6 +46,30 @@
       "revId": "29c0c6a01fd629daf25358106bd216bcec1e122c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_7c5f9572",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 14211
+      },
+      "writtenOn": "2016-03-21T14:13:03Z",
+      "side": 1,
+      "message": "These 2 methods were specifically created for future re-using in other tests, see the previous review comment:\nhttps://review.openstack.org/#/c/207456/13/keystone/tests/unit/identity/test_backends.py@1009",
+      "parentUuid": "fa0719c6_960c0896",
+      "range": {
+        "startLine": 990,
+        "startChar": 8,
+        "endLine": 990,
+        "endChar": 65
+      },
+      "revId": "29c0c6a01fd629daf25358106bd216bcec1e122c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
