@@ -89,6 +89,29 @@
     },
     {
       "key": {
+        "uuid": "fa0719c6_e7e77ee2",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_add_idp_id_to_token_column.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-21T18:12:13Z",
+      "side": 1,
+      "message": "Your loading the table above, but not using it.  And what about cascade deletes?  For example:\nidp_table \u003d sql.Table(\u0027identity_provider\u0027, meta, autoload\u003dTrue)\n\nsql.Column(\u0027idp_id\u0027, sql.String(64),\n           sql.ForeignKey(idp_table.c.id, ondelete\u003d\u0027CASCADE\u0027),\n           nullable\u003dFalse),",
+      "range": {
+        "startLine": 30,
+        "startChar": 31,
+        "endLine": 30,
+        "endChar": 70
+      },
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_5e92da4c",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
