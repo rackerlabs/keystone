@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa0719c6_c331a3ee",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-21T12:21:31Z",
+      "side": 1,
+      "message": "left public because it is being used by a superclass",
+      "parentUuid": "1af94dfe_64b58e7c",
+      "range": {
+        "startLine": 169,
+        "startChar": 8,
+        "endLine": 169,
+        "endChar": 23
+      },
+      "revId": "1811647b3d7096b839d6fd2ce142402118637bea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_04500a31",
         "filename": "keystone/federation/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-18T17:51:10Z",
       "side": 1,
       "message": "i\u0027m confused about why we need this here",
+      "range": {
+        "startLine": 553,
+        "startChar": 8,
+        "endLine": 556,
+        "endChar": 35
+      },
+      "revId": "1811647b3d7096b839d6fd2ce142402118637bea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_03043b13",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-21T12:21:31Z",
+      "side": 1,
+      "message": "this is to replicate the behavior, otherwise the legacy driver tests won\u0027t pass. Is this the wrong place to put it?",
+      "parentUuid": "1af94dfe_04500a31",
       "range": {
         "startLine": 553,
         "startChar": 8,
