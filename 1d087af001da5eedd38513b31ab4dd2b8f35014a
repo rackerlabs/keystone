@@ -16,6 +16,24 @@
       "revId": "1d087af001da5eedd38513b31ab4dd2b8f35014a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_db8ad5be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-03-22T21:39:07Z",
+      "side": 1,
+      "message": "An example use case is a user using an LDAP backend with a large number of users. They may want to check that the /users endpoint is healthy and check the Content-Length of the response without actually transmitting the full list of users.\n\nThe use cases get slightly murkier from there but API consistency is important from UX perspective, which I think was what the bug author had in mind.",
+      "parentUuid": "fa0719c6_f58a48be",
+      "revId": "1d087af001da5eedd38513b31ab4dd2b8f35014a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
