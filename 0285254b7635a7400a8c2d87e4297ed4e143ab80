@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_a14f07bc",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 0,
+      "message": "What is the meaningful difference between FEDERATED and LOCAL moving forward? They should all just be shadow users at the end of the day, right?",
+      "revId": "0285254b7635a7400a8c2d87e4297ed4e143ab80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

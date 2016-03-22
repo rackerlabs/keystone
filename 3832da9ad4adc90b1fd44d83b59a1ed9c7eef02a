@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_e1ee1f8a",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "I hope I\u0027m just overlooking it, but I don\u0027t see any real support for not setting \"type\" in the implementation.",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_41e38b05",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "I imagine that since all users are going to be the same now, the \"type\" attribute can just be undocumented and ignored moving forward?",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_41854bab",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "It\u0027d be nice if our examples of JSON were actually valid JSON.",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_61b16f8f",
+        "filename": "doc/source/mapping_combinations.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "There was a missing space here after the period.",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_8145a3b4",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "We MUST provide backwards compatibility for mappings that have already been created with \"ephemeral\" as the value, such as by ignoring the configured user \"type\" entirely and unifying the mapping process.",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_24d30206",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-03-22T15:43:12Z",
+      "side": 1,
+      "message": "use self.assertRaises() instead of using try/excepts in tests (which is an anti-pattern)",
+      "revId": "3832da9ad4adc90b1fd44d83b59a1ed9c7eef02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
