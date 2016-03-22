@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_10e57f36",
+        "filename": "keystone/tests/unit/test_sql_livetest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-22T00:58:13Z",
+      "side": 0,
+      "message": "now we\u0027re removing db2 tests, but oslo.db doesn\u0027t support db2... it\u0027s not exactly tested now anyway, just saying",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 21
+      },
+      "revId": "8a56c161ee29e34e70c6334b048881e8fbbd7514",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
