@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_05a08642",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Indentation here is wrong. To reproduce this locally just run \u0027tox -e pep8\u0027",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_c5b68edb",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Don\u0027t save the return value if you don\u0027t use it.",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_e5eab2ab",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Same. I know that it was already like that, but since the line is changing anyway.",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_8582d692",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Indentation here is wrong. To reproduce this locally just run \u0027tox -e pep8\u0027",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_0545266f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Indentation here is wrong. To reproduce this locally just run \u0027tox -e pep8\u0027",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_25694a26",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "We don\u0027t use the \u0027r\u0027 here either.",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_450d5e3d",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-03-22T13:19:14Z",
+      "side": 1,
+      "message": "Indentation here is wrong. To reproduce this locally just run \u0027tox -e pep8\u0027",
+      "revId": "68c88d4656a698d62a1e63d61a8b9b3b4241891d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
