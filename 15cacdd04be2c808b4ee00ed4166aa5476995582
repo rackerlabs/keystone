@@ -22,6 +22,30 @@
       "revId": "15cacdd04be2c808b4ee00ed4166aa5476995582",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_45271e12",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-22T13:14:18Z",
+      "side": 1,
+      "message": "test_base.DbTestCase defines self.schema for something else, and we can\u0027t overwrite it otherwise cleanup doesn\u0027t work.",
+      "parentUuid": "fa0719c6_f0960b93",
+      "range": {
+        "startLine": 208,
+        "startChar": 13,
+        "endLine": 208,
+        "endChar": 20
+      },
+      "revId": "15cacdd04be2c808b4ee00ed4166aa5476995582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
