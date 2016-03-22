@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_f58a48be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-03-22T20:54:34Z",
+      "side": 1,
+      "message": "Can you please give an example for one meta information that you can get from HEAD about API resource?  How is that hypertext links/accessibility even a valid argument since most of the request requires token.\n\nIt is not necessary to have head for all operations. It is based on usage.",
+      "revId": "1d087af001da5eedd38513b31ab4dd2b8f35014a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
