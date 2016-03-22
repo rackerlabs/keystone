@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_d1302604",
+        "filename": "releasenotes/notes/removed-as-of-newton-721c06b5dcb1b34a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-22T07:03:35Z",
+      "side": 1,
+      "message": "nit: not sure we need this comma",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "bc1f5b7aeebc3e1db53ee340fa11aed2e1fc550d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_910d0e41",
+        "filename": "releasenotes/notes/removed-as-of-newton-721c06b5dcb1b34a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-22T07:03:35Z",
+      "side": 1,
+      "message": "we could be more specific here and say: ...to be specified or a domain scoped token to be used.",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "bc1f5b7aeebc3e1db53ee340fa11aed2e1fc550d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_fc026108",
+        "filename": "releasenotes/notes/removed-as-of-newton-721c06b5dcb1b34a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-22T07:03:35Z",
+      "side": 1,
+      "message": "would be used as a fallback (?)",
+      "range": {
+        "startLine": 12,
+        "startChar": 9,
+        "endLine": 12,
+        "endChar": 17
+      },
+      "revId": "bc1f5b7aeebc3e1db53ee340fa11aed2e1fc550d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
