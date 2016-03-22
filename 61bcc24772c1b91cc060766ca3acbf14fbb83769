@@ -16,6 +16,23 @@
       "revId": "61bcc24772c1b91cc060766ca3acbf14fbb83769",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_40ba50c1",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-22T21:10:18Z",
+      "side": 1,
+      "message": "I shouldn\u0027t need to change this. I think it was done to try to figure out why the test wasn\u0027t working.",
+      "revId": "61bcc24772c1b91cc060766ca3acbf14fbb83769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
