@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_01e21a9f",
+        "filename": "keystone/identity/backends/ldap3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-22T22:35:14Z",
+      "side": 1,
+      "message": "Suggest naming the file ldap3_identity so absolute_import isn\u0027t needed.",
+      "revId": "41a12eafddcada9c37cd1b1aaa3cd458481c9774",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_c1fe6237",
+        "filename": "keystone/identity/backends/ldap3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-22T22:35:14Z",
+      "side": 1,
+      "message": "This is new code, do not attribute copyright to the foundation (either remove this or attribute copyright to your company/you personally)",
+      "revId": "41a12eafddcada9c37cd1b1aaa3cd458481c9774",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
