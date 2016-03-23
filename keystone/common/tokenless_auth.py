@@ -126,10 +126,8 @@ class TokenlessAuthHelper(object):
             user_domain_id = None
             user_domain_name = None
 
-        # if user is ephemeral type, we don't care if the user exists
-        # or not, but just care if the mapped group(s) is valid.
-        if user_type == utils.UserType.EPHEMERAL:
-            user_ref = {'type': utils.UserType.EPHEMERAL}
+        # if federated user, check if mapped group(s) is valid.
+        if (idp_id and CONF.tokenless_auth.protocol):
             group_ids = mapped_properties['group_ids']
             utils.validate_groups_in_backend(group_ids,
                                              mapping_id,
@@ -141,6 +139,7 @@ class TokenlessAuthHelper(object):
             roles = self.assignment_api.get_roles_for_groups(group_ids,
                                                              project_id,
                                                              domain_id)
+            user_ref = {}
             if roles is not None:
                 role_names = [role['name'] for role in roles]
                 user_ref['roles'] = role_names

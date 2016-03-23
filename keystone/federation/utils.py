@@ -29,13 +29,6 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
-class UserType(object):
-    """User mapping type."""
-
-    EPHEMERAL = 'ephemeral'
-    LOCAL = 'local'
-
-
 MAPPING_SCHEMA = {
     "type": "object",
     "required": ['rules'],
