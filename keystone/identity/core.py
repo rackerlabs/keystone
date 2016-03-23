@@ -34,6 +34,8 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _, _LW
+from keystone.identity.backends import base as identity_interface
+from keystone.identity.mapping_backends import base as mapping_interface
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 
@@ -54,29 +56,6 @@ REGISTRATION_ATTEMPTS = 10
 
 # Config Registration Types
 SQL_DRIVER = 'SQL'
-
-
-def filter_user(user_ref):
-    """Filter out private items in a user dict.
-
-    'password', 'tenants' and 'groups' are never returned.
-
-    :returns: user_ref
-
-    """
-    if user_ref:
-        user_ref = user_ref.copy()
-        user_ref.pop('password', None)
-        user_ref.pop('tenants', None)
-        user_ref.pop('groups', None)
-        user_ref.pop('domains', None)
-        try:
-            user_ref['extra'].pop('password', None)
-            user_ref['extra'].pop('tenants', None)
-        except KeyError:  # nosec
-            # ok to not have extra in the user_ref.
-            pass
-    return user_ref
 
 
 @dependency.requires('domain_config_api', 'resource_api')
@@ -1253,6 +1232,11 @@ class Manager(manager.Manager):
         return user_dict
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.identity.IdentityDriverV8',
+    in_favor_of='keystone.identity.backends.base.IdentityDriverV8',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class IdentityDriverV8(object):
     """Interface description for an Identity driver."""
@@ -1484,7 +1468,7 @@ class IdentityDriverV8(object):
     # end of identity
 
 
-Driver = manager.create_legacy_driver(IdentityDriverV8)
+Driver = manager.create_legacy_driver(identity_interface.IdentityDriverV8)
 
 
 @dependency.provider('id_mapping_api')
@@ -1497,6 +1481,11 @@ class MappingManager(manager.Manager):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.identity.MappingDriverV8',
+    in_favor_of='keystone.identity.mapping_backends.base.MappingDriverV8',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class MappingDriverV8(object):
     """Interface description for an ID Mapping driver."""
@@ -1559,7 +1548,7 @@ class MappingDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 
-MappingDriver = manager.create_legacy_driver(MappingDriverV8)
+MappingDriver = manager.create_legacy_driver(mapping_interface.MappingDriverV8)
 
 
 @dependency.provider('shadow_users_api')
@@ -1572,6 +1561,11 @@ class ShadowUsersManager(manager.Manager):
         super(ShadowUsersManager, self).__init__(CONF.shadow_users.driver)
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.identity.ShadowUsersDriverV9',
+    in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverV9(object):
     """Interface description for an Shadow Users driver."""
