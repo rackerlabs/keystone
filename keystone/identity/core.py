@@ -14,26 +14,23 @@
 
 """Main entry point into the Identity service."""
 
-import abc
-import functools
-import os
-import threading
 import uuid
 
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
-import six
 
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.common import cache
 from keystone.common import clean
-from keystone.common import config
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _, _LW
+from keystone.identity.backends import interface as identity_interface
+from keystone.identity import domain_configs
+from keystone.identity.mapping_backends import interface as mapping_interface
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 
@@ -43,415 +40,6 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 MEMOIZE = cache.get_memoization_decorator(group='identity')
-
-DOMAIN_CONF_FHEAD = 'keystone.'
-DOMAIN_CONF_FTAIL = '.conf'
-
-# The number of times we will attempt to register a domain to use the SQL
-# driver, if we find that another process is in the middle of registering or
-# releasing at the same time as us.
-REGISTRATION_ATTEMPTS = 10
-
-# Config Registration Types
-SQL_DRIVER = 'SQL'
-
-
-def filter_user(user_ref):
-    """Filter out private items in a user dict.
-
-    'password', 'tenants' and 'groups' are never returned.
-
-    :returns: user_ref
-
-    """
-    if user_ref:
-        user_ref = user_ref.copy()
-        user_ref.pop('password', None)
-        user_ref.pop('tenants', None)
-        user_ref.pop('groups', None)
-        user_ref.pop('domains', None)
-        try:
-            user_ref['extra'].pop('password', None)
-            user_ref['extra'].pop('tenants', None)
-        except KeyError:  # nosec
-            # ok to not have extra in the user_ref.
-            pass
-    return user_ref
-
-
-@dependency.requires('domain_config_api', 'resource_api')
-class DomainConfigs(dict):
-    """Discover, store and provide access to domain specific configs.
-
-    The setup_domain_drivers() call will be made via the wrapper from
-    the first call to any driver function handled by this manager.
-
-    Domain specific configurations are only supported for the identity backend
-    and the individual configurations are either specified in the resource
-    database or in individual domain configuration files, depending on the
-    setting of the 'domain_configurations_from_database' config option.
-
-    The result will be that for each domain with a specific configuration,
-    this class will hold a reference to a ConfigOpts and driver object that
-    the identity manager and driver can use.
-
-    """
-
-    configured = False
-    driver = None
-    _any_sql = False
-    lock = threading.Lock()
-
-    def _load_driver(self, domain_config):
-        return manager.load_driver(Manager.driver_namespace,
-                                   domain_config['cfg'].identity.driver,
-                                   domain_config['cfg'])
-
-    def _load_config_from_file(self, resource_api, file_list, domain_name):
-
-        def _assert_no_more_than_one_sql_driver(domain_id, new_config,
-                                                config_file):
-            """Ensure there is no more than one sql driver.
-
-            Check to see if the addition of the driver in this new config
-            would cause there to be more than one sql driver.
-
-            """
-            if (new_config['driver'].is_sql and
-                    (self.driver.is_sql or self._any_sql)):
-                # The addition of this driver would cause us to have more than
-                # one sql driver, so raise an exception.
-                raise exception.MultipleSQLDriversInConfig(source=config_file)
-            self._any_sql = self._any_sql or new_config['driver'].is_sql
-
-        try:
-            domain_ref = resource_api.get_domain_by_name(domain_name)
-        except exception.DomainNotFound:
-            LOG.warning(
-                _LW('Invalid domain name (%s) found in config file name'),
-                domain_name)
-            return
-
-        # Create a new entry in the domain config dict, which contains
-        # a new instance of both the conf environment and driver using
-        # options defined in this set of config files.  Later, when we
-        # service calls via this Manager, we'll index via this domain
-        # config dict to make sure we call the right driver
-        domain_config = {}
-        domain_config['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=domain_config['cfg'])
-        domain_config['cfg'](args=[], project='keystone',
-                             default_config_files=file_list)
-        domain_config['driver'] = self._load_driver(domain_config)
-        _assert_no_more_than_one_sql_driver(domain_ref['id'],
-                                            domain_config,
-                                            file_list)
-        self[domain_ref['id']] = domain_config
-
-    def _setup_domain_drivers_from_files(self, standard_driver, resource_api):
-        """Read the domain specific configuration files and load the drivers.
-
-        Domain configuration files are stored in the domain config directory,
-        and must be named of the form:
-
-        keystone.<domain_name>.conf
-
-        For each file, call the load config method where the domain_name
-        will be turned into a domain_id and then:
-
-        - Create a new config structure, adding in the specific additional
-          options defined in this config file
-        - Initialise a new instance of the required driver with this new config
-
-        """
-        conf_dir = CONF.identity.domain_config_dir
-        if not os.path.exists(conf_dir):
-            LOG.warning(_LW('Unable to locate domain config directory: %s'),
-                        conf_dir)
-            return
-
-        for r, d, f in os.walk(conf_dir):
-            for fname in f:
-                if (fname.startswith(DOMAIN_CONF_FHEAD) and
-                        fname.endswith(DOMAIN_CONF_FTAIL)):
-                    if fname.count('.') >= 2:
-                        self._load_config_from_file(
-                            resource_api, [os.path.join(r, fname)],
-                            fname[len(DOMAIN_CONF_FHEAD):
-                                  -len(DOMAIN_CONF_FTAIL)])
-                    else:
-                        LOG.debug(('Ignoring file (%s) while scanning domain '
-                                   'config directory'),
-                                  fname)
-
-    def _load_config_from_database(self, domain_id, specific_config):
-
-        def _assert_no_more_than_one_sql_driver(domain_id, new_config):
-            """Ensure adding driver doesn't push us over the limit of 1
-
-            The checks we make in this method need to take into account that
-            we may be in a multiple process configuration and ensure that
-            any race conditions are avoided.
-
-            """
-            if not new_config['driver'].is_sql:
-                self.domain_config_api.release_registration(domain_id)
-                return
-
-            # To ensure the current domain is the only SQL driver, we attempt
-            # to register our use of SQL. If we get it we know we are good,
-            # if we fail to register it then we should:
-            #
-            # - First check if another process has registered for SQL for our
-            #   domain, in which case we are fine
-            # - If a different domain has it, we should check that this domain
-            #   is still valid, in case, for example, domain deletion somehow
-            #   failed to remove its registration (i.e. we self heal for these
-            #   kinds of issues).
-
-            domain_registered = 'Unknown'
-            for attempt in range(REGISTRATION_ATTEMPTS):
-                if self.domain_config_api.obtain_registration(
-                        domain_id, SQL_DRIVER):
-                    LOG.debug('Domain %s successfully registered to use the '
-                              'SQL driver.', domain_id)
-                    return
-
-                # We failed to register our use, let's find out who is using it
-                try:
-                    domain_registered = (
-                        self.domain_config_api.read_registration(
-                            SQL_DRIVER))
-                except exception.ConfigRegistrationNotFound:
-                    msg = ('While attempting to register domain %(domain)s to '
-                           'use the SQL driver, another process released it, '
-                           'retrying (attempt %(attempt)s).')
-                    LOG.debug(msg, {'domain': domain_id,
-                                    'attempt': attempt + 1})
-                    continue
-
-                if domain_registered == domain_id:
-                    # Another process already registered it for us, so we are
-                    # fine. In the race condition when another process is
-                    # in the middle of deleting this domain, we know the domain
-                    # is already disabled and hence telling the caller that we
-                    # are registered is benign.
-                    LOG.debug('While attempting to register domain %s to use '
-                              'the SQL driver, found that another process had '
-                              'already registered this domain. This is normal '
-                              'in multi-process configurations.', domain_id)
-                    return
-
-                # So we don't have it, but someone else does...let's check that
-                # this domain is still valid
-                try:
-                    self.resource_api.get_domain(domain_registered)
-                except exception.DomainNotFound:
-                    msg = ('While attempting to register domain %(domain)s to '
-                           'use the SQL driver, found that it was already '
-                           'registered to a domain that no longer exists '
-                           '(%(old_domain)s). Removing this stale '
-                           'registration and retrying (attempt %(attempt)s).')
-                    LOG.debug(msg, {'domain': domain_id,
-                                    'old_domain': domain_registered,
-                                    'attempt': attempt + 1})
-                    self.domain_config_api.release_registration(
-                        domain_registered, type=SQL_DRIVER)
-                    continue
-
-                # The domain is valid, so we really do have an attempt at more
-                # than one SQL driver.
-                details = (
-                    _('Config API entity at /domains/%s/config') % domain_id)
-                raise exception.MultipleSQLDriversInConfig(source=details)
-
-            # We fell out of the loop without either registering our domain or
-            # being able to find who has it...either we were very very very
-            # unlucky or something is awry.
-            msg = _('Exceeded attempts to register domain %(domain)s to use '
-                    'the SQL driver, the last domain that appears to have '
-                    'had it is %(last_domain)s, giving up') % {
-                        'domain': domain_id, 'last_domain': domain_registered}
-            raise exception.UnexpectedError(msg)
-
-        domain_config = {}
-        domain_config['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=domain_config['cfg'])
-        domain_config['cfg'](args=[], project='keystone',
-                             default_config_files=[])
-
-        # Override any options that have been passed in as specified in the
-        # database.
-        for group in specific_config:
-            for option in specific_config[group]:
-                domain_config['cfg'].set_override(
-                    option, specific_config[group][option],
-                    group, enforce_type=True)
-
-        domain_config['cfg_overrides'] = specific_config
-        domain_config['driver'] = self._load_driver(domain_config)
-        _assert_no_more_than_one_sql_driver(domain_id, domain_config)
-        self[domain_id] = domain_config
-
-    def _setup_domain_drivers_from_database(self, standard_driver,
-                                            resource_api):
-        """Read domain specific configuration from database and load drivers.
-
-        Domain configurations are stored in the domain-config backend,
-        so we go through each domain to find those that have a specific config
-        defined, and for those that do we:
-
-        - Create a new config structure, overriding any specific options
-          defined in the resource backend
-        - Initialise a new instance of the required driver with this new config
-
-        """
-        for domain in resource_api.list_domains():
-            domain_config_options = (
-                self.domain_config_api.
-                get_config_with_sensitive_info(domain['id']))
-            if domain_config_options:
-                self._load_config_from_database(domain['id'],
-                                                domain_config_options)
-
-    def setup_domain_drivers(self, standard_driver, resource_api):
-        # This is called by the api call wrapper
-        self.driver = standard_driver
-
-        if CONF.identity.domain_configurations_from_database:
-            self._setup_domain_drivers_from_database(standard_driver,
-                                                     resource_api)
-        else:
-            self._setup_domain_drivers_from_files(standard_driver,
-                                                  resource_api)
-        self.configured = True
-
-    def get_domain_driver(self, domain_id):
-        self.check_config_and_reload_domain_driver_if_required(domain_id)
-        if domain_id in self:
-            return self[domain_id]['driver']
-
-    def get_domain_conf(self, domain_id):
-        self.check_config_and_reload_domain_driver_if_required(domain_id)
-        if domain_id in self:
-            return self[domain_id]['cfg']
-        else:
-            return CONF
-
-    def reload_domain_driver(self, domain_id):
-        # Only used to support unit tests that want to set
-        # new config values.  This should only be called once
-        # the domains have been configured, since it relies on
-        # the fact that the configuration files/database have already been
-        # read.
-        if self.configured:
-            if domain_id in self:
-                self[domain_id]['driver'] = (
-                    self._load_driver(self[domain_id]))
-            else:
-                # The standard driver
-                self.driver = self.driver()
-
-    def check_config_and_reload_domain_driver_if_required(self, domain_id):
-        """Check for, and load, any new domain specific config for this domain.
-
-        This is only supported for the database-stored domain specific
-        configuration.
-
-        When the domain specific drivers were set up, we stored away the
-        specific config for this domain that was available at that time. So we
-        now read the current version and compare. While this might seem
-        somewhat inefficient, the sensitive config call is cached, so should be
-        light weight. More importantly, when the cache timeout is reached, we
-        will get any config that has been updated from any other keystone
-        process.
-
-        This cache-timeout approach works for both multi-process and
-        multi-threaded keystone configurations. In multi-threaded
-        configurations, even though we might remove a driver object (that
-        could be in use by another thread), this won't actually be thrown away
-        until all references to it have been broken. When that other
-        thread is released back and is restarted with another command to
-        process, next time it accesses the driver it will pickup the new one.
-
-        """
-        if (not CONF.identity.domain_specific_drivers_enabled or
-                not CONF.identity.domain_configurations_from_database):
-            # If specific drivers are not enabled, then there is nothing to do.
-            # If we are not storing the configurations in the database, then
-            # we'll only re-read the domain specific config files on startup
-            # of keystone.
-            return
-
-        latest_domain_config = (
-            self.domain_config_api.
-            get_config_with_sensitive_info(domain_id))
-        domain_config_in_use = domain_id in self
-
-        if latest_domain_config:
-            if (not domain_config_in_use or
-                    latest_domain_config != self[domain_id]['cfg_overrides']):
-                self._load_config_from_database(domain_id,
-                                                latest_domain_config)
-        elif domain_config_in_use:
-            # The domain specific config has been deleted, so should remove the
-            # specific driver for this domain.
-            try:
-                del self[domain_id]
-            except KeyError:  # nosec
-                # Allow this error in case we are unlucky and in a
-                # multi-threaded situation, two threads happen to be running
-                # in lock step.
-                pass
-        # If we fall into the else condition, this means there is no domain
-        # config set, and there is none in use either, so we have nothing
-        # to do.
-
-
-def domains_configured(f):
-    """Wraps API calls to lazy load domain configs after init.
-
-    This is required since the assignment manager needs to be initialized
-    before this manager, and yet this manager's init wants to be
-    able to make assignment calls (to build the domain configs).  So
-    instead, we check if the domains have been initialized on entry
-    to each call, and if requires load them,
-
-    """
-    @functools.wraps(f)
-    def wrapper(self, *args, **kwargs):
-        if (not self.domain_configs.configured and
-                CONF.identity.domain_specific_drivers_enabled):
-            # If domain specific driver has not been configured, acquire the
-            # lock and proceed with loading the driver.
-            with self.domain_configs.lock:
-                # Check again just in case some other thread has already
-                # completed domain config.
-                if not self.domain_configs.configured:
-                    self.domain_configs.setup_domain_drivers(
-                        self.driver, self.resource_api)
-        return f(self, *args, **kwargs)
-    return wrapper
-
-
-def exception_translated(exception_type):
-    """Wraps API calls to map to correct exception."""
-    def _exception_translated(f):
-        @functools.wraps(f)
-        def wrapper(self, *args, **kwargs):
-            try:
-                return f(self, *args, **kwargs)
-            except exception.PublicIDNotFound as e:
-                if exception_type == 'user':
-                    raise exception.UserNotFound(user_id=str(e))
-                elif exception_type == 'group':
-                    raise exception.GroupNotFound(group_id=str(e))
-                elif exception_type == 'assertion':
-                    raise AssertionError(_('Invalid user / password'))
-                else:
-                    raise
-        return wrapper
-    return _exception_translated
 
 
 @notifications.listener
@@ -504,7 +92,7 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.identity.driver)
-        self.domain_configs = DomainConfigs()
+        self.domain_configs = domain_configs.DomainConfigs()
 
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
@@ -841,8 +429,8 @@ class Manager(manager.Manager):
     # - create any ID mapping that might be required
 
     @notifications.emit_event('authenticate')
-    @domains_configured
-    @exception_translated('assertion')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('assertion')
     def authenticate(self, context, user_id, password):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
@@ -850,8 +438,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     def create_user(self, user_ref, initiator=None):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
@@ -873,8 +461,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     @MEMOIZE
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
@@ -894,8 +482,8 @@ class Manager(manager.Manager):
         if not user.get('enabled', True):
             raise AssertionError(_('User is disabled: %s') % user_id)
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     @MEMOIZE
     def get_user_by_name(self, user_name, domain_id):
         driver = self._select_identity_driver(domain_id)
@@ -903,8 +491,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
         driver = self._select_identity_driver(domain_scope)
         self._set_list_limit_in_hints(hints, driver)
@@ -929,8 +517,8 @@ class Manager(manager.Manager):
                     'and will be removed in O.')
             )
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     def update_user(self, user_id, user_ref, initiator=None):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
@@ -969,8 +557,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     def delete_user(self, user_id, initiator=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
@@ -989,8 +577,8 @@ class Manager(manager.Manager):
         # role assignments where the actor is the specified user
         assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def create_group(self, group_ref, initiator=None):
         group = group_ref.copy()
         group.setdefault('description', '')
@@ -1012,8 +600,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     @MEMOIZE
     def get_group(self, group_id):
         domain_id, driver, entity_id = (
@@ -1022,16 +610,16 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def get_group_by_name(self, group_name, domain_id):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_group_by_name(group_name, domain_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def update_group(self, group_id, group, initiator=None):
         if 'domain_id' in group:
             old_group_ref = self.get_group(group_id)
@@ -1047,8 +635,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def delete_group(self, group_id, initiator=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
@@ -1067,10 +655,10 @@ class Manager(manager.Manager):
         # role assignments expanded from the specified group to its users
         assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def add_user_to_group(self, user_id, group_id, initiator=None):
-        @exception_translated('user')
+        @domain_configs.exception_translated('user')
         def get_entity_info_for_user(public_id):
             return self._get_domain_driver_and_entity_id(public_id)
 
@@ -1092,10 +680,10 @@ class Manager(manager.Manager):
         notifications.Audit.added_to(self._GROUP, group_id, self._USER,
                                      user_id, initiator)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def remove_user_from_group(self, user_id, group_id, initiator=None):
-        @exception_translated('user')
+        @domain_configs.exception_translated('user')
         def get_entity_info_for_user(public_id):
             return self._get_domain_driver_and_entity_id(public_id)
 
@@ -1145,8 +733,8 @@ class Manager(manager.Manager):
             user_project
         )
 
-    @domains_configured
-    @exception_translated('user')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('user')
     def list_groups_for_user(self, user_id, hints=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
@@ -1160,8 +748,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def list_groups(self, domain_scope=None, hints=None):
         driver = self._select_identity_driver(domain_scope)
         self._set_list_limit_in_hints(hints, driver)
@@ -1178,8 +766,8 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.GROUP)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def list_users_in_group(self, group_id, hints=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
@@ -1193,10 +781,10 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.USER)
 
-    @domains_configured
-    @exception_translated('group')
+    @domain_configs.domains_configured
+    @domain_configs.exception_translated('group')
     def check_user_in_group(self, user_id, group_id):
-        @exception_translated('user')
+        @domain_configs.exception_translated('user')
         def get_entity_info_for_user(public_id):
             return self._get_domain_driver_and_entity_id(public_id)
 
@@ -1213,7 +801,7 @@ class Manager(manager.Manager):
         return group_driver.check_user_in_group(user_entity_id,
                                                 group_entity_id)
 
-    @domains_configured
+    @domain_configs.domains_configured
     def change_password(self, context, user_id, original_password,
                         new_password):
 
@@ -1253,238 +841,7 @@ class Manager(manager.Manager):
         return user_dict
 
 
-@six.add_metaclass(abc.ABCMeta)
-class IdentityDriverV8(object):
-    """Interface description for an Identity driver."""
-
-    def _get_conf(self):
-        try:
-            return self.conf or CONF
-        except AttributeError:
-            return CONF
-
-    def _get_list_limit(self):
-        conf = self._get_conf()
-        # use list_limit from domain-specific config. If list_limit in
-        # domain-specific config is not set, look it up in the default config
-        return (conf.identity.list_limit or conf.list_limit or
-                CONF.identity.list_limit or CONF.list_limit)
-
-    def is_domain_aware(self):
-        """Indicates if Driver supports domains."""
-        return True
-
-    def default_assignment_driver(self):
-        # TODO(morganfainberg): To be removed when assignment driver based
-        # upon [identity]/driver option is removed in the "O" release.
-        return 'sql'
-
-    @property
-    def is_sql(self):
-        """Indicates if this Driver uses SQL."""
-        return False
-
-    @property
-    def multiple_domains_supported(self):
-        return (self.is_domain_aware() or
-                CONF.identity.domain_specific_drivers_enabled)
-
-    def generates_uuids(self):
-        """Indicates if Driver generates UUIDs as the local entity ID."""
-        return True
-
-    @abc.abstractmethod
-    def authenticate(self, user_id, password):
-        """Authenticate a given user and password.
-
-        :returns: user_ref
-        :raises AssertionError: If user or password is invalid.
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # user crud
-
-    @abc.abstractmethod
-    def create_user(self, user_id, user):
-        """Creates a new user.
-
-        :raises keystone.exception.Conflict: If a duplicate user exists.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_users(self, hints):
-        """List users in the system.
-
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of user_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_users_in_group(self, group_id, hints):
-        """List users in a group.
-
-        :param group_id: the group in question
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of user_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_user(self, user_id):
-        """Get a user by ID.
-
-        :returns: user_ref
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def update_user(self, user_id, user):
-        """Updates an existing user.
-
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-        :raises keystone.exception.Conflict: If a duplicate user exists.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def add_user_to_group(self, user_id, group_id):
-        """Adds a user to a group.
-
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def check_user_in_group(self, user_id, group_id):
-        """Checks if a user is a member of a group.
-
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def remove_user_from_group(self, user_id, group_id):
-        """Removes a user from a group.
-
-        :raises keystone.exception.NotFound: If the entity not found.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_user(self, user_id):
-        """Deletes an existing user.
-
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_user_by_name(self, user_name, domain_id):
-        """Get a user by name.
-
-        :returns: user_ref
-        :raises keystone.exception.UserNotFound: If the user doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # group crud
-
-    @abc.abstractmethod
-    def create_group(self, group_id, group):
-        """Creates a new group.
-
-        :raises keystone.exception.Conflict: If a duplicate group exists.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_groups(self, hints):
-        """List groups in the system.
-
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of group_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_groups_for_user(self, user_id, hints):
-        """List groups a user is in
-
-        :param user_id: the user in question
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of group_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_group(self, group_id):
-        """Get a group by ID.
-
-        :returns: group_ref
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_group_by_name(self, group_name, domain_id):
-        """Get a group by name.
-
-        :returns: group_ref
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def update_group(self, group_id, group):
-        """Updates an existing group.
-
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-        :raises keystone.exception.Conflict: If a duplicate group exists.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_group(self, group_id):
-        """Deletes an existing group.
-
-        :raises keystone.exception.GroupNotFound: If the group doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # end of identity
-
-
-Driver = manager.create_legacy_driver(IdentityDriverV8)
+Driver = manager.create_legacy_driver(identity_interface.IdentityDriverV8)
 
 
 @dependency.provider('id_mapping_api')
@@ -1497,69 +854,7 @@ class MappingManager(manager.Manager):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
 
 
-@six.add_metaclass(abc.ABCMeta)
-class MappingDriverV8(object):
-    """Interface description for an ID Mapping driver."""
-
-    @abc.abstractmethod
-    def get_public_id(self, local_entity):
-        """Returns the public ID for the given local entity.
-
-        :param dict local_entity: Containing the entity domain, local ID and
-                                  type ('user' or 'group').
-        :returns: public ID, or None if no mapping is found.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_id_mapping(self, public_id):
-        """Returns the local mapping.
-
-        :param public_id: The public ID for the mapping required.
-        :returns dict: Containing the entity domain, local ID and type. If no
-                       mapping is found, it returns None.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def create_id_mapping(self, local_entity, public_id=None):
-        """Create and store a mapping to a public_id.
-
-        :param dict local_entity: Containing the entity domain, local ID and
-                                  type ('user' or 'group').
-        :param public_id: If specified, this will be the public ID.  If this
-                          is not specified, a public ID will be generated.
-        :returns: public ID
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_id_mapping(self, public_id):
-        """Deletes an entry for the given public_id.
-
-        :param public_id: The public ID for the mapping to be deleted.
-
-        The method is silent if no mapping is found.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def purge_mappings(self, purge_filter):
-        """Purge selected identity mappings.
-
-        :param dict purge_filter: Containing the attributes of the filter that
-                                  defines which entries to purge. An empty
-                                  filter means purge all mappings.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-
-MappingDriver = manager.create_legacy_driver(MappingDriverV8)
+MappingDriver = manager.create_legacy_driver(mapping_interface.MappingDriverV8)
 
 
 @dependency.provider('shadow_users_api')
@@ -1570,44 +865,3 @@ class ShadowUsersManager(manager.Manager):
 
     def __init__(self):
         super(ShadowUsersManager, self).__init__(CONF.shadow_users.driver)
-
-
-@six.add_metaclass(abc.ABCMeta)
-class ShadowUsersDriverV9(object):
-    """Interface description for an Shadow Users driver."""
-
-    @abc.abstractmethod
-    def create_federated_user(self, federated_dict):
-        """Create a new user with the federated identity
-
-        :param dict federated_dict: Reference to the federated user
-        :param user_id: user ID for linking to the federated identity
-        :returns dict: Containing the user reference
-
-        """
-        raise exception.NotImplemented()
-
-    @abc.abstractmethod
-    def get_federated_user(self, idp_id, protocol_id, unique_id):
-        """Returns the found user for the federated identity
-
-        :param idp_id: The identity provider ID
-        :param protocol_id: The federation protocol ID
-        :param unique_id: The unique ID for the user
-        :returns dict: Containing the user reference
-
-        """
-        raise exception.NotImplemented()
-
-    @abc.abstractmethod
-    def update_federated_user_display_name(self, idp_id, protocol_id,
-                                           unique_id, display_name):
-        """Updates federated user's display name if changed
-
-        :param idp_id: The identity provider ID
-        :param protocol_id: The federation protocol ID
-        :param unique_id: The unique ID for the user
-        :param display_name: The user's display name
-
-        """
-        raise exception.NotImplemented()
