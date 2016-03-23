@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_9e6768b6",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-03-23T21:35:50Z",
+      "side": 1,
+      "message": "Is this not used for regular users, too, or do they get their roles via the list_effective_roles call?",
+      "revId": "603e21548f6415d206d30e2048cd6473ab00f081",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
