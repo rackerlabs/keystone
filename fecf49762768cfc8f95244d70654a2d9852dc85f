@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_9b07a417",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-23T10:43:18Z",
+      "side": 1,
+      "message": "keystone-all is deprecated and will probably be deleted. Please do not refer to it here and describe the problem without it.",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 36
+      },
+      "revId": "fecf49762768cfc8f95244d70654a2d9852dc85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_dbfbdcbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-23T10:43:18Z",
+      "side": 1,
+      "message": "for me it\u0027s almost never in .tox/.... I maintain my venvs in ~/.virtualenvs/....\n\nLets not make this kind of assumptions.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "fecf49762768cfc8f95244d70654a2d9852dc85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_9b6cc4d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-23T10:43:18Z",
+      "side": 1,
+      "message": "Almost the whole text above should go to the bugtracker, https://bugs.launchpad.net/keystone . Please describe the problem there with steps to reproduce, link the bugreport and describe the fix here.",
+      "revId": "fecf49762768cfc8f95244d70654a2d9852dc85f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
