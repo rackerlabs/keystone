@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_326f792c",
+        "filename": "keystone/identity/backends/ldap_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-23T18:38:32Z",
+      "side": 1,
+      "message": "Pep8 may complain about this (import only modules, see comment below)",
+      "revId": "d19904d045159dbb53323d0ebac42714f85af59a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_721e11bc",
+        "filename": "keystone/identity/backends/ldap_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-23T18:38:32Z",
+      "side": 1,
+      "message": "Pep8 will complain about this, be sure to import only modules and then:\n\n  raise exception.Forbidden(_(\"\u003cdriver name\u003e does not support write operations\"))\n\nor something similar.",
+      "revId": "d19904d045159dbb53323d0ebac42714f85af59a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
