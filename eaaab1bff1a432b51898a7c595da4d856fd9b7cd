@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_94747268",
+        "filename": "releasenotes/notes/removed-as-of-newton-721c06b5dcb1b34a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-03-23T18:49:56Z",
+      "side": 1,
+      "message": "should we specify this is actually for v3 API, or better not bring it up anymore since we either way recommend using v3? :)",
+      "range": {
+        "startLine": 13,
+        "startChar": 23,
+        "endLine": 13,
+        "endChar": 33
+      },
+      "revId": "eaaab1bff1a432b51898a7c595da4d856fd9b7cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
