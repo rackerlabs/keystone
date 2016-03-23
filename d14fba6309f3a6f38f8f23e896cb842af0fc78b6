@@ -46,6 +46,30 @@
       "revId": "d14fba6309f3a6f38f8f23e896cb842af0fc78b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_a08073f8",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-03-23T10:27:03Z",
+      "side": 1,
+      "message": "No, tuple is not better. Tuple has another semantics.",
+      "parentUuid": "fa0719c6_7a276012",
+      "range": {
+        "startLine": 32,
+        "startChar": 22,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "d14fba6309f3a6f38f8f23e896cb842af0fc78b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
