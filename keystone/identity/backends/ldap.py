@@ -26,7 +26,8 @@ from keystone.common import ldap as common_ldap
 from keystone.common import models
 from keystone import exception
 from keystone.i18n import _
-from keystone import identity
+from keystone.identity.backends import common
+from keystone.identity.backends import interface
 
 
 CONF = cfg.CONF
@@ -37,7 +38,7 @@ _DEPRECATION_MSG = _('%s for the LDAP identity backend has been deprecated in '
                      'access. It will be removed in the "O" release.')
 
 
-class Identity(identity.IdentityDriverV8):
+class Identity(interface.IdentityDriverV8):
     def __init__(self, conf=None):
         super(Identity, self).__init__()
         if conf is None:
@@ -297,7 +298,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                 for user in self.get_all(query, hints)]
 
     def filter_attributes(self, user):
-        return identity.filter_user(common_ldap.filter_entity(user))
+        return common.filter_user(common_ldap.filter_entity(user))
 
     def is_user(self, dn):
         """Returns True if the entry is a user."""

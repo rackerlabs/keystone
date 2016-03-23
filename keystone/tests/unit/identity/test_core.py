@@ -22,6 +22,7 @@ from oslo_config import fixture as config_fixture
 
 from keystone import exception
 from keystone import identity
+from keystone.identity import domain_configs
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 
@@ -60,7 +61,7 @@ class TestDomainConfigs(unit.BaseTestCase):
         mock_assignment_api = mock.Mock()
         mock_assignment_api.get_domain_by_name.side_effect = e
 
-        domain_config = identity.DomainConfigs()
+        domain_config = domain_configs.DomainConfigs()
         fake_standard_driver = None
         domain_config.setup_domain_drivers(fake_standard_driver,
                                            mock_assignment_api)
@@ -74,9 +75,9 @@ class TestDomainConfigs(unit.BaseTestCase):
             """Write an empty config file."""
         self.addCleanup(os.remove, domain_config_filename)
 
-        with mock.patch.object(identity.DomainConfigs,
+        with mock.patch.object(domain_configs.DomainConfigs,
                                '_load_config_from_file') as mock_load_config:
-            domain_config = identity.DomainConfigs()
+            domain_config = domain_configs.DomainConfigs()
             fake_assignment_api = None
             fake_standard_driver = None
             domain_config.setup_domain_drivers(fake_standard_driver,
@@ -86,7 +87,7 @@ class TestDomainConfigs(unit.BaseTestCase):
                                                      'abc.def.com')
 
     def test_config_for_multiple_sql_backend(self):
-        domains_config = identity.DomainConfigs()
+        domains_config = domain_configs.DomainConfigs()
 
         # Create the right sequence of is_sql in the drivers being
         # requested to expose the bug, which is that a False setting
@@ -98,9 +99,9 @@ class TestDomainConfigs(unit.BaseTestCase):
             drivers.append(drv)
             name = 'dummy.{0}'.format(idx)
             files.append(''.join((
-                identity.DOMAIN_CONF_FHEAD,
+                domain_configs.DOMAIN_CONF_FHEAD,
                 name,
-                identity.DOMAIN_CONF_FTAIL)))
+                domain_configs.DOMAIN_CONF_FTAIL)))
 
         walk_fake = lambda *a, **kwa: (
             ('/fake/keystone/domains/config', [], files), )
@@ -148,7 +149,7 @@ class TestDatabaseDomainConfigs(unit.TestCase):
                     'driver': 'ldap'}}
         self.domain_config_api.create_config(domain['id'], conf)
         fake_standard_driver = None
-        domain_config = identity.DomainConfigs()
+        domain_config = domain_configs.DomainConfigs()
         domain_config.setup_domain_drivers(fake_standard_driver,
                                            self.resource_api)
         # Make sure our two overrides are in place, and others are not affected
@@ -166,7 +167,7 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         # default config file values are now seen instead of the overrides.
         CONF.set_override('domain_configurations_from_database', False,
                           'identity', enforce_type=True)
-        domain_config = identity.DomainConfigs()
+        domain_config = domain_configs.DomainConfigs()
         domain_config.setup_domain_drivers(fake_standard_driver,
                                            self.resource_api)
         res = domain_config.get_domain_conf(domain['id'])
