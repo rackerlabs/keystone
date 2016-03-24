@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_db819e4f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-24T20:37:21Z",
+      "side": 1,
+      "message": "Does this not apply to other IDs in the federated payload, like user IDs?",
+      "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
