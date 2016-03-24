@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_5b4bce2b",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T20:49:20Z",
+      "side": 1,
+      "message": "this comment should be moved down to before create_idp. Or just get rid of it because these comments are worthless.",
+      "revId": "f88a59891ac418e6e42086e73a0942cf6b9d23bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_bbbaeabe",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T20:49:20Z",
+      "side": 1,
+      "message": "(unrelated) seems kind of dangerous to return details of the sql exception to the user.",
+      "revId": "f88a59891ac418e6e42086e73a0942cf6b9d23bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_9bf28699",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T20:49:20Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "f88a59891ac418e6e42086e73a0942cf6b9d23bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_db2a3ee7",
+        "filename": "keystone/tests/unit/backend/legacy_drivers/federation/V8/api_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T20:49:20Z",
+      "side": 1,
+      "message": "We can fix the V8 driver.",
+      "revId": "f88a59891ac418e6e42086e73a0942cf6b9d23bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_dbed1e90",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T20:49:20Z",
+      "side": 1,
+      "message": "shouldn\u0027t use get here, it\u0027ll be harder to tell what\u0027s wrong since we won\u0027t be able to tell if it\u0027s \u0027error\u0027 or \u0027message\u0027 that\u0027s missing.",
+      "revId": "f88a59891ac418e6e42086e73a0942cf6b9d23bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
