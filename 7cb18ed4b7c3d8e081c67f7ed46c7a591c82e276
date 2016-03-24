@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa0719c6_061ad416",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-24T11:04:08Z",
+      "side": 1,
+      "message": "Several patches already depend on it, so I think it should be in following clean-up of refactoring patch. Right now things have to be as readable as possible.",
+      "parentUuid": "1af94dfe_9aea250e",
+      "range": {
+        "startLine": 32,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 25
+      },
+      "revId": "7cb18ed4b7c3d8e081c67f7ed46c7a591c82e276",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_bace01b2",
         "filename": "keystone/delegation/backends/sql.py",
         "patchSetId": 30
@@ -59,6 +83,30 @@
       "writtenOn": "2016-03-16T19:25:20Z",
       "side": 1,
       "message": "Foreign key constraints to project.id and domain.id?",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 13
+      },
+      "revId": "7cb18ed4b7c3d8e081c67f7ed46c7a591c82e276",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_0676543d",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-03-24T11:04:08Z",
+      "side": 1,
+      "message": "Backends are pluggable - there is no guarantee that resources are stored in the same sql db as delegations.",
+      "parentUuid": "1af94dfe_da9aed62",
       "range": {
         "startLine": 114,
         "startChar": 4,
