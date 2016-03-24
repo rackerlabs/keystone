@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_2e1dfb0f",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T19:31:37Z",
+      "side": 1,
+      "message": "\"of the shared\" (add the)",
+      "range": {
+        "startLine": 593,
+        "startChar": 66,
+        "endLine": 593,
+        "endChar": 75
+      },
+      "revId": "691d497885cf4d8b39bb6ddb384b7c027bb52f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_ce2b9f32",
+        "filename": "keystone/tests/unit/test_kvs.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-24T19:31:37Z",
+      "side": 1,
+      "message": "change to \"Which\"",
+      "range": {
+        "startLine": 594,
+        "startChar": 24,
+        "endLine": 594,
+        "endChar": 28
+      },
+      "revId": "691d497885cf4d8b39bb6ddb384b7c027bb52f95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
