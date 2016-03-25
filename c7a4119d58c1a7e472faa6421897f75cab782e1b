@@ -39,6 +39,30 @@
       "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_ea02af3d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-25T13:18:22Z",
+      "side": 1,
+      "message": "@Lance Checking now.\n\n@Steve, attempt_convert_uuid_hex_to_bytes will convert from bytes to hex where this is converting bytes to text_type.",
+      "parentUuid": "da0c15f0_90109750",
+      "range": {
+        "startLine": 535,
+        "startChar": 8,
+        "endLine": 539,
+        "endChar": 48
+      },
+      "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
