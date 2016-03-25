@@ -16,6 +16,29 @@
       "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_90109750",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-25T04:23:09Z",
+      "side": 1,
+      "message": "whats the difference between this and \"attempt_convert_uuid_hex_to_bytes\" like on line 564",
+      "range": {
+        "startLine": 535,
+        "startChar": 8,
+        "endLine": 539,
+        "endChar": 48
+      },
+      "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
