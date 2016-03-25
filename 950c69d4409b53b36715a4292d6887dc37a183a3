@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_d820579e",
+        "filename": "tools/cover.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-25T18:11:01Z",
+      "side": 1,
+      "message": "This should be -ge (greater-than-or-equal-to). The script shouldn\u0027t fail if the number of lines is the same.",
+      "range": {
+        "startLine": 55,
+        "startChar": 22,
+        "endLine": 55,
+        "endChar": 25
+      },
+      "revId": "950c69d4409b53b36715a4292d6887dc37a183a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
