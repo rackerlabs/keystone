@@ -37,7 +37,7 @@ class ShadowUsers(identity.ShadowUsersDriverV9):
         return identity.filter_user(user_ref.to_dict())
 
     def _get_federated_user(self, idp_id, protocol_id, unique_id):
-        """Returns the found user for the federated identity
+        """Returns the found user for the federated identity.
 
         :param idp_id: The identity provider ID
         :param protocol_id: The federation protocol ID

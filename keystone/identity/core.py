@@ -187,7 +187,7 @@ class DomainConfigs(dict):
     def _load_config_from_database(self, domain_id, specific_config):
 
         def _assert_no_more_than_one_sql_driver(domain_id, new_config):
-            """Ensure adding driver doesn't push us over the limit of 1
+            """Ensure adding driver doesn't push us over the limit of 1.
 
             The checks we make in this method need to take into account that
             we may be in a multiple process configuration and ensure that
@@ -799,7 +799,7 @@ class Manager(manager.Manager):
             hints.add_filter('domain_id', domain_id)
 
     def _set_list_limit_in_hints(self, hints, driver):
-        """Set list limit in hints from driver
+        """Set list limit in hints from driver.
 
         If a hints list is provided, the wrapper will insert the relevant
         limit into the hints so that the underlying driver call can try and
@@ -1431,7 +1431,7 @@ class IdentityDriverV8(object):
 
     @abc.abstractmethod
     def list_groups_for_user(self, user_id, hints):
-        """List groups a user is in
+        """List groups a user is in.
 
         :param user_id: the user in question
         :param hints: filter hints which the driver should
@@ -1578,7 +1578,7 @@ class ShadowUsersDriverV9(object):
 
     @abc.abstractmethod
     def create_federated_user(self, federated_dict):
-        """Create a new user with the federated identity
+        """Create a new user with the federated identity.
 
         :param dict federated_dict: Reference to the federated user
         :param user_id: user ID for linking to the federated identity
@@ -1589,7 +1589,7 @@ class ShadowUsersDriverV9(object):
 
     @abc.abstractmethod
     def get_federated_user(self, idp_id, protocol_id, unique_id):
-        """Returns the found user for the federated identity
+        """Returns the found user for the federated identity.
 
         :param idp_id: The identity provider ID
         :param protocol_id: The federation protocol ID
@@ -1602,7 +1602,7 @@ class ShadowUsersDriverV9(object):
     @abc.abstractmethod
     def update_federated_user_display_name(self, idp_id, protocol_id,
                                            unique_id, display_name):
-        """Updates federated user's display name if changed
+        """Updates federated user's display name if changed.
 
         :param idp_id: The identity provider ID
         :param protocol_id: The federation protocol ID
