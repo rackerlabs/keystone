@@ -18,6 +18,7 @@ import uuid
 
 import msgpack
 from oslo_utils import timeutils
+import six
 from six.moves import urllib
 
 from keystone.common import config
@@ -149,7 +150,50 @@ class TestValidate(unit.TestCase):
                 'protocol': {'id': protocol, },
             },
         }
-        self.assertEqual(exp_user_info, token['user'])
+        self.assertDictEqual(exp_user_info, token['user'])
+
+    def test_validate_v3_token_federated_project_scoped(self):
+        # Check the user fields in the token result when use validate_v3_token
+        # when the token has federated info.
+
+        # need project id
+        #return kwargs['project_id'] and kwargs['federated_info']
+
+        domain_ref = unit.new_domain_ref()
+        domain_ref = self.resource_api.create_domain(domain_ref['id'],
+                                                     domain_ref)
+
+        user_ref = unit.new_user_ref(domain_ref['id'])
+        user_ref = self.identity_api.create_user(user_ref)
+
+        method_names = ['mapped']
+
+        group_ids = [uuid.uuid4().hex, ]
+        identity_provider = uuid.uuid4().hex
+        protocol = uuid.uuid4().hex
+        auth_context = {
+            'user_id': user_ref['id'],
+            'group_ids': group_ids,
+            federation_constants.IDENTITY_PROVIDER: identity_provider,
+            federation_constants.PROTOCOL: protocol,
+        }
+        token_id, token_data_ = self.token_provider_api.issue_v3_token(
+            user_ref['id'], method_names, auth_context=auth_context)
+
+        token_data = self.token_provider_api.validate_v3_token(token_id)
+        token = token_data['token']
+        exp_user_info = {
+            'id': user_ref['id'],
+            'name': user_ref['id'],
+            'domain': {'id': CONF.federation.federated_domain_name,
+                       'name': CONF.federation.federated_domain_name, },
+            federation_constants.FEDERATION: {
+                'groups': [{'id': group_id} for group_id in group_ids],
+                'identity_provider': {'id': identity_provider, },
+                'protocol': {'id': protocol, },
+            },
+        }
+        self.assertDictEqual(exp_user_info, token['user'])
 
     def test_validate_v3_token_trust(self):
         # Check the trust fields in the token result when use validate_v3_token
@@ -429,27 +473,44 @@ class TestPayloads(unit.TestCase):
                            exp_project_id='0123456789abcdef',
                            exp_trust_id=uuid.uuid4().hex)
 
-    def _test_federated_payload_with_ids(self, exp_user_id, exp_group_id):
+    def _test_federate_unscoped_payload_with_ids(self, exp_user_id,
+                                                 exp_group_id,
+                                                 protocol_id=None,
+                                                 idp_id=None):
         exp_federated_info = {'group_ids': [{'id': exp_group_id}],
-                              'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'idp_id': idp_id or uuid.uuid4().hex,
+                              'protocol_id': protocol_id or uuid.uuid4().hex}
 
         self._test_payload(token_formatters.FederatedUnscopedPayload,
                            exp_user_id=exp_user_id,
                            exp_federated_info=exp_federated_info)
 
-    def test_federated_payload_with_non_uuid_ids(self):
-        self._test_federated_payload_with_ids('someNonUuidUserId',
-                                              'someNonUuidGroupId')
+    def test_federated_unscoped_payload_with_non_uuid_ids(self):
+        self._test_federate_unscoped_payload_with_ids(
+            'someNonUuidUserId',
+            'someNonUuidGroupId',
+            protocol_id='someNonUuidProtocolId',
+            idp_id='someNonUuidProtocolId')
 
-    def test_federated_payload_with_16_char_non_uuid_ids(self):
-        self._test_federated_payload_with_ids('0123456789abcdef',
-                                              '0123456789abcdef')
+    def test_federated_unscoped_payload_with_16_char_non_uuid_ids(self):
+        self._test_federate_unscoped_payload_with_ids('0123456789abcdef',
+                                                      '0123456789abcdef')
 
-    def test_federated_project_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+    def test_federated_project_scoped_payload_with_ids(self):
+        exp_federated_info = {'group_ids': [{'id': uuid.uuid4().hex}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
+
+        self._test_payload(token_formatters.FederatedProjectScopedPayload,
+                           exp_user_id=uuid.uuid4().hex,
+                           exp_methods=['token'],
+                           exp_project_id=uuid.uuid4().hex,
+                           exp_federated_info=exp_federated_info)
+
+    def test_federated_project_scoped_payload_with_non_uuids(self):
+        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+                              'idp_id': 'someNonUuidIdpId',
+                              'protocol_id': 'someNonUuidProtocolId'}
 
         self._test_payload(token_formatters.FederatedProjectScopedPayload,
                            exp_user_id='someNonUuidUserId',
@@ -457,10 +518,21 @@ class TestPayloads(unit.TestCase):
                            exp_project_id=uuid.uuid4().hex,
                            exp_federated_info=exp_federated_info)
 
-    def test_federated_domain_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+    def test_federated_domain_scoped_payload_with_ids(self):
+        exp_federated_info = {'group_ids': [{'id': uuid.uuid4().hex}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
+
+        self._test_payload(token_formatters.FederatedDomainScopedPayload,
+                           exp_user_id='someNonUuidUserId',
+                           exp_methods=['token'],
+                           exp_domain_id=uuid.uuid4().hex,
+                           exp_federated_info=exp_federated_info)
+
+    def test_federated_domain_scoped_payload_with_non_uuids(self):
+        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+                              'idp_id': 'someNonUuidIdpId',
+                              'protocol_id': 'someNonUuidProtocolId'}
 
         self._test_payload(token_formatters.FederatedDomainScopedPayload,
                            exp_user_id='someNonUuidUserId',
