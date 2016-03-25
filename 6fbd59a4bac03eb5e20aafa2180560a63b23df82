@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_4c9488e1",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-25T19:01:12Z",
+      "side": 1,
+      "message": "why not here?",
+      "range": {
+        "startLine": 597,
+        "startChar": 8,
+        "endLine": 597,
+        "endChar": 32
+      },
+      "revId": "6fbd59a4bac03eb5e20aafa2180560a63b23df82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
