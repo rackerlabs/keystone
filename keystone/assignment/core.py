@@ -236,7 +236,7 @@ class Manager(manager.Manager):
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def remove_user_from_project(self, tenant_id, user_id):
-        """Remove user from a tenant
+        """Remove user from a tenant.
 
         :raises keystone.exception.ProjectNotFound: If the project doesn't
             exist.
@@ -1647,7 +1647,7 @@ class RoleDriverV9(RoleDriverBase):
 
     @abc.abstractmethod
     def get_implied_role(self, prior_role_id, implied_role_id):
-        """Fetches a role inference rule
+        """Fetches a role inference rule.
 
         :raises keystone.exception.ImpliedRoleNotFound: If the implied role
             doesn't exist.
@@ -1657,7 +1657,7 @@ class RoleDriverV9(RoleDriverBase):
 
     @abc.abstractmethod
     def create_implied_role(self, prior_role_id, implied_role_id):
-        """Creates a role inference rule
+        """Creates a role inference rule.
 
         :raises: keystone.exception.RoleNotFound: If the role doesn't exist.
 
@@ -1666,7 +1666,7 @@ class RoleDriverV9(RoleDriverBase):
 
     @abc.abstractmethod
     def delete_implied_role(self, prior_role_id, implied_role_id):
-        """Deletes a role inference rule
+        """Deletes a role inference rule.
 
         :raises keystone.exception.ImpliedRoleNotFound: If the implied role
             doesn't exist.
@@ -1676,12 +1676,12 @@ class RoleDriverV9(RoleDriverBase):
 
     @abc.abstractmethod
     def list_role_inference_rules(self):
-        """Lists all the rules used to imply one role from another"""
+        """Lists all the rules used to imply one role from another."""
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
     def list_implied_roles(self, prior_role_id):
-        """Lists roles implied from the prior role ID"""
+        """Lists roles implied from the prior role ID."""
         raise exception.NotImplemented()  # pragma: no cover
 
 

@@ -106,7 +106,7 @@ class Manager(manager.Manager):
                 _('Max hierarchy depth reached for %s branch.') % project_id)
 
     def _assert_is_domain_project_constraints(self, project_ref):
-        """Enforces specific constraints of projects that act as domains
+        """Enforces specific constraints of projects that act as domains.
 
         Called when is_domain is true, this method ensures that:
 
@@ -130,7 +130,7 @@ class Manager(manager.Manager):
                           'domains.'))
 
     def _assert_regular_project_constraints(self, project_ref):
-        """Enforces regular project hierarchy constraints
+        """Enforces regular project hierarchy constraints.
 
         Called when is_domain is false. The project must contain a valid
         domain_id and parent_id. The goal of this method is to check
@@ -1673,7 +1673,7 @@ class DomainConfigManager(manager.Manager):
         return config
 
     def create_config(self, domain_id, config):
-        """Create config for a domain
+        """Create config for a domain.
 
         :param domain_id: the domain in question
         :param config: the dict of config groups/options to assign to the
@@ -1708,7 +1708,7 @@ class DomainConfigManager(manager.Manager):
         return self._list_to_config(whitelisted)
 
     def get_config(self, domain_id, group=None, option=None):
-        """Get config, or partial config, for a domain
+        """Get config, or partial config, for a domain.
 
         :param domain_id: the domain in question
         :param group: an optional specific group of options
@@ -1750,7 +1750,7 @@ class DomainConfigManager(manager.Manager):
             domain_id=domain_id, group_or_option=msg)
 
     def update_config(self, domain_id, config, group=None, option=None):
-        """Update config, or partial config, for a domain
+        """Update config, or partial config, for a domain.
 
         :param domain_id: the domain in question
         :param config: the config dict containing and groups/options being
@@ -1974,7 +1974,7 @@ class DomainConfigManager(manager.Manager):
         return self._get_config_with_sensitive_info(domain_id)
 
     def get_config_default(self, group=None, option=None):
-        """Get default config, or partial default config
+        """Get default config, or partial default config.
 
         :param group: an optional specific group of options
         :param option: an optional specific option within the group

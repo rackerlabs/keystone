@@ -153,7 +153,7 @@ class BaseApplication(object):
         return cls(**local_config)
 
     def __call__(self, environ, start_response):
-        r"""Subclasses will probably want to implement __call__ like this:
+        r"""Subclasses will probably want to implement __call__ as seen below.
 
         @webob.dec.wsgify()
         def __call__(self, req):
