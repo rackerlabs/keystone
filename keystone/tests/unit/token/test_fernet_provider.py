@@ -429,27 +429,44 @@ class TestPayloads(unit.TestCase):
                            exp_project_id='0123456789abcdef',
                            exp_trust_id=uuid.uuid4().hex)
 
-    def _test_federated_payload_with_ids(self, exp_user_id, exp_group_id):
+    def _test_federate_unscoped_payload_with_ids(self, exp_user_id,
+                                                 exp_group_id,
+                                                 protocol_id=None,
+                                                 idp_id=None):
         exp_federated_info = {'group_ids': [{'id': exp_group_id}],
-                              'idp_id': uuid.uuid4().hex,
-                              'protocol_id': uuid.uuid4().hex}
+                              'idp_id': idp_id or uuid.uuid4().hex,
+                              'protocol_id': protocol_id or uuid.uuid4().hex}
 
         self._test_payload(token_formatters.FederatedUnscopedPayload,
                            exp_user_id=exp_user_id,
                            exp_federated_info=exp_federated_info)
 
-    def test_federated_payload_with_non_uuid_ids(self):
-        self._test_federated_payload_with_ids('someNonUuidUserId',
-                                              'someNonUuidGroupId')
+    def test_federated_unscoped_payload_with_non_uuid_ids(self):
+        self._test_federate_unscoped_payload_with_ids(
+            'someNonUuidUserId',
+            'someNonUuidGroupId',
+            protocol_id='someNonUuidProtocolId',
+            idp_id='someNonUuidProtocolId')
 
-    def test_federated_payload_with_16_char_non_uuid_ids(self):
-        self._test_federated_payload_with_ids('0123456789abcdef',
-                                              '0123456789abcdef')
+    def test_federated_unscoped_payload_with_16_char_non_uuid_ids(self):
+        self._test_federate_unscoped_payload_with_ids('0123456789abcdef',
+                                                      '0123456789abcdef')
 
-    def test_federated_project_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+    def test_federated_project_scoped_payload_with_ids(self):
+        exp_federated_info = {'group_ids': [{'id': uuid.uuid4().hex}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
+
+        self._test_payload(token_formatters.FederatedProjectScopedPayload,
+                           exp_user_id=uuid.uuid4().hex,
+                           exp_methods=['token'],
+                           exp_project_id=uuid.uuid4().hex,
+                           exp_federated_info=exp_federated_info)
+
+    def test_federated_project_scoped_payload_with_non_uuids(self):
+        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+                              'idp_id': 'someNonUuidIdpId',
+                              'protocol_id': 'someNonUuidProtocolId'}
 
         self._test_payload(token_formatters.FederatedProjectScopedPayload,
                            exp_user_id='someNonUuidUserId',
@@ -457,10 +474,21 @@ class TestPayloads(unit.TestCase):
                            exp_project_id=uuid.uuid4().hex,
                            exp_federated_info=exp_federated_info)
 
-    def test_federated_domain_scoped_payload(self):
-        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+    def test_federated_domain_scoped_payload_with_ids(self):
+        exp_federated_info = {'group_ids': [{'id': uuid.uuid4().hex}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
+
+        self._test_payload(token_formatters.FederatedDomainScopedPayload,
+                           exp_user_id='someNonUuidUserId',
+                           exp_methods=['token'],
+                           exp_domain_id=uuid.uuid4().hex,
+                           exp_federated_info=exp_federated_info)
+
+    def test_federated_domain_scoped_payload_with_non_uuids(self):
+        exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
+                              'idp_id': 'someNonUuidIdpId',
+                              'protocol_id': 'someNonUuidProtocolId'}
 
         self._test_payload(token_formatters.FederatedDomainScopedPayload,
                            exp_user_id='someNonUuidUserId',
