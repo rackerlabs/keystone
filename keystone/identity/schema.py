@@ -36,7 +36,7 @@ _user_properties = {
 user_create = {
     'type': 'object',
     'properties': _user_properties,
-    'required': ['name'],
+    'required': ['name', 'domain_id'],
     'additionalProperties': True
 }
 
@@ -56,7 +56,7 @@ _group_properties = {
 group_create = {
     'type': 'object',
     'properties': _group_properties,
-    'required': ['name'],
+    'required': ['name', 'domain_id'],
     'additionalProperties': True
 }
 
