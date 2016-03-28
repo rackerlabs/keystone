@@ -1031,6 +1031,134 @@ class SqlUpgradeTests(SqlMigrateBase):
         # assert id column is an integer (after)
         self.assertIsInstance(revocation_event_table.c.id.type, sql.Integer)
 
+    def _add_unique_constraint_to_role_name(self,
+                                            constraint_name='ixu_role_name'):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        sqlalchemy.UniqueConstraint(role_table.c.name,
+                                    name=constraint_name).create()
+
+    def test_migration_88_drops_unique_constraint(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+
+        self.upgrade(87)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.upgrade(88)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+
+    def test_migration_88_multiple_constraints_found(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+
+        self.upgrade(87)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertIn(role_table.c.name.indexes, 'ixu_role_name')
+        self._add_unique_constraint_to_role_name(
+            constraint_name=uuid.uuid4().hex)
+        self.assertRaises(AssertionError, self.upgrade, 88)
+
+    def test_migration_88_inconsistent_constraint_name(self):
+        constraint_name = uuid.uuid4().hex
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+
+        self.upgrade(87)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        sqlalchemy.UniqueConstraint(role_table.c.name,
+                                    name='ixu_role_name').drop()
+        self._add_unique_constraint_to_role_name(
+            constraint_name=constraint_name)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.assertIn(role_table.c.name.indexes, constraint_name)
+        self.upgrade(88)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.assertNotIn(role_table.c.name.indexes, constraint_name)
+
+    def test_migration_96(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        self.upgrade(95)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.upgrade(96)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+
+    def test_migration_96_constraint_exists(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        self.upgrade(95)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self._add_unique_constraint_to_role_name(
+            constraint_name='ixu_role_name')
+        self.asserttIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.upgrade(96)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+
+    def test_migration_96_multiple_constraints_found(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+
+        self.upgrade(95)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self._add_unique_constraint_to_role_name(
+            constraint_name=uuid.uuid4().hex)
+        self._add_unique_constraint_to_role_name(
+            constraint_name=uuid.uuid4().hex)
+        self.assertRaises(AssertionError, self.upgrade, 96)
+
+    def test_migration_101(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        self.upgrade(95)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.upgrade(96)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+
+    def test_migration_101_constraint_exists(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        self.upgrade(100)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self._add_unique_constraint_to_role_name(
+            constraint_name='ixu_role_name')
+        self.asserttIn(role_table.c.name.indexes, 'ixu_role_name')
+        self.upgrade(101)
+        meta.clear()
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+
+    def test_migration_101_multiple_constraints_found(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+
+        self.upgrade(100)
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        self.assertNotIn(role_table.c.name.indexes, 'ixu_role_name')
+        self._add_unique_constraint_to_role_name(
+            constraint_name=uuid.uuid4().hex)
+        self._add_unique_constraint_to_role_name(
+            constraint_name=uuid.uuid4().hex)
+        self.assertRaises(AssertionError, self.upgrade, 101)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
