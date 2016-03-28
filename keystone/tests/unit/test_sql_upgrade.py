@@ -32,6 +32,7 @@ WARNING::
 import json
 import uuid
 
+import migrate
 from migrate.versioning import api as versioning_api
 from migrate.versioning import repository
 import mock
@@ -41,6 +42,7 @@ from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import test_base
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
+from sqlalchemy import inspect
 from testtools import matchers
 
 from keystone.common import sql
@@ -1030,6 +1032,148 @@ class SqlUpgradeTests(SqlMigrateBase):
                                                   meta, autoload=True)
         # assert id column is an integer (after)
         self.assertIsInstance(revocation_event_table.c.id.type, sql.Integer)
+
+    # The tests below check the role name constraint has been dropped.
+
+    # These tests are being added in the Newton release of OpenStack, as well
+    # as the fix of migration 88 and the new migrations 96 and 101.
+    # Back in Mitaka, migration 88 introduced domain specific roles, dropping
+    # the role name uniqueness constraint in favor of a domain and name
+    # constraint.
+
+    # Prior to this change (ID Ie0dc3d2449bace57d3e9323b281a2abd2ad0c983),
+    # migration 88 was dropping such constraint by its expected name:
+    # 'ixu_role_name'. However, some deployments may have a different name to
+    # it, causing the migration to not work properly. The code has been
+    # updated to find and delete the constraint programatically.
+
+    # There are 3 cases that need to be addressed:
+    # 1) Migration 88 has not been run yet
+    # When migrating to Mitaka, as the code for the migration 88 has been
+    # fixed and submitted as a backport (with same change ID), new executions
+    # are guaranteed to succeed.
+    # 2) Migration 88 has been run in stable/mitaka
+    # A new migration with number 96 is submitted as a backport and drops the
+    # old name uniqueness constraint.
+    # 3) Migration 88 has been run in master
+    # For those running on master, both migration 88 and 96 (placeholder)
+    # have been run. This way, a new idempotent migration with number 101 is
+    # available.
+
+    ROLE_NAME_CONSTRAINT = 'ixu_role_name'
+
+    def _add_unique_constraint_to_role_name(
+            self, constraint_name=ROLE_NAME_CONSTRAINT):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        migrate.UniqueConstraint(role_table.c.name,
+                                 name=constraint_name).create()
+
+    def _drop_unique_constraint_to_role_name(
+            self, constraint_name=ROLE_NAME_CONSTRAINT):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        role_table = sqlalchemy.Table('role', meta, autoload=True)
+        migrate.UniqueConstraint(role_table.c.name,
+                                 name='ixu_role_name').drop()
+
+    def _check_unique_constraint_to_role_name(
+            self, constraint_name=ROLE_NAME_CONSTRAINT, contains=True):
+        inspector = inspect(self.engine)
+        constraints = inspector.get_unique_constraints('role')
+        constraint_names = [constraint['name'] for constraint in constraints]
+        if contains:
+            self.assertIn(constraint_name, constraint_names)
+        else:
+            self.assertNotIn(constraint_name, constraint_names)
+
+    def test_migration_88_drops_hardcoded_constraint(self):
+        # Tests the new version of migration 88 still drops the hardcoded
+        # role name constraint.
+        self.upgrade(87)
+        self._check_unique_constraint_to_role_name()
+        self.upgrade(88)
+        self._check_unique_constraint_to_role_name(contains=False)
+
+    def test_migration_88_drops_renamed_constraint(self):
+        # Tests the new version of migration 88 also drops the role name
+        # constraint even if it has a different name.
+        constraint_name = uuid.uuid4().hex
+
+        self.upgrade(87)
+        self._drop_unique_constraint_to_role_name()
+        self._add_unique_constraint_to_role_name(
+            constraint_name=constraint_name)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._check_unique_constraint_to_role_name(
+            constraint_name=constraint_name)
+        self.upgrade(88)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._check_unique_constraint_to_role_name(
+            constraint_name=constraint_name, contains=False)
+
+    def test_migration_96(self):
+        # Tests that migration 96 does not do anything in the case the
+        # constraint does not exist (in this case it has been dropped in
+        # migration 88).
+        self.upgrade(95)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self.upgrade(96)
+        self._check_unique_constraint_to_role_name(contains=False)
+
+    def test_migration_96_drops_hardcoded_constraint(self):
+        # Tests that migration 96 drops the hardcoded role name constraint.
+        self.upgrade(95)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._add_unique_constraint_to_role_name()
+        self._check_unique_constraint_to_role_name()
+        self.upgrade(96)
+        self._check_unique_constraint_to_role_name(contains=False)
+
+    def test_migration_96_renamed_constraint_exists(self):
+        # Tests that migration 96 also drops the role name constraint even if
+        # it has a different name.
+        constraint_name = uuid.uuid4().hex
+
+        self.upgrade(95)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._add_unique_constraint_to_role_name(constraint_name)
+        self._check_unique_constraint_to_role_name(constraint_name)
+        self.upgrade(96)
+        self._check_unique_constraint_to_role_name(constraint_name,
+                                                   contains=False)
+
+    def test_migration_101(self):
+        # Tests that migration 101 does not do anything in the case the
+        # constraint does not exist (in this case it has been dropped in
+        # migration 88 or 96).
+        self.upgrade(100)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self.upgrade(101)
+        self._check_unique_constraint_to_role_name(contains=False)
+
+    def test_migration_101_drops_hardcoded_constraint(self):
+        # Tests that migration 96 drops the hardcoded role name constraint.
+        self.upgrade(100)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._add_unique_constraint_to_role_name()
+        self._check_unique_constraint_to_role_name()
+        self.upgrade(101)
+        self._check_unique_constraint_to_role_name(contains=False)
+
+    def test_migration_101_renamed_constraint_exists(self):
+        # Tests that migration 96 also drops the role name constraint even if
+        # it has a different name.
+        constraint_name = uuid.uuid4().hex
+
+        self.upgrade(100)
+        self._check_unique_constraint_to_role_name(contains=False)
+        self._add_unique_constraint_to_role_name(constraint_name)
+        self._check_unique_constraint_to_role_name(constraint_name)
+        self.upgrade(101)
+        self._check_unique_constraint_to_role_name(constraint_name,
+                                                   contains=False)
 
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
