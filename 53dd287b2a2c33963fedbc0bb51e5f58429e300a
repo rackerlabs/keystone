@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_4d3b0fec",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-28T21:57:57Z",
+      "side": 1,
+      "message": "there should be only 1 constraint that gets dropped, so no need to have a list.\n\nThis comment applies to the other migrations, too.",
+      "revId": "53dd287b2a2c33963fedbc0bb51e5f58429e300a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_ed1ca379",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-28T21:57:57Z",
+      "side": 1,
+      "message": "the code should verify that there\u0027s 1 constraint to drop and raise an exception if there isn\u0027t, since their database isn\u0027t as expected.",
+      "revId": "53dd287b2a2c33963fedbc0bb51e5f58429e300a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
