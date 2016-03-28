@@ -12,10 +12,12 @@
 
 import migrate
 import sqlalchemy as sql
+from sqlalchemy import inspect
 
-_ROLE_NAME_OLD_CONSTRAINT = 'ixu_role_name'
+
 _ROLE_NAME_NEW_CONSTRAINT = 'ixu_role_name_domain_id'
 _ROLE_TABLE_NAME = 'role'
+_ROLE_NAME_COLUMN_NAME = 'name'
 _DOMAIN_ID_COLUMN_NAME = 'domain_id'
 _NULL_DOMAIN_ID = '<<null>>'
 
@@ -27,10 +29,27 @@ def upgrade(migrate_engine):
     role_table = sql.Table(_ROLE_TABLE_NAME, meta, autoload=True)
     domain_id = sql.Column(_DOMAIN_ID_COLUMN_NAME, sql.String(64),
                            nullable=False, server_default=_NULL_DOMAIN_ID)
-    role_table.create_column(domain_id)
 
-    migrate.UniqueConstraint(role_table.c.name,
-                             name=_ROLE_NAME_OLD_CONSTRAINT).drop()
+    # NOTE(morganfainberg): the `role_name` unique constraint is not guaranteed
+    # to be a fixed name, such as 'ixu_role_name`, so we need to search for the
+    # correct constraint that only affects role_table.c.name and drop it.
+    inspector = inspect(migrate_engine)
+    constraints = inspector.get_unique_constraints(_ROLE_TABLE_NAME)
+
+    name_constraint = None
+    for c in constraints:
+        if c['column_names'] == [_ROLE_NAME_COLUMN_NAME]:
+            name_constraint = c
+            break
+
+    if name_constraint is not None:
+        migrate.UniqueConstraint(role_table.c.name,
+                                 name=name_constraint['name']).drop()
+
+    # perform changes after constraint is dropped.
+    if 'domain_id' not in role_table.columns:
+        # Only create the column if it doesn't already exist.
+        role_table.create_column(domain_id)
 
     migrate.UniqueConstraint(role_table.c.name,
                              role_table.c.domain_id,
