@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_6a74f9ce",
+        "filename": "tools/cover.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-28T21:26:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_aab6113b",
+      "revId": "897dab5137ca26d5e5e8f547b025d9c25f62579a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_0a9bbdca",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-28T21:04:57Z",
       "side": 1,
       "message": "the script already does this, so remove this line.",
+      "revId": "897dab5137ca26d5e5e8f547b025d9c25f62579a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_ea35a9f7",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-28T21:26:32Z",
+      "side": 1,
+      "message": "good call. I didn\u0027t see that when i looked before.",
+      "parentUuid": "ba0121b8_0a9bbdca",
       "revId": "897dab5137ca26d5e5e8f547b025d9c25f62579a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
