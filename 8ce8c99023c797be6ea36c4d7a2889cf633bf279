@@ -46,6 +46,24 @@
       "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_b0458518",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-28T14:04:48Z",
+      "side": 1,
+      "message": "so - scorched earth policy?",
+      "parentUuid": "3afc51ec_7c7e8eaf",
+      "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
