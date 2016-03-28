@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_aab6113b",
+        "filename": "tools/cover.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-28T21:04:57Z",
+      "side": 1,
+      "message": "The commit message should say why you\u0027re assigning the copyright to Mirantis.",
+      "revId": "897dab5137ca26d5e5e8f547b025d9c25f62579a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0a9bbdca",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-28T21:04:57Z",
+      "side": 1,
+      "message": "the script already does this, so remove this line.",
+      "revId": "897dab5137ca26d5e5e8f547b025d9c25f62579a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
