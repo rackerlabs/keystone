@@ -13,9 +13,9 @@
 import migrate
 import sqlalchemy as sql
 
-_ROLE_NAME_OLD_CONSTRAINT = 'ixu_role_name'
 _ROLE_NAME_NEW_CONSTRAINT = 'ixu_role_name_domain_id'
 _ROLE_TABLE_NAME = 'role'
+_ROLE_NAME_COLUMN_NAME = 'name'
 _DOMAIN_ID_COLUMN_NAME = 'domain_id'
 _NULL_DOMAIN_ID = '<<null>>'
 
@@ -27,11 +27,31 @@ def upgrade(migrate_engine):
     role_table = sql.Table(_ROLE_TABLE_NAME, meta, autoload=True)
     domain_id = sql.Column(_DOMAIN_ID_COLUMN_NAME, sql.String(64),
                            nullable=False, server_default=_NULL_DOMAIN_ID)
+
+    # NOTE(morganfainberg): the `role_name` unique constraint is not
+    # guaranteed to be named 'ixu_role_name', so we need to search for the
+    # correct constraint that only affects role_table.c.name and drop
+    # that constraint.
+    to_drop = []
+    for c in role_table.indexes:
+        if (c.unique and len(c.columns) == 1 and
+                _ROLE_NAME_COLUMN_NAME in c.columns):
+            to_drop.append(c)
+
+    # NOTE(morganfainberg): Only perform a drop if exactly one constraint was
+    # found. If 0 are found, there is nothing to do, if more than 1 is found
+    # error.
+    if to_drop and len(to_drop) == 1:
+        migrate.UniqueConstraint(role_table.c.name,
+                                 name=to_drop[0].name).drop()
+    elif len(to_drop) > 1:
+        raise AssertionError('More than one unique constraint for '
+                             '`role.name` column. The DB is in an '
+                             'unknown state and cannot be migrated. '
+                             'Found constraints: %r' % to_drop)
+
+    # perform changes after constraint is dropped.
     role_table.create_column(domain_id)
-
-    migrate.UniqueConstraint(role_table.c.name,
-                             name=_ROLE_NAME_OLD_CONSTRAINT).drop()
-
     migrate.UniqueConstraint(role_table.c.name,
                              role_table.c.domain_id,
                              name=_ROLE_NAME_NEW_CONSTRAINT).create()
