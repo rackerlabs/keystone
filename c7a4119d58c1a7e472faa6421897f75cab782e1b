@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_b5baf7be",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2812,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-03-28T18:41:14Z",
+      "side": 1,
+      "message": "I agree 100%, It will be fixed in the next patch set.",
+      "parentUuid": "da0c15f0_e093dda1",
+      "revId": "c7a4119d58c1a7e472faa6421897f75cab782e1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da0c15f0_db819e4f",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 5
