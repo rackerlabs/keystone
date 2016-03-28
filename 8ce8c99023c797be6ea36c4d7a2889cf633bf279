@@ -64,6 +64,24 @@
       "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_729cf869",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-03-28T17:14:37Z",
+      "side": 1,
+      "message": "yep - that is the current functionality, whether done atomically or not..",
+      "parentUuid": "da0c15f0_b0458518",
+      "revId": "8ce8c99023c797be6ea36c4d7a2889cf633bf279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
