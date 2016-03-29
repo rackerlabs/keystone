@@ -70,6 +70,24 @@
       "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_f713a15a",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-29T16:07:14Z",
+      "side": 1,
+      "message": "@Lance: You are correct, when an ldap user authenticates, we\u0027ll store a ldap_user record in SQL.",
+      "parentUuid": "ba0121b8_5ccc3435",
+      "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
