@@ -52,6 +52,24 @@
       "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_5ccc3435",
+        "filename": "keystone/identity/backends/model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T16:03:59Z",
+      "side": 1,
+      "message": "It will be used with LDAP such that when a user authenticates successfully with LDAP - we will hit this code to store an LdapUser in SQL, right?",
+      "parentUuid": "1af94dfe_fb948b37",
+      "revId": "95f255e047639e3c9ef04b396b6cb2328af74ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
