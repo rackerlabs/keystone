@@ -16,6 +16,57 @@
       "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_d916bda6",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T00:15:28Z",
+      "side": 1,
+      "message": "See previous comment.",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_5923cd05",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T00:15:28Z",
+      "side": 1,
+      "message": "See previous comment",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b92029f9",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T00:15:28Z",
+      "side": 1,
+      "message": "see previous comment",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
