@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_cf8893ea",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T13:40:27Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this pass a handler class?\n\n    _context_cache._register_model_handler(handler_class)",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
