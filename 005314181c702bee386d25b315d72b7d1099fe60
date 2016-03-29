@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_e17483d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T15:54:55Z",
+      "side": 1,
+      "message": "I wonder if each of these items could be there own patch set? It would result in smaller changes that are a little more reviewable.",
+      "revId": "005314181c702bee386d25b315d72b7d1099fe60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
