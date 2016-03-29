@@ -94,6 +94,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_30efe7e9",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_drop_role_name_constraint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T15:00:21Z",
+      "side": 1,
+      "message": "Put that in a comment in the code so we have a record of why it was done this way.",
+      "parentUuid": "ba0121b8_0d273013",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_6f306702",
         "filename": "keystone/common/sql/migrate_repo/versions/101_drop_role_name_constraint.py",
         "patchSetId": 4
