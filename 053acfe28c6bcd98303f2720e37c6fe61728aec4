@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_2c279d13",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T13:23:48Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this have failed test that already have usernames in keystone? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_validation.py#L1761",
+      "parentUuid": "ba0121b8_79f8517d",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_d916bda6",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 37
@@ -64,6 +82,23 @@
       "writtenOn": "2016-03-29T00:15:28Z",
       "side": 1,
       "message": "see previous comment",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4cc65168",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T13:23:48Z",
+      "side": 1,
+      "message": "Based on Morgan\u0027s comment - we should add another entry to this list that is multiple non-whitespace characters.",
       "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
