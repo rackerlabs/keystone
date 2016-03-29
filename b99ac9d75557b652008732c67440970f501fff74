@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_9214f3f5",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-29T16:28:17Z",
+      "side": 1,
+      "message": "Good point.  And just for clarification, a User object can have a local user identity and zero to many federated user identities.  This will be more realized when we do things like account linking.",
+      "parentUuid": "ba0121b8_b7576901",
+      "revId": "b99ac9d75557b652008732c67440970f501fff74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_5787ed60",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-29T16:11:10Z",
       "side": 1,
       "message": "This is essentially the default (identity store) backend for keystone.",
+      "revId": "b99ac9d75557b652008732c67440970f501fff74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b7264966",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-29T16:28:17Z",
+      "side": 1,
+      "message": "Correct",
+      "parentUuid": "ba0121b8_5787ed60",
       "revId": "b99ac9d75557b652008732c67440970f501fff74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
