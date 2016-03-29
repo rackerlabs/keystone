@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_4f4763bb",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T13:42:58Z",
+      "side": 1,
+      "message": "readers might wonder where \"ixu_role_name\" came from since it\u0027s not mentioned anywhere else. Could just say that we don\u0027t know what the name is.",
+      "range": {
+        "startLine": 32,
+        "startChar": 30,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4fc2c334",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T13:42:58Z",
+      "side": 1,
+      "message": "no need to check to_drop since checking the len directly.",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0f93ab5c",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T13:42:58Z",
+      "side": 1,
+      "message": "If somebody had run this migration in its old form it will have failed after creating this column. The migration should handle the case where this column already exists.",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6fab471e",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_drop_role_name_constraint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T13:42:58Z",
+      "side": 1,
+      "message": "I don\u0027t understand the point of this. According to the bug the migration failed so they\u0027ll still be at migration 88.",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6f306702",
+        "filename": "keystone/common/sql/migrate_repo/versions/101_drop_role_name_constraint.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-29T13:42:58Z",
+      "side": 1,
+      "message": "Again, I don\u0027t see the point of this. The failure happened in migration 88 so now they\u0027re stuck there.",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
