@@ -1444,10 +1444,10 @@
 #kombu_reconnect_delay = 1.0
 
 # EXPERIMENTAL: Possible values are: gzip, bz2. If not set compression will not
-# be used. This option may notbe available in future versions. (string value)
+# be used. This option may not be available in future versions. (string value)
 #kombu_compression = <None>
 
-# How long to wait a missing client beforce abandoning to send it its replies.
+# How long to wait a missing client before abandoning to send it its replies.
 # This value should not be longer than rpc_response_timeout. (integer value)
 # Deprecated group/name - [DEFAULT]/kombu_reconnect_timeout
 #kombu_missing_consumer_retry_timeout = 60
