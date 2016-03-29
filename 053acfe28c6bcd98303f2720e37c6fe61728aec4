@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_79f8517d",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T00:14:27Z",
+      "side": 1,
+      "message": "is this supposed to be [\\S]+ not [\\S+]?\n\nThe \u0027[\\S+]\u0027 means \"match either a non-whitespace character *or* a +\n\nthe \u0027[\\S]+\u0027 would be \"match one or more non-whitespace characters\" in traditional regex parlance",
+      "revId": "053acfe28c6bcd98303f2720e37c6fe61728aec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
