@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_199e7556",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-29T00:08:00Z",
+      "side": 1,
+      "message": "this file is auto generated and needs to be fixed here: https://github.com/openstack/oslo.messaging/blob/b60af2315b1cc55f116248a708b6ef7f88a227c6/oslo_messaging/_drivers/impl_rabbit.py#L83-L86",
+      "revId": "346734572a32f84fa2fbe77629ded35b37af665d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
