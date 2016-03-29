@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_30040716",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T15:08:24Z",
+      "side": 1,
+      "message": "Fixed in next",
+      "parentUuid": "ba0121b8_4f4763bb",
+      "range": {
+        "startLine": 32,
+        "startChar": 30,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_4fc2c334",
         "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
         "patchSetId": 4
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_c309872e",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T15:08:24Z",
+      "side": 1,
+      "message": "Fixed in next",
+      "parentUuid": "ba0121b8_4fc2c334",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_0f93ab5c",
         "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
         "patchSetId": 4
@@ -53,6 +95,24 @@
       "writtenOn": "2016-03-29T13:42:58Z",
       "side": 1,
       "message": "If somebody had run this migration in its old form it will have failed after creating this column. The migration should handle the case where this column already exists.",
+      "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e3100b51",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_domain_specific_roles.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T15:08:24Z",
+      "side": 1,
+      "message": "Fixed in next.",
+      "parentUuid": "ba0121b8_0f93ab5c",
       "revId": "a5c2c41cafa9f3a23ba98a00382d8130b9905bd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
