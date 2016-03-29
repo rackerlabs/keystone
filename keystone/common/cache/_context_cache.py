@@ -16,7 +16,6 @@ from dogpile.cache import proxy
 from oslo_context import context as oslo_context
 from oslo_serialization import msgpackutils
 
-
 from keystone.models import revoke_model
 
 
