@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_a6a9fa7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-29T17:26:42Z",
+      "side": 1,
+      "message": "change this to:\n\n  implements: bp ldap3",
+      "range": {
+        "startLine": 13,
+        "startChar": 12,
+        "endLine": 13,
+        "endChar": 51
+      },
+      "revId": "a8aa9c48e6fc2eaa38c12b17b842b6e92d7fa373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da0c15f0_0367ed25",
         "filename": "keystone/identity/backends/ldap_identity.py",
         "patchSetId": 6
