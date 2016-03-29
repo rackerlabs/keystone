@@ -1,0 +1,11 @@
+Code-Review+1: Thomas Hsiao <thomas.hsiao@gmail.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 29 Mar 2016 18:13:13 +0000
+Reviewed-on: https://review.openstack.org/290223
+Project: openstack/keystone
+Branch: refs/heads/master
