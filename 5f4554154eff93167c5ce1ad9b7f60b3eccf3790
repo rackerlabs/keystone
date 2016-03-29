@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_071c1d76",
+        "filename": "test-requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-29T19:46:47Z",
+      "side": 1,
+      "message": "mysql? or pymysql?",
+      "revId": "5f4554154eff93167c5ce1ad9b7f60b3eccf3790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
