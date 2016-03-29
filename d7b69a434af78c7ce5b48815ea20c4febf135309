@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_a15f2b71",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-29T15:47:42Z",
+      "side": 1,
+      "message": "Got it - thanks!",
+      "parentUuid": "ba0121b8_c36d0706",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_232de3a7",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 1
