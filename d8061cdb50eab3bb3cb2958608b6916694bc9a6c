@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_0044bc47",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-30T20:55:57Z",
+      "side": 1,
+      "message": "Suggest making this a wrapper that issues a deprecation warning instead of just an alias (long term)",
+      "revId": "d8061cdb50eab3bb3cb2958608b6916694bc9a6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_2047404c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-30T20:55:57Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "d8061cdb50eab3bb3cb2958608b6916694bc9a6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
