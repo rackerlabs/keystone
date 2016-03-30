@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_97401e36",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T16:13:28Z",
+      "side": 1,
+      "message": "nit: remove ,",
+      "revId": "aaf918861b9c6560cd8b4dac244dc922903cd147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b76a82b1",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T16:13:28Z",
+      "side": 1,
+      "message": "nit: hostname or host IP address that the service will be running on.",
+      "revId": "aaf918861b9c6560cd8b4dac244dc922903cd147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_37d2f25c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T16:13:28Z",
+      "side": 1,
+      "message": "nit: TODO just to follow out existing convention.",
+      "revId": "aaf918861b9c6560cd8b4dac244dc922903cd147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
