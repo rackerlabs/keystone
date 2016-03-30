@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_314cc29d",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T15:56:14Z",
+      "side": 1,
+      "message": "We should add a test that confirms the message we set is passed along to the user.",
+      "revId": "815a9247758a79551cb106b09e2f5a7c1bd61cfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
