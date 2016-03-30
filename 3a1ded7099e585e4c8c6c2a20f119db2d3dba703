@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_1d16e5f0",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-30T20:51:47Z",
+      "side": 1,
+      "message": "Thx :)",
+      "parentUuid": "ba0121b8_b578c92c",
+      "revId": "3a1ded7099e585e4c8c6c2a20f119db2d3dba703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_3551590f",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_3d192923",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-30T20:51:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_3551590f",
+      "revId": "3a1ded7099e585e4c8c6c2a20f119db2d3dba703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_1557f5ce",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2016-03-30T13:31:51Z",
       "side": 1,
       "message": "Any particular reason to re-namespace this to common?",
+      "revId": "3a1ded7099e585e4c8c6c2a20f119db2d3dba703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_5d805dc0",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-30T20:51:47Z",
+      "side": 1,
+      "message": "Just being lazy, I was importing a common module in a previous patch.  I\u0027ve updated this and given a better name.",
+      "parentUuid": "ba0121b8_1557f5ce",
       "revId": "3a1ded7099e585e4c8c6c2a20f119db2d3dba703",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
