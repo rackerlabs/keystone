@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_636ae2ef",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2811,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:51:54Z",
+      "side": 1,
+      "message": "To make a binary string literal use b\u0027\u0027.",
+      "revId": "0f19b295bfc308643414481ce4c06c8e84f4f676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
