@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_b578c92c",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T13:34:01Z",
+      "side": 1,
+      "message": "++ nice, this is a better spot for this.",
+      "revId": "3a1ded7099e585e4c8c6c2a20f119db2d3dba703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_3551590f",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 9
