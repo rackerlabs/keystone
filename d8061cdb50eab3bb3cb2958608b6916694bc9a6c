@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_205e2012",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-30T20:56:39Z",
+      "side": 1,
+      "message": "deprecation of 1 cycle should be good.",
+      "parentUuid": "ba0121b8_0044bc47",
+      "revId": "d8061cdb50eab3bb3cb2958608b6916694bc9a6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_2047404c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
