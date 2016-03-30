@@ -16,7 +16,7 @@ from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.sql.expression import false
 
-from keystone import assignment as keystone_assignment
+from keystone.assignment.backends import base as keystone_assignment
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
