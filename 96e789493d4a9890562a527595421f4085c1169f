@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_50b6028b",
+        "filename": "keystone_tempest_plugin/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "Can we change the directory to tempest_plugin? There\u0027s no need to have keystone in the directory name since that\u0027s the project.\n\nAlternatively, just call the directory tempest, or tempest/plugin. No need to use _ to separate parts since / is available.",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_d0817291",
+        "filename": "keystone_tempest_plugin/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "change to Tests for Keystone",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 22
+      },
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_702226bb",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "why noqa here? If it\u0027s not used just remove it.",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b0031e0f",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be adding config options until we need them.",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_50128263",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "What is this oddity? keystone is going to removed soon so this isn\u0027t going to work.",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_f03596f7",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-30T21:27:10Z",
+      "side": 1,
+      "message": "suggest remove \"Keystone\" -- what else would it be for?",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
