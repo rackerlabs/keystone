@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_4e755e96",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "We should at least add a comment as to why we don\u0027t do this for LDAP (vs. SQL).",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_2e510a0f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "hints is always just an empty Hints object. Is passing hints required for filter_limit_query()?",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6b02d470",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "Why not just use user_list?",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0b4b58ca",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "Could this be simplified to: \n\n    if user_list:\n        ...",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_eb1c24c3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "Do we need to make a second list for user IDs if we already have all the information we need in user_detailed_list? \n\n    if user_list:\n        for user_ref in user_list:\n            try: \n                self.update_user(user[\u0027id\u0027], {\u0027default_project_id\u0027: None})\n            except:\n                # logging\n\nWe might just be able to get away with: \n\n    for user_ref in user_list:\n        try: \n            self.update_user(user[\u0027id\u0027], {\u0027default_project_id\u0027: None})\n        except:\n            # logging",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_8eb136e4",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1601,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "This key should always be returned, right?",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6e394241",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1606,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4e7a7ef2",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-30T14:19:36Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
