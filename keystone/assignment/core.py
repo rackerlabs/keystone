@@ -23,6 +23,8 @@ from oslo_log import log
 from oslo_log import versionutils
 import six
 
+from keystone.assignment.backends import base
+from keystone.assignment.role_backends import base as role_base
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -95,9 +97,9 @@ class Manager(manager.Manager):
 
         # Make sure it is a driver version we support, and if it is a legacy
         # driver, then wrap it.
-        if isinstance(self.driver, AssignmentDriverV8):
-            self.driver = V9AssignmentWrapperForV8Driver(self.driver)
-        elif not isinstance(self.driver, AssignmentDriverV9):
+        if isinstance(self.driver, base.AssignmentDriverV8):
+            self.driver = base.V9AssignmentWrapperForV8Driver(self.driver)
+        elif not isinstance(self.driver, base.AssignmentDriverV9):
             raise exception.UnsupportedDriverVersion(driver=assignment_driver)
 
         self.event_callbacks = {
@@ -1099,6 +1101,11 @@ class Manager(manager.Manager):
 # If you remove a method from V9, then move the abstract methods from this Base
 # class to the V8 class. Do not modify any of the method signatures in the Base
 # class - changes should only be made in the V8 and subsequent classes.
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.AssignmentDriverBase',
+    in_favor_of='keystone.assignment.backends.base.AssignmentDriverBase',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class AssignmentDriverBase(object):
 
@@ -1218,6 +1225,11 @@ class AssignmentDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.AssignmentDriverV8',
+    in_favor_of='keystone.assignment.backends.base.AssignmentDriverV8',
+    remove_in=+1)
 class AssignmentDriverV8(AssignmentDriverBase):
     """Removed or redefined methods from V8.
 
@@ -1345,6 +1357,11 @@ class AssignmentDriverV8(AssignmentDriverBase):
         raise exception.NotImplemented()
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.AssignmentDriverV9',
+    in_favor_of='keystone.assignment.backends.base.AssignmentDriverV9',
+    remove_in=+1)
 class AssignmentDriverV9(AssignmentDriverBase):
     """New or redefined methods from V8.
 
@@ -1359,6 +1376,12 @@ class AssignmentDriverV9(AssignmentDriverBase):
         raise exception.NotImplemented()
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.V9AssignmentWrapperForV8Driver',
+    in_favor_of=(
+        'keystone.assignment.backends.base.V9AssignmentWrapperForV8Driver'),
+    remove_in=+1)
 class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
     """Wrapper class to supported a V8 legacy driver.
 
@@ -1465,7 +1488,7 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
         self.driver.delete_group_assignments(group_id)
 
 
-Driver = manager.create_legacy_driver(AssignmentDriverV8)
+Driver = manager.create_legacy_driver(base.AssignmentDriverV8)
 
 
 @dependency.provider('role_api')
@@ -1490,9 +1513,9 @@ class RoleManager(manager.Manager):
 
         # Make sure it is a driver version we support, and if it is a legacy
         # driver, then wrap it.
-        if isinstance(self.driver, RoleDriverV8):
-            self.driver = V9RoleWrapperForV8Driver(self.driver)
-        elif not isinstance(self.driver, RoleDriverV9):
+        if isinstance(self.driver, role_base.RoleDriverV8):
+            self.driver = role_base.V9RoleWrapperForV8Driver(self.driver)
+        elif not isinstance(self.driver, role_base.RoleDriverV9):
             raise exception.UnsupportedDriverVersion(driver=role_driver)
 
     @MEMOIZE
@@ -1553,6 +1576,11 @@ class RoleManager(manager.Manager):
 # If you remove a method from V9, then move the abstract methods from this Base
 # class to the V8 class. Do not modify any of the method signatures in the Base
 # class - changes should only be made in the V8 and subsequent classes.
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.RoleDriverBase',
+    in_favor_of='keystone.assignment.role_backends.base.RoleDriverBase',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class RoleDriverBase(object):
 
@@ -1624,6 +1652,11 @@ class RoleDriverBase(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.RoleDriverV8',
+    in_favor_of='keystone.assignment.role_backends.base.RoleDriverV8',
+    remove_in=+1)
 class RoleDriverV8(RoleDriverBase):
     """Removed or redefined methods from V8.
 
@@ -1637,6 +1670,11 @@ class RoleDriverV8(RoleDriverBase):
     pass
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.RoleDriverV9',
+    in_favor_of='keystone.assignment.role_backends.base.RoleDriverV9',
+    remove_in=+1)
 class RoleDriverV9(RoleDriverBase):
     """New or redefined methods from V8.
 
@@ -1685,6 +1723,12 @@ class RoleDriverV9(RoleDriverBase):
         raise exception.NotImplemented()  # pragma: no cover
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.MITAKA,
+    what='keystone.assignment.V9RoleWrapperForV8Driver',
+    in_favor_of=(
+        'keystone.assignment.role_backends.base.V9RoleWrapperForV8Driver'),
+    remove_in=+1)
 class V9RoleWrapperForV8Driver(RoleDriverV9):
     """Wrapper class to supported a V8 legacy driver.
 
@@ -1787,4 +1831,5 @@ class V9RoleWrapperForV8Driver(RoleDriverV9):
     def list_role_inference_rules(self):
         raise exception.NotImplemented()  # pragma: no cover
 
-RoleDriver = manager.create_legacy_driver(RoleDriverV8)
+
+RoleDriver = manager.create_legacy_driver(role_base.RoleDriverV8)
