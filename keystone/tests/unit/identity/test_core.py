@@ -215,8 +215,11 @@ class IdentityDriverV8Tests(object):
     def test_create_user(self):
         user_id = uuid.uuid4().hex
         user = {
-            'id': user_id
+            'id': user_id,
+            'name': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         ret = self.driver.create_user(user_id, user)
         self.assertEqual(user_id, ret['id'])
 
@@ -225,11 +228,12 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
             'enabled': True,
             'default_project_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         ret = self.driver.create_user(user_id, user)
         exp_user = user.copy()
         del exp_user['password']
@@ -238,8 +242,11 @@ class IdentityDriverV8Tests(object):
     def test_create_user_same_id_exc(self):
         user_id = uuid.uuid4().hex
         user = {
-            'id': user_id
+            'id': user_id,
+            'name': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
         self.assertRaises(exception.Conflict,
                           self.driver.create_user, user_id, user)
@@ -251,16 +258,18 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user1_id,
             'name': name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = domain_id
         self.driver.create_user(user1_id, user)
 
         user2_id = uuid.uuid4().hex
         user = {
             'id': user2_id,
             'name': name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = domain_id
         self.assertRaises(exception.Conflict,
                           self.driver.create_user, user2_id, user)
 
@@ -271,8 +280,11 @@ class IdentityDriverV8Tests(object):
     def test_list_users_when_users(self):
         user_id = uuid.uuid4().hex
         user = {
-            'id': user_id
+            'id': user_id,
+            'name': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         hints = driver_hints.Hints()
@@ -283,8 +295,11 @@ class IdentityDriverV8Tests(object):
     def test_get_user(self):
         user_id = uuid.uuid4().hex
         user = {
-            'id': user_id
+            'id': user_id,
+            'name': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         user = self.driver.get_user(user_id)
@@ -301,8 +316,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': user_name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = domain_id
         self.driver.create_user(user_id, user)
 
         user = self.driver.get_user_by_name(user_name, domain_id)
@@ -319,8 +335,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         user_mod = {'enabled': False}
@@ -335,9 +352,10 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
             optional_attribute: uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         user_mod = {optional_attribute: None}
@@ -356,8 +374,9 @@ class IdentityDriverV8Tests(object):
         user1 = {
             'id': user1_id,
             'name': uuid.uuid4().hex,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            user1['domain_id'] = domain_id
         self.driver.create_user(user1_id, user1)
 
         user2_id = uuid.uuid4().hex
@@ -365,8 +384,9 @@ class IdentityDriverV8Tests(object):
         user2 = {
             'id': user2_id,
             'name': user2_name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            user2['domain_id'] = domain_id
         self.driver.create_user(user2_id, user2)
 
         user_mod = {'name': user2_name}
@@ -390,8 +410,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         user_mod = {'name': uuid.uuid4().hex}
@@ -403,8 +424,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         self.driver.delete_user(user_id)
@@ -422,8 +444,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         new_group = self.driver.create_group(group_id, group)
         self.assertEqual(group_id, new_group['id'])
 
@@ -432,9 +455,10 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         new_group = self.driver.create_group(group_id, group)
         self.assertEqual(group, new_group)
 
@@ -445,16 +469,18 @@ class IdentityDriverV8Tests(object):
         group1 = {
             'id': group1_id,
             'name': name,
-            'domain_id': domain,
         }
+        if self.expected_is_domain_aware:
+            group1['domain_id'] = domain
         self.driver.create_group(group1_id, group1)
 
         group2_id = uuid.uuid4().hex
         group2 = {
             'id': group2_id,
             'name': name,
-            'domain_id': domain,
         }
+        if self.expected_is_domain_aware:
+            group2['domain_id'] = domain
         self.assertRaises(exception.Conflict, self.driver.create_group,
                           group2_id, group2)
 
@@ -463,8 +489,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         group_ref = self.driver.get_group(group_id)
@@ -482,8 +509,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = domain_id
         self.driver.create_group(group_id, group)
 
         found_group = self.driver.get_group_by_name(name, domain_id)
@@ -500,8 +528,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         new_description = uuid.uuid4().hex
@@ -528,16 +557,18 @@ class IdentityDriverV8Tests(object):
         group1 = {
             'id': group1_id,
             'name': name,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            group1['domain_id'] = domain_id
         self.driver.create_group(group1_id, group1)
 
         group2_id = uuid.uuid4().hex
         group2 = {
             'id': group2_id,
             'name': uuid.uuid4().hex,
-            'domain_id': domain_id,
         }
+        if self.expected_is_domain_aware:
+            group2['domain_id'] = domain_id
         self.driver.create_group(group2_id, group2)
 
         group_mod = {'name': name}
@@ -555,8 +586,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         group_mod = {'name': uuid.uuid4().hex}
@@ -568,8 +600,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.driver.delete_group(group_id)
@@ -589,8 +622,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         groups = self.driver.list_groups(driver_hints.Hints())
@@ -601,16 +635,18 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.driver.add_user_to_group(user_id, group_id)
@@ -625,8 +661,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.assertRaises(exception.UserNotFound,
@@ -637,8 +674,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
@@ -650,16 +688,18 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.driver.add_user_to_group(user_id, group_id)
@@ -673,16 +713,18 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.assertRaises(exception.NotFound, self.driver.check_user_in_group,
@@ -696,8 +738,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.assertRaises(exception.UserNotFound,
@@ -709,8 +752,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
@@ -723,8 +767,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
         users = self.driver.list_users_in_group(group_id, driver_hints.Hints())
         self.assertEqual([], users)
@@ -734,16 +779,18 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         user_id = uuid.uuid4().hex
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         self.driver.add_user_to_group(user_id, group_id)
@@ -762,8 +809,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         groups = self.driver.list_groups_for_user(user_id,
@@ -775,16 +823,18 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.driver.add_user_to_group(user_id, group_id)
@@ -804,15 +854,17 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
         self.driver.add_user_to_group(user_id, group_id)
 
@@ -826,15 +878,17 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
         group_id = uuid.uuid4().hex
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         # FIXME(blk-u): ldap is returning UserNotFound rather than NotFound,
@@ -849,8 +903,9 @@ class IdentityDriverV8Tests(object):
         group = {
             'id': group_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            group['domain_id'] = uuid.uuid4().hex
         self.driver.create_group(group_id, group)
 
         self.assertRaises(
@@ -862,8 +917,9 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
         group_id = uuid.uuid4().hex
 
@@ -877,9 +933,10 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
             'password': password,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         user_info = self.driver.authenticate(user_id, password)
@@ -890,9 +947,10 @@ class IdentityDriverV8Tests(object):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
         }
+        if self.expected_is_domain_aware:
+            user['domain_id'] = uuid.uuid4().hex
         self.driver.create_user(user_id, user)
 
         password = uuid.uuid4().hex
