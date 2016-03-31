@@ -22,6 +22,30 @@
       "revId": "9e81843719dab3c66d89adf100bb3e1d5c9cedca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_65110a04",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_drop_role_name_constraint.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-03-31T22:39:24Z",
+      "side": 1,
+      "message": "that\u0027s something we want to avoid, we don\u0027t need to create any more dependencies in the migrations, they should be simple.\n\nthis was a very rare case that we hopefully shouldn\u0027t hit again",
+      "parentUuid": "ba0121b8_dc43926a",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "9e81843719dab3c66d89adf100bb3e1d5c9cedca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
