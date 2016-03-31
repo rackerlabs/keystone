@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_f7ccb78a",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_drop_role_name_constraint.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-31T18:36:33Z",
+      "side": 1,
+      "message": "duplicated with the above",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 31
+      },
+      "revId": "243ba563ec78d02c53b3deaa352d8a3c28c275f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_37c3cf58",
+        "filename": "keystone/common/sql/migrate_repo/versions/101_drop_role_name_constraint.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-03-31T18:36:33Z",
+      "side": 1,
+      "message": "duplicated with the above",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 31
+      },
+      "revId": "243ba563ec78d02c53b3deaa352d8a3c28c275f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
