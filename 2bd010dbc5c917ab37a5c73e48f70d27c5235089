@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_84342efc",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T17:39:11Z",
+      "side": 1,
+      "message": "this should be able to use self.meta (same for all uses of meta)",
+      "revId": "2bd010dbc5c917ab37a5c73e48f70d27c5235089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_2401e206",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T17:39:11Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently (applies to all these changes)",
+      "revId": "2bd010dbc5c917ab37a5c73e48f70d27c5235089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_3f1d6b66",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T17:39:11Z",
+      "side": 1,
+      "message": "no argument needed since it has a default.",
+      "revId": "2bd010dbc5c917ab37a5c73e48f70d27c5235089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_5f53ff16",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1085,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T17:39:11Z",
+      "side": 1,
+      "message": "no need to assert these things since the operations were just done.",
+      "revId": "2bd010dbc5c917ab37a5c73e48f70d27c5235089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_df66efeb",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T17:39:11Z",
+      "side": 1,
+      "message": "the previous tests already showed this to be the case.",
+      "revId": "2bd010dbc5c917ab37a5c73e48f70d27c5235089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
