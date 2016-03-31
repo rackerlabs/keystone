@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_0b53066c",
+        "filename": "config-generator/keystone.conf",
+        "patchSetId": 47
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-31T20:12:14Z",
+      "side": 1,
+      "message": "This needs to be osprofiler",
+      "revId": "3c0a725401e44b02d5981c69c113ad01a31c6fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e608872a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-31T20:12:14Z",
+      "side": 1,
+      "message": "Don\u0027t run this here.",
+      "revId": "3c0a725401e44b02d5981c69c113ad01a31c6fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e61fe758",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-31T20:12:14Z",
+      "side": 1,
+      "message": "rename this to something like \"set_external_opt_defaults\" and include the profiler defaults being set here.",
+      "revId": "3c0a725401e44b02d5981c69c113ad01a31c6fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4bd69ef1",
+        "filename": "setup.cfg",
+        "patchSetId": 47
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-03-31T20:12:14Z",
+      "side": 1,
+      "message": "The code in keystone.common.config:set_profiler_defaults needs to be called from the main entry point for oslo.config.opts.defaults\n\nso a rename of: keystone.common.config:set_middleware_defaults\n\nto something like:\n\nkeystone.common.config:set_external_opt_defaults\n\nand inclusion of set_profiler_defaults in that method",
+      "revId": "3c0a725401e44b02d5981c69c113ad01a31c6fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
