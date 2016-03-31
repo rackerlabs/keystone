@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_257c3cb4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:27:09Z",
+      "side": 1,
+      "message": "See comments https://review.openstack.org/#/c/298402/15/keystone/tests/unit/test_sql_upgrade.py",
+      "revId": "f8aaa99e44a7e83a009d18aee54a2ea8f6880e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
