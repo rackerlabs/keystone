@@ -470,8 +470,33 @@ modify the file ``keystone/tests/unit/config_files/backend_liveldap.conf`` and
 password.
 
 .. NOTE::
-    To run the live tests you need to set the environment variable 
+    To run the live tests you need to set the environment variable
     ``ENABLE_LDAP_LIVE_TEST`` to a non-negative value.
+
+Opportunistic tests
+-------------------
+
+Some tests will run if an LDAP server is running and you're able to connect to
+it.
+
+The defaults match how devstack configures OpenLDAP, so one way to get your
+development system setup for the opportunistic tests is to run devstack with
+LDAP enabled (see above).
+
+You'll need an entry under which the tests will create entries for testing::
+
+    ldapadd -D cn=Manager,dc=openstack,dc=org -w mypassword <<EOF
+    dn: ou=keystone-test,dc=openstack,dc=org
+    objectclass: organizationalunit
+    EOF
+
+The connection parameters can be set using environment variables. You'll
+likely have to change the password::
+
+    export OS_TEST_LDAP_USER_PASSWORD=mypassword
+
+See :class:`keystone.tests.unit.ideneity.backends.test_ldap.OpportunisticLiveIdentityDriverTest`
+for the other options.
 
 
 "Work in progress" Tests
