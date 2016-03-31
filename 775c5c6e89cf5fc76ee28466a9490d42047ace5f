@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_41679db6",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-03-31T20:24:48Z",
+      "side": 1,
+      "message": "I think this should be something that\u0027s handled in the manager layer. This will make it so that we have less duplicate code between backend versions.",
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
