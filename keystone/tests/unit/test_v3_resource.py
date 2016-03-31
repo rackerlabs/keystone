@@ -1235,6 +1235,21 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             body={'project': project},
             expected_status=http_client.BAD_REQUEST)
 
+    def test_update_project_name_conflict(self):
+        """Call ``PATCH /projects/{project_id}`` with existing name."""
+        project1 = unit.new_project_ref(domain_id=self.domain['id'],
+                                        name=uuid.uuid4().hex)
+        self.resource_api.create_project(project1['id'], project1)
+
+        project2 = unit.new_project_ref(domain_id=self.domain['id'],
+                                        name=uuid.uuid4().hex)
+        project = self.resource_api.create_project(project2['id'], project2)
+
+        self.patch('/projects/%(project_id)s' % {
+            'project_id': project['id']},
+            body={'project': {'name': project1['name']}},
+            expected_status=http_client.CONFLICT)
+
     def test_disable_leaf_project(self):
         """Call ``PATCH /projects/{project_id}``."""
         projects = self._create_projects_hierarchy()
