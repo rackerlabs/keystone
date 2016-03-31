@@ -34,6 +34,24 @@
       "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4507a681",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T21:46:56Z",
+      "side": 1,
+      "message": "The manager can\u0027t be expected to interpret sql exceptions.",
+      "parentUuid": "ba0121b8_41679db6",
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
