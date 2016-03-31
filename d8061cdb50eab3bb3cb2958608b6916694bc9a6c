@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_016c8533",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-31T20:36:01Z",
+      "side": 1,
+      "message": "We discussed this in IRC, this patch does not move this line (\"Driver \u003d ...\") to the backend.  So if someone is sub-classing off of Driver, identity.core.Driver will still work; thus there wouldn\u0027t be a need to have a deprecation warning.",
+      "parentUuid": "ba0121b8_205e2012",
+      "revId": "d8061cdb50eab3bb3cb2958608b6916694bc9a6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_2047404c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
