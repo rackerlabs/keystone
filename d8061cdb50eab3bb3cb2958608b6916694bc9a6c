@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_41531d39",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-03-31T20:42:19Z",
+      "side": 1,
+      "message": "That being said, I do see the benefit of moving this line (\"Driver \u003d ...\") to the base class.  However, I think we should create a separate patch for this.  The primary concern for the current patch is to avoid driver -\u003e manager calls and I want to keep it as simple as possible for reviewers.  Let me know if you strongly disagree though.",
+      "parentUuid": "ba0121b8_016c8533",
+      "revId": "d8061cdb50eab3bb3cb2958608b6916694bc9a6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_2047404c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
