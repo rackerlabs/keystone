@@ -10,6 +10,7 @@ os-testr>=0.4.1 # Apache-2.0
 
 # Include drivers for opportunistic testing.
 oslo.db[fixtures,mysql,postgresql]>=4.1.0 # Apache-2.0
+ldap3>=0.9.8.2  # LGPLv3
 
 # computes code coverage percentages
 coverage>=3.6 # Apache-2.0
