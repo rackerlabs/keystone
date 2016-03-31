@@ -47,6 +47,31 @@ class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
         cli.TokenFlush.main()
 
 
+class CliNoConfigTestCase(unit.TestCase):
+
+    def setUp(self):
+        super(CliNoConfigTestCase, self).setUp()
+
+        # NOTE(crinkle): the command call doesn't have to actually work,
+        # that's what the other unit tests are for. So just mock it out.
+        class FakeConfCommand(object):
+            def __init__(self):
+                self.cmd_class = mock.Mock()
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', FakeConfCommand()))
+
+        self.logging = self.useFixture(
+            fixtures.FakeLogger(level=logging.WARN))
+
+    def config(self, config_files):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+
+    def test_cli(self):
+        expected_msg = 'Config file not found, using default configs.'
+        cli.main(argv=['keystone-manage', 'db_sync'])
+        self.assertThat(self.logging.output, matchers.Contains(expected_msg))
+
+
 class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
     def setUp(self):
