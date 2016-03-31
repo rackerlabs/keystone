@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_f005f210",
+        "filename": "keystone_tempest_plugin/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-31T13:58:51Z",
+      "side": 1,
+      "message": "makes sense, but {project_name}_tempest_plugin/tests is the \"pattern\" being used across projects [1] [2]. I guess makes sense to use the same pattern?\n\n[1] https://github.com/openstack/ironic/tree/master/ironic_tempest_plugin\n[2] https://github.com/openstack/manila/tree/master/manila_tempest_tests",
+      "parentUuid": "ba0121b8_50b6028b",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_d0817291",
         "filename": "keystone_tempest_plugin/README.rst",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2016-03-30T21:27:10Z",
       "side": 1,
       "message": "change to Tests for Keystone",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 22
+      },
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_300c8a3a",
+        "filename": "keystone_tempest_plugin/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-31T13:58:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_d0817291",
       "range": {
         "startLine": 2,
         "startChar": 20,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_b046da4c",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-31T13:58:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_702226bb",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_b0031e0f",
         "filename": "keystone_tempest_plugin/config.py",
         "patchSetId": 3
@@ -70,6 +130,24 @@
       "writtenOn": "2016-03-30T21:27:10Z",
       "side": 1,
       "message": "I don\u0027t think we should be adding config options until we need them.",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b0b41a35",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-31T13:58:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_b0031e0f",
       "revId": "96e789493d4a9890562a527595421f4085c1169f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +182,24 @@
       "writtenOn": "2016-03-30T21:27:10Z",
       "side": 1,
       "message": "suggest remove \"Keystone\" -- what else would it be for?",
+      "revId": "96e789493d4a9890562a527595421f4085c1169f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_50977e39",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-03-31T13:58:51Z",
+      "side": 1,
+      "message": "It inherits from TempestPlugin, seems confusing to have a subclass with the same name.",
+      "parentUuid": "ba0121b8_f03596f7",
       "revId": "96e789493d4a9890562a527595421f4085c1169f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
