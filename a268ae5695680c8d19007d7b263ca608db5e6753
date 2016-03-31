@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_4a1dff64",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "This isn\u0027t going to work since new tests are going to be added to this class and we\u0027re not going to go looking for this comment so things will get out of date.\n\nThese tests could be gathered in a separate test class to make the documentation work.\n\nOtherwise, just drop the comments since it\u0027s excessive. Put them in the commit message.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_eaadf3e9",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1063,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "need to put the migration version on the name since it\u0027s not going to be the role name constraint after 88, so suggest call it ROLE_NAME_CONSTRAINT_PRE_88.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_8a3a7797",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "no need for a new meta, use self.meta.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_caaf4f7b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "this should be \"on\"",
+      "range": {
+        "startLine": 1073,
+        "startChar": 32,
+        "endLine": 1073,
+        "endChar": 34
+      },
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_aab2dbe2",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "this should be \"on\"",
+      "range": {
+        "startLine": 1081,
+        "startChar": 33,
+        "endLine": 1081,
+        "endChar": 35
+      },
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_aa113b06",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "give a name to the \u0027role\u0027 argument so readers know what it\u0027s intended for.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_ea933359",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "There\u0027s no need to verify this -- we can assume that _drop_unique_constraint_to_role_name() did its job.\n\nThis applies to all these extra checks.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0afca76e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-03-31T18:02:39Z",
+      "side": 1,
+      "message": "no need to check this every time, it was already verified in other tests.",
+      "revId": "a268ae5695680c8d19007d7b263ca608db5e6753",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
