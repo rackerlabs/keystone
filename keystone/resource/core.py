@@ -197,7 +197,7 @@ class Manager(manager.Manager):
             })
 
     def _generate_project_name_conflict_msg(self, project):
-        if project['is_domain']:
+        if project.get('is_domain'):
             return _('it is not permitted to have two projects '
                      'acting as domains with the same name: %s'
                      ) % project['name']
