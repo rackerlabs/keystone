@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_7eb8492b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 2627,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:25:46Z",
+      "side": 1,
+      "message": "nit: when first reading this comment \u0027validate authorized\u0027 was a little strange to think about. Is it performing an authentication or a validation? Minor suggestion:\n\n    # authenticate with the unscoped token; resulting in a project-scoped token",
+      "revId": "6aefec53b787d82c8a32eb15a4057910b3575578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
