@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_bccc296b",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-01T04:53:17Z",
+      "side": 1,
+      "message": "Yes. I will add a comment for the same.",
+      "parentUuid": "ba0121b8_4e755e96",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_2e510a0f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_a282edc5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-01T04:53:17Z",
+      "side": 1,
+      "message": "hint: this is an object of \"keystone.common.driver_hints.Hints\"\n\nThe method expects this parameter to be passed. If we do not pass this parameter then the following error may occur.\n\"filter_limit_query() takes exactly 3 arguments (2 given) (HTTP 400) (Request-ID: req-85d5c8be-d38d-4e89-b2de-95873131b30e)\"\n\nFor handling this, changes should be done in sqlalchemy.\nBut this method is used in multiple places in keystone.\nAccording to my understanding that can be a bigger impact.\nIt is safe to keep it as it is.\nPlease suggest.",
+      "parentUuid": "ba0121b8_2e510a0f",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_6b02d470",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2016-03-30T14:19:36Z",
       "side": 1,
       "message": "Why not just use user_list?",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_7d2236a4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-01T04:53:17Z",
+      "side": 1,
+      "message": "Will change the variable name.",
+      "parentUuid": "ba0121b8_6b02d470",
       "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_bd384ed4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-01T04:53:17Z",
+      "side": 1,
+      "message": "Done according to the first suggestion.",
+      "parentUuid": "ba0121b8_eb1c24c3",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_8eb136e4",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 6
@@ -98,6 +170,24 @@
       "writtenOn": "2016-03-30T14:19:36Z",
       "side": 1,
       "message": "This key should always be returned, right?",
+      "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9da46a08",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1601,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-01T04:53:17Z",
+      "side": 1,
+      "message": "For this test, the key will not be returned for many cases of LDAP. We can remove this if condition once the LDAP support is completely removed.",
+      "parentUuid": "ba0121b8_8eb136e4",
       "revId": "ad2baa2c60e1716333c3c326dd7f878575cee385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
