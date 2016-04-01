@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_32aba0d8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T21:03:16Z",
+      "side": 1,
+      "message": "Anybody who\u0027s developing their own driver using IdentityDriverV8 is going to fail with this move. We need to leave the symbol here and have it print a deprecated message when somebody uses it.\n\nThis applies to the other symbols removed from here.",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_db3ec7d9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -30,6 +47,23 @@
       "writtenOn": "2016-04-01T19:18:40Z",
       "side": 1,
       "message": "Would this also apply to the above comment?",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b23a1097",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T21:03:16Z",
+      "side": 1,
+      "message": "isn\u0027t it weird to have references from the shadow_backends driver to identity.backends? I thought the whole point of this change was to avoid these kinds of entanglements.",
       "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
