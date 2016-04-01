@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_a129248c",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:43:48Z",
+      "side": 1,
+      "message": "nit: OS_KEYSTONE_CONFIG_DIR should probably be in backticks since it\u0027s a variable: \n\n    ``OS_KEYSTONE_CONFIG_DIR``",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_413928d8",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:43:48Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e17f9c64",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:43:48Z",
+      "side": 1,
+      "message": "Could add a small snippet to this section saying that the OS_KEYSTONE_CONFIG_FILES/DIR must be an absolute system path.",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6130ace9",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:43:48Z",
+      "side": 1,
+      "message": "Thanks for adding the docs!",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_615eec13",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:43:48Z",
+      "side": 1,
+      "message": "This assumes that config files must be absolute paths, right? So: \n\n    /etc/keystone/keystone.conf\n\ninstead of: \n\n    keystone.conf\n\nNot sure why someone would do the later, but we should also highlight that in the docs.",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
