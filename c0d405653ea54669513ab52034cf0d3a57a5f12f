@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_48cdd664",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:22:38Z",
+      "side": 0,
+      "message": "Should we take this opportunity to add actual docstrings to this method to be consistent with other methods in the module? \n\n    :returns: a boolean indicating if the options provided are valid",
+      "revId": "c0d405653ea54669513ab52034cf0d3a57a5f12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_c87ba6f3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:22:38Z",
+      "side": 0,
+      "message": "Same comment here about the returns docstrings.",
+      "revId": "c0d405653ea54669513ab52034cf0d3a57a5f12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_28d982f3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:22:38Z",
+      "side": 0,
+      "message": "In addition to printing this, should this be logged?",
+      "revId": "c0d405653ea54669513ab52034cf0d3a57a5f12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
