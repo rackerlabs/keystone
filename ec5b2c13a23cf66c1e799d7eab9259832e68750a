@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_db452e6f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:43:30Z",
+      "side": 1,
+      "message": "++ This works for me but I think we should add a test to make sure we don\u0027t accidentally refactor out this behavior. Maybe something along the lines of: \n\nhttps://review.openstack.org/#/c/214287/9/keystone/tests/unit/test_cli.py",
+      "revId": "ec5b2c13a23cf66c1e799d7eab9259832e68750a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
