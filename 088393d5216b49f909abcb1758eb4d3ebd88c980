@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_9eca7d19",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:36:06Z",
+      "side": 1,
+      "message": "\"keystone\" should be removed from the directory name. It\u0027s already in keystone so that\u0027s unnecessary.",
+      "revId": "088393d5216b49f909abcb1758eb4d3ebd88c980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_de5d157b",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:36:06Z",
+      "side": 1,
+      "message": "remove Keystone since this is in keystone already.",
+      "revId": "088393d5216b49f909abcb1758eb4d3ebd88c980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
