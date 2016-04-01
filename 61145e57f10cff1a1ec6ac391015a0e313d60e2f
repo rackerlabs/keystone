@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_d3019806",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:32:31Z",
+      "side": 1,
+      "message": "Also, you added a new driver method, but you didn\u0027t update the abstract base class:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L1257",
+      "parentUuid": "ba0121b8_8d2ee3a2",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 68
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_78718b0b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
