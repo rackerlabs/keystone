@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_b2bb42c3",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:10:25Z",
+      "side": 1,
+      "message": "nit: you are only using this once, so you don\u0027t need a global name",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_83242360",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
@@ -19,6 +42,47 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_6d5c2f19",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:10:25Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a57f1b5_83242360",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4d6b2bb7",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:10:25Z",
+      "side": 1,
+      "message": "Do you need a foreign key relationship for this column?",
+      "range": {
+        "startLine": 26,
+        "startChar": 58,
+        "endLine": 26,
+        "endChar": 60
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_63f9e7c6",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
@@ -30,6 +94,29 @@
       "writtenOn": "2016-02-12T03:38:18Z",
       "side": 1,
       "message": "extras",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_8d8f0374",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:10:25Z",
+      "side": 1,
+      "message": "Foreign key relationship?",
+      "range": {
+        "startLine": 45,
+        "startChar": 51,
+        "endLine": 45,
+        "endChar": 53
+      },
       "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
