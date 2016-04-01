@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_8d2ee3a2",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:27:21Z",
+      "side": 1,
+      "message": "What does this have to do with deleting the project_id?  New driver method, perhaps add this to your commit message.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 68
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_78718b0b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T15:27:21Z",
+      "side": 1,
+      "message": "This seems to be the wrong place for this functionality.  Wouldn\u0027t it be better as part of the project delete:\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L480\n\nAnd you could run a migration script to first update any default_project_id to None where the project no longer exists.\n\nAlso, add a foreign key constraint from the user table to the project table to prevent from the database.",
+      "range": {
+        "startLine": 543,
+        "startChar": 8,
+        "endLine": 543,
+        "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
