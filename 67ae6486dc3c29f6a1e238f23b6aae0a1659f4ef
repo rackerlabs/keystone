@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_93528f33",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-04-01T11:20:39Z",
+      "side": 1,
+      "message": "it looks like removal of profiler configuration here led to the errors - https://review.openstack.org/294535",
+      "revId": "67ae6486dc3c29f6a1e238f23b6aae0a1659f4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
