@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_dbaec797",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "below",
+      "range": {
+        "startLine": 758,
+        "startChar": 55,
+        "endLine": 758,
+        "endChar": 61
+      },
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_fbfc6b74",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "there needs to be a blank space after this otherwise the ascii art doesn\u0027t render correctly.",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_bb1033ad",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "why doesn\u0027t _create_projects_hierarchy allow you create the tree that you want more easily?",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9e027d08",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "comments should tell the reader why the code is there not what the code is going to do since we can already see what the code does.",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_de0cf53d",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_5e47454b",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-01T19:23:10Z",
+      "side": 1,
+      "message": "how do you append something to a tree?",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
