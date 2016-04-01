@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_7bf18294",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T16:37:37Z",
+      "side": 1,
+      "message": "But the generic method includes the details in the returned message:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L413\n\nWhile not as pretty as your message, it does provide the information.",
+      "parentUuid": "ba0121b8_c4527812",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_41679db6",
         "filename": "keystone/federation/V8_backends/sql.py",
         "patchSetId": 4
