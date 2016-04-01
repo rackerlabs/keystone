@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_cc5c7a4d",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:14:03Z",
+      "side": 1,
+      "message": "Don\u0027t we already have a generic method in keystone.common.sql to handle conflicts?  So why do we need this?",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_41679db6",
         "filename": "keystone/federation/V8_backends/sql.py",
         "patchSetId": 4
@@ -49,6 +72,93 @@
       "side": 1,
       "message": "The manager can\u0027t be expected to interpret sql exceptions.",
       "parentUuid": "ba0121b8_41679db6",
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_4c506a32",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:14:03Z",
+      "side": 1,
+      "message": "Ah, good point",
+      "parentUuid": "ba0121b8_4507a681",
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_8c14424d",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:14:03Z",
+      "side": 1,
+      "message": "Can\u0027t we use the generic method in keystone.common.sql, so something like this for update as well:\n@sql.handle_conflicts(conflict_type\u003d\u0027identity_provider\u0027)",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 225,
+        "endChar": 7
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9fc902af",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:14:03Z",
+      "side": 1,
+      "message": "It looks like you are duplicating code (V8_backends), is there a common place you could put this?",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_1f34d2db",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:14:03Z",
+      "side": 1,
+      "message": "So same thing here, why are we not using the generic method in keystone.common.sql to handle conflicts?",
+      "range": {
+        "startLine": 181,
+        "startChar": 8,
+        "endLine": 181,
+        "endChar": 18
+      },
       "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
