@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_9b344ffc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:18:40Z",
+      "side": 1,
+      "message": "Based on the previous discussion we *could* add a note here saying that this should be moved to the backend at some point.",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_db3ec7d9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:18:40Z",
+      "side": 1,
+      "message": "Would this also apply to the above comment?",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
