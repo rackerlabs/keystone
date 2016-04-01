@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_c4527812",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-01T14:19:24Z",
+      "side": 1,
+      "message": "this is to add a more detailed information about the conflict (since it is related to remote IDs)",
+      "parentUuid": "ba0121b8_cc5c7a4d",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_41679db6",
         "filename": "keystone/federation/V8_backends/sql.py",
         "patchSetId": 4
@@ -119,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_443f88b3",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-01T14:19:24Z",
+      "side": 1,
+      "message": "see comment above",
+      "parentUuid": "ba0121b8_8c14424d",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 225,
+        "endChar": 7
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_9fc902af",
         "filename": "keystone/federation/backends/sql.py",
         "patchSetId": 4
@@ -130,6 +178,30 @@
       "writtenOn": "2016-04-01T03:14:03Z",
       "side": 1,
       "message": "It looks like you are duplicating code (V8_backends), is there a common place you could put this?",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_848a4062",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-01T14:19:24Z",
+      "side": 1,
+      "message": "agreed, not sure that we have such a place (mainly because of the imports that are needed)",
+      "parentUuid": "ba0121b8_9fc902af",
       "range": {
         "startLine": 168,
         "startChar": 8,
@@ -165,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_64e0cc29",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-01T14:19:24Z",
+      "side": 1,
+      "message": "see comment in the other file",
+      "parentUuid": "ba0121b8_1f34d2db",
+      "range": {
+        "startLine": 181,
+        "startChar": 8,
+        "endLine": 181,
+        "endChar": 18
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_9fb3c209",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 4
@@ -176,6 +272,30 @@
       "writtenOn": "2016-04-01T03:20:42Z",
       "side": 1,
       "message": "This test the functionality at a high level, but shouldn\u0027t we have a test for the backends specifically here:\ntests/unit/federation/backends/test_sql.py",
+      "range": {
+        "startLine": 991,
+        "startChar": 8,
+        "endLine": 991,
+        "endChar": 39
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_84e1a02c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-01T14:19:24Z",
+      "side": 1,
+      "message": "++ will add a test there",
+      "parentUuid": "ba0121b8_9fb3c209",
       "range": {
         "startLine": 991,
         "startChar": 8,
