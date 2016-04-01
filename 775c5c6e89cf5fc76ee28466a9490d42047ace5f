@@ -162,6 +162,29 @@
       "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9fb3c209",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-01T03:20:42Z",
+      "side": 1,
+      "message": "This test the functionality at a high level, but shouldn\u0027t we have a test for the backends specifically here:\ntests/unit/federation/backends/test_sql.py",
+      "range": {
+        "startLine": 991,
+        "startChar": 8,
+        "endLine": 991,
+        "endChar": 39
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
