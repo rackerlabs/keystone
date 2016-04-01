@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_1b116652",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:33:40Z",
+      "side": 1,
+      "message": "We can short hand this even more with: \n\n    \u003e\u003e\u003e a, b \u003d 1, 1\n    \u003e\u003e\u003e a \n    1\n    \u003e\u003e\u003e b\n    1",
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_3cb5447d",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 9
@@ -43,6 +60,24 @@
         "endLine": 779,
         "endChar": 10
       },
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_fbc8f2a9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T16:33:40Z",
+      "side": 1,
+      "message": "++ to this because it will give the user the exact config that failed to load. We could also be more verbose with our successful logging: \n\n\n    for filename, domain_name in self._domain_config_finder(conf_dir):\n        if self._upload_config_to_database(filename, domain_name):\n            LOG.info(_LI(\u0027Successfully uploaded domain config %r\u0027), filename)\n        else:\n            LOG.warning(_LW(\u0027Unable to upload domain config %r\u0027), filename)",
+      "parentUuid": "5aef4532_a52da7ff",
       "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
