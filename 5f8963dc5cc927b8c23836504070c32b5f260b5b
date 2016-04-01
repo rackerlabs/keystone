@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_475db847",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-01T20:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_a129248c",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_413928d8",
         "filename": "doc/source/apache-httpd.rst",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_8757d025",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-01T20:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_413928d8",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_e17f9c64",
         "filename": "doc/source/apache-httpd.rst",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2016-04-01T19:43:48Z",
       "side": 1,
       "message": "Could add a small snippet to this section saying that the OS_KEYSTONE_CONFIG_FILES/DIR must be an absolute system path.",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_67543c21",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-01T20:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_e17f9c64",
       "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2016-04-01T19:43:48Z",
       "side": 1,
       "message": "This assumes that config files must be absolute paths, right? So: \n\n    /etc/keystone/keystone.conf\n\ninstead of: \n\n    keystone.conf\n\nNot sure why someone would do the later, but we should also highlight that in the docs.",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_476c9836",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-01T20:56:17Z",
+      "side": 1,
+      "message": "This works with both relative and absolute paths. This is how os.path join operation works:\n\n\u003e\u003e\u003e os.path.join(\"/etc/keystone\", \"x/y/z\")\n\n\u0027/etc/keystone/x/y/z\u0027\n\n\u003e\u003e\u003e os.path.join(\"/etc/keystone\", \"/x/y/z\")\n\n\u0027/x/y/z\u0027\n\nThe \"s.startswith(\u0027/\u0027)\" filter condition has been added as a simple sanity check.",
+      "parentUuid": "ba0121b8_615eec13",
       "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
