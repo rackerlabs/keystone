@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_e1e03cfd",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:54:25Z",
+      "side": 1,
+      "message": "For this, is there something that we need in TestCase or can we just use BaseTestCase?",
+      "revId": "318f93db1e0fed1603db1b0b758a120d70e4a429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_c129b8f4",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-01T19:54:25Z",
+      "side": 1,
+      "message": "I pulled this down and ran the tests but inherited BaseTestCase instead of TestCase and got this failure (http://cdn.pasteraw.com/472zi6z5qs9yxt0gxmv9teg1uvbedj6). \n\nShouldn\u0027t the mock allow us to use BaseTestCase instead?",
+      "revId": "318f93db1e0fed1603db1b0b758a120d70e4a429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
