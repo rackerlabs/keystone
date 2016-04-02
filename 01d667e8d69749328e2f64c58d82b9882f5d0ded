@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_df505d0d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-02T21:09:05Z",
+      "side": 1,
+      "message": "Do we need to do setup_logging first?",
+      "revId": "01d667e8d69749328e2f64c58d82b9882f5d0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
