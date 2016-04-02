@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_e4fddf09",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-02T08:28:58Z",
+      "side": 1,
+      "message": "@Rodrigo I saw your other comment regarding this, so I\u0027m okay. However, I think it would be nice if we could somehow extend the common method to meet these requirements.  So that we don\u0027t have to do this every time we want to show more detail.",
+      "parentUuid": "ba0121b8_7bf18294",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_41679db6",
         "filename": "keystone/federation/V8_backends/sql.py",
         "patchSetId": 4
