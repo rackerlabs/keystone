@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_4411245d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-02T20:56:10Z",
+      "side": 1,
+      "message": "@Brant we\u0027re not moving this line:\nDriver \u003d manager.create_legacy_driver(identity_interface.IdentityDriverV8)\n\nOnly moving the abstract base class at this point.",
+      "parentUuid": "ba0121b8_32aba0d8",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_db3ec7d9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
