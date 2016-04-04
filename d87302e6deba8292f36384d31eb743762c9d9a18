@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_72e8677d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-04T15:05:35Z",
+      "side": 1,
+      "message": "It\u0027s the abstract base class that developers of custom drivers are using, just like our drivers are using it.\n\nSo if somebody was doing\n\n from keystone import identity\n\n class MyDriver(identity.IdentityDriverV8):\n\nor\n\n from keystone.identity import core\n\n class MyDriver(core.IdentityDriverV8):\n\nthat needs to continue to work, since that\u0027s part of the public interface of keystone.",
+      "parentUuid": "ba0121b8_4411245d",
+      "revId": "d87302e6deba8292f36384d31eb743762c9d9a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_db3ec7d9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
