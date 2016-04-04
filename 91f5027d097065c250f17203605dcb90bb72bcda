@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_1cae5585",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-04T18:10:02Z",
+      "side": 1,
+      "message": "this should be an empty class that\u0027s a subclass of keystone.identity.backends.base.IdentityDriverV8",
+      "revId": "91f5027d097065c250f17203605dcb90bb72bcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
