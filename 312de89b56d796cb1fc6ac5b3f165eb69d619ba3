@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_4c44b173",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_dbaec797",
+      "range": {
+        "startLine": 758,
+        "startChar": 55,
+        "endLine": 758,
+        "endChar": 61
+      },
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_fbfc6b74",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2016-04-01T19:23:10Z",
       "side": 1,
       "message": "there needs to be a blank space after this otherwise the ascii art doesn\u0027t render correctly.",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_4c3b11ec",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "Yes! With all the reviews of docs i should have seen this!",
+      "parentUuid": "ba0121b8_fbfc6b74",
       "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_0fdd8b14",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "I am not sure what would be easier, I guess it would be cool to have it so you can pass in a list of tuples e.g.[(parent_id, size_of_subtree), ..] Then have it return the tree.  The tough part would be returning the tree correctly so the user will understand where they are in the hierarchy. You wouldn\u0027t want to use \"get_projects_in_subtree_as_ids\" because that would make this test invalid.  For now i think this is pretty easy. Do you have any recommendations?",
+      "parentUuid": "ba0121b8_bb1033ad",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_9e027d08",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 5
@@ -70,6 +130,24 @@
       "writtenOn": "2016-04-01T19:23:10Z",
       "side": 1,
       "message": "comments should tell the reader why the code is there not what the code is going to do since we can already see what the code does.",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_12048b13",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_9e027d08",
       "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_af745ffd",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "you always ask the tough question Brant :p  \n\nI will update the comment.",
+      "parentUuid": "ba0121b8_de0cf53d",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_5e47454b",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 5
@@ -104,6 +200,24 @@
       "writtenOn": "2016-04-01T19:23:10Z",
       "side": 1,
       "message": "how do you append something to a tree?",
+      "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_08bf3cd1",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-04T16:04:33Z",
+      "side": 1,
+      "message": "I will clarify :p  \n\n\n\n**delete**",
+      "parentUuid": "ba0121b8_5e47454b",
       "revId": "312de89b56d796cb1fc6ac5b3f165eb69d619ba3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
