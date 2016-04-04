@@ -97,6 +97,29 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_5df90b4d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-04T08:45:44Z",
+      "side": 1,
+      "message": "This is the wrong comment, however. We are not going to remove LDAP support any time soon. We are going to remove the ability to write to the LDAP backend soon (since most installations talk to their corporate LDAP stores in RO mode).",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 19
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_78718b0b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -137,6 +160,53 @@
         "startChar": 8,
         "endLine": 543,
         "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_dd5ebb75",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-04T08:45:44Z",
+      "side": 1,
+      "message": "So doing this through event callbacks stops there being too tighter an integration between the identity and resource components.  Also, in regard to have a foreign key, that is not appropriate since the identity (i.e. user/group) could be in a different database to the project table...or even using a different backend technology (e.g. LDAP)",
+      "parentUuid": "9a061dce_973544f9",
+      "range": {
+        "startLine": 543,
+        "startChar": 8,
+        "endLine": 543,
+        "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_7d816f8f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-04T08:45:44Z",
+      "side": 1,
+      "message": "So ++ for making this efficient. Unfortunately, since you are changing the driver interface you need to make a new version of the driver (i.e. V10), and add this new method to the V10 interface only. If you  need help on this, let me know.",
+      "range": {
+        "startLine": 548,
+        "startChar": 12,
+        "endLine": 548,
+        "endChar": 78
       },
       "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
