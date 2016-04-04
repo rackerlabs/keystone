@@ -49,6 +49,54 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_17ff7435",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-04T07:45:24Z",
+      "side": 1,
+      "message": "Untill the LDAP support is removed this menthod should be there or else it will throw error for LDAP backend.\n\nThe comment mentioned in this section will be updated in commit message.",
+      "parentUuid": "ba0121b8_8d2ee3a2",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 68
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d7a33c4e",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-04T07:45:24Z",
+      "side": 1,
+      "message": "Will add the same.",
+      "parentUuid": "ba0121b8_d3019806",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 68
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_78718b0b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -60,6 +108,30 @@
       "writtenOn": "2016-04-01T15:27:21Z",
       "side": 1,
       "message": "This seems to be the wrong place for this functionality.  Wouldn\u0027t it be better as part of the project delete:\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L480\n\nAnd you could run a migration script to first update any default_project_id to None where the project no longer exists.\n\nAlso, add a foreign key constraint from the user table to the project table to prevent from the database.",
+      "range": {
+        "startLine": 543,
+        "startChar": 8,
+        "endLine": 543,
+        "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_973544f9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-04T07:45:24Z",
+      "side": 1,
+      "message": "The section you have mentioned in the link, this function is called from that block itself. \nIt is done through event notification. Check \"event_callbacks\"\nIt is the similar implementation done in delete_domain. This functionality should be in Identity itself, where this method will be called indirectly on the event of delete_project.\nPlease see comment of henry-nash on Feb 11 12:39 PM (Patch Set 3: Code-Review-1)",
+      "parentUuid": "ba0121b8_78718b0b",
       "range": {
         "startLine": 543,
         "startChar": 8,
