@@ -215,6 +215,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_9574f3cf",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-04T21:19:26Z",
+      "side": 1,
+      "message": "Yeah, I understand you are doing this through events, I just think it\u0027s more direct to do this clean up when the project is deleted (_post_delete_cleanup_project).  The same way the project assignments get deleted.",
+      "parentUuid": "9a061dce_973544f9",
+      "range": {
+        "startLine": 543,
+        "startChar": 8,
+        "endLine": 543,
+        "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_7d816f8f",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
