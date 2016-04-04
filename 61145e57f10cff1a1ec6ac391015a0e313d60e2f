@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_553a5b37",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-04T21:11:23Z",
+      "side": 1,
+      "message": "The foreign key relationship would ensure that if a default_project_id did exist in the user table, that the id existed in the project table.  This wouldn\u0027t matter if the identity was in LDAP.",
+      "parentUuid": "9a061dce_dd5ebb75",
+      "range": {
+        "startLine": 543,
+        "startChar": 8,
+        "endLine": 543,
+        "endChar": 36
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_7d816f8f",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
