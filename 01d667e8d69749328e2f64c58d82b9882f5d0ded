@@ -16,6 +16,24 @@
       "revId": "01d667e8d69749328e2f64c58d82b9882f5d0ded",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2277b43b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-04-04T18:50:18Z",
+      "side": 1,
+      "message": "My thought with having it second was that oslo_log.log.setup() uses configs from keystone.conf, so warning they were missing ahead of trying to use them made sense. On the other hand, oslo_log.log.setup() adds the log formatting prefix to the output, so that might be preferable. What do you think?",
+      "parentUuid": "ba0121b8_df505d0d",
+      "revId": "01d667e8d69749328e2f64c58d82b9882f5d0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
