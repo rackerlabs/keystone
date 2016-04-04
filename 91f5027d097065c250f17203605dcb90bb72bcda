@@ -16,6 +16,24 @@
       "revId": "91f5027d097065c250f17203605dcb90bb72bcda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_e8c47b93",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-04T19:32:23Z",
+      "side": 1,
+      "message": "good suggestion.  thx",
+      "parentUuid": "9a061dce_1cae5585",
+      "revId": "91f5027d097065c250f17203605dcb90bb72bcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
