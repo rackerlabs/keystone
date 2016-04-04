@@ -211,6 +211,30 @@
       "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_ea176a52",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-04T12:34:43Z",
+      "side": 1,
+      "message": "Hi Henry,\n\nThanks for the comment. \nDo you mean to say a separate driver like \"shadow_backends (V9)\" or \"mapping_backends (V8)\"? \nI am trying it from my side. If I need any support will let you know surely.",
+      "parentUuid": "9a061dce_7d816f8f",
+      "range": {
+        "startLine": 548,
+        "startChar": 12,
+        "endLine": 548,
+        "endChar": 78
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
