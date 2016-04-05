@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_1841f8a9",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T21:41:19Z",
+      "side": 0,
+      "message": "If we\u0027re not going to be using this anymore, we should deprecate the configuration option. Otherwise operators will be setting this and it won\u0027t take effect because we\u0027re ignoring it.",
+      "revId": "2445d24efacd4c5f96174b3bf1028bf5770f7bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
