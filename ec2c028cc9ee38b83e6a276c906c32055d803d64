@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_dd29448b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-04-05T15:27:47Z",
+      "side": 1,
+      "message": "I would think so. It seems like the better fix here would be to make sure that is always set, so that we will return the correct error message if the project we\u0027re renaming IS in fact acting as a domain, as well as when it\u0027s not.",
+      "parentUuid": "9a061dce_ad69ccc0",
+      "range": {
+        "startLine": 200,
+        "startChar": 11,
+        "endLine": 200,
+        "endChar": 35
+      },
+      "revId": "ec2c028cc9ee38b83e6a276c906c32055d803d64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_fa4a4e82",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-04-05T15:27:47Z",
+      "side": 1,
+      "message": "this wording means that there are 2 domains with the same name, which is not what we\u0027re trying to say. Should say something like \"with the same name in the same domain\".",
+      "range": {
+        "startLine": 206,
+        "startChar": 22,
+        "endLine": 206,
+        "endChar": 56
+      },
+      "revId": "ec2c028cc9ee38b83e6a276c906c32055d803d64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_adb0ac44",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 3
