@@ -156,6 +156,24 @@
       "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_1d7e0aae",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T21:23:38Z",
+      "side": 1,
+      "message": "ah - so we should always end up with an absolute path?",
+      "parentUuid": "ba0121b8_476c9836",
+      "revId": "5f8963dc5cc927b8c23836504070c32b5f260b5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
