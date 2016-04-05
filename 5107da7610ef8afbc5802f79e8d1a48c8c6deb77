@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_dd78122e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:27:31Z",
+      "side": 1,
+      "message": "from",
+      "range": {
+        "startLine": 7,
+        "startChar": 41,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "5107da7610ef8afbc5802f79e8d1a48c8c6deb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_9d9dfa5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:27:31Z",
+      "side": 1,
+      "message": "only 1 space after a .?",
+      "range": {
+        "startLine": 18,
+        "startChar": 61,
+        "endLine": 18,
+        "endChar": 62
+      },
+      "revId": "5107da7610ef8afbc5802f79e8d1a48c8c6deb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_dd3bf236",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:27:31Z",
+      "side": 1,
+      "message": "(unrelated) what about domains?",
+      "revId": "5107da7610ef8afbc5802f79e8d1a48c8c6deb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_fd14f644",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:27:31Z",
+      "side": 1,
+      "message": "why isn\u0027t \"base\" called \"interface\" if that\u0027s a better name for it?",
+      "revId": "5107da7610ef8afbc5802f79e8d1a48c8c6deb77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
