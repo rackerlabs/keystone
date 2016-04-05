@@ -22,6 +22,30 @@
       "revId": "6f22a202f7ba4187d139a888c3da8eec86e4c504",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_9d54ec21",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T15:38:48Z",
+      "side": 1,
+      "message": "These aren\u0027t sentences so there\u0027s no .",
+      "parentUuid": "ba0121b8_74b4ccd0",
+      "range": {
+        "startLine": 1378,
+        "startChar": 8,
+        "endLine": 1379,
+        "endChar": 37
+      },
+      "revId": "6f22a202f7ba4187d139a888c3da8eec86e4c504",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
