@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_58e9b013",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T21:30:12Z",
+      "side": 1,
+      "message": "Could the default value here be: \n\n    env.get(\u0027OS_KEYSTONE_CONFIG_DIR\u0027, \u0027/etc/keystone/\u0027).strip()\n\nThat would collapse this all down into a one-liner.",
+      "revId": "a51122bbf70161c38a6a5839572814dee9e45b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_985fc8e4",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T21:30:12Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "a51122bbf70161c38a6a5839572814dee9e45b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
