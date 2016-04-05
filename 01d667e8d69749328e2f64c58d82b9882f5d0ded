@@ -34,6 +34,24 @@
       "revId": "01d667e8d69749328e2f64c58d82b9882f5d0ded",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d09e4bb7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-05T15:41:43Z",
+      "side": 1,
+      "message": "I tend to err to the side of consistency, so the prefixes and such would be generally good. I really think that in either case just adding the log lines is super useful; so either way.",
+      "parentUuid": "9a061dce_2277b43b",
+      "revId": "01d667e8d69749328e2f64c58d82b9882f5d0ded",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
