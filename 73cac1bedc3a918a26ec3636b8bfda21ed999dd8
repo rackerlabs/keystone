@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_87648d22",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:01:32Z",
+      "side": 1,
+      "message": "You should be able to pass in the hierarchy as a dict, just like expected_projects is a dict and get_projects_in_subtree_as_ids returns a dict.",
+      "revId": "73cac1bedc3a918a26ec3636b8bfda21ed999dd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_fa4cfc43",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-05T21:01:32Z",
+      "side": 1,
+      "message": "I removed \"+ u\u0027\u0027\" and the test still passed, so this is inaccurate. Converting the IDs to unicode doesn\u0027t make any difference. If the tests were required to convert strings to unicode for comparisons we\u0027d have to change almost every test in keystone.",
+      "revId": "73cac1bedc3a918a26ec3636b8bfda21ed999dd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
