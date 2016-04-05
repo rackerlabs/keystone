@@ -16,6 +16,24 @@
       "revId": "7ad4f8728cce354617b5facefe5076d65af311c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_75c0047c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-05T19:17:22Z",
+      "side": 1,
+      "message": "Dolph, the third call to shadow_federated_user will return the correct name. It is a separate bug.",
+      "parentUuid": "9a061dce_ea3c33e4",
+      "revId": "7ad4f8728cce354617b5facefe5076d65af311c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
