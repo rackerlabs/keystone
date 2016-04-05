@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_ea3c33e4",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-05T19:10:41Z",
+      "side": 1,
+      "message": "Although the calls succeed, the wrong username is returned here. The bug fix is probably still valid, but we\u0027re not getting the desired behavior (an updated name).",
+      "revId": "7ad4f8728cce354617b5facefe5076d65af311c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
