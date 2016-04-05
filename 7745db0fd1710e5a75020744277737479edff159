@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_e73bc936",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 2595,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T20:35:41Z",
+      "side": 1,
+      "message": "Some people have reported that using docstrings in tests causes garbage output... I want to say Brant told me this? Not sure if this is a result of that though. I\u0027d be fine with putting this in a separate patch.",
+      "parentUuid": "9a061dce_6e697725",
+      "revId": "7745db0fd1710e5a75020744277737479edff159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_f4bf165e",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 35
@@ -36,6 +54,24 @@
         "endLine": 2621,
         "endChar": 70
       },
+      "revId": "7745db0fd1710e5a75020744277737479edff159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_474b95c9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 2621,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-05T20:35:41Z",
+      "side": 1,
+      "message": "++ nice catch Boris.",
+      "parentUuid": "9a061dce_f4bf165e",
       "revId": "7745db0fd1710e5a75020744277737479edff159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
