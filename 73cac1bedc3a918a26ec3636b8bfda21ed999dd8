@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_3d4b0ecb",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-05T21:17:40Z",
+      "side": 1,
+      "message": "I will look into it. it will be useful to have, since we are moving towards this new Hierarchical world.",
+      "parentUuid": "9a061dce_87648d22",
+      "revId": "73cac1bedc3a918a26ec3636b8bfda21ed999dd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_fa4cfc43",
         "filename": "keystone/tests/unit/resource/test_backends.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-05T21:01:32Z",
       "side": 1,
       "message": "I removed \"+ u\u0027\u0027\" and the test still passed, so this is inaccurate. Converting the IDs to unicode doesn\u0027t make any difference. If the tests were required to convert strings to unicode for comparisons we\u0027d have to change almost every test in keystone.",
+      "revId": "73cac1bedc3a918a26ec3636b8bfda21ed999dd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_fd73567e",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 17123
+      },
+      "writtenOn": "2016-04-05T21:17:40Z",
+      "side": 1,
+      "message": "Oh wow. Thanks for having my back Brant and being a good reviewer. I will fix it.  Maybe we don\u0027t need it.  If its doing a str compare unicode string is equal to byte str e.g.    \n\nu\u0027hi\u0027 \u003d\u003d \u0027hi\u0027\n\u003d\u003e True\nWe might not need to add the Unicode conversion",
+      "parentUuid": "9a061dce_fa4cfc43",
       "revId": "73cac1bedc3a918a26ec3636b8bfda21ed999dd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
