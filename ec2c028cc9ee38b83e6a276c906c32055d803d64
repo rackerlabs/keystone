@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_850d9392",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-04-06T08:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_dd29448b",
+      "range": {
+        "startLine": 200,
+        "startChar": 11,
+        "endLine": 200,
+        "endChar": 35
+      },
+      "revId": "ec2c028cc9ee38b83e6a276c906c32055d803d64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_fa4a4e82",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_45137bb8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-04-06T08:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_fa4a4e82",
+      "range": {
+        "startLine": 206,
+        "startChar": 22,
+        "endLine": 206,
+        "endChar": 56
+      },
+      "revId": "ec2c028cc9ee38b83e6a276c906c32055d803d64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_adb0ac44",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 3
@@ -83,6 +131,30 @@
       "writtenOn": "2016-04-05T13:32:37Z",
       "side": 1,
       "message": "suggest: project_name_conflict",
+      "range": {
+        "startLine": 1238,
+        "startChar": 20,
+        "endLine": 1238,
+        "endChar": 36
+      },
+      "revId": "ec2c028cc9ee38b83e6a276c906c32055d803d64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_8a45a071",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-04-06T08:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_adb0ac44",
       "range": {
         "startLine": 1238,
         "startChar": 20,
