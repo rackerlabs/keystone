@@ -22,6 +22,30 @@
       "revId": "7ad4f8728cce354617b5facefe5076d65af311c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_05fea336",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-06T08:36:34Z",
+      "side": 0,
+      "message": "i agree, this should not be removed.",
+      "parentUuid": "9a061dce_3c4e6796",
+      "range": {
+        "startLine": 536,
+        "startChar": 8,
+        "endLine": 537,
+        "endChar": 64
+      },
+      "revId": "7ad4f8728cce354617b5facefe5076d65af311c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
