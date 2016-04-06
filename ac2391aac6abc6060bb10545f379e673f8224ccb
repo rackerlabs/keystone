@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_ec0c0eee",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "there should be no need for a json package. Keystone only supports json so there isn\u0027t going to be another one.\n\nAlso, having long import lines is one of the reasons we shouldn\u0027t have keystone_ in the package name.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_4cc37a57",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "OpenStack standard is to import modules and not symbols in modules.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_8c32b2a5",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "CONF isn\u0027t used. remove it.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_4ced3ab6",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "is there a reason to do this over import json?",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_af5fa8e3",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "my opinion is that all these should be named like put_identity_provider so that it\u0027s obvious what the function is going to do so that we can tell what operation is being tested more easily.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_0cd062f5",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "to remove duplication, could create a self.put in this class that sticks /v3/OS-FEDERATION on the URL.\n\nAlso, it could be enhanced to do the JSON conversion.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2cdd66e0",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "this should be in a separate section since it\u0027s a local package import.\n\nThis applies to the other parts, too.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_cc14aa4e",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "this should be checking the value of the fields of the returned identity provider, not just that the fields are present.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_ef5400ff",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "if identity_providers_client had a reference to the TestCase it could do this automatically in create_identity_provider and the test writer wouldn\u0027t have to remember to do it.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_eff080ff",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "rather than loop do assertItemsEqual(). This applies where other loops and assertIn is used.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_6f9d9065",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of separating these out since it\u0027s harder to see what\u0027s tested and what\u0027s not.\n\nAlso, I\u0027m not sure that we should even have these tests. Seems excessive to have tempest tests when we can test these cases in unit tests adequately.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_0fa21499",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "we should have a fixture so that the tests can be clearer.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_6f6ab082",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "really? This could use more info since we\u0027re just adding the test now.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_cfe93cb9",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "isn\u0027t this the default? why have this?",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_ef32405d",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T20:44:25Z",
+      "side": 1,
+      "message": "Do we really need admin and non-admin test suites? Let\u0027s just have 1 test suite and let the test say that it needs admin or non-admin.\n\n99% of the tests should be admin and there will only be a handful on non-admin tests anyways.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
