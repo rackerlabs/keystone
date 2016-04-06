@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_210c72ec",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-06T11:59:15Z",
+      "side": 1,
+      "message": "nice",
+      "range": {
+        "startLine": 408,
+        "startChar": 12,
+        "endLine": 409,
+        "endChar": 66
+      },
+      "revId": "2f24a4ba1257b986aa3249728ab4e3b4975d8146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d079fdc9",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-06T11:59:15Z",
+      "side": 1,
+      "message": "use: uuid.uuid4().hex",
+      "range": {
+        "startLine": 1241,
+        "startChar": 45,
+        "endLine": 1241,
+        "endChar": 52
+      },
+      "revId": "2f24a4ba1257b986aa3249728ab4e3b4975d8146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_b07609d5",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-06T11:59:15Z",
+      "side": 1,
+      "message": "use: uuid.uuid4().hex",
+      "range": {
+        "startLine": 1245,
+        "startChar": 45,
+        "endLine": 1245,
+        "endChar": 52
+      },
+      "revId": "2f24a4ba1257b986aa3249728ab4e3b4975d8146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_30c319ef",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1250,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-06T11:59:15Z",
+      "side": 1,
+      "message": "use project1[\u0027name\u0027]",
+      "range": {
+        "startLine": 1250,
+        "startChar": 38,
+        "endLine": 1250,
+        "endChar": 45
+      },
+      "revId": "2f24a4ba1257b986aa3249728ab4e3b4975d8146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
