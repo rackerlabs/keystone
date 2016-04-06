@@ -46,6 +46,30 @@
       "revId": "6f22a202f7ba4187d139a888c3da8eec86e4c504",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2d5abb4f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-04-06T00:36:59Z",
+      "side": 1,
+      "message": "Yes, I also think so. But, I found the descriptions of param in other lines such as 1440/1452/1470... have the same problem.\nshould those be unified?",
+      "parentUuid": "9a061dce_9d54ec21",
+      "range": {
+        "startLine": 1378,
+        "startChar": 8,
+        "endLine": 1379,
+        "endChar": 37
+      },
+      "revId": "6f22a202f7ba4187d139a888c3da8eec86e4c504",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
