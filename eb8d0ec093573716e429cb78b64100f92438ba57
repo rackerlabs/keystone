@@ -70,6 +70,30 @@
       "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_af9688ed",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-06T20:49:18Z",
+      "side": 1,
+      "message": "Nice, it does make sense now. Could we add a comment here explaining what this method is for? So it\u0027s clear for others reading the code",
+      "parentUuid": "9a061dce_981b0d73",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 52
+      },
+      "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
