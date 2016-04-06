@@ -158,25 +158,26 @@ each service.
 
 A general class exists under each backend to provide an
 abstract base class for any implementations, identifying the expected service
-implementations. The classes are named after the keystone release in which
+implementations. The abstract base classes are stored in the service's backends
+directory as ``base.py``. The classes are named after the keystone release in which
 they were introduced. For eg. ``DriverV8`` for keystone release version 8.
 The corresponding drivers for the services are:
 
-* :mod:`keystone.assignment.core.AssignmentDriverV8`
-* :mod:`keystone.assignment.core.RoleDriverV8`
-* :mod:`keystone.catalog.core.CatalogDriverV8`
-* :mod:`keystone.credential.core.CredentialDriverV8`
-* :mod:`keystone.endpoint_policy.core.EndpointPolicyDriverV8`
-* :mod:`keystone.federation.core.FederationDriverV8`
-* :mod:`keystone.identity.core.IdentityDriverV8`
-* :mod:`keystone.identity.core.MappingDriverV8`
-* :mod:`keystone.oauth1.core.Oauth1DriverV8`
-* :mod:`keystone.policy.core.PolicyDriverV8`
-* :mod:`keystone.resource.core.DomainConfigDriverV8`
-* :mod:`keystone.resource.core.ResourceDriverV8`
-* :mod:`keystone.revoke.core.RevokeDriverV8`
-* :mod:`keystone.token.core.TokenDriverV8`
-* :mod:`keystone.trust.core.TrustDriverV8`
+* :mod:`keystone.assignment.core.backends.base.AssignmentDriverV8`
+* :mod:`keystone.assignment.core.backends.base.RoleDriverV8`
+* :mod:`keystone.catalog.core.backends.base.CatalogDriverV8`
+* :mod:`keystone.credential.core.backends.base.CredentialDriverV8`
+* :mod:`keystone.endpoint_policy.core.backends.base.EndpointPolicyDriverV8`
+* :mod:`keystone.federation.core.backends.base.FederationDriverV8`
+* :mod:`keystone.identity.core.backends.base.IdentityDriverV8`
+* :mod:`keystone.identity.core.backends.base.MappingDriverV8`
+* :mod:`keystone.oauth1.core.backends.base.Oauth1DriverV8`
+* :mod:`keystone.policy.core.backends.base.PolicyDriverV8`
+* :mod:`keystone.resource.core.backends.base.DomainConfigDriverV8`
+* :mod:`keystone.resource.core.backends.base.ResourceDriverV8`
+* :mod:`keystone.revoke.core.backends.base.RevokeDriverV8`
+* :mod:`keystone.token.core.backends.base.TokenDriverV8`
+* :mod:`keystone.trust.core.backends.base.TrustDriverV8`
 
 If you implement a backend driver for one of the Keystone services, you're
 expected to subclass from these classes.
