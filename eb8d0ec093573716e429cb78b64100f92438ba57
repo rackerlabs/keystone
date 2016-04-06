@@ -46,6 +46,30 @@
       "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_981b0d73",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T19:43:48Z",
+      "side": 1,
+      "message": "Because this is testing driver.create_user(). The other tests aren\u0027t testing driver.create_user(), they just need a user for the test. The goal is to provide a create_user method that subclasses that don\u0027t actually support driver.create_user() can override to get themselves a user somehow (maybe by using the ldap API directly).",
+      "parentUuid": "9a061dce_7d8eebd0",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 52
+      },
+      "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
