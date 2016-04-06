@@ -20,7 +20,20 @@ from oslo_config import cfg
 identity_group = cfg.OptGroup(name='identity',
                               title="Keystone Configuration Options")
 
-IdentityGroup = []
+IdentityGroup = [
+    cfg.StrOpt('region',
+               default='RegionOne',
+               help="The identity region name to use. Also used as the other "
+                    "services' region name unless they are set explicitly. "
+                    "If no such region is found in the service catalog, the "
+                    "first found one is used."),
+    cfg.StrOpt('v3_endpoint_type',
+               default='adminURL',
+               choices=['public', 'admin', 'internal',
+                        'publicURL', 'adminURL', 'internalURL'],
+               help="The endpoint type to use for OpenStack Identity "
+                    "(Keystone) API v3"),
+]
 
 identity_feature_group = cfg.OptGroup(name='identity-feature-enabled',
                                       title='Enabled Identity Features')
