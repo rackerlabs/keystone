@@ -533,7 +533,7 @@ class DomainConfigTests(object):
             self.domain_config_api.create_config(
                 self.domain['id'], invalid_option_config)
 
-            with mock.patch('keystone.resource.core.LOG', mock_log):
+            with mock.patch('keystone.resource.managers.LOG', mock_log):
                 res = self.domain_config_api.get_config_with_sensitive_info(
                     self.domain['id'])
             mock_log.warning.assert_any_call(mock.ANY)
@@ -553,7 +553,7 @@ class DomainConfigTests(object):
         self.domain_config_api.create_config(
             self.domain['id'], escaped_option_config)
 
-        with mock.patch('keystone.resource.core.LOG', mock_log):
+        with mock.patch('keystone.resource.managers.LOG', mock_log):
             res = self.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id'])
         self.assertFalse(mock_log.warn.called)

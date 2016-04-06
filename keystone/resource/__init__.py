@@ -11,4 +11,4 @@
 # under the License.
 
 from keystone.resource import controllers  # noqa
-from keystone.resource.core import *  # noqa
+from keystone.resource.managers import *  # noqa
