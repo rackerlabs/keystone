@@ -22,6 +22,30 @@
       "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_7d8eebd0",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-06T19:39:11Z",
+      "side": 1,
+      "message": "Same applies to some of the test cases below",
+      "parentUuid": "9a061dce_fdb67bf7",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 52
+      },
+      "revId": "eb8d0ec093573716e429cb78b64100f92438ba57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
