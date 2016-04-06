@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_c605b07a",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-06T17:50:11Z",
+      "side": 1,
+      "message": "Not exactly. We need to clearly distinguish if a custom configuration directory is being used or not in order to correctly handle relative paths.",
+      "parentUuid": "9a061dce_58e9b013",
+      "revId": "a51122bbf70161c38a6a5839572814dee9e45b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_985fc8e4",
         "filename": "keystone/server/wsgi.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-05T21:30:12Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "a51122bbf70161c38a6a5839572814dee9e45b5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_e68554cf",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 18920
+      },
+      "writtenOn": "2016-04-06T17:50:11Z",
+      "side": 1,
+      "message": "The default config file should be included only when a custom config directory is used. Otherwise, the config file list will be left empty, for the default config file to be searched within all default config directories.",
+      "parentUuid": "9a061dce_985fc8e4",
       "revId": "a51122bbf70161c38a6a5839572814dee9e45b5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
