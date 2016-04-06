@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_f8ae96e4",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-06T15:41:15Z",
+      "side": 1,
+      "message": "These need to reference existing classes otherwise we get a bunch of broken links.",
+      "revId": "2e3de5f326d3ead339da1f874433fdb899bf364b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
