@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_12423e68",
+        "filename": "keystone/tests/unit/policy/backends/test_base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-06T19:31:08Z",
+      "side": 1,
+      "message": "We could make this an abstractmethod for clarity, but not required.",
+      "revId": "27693cb020269525ec325e45812ec82514ce0d06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
