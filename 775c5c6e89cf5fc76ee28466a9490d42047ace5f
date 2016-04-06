@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_b871beaa",
+        "filename": "keystone/federation/V8_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-06T15:40:48Z",
+      "side": 1,
+      "message": "@Brant I just think we should make use of the common code.  Otherwise, why have it.",
+      "parentUuid": "9a061dce_67be99d5",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_41679db6",
         "filename": "keystone/federation/V8_backends/sql.py",
         "patchSetId": 4
@@ -310,6 +334,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_1899cac4",
+        "filename": "keystone/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-06T15:40:48Z",
+      "side": 1,
+      "message": "Good point re: duplicating code between drivers",
+      "parentUuid": "9a061dce_c727a562",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_1f34d2db",
         "filename": "keystone/federation/backends/sql.py",
         "patchSetId": 4
@@ -416,6 +464,30 @@
       "side": 1,
       "message": "There is no tests/unit/federation/backends/test_sql.py , so I don\u0027t think we should hold up this change for creating one. Also, if there\u0027s a test at the component level then no need for this test at all since it would just be showing the same thing.",
       "parentUuid": "ba0121b8_9fb3c209",
+      "range": {
+        "startLine": 991,
+        "startChar": 8,
+        "endLine": 991,
+        "endChar": 39
+      },
+      "revId": "775c5c6e89cf5fc76ee28466a9490d42047ace5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_18fc2ab7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-06T15:40:48Z",
+      "side": 1,
+      "message": "@Brant Then we should have unit tests here: tests/unit/federation/backends/test_sql.py. The more unit tests, the better. We want good test coverage across every component.",
+      "parentUuid": "9a061dce_875f6de4",
       "range": {
         "startLine": 991,
         "startChar": 8,
