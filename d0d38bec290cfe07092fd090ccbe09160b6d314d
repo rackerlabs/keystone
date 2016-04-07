@@ -16,6 +16,24 @@
       "revId": "d0d38bec290cfe07092fd090ccbe09160b6d314d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_6ba1cd93",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-07T16:27:16Z",
+      "side": 0,
+      "message": "Good catch, I\u0027ve added a deprecated decorator for this",
+      "parentUuid": "9a061dce_6df1ea6a",
+      "revId": "d0d38bec290cfe07092fd090ccbe09160b6d314d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
