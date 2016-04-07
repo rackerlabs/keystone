@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_403dcd8d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-07T15:14:01Z",
+      "side": 1,
+      "message": "We should not be accessing private functions.",
+      "revId": "a932d433d7b260058d598bdaafb9fc0cec84752b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
