@@ -19,6 +19,7 @@ from oslo_cache import core as cache
 from oslo_config import cfg
 
 from keystone.common.cache import _context_cache
+from keystone.common.cache import _profile_cache
 
 
 CONF = cfg.CONF
@@ -36,7 +37,11 @@ def configure_cache(region=None):
     # Only wrap the region if it was not configured. This should be pushed
     # to oslo_cache lib somehow.
     if not configured:
+        if CONF.profiler.enabled:
+            region.wrap(_profile_cache.get_profile_proxy("memcache_%s"))
         region.wrap(_context_cache._ResponseCacheProxy)
+        if CONF.profiler.enabled:
+            region.wrap(_profile_cache.get_profile_proxy("ctxt_%s"))
 
 
 def get_memoization_decorator(group, expiration_group=None, region=None):
