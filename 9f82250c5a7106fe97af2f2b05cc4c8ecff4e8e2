@@ -34,6 +34,23 @@
       "revId": "9f82250c5a7106fe97af2f2b05cc4c8ecff4e8e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_8a4372ae",
+        "filename": "keystone/common/cache/_profile_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-04-07T19:02:36Z",
+      "side": 1,
+      "message": "This is super complicated. You expect the caller to pass a string which has \"%s\u0027 such as \"memcache_%s\"\n\nThe caller can just pass \"memcache\" and you could have appended %s in this class.  Some comments will be useful",
+      "revId": "9f82250c5a7106fe97af2f2b05cc4c8ecff4e8e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
