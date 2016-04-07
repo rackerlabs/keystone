@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_1db3250b",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "There is no endpoint_policy/backends/base.py. This file should be in tests/unit/endpoint_policy/test_core.py",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_7de18129",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "using an abstract base class is excessive in almost all cases.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_ddeb6d11",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "making this a property or just a class field would be more pythonic.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_bdbb19c3",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "there should be documentation what this is showing. I can\u0027t tell reading the code. This applies to pretty much all these tests.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_5dde3ddd",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "tests should be based on the documented behavior of the function. The documentation doesn\u0027t say that the returned value has a tuple so the documentation should be updated.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_3d00a933",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "these 3 asserts could be replaced with assertItemsEqual",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_dd652d1e",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "this test doesn\u0027t use the policy association created in setUp so it should be in a different class. It takes more time to run tests that have extra fixtures.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_206d22cc",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-07T21:39:01Z",
+      "side": 1,
+      "message": "don\u0027t use this. For some reason it does self.load_backends() and self.load_fixtures(), which these tests should not use.",
+      "revId": "88fd38b067440954f2edbe31142e1c026f288094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
