@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_db527134",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-07T14:29:06Z",
+      "side": 1,
+      "message": "Please specify a blueprint or a spec here",
+      "revId": "9f82250c5a7106fe97af2f2b05cc4c8ecff4e8e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
