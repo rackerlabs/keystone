@@ -16,6 +16,24 @@
       "revId": "9f82250c5a7106fe97af2f2b05cc4c8ecff4e8e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d617e842",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-04-07T14:30:39Z",
+      "side": 1,
+      "message": "Alex, historically for keystone osprofiler integration there were no BP written :) I may write some :)",
+      "parentUuid": "9a061dce_db527134",
+      "revId": "9f82250c5a7106fe97af2f2b05cc4c8ecff4e8e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
