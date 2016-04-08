@@ -29,6 +29,8 @@ class BaseIdentityTest(tempest.test.BaseTestCase):
         super(BaseIdentityTest, cls).setup_clients()
         cls.identity_providers_client = (
             clients.Manager().identity_providers_client)
+        cls.service_providers_client = (
+            clients.Manager().service_providers_client)
 
     @classmethod
     def resource_setup(cls):
