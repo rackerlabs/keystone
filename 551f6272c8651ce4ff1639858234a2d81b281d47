@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_b39f9c4f",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-04-08T16:00:05Z",
+      "side": 1,
+      "message": "A question I had/still have is why are there a bunch of *_placeholder.py migrations in this directory, and when (if ever) someone would want to add one or change one to have content.",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_b3c67c47",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-04-08T16:00:05Z",
+      "side": 1,
+      "message": "Maybe give an example of an API change that would require a change in the manager?",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_b3f4bc87",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-04-08T16:00:05Z",
+      "side": 1,
+      "message": "Maybe give an example of an API change that would require a change in the controller or router?",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
