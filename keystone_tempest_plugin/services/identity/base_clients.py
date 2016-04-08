@@ -34,3 +34,30 @@ class IdentityClient(rest_client.RestClient):
             CATALOG_TYPE,
             CONF.identity.region,
             endpoint_type=CONF.identity.v3_endpoint_type)
+
+
+class FederationClient(IdentityClient):
+    """Tempest REST client for keystone's Federated Identity API."""
+
+    url_prefix = 'OS-FEDERATION'
+    api_name = None
+
+    def _build_url(self, entity_id=None):
+        base_url = '%s/%s' % (self.url_prefix, self.api_name)
+        return '%s/%s' % (base_url, entity_id) if entity_id else base_url
+
+    def _delete(self, entity_id, **kwargs):
+        url = self._build_url(entity_id)
+        return super(FederationClient, self).delete(url, **kwargs)
+
+    def _get(self, entity_id=None, **kwargs):
+        url = self._build_url(entity_id)
+        return super(FederationClient, self).get(url, **kwargs)
+
+    def _patch(self, entity_id, body, **kwargs):
+        url = self._build_url(entity_id)
+        return super(FederationClient, self).patch(url, body, **kwargs)
+
+    def _put(self, entity_id, body, **kwargs):
+        url = self._build_url(entity_id)
+        return super(FederationClient, self).put(url, body, **kwargs)
