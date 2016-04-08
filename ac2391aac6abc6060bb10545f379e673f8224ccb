@@ -334,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_7caf8c7d",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T18:44:33Z",
+      "side": 1,
+      "message": "the thing here is that we might run this tests in an env that already has other identity providers (not just in a brand new devstack deployment)",
+      "parentUuid": "9a061dce_eff080ff",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_6f9d9065",
         "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
         "patchSetId": 1
