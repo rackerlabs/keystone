@@ -15,10 +15,11 @@
 
 from keystone_tempest_plugin.services.identity.v3 \
     import identity_providers_client
+from keystone_tempest_plugin.services.identity.v3 \
+    import service_providers_client
 
 from tempest import clients
 from tempest.common import credentials_factory as common_creds
-
 
 ADMIN_CREDS = common_creds.get_configured_credentials('identity_admin')
 
@@ -30,4 +31,8 @@ class Manager(clients.Manager):
 
         self.identity_providers_client = (
             identity_providers_client.IdentityProvidersClient(
+                self.auth_provider))
+
+        self.service_providers_client = (
+            service_providers_client.ServiceProvidersClient(
                 self.auth_provider))
