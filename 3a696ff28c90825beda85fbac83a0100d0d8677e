@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_79396341",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-08T16:32:09Z",
+      "side": 1,
+      "message": "This is not a private function, it has to be documented somewhere in follow-up patches.",
+      "revId": "3a696ff28c90825beda85fbac83a0100d0d8677e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_b91c9b14",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-08T16:32:09Z",
+      "side": 1,
+      "message": "Why not to use context.get(\u0027is_admin\u0027)?",
+      "revId": "3a696ff28c90825beda85fbac83a0100d0d8677e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
