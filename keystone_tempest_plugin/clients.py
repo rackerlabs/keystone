@@ -15,6 +15,8 @@
 from keystone_tempest_plugin import exceptions
 from keystone_tempest_plugin.services.identity.v3 \
     import identity_providers_client
+from keystone_tempest_plugin.services.identity.v3 \
+    import service_providers_client
 
 from tempest import clients
 from tempest.common import credentials_factory as common_creds
@@ -40,4 +42,8 @@ class Manager(clients.Manager):
 
         self.identity_providers_client = (
             identity_providers_client.IdentityProvidersClient(
+                self.auth_provider))
+
+        self.service_providers_client = (
+            service_providers_client.ServiceProvidersClient(
                 self.auth_provider))
