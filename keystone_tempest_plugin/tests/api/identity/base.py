@@ -27,8 +27,12 @@ class BaseIdentityTest(tempest.test.BaseTestCase):
     @classmethod
     def setup_clients(cls):
         super(BaseIdentityTest, cls).setup_clients()
+        keystone_manager = clients.Manager()
+
         cls.identity_providers_client = (
-            clients.Manager().identity_providers_client)
+            keystone_manager.identity_providers_client)
+        cls.service_providers_client = (
+            keystone_manager.service_providers_client)
 
     @classmethod
     def resource_setup(cls):
