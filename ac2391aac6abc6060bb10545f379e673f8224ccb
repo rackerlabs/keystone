@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_e57f0115",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "the package name is used during plugin discovery. This means that having \"keystone_\" in the name makes possible for us to run the plugin test using \"tox -e all-plugin -- keystone\".\n\nif we rename to \"tempest_plugin\" we need to put it inside \"keystone/keystone\", otherwise the plugin discovery won\u0027t find it using the command above. (if we put in keystone/, the root is not included during plugin discovery)",
+      "parentUuid": "9a061dce_ec0c0eee",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_4cc37a57",
         "filename": "keystone_tempest_plugin/clients.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-06T20:44:25Z",
       "side": 1,
       "message": "OpenStack standard is to import modules and not symbols in modules.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_45d6adf1",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_4cc37a57",
       "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_053e7527",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_8c32b2a5",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_4ced3ab6",
         "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-04-06T20:44:25Z",
       "side": 1,
       "message": "is there a reason to do this over import json?",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_256f392c",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_4ced3ab6",
       "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_a5efc985",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "I think is clearer to have the action in the method name instead of the HTTP method called to perform it, just matter of opinion though.",
+      "parentUuid": "9a061dce_af5fa8e3",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_0cd062f5",
         "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2016-04-06T20:44:25Z",
       "side": 1,
       "message": "to remove duplication, could create a self.put in this class that sticks /v3/OS-FEDERATION on the URL.\n\nAlso, it could be enhanced to do the JSON conversion.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d184f65e",
+        "filename": "keystone_tempest_plugin/services/identity/v3/json/identity_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "created a build_url to be used by different methods",
+      "parentUuid": "9a061dce_0cd062f5",
       "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_2560d900",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_2cdd66e0",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_cc14aa4e",
         "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
         "patchSetId": 1
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_8a3a69e5",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_cc14aa4e",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_ef5400ff",
         "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
         "patchSetId": 1
@@ -149,6 +293,24 @@
       "writtenOn": "2016-04-06T20:44:25Z",
       "side": 1,
       "message": "if identity_providers_client had a reference to the TestCase it could do this automatically in create_identity_provider and the test writer wouldn\u0027t have to remember to do it.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_d5452243",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "the clients are setup before the test case itself is created, will try to add a fixtures class to handle the general testcases",
+      "parentUuid": "9a061dce_ef5400ff",
       "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_60ec7ff3",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "yeah... I guess all the tests here are \"duplicates\" from already existent unit tests, this one for example: https://review.openstack.org/#/c/294201/\n\nif I don\u0027t come up with a new corner case test for the API only, will remove this file. Regarding having a different file for negative tests, is the \"pattern\" in tempest, not sure why :)",
+      "parentUuid": "9a061dce_6f9d9065",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_0fa21499",
         "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
         "patchSetId": 1
@@ -223,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_8049d362",
+        "filename": "keystone_tempest_plugin/tests/api/identity/admin/v3/test_identity_providers_negative.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "let me check if we can add more info here",
+      "parentUuid": "9a061dce_6f6ab082",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_cfe93cb9",
         "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
         "patchSetId": 1
@@ -251,6 +449,24 @@
       "writtenOn": "2016-04-06T20:44:25Z",
       "side": 1,
       "message": "Do we really need admin and non-admin test suites? Let\u0027s just have 1 test suite and let the test say that it needs admin or non-admin.\n\n99% of the tests should be admin and there will only be a handful on non-admin tests anyways.",
+      "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_c0c8eb24",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-08T03:57:36Z",
+      "side": 1,
+      "message": "will leave just the admin v3 for now, if we come up with non-admin tests we can split this again",
+      "parentUuid": "9a061dce_ef32405d",
       "revId": "ac2391aac6abc6060bb10545f379e673f8224ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
