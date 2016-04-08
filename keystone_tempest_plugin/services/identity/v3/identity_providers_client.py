@@ -18,20 +18,14 @@ from oslo_serialization import jsonutils
 from tempest.lib.common import rest_client
 
 
-class IdentityProvidersClient(base_clients.IdentityClient):
+class IdentityProvidersClient(base_clients.FederationClient):
 
-    url_prefix = 'OS-FEDERATION'
     api_name = 'identity_providers'
-
-    def _build_url(self, idp_id=None):
-        base_url = '%s/%s' % (self.url_prefix, self.api_name)
-        return '%s/%s' % (base_url, idp_id) if idp_id else base_url
 
     def create_identity_provider(self, idp_id, **kwargs):
         """Create an identity provider."""
         put_body = jsonutils.dumps({'identity_provider': kwargs})
-        url = self._build_url(idp_id)
-        resp, body = self.put(url, put_body)
+        resp, body = self._put(idp_id, put_body)
         self.expected_success(201, resp.status)
         body = jsonutils.loads(body)
         idp = rest_client.ResponseBody(resp, body)['identity_provider']
@@ -40,32 +34,28 @@ class IdentityProvidersClient(base_clients.IdentityClient):
 
     def list_identity_providers(self):
         """List the identity providers."""
-        url = self._build_url()
-        resp, body = self.get(url)
+        resp, body = self._get()
         self.expected_success(200, resp.status)
         body = jsonutils.loads(body)
         return rest_client.ResponseBody(resp, body)['identity_providers']
 
     def show_identity_provider(self, idp_id):
         """Get an identity provider."""
-        url = self._build_url(idp_id)
-        resp, body = self.get(url)
+        resp, body = self._get(idp_id)
         self.expected_success(200, resp.status)
         body = jsonutils.loads(body)
         return rest_client.ResponseBody(resp, body)['identity_provider']
 
     def delete_identity_provider(self, idp_id):
         """Delete an identity provider."""
-        url = self._build_url(idp_id)
-        resp, body = self.delete(url)
+        resp, body = self._delete(idp_id)
         self.expected_success(204, resp.status)
         return rest_client.ResponseBody(resp, body)
 
     def update_identity_provider(self, idp_id, **kwargs):
         """Update an identity provider."""
         patch_body = jsonutils.dumps({'identity_provider': kwargs})
-        url = self._build_url(idp_id)
-        resp, body = self.patch(url, patch_body)
+        resp, body = self._patch(idp_id, patch_body)
         self.expected_success(200, resp.status)
         body = jsonutils.loads(body)
         return rest_client.ResponseBody(resp, body)['identity_provider']
