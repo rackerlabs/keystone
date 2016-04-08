@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_8f6cfb37",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-08T12:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_120e6ce4",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 10
+      },
+      "revId": "3d3f9b1afba83e3ca0462a69646f527335c7485b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_f25938fe",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_2f87afd8",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-08T12:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_f25938fe",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 25
+      },
+      "revId": "3d3f9b1afba83e3ca0462a69646f527335c7485b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_d2d2345b",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2016-04-08T00:56:43Z",
       "side": 1,
       "message": "responsibility",
+      "range": {
+        "startLine": 149,
+        "startChar": 12,
+        "endLine": 149,
+        "endChar": 26
+      },
+      "revId": "3d3f9b1afba83e3ca0462a69646f527335c7485b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2f104fa8",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-08T12:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_d2d2345b",
       "range": {
         "startLine": 149,
         "startChar": 12,
