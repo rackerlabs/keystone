@@ -682,6 +682,16 @@ def _send_audit_notification(action, initiator, outcome, target,
     if _check_notification_opt_out(event_type, outcome):
         return
 
+    from keystone import catalog
+    service = catalog.controllers.ServiceV3()
+    service_list = service.catalog_api.list_services()
+    service_id = None
+
+    for i in service_list:
+        if i['type'] == SERVICE:
+            service_id = i['id']
+            break
+
     event = eventfactory.EventFactory().new_event(
         eventType=cadftype.EVENTTYPE_ACTIVITY,
         outcome=outcome,
@@ -689,6 +699,8 @@ def _send_audit_notification(action, initiator, outcome, target,
         initiator=initiator,
         target=target,
         observer=resource.Resource(typeURI=taxonomy.SERVICE_SECURITY))
+
+    setattr(event.observer, 'identity_id', service_id)
 
     for key, value in kwargs.items():
         setattr(event, key, value)
