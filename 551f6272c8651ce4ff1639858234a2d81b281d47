@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a1b2928_f18298ff",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-11T18:51:00Z",
+      "side": 1,
+      "message": "They are reserved for backports. As soon as we cut out a release, we add them. When a migraiton needs to be backported, it takes the first placeholder spot available.",
+      "parentUuid": "9a061dce_b39f9c4f",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_b3c67c47",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a1b2928_b18f8022",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-11T18:51:00Z",
+      "side": 1,
+      "message": "Sure, just not sure we can do it without requiring to implement a totally new API",
+      "parentUuid": "9a061dce_b3c67c47",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_b3f4bc87",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2016-04-08T16:00:05Z",
       "side": 1,
       "message": "Maybe give an example of an API change that would require a change in the controller or router?",
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_d19e7c55",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-11T18:51:00Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "9a061dce_b3f4bc87",
       "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
