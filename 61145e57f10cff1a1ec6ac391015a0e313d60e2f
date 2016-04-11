@@ -283,6 +283,30 @@
       "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_b7cf5b7e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-11T13:07:15Z",
+      "side": 1,
+      "message": "Yes, you need to create identity V9 backend.  You also need to save off a version of the current backend into the legacy backends and arrange for this to be tested as part of the tox legacy drivers tests. This is quite a lot of work, albeit mechanical. I have done it before, so would be happy to create a patch for you that you could base your change on - let me know if you want that.",
+      "parentUuid": "9a061dce_ea176a52",
+      "range": {
+        "startLine": 548,
+        "startChar": 12,
+        "endLine": 548,
+        "endChar": 78
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
