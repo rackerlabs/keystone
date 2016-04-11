@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1b2928_eb73ca4b",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-11T17:04:35Z",
+      "side": 1,
+      "message": "It\u0027s a question where to put this logic as driver should be as thin as possible and the logic itself depends on various outer parts.",
+      "revId": "41e56f1c7d9ccf556c39b798ff4f2c370a261981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
