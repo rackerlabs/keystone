@@ -9,7 +9,7 @@ greenlet>=0.3.2
 netaddr>=0.7.12
 PasteDeploy>=1.5.0
 Paste
-Routes!=2.0,>=1.12.3
+Routes!=2.0,<2.3.0,>=1.12.3
 cryptography>=0.8 # Apache-2.0
 six>=1.9.0
 SQLAlchemy<=0.9.99,>=0.9.7
