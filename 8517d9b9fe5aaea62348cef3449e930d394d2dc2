@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1b2928_e4d81f20",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-04-11T15:50:21Z",
+      "side": 1,
+      "message": "Import should be at the top of the file.",
+      "revId": "8517d9b9fe5aaea62348cef3449e930d394d2dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
