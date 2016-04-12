@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_df95f740",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-12T13:49:34Z",
+      "side": 0,
+      "message": "just change this to endpoint_ref.get(\u0027region\u0027)",
+      "range": {
+        "startLine": 179,
+        "startChar": 40,
+        "endLine": 179,
+        "endChar": 66
+      },
+      "revId": "c34930eb48f71b052a9243b647367a6186be41b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
