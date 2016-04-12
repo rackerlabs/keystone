@@ -16,6 +16,24 @@
       "revId": "8517d9b9fe5aaea62348cef3449e930d394d2dc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_8a819792",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-04-12T04:18:43Z",
+      "side": 1,
+      "message": "When adding import in the top of a file, a circulation import error occurs.\nExcept for adding import to 685 lines, Is there solution to avoid this error?",
+      "parentUuid": "7a1b2928_e4d81f20",
+      "revId": "8517d9b9fe5aaea62348cef3449e930d394d2dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
