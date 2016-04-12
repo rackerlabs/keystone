@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_26916df1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "no need to mention keystone.",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_26568d29",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "is this review a WIP?",
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_46fd8939",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "admin",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_669a4516",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "there is no keystone CLI. This should be changed to the openstack CLI.",
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_8663211a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "this is never going to happen since the CLI is removed.",
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_a6bbbd71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 49
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-12T21:28:20Z",
+      "side": 1,
+      "message": "this can be removed now.",
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
