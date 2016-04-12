@@ -457,6 +457,16 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_audit(endpoint_ref['id'], CREATED_OPERATION,
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
+    def test_create_endpoint_without_region(self):
+        endpoint_ref = unit.new_endpoint_ref_with_no_region(service_id=self.
+                                                            service_id,
+                                                            interface='public')
+        self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
+        self._assert_notify_sent(endpoint_ref['id'], CREATED_OPERATION,
+                                 'endpoint')
+        self._assert_last_audit(endpoint_ref['id'], CREATED_OPERATION,
+                                'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
+
     def test_update_endpoint(self):
         endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id,
                                              interface='public',
