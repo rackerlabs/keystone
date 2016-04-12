@@ -176,7 +176,8 @@ class Endpoint(controller.V2Controller):
             endpoint_ref['legacy_endpoint_id'] = legacy_endpoint_id
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url
-            endpoint_ref['region_id'] = endpoint_ref.pop('region')
+            if endpoint_ref.get('region'):
+                endpoint_ref['region_id'] = endpoint_ref.pop('region')
             self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref,
                                              initiator)
 
