@@ -34,6 +34,29 @@
       "revId": "8517d9b9fe5aaea62348cef3449e930d394d2dc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_5223b505",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-12T07:19:35Z",
+      "side": 1,
+      "message": "This can typically be done with the @requires decorator on a class. However this requires looking up the service from a class or similar, which likely means we need to rework how the data is passed down into this method. \n\nThe import should not be embedded down here, we should avoid importing at runtime like this where at all possible. It is likely a helper object will be needed here that can be instantiated with the catalog_api.  I would do something like this:\n\n\nAt the top of the file, in the appropriate locations:\n\n\n  from keystone.common import dependency\n\n  _CATALOG_HELPER_OBJ \u003d None\n\n\nClass definition for the helper obj, as a note, an __init__ might need to be defined that does nothing but calls super(_CatalogHelperObj, self).__init__() for the injection to work:\n\n\n  @depencency.required(\u0027catalog_api\u0027)\n  class _CatalogHelperObj(object):\n      \"\"\"A helper object to allow lookups of identity service id.\"\"\"\n\n\nIn this method instead of the import, etc:\n\n\n    global _CATALOG_HELPER_OBJ\n\n    if _CATALOG_HELPER_OBJ is None:\n        _CATALOG_HELPER_OBJ \u003d _CatalogHelperObj()\n\n    service_list \u003d _CATALOG_HELPER_OBJ.catalog_api.list_services()\n    service_id \u003d None\n\n    for i in service_list:\n        if i[\u0027type\u0027] \u003d\u003d SERVICE:\n            service_id \u003d i[\u0027id\u0027]\n            break",
+      "range": {
+        "startLine": 685,
+        "startChar": 4,
+        "endLine": 693,
+        "endChar": 17
+      },
+      "revId": "8517d9b9fe5aaea62348cef3449e930d394d2dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
