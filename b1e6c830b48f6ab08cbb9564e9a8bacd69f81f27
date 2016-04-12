@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_c277d7d2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-12T15:28:10Z",
+      "side": 1,
+      "message": "This is a lot better IMHO than the previous iteration. :)",
+      "range": {
+        "startLine": 692,
+        "startChar": 4,
+        "endLine": 701,
+        "endChar": 17
+      },
+      "revId": "b1e6c830b48f6ab08cbb9564e9a8bacd69f81f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_a2229bb7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-12T15:28:10Z",
+      "side": 1,
+      "message": "Is it possible to do:\n\n  event.observer.identity_id \u003d service_id\n\nor to build this directly in line 709?",
+      "revId": "b1e6c830b48f6ab08cbb9564e9a8bacd69f81f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
