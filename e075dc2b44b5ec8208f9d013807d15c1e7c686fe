@@ -16,6 +16,23 @@
       "revId": "e075dc2b44b5ec8208f9d013807d15c1e7c686fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_a53c6530",
+        "filename": "releasenotes/notes/allow-fernet-to-support-trust-auth-on-v2-d6117713d90da838.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-12T15:36:04Z",
+      "side": 1,
+      "message": "supports*",
+      "revId": "e075dc2b44b5ec8208f9d013807d15c1e7c686fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
