@@ -294,6 +294,19 @@ def new_endpoint_ref_with_region(service_id, region, interface='public',
     return ref
 
 
+def new_endpoint_ref_with_no_region(service_id, interface='public',
+                                    **kwargs):
+    """Define an endpoint_ref having a pre-3.2 form.
+
+    Does not contain 'region' or 'region_id'.
+    """
+    ref = new_endpoint_ref(service_id, interface, region=None,
+                           region_id=None, **kwargs)
+    del ref['region_id']
+    del ref['region']
+    return ref
+
+
 def new_domain_ref(**kwargs):
     ref = {
         'id': uuid.uuid4().hex,
