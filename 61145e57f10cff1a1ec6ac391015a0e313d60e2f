@@ -331,6 +331,30 @@
       "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_ee8615da",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-13T10:03:37Z",
+      "side": 1,
+      "message": "Sure...will post it in the next day or so.",
+      "parentUuid": "7a1b2928_ba100d50",
+      "range": {
+        "startLine": 548,
+        "startChar": 12,
+        "endLine": 548,
+        "endChar": 78
+      },
+      "revId": "61145e57f10cff1a1ec6ac391015a0e313d60e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
