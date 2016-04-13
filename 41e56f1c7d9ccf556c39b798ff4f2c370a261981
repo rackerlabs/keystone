@@ -16,6 +16,24 @@
       "revId": "41e56f1c7d9ccf556c39b798ff4f2c370a261981",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_bd82a792",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-04-13T01:23:06Z",
+      "side": 1,
+      "message": "Move complex, multidriver logic to the manager.  You might ended up with some driver methods having to be split.",
+      "parentUuid": "7a1b2928_eb73ca4b",
+      "revId": "41e56f1c7d9ccf556c39b798ff4f2c370a261981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
