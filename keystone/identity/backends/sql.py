@@ -23,7 +23,7 @@ from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
 
 
-class Identity(base.IdentityDriverV8):
+class Identity(base.IdentityDriverV9):
     # NOTE(henry-nash): Override the __init__() method so as to take a
     # config parameter to enable sql to be used as a domain-specific driver.
     def __init__(self, conf=None):

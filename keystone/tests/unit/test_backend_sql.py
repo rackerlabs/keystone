@@ -405,14 +405,9 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
     def test_sql_user_to_dict_null_default_project_id(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
-        with sql.session_for_read() as session:
-            query = session.query(identity_sql.User)
-            query = query.filter_by(id=user['id'])
-            raw_user_ref = query.one()
-            self.assertIsNone(raw_user_ref.default_project_id)
-            user_ref = raw_user_ref.to_dict()
-            self.assertNotIn('default_project_id', user_ref)
-            session.close()
+        self.assertNotIn('default_project_id', user)
+        user = self.identity_api.get_user(user['id'])
+        self.assertNotIn('default_project_id', user)
 
     def test_list_domains_for_user(self):
         domain = unit.new_domain_ref()

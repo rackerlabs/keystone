@@ -490,6 +490,15 @@ class Manager(manager.Manager):
             },
         }
 
+        # Make sure it is a driver version we support, and if it is a legacy
+        # driver, then wrap it.
+        if isinstance(self.driver, identity_interface.IdentityDriverV8):
+            self.driver = (
+                identity_interface.V9IdentityWrapperForV8Driver(self.driver))
+        elif not isinstance(self.driver, identity_interface.IdentityDriverV9):
+            raise exception.UnsupportedDriverVersion(
+                driver=CONF.identity.driver)
+
     def _domain_deleted(self, service, resource_type, operation,
                         payload):
         domain_id = payload['resource_info']

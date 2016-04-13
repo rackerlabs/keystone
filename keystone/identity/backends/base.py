@@ -15,6 +15,7 @@
 import abc
 
 from oslo_config import cfg
+from oslo_log import versionutils
 import six
 
 from keystone import exception
@@ -47,7 +48,7 @@ def filter_user(user_ref):
 
 
 @six.add_metaclass(abc.ABCMeta)
-class IdentityDriverV8(object):
+class IdentityDriverBase(object):
     """Interface description for an Identity driver.
 
     The schema for users and groups is different depending on whether the
@@ -424,3 +425,142 @@ class IdentityDriverV8(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+
+class IdentityDriverV8(IdentityDriverBase):
+    """Removed or redefined methods from V8.
+
+    Move the abstract methods of any methods removed or modified in later
+    versions of the driver from IdentityDriverBase to here. We maintain this
+    so that legacy drivers, which will be a subclass of IdentityDriverV8, can
+    still reference them.
+
+    """
+
+    pass
+
+
+class IdentityDriverV9(IdentityDriverBase):
+    """New or redefined methods from V8.
+
+    Add any new V9 abstract methods (or those with modified signatures) to
+    this class.
+
+    """
+
+    pass
+
+
+class V9IdentityWrapperForV8Driver(IdentityDriverV9):
+    """Wrapper class to supported a V8 legacy driver.
+
+    In order to support legacy drivers without having to make the manager code
+    driver-version aware, we wrap legacy drivers so that they look like the
+    latest version. For the various changes made in a new driver, here are the
+    actions needed in this wrapper:
+
+    Method removed from new driver - remove the call-through method from this
+                                     class, since the manager will no longer be
+                                     calling it.
+    Method signature (or meaning) changed - wrap the old method in a new
+                                            signature here, and munge the input
+                                            and output parameters accordingly.
+    New method added to new driver - add a method to implement the new
+                                     functionality here if possible. If that is
+                                     not possible, then return NotImplemented,
+                                     since we do not guarantee to support new
+                                     functionality with legacy drivers.
+
+    This wrapper contains the following support for newer manager code:
+
+    - None (yet)
+
+    """
+
+    @versionutils.deprecated(
+        # FIXME(henry-nash): use versionutils.deprecated.NEWTON with remove
+        # in two cycles once new oslo.log is released
+        as_of=versionutils.deprecated.MITAKA,
+        what='keystone.identity.IdentityDriverV8',
+        in_favor_of='keystone.identity.base.IdentityDriverV9',
+        remove_in=+3)
+    def __init__(self, wrapped_driver):
+        self.driver = wrapped_driver
+
+    def is_domain_aware(self):
+        return self.driver.is_domain_aware()
+
+    def default_assignment_driver(self):
+        return self.driver.default_assignment_driver()
+
+    @property
+    def is_sql(self):
+        return self.driver.is_sql
+
+    @property
+    def multiple_domains_supported(self):
+        return self.driver.multiple_domains_supported
+
+    def generates_uuids(self):
+        return self.driver.generates_uuids()
+
+    def authenticate(self, user_id, password):
+        return self.driver.authenticate(user_id, password)
+
+    def create_user(self, user_id, user):
+        return self.driver.create_user(user_id, user)
+
+    def list_users(self, hints):
+        return self.driver.list_users(hints)
+
+    def list_users_in_group(self, group_id, hints):
+        return self.driver.list_users_in_group(group_id, hints)
+
+    def get_user(self, user_id):
+        return self.driver.get_user(user_id)
+
+    def update_user(self, user_id, user):
+        return self.driver.update_user(user_id, user)
+
+    def add_user_to_group(self, user_id, group_id):
+        self.driver.add_user_to_group(user_id, group_id)
+
+    def check_user_in_group(self, user_id, group_id):
+        self.driver.check_user_in_group(user_id, group_id)
+
+    def remove_user_from_group(self, user_id, group_id):
+        self.driver.remove_user_from_group(user_id, group_id)
+
+    def delete_user(self, user_id):
+        return self.driver.delete_user(user_id)
+
+    def get_user_by_name(self, user_name, domain_id):
+        return self.driver.get_user_by_name(user_name, domain_id)
+
+    def create_group(self, group_id, group):
+        return self.driver.create_group(group_id, group)
+
+    def list_groups(self, hints):
+        return self.driver.list_groups(hints)
+
+    def list_groups_for_user(self, user_id, hints):
+        return self.driver.list_groups_for_user(user_id, hints)
+
+    def get_group(self, group_id):
+        return self.driver.get_group(group_id)
+
+    def get_group_by_name(self, group_name, domain_id):
+        return self.driver.get_group_by_name(group_name, domain_id)
+
+    def update_group(self, group_id, group):
+        return self.driver.update_group(group_id, group)
+
+    def delete_group(self, group_id):
+        self.driver.delete_group(group_id)
+
+    # NOTE(henry-nash): _get_user() is not part of the supported interface, but
+    # is used for testing purposes.
+    # TODO(henry-nash): We should find another way of doing our testing so that
+    # this is no longer required.
+    def _get_user(self, session, user_id):
+        return self.driver._get_user(session, user_id)
