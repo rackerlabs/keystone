@@ -49,5 +49,7 @@ class BaseIdentityV3Test(BaseIdentityTest):
         super(BaseIdentityV3Test, cls).setup_clients()
         cls.identity_providers_client = (
             cls.keystone_manager.identity_providers_client)
+        cls.mapping_rules_client = (
+            cls.keystone_manager.mapping_rules_client)
         cls.service_providers_client = (
             cls.keystone_manager.service_providers_client)
