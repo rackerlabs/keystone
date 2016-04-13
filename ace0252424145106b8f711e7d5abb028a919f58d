@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_76c00a7c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T15:14:26Z",
+      "side": 1,
+      "message": "Thank you for making this not always wrap the session! profiling should be next to zero cost when/if disabled. Nicely done.",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 225,
+        "endChar": 15
+      },
+      "revId": "ace0252424145106b8f711e7d5abb028a919f58d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
