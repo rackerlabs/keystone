@@ -16,6 +16,24 @@
       "revId": "c3313bf9b99cc659cdfe8e556a1a090250f711d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_434d496b",
+        "filename": "releasenotes/notes/integrate-osprofiler-ad0e16a542b12899.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-13T16:08:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a18252c_f621baa0",
+      "revId": "c3313bf9b99cc659cdfe8e556a1a090250f711d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
