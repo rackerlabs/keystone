@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_76f3ead6",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T15:15:30Z",
+      "side": 1,
+      "message": "same comment as on 5, thanks for making this next to zero cost if profiling is disabled.",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 15
+      },
+      "revId": "f560963f3d267e7afc9ea7932468afb1276d3f64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
