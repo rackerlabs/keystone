@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_243ca0c7",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1b2928_bce2b701",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 4
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1b2928_5cc9e377",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-11T19:14:47Z",
       "side": 1,
       "message": "think \"a feature\" is more accurate in this case",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 18
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_64c0587c",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "We are talking about API change all over the document",
+      "parentUuid": "7a1b2928_5cc9e377",
       "range": {
         "startLine": 29,
         "startChar": 10,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_840934e0",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "Sure, will add",
+      "parentUuid": "7a1b2928_1c964b4c",
+      "range": {
+        "startLine": 32,
+        "startChar": 21,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1b2928_3c9d0766",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-04-11T19:14:47Z",
       "side": 1,
       "message": "s/to roles/to the roles API",
+      "range": {
+        "startLine": 64,
+        "startChar": 20,
+        "endLine": 64,
+        "endChar": 28
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_e4f468f3",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1b2928_3c9d0766",
       "range": {
         "startLine": 64,
         "startChar": 20,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_841654a5",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "in this case the request triggers the call of those 4 levels, and not the opposite, so the request \u0027calls\u0027, and not \u0027is called\u0027. That\u0027s how I see it",
+      "parentUuid": "7a1b2928_7c949f36",
+      "range": {
+        "startLine": 72,
+        "startChar": 35,
+        "endLine": 72,
+        "endChar": 40
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1b2928_3cab4776",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2016-04-11T19:14:47Z",
       "side": 1,
       "message": "extra space",
+      "range": {
+        "startLine": 93,
+        "startChar": 7,
+        "endLine": 93,
+        "endChar": 8
+      },
+      "revId": "551f6272c8651ce4ff1639858234a2d81b281d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_44b6fc3d",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-13T14:09:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1b2928_3cab4776",
       "range": {
         "startLine": 93,
         "startChar": 7,
