@@ -35,6 +35,11 @@ class User(sql.ModelBase, sql.DictBase):
                                        lazy='subquery',
                                        cascade='all,delete-orphan',
                                        backref='user')
+    nonlocal_users = orm.relationship('NonLocalUser',
+                                      single_parent=True,
+                                      lazy='subquery',
+                                      cascade='all,delete-orphan',
+                                      backref='user')
 
     # name property
     @hybrid_property
@@ -146,6 +151,15 @@ class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
                                         ['federation_protocol.id',
                                          'federation_protocol.idp_id'])
     )
+
+
+class NonLocalUser(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'nonlocal_user'
+    attributes = ['domain_id', 'name', 'user_id']
+    domain_id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(64), primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                                                        ondelete='CASCADE'))
 
 
 class Group(sql.ModelBase, sql.DictBase):
