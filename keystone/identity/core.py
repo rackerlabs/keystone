@@ -22,6 +22,7 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
+import six
 
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.common import cache
@@ -1231,11 +1232,31 @@ class Manager(manager.Manager):
         return user_dict
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+class deprecated(object):
+
+    def __init__(self, as_of, in_favor_of=None, remove_in=2, what=None):
+        self.as_of = as_of
+        self.in_favor_of = in_favor_of
+        self.remove_in = remove_in
+        self.what = what
+
+    def __call__(self, func_or_cls):
+        @six.wraps(func_or_cls)
+        def wrapped(*args, **kwargs):
+            msg = (_(
+                '%(what) is deprecated as of %(version), in favor of '
+                '%(in_favor_of) and may be removed in $(remove_in)') %
+                {'what': self.what, 'version': self.as_of})
+            versionutils.report_deprecated_feature(LOG, msg)
+            return func_or_cls(*args, **kwargs)
+        return wrapped
+
+
+@deprecated(
+    as_of='NEWTON',
     what='keystone.identity.IdentityDriverV8',
     in_favor_of='keystone.identity.backends.base.IdentityDriverV8',
-    remove_in=+1)
+    remove_in='+1')
 class IdentityDriverV8(identity_interface.IdentityDriverV8):
     pass
 
@@ -1252,11 +1273,11 @@ class MappingManager(manager.Manager):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+@deprecated(
+    as_of='NEWTON',
     what='keystone.identity.MappingDriverV8',
     in_favor_of='keystone.identity.mapping_backends.base.MappingDriverV8',
-    remove_in=+1)
+    remove_in='+1')
 class MappingDriverV8(mapping_interface.MappingDriverV8):
     pass
 
@@ -1274,10 +1295,10 @@ class ShadowUsersManager(manager.Manager):
         super(ShadowUsersManager, self).__init__(CONF.shadow_users.driver)
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+@deprecated(
+    as_of='NEWTON',
     what='keystone.identity.ShadowUsersDriverV9',
     in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
-    remove_in=+1)
+    remove_in='+1')
 class ShadowUsersDriverV9(shadow_interface.ShadowUsersDriverV9):
     pass
