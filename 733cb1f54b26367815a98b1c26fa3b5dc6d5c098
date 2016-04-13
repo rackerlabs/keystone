@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_1551d062",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-13T14:42:16Z",
+      "side": 1,
+      "message": "nit: the extra space before the ; looks a bit odd in the compiled doc (same for the other lines below)",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
