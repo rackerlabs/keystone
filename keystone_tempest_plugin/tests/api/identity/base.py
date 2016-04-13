@@ -31,6 +31,8 @@ class BaseIdentityTest(tempest.test.BaseTestCase):
 
         cls.identity_providers_client = (
             keystone_manager.identity_providers_client)
+        cls.mapping_rules_client = (
+            keystone_manager.mapping_rules_client)
         cls.service_providers_client = (
             keystone_manager.service_providers_client)
 
