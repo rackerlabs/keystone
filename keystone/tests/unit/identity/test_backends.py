@@ -1357,3 +1357,65 @@ class LimitTests(filtering.FilterTests):
 
     def test_list_projects_filtered_and_limited(self):
         self._test_list_entity_filtered_and_limited('project')
+
+
+class ShadowUsersTests(object):
+
+    def test_create_nonlocal_user_unique_constraint(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_created = self.shadow_users_api.create_nonlocal_user(user)
+        self.assertEqual(user_created['id'], user['id'])
+        self.assertEqual(user_created['domain_id'], user['domain_id'])
+        self.assertEqual(user_created['name'], user['name'])
+        new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        new_user['name'] = user['name']
+        self.assertRaises(exception.Conflict,
+                          self.shadow_users_api.create_nonlocal_user,
+                          new_user)
+
+    def test_get_user(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user.pop('email')
+        user.pop('password')
+        user_created = self.shadow_users_api.create_nonlocal_user(user)
+        self.assertEqual(user_created['id'], user['id'])
+        user_found = self.shadow_users_api.get_user(user_created['id'])
+        self.assertItemsEqual(user_created, user_found)
+
+    def test_create_federated_user_unique_constraint(self):
+        federated_dict = unit.new_federated_user_ref()
+        user_dict = self.shadow_users_api.create_federated_user(federated_dict)
+        user_dict = self.identity_api.get_user(user_dict["id"])
+        self.assertIsNotNone(user_dict["id"])
+        self.assertRaises(exception.Conflict,
+                          self.shadow_users_api.create_federated_user,
+                          federated_dict)
+
+    def test_get_federated_user(self):
+        federated_dict = unit.new_federated_user_ref()
+        user_dict_create = self.shadow_users_api.create_federated_user(
+            federated_dict)
+        user_dict_get = self.shadow_users_api.get_federated_user(
+            federated_dict["idp_id"],
+            federated_dict["protocol_id"],
+            federated_dict["unique_id"])
+        self.assertItemsEqual(user_dict_create, user_dict_get)
+        self.assertEqual(user_dict_create["id"], user_dict_get["id"])
+
+    def test_update_federated_user_display_name(self):
+        federated_dict = unit.new_federated_user_ref()
+        user_dict_create = self.shadow_users_api.create_federated_user(
+            federated_dict)
+        new_display_name = uuid.uuid4().hex
+        self.shadow_users_api.update_federated_user_display_name(
+            federated_dict["idp_id"],
+            federated_dict["protocol_id"],
+            federated_dict["unique_id"],
+            new_display_name)
+        user_ref = self.shadow_users_api._get_federated_user(
+            federated_dict["idp_id"],
+            federated_dict["protocol_id"],
+            federated_dict["unique_id"])
+        self.assertEqual(user_ref.federated_users[0].display_name,
+                         new_display_name)
+        self.assertEqual(user_dict_create["id"], user_ref.id)
