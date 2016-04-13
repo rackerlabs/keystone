@@ -387,7 +387,7 @@ class DomainConfigs(dict):
 
 
 def domains_configured(f):
-    """Wraps API calls to lazy load domain configs after init.
+    """Wrap API calls to lazy load domain configs after init.
 
     This is required since the assignment manager needs to be initialized
     before this manager, and yet this manager's init wants to be
@@ -413,7 +413,7 @@ def domains_configured(f):
 
 
 def exception_translated(exception_type):
-    """Wraps API calls to map to correct exception."""
+    """Wrap API calls to map to correct exception."""
     def _exception_translated(f):
         @functools.wraps(f)
         def wrapper(self, *args, **kwargs):
@@ -573,7 +573,7 @@ class Manager(manager.Manager):
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
     def _needs_post_processing(self, driver):
-        """Returns whether entity from driver needs domain added or mapping."""
+        """Return whether entity from driver needs domain added or mapping."""
         return (driver is not self.driver or not driver.generates_uuids() or
                 not driver.is_domain_aware())
 
@@ -605,7 +605,7 @@ class Manager(manager.Manager):
         return ref
 
     def _insert_domain_id_if_needed(self, ref, driver, domain_id, conf):
-        """Inserts the domain ID into the ref, if required.
+        """Insert the domain ID into the ref, if required.
 
         If the driver can't handle domains, then we need to insert the
         domain_id into the entity being returned.  If the domain_id is
@@ -618,7 +618,7 @@ class Manager(manager.Manager):
             ref['domain_id'] = domain_id
 
     def _is_mapping_needed(self, driver):
-        """Returns whether mapping is needed.
+        """Return whether mapping is needed.
 
         There are two situations where we must use the mapping:
         - this isn't the default driver (i.e. multiple backends), or
@@ -747,7 +747,7 @@ class Manager(manager.Manager):
 
     def _assert_user_and_group_in_same_backend(
             self, user_entity_id, user_driver, group_entity_id, group_driver):
-        """Ensures that user and group IDs are backed by the same backend.
+        """Ensure that user and group IDs are backed by the same backend.
 
         Raise a CrossBackendNotAllowed exception if they are not from the same
         backend, otherwise return None.
@@ -983,6 +983,7 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         group['id'] = uuid.uuid4().hex
+        group['name'] = clean.group_name(group['name'])
         ref = driver.create_group(group['id'], group)
 
         notifications.Audit.created(self._GROUP, group['id'], initiator)
@@ -1019,6 +1020,8 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
         group = self._clear_domain_id_if_domain_unaware(driver, group)
+        if 'name' in group:
+            group['name'] = clean.group_name(group['name'])
         ref = driver.update_group(entity_id, group)
         self.get_group.invalidate(self, group_id)
         notifications.Audit.updated(self._GROUP, group_id, initiator)
@@ -1204,7 +1207,7 @@ class Manager(manager.Manager):
     @MEMOIZE
     def shadow_federated_user(self, idp_id, protocol_id, unique_id,
                               display_name):
-        """Shadows a federated user by mapping to a user.
+        """Map a federated user to a user.
 
         :param idp_id: identity provider id
         :param protocol_id: protocol id
@@ -1232,7 +1235,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.IdentityDriverV8',
     in_favor_of='keystone.identity.backends.base.IdentityDriverV8',
     remove_in=+1)
@@ -1253,7 +1256,7 @@ class MappingManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.MappingDriverV8',
     in_favor_of='keystone.identity.mapping_backends.base.MappingDriverV8',
     remove_in=+1)
@@ -1275,7 +1278,7 @@ class ShadowUsersManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.ShadowUsersDriverV9',
     in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
     remove_in=+1)
