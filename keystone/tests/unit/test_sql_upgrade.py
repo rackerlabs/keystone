@@ -1154,6 +1154,16 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self.does_constraint_exist('role',
                                                         'ixu_role_name'))
 
+    def test_add_nonlocal_user_table(self):
+        nonlocal_user_table = 'nonlocal_user'
+        self.upgrade(101)
+        self.assertTableDoesNotExist(nonlocal_user_table)
+        self.upgrade(102)
+        self.assertTableColumns(nonlocal_user_table,
+                                ['domain_id',
+                                 'name',
+                                 'user_id'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
