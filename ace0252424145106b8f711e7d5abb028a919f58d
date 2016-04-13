@@ -22,6 +22,30 @@
       "revId": "ace0252424145106b8f711e7d5abb028a919f58d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_80647722",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-04-13T16:05:20Z",
+      "side": 1,
+      "message": "You\u0027re welcome! Once profiler release will be cut this week, this will be fully workable :)",
+      "parentUuid": "5a18252c_76c00a7c",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 225,
+        "endChar": 15
+      },
+      "revId": "ace0252424145106b8f711e7d5abb028a919f58d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
