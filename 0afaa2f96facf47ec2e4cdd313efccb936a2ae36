@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_4dfe1838",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-04-13T15:45:54Z",
+      "side": 1,
+      "message": "I don\u0027t think this is correct.\n\nUser A in Domain A\nSay I give permission for User A to  project B in domain B\nNow  user A can access domain B user list which is a security hole",
+      "revId": "0afaa2f96facf47ec2e4cdd313efccb936a2ae36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
