@@ -113,6 +113,23 @@
       "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_72f4b686",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-13T06:52:28Z",
+      "side": 1,
+      "message": "the changes here are not necessary since we are removing eventlet",
+      "revId": "639e36adbfa0f58ce2c3f31856b4343e9197aa0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
