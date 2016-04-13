@@ -43,12 +43,19 @@ class User(sql.ModelBase, sql.DictBase):
                                        lazy='subquery',
                                        cascade='all,delete-orphan',
                                        backref='user')
+    nonlocal_users = orm.relationship('NonLocalUser',
+                                      single_parent=True,
+                                      lazy='subquery',
+                                      cascade='all,delete-orphan',
+                                      backref='user')
 
     # name property
     @hybrid_property
     def name(self):
         if self.local_user:
             return self.local_user.name
+        elif self.nonlocal_users:
+            return self.nonlocal_users[0].name
         elif self.federated_users:
             return self.federated_users[0].display_name
         else:
@@ -93,6 +100,8 @@ class User(sql.ModelBase, sql.DictBase):
     def domain_id(self):
         if self.local_user:
             return self.local_user.domain_id
+        elif self.nonlocal_users:
+            return self.nonlocal_users[0].domain_id
         else:
             return None
 
@@ -123,8 +132,10 @@ class LocalUser(sql.ModelBase, sql.DictBase):
                          ondelete='CASCADE'), unique=True)
     domain_id = sql.Column(sql.String(64), nullable=False)
     name = sql.Column(sql.String(255), nullable=False)
-    passwords = orm.relationship('Password', single_parent=True,
+    passwords = orm.relationship('Password',
+                                 single_parent=True,
                                  cascade='all,delete-orphan',
+                                 lazy='subquery',
                                  backref='local_user')
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
@@ -164,6 +175,15 @@ class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
                                         ['federation_protocol.id',
                                          'federation_protocol.idp_id'])
     )
+
+
+class NonLocalUser(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'nonlocal_user'
+    attributes = ['domain_id', 'name', 'user_id']
+    domain_id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(255), primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                                                        ondelete='CASCADE'))
 
 
 class Group(sql.ModelBase, sql.DictBase):
