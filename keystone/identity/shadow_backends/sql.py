@@ -20,6 +20,42 @@ from keystone.identity.shadow_backends import base
 
 
 class ShadowUsers(base.ShadowUsersDriverV9):
+    @sql.handle_conflicts(conflict_type='alt_user')
+    def create_nonlocal_user(self, user_dict):
+        new_user_dict = {
+            'id': user_dict['id'],
+            'extra': user_dict['extra'],
+            'enabled': user_dict['enabled'],
+            'default_project_id': user_dict['default_project_id']
+        }
+        new_nonlocal_user_dict = {
+            'domain_id': user_dict['domain_id'],
+            'name': user_dict['name']
+        }
+        with sql.session_for_write() as session:
+            new_nonlocal_user_ref = model.NonLocalUser.from_dict(
+                new_nonlocal_user_dict)
+            new_user_ref = model.User.from_dict(new_user_dict)
+            new_user_ref.nonlocal_users.append(new_nonlocal_user_ref)
+            session.add(new_user_ref)
+            return identity_base.filter_user(new_user_ref.to_dict())
+
+    def get_nonlocal_user(self, user_id):
+        user_ref = self._get_nonlocal_user(user_id)
+        return identity_base.filter_user(user_ref.to_dict())
+
+    def _get_nonlocal_user(self, user_id):
+        with sql.session_for_read() as session:
+            query = session.query(model.User).outerjoin(model.LocalUser)
+            query = query.outerjoin(model.FederatedUser)
+            query = query.outerjoin(model.NonLocalUser)
+            query = query.filter(model.User.id == user_id)
+            try:
+                user_ref = query.one()
+            except sql.NotFound:
+                raise exception.UserNotFound(user_id=user_id)
+            return user_ref
+
     @sql.handle_conflicts(conflict_type='federated_user')
     def create_federated_user(self, federated_dict):
         user = {
