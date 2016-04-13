@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_7d6e4f30",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-04-13T02:12:33Z",
+      "side": 1,
+      "message": "Done: https://review.openstack.org/304919",
+      "parentUuid": "5a18252c_92554d1f",
+      "revId": "ed25ca15fe7bf794e8e40aa2ac5b9367aec905ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_f42ab12b",
         "filename": "keystone/tests/unit/test_v3_resource.py",
         "patchSetId": 5
@@ -77,6 +95,30 @@
       "writtenOn": "2016-04-12T13:46:28Z",
       "side": 1,
       "message": "+1 makes sense",
+      "parentUuid": "5a18252c_6dc41092",
+      "range": {
+        "startLine": 1238,
+        "startChar": 8,
+        "endLine": 1238,
+        "endChar": 41
+      },
+      "revId": "ed25ca15fe7bf794e8e40aa2ac5b9367aec905ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_230dd637",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-04-13T02:12:33Z",
+      "side": 1,
+      "message": "Done, thanks!",
       "parentUuid": "5a18252c_6dc41092",
       "range": {
         "startLine": 1238,
