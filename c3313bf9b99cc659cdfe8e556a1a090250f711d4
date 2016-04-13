@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_f621baa0",
+        "filename": "releasenotes/notes/integrate-osprofiler-ad0e16a542b12899.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T15:10:41Z",
+      "side": 1,
+      "message": "Suggest a link to the documentation for how to perform the tracing",
+      "revId": "c3313bf9b99cc659cdfe8e556a1a090250f711d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
