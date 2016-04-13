@@ -13,6 +13,7 @@
 # under the License.
 
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 
 from keystone.common import wsgi
@@ -58,6 +59,10 @@ class AdminTokenAuthMiddleware(wsgi.Middleware):
 
     """
 
+    @versionutils.deprecated(
+        what='keystone.middleware.AdminTokenAuthMiddleware',
+        as_of=versionutils.deprecated.NEWTON,
+        remove_in=+2)
     def __init__(self, application):
         super(AdminTokenAuthMiddleware, self).__init__(application)
         LOG.warning(_LW("The admin_token_auth middleware presents a security "

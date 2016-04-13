@@ -12,8 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import os
-
 from six.moves import http_client
 import webtest
 
@@ -22,31 +20,16 @@ from keystone.tests.unit.ksfixtures import database
 
 
 class TestNoAdminTokenAuth(unit.TestCase):
+
     def setUp(self):
         super(TestNoAdminTokenAuth, self).setUp()
         self.useFixture(database.Database())
         self.load_backends()
 
-        self._generate_paste_config()
-
         self.admin_app = webtest.TestApp(
-            self.loadapp(unit.dirs.tmp('no_admin_token_auth'), name='admin'),
+            self.loadapp(unit.dirs.etc('keystone'), name='admin'),
             extra_environ=dict(REMOTE_ADDR='127.0.0.1'))
         self.addCleanup(setattr, self, 'admin_app', None)
-
-    def _generate_paste_config(self):
-        # Generate a file, based on keystone-paste.ini, that doesn't include
-        # admin_token_auth in the pipeline
-
-        with open(unit.dirs.etc('keystone-paste.ini'), 'r') as f:
-            contents = f.read()
-
-        new_contents = contents.replace(' admin_token_auth ', ' ')
-
-        filename = unit.dirs.tmp('no_admin_token_auth-paste.ini')
-        with open(filename, 'w') as f:
-            f.write(new_contents)
-        self.addCleanup(os.remove, filename)
 
     def test_request_no_admin_token_auth(self):
         # This test verifies that if the admin_token_auth middleware isn't

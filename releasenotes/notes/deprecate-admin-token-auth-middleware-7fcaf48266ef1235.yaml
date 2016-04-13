@@ -1,0 +1,8 @@
+---
+deprecations:
+  - >
+    [`blueprint deprecated-as-of-ocata <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-ocata>`_]
+    As of the Ocata release, the admin token auth middleware (`keystone.middleware.AdminTokenAuthMiddleware`)
+    has been deprecated. Please use the `keystone-manage bootstrap
+    <http://docs.openstack.org/developer/keystone/configuringservices.html#setting-up-credentials-with-keystone-manage-bootstrap>`_
+    command instead to bootstrap keystone. It will be removed in the 'Q' release.
