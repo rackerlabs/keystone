@@ -28,7 +28,7 @@ from testtools import matchers
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
-from keystone.identity.backends import sql as identity_sql
+from keystone.identity.backends import sql_model as identity_sql
 from keystone.resource.backends import base as resource
 from keystone.tests import unit
 from keystone.tests.unit.assignment import test_backends as assignment_tests
@@ -147,6 +147,12 @@ class SqlModels(SqlTests):
                 ('local_user_id', sql.Integer, None),
                 ('password', sql.String, 128))
         self.assertExpectedSchema('password', cols)
+
+    def test_nonlocal_user_model(self):
+        cols = (('domain_id', sql.String, 64),
+                ('name', sql.String, 255),
+                ('user_id', sql.String, 64))
+        self.assertExpectedSchema('nonlocal_user', cols)
 
     def test_federated_user_model(self):
         cols = (('id', sql.Integer, None),
@@ -273,44 +279,6 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         # assign a new ID with the same name, but this time in uppercase
         ref['name'] = ref['name'].upper()
         self.identity_api.create_user(ref)
-
-    def test_create_federated_user_unique_constraint(self):
-        federated_dict = unit.new_federated_user_ref()
-        user_dict = self.shadow_users_api.create_federated_user(federated_dict)
-        user_dict = self.identity_api.get_user(user_dict["id"])
-        self.assertIsNotNone(user_dict["id"])
-        self.assertRaises(exception.Conflict,
-                          self.shadow_users_api.create_federated_user,
-                          federated_dict)
-
-    def test_get_federated_user(self):
-        federated_dict = unit.new_federated_user_ref()
-        user_dict_create = self.shadow_users_api.create_federated_user(
-            federated_dict)
-        user_dict_get = self.shadow_users_api.get_federated_user(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"])
-        self.assertItemsEqual(user_dict_create, user_dict_get)
-        self.assertEqual(user_dict_create["id"], user_dict_get["id"])
-
-    def test_update_federated_user_display_name(self):
-        federated_dict = unit.new_federated_user_ref()
-        user_dict_create = self.shadow_users_api.create_federated_user(
-            federated_dict)
-        new_display_name = uuid.uuid4().hex
-        self.shadow_users_api.update_federated_user_display_name(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"],
-            new_display_name)
-        user_ref = self.shadow_users_api._get_federated_user(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"])
-        self.assertEqual(user_ref.federated_users[0].display_name,
-                         new_display_name)
-        self.assertEqual(user_dict_create["id"], user_ref.id)
 
     def test_create_project_case_sensitivity(self):
         # project name case sensitivity is down to the fact that it is marked
@@ -921,6 +889,10 @@ class SqlLimitTests(SqlTests, identity_tests.LimitTests):
     def setUp(self):
         super(SqlLimitTests, self).setUp()
         identity_tests.LimitTests.setUp(self)
+
+
+class ShadowUsersTests(SqlTests, identity_tests.ShadowUsersTests):
+    pass
 
 
 class FakeTable(sql.ModelBase):
