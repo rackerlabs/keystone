@@ -14,21 +14,21 @@
 
 import abc
 
+from oslo_log import versionutils
 import six
 
 from keystone import exception
 
 
 @six.add_metaclass(abc.ABCMeta)
-class ShadowUsersDriverV9(object):
-    """Interface description for an Shadow Users driver."""
+class ShadowUsersDriverBase(object):
+    """Interface description for an Shadow Users base driver."""
 
     @abc.abstractmethod
     def create_federated_user(self, federated_dict):
         """Create a new user with the federated identity.
 
         :param dict federated_dict: Reference to the federated user
-        :param user_id: user ID for linking to the federated identity
         :returns dict: Containing the user reference
 
         """
@@ -57,4 +57,70 @@ class ShadowUsersDriverV9(object):
         :param display_name: The user's display name
 
         """
+        raise exception.NotImplemented()
+
+
+@versionutils.deprecated(
+    versionutils.deprecated.NEWTON,
+    what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
+    in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV10',
+    remove_in=+2)
+class ShadowUsersDriverV9(ShadowUsersDriverBase):
+    pass
+
+
+@six.add_metaclass(abc.ABCMeta)
+class ShadowUsersDriverV10(ShadowUsersDriverBase):
+    """Interface description for an Shadow Users V10 driver."""
+
+    @abc.abstractmethod
+    def get_user(self, user_id):
+        """Return the found user.
+
+        :param user_id: Identity of the user
+        :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_nonlocal_user(self, user_dict):
+        """Create a new non-local user.
+
+        :param dict user_dict: Reference to the non-local user
+        :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+
+class V10ShadowUsersWrapperForV9Driver(ShadowUsersDriverV10):
+
+    @versionutils.deprecated(
+        versionutils.deprecated.NEWTON,
+        what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
+        in_favor_of=(
+            'keystone.identity.shadow_backends.base.ShadowUsersDriverV10'),
+        remove_in=+2)
+    def __init__(self, wrapped_driver):
+        self.driver = wrapped_driver
+
+    def create_federated_user(self, federated_dict):
+        return self.driver.create_federated_user(federated_dict)
+
+    def get_federated_user(self, idp_id, protocol_id, unique_id):
+        return self.driver.get_federated_user(idp_id, protocol_id,
+                                              unique_id)
+
+    def update_federated_user_display_name(self, idp_id, protocol_id,
+                                           unique_id, display_name):
+        return self.driver.update_federated_user_display_name(idp_id,
+                                                              protocol_id,
+                                                              unique_id,
+                                                              display_name)
+
+    def get_user(self, user_id):
+        raise exception.NotImplemented()
+
+    def create_nonlocal_user(self, user_dict):
         raise exception.NotImplemented()
