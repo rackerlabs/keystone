@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_ac7d53b3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-13T05:46:55Z",
+      "side": 1,
+      "message": "close, but i think we just want to set the ID, not the identity_id:\n\n  if service_id:\n    event.observer.id \u003d service_id\n\nif service_id is not set, we can continue to use the generated value that pycadf provides",
+      "range": {
+        "startLine": 711,
+        "startChar": 4,
+        "endLine": 711,
+        "endChar": 43
+      },
+      "revId": "779465ba78de000ed554c445234900bb7d4a223f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
