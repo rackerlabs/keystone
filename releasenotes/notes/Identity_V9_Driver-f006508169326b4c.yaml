@@ -1,0 +1,5 @@
+---
+deprecations:
+  - The V8 Identity driver interface is deprecated in favor of the V9
+    Identity driver interface. Support for the V8 Identity driver
+    interface is planned to be removed in the 'P' release of OpenStack.
