@@ -1,0 +1,7 @@
+---
+features:
+  - OSprofiler makes possible to trace the OpenStack
+    request through all projects supporting the library, where the
+    profiling is enabled, and generate JSON and HTML human-readable
+    reports, describing what time was spent on which operation, e.g.
+    API or DB request.
