@@ -14,11 +14,17 @@
 
 import abc
 
+from oslo_log import versionutils
 import six
 
 from keystone import exception
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.NEWTON,
+    what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
+    in_favor_of='Dropping support of shadow users driver backend',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverV9(object):
     """Interface description for an Shadow Users driver."""
@@ -28,7 +34,6 @@ class ShadowUsersDriverV9(object):
         """Create a new user with the federated identity.
 
         :param dict federated_dict: Reference to the federated user
-        :param user_id: user ID for linking to the federated identity
         :returns dict: Containing the user reference
 
         """
