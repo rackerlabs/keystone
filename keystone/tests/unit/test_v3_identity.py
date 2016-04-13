@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import os
 import uuid
 
 import fixtures
@@ -22,6 +23,7 @@ from oslo_db import exception as oslo_db_exception
 from oslo_log import log
 from six.moves import http_client
 from testtools import matchers
+import webtest
 
 from keystone.common import controller
 from keystone.common import sql
@@ -43,7 +45,35 @@ CONF = keystone.conf.CONF
 # NOTE(morganfainberg): To be removed when admin_token_auth middleware is
 # removed. This was moved to it's own testcase so it can setup the
 # admin_token_auth pipeline without impacting other tests.
-class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
+class IdentityTestCaseStaticAdminToken(unit.TestCase):
+
+    def setUp(self):
+        super(IdentityTestCaseStaticAdminToken, self).setUp()
+        self._generate_paste_config()
+        self.useFixture(database.Database())
+        self.load_backends()
+        self.domain_id = 'default'
+
+        self.admin_app = webtest.TestApp(
+            self.loadapp(unit.dirs.tmp('admin_token_auth'), name='admin'),
+            extra_environ=dict(REMOTE_ADDR='127.0.0.1'))
+        self.addCleanup(setattr, self, 'admin_app', None)
+
+    def _generate_paste_config(self):
+        # NOTE(dstanek): add the admin_token_auth middleware back into the
+        # pipeline for these tests
+        with open(unit.dirs.etc('keystone-paste.ini'), 'r') as f:
+            contents = f.read()
+
+        # NOTE(dstanek): The tailing space is significant. Without it the code
+        # would mangle the filter declaration.
+        new_contents = contents.replace('request_id ',
+                                        'request_id admin_token_auth ')
+
+        filename = unit.dirs.tmp('admin_token_auth-paste.ini')
+        with open(filename, 'w') as f:
+            f.write(new_contents)
+        self.addCleanup(os.remove, filename)
 
     def config_overrides(self):
         super(IdentityTestCaseStaticAdminToken, self).config_overrides()
@@ -55,8 +85,9 @@ class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
         # disallowed when domain-specific drivers are enabled
         self.config_fixture.config(group='identity',
                                    domain_specific_drivers_enabled=True)
-        self.get('/users', token=CONF.admin_token,
-                 expected_status=exception.Unauthorized.code)
+        self.admin_app.get('/v3/users',
+                           headers={'X-Auth-Token': CONF.admin_token},
+                           status=exception.Unauthorized.code)
 
     def test_create_user_with_admin_token_and_no_domain(self):
         """Call ``POST /users`` with admin token but no domain id.
@@ -70,8 +101,10 @@ class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
         ref = unit.new_user_ref(domain_id=self.domain_id)
         # Delete the domain id before sending the request.
         del ref['domain_id']
-        self.post('/users', body={'user': ref}, token=CONF.admin_token,
-                  expected_status=http_client.BAD_REQUEST)
+        headers = {'X-Auth-Token': CONF.admin_token}
+        body = {'user': ref}
+        self.admin_app.post_json('/v3/users', headers=headers, params=body,
+                                 status=http_client.BAD_REQUEST)
 
 
 class IdentityTestCase(test_v3.RestfulTestCase):
