@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_de6e5000",
+        "filename": "releasenotes/notes/integrate-osprofiler-ad0e16a542b12899.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T16:40:03Z",
+      "side": 1,
+      "message": "a link to the osprofiler documentation would probably be sufficient here. see comment below regarding implicit \"enabled\" recommendations.",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 65
+      },
+      "revId": "81cccb4354715cddd3733463d992d113d611b65f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_7ef29c70",
+        "filename": "releasenotes/notes/integrate-osprofiler-ad0e16a542b12899.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T16:40:03Z",
+      "side": 1,
+      "message": "I would prefer to not implicitly recommend profiler be \"enabled\" in production. I\u0027d encourage documentation elsewhere on how to enable this.",
+      "range": {
+        "startLine": 25,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "81cccb4354715cddd3733463d992d113d611b65f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_fe850cad",
+        "filename": "releasenotes/notes/integrate-osprofiler-ad0e16a542b12899.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-13T16:40:03Z",
+      "side": 1,
+      "message": "This also feels more like documentation of osprofiler and not a releasenote.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 65
+      },
+      "revId": "81cccb4354715cddd3733463d992d113d611b65f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
