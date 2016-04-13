@@ -35,6 +35,9 @@ class User(sql.ModelBase, sql.DictBase):
                                        lazy='subquery',
                                        cascade='all,delete-orphan',
                                        backref='user')
+    ldap_user = orm.relationship('LdapUser', uselist=False,
+                                 single_parent=True, lazy='subquery',
+                                 cascade='all,delete-orphan', backref='user')
 
     # name property
     @hybrid_property
@@ -146,6 +149,15 @@ class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
                                         ['federation_protocol.id',
                                          'federation_protocol.idp_id'])
     )
+
+
+class LdapUser(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'ldap_user'
+    attributes = ['domain_id', 'name', 'user_id']
+    domain_id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(64), primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                         ondelete='CASCADE'), unique=True)
 
 
 class Group(sql.ModelBase, sql.DictBase):
