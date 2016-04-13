@@ -1,0 +1,11 @@
+Code-Review+1: Davanum Srinivas (dims) <davanum@gmail.com>
+Code-Review+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 13 Apr 2016 02:58:51 +0000
+Reviewed-on: https://review.openstack.org/304486
+Project: openstack/keystone
+Branch: refs/heads/master
