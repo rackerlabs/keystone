@@ -24,11 +24,30 @@ class ShadowUsersDriverV9(object):
     """Interface description for an Shadow Users driver."""
 
     @abc.abstractmethod
+    def get_alt_user(self, user_id):
+        """Returns the found user for the alt identity
+
+        :param user_id: Identity of the user
+        :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_alt_user(self, user_dict):
+        """Create a new alt user
+
+        :param dict user_dict: Reference to the alt user
+        :returns dict: Containing the user reference
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
     def create_federated_user(self, federated_dict):
         """Create a new user with the federated identity
 
         :param dict federated_dict: Reference to the federated user
-        :param user_id: user ID for linking to the federated identity
         :returns dict: Containing the user reference
 
         """
