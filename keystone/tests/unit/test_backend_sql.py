@@ -148,6 +148,12 @@ class SqlModels(SqlTests):
                 ('password', sql.String, 128))
         self.assertExpectedSchema('password', cols)
 
+    def test_nonlocal_user_model(self):
+        cols = (('domain_id', sql.String, 64),
+                ('name', sql.String, 255),
+                ('user_id', sql.String, 64))
+        self.assertExpectedSchema('nonlocal_user', cols)
+
     def test_federated_user_model(self):
         cols = (('id', sql.Integer, None),
                 ('user_id', sql.String, 64),
@@ -921,6 +927,10 @@ class SqlLimitTests(SqlTests, identity_tests.LimitTests):
     def setUp(self):
         super(SqlLimitTests, self).setUp()
         identity_tests.LimitTests.setUp(self)
+
+
+class ShadowUsersTests(SqlTests, identity_tests.ShadowUsersTests):
+    pass
 
 
 class FakeTable(sql.ModelBase):
