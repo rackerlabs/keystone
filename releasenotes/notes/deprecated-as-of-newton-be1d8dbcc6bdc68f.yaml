@@ -5,3 +5,9 @@ deprecations:
     As of the Newton release, the class plugin `keystone.common.kvs.core.KeyValueStore`
     has been deprecated. It is recommended to use alternative backends instead.
     The ``KeyValueStore`` class will be removed in the 'P' release.
+  - >
+    [`blueprint deprecated-as-of-newton <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-newton>`_]
+    As of the Newton release, the admin auth middleware `keystone.middleware.AdminTokenAuthMiddleware`
+    has been deprecated. Please use the `keystone-manage bootstrap
+    <http://docs.openstack.org/developer/keystone/configuringservices.html#setting-up-credentials-with-keystone-manage-bootstrap>`_
+    command instead to bootstrap keystone. It will be removed in the 'P' release.
