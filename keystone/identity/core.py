@@ -1232,7 +1232,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.IdentityDriverV8',
     in_favor_of='keystone.identity.backends.base.IdentityDriverV8',
     remove_in=+1)
@@ -1253,7 +1253,7 @@ class MappingManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.MappingDriverV8',
     in_favor_of='keystone.identity.mapping_backends.base.MappingDriverV8',
     remove_in=+1)
@@ -1275,7 +1275,7 @@ class ShadowUsersManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.MITAKA,
+    versionutils.deprecated.NEWTON,
     what='keystone.identity.ShadowUsersDriverV9',
     in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
     remove_in=+1)
