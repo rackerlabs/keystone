@@ -1,4 +1,6 @@
 ---
+prelude: >
+  - Using the ``admin_token_auth`` middleware is now deprecated. See ``deprecations`` for more details.
 deprecations:
   - >
     [`blueprint deprecated-as-of-ocata <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-ocata>`_]
@@ -17,3 +19,9 @@ deprecations:
       * ``keystone.token.persistence.backends.kvs.Token``
       * all config options under ``[kvs]`` in `keystone.conf`
       * the config option ``[memcached] servers`` in `keystone.conf`
+  - >
+    [`blueprint deprecated-as-of-ocata <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-ocata>`_]
+    As of the Ocata release, the admin token auth middleware (`keystone.middleware.AdminTokenAuthMiddleware`)
+    has been deprecated. Please use the `keystone-manage bootstrap
+    <http://docs.openstack.org/developer/keystone/configuringservices.html#setting-up-credentials-with-keystone-manage-bootstrap>`_
+    command instead to bootstrap keystone. It will be removed in the 'Q' release.
