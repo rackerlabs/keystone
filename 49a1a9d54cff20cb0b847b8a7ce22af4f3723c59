@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_06a95f90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-14T15:50:40Z",
+      "side": 1,
+      "message": "The bug defect for those changes is listed at the bottom of this commit. WE keep it separate to simply make the review process easier.",
+      "parentUuid": "5a18252c_8b7f38df",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_2b2704cb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_c605a77a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-14T15:50:40Z",
+      "side": 1,
+      "message": "So if you look at the ShadowUsers.create_federated_user() it references the User model....this is what prevents us testing the legacy driver",
+      "parentUuid": "5a18252c_2b2704cb",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_abb794d6",
         "filename": "keystone/identity/V8_backends/sql.py",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2016-04-14T15:40:54Z",
       "side": 1,
       "message": "I don\u0027t think we need a new version of the sql model, only the driver needs to be versioned.",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 13
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_06815fc3",
+        "filename": "keystone/identity/V8_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-14T15:50:40Z",
+      "side": 1,
+      "message": "Normally, that is true. However, the shadowuser stuff loads these models as well as out test harness. This leads to a conflict of duplicate User (and the other table) modules being loaded...which seems to cause sqlalchemy heart failure. I\u0027d love to not have to do this, but struggled with out it - definitely open to ideas!",
+      "parentUuid": "5a18252c_abb794d6",
       "range": {
         "startLine": 27,
         "startChar": 12,
