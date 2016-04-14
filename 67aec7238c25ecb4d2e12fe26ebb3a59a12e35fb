@@ -22,6 +22,30 @@
       "revId": "67aec7238c25ecb4d2e12fe26ebb3a59a12e35fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_917e4217",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_service_providers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-14T18:32:26Z",
+      "side": 1,
+      "message": "it is, take a look at line 80",
+      "parentUuid": "5a18252c_40a856db",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 38
+      },
+      "revId": "67aec7238c25ecb4d2e12fe26ebb3a59a12e35fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
