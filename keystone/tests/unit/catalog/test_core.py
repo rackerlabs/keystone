@@ -98,3 +98,6 @@ class FormatUrlTests(unit.BaseTestCase):
                   'user_id': 'B'}
         self.assertIsNone(core.format_url(url_template, values,
                           silent_keyerror_failures=['project_id']))
+
+    def test_experimental(self):
+        self.assertEqual("hi :)", core.useless_function())
