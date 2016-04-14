@@ -119,6 +119,10 @@ def check_endpoint_url(url):
         raise exception.URLValidationError(url)
 
 
+def useless_function():
+    return "hi :)"
+
+
 @dependency.provider('catalog_api')
 @dependency.requires('resource_api')
 class Manager(manager.Manager):
