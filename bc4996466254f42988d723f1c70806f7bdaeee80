@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_37a806db",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-04-14T16:43:48Z",
+      "side": 1,
+      "message": "nit: I noticed some of these summary lines end with a period and some don\u0027t.  Is there a PEP standard for that?  If not, should we make them consistent as well.",
+      "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
