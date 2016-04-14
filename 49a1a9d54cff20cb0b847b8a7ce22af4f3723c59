@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_8b7f38df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T15:40:54Z",
+      "side": 1,
+      "message": "What upcoming changes, can you be more specific? And I\u0027m sort of inclined to say that we create the versioned driver as part of the upcoming change.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_2b2704cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T15:40:54Z",
+      "side": 1,
+      "message": "Nit: shadow users references the sql model and common methods (filter...), but does not reference the identity driver.  Part of the reason why I want to separate the model from the driver:\nhttps://review.openstack.org/#/c/292611/",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_abb794d6",
+        "filename": "keystone/identity/V8_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T15:40:54Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a new version of the sql model, only the driver needs to be versioned.",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 13
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
