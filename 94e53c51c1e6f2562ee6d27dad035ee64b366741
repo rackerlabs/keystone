@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_b8a7f1bb",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_alt_user_table.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T14:11:10Z",
+      "side": 1,
+      "message": "The reason why not just ldap_user_table because I\u0027m trying to include ldap and custom drivers, so really any non-sql driver.  Alternatives seemed like an appropriate name.",
+      "parentUuid": "5a18252c_4b38a93d",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "94e53c51c1e6f2562ee6d27dad035ee64b366741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_0bf51156",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-14T02:53:15Z",
       "side": 1,
       "message": "this is used by ldap and sql users, so won\u0027t this shadow the sql users as well?",
+      "range": {
+        "startLine": 824,
+        "startChar": 4,
+        "endLine": 830,
+        "endChar": 37
+      },
+      "revId": "94e53c51c1e6f2562ee6d27dad035ee64b366741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_d85f4de3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T14:11:10Z",
+      "side": 1,
+      "message": "This will shadow all users (ldap, custom drivers...).  Regarding sql users, shadow users first checks if the user exists in the user table; if not, maps them to the appropriate tables.  sql users will already be mapped, so will not be added; thus, not shadowed.",
+      "parentUuid": "5a18252c_0bf51156",
       "range": {
         "startLine": 824,
         "startChar": 4,
