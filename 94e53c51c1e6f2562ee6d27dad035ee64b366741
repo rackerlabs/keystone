@@ -140,6 +140,30 @@
       "revId": "94e53c51c1e6f2562ee6d27dad035ee64b366741",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_f5c7af95",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T15:01:16Z",
+      "side": 1,
+      "message": "Do I need a version 10 if I\u0027m not breaking the old interface?  I\u0027m just adding new methods here.",
+      "parentUuid": "5a18252c_6b9da509",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "94e53c51c1e6f2562ee6d27dad035ee64b366741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
