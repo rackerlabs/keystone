@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_9c6940fc",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-14T16:22:52Z",
+      "side": 1,
+      "message": "Howdy!",
+      "range": {
+        "startLine": 123,
+        "startChar": 11,
+        "endLine": 123,
+        "endChar": 18
+      },
+      "revId": "26852ca2c21d661a3485e1c6628e56d2d1225025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
