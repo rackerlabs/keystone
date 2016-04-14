@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_835d6617",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T14:19:28Z",
+      "side": 1,
+      "message": "And by shadowing users here in the manager table, I don\u0027t need to know which driver is being used. So I don\u0027t need do:\n\nif is_ldap_driver: do this else: do something else...  \n\nEssentially, the sql driver is ignored (already mapped), so then I just map all other non-local users.",
+      "parentUuid": "5a18252c_d85f4de3",
+      "range": {
+        "startLine": 824,
+        "startChar": 4,
+        "endLine": 830,
+        "endChar": 37
+      },
+      "revId": "94e53c51c1e6f2562ee6d27dad035ee64b366741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_6b9da509",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 3
