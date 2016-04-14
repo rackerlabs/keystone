@@ -118,6 +118,9 @@ def check_endpoint_url(url):
     except (KeyError, TypeError, ValueError):
         raise exception.URLValidationError(url)
 
+def useless_function():
+    print "hi :)"
+
 
 @dependency.provider('catalog_api')
 @dependency.requires('resource_api')
