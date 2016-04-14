@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_9c32e0a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T16:15:47Z",
+      "side": 1,
+      "message": "Yeah, I agree it should be a separate patch, but was just thinking that it should be part implementation for the upcoming change. What if the upcoming change doesn\u0027t get started for a long time, then this sort becomes technical debt in the meantime (maybe) :)",
+      "parentUuid": "5a18252c_06a95f90",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_2b2704cb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -155,6 +179,30 @@
       "side": 1,
       "message": "Normally, that is true. However, the shadowuser stuff loads these models as well as out test harness. This leads to a conflict of duplicate User (and the other table) modules being loaded...which seems to cause sqlalchemy heart failure. I\u0027d love to not have to do this, but struggled with out it - definitely open to ideas!",
       "parentUuid": "5a18252c_abb794d6",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 13
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_5cecc8f2",
+        "filename": "keystone/identity/V8_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-14T16:15:47Z",
+      "side": 1,
+      "message": "Okay, let me give this some thought.  I\u0027ll come back to this.",
+      "parentUuid": "5a18252c_06815fc3",
       "range": {
         "startLine": 27,
         "startChar": 12,
