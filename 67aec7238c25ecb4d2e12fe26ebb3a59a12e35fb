@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a18252c_40a856db",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_service_providers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-14T17:24:10Z",
+      "side": 1,
+      "message": "looks like this is not used anywhere.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 38
+      },
+      "revId": "67aec7238c25ecb4d2e12fe26ebb3a59a12e35fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
