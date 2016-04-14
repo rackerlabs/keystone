@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_b167feb5",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-14T18:28:59Z",
+      "side": 1,
+      "message": "According to mid-cycle agreement I can\u0027t change manager logic.",
+      "parentUuid": "5a18252c_1dd59bb8",
+      "revId": "c9c216ca685f859ea4d97bb7ef634de350458c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_5dfef338",
         "filename": "keystone/delegation/backends/sql.py",
         "patchSetId": 9
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_d1bc3a08",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-14T18:28:59Z",
+      "side": 1,
+      "message": "This is a driver implementation, abstract class daclares this parameter, I should follow...",
+      "parentUuid": "5a18252c_5dfef338",
+      "revId": "c9c216ca685f859ea4d97bb7ef634de350458c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_9d8febcb",
         "filename": "keystone/delegation/backends/sql.py",
         "patchSetId": 9
@@ -115,6 +151,24 @@
       "writtenOn": "2016-04-13T01:23:34Z",
       "side": 1,
       "message": "type is a reserved word.  It might have been a mistake to use this.",
+      "revId": "c9c216ca685f859ea4d97bb7ef634de350458c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_913c82c9",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-14T18:28:59Z",
+      "side": 1,
+      "message": "I mimic the structure used in existing assignment driver, so I preserve the naming",
+      "parentUuid": "5a18252c_9d8febcb",
       "revId": "c9c216ca685f859ea4d97bb7ef634de350458c03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
