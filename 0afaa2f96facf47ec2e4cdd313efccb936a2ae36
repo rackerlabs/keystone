@@ -16,6 +16,24 @@
       "revId": "0afaa2f96facf47ec2e4cdd313efccb936a2ae36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_4e71d7a7",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-14T03:02:01Z",
+      "side": 1,
+      "message": "thinking about this more.. this is no more of a security hole than specifying the domain_id in a query arg. This conditional is just a fall back if the domain id is not specified.",
+      "parentUuid": "5a18252c_4dfe1838",
+      "revId": "0afaa2f96facf47ec2e4cdd313efccb936a2ae36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
