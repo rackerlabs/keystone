@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_21128557",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-14T15:56:03Z",
+      "side": 1,
+      "message": "sorry, I misread your comment...I agree with you - I\u0027ll update this in the next patch set",
+      "parentUuid": "5a18252c_c605a77a",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_abb794d6",
         "filename": "keystone/identity/V8_backends/sql.py",
         "patchSetId": 3
