@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a18252c_56713b75",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1207,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-14T20:03:49Z",
+      "side": 1,
+      "message": "That works.",
+      "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_767ef719",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-14T20:03:49Z",
+      "side": 1,
+      "message": "The new description does not make it clear that this is a decorator, although the example below does. Not a huge loss.",
+      "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_36e59fdb",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-14T20:03:49Z",
+      "side": 1,
+      "message": ".\n\n  Test for backward compatibility ...",
+      "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_37a806db",
         "filename": "keystone/token/persistence/backends/sql.py",
         "patchSetId": 1
@@ -13,6 +64,24 @@
       "writtenOn": "2016-04-14T16:43:48Z",
       "side": 1,
       "message": "nit: I noticed some of these summary lines end with a period and some don\u0027t.  Is there a PEP standard for that?  If not, should we make them consistent as well.",
+      "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_964473b7",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-14T20:03:49Z",
+      "side": 1,
+      "message": "Yes, that\u0027s another pep257 standard (D400) that can be fixed in another change (and then gated on!):\n\n  http://pydocstyle.readthedocs.org/en/latest/error_codes.html",
+      "parentUuid": "5a18252c_37a806db",
       "revId": "bc4996466254f42988d723f1c70806f7bdaeee80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
