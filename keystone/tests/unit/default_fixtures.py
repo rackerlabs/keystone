@@ -15,11 +15,15 @@
 # NOTE(dolph): please try to avoid additional fixtures if possible; test suite
 #              performance may be negatively affected.
 
+BAR_TENANT_ID = '0ce32cd748454c3b95266ff0e70d986a'
+BAZ_TENANT_ID = '1bd50145c53f440f92dab29b34ffe345'
+MTU_TENANT_ID = 'f3d44868a793426599669ab426b22a68'
+SERVICE_TENANT_ID = '8137db62a8d646aba8cfb3480e4377b5'
 DEFAULT_DOMAIN_ID = 'default'
 
 TENANTS = [
     {
-        'id': 'bar',
+        'id': BAR_TENANT_ID,
         'name': 'BAR',
         'domain_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
@@ -27,7 +31,7 @@ TENANTS = [
         'parent_id': DEFAULT_DOMAIN_ID,
         'is_domain': False,
     }, {
-        'id': 'baz',
+        'id': BAZ_TENANT_ID,
         'name': 'BAZ',
         'domain_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
@@ -35,7 +39,7 @@ TENANTS = [
         'parent_id': DEFAULT_DOMAIN_ID,
         'is_domain': False,
     }, {
-        'id': 'mtu',
+        'id': MTU_TENANT_ID,
         'name': 'MTU',
         'description': 'description',
         'enabled': True,
@@ -43,7 +47,7 @@ TENANTS = [
         'parent_id': DEFAULT_DOMAIN_ID,
         'is_domain': False,
     }, {
-        'id': 'service',
+        'id': SERVICE_TENANT_ID,
         'name': 'service',
         'description': 'description',
         'enabled': True,
@@ -69,7 +73,7 @@ USERS = [
         'name': 'FOO',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'foo2',
-        'tenants': ['bar'],
+        'tenants': [BAR_TENANT_ID],
         'enabled': True,
         'email': 'foo@bar.com',
     }, {
@@ -78,8 +82,8 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
         'enabled': True,
-        'default_project_id': 'baz',
-        'tenants': ['baz'],
+        'default_project_id': BAZ_TENANT_ID,
+        'tenants': [BAZ_TENANT_ID],
         'email': 'two@three.com',
     }, {
         'id': 'badguy',
@@ -87,8 +91,8 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
         'enabled': False,
-        'default_project_id': 'baz',
-        'tenants': ['baz'],
+        'default_project_id': BAZ_TENANT_ID,
+        'tenants': [BAZ_TENANT_ID],
         'email': 'bad@guy.com',
     }, {
         'id': 'sna',
@@ -96,7 +100,7 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'snafu',
         'enabled': True,
-        'tenants': ['bar'],
+        'tenants': [BAR_TENANT_ID],
         'email': 'sna@snl.coom',
     }
 ]
@@ -137,7 +141,7 @@ ROLES = [
 ROLE_ASSIGNMENTS = [
     {
         'user': 'reqadmin',
-        'tenant_id': 'service',
+        'tenant_id': SERVICE_TENANT_ID,
         'role_id': 'admin'
     },
 ]
