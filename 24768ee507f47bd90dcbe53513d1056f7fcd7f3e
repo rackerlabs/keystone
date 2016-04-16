@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_0f6d7498",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-04-16T20:43:32Z",
+      "side": 1,
+      "message": "missing space after \u0027false\u0027",
+      "range": {
+        "startLine": 48,
+        "startChar": 69,
+        "endLine": 48,
+        "endChar": 70
+      },
+      "revId": "24768ee507f47bd90dcbe53513d1056f7fcd7f3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ef69188d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2016-04-16T20:43:32Z",
+      "side": 1,
+      "message": "missing space after \u0027will\u0027",
+      "range": {
+        "startLine": 49,
+        "startChar": 68,
+        "endLine": 49,
+        "endChar": 69
+      },
+      "revId": "24768ee507f47bd90dcbe53513d1056f7fcd7f3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
