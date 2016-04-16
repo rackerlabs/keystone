@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_cc1d4f11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-16T07:39:30Z",
+      "side": 1,
+      "message": "....so the patch for that already exists (and has for a while) see: https://review.openstack.org/#/c/277707/7....it\u0027s not my patch, I\u0027m just creating the V9 driver to help them out since their patch is blocked until we have a V9 driver (and I\u0027ve created most of the versions drivers). All that needs to happen is for them to rebase their patch on this one.",
+      "parentUuid": "5a18252c_9c32e0a5",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "49a1a9d54cff20cb0b847b8a7ce22af4f3723c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_2b2704cb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
