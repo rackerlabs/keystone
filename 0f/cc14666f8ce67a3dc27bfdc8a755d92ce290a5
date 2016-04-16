@@ -1,0 +1,10 @@
+Code-Review+1: guang-yee <guang.yee@hpe.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 16 Apr 2016 21:42:36 +0000
+Reviewed-on: https://review.openstack.org/304487
+Project: openstack/keystone
+Branch: refs/heads/stable/mitaka
