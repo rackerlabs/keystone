@@ -732,7 +732,8 @@ class TestCase(BaseTestCase):
                 fixtures_to_cleanup.append(attrname)
 
             for tenant in fixtures.TENANTS:
-                if hasattr(self, 'tenant_%s' % tenant['id']):
+                tenant_id = 'tenant_%s' % tenant['name'].lower()
+                if hasattr(self, tenant_id):
                     try:
                         # This will clear out any roles on the project as well
                         self.resource_api.delete_project(tenant['id'])
@@ -741,9 +742,8 @@ class TestCase(BaseTestCase):
                 rv = self.resource_api.create_project(
                     tenant['id'], tenant)
 
-                attrname = 'tenant_%s' % tenant['id']
-                setattr(self, attrname, rv)
-                fixtures_to_cleanup.append(attrname)
+                setattr(self, tenant_id, rv)
+                fixtures_to_cleanup.append(tenant_id)
 
             for role in fixtures.ROLES:
                 try:
