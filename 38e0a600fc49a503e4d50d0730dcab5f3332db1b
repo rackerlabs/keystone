@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_051ef562",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-17T04:10:53Z",
+      "side": 1,
+      "message": "i reworked this a bit, but i\u0027ll propose another patch that rips the SSL generation out",
+      "parentUuid": "dae33548_de3c9de4",
+      "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_7e675125",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-16T15:37:24Z",
       "side": 1,
       "message": "These options are gone.",
+      "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e51ad96d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 949,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-17T04:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae33548_7e675125",
       "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_45262dbb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-17T04:10:53Z",
+      "side": 1,
+      "message": "refer to above",
+      "parentUuid": "dae33548_89baddbe",
+      "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dae33548_4969f58a",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 28
@@ -64,6 +118,24 @@
       "writtenOn": "2016-02-16T15:37:24Z",
       "side": 1,
       "message": "Did we get rid of keystone-manage ssl_setup? If so there\u0027s a bunch of other things that should be removed in the config docs...",
+      "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_aa09ce33",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-17T04:10:53Z",
+      "side": 1,
+      "message": "we can get rid of that in another patch, may have to deprecate, but it\u0027s pointless without eventlet... so maybe just remove it",
+      "parentUuid": "dae33548_4969f58a",
       "revId": "38e0a600fc49a503e4d50d0730dcab5f3332db1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
