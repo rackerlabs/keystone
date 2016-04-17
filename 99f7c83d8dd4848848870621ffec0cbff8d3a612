@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_a5ce2158",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-17T05:59:55Z",
+      "side": 0,
+      "message": "we could deprecate these options instead of removing, but keep the rest of the changes, the values would just be ignored",
+      "range": {
+        "startLine": 368,
+        "startChar": 4,
+        "endLine": 382,
+        "endChar": 6
+      },
+      "revId": "99f7c83d8dd4848848870621ffec0cbff8d3a612",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
