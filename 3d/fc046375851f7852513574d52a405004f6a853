@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sun, 17 Apr 2016 00:32:01 +0000
+Reviewed-on: https://review.openstack.org/306003
+Project: openstack/keystone
+Branch: refs/heads/stable/mitaka
