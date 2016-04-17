@@ -23,7 +23,7 @@ from keystone.tests.unit.ksfixtures import database
 
 
 class RestfulTestCase(unit.TestCase):
-    """Performs restful tests against the WSGI app over HTTP.
+    """Performs restful tests against the WSGI app over HTTP..
 
     This class launches public & admin WSGI servers for every test, which can
     be accessed by calling ``public_request()`` or ``admin_request()``,
