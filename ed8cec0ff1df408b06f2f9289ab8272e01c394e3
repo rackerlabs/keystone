@@ -22,6 +22,30 @@
       "revId": "ed8cec0ff1df408b06f2f9289ab8272e01c394e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_338516ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 19456
+      },
+      "writtenOn": "2016-04-18T13:59:46Z",
+      "side": 1,
+      "message": "Yes you are correct. removed.\nI am learning gradually.",
+      "parentUuid": "1a122d0e_73b5ce2f",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 55
+      },
+      "revId": "ed8cec0ff1df408b06f2f9289ab8272e01c394e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
