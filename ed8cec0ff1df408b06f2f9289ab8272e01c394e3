@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_73b5ce2f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-04-18T13:49:36Z",
+      "side": 1,
+      "message": "You\u0027re not doing this part here, right? since this was made in the precious patch, so I suggest remove this part of the commit message.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 55
+      },
+      "revId": "ed8cec0ff1df408b06f2f9289ab8272e01c394e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
