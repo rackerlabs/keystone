@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_39cb30a7",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-18T15:42:47Z",
+      "side": 1,
+      "message": "see https://github.com/openstack/requirements/blob/stable/mitaka/global-requirements.txt#L12",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "94b663c38e5e56c6f2e68c208bb68dc741223a16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
