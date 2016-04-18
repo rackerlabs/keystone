@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_9cbd17da",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-18T14:37:12Z",
+      "side": 1,
+      "message": "This shouldn\u0027t go in the wrapper - since the wrapper is to support calls to the V8 Interface when you are running a V9 driver. This signature should go in the IdentityDriverV9 class.",
+      "range": {
+        "startLine": 365,
+        "startChar": 8,
+        "endLine": 365,
+        "endChar": 42
+      },
+      "revId": "ca1cc72fdd80ffa00beb462d9b613088f8bb37ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
