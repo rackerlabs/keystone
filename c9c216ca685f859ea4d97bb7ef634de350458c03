@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_6a7828c5",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-18T17:01:20Z",
+      "side": 1,
+      "message": "It will require autoincrement that is hard to scale.",
+      "parentUuid": "5a18252c_1d875bd8",
+      "revId": "c9c216ca685f859ea4d97bb7ef634de350458c03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_fd609f37",
         "filename": "keystone/delegation/backends/sql.py",
         "patchSetId": 9
