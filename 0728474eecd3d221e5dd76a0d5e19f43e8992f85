@@ -2,6 +2,80 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_5369a08a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-18T20:12:52Z",
+      "side": 1,
+      "message": "if",
+      "range": {
+        "startLine": 9,
+        "startChar": 35,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "0728474eecd3d221e5dd76a0d5e19f43e8992f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f3270c62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-18T20:12:52Z",
+      "side": 1,
+      "message": "they\u0027re not since we allow deployers to override the driver.",
+      "revId": "0728474eecd3d221e5dd76a0d5e19f43e8992f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_73f3fcd6",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-18T20:12:52Z",
+      "side": 1,
+      "message": "this should be tenant_attr_name. It\u0027s confusing to call an attribute name an ID.",
+      "revId": "0728474eecd3d221e5dd76a0d5e19f43e8992f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_13cba873",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-18T20:12:52Z",
+      "side": 1,
+      "message": "use \u0027 for strings to be consistent with other strings in this file.\n\nAlso, use uuid.uuid4().hex.",
+      "revId": "0728474eecd3d221e5dd76a0d5e19f43e8992f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_9b77d439",
         "filename": "keystone/tests/unit/default_fixtures.py",
         "patchSetId": 1
