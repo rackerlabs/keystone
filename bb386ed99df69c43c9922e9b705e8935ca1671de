@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_ae69c2c0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-18T12:46:38Z",
+      "side": 1,
+      "message": "You need to add a method signature to the V9 driver in backends/base.py for this....",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 42
+      },
+      "revId": "bb386ed99df69c43c9922e9b705e8935ca1671de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ae97028f",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1609,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-18T12:46:38Z",
+      "side": 1,
+      "message": "one https://review.openstack.org/#/c/288403/4  merges (and you we rebase the patches), then this code will no longer be part of this patch...",
+      "range": {
+        "startLine": 1593,
+        "startChar": 0,
+        "endLine": 1609,
+        "endChar": 71
+      },
+      "revId": "bb386ed99df69c43c9922e9b705e8935ca1671de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
