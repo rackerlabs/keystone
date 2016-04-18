@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_e1d468be",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-04-18T14:29:25Z",
+      "side": 1,
+      "message": "why not return the empty list here, instead of pass?",
+      "revId": "67aec7238c25ecb4d2e12fe26ebb3a59a12e35fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_40a856db",
         "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_service_providers.py",
         "patchSetId": 5
