@@ -24,6 +24,7 @@ class IndentityProvidersTest(base.BaseIdentityTest):
     def setUp(self):
         super(IndentityProvidersTest, self).setUp()
         self.identity_providers_client.set_test_case(self)
+        self.mapping_rules_client.set_test_case(self)
 
     def _assert_identity_provider_attributes(self, idp, idp_id, idp_ref=None):
         self.assertIn('id', idp)
@@ -42,6 +43,15 @@ class IndentityProvidersTest(base.BaseIdentityTest):
 
             if 'remote_ids' in idp_ref:
                 self.assertItemsEqual(idp_ref['remote_ids'], idp['remote_ids'])
+
+    def _assert_protocol_attributes(self, protocol, protocol_id,
+                                    mapping_id=None):
+        self.assertIn('id', protocol)
+        self.assertEqual(protocol_id, protocol['id'])
+
+        self.assertIn('mapping_id', protocol)
+        if mapping_id:
+            self.assertEqual(mapping_id, protocol['mapping_id'])
 
     @test.idempotent_id('09450910-b816-4150-8513-a2fd4628a0c3')
     def test_identity_provider_create(self):
@@ -116,3 +126,106 @@ class IndentityProvidersTest(base.BaseIdentityTest):
 
         # The identity provider should be disabled
         self.assertFalse(idp['enabled'])
+
+    def _create_identity_provider_and_mapping(self):
+        # Create an identity provider
+        idp_id = data_utils.rand_uuid_hex()
+        self.identity_providers_client.create_identity_provider(
+            idp_id, **fixtures.idp_ref(enabled=True))
+
+        # Create a mapping rule
+        mapping_id = data_utils.rand_uuid_hex()
+        self.mapping_rules_client.create_mapping_rule(
+            mapping_id, fixtures.mapping_ref())
+
+        return idp_id, mapping_id
+
+    def test_add_protocol_to_identity_provider(self):
+        idp_id, mapping_id = self._create_identity_provider_and_mapping()
+
+        # Now we try to add a protocol to the identity provider
+        protocol_id = data_utils.rand_uuid_hex()
+        protocol = self.identity_providers_client.add_protocol_and_mapping(
+            idp_id, protocol_id, mapping_id)
+
+        self._assert_protocol_attributes(protocol, protocol_id, mapping_id)
+
+    def test_get_protocol_from_identity_provider(self):
+        idp_id, mapping_id = self._create_identity_provider_and_mapping()
+
+        # Add a protocol to the identity provider
+        protocol_id = data_utils.rand_uuid_hex()
+        self.identity_providers_client.add_protocol_and_mapping(
+            idp_id, protocol_id, mapping_id)
+
+        # Try to get the protocol
+        protocol = self.identity_providers_client.get_protocol_and_mapping(
+            idp_id, protocol_id)
+        self._assert_protocol_attributes(protocol, protocol_id, mapping_id)
+
+    def test_list_protocols_from_identity_provider(self):
+        idp_id, mapping_id = self._create_identity_provider_and_mapping()
+
+        protocol_ids = []
+        for _ in range(3):
+            protocol_id = data_utils.rand_uuid_hex()
+            self.identity_providers_client.add_protocol_and_mapping(
+                idp_id, protocol_id, mapping_id)
+            protocol_ids.append(protocol_id)
+
+        protocols_list = (
+            self.identity_providers_client.list_protocols_and_mappings(idp_id))
+        fetched_ids = [fetched['id'] for fetched in protocols_list]
+
+        for protocol_id in protocol_ids:
+            self.assertIn(protocol_id, fetched_ids)
+
+    def test_update_mapping_from_identity_provider_protocol(self):
+        idp_id, mapping_id = self._create_identity_provider_and_mapping()
+
+        # Add a protocol to the identity provider
+        protocol_id = data_utils.rand_uuid_hex()
+        self.identity_providers_client.add_protocol_and_mapping(
+            idp_id, protocol_id, mapping_id)
+
+        # Create another mapping
+        new_mapping_id = data_utils.rand_uuid_hex()
+        self.mapping_rules_client.create_mapping_rule(
+            new_mapping_id, fixtures.mapping_ref())
+
+        # Update the identity provider protocol
+        protocol = self.identity_providers_client.update_protocol_mapping(
+            idp_id, protocol_id, new_mapping_id)
+
+        self._assert_protocol_attributes(protocol, protocol_id, new_mapping_id)
+
+    def test_add_protocol_to_identity_provider_bad_mapping(self):
+        # Create an identity provider
+        idp_id = data_utils.rand_uuid_hex()
+        self.identity_providers_client.create_identity_provider(
+            idp_id, **fixtures.idp_ref(enabled=True))
+
+        # Now we try to add a protocol to the identity provider using
+        # a non existent mapping ID
+        mapping_id = data_utils.rand_uuid_hex()
+        protocol_id = data_utils.rand_uuid_hex()
+        protocol = self.identity_providers_client.add_protocol_and_mapping(
+            idp_id, protocol_id, mapping_id)
+
+        self._assert_protocol_attributes(protocol, protocol_id, mapping_id)
+
+    def test_update_protocol_from_identity_provider_bad_mapping(self):
+        idp_id, mapping_id = self._create_identity_provider_and_mapping()
+
+        # Add a protocol to the identity provider
+        protocol_id = data_utils.rand_uuid_hex()
+        self.identity_providers_client.add_protocol_and_mapping(
+            idp_id, protocol_id, mapping_id)
+
+        # Update the identity provider protocol using a non existent
+        # mapping_id
+        new_mapping_id = data_utils.rand_uuid_hex()
+        protocol = self.identity_providers_client.update_protocol_mapping(
+            idp_id, protocol_id, new_mapping_id)
+
+        self._assert_protocol_attributes(protocol, protocol_id, new_mapping_id)
