@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_41defc6d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-04-18T14:23:06Z",
+      "side": 1,
+      "message": "please use sys.maxsize here",
+      "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a1a430b9",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-04-18T14:23:06Z",
+      "side": 1,
+      "message": "Why do this outside the try-catch code?\n\nyou could also raise a DbMigrationError here, stating the version is not valid.",
+      "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e1858807",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-04-18T14:23:06Z",
+      "side": 1,
+      "message": "why not raise dbMigrationError instead of thsi sys.exit?",
+      "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
