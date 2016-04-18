@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_9b77d439",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-18T17:57:58Z",
+      "side": 1,
+      "message": "what impact generate these IDs at runtime would have in the tests performance? I mean... you can\u0027t guarantee these are UUIDs in this way.",
+      "revId": "0728474eecd3d221e5dd76a0d5e19f43e8992f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
