@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_48c5983a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-18T06:13:50Z",
+      "side": 1,
+      "message": "you can use sys.maxsize instead",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 20
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_48f3d89e",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-18T06:13:50Z",
+      "side": 1,
+      "message": "you could also raise a DbMigrationError here, stating the version is not valid",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 213,
+        "endChar": 19
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_48dc7812",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-18T06:13:50Z",
+      "side": 1,
+      "message": "why not just catch ValueErrors after trying int(version)\n\nusing int(version) should cover most cases... and you wouldn\u0027t need to use MAX_INT or sys.maxsize",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 213,
+        "endChar": 19
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a8038c72",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-18T06:13:50Z",
+      "side": 1,
+      "message": "why change this? it was raising valid exceptions before when migrations failed.",
+      "range": {
+        "startLine": 226,
+        "startChar": 12,
+        "endLine": 227,
+        "endChar": 23
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
