@@ -1154,6 +1154,24 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self.does_constraint_exist('role',
                                                         'ixu_role_name'))
 
+    def test_migration_102_after_upgrade_type_is_unique(self):
+        """Check service 'type' column should be unique after upgrade."""
+        self.upgrade(101)
+        session = self.sessionmaker()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+
+        self.upgrade(102)
+        add_service('compute')
+        self.assertRaises(db_exception.DBError, add_service, 'compute')
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
