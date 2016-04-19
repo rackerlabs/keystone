@@ -12,7 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """
-To run these tests against a live database:
+Test for SQL migration extensions.
+To run these tests against a live database.
 
 1. Modify the file ``keystone/tests/unit/config_files/backend_sql.conf`` to use
    the connection for your live database.
