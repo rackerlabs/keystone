@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_702a9291",
+        "filename": "keystone/token/providers/fernet/uuid_msgpack/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-19T23:41:06Z",
+      "side": 1,
+      "message": "pack, unpack, and creation_time should probably be moved from the formatter to the provider itself?",
+      "revId": "37152d1fce1ea817d29845ddae0e782143c224a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_50b15646",
         "filename": "keystone/token/providers/fernet/uuid_msgpack/core.py",
         "patchSetId": 1
