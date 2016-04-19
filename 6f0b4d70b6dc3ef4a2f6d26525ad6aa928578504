@@ -16,6 +16,24 @@
       "revId": "6f0b4d70b6dc3ef4a2f6d26525ad6aa928578504",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4c06fe86",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-19T13:42:51Z",
+      "side": 1,
+      "message": "This was changed because I have no idea what a user_ref is.",
+      "parentUuid": "1a122d0e_7762bfae",
+      "revId": "6f0b4d70b6dc3ef4a2f6d26525ad6aa928578504",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
