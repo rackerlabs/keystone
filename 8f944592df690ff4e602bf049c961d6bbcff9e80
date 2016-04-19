@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_3acae76d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-19T06:30:46Z",
+      "side": 1,
+      "message": "Maybe we should say *something* like. \"However, future API versions may remove this, so please specify...",
+      "revId": "8f944592df690ff4e602bf049c961d6bbcff9e80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
