@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_d4e603af",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-19T19:13:43Z",
+      "side": 1,
+      "message": "still need to use uuid.uuid4().hex?",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "1d66c1a7157cb0ece268a9adb64c0e5b64ffa2b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
