@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_57085e91",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 12898
+      },
+      "writtenOn": "2016-04-19T05:57:46Z",
+      "side": 1,
+      "message": "Wont you inherit the install_command from testenv?\n\nDon\u0027t you need something like https://github.com/openstack/nova/blob/master/tox.ini#L69-L72",
+      "revId": "ed36b7ddf5bc0170fbf7608d812e697676a8571f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_b7ff3266",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 12898
+      },
+      "writtenOn": "2016-04-19T05:57:46Z",
+      "side": 1,
+      "message": "Wont you inherit the install_command from testenv?\n\nDon\u0027t you need something like https://github.com/openstack/nova/blob/master/tox.ini#L124-L127",
+      "revId": "ed36b7ddf5bc0170fbf7608d812e697676a8571f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
