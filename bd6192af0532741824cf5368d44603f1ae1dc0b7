@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_8cd01bf8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-04-19T12:20:33Z",
+      "side": 1,
+      "message": "Hi Colleen,\n\nI have made this change because arguments are set in CONF at line no. 1178 and it gives ArgsAlreadyParsedError from oslo_config when we try to set arguments in CONF again.",
+      "parentUuid": "1a122d0e_c1279562",
+      "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_e11c5115",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -81,6 +99,24 @@
       "writtenOn": "2016-04-18T23:58:57Z",
       "side": 1,
       "message": "Why does this try/except need to be here? If cli.main() raises an exception that will cause the test to fail without hiding the traceback.",
+      "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ec1eefb9",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1225,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-04-19T12:20:33Z",
+      "side": 1,
+      "message": "Hi Colleen,\n\nThis is the positive testcase when valid value for version is passed. Hence, cli.main() will not raise any exception.",
+      "parentUuid": "1a122d0e_e11c5115",
       "revId": "bd6192af0532741824cf5368d44603f1ae1dc0b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
