@@ -22,6 +22,30 @@
       "revId": "1d66c1a7157cb0ece268a9adb64c0e5b64ffa2b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_720bbf8e",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-04-19T20:04:10Z",
+      "side": 1,
+      "message": "So, this is a minor perf optimization.  THe strings themselves are the result of the CLI equivalent, but this prevents them from being run on in each import.  As written this way, they have minimal impact (just strings) but a call to random is actually dependant on VM entropy, and might slow things down a lot.",
+      "parentUuid": "1a122d0e_d4e603af",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "1d66c1a7157cb0ece268a9adb64c0e5b64ffa2b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
