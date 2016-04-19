@@ -1154,6 +1154,67 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self.does_constraint_exist('role',
                                                         'ixu_role_name'))
 
+    def test_migration_102(self):
+        """Migration 102 should make the service 'type' column unique."""
+        self.upgrade(101)
+        session = self.sessionmaker()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+            return service_id
+
+        first_service_id = add_service('compute')
+        second_service_id = add_service('volume')
+
+        self.upgrade(102)
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service',
+                                         self.metadata,
+                                         autoload=True)
+
+        def get_service(service_id):
+            cols = [service_table.c.id, service_table.c.type]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep
+
+        get_first_service = get_service(first_service_id)
+        get_second_service = get_service(second_service_id)
+
+        self.assertEqual(first_service_id, get_first_service.id)
+        self.assertEqual("compute", get_first_service.type)
+
+        self.assertEqual(second_service_id, get_second_service.id)
+        self.assertEqual("volume", get_second_service.type)
+
+    def test_migration_102_after_upgrade_type_is_unique(self):
+        """Check service 'type' column should be unique after upgrade."""
+        self.upgrade(101)
+        session = self.sessionmaker()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+
+        self.upgrade(102)
+        add_service('compute')
+        self.assertRaises((sqlalchemy.exc.IntegrityError,
+                          db_exception.DBError),
+                          add_service, 'compute')
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
