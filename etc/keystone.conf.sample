@@ -396,7 +396,7 @@
 #proxies =
 
 # Global toggle for caching. (boolean value)
-#enabled = false
+#enabled = true
 
 # Extra debugging from the cache backend (cache keys, get/set/delete/etc
 # calls). This is only really useful if you need to see the specific cache-
