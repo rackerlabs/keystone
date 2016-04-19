@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_58019969",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-19T13:23:11Z",
+      "side": 1,
+      "message": "this option is missing the deprecation reason",
+      "range": {
+        "startLine": 699,
+        "startChar": 0,
+        "endLine": 699,
+        "endChar": 19
+      },
+      "revId": "e380a3c005aa1c045bc15ef884edf3d0e20032f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
