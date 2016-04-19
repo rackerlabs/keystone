@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_1bdb7f50",
+        "filename": "keystone/token/providers/fernet/uuid_msgpack/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-04-19T23:58:49Z",
+      "side": 1,
+      "message": "Pack \u003d Fernet Encrypt, unpack \u003d decrypt, creation_time extracts create time from the fernet token.",
+      "parentUuid": "1a122d0e_702a9291",
+      "revId": "37152d1fce1ea817d29845ddae0e782143c224a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_50b15646",
         "filename": "keystone/token/providers/fernet/uuid_msgpack/core.py",
         "patchSetId": 1
