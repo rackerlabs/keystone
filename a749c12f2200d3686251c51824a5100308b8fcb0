@@ -22,6 +22,40 @@
       "revId": "a749c12f2200d3686251c51824a5100308b8fcb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c94965b9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-19T12:13:48Z",
+      "side": 1,
+      "message": "If bind is a string bind_data will be just the first char.",
+      "revId": "a749c12f2200d3686251c51824a5100308b8fcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_0c2d2b95",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-19T12:13:48Z",
+      "side": 1,
+      "message": "except (exception.NotFound, exception.Unauthorized, exception.Forbidden)",
+      "revId": "a749c12f2200d3686251c51824a5100308b8fcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
