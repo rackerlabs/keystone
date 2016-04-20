@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_6bb26ae6",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T20:43:03Z",
+      "side": 1,
+      "message": "Why not remove the default since it\u0027s not valid?",
+      "parentUuid": "1a122d0e_3e8ba069",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_6050e032",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 9
@@ -177,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_8be6e6e5",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T20:43:03Z",
+      "side": 1,
+      "message": "how does tempest handle this situation?",
+      "parentUuid": "1a122d0e_fe7ac822",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_ea94ca8b",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 9
@@ -241,6 +277,24 @@
       "side": 1,
       "message": "it is kind of, they always prefer to pass kwargs directly instead of manipulating the arguments - they want the clients to be as dumb as possible.",
       "parentUuid": "1a122d0e_974d7f9c",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_abf6428c",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T20:43:03Z",
+      "side": 1,
+      "message": "Then I would vote for some docstrings.",
+      "parentUuid": "1a122d0e_5e777c01",
       "revId": "61665dd27f595b43f0954064939c737e10965a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
