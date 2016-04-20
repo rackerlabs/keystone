@@ -1,0 +1,11 @@
+gettext
+libffi-dev
+libldap2-dev
+libsasl2-dev
+libsqlite3-dev
+libssl-dev
+libxml2-dev
+libxslt1-dev
+mysql-client
+python-dev
+python3-dev
