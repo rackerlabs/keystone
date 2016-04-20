@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_5eaf657c",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9234
+      },
+      "writtenOn": "2016-04-20T23:03:05Z",
+      "side": 1,
+      "message": "this one should probably still be a colon.  Maybe add a line before this \"Tests for SQL migration extensions.\"",
+      "revId": "e425f5531130daf19dc85befe048731fbe28c5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_7ec86155",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9234
+      },
+      "writtenOn": "2016-04-20T23:03:05Z",
+      "side": 1,
+      "message": "this one should probably still be a colon.  Maybe add a line before this \"Tests for SQL migration extensions.\"",
+      "revId": "e425f5531130daf19dc85befe048731fbe28c5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_9efbbd78",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 9234
+      },
+      "writtenOn": "2016-04-20T23:03:05Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "e425f5531130daf19dc85befe048731fbe28c5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_1e15ed9a",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1028,
+      "author": {
+        "id": 9234
+      },
+      "writtenOn": "2016-04-20T23:03:05Z",
+      "side": 1,
+      "message": "not your change, but \"as\" doesn\u0027t make sense in that sentence.  Maybe it should be \"are\"?",
+      "revId": "e425f5531130daf19dc85befe048731fbe28c5b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
