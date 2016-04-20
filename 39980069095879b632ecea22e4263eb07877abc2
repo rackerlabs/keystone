@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_0f630143",
+        "filename": "keystone/policy/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T21:14:13Z",
+      "side": 1,
+      "message": "The imports are in the wrong order. Should be stdlib, third-party and them keystone.",
+      "revId": "39980069095879b632ecea22e4263eb07877abc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
