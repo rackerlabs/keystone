@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_d21c0e6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-20T21:18:45Z",
+      "side": 1,
+      "message": "nit: add \"Partial-Bug: #1563101\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 0
+      },
+      "revId": "39980069095879b632ecea22e4263eb07877abc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_0f630143",
         "filename": "keystone/policy/backends/base.py",
         "patchSetId": 2
