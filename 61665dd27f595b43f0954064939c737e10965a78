@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_2fe99db7",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-20T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_6bb26ae6",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_6050e032",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 9
@@ -213,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_afdf6dd4",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-20T21:11:32Z",
+      "side": 1,
+      "message": "using the addCleanup when necessary.\n\n- example of general tests fixtures: https://github.com/openstack/tempest/blob/master/tempest/api/identity/base.py#L265-L284 (which we don\u0027t need yet)\n\n- example of specific tests fixtures: https://github.com/openstack/tempest/blob/master/tempest/api/identity/admin/v3/test_groups.py#L32-L35",
+      "parentUuid": "1a122d0e_8be6e6e5",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_ea94ca8b",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 9
@@ -295,6 +331,24 @@
       "side": 1,
       "message": "Then I would vote for some docstrings.",
       "parentUuid": "1a122d0e_5e777c01",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4f34d948",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-20T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_abf6428c",
       "revId": "61665dd27f595b43f0954064939c737e10965a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
