@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_d9af267b",
+        "filename": "keystone/tests/unit/default_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-04-20T15:24:11Z",
+      "side": 1,
+      "message": "AHHH this won\u0027t work.  Each time they are implorted, they will be regernerated and not have consistant values.  Possibly ok, but certainly not what is meant.  Will roll back to previous.",
+      "revId": "60e2bb86a85b74ed673d7675a80ebf847b922b7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
