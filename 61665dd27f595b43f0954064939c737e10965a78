@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_c0e734aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "(nit) s/,/./",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_40fcc43d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "(nit) s/this/These/",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_97f1ff6d",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "This doesn\u0027t match the parent signature. Is it OK to have a None value for credentials? Just looking at the tempest code it looks like it would blow up with an attribute error.",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_6050e032",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "(nit) needs newline",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_2d46dc4e",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "Why not force the test_case here instead of the set_test_case method? That way this can be done in the base classes instead of every test class.",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ea94ca8b",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "Why the newline here?",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_974d7f9c",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "Is the **kwargs a common pattern in tempest land? I\u0027m not a fan because I can\u0027t see what I need to pass in here. If we don\u0027t want to list out the args then we should at least provide the information in docstrings.",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f4add1e9",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "Why do we need this if we are just calling through to the parent\u0027s method?",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_74a1c1f7",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "Why do we need this if we are just calling through to the parent\u0027s method?",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_144fad37",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-20T14:22:39Z",
+      "side": 1,
+      "message": "`enabled` should be compared against None so that False values work correctly.",
+      "revId": "61665dd27f595b43f0954064939c737e10965a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
