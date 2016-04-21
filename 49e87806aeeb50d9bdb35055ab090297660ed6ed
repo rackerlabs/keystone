@@ -19,6 +19,47 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_a5f8004b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-21T16:16:59Z",
+      "side": 1,
+      "message": "reference bug https://bugs.launchpad.net/keystone/+bug/1550127\nand bug https://bugs.launchpad.net/keystone/+bug/1554274\n\nwith:\n\nCloses-Bug: 155...\nCloses-Bug: 155...",
+      "parentUuid": "1a122d0e_908f05cc",
+      "revId": "49e87806aeeb50d9bdb35055ab090297660ed6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4582ccc9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-21T16:16:59Z",
+      "side": 1,
+      "message": "i don\u0027t think we want this in the [auth] section, the [DEFAULT] section would be better, since this will work for all requests, not just auth",
+      "range": {
+        "startLine": 820,
+        "startChar": 0,
+        "endLine": 823,
+        "endChar": 76
+      },
+      "revId": "49e87806aeeb50d9bdb35055ab090297660ed6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_701fc909",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
@@ -30,6 +71,30 @@
       "writtenOn": "2016-04-21T15:15:54Z",
       "side": 1,
       "message": "why do you need this check? Why not just use X-Forwarded-For if it exists?",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 39
+      },
+      "revId": "49e87806aeeb50d9bdb35055ab090297660ed6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_85afc42a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-21T16:16:59Z",
+      "side": 1,
+      "message": "from https://bugs.launchpad.net/keystone/+bug/1550127\n\nOne reason to make it an option is that the value should only be trusted if Keystone is behind a trusted proxy that ensures it is set correctly. Otherwise, a malicious client can set the value to anything (the wrong IP address, unprintable characters, etc). By setting this option, an operator is letting Keystone know the header can be trusted based on the deployment.",
+      "parentUuid": "1a122d0e_701fc909",
       "range": {
         "startLine": 231,
         "startChar": 8,
