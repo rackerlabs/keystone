@@ -296,19 +296,19 @@ class Manager(manager.Manager):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
 
-        try:
-            if not self._needs_persistence:
-                # NOTE(lbragstad): This will validate v2 and v3 non-persistent
-                # tokens.
-                return self.driver.validate_non_persistent_token(token_id)
-            token_ref = self._persistence.get_token(token_id)
-            version = self.get_token_version(token_ref)
-            if version == self.V3:
+        if not self._needs_persistence:
+            # NOTE(lbragstad): This will validate v2 and v3 non-persistent
+            # tokens.
+            return self.driver.validate_non_persistent_token(token_id)
+        token_ref = self._persistence.get_token(token_id)
+        version = self.get_token_version(token_ref)
+        if version == self.V3:
+            try:
                 return self.driver.validate_v3_token(token_ref)
-        except exception.Unauthorized as e:
-            LOG.debug('Unable to validate token: %s', e)
-            raise exception.TokenNotFound(token_id=token_id)
-        if version == self.V2:
+            except exception.Unauthorized as e:
+                LOG.debug('Unable to validate token: %s', e)
+                raise exception.TokenNotFound(token_id=token_id)
+        elif version == self.V2:
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
 
@@ -375,6 +375,7 @@ class Manager(manager.Manager):
                         trust_id=token_ref['metadata'].get('trust_id'),
                         token_version=self.V2)
             self._create_token(token_id, data)
+            self._validate_v2_token.set(data, token_id)
 
         return token_id, token_data
 
@@ -416,6 +417,9 @@ class Manager(manager.Manager):
                     token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+            self._validate_v3_token.set(token_data, token_id)
+        else:
+            self.validate_non_persistent_token.set(token_data, token_id)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
