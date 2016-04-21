@@ -264,6 +264,7 @@ class Manager(manager.Manager):
         else:
             return self.check_revocation_v3(token)
 
+    @MEMOIZE
     def validate_v3_token(self, token_id):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
@@ -312,7 +313,6 @@ class Manager(manager.Manager):
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
-    @MEMOIZE
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
@@ -410,6 +410,7 @@ class Manager(manager.Manager):
                     token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+        self.validate_v3_token.set(token_data, token_id)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
@@ -424,7 +425,7 @@ class Manager(manager.Manager):
 
         self._validate_token.invalidate(self, token_id)
         self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v3_token.invalidate(self, token_id)
+        self.validate_v3_token.invalidate(self, token_id)
 
     def revoke_token(self, token_id, revoke_chain=False):
         revoke_by_expires = False
