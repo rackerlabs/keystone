@@ -228,6 +228,10 @@ class Application(BaseApplication):
         context['accept_header'] = req.accept
         req.environ = None
 
+        forward_value = req.headers.get('X-Forwarded-For')
+        if CONF.use_forwarded_for and forward_value:
+            req.environ['REMOTE_ADDR'] = forward_value
+
         params.update(arg_dict)
 
         context.setdefault('is_admin', False)
