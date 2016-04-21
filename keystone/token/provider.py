@@ -375,6 +375,7 @@ class Manager(manager.Manager):
                         trust_id=token_ref['metadata'].get('trust_id'),
                         token_version=self.V2)
             self._create_token(token_id, data)
+            self._validate_v2_token.set(data, token_id)
 
         return token_id, token_data
 
@@ -416,6 +417,9 @@ class Manager(manager.Manager):
                     token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+            self._validate_v3_token.set(token_data, token_id)
+        else:
+            self.validate_non_persistent_token.set(token_data, token_id)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
