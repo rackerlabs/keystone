@@ -1,0 +1,14 @@
+---
+features:
+  - >
+    [`bug 1550127 <https://bugs.launchpad.net/keystone/+bug/1550127>`_]
+    Added use_forwarded_for option in [DEAFAULT] section.
+    If enabled, the address from X-Forwarded-For will be
+    used as remote address.
+    "False" by default.
+fixes:
+  - >
+    [`bug 1550127 <https://bugs.launchpad.net/keystone/+bug/1550127>`_]
+    Originally, log file contained a reverse proxy address when keystone
+    endpoint was behind the proxy. Now, address from X-Forwarded-For is used
+    in the log file if "use_forwarded_for" is set by "True" in the config file.

@@ -239,6 +239,36 @@ class ApplicationTest(BaseWSGITest):
         self.assertEqual({'name': u'nonexit\xe8nt'},
                          jsonutils.loads(resp.body))
 
+    def test_x_forwarded_for_enable_not_set(self):
+        req = self._make_request()
+        req.environ['REMOTE_ADDR'] = '1.1.1.1'
+        wsgi.CONF.use_forwarded_for = True
+        app = FakeApp()
+        app(req)
+        # True value can affect on other tests
+        wsgi.CONF.use_forwarded_for = False
+        self.assertEqual('1.1.1.1', req.environ['REMOTE_ADDR'])
+
+    def test_x_forwarded_for_enable(self):
+        req = self._make_request()
+        req.environ['REMOTE_ADDR'] = '1.1.1.1'
+        req.headers['X-Forwarded-For'] = '1.1.1.2'
+        wsgi.CONF.use_forwarded_for = True
+        app = FakeApp()
+        app(req)
+        # True value can affect on other tests
+        wsgi.CONF.use_forwarded_for = False
+        self.assertEqual('1.1.1.2', req.environ['REMOTE_ADDR'])
+
+    def test_x_forwarded_for_disable(self):
+        req = self._make_request()
+        req.environ['REMOTE_ADDR'] = '1.1.1.1'
+        req.headers['X-Forwarded-For'] = '1.1.1.2'
+        wsgi.CONF.use_forwarded_for = False
+        app = FakeApp()
+        app(req)
+        self.assertEqual('1.1.1.1', req.environ['REMOTE_ADDR'])
+
     def test_base_url(self):
         class FakeApp(wsgi.Application):
             def index(self, context):

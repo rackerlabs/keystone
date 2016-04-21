@@ -43,7 +43,6 @@ from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.models import token_model
 
-
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
@@ -228,6 +227,10 @@ class Application(BaseApplication):
         context['accept_header'] = req.accept
         req.environ = None
 
+        forward_value = req.headers.get('X-Forwarded-For')
+        if CONF.use_forwarded_for and forward_value:
+            req.environ['REMOTE_ADDR'] = forward_value
+
         params.update(arg_dict)
 
         context.setdefault('is_admin', False)
@@ -298,7 +301,6 @@ class Application(BaseApplication):
 
     def assert_admin(self, context):
         """Ensure the user is an admin.
-
         :raises keystone.exception.Unauthorized: if a token could not be
             found/authorized, a user is invalid, or a tenant is
             invalid/not scoped.

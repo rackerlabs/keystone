@@ -90,6 +90,10 @@
 # but is insecure. (boolean value)
 #insecure_debug = false
 
+# Treat X-Forwarded-For as the canonical remote address. Only enable this if
+# you have a sanitizing proxy. (boolean value)
+#use_forwarded_for = false
+
 #
 # From keystone.notifications
 #
