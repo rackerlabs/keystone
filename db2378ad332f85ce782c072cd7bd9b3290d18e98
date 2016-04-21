@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_1da16a46",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-04-21T06:41:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_48c5983a",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 20
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_48f3d89e",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 3
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_bdc6ec46",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-04-21T06:41:21Z",
+      "side": 1,
+      "message": "Hi Steve,\n\nDbMigrationError is implemented in oslo_db which cannot not be raised from here. I have defined own custom exception for invalid value of version and raised it.",
+      "parentUuid": "1a122d0e_48f3d89e",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 213,
+        "endChar": 19
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a8038c72",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 3
@@ -82,6 +130,30 @@
       "writtenOn": "2016-04-18T06:13:50Z",
       "side": 1,
       "message": "why change this? it was raising valid exceptions before when migrations failed.",
+      "range": {
+        "startLine": 226,
+        "startChar": 12,
+        "endLine": 227,
+        "endChar": 23
+      },
+      "revId": "db2378ad332f85ce782c072cd7bd9b3290d18e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_daa48ea7",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-04-21T06:41:21Z",
+      "side": 1,
+      "message": "Hi Steve,\n\nAs explained in the commit message, it prints stacktrace with KeyError when version passed is greater than current version and DbMigrationError with stacktrace when version is passed less than current version. Stacktrace does not make any sense to the user. So this line handles appropriate exception and displays user friendly message to user.",
+      "parentUuid": "1a122d0e_a8038c72",
       "range": {
         "startLine": 226,
         "startChar": 12,
