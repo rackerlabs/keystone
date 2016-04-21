@@ -56,6 +56,15 @@ V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
 
+def anonymous_token_validator(validate_token):
+    """Shadow function name from `cache_on_arguments` to merge caching."""
+    def _anonymous(self, token_id):
+        # NOTE(amakarov): "self" is required here for cache key generator
+        # function to work correctly - it relies on the naming.
+        return validate_token(self, token_id)
+    return _anonymous
+
+
 def base64_encode(s):
     """Encode a URL-safe string.
 
@@ -293,10 +302,12 @@ class Manager(manager.Manager):
             raise exception.TokenNotFound(token_id=token_id)
 
     @MEMOIZE_TOKENS
+    @anonymous_token_validator
     def validate_non_persistent_token(self, token_id):
         return self.driver.validate_non_persistent_token(token_id)
 
     @MEMOIZE_TOKENS
+    @anonymous_token_validator
     def _validate_token(self, token_id):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
@@ -318,10 +329,12 @@ class Manager(manager.Manager):
         raise exception.UnsupportedTokenVersionException()
 
     @MEMOIZE_TOKENS
+    @anonymous_token_validator
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
     @MEMOIZE_TOKENS
+    @anonymous_token_validator
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
@@ -380,6 +393,10 @@ class Manager(manager.Manager):
                         trust_id=token_ref['metadata'].get('trust_id'),
                         token_version=self.V2)
             self._create_token(token_id, data)
+            # NOTE(amakarov): TOKENS_REGION is to be passed to serve as
+            # required positional "self" argument. It's ignored, so I've put
+            # it here for convenience - any placeholder is fine.
+            self._validate_v2_token.set(data, TOKENS_REGION, token_id)
 
         return token_id, token_data
 
@@ -421,6 +438,13 @@ class Manager(manager.Manager):
                     token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+            self._validate_v3_token.set(token_data, TOKENS_REGION, token_id)
+        else:
+            # NOTE(amakarov): here and above TOKENS_REGION is to be passed
+            # to serve as required positional "self" argument. It's ignored,
+            # so I've put it here for convenience - any placeholder is fine.
+            self.validate_non_persistent_token.set(
+                token_data, TOKENS_REGION, token_id)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
