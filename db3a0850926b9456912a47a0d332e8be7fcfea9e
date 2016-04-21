@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_efa306fe",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1252,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-21T11:29:56Z",
+      "side": 1,
+      "message": "it should go to a separate patchset, because it is unrelated to the main subject of the patch.",
+      "range": {
+        "startLine": 1235,
+        "startChar": 0,
+        "endLine": 1252,
+        "endChar": 22
+      },
+      "revId": "db3a0850926b9456912a47a0d332e8be7fcfea9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_8f87f25f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-21T11:29:56Z",
+      "side": 1,
+      "message": "why do use string here instead of defined constant?",
+      "range": {
+        "startLine": 1256,
+        "startChar": 10,
+        "endLine": 1256,
+        "endChar": 18
+      },
+      "revId": "db3a0850926b9456912a47a0d332e8be7fcfea9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_6fb8962a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-21T11:29:56Z",
+      "side": 1,
+      "message": "why do you change an integer to string?",
+      "range": {
+        "startLine": 1259,
+        "startChar": 14,
+        "endLine": 1259,
+        "endChar": 18
+      },
+      "revId": "db3a0850926b9456912a47a0d332e8be7fcfea9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
