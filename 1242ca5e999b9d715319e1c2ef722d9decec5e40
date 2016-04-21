@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_2634fb48",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 9301
+      },
+      "writtenOn": "2016-04-21T15:39:37Z",
+      "side": 1,
+      "message": "docstring for idp_id as well would be good.\n\n:param str idp_id: The ID to be used to delete the Identity Provider.",
+      "revId": "1242ca5e999b9d715319e1c2ef722d9decec5e40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
