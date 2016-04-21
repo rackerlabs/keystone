@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_677b837c",
+        "filename": "keystone/endpoint_policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-21T20:15:09Z",
+      "side": 0,
+      "message": "Since this is a public symbol we need to leave it here and deprecated in favor of the new location. I think there\u0027s a debtcollector function for this.",
+      "revId": "eaec636401b1f3c31495abc6b28d624185bb3e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
