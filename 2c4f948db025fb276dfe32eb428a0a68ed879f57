@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_06873fd8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1650,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-21T15:44:58Z",
+      "side": 1,
+      "message": "Out of scope for this patch: Fetch*",
+      "revId": "2c4f948db025fb276dfe32eb428a0a68ed879f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4685b7ab",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-04-21T15:44:58Z",
+      "side": 1,
+      "message": "This needs to be re-written to actually make sense with a period.",
+      "revId": "2c4f948db025fb276dfe32eb428a0a68ed879f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
