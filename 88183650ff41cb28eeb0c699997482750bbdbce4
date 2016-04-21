@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_41cf8055",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-21T06:31:46Z",
+      "side": 1,
+      "message": "i think you need a new line after",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 34
+      },
+      "revId": "88183650ff41cb28eeb0c699997482750bbdbce4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_81d518e6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-21T06:31:46Z",
+      "side": 1,
+      "message": "change this to a colon:",
+      "range": {
+        "startLine": 16,
+        "startChar": 42,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "88183650ff41cb28eeb0c699997482750bbdbce4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
