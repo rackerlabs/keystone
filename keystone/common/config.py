@@ -817,6 +817,10 @@ FILE_OPTIONS = {
         cfg.StrOpt('oauth1',
                    help='Entrypoint for the oAuth1.0 auth plugin module in '
                         'the keystone.auth.oauth1 namespace.'),
+        cfg.BoolOpt('use_forwarded_for',
+                    default=False,
+                    help='Treat X-Forwarded-For as the canonical remote address. '
+                         'Only enable this if you have a sanitizing proxy.')
     ],
     'tokenless_auth': [
         cfg.MultiStrOpt('trusted_issuer', default=[],
