@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_908f05cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-21T15:15:54Z",
+      "side": 1,
+      "message": "This should have a reference to the bugreport. Please read https://wiki.openstack.org/wiki/GitCommitMessages for more info. There should be something like Closes-Bug: #bugnumber",
+      "revId": "49e87806aeeb50d9bdb35055ab090297660ed6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_701fc909",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-04-21T15:15:54Z",
+      "side": 1,
+      "message": "why do you need this check? Why not just use X-Forwarded-For if it exists?",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 39
+      },
+      "revId": "49e87806aeeb50d9bdb35055ab090297660ed6ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
