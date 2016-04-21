@@ -153,6 +153,11 @@ FILE_OPTIONS = {
                          'or authenticated user to get more information than '
                          'normal, such as why authentication failed. This may '
                          'be useful for debugging but is insecure.'),
+        cfg.BoolOpt('use_forwarded_for',
+                    default=False,
+                    help='Treat X-Forwarded-For as the canonical remote '
+                         'address. Only enable this if you have a '
+                         'sanitizing proxy.')
     ],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default',
