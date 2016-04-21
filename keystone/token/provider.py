@@ -274,7 +274,7 @@ class Manager(manager.Manager):
             # Otherwise the information about the token must be in the token
             # id.
             if not self._needs_persistence:
-                token_ref = self.validate_non_persistent_token(token_id)
+                token_ref = self._validate_non_persistent_token(token_id)
             else:
                 unique_id = utils.generate_unique_id(token_id)
                 # NOTE(morganfainberg): Ensure we never use the long-form
@@ -286,6 +286,10 @@ class Manager(manager.Manager):
         except exception.Unauthorized as e:
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
+
+    @MEMOIZE
+    def _validate_non_persistent_token(self, token_id):
+        return self.validate_non_persistent_token(token_id)
 
     @MEMOIZE
     def _validate_token(self, token_id):
@@ -371,6 +375,7 @@ class Manager(manager.Manager):
                         trust_id=token_ref['metadata'].get('trust_id'),
                         token_version=self.V2)
             self._create_token(token_id, data)
+            self._validate_v2_token.set(data, token_id)
 
         return token_id, token_data
 
@@ -410,6 +415,9 @@ class Manager(manager.Manager):
                     token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+            self._validate_v3_token.set(token_data, token_id)
+        else:
+            self._validate_non_persistent_token.set(token_data, token_id)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
@@ -425,6 +433,7 @@ class Manager(manager.Manager):
         self._validate_token.invalidate(self, token_id)
         self._validate_v2_token.invalidate(self, token_id)
         self._validate_v3_token.invalidate(self, token_id)
+        self._validate_non_persistent_token.invalidate(self, token_id)
 
     def revoke_token(self, token_id, revoke_chain=False):
         revoke_by_expires = False
