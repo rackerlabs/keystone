@@ -1335,7 +1335,7 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
         trust_id = new_trust['id']
         self.trust_controller.delete_trust(request, trust_id=trust_id)
         self.assertRaises(
-            exception.Unauthorized,
+            exception.TrustNotFound,
             self.controller.validate_token,
             self.make_request(is_admin=True),
             token_id=trust_scoped_token_id
