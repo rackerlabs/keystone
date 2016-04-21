@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_627d48b1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1252,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-21T13:41:40Z",
+      "side": 1,
+      "message": "Agree, I just view this temporary until we upgrade to the latest oslog_config",
+      "parentUuid": "1a122d0e_efa306fe",
+      "range": {
+        "startLine": 1235,
+        "startChar": 0,
+        "endLine": 1252,
+        "endChar": 22
+      },
+      "revId": "db3a0850926b9456912a47a0d332e8be7fcfea9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_8f87f25f",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-21T11:29:56Z",
       "side": 1,
       "message": "why do use string here instead of defined constant?",
+      "range": {
+        "startLine": 1256,
+        "startChar": 10,
+        "endLine": 1256,
+        "endChar": 18
+      },
+      "revId": "db3a0850926b9456912a47a0d332e8be7fcfea9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a298001d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-21T13:41:40Z",
+      "side": 1,
+      "message": "Because we are using an older version of oslo_log and thus, the NEWTON constant is not available.",
+      "parentUuid": "1a122d0e_8f87f25f",
       "range": {
         "startLine": 1256,
         "startChar": 10,
