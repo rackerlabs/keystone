@@ -203,6 +203,11 @@ class Application(BaseApplication):
         del arg_dict['controller']
 
         params = req.environ.get(PARAMS_ENV, {})
+
+        forward_value = req.headers.get('X-Forwarded-For')
+        if forward_value:
+            req.environ['REMOTE_ADDR'] = forward_value
+
         params.update(arg_dict)
 
         # TODO(termie): do some basic normalization on methods

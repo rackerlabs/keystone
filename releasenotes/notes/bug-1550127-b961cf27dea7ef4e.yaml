@@ -1,0 +1,13 @@
+---
+features:
+  - >
+    [`bug 1550127 <https://bugs.launchpad.net/keystone/+bug/1550127>`_]
+    If X-Forwarded-For header is present is the request, it will be
+    used as remote address. This header is expected to be set by the proxy
+    to indicate the client IP.
+fixes:
+  - >
+    [`bug 1550127 <https://bugs.launchpad.net/keystone/+bug/1550127>`_]
+    Originally, log file contained a reverse proxy address when keystone
+    endpoint was behind the proxy. Now, address from X-Forwarded-For is used
+    in the log file.

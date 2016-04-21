@@ -239,6 +239,19 @@ class ApplicationTest(BaseWSGITest):
         self.assertEqual({'name': u'nonexit\xe8nt'},
                          jsonutils.loads(resp.body))
 
+    def test_x_forwarded_for_header_present(self):
+        req = self._make_request(url='/')
+        req.environ['REMOTE_ADDR'] = '1.1.1.1'
+        req.headers['X-Forwarded-For'] = '1.1.1.2'
+        req.get_response(FakeApp())
+        self.assertEqual('1.1.1.2', req.environ['REMOTE_ADDR'])
+
+    def test_x_forwarded_for_header_absent(self):
+        req = self._make_request(url='/')
+        req.environ['REMOTE_ADDR'] = '1.1.1.1'
+        req.get_response(FakeApp())
+        self.assertEqual('1.1.1.1', req.environ['REMOTE_ADDR'])
+
     def test_base_url(self):
         class FakeApp(wsgi.Application):
             def index(self, context):
