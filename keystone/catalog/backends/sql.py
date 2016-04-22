@@ -19,8 +19,7 @@ from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.sql import true
 
-from keystone import catalog
-from keystone.catalog import core
+from keystone.catalog.backends import base
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone import exception
@@ -28,6 +27,48 @@ from keystone.i18n import _
 
 
 CONF = cfg.CONF
+
+
+def format_url(url, substitutions, silent_keyerror_failures=None):
+    """Format a user-defined URL with the given substitutions.
+
+    :param string url: the URL to be formatted
+    :param dict substitutions: the dictionary used for substitution
+    :param list silent_keyerror_failures: keys for which we should be silent
+        if there is a KeyError exception on substitution attempt
+    :returns: a formatted URL
+
+    """
+    substitutions = utils.WhiteListedItemFilter(
+        WHITELISTED_PROPERTIES,
+        substitutions)
+    allow_keyerror = silent_keyerror_failures or []
+    try:
+        result = url.replace('$(', '%(') % substitutions
+    except AttributeError:
+        LOG.error(_LE('Malformed endpoint - %(url)r is not a string'),
+                  {"url": url})
+        raise exception.MalformedEndpoint(endpoint=url)
+    except KeyError as e:
+        if not e.args or e.args[0] not in allow_keyerror:
+            LOG.error(_LE("Malformed endpoint %(url)s - unknown key "
+                          "%(keyerror)s"),
+                      {"url": url,
+                       "keyerror": e})
+            raise exception.MalformedEndpoint(endpoint=url)
+        else:
+            result = None
+    except TypeError as e:
+        LOG.error(_LE("Malformed endpoint '%(url)s'. The following type error "
+                      "occurred during string substitution: %(typeerror)s"),
+                  {"url": url,
+                   "typeerror": e})
+        raise exception.MalformedEndpoint(endpoint=url)
+    except ValueError as e:
+        LOG.error(_LE("Malformed endpoint %s - incomplete format "
+                      "(are you missing a type notifier ?)"), url)
+        raise exception.MalformedEndpoint(endpoint=url)
+    return result
 
 
 class Region(sql.ModelBase, sql.DictBase):
@@ -81,7 +122,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
-class Catalog(catalog.CatalogDriverV8):
+class Catalog(base.CatalogDriverV8):
     # Regions
     def list_regions(self, hints):
         with sql.session_for_read() as session:
@@ -289,7 +330,7 @@ class Catalog(catalog.CatalogDriverV8):
                 if not endpoint.service['enabled']:
                     continue
                 try:
-                    formatted_url = core.format_url(
+                    formatted_url = format_url(
                         endpoint['url'], substitutions,
                         silent_keyerror_failures=silent_keyerror_failures)
                     if formatted_url is not None:
@@ -351,7 +392,7 @@ class Catalog(catalog.CatalogDriverV8):
                     del endpoint['enabled']
                     endpoint['region'] = endpoint['region_id']
                     try:
-                        formatted_url = core.format_url(
+                        formatted_url = format_url(
                             endpoint['url'], d,
                             silent_keyerror_failures=silent_keyerror_failures)
                         if formatted_url:
