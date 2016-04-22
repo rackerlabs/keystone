@@ -103,6 +103,7 @@ class AuthContext(dict):
                                      'expires_at'])
 
     def __setitem__(self, key, val):
+        """Assign identity attributes with condtions."""
         if key in self.IDENTITY_ATTRIBUTES and key in self:
             existing_val = self[key]
             if key == 'expires_at':

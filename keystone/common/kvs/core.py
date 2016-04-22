@@ -429,6 +429,7 @@ class KeyValueStoreLock(object):
                             self.key)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """Exit behavior of context manager to release the lock."""
         self.release()
 
 
