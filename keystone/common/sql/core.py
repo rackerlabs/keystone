@@ -147,6 +147,7 @@ class DictBase(models.ModelBase):
         return d
 
     def __getitem__(self, key):
+        """Define access to an item where key's value is in extra or not."""
         if key in self.extra:
             return self.extra[key]
         return getattr(self, key)
