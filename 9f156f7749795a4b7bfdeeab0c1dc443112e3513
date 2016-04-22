@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_2a7127a9",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-22T16:31:29Z",
+      "side": 1,
+      "message": "KeystoneToken. (drop the last word)",
+      "range": {
+        "startLine": 66,
+        "startChar": 43,
+        "endLine": 66,
+        "endChar": 69
+      },
+      "revId": "9f156f7749795a4b7bfdeeab0c1dc443112e3513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
