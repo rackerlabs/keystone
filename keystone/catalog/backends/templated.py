@@ -20,6 +20,7 @@ from oslo_log import log
 import six
 
 from keystone.catalog import core
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _LC
 
@@ -231,7 +232,7 @@ class Catalog(core.Driver):
                 service_data = {}
                 try:
                     for k, v in service_ref.items():
-                        formatted_value = core.format_url(
+                        formatted_value = utils.format_url(
                             v, substitutions,
                             silent_keyerror_failures=silent_keyerror_failures)
                         if formatted_value:
