@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_aae2572d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-22T16:36:01Z",
+      "side": 1,
+      "message": "Misspelling and I don\u0027t know what this means.",
+      "revId": "7940a80fd453b13c25865f74ad118021d4234ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ea39efa4",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-22T16:36:01Z",
+      "side": 1,
+      "message": "Just \"Context manager exit\" would be fine. What is KVSLock?",
+      "revId": "7940a80fd453b13c25865f74ad118021d4234ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4a58e3fa",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-22T16:36:01Z",
+      "side": 1,
+      "message": "Similar to my previous comment",
+      "revId": "7940a80fd453b13c25865f74ad118021d4234ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_8a72fb7a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-22T16:36:01Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "7940a80fd453b13c25865f74ad118021d4234ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
