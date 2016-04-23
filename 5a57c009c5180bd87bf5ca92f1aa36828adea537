@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_4720cc49",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-23T05:15:07Z",
+      "side": 1,
+      "message": "thanks for matching this text with nova\u0027s ! https://github.com/openstack/nova/blob/bc5035343d366a18cae587f92ecb4e871aba974a/nova/api/auth.py#L47",
+      "range": {
+        "startLine": 158,
+        "startChar": 20,
+        "endLine": 160,
+        "endChar": 45
+      },
+      "revId": "5a57c009c5180bd87bf5ca92f1aa36828adea537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_0726d467",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-23T05:15:07Z",
+      "side": 1,
+      "message": "just because the option is set to true, doesn\u0027t guarantee that x-forwarded-for is set\n\n  forwarded_value \u003d req.headers.get(\u0027X-Forwarded-For\u0027)\n  if CONF.use_forwarded_for and forwarded_value:\n    req.environ[\u0027REMOTE_ADDR\u0027] \u003d forwarded_value",
+      "range": {
+        "startLine": 232,
+        "startChar": 41,
+        "endLine": 232,
+        "endChar": 71
+      },
+      "revId": "5a57c009c5180bd87bf5ca92f1aa36828adea537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c7d21c34",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-23T05:15:07Z",
+      "side": 1,
+      "message": "you could add a test where x-forwarded-for is enabled but not set, so it defaults to remote-addr",
+      "range": {
+        "startLine": 242,
+        "startChar": 8,
+        "endLine": 242,
+        "endChar": 35
+      },
+      "revId": "5a57c009c5180bd87bf5ca92f1aa36828adea537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
