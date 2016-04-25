@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_a0ca4a9f",
+        "filename": "keystone/common/ldap/models.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-25T14:05:48Z",
+      "side": 1,
+      "message": "nit: s/id/ID",
+      "range": {
+        "startLine": 26,
+        "startChar": 54,
+        "endLine": 26,
+        "endChar": 56
+      },
+      "revId": "a17083e7184e4d5e0f8c432410634cad49fe43d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
