@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_521b511b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-04-25T09:51:57Z",
+      "side": 1,
+      "message": "I think that should be written as follows.\nlogger.logger.setLevel(level_name)",
+      "range": {
+        "startLine": 648,
+        "startChar": 12,
+        "endLine": 648,
+        "endChar": 39
+      },
+      "revId": "7c969651f40e8f26534efd53d2ce50ded485f412",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
