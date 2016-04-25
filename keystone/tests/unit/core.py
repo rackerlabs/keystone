@@ -19,7 +19,6 @@ import datetime
 import functools
 import hashlib
 import json
-import logging
 import os
 import re
 import shutil
@@ -636,7 +635,7 @@ class TestCase(BaseTestCase):
         # NOTE(morganfainberg): ensure config_overrides has been called.
         self.addCleanup(self._assert_config_overrides_called)
 
-        self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
+        self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
 
         # NOTE(morganfainberg): This code is a copy from the oslo-incubator
         # log module. This is not in a function or otherwise available to use
@@ -645,7 +644,7 @@ class TestCase(BaseTestCase):
         # would run under mod_wsgi).
         for pair in CONF.default_log_levels:
             mod, _sep, level_name = pair.partition('=')
-            logger = logging.getLogger(mod)
+            logger = log.getLogger(mod)
             logger.setLevel(level_name)
 
         self.useFixture(ksfixtures.Cache())
