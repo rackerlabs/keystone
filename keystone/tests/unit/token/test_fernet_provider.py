@@ -324,7 +324,7 @@ class TestPayloads(unit.TestCase):
     def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None,
                       exp_project_id=None, exp_domain_id=None,
                       exp_trust_id=None, exp_federated_info=None,
-                      exp_access_token_id=None):
+                      exp_access_token_id=None, exp_role_id=None):
         exp_user_id = exp_user_id or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
@@ -333,12 +333,12 @@ class TestPayloads(unit.TestCase):
         payload = payload_class.assemble(
             exp_user_id, exp_methods, exp_project_id, exp_domain_id,
             exp_expires_at, exp_audit_ids, exp_trust_id, exp_federated_info,
-            exp_access_token_id)
+            exp_access_token_id, exp_role_id)
 
         (user_id, methods, project_id,
          domain_id, expires_at, audit_ids,
          trust_id, federated_info,
-         access_token_id) = payload_class.disassemble(payload)
+         access_token_id, role_id) = payload_class.disassemble(payload)
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_methods, methods)
@@ -360,6 +360,11 @@ class TestPayloads(unit.TestCase):
     def test_project_scoped_payload(self):
         self._test_payload(token_formatters.ProjectScopedPayload,
                            exp_project_id=uuid.uuid4().hex)
+
+    def test_project_single_role_payload(self):
+        self._test_payload(token_formatters.ProjectSingleRolePayload,
+                           exp_project_id=uuid.uuid4().hex,
+                           exp_role_id=uuid.uuid4().hex)
 
     def test_domain_scoped_payload(self):
         self._test_payload(token_formatters.DomainScopedPayload,
