@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_69b3f19a",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_alter_service_type_unique.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-26T02:49:15Z",
+      "side": 1,
+      "message": "(nit) missing a newline",
+      "revId": "d78b0442dd1c59db5d0cf0484686faf4718628aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_09c23de9",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-04-26T02:49:15Z",
+      "side": 1,
+      "message": "Is it possible that this actually raise two different exceptions? I\u0027m guessing that it won\u0027t and we should catch the one that we expect.",
+      "revId": "d78b0442dd1c59db5d0cf0484686faf4718628aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
