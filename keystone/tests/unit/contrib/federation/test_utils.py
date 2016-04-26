@@ -613,6 +613,12 @@ class MappingRuleEngineTests(unit.BaseTestCase):
                           mapping_utils.validate_mapping_structure,
                           mapping)
 
+    def test_mapping_with_group_name(self):
+        mapping = mapping_fixtures.MAPPING_GROUP_NAMES
+        # validate_mapping_structure raises ValidationError when fails
+        mapping_utils.validate_mapping_structure(mapping)
+        self.assertTrue(True)
+
     def test_type_not_in_assertion(self):
         """Test that if the remote "type" is not in the assertion it fails."""
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_PASS_THROUGH
