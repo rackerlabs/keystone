@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_a96ea92c",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_alter_service_type_unique.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-04-26T02:37:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_3f9becca",
+      "range": {
+        "startLine": 25,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 51
+      },
+      "revId": "035f5b879a24ff12377071281b793dddcfac23c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_3f376cb1",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-25T20:43:26Z",
       "side": 1,
       "message": "what this test is testing? that we can add two services with different types? Don\u0027t think it is necessary",
+      "range": {
+        "startLine": 1157,
+        "startChar": 4,
+        "endLine": 1157,
+        "endChar": 32
+      },
+      "revId": "035f5b879a24ff12377071281b793dddcfac23c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_896bed1d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-04-26T02:37:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_3f376cb1",
       "range": {
         "startLine": 1157,
         "startChar": 4,
