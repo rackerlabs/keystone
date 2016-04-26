@@ -1,0 +1,13 @@
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+1: Navid Pustchi <npustchi@gmail.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+2: Matt Riedemann <mriedem@us.ibm.com>
+Workflow+1: Matt Riedemann <mriedem@us.ibm.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Apr 2016 19:20:24 +0000
+Reviewed-on: https://review.openstack.org/310038
+Project: openstack/keystone
+Branch: refs/heads/stable/liberty
