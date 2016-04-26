@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_184437b5",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-26T14:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_78056b78",
+      "revId": "fb9f121685c2528ab897c5934cb258b4ef2a720f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_d8a11f96",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_f827bb0f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-26T14:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_d8a11f96",
+      "revId": "fb9f121685c2528ab897c5934cb258b4ef2a720f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_b8e423e0",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-04-26T14:36:33Z",
       "side": 1,
       "message": "We will need to change this to be a difference version than the ProjectScopedPayload",
+      "revId": "fb9f121685c2528ab897c5934cb258b4ef2a720f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_1b2f1189",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-04-26T14:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_b8e423e0",
       "revId": "fb9f121685c2528ab897c5934cb258b4ef2a720f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
