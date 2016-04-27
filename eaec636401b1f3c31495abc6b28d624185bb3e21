@@ -34,6 +34,24 @@
       "revId": "eaec636401b1f3c31495abc6b28d624185bb3e21",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4e0fe538",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-27T19:24:44Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "1a122d0e_26e504a8",
+      "revId": "eaec636401b1f3c31495abc6b28d624185bb3e21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
