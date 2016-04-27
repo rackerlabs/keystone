@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_fb82ec50",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3566,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-27T21:31:43Z",
+      "side": 1,
+      "message": "As the domain is internally represented as a project, please add another test in which you only create a domain, and then trying to get a project scoped token for that isdomain project will not be successful",
+      "revId": "63d5c983caf2dfb2e79e47a2a9f05a0c778213ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
