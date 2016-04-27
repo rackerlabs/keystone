@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_a2a4cd4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-04-27T20:00:27Z",
+      "side": 1,
+      "message": "nit: add \"Partial-Bug: #1563101\"",
+      "revId": "64a94a4002f347a30b612112fc4608617f34bfb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
