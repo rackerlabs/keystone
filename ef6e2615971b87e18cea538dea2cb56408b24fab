@@ -165,6 +165,30 @@
       "revId": "ef6e2615971b87e18cea538dea2cb56408b24fab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_2eb8a974",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-27T19:16:45Z",
+      "side": 1,
+      "message": "in this case, the test should fail if something happens if you are passing a valid mapping, right? So it should do nothing after you call \"validate_mapping_structure\"",
+      "parentUuid": "1a122d0e_0e7a0df1",
+      "range": {
+        "startLine": 620,
+        "startChar": 8,
+        "endLine": 620,
+        "endChar": 29
+      },
+      "revId": "ef6e2615971b87e18cea538dea2cb56408b24fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
