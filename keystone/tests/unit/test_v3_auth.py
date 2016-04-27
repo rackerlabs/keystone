@@ -3543,6 +3543,27 @@ class TestAuth(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
+    def test_authenticate_if_domain_and_project_name_clash(self):
+        """Authenticate to a project with the same name as its domain."""
+        domain = unit.new_project_ref(is_domain=True)
+        domain = self.resource_api.create_domain(domain['id'], domain)
+        project = unit.new_project_ref(domain_id=domain['id'],
+                                       name=domain['name'])
+        self.resource_api.create_project(project['id'], project)
+        role_member = unit.new_role_ref()
+        self.role_api.create_role(role_member['id'], role_member)
+        self.assignment_api.add_role_to_user_and_project(
+            self.user['id'], project['id'], role_member['id'])
+
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_name=project['name'],
+            project_domain_name=domain['name'])
+
+        r = self.v3_create_token(auth_data)
+        self.assertEqual(project['id'], r.result['token']['project']['id'])
+
 
 class TestAuthJSONExternal(test_v3.RestfulTestCase):
     content_type = 'json'
