@@ -34,6 +34,24 @@
       "revId": "71949f599ee52293b6050435a8f3800622af6586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_d0c6cb98",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-28T21:17:53Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to have the differences only here? __getattr__ is called only for the items, that was not defined in the class, so unchanged methods will be proxied. \n\nMeanwhile, methods, that override legacy driver methods and explicitly defined here will be called without __getattr__ involved (it\u0027s __getattribute__ that\u0027s called anyway despite of the method presence).\n\nMethods, that aren\u0027t in the legacy driver will raise AttributeError if called as per __getattr__ implementation (it\u0027s up to developer how to handle the sutuation though).",
+      "parentUuid": "1a122d0e_3c943e35",
+      "revId": "71949f599ee52293b6050435a8f3800622af6586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
