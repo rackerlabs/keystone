@@ -659,6 +659,16 @@ class Manager(manager.Manager):
             driver = (self.domain_configs.get_domain_driver(domain_id) or
                       self.driver)
 
+            # Even if there is a specific config, the may fall back to the
+            # default driver, as the config may only be specifying the use
+            # of PCI. In that case, we should still consider the PCI config
+            # for that domain.
+            specific_config = self.domain_configs.get_domain_conf(domain_id)
+            if specific_config and specific_config.identity.pci:
+                # I am assuming the driver can deal with different PCI regex
+                # 1 per domain (even in the same default driver)
+                driver.pci_regex[domain_id] = specific_config.identity.pci
+
         # If the driver is not domain aware (e.g. LDAP) then check to
         # ensure we are not mapping multiple domains onto it - the only way
         # that would happen is that the default driver is LDAP and the
