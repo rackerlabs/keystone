@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_ece5fd37",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-28T16:25:14Z",
+      "side": 1,
+      "message": "Is this also something we also assume people may be referring to from outside keystone ? I agree about the driver\u0027s interface, but not sure about these methods ..\n\nMy rationale is that these methods don\u0027t go through the diriver\u0027s versioning process .. so not sure we want to do this",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
