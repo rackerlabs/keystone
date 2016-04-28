@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_4bd20e5d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-28T21:58:48Z",
+      "side": 1,
+      "message": "Usually this should be refactored: extract method",
+      "revId": "c56563e41282dd1c354c40341e4d87dad477838a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
