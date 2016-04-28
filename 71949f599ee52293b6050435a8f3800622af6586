@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_32df4c0e",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-04-28T17:19:58Z",
+      "side": 1,
+      "message": "Why do you specify all this proxy calls below explicitly? You could use __getattr__ for that as managers do to drivers.",
+      "revId": "71949f599ee52293b6050435a8f3800622af6586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
