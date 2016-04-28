@@ -16,6 +16,24 @@
       "revId": "71949f599ee52293b6050435a8f3800622af6586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3c943e35",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-28T19:20:43Z",
+      "side": 1,
+      "message": "because the point of this class is to map the new driver interface onto the old one....which by definition WILL be different. OK, in the patch they are not...but this is the framework that is then modified by follow on patches as the interfaces drift apart",
+      "parentUuid": "1a122d0e_32df4c0e",
+      "revId": "71949f599ee52293b6050435a8f3800622af6586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
