@@ -70,6 +70,30 @@
       "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_d7fc0ab7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-28T16:48:33Z",
+      "side": 1,
+      "message": "So as agreed in our conversation at Summit, Ron will check if it this method is really necessary to be called from the drivers (it\u0027s currently called by the driver AND the controller, which seems very odd). If not, it should just be moved to controller module",
+      "parentUuid": "1a122d0e_aca5c5a2",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
