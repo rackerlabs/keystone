@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_2cd5351b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-04-28T16:26:39Z",
+      "side": 1,
+      "message": "Same as in [1], I am not sure that deprecating this is necessary\n\nhttps://review.openstack.org/#/c/309238/3/keystone/catalog/core.py",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 37
+      },
+      "revId": "6f769b8ea5353bdffa2ff5f604ae5426cf75a7e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
