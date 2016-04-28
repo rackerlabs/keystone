@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_114344b0",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-28T06:44:22Z",
+      "side": 1,
+      "message": "no need to create this change, there is a proposal bot to update the sample config -- see the second paragraph here: http://docs.openstack.org/developer/keystone/developing.html#generating-updated-sample-config-file",
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_51177ca2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-28T06:44:22Z",
+      "side": 1,
+      "message": "not crazy about overriding remote_addr, but this should work",
+      "range": {
+        "startLine": 233,
+        "startChar": 12,
+        "endLine": 233,
+        "endChar": 38
+      },
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
