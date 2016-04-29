@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_f51654a5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-04-29T02:38:23Z",
+      "side": 1,
+      "message": "I don\u0027t think this configuration is needed. I\u0027ve never seen a production deployment where external clients are allowed to directly connect to Keystone. Client also terminates at proxy/LB and the request is LBed into the Keystone nodes. If X-Forwarded-For header is set, we should automatically use it.",
+      "range": {
+        "startLine": 95,
+        "startChar": 1,
+        "endLine": 95,
+        "endChar": 18
+      },
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_51177ca2",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
