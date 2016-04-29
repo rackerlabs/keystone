@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_7ee5ea35",
+        "filename": "keystone/tests/unit/policy/backends/test_base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T20:03:23Z",
+      "side": 1,
+      "message": "this should not be called load_backend. We already have a load_backends in the tests that loads managers.",
+      "revId": "f518fa020129bb254ddfef6afafeea17426a494e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_fef0dafe",
+        "filename": "keystone/tests/unit/policy/backends/test_base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T20:03:23Z",
+      "side": 1,
+      "message": "this class isn\u0027t decorated as being an abstract base class.",
+      "revId": "f518fa020129bb254ddfef6afafeea17426a494e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3edff269",
+        "filename": "keystone/tests/unit/policy/backends/test_base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T20:03:23Z",
+      "side": 1,
+      "message": "these 3 lines could be accomplished with assertItemsEqual",
+      "revId": "f518fa020129bb254ddfef6afafeea17426a494e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
