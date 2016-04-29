@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_9bc29d32",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "remove \"current\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 34,
+        "endLine": 20,
+        "endChar": 41
+      },
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_fbfe3168",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "This should be called load_fixtures rather than load_backend. load_backend in the tests already means to instantiate a manager.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_9be3bda3",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "The test is showing that more then one policy association can be created. This needs more of an explanation.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_9b91fdf3",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "This needs a comment saying what it\u0027s testing, or needs to be simpler. I can\u0027t figure it out just by reading it.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_16f14401",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "several tests don\u0027t use self.association, so that policy association shouldn\u0027t be created in setUp, because for these tests it was just a waste of time.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_361d600f",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:30:05Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be created every time the property is used. Create a single instance and re-use it.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
