@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_db009503",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_c199d020",
+      "range": {
+        "startLine": 13,
+        "startChar": 54,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_446f8e91",
         "filename": "keystone_tempest_plugin/clients.py",
         "patchSetId": 11
@@ -36,6 +60,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "This can just be Manager. We already know it\u0027s keystone since it\u0027s in the keystone project.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3b6549e0",
+        "filename": "keystone_tempest_plugin/clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_446f8e91",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_fb7c7172",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_e4bdfa68",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_aabc6906",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 11
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_9b8e1d77",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_aabc6906",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_67cc4c6a",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 11
@@ -87,6 +165,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "can\u0027t we just import oslo_config?",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_1b0dede7",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "this imports the configs given by the tempest package",
+      "parentUuid": "1a122d0e_67cc4c6a",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_5bfbe5c0",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_24425268",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_4765d0de",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 11
@@ -127,6 +247,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "This should be SERVICE to match the parameter",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3b1d490f",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_4765d0de",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -150,6 +288,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_1bb20d06",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_8afc0db6",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_8a440d47",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 11
@@ -161,6 +317,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "what is this? Add a comment.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_7bea21d9",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "removed, it is unused",
+      "parentUuid": "1a122d0e_8a440d47",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -184,6 +358,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_1ba96d90",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_c79f20b2",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_27f1b401",
         "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
         "patchSetId": 11
@@ -195,6 +387,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "Does this need to be configurable? I don\u0027t see why. The current tests are testing admin function. Let\u0027s add configurability when we need it.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_1b816dc3",
+        "filename": "keystone_tempest_plugin/services/identity/base_clients.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_27f1b401",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -218,6 +428,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_5bdda5de",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "not really, will try with json",
+      "parentUuid": "1a122d0e_aa18e91e",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_aa4749ba",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 11
@@ -229,6 +457,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "this isn\u0027t an api name. I think these should both be in 1 variable subpath \u003d \u0027OS-FEDERATION/identity_providers\u0027",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3b86e9b8",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_aa4749ba",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -269,6 +515,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_566a9cb3",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "having kwargs here, we can test cases where we pass not accepted fields to the API.",
+      "parentUuid": "1a122d0e_1555bef8",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_35655ae0",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 11
@@ -280,6 +544,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "according to the spec there is no remote_ids: http://specs.openstack.org/openstack/keystone-specs/api/identity-api-v3-os-federation-ext.html#register-an-identity-provider",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_b6869062",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "this looks like an old doc: https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3-os-federation-ext.rst#register-an-identity-provider",
+      "parentUuid": "1a122d0e_35655ae0",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -303,6 +585,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_f6f3e806",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "doing that in a follow up patch, when another class is added.",
+      "parentUuid": "1a122d0e_d55fc6e2",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_d52d0647",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 11
@@ -314,6 +614,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "shouldn\u0027t have to do build_url if there\u0027s no argument. it\u0027s unnecessarily complicated.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_b63b309b",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "we are just reusing what is already there",
+      "parentUuid": "1a122d0e_d52d0647",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -337,6 +655,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_564d7c3c",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_75707208",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_f5e8027d",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 11
@@ -348,6 +684,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "There\u0027s no remote_ids according to the spec.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_163f8487",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "see the reply above",
+      "parentUuid": "1a122d0e_f5e8027d",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -371,6 +725,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_766fd85f",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_d54b4685",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_757a32bb",
         "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
         "patchSetId": 11
@@ -382,6 +754,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "give a name to the \"identity_admin\" magic value so that readers know what it\u0027s for.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_d6bb4ce3",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_757a32bb",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -405,6 +795,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_76ea38d9",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_35743acd",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_106cacce",
         "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
         "patchSetId": 11
@@ -416,6 +824,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "I don\u0027t understand what\u0027s going on here. A comment would help.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_56e9fce4",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "it is a kind of \"alias\" to reduce a bit the size of the lines we are calling:\n\n\n    self.keystone_manager.identity_provider_client.create_identity_provider(...)",
+      "parentUuid": "1a122d0e_106cacce",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -439,6 +865,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_6a652cad",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/fixtures.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3-os-federation-ext.rst#register-an-identity-provider",
+      "parentUuid": "1a122d0e_30c1e880",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_70eb60a4",
         "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
         "patchSetId": 11
@@ -456,6 +900,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_ca0600cd",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_70eb60a4",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_90c6fc65",
         "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
         "patchSetId": 11
@@ -467,6 +929,24 @@
       "writtenOn": "2016-04-29T15:57:58Z",
       "side": 1,
       "message": "since create_identity_provider is always going to be matched with a self._add_cleanup of it, these should both be in a function, or use a fixture instead.",
+      "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4a6f902a",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-04-29T17:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_90c6fc65",
       "revId": "0a9e0fe5ab9d83b71f636e4541967c3f26549e9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
