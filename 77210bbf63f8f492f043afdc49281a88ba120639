@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_594e4838",
+        "filename": "requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-04-29T20:11:24Z",
+      "side": 1,
+      "message": "i don\u0027t think we need this for mitaka and liberty, i will remove this and see what happens.. we can revert if necessary",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "77210bbf63f8f492f043afdc49281a88ba120639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
