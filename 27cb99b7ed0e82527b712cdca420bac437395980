@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_db837554",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-04-29T16:06:55Z",
+      "side": 1,
+      "message": "we can\u0027t reference private variables because oslo.config will change and then the test will break again.",
+      "revId": "27cb99b7ed0e82527b712cdca420bac437395980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
