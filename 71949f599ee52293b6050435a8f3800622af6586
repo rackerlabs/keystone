@@ -52,6 +52,24 @@
       "revId": "71949f599ee52293b6050435a8f3800622af6586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c4c0bee2",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-04-29T14:44:38Z",
+      "side": 1,
+      "message": "We might be able to do that....although for now, I\u0027d like to keep this the way we have done all the other version drivers.  If we find a better way, we can come back in and fix them in bulk.",
+      "parentUuid": "1a122d0e_d0c6cb98",
+      "revId": "71949f599ee52293b6050435a8f3800622af6586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
