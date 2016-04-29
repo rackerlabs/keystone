@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the keystone project.
 #
 # Translators:
-# OpenStack Infra <zanata@openstack.org>, 2015. #zanata
+# Sungjin Kang <gang.sungjin@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
@@ -22,4 +22,4 @@ msgstr ""
 
 #, python-format
 msgid "Unable to open template file %s"
-msgstr "템플리트 파일 %s을(를) 열 수 없음"
+msgstr "템플릿 파일 %s을(를) 열 수 없음"
