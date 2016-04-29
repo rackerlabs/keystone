@@ -275,6 +275,14 @@ class V3TokenDataHelper(object):
         if (project['name'] == r.admin_project_name and
                 project['domain']['name'] == r.admin_project_domain_name):
             token_data['is_admin_project'] = True
+        # (edmondsw) Also set is_admin_project when admin_project_name is
+        # not set in CONF and the role is admin, as a way to maintain backward
+        # compatibility for users depending on the legacy behavior that anyone
+        # with the admin role is not restricted to the scope of their token
+        elif r.admin_project_name == None:
+            for role in token_data['roles']:
+                if role['name'] == 'admin':
+                    token_data['is_admin_project'] = True
 
     def _get_roles_for_user(self, user_id, domain_id, project_id):
         roles = []
@@ -514,11 +522,11 @@ class V3TokenDataHelper(object):
             token_data['bind'] = bind
 
         self._populate_scope(token_data, domain_id, project_id)
-        if token_data.get('project'):
-            self._populate_is_admin_project(token_data)
         self._populate_user(token_data, user_id, trust)
         self._populate_roles(token_data, user_id, domain_id, project_id, trust,
                              access_token)
+        if token_data.get('project'):
+            self._populate_is_admin_project(token_data)
         self._populate_audit_info(token_data, audit_info)
 
         if include_catalog:
