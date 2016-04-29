@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_de0fdedd",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-04-29T19:34:44Z",
+      "side": 1,
+      "message": "Great to see all these values preserved for posterity... or at least post testing :-)",
+      "revId": "08dc3ce6d9e80ce365332005048c32b5be18ba00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
