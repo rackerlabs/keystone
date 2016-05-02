@@ -15,35 +15,43 @@ from dogpile.cache import api
 from dogpile.cache import proxy
 from oslo_context import context as oslo_context
 from oslo_serialization import msgpackutils
+from oslo_utils import timeutils
+
 
 from keystone.models import revoke_model
 
 
-class _RevokeModelHandler(object):
+class _RevokeEventHandler(object):
     # NOTE(morganfainberg): There needs to be reserved "registry" entries set
     # in oslo_serialization for application-specific handlers. We picked 127
     # here since it's waaaaaay far out before oslo_serialization will use it.
     identity = 127
-    handles = (revoke_model.RevokeTree,)
+    handles = (revoke_model.RevokeEvent,)
 
     def __init__(self, registry):
         self._registry = registry
 
     def serialize(self, obj):
-        return msgpackutils.dumps(obj.revoke_map,
+        return msgpackutils.dumps(obj.to_dict(),
                                   registry=self._registry)
 
     def deserialize(self, data):
-        revoke_map = msgpackutils.loads(data, registry=self._registry)
-        revoke_tree = revoke_model.RevokeTree()
-        revoke_tree.revoke_map = revoke_map
-        return revoke_tree
+        revoke_event_data = msgpackutils.loads(data, registry=self._registry)
+        # NOTE(notmorgan): Restore the datetime object(s)
+        if revoke_event_data.get('expires_at') is not None:
+            revoke_event_data['expires_at'] = timeutils.normalize_time(
+                timeutils.parse_isotime(revoke_event_data['expires_at']))
+        if revoke_event_data.get('issued_before') is not None:
+            revoke_event_data['issued_before'] = timeutils.normalize_time(
+                timeutils.parse_isotime(revoke_event_data['issued_before']))
+        revoke_event = revoke_model.RevokeEvent(**revoke_event_data)
+        return revoke_event
 
 
 # Register our new handler.
 _registry = msgpackutils.default_registry
 _registry.frozen = False
-_registry.register(_RevokeModelHandler(registry=_registry))
+_registry.register(_RevokeEventHandler(registry=_registry))
 _registry.frozen = True
 
 
