@@ -206,11 +206,8 @@ class Manager(manager.Manager):
                                              role_id=role_id))
 
     @MEMOIZE
-    def _get_revoke_tree(self):
-        events = self.driver.list_events()
-        revoke_tree = revoke_model.RevokeTree(revoke_events=events)
-
-        return revoke_tree
+    def _list_events(self):
+        return self.driver.list_events()
 
     def check_token(self, token_values):
         """Check the values from a token against the revocation list.
@@ -222,12 +219,12 @@ class Manager(manager.Manager):
         :raises keystone.exception.TokenNotFound: If the token is invalid.
 
         """
-        if self._get_revoke_tree().is_revoked(token_values):
+        if revoke_model.is_revoked(self._list_events(), token_values):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def revoke(self, event):
         self.driver.revoke(event)
-        self._get_revoke_tree.invalidate(self)
+        self._list_events.invalidate(self)
 
 
 @six.add_metaclass(abc.ABCMeta)
