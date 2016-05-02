@@ -22,13 +22,13 @@ import weakref
 
 import ldap.controls
 import ldap.filter
-import ldappool
 from oslo_log import log
 from oslo_utils import reflection
 import six
 from six.moves import map, zip
 
 from keystone.common import driver_hints
+from keystone.common.ldap import ldappool
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LW
