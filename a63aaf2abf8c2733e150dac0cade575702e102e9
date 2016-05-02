@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_b43c95c0",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-02T23:38:23Z",
+      "side": 1,
+      "message": "we can probably document this in another bug if it hasn\u0027t be done already.",
+      "revId": "a63aaf2abf8c2733e150dac0cade575702e102e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
