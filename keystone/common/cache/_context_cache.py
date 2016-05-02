@@ -19,31 +19,29 @@ from oslo_serialization import msgpackutils
 from keystone.models import revoke_model
 
 
-class _RevokeModelHandler(object):
+class _RevokeEventHandler(object):
     # NOTE(morganfainberg): There needs to be reserved "registry" entries set
     # in oslo_serialization for application-specific handlers. We picked 127
     # here since it's waaaaaay far out before oslo_serialization will use it.
     identity = 127
-    handles = (revoke_model.RevokeTree,)
+    handles = (revoke_model.RevokeEvent,)
 
     def __init__(self, registry):
         self._registry = registry
 
     def serialize(self, obj):
-        return msgpackutils.dumps(obj.revoke_map,
-                                  registry=self._registry)
+        return msgpackutils.dumps(obj.to_dict(), registry=self._registry)
 
     def deserialize(self, data):
-        revoke_map = msgpackutils.loads(data, registry=self._registry)
-        revoke_tree = revoke_model.RevokeTree()
-        revoke_tree.revoke_map = revoke_map
-        return revoke_tree
+        kwargs = msgpackutils.loads(data, registry=self._registry)
+        revoke_event = revoke_model.RevokeEvent(**kwargs)
+        return revoke_event
 
 
 # Register our new handler.
 _registry = msgpackutils.default_registry
 _registry.frozen = False
-_registry.register(_RevokeModelHandler(registry=_registry))
+_registry.register(_RevokeEventHandler(registry=_registry))
 _registry.frozen = True
 
 
