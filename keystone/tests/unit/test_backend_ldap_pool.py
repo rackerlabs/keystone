@@ -15,11 +15,11 @@
 # under the License.
 
 import fixtures
-import ldappool
 import mock
 from oslo_config import cfg
 
 from keystone.common.ldap import core as ldap_core
+from keystone.common.ldap import ldappool
 from keystone.identity.backends import ldap
 from keystone.tests import unit
 from keystone.tests.unit import fakeldap
