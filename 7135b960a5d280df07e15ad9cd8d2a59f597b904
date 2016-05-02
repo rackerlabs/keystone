@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_768045f8",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-02T22:34:58Z",
+      "side": 1,
+      "message": "the patch should just call this line, without the try/error block",
+      "revId": "7135b960a5d280df07e15ad9cd8d2a59f597b904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
