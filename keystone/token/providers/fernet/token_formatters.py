@@ -439,6 +439,19 @@ class ProjectScopedPayload(BasePayload):
         (is_stored_as_bytes, project_id) = payload[2]
         if is_stored_as_bytes:
             project_id = cls.convert_uuid_bytes_to_hex(project_id)
+        else:
+            # NOTE(lbragstad): This is specific to python 3. The original
+            # payload value was stored as bytes but it's only converted to a
+            # str type if is_stored_as_bytes is True. This fails when you have
+            # a tenant name like 'bar' because it's converted to a byte string
+            # in assemble and not converted back to a str, which breaks in
+            # sqlalchemy. This is the only occurrence of this happening because
+            # the tests written in keystone/tests/unit/test_auth.py don't use
+            # uuid for project IDs, instead they use non-uuid strings. This
+            # pattern could probably be applied to the rest of this formatter,
+            # but this is the only break that was exposed when testing fernet +
+            # v2.0 + non-uuid project IDs.
+            project_id = project_id.decode("utf-8")
         expires_at_str = cls._convert_float_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
         domain_id = None
