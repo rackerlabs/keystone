@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_46e000cd",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-05-02T19:28:10Z",
+      "side": 1,
+      "message": "Seems like this could be added to AuthWithToken below instead of a new test.",
+      "revId": "560af1fe533d04d85643938bc9b88f55ac1ccfa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
