@@ -33,6 +33,7 @@ from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
 from keystone.token import provider
@@ -253,6 +254,27 @@ class AuthBadRequests(AuthTest):
         self.assertRaises(exception.Unauthorized,
                           self.controller.authenticate,
                           no_context, body_dict)
+
+
+class FernetAuth(AuthTest):
+    def config_overrides(self):
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def test_audit_ids(self):
+        body_dict = _build_user_auth(username='FOO',
+                                     password='foo2')
+        unscoped_token = self.controller.authenticate({}, body_dict)
+
+        body_dict = _build_user_auth(
+            token=unscoped_token["access"]["token"],
+            tenant_name="BAR")
+        scoped_token = self.controller.authenticate({}, body_dict)
+        # NOTE(lbragstad): This shouldn't pass. The audit id from the unscoped
+        # token should one of the audit ids in the list of audit ids in the
+        # scoped token response.
+        self.assertNotIn(unscoped_token['access']['token']['audit_ids'],
+                         scoped_token['access']['token']['audit_ids'])
 
 
 class AuthWithToken(AuthTest):
