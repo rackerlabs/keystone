@@ -94,6 +94,54 @@
       "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_9dc26c85",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-02T14:07:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_ece5fd37",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_1dce5cb7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-02T14:07:44Z",
+      "side": 1,
+      "message": "Moved these methods to utils, seemed to be the most appropriate spot.",
+      "parentUuid": "1a122d0e_d7fc0ab7",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 39
+      },
+      "revId": "76e57c008e723cf865b90645cc444e100e702bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
