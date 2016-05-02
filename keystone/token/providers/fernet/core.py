@@ -10,11 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
+
 from oslo_config import cfg
 
 from keystone.common import dependency
 from keystone.common import utils as ks_utils
 from keystone.federation import constants as federation_constants
+from keystone.i18n import _
 from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
@@ -27,6 +30,17 @@ CONF = cfg.CONF
 class Provider(common.BaseProvider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
+
+        if not os.path.exists(CONF.fernet_tokens.key_repository):
+            # bail here because we can't do anything without a key_repository
+            subs = {'key_repo': CONF.fernet_tokens.key_repository}
+            raise SystemExit(_('%(key_repo)s does not exist') % subs)
+        if not os.listdir(CONF.fernet_tokens.key_repository):
+            # bail here because we can't do anything without keys
+            subs = {'key_repo': CONF.fernet_tokens.key_repository}
+            raise SystemExit(_('%(key_repo)s does not contain keys, use '
+                               'keystone-manage fernet_setup to create '
+                               'Fernet keys.') % subs)
 
         self.token_formatter = tf.TokenFormatter()
 
