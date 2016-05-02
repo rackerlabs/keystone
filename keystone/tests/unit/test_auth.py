@@ -33,6 +33,7 @@ from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone import token
 from keystone.token import provider
@@ -669,6 +670,21 @@ class AuthWithToken(AuthTest):
             self.assertRaises(exception.TokenNotFound,
                               self.token_provider_api.validate_v2_token,
                               token_id=token_2_id)
+
+
+class FernetAuthWithToken(AuthWithToken):
+    def config_overrides(self):
+        super(FernetAuthWithToken, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def test_token_auth_with_binding(self):
+        self.config_fixture.config(group='token', bind=['kerberos'])
+        body_dict = _build_user_auth()
+        self.assertRaises(exception.NotImplemented,
+                          self.controller.authenticate,
+                          self.context_with_remote_user,
+                          body_dict)
 
 
 class AuthWithPasswordCredentials(AuthTest):
