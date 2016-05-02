@@ -63,6 +63,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
                 utils.isotime(event_issued_before, subsecond=True),
                 utils.isotime(after_time, subsecond=True)))
         del (event['issued_before'])
+        del (event['revoked_at'])
         self.assertEqual(sample, event)
 
     def test_revoked_list_self_url(self):
