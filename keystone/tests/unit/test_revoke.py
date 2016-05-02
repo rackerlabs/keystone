@@ -549,64 +549,11 @@ class RevokeTreeTests(unit.TestCase):
     def _assertEmpty(self, collection):
         return self.assertEqual(0, len(collection), "collection not empty")
 
-    def _assertEventsMatchIteration(self, turn):
-        self.assertEqual(1, len(self.tree.revoke_map))
-        self.assertEqual(turn + 1, len(self.tree.revoke_map
-                                       ['trust_id=*']
-                                       ['consumer_id=*']
-                                       ['access_token_id=*']
-                                       ['audit_id=*']
-                                       ['audit_chain_id=*']))
-        # two different functions add  domain_ids, +1 for None
-        self.assertEqual(2 * turn + 1, len(self.tree.revoke_map
-                                           ['trust_id=*']
-                                           ['consumer_id=*']
-                                           ['access_token_id=*']
-                                           ['audit_id=*']
-                                           ['audit_chain_id=*']
-                                           ['expires_at=*']))
-        # two different functions add  project_ids, +1 for None
-        self.assertEqual(2 * turn + 1, len(self.tree.revoke_map
-                                           ['trust_id=*']
-                                           ['consumer_id=*']
-                                           ['access_token_id=*']
-                                           ['audit_id=*']
-                                           ['audit_chain_id=*']
-                                           ['expires_at=*']
-                                           ['domain_id=*']))
-        # 10 users added
-        self.assertEqual(turn, len(self.tree.revoke_map
-                                   ['trust_id=*']
-                                   ['consumer_id=*']
-                                   ['access_token_id=*']
-                                   ['audit_id=*']
-                                   ['audit_chain_id=*']
-                                   ['expires_at=*']
-                                   ['domain_id=*']
-                                   ['project_id=*']))
-
     def test_cleanup(self):
         events = self.events
-        self._assertEmpty(self.tree.revoke_map)
+        self._assertEmpty(self.tree._events)
         expiry_base_time = _future_time()
         for i in range(0, 10):
-            events.append(
-                self._revoke_by_user(_new_id()))
-
-            args = (_new_id(),
-                    expiry_base_time + datetime.timedelta(seconds=i))
-            events.append(
-                self._revoke_by_expiration(*args))
-
-            self.assertEqual(i + 2, len(self.tree.revoke_map
-                                        ['trust_id=*']
-                                        ['consumer_id=*']
-                                        ['access_token_id=*']
-                                        ['audit_id=*']
-                                        ['audit_chain_id=*']),
-                             'adding %s to %s' % (args,
-                                                  self.tree.revoke_map))
-
             events.append(
                 self._revoke_by_project_role_assignment(_new_id(), _new_id()))
             events.append(
@@ -615,8 +562,7 @@ class RevokeTreeTests(unit.TestCase):
                 self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
             events.append(
                 self._revoke_by_user_and_project(_new_id(), _new_id()))
-            self._assertEventsMatchIteration(i + 1)
 
         for event in self.events:
             self.tree.remove_event(event)
-        self._assertEmpty(self.tree.revoke_map)
+        self._assertEmpty(self.tree._events)

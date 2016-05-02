@@ -207,6 +207,7 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _get_revoke_tree(self):
+
         events = self.driver.list_events()
         revoke_tree = revoke_model.RevokeTree(revoke_events=events)
 

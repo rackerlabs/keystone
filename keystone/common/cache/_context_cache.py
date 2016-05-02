@@ -30,7 +30,7 @@ class _RevokeModelHandler(object):
         self._registry = registry
 
     def serialize(self, obj):
-        return msgpackutils.dumps(obj.revoke_map,
+        return msgpackutils.dumps(obj._events,
                                   registry=self._registry)
 
     def deserialize(self, data):
