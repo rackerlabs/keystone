@@ -237,6 +237,30 @@ class BaseLDAPIdentity(identity_tests.IdentityTests,
                           self.identity_api.get_user,
                           self.user_foo['id'])
 
+    def test_list_users_with_filter(self):
+        hints = driver_hints.Hints()
+        hints.add_filter('name', self.user_foo['name'])
+
+        # first confirm that the user exists
+        users = self.identity_api.list_users(
+            domain_scope=self._set_domain_scope(
+                self.user_foo['domain_id']),
+            hints=hints)
+        self.assertEqual(len(users), 1)
+        self.assertEqual(self.user_foo['name'], users[0]['name'])
+
+        # confirm that when user filtering in conf should not expose
+        # a given user, that user is not exposed even when specified
+        # by name in query parameter
+        driver = self.identity_api._select_identity_driver(
+            users[0]['domain_id'])
+        driver.user.ldap_filter = '(CN=%s)' % self.user_sna
+        users = self.identity_api.list_users(
+            domain_scope=self._set_domain_scope(
+                self.user_foo['domain_id']),
+            hints=hints)
+        self.assertEqual(users, [])
+
     def test_remove_role_grant_from_user_and_project(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
