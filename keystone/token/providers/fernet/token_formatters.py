@@ -20,6 +20,7 @@ import msgpack
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
+import six
 from six.moves import map
 from six.moves import urllib
 
