@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_f0defe0e",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-03T18:56:26Z",
+      "side": 1,
+      "message": "nit: test_mapping_with_group_name_and_domain",
+      "range": {
+        "startLine": 616,
+        "startChar": 8,
+        "endLine": 616,
+        "endChar": 36
+      },
+      "revId": "5adaeac8a13dcfb4a732961cee0eebc246dc1b7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
