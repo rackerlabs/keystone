@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_249afbc5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-03T17:40:26Z",
+      "side": 1,
+      "message": "So, this patch doesn\u0027t fix this issue? https://review.openstack.org/#/c/306681/\n\nOr should we do some similar for this case?",
+      "revId": "fca1657de2cd3795fd60322435549f8b9e3ee77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
