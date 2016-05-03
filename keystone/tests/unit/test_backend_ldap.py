@@ -237,6 +237,25 @@ class BaseLDAPIdentity(identity_tests.IdentityTests,
                           self.identity_api.get_user,
                           self.user_foo['id'])
 
+    def test_list_user_filter(self):
+        # Try without filter
+        hints = driver_hints.Hints()
+        hints.add_filter('name', 'FOO')
+        users = self.identity_api.list_users(
+            domain_scope=self._set_domain_scope(
+                self.user_foo['domain_id']), 
+            hints=hints)
+        self.assertEqual(self.user_foo['name'], users[0]['name'])
+        # Try with filter
+        driver = self.identity_api._select_identity_driver(
+            users[0]['domain_id'])
+        driver.user.ldap_filter = '(CN=DOES_NOT_MATCH)'
+        users = self.identity_api.list_users(
+            domain_scope=self._set_domain_scope(
+                self.user_foo['domain_id']), 
+            hints=hints)
+        self.assertEqual(users,[])
+
     def test_remove_role_grant_from_user_and_project(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
