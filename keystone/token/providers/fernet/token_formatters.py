@@ -20,6 +20,7 @@ import msgpack
 from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
+import six
 from six.moves import map
 from six.moves import urllib
 
@@ -439,6 +440,8 @@ class ProjectScopedPayload(BasePayload):
         (is_stored_as_bytes, project_id) = payload[2]
         if is_stored_as_bytes:
             project_id = cls.convert_uuid_bytes_to_hex(project_id)
+        elif six.PY3:
+            project_id = project_id.decode('utf-8')
         expires_at_str = cls._convert_float_to_time_string(payload[3])
         audit_ids = list(map(provider.base64_encode, payload[4]))
         domain_id = None
