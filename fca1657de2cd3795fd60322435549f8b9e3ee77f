@@ -16,6 +16,24 @@
       "revId": "fca1657de2cd3795fd60322435549f8b9e3ee77f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4411f703",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-03T17:47:55Z",
+      "side": 1,
+      "message": "Raildo, it looks like Adam\u0027s patch fixes this but in a different way. I would be fine taking both approaches. The first would be correcting the test like what Adam is doing, and the second we could do something like this where we make sure the project_id is always of type str before returning if from the formatter.",
+      "parentUuid": "1a122d0e_249afbc5",
+      "revId": "fca1657de2cd3795fd60322435549f8b9e3ee77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
