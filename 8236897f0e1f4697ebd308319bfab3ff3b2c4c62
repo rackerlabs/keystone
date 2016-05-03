@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_0cc0dd7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-03T05:35:17Z",
+      "side": 1,
+      "message": "reference bug https://bugs.launchpad.net/keystone/+bug/1576315",
+      "revId": "8236897f0e1f4697ebd308319bfab3ff3b2c4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_cccd45b9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-03T05:35:17Z",
+      "side": 1,
+      "message": "put these in backticks ``",
+      "range": {
+        "startLine": 42,
+        "startChar": 32,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "8236897f0e1f4697ebd308319bfab3ff3b2c4c62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
