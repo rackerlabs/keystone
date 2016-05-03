@@ -15,7 +15,6 @@
 import copy
 import datetime
 import itertools
-import json
 import operator
 import uuid
 
@@ -23,8 +22,10 @@ from keystoneclient.common import cms
 import mock
 from oslo_config import cfg
 from oslo_log import versionutils
+from oslo_serialization import jsonutils
 from oslo_utils import fixture
 from oslo_utils import timeutils
+import six
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -269,7 +270,7 @@ class TokenAPITests(object):
                                          domain_id=self.domain['id'])
         domain_scoped_token = self._get_domain_scoped_token()
         resp = self._validate_token(domain_scoped_token)
-        resp_json = json.loads(resp.body)
+        resp_json = jsonutils.loads(resp.body)
         self.assertIsNotNone(resp_json['token']['catalog'])
         self.assertIsNotNone(resp_json['token']['roles'])
         self.assertIsNotNone(resp_json['token']['domain'])
@@ -586,6 +587,13 @@ class TokenAPITests(object):
             method='GET',
             expected_status=http_client.UNAUTHORIZED)
 
+    def assertTimestampEqual(self, expected, value):
+        # Compare two timestamps but ignore the microseconds part
+        # of the expected timestamp
+        self.assertIn(expected.partition(".")[0],
+                      value,
+                      "%s != %s" % (expected, value))
+
     def test_v3_v2_unscoped_token_intermix(self):
         r = self.v3_create_token(self.build_authentication_request(
             user_id=self.default_domain_user['id'],
@@ -603,10 +611,8 @@ class TokenAPITests(object):
 
         self.assertEqual(v2_token_data['access']['user']['id'],
                          v3_token_data['token']['user']['id'])
-        # v2 token time has not fraction of second precision so
-        # just need to make sure the non fraction part agrees
-        self.assertIn(v2_token_data['access']['token']['expires'][:-1],
-                      v3_token_data['token']['expires_at'])
+        self.assertTimestampEqual(v2_token_data['access']['token']['expires'],
+                                  v3_token_data['token']['expires_at'])
 
     def test_v3_v2_token_intermix(self):
         # FIXME(gyee): PKI tokens are not interchangeable because token
@@ -628,10 +634,8 @@ class TokenAPITests(object):
 
         self.assertEqual(v2_token_data['access']['user']['id'],
                          v3_token_data['token']['user']['id'])
-        # v2 token time has not fraction of second precision so
-        # just need to make sure the non fraction part agrees
-        self.assertIn(v2_token_data['access']['token']['expires'][:-1],
-                      v3_token_data['token']['expires_at'])
+        self.assertTimestampEqual(v2_token_data['access']['token']['expires'],
+                                  v3_token_data['token']['expires_at'])
         self.assertEqual(v2_token_data['access']['user']['roles'][0]['name'],
                          v3_token_data['token']['roles'][0]['name'])
 
@@ -731,7 +735,7 @@ class TokenAPITests(object):
         self.assertValidProjectScopedTokenResponse(r)
 
         # ensure token expiration stayed the same
-        self.assertEqual(expires, r.result['token']['expires_at'])
+        self.assertTimestampEqual(expires, r.result['token']['expires_at'])
 
     def test_check_token(self):
         self.head('/auth/tokens', headers=self.headers,
@@ -1111,7 +1115,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidUnscopedTokenResponse,
                           r)
@@ -1133,7 +1137,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidDomainScopedTokenResponse,
                           r)
@@ -1150,7 +1154,7 @@ class TokenDataTests(object):
         resp = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        resp.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        resp.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidProjectScopedTokenResponse,
                           resp)
@@ -1258,9 +1262,9 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
 
         decoded_token = self.verify_token(token_id, CONF.signing.certfile,
                                           CONF.signing.ca_certs)
-        decoded_token_dict = json.loads(decoded_token)
+        decoded_token_dict = jsonutils.loads(decoded_token)
 
-        token_resp_dict = json.loads(resp.body)
+        token_resp_dict = jsonutils.loads(resp.body)
 
         self.assertEqual(decoded_token_dict, token_resp_dict)
         # should be able to validate hash PKI token as well
@@ -1288,10 +1292,8 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
         v2_token = resp.result
         self.assertEqual(v2_token['access']['user']['id'],
                          token_data['token']['user']['id'])
-        # v2 token time has not fraction of second precision so
-        # just need to make sure the non fraction part agrees
-        self.assertIn(v2_token['access']['token']['expires'][:-1],
-                      token_data['token']['expires_at'])
+        self.assertTimestampEqual(v2_token['access']['token']['expires'],
+                                  token_data['token']['expires_at'])
         self.assertEqual(v2_token['access']['user']['roles'][0]['name'],
                          token_data['token']['roles'][0]['name'])
 
@@ -4929,7 +4931,7 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
         signed = res.json['signed']
         clear = cms.cms_verify(signed, CONF.signing.certfile,
                                CONF.signing.ca_certs)
-        payload = json.loads(clear)
+        payload = jsonutils.loads(clear)
         self.assertEqual({'revoked': []}, payload)
 
     def test_ids_token(self):
@@ -4950,7 +4952,7 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
         signed = res.json['signed']
         clear = cms.cms_verify(signed, CONF.signing.certfile,
                                CONF.signing.ca_certs)
-        payload = json.loads(clear)
+        payload = jsonutils.loads(clear)
 
         def truncate(ts_str):
             return ts_str[:19] + 'Z'  # 2016-01-21T15:53:52 == 19 chars.

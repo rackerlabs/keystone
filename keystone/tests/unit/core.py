@@ -409,7 +409,12 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
 
 def new_totp_credential(user_id, project_id=None, blob=None):
     if not blob:
-        blob = base64.b32encode(uuid.uuid4().hex).rstrip('=')
+        blob = uuid.uuid4().hex
+        if six.PY3:
+            blob = base64.b32encode(blob.encode('ascii')).decode('ascii')
+        else:
+            blob = base64.b32encode(blob)
+        blob = blob.rstrip('=')
     credential = new_credential_ref(user_id=user_id,
                                     project_id=project_id,
                                     blob=blob,
