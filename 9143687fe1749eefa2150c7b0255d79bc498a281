@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_3d5a0af3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-03T19:03:45Z",
+      "side": 1,
+      "message": "you forgot to reference the bug :P",
+      "revId": "9143687fe1749eefa2150c7b0255d79bc498a281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
