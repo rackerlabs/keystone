@@ -59,6 +59,52 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_f7ed18f1",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-05-04T20:55:25Z",
+      "side": 1,
+      "message": "Isn\u0027t revoked by audit_id/audit_chain_id the most common case? If so, you may want to move them to the top to short circuit the check.",
+      "range": {
+        "startLine": 192,
+        "startChar": 42,
+        "endLine": 192,
+        "endChar": 52
+      },
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_b7ce0081",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-05-04T20:55:25Z",
+      "side": 1,
+      "message": "Thought we don\u0027t revoke by role_id anymore. At least not for fernet right?",
+      "range": {
+        "startLine": 199,
+        "startChar": 7,
+        "endLine": 199,
+        "endChar": 20
+      },
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a6541854",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 3
