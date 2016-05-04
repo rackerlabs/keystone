@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_49739ab4",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T18:03:27Z",
+      "side": 1,
+      "message": "I think subs should be defined outside the ifs so you can add a debug log saying that it was possible to find the fernet keys",
+      "range": {
+        "startLine": 40,
+        "startChar": 12,
+        "endLine": 40,
+        "endChar": 66
+      },
+      "revId": "ed74e19f5aa10b5b9c53e4a2e97e3922d70218e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_499a7ac6",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T18:03:27Z",
+      "side": 1,
+      "message": "log here that the fernet keys were found",
+      "revId": "ed74e19f5aa10b5b9c53e4a2e97e3922d70218e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
