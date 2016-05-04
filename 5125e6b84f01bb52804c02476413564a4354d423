@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_26d3e839",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T19:47:23Z",
+      "side": 1,
+      "message": "great commit message!",
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_86511c65",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T19:47:23Z",
+      "side": 1,
+      "message": "a brute",
+      "range": {
+        "startLine": 153,
+        "startChar": 28,
+        "endLine": 153,
+        "endChar": 34
+      },
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e6f8d04c",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T19:47:23Z",
+      "side": 1,
+      "message": "maybe add the steps taken in the verification: first user_id, second domain_id... This is intend to fail fast for the most common types of revoke events going first, right?",
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a6541854",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T19:47:23Z",
+      "side": 1,
+      "message": "roles is list, right? this could be only:\n\n  if event.role_id not in roles:\n    return False",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 24
+      },
+      "revId": "5125e6b84f01bb52804c02476413564a4354d423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
