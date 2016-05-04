@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_69adb69a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-04T18:08:12Z",
+      "side": 1,
+      "message": "think this commit deserves a really detailed commit message :)",
+      "revId": "b2ef3f1b643fa70aaeec5add60107f58c468daaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_ed58df33",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
