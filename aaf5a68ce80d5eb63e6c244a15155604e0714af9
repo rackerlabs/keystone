@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_41a27c9b",
+        "filename": "test-requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-05-04T00:24:25Z",
+      "side": 1,
+      "message": "keystone doesn\u0027t use testresources directly so we shouldn\u0027t need this. The oslo.db[fixtures] above should take care of this already: http://git.openstack.org/cgit/openstack/oslo.db/tree/setup.cfg#n48",
+      "revId": "aaf5a68ce80d5eb63e6c244a15155604e0714af9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
