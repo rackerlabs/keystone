@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_314bb02d",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_9bc29d32",
+      "range": {
+        "startLine": 20,
+        "startChar": 34,
+        "endLine": 20,
+        "endChar": 41
+      },
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_fbfe3168",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 24
@@ -36,6 +60,24 @@
       "writtenOn": "2016-04-29T16:30:05Z",
       "side": 1,
       "message": "This should be called load_fixtures rather than load_backend. load_backend in the tests already means to instantiate a manager.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_91309ca0",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "I agree with you. I will rename it to load_driver, which is actually what it does",
+      "parentUuid": "1a122d0e_fbfe3168",
       "revId": "496330fc26b330c247573594e28140ff79055cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_11794c30",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "Agreed, the behavior is to override the old policy to that target. I will document this",
+      "parentUuid": "1a122d0e_9be3bda3",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_9b91fdf3",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 24
@@ -70,6 +130,24 @@
       "writtenOn": "2016-04-29T16:30:05Z",
       "side": 1,
       "message": "This needs a comment saying what it\u0027s testing, or needs to be simpler. I can\u0027t figure it out just by reading it.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_312570c2",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "I will do both",
+      "parentUuid": "1a122d0e_9b91fdf3",
       "revId": "496330fc26b330c247573594e28140ff79055cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_74db661c",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_16f14401",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_361d600f",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
         "patchSetId": 24
@@ -104,6 +200,24 @@
       "writtenOn": "2016-04-29T16:30:05Z",
       "side": 1,
       "message": "This shouldn\u0027t be created every time the property is used. Create a single instance and re-use it.",
+      "revId": "496330fc26b330c247573594e28140ff79055cdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b75f9074",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-05T21:48:51Z",
+      "side": 1,
+      "message": "++ nice catch",
+      "parentUuid": "1a122d0e_361d600f",
       "revId": "496330fc26b330c247573594e28140ff79055cdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
