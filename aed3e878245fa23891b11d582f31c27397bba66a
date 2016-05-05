@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_7aeee4b5",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 18940
+      },
+      "writtenOn": "2016-05-05T16:26:32Z",
+      "side": 1,
+      "message": "Yepp, will remove it.",
+      "parentUuid": "1a122d0e_e4209f9c",
+      "range": {
+        "startLine": 650,
+        "startChar": 4,
+        "endLine": 654,
+        "endChar": 34
+      },
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a78cf635",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 1
@@ -215,6 +239,24 @@
       "side": 1,
       "message": "or is the expected behavior, or it is a bug. If we have a way to define such kind of rules in the schema, we should open a bug and fix that. Otherwise, we should check the expected behavior (which is \"validates ok\" for the current schema) in the unit tests.",
       "parentUuid": "1a122d0e_61548653",
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_faf95483",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 18940
+      },
+      "writtenOn": "2016-05-05T16:26:32Z",
+      "side": 1,
+      "message": "I vould vote for the bug, if it accepts such mapping, the user will get an 500 Internal Server Error when she/he tries to use it. I don\u0027t think that can be an expected behavior.",
+      "parentUuid": "1a122d0e_8699f321",
       "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
