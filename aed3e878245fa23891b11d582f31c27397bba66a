@@ -99,6 +99,24 @@
       "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_76f56a4f",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 18940
+      },
+      "writtenOn": "2016-05-05T14:08:03Z",
+      "side": 1,
+      "message": "Should we test for a case which is a deficiency of the validator? :) Such mapping would fail on a mapping engine test.",
+      "parentUuid": "1a122d0e_7beb93a4",
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
