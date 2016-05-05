@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_ea44f373",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 18940
+      },
+      "writtenOn": "2016-05-05T13:03:07Z",
+      "side": 1,
+      "message": "I thought just changing all validation test to test_mapping_validation_xxx would be more consistent.",
+      "parentUuid": "1a122d0e_43e237a1",
+      "range": {
+        "startLine": 610,
+        "startChar": 21,
+        "endLine": 610,
+        "endChar": 31
+      },
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a78cf635",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2016-05-05T12:23:22Z",
       "side": 1,
       "message": "is there anything like: test_mapping_validation_with_group_name_no_domain? (and all the variants with group_id, user_name and user_id?)\n\nthis should pass, right? since the domain is only mandatory when we pass a name and its checked at the controller level.",
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4a2527c0",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 18940
+      },
+      "writtenOn": "2016-05-05T13:03:07Z",
+      "side": 1,
+      "message": "Currently name without domain would pass, since the validator doesn\u0027t check the relations between the fields.",
+      "parentUuid": "1a122d0e_a78cf635",
       "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
