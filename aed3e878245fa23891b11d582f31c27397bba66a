@@ -117,6 +117,24 @@
       "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a147be4a",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-05T14:11:26Z",
+      "side": 1,
+      "message": "why not? if it is the expected behavior, it should be tested.",
+      "parentUuid": "1a122d0e_76f56a4f",
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
