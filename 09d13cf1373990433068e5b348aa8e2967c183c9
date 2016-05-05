@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_82927655",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-05T18:17:09Z",
+      "side": 1,
+      "message": "thanks for including this",
+      "range": {
+        "startLine": 633,
+        "startChar": 4,
+        "endLine": 639,
+        "endChar": 34
+      },
+      "revId": "09d13cf1373990433068e5b348aa8e2967c183c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
