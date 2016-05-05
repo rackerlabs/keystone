@@ -260,6 +260,24 @@
       "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_3a546c52",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-05T16:30:44Z",
+      "side": 1,
+      "message": "++ totally agree. You can create tests to expose the bugs and later, fix them. Take a look in this example: https://review.openstack.org/#/c/288403/",
+      "parentUuid": "1a122d0e_faf95483",
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
