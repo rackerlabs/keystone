@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_e9a6b8be",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-05T15:31:40Z",
+      "side": 1,
+      "message": "this is a dupe with line 610-614",
+      "range": {
+        "startLine": 650,
+        "startChar": 4,
+        "endLine": 654,
+        "endChar": 34
+      },
+      "revId": "aed3e878245fa23891b11d582f31c27397bba66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a78cf635",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 1
