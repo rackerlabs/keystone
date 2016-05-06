@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "dab17558_4faae0d5",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-05-06T17:26:01Z",
+      "side": 1,
+      "message": "Was this done in this style to match the rest of the code?\nThe following would be simpler.\n\nif event.role_id is not None:\n    if event.role_id not in token_values[\u0027roles\u0027]:\n        return False",
+      "revId": "c337875d79d5656409701c6a12cd46110fe015a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_4cbb0e73",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 4
