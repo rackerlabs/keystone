@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_9c7c1622",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T12:06:57Z",
+      "side": 1,
+      "message": "suggestion: test_list_users_with_filter or test_list_users_with_ldap_filter",
+      "range": {
+        "startLine": 240,
+        "startChar": 8,
+        "endLine": 240,
+        "endChar": 29
+      },
+      "revId": "61c2a8e6cf0e3afdaa5a37203dc83f9c90657c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_bcee3aea",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T12:06:57Z",
+      "side": 1,
+      "message": "need to use self.user_foo[\u0027name\u0027] (or similar)",
+      "range": {
+        "startLine": 243,
+        "startChar": 33,
+        "endLine": 243,
+        "endChar": 38
+      },
+      "revId": "61c2a8e6cf0e3afdaa5a37203dc83f9c90657c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_bc9c7a6a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T12:06:57Z",
+      "side": 1,
+      "message": "add a new line here, also add more details to the comments or add a docstring to the test.",
+      "revId": "61c2a8e6cf0e3afdaa5a37203dc83f9c90657c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_5cabce89",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T12:06:57Z",
+      "side": 1,
+      "message": "would be nice to have a test where the filter returns something",
+      "range": {
+        "startLine": 252,
+        "startChar": 34,
+        "endLine": 252,
+        "endChar": 55
+      },
+      "revId": "61c2a8e6cf0e3afdaa5a37203dc83f9c90657c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
