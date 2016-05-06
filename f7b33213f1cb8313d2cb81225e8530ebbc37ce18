@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_441e3ebb",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-06T21:17:00Z",
+      "side": 0,
+      "message": "Can\u0027t we get rid of:\n\n    from keystone.catalog import core \n\nnow?",
+      "revId": "f7b33213f1cb8313d2cb81225e8530ebbc37ce18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_44759ef7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-06T21:17:00Z",
+      "side": 0,
+      "message": "unrelated whitespace change?",
+      "revId": "f7b33213f1cb8313d2cb81225e8530ebbc37ce18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
