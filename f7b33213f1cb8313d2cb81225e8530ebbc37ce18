@@ -69,6 +69,24 @@
       "revId": "f7b33213f1cb8313d2cb81225e8530ebbc37ce18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_eaac59ef",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-06T22:00:49Z",
+      "side": 0,
+      "message": "yeah, just looked prettier having them all together :)",
+      "parentUuid": "dab17558_44759ef7",
+      "revId": "f7b33213f1cb8313d2cb81225e8530ebbc37ce18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
