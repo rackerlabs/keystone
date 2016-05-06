@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_848f8122",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T23:44:45Z",
+      "side": 1,
+      "message": "if you remove this, you can list all users in the DEFAULT_DOMAIN_ID.",
+      "range": {
+        "startLine": 242,
+        "startChar": 8,
+        "endLine": 242,
+        "endChar": 55
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_04a431a4",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T23:44:45Z",
+      "side": 1,
+      "message": "removing this will result in a list with five users (https://github.com/openstack/keystone/blob/master/keystone/tests/unit/default_fixtures.py#L62)",
+      "range": {
+        "startLine": 248,
+        "startChar": 12,
+        "endLine": 248,
+        "endChar": 24
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_c4b069e0",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T23:44:45Z",
+      "side": 1,
+      "message": "adding this, the list_users() below should return only user_sna.",
+      "range": {
+        "startLine": 255,
+        "startChar": 8,
+        "endLine": 255,
+        "endChar": 59
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4477593a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-06T23:44:45Z",
+      "side": 1,
+      "message": "this is already filtering by the username, so the ldap_filter won\u0027t work.",
+      "range": {
+        "startLine": 259,
+        "startChar": 12,
+        "endLine": 259,
+        "endChar": 23
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
