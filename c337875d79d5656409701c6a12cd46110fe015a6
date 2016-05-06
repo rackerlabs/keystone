@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_99f6dad5",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-05-06T17:21:04Z",
+      "side": 1,
+      "message": "What tree? This is a list now. s/tree/list/ in the comments and docs please.",
+      "revId": "c337875d79d5656409701c6a12cd46110fe015a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_79d176cd",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-05-06T17:21:04Z",
+      "side": 1,
+      "message": "where is \"Check by Tree\"? Why not drop this fragment and start with \"This is a brute...\".",
+      "revId": "c337875d79d5656409701c6a12cd46110fe015a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4cbb0e73",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-05-06T17:21:04Z",
+      "side": 1,
+      "message": "Every other logic stanza is separated by a blank line. For consistency one should be above this line too.",
+      "revId": "c337875d79d5656409701c6a12cd46110fe015a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
