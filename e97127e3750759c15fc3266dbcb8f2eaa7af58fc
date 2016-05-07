@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_0f7281ad",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-07T17:32:43Z",
+      "side": 1,
+      "message": "please change the test name to specify that it is testing list users by name and also using a ldap filter.",
+      "range": {
+        "startLine": 240,
+        "startChar": 8,
+        "endLine": 240,
+        "endChar": 35
+      },
+      "revId": "e97127e3750759c15fc3266dbcb8f2eaa7af58fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
