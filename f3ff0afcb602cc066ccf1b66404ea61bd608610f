@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_6cb19b8f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-07T16:53:49Z",
+      "side": 1,
+      "message": "yes... but that\u0027s not what we\u0027re trying to do here.",
+      "parentUuid": "dab17558_848f8122",
+      "range": {
+        "startLine": 242,
+        "startChar": 8,
+        "endLine": 242,
+        "endChar": 55
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_04a431a4",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-06T23:44:45Z",
       "side": 1,
       "message": "removing this will result in a list with five users (https://github.com/openstack/keystone/blob/master/keystone/tests/unit/default_fixtures.py#L62)",
+      "range": {
+        "startLine": 248,
+        "startChar": 12,
+        "endLine": 248,
+        "endChar": 24
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_acab831c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-07T16:53:49Z",
+      "side": 1,
+      "message": "yes... but that\u0027s not what we\u0027re trying to test",
+      "parentUuid": "dab17558_04a431a4",
       "range": {
         "startLine": 248,
         "startChar": 12,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_cc66c728",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-07T16:53:49Z",
+      "side": 1,
+      "message": "if there were no further filtering based on the hints, yes... but we\u0027re going to do further filtering based on hints, so no.",
+      "parentUuid": "dab17558_c4b069e0",
+      "range": {
+        "startLine": 255,
+        "startChar": 8,
+        "endLine": 255,
+        "endChar": 59
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_4477593a",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2016-05-06T23:44:45Z",
       "side": 1,
       "message": "this is already filtering by the username, so the ldap_filter won\u0027t work.",
+      "range": {
+        "startLine": 259,
+        "startChar": 12,
+        "endLine": 259,
+        "endChar": 23
+      },
+      "revId": "f3ff0afcb602cc066ccf1b66404ea61bd608610f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4c73f7e7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-07T16:53:49Z",
+      "side": 1,
+      "message": "define \"won\u0027t work\"... If you mean that it won\u0027t return any users, then yes. But that\u0027s exactly what we are trying to prove/test.",
+      "parentUuid": "dab17558_4477593a",
       "range": {
         "startLine": 259,
         "startChar": 12,
