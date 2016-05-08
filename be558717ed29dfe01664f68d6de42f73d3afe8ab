@@ -16,6 +16,29 @@
       "revId": "be558717ed29dfe01664f68d6de42f73d3afe8ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6378862c",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-08T07:20:03Z",
+      "side": 1,
+      "message": "this isn\u0027t used anywhere",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "be558717ed29dfe01664f68d6de42f73d3afe8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
