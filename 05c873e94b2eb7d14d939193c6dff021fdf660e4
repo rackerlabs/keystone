@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_e3d3d65d",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-08T06:52:39Z",
+      "side": 1,
+      "message": "pep8 fail here",
+      "range": {
+        "startLine": 2120,
+        "startChar": 28,
+        "endLine": 2121,
+        "endChar": 47
+      },
+      "revId": "05c873e94b2eb7d14d939193c6dff021fdf660e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
