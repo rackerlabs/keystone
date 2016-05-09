@@ -1172,6 +1172,51 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'name',
                                  'user_id'])
 
+    def test_add_password_date_columns(self):
+        def add_user_model_record(session):
+            # add a user
+            user = {'id': uuid.uuid4().hex}
+            self.insert_dict(session, 'user', user)
+            # add a local user
+            local_user = {
+                'id': 1,
+                'user_id': user['id'],
+                'domain_id': 'default',
+                'name': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'local_user', local_user)
+            # add a password
+            password = {
+                'local_user_id': local_user['id'],
+                'password': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'password', password)
+            self.metadata.clear()
+        self.upgrade(103)
+        session = self.sessionmaker()
+        password_name = 'password'
+        self.assertTableColumns(password_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password'])
+        add_user_model_record(session)
+        self.upgrade(104)
+        self.assertTableColumns(password_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password',
+                                 'created_at',
+                                 'expires_at'])
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        # assert password table count is greater then zero
+        cnt = session.query(password_table).count()
+        self.assertTrue(cnt > 0)
+        # assert created_at is not null
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertTrue(null_created_at_cnt == 0)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
