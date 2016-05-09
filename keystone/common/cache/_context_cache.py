@@ -14,7 +14,7 @@
 from dogpile.cache import api
 from dogpile.cache import proxy
 from oslo_context import context as oslo_context
-from oslo_serialization import msgpackutils
+from oslo_serialization import jsonutils
 
 
 class _ResponseCacheProxy(proxy.ProxyBackend):
@@ -34,7 +34,7 @@ class _ResponseCacheProxy(proxy.ProxyBackend):
         if not ctx:
             ctx = self._get_request_context()
         serialize = {'payload': value.payload, 'metadata': value.metadata}
-        setattr(ctx, self._get_request_key(key), msgpackutils.dumps(serialize))
+        setattr(ctx, self._get_request_key(key), jsonutils.dumps(serialize))
         ctx.update_store()
 
     def _get_local_cache(self, key):
@@ -45,7 +45,7 @@ class _ResponseCacheProxy(proxy.ProxyBackend):
         except AttributeError:
             return api.NO_VALUE
 
-        value = msgpackutils.loads(value)
+        value = jsonutils.loads(value)
         return api.CachedValue(payload=value['payload'],
                                metadata=value['metadata'])
 
