@@ -1172,6 +1172,21 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'name',
                                  'user_id'])
 
+    def test_add_password_date_columns(self):
+        password_table_name = 'password'
+        self.upgrade(103)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password'])
+        self.upgrade(104)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password',
+                                 'created_at',
+                                 'expires_at'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
