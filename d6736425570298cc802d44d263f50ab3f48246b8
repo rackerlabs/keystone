@@ -52,6 +52,24 @@
       "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9d45e218",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-09T18:17:03Z",
+      "side": 1,
+      "message": "No, in that case.  But by default, all drivers will be shadowed in sql.",
+      "parentUuid": "dab17558_e250cb60",
+      "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
