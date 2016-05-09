@@ -1162,6 +1162,27 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(102)
         self.assertTableDoesNotExist('domain')
 
+    def test_add_new_password_columns(self):
+        session = self.sessionmaker()
+        password_table_name = 'password'
+        self.upgrade(102)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password'])
+        self.upgrade(103)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password',
+                                 'created_at',
+                                 'expired'])
+        password_table = sqlalchemy.Table(password_table_name, self.metadata,
+                                          autoload=True)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertTrue(null_created_at_cnt == 0)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
