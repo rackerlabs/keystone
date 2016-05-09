@@ -22,6 +22,30 @@
       "revId": "09d893b70daf068556ee82819f7e6b9730076294",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_33a187a4",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-09T19:16:40Z",
+      "side": 1,
+      "message": "Nope, we need more than that is has the attribute, some of them come through as None.",
+      "parentUuid": "dab17558_5d089a91",
+      "range": {
+        "startLine": 195,
+        "startChar": 11,
+        "endLine": 195,
+        "endChar": 18
+      },
+      "revId": "09d893b70daf068556ee82819f7e6b9730076294",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
