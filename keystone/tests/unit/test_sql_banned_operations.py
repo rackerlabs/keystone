@@ -134,7 +134,15 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
             # code that referenced the domain table was removed in the Mitaka
             # release, hence this migration will not cause problems when
             # running a mixture of Mitaka and Newton versions of keystone.
-            102
+            102,
+
+            # Migration 105 adds a created_at column to the password table;
+            # updates the the value and sets the column to be not nullable.
+            # During a rolling upgrade, this would not cause an error for
+            # password updates, but would for create user. However, I'm
+            # requesting that we make an exception for this migration, as
+            # rolling upgrades is not targeted for Newton.
+            105
         ]
 
         # NOTE(xek): We start requiring things be additive in Newton, so
