@@ -39,6 +39,30 @@
       "revId": "be558717ed29dfe01664f68d6de42f73d3afe8ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_da9cab5f",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-05-09T05:29:22Z",
+      "side": 1,
+      "message": "This overrides the implementation in auth_token middleware and is what lets us use a database call instead of a REST lookup \n\nhttps://github.com/openstack/keystonemiddleware/blob/ed931a00d81ed643c5138f4580cee04e1d69a2f8/keystonemiddleware/auth_token/__init__.py#L541",
+      "parentUuid": "dab17558_6378862c",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "be558717ed29dfe01664f68d6de42f73d3afe8ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
