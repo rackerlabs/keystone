@@ -70,6 +70,24 @@
       "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9d9de25b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-05-09T18:24:40Z",
+      "side": 1,
+      "message": "So we only support the default? Why have anything other than the default?",
+      "parentUuid": "dab17558_9d45e218",
+      "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
