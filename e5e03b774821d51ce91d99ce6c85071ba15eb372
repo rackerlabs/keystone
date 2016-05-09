@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_e85a774f",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-09T14:30:05Z",
+      "side": 1,
+      "message": "Do not use a for/else. This can always be written a better way that is more friendly/easier to maintain/understand. This is the main reason for the -1.",
+      "revId": "e5e03b774821d51ce91d99ce6c85071ba15eb372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a816af52",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-09T14:30:05Z",
+      "side": 1,
+      "message": "Do not use for/else. See above.",
+      "revId": "e5e03b774821d51ce91d99ce6c85071ba15eb372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8b000503",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-09T14:30:05Z",
+      "side": 1,
+      "message": "Do not use for/else. See above.",
+      "revId": "e5e03b774821d51ce91d99ce6c85071ba15eb372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ebca716d",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-09T14:30:05Z",
+      "side": 1,
+      "message": "We should look at moving to something more directly indexed rather than needing to iterate. But since this is in support of testing, this comment is more of a nit than anything else. (Perhaps worthy of a future cleanup)",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 33
+      },
+      "revId": "e5e03b774821d51ce91d99ce6c85071ba15eb372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

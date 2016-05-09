@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_48e743b0",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-09T14:30:05Z",
+      "side": 0,
+      "message": "It would be worthwhile seeing a followup patch that move the whole serialize/deserialize to json (I\u0027ll take care of this followup)",
+      "revId": "61a135cf7d76f0bf4322d44aed18312c711c1eea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
