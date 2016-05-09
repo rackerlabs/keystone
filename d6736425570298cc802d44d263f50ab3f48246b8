@@ -88,6 +88,24 @@
       "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_58ed4824",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-09T18:42:51Z",
+      "side": 1,
+      "message": "You can of course have a custom shadow backend that may not be sql.  In that rare case, the sql model may not be used.  However, by default we will use it to shadow all backend identities, which is the main reason why I want to separate it out.",
+      "parentUuid": "dab17558_9d9de25b",
+      "revId": "d6736425570298cc802d44d263f50ab3f48246b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
