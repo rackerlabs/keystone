@@ -1172,6 +1172,25 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'name',
                                  'user_id'])
 
+    def test_add_password_date_columns(self):
+        session = self.sessionmaker()
+        password_table_name = 'password'
+        self.upgrade(103)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password'])
+        self.upgrade(104)
+        self.assertTableColumns(password_table_name,
+                                ['id',
+                                 'local_user_id',
+                                 'password',
+                                 'created_at',
+                                 'expires_at'])
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertTrue(null_created_at_cnt == 0)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
