@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
@@ -121,11 +122,15 @@ class LocalUser(sql.ModelBase, sql.DictBase):
 
 class Password(sql.ModelBase, sql.DictBase):
     __tablename__ = 'password'
-    attributes = ['id', 'local_user_id', 'password']
+    attributes = ['id', 'local_user_id', 'password', 'created_at',
+                  'created_by', 'expired', 'change_required']
     id = sql.Column(sql.Integer, primary_key=True)
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
     password = sql.Column(sql.String(128))
+    created_at = sql.Column(sql.DateTime, nullable=False,
+                            default=datetime.datetime.utcnow)
+    expired = sql.Column(sql.Boolean, default=False)
 
 
 class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
