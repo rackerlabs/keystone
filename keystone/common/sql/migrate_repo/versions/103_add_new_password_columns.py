@@ -1,0 +1,43 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import datetime
+import sqlalchemy as sql
+
+
+def upgrade(migrate_engine):
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    user_table = sql.Table('user', meta, autoload=True)
+    password_table = sql.Table('password', meta, autoload=True)
+
+    # add new password columns
+    created_at_column = sql.Column('created_at', sql.DateTime(),
+                                   nullable=True)
+    created_by_column = sql.Column('created_by', sql.String(64),
+                                   sql.ForeignKey(user_table.c.id),
+                                   nullable=True)
+    expired_column = sql.Column('expired', sql.Boolean, nullable=False,
+                                server_default='0', default=False)
+    change_required_column = sql.Column('change_required', sql.Boolean,
+                                        nullable=False, server_default='0',
+                                        default=False)
+    password_table.create_column(created_at_column)
+    password_table.create_column(created_by_column)
+    password_table.create_column(expired_column)
+    password_table.create_column(change_required_column)
+
+    # update created_at to now
+    now = datetime.datetime.utcnow()
+    stmt = password_table.update().values(created_at=now)
+    stmt.execute()
