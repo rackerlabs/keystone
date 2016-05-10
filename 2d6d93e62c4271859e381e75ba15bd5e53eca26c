@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_5fb97214",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-10T17:14:52Z",
+      "side": 1,
+      "message": "oh okay. I\u0027ll add that feature to the etherpad. I guess that should be configurable too?",
+      "parentUuid": "dab17558_92711647",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a656a027",
         "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
         "patchSetId": 6
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Talking with Dolph, we may not need this table.  We could instead utilize Keystone events and Ceilometer to pull this data.",
       "parentUuid": "dab17558_f1bd0469",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_bf5fbee3",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-10T17:14:52Z",
+      "side": 1,
+      "message": "for which feature was this going to be used for again? Or is this just for auditing purposes?",
+      "parentUuid": "dab17558_d2e39ed7",
       "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
