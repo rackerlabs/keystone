@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_9f4111ac",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T20:31:23Z",
+      "side": 1,
+      "message": "Yay no extra magic needed for handling eventlet vs non-eventlet here.",
+      "revId": "e4d6eb8eccd6a774e311671f8e4dd23b3e355fbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_7f3eed28",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T20:31:23Z",
+      "side": 1,
+      "message": "In the next(upcoming? some release?) dogpile can now handle the reconfiguration cases. We should look to move to supporting that and bumping the minimums respectively.",
+      "revId": "e4d6eb8eccd6a774e311671f8e4dd23b3e355fbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
