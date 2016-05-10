@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_5a6fc02a",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-10T17:39:15Z",
+      "side": 1,
+      "message": "Will this \"if(\" pass pep8 ?",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 11
+      },
+      "revId": "59fb7cc82e107531bdac520c0a9cd5f4af52e0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
