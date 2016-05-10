@@ -34,6 +34,23 @@
       "revId": "44833d1cbad7e942f8eff3c2942be475450304ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b197ee46",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T19:43:36Z",
+      "side": 1,
+      "message": "Lets ensure this is in-fact a boolean while we\u0027re at it.",
+      "revId": "44833d1cbad7e942f8eff3c2942be475450304ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
