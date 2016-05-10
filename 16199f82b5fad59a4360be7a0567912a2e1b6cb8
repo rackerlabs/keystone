@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c6191f8a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "do not use the httpd/* files, use the files created by the entry points.",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a61e9b6d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "do not use the httpd/* files, use the files created by the entry points",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_06104758",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "do not use the httpd/* files, use the files created by the entry points",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_862d57aa",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "It is not recommended to use the httpd/keystone-admin.py instead it is recommended to use the files created by the entry points.",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_662af391",
+        "filename": "httpd/keystone-admin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "This file should not be changed. The is still deprecated and slated for removal. The recommendation should be to use the files created by the entry points.",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e614234e",
+        "filename": "httpd/keystone-public.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:34:47Z",
+      "side": 1,
+      "message": "Do not create this file, use the files created by the entry points.",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
