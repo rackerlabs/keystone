@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_cbc80025",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-10T18:40:05Z",
+      "side": 1,
+      "message": "This table was going to be used to support these features:\n* PCI-DSS 8.1.4: Remove/disable inactive user accounts within 90 days.\n* PCI-DSS 8.1.6: Limit repeated access attempts by locking out the user ID after not more than six attempts.",
+      "parentUuid": "dab17558_bf5fbee3",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a62d00aa",
         "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
         "patchSetId": 6
