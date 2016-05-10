@@ -34,6 +34,24 @@
       "revId": "db299828ae99c4e21d1b17ffc6efe59950165c23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_7192bdf7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T13:18:59Z",
+      "side": 1,
+      "message": "I don\u0027t think other code will depend on shadow users being SQL. This is really a refactor for something that we already do. The shadow users SQL backend reuses the identity SQL models: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/shadow_backends/sql.py?id\u003d7c3497c#n18\n\nThis patch makes it better in that the shadow users SQL driver no longer directly depends on the identity SQL driver. Instead they share a common set of models.\n\nThis should have no impact on any other driver implementations.",
+      "parentUuid": "dab17558_ee6b68ef",
+      "revId": "db299828ae99c4e21d1b17ffc6efe59950165c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
