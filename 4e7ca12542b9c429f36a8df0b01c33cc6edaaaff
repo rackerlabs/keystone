@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "dab17558_f1c21633",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T19:45:42Z",
+      "side": 1,
+      "message": "Including at least basic data would go a long way to making this easier to understand. I get that you don\u0027t have the data anymore, is it possible to reproduce?",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b039ab41",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -48,6 +65,40 @@
       "writtenOn": "2015-07-31T14:47:21Z",
       "side": 1,
       "message": "This looks like it could cause a busy wait now. What happens when the server is under high load? What types of testing did you do to ensure this doesn\u0027t happen under heavy load or when the connection to memcache starts to experience some latency?",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_d1bf12a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T19:45:42Z",
+      "side": 1,
+      "message": "Please open a bug/tracker for this. I would like this to also have a releasenote",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_91c90a5c",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T19:45:42Z",
+      "side": 1,
+      "message": "I do worry about this spinning a lot at 1500 attempts",
       "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
