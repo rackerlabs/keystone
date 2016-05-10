@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_92711647",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-10T16:13:58Z",
+      "side": 1,
+      "message": "Yeah, at the Summit we talked about if an admin creates the password for the user, the user should be required to change the password at the next login.",
+      "parentUuid": "dab17558_718bd4c3",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a656a027",
         "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
         "patchSetId": 6
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_d2e39ed7",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-10T16:13:58Z",
+      "side": 1,
+      "message": "Talking with Dolph, we may not need this table.  We could instead utilize Keystone events and Ceilometer to pull this data.",
+      "parentUuid": "dab17558_f1bd0469",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a62d00aa",
         "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
         "patchSetId": 6
@@ -83,6 +119,24 @@
       "writtenOn": "2016-05-10T15:23:03Z",
       "side": 1,
       "message": "What kind of message are we storing here?",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_92d636ef",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-10T16:13:58Z",
+      "side": 1,
+      "message": "Not sure, just thought we may want to capture additional info.",
+      "parentUuid": "dab17558_a62d00aa",
       "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
