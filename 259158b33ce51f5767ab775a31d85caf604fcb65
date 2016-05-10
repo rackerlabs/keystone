@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_172d05fe",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T22:51:12Z",
+      "side": 1,
+      "message": "Why the move to deepcopy here? This is not clear because before it wasn\u0027t a deepcopy.",
+      "revId": "259158b33ce51f5767ab775a31d85caf604fcb65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
