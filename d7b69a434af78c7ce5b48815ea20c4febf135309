@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_2a5d3c79",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:40:43Z",
+      "side": 1,
+      "message": "Suggest a bug id for this.",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8a56e859",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:40:43Z",
+      "side": 1,
+      "message": "Please rebase this on top of the liniar revocation event patch, this is likely no longer needed.",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_cf8893ea",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 1
@@ -49,6 +83,40 @@
       "side": 1,
       "message": "Got it - thanks!",
       "parentUuid": "ba0121b8_c36d0706",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6a53c46b",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:40:43Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4a58808a",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:40:43Z",
+      "side": 1,
+      "message": "See previous comments.",
       "revId": "d7b69a434af78c7ce5b48815ea20c4febf135309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
