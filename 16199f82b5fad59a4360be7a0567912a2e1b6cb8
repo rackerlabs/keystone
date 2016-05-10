@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_1cdc1872",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-10T16:57:06Z",
+      "side": 1,
+      "message": "What should be the command?  It seems to be different based on how the developer set up his environment.  I am using pyenv and would use the following:\n\nuwsgi --http 127.0.0.1:35357 --wsgi-file ~/.pyenv/versions/keystone/bin/keystone-wsgi-admin",
+      "parentUuid": "dab17558_c6191f8a",
+      "revId": "16199f82b5fad59a4360be7a0567912a2e1b6cb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a61e9b6d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 2
