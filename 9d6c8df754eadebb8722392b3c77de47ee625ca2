@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "dab17558_6ad0e4f6",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:33:09Z",
+      "side": 1,
+      "message": "why not just use six.text_type(uuid.uuid4().hex)?",
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_8a3c3ec9",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 2
