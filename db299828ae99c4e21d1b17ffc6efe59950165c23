@@ -16,6 +16,24 @@
       "revId": "db299828ae99c4e21d1b17ffc6efe59950165c23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ee6b68ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-05-10T13:03:30Z",
+      "side": 1,
+      "message": "shared by what? Other code can\u0027t depend on the shadow users backend being the SQL backend. So making it available is just going to lead to code making incorrect assumptions.",
+      "parentUuid": "dab17558_098cebd8",
+      "revId": "db299828ae99c4e21d1b17ffc6efe59950165c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
