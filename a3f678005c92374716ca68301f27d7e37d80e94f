@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_6792fbf7",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T13:50:45Z",
+      "side": 1,
+      "message": "With the merge of https://review.openstack.org/#/c/306681/ is this still needed?\n\nWe do this with other things too, like user ids. We should do this consistently for all things stored as bytes or not at all. With Adam\u0027s patch, I don\u0027t think we will be passing id strings that aren\u0027t uuid format in the tests anymore.",
+      "revId": "a3f678005c92374716ca68301f27d7e37d80e94f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
