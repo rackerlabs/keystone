@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_2b538c6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T18:39:53Z",
+      "side": 1,
+      "message": "YES! Do not store things in \"extra\" if we can avoid it.",
+      "revId": "368e6bd770df39e104615522402d8a2ae1c44feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8b4c38c9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T18:39:53Z",
+      "side": 1,
+      "message": "Please open a bug for this. I\u0027d like to see this tracked.",
+      "revId": "368e6bd770df39e104615522402d8a2ae1c44feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_eb5ce47e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T18:39:53Z",
+      "side": 1,
+      "message": "Please add an assert that the new columns are null/empty here.",
+      "revId": "368e6bd770df39e104615522402d8a2ae1c44feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4b56d05c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T18:39:53Z",
+      "side": 1,
+      "message": "Is this the right approach (reinitializing sql?) I think you need just a new metadata object.\nMore of a nit / question, but not worth blocking this review over.",
+      "revId": "368e6bd770df39e104615522402d8a2ae1c44feb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
