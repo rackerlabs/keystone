@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_1d8c20d9",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T14:27:01Z",
+      "side": 1,
+      "message": "I\u0027d like to see this load tested. My main concern is that we\u0027d select pulling all of the events for every token check , where it looks like it was actually only doing that periodically.",
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
