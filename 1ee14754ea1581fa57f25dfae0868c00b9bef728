@@ -120,6 +120,23 @@
     },
     {
       "key": {
+        "uuid": "dab17558_8ab1c849",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:11:54Z",
+      "side": 0,
+      "message": "No this should not be kept at all if revoke_by_expiration is not used.",
+      "revId": "1ee14754ea1581fa57f25dfae0868c00b9bef728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_8db8f4c9",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 11
