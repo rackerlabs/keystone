@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_e984f40b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:44:17Z",
+      "side": 1,
+      "message": "This type of new constraint needs to be enforced at the manager level as well, this cannot strictly be something that is enforced at the driver level. Secondarily this would be an API incompat/break. So -2 (sorry) until we resolve these issues.",
+      "revId": "d131d63fde01ab72b84c46d121701d355c66d648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_497ee019",
+        "filename": "keystone/common/sql/migrate_repo/versions/095_add_unique_constraint_endpoint.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T16:44:17Z",
+      "side": 1,
+      "message": "This is something we need to resolve automatically. This is not something that should be solved here somehow. We should not be asking operators to \"cleanup\" entries. Please come up with a solution to handle this properly.",
+      "revId": "d131d63fde01ab72b84c46d121701d355c66d648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
