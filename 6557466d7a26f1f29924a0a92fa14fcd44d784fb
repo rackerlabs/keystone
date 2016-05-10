@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_37ebe979",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T22:55:26Z",
+      "side": 1,
+      "message": "Please subclass ValidationError to pass back relevant information to the end user. This is not a case we need to obscure things.",
+      "revId": "6557466d7a26f1f29924a0a92fa14fcd44d784fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
