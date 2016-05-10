@@ -16,6 +16,24 @@
       "revId": "5f139a283a06da71eb77d3702d157ca80a977502",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_013b3b9d",
+        "filename": "keystone/common/ldap/ldappool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-10T04:44:37Z",
+      "side": 1,
+      "message": "when i was working on this, i was using https://github.com/openstack/oslo.utils/blob/master/oslo_utils/encodeutils.py#L107-L121  which looks pretty similar",
+      "parentUuid": "dab17558_01517b0e",
+      "revId": "5f139a283a06da71eb77d3702d157ca80a977502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
