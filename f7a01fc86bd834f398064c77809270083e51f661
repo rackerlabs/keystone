@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_a2bcd1dc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T14:00:51Z",
+      "side": 1,
+      "message": "Wouldn\u0027t something like this (https://github.com/openstack/keystone/blob/02562069d8e48eadcec8ab66fb82d6427a6a749c/keystone/tests/unit/core.py#L828-L839) work here?",
+      "revId": "f7a01fc86bd834f398064c77809270083e51f661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
