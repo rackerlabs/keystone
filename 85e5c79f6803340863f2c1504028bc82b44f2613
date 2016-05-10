@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_6a12a458",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:06:29Z",
+      "side": 1,
+      "message": "Please provide information on what is expected if these are commented out. OR use @wip. Do NOT just create a test that has commented out sections without at least a TODO/FIXME/Something to tag on for future work.",
+      "revId": "85e5c79f6803340863f2c1504028bc82b44f2613",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
