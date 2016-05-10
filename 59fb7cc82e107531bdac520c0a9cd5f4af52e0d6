@@ -22,6 +22,30 @@
       "revId": "59fb7cc82e107531bdac520c0a9cd5f4af52e0d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_fa6f94f9",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-10T17:42:11Z",
+      "side": 1,
+      "message": "it will, the one in mitaka did. \n\nthe space after if is more of a python convention than a straight flake8 failure",
+      "parentUuid": "dab17558_5a6fc02a",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 11
+      },
+      "revId": "59fb7cc82e107531bdac520c0a9cd5f4af52e0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
