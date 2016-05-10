@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_b4feb7ab",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-10T22:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_4047c676",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_80f7ee89",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_142ea342",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-10T22:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_80f7ee89",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_a04152ab",
         "filename": "doc/source/installing.rst",
         "patchSetId": 3
@@ -65,6 +101,24 @@
       "writtenOn": "2016-05-10T21:48:27Z",
       "side": 1,
       "message": "Same comment here",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_94229350",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-10T22:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_a04152ab",
       "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
