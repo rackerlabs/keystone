@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_4047c676",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T21:55:22Z",
+      "side": 1,
+      "message": "Yeah - i can run this all locally without overriding the configuration directory.",
+      "parentUuid": "dab17558_40018669",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_80f7ee89",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
