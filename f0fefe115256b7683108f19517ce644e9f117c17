@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_6a5d8446",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_alter_service_type_unique.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:47:59Z",
+      "side": 1,
+      "message": "What happens if someone has duplicate services already? this is likely going to fail",
+      "revId": "f0fefe115256b7683108f19517ce644e9f117c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
