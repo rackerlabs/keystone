@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_b89d2abe",
+        "filename": "keystone/endpoint_policy/backends/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T12:58:44Z",
+      "side": 1,
+      "message": "tuple of what?",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_f8c852aa",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T12:58:44Z",
+      "side": 1,
+      "message": "six should be in it\u0027s own section since it\u0027s a third party library",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8e961c3d",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T12:58:44Z",
+      "side": 1,
+      "message": "If we\u0027re just doing this in the setup anyway why not have subclasses just do this in their setup?",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
