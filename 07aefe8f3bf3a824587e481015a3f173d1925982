@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "dab17558_4a5520f8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:08:15Z",
+      "side": 1,
+      "message": "NICE!",
+      "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_2947a078",
         "filename": "keystone/tests/unit/ksfixtures/auth_plugins.py",
         "patchSetId": 2
@@ -66,6 +83,23 @@
         "endLine": 43,
         "endChar": 18
       },
+      "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2a5a5c2a",
+        "filename": "keystone/tests/unit/ksfixtures/auth_plugins.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-10T23:08:15Z",
+      "side": 1,
+      "message": "Please clarify what this is... or comment?",
       "revId": "07aefe8f3bf3a824587e481015a3f173d1925982",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
