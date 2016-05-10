@@ -1026,6 +1026,39 @@ FILE_OPTIONS = {
                     help='The port number which the admin service listens '
                          'on.'),
     ],
+    'compliance': [
+        cfg.BoolOpt('enable',
+                    default=False,
+                    help='enable the compliance settings'),
+        cfg.IntOpt('lockout_days_no_activity',
+                   default=90,
+                   help='number of days for which a user can be inactive'
+                        'before being locked out'),
+        cfg.IntOpt('lockout_failure_attempts',
+                   default=6,
+                   help='number of times a user can fail login attempts until '
+                        'the user is locked out'),
+        cfg.IntOpt('lockout_duration_mins',
+                   default=30,
+                   help='how long in minutes a user will be locked out for '),
+        cfg.IntOpt('change_password_days',
+                   default=90,
+                   help='number of days for which a password will be '
+                        'considered valid before requiring the user to change'
+                        ' it'),
+        cfg.IntOpt('cannot_match_last_password',
+                   default=4,
+                   help='number of latest password iterations for which the '
+                        'password must be unique'),
+        cfg.IntOpt('password_change_limit_days',
+                   default=4,
+                   help='number of days for which a password will be '
+                        'considered valid before requiring the user to change'
+                        ' it'),
+        cfg.StrOpt('password_regex',
+                   default="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$",
+                   help='regex string to accept a valid password'),
+    ]
 }
 
 
