@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_311e6c5f",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-10T15:23:03Z",
+      "side": 1,
+      "message": "Not sure if required but seems good to have.",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a656a027",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-10T15:23:03Z",
+      "side": 1,
+      "message": "Can this be grabbed somewhere else? Or is it just easier to access if we store it here?",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a62d00aa",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_password_columns_and_user_activity_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-10T15:23:03Z",
+      "side": 1,
+      "message": "What kind of message are we storing here?",
+      "revId": "2d6d93e62c4271859e381e75ba15bd5e53eca26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
