@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c3e5a4dc",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-10T11:08:09Z",
+      "side": 1,
+      "message": "In this context (single property), what is the difference between this and \"\u0027required\u0027: [\u0027mapping_id\u0027]\" from L114.\n\nIf they\u0027re the same, why not just make:\n\n    protocol_update \u003d protocol_create",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 121,
+        "endChar": 23
+      },
+      "revId": "88713cce119c5f6a9f5b943de7cec49092cfebd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
