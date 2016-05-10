@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_098cebd8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-10T11:53:28Z",
+      "side": 1,
+      "message": "Maybe lines 9-20 just need to be replaced with:\n\n  This patch moves identity.backends.sql model code to sql_model.py so that they can be shared with the shadow users SQL backend.",
+      "revId": "db299828ae99c4e21d1b17ffc6efe59950165c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
