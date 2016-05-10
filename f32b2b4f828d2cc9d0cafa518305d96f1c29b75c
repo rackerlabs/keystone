@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_40018669",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T21:48:27Z",
+      "side": 1,
+      "message": "Is this part required? this will default to /etc/keystone/ right?",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_80f7ee89",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T21:48:27Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a04152ab",
+        "filename": "doc/source/installing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-10T21:48:27Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "f32b2b4f828d2cc9d0cafa518305d96f1c29b75c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
