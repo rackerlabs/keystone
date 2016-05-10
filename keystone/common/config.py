@@ -1026,6 +1026,46 @@ FILE_OPTIONS = {
                     help='The port number which the admin service listens '
                          'on.'),
     ],
+    'compliance': [
+        cfg.IntOpt('disable_user_account_days_inactive',
+                   default=90,
+                   help='Number of days for which a user can be inactive '
+                        'before the account becomes disabled. Setting the '
+                        'value to 0 disables this feature.'),
+        cfg.IntOpt('lockout_failure_attempts',
+                   default=6,
+                   help='Number of times a user can fail login attempts until '
+                        'the user is disabled out. Setting the value to 0  '
+                        'disables this feature.'),
+        cfg.IntOpt('lockout_duration_mins',
+                   default=30,
+                   help='How long in minutes a user will be disabled. '),
+        cfg.IntOpt('password_expires_days',
+                   default=90,
+                   help='Number of days for which a password will be '
+                        'considered valid before requiring the user to '
+                        'change it. Setting the value to 0 disables this '
+                        'feature.'),
+        cfg.IntOpt('cannot_match_last_password',
+                   default=4,
+                   help='Number of latest password iterations for which the '
+                        'password must be unique. Setting the value to 0 '
+                        'disables this feature.'),
+        cfg.IntOpt('password_change_limit_per_day',
+                   default=4,
+                   help='Number of days for which a password will be '
+                        'considered valid before requiring the user to '
+                        'change it. Setting the value to 0 disables '
+                        'this feature.'),
+        cfg.StrOpt('password_regex',
+                   default="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$",
+                   help='Regex string to accept a valid password. The default '
+                        'accepts passwords that contain only alphanumeric '
+                        'characters, contains at least one letter, '
+                        'contains one digit, and must also contain only '
+                        'alphanumeric characters and have a '
+                        'minimum length of 7.')
+    ]
 }
 
 
