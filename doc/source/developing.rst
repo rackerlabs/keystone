@@ -47,7 +47,8 @@ To run the Keystone Admin and API server instances, use:
 
 .. code-block:: bash
 
-    $ keystone-all
+    $ export OS_KEYSTONE_CONFIG_DIR=etc
+    $ uwsgi --http 127.0.0.1:35357 --wsgi-file httpd/keystone-admin.py
 
 This runs Keystone with the configuration the etc/ directory of the project.
 See :doc:`configuration` for details on how Keystone is configured. By default,
@@ -564,7 +565,9 @@ This will generate .mo files like keystone/locale/[lang]/LC_MESSAGES/[lang].mo
 
 .. code-block:: bash
 
-   $ KEYSTONE_LOCALEDIR=/opt/stack/keystone/keystone/locale keystone-all
+    $ export OS_KEYSTONE_CONFIG_DIR=etc
+    $ KEYSTONE_LOCALEDIR=/opt/stack/keystone/keystone/locale uwsgi --http 127.0.0.1:35357 --wsgi-file httpd/keystone-admin.py
+
 
 Now you can get a translated error response:
 
