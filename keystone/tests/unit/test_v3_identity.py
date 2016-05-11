@@ -46,7 +46,7 @@ class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
         # disallowed when domain-specific drivers are enabled
         self.config_fixture.config(group='identity',
                                    domain_specific_drivers_enabled=True)
-        self.get('/users', token=CONF.admin_token,
+        self.get('/users?enabled=1', token=CONF.admin_token,
                  expected_status=exception.Unauthorized.code)
 
     def test_create_user_with_admin_token_and_no_domain(self):
@@ -219,9 +219,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.post('/users', body={'user': {}},
                   expected_status=http_client.BAD_REQUEST)
 
+    def test_list_user_without_filter(self):
+        """Call ``GET & HEAD /users`` without filter."""
+        resource_url = '/users'
+        self.get(resource_url, expected_status=http_client.BAD_REQUEST)
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
-        resource_url = '/users'
+        resource_url = '/users?enabled=1'
         r = self.get(resource_url)
         self.assertValidUserListResponse(r, ref=self.user,
                                          resource_url=resource_url)
@@ -265,13 +270,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             project_id=project['id'])
 
         # First try using a domain scoped token
-        resource_url = '/users'
+        resource_url = '/users?enabled=1'
         r = self.get(resource_url, auth=dom_auth)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
 
         # Now try using a project scoped token
-        resource_url = '/users'
+        resource_url = '/users?enabled=1'
         r = self.get(resource_url, auth=project_auth)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
@@ -287,7 +292,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``GET /users`` making sure no default_project_id."""
         user = unit.new_user_ref(self.domain_id)
         user = self.identity_api.create_user(user)
-        resource_url = '/users'
+        resource_url = '/users?enabled=1'
         r = self.get(resource_url)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
