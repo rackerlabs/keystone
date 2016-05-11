@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_52d009c9",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T19:04:06Z",
+      "side": 1,
+      "message": "add a space or colon here, between Failed and the bugID",
+      "range": {
+        "startLine": 90,
+        "startChar": 49,
+        "endLine": 90,
+        "endChar": 59
+      },
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_52e769ab",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T19:04:06Z",
+      "side": 1,
+      "message": "same remark",
+      "range": {
+        "startLine": 95,
+        "startChar": 49,
+        "endLine": 95,
+        "endChar": 59
+      },
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b2f6955a",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T19:04:06Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 101,
+        "startChar": 62,
+        "endLine": 101,
+        "endChar": 72
+      },
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
