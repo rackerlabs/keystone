@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_d22eb9a3",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-11T19:06:40Z",
+      "side": 1,
+      "message": "That is explicit to not have it so that you don\u0027t end up with:\n\n  Failed : \u003cmessage\u003e or Failed (BugId: \u003cID\u003e): Message\n\nLook at line 78 for where the space is added.",
+      "parentUuid": "dab17558_52d009c9",
+      "range": {
+        "startLine": 90,
+        "startChar": 49,
+        "endLine": 90,
+        "endChar": 59
+      },
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_52e769ab",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 1
