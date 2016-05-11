@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_663481fb",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-11T14:01:45Z",
+      "side": 1,
+      "message": "actually, the client is intended to be as \"dumb\" as possible. We might want for example to test passing extra data.",
+      "parentUuid": "dab17558_ea45dd42",
+      "revId": "edbe6eab3bd3ae68d3117859acf1179afc74456e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_c32d7ba9",
         "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
         "patchSetId": 14
