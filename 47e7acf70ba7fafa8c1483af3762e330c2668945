@@ -16,6 +16,24 @@
       "revId": "47e7acf70ba7fafa8c1483af3762e330c2668945",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2aca2f1b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1790,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-11T17:15:10Z",
+      "side": 0,
+      "message": "Good catch :)  Fixed.",
+      "parentUuid": "dab17558_c9d9fef4",
+      "revId": "47e7acf70ba7fafa8c1483af3762e330c2668945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
