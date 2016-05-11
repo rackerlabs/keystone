@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_49c85755",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-11T21:27:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_0343d013",
+      "range": {
+        "startLine": 23,
+        "startChar": 59,
+        "endLine": 23,
+        "endChar": 74
+      },
+      "revId": "325f45bf1a22153399832213d537c015448bf70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_c387085f",
         "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-11T20:23:51Z",
       "side": 1,
       "message": "silly question, whats \u0027craeted_by\u0027 and how will that be used in the future?",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 48
+      },
+      "revId": "325f45bf1a22153399832213d537c015448bf70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_29afd37d",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-11T21:27:47Z",
+      "side": 1,
+      "message": "created_by would be the user.id of the person that created the password.  For example, if an admin updates a password for a user, the created_by would be the admin\u0027s user.id.  And then the user would be required to change the password at the next login.",
+      "parentUuid": "dab17558_c387085f",
       "range": {
         "startLine": 25,
         "startChar": 4,
