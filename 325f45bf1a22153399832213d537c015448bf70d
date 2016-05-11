@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c387085f",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:23:51Z",
+      "side": 1,
+      "message": "silly question, whats \u0027craeted_by\u0027 and how will that be used in the future?",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 48
+      },
+      "revId": "325f45bf1a22153399832213d537c015448bf70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
