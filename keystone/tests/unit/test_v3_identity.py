@@ -239,6 +239,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                         "DEFaUlT"}},
                   expected_status=http_client.NOT_FOUND)
 
+    def test_list_user_without_filter(self):
+        """Call ``GET & HEAD /users`` without filter."""
+        resource_url = '/users'
+        self.config_fixture.config(group='identity',
+                                   disable_user_list_without_filter=False)
+        response = self.get(resource_url)
+        self.config_fixture.config(group='identity',
+                                   disable_user_list_without_filter=True)
+        response = self.get(resource_url)
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'

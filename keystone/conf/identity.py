@@ -109,6 +109,11 @@ Maximum number of entities that will be returned in an identity collection.
 """))
 
 
+disable_user_list_without_filter=cfg.BoolOpt(
+    'disable_user_list_without_filter',
+    default=False,
+    help='In v3 API, disable users list without a filter.') 
+
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     default_domain_id,
@@ -120,6 +125,7 @@ ALL_OPTS = [
     cache_time,
     max_password_length,
     list_limit,
+    disable_user_list_without_filter
 ]
 
 
