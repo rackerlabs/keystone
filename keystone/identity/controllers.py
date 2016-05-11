@@ -223,6 +223,9 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_users(self, context, filters):
+        if len(context['query_string']) == 0:
+            msg = _("Can't use user list api without a filter.")
+            raise exception.ValidationError(message=msg)
         hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users(
             domain_scope=self._get_domain_id_for_list_request(context),

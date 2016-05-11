@@ -383,12 +383,19 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
         self._set_policy({"identity:list_%s" % plural: []})
         self.config_fixture.config(list_limit=5)
         self.config_fixture.config(group=driver, list_limit=None)
-        r = self.get('/%s' % plural, auth=self.auth)
+
+        if plural == 'users':
+            r = self.get('/%s?enabled=1' % plural, auth=self.auth)
+        else:
+            r = self.get('/%s' % plural, auth=self.auth)
         self.assertEqual(5, len(r.result.get(plural)))
         self.assertIs(r.result.get('truncated'), True)
 
         self.config_fixture.config(group=driver, list_limit=4)
-        r = self.get('/%s' % plural, auth=self.auth)
+        if plural == 'users':
+            r = self.get('/%s?enabled=1' % plural, auth=self.auth)
+        else:
+            r = self.get('/%s' % plural, auth=self.auth)
         self.assertEqual(4, len(r.result.get(plural)))
         self.assertIs(r.result.get('truncated'), True)
 

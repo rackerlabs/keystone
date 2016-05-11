@@ -123,7 +123,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         """
         self._set_policy({"identity:list_users": []})
-        r = self.get('/users', auth=self.auth)
+        r = self.get('/users?enabled=1', auth=self.auth)
         id_list = self._get_id_list_from_ref_list(r.result.get('users'))
         self.assertIn(self.user1['id'], id_list)
         self.assertIn(self.user2['id'], id_list)
