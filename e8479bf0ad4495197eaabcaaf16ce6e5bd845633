@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_437b197b",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:09:33Z",
+      "side": 1,
+      "message": "\"a list of events\" is enough of a description",
+      "range": {
+        "startLine": 137,
+        "startChar": 26,
+        "endLine": 137,
+        "endChar": 40
+      },
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_23437514",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:09:33Z",
+      "side": 1,
+      "message": "what does an event look like? you describe the token_data above, which is very helpful",
+      "range": {
+        "startLine": 161,
+        "startChar": 11,
+        "endLine": 161,
+        "endChar": 16
+      },
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e3d5ed42",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:09:33Z",
+      "side": 1,
+      "message": "bump this over, under \"dictionary\"",
+      "range": {
+        "startLine": 163,
+        "startChar": 4,
+        "endLine": 163,
+        "endChar": 9
+      },
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_23cc15ba",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:09:33Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 165,
+        "startChar": 4,
+        "endLine": 165,
+        "endChar": 26
+      },
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_68ae2ce7",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 8
@@ -31,6 +123,29 @@
       "side": 1,
       "message": "Right.  I always have to reread the one from the old version because the true/false in the return is determined by the result of the evaluation.  Thus, to me, this version is easier to read quickly and see what is going on, but the result and performance is the same.",
       "parentUuid": "dab17558_68ae2ce7",
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e3d84d55",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-11T20:09:33Z",
+      "side": 1,
+      "message": "minor optimization, shouldn\u0027t this be at the top? before we loop over attributes on line 194, this is a very fast comparison",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 55
+      },
       "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
