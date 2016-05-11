@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_1ef6baf8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T02:04:49Z",
+      "side": 1,
+      "message": "We should LOG an error if we get one.",
+      "revId": "084600ae3731fbf4ed0f24e83d712adbe5b66f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_bebcce06",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T02:04:49Z",
+      "side": 1,
+      "message": "We should suggest to the user that the version should be less than or equal to the max migration value:\n\n    if version \u003e max_migration_possible:\n        msg \u003d (_(\u0027Version should be less than \u0027\n        \u0027or equal to %d.\u0027) % max_migration_possible)",
+      "revId": "084600ae3731fbf4ed0f24e83d712adbe5b66f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1e5b5af7",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T02:04:49Z",
+      "side": 1,
+      "message": "We have a bunch of validation error message above, maybe we can reuse one of those instead of creating a new one.",
+      "revId": "084600ae3731fbf4ed0f24e83d712adbe5b66f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_de3272a6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T02:04:49Z",
+      "side": 1,
+      "message": "A user could technically still have issues with this. If there are only 350 migration versions and a user specifies 9223372036854775806 (sys.maxsize -1) then they wouldn\u0027t get any sort of helpful error message.",
+      "revId": "084600ae3731fbf4ed0f24e83d712adbe5b66f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
