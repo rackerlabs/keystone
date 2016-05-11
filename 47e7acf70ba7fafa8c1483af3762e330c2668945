@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c9d9fef4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1790,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T14:16:01Z",
+      "side": 0,
+      "message": "This will get updated to:\n\n    role_base.RoleDriverV8\n\nonce we remove the deprecated classes in core.py, right?",
+      "revId": "47e7acf70ba7fafa8c1483af3762e330c2668945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
