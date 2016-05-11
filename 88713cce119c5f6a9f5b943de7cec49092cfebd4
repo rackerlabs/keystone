@@ -39,6 +39,24 @@
       "revId": "88713cce119c5f6a9f5b943de7cec49092cfebd4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_90143f4d",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T13:36:24Z",
+      "side": 1,
+      "message": "Yeah - that would make sense. I was following the existing convention with the rest of the schemas, but either way would work fine.",
+      "parentUuid": "dab17558_c3e5a4dc",
+      "revId": "88713cce119c5f6a9f5b943de7cec49092cfebd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
