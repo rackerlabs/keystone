@@ -219,6 +219,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.post('/users', body={'user': {}},
                   expected_status=http_client.BAD_REQUEST)
 
+    def test_list_user_without_filter(self):
+        """Call ``GET & HEAD /users`` without filter."""
+        self.config_fixture.config(group='identity',
+                                   disable_user_list_without_filter=True)
+        resource_url = '/users'
+        self.get(resource_url, expected_status=http_client.BAD_REQUEST)
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'

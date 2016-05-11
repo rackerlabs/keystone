@@ -205,6 +205,11 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned in '
                         'an identity collection.'),
+        cfg.BoolOpt('disable_user_list_without_filter',
+                    default=False,
+                    help='In v3 API, disable users list without a filter. '
+                         'This feature is disabled by default. '
+                         'set to true to enable.')
     ],
     'identity_mapping': [
         cfg.StrOpt('driver',

@@ -902,6 +902,9 @@
 # (integer value)
 #list_limit = <None>
 
+# Disable users list without a filter. This feature is disabled by default.
+# set to true to enable. (boolean value)
+#disable_user_list_without_filter = false
 
 [identity_mapping]
 
