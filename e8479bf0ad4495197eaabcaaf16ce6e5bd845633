@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_c600cd36",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-11T13:59:35Z",
+      "side": 1,
+      "message": "Right.  I always have to reread the one from the old version because the true/false in the return is determined by the result of the evaluation.  Thus, to me, this version is easier to read quickly and see what is going on, but the result and performance is the same.",
+      "parentUuid": "dab17558_68ae2ce7",
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_1d8c20d9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-10T14:27:01Z",
       "side": 1,
       "message": "I\u0027d like to see this load tested. My main concern is that we\u0027d select pulling all of the events for every token check , where it looks like it was actually only doing that periodically.",
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_064495b4",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-11T13:59:35Z",
+      "side": 1,
+      "message": "That caching was origianlly done assuming that the code was run external to the Keystone server, and needed to be updated based on a new fetch.  This one counts on caching at the driver level, and thus has less memory footprint.",
+      "parentUuid": "dab17558_1d8c20d9",
       "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
