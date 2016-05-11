@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_68ae2ce7",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-11T00:45:01Z",
+      "side": 1,
+      "message": "I had to double check this because the logic is opposite here https://github.com/openstack/keystone/blob/02562069d8e48eadcec8ab66fb82d6427a6a749c/keystone/models/revoke_model.py#L223\n\nIf token_values[\u0027issued_at\u0027] is within the same second as event.issued_before, this statement should evaluate to false. Which is what we want since it should keep the tokens from being revoked and successfully validated in the same second.",
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_1d8c20d9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 8
