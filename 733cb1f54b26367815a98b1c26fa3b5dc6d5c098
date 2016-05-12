@@ -16,6 +16,57 @@
       "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_3c7d21e8",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-12T18:04:36Z",
+      "side": 1,
+      "message": "cp specs/template.rst specs/backloga/\u003cfeature\u003e.rst\n\nensure the BP points to the one created in step 1\n\n\nalso edit the API doc in (path..) to show the effect of the new change, and make sure you bump the version number etc.\n\n\nI don\u0027t like that part of it, but it is \\what we have to do now.",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1c4e5dc1",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-12T18:04:36Z",
+      "side": 1,
+      "message": "\"when trying to determine whether a change goes in driver or manager, the test is whether the code needs to be exectued for each driver. Common logic goes in the manager, backend specific logic goes in the driver.\"",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_dcda15e9",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-12T18:04:36Z",
+      "side": 1,
+      "message": "\"Business logic should not go in the controller.  THe controller should be viewed as a binding between the Business logic and the HTTP protocol.  Logic is often called from other controllers or Managers, and that logic should not be duplicated, thus should be in the Mananger.\"",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
