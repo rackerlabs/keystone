@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_3687fd13",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a18252c_1551d062",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_3c7d21e8",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 4
@@ -30,6 +48,47 @@
       "writtenOn": "2016-05-12T18:04:36Z",
       "side": 1,
       "message": "cp specs/template.rst specs/backloga/\u003cfeature\u003e.rst\n\nensure the BP points to the one created in step 1\n\n\nalso edit the API doc in (path..) to show the effect of the new change, and make sure you bump the version number etc.\n\n\nI don\u0027t like that part of it, but it is \\what we have to do now.",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2c87aa13",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_3c7d21e8",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_aaf41a87",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "This needs to talk about the drivers too",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 18
+      },
       "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +112,47 @@
     },
     {
       "key": {
+        "uuid": "dab17558_8cfe9636",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_1c4e5dc1",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2a2f8af7",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "This section needs to talk about JSON schemas and show how to update them",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 34
+      },
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_dcda15e9",
         "filename": "doc/source/api_change_tutorial.rst",
         "patchSetId": 4
@@ -64,6 +164,24 @@
       "writtenOn": "2016-05-12T18:04:36Z",
       "side": 1,
       "message": "\"Business logic should not go in the controller.  THe controller should be viewed as a binding between the Business logic and the HTTP protocol.  Logic is often called from other controllers or Managers, and that logic should not be duplicated, thus should be in the Mananger.\"",
+      "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ecfbe245",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-12T20:45:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_dcda15e9",
       "revId": "733cb1f54b26367815a98b1c26fa3b5dc6d5c098",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
