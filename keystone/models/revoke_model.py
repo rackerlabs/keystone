@@ -91,8 +91,10 @@ class RevokeEvent(object):
 
         if self.revoked_at is None:
             self.revoked_at = timeutils.utcnow()
+            self.revoked_at = self.revoked_at.replace(microsecond=0)
         if self.issued_before is None:
             self.issued_before = self.revoked_at
+            self.issued_before = self.issued_before.replace(microsecond=0)
 
     def to_dict(self):
         keys = ['user_id',

@@ -34,7 +34,7 @@ class TokenModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'token'
     attributes = ['id', 'expires', 'user_id', 'trust_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    expires = sql.Column(sql.DateTime(), default=None)
+    expires = sql.Column(sql.SafeDateTime(), default=None)
     extra = sql.Column(sql.JsonBlob())
     valid = sql.Column(sql.Boolean(), default=True, nullable=False)
     user_id = sql.Column(sql.String(64))

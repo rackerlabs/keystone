@@ -39,8 +39,8 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     trustee_user_id = sql.Column(sql.String(64), nullable=False)
     project_id = sql.Column(sql.String(64))
     impersonation = sql.Column(sql.Boolean, nullable=False)
-    deleted_at = sql.Column(sql.DateTime)
-    expires_at = sql.Column(sql.DateTime)
+    deleted_at = sql.Column(sql.SafeDateTime)
+    expires_at = sql.Column(sql.SafeDateTime)
     remaining_uses = sql.Column(sql.Integer, nullable=True)
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (sql.UniqueConstraint(

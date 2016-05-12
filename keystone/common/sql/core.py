@@ -18,6 +18,7 @@ Before using this module, call initialize(). This has to be done before
 CONF() because it sets up configuration options.
 
 """
+import datetime
 import functools
 
 from oslo_config import cfg
@@ -115,6 +116,16 @@ class JsonBlob(sql_types.TypeDecorator):
 
     def process_result_value(self, value, dialect):
         return jsonutils.loads(value)
+
+
+class SafeDateTime(sql_types.TypeDecorator):
+
+    impl = sql.DateTime
+
+    def process_bind_param(self, value, dialect):
+        if isinstance(value, datetime.datetime):
+            value = value.replace(microsecond=0)
+        return value
 
 
 class DictBase(models.ModelBase):

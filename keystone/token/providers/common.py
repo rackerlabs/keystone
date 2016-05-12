@@ -139,9 +139,13 @@ class V2TokenDataHelper(object):
         if audit_info is None:
             audit_info = provider.audit_info(token_ref.get('parent_audit_id'))
 
+        issued_at = utils.timeutils.utcnow()
+        issued_at = issued_at.replace(microsecond=0)
+
         o = {'access': {'token': {'id': token_ref['id'],
                                   'expires': expires,
-                                  'issued_at': utils.isotime(subsecond=True),
+                                  'issued_at': utils.isotime(at=issued_at,
+                                                             subsecond=True),
                                   'audit_ids': audit_info
                                   },
                         'user': {'id': user_ref['id'],
@@ -490,8 +494,11 @@ class V3TokenDataHelper(object):
         if not isinstance(expires, six.string_types):
             expires = utils.isotime(expires, subsecond=True)
         token_data['expires_at'] = expires
+        safe_issued_at = utils.timeutils.utcnow()
+        safe_issued_at = safe_issued_at.replace(microsecond=0)
         token_data['issued_at'] = (issued_at or
-                                   utils.isotime(subsecond=True))
+                                   utils.isotime(at=safe_issued_at,
+                                                 subsecond=True))
 
     def _populate_audit_info(self, token_data, audit_info=None):
         if audit_info is None or isinstance(audit_info, six.string_types):
