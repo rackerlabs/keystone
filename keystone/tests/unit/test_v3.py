@@ -341,6 +341,16 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.default_domain_user_id, self.project_id,
             self.role_id)
 
+        # create & grant a non-admin role
+        self.member_role = unit.new_role_ref(name='member')
+        self.role_api.create_role(self.member_role['id'], self.member_role)
+        self.user_member = unit.create_user(self.identity_api,
+                                            domain_id=self.domain_id)
+        self.assignment_api.add_role_to_user_and_project(
+            self.user_member['id'],
+            self.project_id,
+            self.member_role['id'])
+
         # Create "req_admin" user for simulating a real user instead of the
         # admin_token_auth middleware
         self.user_reqadmin = unit.create_user(self.identity_api,
@@ -692,7 +702,6 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         require_catalog = kwargs.pop('require_catalog', True)
         endpoint_filter = kwargs.pop('endpoint_filter', False)
         ep_filter_assoc = kwargs.pop('ep_filter_assoc', 0)
-        is_admin_project = kwargs.pop('is_admin_project', None)
         token = self.assertValidTokenResponse(r, *args, **kwargs)
 
         if require_catalog:
@@ -720,12 +729,11 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertIn('id', role)
             self.assertIn('name', role)
 
-        # NOTE(samueldmq): We want to explicitly test for boolean or None
-        self.assertIs(is_admin_project, token.get('is_admin_project'))
-
         return token
 
     def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
+        role_id = kwargs.pop('role_id', self.role_id)
+        is_admin_project = kwargs.pop('is_admin_project', True)
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
         project_scoped_token_schema = self.generate_token_schema(
@@ -766,7 +774,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             project_scoped_token_schema)
         validator_object.validate(token)
 
-        self.assertEqual(self.role_id, token['roles'][0]['id'])
+        self.assertEqual(role_id, token['roles'][0]['id'])
+        self.assertIs(is_admin_project, token.get('is_admin_project'))
 
         return token
 
@@ -777,6 +786,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             self.generate_token_schema(domain_scoped=True)
         )
         validator_object.validate(token)
+
+        self.assertIs(None, token.get('is_admin_project'))
 
         return token
 

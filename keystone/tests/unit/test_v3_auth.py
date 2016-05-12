@@ -824,13 +824,25 @@ class TokenAPITests(object):
             group='resource',
             admin_project_name=self.project['name'])
         r = self.v3_create_token(self.build_authentication_request(
+            user_id=self.user_member['id'],
+            password=self.user_member['password'],
+            project_id=self.project['id']))
+        self.assertValidProjectScopedTokenResponse(
+            r, is_admin_project=None, role_id=self.member_role['id'])
+        v3_token = r.headers.get('X-Subject-Token')
+        r = self.get('/auth/tokens', headers={'X-Subject-Token': v3_token})
+        self.assertValidProjectScopedTokenResponse(
+            r, is_admin_project=None, role_id=self.member_role['id'])
+
+    def test_admin_project_not_set_but_admin_role(self):
+        r = self.v3_create_token(self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id']))
-        self.assertValidProjectScopedTokenResponse(r, is_admin_project=None)
+        self.assertValidProjectScopedTokenResponse(r, is_admin_project=True)
         v3_token = r.headers.get('X-Subject-Token')
         r = self.get('/auth/tokens', headers={'X-Subject-Token': v3_token})
-        self.assertValidProjectScopedTokenResponse(r, is_admin_project=None)
+        self.assertValidProjectScopedTokenResponse(r, is_admin_project=True)
 
     def _create_role(self, domain_id=None):
         """Call ``POST /roles``."""

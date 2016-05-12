@@ -274,7 +274,15 @@ class V3TokenDataHelper(object):
         admin_project_domain_name = CONF.resource.admin_project_domain_name
 
         if not (admin_project_name and admin_project_domain_name):
-            return  # admin project not enabled
+            # set is_admin_project=True for tokens with the admin role if admin
+            # project is not defined in conf. This will allow services to
+            # maintain backward compatibility for those depending on the legacy
+            # behavior that anyone with the admin role is not restricted to the
+            # scope of their token.
+            for role in token_data['roles']:
+                if role['name'] == 'admin':
+                    token_data['is_admin_project'] = True
+            return
 
         project = token_data['project']
 
@@ -520,11 +528,11 @@ class V3TokenDataHelper(object):
             token_data['bind'] = bind
 
         self._populate_scope(token_data, domain_id, project_id)
-        if token_data.get('project'):
-            self._populate_is_admin_project(token_data)
         self._populate_user(token_data, user_id, trust)
         self._populate_roles(token_data, user_id, domain_id, project_id, trust,
                              access_token)
+        if token_data.get('project'):
+            self._populate_is_admin_project(token_data)
         self._populate_audit_info(token_data, audit_info)
 
         if include_catalog:
