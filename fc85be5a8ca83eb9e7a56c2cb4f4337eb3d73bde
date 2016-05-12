@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_5bfdb4af",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "I\u0027ll remove the option. I think the defaults are reasonable. If an operator has a problem with the compliance defaults they can change them. I agree with Ron since the enable option would be hard to maintain since the other config variables would have to reference the enable variable.",
+      "parentUuid": "dab17558_822e91a2",
+      "range": {
+        "startLine": 1030,
+        "startChar": 21,
+        "endLine": 1030,
+        "endChar": 27
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_f1d97623",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -168,6 +192,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_3b239057",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_f1d97623",
+      "range": {
+        "startLine": 1033,
+        "startChar": 20,
+        "endLine": 1033,
+        "endChar": 44
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2314154b",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -179,6 +227,30 @@
       "writtenOn": "2016-05-11T20:21:47Z",
       "side": 1,
       "message": "Capitalize the start of sentences",
+      "range": {
+        "startLine": 1035,
+        "startChar": 25,
+        "endLine": 1035,
+        "endChar": 31
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_0d774d03",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_2314154b",
       "range": {
         "startLine": 1035,
         "startChar": 25,
@@ -214,6 +286,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_ed73e913",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_830fc135",
+      "range": {
+        "startLine": 1036,
+        "startChar": 45,
+        "endLine": 1036,
+        "endChar": 48
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_d1ed52b8",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -225,6 +321,30 @@
       "writtenOn": "2016-05-10T19:51:00Z",
       "side": 1,
       "message": "How about password_expires_days?",
+      "range": {
+        "startLine": 1044,
+        "startChar": 20,
+        "endLine": 1044,
+        "endChar": 40
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1b932c5c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_d1ed52b8",
       "range": {
         "startLine": 1044,
         "startChar": 20,
@@ -284,6 +404,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_5b993478",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "I will change it to password_change_limit_per_day.",
+      "parentUuid": "dab17558_a333e4f4",
+      "range": {
+        "startLine": 1053,
+        "startChar": 20,
+        "endLine": 1053,
+        "endChar": 46
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_03591035",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -295,6 +439,30 @@
       "writtenOn": "2016-05-11T20:21:47Z",
       "side": 1,
       "message": "consider adding text explaining what the default actually checks",
+      "range": {
+        "startLine": 1060,
+        "startChar": 19,
+        "endLine": 1060,
+        "endChar": 67
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6d87f9d7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-12T16:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_03591035",
       "range": {
         "startLine": 1060,
         "startChar": 19,
