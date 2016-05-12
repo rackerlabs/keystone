@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_b0081a2f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1038,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-12T16:47:04Z",
+      "side": 1,
+      "message": "use the word disabled here",
+      "range": {
+        "startLine": 1038,
+        "startChar": 37,
+        "endLine": 1038,
+        "endChar": 47
+      },
+      "revId": "617576bb7f3f1034d86932a03d04f7d25eabd661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_f002a20a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-12T16:47:04Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 1042,
+        "startChar": 60,
+        "endLine": 1042,
+        "endChar": 70
+      },
+      "revId": "617576bb7f3f1034d86932a03d04f7d25eabd661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_7324fcae",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-12T16:47:04Z",
+      "side": 1,
+      "message": "the default also indicates that it must be 7 characters long.",
+      "range": {
+        "startLine": 1062,
+        "startChar": 66,
+        "endLine": 1064,
+        "endChar": 39
+      },
+      "revId": "617576bb7f3f1034d86932a03d04f7d25eabd661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b33dc4bd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-12T16:47:04Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t sound necessary, since a user can change this regex it doesn\u0027t have to meet this criteria",
+      "range": {
+        "startLine": 1064,
+        "startChar": 40,
+        "endLine": 1066,
+        "endChar": 35
+      },
+      "revId": "617576bb7f3f1034d86932a03d04f7d25eabd661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
