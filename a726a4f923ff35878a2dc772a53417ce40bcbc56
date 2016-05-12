@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_932b6e94",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-12T12:48:49Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "dab17558_06f59eeb",
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_52d009c9",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 1
@@ -77,6 +95,24 @@
       "writtenOn": "2016-05-12T03:11:40Z",
       "side": 1,
       "message": "Will this ever be hit? Line 88 catches the one you care about and any other exception would just bubble up.",
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6eaedde8",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-12T12:48:49Z",
+      "side": 1,
+      "message": "+1\n\nit needs another except block for Exception and this check would be made there",
+      "parentUuid": "dab17558_a568fff5",
       "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
