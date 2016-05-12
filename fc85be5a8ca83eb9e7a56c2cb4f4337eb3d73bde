@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_822e91a2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-12T02:45:13Z",
+      "side": 1,
+      "message": "Yeah, I think we do have to have some default values, but again, it\u0027s sort of up to operators to configure those setting to comply with PCI, HIPAA or any other standards.  The point being, is that they will now have options/settings they can configure to comply with those standards.",
+      "parentUuid": "dab17558_ef0dc68f",
+      "range": {
+        "startLine": 1030,
+        "startChar": 21,
+        "endLine": 1030,
+        "endChar": 27
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_f1d97623",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
