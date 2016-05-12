@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_2ff7ced3",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-12T01:47:43Z",
+      "side": 1,
+      "message": "whoops, still not right, should be:\n\n  default\u003ddatetime.datetime.utcnow\n\nhttp://stackoverflow.com/questions/13370317/sqlalchemy-default-datetime",
+      "range": {
+        "startLine": 24,
+        "startChar": 43,
+        "endLine": 24,
+        "endChar": 70
+      },
+      "revId": "ecf516a065fe5beca4e1dc3179be1e40d9bf0540",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
