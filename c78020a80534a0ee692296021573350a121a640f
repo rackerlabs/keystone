@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_7aa6a854",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1528,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-12T09:36:29Z",
+      "side": 1,
+      "message": "Create",
+      "range": {
+        "startLine": 1528,
+        "startChar": 11,
+        "endLine": 1528,
+        "endChar": 18
+      },
+      "revId": "c78020a80534a0ee692296021573350a121a640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ba8bf01d",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-12T09:36:29Z",
+      "side": 1,
+      "message": "add period",
+      "revId": "c78020a80534a0ee692296021573350a121a640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_da77d406",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-12T09:36:29Z",
+      "side": 1,
+      "message": "++",
+      "revId": "c78020a80534a0ee692296021573350a121a640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_fa5d787a",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-12T09:36:29Z",
+      "side": 1,
+      "message": "++",
+      "revId": "c78020a80534a0ee692296021573350a121a640f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
