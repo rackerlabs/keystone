@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_3e906bec",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-05-12T22:56:39Z",
+      "side": 1,
+      "message": "Why? from a client side we default to is_admin_project True if nothing is set so this is exactly the same. \n\nalso just \u0027admin\u0027 in token_data[\u0027roles\u0027]",
+      "range": {
+        "startLine": 285,
+        "startChar": 12,
+        "endLine": 285,
+        "endChar": 18
+      },
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
