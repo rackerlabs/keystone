@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_06f59eeb",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-12T03:11:40Z",
+      "side": 1,
+      "message": "Any reason not to make it just \u0027bug\u0027 so that it matches skip_because()?",
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_52d009c9",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 1
@@ -43,6 +60,23 @@
         "endLine": 90,
         "endChar": 59
       },
+      "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a568fff5",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-12T03:11:40Z",
+      "side": 1,
+      "message": "Will this ever be hit? Line 88 catches the one you care about and any other exception would just bubble up.",
       "revId": "a726a4f923ff35878a2dc772a53417ce40bcbc56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
