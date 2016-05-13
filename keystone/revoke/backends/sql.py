@@ -10,9 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import log
+
 from keystone.common import sql
 from keystone.models import revoke_model
 from keystone import revoke
+
+
+LOG = log.getLogger(__name__)
 
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
@@ -91,6 +96,8 @@ class Revoke(revoke.RevokeDriverV8):
             return events
 
     def revoke(self, event):
+        LOG.debug('Persisting revocation event: %r' % event.to_dict())
+
         kwargs = dict()
         for attr in revoke_model.REVOKE_KEYS:
             kwargs[attr] = getattr(event, attr)
