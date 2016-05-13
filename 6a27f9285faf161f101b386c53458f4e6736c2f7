@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_6e2faf3e",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-13T19:00:38Z",
+      "side": 1,
+      "message": "these need to be: \n\n    LOG.debug(\u0027revoke_map: %r\u0027, revoke_map) \n\nI think we should just use %r since revoke_map might not be a string. Same with token_data. Also we have to use a , instead of a : (throws a syntax error).",
+      "revId": "6a27f9285faf161f101b386c53458f4e6736c2f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
