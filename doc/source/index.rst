@@ -49,6 +49,7 @@ Getting Started
 
     installing
     configuration
+    support-matrix
     apache-httpd
     policy_mapping
     configuringservices
