@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import log
 from oslo_utils import timeutils
 from six.moves import map
 
@@ -57,6 +58,9 @@ ALTERNATIVES = {
 
 
 REVOKE_KEYS = _NAMES + _EVENT_ARGS
+
+
+LOG = log.getLogger(__name__)
 
 
 def blank_token_data(issued_at):
@@ -151,6 +155,8 @@ class RevokeTree(object):
         :returns:  the event that was passed in.
 
         """
+        LOG.debug('Adding revocation event: %r' % event.to_dict())
+
         revoke_map = self.revoke_map
         for key in attr_keys(event):
             revoke_map = revoke_map.setdefault(key, {})
@@ -171,6 +177,8 @@ class RevokeTree(object):
         :param: Event to remove from the tree
 
         """
+        LOG.debug('Removing revocation event: %r' % event.to_dict())
+
         stack = []
         revoke_map = self.revoke_map
         for name in _EVENT_NAMES:
@@ -220,6 +228,10 @@ class RevokeTree(object):
             # The last (leaf) level is checked in a special way because we
             # verify issued_at field differently.
             try:
+                LOG.debug('Comparing token against revoke map')
+                LOG.debug('revoke_map: %r' % revoke_map)
+                LOG.debug('token_data: %r' % token_data)
+
                 return revoke_map['issued_before'] >= token_data['issued_at']
             except KeyError:
                 return False
@@ -252,6 +264,8 @@ class RevokeTree(object):
            'consumer_id', 'access_token_id'
 
         """
+        LOG.debug('Checking token against revocation tree: %r' % token_data)
+
         return self._search(self.revoke_map, _EVENT_NAMES, token_data)
 
 
