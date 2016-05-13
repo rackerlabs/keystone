@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_9772ff7a",
+        "filename": "keystone/endpoint_policy/backends/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-13T12:47:43Z",
+      "side": 1,
+      "message": "A tuple containing only the policy_id. The result is: {\u0027policy_id\u0027: (policy_id,)}\n\nI elaborated the doc a bit more",
+      "parentUuid": "dab17558_b89d2abe",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_f8c852aa",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 26
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_57b097dd",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-13T12:47:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_f8c852aa",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_8e961c3d",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 26
@@ -47,6 +83,24 @@
       "writtenOn": "2016-05-10T12:58:44Z",
       "side": 1,
       "message": "If we\u0027re just doing this in the setup anyway why not have subclasses just do this in their setup?",
+      "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b772a30f",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-13T12:47:43Z",
+      "side": 1,
+      "message": "I wanted to force them to override a method somehow, but your suggestion makes sense, if their tests don\u0027t work because something is missing, it\u0027s clear they need to load their fixtures in setUp",
+      "parentUuid": "dab17558_8e961c3d",
       "revId": "74df67e67c6cdea15f40ed297b76982a8ad6c8e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
