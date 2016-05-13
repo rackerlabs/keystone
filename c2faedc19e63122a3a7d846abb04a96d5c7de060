@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_9995ffe5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-13T19:39:08Z",
+      "side": 1,
+      "message": "Just make it true for all roles, and the fix is backwards compatible.  There is nothing special about admin.  If the conf values are set and they don\u0027t match, explicitly set is_admin_project \u003d False.",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_3e906bec",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
