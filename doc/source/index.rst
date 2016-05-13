@@ -49,6 +49,7 @@ Getting Started
 
     installing
     configuration
+    support-matrix
     performance
     apache-httpd
     policy_mapping
