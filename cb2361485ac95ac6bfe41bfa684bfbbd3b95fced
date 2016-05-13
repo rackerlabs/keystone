@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_09a8c1da",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-13T07:55:51Z",
+      "side": 1,
+      "message": "make this link somewhere: https://blueprints.launchpad.net/keystone/+addspec",
+      "range": {
+        "startLine": 42,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 23
+      },
+      "revId": "cb2361485ac95ac6bfe41bfa684bfbbd3b95fced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_49aac9d3",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-13T07:55:51Z",
+      "side": 1,
+      "message": "put this in backticks",
+      "range": {
+        "startLine": 44,
+        "startChar": 6,
+        "endLine": 44,
+        "endChar": 53
+      },
+      "revId": "cb2361485ac95ac6bfe41bfa684bfbbd3b95fced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_89b4b135",
+        "filename": "doc/source/api_change_tutorial.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-13T07:55:51Z",
+      "side": 1,
+      "message": "also put this in backticks",
+      "range": {
+        "startLine": 47,
+        "startChar": 36,
+        "endLine": 47,
+        "endChar": 62
+      },
+      "revId": "cb2361485ac95ac6bfe41bfa684bfbbd3b95fced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
