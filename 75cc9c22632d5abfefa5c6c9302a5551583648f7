@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_b933ac12",
+        "filename": "doc/ext/support_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-13T16:17:15Z",
+      "side": 1,
+      "message": "unrelated to identity",
+      "range": {
+        "startLine": 463,
+        "startChar": 16,
+        "endLine": 463,
+        "endChar": 73
+      },
+      "revId": "75cc9c22632d5abfefa5c6c9302a5551583648f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_992fc8a0",
+        "filename": "doc/source/support-matrix.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-13T16:17:15Z",
+      "side": 1,
+      "message": "group*",
+      "range": {
+        "startLine": 103,
+        "startChar": 34,
+        "endLine": 103,
+        "endChar": 38
+      },
+      "revId": "75cc9c22632d5abfefa5c6c9302a5551583648f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
