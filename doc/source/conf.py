@@ -44,6 +44,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.viewcode',
               'oslo_config.sphinxconfiggen',
               'oslosphinx',
+              'ext.support_matrix',
               ]
 
 config_generator_config_file = '../../config-generator/keystone.conf'
