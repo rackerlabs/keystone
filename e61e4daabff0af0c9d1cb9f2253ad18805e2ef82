@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_b9be0c62",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-13T16:14:30Z",
+      "side": 1,
+      "message": "(NIT): It would be nice to have a comment here.",
+      "revId": "e61e4daabff0af0c9d1cb9f2253ad18805e2ef82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
