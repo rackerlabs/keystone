@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_e4e73b10",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-05-13T22:15:36Z",
+      "side": 1,
+      "message": "Right - ayoung and i had a debate over this as to whether it was necessary to put true - because True is the default, it\u0027s False we\u0027re really interested in here.\n\nWhat i most dislike is you are looking for the admin role rather than just saying everything is in the admin project. I don\u0027t want to make the string \u0027admin\u0027 any more special than it already is.\n\nBut yea - if nothing is in the token then we assume True. Adding True here doesn\u0027t buy us anything.",
+      "parentUuid": "dab17558_9995ffe5",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_3e906bec",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
