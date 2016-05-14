@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_87358847",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-14T13:45:26Z",
+      "side": 1,
+      "message": "checking for the admin role is essential. Otherwise as soon as the code and policy files for nova, etc. are updated to check for is_admin_project\u003dTrue and consider that global, ALL role assignments will be global for environments that don\u0027t have the admin project specified in keystone\u0027s conf. Doing that for admin is backward compatible because that\u0027s the current behavior for admin roles... but doing that for anything else is most definitely NOT backward compatible.\n\nAnd the fact that keystoneauth will assume True if is_admin_project isn\u0027t in the token only helps those that use keystoneauth... which is not everyone. So doing this here rather than just in keystoneauth means it works for everyone, not just users of keystoneauth.",
+      "parentUuid": "dab17558_e4e73b10",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_3e906bec",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
