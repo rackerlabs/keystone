@@ -1,0 +1,9 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 14 May 2016 03:03:58 +0000
+Reviewed-on: https://review.openstack.org/197331
+Project: openstack/keystone
+Branch: refs/heads/master
