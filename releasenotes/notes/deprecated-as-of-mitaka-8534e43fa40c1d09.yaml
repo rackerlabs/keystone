@@ -1,4 +1,16 @@
 ---
+preface:
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    Deprecated all v2.0 APIs. The keystone team recommends using v3 APIs instead.
+    Most v2.0 APIs will be removed in the 'Q' release. However, the authentication
+    APIs and EC2 APIs are indefinitely deprecated and will not be removed in
+    the 'Q' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    As of the Mitaka release, the simple_cert_extension is deprecated since it
+    is only used in support of the PKI and PKIz token formats.  It will be
+    removed in the 'O' release.
 deprecations:
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
@@ -21,6 +33,19 @@ deprecations:
     instead. The ``saml2`` plugin will be removed in the 'O' release.
   - >
     [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
-    As of the Mitaka release, the simple_cert_extension is deprecated since it
-    is only used in support of the PKI and PKIz token formats.  It will be
+    Deprecate the ``enabled`` option from ``[endpoint_policy]``, it will be
+    removed in the 'O' release, and the extension will always be enabled.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The token memcache and memcache_pool persistence
+    backends have been deprecated in favor of using
+    Fernet tokens (which require no persistence).
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The file ``httpd/keystone.py`` has been deprecated in favor of
+    ``keystone-wsgi-admin`` and ``keystone-wsgi-public`` and may be
     removed in the 'O' release.
+  - >
+    [`blueprint deprecated-as-of-mitaka <https://blueprints.launchpad.net/keystone/+spec/deprecated-as-of-mitaka>`_]
+    The V8 Role driver interface is deprecated. Support for the V8 Role driver
+    interface is planned to be removed in the 'O' release of OpenStack.
