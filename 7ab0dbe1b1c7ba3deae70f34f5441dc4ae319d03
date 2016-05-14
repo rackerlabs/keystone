@@ -16,6 +16,24 @@
       "revId": "7ab0dbe1b1c7ba3deae70f34f5441dc4ae319d03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9cb03fdf",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-14T11:02:33Z",
+      "side": 1,
+      "message": "nvm, this is not a token storage .... still catching up early in the morning",
+      "parentUuid": "dab17558_fc718b45",
+      "revId": "7ab0dbe1b1c7ba3deae70f34f5441dc4ae319d03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
