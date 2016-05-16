@@ -190,7 +190,6 @@ class PersistenceManager(manager.Manager):
         # consulted before accepting a token as valid.  For now we will
         # do the explicit individual token invalidation.
         self._get_token.invalidate(self, token_id)
-        self.token_provider_api.invalidate_individual_token_cache(token_id)
 
 
 @dependency.requires('token_provider_api')
