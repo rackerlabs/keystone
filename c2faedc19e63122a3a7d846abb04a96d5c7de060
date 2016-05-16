@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_0cccebb9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-16T14:52:14Z",
+      "side": 1,
+      "message": "that rewriting of policy files is exactly what is going to start happening, though, making all roles global-capable. That is only safe, for the reasons I described above, if we check for the admin role here.",
+      "parentUuid": "dab17558_47643221",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_3e906bec",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
