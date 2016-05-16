@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_40434613",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-16T20:54:47Z",
+      "side": 1,
+      "message": "I assume all these attributes are mandatory in the token data. Is this right?",
+      "range": {
+        "startLine": 197,
+        "startChar": 20,
+        "endLine": 197,
+        "endChar": 48
+      },
+      "revId": "1c3f61cd068d15bd40c3c7cd7d3acf7e0a106671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_000bfed6",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-16T20:54:47Z",
+      "side": 1,
+      "message": "So if the token data has matched all the data from the event, let\u0027s finally check the datetimes. Could you add a comment here to be clearer?",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 55
+      },
+      "revId": "1c3f61cd068d15bd40c3c7cd7d3acf7e0a106671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
