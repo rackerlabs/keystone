@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_921476e9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-16T15:20:03Z",
+      "side": 1,
+      "message": "This has the exact same description as password_expires_days and I\u0027m not sure why this is needed.  I don\u0027t see it in the specs.  Thus, I think we should take this out.",
+      "range": {
+        "startLine": 1056,
+        "startChar": 19,
+        "endLine": 1056,
+        "endChar": 23
+      },
+      "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
