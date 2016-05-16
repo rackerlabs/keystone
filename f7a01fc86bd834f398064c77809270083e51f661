@@ -16,6 +16,24 @@
       "revId": "f7a01fc86bd834f398064c77809270083e51f661",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_3dada3e9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2016-05-16T13:47:43Z",
+      "side": 1,
+      "message": "Oh nice, I didn\u0027t know assertCloseEnoughForGovernmentWork(). Sadly, this function expects a datetime.datetime object, whereas my function expects strings. I just moved existing code.",
+      "parentUuid": "dab17558_a2bcd1dc",
+      "revId": "f7a01fc86bd834f398064c77809270083e51f661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
