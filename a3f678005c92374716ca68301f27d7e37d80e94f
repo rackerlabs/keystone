@@ -16,6 +16,24 @@
       "revId": "a3f678005c92374716ca68301f27d7e37d80e94f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1dcedf2c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2016-05-16T13:56:08Z",
+      "side": 1,
+      "message": "Oh nice. I tested without my change, and the unit tests still pass. So I removed this change ;-) Thanks.",
+      "parentUuid": "dab17558_6792fbf7",
+      "revId": "a3f678005c92374716ca68301f27d7e37d80e94f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
