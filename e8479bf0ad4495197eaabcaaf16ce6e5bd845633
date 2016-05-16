@@ -152,6 +152,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_f20502c2",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-16T15:18:21Z",
+      "side": 1,
+      "message": "I don\u0027t think we have enough data to decide what the ordering of the checks should be.  I can make guesses, but really we need to know what the most common check is, and I don\u0027t think it is this one.  It really depends on why tokens get revoked.",
+      "parentUuid": "dab17558_e3d84d55",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 55
+      },
+      "revId": "e8479bf0ad4495197eaabcaaf16ce6e5bd845633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_1d8c20d9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 8
