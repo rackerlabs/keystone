@@ -468,6 +468,8 @@ class Manager(manager.Manager):
         if CONF.token.revoke_by_id and self._needs_persistence:
             self._persistence.delete_token(token_id=token_id)
 
+        self.invalidate_individual_token_cache(token_id)
+
     def list_revoked_tokens(self):
         return self._persistence.list_revoked_tokens()
 
