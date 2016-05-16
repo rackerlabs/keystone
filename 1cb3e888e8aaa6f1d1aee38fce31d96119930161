@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_5a1df760",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-16T19:52:55Z",
+      "side": 1,
+      "message": "You need to implement manager .list_events() with @memoize on it and still do the proper invalidation of the new .list_events(). calling driver.list_events() circumvents the manager (at the very least always call self.list_events() it should pass through to the driver) and you\u0027ve eliminated caching for the events.",
+      "range": {
+        "startLine": 218,
+        "startChar": 35,
+        "endLine": 218,
+        "endChar": 60
+      },
+      "revId": "1cb3e888e8aaa6f1d1aee38fce31d96119930161",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
