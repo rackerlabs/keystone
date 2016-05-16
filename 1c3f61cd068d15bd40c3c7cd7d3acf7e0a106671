@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_4037c64c",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-16T21:00:08Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "dab17558_40434613",
+      "range": {
+        "startLine": 197,
+        "startChar": 20,
+        "endLine": 197,
+        "endChar": 48
+      },
+      "revId": "1c3f61cd068d15bd40c3c7cd7d3acf7e0a106671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_000bfed6",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-16T20:54:47Z",
       "side": 1,
       "message": "So if the token data has matched all the data from the event, let\u0027s finally check the datetimes. Could you add a comment here to be clearer?",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 55
+      },
+      "revId": "1c3f61cd068d15bd40c3c7cd7d3acf7e0a106671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e046babe",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-05-16T21:00:08Z",
+      "side": 1,
+      "message": "All of the rules are fall through. There is no reason this needs to be last",
+      "parentUuid": "dab17558_000bfed6",
       "range": {
         "startLine": 205,
         "startChar": 4,
