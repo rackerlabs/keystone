@@ -212,11 +212,16 @@ class Identity(base.IdentityDriverV8):
             user_ref = None
             try:
                 user_ref = self._get_user(session, user_id)
+                if self._is_change_password_required(user_ref):
+                    raise exception.ChangePasswordRequired(user_id=user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
             if not self._check_password(password, user_ref):
                 raise AssertionError(_('Invalid user / password'))
             return base.filter_user(user_ref.to_dict())
+
+    def _is_change_password_required(self, user_ref):
+        return False
 
     # user crud
 
