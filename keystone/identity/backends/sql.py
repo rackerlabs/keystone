@@ -17,12 +17,17 @@ import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
+from oslo_config import cfg
+
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
+
+
+CONF = cfg.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -196,28 +201,23 @@ class Identity(base.IdentityDriverV8):
     def is_sql(self):
         return True
 
-    def _check_password(self, password, user_ref):
-        """Check the specified password against the data store.
-
-        Note that we'll pass in the entire user_ref in case the subclass
-        needs things like user_ref.get('name')
-        For further justification, please see the follow up suggestion at
-        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
-
-        """
-        return utils.check_password(password, user_ref.password)
-
-    # Identity interface
     def authenticate(self, user_id, password):
-        with sql.session_for_read() as session:
-            user_ref = None
-            try:
-                user_ref = self._get_user(session, user_id)
-            except exception.UserNotFound:
-                raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        return Authenticator().authenticate(user_id, password)
+
+    def _is_change_password_required(self, user_ref, password):
+        for password_ref in user_ref.local_user.passwords:
+            if password_ref.password == password:
+                return self._is_password_expired(password_ref.created_at)
+        return False
+
+    def _is_password_expired(self, created_at):
+        expires_days = CONF.security_compliance.password_expires_days
+        if expires_days is not None and expires_days > 0:
+            now = datetime.datetime.utcnow()
+            expired_date = now + datetime.timedelta(days=expires_days)
+            if now >= expired_date:
+                return True
+        return False
 
     # user crud
 
@@ -407,3 +407,50 @@ class Identity(base.IdentityDriverV8):
             q.delete(False)
 
             session.delete(ref)
+
+
+class Authenticator(object):
+    def authenticate(self, user_id, password):
+        with sql.session_for_read() as session:
+            user_ref = None
+            try:
+                user_ref = self._get_user(session, user_id)
+            except exception.UserNotFound:
+                raise AssertionError(_('Invalid user / password'))
+            if not self._check_password(password, user_ref):
+                raise AssertionError(_('Invalid user / password'))
+            if self._is_change_password_required(user_ref, password):
+                raise exception.ChangePasswordRequired(user_id=user_id)
+            return base.filter_user(user_ref.to_dict())
+
+    def _check_password(self, password, user_ref):
+        """Check the specified password against the data store.
+
+        Note that we'll pass in the entire user_ref in case the subclass
+        needs things like user_ref.get('name')
+        For further justification, please see the follow up suggestion at
+        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
+
+        """
+        return utils.check_password(password, user_ref.password)
+
+    def _get_user(self, session, user_id):
+        user_ref = session.query(User).get(user_id)
+        if not user_ref:
+            raise exception.UserNotFound(user_id=user_id)
+        return user_ref
+
+    def _is_change_password_required(self, user_ref, password):
+        for password_ref in user_ref.local_user.passwords:
+            if password_ref.password == password:
+                return self._is_password_expired(password_ref.created_at)
+        return False
+
+    def _is_password_expired(self, created_at):
+        expires_days = CONF.security_compliance.password_expires_days
+        if expires_days is not None and expires_days > 0:
+            now = datetime.datetime.utcnow()
+            expired_date = now + datetime.timedelta(days=expires_days)
+            if now >= expired_date:
+                return True
+        return False
