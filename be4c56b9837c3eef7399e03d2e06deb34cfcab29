@@ -22,6 +22,30 @@
       "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8a5f0840",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-16T22:33:05Z",
+      "side": 1,
+      "message": "we (ibm) brought this up as a requirement that we internally have... we said this clearly at the work session and there weren\u0027t any dissenters. it\u0027s not in the spec, but it\u0027s related",
+      "parentUuid": "dab17558_921476e9",
+      "range": {
+        "startLine": 1056,
+        "startChar": 19,
+        "endLine": 1056,
+        "endChar": 23
+      },
+      "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
