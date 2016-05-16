@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_15ad0b84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-16T16:57:08Z",
+      "side": 1,
+      "message": "happening*",
+      "revId": "7067fb31b547c71c9b6a99a1328e54c71bdd3388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_55cb1353",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-16T16:57:08Z",
+      "side": 1,
+      "message": "cache*",
+      "revId": "7067fb31b547c71c9b6a99a1328e54c71bdd3388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b5307f57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-16T16:57:08Z",
+      "side": 1,
+      "message": "nit: regardless of the token provider being used or if the token has actually been persisted.",
+      "revId": "7067fb31b547c71c9b6a99a1328e54c71bdd3388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
