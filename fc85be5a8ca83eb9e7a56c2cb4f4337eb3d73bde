@@ -428,6 +428,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_f237c2ad",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-16T15:17:01Z",
+      "side": 1,
+      "message": "The number of times a user can change their password?  Where in the spec is this defined?",
+      "parentUuid": "dab17558_a333e4f4",
+      "range": {
+        "startLine": 1053,
+        "startChar": 20,
+        "endLine": 1053,
+        "endChar": 46
+      },
+      "revId": "fc85be5a8ca83eb9e7a56c2cb4f4337eb3d73bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_03591035",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
