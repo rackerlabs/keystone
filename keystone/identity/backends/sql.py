@@ -17,12 +17,17 @@ import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
+from oslo_config import cfg
+
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
+
+
+CONF = cfg.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -213,11 +218,28 @@ class Identity(base.IdentityDriverV8):
             user_ref = None
             try:
                 user_ref = self._get_user(session, user_id)
+                if self._is_change_password_required(user_ref, password):
+                    raise exception.ChangePasswordRequired(user_id=user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
             if not self._check_password(password, user_ref):
                 raise AssertionError(_('Invalid user / password'))
             return base.filter_user(user_ref.to_dict())
+
+    def _is_change_password_required(self, user_ref, password):
+        for password_ref in user_ref.local_user.passwords:
+            if password_ref.password == password:
+                return self._is_password_expired(password_ref.created_at)
+        return False
+
+    def _is_password_expired(self, created_at):
+        expires_days = CONF.security_compliance.password_expires_days
+        if expires_days is not None and expires_days > 0:
+            now = datetime.datetime.utcnow()
+            expired_date = now + datetime.timedelta(days=expires_days)
+            if now >= expired_date:
+                return True
+        return False
 
     # user crud
 
