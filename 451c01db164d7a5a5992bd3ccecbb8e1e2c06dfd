@@ -138,6 +138,23 @@
       "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4c4180a8",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:08:53Z",
+      "side": 1,
+      "message": "This is moving validation logic out of the jsonschema solution we already have.",
+      "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
