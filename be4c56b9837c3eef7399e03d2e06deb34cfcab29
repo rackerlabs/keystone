@@ -46,6 +46,30 @@
       "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_3e9c5e0d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T01:08:40Z",
+      "side": 1,
+      "message": "Okay, so we want to limit how many times a user can change their password in a day?  Is that what this config option is defining?",
+      "parentUuid": "dab17558_8a5f0840",
+      "range": {
+        "startLine": 1056,
+        "startChar": 19,
+        "endLine": 1056,
+        "endChar": 23
+      },
+      "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
