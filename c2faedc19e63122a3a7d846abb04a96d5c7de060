@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_43ae7981",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-17T18:03:32Z",
+      "side": 1,
+      "message": "self.role_id \u003d\u003d \u0027admin\u0027 and the test I added needed to use a non-admin user.",
+      "parentUuid": "dab17558_faa02bf6",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_5aa217fd",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 2
