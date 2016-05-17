@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_de3528f7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-17T15:56:15Z",
+      "side": 1,
+      "message": "remove trailing space...",
+      "range": {
+        "startLine": 580,
+        "startChar": 5,
+        "endLine": 580,
+        "endChar": 12
+      },
+      "revId": "0c2ef560fe4e7acc760ca57bdc103bcd938a416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
