@@ -31,6 +31,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
 import keystone.conf
+from keystone.credential import controllers
 from keystone import exception
 from keystone.federation import idp
 from keystone.federation import utils as mapping_engine
@@ -389,6 +390,54 @@ class DbSync(BaseApp):
         migration_helpers.sync_database_to_version(extension, version)
 
 
+class CredentialEncrypt(BaseApp):
+    """Provides ability to migrate credentials to new encryption_key.
+
+    This assumes you have already run keystone-manage credential_setup and
+    keystone-manage credential_rotate
+
+    ``allow_plaintext`` should be set to true the first time running the script
+    This allows migration of credentials that are not encrypted.  Once
+    encrypted this should be set to false to catch encryption errors due to
+    invalid keys.
+    """
+
+    name = 'credential_encrypt'
+
+    def __init__(self):
+        self.limit = 100
+        self.offset = 0
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.credential_api = drivers['credential_api']
+        self.credential_controller = controllers.CredentialV3()
+
+    @classmethod
+    def main(cls):
+        klass = cls()
+        klass.load_backends()
+        klass.do_encrypt()
+
+    def get_hints(self):
+        hints = driver_hints.Hints()
+        hints.set_limit(self.limit, offset=self.offset)
+        self.offset = self.offset + self.limit
+        return hints
+
+    def do_encrypt(self):
+        refs = self.credential_api.list_credentials(self.get_hints())
+
+        while refs:
+            refs = [self.credential_controller.decrypt_credential(r)
+                    for r in refs]
+
+            for ref in refs:
+                ref = self.credential_controller.encrypt_credential(ref)
+                self.credential_api.update_credential(ref['id'], ref)
+            refs = self.credential_api.list_credentials(self.get_hints())
+
+
 class DbVersion(BaseApp):
     """Print the current migration version of the database."""
 
@@ -494,7 +543,8 @@ class FernetSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        from keystone.token.providers.fernet import utils as fernet
+        from keystone.token.providers.fernet.utils import FernetUtils
+        fernet = FernetUtils()
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
         fernet.create_key_directory(keystone_user_id, keystone_group_id)
@@ -525,11 +575,65 @@ class FernetRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
-        from keystone.token.providers.fernet import utils as fernet
+        from keystone.token.providers.fernet.utils import FernetUtils
+        fernet = FernetUtils()
 
         keystone_user_id, keystone_group_id = cls.get_user_group()
         if fernet.validate_key_repository(requires_write=True):
             fernet.rotate_keys(keystone_user_id, keystone_group_id)
+
+
+class CredentialSetup(BasePermissionsSetup):
+    """Setup a key repository for Credential tokens.
+
+    This also creates a primary key used for both creating and validating
+    Credential tokens. To improve security, you should rotate your keys (using
+    keystone-manage credential_rotate, for example).
+
+    """
+
+    name = 'credential_setup'
+
+    @classmethod
+    def main(cls):
+        from keystone.token.providers.fernet.utils import CredentialUtils
+        utils = CredentialUtils()
+
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        utils.create_key_directory(keystone_user_id, keystone_group_id)
+        if utils.validate_key_repository(requires_write=True):
+            utils.initialize_key_repository(
+                keystone_user_id, keystone_group_id)
+
+
+class CredentialRotate(BasePermissionsSetup):
+    """Rotate Credential encryption keys.
+
+    This assumes you have already run keystone-manage credential_setup.
+
+    A new primary key is placed into rotation, which is used for new tokens.
+    The old primary key is demoted to secondary, which can then still be used
+    for validating tokens. Excess secondary keys (beyond [credential_tokens]
+    max_active_keys) are revoked. Revoked keys are permanently deleted. A new
+    staged key will be created and used to validate tokens. The next time key
+    rotation takes place, the staged key will be put into rotation as the
+    primary key.
+
+    Rotating keys too frequently, or with [credential_tokens] max_active_keys
+    set too low, will cause tokens to become invalid prior to their expiration.
+
+    """
+
+    name = 'credential_rotate'
+
+    @classmethod
+    def main(cls):
+        from keystone.token.providers.fernet.utils import CredentialUtils
+        utils = CredentialUtils()
+
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        if utils.validate_key_repository(requires_write=True):
+            utils.rotate_keys(keystone_user_id, keystone_group_id)
 
 
 class TokenFlush(BaseApp):
@@ -929,6 +1033,9 @@ class MappingEngineTester(BaseApp):
 CMDS = [
     BootStrap,
     DbSync,
+    CredentialRotate,
+    CredentialSetup,
+    CredentialEncrypt,
     DbVersion,
     DomainConfigUpload,
     FernetRotate,
