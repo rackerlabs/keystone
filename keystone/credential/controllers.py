@@ -24,7 +24,7 @@ from keystone import exception
 from keystone.i18n import _
 
 
-@dependency.requires('credential_api')
+@dependency.requires('credential_api', 'credential_provider_api')
 class CredentialV3(controller.V3Controller):
     collection_name = 'credentials'
     member_name = 'credential'
@@ -66,8 +66,22 @@ class CredentialV3(controller.V3Controller):
         trust_id = self._get_trust_id_for_request(context)
         ref = self._assign_unique_id(self._normalize_dict(credential),
                                      trust_id)
+        blob = ref.get('blob')
+        ref = self.encrypt_credential(ref)
         ref = self.credential_api.create_credential(ref['id'], ref)
+        ref['blob'] = blob
         return CredentialV3.wrap_member(context, ref)
+
+    def encrypt_credential(self, ref):
+        new_ref = ref.copy()
+        new_ref['blob'] = self.credential_provider_api.encrypt(ref['blob'])
+        return new_ref
+
+    def decrypt_credential(self, ref):
+        ref = self._blob_to_json(ref)
+        new_ref = ref.copy()
+        new_ref['blob'] = self.credential_provider_api.decrypt(ref['blob'])
+        return new_ref
 
     @staticmethod
     def _blob_to_json(ref):
@@ -85,14 +99,14 @@ class CredentialV3(controller.V3Controller):
     def list_credentials(self, context, filters):
         hints = CredentialV3.build_driver_hints(context, filters)
         refs = self.credential_api.list_credentials(hints)
-        ret_refs = [self._blob_to_json(r) for r in refs]
+        ret_refs = [self.decrypt_credential(r) for r in refs]
         return CredentialV3.wrap_collection(context, ret_refs,
                                             hints=hints)
 
     @controller.protected()
     def get_credential(self, context, credential_id):
         ref = self.credential_api.get_credential(credential_id)
-        ret_ref = self._blob_to_json(ref)
+        ret_ref = self.decrypt_credential(ref)
         return CredentialV3.wrap_member(context, ret_ref)
 
     @controller.protected()
@@ -100,7 +114,10 @@ class CredentialV3(controller.V3Controller):
     def update_credential(self, context, credential_id, credential):
         self._require_matching_id(credential_id, credential)
 
-        ref = self.credential_api.update_credential(credential_id, credential)
+        blob = credential.get('blob')
+        ref = self.encrypt_credential(credential)
+        ref = self.credential_api.update_credential(credential_id, ref)
+        ref['blob'] = blob
         return CredentialV3.wrap_member(context, ref)
 
     @controller.protected()
