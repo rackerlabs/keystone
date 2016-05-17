@@ -142,6 +142,30 @@
       "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8cab6874",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T21:05:47Z",
+      "side": 1,
+      "message": "1) what if i don\u0027t want my passwords to expire?\nThe config setting will be set to 0 and when we check if change_password_is_expired(), we evaluate that setting.  If it\u0027s not set, then it won\u0027t be expired.\n\n2) I also have service \"users\", like the \"nova\" account that talks to glance, specified in keystonemiddleware, how do i get notified upon login?\nHow do you get notified today?  I\u0027m not sure why this would change.",
+      "parentUuid": "dab17558_d889af27",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 217,
+        "endChar": 36
+      },
+      "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
