@@ -372,6 +372,9 @@ def _limit(query, hints):
     # If we satisfied all the filters, set an upper limit if supplied
     if hints.limit:
         query = query.limit(hints.limit['limit'])
+
+        if hints.limit.get('offset') is not None:
+            query = query.offset(hints.limit['offset'])
     return query
 
 
