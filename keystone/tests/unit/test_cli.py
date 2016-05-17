@@ -505,3 +505,18 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class CliDbEncryptTestCase(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(CliDbEncryptTestCase, self).setUp()
+
+    def config_files(self):
+        config_files = super(CliDbEncryptTestCase, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def test_do_encrypt(self):
+        cli.DbEncrypt.main()

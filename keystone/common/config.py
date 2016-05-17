@@ -503,6 +503,21 @@ FILE_OPTIONS = {
                    default='sql',
                    help='Entrypoint for the credential backend driver in the '
                         'keystone.credential namespace.'),
+        cfg.StrOpt('provider',
+                   default='fernet',
+                   help='Controls the credential encryption and decryption '
+                        'operations. Entrypoint in the '
+                        'keystone.credential.provider namespace. Core '
+                        'provider is [fernet].'),
+        cfg.ListOpt('encryption_keys', secret=True, default=[],
+                    help='A "shared secret" that can be used to encrypt and '
+                         'decrypt Keystone credentials.'),
+        cfg.IntOpt('active_key', secret=True, default=0,
+                   help='Index to the current encryption_key to use for '
+                        'encryption of Keystone credentials.'),
+        cfg.BoolOpt('allow_plaintext', default=True,
+                    help='Allow fields to not be encrypted when retrieving '
+                         'them from backend'),
     ],
     'oauth1': [
         cfg.StrOpt('driver',
