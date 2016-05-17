@@ -376,6 +376,9 @@ def _limit(query, hints):
         if limit_query.count() < original_len:
             hints.limit['truncated'] = True
             query = limit_query
+
+        if hints.limit.get('offset') is not None:
+            query = query.offset(hints.limit['offset'])
     return query
 
 

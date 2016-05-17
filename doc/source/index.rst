@@ -69,6 +69,7 @@ Advanced Topics
 
    configure_tokenless_x509
    auth-totp
+   credential-encryption
    event_notifications
    external-auth
 
