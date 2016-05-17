@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_b24e8c93",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 2625,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:17:57Z",
+      "side": 1,
+      "message": "This results in an unauthorized because the user doesn\u0027t have any role assignments, right (we should add that to this comment)?",
+      "revId": "2cb43b04d5b66d5953401446eab5efd9c69f2b7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1d3fa987",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:17:57Z",
+      "side": 1,
+      "message": "This change makes it so that we no longer need federated fernet tokens, right? Or are we planning on keeping the group_id things for backwards compatibility?",
+      "revId": "2cb43b04d5b66d5953401446eab5efd9c69f2b7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
