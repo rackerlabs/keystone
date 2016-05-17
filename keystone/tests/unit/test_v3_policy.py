@@ -13,13 +13,16 @@
 #    under the License.
 
 import json
+import mock
+import oslo_policy
+import requests
+import urllib
 import uuid
 
 from six.moves import http_client
 
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-
 
 class PolicyTestCase(test_v3.RestfulTestCase):
     """Test policy CRUD."""
@@ -67,3 +70,53 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         """Call ``DELETE /policies/{policy_id}``."""
         self.delete(
             '/policies/%(policy_id)s' % {'policy_id': self.policy_id})
+
+
+
+class PolicyEnforcementTestCase(test_v3.RestfulTestCase):
+
+    def test_check_policy_true(self):
+        resource_url = '/policy_enforcement/identity:list_policies'
+
+        credentials = {"roles": ["admin"]}
+        body = {'credentials': json.dumps(credentials),
+                'target': '{}'}
+
+        body_encoded = urllib.urlencode(body)
+        resp = self.request(method='POST',
+                          path=resource_url,
+                          body=body_encoded,
+                          accept='*/*',
+                          app=self.public_app,
+                          content_type='application/x-www-form-urlencoded')
+        self.assertEqual('True', resp.body)
+
+    def test_check_policy_false(self):
+        resource_url = '/policy_enforcement/identity:list_policies'
+
+        credentials = {"roles": ["user"]}
+        body = {'credentials': json.dumps(credentials),
+                'target': '{}'}
+
+        body_encoded = urllib.urlencode(body)
+        resp = self.request(method='POST',
+                          path=resource_url,
+                          body=body_encoded,
+                          accept='*/*',
+                          app=self.public_app,
+                          content_type='application/x-www-form-urlencoded')
+        self.assertEqual('False', resp.body)
+
+    @mock.patch('oslo_policy._checks.requests.post')
+    def test_list_policy_url(self, mock_post):
+
+        class Resp(object):
+            text = 'True'
+            def close(self):
+                pass
+
+        mock_post.return_value = Resp()
+        url = '/policies'
+        self.get(url)
+        print(mock_post.call_args)
+        assert mock_post.called
