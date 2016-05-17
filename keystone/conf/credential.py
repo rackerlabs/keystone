@@ -23,10 +23,39 @@ Entrypoint for the credential backend driver in the keystone.credential
 namespace.
 """))
 
+provider = cfg.StrOpt(
+    'provider',
+    default='fernet',
+    help=utils.fmt("""
+Controls the credential encryption and decryption operations. Entrypoint in
+the keystone.credential.provider namespace. Core provider is [fernet].
+"""))
+
+encryption_keys = cfg.ListOpt(
+    'encryption_keys',
+    secret=True,
+    default=[],
+    help=utils.fmt("""
+List of fernet keys used for credential encryption.  The first key is the
+active key used for encryption and all fernet keys are used for decryption.
+When this value is not set encryption is not used.
+"""))
+
+allow_plaintext = cfg.BoolOpt(
+    'allow_plaintext',
+    default=True,
+    help=utils.fmt("""
+Allow fields to not be encrypted when retrieving them from backend.  This
+should be disabled once credentials have been encrypted using the
+keystone-manage db_encrypt command.
+"""))
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
+    provider,
+    encryption_keys,
+    allow_plaintext
 ]
 
 
