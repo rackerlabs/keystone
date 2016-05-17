@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_3ec73e99",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-17T00:40:27Z",
+      "side": 1,
+      "message": "just one suggestion to keep things consistent with other patches:\n\n  if six.PY3:\n    blob \u003d blob.encode(\u0027ascii\u0027).decode(\u0027ascii\u0027)\n  base64.b32encode(blob)",
+      "range": {
+        "startLine": 413,
+        "startChar": 8,
+        "endLine": 416,
+        "endChar": 41
+      },
+      "revId": "53adaa9dbe999d77179c950861ab887c88f7dbc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
