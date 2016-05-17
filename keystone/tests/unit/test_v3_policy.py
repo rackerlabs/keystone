@@ -13,6 +13,9 @@
 #    under the License.
 
 import json
+import mock
+import requests
+import urllib
 import uuid
 
 from six.moves import http_client
@@ -67,3 +70,89 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         """Call ``DELETE /policies/{policy_id}``."""
         self.delete(
             '/policies/%(policy_id)s' % {'policy_id': self.policy_id})
+
+
+class PolicyEnforcementTestCase(test_v3.RestfulTestCase):
+
+    def create_scoped_token(self):
+        body = {
+            'auth': {
+                'identity': {
+                    'methods': ['password'],
+                    'password': {
+                        'user': {
+                            'name': self.user['name'],
+                            'password': self.user['password'],
+                            'domain': {
+                                'id': self.user['domain_id']
+                            }
+                        }
+                    }
+                },
+                'scope': {
+                    'project': {
+                        'id': self.project['id'],
+                    }
+                }
+            }
+        }
+        return self.v3_create_token(auth=body)
+
+    def test_check_policy_true(self):
+        resource_url = '/policy_enforcement/identity:list_policies'
+
+        credentials = {"roles": ["admin"]}
+        body = {'credentials': json.dumps(credentials),
+                'target': '{}'}
+
+        body_encoded = urllib.urlencode(body)
+        resp = self.request(method='POST',
+                            path=resource_url,
+                            body=body_encoded,
+                            accept='*/*',
+                            app=self.public_app,
+                            content_type='application/x-www-form-urlencoded')
+        self.assertEqual('True', resp.body)
+
+    def test_check_policy_false(self):
+        resource_url = '/policy_enforcement/identity:list_policies'
+
+        credentials = {"roles": ["user"]}
+        body = {'credentials': json.dumps(credentials),
+                'target': '{}'}
+
+        body_encoded = urllib.urlencode(body)
+        resp = self.request(method='POST',
+                            path=resource_url,
+                            body=body_encoded,
+                            accept='*/*',
+                            app=self.public_app,
+                            content_type='application/x-www-form-urlencoded')
+        self.assertEqual('False', resp.body)
+
+    @mock.patch('requests.post')
+    def test_list_policy_url(self, mock_post):
+
+        class Post_response(object):
+            text = 'True'
+
+            def close(self):
+                pass
+
+        mock_post.return_value = Post_response()
+
+        token = self.create_scoped_token()
+        self.get('/policies', token=token.headers.get('X-Subject-Token'))
+
+        args, kwargs = mock_post.call_args
+        url_arg = args[0]
+        data_arg = kwargs['data']
+        credentials_arg = json.loads(data_arg['credentials'])
+        token_arg = credentials_arg['token']
+
+        token_body = json.loads(token.body)['token']
+        url = 'http://localhost:5000/policy_enforcement/identity:list_policies'
+
+        self.assertEqual(url, url_arg)
+        self.assertEqual(token_body, token_arg)
+        self.assertEqual('{}', data_arg['target'])

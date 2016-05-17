@@ -12,11 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import json
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
 from keystone import notifications
 from keystone.policy import schema
+
+from oslo_config import cfg
+from oslo_policy import policy as common_policy
 
 
 @dependency.requires('policy_api')
@@ -54,3 +59,14 @@ class PolicyV3(controller.V3Controller):
     def delete_policy(self, context, policy_id):
         initiator = notifications._get_request_audit_info(context)
         return self.policy_api.delete_policy(policy_id, initiator)
+
+
+class EnforcerV3(controller.V3Controller):
+
+    def policy_check(self, context, policy_action=''):
+        enforcer = common_policy.Enforcer(cfg.CONF,
+                                          policy_file="custom_policy.json")
+        query_string = context['query_string']
+        credentials = json.loads(query_string.get('credentials'))
+        target = json.loads(query_string.get('target'))
+        return str(enforcer.enforce(policy_action, target, credentials))
