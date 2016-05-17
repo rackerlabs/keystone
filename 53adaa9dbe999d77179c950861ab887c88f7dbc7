@@ -70,6 +70,23 @@
       "revId": "53adaa9dbe999d77179c950861ab887c88f7dbc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_c1ef09e7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T16:03:22Z",
+      "side": 1,
+      "message": "nit: we should add to the comment explaining *why* we want to ignore the microseconds part of the timestamp.",
+      "revId": "53adaa9dbe999d77179c950861ab887c88f7dbc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
