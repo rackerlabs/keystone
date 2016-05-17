@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_4c4d003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:05:06Z",
+      "side": 1,
+      "message": "This file doesn\u0027t need to be updated manually - we have a job that will propose a change with the updated version.",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2c1d1c0f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:05:06Z",
+      "side": 1,
+      "message": "nit: I\u0027d suggest giving a little more information about the behavior of this option. The fact that the option defaults to False will be documented in the sample config.",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_5710fb4d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -13,6 +47,58 @@
       "writtenOn": "2016-05-17T16:30:37Z",
       "side": 1,
       "message": "This should be a \u0027and\u0027 if conf... and if len(...)",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6cc1e44d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:05:06Z",
+      "side": 1,
+      "message": "What about: \n\n    if CONF.identity.disable_user_list_without_filter and not context[\u0027query_string\u0027]:",
+      "parentUuid": "dab17558_5710fb4d",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6c98c475",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:05:06Z",
+      "side": 1,
+      "message": "nit: use \u0027 instead of \" to be consistent with other messages in this module.",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_4c7ea019",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T21:05:06Z",
+      "side": 1,
+      "message": "Do we have a test that ensures we can still list users *with* filters?",
       "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
