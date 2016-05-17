@@ -31,6 +31,7 @@ from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
+from keystone.credential import controllers
 from keystone import exception
 from keystone.federation import idp
 from keystone.federation import utils as mapping_engine
@@ -369,6 +370,54 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         migration_helpers.sync_database_to_version(extension, version)
+
+
+class DbEncrypt(BaseApp):
+    """Provides ability to migrate credentials to new encryption_key.
+
+    keystone.conf needs to be updated before running this script:
+    encryption_keys should have a valid fernet key and
+    active_key should also be set to the index of active encryption_key
+
+    allow_plaintext should be set to true the first time running the script.
+    This allows migration of credentials that are not encrypted.  Once migrated
+    this should be set to false to catch encryption errors due to invalid keys.
+    """
+
+    name = 'db_encrypt'
+
+    def __init__(self):
+        self.limit = 100
+        self.offset = 0
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.credential_api = drivers['credential_api']
+        self.credential_controller = controllers.CredentialV3()
+
+    @classmethod
+    def main(cls):
+        klass = cls()
+        klass.load_backends()
+        klass.do_encrypt()
+
+    def get_hints(self):
+        hints = driver_hints.Hints()
+        hints.set_limit(self.limit, offset=self.offset)
+        self.offset = self.offset + self.limit
+        return hints
+
+    def do_encrypt(self):
+        refs = self.credential_api.list_credentials(self.get_hints())
+
+        while refs:
+            refs = [self.credential_controller.decrypt_credential(r)
+                    for r in refs]
+
+            for ref in refs:
+                ref = self.credential_controller.encrypt_credential(ref)
+                self.credential_api.update_credential(ref['id'], ref)
+            refs = self.credential_api.list_credentials(self.get_hints())
 
 
 class DbVersion(BaseApp):
@@ -911,6 +960,7 @@ class MappingEngineTester(BaseApp):
 CMDS = [
     BootStrap,
     DbSync,
+    DbEncrypt,
     DbVersion,
     DomainConfigUpload,
     FernetRotate,
