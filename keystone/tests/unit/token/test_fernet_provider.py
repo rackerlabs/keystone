@@ -30,9 +30,10 @@ from keystone.tests.unit.ksfixtures import database
 from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
-from keystone.token.providers.fernet import utils as fernet_utils
+import keystone.token.providers.fernet.utils as fernet_utils
 
 
+fernet_utils = fernet_utils.FernetUtils()
 CONF = keystone.conf.CONF
 
 
