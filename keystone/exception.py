@@ -546,3 +546,8 @@ class MigrationMovedFailure(RuntimeError):
 
 class UnsupportedDriverVersion(UnexpectedError):
     debug_message_format = _('%(driver)s is not supported driver version')
+
+
+class CredentialEncryptionError(Exception):
+    message_format = _("An unexpected error prevented the server "
+                       "from accessing encrypted credentials.")

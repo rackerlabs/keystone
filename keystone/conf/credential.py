@@ -24,10 +24,51 @@ namespace. Keystone only provides a `sql` driver, so there's no reason to
 change this unless you are providing a custom entry point.
 """))
 
+provider = cfg.StrOpt(
+    'provider',
+    default='fernet',
+    help=utils.fmt("""
+Controls the credential encryption and decryption operations. Entry point in
+the ``keystone.credential.provider`` namespace. Default provider is [fernet].
+"""))
+
+allow_plaintext = cfg.BoolOpt(
+    'allow_plaintext',
+    default=True,
+    help=utils.fmt("""
+Allow fields to not be encrypted when retrieving them from backend.  This
+should be disabled once credentials have been encrypted using the
+``keystone-manage credentials_encrypt`` command.  This can also be used to
+allow storing non-encrypted credentials.
+"""))
+
+key_repository = cfg.StrOpt(
+    'key_repository',
+    default='/etc/keystone/credential-keys/',
+    help=utils.fmt("""
+Directory containing Encrypted Credential keys.  Credential token keys have no
+relationship to Fernet token keys.
+"""))
+
+max_active_keys = cfg.IntOpt(
+    'max_active_keys',
+    default=2,
+    help=utils.fmt("""
+This controls how many keys are held in rotation by keystone-manage
+credential_rotate before they are discarded. The default value of 3 means that
+keystone will maintain one staged key, one primary key, and one secondary key.
+Increasing this value means that additional secondary keys will be kept in the
+rotation.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
+    provider,
+    allow_plaintext,
+    key_repository,
+    max_active_keys
 ]
 
 

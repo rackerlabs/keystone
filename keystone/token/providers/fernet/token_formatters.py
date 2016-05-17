@@ -29,7 +29,7 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _, _LI
 from keystone.token import provider
-from keystone.token.providers.fernet import utils
+from keystone.token.providers.fernet import utils as fernet_utils
 
 
 CONF = keystone.conf.CONF
@@ -57,6 +57,7 @@ class TokenFormatter(object):
         ``encrypt(plaintext)`` and ``decrypt(ciphertext)``.
 
         """
+        utils = fernet_utils.FernetUtils()
         keys = utils.load_keys()
 
         if not keys:
