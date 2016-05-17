@@ -14,8 +14,11 @@
 
 """Main entry point into the Policy service."""
 
+import json
+
 from oslo_config import cfg
 from oslo_log import versionutils
+from oslo_policy import policy as common_policy
 
 from keystone.common import dependency
 from keystone.common import manager
@@ -90,3 +93,21 @@ class PolicyDriverV8(base.PolicyDriverV8):
 
 
 Driver = manager.create_legacy_driver(base.PolicyDriverV8)
+
+
+@dependency.provider('enforcement_api')
+class EnforcementManager(manager.Manager):
+
+    driver_namespace = 'keystone.policy'
+
+    def __init__(self):
+        pass
+
+    def enforce(self, context, policy_action):
+        enforcer = common_policy.Enforcer(cfg.CONF,
+                                          policy_file="custom_policy.json")
+        query_string = context['query_string']
+        credentials = json.loads(query_string.get('credentials'))
+        target = json.loads(query_string.get('target'))
+
+        return str(enforcer.enforce(policy_action, target, credentials))

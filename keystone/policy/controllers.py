@@ -54,3 +54,10 @@ class PolicyV3(controller.V3Controller):
     def delete_policy(self, context, policy_id):
         initiator = notifications._get_request_audit_info(context)
         return self.policy_api.delete_policy(policy_id, initiator)
+
+
+@dependency.requires('enforcement_api')
+class EnforcerV3(controller.V3Controller):
+
+    def policy_check(self, context, policy_action=''):
+        return self.enforcement_api.enforce(context, policy_action)
