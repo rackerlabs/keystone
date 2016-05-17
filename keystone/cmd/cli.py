@@ -25,6 +25,7 @@ from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import pbr.version
 
+from keystone.credential.controllers import CredentialV3
 from keystone.common import config
 from keystone.common import driver_hints
 from keystone.common import openssl
@@ -369,6 +370,37 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         migration_helpers.sync_database_to_version(extension, version)
+
+
+class DbEncrypt(BaseApp):
+
+    name = 'db_encrypt'
+
+    def __init__(self):
+        self.load_backends()
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.credential_api = drivers['credential_api']
+        self.credential_controller = CredentialV3()
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DbEncrypt, cls).add_argument_parser(subparsers)
+
+    @classmethod
+    def main(cls):
+        klass = cls()
+        klass.do_encrypt()
+
+    def do_encrypt(self):
+        refs = self.credential_api.list_credentials()
+        ret_refs = [self.credential_controller._blob_to_json(r) for r in refs]
+        ret_refs = [self.credential_controller._decrypt_blob(r) for r in ret_refs]
+
+        for ref in ret_refs:
+            ref = self.credential_controller._encrypt_blob(ref)
+            self.credential_api.update_credential(ref['id'], ref)
 
 
 class DbVersion(BaseApp):
@@ -911,6 +943,7 @@ class MappingEngineTester(BaseApp):
 CMDS = [
     BootStrap,
     DbSync,
+    DbEncrypt,
     DbVersion,
     DomainConfigUpload,
     FernetRotate,
