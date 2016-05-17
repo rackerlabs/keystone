@@ -94,6 +94,30 @@
       "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_1e585030",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T15:44:05Z",
+      "side": 1,
+      "message": "As we discussed in IRC/etherpad, we\u0027ll create a new interface for most of the PCI functionality.  Regarding upgrade, if operators set password expired days, when the user authenticates we\u0027ll check if the password is expired and set the expires_at date.  Finally, to answer your last question, if the current password doesn\u0027t match the required strength, then the user would be required to change their password.",
+      "parentUuid": "dab17558_49a6a50f",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 217,
+        "endChar": 36
+      },
+      "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
