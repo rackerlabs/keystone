@@ -111,6 +111,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_785b6322",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:34:09Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7af24918_2a5a4a2a",
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b14c7f43",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 2
