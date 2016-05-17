@@ -70,6 +70,30 @@
       "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_22171c46",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 17579
+      },
+      "writtenOn": "2016-05-17T03:54:51Z",
+      "side": 1,
+      "message": "Nice catch, I need to change the description. Thanks Ron.",
+      "parentUuid": "dab17558_3e9c5e0d",
+      "range": {
+        "startLine": 1056,
+        "startChar": 19,
+        "endLine": 1056,
+        "endChar": 23
+      },
+      "revId": "be4c56b9837c3eef7399e03d2e06deb34cfcab29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
