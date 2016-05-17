@@ -26,9 +26,12 @@ from testtools import matchers
 from keystone.cmd import cli
 from keystone.common import dependency
 import keystone.conf
+from keystone.credential import controllers
 from keystone.i18n import _
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import database
+import keystone.token.providers.fernet.utils as fernet_utils
 
 
 CONF = keystone.conf.CONF
@@ -534,3 +537,67 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class CliCredentialEncryptTestCase(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(CliCredentialEncryptTestCase, self).setUp()
+        self.load_backends()
+        self.credential_controller = controllers.CredentialV3()
+        self.credential_api = self.credential_controller.credential_api
+
+    def config_overrides(self):
+        super(CliCredentialEncryptTestCase, self).config_overrides()
+        self.config_fixture.config(group='credential', allow_plaintext=True)
+        self.config_fixture.config(group='credential', max_active_keys=2)
+        self.useFixture(ksfixtures.CredentialRepository(self.config_fixture))
+        self.utils = fernet_utils.CredentialUtils()
+        self.utils.initialize_key_repository()
+        self.utils.rotate_keys()
+
+    def config_files(self):
+        config_files = super(CliCredentialEncryptTestCase, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def test_do_encrypt_unencrypted_credential(self):
+        encrypt = cli.CredentialEncrypt()
+        encrypt.credential_api = self.credential_api
+        encrypt.credential_controller = self.credential_controller
+
+        credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)
+        created = self.credential_api.create_credential(
+            credential['id'], credential)
+
+        encrypt.do_encrypt()
+
+        encrypted = self.credential_api.get_credential(credential['id'])
+
+        retrieved = self.credential_controller.get_credential(
+            self.make_request(is_admin=True), credential['id'])
+        retrieved['credential'].pop('links')
+
+        self.assertNotEqual(created['blob'], encrypted['blob'])
+        self.assertEqual(created, retrieved['credential'])
+
+    def test_do_encrypt_encrypted_credential(self):
+        encrypt = cli.CredentialEncrypt()
+        encrypt.credential_api = self.credential_api
+        encrypt.credential_controller = self.credential_controller
+
+        credential = unit.new_credential_ref(user_id=uuid.uuid4().hex)
+        created = self.credential_api.create_credential(
+            credential['id'], credential)
+
+        encrypt.do_encrypt()
+
+        encrypted = self.credential_api.get_credential(credential['id'])
+
+        retrieved = self.credential_controller.get_credential(
+            self.make_request(is_admin=True), credential['id'])
+        retrieved['credential'].pop('links')
+
+        self.assertNotEqual(created['blob'], encrypted['blob'])
+        self.assertEqual(created, retrieved['credential'])
