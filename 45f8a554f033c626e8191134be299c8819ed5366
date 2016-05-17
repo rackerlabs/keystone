@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_2d136466",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1029,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "Need a better name than compliance, too generic. Perhaps, security_compliance.  And you could separate some of this out into password_validation or password compliance.",
+      "range": {
+        "startLine": 1029,
+        "startChar": 5,
+        "endLine": 1029,
+        "endChar": 15
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e8514a0f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "I think we need to agree on defaults for these settings.  90 days seems too short for the default.",
+      "range": {
+        "startLine": 1031,
+        "startChar": 27,
+        "endLine": 1031,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e8866a63",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1038,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "\"until the user account is locked\"",
+      "range": {
+        "startLine": 1038,
+        "startChar": 49,
+        "endLine": 1038,
+        "endChar": 50
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6848ba2d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "\"The number of minutes a user account will be locked after reaching the maximum number of failed attempts.\"",
+      "range": {
+        "startLine": 1042,
+        "startChar": 25,
+        "endLine": 1042,
+        "endChar": 28
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_c860c6d1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "I think the default should be 0 by default.  Or, something longer.  90 days is pretty aggressive.",
+      "range": {
+        "startLine": 1044,
+        "startChar": 27,
+        "endLine": 1044,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2827d263",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "cannot_match_last_password_count or something.  cannot_match_last_password sounds like a boolean value.",
+      "range": {
+        "startLine": 1049,
+        "startChar": 46,
+        "endLine": 1049,
+        "endChar": 48
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_28deb23d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "\"...password in a day\"",
+      "range": {
+        "startLine": 1057,
+        "startChar": 25,
+        "endLine": 1057,
+        "endChar": 33
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_68ff1a34",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "We should allow special characters as well by default.  Just require that passwords contain at least one letter and one digit.",
+      "range": {
+        "startLine": 1060,
+        "startChar": 41,
+        "endLine": 1060,
+        "endChar": 49
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2884f2d0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T17:49:11Z",
+      "side": 1,
+      "message": "\"Regular expression used to validate password strength requirements.  The default requires that passwords must contain at least one letter, one digit, and have a minimum length of 7 characters.\"",
+      "range": {
+        "startLine": 1061,
+        "startChar": 25,
+        "endLine": 1061,
+        "endChar": 30
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
