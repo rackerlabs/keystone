@@ -33,6 +33,24 @@
       "revId": "2cb43b04d5b66d5953401446eab5efd9c69f2b7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b8866b62",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T20:35:00Z",
+      "side": 1,
+      "message": "Yeah, we\u0027re dropping support for federated tokens.  However, federated users can still be mapped to groups via the mapping engine.",
+      "parentUuid": "dab17558_1d3fa987",
+      "revId": "2cb43b04d5b66d5953401446eab5efd9c69f2b7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
