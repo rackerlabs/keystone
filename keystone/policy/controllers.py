@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import json
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -54,3 +56,14 @@ class PolicyV3(controller.V3Controller):
     def delete_policy(self, context, policy_id):
         initiator = notifications._get_request_audit_info(context)
         return self.policy_api.delete_policy(policy_id, initiator)
+
+
+@dependency.requires('enforcement_api')
+class EnforcerV3(controller.V3Controller):
+
+    def policy_check(self, context, policy_action=''):
+        query_string = context['query_string']
+        credentials = json.loads(query_string.get('credentials'))
+        target = json.loads(query_string.get('target'))
+
+        return self.enforcement_api.enforce(credentials, policy_action, target)

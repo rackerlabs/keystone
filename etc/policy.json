@@ -97,7 +97,7 @@
     "identity:list_role_assignments_for_tree": "rule:admin_required",
 
     "identity:get_policy": "rule:admin_required",
-    "identity:list_policies": "rule:admin_required",
+    "identity:list_policies": "http://localhost:5000/policy_enforcement/identity:list_policies",
     "identity:create_policy": "rule:admin_required",
     "identity:update_policy": "rule:admin_required",
     "identity:delete_policy": "rule:admin_required",

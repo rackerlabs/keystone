@@ -67,7 +67,8 @@ def load_backends():
         role_api=assignment.RoleManager(),
         token_api=token.persistence.Manager(),
         trust_api=trust.Manager(),
-        token_provider_api=token.provider.Manager())
+        token_provider_api=token.provider.Manager(),
+        enforcement_api=policy.EnforcementManager())
 
     auth.controllers.load_auth_methods()
 
