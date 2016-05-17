@@ -46,6 +46,30 @@
       "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9e972547",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T14:28:29Z",
+      "side": 1,
+      "message": "And by the way, I envision this method handling the following change password requirements:\n* Expired passwords\n* Password doesn’t meet current rules (password strength)\n* Password was created by someone else",
+      "parentUuid": "dab17558_b5484d2e",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 217,
+        "endChar": 36
+      },
+      "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
