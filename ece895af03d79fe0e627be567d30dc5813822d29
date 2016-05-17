@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_5710fb4d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-17T16:30:37Z",
+      "side": 1,
+      "message": "This should be a \u0027and\u0027 if conf... and if len(...)",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
