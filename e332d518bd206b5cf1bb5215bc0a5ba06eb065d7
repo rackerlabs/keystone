@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_296081a4",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-17T14:40:31Z",
+      "side": 1,
+      "message": "this has been deprecated, refer to https://github.com/openstack/keystone/blob/master/httpd/keystone.py#L28-L34\n\nwe should be pointing to $ keystone-wsgi-admin and $ keystone-wsgi-main",
+      "range": {
+        "startLine": 36,
+        "startChar": 18,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "e332d518bd206b5cf1bb5215bc0a5ba06eb065d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
