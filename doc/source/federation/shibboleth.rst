@@ -31,8 +31,11 @@ example:
 
 Configure your Keystone virtual host and adjust the config to properly handle SAML2 workflow:
 
-Add *WSGIScriptAlias* directive to your vhost configuration::
+Create  */var/www/keystone* directory if it does not exist and create the following hard links::
+    ln /opt/stack/keystone/httpd/keystone.py main
+    ln /opt/stack/keystone/httpd/keystone.py admin
 
+Add *WSGIScriptAliasMatch* directive to your vhost configuration::
     WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
 
 Make sure the *wsgi-keystone.conf* contains a *<Location>* directive for the Shibboleth module and
