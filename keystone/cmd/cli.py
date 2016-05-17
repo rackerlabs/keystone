@@ -31,6 +31,7 @@ from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
+from keystone.credential import controllers
 from keystone import exception
 from keystone.federation import idp
 from keystone.federation import utils as mapping_engine
@@ -369,6 +370,33 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         migration_helpers.sync_database_to_version(extension, version)
+
+
+class DbEncrypt(BaseApp):
+    """Provides ability to migrate credentials to new encryption_key."""
+
+    name = 'db_encrypt'
+
+    def __init__(self):
+        self.load_backends()
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.credential_api = drivers['credential_api']
+        self.credential_controller = controllers.CredentialV3()
+
+    @classmethod
+    def main(cls):
+        klass = cls()
+        klass.do_encrypt()
+
+    def do_encrypt(self):
+        refs = self.credential_api.list_credentials()
+        refs = [self.credential_controller.decrypt_credential(r) for r in refs]
+
+        for ref in refs:
+            ref = self.credential_controller.encrypt_credential(ref)
+            self.credential_api.update_credential(ref['id'], ref)
 
 
 class DbVersion(BaseApp):
@@ -911,6 +939,7 @@ class MappingEngineTester(BaseApp):
 CMDS = [
     BootStrap,
     DbSync,
+    DbEncrypt,
     DbVersion,
     DomainConfigUpload,
     FernetRotate,
