@@ -16,6 +16,24 @@
       "revId": "5d8e5669381baae4784f879ccea9e37ecf2d54cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b8030b0c",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_add_new_password_columns.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-17T20:31:40Z",
+      "side": 1,
+      "message": "Whether a user is allowed to use the same password as a previous password is configurable.  When it is set to where a password cannot be the same as n number of previous passwords, we\u0027ll do that validation as part of updating a user\u0027s password.",
+      "parentUuid": "dab17558_f20c9494",
+      "revId": "5d8e5669381baae4784f879ccea9e37ecf2d54cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
