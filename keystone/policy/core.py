@@ -90,3 +90,15 @@ class PolicyDriverV8(base.PolicyDriverV8):
 
 
 Driver = manager.create_legacy_driver(base.PolicyDriverV8)
+
+
+@dependency.provider('enforcement_api')
+class EnforcementManager(manager.Manager):
+
+    driver_namespace = 'keystone.policy_enforcement'
+
+    def __init__(self):
+        super(EnforcementManager, self).__init__('static')
+
+    def enforce(self, credentials, policy_action, target):
+        return self.driver.enforce_policy(credentials, policy_action, target)

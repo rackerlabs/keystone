@@ -557,6 +557,12 @@ FILE_OPTIONS = {
                    help='Maximum number of entities that will be returned '
                         'in a policy collection.'),
     ],
+    'policy_enforcement': [
+        cfg.StrOpt('driver',
+                   default='static',
+                   help='Entrypoint for the policy enforcement driver in the '
+                        'keystone.policy nemespace. Supplied driver is static.'),
+    ],
     'endpoint_filter': [
         cfg.StrOpt('driver',
                    default='sql',
