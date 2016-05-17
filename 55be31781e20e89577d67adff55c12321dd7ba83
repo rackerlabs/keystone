@@ -42,6 +42,41 @@
     },
     {
       "key": {
+        "uuid": "dab17558_18333763",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:54:35Z",
+      "side": 1,
+      "message": "++ I agree. Do we have a use case for *not* doing this?",
+      "parentUuid": "1a122d0e_f51654a5",
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_0c1e585e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:54:35Z",
+      "side": 1,
+      "message": "X-Forwarded-For is suppose to be: \n\n    client, proxy1, proxy2, ...\n\nAre we sure we\u0027re grabbing the client IP in this case?",
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_51177ca2",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
@@ -59,6 +94,41 @@
         "endLine": 233,
         "endChar": 38
       },
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_386a7b1a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:54:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we be detecting if REMOTE_ADDR is already populated and appending the forward_value if there is already something there?",
+      "parentUuid": "1a122d0e_51177ca2",
+      "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_18cfb729",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:54:35Z",
+      "side": 1,
+      "message": "The syntax of X-Forwarded-For is: \n\n    client, proxy1, proxy2\n\nWe should be enforcing that syntax here (unless I\u0027m missing something?). \n\nhttps://en.wikipedia.org/wiki/X-Forwarded-For",
       "revId": "55be31781e20e89577d67adff55c12321dd7ba83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
