@@ -22,3 +22,11 @@ class Routers(wsgi.RoutersBase):
         policy_controller = controllers.PolicyV3()
         routers.append(router.Router(policy_controller, 'policies', 'policy',
                                      resource_descriptions=self.v3_resources))
+
+class PolicyEnforcementRouter(wsgi.ComposableRouter):
+
+    def add_routes(self, mapper):
+        mapper.connect('/',
+                       controller = controllers.EnforcerV3(),
+                       action = 'policy_check',
+                       conditions=dict(method=['POST']))
