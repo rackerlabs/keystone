@@ -505,6 +505,18 @@
 # namespace. (string value)
 #driver = sql
 
+# Controls the credential encryption and decryption operations. Entrypoint in
+# the keystone.credential.provider namespace. Core provider is [fernet].
+# (string value)
+#provider = fernet
+
+# credential encryption and decryption keys. (list value)
+#encryption_keys =
+
+# Allow fields to not be encrypted when retrieving them from backend.  This
+# should be disabled once credentials have been encrypted. (boolean value)
+#allow_plaintext = true
+
 
 [database]
 
