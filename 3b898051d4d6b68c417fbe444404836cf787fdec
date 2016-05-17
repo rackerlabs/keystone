@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c5361550",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-17T07:48:17Z",
+      "side": 1,
+      "message": "...create the following hard links within it?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 96
+      },
+      "revId": "3b898051d4d6b68c417fbe444404836cf787fdec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
