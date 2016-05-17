@@ -199,6 +199,23 @@
       "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_989d6768",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-17T20:44:50Z",
+      "side": 1,
+      "message": "we could add a comment here saying that this *has* to be after we populate the roles, because in order to set the admin project we need to know the roles a user has.",
+      "revId": "c2faedc19e63122a3a7d846abb04a96d5c7de060",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
