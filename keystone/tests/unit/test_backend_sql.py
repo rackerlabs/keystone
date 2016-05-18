@@ -311,6 +311,24 @@ class SqlIdentity(SqlTests,
                           project['name'],
                           CONF.identity.default_domain_id)
 
+    @mock.patch('sqlalchemy.orm.session.Session.commit')
+    def test_create_project_with_4byte_data_in_mysql(self, mock_commit):
+        project = unit.new_project_ref(
+            name=u'\U0001f693', domain_id=CONF.identity.default_domain_id)
+        # fake_error_code and fake_error_message are associated with wrapped
+        # database exception which are required parameters of the
+        # InternalError. It is required to pass these attributes because the
+        # fake_error_message is extracted from the inner_exception and
+        # displayed to the user.
+        fake_error_code = 1366
+        fake_error_message = 'Incorrect string value.'
+        fake_db_exc = Exception(fake_error_code, fake_error_message)
+        mock_commit.side_effect = db_exception.DBDataError(
+            inner_exception=exc.InternalError('a', 'a', fake_db_exc))
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project, project['id'],
+                          project)
+
     def test_delete_project_with_user_association(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)

@@ -54,6 +54,7 @@ Enum = sql.Enum
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
+InternalError = sql.exc.InternalError
 DBDuplicateEntry = db_exception.DBDuplicateEntry
 OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
@@ -433,6 +434,17 @@ def handle_conflicts(conflict_type='object'):
                                           'details': six.text_type(e)})
                 raise exception.Conflict(type=conflict_type,
                                          details=_('Duplicate Entry'))
+            except db_exception.DBDataError as e:
+                if isinstance(e.inner_exception, InternalError):
+                    # NOTE(srushti-gadadare): This is the case where the SQL
+                    # failed to store data when input from user is not in a
+                    # valid format which raises different data error for
+                    # different backends. For example, it could be 4 byte
+                    # unicode data which raises data error for mysql database
+                    # as it doesn't use utf8mb4 character encoding.
+                    raise exception.ValidationError(
+                        _('Error writing field to database. %s') %
+                        six.text_type(e.inner_exception.orig.args[1]))
             except db_exception.DBError as e:
                 # TODO(blk-u): inspecting inner_exception breaks encapsulation;
                 # oslo_db should provide exception we need.
