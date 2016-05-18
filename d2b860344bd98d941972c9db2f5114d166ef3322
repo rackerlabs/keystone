@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_851df068",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-18T06:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_2c98d8bf",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 51
+      },
+      "revId": "d2b860344bd98d941972c9db2f5114d166ef3322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_acb7a8d6",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-16T12:53:16Z",
       "side": 1,
       "message": "this is not the correct attribute, right? See: https://github.com/openstack/keystone/blob/master/keystone/exception.py#L83\n\nthink you want something like: \"dict\"",
+      "range": {
+        "startLine": 174,
+        "startChar": 55,
+        "endLine": 174,
+        "endChar": 66
+      },
+      "revId": "d2b860344bd98d941972c9db2f5114d166ef3322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c52538af",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-18T06:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_acb7a8d6",
       "range": {
         "startLine": 174,
         "startChar": 55,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_a52ab47c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-18T06:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_ecad3085",
+      "range": {
+        "startLine": 200,
+        "startChar": 54,
+        "endLine": 200,
+        "endChar": 66
+      },
+      "revId": "d2b860344bd98d941972c9db2f5114d166ef3322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2c41f8a9",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_e524bcb0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-18T06:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_2c41f8a9",
+      "range": {
+        "startLine": 127,
+        "startChar": 39,
+        "endLine": 127,
+        "endChar": 41
+      },
+      "revId": "d2b860344bd98d941972c9db2f5114d166ef3322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_0c3eb427",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2016-05-16T12:53:16Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 138,
+        "startChar": 40,
+        "endLine": 138,
+        "endChar": 42
+      },
+      "revId": "d2b860344bd98d941972c9db2f5114d166ef3322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_453ae8ce",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-18T06:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_0c3eb427",
       "range": {
         "startLine": 138,
         "startChar": 40,
