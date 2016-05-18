@@ -446,6 +446,16 @@ def handle_conflicts(conflict_type='object'):
                     raise exception.UnexpectedError(
                         _('An unexpected error occurred when trying to '
                           'store %s') % conflict_type)
+
+                if isinstance(e, db_exception.DBDataError):
+                    # NOTE(srushti-gadadare): This is the case where the SQL
+                    # failed to store data when input from user is not a valid
+                    # format which raises different data error for different
+                    # backends. For example, it could be 4 byte unicode data
+                    # which raises data error for mysql database as it doesn't
+                    # use utf8mb4 character encoding.
+                    raise exception.ValidationError(_('Error writing field '
+                                                      'to database'))
                 raise
 
         return wrapper
