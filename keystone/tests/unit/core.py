@@ -409,7 +409,12 @@ def new_ec2_credential(user_id, project_id=None, blob=None, **kwargs):
 
 def new_totp_credential(user_id, project_id=None, blob=None):
     if not blob:
-        blob = base64.b32encode(uuid.uuid4().hex).rstrip('=')
+        # NOTE(notmorgan): b32encode needs a binary_type input, and
+        # returns a binary_type. "rstrip" only works with text_type (Python 3)
+        # therefore encode from uuid4().hex and explicitly decode before
+        # performing the .rstrip()
+        blob = base64.b32encode(
+            uuid.uuid4().hex.encode('utf-8')).decode('utf-8').rstrip('=')
     credential = new_credential_ref(user_id=user_id,
                                     project_id=project_id,
                                     blob=blob,
