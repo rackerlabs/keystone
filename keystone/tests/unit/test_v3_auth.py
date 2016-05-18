@@ -15,7 +15,6 @@
 import copy
 import datetime
 import itertools
-import json
 import operator
 import uuid
 
@@ -23,8 +22,10 @@ from keystoneclient.common import cms
 import mock
 from oslo_config import cfg
 from oslo_log import versionutils
+from oslo_serialization import jsonutils as json
 from oslo_utils import fixture
 from oslo_utils import timeutils
+import six
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -1111,7 +1112,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidUnscopedTokenResponse,
                           r)
@@ -1133,7 +1134,7 @@ class TokenDataTests(object):
         r = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        r.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        r.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidDomainScopedTokenResponse,
                           r)
@@ -1150,7 +1151,7 @@ class TokenDataTests(object):
         resp = self.get('/auth/tokens', headers=self.headers)
 
         # populate the response result with some extra data
-        resp.result['token'][u'extra'] = unicode(uuid.uuid4().hex)
+        resp.result['token'][u'extra'] = six.text_type(uuid.uuid4().hex)
         self.assertRaises(exception.SchemaValidationError,
                           self.assertValidProjectScopedTokenResponse,
                           resp)
@@ -1258,8 +1259,8 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
 
         decoded_token = self.verify_token(token_id, CONF.signing.certfile,
                                           CONF.signing.ca_certs)
-        decoded_token_dict = json.loads(decoded_token)
 
+        decoded_token_dict = json.loads(decoded_token)
         token_resp_dict = json.loads(resp.body)
 
         self.assertEqual(decoded_token_dict, token_resp_dict)
