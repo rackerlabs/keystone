@@ -1,0 +1,11 @@
+Code-Review+1: Colleen Murphy <colleen@gazlene.net>
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: Steve Martinelli <s.martinelli@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 18 May 2016 19:17:14 +0000
+Reviewed-on: https://review.openstack.org/317638
+Project: openstack/keystone
+Branch: refs/heads/master
