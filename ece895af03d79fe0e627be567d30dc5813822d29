@@ -102,6 +102,24 @@
       "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c5340ee0",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-18T09:37:38Z",
+      "side": 1,
+      "message": "Perhaps it would be best if this test first ensures that you CAN list the users without a filter with the default config option setting (i.e. disabled), then change the config and try again, showing that it fails.",
+      "parentUuid": "dab17558_4c7ea019",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
