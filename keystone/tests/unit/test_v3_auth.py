@@ -3323,6 +3323,23 @@ class TestAuth(test_v3.RestfulTestCase):
         self.v3_create_token(auth_data,
                              expected_status=http_client.UNAUTHORIZED)
 
+    def test_default_project_is_domain_result_in_unscoped_token(self):
+        # set the user's preferred project to a domain
+        body = {'user': {'default_project_id': self.domain['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # attempt to authenticate without requesting a project
+        # this should result in an unscoped token as domain instead of
+        # HTTP 400
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.v3_create_token(auth_data)
+        self.assertValidUnscopedTokenResponse(r)
+
     def test_disabled_default_project_result_in_unscoped_token(self):
         # create a disabled project to work with
         project = self.create_new_default_project_for_user(

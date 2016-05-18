@@ -459,6 +459,12 @@ class Auth(controller.V3Controller):
         try:
             default_project_ref = self.resource_api.get_project(
                 default_project_id)
+            if default_project_ref['is_domain']:
+                # FIXME(gyee): default project can't be a domain right now.
+                # Till we change th spec which issues a project-scoped token
+                # if the default_project_id is a domain, this should be
+                # be treated as project does not exist.
+                raise exception.ProjectNotFound(project_id=default_project_id)
             default_project_domain_ref = self.resource_api.get_domain(
                 default_project_ref['domain_id'])
             if (default_project_ref.get('enabled', True) and
