@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_a800c1ab",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-18T09:54:37Z",
+      "side": 1,
+      "message": "was this meant to be changed to dict?",
+      "range": {
+        "startLine": 200,
+        "startChar": 54,
+        "endLine": 200,
+        "endChar": 66
+      },
+      "revId": "b8f15d734aeb67201cba3e7387158dbb5da19bf1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
