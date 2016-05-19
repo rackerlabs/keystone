@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_437b88f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T23:15:13Z",
+      "side": 1,
+      "message": "Good point.  I removed this from the commit message.",
+      "parentUuid": "bab6814e_80456d71",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_3d830a58",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_new_password_columns.py",
         "patchSetId": 20
@@ -83,6 +101,24 @@
       "writtenOn": "2016-05-19T19:52:56Z",
       "side": 1,
       "message": "Yep, this should be.  Good catch.",
+      "parentUuid": "bab6814e_3d830a58",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_8381f0c5",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_new_password_columns.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T23:15:13Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "bab6814e_3d830a58",
       "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
