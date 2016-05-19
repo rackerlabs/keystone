@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_9d92f69d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:49:34Z",
+      "side": 1,
+      "message": "Is this addressed in this patch?",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_3d830a58",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_new_password_columns.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:49:34Z",
+      "side": 1,
+      "message": "Should this be a FK to a user?",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
