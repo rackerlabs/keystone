@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_8aac71a1",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T18:37:56Z",
+      "side": 1,
+      "message": "(nit)  missing newline",
+      "revId": "fcd664447331d379ece2616b6735f9f0debfec2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
