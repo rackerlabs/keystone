@@ -113,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_a03b5137",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T20:13:51Z",
+      "side": 1,
+      "message": "Hmm...  Good question.  Disabled to me is more of a long term setting, where a user account is disabled because they are no longer with the organization for example.  Locked is a temporary security to prevent a brute force attack.  User is locked out for 30 minutes after 3 failed attempts.",
+      "parentUuid": "bab6814e_50751696",
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_e8866a63",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -206,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_80de0d3d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T20:13:51Z",
+      "side": 1,
+      "message": "Agree, but I think we should relax these settings by default.",
+      "parentUuid": "bab6814e_70ce5ab5",
+      "range": {
+        "startLine": 1044,
+        "startChar": 27,
+        "endLine": 1044,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2827d263",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -241,6 +283,30 @@
       "side": 1,
       "message": "unique_last_password_count?",
       "parentUuid": "dab17558_2827d263",
+      "range": {
+        "startLine": 1049,
+        "startChar": 46,
+        "endLine": 1049,
+        "endChar": 48
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_40bb85e5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T20:13:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bab6814e_d04c6644",
       "range": {
         "startLine": 1049,
         "startChar": 46,
