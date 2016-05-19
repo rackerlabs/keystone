@@ -131,6 +131,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_407a65f2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:16:58Z",
+      "side": 1,
+      "message": "We should add this to a doc somewhere so that nobody has to guess",
+      "parentUuid": "bab6814e_a03b5137",
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_e8866a63",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -236,6 +254,30 @@
       "side": 1,
       "message": "Agree, but I think we should relax these settings by default.",
       "parentUuid": "bab6814e_70ce5ab5",
+      "range": {
+        "startLine": 1044,
+        "startChar": 27,
+        "endLine": 1044,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_20c001e0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:16:58Z",
+      "side": 1,
+      "message": "That\u0027s a good point. We should probably just use 0 since we currently don\u0027t have this feature.",
+      "parentUuid": "bab6814e_80de0d3d",
       "range": {
         "startLine": 1044,
         "startChar": 27,
