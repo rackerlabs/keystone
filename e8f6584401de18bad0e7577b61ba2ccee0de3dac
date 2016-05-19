@@ -22,6 +22,24 @@
       "revId": "e8f6584401de18bad0e7577b61ba2ccee0de3dac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_dab660db",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-19T12:01:59Z",
+      "side": 1,
+      "message": "I think this is because most everything else in the payload is UUID generated? If the value is UUID generated, the assemble method will automatically convert it to bytes. Adam and I saw something similar with project IDs.",
+      "parentUuid": "bab6814e_255cc1ec",
+      "revId": "e8f6584401de18bad0e7577b61ba2ccee0de3dac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
