@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_255cc1ec",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-05-19T07:09:23Z",
+      "side": 1,
+      "message": "why is this the only one? it seems we want to either have bytes or str at the top of this function and do it once.",
+      "range": {
+        "startLine": 542,
+        "startChar": 44,
+        "endLine": 542,
+        "endChar": 46
+      },
+      "revId": "e8f6584401de18bad0e7577b61ba2ccee0de3dac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
