@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_0bc0837a",
+        "filename": "keystone/common/sql/migrate_repo/versions/105_update_password_created_at_column.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:39:26Z",
+      "side": 1,
+      "message": "We really have to figure out what we are doing for these rolling upgrade because I don\u0027t think this would be allowed until the O release.",
+      "revId": "281f16f6903376f75c5681b399629e50ccbb921b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
