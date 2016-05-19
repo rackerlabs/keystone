@@ -1,0 +1,11 @@
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 May 2016 14:53:20 +0000
+Reviewed-on: https://review.openstack.org/318349
+Project: openstack/keystone
+Branch: refs/heads/master
