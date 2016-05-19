@@ -40,6 +40,24 @@
       "revId": "e8f6584401de18bad0e7577b61ba2ccee0de3dac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_75ff85aa",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-19T12:13:30Z",
+      "side": 1,
+      "message": "what lance said afaict",
+      "parentUuid": "bab6814e_dab660db",
+      "revId": "e8f6584401de18bad0e7577b61ba2ccee0de3dac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
