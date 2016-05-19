@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_3d2dca46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T19:52:56Z",
+      "side": 1,
+      "message": "This is just adding the table columns to support this feature",
+      "parentUuid": "bab6814e_9d92f69d",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_3d830a58",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_new_password_columns.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-19T19:49:34Z",
       "side": 1,
       "message": "Should this be a FK to a user?",
+      "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_9d1cb614",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_new_password_columns.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-19T19:52:56Z",
+      "side": 1,
+      "message": "Yep, this should be.  Good catch.",
+      "parentUuid": "bab6814e_3d830a58",
       "revId": "f7a777d42257f0372a7ad27d31d9dcb09deacf96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
