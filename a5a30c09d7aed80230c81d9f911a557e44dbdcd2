@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_8c73e6e6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-19T21:46:31Z",
+      "side": 1,
+      "message": "_shadow_non_local_user?",
+      "range": {
+        "startLine": 1209,
+        "startChar": 8,
+        "endLine": 1209,
+        "endChar": 20
+      },
+      "revId": "a5a30c09d7aed80230c81d9f911a557e44dbdcd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_501356b8",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 26
