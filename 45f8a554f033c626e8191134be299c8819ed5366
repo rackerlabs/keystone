@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_e58f2eca",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1029,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dab17558_2d136466",
+      "range": {
+        "startLine": 1029,
+        "startChar": 5,
+        "endLine": 1029,
+        "endChar": 15
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_e8514a0f",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -42,6 +66,47 @@
         "endLine": 1031,
         "endChar": 29
       },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_504eb66f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "I think it has to be the default. According to section 8.1.4 the requirement is within 90 days. A deployer could relax that if they wanted to, but I think out of the box we should be PCI compliant where possible.",
+      "parentUuid": "dab17558_e8514a0f",
+      "range": {
+        "startLine": 1031,
+        "startChar": 27,
+        "endLine": 1031,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_50751696",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "What is the difference between disabled and locked? From what I gather disabled means locked indefinitely until an admin unlocks.",
       "revId": "45f8a554f033c626e8191134be299c8819ed5366",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +182,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_70ce5ab5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "90 days is in section 8.2.4 of the spec.",
+      "parentUuid": "dab17558_c860c6d1",
+      "range": {
+        "startLine": 1044,
+        "startChar": 27,
+        "endLine": 1044,
+        "endChar": 29
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2827d263",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -128,6 +217,30 @@
       "writtenOn": "2016-05-17T17:49:11Z",
       "side": 1,
       "message": "cannot_match_last_password_count or something.  cannot_match_last_password sounds like a boolean value.",
+      "range": {
+        "startLine": 1049,
+        "startChar": 46,
+        "endLine": 1049,
+        "endChar": 48
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_d04c6644",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "unique_last_password_count?",
+      "parentUuid": "dab17558_2827d263",
       "range": {
         "startLine": 1049,
         "startChar": 46,
@@ -186,6 +299,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_90de5e3d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "++ without special characters my default password scheme won\u0027t work! i\u0027d rather see at least 1 number and 1 letter with a min length of 7. That way passwords like \u0027p@ssw0rd\u0027 would work and we wouldn\u0027t have to whitelist all the special characters.",
+      "parentUuid": "dab17558_68ff1a34",
+      "range": {
+        "startLine": 1060,
+        "startChar": 41,
+        "endLine": 1060,
+        "endChar": 49
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2884f2d0",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -197,6 +334,30 @@
       "writtenOn": "2016-05-17T17:49:11Z",
       "side": 1,
       "message": "\"Regular expression used to validate password strength requirements.  The default requires that passwords must contain at least one letter, one digit, and have a minimum length of 7 characters.\"",
+      "range": {
+        "startLine": 1061,
+        "startChar": 25,
+        "endLine": 1061,
+        "endChar": 30
+      },
+      "revId": "45f8a554f033c626e8191134be299c8819ed5366",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_b0e3a204",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T19:13:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dab17558_2884f2d0",
       "range": {
         "startLine": 1061,
         "startChar": 25,
