@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_f5f6d5f7",
+        "filename": "MANIFEST.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2016-05-19T12:14:02Z",
+      "side": 1,
+      "message": "While at it, let\u0027s drop this: .pot was removed in https://review.openstack.org/307589",
+      "range": {
+        "startLine": 20,
+        "startChar": 64,
+        "endLine": 20,
+        "endChar": 70
+      },
+      "revId": "d66965b94a436c344ef65e66802501a94e768a0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
