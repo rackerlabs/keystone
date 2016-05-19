@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_9d78362d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "Most security standards have requirements for \"Encryption at rest\"",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_20e121d1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "With this design it is impossible to rotate keys",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_ddc0fe2c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "What is this for?",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_3d2caa01",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "Only import modules",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_209f61b5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "What is this for? Needs some documentation",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_7d8472d3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "We shouldn\u0027t be using protected methods. There are a couple of occurrences in this method.",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c0de556c",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "Why are we doing this? Instead do you really want to do something like \"encrypted_ref \u003d self._encrypt_blob(ref)\"?",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_6045e915",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "Why are we doing this?",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c0fad5bc",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-19T20:12:20Z",
+      "side": 1,
+      "message": "six is a third party package.",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
