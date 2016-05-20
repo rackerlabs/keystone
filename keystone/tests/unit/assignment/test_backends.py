@@ -1317,9 +1317,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
                                          role_id=role_list[7]['id'])
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     domain_id=domain1['id'])
-        self.assertEqual(2, len(roles_ref))
+        self.assertEqual(4, len(roles_ref))
         self.assertIn(role_list[0], roles_ref)
         self.assertIn(role_list[1], roles_ref)
+        self.assertIn(role_list[2], roles_ref)
+        self.assertIn(role_list[3], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     domain_id=domain1['id'])
         self.assertEqual(2, len(roles_ref))
@@ -1327,9 +1329,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
         self.assertIn(role_list[3], roles_ref)
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     project_id=project1['id'])
-        self.assertEqual(2, len(roles_ref))
+        self.assertEqual(4, len(roles_ref))
         self.assertIn(role_list[4], roles_ref)
         self.assertIn(role_list[5], roles_ref)
+        self.assertIn(role_list[6], roles_ref)
+        self.assertIn(role_list[7], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     project_id=project1['id'])
         self.assertEqual(2, len(roles_ref))
