@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_4cb8c52a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-20T10:05:31Z",
+      "side": 1,
+      "message": "I\u0027m wondering if all these should be 0 since it is an opt-in feature? Or we could think about adding something like:\n\n    cfg.BoolOpt(\u0027enable_security_compliance\u0027, default\u003dFalse)\n\nIf enabled, we could safely assume all reasonable defaults for PCI-DSS.\n\nWe have this same pattern with the caching configuration. Each subsystem in keystone has it\u0027s own caching configs but they aren\u0027t honored in keystone unless the global caching configuration is enabled.",
+      "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
