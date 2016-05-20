@@ -370,6 +370,19 @@ class Manager(manager.Manager):
             self.resource_api.get_project(project_id)
         grant_ids = self.list_grant_role_ids(
             user_id, group_id, domain_id, project_id, inherited_to_projects)
+        user_temp_id = user_id
+        if user_temp_id:
+            user_belong_group = self.identity_api.list_groups_for_user(user_id)
+            if user_belong_group:
+                grant_user_belong_group_ids = []
+                user_temp_id = None
+                for i in range(len(user_belong_group)):
+
+                    group_id = user_belong_group[i].get("id")
+                    grant_user_belong_group_ids = grant_user_belong_group_ids + self.list_grant_role_ids(
+                        user_temp_id, group_id, domain_id, project_id, inherited_to_projects)
+
+                grant_ids = list(set(grant_ids + grant_user_belong_group_ids))
         return self.role_api.list_roles_from_ids(grant_ids)
 
     @notifications.role_assignment('deleted')
