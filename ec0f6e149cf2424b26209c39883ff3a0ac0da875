@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_f1d97423",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T18:58:52Z",
+      "side": 1,
+      "message": "It seems to me that a better model may be to just follow the approach that fernet tokens uses.",
+      "parentUuid": "bab6814e_3224a1c3",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_ddc0fe2c",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 4
@@ -311,6 +329,24 @@
       "side": 1,
       "message": "what is required for third party packages?",
       "parentUuid": "bab6814e_c0fad5bc",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_1132385f",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T18:58:52Z",
+      "side": 1,
+      "message": "A separate import section: http://docs.openstack.org/developer/hacking/#imports",
+      "parentUuid": "bab6814e_c8b768d6",
       "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
