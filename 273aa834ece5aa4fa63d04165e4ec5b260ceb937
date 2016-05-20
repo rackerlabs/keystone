@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_e3f08693",
+        "filename": "releasenotes/notes/python3-support-e4189e0a1a6e2e4f.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T21:53:50Z",
+      "side": 1,
+      "message": "don\u0027t you mean just \u0027now\u0027 ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 13,
+        "endLine": 3,
+        "endChar": 19
+      },
+      "revId": "273aa834ece5aa4fa63d04165e4ec5b260ceb937",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_232d6efe",
+        "filename": "releasenotes/notes/python3-support-e4189e0a1a6e2e4f.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T21:53:50Z",
+      "side": 1,
+      "message": "is there a need to specify where they\u0027ve been added ?",
+      "range": {
+        "startLine": 4,
+        "startChar": 40,
+        "endLine": 4,
+        "endChar": 55
+      },
+      "revId": "273aa834ece5aa4fa63d04165e4ec5b260ceb937",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
