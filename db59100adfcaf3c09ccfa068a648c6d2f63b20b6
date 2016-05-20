@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_a15dfa7a",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-20T09:54:41Z",
+      "side": 1,
+      "message": "Are we going to treat this migration the same we did for shadow users? I remember those migrations happening in two phases. The first we just created the tables. In the second, we actually migrated the data. This line seems like it should live in the second phase if that is the approach we are taking with the migration.\n\nAlso, why update the create_at at the time of the database migration?",
+      "revId": "db59100adfcaf3c09ccfa068a648c6d2f63b20b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_01fb267a",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-20T09:54:41Z",
+      "side": 1,
+      "message": "Should this be removed?",
+      "revId": "db59100adfcaf3c09ccfa068a648c6d2f63b20b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_a1b97a7b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-20T09:54:41Z",
+      "side": 1,
+      "message": "This reminds me - I wonder if we should do something like this (https://review.openstack.org/#/c/315735/2/keystone/common/sql/core.py) with the DateTime object?\n\nProbably something best done in a separate patch but trying to understand the ramifications if we merge this and decide to change it later.",
+      "revId": "db59100adfcaf3c09ccfa068a648c6d2f63b20b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
