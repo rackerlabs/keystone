@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_39564c5c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-05-20T16:25:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_4fd5691a",
+      "range": {
+        "startLine": 831,
+        "startChar": 54,
+        "endLine": 831,
+        "endChar": 63
+      },
+      "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_b61b6c72",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-20T15:03:34Z",
       "side": 1,
       "message": "suggest to add something clearer here",
+      "range": {
+        "startLine": 838,
+        "startChar": 29,
+        "endLine": 838,
+        "endChar": 63
+      },
+      "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_d95c607f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-05-20T16:25:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_b61b6c72",
       "range": {
         "startLine": 838,
         "startChar": 29,
@@ -77,6 +125,24 @@
       "side": 1,
       "message": "isn\u0027t it doing that already? it only falls in this case if the project_id doesn\u0027t exist (being a domain or not)",
       "parentUuid": "bab6814e_effeddac",
+      "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_196c2834",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-05-20T16:25:50Z",
+      "side": 1,
+      "message": "right, that\u0027s already done. This is just to make it idempotent.",
+      "parentUuid": "bab6814e_f6ea140e",
       "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
