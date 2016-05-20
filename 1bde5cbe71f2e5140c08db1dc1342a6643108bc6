@@ -52,6 +52,41 @@
       "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_7701fb05",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T17:08:34Z",
+      "side": 1,
+      "message": "I\u0027m fine with this as a default. It does change the behavior a bit, but only for attackers or people that truly screw up.",
+      "parentUuid": "bab6814e_2b6b99f2",
+      "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_722f4988",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T17:08:34Z",
+      "side": 1,
+      "message": "Someone could make the argument that we want this to be 0 by default, but I don\u0027t think it would matter much either way.",
+      "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
