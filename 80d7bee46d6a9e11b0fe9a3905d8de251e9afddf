@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_d51b7571",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T22:12:00Z",
+      "side": 1,
+      "message": "Could be inside the if statement for optimization... but meh :)",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 44
+      },
+      "revId": "80d7bee46d6a9e11b0fe9a3905d8de251e9afddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
