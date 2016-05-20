@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_b197218f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_9d78362d",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_20e121d1",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-19T20:12:20Z",
       "side": 1,
       "message": "With this design it is impossible to rotate keys",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_3224a1c3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Yes, I updated the config to make it more clear.\n\nencryption_keys \u003d key1,key2\nactive_key \u003d 0\n\nencryption_keys will contain the keys to use for encryption and active_key the index to the current active key for encryption.\n\nTo rotate keys an operator would add a new encryption_key to all nodes and then update active_key on all nodes to n+1",
+      "parentUuid": "bab6814e_20e121d1",
       "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_922d8daa",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_ddc0fe2c",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_3d2caa01",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-19T20:12:20Z",
       "side": 1,
       "message": "Only import modules",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_8d60d2d0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_3d2caa01",
       "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_eda19e47",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_209f61b5",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_7d8472d3",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2016-05-19T20:12:20Z",
       "side": 1,
       "message": "We shouldn\u0027t be using protected methods. There are a couple of occurrences in this method.",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_6818fc75",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_7d8472d3",
       "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_28e6f414",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "return value from create_credentials is required.  I\u0027ll update code to store blob instead of using decrypt",
+      "parentUuid": "bab6814e_c0de556c",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_6045e915",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 4
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_e8b6acf7",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_6045e915",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_c0fad5bc",
         "filename": "keystone/credential/providers/core.py",
         "patchSetId": 4
@@ -149,6 +293,24 @@
       "writtenOn": "2016-05-19T20:12:20Z",
       "side": 1,
       "message": "six is a third party package.",
+      "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c8b768d6",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-20T18:42:16Z",
+      "side": 1,
+      "message": "what is required for third party packages?",
+      "parentUuid": "bab6814e_c0fad5bc",
       "revId": "ec0f6e149cf2424b26209c39883ff3a0ac0da875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
