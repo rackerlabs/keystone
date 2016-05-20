@@ -1,0 +1,11 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 20 May 2016 23:46:09 +0000
+Reviewed-on: https://review.openstack.org/317825
+Project: openstack/keystone
+Branch: refs/heads/master
