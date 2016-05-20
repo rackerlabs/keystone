@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_11f51856",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "This requires some coordination that should be documented. The first step is to add the new key to the keystone configs and make it the active one. Once this is the case this can be run to re-encrypt the data. A optional (but i think recommended) last step would be to remove the old key from the config.",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_51a2004c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "We probably can\u0027t do them all like this and would have to page through the data if we have lots of credentials.",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_3133fc15",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "I still like my suggestion in the previous review. encrypt_credential() is already making a copy and returning the copy. Just give it a different name like \u0027encrypted_ref\u0027 and pass that to the backend. Then you can remove line 72.",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_5115e046",
+        "filename": "keystone/credential/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "Why are these here it they are not used?",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_910bc829",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "third-party lib: http://docs.openstack.org/developer/hacking/#imports",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_545aee2a",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "remove the newline",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_143ea68b",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "This doesn\u0027t make sense. Only check if it should be encrypted if encryption fails? If encryption fails for a legit reason (like bad or missing key) then this wouldn\u0027t be properly caught and this method would return with None.",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_b4987ac1",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "What is the point of allowing plaintext? Just to make upgrades easier? And speaking of that how will we know if the data is encrypted when this is first turned on? Why not do this first before all of the slow encrption?",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_946736e8",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-20T19:16:41Z",
+      "side": 1,
+      "message": "We probably need to log this as an error since it would require an operator to fix",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
