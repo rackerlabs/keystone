@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_e89185f2",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-20T21:27:52Z",
+      "side": 1,
+      "message": "rstrip isn\u0027t needed with proper byte barriers. This is just making it so we don\u0027t need to .encode/decode/encode/decode like 4 times. The alternative was:\n\nuuid.uuid().hex.encode(\u0027utf-8\u0027)).decode(\u0027utf-8\u0027).rstrip(\u0027\u003d\u0027).encode(\u0027utf-8\u0027)",
+      "parentUuid": "bab6814e_227bacf6",
+      "range": {
+        "startLine": 412,
+        "startChar": 32,
+        "endLine": 412,
+        "endChar": 46
+      },
+      "revId": "68473b26eea2114fc02e4f29e8f33f0bcb4c0eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_e291a4f2",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -59,6 +83,30 @@
       "writtenOn": "2016-05-20T20:34:08Z",
       "side": 1,
       "message": "Isn\u0027t the default message something like this already?",
+      "range": {
+        "startLine": 212,
+        "startChar": 12,
+        "endLine": 212,
+        "endChar": 42
+      },
+      "revId": "68473b26eea2114fc02e4f29e8f33f0bcb4c0eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_48b9b178",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-20T21:27:52Z",
+      "side": 1,
+      "message": "I think it ends up something different.",
+      "parentUuid": "bab6814e_423eb0da",
       "range": {
         "startLine": 212,
         "startChar": 12,
