@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_032dca94",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-20T21:32:12Z",
+      "side": 1,
+      "message": "https://review.openstack.org/319462",
+      "parentUuid": "bab6814e_e89185f2",
+      "range": {
+        "startLine": 412,
+        "startChar": 32,
+        "endLine": 412,
+        "endChar": 46
+      },
+      "revId": "68473b26eea2114fc02e4f29e8f33f0bcb4c0eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_e291a4f2",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
