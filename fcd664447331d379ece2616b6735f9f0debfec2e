@@ -16,6 +16,24 @@
       "revId": "fcd664447331d379ece2616b6735f9f0debfec2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_4c056512",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-20T10:17:41Z",
+      "side": 1,
+      "message": "Done: \n\nhttps://review.openstack.org/#/c/319179/",
+      "parentUuid": "bab6814e_8aac71a1",
+      "revId": "fcd664447331d379ece2616b6735f9f0debfec2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
