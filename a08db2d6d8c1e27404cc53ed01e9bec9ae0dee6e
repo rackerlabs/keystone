@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_35a2c14b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T22:37:44Z",
+      "side": 1,
+      "message": "No need to repeat information in the second sentence..\n\nWhat about: \u0027be a domain ID: %s\u0027\n\nI\u0027ve seen this pattern being used in other places",
+      "range": {
+        "startLine": 837,
+        "startChar": 62,
+        "endLine": 838,
+        "endChar": 50
+      },
+      "revId": "a08db2d6d8c1e27404cc53ed01e9bec9ae0dee6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
