@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_dd49e161",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T21:43:38Z",
+      "side": 1,
+      "message": "Could be just \u0027self.access_token.key.decode()\u0027 here",
+      "range": {
+        "startLine": 364,
+        "startChar": 45,
+        "endLine": 364,
+        "endChar": 61
+      },
+      "revId": "ee0a294ec382f61c42a26ed6f0ab938055e2a8ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_1d76c9a3",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T21:43:38Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 381,
+        "startChar": 38,
+        "endLine": 381,
+        "endChar": 54
+      },
+      "revId": "ee0a294ec382f61c42a26ed6f0ab938055e2a8ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_7d6715e9",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-20T21:43:38Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 425,
+        "startChar": 38,
+        "endLine": 425,
+        "endChar": 54
+      },
+      "revId": "ee0a294ec382f61c42a26ed6f0ab938055e2a8ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
