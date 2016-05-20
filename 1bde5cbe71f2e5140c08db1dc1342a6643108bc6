@@ -87,6 +87,24 @@
       "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_52ccc569",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-20T17:21:22Z",
+      "side": 1,
+      "message": "Yeah agree.  I missed this one, it should be 0.",
+      "parentUuid": "bab6814e_722f4988",
+      "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
