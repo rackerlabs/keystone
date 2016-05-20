@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_4fd5691a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-20T01:33:36Z",
+      "side": 1,
+      "message": "suggest just taking an id here instead, don\u0027t pull it out of the user_ref in this method, do that in the calling method.",
+      "range": {
+        "startLine": 831,
+        "startChar": 54,
+        "endLine": 831,
+        "endChar": 63
+      },
+      "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_effeddac",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-20T01:33:36Z",
+      "side": 1,
+      "message": "Raise a validation error out instead please. and make sure this is telling the user \"project is a domain\". This shouldn\u0027t be a 404.",
+      "revId": "21698f481c81051a4d0e05ef2a5cfd0fa9c0c742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
