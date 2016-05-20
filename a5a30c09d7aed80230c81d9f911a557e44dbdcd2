@@ -73,6 +73,24 @@
       "revId": "a5a30c09d7aed80230c81d9f911a557e44dbdcd2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_e9feddac",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-20T00:19:30Z",
+      "side": 1,
+      "message": "Yeah, I often find that I need the User object; not the dictionary for testing.",
+      "parentUuid": "bab6814e_501356b8",
+      "revId": "a5a30c09d7aed80230c81d9f911a557e44dbdcd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
