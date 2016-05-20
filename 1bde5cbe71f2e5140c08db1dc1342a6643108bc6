@@ -16,6 +16,24 @@
       "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_f0bdfc68",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-20T14:39:01Z",
+      "side": 1,
+      "message": "No, I\u0027m not thinking of having a enable_security_compliance flag.  Instead, operators can turn on/off the various security settings.\n\nRegarding lockout_failure_attempts, while most settings are 0 by default, I think this security setting makes sense to turn on by default as it will prevent brute force attacks and not change existing system behavior.",
+      "parentUuid": "bab6814e_4cb8c52a",
+      "revId": "1bde5cbe71f2e5140c08db1dc1342a6643108bc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
