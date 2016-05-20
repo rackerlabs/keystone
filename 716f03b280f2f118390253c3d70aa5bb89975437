@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_114a5bac",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-05-20T07:45:41Z",
+      "side": 1,
+      "message": "Limit all lines to a maximum of 79 characters.",
+      "revId": "716f03b280f2f118390253c3d70aa5bb89975437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
