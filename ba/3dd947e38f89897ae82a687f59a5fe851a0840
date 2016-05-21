@@ -1,0 +1,10 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+2: Jamie Lennox <jamielennox@gmail.com>
+Workflow+1: Jamie Lennox <jamielennox@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 21 May 2016 00:05:34 +0000
+Reviewed-on: https://review.openstack.org/319179
+Project: openstack/keystone
+Branch: refs/heads/master
