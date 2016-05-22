@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_73f28f9b",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-22T19:45:05Z",
+      "side": 1,
+      "message": "Default is \"python built-in Exception class\" would be more accurate since we are talking about exception class",
+      "range": {
+        "startLine": 68,
+        "startChar": 50,
+        "endLine": 68,
+        "endChar": 74
+      },
+      "revId": "e386e84869ebf2e3d3c61c03e39782ac16ae2a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
