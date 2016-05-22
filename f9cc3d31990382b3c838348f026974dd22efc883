@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_9fbd7cda",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-22T06:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_971485a0",
+      "range": {
+        "startLine": 159,
+        "startChar": 10,
+        "endLine": 159,
+        "endChar": 45
+      },
+      "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_767efb19",
         "filename": "keystone/token/provider.py",
         "patchSetId": 11
@@ -53,6 +77,47 @@
       "writtenOn": "2016-05-10T23:11:54Z",
       "side": 1,
       "message": "++",
+      "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_7fc09850",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-22T06:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_6aae24e7",
+      "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_dfb38408",
+        "filename": "releasenotes/notes/removed-as-of-mitaka-9ff14f87d0b98e7e.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-22T06:53:13Z",
+      "side": 1,
+      "message": "moved this to newton",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 53
+      },
       "revId": "f9cc3d31990382b3c838348f026974dd22efc883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
