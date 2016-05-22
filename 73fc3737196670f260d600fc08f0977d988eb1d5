@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "bab6814e_f5db077a",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-22T12:17:12Z",
+      "side": 1,
+      "message": "this needs to be:\n\n  except Exception as __e:\n\nso you can check the exception type inside the except block",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 44
+      },
+      "revId": "73fc3737196670f260d600fc08f0977d988eb1d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_15e16b2d",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-22T12:17:12Z",
+      "side": 1,
+      "message": "this will never happen since it is catching only \"expected_exception\" above",
+      "range": {
+        "startLine": 91,
+        "startChar": 24,
+        "endLine": 91,
+        "endChar": 63
+      },
+      "revId": "73fc3737196670f260d600fc08f0977d988eb1d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_7f1898d3",
         "filename": "keystone/tests/unit/utils.py",
         "patchSetId": 4
