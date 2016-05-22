@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_7f1898d3",
+        "filename": "keystone/tests/unit/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-22T07:35:58Z",
+      "side": 1,
+      "message": "nit: do you think it might be worth saying \"Failed (as expected)\" ?",
+      "range": {
+        "startLine": 102,
+        "startChar": 43,
+        "endLine": 102,
+        "endChar": 49
+      },
+      "revId": "73fc3737196670f260d600fc08f0977d988eb1d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
