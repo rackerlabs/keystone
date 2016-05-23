@@ -113,6 +113,8 @@ class IdentityDriverV8Tests(object):
         ret = self.driver.create_user(user_id, user)
         exp_user = user.copy()
         del exp_user['password']
+        if 'password_expires_at' in ret:
+            del ret['password_expires_at']
         self.assertEqual(exp_user, ret)
 
     def test_create_user_same_id_exc(self):
