@@ -12,7 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import sqlalchemy
+
+from oslo_config import cfg
 
 from keystone.common import driver_hints
 from keystone.common import sql
@@ -21,6 +24,9 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = cfg.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -34,30 +40,8 @@ class Identity(base.IdentityDriverV8):
     def is_sql(self):
         return True
 
-    def _check_password(self, password, user_ref):
-        """Check the specified password against the data store.
-
-        Note that we'll pass in the entire user_ref in case the subclass
-        needs things like user_ref.get('name')
-        For further justification, please see the follow up suggestion at
-        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
-
-        """
-        return utils.check_password(password, user_ref.password)
-
-    # Identity interface
     def authenticate(self, user_id, password):
-        with sql.session_for_read() as session:
-            user_ref = None
-            try:
-                user_ref = self._get_user(session, user_id)
-            except exception.UserNotFound:
-                raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
-
-    # user crud
+        return Authenticator().authenticate(user_id, password)
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
@@ -107,7 +91,7 @@ class Identity(base.IdentityDriverV8):
                 old_user_dict[k] = user[k]
             new_user = model.User.from_dict(old_user_dict)
             for attr in model.User.attributes:
-                if attr != 'id':
+                if attr != 'id' and attr not in model.User.readonly_attributes:
                     setattr(user_ref, attr, getattr(new_user, attr))
             user_ref.extra = new_user.extra
             return base.filter_user(
@@ -247,3 +231,40 @@ class Identity(base.IdentityDriverV8):
             q.delete(False)
 
             session.delete(ref)
+
+
+class Authenticator(object):
+    def authenticate(self, user_id, password):
+        with sql.session_for_read() as session:
+            user_ref = None
+            try:
+                user_ref = self._get_user(session, user_id)
+                # TODO(rderose): handle if password.created_at is not set,
+                # fallout from rolling upgrade
+            except exception.UserNotFound:
+                raise AssertionError(_('Invalid user / password'))
+            if not self._password_matches(password, user_ref.password):
+                raise AssertionError(_('Invalid user / password'))
+            elif self._is_password_expired(user_ref.password_expires_at):
+                raise exception.PasswordExpired(user_id=user_id)
+            return base.filter_user(user_ref.to_dict())
+
+    def _password_matches(self, password, hashed_password):
+        """Check the specified password against the data store.
+
+        For more info, please see the follow up suggestion at
+        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
+
+        """
+        return utils.check_password(password, hashed_password)
+
+    def _get_user(self, session, user_id):
+        user_ref = session.query(model.User).get(user_id)
+        if not user_ref:
+            raise exception.UserNotFound(user_id=user_id)
+        return user_ref
+
+    def _is_password_expired(self, expires_at):
+        if expires_at:
+            return datetime.datetime.utcnow() >= expires_at
+        return False
