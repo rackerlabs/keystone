@@ -502,7 +502,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                                                     fed_user['display_name'])
         )
         self.assertIsNotNone(user['id'])
-        self.assertEqual(len(user.keys()), 4)
+        self.assertEqual(len(user.keys()), 5)
         self.assertIsNotNone(user['name'])
         self.assertIsNone(user['domain_id'])
         self.assertEqual(user['enabled'], True)
