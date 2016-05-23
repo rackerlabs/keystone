@@ -212,6 +212,10 @@ class MissingGroups(Unauthorized):
                        "mapping %(mapping_id)s")
 
 
+class PasswordExpired(Unauthorized):
+    message_format = _("The user's password is expired")
+
+
 class AuthMethodNotSupported(AuthPluginException):
     message_format = _("Attempted to authenticate with an unsupported method.")
 
