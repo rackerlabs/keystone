@@ -334,6 +334,11 @@ class UserNotFound(NotFound):
     message_format = _("Could not find user: %(user_id)s")
 
 
+class ChangePasswordRequired(Error):
+    message_format = _("The user is required to change their password: "
+                       "%(user_id)")
+
+
 class GroupNotFound(NotFound):
     message_format = _("Could not find group: %(group_id)s")
 
