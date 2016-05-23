@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_b972e3ae",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_11f51856",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_51a2004c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-20T19:16:41Z",
       "side": 1,
       "message": "We probably can\u0027t do them all like this and would have to page through the data if we have lots of credentials.",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_f96c6bd2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_51a2004c",
       "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_7954fbc9",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "In the original code the ref is returned to the client.  The suggested code changes would not work for default values that are not specified by the client.  They would not be returned in the response after being created.",
+      "parentUuid": "bab6814e_3133fc15",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_5115e046",
         "filename": "keystone/credential/provider.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-20T19:16:41Z",
       "side": 1,
       "message": "Why are these here it they are not used?",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_591657f2",
+        "filename": "keystone/credential/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_5115e046",
       "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_79c7db64",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_910bc829",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_545aee2a",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2016-05-20T19:16:41Z",
       "side": 1,
       "message": "remove the newline",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_79c35b39",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_545aee2a",
       "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_f9810bc5",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_143ea68b",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_b4987ac1",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 5
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_598f77cc",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "This is to allow running Keystone without any downtime.\nallow_plaintext should only be enabled when first starting keystone.  Once the credentials are migrated then allow_plaintext should be set to false in order to catch any errors due to encryption.\n\nI can remove this flag if we are fine with keystone downtime.",
+      "parentUuid": "bab6814e_b4987ac1",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_946736e8",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 5
@@ -149,6 +293,24 @@
       "writtenOn": "2016-05-20T19:16:41Z",
       "side": 1,
       "message": "We probably need to log this as an error since it would require an operator to fix",
+      "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_79051b13",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-05-23T20:52:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_946736e8",
       "revId": "2aa4c273af56d58c0097be83fafe5a753cf913e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
