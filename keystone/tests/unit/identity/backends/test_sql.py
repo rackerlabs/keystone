@@ -16,11 +16,13 @@ from oslo_db.sqlalchemy import test_base as db_test
 from keystone.common import sql
 from keystone.identity.backends import sql as sql_backend
 from keystone.tests.unit.identity.backends import test_base
+from keystone.tests.unit.identity.backends import test_sql_security
 from keystone.tests.unit.ksfixtures import database
 
 
 class TestIdentityDriver(db_test.DbTestCase,
-                         test_base.IdentityDriverV8Tests):
+                         test_base.IdentityDriverV8Tests,
+                         test_sql_security.SqlSecurityTests):
 
     expected_is_domain_aware = True
     expected_default_assignment_driver = 'sql'
