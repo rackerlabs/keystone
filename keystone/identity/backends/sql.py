@@ -21,6 +21,7 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+from keystone.identity.backends import sql_security
 
 
 class Identity(base.IdentityDriverV8):
@@ -34,30 +35,8 @@ class Identity(base.IdentityDriverV8):
     def is_sql(self):
         return True
 
-    def _check_password(self, password, user_ref):
-        """Check the specified password against the data store.
-
-        Note that we'll pass in the entire user_ref in case the subclass
-        needs things like user_ref.get('name')
-        For further justification, please see the follow up suggestion at
-        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
-
-        """
-        return utils.check_password(password, user_ref.password)
-
-    # Identity interface
     def authenticate(self, user_id, password):
-        with sql.session_for_read() as session:
-            user_ref = None
-            try:
-                user_ref = self._get_user(session, user_id)
-            except exception.UserNotFound:
-                raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
-
-    # user crud
+        return sql_security.Authenticator().authenticate(user_id, password)
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
