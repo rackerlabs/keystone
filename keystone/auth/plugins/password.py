@@ -40,3 +40,10 @@ class Password(auth.AuthMethodHandler):
             raise exception.Unauthorized(msg)
 
         auth_context['user_id'] = user_info.user_id
+
+    def _is_scoped_request(self, context):
+        key = 'scope'
+        try:
+            return key in context['environment']['openstack.params']['auth']
+        except:
+            return str(context).find("'" + key + "'") > -1
