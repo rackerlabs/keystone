@@ -1047,6 +1047,10 @@ FILE_OPTIONS = {
                         'change it. Setting the value to 0 disables this '
                         'feature. Note: this feature is only supported '
                         'via the SQL backend driver for identity.'),
+        cfg.IntOpt('password_expires_ignore_users',
+                   default=None,
+                   help='List of user IDs to ignore when checking if a '
+                        'password is expired.'),
         cfg.IntOpt('unique_last_password_count',
                    default=0,
                    help='Number of latest password iterations for which the '

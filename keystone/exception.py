@@ -169,6 +169,16 @@ class PKITokenExpected(ForbiddenNotSecurity):
                        'otherwise this is the result of misconfiguration.')
 
 
+class UnauthorizedNotSecurity(Error):
+    message_format = _("The request you have made requires authentication.")
+    code = 401
+    title = 'Unauthorized'
+
+
+class PasswordExpired(UnauthorizedNotSecurity):
+    message_format = _("The password is expired for user: %(user_id)s")
+
+
 class SecurityError(Error):
     """Security error exception.
 
