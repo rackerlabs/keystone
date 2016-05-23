@@ -17,7 +17,12 @@ import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
+from oslo_config import cfg
+
 from keystone.common import sql
+
+
+CONF = cfg.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -57,25 +62,42 @@ class User(sql.ModelBase, sql.DictBase):
     def name(cls):
         return LocalUser.name
 
-    # password property
+    # password properties
+    @hybrid_property
+    def password_ref(self):
+        if self.local_user and self.local_user.passwords:
+            for password_ref in self.local_user.passwords:
+                if not password_ref.expired:
+                    return password_ref
+        return None
+
+    @hybrid_property
+    def password_expires_at(self):
+        if self.password_ref:
+            expires_days = CONF.security_compliance.password_expires_days
+            if expires_days and expires_days > 0:
+                expired_date = (
+                    self.password_ref.created_at +
+                    datetime.timedelta(days=expires_days)
+                )
+                return expired_date
+        return None
+
     @hybrid_property
     def password(self):
-        if self.local_user and self.local_user.passwords:
-            return self.local_user.passwords[0].password
-        else:
-            return None
+        if self.password_ref:
+            return self.password_ref.password
+        return None
 
     @password.setter
     def password(self, value):
-        if not value:
-            if self.local_user and self.local_user.passwords:
-                self.local_user.passwords = []
-        else:
-            if not self.local_user:
-                self.local_user = LocalUser()
-            if not self.local_user.passwords:
-                self.local_user.passwords.append(Password())
-            self.local_user.passwords[0].password = value
+        if not self.local_user:
+            self.local_user = LocalUser()
+        for password_ref in self.local_user.passwords:
+            password_ref.expired = True
+        new_password_ref = Password()
+        new_password_ref.password = value
+        self.local_user.passwords.append(new_password_ref)
 
     @password.expression
     def password(cls):
