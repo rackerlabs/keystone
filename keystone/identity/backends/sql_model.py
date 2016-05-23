@@ -17,13 +17,19 @@ import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
+from oslo_config import cfg
+
 from keystone.common import sql
+
+
+CONF = cfg.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
+                  'default_project_id', 'password_expires_at']
+    readonly_attributes = ['password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -57,25 +63,45 @@ class User(sql.ModelBase, sql.DictBase):
     def name(cls):
         return LocalUser.name
 
-    # password property
+    # password properties
+    @hybrid_property
+    def password_ref(self):
+        if self.local_user and self.local_user.passwords:
+            for password_ref in self.local_user.passwords:
+                if not password_ref.expired:
+                    return password_ref
+        return None
+
+    @hybrid_property
+    def password_expires_at(self):
+        if self.password_ref:
+            expires_days = CONF.security_compliance.password_expires_days
+            if expires_days and expires_days > 0:
+                expired_date = (
+                    self.password_ref.created_at +
+                    datetime.timedelta(days=expires_days)
+                )
+                return expired_date.replace(microsecond=0)
+        return None
+
     @hybrid_property
     def password(self):
-        if self.local_user and self.local_user.passwords:
-            return self.local_user.passwords[0].password
-        else:
-            return None
+        if self.password_ref:
+            return self.password_ref.password
+        return None
 
     @password.setter
     def password(self, value):
-        if not value:
-            if self.local_user and self.local_user.passwords:
-                self.local_user.passwords = []
-        else:
-            if not self.local_user:
-                self.local_user = LocalUser()
-            if not self.local_user.passwords:
-                self.local_user.passwords.append(Password())
-            self.local_user.passwords[0].password = value
+        if not self.local_user:
+            self.local_user = LocalUser()
+        for password_ref in self.local_user.passwords:
+            password_ref.expired = True
+        if value:
+            new_password_ref = Password()
+            new_password_ref.password = value
+            new_password_ref.created_at = datetime.datetime.utcnow()
+            new_password_ref.expired = False
+            self.local_user.passwords.append(new_password_ref)
 
     @password.expression
     def password(cls):
@@ -104,6 +130,13 @@ class User(sql.ModelBase, sql.DictBase):
         if 'default_project_id' in d and d['default_project_id'] is None:
             del d['default_project_id']
         return d
+
+    @classmethod
+    def from_dict(cls, user_dict):
+        for attribute in cls.readonly_attributes:
+            if attribute in user_dict:
+                del user_dict[attribute]
+        return super(User, cls).from_dict(user_dict)
 
 
 class LocalUser(sql.ModelBase, sql.DictBase):
