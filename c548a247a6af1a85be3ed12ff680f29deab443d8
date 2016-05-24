@@ -34,6 +34,42 @@
       "revId": "c548a247a6af1a85be3ed12ff680f29deab443d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_8ba97e7e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 17430
+      },
+      "writtenOn": "2016-05-24T01:38:45Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "bab6814e_fae2bdd3",
+      "revId": "c548a247a6af1a85be3ed12ff680f29deab443d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_bb52fe64",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 17430
+      },
+      "writtenOn": "2016-05-24T01:38:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_1ccee881",
+      "revId": "c548a247a6af1a85be3ed12ff680f29deab443d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
