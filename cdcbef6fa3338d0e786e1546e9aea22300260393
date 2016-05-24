@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_66039677",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-24T12:46:51Z",
+      "side": 1,
+      "message": "essentially*",
+      "revId": "cdcbef6fa3338d0e786e1546e9aea22300260393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_81ce64b2",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-24T12:46:51Z",
+      "side": 1,
+      "message": "It looks like new_user_dict uses pretty much the same keys that user_dict does. Would it make sense to just have it be a copy? \n\n    import copy\n    ... \n\n    def create_nonlocal_user(self, user_dict):\n        new_user_dict \u003d copy.copy(user_dict)\n        new_nonlocal_user_dict \u003d {\n            \u0027domain_id\u0027: user_dict[\u0027domain_id\u0027],\n            \u0027name\u0027: user_dict[\u0027name\u0027]\n        }\n        with sql.session_for_write() as session:\n            ...",
+      "revId": "cdcbef6fa3338d0e786e1546e9aea22300260393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
