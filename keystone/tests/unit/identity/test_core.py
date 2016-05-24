@@ -174,3 +174,13 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+
+
+class TestPasswordValidation(unit.TestCase):
+
+    def setUp(self):
+        super(TestDatabaseDomainConfigs, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
+    # TODO(rderose): add tests: update_user, change_password, create_user
