@@ -16,6 +16,24 @@
       "revId": "6f25ac3427c3eaaf4ad8f5783d326337d1058e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_7e35d3f5",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-24T14:47:39Z",
+      "side": 1,
+      "message": "Yes, correct",
+      "parentUuid": "bab6814e_960fc52d",
+      "revId": "6f25ac3427c3eaaf4ad8f5783d326337d1058e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
