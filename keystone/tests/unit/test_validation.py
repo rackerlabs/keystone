@@ -2172,3 +2172,34 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'description': None}
         self.create_consumer_validator.validate(request_to_validate)
         self.update_consumer_validator.validate(request_to_validate)
+
+
+class PasswordValidationTestCase(unit.TestCase):
+    def setUp(self):
+        super(PasswordValidationTestCase, self).setUp()
+        self.validator = validators.PasswordValidator()
+        # passwords requires: 1 letter, 1 digit, 7 chars
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex=(
+                                       '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'))
+
+    def test_password_validate_with_valid_strong_password(self):
+        password = 'mypassword2'
+        self.assertIsNone(self.validator.validate(password))
+
+    def test_password_validate_with_invalid_strong_password(self):
+        # negative test: None
+        password = None
+        self.assertRaises(exception.PasswordValidationError,
+                          self.validator.validate,
+                          password)
+        # negative test: numeric
+        password = 1234
+        self.assertRaises(exception.PasswordValidationError,
+                          self.validator.validate,
+                          password)
+        # negative test: boolean
+        password = True
+        self.assertRaises(exception.PasswordValidationError,
+                          self.validator.validate,
+                          password)
