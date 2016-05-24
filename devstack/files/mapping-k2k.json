@@ -1,0 +1,23 @@
+[
+    {
+        "local": [
+            {
+                "group": {
+                    "name": "federated_group",
+                    "domain": {
+                        "id": "default"
+                    }
+                }
+            }
+        ],
+        "remote": [
+            {
+                "type": "openstack_user",
+                "any_one_of": [
+                    "admin",
+                    "demo"
+                ]
+            }
+        ]
+    }
+]
