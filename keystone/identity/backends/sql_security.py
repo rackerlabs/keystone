@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 
 from oslo_config import cfg
 
@@ -86,6 +87,11 @@ class Authenticator(object):
 
 class PasswordValidator(object):
     def is_valid(self, password):
-        # TODO(rderose): implement password strength requirements in a
-        # separate patch
+        pattern = CONF.security_compliance.password_regex
+        if pattern:
+            return re.match(pattern, password)
         return True
+
+
+class PasswordSaver(object):
+    pass
