@@ -16,6 +16,24 @@
       "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_9beb5eb0",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-24T17:15:17Z",
+      "side": 1,
+      "message": "Not sure what this would entail. common.config uses oslo_config and we don\u0027t actually have access to the options until we call setup (on syustem startup)",
+      "parentUuid": "bab6814e_759dfe58",
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
