@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_eba483ba",
+        "filename": "api-ref/source/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-24T06:56:58Z",
+      "side": 1,
+      "message": "a few trailing white spaces in this file",
+      "revId": "71cd2a635625f08af686c66fc6efbe8b05bd4e20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
