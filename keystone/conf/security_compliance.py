@@ -56,7 +56,7 @@ Setting the value to 0 disables this feature. Note: this feature is only
 supported via the SQL backend driver for identity.
 """))
 
-assword_change_limit_per_day = cfg.IntOpt(
+password_change_limit_per_day = cfg.IntOpt(
     'password_change_limit_per_day',
     default=0,
     help=utils.fmt("""
@@ -72,6 +72,16 @@ Regular expression used to validate password strength requirements. Setting the
 value to None disables this feature. The following is an example of a pattern
 which requires at least 1 letter, 1 digit, and have a minimum length of 7
 characters: ^(?=.*\d)(?=.*[a-zA-Z]).{7,}$
+"""))
+
+password_regex_description = cfg.StrOpt(
+    'password_regex_description',
+    default=None,
+    help=utils.fmt("""
+Describe your password regular expression here in language for humans. If a
+password fails to match the regular expression, the contents of this
+configuration variable will be returned to users to explain why their
+requested password was insufficient.
 """))
 
 
