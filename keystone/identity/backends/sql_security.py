@@ -33,12 +33,14 @@ class Authenticator(object):
             user_ref = None
             try:
                 user_ref = self._get_user(session, user_id)
+                # TODO(rderose): handle if password.created_at is not set,
+                # fallout from rolling upgrade
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
             if not self._password_matches(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
-            elif self._is_password_expired(user_ref, password):
-                raise exception.PasswordExpired(user_id=user_id)
+            elif self._is_password_expired(user_ref.password_expires_at):
+                raise exception.PasswordExpired()
             return base.filter_user(user_ref.to_dict())
 
     def _password_matches(self, password, hashed_password):
@@ -58,20 +60,7 @@ class Authenticator(object):
             raise exception.UserNotFound(user_id=user_id)
         return user_ref
 
-    def _is_password_expired(self, user_ref, password):
-        password_ref = self._get_password_ref(user_ref, password)
-        created_at = password_ref.created_at
-        # TODO(rderose): if not created_at, update created_at date for user...
-        expires_days = CONF.security_compliance.password_expires_days
-        if expires_days and expires_days > 0:
-            now = datetime.datetime.utcnow()
-            expired_date = (created_at + datetime.timedelta(days=expires_days))
-            if now >= expired_date:
-                return True
+    def _is_password_expired(self, expires_at):
+        if expires_at:
+            return datetime.datetime.utcnow() >= expires_at
         return False
-
-    def _get_password_ref(self, user_ref, password):
-        for password_ref in user_ref.local_user.passwords:
-            if self._password_matches(password, password_ref.password):
-                return password_ref
-        return None
