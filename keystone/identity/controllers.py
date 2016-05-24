@@ -273,6 +273,7 @@ class UserV3(controller.V3Controller):
         return self.identity_api.delete_user(user_id, initiator)
 
     @controller.protected()
+    @validation.validated(schema.user_password, 'user')
     def change_password(self, context, user_id, user):
         original_password = user.get('original_password')
         if original_password is None:
