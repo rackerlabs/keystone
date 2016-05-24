@@ -16,6 +16,7 @@
 
 import functools
 import os
+import re
 import threading
 import uuid
 
@@ -1305,3 +1306,11 @@ class ShadowUsersManager(manager.Manager):
     remove_in=+1)
 class ShadowUsersDriverV9(shadow_interface.ShadowUsersDriverV9):
     pass
+
+
+class PasswordValidator(object):
+    def is_valid(self, password):
+        pattern = CONF.security_compliance.password_regex
+        if pattern:
+            return re.match(pattern, password)
+        return True
