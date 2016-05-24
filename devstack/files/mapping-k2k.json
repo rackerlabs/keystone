@@ -1,0 +1,23 @@
+[
+    {
+        "local": [
+            {
+                "user": {
+                    "name": "federated_user",
+                    "domain": {
+                        "id": "default"
+                    }
+                }
+            }
+        ],
+        "remote": [
+            {
+                "type": "openstack_user",
+                "any_one_of": [
+                    "admin",
+                    "demo"
+                ]
+            }
+        ]
+    }
+]
