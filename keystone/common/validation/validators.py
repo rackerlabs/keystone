@@ -11,10 +11,25 @@
 # under the License.
 """Internal implementation of request body validating middleware."""
 
+import re
+
 import jsonschema
+from oslo_config import cfg
 
 from keystone import exception
 from keystone.i18n import _
+
+
+CONF = cfg.CONF
+
+
+# TODO(rderose): extend schema validation and add this check there
+class PasswordValidator(object):
+    def validate(self, password):
+        pattern = CONF.security_compliance.password_regex
+        if pattern and not re.match(pattern, password):
+            detail = _('Invalid password: does not match password regex')
+            raise exception.PasswordValidationError(detail=detail)
 
 
 class SchemaValidator(object):
