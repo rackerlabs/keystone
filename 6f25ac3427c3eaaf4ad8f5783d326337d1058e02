@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_960fc52d",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-05-24T13:04:53Z",
+      "side": 1,
+      "message": "Just for my understanding, this would be used if an admin created a user\u0027s password and that user is now required to change it to something else upon login?",
+      "revId": "6f25ac3427c3eaaf4ad8f5783d326337d1058e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
