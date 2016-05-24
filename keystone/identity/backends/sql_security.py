@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 
 from oslo_config import cfg
 
