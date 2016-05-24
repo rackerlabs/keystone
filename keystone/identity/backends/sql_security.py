@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 
 from oslo_config import cfg
 
@@ -37,8 +38,8 @@ class Authenticator(object):
                 raise AssertionError(_('Invalid user / password'))
             if not self._password_matches(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
-            if self._is_change_password_required(user_ref, password):
-                raise exception.ChangePasswordRequired(user_id=user_id)
+            elif self._is_password_expired(user_ref, password):
+                raise exception.PasswordExpired(user_id=user_id)
             return base.filter_user(user_ref.to_dict())
 
     def _password_matches(self, password, hashed_password):
@@ -58,22 +59,9 @@ class Authenticator(object):
             raise exception.UserNotFound(user_id=user_id)
         return user_ref
 
-    def _is_change_password_required(self, user_ref, password):
-        is_change_password_required = False
+    def _is_password_expired(self, user_ref, password):
         password_ref = self._get_password_ref(user_ref, password)
-        if not PasswordValidator().is_valid(password):
-            is_change_password_required = True
-        elif self._is_password_expired(password_ref.created_at):
-            is_change_password_required = True
-        return is_change_password_required
-
-    def _get_password_ref(self, user_ref, password):
-        for password_ref in user_ref.local_user.passwords:
-            if self._password_matches(password, password_ref.password):
-                return password_ref
-        return None
-
-    def _is_password_expired(self, created_at):
+        created_at = password_ref.created_at
         # TODO(rderose): if not created_at, update created_at date for user...
         expires_days = CONF.security_compliance.password_expires_days
         if expires_days and expires_days > 0:
@@ -83,9 +71,8 @@ class Authenticator(object):
                 return True
         return False
 
-
-class PasswordValidator(object):
-    def is_valid(self, password):
-        # TODO(rderose): implement password strength requirements in a
-        # separate patch
-        return True
+    def _get_password_ref(self, user_ref, password):
+        for password_ref in user_ref.local_user.passwords:
+            if self._password_matches(password, password_ref.password):
+                return password_ref
+        return None
