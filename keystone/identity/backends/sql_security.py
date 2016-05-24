@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 
 from oslo_config import cfg
 
@@ -64,3 +65,15 @@ class Authenticator(object):
         if expires_at:
             return datetime.datetime.utcnow() >= expires_at
         return False
+
+
+class PasswordValidator(object):
+    def is_valid(self, password):
+        pattern = CONF.security_compliance.password_regex
+        if pattern:
+            return re.match(pattern, password)
+        return True
+
+
+class PasswordSaver(object):
+    pass
