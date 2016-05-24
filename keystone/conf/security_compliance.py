@@ -68,10 +68,20 @@ password_regex = cfg.StrOpt(
     'password_regex',
     default=None,
     help=utils.fmt("""
-Regular expression used to validate password strength requirements. Setting the
-value to None disables this feature. The following is an example of a pattern
+Regular expression used to validate password strength requirements. This
+feature is disabled by default. The following is an example of a pattern
 which requires at least 1 letter, 1 digit, and have a minimum length of 7
 characters: ^(?=.*\d)(?=.*[a-zA-Z]).{7,}$
+"""))
+
+password_regex_description = cfg.StrOpt(
+    'password_regex_description',
+    default=None,
+    help=utils.fmt("""
+Describe your password regular expression here in language for humans. If a
+password fails to match the regular expression, the contents of this
+configuration variable will be returned to users to explain why their
+requested password was insufficient.
 """))
 
 
@@ -84,6 +94,7 @@ ALL_OPTS = [
     unique_last_password_count,
     password_change_limit_per_day,
     password_regex,
+    password_regex_description,
 ]
 
 
