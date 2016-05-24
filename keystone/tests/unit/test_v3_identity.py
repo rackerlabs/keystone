@@ -147,6 +147,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.post('/users', body={'user': ref}, token=self.get_admin_token(),
                   expected_status=http_client.CREATED)
 
+    def test_create_user_with_invalid_password(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex=(
+                                       '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'))
+        user = unit.new_user_ref(domain_id=self.domain_id)
+        user['password'] = 'simple'
+        self.post('/users', body={'user': user}, token=self.get_admin_token(),
+                  expected_status=http_client.BAD_REQUEST)
+
     def test_user_management_normalized_keys(self):
         """Illustrate the inconsistent handling of hyphens in keys.
 
@@ -390,6 +399,19 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'user_id': self.user['id']},
             body={'user': user})
         self.assertValidUserResponse(r, user)
+
+    def test_update_user_with_invalid_password(self):
+        user = unit.create_user(self.identity_api,
+                                domain_id=self.domain['id'])
+        # set password strength and update password
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex=(
+                                       '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'))
+        user['password'] = 'simple'
+        self.patch('/users/%(user_id)s' % {
+            'user_id': user['id']},
+            body={'user': user},
+            expected_status=http_client.BAD_REQUEST)
 
     def test_admin_password_reset(self):
         # bootstrap a user as admin
@@ -830,3 +852,39 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
 
         self.assertNotIn(self.user_ref['password'], log_fix.output)
         self.assertNotIn(new_password, log_fix.output)
+
+    def test_changing_password_with_simple_password_strength(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex='[\S]+')
+        self.change_password(password='simple',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_password_with_strong_password_strength(self):
+        # password requires: 1 letter, 1 digit, 7 chars
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex=(
+                                       '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'))
+        self.change_password(password='mypassword2',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_password_with_strong_password_strength_fails(self):
+        # password requires: 1 letter, 1 digit, 7 chars
+        self.config_fixture.config(group='security_compliance',
+                                   password_regex=(
+                                       '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'))
+        # no digit
+        self.change_password(password='mypassword',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)
+
+        # no letter
+        self.change_password(password='12345678',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)
+
+        # less than 7 chars
+        self.change_password(password='mypas2',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)
