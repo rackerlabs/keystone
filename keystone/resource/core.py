@@ -469,7 +469,9 @@ class Manager(manager.Manager):
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(project_id)
-        notifications.Audit.deleted(self._PROJECT, project_id, initiator)
+        resource_value = {'resource_id': project_id,
+                          'resource_name' : project['name']}
+        notifications.Audit.deleted(self._PROJECT, resource_value, initiator)
         # Invalidate user role assignments cache region, as it may
         # be caching role assignments where the target is
         # the specified project
