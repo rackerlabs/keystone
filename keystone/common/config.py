@@ -1090,7 +1090,12 @@ FILE_OPTIONS = {
                         'is an example of a pattern which requires '
                         'at least 1 letter, 1 digit, and have a minimum '
                         'length of 7 characters: '
-                        '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+                        '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'),
+        cfg.StrOpt('password_regex_desc',
+                   default=None,
+                   help='Description of the password regular expression '
+                        'requirements to be returned in the response when '
+                        'validation fails.')
     ]
 }
 
