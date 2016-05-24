@@ -386,10 +386,17 @@ def _create_cadf_payload(operation, resource_type, resource_id,
         target_uri = taxonomy.UNKNOWN
     else:
         target_uri = CADF_TYPE_MAP.get(resource_type)
-    target = resource.Resource(typeURI=target_uri,
-                               id=resource_id)
 
-    audit_kwargs = {'resource_info': resource_id}
+    if isinstance(resource_id, dict) and 'resource_name'in resource_id:
+        audit_kwargs = {'resource_info': resource_id['resource_id'],
+                        'resource_name': resource_id['resource_name']}
+        target = resource.Resource(typeURI=target_uri,
+                                   id=resource_id['resource_id'])
+    else:
+        audit_kwargs = {'resource_info': resource_id}
+        target = resource.Resource(typeURI=target_uri,
+                                   id=resource_id)
+
     cadf_action = '%s.%s' % (operation, resource_type)
     event_type = '%s.%s.%s' % (SERVICE, resource_type, operation)
 
@@ -412,7 +419,11 @@ def _send_notification(operation, resource_type, resource_id, actor_dict=None,
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
+    if isinstance(resource_id, dict) and 'resource_name' in resource_id:
+        payload = {'resource_info': resource_id['resource_id'],
+                   'resource_name': resource_id['resource_name']}
+    else:
+        payload = {'resource_info': resource_id}
 
     if actor_dict:
         payload['actor_id'] = actor_dict['id']

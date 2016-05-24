@@ -213,12 +213,23 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
 
         def fake_notify(operation, resource_type, resource_id,
                         actor_dict=None, public=True):
-            note = {
-                'resource_id': resource_id,
-                'operation': operation,
-                'resource_type': resource_type,
-                'send_notification_called': True,
-                'public': public}
+
+            if (isinstance(resource_id, dict)
+                    and 'resource_name' in resource_id):
+                note = {
+                    'resource_id': resource_id['resource_id'],
+                    'resource_name': resource_id['resource_name'],
+                    'operation': operation,
+                    'resource_type': resource_type,
+                    'send_notification_called': True,
+                    'public': public}
+            else:
+                note = {
+                    'resource_id': resource_id,
+                    'operation': operation,
+                    'resource_type': resource_type,
+                    'send_notification_called': True,
+                    'public': public}
             if actor_dict:
                 note['actor_id'] = actor_dict.get('id')
                 note['actor_type'] = actor_dict.get('type')
@@ -262,7 +273,11 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
         self.assertTrue(len(self._notifications) > 0)
         note = self._notifications[-1]
         self.assertEqual(operation, note['operation'])
-        self.assertEqual(resource_id, note['resource_id'])
+        if isinstance(resource_id, dict):
+            self.assertEqual(resource_id['id'], note['resource_id'])
+            self.assertEqual(resource_id['name'], note['resource_name'])
+        else:
+            self.assertEqual(resource_id, note['resource_id'])
         self.assertEqual(resource_type, note['resource_type'])
         self.assertTrue(note['send_notification_called'])
         if actor_id:
@@ -279,7 +294,12 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
         self.assertTrue(len(self._audits) > 0)
         audit = self._audits[-1]
         payload = audit['payload']
-        self.assertEqual(resource_id, payload['resource_info'])
+        if (isinstance(resource_id, dict)
+                and 'resource_name' in resource_id):
+            self.assertEqual(resource_id['id'], payload['resource_id'])
+            self.assertEqual(resource_id['name'], payload['resource_name'])
+        else:
+            self.assertEqual(resource_id, payload['resource_info'])
         action = '%s.%s' % (operation, resource_type)
         self.assertEqual(action, payload['action'])
         self.assertEqual(target_uri, payload['target']['typeURI'])
@@ -385,7 +405,7 @@ class NotificationsForEntities(BaseNotificationTest):
         self.resource_api.create_project(project_ref['id'], project_ref)
         self.resource_api.delete_project(project_ref['id'])
         self._assert_last_note(
-            project_ref['id'], DELETED_OPERATION, 'project')
+            project_ref, DELETED_OPERATION, 'project')
         self._assert_last_audit(project_ref['id'], DELETED_OPERATION,
                                 'project', cadftaxonomy.SECURITY_PROJECT)
 
