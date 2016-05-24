@@ -830,3 +830,26 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
 
         self.assertNotIn(self.user_ref['password'], log_fix.output)
         self.assertNotIn(new_password, log_fix.output)
+
+    def test_changing_password_with_simple_password_strength(self):
+        CONF.security_compliance.password_regex = '[\S]+'
+        self.change_password(password='simple',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_password_with_strong_password_strength(self):
+        # password requires: 1 letter, 1 digit, 7 chars
+        CONF.security_compliance.password_regex = (
+            '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+        self.change_password(password='mypassword2',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_password_with_strong_password_strength_fails(self):
+        # password requires: 1 letter, 1 digit, 7 chars
+        CONF.security_compliance.password_regex = (
+            '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+        # missing digit
+        self.change_password(password='mypass',
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.BAD_REQUEST)

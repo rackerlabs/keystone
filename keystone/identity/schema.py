@@ -10,8 +10,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
+
 from keystone.common import validation
 from keystone.common.validation import parameter_types
+
+
+CONF = cfg.CONF
+
+try:
+    _password_pattern = CONF.security_compliance.password_regex
+except Exception:
+    _password_pattern = '[\S]+'
 
 
 # NOTE(lhcheng): the max length is not applicable since it is specific
@@ -29,7 +39,15 @@ _user_properties = {
     'enabled': parameter_types.boolean,
     'name': _identity_name,
     'password': {
-        'type': ['string', 'null']
+        'type': ['string', 'null'],
+        'pattern': _password_pattern
+    }
+}
+
+_password_properties = {
+    'password': {
+        'type': ['string', 'null'],
+        'pattern': _password_pattern
     }
 }
 
@@ -43,6 +61,13 @@ user_create = {
 user_update = {
     'type': 'object',
     'properties': _user_properties,
+    'minProperties': 1,
+    'additionalProperties': True
+}
+
+user_password = {
+    'type': 'object',
+    'properties': _password_properties,
     'minProperties': 1,
     'additionalProperties': True
 }
