@@ -1,0 +1,13 @@
+<Location /Shibboleth.sso>
+    SetHandler shib
+</Location>
+
+# Warning: The wildcard is not safe as Apache doesn't validate whether the
+# identity provider is registered with Keystone.
+# http://lists.openstack.org/pipermail/openstack-dev/2015-April/061919.html
+<LocationMatch /v3/OS-FEDERATION/identity_providers/.*?/protocols/saml2/auth>
+    ShibRequestSetting requireSession 1
+    AuthType shibboleth
+    ShibExportAssertion Off
+    Require valid-user
+</LocationMatch>
