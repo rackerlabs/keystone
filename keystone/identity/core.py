@@ -30,6 +30,7 @@ from keystone.common import config
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common.validation import validators
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.backends import base as identity_interface
@@ -1221,6 +1222,8 @@ class Manager(manager.Manager):
 
         # authenticate() will raise an AssertionError if authentication fails
         self.authenticate(context, user_id, original_password)
+
+        validators.PasswordValidator().validate(new_password)
 
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict)
