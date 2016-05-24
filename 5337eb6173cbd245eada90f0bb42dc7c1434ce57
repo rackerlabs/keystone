@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_759dfe58",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-05-24T11:41:55Z",
+      "side": 1,
+      "message": "Morgan, do you think we can use keystone/common/config.py here instead of oslo_config? if so, we\u0027ll be able to use all already set up options",
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
