@@ -44,6 +44,12 @@ from testtools import testcase
 
 from keystone import auth
 from keystone.common import config
+
+
+config.configure()
+config.set_config_defaults()
+
+
 from keystone.common import dependency
 from keystone.common.kvs import core as kvs_core
 from keystone.common import sql
@@ -55,9 +61,6 @@ from keystone.tests.unit import ksfixtures
 from keystone.version import controllers
 from keystone.version import service
 
-
-config.configure()
-config.set_config_defaults()
 
 PID = six.text_type(os.getpid())
 TESTSDIR = os.path.dirname(os.path.abspath(__file__))
