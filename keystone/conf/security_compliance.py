@@ -95,6 +95,16 @@ minimum length of 7 characters: ^(?=.*\d)(?=.*[a-zA-Z]).{7,}$ This feature
 depends on the `sql` backend for the `[identity] driver`.
 """))
 
+password_regex_description = cfg.StrOpt(
+    'password_regex_description',
+    default=None,
+    help=utils.fmt("""
+Describe your password regular expression here in language for humans. If a
+password fails to match the regular expression, the contents of this
+configuration variable will be returned to users to explain why their
+requested password was insufficient.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -105,6 +115,7 @@ ALL_OPTS = [
     unique_last_password_count,
     password_change_limit_per_day,
     password_regex,
+    password_regex_description,
 ]
 
 
