@@ -22,15 +22,23 @@ _identity_name = {
     'pattern': '[\S]+'
 }
 
+_password_pattern = (CONF.security_compliance.password_regex if
+        CONF.security_compliance.password_regex else '[\S]+')
+
+_password_properties = {
+    'password':{
+        'type':['string','null'],
+        'password':_password_pattern
+    }
+}
+
 _user_properties = {
     'default_project_id': validation.nullable(parameter_types.id_string),
     'description': validation.nullable(parameter_types.description),
     'domain_id': parameter_types.id_string,
     'enabled': parameter_types.boolean,
     'name': _identity_name,
-    'password': {
-        'type': ['string', 'null']
-    }
+    'password': _password_properties
 }
 
 user_create = {
