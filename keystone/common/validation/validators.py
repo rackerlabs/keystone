@@ -11,10 +11,26 @@
 # under the License.
 """Internal implementation of request body validating middleware."""
 
+import re
+
 import jsonschema
+from oslo_config import cfg
 
 from keystone import exception
 from keystone.i18n import _
+
+
+CONF = cfg.CONF
+
+
+class PasswordValidator(object):
+    def validate(self, password):
+        pattern = CONF.security_compliance.password_regex
+        if pattern and not re.match(pattern, str(password)):
+            pattern_desc = CONF.security_compliance.password_regex_desc
+            detail = _("The password does not meet the requirements: "
+                       "%(message)s") % {'message': pattern_desc}
+            raise exception.PasswordValidationError(detail=detail)
 
 
 class SchemaValidator(object):
