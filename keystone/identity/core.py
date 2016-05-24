@@ -30,6 +30,7 @@ from keystone.common import config
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common.validation import validators
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.backends import base as identity_interface
@@ -848,6 +849,8 @@ class Manager(manager.Manager):
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
         user = user_ref.copy()
+        if 'password' in user:
+            validators.validate_password(user['password'])
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
         user['enabled'] = clean.user_enabled(user['enabled'])
@@ -931,6 +934,8 @@ class Manager(manager.Manager):
     def update_user(self, user_id, user_ref, initiator=None):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
+        if 'password' in user:
+            validators.validate_password(user['password'])
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
         if 'enabled' in user:
@@ -1222,6 +1227,8 @@ class Manager(manager.Manager):
 
         # authenticate() will raise an AssertionError if authentication fails
         self.authenticate(context, user_id, original_password)
+
+        validators.validate_password(new_password)
 
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict)
