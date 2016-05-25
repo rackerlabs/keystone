@@ -34,6 +34,24 @@
       "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_e103bf74",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-05-25T08:42:05Z",
+      "side": 1,
+      "message": "oops, yes, I was confused here. I think we can modify these lines\n\nhttps://github.com/openstack/keystone/blob/master/keystone/cmd/cli.py#L941-L942\n\nto look like this:\n\n    config.set_config_defaults()\n    sql.initialize()\n\nthe only moment I want to ensure - is the order sql initialisation first and then config management intentional? or I can just swap these two steps? if it\u0027s intentional I can just add set_external_opts_defaults() prior sql initialization",
+      "parentUuid": "bab6814e_9beb5eb0",
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
