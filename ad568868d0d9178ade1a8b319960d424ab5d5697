@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_ec90b297",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-25T17:59:04Z",
+      "side": 1,
+      "message": "In the current implementation, the accounts would not be linked.  However, the data model does support account linking, so we could add this in the future.  And while the accounts are not linked, the benefit for Federated users is, that they get a normal user ID; can receive concrete role assignments and are no longer ephemeral.",
+      "parentUuid": "bab6814e_36dde714",
+      "range": {
+        "startLine": 1232,
+        "startChar": 41,
+        "endLine": 1232,
+        "endChar": 61
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_4b128bb5",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 29
