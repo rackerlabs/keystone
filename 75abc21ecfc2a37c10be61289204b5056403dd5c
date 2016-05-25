@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_7de5b9a6",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-25T05:31:34Z",
+      "side": 1,
+      "message": "unrelated change (NIT)",
+      "revId": "75abc21ecfc2a37c10be61289204b5056403dd5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
