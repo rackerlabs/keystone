@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_a0fd113d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-25T16:46:10Z",
+      "side": 1,
+      "message": "That being said, this code is checking if the user already exists; if so, no need to shadow the user.",
+      "parentUuid": "bab6814e_e0727910",
+      "range": {
+        "startLine": 1232,
+        "startChar": 41,
+        "endLine": 1232,
+        "endChar": 61
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_4b128bb5",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 29
