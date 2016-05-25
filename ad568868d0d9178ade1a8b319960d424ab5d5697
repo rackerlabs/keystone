@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_e0727910",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-25T16:43:57Z",
+      "side": 1,
+      "message": "Currently, a Federated identity and an LDAP identity would have too separate user accounts, as we have not implemented any sort of account linking.  However, the data model does support this (LDAP and Federated identities having the same user account).",
+      "parentUuid": "bab6814e_b55a7b81",
+      "range": {
+        "startLine": 1232,
+        "startChar": 41,
+        "endLine": 1232,
+        "endChar": 61
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_4b128bb5",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 29
