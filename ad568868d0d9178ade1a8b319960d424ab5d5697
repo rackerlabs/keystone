@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_07022f09",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-25T18:22:07Z",
+      "side": 1,
+      "message": "++ This was confusing to me too...",
+      "parentUuid": "bab6814e_f54b6329",
+      "range": {
+        "startLine": 1230,
+        "startChar": 8,
+        "endLine": 1230,
+        "endChar": 20
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_b55a7b81",
         "filename": "keystone/identity/core.py",
         "patchSetId": 29
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "In the current implementation, the accounts would not be linked.  However, the data model does support account linking, so we could add this in the future.  And while the accounts are not linked, the benefit for Federated users is, that they get a normal user ID; can receive concrete role assignments and are no longer ephemeral.",
       "parentUuid": "bab6814e_36dde714",
+      "range": {
+        "startLine": 1232,
+        "startChar": 41,
+        "endLine": 1232,
+        "endChar": 61
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c75dc716",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-25T18:22:07Z",
+      "side": 1,
+      "message": "Ah, I guess my error in thinking was not realising that the user[\u0027id\u0027] here CANNOT be the same as the userID given to a federated user, since the (nonlocal) userId being returned here is not the ID from, say, LDAP, but the keystone generated one?",
+      "parentUuid": "bab6814e_ec90b297",
       "range": {
         "startLine": 1232,
         "startChar": 41,
