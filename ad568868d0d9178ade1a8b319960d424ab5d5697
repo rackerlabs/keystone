@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_36dde714",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-25T17:23:08Z",
+      "side": 1,
+      "message": "so the accounts would be (kindof) linked?",
+      "parentUuid": "bab6814e_a0fd113d",
+      "range": {
+        "startLine": 1232,
+        "startChar": 41,
+        "endLine": 1232,
+        "endChar": 61
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_4b128bb5",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 29
@@ -125,6 +149,24 @@
       "side": 1,
       "message": "Why, the existing methods haven\u0027t changed.  What is your concern here?  Thanks.",
       "parentUuid": "bab6814e_4b128bb5",
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_760c8f94",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-25T17:23:08Z",
+      "side": 1,
+      "message": "So the concern is:\n- some has created a customer shadow user driver based on the Mitaka code\n- we have committee that they can continue to use this driver for 2 cycles\n- they upgrade to Newton...and use their driver...\n- won\u0027t the manager now go bang!\n- If so, then that\u0027s what the wrapper is for - to fake up any new methods so that they either are silent, or fake the new functionality in a non-perfmant way...etc....basically so the new manager doesn\u0027t have to have knowledge of older drivers....",
+      "parentUuid": "bab6814e_736e61ca",
       "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
