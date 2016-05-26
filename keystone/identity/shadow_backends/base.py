@@ -64,11 +64,16 @@ class ShadowUsersDriverBase(object):
     versionutils.deprecated.NEWTON,
     what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
     in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV10',
-    remove_in=+2)
+    remove_in=+1)
 class ShadowUsersDriverV9(ShadowUsersDriverBase):
     pass
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.NEWTON,
+    what='keystone.identity.shadow_backends.base.ShadowUsersDriverV10',
+    in_favor_of='Dropping support of shadow users driver backend',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverV10(ShadowUsersDriverBase):
     """Interface description for an Shadow Users V10 driver."""
@@ -101,7 +106,7 @@ class V10ShadowUsersWrapperForV9Driver(ShadowUsersDriverV10):
         what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
         in_favor_of=(
             'keystone.identity.shadow_backends.base.ShadowUsersDriverV10'),
-        remove_in=+2)
+        remove_in=+1)
     def __init__(self, wrapped_driver):
         self.driver = wrapped_driver
 
