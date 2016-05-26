@@ -22,6 +22,30 @@
       "revId": "0d711219f02edddd2accb0a0fe24f2a71912102c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_5f231ebd",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-26T20:11:37Z",
+      "side": 1,
+      "message": "Okay, I\u0027ve modified the methods so that authentication won\u0027t fail.  Regarding running the tests with the old driver, unfortunately new shadow users tests would still fail; I\u0027d have to separate them out. And to be honest, I\u0027m not so happy with this approach. I\u0027m hoping this will be good enough for now for shadow users.",
+      "parentUuid": "bab6814e_a94f7c32",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 40
+      },
+      "revId": "0d711219f02edddd2accb0a0fe24f2a71912102c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
