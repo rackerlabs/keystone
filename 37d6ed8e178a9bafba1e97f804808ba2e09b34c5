@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_2bad5984",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "bp credential-encryption",
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_0b005565",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "it\u0027s weird don\u0027t see any default value here, is it right? if this doesn\u0027t have default value, please make this  \u0027\u003d \u003cNone\u003e\u0027",
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_ab74a9fd",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "if this is a constraint, please make this uppercase, if don\u0027t why not include it the __init__?",
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_4b87fdb4",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "if can just do:\nref[\u0027blob\u0027] \u003d credential.get(\u0027blob\u0027)",
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_eb4a3182",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "We really need catch every exception here?",
+      "range": {
+        "startLine": 43,
+        "startChar": 15,
+        "endLine": 43,
+        "endChar": 24
+      },
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_6b2641cf",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-26T13:01:30Z",
+      "side": 1,
+      "message": "why just pass with a invalid token?\n\nplease at least a note explaining the reason.",
+      "range": {
+        "startLine": 59,
+        "startChar": 16,
+        "endLine": 59,
+        "endChar": 20
+      },
+      "revId": "37d6ed8e178a9bafba1e97f804808ba2e09b34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
