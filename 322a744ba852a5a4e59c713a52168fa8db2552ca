@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_5c433eaf",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-26T14:23:57Z",
+      "side": 1,
+      "message": "suggest the following order for this test:\n1 - set ldap_filter (limit for user_sna and user_two)\n2 - list all users\n3 - check that only two above were returned\n4 - add a hint for user_foo name\n5 - list all users with the hint above\n6 - check that no user was returned",
+      "revId": "322a744ba852a5a4e59c713a52168fa8db2552ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_bc886a23",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-26T14:23:57Z",
+      "side": 1,
+      "message": "nit: add a comment explaining the ldap_filter will limit the search to only user_sna and user_two",
+      "revId": "322a744ba852a5a4e59c713a52168fa8db2552ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
