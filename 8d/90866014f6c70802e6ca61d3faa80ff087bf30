@@ -1,0 +1,11 @@
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 26 May 2016 22:17:40 +0000
+Reviewed-on: https://review.openstack.org/302299
+Project: openstack/keystone
+Branch: refs/heads/master
