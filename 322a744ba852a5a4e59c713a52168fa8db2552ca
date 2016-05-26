@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_c82be8e9",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-05-26T15:15:34Z",
+      "side": 1,
+      "message": "what you\u0027re suggesting is a little different, but I did originally try to write something that showed a user IS exposed when it matches the filter setting in conf, to go along with the test here that it is NOT exposed when it doesn\u0027t match. Unfortunately the LDAP UT framework is such that that is not currently possible to get that to work (even with help from raildo and ayoung).  Would be a lot of work to fix that up and I didn\u0027t want to take that on here.",
+      "parentUuid": "bab6814e_5c433eaf",
+      "revId": "322a744ba852a5a4e59c713a52168fa8db2552ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_bc886a23",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 11
