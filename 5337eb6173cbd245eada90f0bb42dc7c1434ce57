@@ -52,6 +52,24 @@
       "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_dc428e0e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-05-26T14:18:21Z",
+      "side": 1,
+      "message": "Unfortunatly, no. Because wedon\u0027t iniitalize config until runtime to avoid issues with reading config before it\u0027s populated/read from disk.",
+      "parentUuid": "bab6814e_e103bf74",
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
