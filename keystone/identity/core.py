@@ -33,6 +33,7 @@ from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.backends import base as identity_interface
+from keystone.identity.backends import shadow
 from keystone.identity.mapping_backends import base as mapping_interface
 from keystone.identity.mapping_backends import mapping
 from keystone.identity.shadow_backends import base as shadow_interface
@@ -435,7 +436,7 @@ def exception_translated(exception_type):
 @notifications.listener
 @dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
-                     'resource_api', 'revoke_api', 'shadow_users_api')
+                     'resource_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the Identity backend.
 
@@ -1228,10 +1229,11 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def _shadow_nonlocal_user(self, user):
+        shadow_users_api = shadow.ShadowUsers()
         try:
-            return self.shadow_users_api.get_user(user['id'])
+            return shadow_users_api.get_user(user['id'])
         except exception.UserNotFound:
-            self.shadow_users_api.create_nonlocal_user(user)
+            shadow_users_api.create_nonlocal_user(user)
         return user
 
     @MEMOIZE
@@ -1246,11 +1248,12 @@ class Manager(manager.Manager):
 
         :returns: dictionary of the mapped User entity
         """
+        shadow_users_api = shadow.ShadowUsers()
         user_dict = {}
         try:
-            self.shadow_users_api.update_federated_user_display_name(
+            shadow_users_api.update_federated_user_display_name(
                 idp_id, protocol_id, unique_id, display_name)
-            user_dict = self.shadow_users_api.get_federated_user(
+            user_dict = shadow_users_api.get_federated_user(
                 idp_id, protocol_id, unique_id)
         except exception.UserNotFound:
             federated_dict = {
@@ -1259,7 +1262,7 @@ class Manager(manager.Manager):
                 'unique_id': unique_id,
                 'display_name': display_name
             }
-            user_dict = self.shadow_users_api.create_federated_user(
+            user_dict = shadow_users_api.create_federated_user(
                 federated_dict)
         return user_dict
 
@@ -1311,9 +1314,6 @@ class ShadowUsersManager(manager.Manager):
         if isinstance(self.driver, shadow_interface.ShadowUsersDriverV9):
             self.driver = (
                 shadow_interface.V10ShadowUsersWrapperForV9Driver(self.driver))
-        elif not isinstance(self.driver,
-                            shadow_interface.ShadowUsersDriverV10):
-            raise exception.UnsupportedDriverVersion(driver=shadow_driver)
 
 
 @versionutils.deprecated(
