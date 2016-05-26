@@ -49,6 +49,54 @@
     },
     {
       "key": {
+        "uuid": "bab6814e_17950832",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-26T16:15:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_07022f09",
+      "range": {
+        "startLine": 1230,
+        "startChar": 8,
+        "endLine": 1230,
+        "endChar": 20
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_d770a042",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-26T16:15:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_f54b6329",
+      "range": {
+        "startLine": 1230,
+        "startChar": 8,
+        "endLine": 1230,
+        "endChar": 20
+      },
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_b55a7b81",
         "filename": "keystone/identity/core.py",
         "patchSetId": 29
@@ -257,6 +305,24 @@
       "side": 1,
       "message": "Ah, that makes sense.  In hindsight, I should have never made ShadowUsers a driver to be customized.  Just one of those things that would only exist in the database.  Anyway...  Good catch, I\u0027ll make the change.  Thanks.",
       "parentUuid": "bab6814e_760c8f94",
+      "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_97a1f896",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-05-26T16:15:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_4b128bb5",
       "revId": "ad568868d0d9178ade1a8b319960d424ab5d5697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
