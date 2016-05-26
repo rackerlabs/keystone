@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_a94f7c32",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-26T19:01:26Z",
+      "side": 1,
+      "message": "won\u0027t issuing NotImplemented cause authenticate to fail? To really support a driver version change, you need to add to the tox legacy_driver target, copy the old sql driver to tests/unit/backend/legacy_drivers/identity or and add a test case which runs the the tests with the old legacy driver plugged in...",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 40
+      },
+      "revId": "0d711219f02edddd2accb0a0fe24f2a71912102c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
