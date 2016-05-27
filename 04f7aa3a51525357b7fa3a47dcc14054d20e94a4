@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_a4174eec",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-27T12:41:45Z",
+      "side": 1,
+      "message": "Not sure this is the best place of this test - test_notifications is meant to check the audit generated. To test the controller level, I would suggest creating a class in v2_controller.py.",
+      "range": {
+        "startLine": 460,
+        "startChar": 8,
+        "endLine": 460,
+        "endChar": 49
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
