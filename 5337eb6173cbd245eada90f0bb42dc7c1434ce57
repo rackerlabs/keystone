@@ -70,6 +70,24 @@
       "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_1183ffcd",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-05-27T10:26:38Z",
+      "side": 1,
+      "message": "ok, so it looks like I just need to ensure needed opts are initialised in this module and that\u0027s it. Not so fancy, but no influence to current behaviour.",
+      "parentUuid": "bab6814e_dc428e0e",
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
