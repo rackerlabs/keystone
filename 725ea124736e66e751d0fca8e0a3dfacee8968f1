@@ -22,6 +22,30 @@
       "revId": "725ea124736e66e751d0fca8e0a3dfacee8968f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_14ee3122",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2016-05-27T20:34:28Z",
+      "side": 1,
+      "message": "Hmm I\u0027m not sure about the 2 first. There\u0027s nothing using the in Keystone itself and it depends how/why you deploy it.\n\nI\u0027m ok with everything in etc. But that won\u0027t rename the sample conf, which I liked, but ok :)",
+      "parentUuid": "9abb7d3a_bf3743e2",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "725ea124736e66e751d0fca8e0a3dfacee8968f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
