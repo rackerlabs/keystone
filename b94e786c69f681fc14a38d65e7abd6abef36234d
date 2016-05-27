@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_2c6eaac9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-05-27T10:37:17Z",
+      "side": 1,
+      "message": "APIImpact tag is needed.",
+      "revId": "b94e786c69f681fc14a38d65e7abd6abef36234d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
