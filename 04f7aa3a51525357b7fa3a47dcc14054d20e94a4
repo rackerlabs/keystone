@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_aae2759d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T13:10:34Z",
+      "side": 1,
+      "message": "nit: you don\u0027t need to pass None here",
+      "range": {
+        "startLine": 179,
+        "startChar": 65,
+        "endLine": 179,
+        "endChar": 71
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_a4174eec",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 5
@@ -18,6 +41,53 @@
         "startChar": 8,
         "endLine": 460,
         "endChar": 49
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_4a9f8903",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T13:10:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9abb7d3a_a4174eec",
+      "range": {
+        "startLine": 460,
+        "startChar": 8,
+        "endLine": 460,
+        "endChar": 49
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_2a7205e6",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T13:10:34Z",
+      "side": 1,
+      "message": "why are you doing this if you are already passing None?",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 21
       },
       "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
