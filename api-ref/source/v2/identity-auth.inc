@@ -8,7 +8,7 @@ Tokens and tenants
 List tenants
 ============
 
-.. rest_method::  GET /v2.0/tenants
+ rest_method::  GET /v2.0/tenants
 
 Lists tenants to which the token has access.
 
