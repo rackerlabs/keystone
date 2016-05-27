@@ -16,6 +16,24 @@
       "revId": "8da4726b12e7eeef3d6c53d1516080e04109227c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_712514aa",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T17:26:35Z",
+      "side": 1,
+      "message": "yep! this was something I brought up in a keystone meeting and it was decided that fixing this was an API break change :)",
+      "parentUuid": "bab6814e_56bcf66b",
+      "revId": "8da4726b12e7eeef3d6c53d1516080e04109227c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
