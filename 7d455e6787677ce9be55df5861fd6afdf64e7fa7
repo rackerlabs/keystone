@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_6369ea8b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 20095
+      },
+      "writtenOn": "2016-05-27T07:37:31Z",
+      "side": 1,
+      "message": "Can you remove print function.",
+      "range": {
+        "startLine": 464,
+        "startChar": 14,
+        "endLine": 464,
+        "endChar": 26
+      },
+      "revId": "7d455e6787677ce9be55df5861fd6afdf64e7fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
