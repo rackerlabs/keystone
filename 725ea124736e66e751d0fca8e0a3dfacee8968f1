@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_bf3743e2",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-27T18:17:19Z",
+      "side": 1,
+      "message": "What do you think of:\n\n  data_files \u003d\n    www/ \u003d httpd/keystone.py\n    etc/httpd/conf.d/ \u003d httpd/wsgi-keystone.conf\n    etc/keystone \u003d etc/*\n\nof course, we could always leave the first two for a follow up, just thought i\u0027d propose it since we\u0027re looking at this again.\n\nthis comes from https://github.com/brantlk/ibm-keystone-patches/blob/master/0001-include-static-files-in-wheel.patch",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "725ea124736e66e751d0fca8e0a3dfacee8968f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
