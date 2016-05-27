@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_c23087a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2016-05-27T11:20:19Z",
+      "side": 1,
+      "message": "This no longer reflects what the commit does.",
+      "range": {
+        "startLine": 10,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "b94e786c69f681fc14a38d65e7abd6abef36234d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_2c6eaac9",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
