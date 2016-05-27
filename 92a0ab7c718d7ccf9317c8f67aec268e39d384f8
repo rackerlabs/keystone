@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_e9ebf9ae",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 16308
+      },
+      "writtenOn": "2016-05-27T08:39:18Z",
+      "side": 1,
+      "message": "May be we can change this as below:\n\nendpoint_ref[\u0027region_id\u0027] \u003d endpoint_ref.get(\u0027region\u0027, None)",
+      "range": {
+        "startLine": 179,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 70
+      },
+      "revId": "92a0ab7c718d7ccf9317c8f67aec268e39d384f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
