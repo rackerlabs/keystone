@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_8addf172",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T12:58:27Z",
+      "side": 1,
+      "message": "just wanted to differentiate between the methods from the parent, but you have a point... will update",
+      "parentUuid": "9abb7d3a_e2114bb1",
+      "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_9d72f6e1",
         "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-25T16:54:40Z",
       "side": 1,
       "message": "/s/an/a/ - same in the other docstrings.",
+      "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_4acae9a2",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T12:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_9d72f6e1",
       "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_2acfa5b1",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T12:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_7341410b",
+      "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_33d05953",
         "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-25T16:54:40Z",
       "side": 1,
       "message": "Where is the auth provider set? It\u0027s bit unclear.",
+      "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_8ac4d192",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-27T12:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab6814e_33d05953",
       "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
