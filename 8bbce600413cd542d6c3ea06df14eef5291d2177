@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_44682cbb",
+        "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-27T08:52:44Z",
+      "side": 1,
+      "message": "nit : a\nalso need to be modified docstring of the other line.",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 20
+      },
+      "revId": "8bbce600413cd542d6c3ea06df14eef5291d2177",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
