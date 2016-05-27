@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_e2114bb1",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2016-05-27T11:28:55Z",
+      "side": 1,
+      "message": "Is there a reason you needed to prepend an underscore to these functions? You would be able to use them and change less code in the keystone_tempest_plugin/services/identity/v3/identity_providers_client.py file",
+      "revId": "e594d61056df681c1fdba9e4cb8f0ef920775da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_9d72f6e1",
         "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
         "patchSetId": 13
