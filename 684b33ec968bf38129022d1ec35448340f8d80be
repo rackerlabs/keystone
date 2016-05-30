@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_57e9a013",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-05-30T16:22:11Z",
+      "side": 1,
+      "message": "Defaults should make keystone behave as there was no change: in particular, lockout_failure_attempts should default to 0.",
+      "revId": "684b33ec968bf38129022d1ec35448340f8d80be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
