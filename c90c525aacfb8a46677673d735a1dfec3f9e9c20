@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_02aa3370",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-30T19:50:31Z",
+      "side": 0,
+      "message": "This is mapping keystone.conf.sample to keystone.conf\n\nin the proposed way in this patch, it will be stored as in the original name, and won\u0027t be read by keystone, so it won\u0027t work",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 57
+      },
+      "revId": "c90c525aacfb8a46677673d735a1dfec3f9e9c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
