@@ -147,7 +147,8 @@ class SqlModels(SqlTests):
                 ('local_user_id', sql.Integer, None),
                 ('password', sql.String, 128),
                 ('created_at', sql.DateTime, None),
-                ('expired', sql.Boolean, False))
+                ('expired', sql.Boolean, False),
+                ('failed_attempts', sql.String, 255))
         self.assertExpectedSchema('password', cols)
 
     def test_federated_user_model(self):
