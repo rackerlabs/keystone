@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_bba440b9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-30T13:41:41Z",
+      "side": 1,
+      "message": "why not keep this v2 version inside the try? Are you sure that this behavior only happen with v3?",
+      "revId": "2ab449f8e196c2185fe5451f3e590f7d26f11fee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
