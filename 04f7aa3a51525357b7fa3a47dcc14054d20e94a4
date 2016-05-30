@@ -92,6 +92,30 @@
       "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_9b4a33ab",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 21376
+      },
+      "writtenOn": "2016-05-30T03:12:26Z",
+      "side": 1,
+      "message": "The condition that was raising the 500 Error needs absence of these parameters. With region or region_id set as None, the functionality is working fine. It fails only when region or region_id parameter is absent. \n\nI am passing None in order to use pre-written initializing method- new_endpoint_ref(...). And then deleting the parameters according to my test case.",
+      "parentUuid": "9abb7d3a_2a7205e6",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 21
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
