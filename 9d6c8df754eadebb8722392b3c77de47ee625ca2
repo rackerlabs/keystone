@@ -77,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_d615b29b",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-30T04:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_ea050211",
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_8a3c3ec9",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 2
@@ -88,6 +106,24 @@
       "writtenOn": "2016-03-03T15:50:33Z",
       "side": 1,
       "message": "use six.text_type or u\u0027\u0027 here.",
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f61276b3",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-30T04:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_8a3c3ec9",
       "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_b6210efe",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-30T04:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_b14c7f43",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_51109ba8",
         "filename": "keystone/tests/unit/common/test_utils.py",
         "patchSetId": 2
@@ -163,6 +223,30 @@
       "writtenOn": "2016-03-02T09:56:32Z",
       "side": 1,
       "message": "comment should say it\u0027s unicode string to differentiate with L53.",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 34
+      },
+      "revId": "9d6c8df754eadebb8722392b3c77de47ee625ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_56226202",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-05-30T04:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_51109ba8",
       "range": {
         "startLine": 71,
         "startChar": 10,
