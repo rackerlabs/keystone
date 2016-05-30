@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_701cc913",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 21376
+      },
+      "writtenOn": "2016-05-30T06:32:29Z",
+      "side": 1,
+      "message": "test_create_endpoint(..) was already written here, to maintain continuity of the use case I added test_create_endpoint_without_region(..) below it.",
+      "parentUuid": "9abb7d3a_a4174eec",
+      "range": {
+        "startLine": 460,
+        "startChar": 8,
+        "endLine": 460,
+        "endChar": 49
+      },
+      "revId": "04f7aa3a51525357b7fa3a47dcc14054d20e94a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_2a7205e6",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 5
