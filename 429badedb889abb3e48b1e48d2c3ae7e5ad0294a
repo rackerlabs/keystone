@@ -22,6 +22,30 @@
       "revId": "429badedb889abb3e48b1e48d2c3ae7e5ad0294a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_1fd4661e",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-05-30T08:56:58Z",
+      "side": 1,
+      "message": "But the tests in this module are designed to test the audit generation of the action, not whether the region field is handled correctly. This test would still pass if your new code wrote \"I am a lumberjack\" into the region field if it is passed in as None. We don\u0027t need a new test here for notifications. we need a new test in the correct place for whether your handling of the region ID is correct.",
+      "parentUuid": "9abb7d3a_539a6f64",
+      "range": {
+        "startLine": 460,
+        "startChar": 4,
+        "endLine": 460,
+        "endChar": 50
+      },
+      "revId": "429badedb889abb3e48b1e48d2c3ae7e5ad0294a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
