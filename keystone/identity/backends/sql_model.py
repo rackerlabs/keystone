@@ -123,7 +123,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
 class Password(sql.ModelBase, sql.DictBase):
     __tablename__ = 'password'
     attributes = ['id', 'local_user_id', 'password', 'created_at',
-                  'expired']
+                  'expired', 'failed_attempts']
     id = sql.Column(sql.Integer, primary_key=True)
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
@@ -131,6 +131,7 @@ class Password(sql.ModelBase, sql.DictBase):
     created_at = sql.Column(sql.DateTime, nullable=False,
                             default=datetime.datetime.utcnow)
     expired = sql.Column(sql.Boolean, default=False)
+    failed_attempts = sql.Column(sql.String(255))
 
 
 class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
