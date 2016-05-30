@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_539a6f64",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-05-30T07:12:15Z",
+      "side": 1,
+      "message": "++\nThis test has been performed using the v3 api.\nI think that it should be written as 758 line of the method.",
+      "range": {
+        "startLine": 460,
+        "startChar": 4,
+        "endLine": 460,
+        "endChar": 50
+      },
+      "revId": "429badedb889abb3e48b1e48d2c3ae7e5ad0294a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
