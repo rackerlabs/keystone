@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_9738ff3e",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-05-31T12:27:53Z",
+      "side": 1,
+      "message": "Is this method might be unnecessary after this change?",
+      "revId": "f42caf817e66bfff43c58b8b66c43df24b4eef2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
