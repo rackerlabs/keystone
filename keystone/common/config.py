@@ -249,6 +249,11 @@ FILE_OPTIONS = {
     'shadow_users': [
         cfg.StrOpt('driver',
                    default='sql',
+                   deprecated_for_removal=True,
+                   deprecated_reason='Support for shadow_users driver '
+                                     'backends has been deprecated in the N '
+                                     'release and will be removed in the O '
+                                     'release.',
                    help='Entrypoint for the shadow users backend driver '
                         'in the keystone.identity.shadow_users namespace.'),
     ],
