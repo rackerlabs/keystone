@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_f3597f36",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 2625,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-05-31T21:27:37Z",
+      "side": 1,
+      "message": "the \"because\" only makes sense if the first part reads something like \"exchange an unscoped token for a scoped token\"\n\nbut i like this step!",
+      "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
