@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_61067d87",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-05-31T12:04:00Z",
+      "side": 1,
+      "message": "nit: domainA has two groups (group1 and group2), domainB has one group (group3)",
+      "range": {
+        "startLine": 579,
+        "startChar": 10,
+        "endLine": 579,
+        "endChar": 71
+      },
+      "revId": "cab348231812727bc152610171ae91b01f2b0276",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
