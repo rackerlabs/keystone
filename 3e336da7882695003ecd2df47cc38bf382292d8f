@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_9f012408",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-05-31T16:27:44Z",
+      "side": 1,
+      "message": "Setting the value to an empty string disables this feature.",
+      "revId": "3e336da7882695003ecd2df47cc38bf382292d8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
