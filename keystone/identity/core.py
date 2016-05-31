@@ -33,6 +33,7 @@ from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.backends import base as identity_interface
+from keystone.identity.backends import shadow
 from keystone.identity.mapping_backends import base as mapping_interface
 from keystone.identity.mapping_backends import mapping
 from keystone.identity.shadow_backends import base as shadow_interface
@@ -825,8 +826,9 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         ref = driver.authenticate(entity_id, password)
-        return self._set_domain_id_and_mapping(
+        ref = self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
+        return self._shadow_nonlocal_user(ref)
 
     def _assert_default_project_id_is_not_domain(self, default_project_id):
         if default_project_id:
@@ -1225,6 +1227,14 @@ class Manager(manager.Manager):
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict)
 
+    @MEMOIZE
+    def _shadow_nonlocal_user(self, user):
+        try:
+            return shadow.ShadowUsers().get_user(user['id'])
+        except exception.UserNotFound:
+            shadow.ShadowUsers().create_nonlocal_user(user)
+        return user
+    
     @MEMOIZE
     def shadow_federated_user(self, idp_id, protocol_id, unique_id,
                               display_name):
