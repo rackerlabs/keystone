@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_18b42080",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-05-31T21:22:07Z",
+      "side": 0,
+      "message": "Previously, the 3 private token validation methods were cached... and the public validate_token() method was not... now only 2 of those are cached, along with the public method.\n\nAfter this change, v3 tokens will be cached twice, and the second cached entry will never get a hit as far as I can tell.",
+      "revId": "745b61200a66e9a4938661538f320aad724e616b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
