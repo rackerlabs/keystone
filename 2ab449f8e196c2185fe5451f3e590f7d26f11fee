@@ -16,6 +16,24 @@
       "revId": "2ab449f8e196c2185fe5451f3e590f7d26f11fee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_ba322c0e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-05-31T20:32:48Z",
+      "side": 1,
+      "message": "I don\u0027t think it is safe to move the V2 if block into try because of the Unauthorized exception raised in this line: https://github.com/openstack/keystone/blob/996b0c7e1019235d384648f74de24542b0a736d7/keystone/token/providers/common.py#L732. I think that\u0027s an Unauthorized exception we want to preserve and we only want to add this fix for the V3 fernet token case.",
+      "parentUuid": "9abb7d3a_bba440b9",
+      "revId": "2ab449f8e196c2185fe5451f3e590f7d26f11fee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
