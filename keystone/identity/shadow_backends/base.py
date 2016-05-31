@@ -14,11 +14,17 @@
 
 import abc
 
+from oslo_log import versionutils
 import six
 
 from keystone import exception
 
 
+@versionutils.deprecated(
+    versionutils.deprecated.NEWTON,
+    what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
+    in_favor_of='Dropping support for the shadow users driver backend',
+    remove_in=+1)
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverV9(object):
     """Interface description for an Shadow Users driver."""
