@@ -21,7 +21,6 @@ from testtools import matchers
 
 from keystone.common import driver_hints
 from keystone import exception
-from keystone.identity.backends import shadow
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
@@ -1361,6 +1360,28 @@ class LimitTests(filtering.FilterTests):
 
 
 class ShadowUsersTests(object):
+    def test_create_nonlocal_user_unique_constraint(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_created = shadow.ShadowUsers().create_nonlocal_user(user)
+        self.assertNotIn('password', user_created)
+        self.assertEqual(user_created['id'], user['id'])
+        self.assertEqual(user_created['domain_id'], user['domain_id'])
+        self.assertEqual(user_created['name'], user['name'])
+        new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        new_user['name'] = user['name']
+        self.assertRaises(exception.Conflict,
+                          shadow.ShadowUsers().create_nonlocal_user,
+                          new_user)
+
+    def test_get_user(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user.pop('email')
+        user.pop('password')
+        user_created = shadow.ShadowUsers().create_nonlocal_user(user)
+        self.assertEqual(user_created['id'], user['id'])
+        user_found = shadow.ShadowUsers().get_user(user_created['id'])
+        self.assertItemsEqual(user_created, user_found)
+
     def test_create_federated_user_unique_constraint(self):
         federated_dict = unit.new_federated_user_ref()
         user_dict = self.shadow_users_api.create_federated_user(federated_dict)
@@ -1391,7 +1412,7 @@ class ShadowUsersTests(object):
             federated_dict["protocol_id"],
             federated_dict["unique_id"],
             new_display_name)
-        user_ref = shadow.ShadowUsers()._get_federated_user(
+        user_ref = self.shadow_users_api._get_federated_user(
             federated_dict["idp_id"],
             federated_dict["protocol_id"],
             federated_dict["unique_id"])
