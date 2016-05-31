@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_ebdcff74",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1063,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-05-31T14:26:14Z",
+      "side": 1,
+      "message": "The default should accept everything (as it is now)",
+      "revId": "bf28fd16c793859e11aaa3969d6be68ef0a68795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
