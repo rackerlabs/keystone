@@ -22,6 +22,30 @@
       "revId": "f586f2b000847025e92b9c2aad653b07e0535699",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_7442cb11",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2016-05-31T07:34:25Z",
+      "side": 1,
+      "message": "Yes, it was suggested by Steve",
+      "parentUuid": "9abb7d3a_e2cbaf51",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 24
+      },
+      "revId": "f586f2b000847025e92b9c2aad653b07e0535699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
