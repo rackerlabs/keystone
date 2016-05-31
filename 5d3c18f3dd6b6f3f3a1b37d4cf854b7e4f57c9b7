@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_0edd0c6f",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "Should this also be an FK?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_ee8088f9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "Why is this not returning the return value here?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_ee0a4878",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "Do we need to do this here and on the V9 class? Seems redundant.",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_6e4db8c3",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "wasn\u0027t this already part of V9?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_eee6c8ae",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "...and this?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_c9b3fee7",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "...and this?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_c9013e6c",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure about these last two implementations. Won\u0027t V9 drivers fail to authenticate correctly since create_nonlocal_user doesn\u0027t return anything and the user ref is expected to be returned?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_896a96ec",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-05-31T16:20:37Z",
+      "side": 1,
+      "message": "Is there any reason why this is broken out?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
