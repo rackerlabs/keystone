@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_d4e9a5b8",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-01T12:38:38Z",
+      "side": 1,
+      "message": "Why not remove it in this patch ? Does this work with this check present ? I don\u0027t see a followup patch removing it",
+      "range": {
+        "startLine": 341,
+        "startChar": 4,
+        "endLine": 342,
+        "endChar": 52
+      },
+      "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_f3597f36",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 45
@@ -13,6 +36,29 @@
       "writtenOn": "2016-05-31T21:27:37Z",
       "side": 1,
       "message": "the \"because\" only makes sense if the first part reads something like \"exchange an unscoped token for a scoped token\"\n\nbut i like this step!",
+      "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_9450bd33",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-01T12:38:38Z",
+      "side": 1,
+      "message": "Is this a public symbol that needs to be deprecated before removal ? i.e any custom providers may be inheriting from it (as it is possible for drivers, for example) ?",
+      "range": {
+        "startLine": 289,
+        "startChar": 8,
+        "endLine": 289,
+        "endChar": 41
+      },
       "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
