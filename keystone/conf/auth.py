@@ -53,6 +53,15 @@ Entrypoint for the oAuth1.0 auth plugin module in the keystone.auth.oauth1
 namespace.
 """))
 
+driver = cfg.StrOpt(
+    'driver',
+    default='sql',
+    help=utils.fmt("""
+Entrypoint for the authentication backend driver in the keystone.auth
+namespace. The only supplied driver is sql.
+"""))
+
+
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     methods,
@@ -60,6 +69,7 @@ ALL_OPTS = [
     token,
     external,
     oauth1,
+    driver,
 ]
 
 
