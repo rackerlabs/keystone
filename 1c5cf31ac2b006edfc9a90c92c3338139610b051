@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_b70a1124",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-01T17:07:05Z",
+      "side": 1,
+      "message": "Sorry for bothering again: can you please multiply it for 60 to get initial 30 minutes? :)",
+      "revId": "1c5cf31ac2b006edfc9a90c92c3338139610b051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
