@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_4bd6a64f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-01T15:48:17Z",
+      "side": 1,
+      "message": "The usual practice is to specify duration in seconds. Why use minutes here?",
+      "revId": "ec555ea3c171195cd6f5cf046d7197c3e3e4e117",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
