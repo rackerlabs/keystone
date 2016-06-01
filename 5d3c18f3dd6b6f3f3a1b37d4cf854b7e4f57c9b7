@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_6f93c4fa",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T13:14:41Z",
+      "side": 1,
+      "message": "FK to which table?  I\u0027ve looked and don\u0027t see a table for this.",
+      "parentUuid": "9abb7d3a_0edd0c6f",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ee8088f9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 32
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_ca0bbe22",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T13:14:41Z",
+      "side": 1,
+      "message": "Was returning the original object in order to support the legacy driver.  However, in the latest patch, I\u0027ve decided to deprecate the backend driver for shadow users.  Therefore, I\u0027ll change this to return the value.",
+      "parentUuid": "9abb7d3a_ee8088f9",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ee0a4878",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 32
@@ -47,6 +83,24 @@
       "writtenOn": "2016-05-31T16:20:37Z",
       "side": 1,
       "message": "Do we need to do this here and on the V9 class? Seems redundant.",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_2afd2ab4",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T13:14:41Z",
+      "side": 1,
+      "message": "Rather than continuing down this path of creating a legacy driver, I\u0027ve decided to deprecate the backend driver instead. I think it was a mistake (my mistake) to add a backend driver for shadow users. There is minimal benefit, if any, for operators to create a custom shadow users driver.",
+      "parentUuid": "9abb7d3a_ee0a4878",
       "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_3f2bd895",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T13:14:41Z",
+      "side": 1,
+      "message": "No, shadow user returns the original authenticated user, so that I can \"fake\" this out.  That being said, I\u0027m not happy about this whole approach of how we handle driver versions and will probably do something different here.",
+      "parentUuid": "9abb7d3a_c9013e6c",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_896a96ec",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 32
@@ -132,6 +204,24 @@
       "writtenOn": "2016-05-31T16:20:37Z",
       "side": 1,
       "message": "Is there any reason why this is broken out?",
+      "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_45c34157",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T13:14:41Z",
+      "side": 1,
+      "message": "In other backends, I\u0027ve found that it can be useful to get the object back, especially for unit tests, so I think I just automatically broke this out in case I needed it.",
+      "parentUuid": "9abb7d3a_896a96ec",
       "revId": "5d3c18f3dd6b6f3f3a1b37d4cf854b7e4f57c9b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
