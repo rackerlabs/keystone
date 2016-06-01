@@ -54,6 +54,7 @@ def load_backends():
 
     DRIVERS = dict(
         assignment_api=_ASSIGNMENT_API,
+        auth_api=auth.Manager(),
         catalog_api=catalog.Manager(),
         credential_api=credential.Manager(),
         domain_config_api=resource.DomainConfigManager(),
