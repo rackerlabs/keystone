@@ -23,6 +23,7 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.auth import plugins
 from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
@@ -365,7 +366,8 @@ class AuthInfo(object):
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'identity_api',
-                     'resource_api', 'token_provider_api', 'trust_api')
+                     'resource_api', 'token_provider_api', 'trust_api',
+                     'auth_api')
 class Auth(controller.V3Controller):
 
     # Note(atiwari): From V3 auth controller code we are
@@ -394,7 +396,26 @@ class Auth(controller.V3Controller):
             auth_context = AuthContext(extras={},
                                        method_names=[],
                                        bind={})
-            self.authenticate(context, auth_info, auth_context)
+
+            # Get user_id using auth method, check lockout, and authenticate
+            # registering failed attempts
+            methods = auth_info.get_method_names()
+            if methods:
+                method = methods[0]
+                auth_payload = auth_info.get_method_data(method)
+                user_info = plugins.UserAuthInfo.create(auth_payload, method)
+                user_id = user_info.user_id
+                self.auth_api.check_auth_attempts(user_id)
+                try:
+                    self.authenticate(context, auth_info, auth_context)
+                except exception.Unauthorized:
+                    self.auth_api.register_failed_auth_attempt(user_id)
+                    raise
+                else:
+                    self.auth_api.reset_auth_attempts(user_id)
+            else:
+                self.authenticate(context, auth_info, auth_context)
+
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
             self._check_and_set_default_scoping(auth_info, auth_context)

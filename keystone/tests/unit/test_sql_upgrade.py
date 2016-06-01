@@ -1162,6 +1162,16 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(102)
         self.assertTableDoesNotExist('domain')
 
+    def test_add_failed_auth_attempts_table(self):
+        failed_auth_attempts_table = 'failed_auth_attempts'
+        self.upgrade(103)
+        self.assertTableDoesNotExist(failed_auth_attempts_table)
+        self.upgrade(104)
+        self.assertTableColumns(failed_auth_attempts_table,
+                                ['id',
+                                 'user_id',
+                                 'timestamp'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
