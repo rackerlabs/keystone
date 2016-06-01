@@ -817,6 +817,11 @@ FILE_OPTIONS = {
         cfg.StrOpt('oauth1',
                    help='Entrypoint for the oAuth1.0 auth plugin module in '
                         'the keystone.auth.oauth1 namespace.'),
+        cfg.StrOpt('driver',
+                   default='sql',
+                   help='Entrypoint for the authentication backend driver in '
+                        'the keystone.auth namespace. The only supplied '
+                        'driver is sql.'),
     ],
     'tokenless_auth': [
         cfg.MultiStrOpt('trusted_issuer', default=[],

@@ -365,7 +365,8 @@ class AuthInfo(object):
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'identity_api',
-                     'resource_api', 'token_provider_api', 'trust_api')
+                     'resource_api', 'token_provider_api', 'trust_api',
+                     'auth_api')
 class Auth(controller.V3Controller):
 
     # Note(atiwari): From V3 auth controller code we are
@@ -394,7 +395,14 @@ class Auth(controller.V3Controller):
             auth_context = AuthContext(extras={},
                                        method_names=[],
                                        bind={})
-            self.authenticate(context, auth_info, auth_context)
+            user_id = auth_context['user_id']
+            self.auth_api.check_auth_attempts(user_id)
+            try:
+                self.authenticate(context, auth_info, auth_context)
+                self.auth_api.reset_auth_attempts(user_id)
+            except exception.Unauthorized:
+                self.auth_api.register_failed_auth_attempt(user_id)
+                raise
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
             self._check_and_set_default_scoping(auth_info, auth_context)
