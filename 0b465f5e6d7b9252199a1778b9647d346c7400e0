@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_70f6e58f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T21:11:50Z",
+      "side": 1,
+      "message": "I think breton has a patch up against the specs repository that sounds very familiar to this. Maybe incorporate it or link to it once it\u0027s merged?",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_706b851e",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T21:11:50Z",
+      "side": 1,
+      "message": "Does it automate setting keystone up as both?",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_7000a534",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T21:11:50Z",
+      "side": 1,
+      "message": "nit: Shibboleth*",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_908c29db",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T21:11:50Z",
+      "side": 1,
+      "message": "Are the tempest tests smart enough to figure out where the service provider and identity provider are? This isn\u0027t something the user has to tell tempest is it?",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b0520d33",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T21:11:50Z",
+      "side": 1,
+      "message": "Do these have to be separate from the above if statements? If we `install_idp` what\u0027s to stop us from running `configure_idp` in the same if statement?",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
