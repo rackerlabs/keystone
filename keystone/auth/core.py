@@ -13,10 +13,17 @@
 # under the License.
 
 import abc
+import datetime
 
 import six
 
+from oslo_config import cfg
+
+from keystone.common import dependency
+from keystone.common import manager
 from keystone import exception
+
+CONF = cfg.CONF
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -92,3 +99,32 @@ class AuthMethodHandler(object):
         :raises keystone.exception.Unauthorized: for authentication failure
         """
         raise exception.Unauthorized()
+
+
+@dependency.provider('auth_api')
+class Manager(manager.Manager):
+
+    driver_namespace = 'keystone.auth'
+
+    def __init__(self):
+        super(Manager, self).__init__(CONF.auth.driver)
+
+    def check_auth_attempts(self, user_id):
+        max_attempts = CONF.security_compliance.lockout_failure_attempts
+        lockout_duration = CONF.security_compliance.lockout_duration
+
+        if max_attempts is None:
+            # The check is disabled
+            return
+
+        attempts = self.driver.list_auth_attempts(user_id)
+        if len(attempts) >= max_attempts:
+            # Account was locked out
+            if lockout_duration:
+                # Check lockout expiration if configured.
+                # If not - just ignore the feature.
+                delta = datetime.timedelta(seconds=lockout_duration)
+                latest = max((item['timestamp'] for item in attempts))
+                if (latest + delta) > datetime.datetime.now():
+                    # lockout is active
+                    raise exception.AccountLocked(user_id=user_id)

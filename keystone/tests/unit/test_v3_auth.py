@@ -5032,3 +5032,59 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
         }
 
         self.assertEqual({'revoked': [exp_token_revoke_data]}, res.json)
+
+
+class TestUserLockout(test_v3.RestfulTestCase):
+
+    def config_overrides(self):
+        super(TestUserLockout, self).config_overrides()
+        self.config_fixture.config(group='security_compliance',
+                                   lockout_failure_attempts=6)
+        self.config_fixture.config(group='security_compliance',
+                                   lockout_duration=60)
+
+    def test_user_locked_after_six_fails(self):
+        """Log in is locked after 6 fails.
+
+        PCI-DSS 8.1.6: Limit repeated access attempts by locking out the user
+        ID after not more than six attempts.
+        """
+        # Log in with wrong credentials: must fail
+        wrong_password = uuid.uuid4().hex
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=wrong_password)
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.UNAUTHORIZED)
+
+        # Log in with right credentials: must succeed
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.v3_create_token(auth_data)
+
+        # 6 failed attempts
+        for _ in range(CONF.security_compliance.lockout_failure_attempts):
+            # Log in with right credentials: must fail
+            wrong_password = uuid.uuid4().hex
+            auth_data = self.build_authentication_request(
+                user_id=self.user['id'],
+                password=wrong_password)
+            self.v3_create_token(auth_data,
+                                 expected_status=http_client.UNAUTHORIZED)
+
+        # Now log in with right credentials: must fail
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.v3_create_token(auth_data,
+                             expected_status=http_client.UNAUTHORIZED)
+
+        # Reset auth attempts
+        self.auth_api.reset_auth_attempts(self.user['id'])
+
+        # Now log in with right credentials: must succeed
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        self.v3_create_token(auth_data)

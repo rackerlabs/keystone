@@ -25,10 +25,11 @@ disabled. Setting the value to 0 disables this feature.
 
 lockout_failure_attempts = cfg.IntOpt(
     'lockout_failure_attempts',
-    default=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
 Number of times a user can fail login attempts until the user account is
-locked. Setting the value to 0  disables this feature.
+locked. Setting the value to None disables this feature.
 """))
 
 lockout_duration = cfg.IntOpt(
