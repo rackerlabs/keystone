@@ -190,6 +190,30 @@
       "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_158e7dcf",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T15:26:33Z",
+      "side": 1,
+      "message": "Ah, good point Stanek.  Currently, service users\u0027 passwords would expire like everyone else.  As we have discussed though, I am returning the user\u0027s password expire date during auth.",
+      "parentUuid": "bab6814e_ab3b3737",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 217,
+        "endChar": 36
+      },
+      "revId": "5e16e9a5e922aa6dcddf7dbcd95333b34acc80e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
