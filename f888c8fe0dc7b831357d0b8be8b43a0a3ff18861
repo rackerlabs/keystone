@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_2bad2288",
+        "filename": "devstack/README.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Fixed the whitespace. Updated the documentation.",
+      "parentUuid": "9abb7d3a_4a756596",
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_affea335",
         "filename": "devstack/files/attribute-map.xml",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-31T05:56:01Z",
       "side": 1,
       "message": "clean up the white space issues here,\n\nalso, do you want to delete the commented out attributes that are going unused?",
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_c8e57c09",
+        "filename": "devstack/files/attribute-map.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_affea335",
       "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_2676f93d",
+        "filename": "devstack/files/mapping.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure. Will do some testing.",
+      "parentUuid": "9abb7d3a_efe1cb9b",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_cfdcc7e6",
         "filename": "devstack/files/shibboleth2.xml",
         "patchSetId": 8
@@ -70,6 +130,24 @@
       "writtenOn": "2016-05-31T05:56:01Z",
       "side": 1,
       "message": "clean up the white spaces here",
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_c3c72494",
+        "filename": "devstack/files/shibboleth2.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9abb7d3a_cfdcc7e6",
       "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_7d409507",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9abb7d3a_cf4047a8",
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_6f103ba9",
         "filename": "devstack/plugin.sh",
         "patchSetId": 8
@@ -104,6 +200,30 @@
       "writtenOn": "2016-05-31T05:56:01Z",
       "side": 1,
       "message": "is the SSO endpoint used?",
+      "range": {
+        "startLine": 32,
+        "startChar": 31,
+        "endLine": 32,
+        "endChar": 47
+      },
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_7dc9b5ab",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Not in the K2K setup.",
+      "parentUuid": "9abb7d3a_6f103ba9",
       "range": {
         "startLine": 32,
         "startChar": 31,
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_7214444c",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "I know",
+      "parentUuid": "9abb7d3a_ef4a6bab",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 109
+      },
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ef738b13",
         "filename": "devstack/plugin.sh",
         "patchSetId": 8
@@ -162,6 +306,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_78b3830a",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9abb7d3a_ef738b13",
+      "range": {
+        "startLine": 84,
+        "startChar": 43,
+        "endLine": 84,
+        "endChar": 51
+      },
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_2f647347",
         "filename": "devstack/plugin.sh",
         "patchSetId": 8
@@ -173,6 +341,30 @@
       "writtenOn": "2016-05-31T05:56:01Z",
       "side": 1,
       "message": "i think you want to add the user to the group instead",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 87
+      },
+      "revId": "f888c8fe0dc7b831357d0b8be8b43a0a3ff18861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f8c77361",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-01T16:06:17Z",
+      "side": 1,
+      "message": "Right, done.",
+      "parentUuid": "9abb7d3a_2f647347",
       "range": {
         "startLine": 86,
         "startChar": 4,
