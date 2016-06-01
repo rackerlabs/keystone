@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_125a01f2",
+        "filename": "keystone/exception.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T20:40:18Z",
+      "side": 1,
+      "message": "Adding the user\u0027s ID to this message will make it a bit more descriptive for administrators.",
+      "revId": "629a502125e01bcf27661e6a9c32b84685d3c947",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b2f17597",
+        "filename": "keystone/identity/backends/sql_security.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T20:40:18Z",
+      "side": 1,
+      "message": "Where do we pass in the entire user_ref? Doesn\u0027t this method only deal with the password value for the authentication request and the hashed value from the backend?",
+      "revId": "629a502125e01bcf27661e6a9c32b84685d3c947",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
