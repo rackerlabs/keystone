@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_1cfce23c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-01T16:50:02Z",
+      "side": 1,
+      "message": "I think `_seconds` suffix is redundant - `lockout_duration` should be enough, can you please reduce it?",
+      "revId": "13982d0c542d5b3ba9c886ce44867157394185c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
