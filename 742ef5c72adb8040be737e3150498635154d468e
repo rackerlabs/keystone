@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_e84e8039",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_f30e9f8a",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_537e8b19",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "nit: these don\u0027t need to be indented... the indentation is being rendered that way:\n\n  http://docs-draft.openstack.org/69/317169/11/check/gate-keystone-docs/1fc5f35//doc/build/html/credential-encryption.html",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b5aa1183",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_537e8b19",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_7592694d",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_f337bf4a",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_73ed8fb6",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "``allow_plaintext``",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f5cdb966",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_73ed8fb6",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_95e9cdb9",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_33f7878c",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_b30a5788",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "It\u0027s not clear to me which key this is referencing... is it intended to be zero indexed? Can we not just use the first key that appears in the list as the active key, by convention? If you want db_encrypt to migrate to something else, you should make that the first key in the list.",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f5fbf976",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_b30a5788",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_3558e155",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_1397e33a",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_f385ffce",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "s/migrated/encrypted/ makes more sense in this context to me",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_08eca4f1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_f385ffce",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_489b4c18",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_937593fb",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_5327abc9",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "Mention which config [section] these are referring to, as you can have the same config names in different sections.",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_ab40f207",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_5327abc9",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_2b1a4217",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "I gave it a general name to be able to extend it to encrypt other fields in the future.  I can name this something else.",
+      "parentUuid": "9abb7d3a_f314df4d",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ae882e72",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 11
@@ -200,6 +398,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "nit: s/blob/plaintext_blob/ would make it a bit more clear why you need to make a copy of it - I didn\u0027t realize what was going on until I got to the end of the method.",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_2bc88273",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_ae882e72",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_2b76c23d",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_ce5f72e3",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_2e1f1e09",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 11
@@ -234,6 +468,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "Use MutliFernet for this, and let cryptography do the iteration... or add an inline comment explaining why that won\u0027t work.",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_132fb03f",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_2e1f1e09",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_0ba81e76",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_2e71de76",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_eedfd637",
         "filename": "keystone/tests/unit/credential/test_controllers.py",
         "patchSetId": 11
@@ -274,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_93ea80d9",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "I didn\u0027t notice this, I copy pasted from a different file.",
+      "parentUuid": "9abb7d3a_eedfd637",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_3058228a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 11
@@ -285,6 +573,24 @@
       "writtenOn": "2016-05-31T21:59:50Z",
       "side": 1,
       "message": "The preferred convention is to always import modules instead of objects so that:\n\nA) It\u0027s clear which objects are local to the module.\n\nB) It\u0027s clear where imported objects were defined and imported from.\n\nC) We don\u0027t have to manage multiple object-level imports from the same module.",
+      "revId": "742ef5c72adb8040be737e3150498635154d468e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_d39ec861",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-01T20:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_3058228a",
       "revId": "742ef5c72adb8040be737e3150498635154d468e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
