@@ -1,0 +1,8 @@
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 01 Jun 2016 23:29:11 +0000
+Reviewed-on: https://review.openstack.org/318527
+Project: openstack/keystone
+Branch: refs/heads/master
