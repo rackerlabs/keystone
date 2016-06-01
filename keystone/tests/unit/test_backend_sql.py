@@ -205,6 +205,13 @@ class SqlModels(SqlTests):
                 ('audit_chain_id', sql.String, 32))
         self.assertExpectedSchema('revocation_event', cols)
 
+    def test_failed_auth_attempts_model(self):
+        cols = (('id', sql.String, 64),
+                ('user_id', sql.String, 64),
+                ('timestamp', sql.DateTime, None),
+                ('extra', sql.JsonBlob, None))
+        self.assertExpectedSchema('failed_auth_attempts', cols)
+
 
 class SqlIdentity(SqlTests, identity_tests.IdentityTests,
                   assignment_tests.AssignmentTests,
