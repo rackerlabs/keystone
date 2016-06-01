@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_28635b43",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T19:45:08Z",
+      "side": 0,
+      "message": "All this stuff could be removed in a subsequent patch, too!",
+      "revId": "f7b33213f1cb8313d2cb81225e8530ebbc37ce18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

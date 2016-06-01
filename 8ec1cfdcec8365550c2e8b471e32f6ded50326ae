@@ -110,6 +110,24 @@
       "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_a8cd8b67",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-01T19:45:08Z",
+      "side": 1,
+      "message": "Correct - if someone wishes to create their own token provider they will be inheriting from the BaseProvider class [0]. A token provider has the ability to leverage these methods in the data helpers if needed - but we don\u0027t require people to implement them if they wish to roll their own provider.  \n\n[0] https://github.com/openstack/keystone/blob/c90c525aacfb8a46677673d735a1dfec3f9e9c20/keystone/token/providers/common.py#L544",
+      "parentUuid": "9abb7d3a_d2a1ab95",
+      "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
