@@ -121,6 +121,24 @@
       "revId": "db59100adfcaf3c09ccfa068a648c6d2f63b20b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_fc711e0d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-01T16:45:47Z",
+      "side": 1,
+      "message": "Yeah, I suppose we could change it later on.  And I\u0027m not so concerned with datetime rounding issues for this feature.",
+      "parentUuid": "bab6814e_a1b97a7b",
+      "revId": "db59100adfcaf3c09ccfa068a648c6d2f63b20b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
