@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_39cfe6b4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T21:08:03Z",
+      "side": 1,
+      "message": "I\u0027ll add Ocata.  I don\u0027t think we need to include a statement about what to use instead, as I don\u0027t really expect operators to have a custom implementation for this.",
+      "parentUuid": "9abb7d3a_63a38150",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_be39fcda",
         "filename": "keystone/identity/backends/shadow.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-02T20:29:26Z",
       "side": 1,
       "message": "Before this module was keystone/identity/shadow_backends/sql.py which meant that shadow users were specific to sql (right?). This just refactors shadow users to be more explicit about being a sql-based implementation?",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_19082291",
+        "filename": "keystone/identity/backends/shadow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T21:08:03Z",
+      "side": 1,
+      "message": "Right (kind of). When I implemented shadow users, I followed the backend driver pattern without thinking about custom drivers. However, I never intended to support custom implementations. Quite the opposite actually, as I was hoping to take advantage of referential integrity by only having this in sql.",
+      "parentUuid": "9abb7d3a_be39fcda",
       "revId": "0347d31169f9d139aff54ef5369e9899df798300",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_9908922f",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T21:08:03Z",
+      "side": 1,
+      "message": "This was missed in the original implementation, so I\u0027m fixing it now.",
+      "parentUuid": "9abb7d3a_fe61c4d4",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_a321e9b6",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-02T20:29:26Z",
       "side": 1,
       "message": "If we wanted to be real verbose - we could include deprecation warnings in these methods telling people to use the new `shadow` module directly.",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_dd40450a",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T21:08:03Z",
+      "side": 1,
+      "message": "So I intend, nor expect folks to use these methods directly. I think having the deprecation warning on the base class is good enough. However, let me know if you feel strongly otherwise.",
+      "parentUuid": "9abb7d3a_a321e9b6",
       "revId": "0347d31169f9d139aff54ef5369e9899df798300",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
