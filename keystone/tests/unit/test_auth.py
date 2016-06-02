@@ -1576,6 +1576,9 @@ class AuthCatalog(unit.SQLDriverOverrides, AuthTest):
 
         self.assertEqual(exp_endpoint, endpoint)
 
+    def test_assert_equal_1(self):
+        self.assertEqual(1, 2)
+
 
 class NonDefaultAuthTest(unit.TestCase):
 
