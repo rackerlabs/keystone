@@ -265,6 +265,75 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_74e182fe",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T17:05:10Z",
+      "side": 1,
+      "message": "this is actually not necessary",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 27
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_54b55ece",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T17:05:10Z",
+      "side": 1,
+      "message": "this is not necessary",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 74
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_d43e6e28",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T17:05:10Z",
+      "side": 1,
+      "message": "i think that the user needs to be ephemeral. I think it\u0027s a more common setup and needs to be tested better.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 61
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_b0520d33",
         "filename": "devstack/plugin.sh",
         "patchSetId": 9
