@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_f14584b3",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-02T16:46:48Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure. In the case where you want to pull a specific keystone review you overwrite KEYSTONE_REPO and KEYSTONE_BRANCH in local.conf. I\u0027m not sure if DevStack clones the plugins from git before cloning keystone/nova/etc., in that case it would clone the current master for keystone instead of the one containing the review.",
+      "parentUuid": "9abb7d3a_8e6df7ce",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_7000a534",
         "filename": "devstack/README.rst",
         "patchSetId": 9
@@ -158,6 +182,30 @@
       "writtenOn": "2016-06-02T16:27:55Z",
       "side": 1,
       "message": "ugh. Will it work with this?",
+      "range": {
+        "startLine": 18,
+        "startChar": 70,
+        "endLine": 18,
+        "endChar": 114
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_71b874e6",
+        "filename": "devstack/files/shibboleth2.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-02T16:46:48Z",
+      "side": 1,
+      "message": "It has worked for me. I just pulled it from a working test setup. Please feel free to change it if you\u0027re more familiar with shibboleth configuration. :)",
+      "parentUuid": "9abb7d3a_6ee1b3fe",
       "range": {
         "startLine": 18,
         "startChar": 70,

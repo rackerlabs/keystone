@@ -16,6 +16,24 @@
       "revId": "a991d9edfeac14bc2c565a779dde6e3c51158ede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f11c64c3",
+        "filename": "devstack/files/mapping.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-02T16:46:48Z",
+      "side": 0,
+      "message": "Right.",
+      "parentUuid": "9abb7d3a_eeff63a8",
+      "revId": "a991d9edfeac14bc2c565a779dde6e3c51158ede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
