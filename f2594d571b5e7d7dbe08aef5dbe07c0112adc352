@@ -16,6 +16,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_34625517",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:41:02Z",
+      "side": 1,
+      "message": "Or - does PCI need to have a hard requirement on using x509 certificates for service users, eliminating the password problem all together?",
+      "parentUuid": "9abb7d3a_f4fbad45",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
