@@ -16,6 +16,24 @@
       "revId": "745b61200a66e9a4938661538f320aad724e616b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_1778f38e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-02T18:46:20Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "9abb7d3a_18b42080",
+      "revId": "745b61200a66e9a4938661538f320aad724e616b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
