@@ -89,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_a7bab008",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 2655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-02T12:56:48Z",
+      "side": 1,
+      "message": "how so? /v3/OS-FEDERATION/projects isn\u0027t only to list the projects the federated user has access to before scoping the token?",
+      "parentUuid": "9abb7d3a_bd02c207",
+      "range": {
+        "startLine": 2655,
+        "startChar": 8,
+        "endLine": 2655,
+        "endChar": 78
+      },
+      "revId": "8ec1cfdcec8365550c2e8b471e32f6ded50326ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_9450bd33",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 45
