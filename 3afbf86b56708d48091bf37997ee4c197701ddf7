@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_4f732d16",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 16312
+      },
+      "writtenOn": "2016-06-02T07:52:11Z",
+      "side": 0,
+      "message": "Would it be possible to replace this command by \"python setup.py compile_catalog\" to validate correctness of .po files instead of just removing itt?. Some issues have been observed with .po files imported from zanata and i think we should still check them.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 60
+      },
+      "revId": "3afbf86b56708d48091bf37997ee4c197701ddf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
