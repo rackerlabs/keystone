@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_63a38150",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T20:29:26Z",
+      "side": 1,
+      "message": "We could use the release names here since we know what they are (Newton, Ocata).\n\nDo we want to include a statement about what to use instead of this?",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_be39fcda",
+        "filename": "keystone/identity/backends/shadow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T20:29:26Z",
+      "side": 1,
+      "message": "Before this module was keystone/identity/shadow_backends/sql.py which meant that shadow users were specific to sql (right?). This just refactors shadow users to be more explicit about being a sql-based implementation?",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_fe61c4d4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T20:29:26Z",
+      "side": 1,
+      "message": "Why was this added after the fact?",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_a321e9b6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T20:29:26Z",
+      "side": 1,
+      "message": "If we wanted to be real verbose - we could include deprecation warnings in these methods telling people to use the new `shadow` module directly.",
+      "revId": "0347d31169f9d139aff54ef5369e9899df798300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
