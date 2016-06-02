@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_2341743a",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T21:41:51Z",
+      "side": 1,
+      "message": "Technically this is already done here: \n\nhttps://github.com/openstack/keystone/blob/c1e712e18743fd683c9e6ee8886032a6e468188e/keystone/common/cache/_context_cache.py#L45",
+      "revId": "429c2218700f9599b9e14f3478f509467b7dfa58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
