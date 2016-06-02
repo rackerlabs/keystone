@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_9de6de42",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-02T12:00:04Z",
+      "side": 1,
+      "message": "Can we add the information about which field was used?",
+      "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
