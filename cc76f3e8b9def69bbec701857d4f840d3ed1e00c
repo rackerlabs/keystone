@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_a040c408",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:23:51Z",
+      "side": 1,
+      "message": "Failed authentication attempts seems like a user attribute.While this works, it seems a little heavy-handed to make failed_auth_attempts it\u0027s own table.",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_4008f891",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:23:51Z",
+      "side": 1,
+      "message": "What if I pass a token to keystone over and over to try and get access to something? Will that be caught by this? This change seems specific to only password authentication attempts. The PCI-DSS 8.1.6 statement doesn\u0027t specifically say password access does it? It seems like PCI-DSS 8.1.6 would still apply to token authentication.",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_209334fc",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:23:51Z",
+      "side": 1,
+      "message": "nit: I feel like this should be done in the layer above. Should we be in this code unless the feature is enabled?",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_807140e3",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:23:51Z",
+      "side": 1,
+      "message": "nit: s/latest/most_recent_failed_attempt/ ?\n\nWhat does * do here?",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_74569d07",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_placeholder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:23:51Z",
+      "side": 1,
+      "message": "I\u0027m thinking maybe this should be done in a separate patch. Typically, we leave room for 4 - 5 of these.",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
