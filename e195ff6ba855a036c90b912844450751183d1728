@@ -33,6 +33,24 @@
       "revId": "e195ff6ba855a036c90b912844450751183d1728",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_4e87bdb4",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T00:37:00Z",
+      "side": 1,
+      "message": "So we shadow users during authentication, when the user ID has already been defined.  LDAP identities do specify their own user IDs.  And it actually gets a little more complicated as we over-write the IDs for domain specific deployments:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L899 \n\nPlease let me know if that answers your question/concern.",
+      "parentUuid": "9abb7d3a_6bdb987c",
+      "revId": "e195ff6ba855a036c90b912844450751183d1728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
