@@ -106,6 +106,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b7e64714",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:52:30Z",
+      "side": 1,
+      "message": "Implement PCI differently as in not rely on what we\u0027re introducing into Keystone for PCI requirements?\n\nI guess the thing I\u0027m thinking about is does it make sense to provide PCI with an ignore_list of the ignore_list violates PCI in some way. Does that make sense? Of course, I don\u0027t claim to be a PCI expert here, just something I thought of.",
+      "parentUuid": "9abb7d3a_374c1776",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
