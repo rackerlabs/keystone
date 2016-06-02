@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_d45149da",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:36:16Z",
+      "side": 1,
+      "message": "Do we have a reason to not explicitly call out that this is designed for service users?",
+      "revId": "7468ad524d1824b6155598f114731d325c8057fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f46bad83",
+        "filename": "keystone/exception.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:36:16Z",
+      "side": 1,
+      "message": "++ sweet",
+      "revId": "7468ad524d1824b6155598f114731d325c8057fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
