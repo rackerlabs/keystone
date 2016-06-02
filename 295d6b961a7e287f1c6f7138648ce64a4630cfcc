@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_1e080891",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T20:38:38Z",
+      "side": 1,
+      "message": "I assume we still have to explicitly set the engine and charset for platforms with defaults that are not openstack-friendly?\n\n  mysql_engine\u003d\u0027InnoDB\u0027,                                                                                             \n  mysql_charset\u003d\u0027utf8\u0027,",
+      "revId": "295d6b961a7e287f1c6f7138648ce64a4630cfcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
