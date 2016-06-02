@@ -69,6 +69,24 @@
       "revId": "e195ff6ba855a036c90b912844450751183d1728",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_be510edb",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T15:11:23Z",
+      "side": 1,
+      "message": "So ShadowUsers will support persisting whatever you pass it as the user ID. For users coming from LDAP - the ID that is persisted is the ID that coming from LDAP as well? For some reason I was thinking that the ID of the shadow user would just be some uuid.uuid4().hex string.",
+      "parentUuid": "9abb7d3a_4e87bdb4",
+      "revId": "e195ff6ba855a036c90b912844450751183d1728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
