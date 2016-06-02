@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_14f2b16f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T18:38:58Z",
+      "side": 1,
+      "message": "I think it could be used for some admins as well, but I\u0027m open to suggestions.",
+      "parentUuid": "9abb7d3a_d45149da",
+      "revId": "7468ad524d1824b6155598f114731d325c8057fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_f46bad83",
         "filename": "keystone/exception.py",
         "patchSetId": 44
