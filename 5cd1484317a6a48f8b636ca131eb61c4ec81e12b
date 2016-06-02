@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_2394ebe6",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T15:09:53Z",
+      "side": 1,
+      "message": "I think identity would be a better place for this than auth, so here for example:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L824\n\nJust think that we want to track failed authentication attempts for LDAP, SQL, and custom identity drivers, but wouldn\u0027t want to track for federation.",
+      "range": {
+        "startLine": 105,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 13
+      },
+      "revId": "5cd1484317a6a48f8b636ca131eb61c4ec81e12b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_839f974f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T15:09:53Z",
+      "side": 1,
+      "message": "Do we really need a custom driver option for this?",
+      "range": {
+        "startLine": 820,
+        "startChar": 12,
+        "endLine": 820,
+        "endChar": 18
+      },
+      "revId": "5cd1484317a6a48f8b636ca131eb61c4ec81e12b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_23306b07",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T15:09:53Z",
+      "side": 1,
+      "message": "Again, I just don\u0027t think we need to custom backend driver for this.",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 9
+      },
+      "revId": "5cd1484317a6a48f8b636ca131eb61c4ec81e12b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
