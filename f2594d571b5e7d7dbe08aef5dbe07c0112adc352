@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_f4fbad45",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-02T18:39:03Z",
+      "side": 1,
+      "message": "Do we have a reason to not explicitly call out that this is designed for service users?\n\nAlso - if a deployment has a set of service users that are exempt from PCI rules, is the deployment still PCI compliant?",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
