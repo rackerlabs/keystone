@@ -34,6 +34,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_374c1776",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T18:43:25Z",
+      "side": 1,
+      "message": "Probably not. However, I expect that operators will implement PCI differently; thus, have different config settings. Often, it\u0027s a matter of how you interpret the standards. Plus, PCI standards will change over time.",
+      "parentUuid": "9abb7d3a_f4fbad45",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
