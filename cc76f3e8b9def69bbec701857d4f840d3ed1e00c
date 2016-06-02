@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_575c3bed",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-02T18:56:49Z",
+      "side": 1,
+      "message": "I agree, and to implement it for all other methods we have to change plugin interface: it have to return user_id despite of authN success or failure.",
+      "parentUuid": "9abb7d3a_4008f891",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_209334fc",
         "filename": "keystone/auth/core.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2016-06-02T18:23:51Z",
       "side": 1,
       "message": "nit: I feel like this should be done in the layer above. Should we be in this code unless the feature is enabled?",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_57b8bbe5",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-02T18:56:49Z",
+      "side": 1,
+      "message": "I had same concerns. This is a business logic and usually belongs to a manager: controller works with web-related stuff, driver - with a storage.",
+      "parentUuid": "9abb7d3a_209334fc",
       "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_b7948744",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-02T18:56:49Z",
+      "side": 1,
+      "message": "Agree: max() accepts iterable too while I\u0027ve used the form I\u0027m more familiar with.",
+      "parentUuid": "9abb7d3a_807140e3",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_74569d07",
         "filename": "keystone/common/sql/migrate_repo/versions/103_placeholder.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2016-06-02T18:23:51Z",
       "side": 1,
       "message": "I\u0027m thinking maybe this should be done in a separate patch. Typically, we leave room for 4 - 5 of these.",
+      "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f79e0f62",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_placeholder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-02T18:56:49Z",
+      "side": 1,
+      "message": "103 update is already claimed by Ron\u0027s change, so I\u0027ve added this for tests to pass.",
+      "parentUuid": "9abb7d3a_74569d07",
       "revId": "cc76f3e8b9def69bbec701857d4f840d3ed1e00c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
