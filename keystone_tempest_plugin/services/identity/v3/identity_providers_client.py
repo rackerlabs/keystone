@@ -24,6 +24,7 @@ class IdentityProvidersClient(clients.Federation):
     subpath_suffix = 'identity_providers'
 
     def create_identity_provider(self, idp_id, **kwargs):
+        # type: (object, object) -> object
         """Create an identity provider.
 
         :param str idp_id: The ID to be used to create the Identity Provider.
