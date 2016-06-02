@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_8e99a57b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T00:21:52Z",
+      "side": 1,
+      "message": "Correct",
+      "parentUuid": "9abb7d3a_92a4314b",
+      "revId": "f99552a8d8fd147b24b9aa8ed4ef206553bb667b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_b280558c",
         "filename": "keystone/common/config.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-01T20:35:36Z",
       "side": 1,
       "message": "Do we have this documented anywhere else? Maybe after this patch lands we need to think about adding a support matrix for PCI and backends.",
+      "revId": "f99552a8d8fd147b24b9aa8ed4ef206553bb667b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_0e849508",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T00:21:52Z",
+      "side": 1,
+      "message": "Good point. Thanks.",
+      "parentUuid": "9abb7d3a_b280558c",
       "revId": "f99552a8d8fd147b24b9aa8ed4ef206553bb667b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
