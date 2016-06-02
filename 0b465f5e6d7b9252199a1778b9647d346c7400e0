@@ -72,6 +72,29 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_8e6df7ce",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T16:27:55Z",
+      "side": 1,
+      "message": "just change it to upstream keystone repo. Anonymous https would be enough.",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_7000a534",
         "filename": "devstack/README.rst",
         "patchSetId": 9
@@ -124,6 +147,29 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_6ee1b3fe",
+        "filename": "devstack/files/shibboleth2.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T16:27:55Z",
+      "side": 1,
+      "message": "ugh. Will it work with this?",
+      "range": {
+        "startLine": 18,
+        "startChar": 70,
+        "endLine": 18,
+        "endChar": 114
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_b0520d33",
         "filename": "devstack/plugin.sh",
         "patchSetId": 9
@@ -153,6 +199,24 @@
       "side": 1,
       "message": "They are called by DevStack in separate phases. The install phase installs the dependencies. In the post-config phase all services are installed and running, so we can query and configure Keystone.\n\nIt\u0027s DevStack that is calling the plugin, not us manually.",
       "parentUuid": "9abb7d3a_b0520d33",
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_8e98576c",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T16:27:55Z",
+      "side": 1,
+      "message": "Yep, that\u0027s right.",
+      "parentUuid": "9abb7d3a_6b93985b",
       "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
