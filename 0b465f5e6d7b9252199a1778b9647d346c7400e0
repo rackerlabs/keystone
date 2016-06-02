@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_d4ae6ee6",
+        "filename": "devstack/README.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T16:55:28Z",
+      "side": 1,
+      "message": "i think that i read somewhere that in the gates $KEYSTONE_REPO is ignored and is uploaded from some cache... maybe i misunderstood something. OK, lets leave this as a note to check in the future.",
+      "parentUuid": "9abb7d3a_f14584b3",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_7000a534",
         "filename": "devstack/README.rst",
         "patchSetId": 9
@@ -211,6 +235,29 @@
         "startChar": 70,
         "endLine": 18,
         "endChar": 114
+      },
+      "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_31c0ace0",
+        "filename": "devstack/files/shibboleth2.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-02T16:55:28Z",
+      "side": 1,
+      "message": "this should probably be configurable",
+      "range": {
+        "startLine": 18,
+        "startChar": 35,
+        "endLine": 18,
+        "endChar": 68
       },
       "revId": "0b465f5e6d7b9252199a1778b9647d346c7400e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
