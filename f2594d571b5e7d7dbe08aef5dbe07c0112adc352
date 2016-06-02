@@ -124,6 +124,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_57eb9bb0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T19:00:15Z",
+      "side": 1,
+      "message": "As much as I\u0027d like to say, that if you have these config settings, you\u0027re PCI compliant, I don\u0027t think we can. It would be based on our interpretation of the standards. And it would be very difficult for us to maintain that as the standards change over time. Ultimately, I think we want to provide operators security features to configure and let them decide whether or not they are PCI compliant.",
+      "parentUuid": "9abb7d3a_b7e64714",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
