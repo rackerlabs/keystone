@@ -88,6 +88,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_976ea394",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T18:50:11Z",
+      "side": 1,
+      "message": "The other thing to consider is that even though we are adding this for PCI, an operator could be using it for meeting HIPAA standards.  Or, to simply meet their specific security requirements.",
+      "parentUuid": "9abb7d3a_57cefbb4",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
