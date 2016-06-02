@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_0f3da5bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2016-06-02T07:37:48Z",
+      "side": 1,
+      "message": "This is done by the infra scripts now. Note that pot files are not added anymore to repositories. We have them now updated after each merge on http://tarballs.openstack.org/translation-source/",
+      "parentUuid": "bab6814e_57faf775",
+      "revId": "16d0cdba47a0ad976f1500cd91c420860c3ad149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_57d31704",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
