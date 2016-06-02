@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_f9b119e1",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T01:09:02Z",
+      "side": 1,
+      "message": "Agree with asserting that user_created does not have password. But it will have the email attribute, as this gets put into extra and passed back to the dictionary here:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L132",
+      "parentUuid": "9abb7d3a_eb87885e",
+      "revId": "e195ff6ba855a036c90b912844450751183d1728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_6bdb987c",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 4
