@@ -87,6 +87,24 @@
       "revId": "e195ff6ba855a036c90b912844450751183d1728",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b93008ea",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T15:22:13Z",
+      "side": 1,
+      "message": "Correct, for LDAP drivers, the user_id would come from LDAP.  Ideally, we did want to standardize the user_id, but it would require a data migration and quite a bit of refactoring.  And again, for domain specific deployments, we are overriding the user_id.",
+      "parentUuid": "9abb7d3a_be510edb",
+      "revId": "e195ff6ba855a036c90b912844450751183d1728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
