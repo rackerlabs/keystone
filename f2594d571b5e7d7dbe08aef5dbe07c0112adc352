@@ -70,6 +70,24 @@
       "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_57cefbb4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1053,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-02T18:48:23Z",
+      "side": 1,
+      "message": "Regarding explicitly calling out service users, I think it could be used for some admins as well. I\u0027m open to suggestions though.",
+      "parentUuid": "9abb7d3a_b7ae47e5",
+      "revId": "f2594d571b5e7d7dbe08aef5dbe07c0112adc352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
