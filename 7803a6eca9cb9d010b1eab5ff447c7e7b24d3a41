@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_8f121657",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "nit: s/since/because/ s/is/are/",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_2f720aae",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "Because this is no longer referring to a literal configuration variable:\n\n   ``active_key``\n\n... you can just write it normally throughout:\n\n   active key",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_8f95f689",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "nit: use double backticks around literals consistently!",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_6b808547",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "docstrings should use RST syntax, as well, as they end up being rendered as part of our sphinx docs.",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_ab6eed93",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "Use complete sentences :) This should explain when the configuration value should be set, with what, and why.",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_cb1ff107",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "Nice addition. I\u0027d amend further with \"... using the keystone-manage db_encrypt command.\"",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_0bc4593e",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-02T16:13:42Z",
+      "side": 1,
+      "message": "Nice improvements in this file.",
+      "revId": "7803a6eca9cb9d010b1eab5ff447c7e7b24d3a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
