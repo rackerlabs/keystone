@@ -15,18 +15,15 @@
 import uuid
 
 import mock
-from oslo_config import cfg
 from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
-
-
-CONF = cfg.CONF
 
 
 class IdentityTests(object):
@@ -38,7 +35,7 @@ class IdentityTests(object):
 
     def _set_domain_scope(self, domain_id):
         # We only provide a domain scope if we have multiple drivers
-        if CONF.identity.domain_specific_drivers_enabled:
+        if conf.identity.domain_specific_drivers_enabled:
             return domain_id
 
     def test_authenticate_bad_user(self):
@@ -68,7 +65,7 @@ class IdentityTests(object):
         self.assertDictEqual(self.user_sna, user_ref)
 
     def test_authenticate_and_get_roles_no_metadata(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
 
         # Remove user id. It is ignored by create_user() and will break the
         # subset test below.
@@ -90,11 +87,11 @@ class IdentityTests(object):
         role_list = self.assignment_api.get_roles_for_user_and_project(
             new_user['id'], self.tenant_baz['id'])
         self.assertEqual(1, len(role_list))
-        self.assertIn(CONF.member_role_id, role_list)
+        self.assertIn(conf.member_role_id, role_list)
 
     def test_authenticate_if_no_password_set(self):
         id_ = uuid.uuid4().hex
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         self.identity_api.create_user(user)
 
         self.assertRaises(AssertionError,
@@ -106,7 +103,7 @@ class IdentityTests(object):
     def test_create_unicode_user_name(self):
         unicode_name = u'name \u540d\u5b57'
         user = unit.new_user_ref(name=unicode_name,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         ref = self.identity_api.create_user(user)
         self.assertEqual(unicode_name, ref['name'])
 
@@ -120,7 +117,7 @@ class IdentityTests(object):
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         self.identity_api.create_user(user)
         ref = self.identity_api.get_user_by_name(user['name'],
                                                  user['domain_id'])
@@ -135,7 +132,7 @@ class IdentityTests(object):
         self.identity_api.get_user.invalidate(self.identity_api, ref['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user, ref['id'])
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         ref = self.identity_api.get_user_by_name(user['name'],
                                                  user['domain_id'])
@@ -157,7 +154,7 @@ class IdentityTests(object):
 
     def test_get_user_by_name(self):
         user_ref = self.identity_api.get_user_by_name(
-            self.user_foo['name'], CONF.identity.default_domain_id)
+            self.user_foo['name'], conf.identity.default_domain_id)
         # NOTE(termie): the password field is left in user_foo to make
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
@@ -166,7 +163,7 @@ class IdentityTests(object):
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user_by_name(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         self.identity_api.create_user(user)
         ref = self.identity_api.get_user_by_name(user['name'],
                                                  user['domain_id'])
@@ -176,13 +173,13 @@ class IdentityTests(object):
         driver.delete_user(entity_id)
 
         self.assertDictEqual(ref, self.identity_api.get_user_by_name(
-            user['name'], CONF.identity.default_domain_id))
+            user['name'], conf.identity.default_domain_id))
         self.identity_api.get_user_by_name.invalidate(
-            self.identity_api, user['name'], CONF.identity.default_domain_id)
+            self.identity_api, user['name'], conf.identity.default_domain_id)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user_by_name,
-                          user['name'], CONF.identity.default_domain_id)
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+                          user['name'], conf.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         ref = self.identity_api.get_user_by_name(user['name'],
                                                  user['domain_id'])
@@ -198,10 +195,10 @@ class IdentityTests(object):
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user_by_name,
                           uuid.uuid4().hex,
-                          CONF.identity.default_domain_id)
+                          conf.identity.default_domain_id)
 
     def test_create_duplicate_user_name_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assertRaises(exception.Conflict,
                           self.identity_api.create_user,
@@ -210,7 +207,7 @@ class IdentityTests(object):
     def test_create_duplicate_user_name_in_different_domains(self):
         new_domain = unit.new_domain_ref()
         self.resource_api.create_domain(new_domain['id'], new_domain)
-        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
 
         user2 = unit.new_user_ref(name=user1['name'],
                                   domain_id=new_domain['id'])
@@ -257,8 +254,8 @@ class IdentityTests(object):
                           user1)
 
     def test_rename_duplicate_user_name_fails(self):
-        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        user2 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
+        user2 = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         self.identity_api.create_user(user1)
         user2 = self.identity_api.create_user(user2)
         user2['name'] = user1['name']
@@ -268,7 +265,7 @@ class IdentityTests(object):
                           user2)
 
     def test_update_user_id_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         original_id = user['id']
         user['id'] = 'fake2'
@@ -358,7 +355,7 @@ class IdentityTests(object):
                           self.identity_api.update_user,
                           user_id,
                           {'id': user_id,
-                           'domain_id': CONF.identity.default_domain_id})
+                           'domain_id': conf.identity.default_domain_id})
 
     def test_delete_user_returns_not_found(self):
         self.assertRaises(exception.UserNotFound,
@@ -367,20 +364,20 @@ class IdentityTests(object):
 
     def test_create_user_long_name_fails(self):
         user = unit.new_user_ref(name='a' * 256,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           user)
 
     def test_create_user_blank_name_fails(self):
         user = unit.new_user_ref(name='',
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           user)
 
     def test_create_user_missed_password(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.identity_api.get_user(user['id'])
         # Make sure  the user is not allowed to login
@@ -398,7 +395,7 @@ class IdentityTests(object):
 
     def test_create_user_none_password(self):
         user = unit.new_user_ref(password=None,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.identity_api.get_user(user['id'])
         # Make sure  the user is not allowed to login
@@ -416,19 +413,19 @@ class IdentityTests(object):
 
     def test_create_user_invalid_name_fails(self):
         user = unit.new_user_ref(name=None,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           user)
 
         user = unit.new_user_ref(name=123,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           user)
 
     def test_create_user_invalid_enabled_type_string(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id,
                                  # invalid string value
                                  enabled='true')
         self.assertRaises(exception.ValidationError,
@@ -436,7 +433,7 @@ class IdentityTests(object):
                           user)
 
     def test_update_user_long_name_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user['name'] = 'a' * 256
         self.assertRaises(exception.ValidationError,
@@ -445,7 +442,7 @@ class IdentityTests(object):
                           user)
 
     def test_update_user_blank_name_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user['name'] = ''
         self.assertRaises(exception.ValidationError,
@@ -454,7 +451,7 @@ class IdentityTests(object):
                           user)
 
     def test_update_user_invalid_name_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
 
         user['name'] = None
@@ -472,7 +469,7 @@ class IdentityTests(object):
     def test_list_users(self):
         users = self.identity_api.list_users(
             domain_scope=self._set_domain_scope(
-                CONF.identity.default_domain_id))
+                conf.identity.default_domain_id))
         self.assertEqual(len(default_fixtures.USERS), len(users))
         user_ids = set(user['id'] for user in users)
         expected_user_ids = set(getattr(self, 'user_%s' % user['id'])['id']
@@ -482,13 +479,13 @@ class IdentityTests(object):
         self.assertEqual(expected_user_ids, user_ids)
 
     def test_list_groups(self):
-        group1 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
-        group2 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group1 = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
+        group2 = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group1 = self.identity_api.create_group(group1)
         group2 = self.identity_api.create_group(group2)
         groups = self.identity_api.list_groups(
             domain_scope=self._set_domain_scope(
-                CONF.identity.default_domain_id))
+                conf.identity.default_domain_id))
         self.assertEqual(2, len(groups))
         group_ids = []
         for group in groups:
@@ -497,13 +494,13 @@ class IdentityTests(object):
         self.assertIn(group2['id'], group_ids)
 
     def test_create_user_doesnt_modify_passed_in_dict(self):
-        new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        new_user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         original_user = new_user.copy()
         self.identity_api.create_user(new_user)
         self.assertDictEqual(original_user, new_user)
 
     def test_update_user_enable(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user_ref = self.identity_api.get_user(user['id'])
         self.assertTrue(user_ref['enabled'])
@@ -545,7 +542,7 @@ class IdentityTests(object):
         self.assertIs(user_ref['enabled'], True)
 
     def test_update_user_name(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user_ref = self.identity_api.get_user(user['id'])
         self.assertEqual(user['name'], user_ref['name'])
@@ -566,7 +563,7 @@ class IdentityTests(object):
         self.assertEqual(changed_name, user_ref['name'])
 
     def test_update_user_enable_fails(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user_ref = self.identity_api.get_user(user['id'])
         self.assertTrue(user_ref['enabled'])
@@ -627,10 +624,10 @@ class IdentityTests(object):
 
     def test_check_user_not_in_group(self):
         new_group = unit.new_group_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         new_group = self.identity_api.create_group(new_group)
 
-        new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        new_user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         new_user = self.identity_api.create_user(new_user)
 
         self.assertRaises(exception.NotFound,
@@ -639,11 +636,11 @@ class IdentityTests(object):
                           new_group['id'])
 
     def test_check_user_in_group_returns_not_found(self):
-        new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        new_user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         new_user = self.identity_api.create_user(new_user)
 
         new_group = unit.new_group_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         new_group = self.identity_api.create_group(new_group)
 
         self.assertRaises(exception.UserNotFound,
@@ -805,13 +802,13 @@ class IdentityTests(object):
                           group['id'])
 
     def test_create_group_name_with_trailing_whitespace(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group_name = group['name'] = (group['name'] + '    ')
         group_returned = self.identity_api.create_group(group)
         self.assertEqual(group_returned['name'], group_name.strip())
 
     def test_update_group_name_with_trailing_whitespace(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group_create = self.identity_api.create_group(group)
         group_name = group['name'] = (group['name'] + '    ')
         group_update = self.identity_api.update_group(group_create['id'],
@@ -820,25 +817,25 @@ class IdentityTests(object):
         self.assertEqual(group_update['name'], group_name.strip())
 
     def test_get_group_by_name(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group_name = group['name']
         group = self.identity_api.create_group(group)
-        spoiler = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        spoiler = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         self.identity_api.create_group(spoiler)
 
         group_ref = self.identity_api.get_group_by_name(
-            group_name, CONF.identity.default_domain_id)
+            group_name, conf.identity.default_domain_id)
         self.assertDictEqual(group, group_ref)
 
     def test_get_group_by_name_returns_not_found(self):
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group_by_name,
                           uuid.uuid4().hex,
-                          CONF.identity.default_domain_id)
+                          conf.identity.default_domain_id)
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_group_crud(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
         # cache the result
         group_ref = self.identity_api.get_group(group['id'])
@@ -852,7 +849,7 @@ class IdentityTests(object):
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group, group['id'])
 
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
         # cache the result
         self.identity_api.get_group(group['id'])
@@ -863,8 +860,8 @@ class IdentityTests(object):
                                       group_ref)
 
     def test_create_duplicate_group_name_fails(self):
-        group1 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
-        group2 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id,
+        group1 = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
+        group2 = unit.new_group_ref(domain_id=conf.identity.default_domain_id,
                                     name=group1['name'])
         group1 = self.identity_api.create_group(group1)
         self.assertRaises(exception.Conflict,
@@ -874,7 +871,7 @@ class IdentityTests(object):
     def test_create_duplicate_group_name_in_different_domains(self):
         new_domain = unit.new_domain_ref()
         self.resource_api.create_domain(new_domain['id'], new_domain)
-        group1 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group1 = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group2 = unit.new_group_ref(domain_id=new_domain['id'],
                                     name=group1['name'])
         group1 = self.identity_api.create_group(group1)
@@ -920,7 +917,7 @@ class IdentityTests(object):
 
     def test_user_crud(self):
         user_dict = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         del user_dict['id']
         user = self.identity_api.create_user(user_dict)
         user_ref = self.identity_api.get_user(user['id'])
@@ -943,7 +940,7 @@ class IdentityTests(object):
     def test_arbitrary_attributes_are_returned_from_create_user(self):
         attr_value = uuid.uuid4().hex
         user_data = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             arbitrary_attr=attr_value)
 
         user = self.identity_api.create_user(user_data)
@@ -953,7 +950,7 @@ class IdentityTests(object):
     def test_arbitrary_attributes_are_returned_from_get_user(self):
         attr_value = uuid.uuid4().hex
         user_data = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             arbitrary_attr=attr_value)
 
         user_data = self.identity_api.create_user(user_data)
@@ -963,7 +960,7 @@ class IdentityTests(object):
 
     def test_new_arbitrary_attributes_are_returned_from_update_user(self):
         user_data = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
         user = self.identity_api.create_user(user_data)
         attr_value = uuid.uuid4().hex
@@ -975,7 +972,7 @@ class IdentityTests(object):
     def test_updated_arbitrary_attributes_are_returned_from_update_user(self):
         attr_value = uuid.uuid4().hex
         user_data = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             arbitrary_attr=attr_value)
 
         new_attr_value = uuid.uuid4().hex
@@ -986,7 +983,7 @@ class IdentityTests(object):
         self.assertEqual(new_attr_value, updated_user['arbitrary_attr'])
 
     def test_user_update_and_user_get_return_same_response(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
 
         user = self.identity_api.create_user(user)
 
@@ -1081,7 +1078,7 @@ class FilterTests(filtering.FilterTests):
             10: 'The ministry of silly walks OF'
         }
         user_list = self._create_test_data(
-            'user', 20, domain_id=CONF.identity.default_domain_id,
+            'user', 20, domain_id=conf.identity.default_domain_id,
             name_dict=user_name_data)
 
         hints = driver_hints.Hints()
@@ -1134,7 +1131,7 @@ class FilterTests(filtering.FilterTests):
         }
         group_list = self._create_test_data(
             'group', number_of_groups,
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             name_dict=group_name_data)
         user_list = self._create_test_data('user', 2)
 
@@ -1256,10 +1253,10 @@ class FilterTests(filtering.FilterTests):
         }
         user_list = self._create_test_data(
             'user', number_of_users,
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             name_dict=user_name_data)
         group = self._create_one_entity(
-            'group', CONF.identity.default_domain_id, 'Great Writers')
+            'group', conf.identity.default_domain_id, 'Great Writers')
         for i in range(7):
             self.identity_api.add_user_to_group(user_list[i]['id'],
                                                 group['id'])

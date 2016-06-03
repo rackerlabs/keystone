@@ -16,7 +16,6 @@ import uuid
 
 import fixtures
 import mock
-from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 from oslo_log import log
 from pycadf import cadftaxonomy
@@ -24,12 +23,11 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
 
+from keystone import conf
 from keystone import notifications
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
-
-CONF = cfg.CONF
 
 EXP_RESOURCE_TYPE = uuid.uuid4().hex
 CREATED_OPERATION = notifications.ACTIONS.created
@@ -53,7 +51,7 @@ def register_callback(operation, resource_type=EXP_RESOURCE_TYPE):
 class AuditNotificationsTestCase(unit.BaseTestCase):
     def setUp(self):
         super(AuditNotificationsTestCase, self).setUp()
-        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture = self.useFixture(config_fixture.Config(conf))
         self.addCleanup(notifications.clear_subscribers)
 
     def _test_notification_operation(self, notify_function, operation):
@@ -141,8 +139,9 @@ class NotificationsTestCase(unit.BaseTestCase):
         # configuration so that we should return before _get_notifer is
         # called. This is because we are opting out notifications for the
         # passed resource_type and operation.
-        conf = self.useFixture(config_fixture.Config(CONF))
-        conf.config(notification_opt_out=event_type)
+        # FIXME(dolph): WTF is this supposed to be doing?
+        wtf_conf = self.useFixture(config_fixture.Config(conf))
+        wtf_conf.config(notification_opt_out=event_type)
 
         with mock.patch.object(notifications._get_notifier(),
                                '_notify') as mocked:
@@ -257,7 +256,7 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
                           actor_operation=None):
         # NOTE(stevemar): If 'basic' format is not used, then simply
         # return since this assertion is not valid.
-        if CONF.notification_format != 'basic':
+        if conf.notification_format != 'basic':
             return
         self.assertTrue(len(self._notifications) > 0)
         note = self._notifications[-1]
@@ -274,7 +273,7 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
                            target_uri):
         # NOTE(stevemar): If 'cadf' format is not used, then simply
         # return since this assertion is not valid.
-        if CONF.notification_format != 'cadf':
+        if conf.notification_format != 'cadf':
             return
         self.assertTrue(len(self._audits) > 0)
         audit = self._audits[-1]

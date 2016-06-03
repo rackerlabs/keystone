@@ -12,17 +12,13 @@
 
 import os
 
-from oslo_config import cfg
-
 from keystone.common import dependency
 from keystone.common import utils as ks_utils
+from keystone import conf
 from keystone.federation import constants as federation_constants
 from keystone.i18n import _
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
-
-
-CONF = cfg.CONF
 
 
 @dependency.requires('trust_api', 'oauth_api')
@@ -35,11 +31,11 @@ class Provider(common.BaseProvider):
         # or doesn't exist we should fail, hard. It doesn't make sense to start
         # keystone and just 500 because we can't do anything with an empty or
         # non-existant key repository.
-        if not os.path.exists(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
+        if not os.path.exists(conf.fernet_tokens.key_repository):
+            subs = {'key_repo': conf.fernet_tokens.key_repository}
             raise SystemExit(_('%(key_repo)s does not exist') % subs)
-        if not os.listdir(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
+        if not os.listdir(conf.fernet_tokens.key_repository):
+            subs = {'key_repo': conf.fernet_tokens.key_repository}
             raise SystemExit(_('%(key_repo)s does not contain keys, use '
                                'keystone-manage fernet_setup to create '
                                'Fernet keys.') % subs)
@@ -129,8 +125,8 @@ class Provider(common.BaseProvider):
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
                 'name': user_id,
-                'domain': {'id': CONF.federation.federated_domain_name,
-                           'name': CONF.federation.federated_domain_name, },
+                'domain': {'id': conf.federation.federated_domain_name,
+                           'name': conf.federation.federated_domain_name, },
             }
         }
 

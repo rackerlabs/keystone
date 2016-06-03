@@ -17,19 +17,15 @@
 
 import uuid
 
-from oslo_config import cfg
-
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
 from keystone.resource import schema
-
-
-CONF = cfg.CONF
 
 
 @dependency.requires('resource_api')
@@ -45,7 +41,7 @@ class Tenant(controller.V2Controller):
 
         try:
             tenant_refs = self.resource_api.list_projects_in_domain(
-                CONF.identity.default_domain_id)
+                conf.identity.default_domain_id)
         except exception.DomainNotFound:
             # If the default domain doesn't exist then there are no V2
             # projects.
@@ -77,7 +73,7 @@ class Tenant(controller.V2Controller):
     def _get_project_by_name(self, tenant_name):
         # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
-            tenant_name, CONF.identity.default_domain_id)
+            tenant_name, conf.identity.default_domain_id)
         self._assert_not_is_domain_project(ref['id'], ref)
         return {'tenant': self.v3_to_v2_project(ref)}
 

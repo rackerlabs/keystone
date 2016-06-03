@@ -15,18 +15,17 @@
 import copy
 import functools
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 
 from keystone.common import sql
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _LI
 from keystone import token
 from keystone.token import provider
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -209,7 +208,7 @@ class Token(token.persistence.TokenDriverV8):
 
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
                      consumer_id=None):
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return []
         if trust_id:
             return self._list_tokens_for_trust(trust_id)

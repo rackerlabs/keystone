@@ -69,7 +69,6 @@ _notifier = None
 SERVICE = 'identity'
 
 
-CONF = cfg.CONF
 
 # NOTE(morganfainberg): Special case notifications that are only used
 # internally for handling token persistence token deletions
@@ -113,7 +112,7 @@ class Audit(object):
             actor_dict,
             public=public)
 
-        if CONF.notification_format == 'cadf' and public:
+        if conf.notification_format.== 'cadf' and public:
             outcome = taxonomy.OUTCOME_SUCCESS
             _create_cadf_payload(operation, resource_type, resource_id,
                                  outcome, initiator)
@@ -304,7 +303,7 @@ def _get_notifier():
     global _notifier
 
     if _notifier is None:
-        host = CONF.default_publisher_id or socket.gethostname()
+        host = conf.default_publisher_id or socket.gethostname()
         try:
             transport = oslo_messaging.get_notification_transport(CONF)
             _notifier = oslo_messaging.Notifier(transport,
@@ -400,7 +399,7 @@ def _send_notification(operation, resource_type, resource_id, actor_dict=None,
     # Only send this notification if the 'basic' format is used, otherwise
     # let the CADF functions handle sending the notification. But we check
     # here so as to not disrupt the notify_event_callbacks function.
-    if public and CONF.notification_format == 'basic':
+    if public and conf.notification_format.== 'basic':
         notifier = _get_notifier()
         if notifier:
             context = {}
@@ -725,7 +724,7 @@ def _check_notification_opt_out(event_type, outcome):
     if 'authenticate' in event_type:
         event_type = event_type + "." + outcome
 
-    if event_type in CONF.notification_opt_out:
+    if event_type in conf.notification_opt_out:
         return True
 
     return False

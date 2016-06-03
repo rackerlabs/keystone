@@ -12,13 +12,13 @@
 
 """Main entry point into the Federation service."""
 
-from oslo_config import cfg
 from oslo_log import versionutils
 
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.federation.backends import base
 from keystone.federation import utils
@@ -27,7 +27,6 @@ from keystone.federation import utils
 # This is a general cache region for service providers.
 MEMOIZE = cache.get_memoization_decorator(group='federation')
 
-CONF = cfg.CONF
 EXTENSION_DATA = {
     'name': 'OpenStack Federation APIs',
     'namespace': 'http://docs.openstack.org/identity/api/ext/'
@@ -57,7 +56,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.federation'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.federation.driver)
+        super(Manager, self).__init__(conf.federation.driver)
 
         # Make sure it is a driver version we support, and if it is a legacy
         # driver, then wrap it.
@@ -65,7 +64,7 @@ class Manager(manager.Manager):
             self.driver = base.V9FederationWrapperForV8Driver(self.driver)
         elif not isinstance(self.driver, base.FederationDriverV9):
             raise exception.UnsupportedDriverVersion(
-                driver=CONF.federation.driver)
+                driver=conf.federation.driver)
 
     @MEMOIZE
     def get_enabled_service_providers(self):

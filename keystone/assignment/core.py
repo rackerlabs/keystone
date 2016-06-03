@@ -17,7 +17,6 @@
 import copy
 
 from oslo_cache import core as oslo_cache
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 
@@ -27,13 +26,13 @@ from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LI, _LE
 from keystone import notifications
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # This is a general cache region for assignment administration (CRUD
@@ -68,7 +67,7 @@ class Manager(manager.Manager):
     _INVALIDATION_USER_PROJECT_TOKENS = 'invalidate_user_project_tokens'
 
     def __init__(self):
-        assignment_driver = CONF.assignment.driver
+        assignment_driver = conf.assignment.driver
         # If there is no explicit assignment driver specified, we let the
         # identity driver tell us what to use. This is for backward
         # compatibility reasons from the time when identity, resource and
@@ -125,7 +124,7 @@ class Manager(manager.Manager):
         return list(set([x['user_id'] for x in assignment_list]))
 
     def _list_parent_ids_of_project(self, project_id):
-        if CONF.os_inherit.enabled:
+        if conf.os_inherit.enabled:
             return [x['id'] for x in (
                 self.resource_api.list_project_parents(project_id))]
         else:
@@ -191,28 +190,28 @@ class Manager(manager.Manager):
         """
         self.resource_api.get_project(tenant_id)
         try:
-            self.role_api.get_role(CONF.member_role_id)
+            self.role_api.get_role(conf.member_role_id)
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
-                CONF.member_role_id)
+                conf.member_role_id)
         except exception.RoleNotFound:
             LOG.info(_LI("Creating the default role %s "
                          "because it does not exist."),
-                     CONF.member_role_id)
-            role = {'id': CONF.member_role_id,
-                    'name': CONF.member_role_name}
+                     conf.member_role_id)
+            role = {'id': conf.member_role_id,
+                    'name': conf.member_role_name}
             try:
-                self.role_api.create_role(CONF.member_role_id, role)
+                self.role_api.create_role(conf.member_role_id, role)
             except exception.Conflict:
                 LOG.info(_LI("Creating the default role %s failed because it "
                              "was already created"),
-                         CONF.member_role_id)
+                         conf.member_role_id)
             # now that default role exists, the add should succeed
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
-                CONF.member_role_id)
+                conf.member_role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.role_assignment('created')
@@ -400,7 +399,7 @@ class Manager(manager.Manager):
                     self.revoke_api.revoke_by_domain_role_assignment(
                         domain_id, role_id
                     )
-                if CONF.token.revoke_by_id:
+                if conf.token.revoke_by_id:
                     # NOTE(morganfainberg): The user ids are the important part
                     # for invalidating tokens below, so extract them here.
                     for user in self.identity_api.list_users_in_group(
@@ -663,7 +662,7 @@ class Manager(manager.Manager):
             indirect['role_id'] = prior_ref['role_id']
             return implied_ref
 
-        if not CONF.token.infer_roles:
+        if not conf.token.infer_roles:
             return role_refs
         try:
             implied_roles_cache = {}
@@ -959,7 +958,7 @@ class Manager(manager.Manager):
         inherited roles retrieval, inherited role assignments will be ignored.
 
         """
-        if not CONF.os_inherit.enabled:
+        if not conf.os_inherit.enabled:
             if inherited:
                 return []
             inherited = False
@@ -1144,7 +1143,7 @@ class RoleManager(manager.Manager):
     def __init__(self):
         # If there is a specific driver specified for role, then use it.
         # Otherwise retrieve the driver type from the assignment driver.
-        role_driver = CONF.role.driver
+        role_driver = conf.role.driver
 
         if role_driver is None:
             assignment_manager = dependency.get_provider('assignment_api')
@@ -1198,7 +1197,7 @@ class RoleManager(manager.Manager):
     def create_implied_role(self, prior_role_id, implied_role_id):
         implied_role = self.driver.get_role(implied_role_id)
         self.driver.get_role(prior_role_id)
-        if implied_role['name'] in CONF.assignment.prohibited_implied_role:
+        if implied_role['name'] in conf.assignment.prohibited_implied_role:
             raise exception.InvalidImpliedRole(role_id=implied_role_id)
         response = self.driver.create_implied_role(
             prior_role_id, implied_role_id)

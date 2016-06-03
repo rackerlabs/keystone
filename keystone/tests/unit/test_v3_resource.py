@@ -12,19 +12,16 @@
 
 import uuid
 
-from oslo_config import cfg
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
 
 from keystone.common import controller
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 from keystone.tests.unit import utils as test_utils
-
-
-CONF = cfg.CONF
 
 
 class ResourceTestCase(test_v3.RestfulTestCase,
@@ -401,12 +398,12 @@ class ResourceTestCase(test_v3.RestfulTestCase,
     def test_delete_default_domain(self):
         # Need to disable it first.
         self.patch('/domains/%(domain_id)s' % {
-            'domain_id': CONF.identity.default_domain_id},
+            'domain_id': conf.identity.default_domain_id},
             body={'domain': {'enabled': False}})
 
         self.delete(
             '/domains/%(domain_id)s' % {
-                'domain_id': CONF.identity.default_domain_id})
+                'domain_id': conf.identity.default_domain_id})
 
     def test_token_revoked_once_domain_disabled(self):
         """Test token from a disabled domain has been invalidated.
@@ -1195,7 +1192,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
         project = unit.new_project_ref(domain_id=self.domain['id'])
         project = self.resource_api.create_project(project['id'], project)
-        project['domain_id'] = CONF.identity.default_domain_id
+        project['domain_id'] = conf.identity.default_domain_id
         r = self.patch('/projects/%(project_id)s' % {
             'project_id': project['id']},
             body={'project': project},
@@ -1308,7 +1305,7 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
 
     def _setup_initial_projects(self):
         self.project_id = uuid.uuid4().hex
-        self.domain_id = CONF.identity.default_domain_id
+        self.domain_id = conf.identity.default_domain_id
         self.parent_id = uuid.uuid4().hex
         # Project with only domain_id in ref
         self.project1 = unit.new_project_ref(id=self.project_id,
@@ -1331,7 +1328,7 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
     def test_v2controller_filter_domain_id(self):
         # V2.0 is not domain aware, ensure domain_id is popped off the ref.
         other_data = uuid.uuid4().hex
-        domain_id = CONF.identity.default_domain_id
+        domain_id = conf.identity.default_domain_id
         ref = {'domain_id': domain_id,
                'other_data': other_data}
 

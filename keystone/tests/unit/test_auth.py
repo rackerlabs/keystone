@@ -28,7 +28,7 @@ from testtools import matchers
 from keystone import assignment
 from keystone import auth
 from keystone.common import authorization
-from keystone.common import config
+from keystone import conf
 from keystone import exception
 from keystone.models import token_model
 from keystone.tests import unit
@@ -39,7 +39,6 @@ from keystone import token
 from keystone import trust
 
 
-CONF = cfg.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 HOST = ''.join(random.choice(string.ascii_lowercase) for x in range(
@@ -218,7 +217,7 @@ class AuthBadRequests(AuthTest):
 
     def test_authenticate_password_too_large(self):
         """Verify sending large 'password' raises the right exception."""
-        length = CONF.identity.max_password_length + 1
+        length = conf.identity.max_password_length + 1
         body_dict = _build_user_auth(username='FOO', password='0' * length)
         self.assertRaises(exception.ValidationSizeError,
                           self.controller.authenticate,
@@ -232,7 +231,7 @@ class AuthBadRequests(AuthTest):
                                    project_name_url_safe='off')
         unsafe_name = 'i am not / safe'
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, name=unsafe_name)
+            domain_id=conf.identity.default_domain_id, name=unsafe_name)
         self.resource_api.create_project(project['id'], project)
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], project['id'], self.role_member['id'])
@@ -460,7 +459,7 @@ class AuthWithToken(AuthTest):
     def test_deleting_role_revokes_token(self):
         role_controller = assignment.controllers.Role()
         project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project1['id'], project1)
         role_one = unit.new_role_ref(id='role_one')
         self.role_api.create_role(role_one['id'], role_one)
@@ -496,7 +495,7 @@ class AuthWithToken(AuthTest):
         admin_context = dict(is_admin=True, query_string={})
 
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         role = unit.new_role_ref()
         self.role_api.create_role(role['id'], role)
@@ -1375,5 +1374,5 @@ class NonDefaultAuthTest(unit.TestCase):
     def test_add_non_default_auth_method(self):
         self.config_fixture.config(group='auth',
                                    methods=['password', 'token', 'custom'])
-        config.setup_authentication()
-        self.assertTrue(hasattr(CONF.auth, 'custom'))
+        conf.setup_authentication()
+        self.assertTrue(hasattr(conf.auth. 'custom'))

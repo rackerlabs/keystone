@@ -18,7 +18,6 @@
 import functools
 import uuid
 
-from oslo_config import cfg
 from oslo_log import log
 from six.moves import urllib
 
@@ -28,12 +27,12 @@ from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import validation
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -56,7 +55,7 @@ class TenantAssignment(controller.V2Controller):
         tenant_refs = (
             self.assignment_api.list_projects_for_user(token_ref.user_id))
         tenant_refs = [self.v3_to_v2_project(ref) for ref in tenant_refs
-                       if ref['domain_id'] == CONF.identity.default_domain_id]
+                       if ref['domain_id'] == conf.identity.default_domain_id]
         params = {
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
@@ -100,11 +99,11 @@ class Role(controller.V2Controller):
             msg = _('Name field is required and cannot be empty')
             raise exception.ValidationError(message=msg)
 
-        if role['name'] == CONF.member_role_name:
+        if role['name'] == conf.member_role_name:
             # Use the configured member role ID when creating the configured
             # member role name. This avoids the potential of creating a
             # "member" role with an unexpected ID.
-            role_id = CONF.member_role_id
+            role_id = conf.member_role_id
         else:
             role_id = uuid.uuid4().hex
 
@@ -203,7 +202,7 @@ class RoleAssignmentV2(controller.V2Controller):
         for tenant in tenants:
             # As a v2 call, we should limit the response to those projects in
             # the default domain.
-            if tenant['domain_id'] != CONF.identity.default_domain_id:
+            if tenant['domain_id'] != conf.identity.default_domain_id:
                 continue
             role_ids = self.assignment_api.get_roles_for_user_and_project(
                 user_id, tenant['id'])
@@ -396,11 +395,11 @@ class RoleV3(controller.V3Controller):
         return self._delete_role(context, role_id)
 
     def _create_role(self, context, role):
-        if role['name'] == CONF.member_role_name:
+        if role['name'] == conf.member_role_name:
             # Use the configured member role ID when creating the configured
             # member role name. This avoids the potential of creating a
             # "member" role with an unexpected ID.
-            role['id'] = CONF.member_role_id
+            role['id'] = conf.member_role_id
         else:
             role = self._assign_unique_id(role)
 
@@ -579,7 +578,7 @@ class GrantAssignmentV3(controller.V3Controller):
             raise exception.ValidationError(msg)
 
     def _check_if_inherited(self, context):
-        return (CONF.os_inherit.enabled and
+        return (conf.os_inherit.enabled and
                 context['path'].startswith('/OS-INHERIT') and
                 context['path'].endswith('/inherited_to_projects'))
 

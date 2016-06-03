@@ -15,18 +15,16 @@
 import subprocess  # nosec : used to catch subprocess exceptions
 
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
 
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.token.providers import common
 
-
-CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 ERROR_MESSAGE = _('Unable to sign token.')
@@ -45,8 +43,8 @@ class Provider(common.BaseProvider):
             # TODO(ayoung): Make to a byte_str for Python3
             token_json = jsonutils.dumps(token_data, cls=utils.PKIEncoder)
             token_id = str(cms.pkiz_sign(token_json,
-                                         CONF.signing.certfile,
-                                         CONF.signing.keyfile))
+                                         conf.signing.certfile,
+                                         conf.signing.keyfile))
             return token_id
         except subprocess.CalledProcessError:
             LOG.exception(ERROR_MESSAGE)

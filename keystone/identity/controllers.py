@@ -14,19 +14,18 @@
 
 """Workflow Logic the Identity service."""
 
-from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity import schema
 from keystone import notifications
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -49,14 +48,14 @@ class User(controller.V2Controller):
 
         self.assert_admin(context)
         user_list = self.identity_api.list_users(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         return {'users': self.v3_to_v2_user(user_list)}
 
     @controller.v2_deprecated
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
         ref = self.identity_api.get_user_by_name(
-            user_name, CONF.identity.default_domain_id)
+            user_name, conf.identity.default_domain_id)
         return {'user': self.v3_to_v2_user(ref)}
 
     # CRUD extension
@@ -133,7 +132,7 @@ class User(controller.V2Controller):
             if user_ref['tenantId'] != old_user_ref.get('tenantId'):
                 if old_user_ref.get('tenantId'):
                     try:
-                        member_role_id = CONF.member_role_id
+                        member_role_id = conf.member_role_id
                         self.assignment_api.remove_role_from_user_and_project(
                             user_id, old_user_ref['tenantId'], member_role_id)
                     except exception.NotFound:

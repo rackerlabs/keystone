@@ -22,6 +22,7 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import openssl
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import rest
@@ -67,7 +68,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
 
         self.config_fixture.config(group='signing', certfile='invalid')
         user = unit.create_user(self.identity_api,
-                                domain_id=CONF.identity.default_domain_id)
+                                domain_id=conf.identity.default_domain_id)
         body_dict = {
             'passwordCredentials': {
                 'userId': user['id'],
@@ -81,9 +82,9 @@ class CertSetupTestCase(rest.RestfulTestCase):
     def test_create_pki_certs(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
         pki.run()
-        self.assertTrue(os.path.exists(CONF.signing.certfile))
-        self.assertTrue(os.path.exists(CONF.signing.ca_certs))
-        self.assertTrue(os.path.exists(CONF.signing.keyfile))
+        self.assertTrue(os.path.exists(conf.signing.certfile))
+        self.assertTrue(os.path.exists(conf.signing.ca_certs))
+        self.assertTrue(os.path.exists(conf.signing.keyfile))
 
     def test_fetch_signing_cert(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
@@ -101,10 +102,10 @@ class CertSetupTestCase(rest.RestfulTestCase):
                                    method='GET',
                                    expected_status=http_client.OK)
 
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             self.assertEqual(f.read(), signing_resp.text)
 
-        with open(CONF.signing.ca_certs) as f:
+        with open(conf.signing.ca_certs) as f:
             self.assertEqual(f.read(), cacert_resp.text)
 
         # NOTE(jamielennox): This is weird behaviour that we need to enforce.
@@ -132,11 +133,11 @@ class CertSetupTestCase(rest.RestfulTestCase):
 
     def test_pki_certs_rebuild(self):
         self.test_create_pki_certs()
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file1 = f.read()
 
         self.test_create_pki_certs(rebuild=True)
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file2 = f.read()
 
         self.assertNotEqual(cert_file1, cert_file2)
@@ -144,23 +145,23 @@ class CertSetupTestCase(rest.RestfulTestCase):
     @mock.patch.object(os, 'remove')
     def test_rebuild_pki_certs_remove_error(self, mock_remove):
         self.test_create_pki_certs()
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file1 = f.read()
 
         mock_remove.side_effect = OSError()
         self.test_create_pki_certs(rebuild=True)
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file2 = f.read()
 
         self.assertEqual(cert_file1, cert_file2)
 
     def test_create_pki_certs_twice_without_rebuild(self):
         self.test_create_pki_certs()
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file1 = f.read()
 
         self.test_create_pki_certs()
-        with open(CONF.signing.certfile) as f:
+        with open(conf.signing.certfile) as f:
             cert_file2 = f.read()
 
         self.assertEqual(cert_file1, cert_file2)

@@ -13,7 +13,7 @@
 
 import fixtures
 
-from keystone.common import config as common_cfg
+from keystone import conf
 
 
 class ConfigAuthPlugins(fixtures.Fixture):
@@ -29,6 +29,6 @@ class ConfigAuthPlugins(fixtures.Fixture):
         super(ConfigAuthPlugins, self).setUp()
         if self.methods:
             self.config_fixture.config(group='auth', methods=self.methods)
-            common_cfg.setup_authentication()
+            conf.setup_authentication()
         if self.method_classes:
             self.config_fixture.config(group='auth', **self.method_classes)

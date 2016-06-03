@@ -20,7 +20,6 @@ import six
 from keystone import exception
 
 
-CONF = cfg.CONF
 
 
 @six.add_metaclass(abc.ABCMeta)

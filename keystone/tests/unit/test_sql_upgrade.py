@@ -54,7 +54,6 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 
 
-CONF = cfg.CONF
 
 # NOTE(morganfainberg): This should be updated when each DB migration collapse
 # is done to mirror the expected structure of the DB in the format of

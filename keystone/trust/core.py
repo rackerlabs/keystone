@@ -16,18 +16,15 @@
 
 import abc
 
-from oslo_config import cfg
 import six
 from six.moves import zip
 
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
-
-
-CONF = cfg.CONF
 
 
 @dependency.requires('identity_api')
@@ -45,13 +42,13 @@ class Manager(manager.Manager):
     _TRUST = "OS-TRUST:trust"
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.trust.driver)
+        super(Manager, self).__init__(conf.trust.driver)
 
     @staticmethod
     def _validate_redelegation(redelegated_trust, trust):
         # Validate against:
         # 0 < redelegation_count <= max_redelegation_count
-        max_redelegation_count = CONF.trust.max_redelegation_count
+        max_redelegation_count = conf.trust.max_redelegation_count
         redelegation_depth = redelegated_trust.get('redelegation_count', 0)
         if not (0 < redelegation_depth <= max_redelegation_count):
             raise exception.Forbidden(
@@ -120,7 +117,7 @@ class Manager(manager.Manager):
         :returns: a new trust
         """
         # Default for initial trust in chain is max_redelegation_count
-        max_redelegation_count = CONF.trust.max_redelegation_count
+        max_redelegation_count = conf.trust.max_redelegation_count
         requested_count = trust.get('redelegation_count')
         redelegatable = (trust.pop('allow_redelegation', False)
                          and requested_count != 0)

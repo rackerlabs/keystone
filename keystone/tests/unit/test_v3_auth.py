@@ -20,7 +20,6 @@ import uuid
 
 from keystoneclient.common import cms
 import mock
-from oslo_config import cfg
 from oslo_log import versionutils
 from oslo_serialization import jsonutils as json
 from oslo_utils import fixture
@@ -34,6 +33,7 @@ from testtools import testcase
 from keystone import auth
 from keystone.auth.plugins import totp
 from keystone.common import utils
+from keystone import conf
 from keystone.contrib.revoke import routers
 from keystone import exception
 from keystone.policy.backends import rules
@@ -41,8 +41,6 @@ from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import test_v3
-
-CONF = cfg.CONF
 
 
 class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
@@ -1282,8 +1280,8 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
 
-        decoded_token = self.verify_token(token_id, CONF.signing.certfile,
-                                          CONF.signing.ca_certs)
+        decoded_token = self.verify_token(token_id, conf.signing.certfile,
+                                          conf.signing.ca_certs)
 
         decoded_token_dict = json.loads(decoded_token)
         token_resp_dict = json.loads(resp.body)
@@ -3745,7 +3743,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
                   expected_status=http_client.FORBIDDEN)
 
     def test_max_redelegation_count_constraint(self):
-        incorrect = CONF.trust.max_redelegation_count + 1
+        incorrect = conf.trust.max_redelegation_count + 1
         self.redelegated_trust_ref['redelegation_count'] = incorrect
         self.post('/OS-TRUST/trusts',
                   body={'trust': self.redelegated_trust_ref},
@@ -4951,8 +4949,8 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
         # the response is signed.
         res = self.get('/auth/tokens/OS-PKI/revoked')
         signed = res.json['signed']
-        clear = cms.cms_verify(signed, CONF.signing.certfile,
-                               CONF.signing.ca_certs)
+        clear = cms.cms_verify(signed, conf.signing.certfile,
+                               conf.signing.ca_certs)
         payload = json.loads(clear)
         self.assertEqual({'revoked': []}, payload)
 
@@ -4972,8 +4970,8 @@ class TestFetchRevocationList(test_v3.RestfulTestCase):
 
         res = self.get('/auth/tokens/OS-PKI/revoked')
         signed = res.json['signed']
-        clear = cms.cms_verify(signed, CONF.signing.certfile,
-                               CONF.signing.ca_certs)
+        clear = cms.cms_verify(signed, conf.signing.certfile,
+                               conf.signing.ca_certs)
         payload = json.loads(clear)
 
         def truncate(ts_str):

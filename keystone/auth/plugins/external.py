@@ -16,16 +16,13 @@
 
 import abc
 
-from oslo_config import cfg
 import six
 
 from keystone import auth
 from keystone.common import dependency
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
-
-
-CONF = cfg.CONF
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -44,7 +41,7 @@ class Base(auth.AuthMethodHandler):
         try:
             user_ref = self._authenticate(REMOTE_USER, context)
             auth_context['user_id'] = user_ref['id']
-            if ('kerberos' in CONF.token.bind and
+            if ('kerberos' in conf.token.bind and
                 (context['environment'].get('AUTH_TYPE', '').lower()
                  == 'negotiate')):
                 auth_context['bind']['kerberos'] = user_ref['name']
@@ -65,7 +62,7 @@ class Base(auth.AuthMethodHandler):
 class DefaultDomain(Base):
     def _authenticate(self, remote_user, context):
         """Use remote_user to look up the user in the identity backend."""
-        domain_id = CONF.identity.default_domain_id
+        domain_id = conf.identity.default_domain_id
         user_ref = self.identity_api.get_user_by_name(remote_user, domain_id)
         return user_ref
 
@@ -82,7 +79,7 @@ class Domain(Base):
         try:
             domain_name = context['environment']['REMOTE_DOMAIN']
         except KeyError:
-            domain_id = CONF.identity.default_domain_id
+            domain_id = conf.identity.default_domain_id
         else:
             domain_ref = self.resource_api.get_domain_by_name(domain_name)
             domain_id = domain_ref['id']

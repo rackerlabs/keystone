@@ -15,7 +15,6 @@
 import sys
 
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
@@ -23,11 +22,11 @@ from oslo_utils import importutils
 import six
 import stevedore
 
-from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _, _LI, _LW
@@ -36,15 +35,13 @@ from keystone.resource import controllers as resource_controllers
 
 LOG = log.getLogger(__name__)
 
-CONF = cfg.CONF
-
 # registry of authentication methods
 AUTH_METHODS = {}
 AUTH_PLUGINS_LOADED = False
 
 
 def load_auth_method(method):
-    plugin_name = CONF.auth.get(method) or 'default'
+    plugin_name = conf.auth.get(method) or 'default'
     namespace = 'keystone.auth.%s' % method
     try:
         driver_manager = stevedore.DriverManager(namespace, plugin_name,
@@ -75,8 +72,8 @@ def load_auth_methods():
         return
     # config.setup_authentication should be idempotent, call it to ensure we
     # have setup all the appropriate configuration options we may need.
-    config.setup_authentication()
-    for plugin in set(CONF.auth.methods):
+    conf.setup_authentication()
+    for plugin in set(conf.auth.methods):
         AUTH_METHODS[plugin] = load_auth_method(plugin)
     AUTH_PLUGINS_LOADED = True
 
@@ -181,7 +178,7 @@ class AuthInfo(object):
                                             target='domain')
         try:
             if domain_name:
-                if (CONF.resource.domain_name_url_safe == 'strict' and
+                if (conf.resource.domain_name_url_safe == 'strict' and
                         utils.is_not_url_safe(domain_name)):
                     msg = _('Domain name cannot contain reserved characters.')
                     raise exception.Unauthorized(message=msg)
@@ -207,7 +204,7 @@ class AuthInfo(object):
                                             target='project')
         try:
             if project_name:
-                if (CONF.resource.project_name_url_safe == 'strict' and
+                if (conf.resource.project_name_url_safe == 'strict' and
                         utils.is_not_url_safe(project_name)):
                     msg = _('Project name cannot contain reserved characters.')
                     raise exception.Unauthorized(message=msg)
@@ -257,7 +254,7 @@ class AuthInfo(object):
             domain_ref = self._lookup_domain(self.auth['scope']['domain'])
             self._scope_data = (domain_ref['id'], None, None, None)
         elif 'OS-TRUST:trust' in self.auth['scope']:
-            if not CONF.trust.enabled:
+            if not conf.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
             trust_ref = self._lookup_trust(
                 self.auth['scope']['OS-TRUST:trust'])
@@ -389,7 +386,7 @@ class Auth(controller.V3Controller):
 
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
-        config.setup_authentication()
+        conf.setup_authentication()
 
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
@@ -565,7 +562,7 @@ class Auth(controller.V3Controller):
 
     @controller.protected()
     def revocation_list(self, context, auth=None):
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             raise exception.Gone()
 
         audit_id_only = ('audit_id_only' in context['query_string'])
@@ -586,8 +583,8 @@ class Auth(controller.V3Controller):
 
         json_data = jsonutils.dumps(data)
         signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
+                                        conf.signing.certfile,
+                                        conf.signing.keyfile)
 
         return {'signed': signed_text}
 

@@ -14,15 +14,12 @@
 
 import uuid
 
-from oslo_config import cfg
-
+from keystone import conf
 from keystone import exception
 from keystone.resource import controllers
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 
-
-CONF = cfg.CONF
 
 _ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
 
@@ -40,7 +37,7 @@ class TenantTestCaseNoDefaultDomain(unit.TestCase):
         # sure the setUp worked as expected.
         self.assertRaises(
             exception.DomainNotFound,
-            self.resource_api.get_domain, CONF.identity.default_domain_id)
+            self.resource_api.get_domain, conf.identity.default_domain_id)
 
     def test_get_all_projects(self):
         # When get_all_projects is done and there's no default domain, the

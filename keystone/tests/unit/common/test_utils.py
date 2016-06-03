@@ -14,19 +14,17 @@
 import datetime
 import uuid
 
-from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 from oslo_serialization import jsonutils
 import six
 
 from keystone.common import utils as common_utils
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import utils
 from keystone.version import service
 
-
-CONF = cfg.CONF
 
 TZ = utils.TZ
 
@@ -36,7 +34,7 @@ class UtilsTestCase(unit.BaseTestCase):
 
     def setUp(self):
         super(UtilsTestCase, self).setUp()
-        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture = self.useFixture(config_fixture.Config(conf))
 
     def test_resource_uuid(self):
         uuid_str = '536e28c2017e405e89b25a1ed777b952'
@@ -98,7 +96,7 @@ class UtilsTestCase(unit.BaseTestCase):
     def test_verify_long_password_strict(self):
         self.config_fixture.config(strict_password_check=False)
         self.config_fixture.config(group='identity', max_password_length=5)
-        max_length = CONF.identity.max_password_length
+        max_length = conf.identity.max_password_length
         invalid_password = 'passw0rd'
         trunc = common_utils.verify_length_and_trunc_password(invalid_password)
         self.assertEqual(invalid_password[:max_length], trunc)

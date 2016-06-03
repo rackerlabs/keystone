@@ -25,12 +25,12 @@ from oslo_log import versionutils
 from oslo_serialization import jsonutils
 import pbr.version
 
-from keystone.common import config
 from keystone.common import driver_hints
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.federation import idp
 from keystone.federation import utils as mapping_engine
@@ -39,7 +39,6 @@ from keystone.server import backends
 from keystone import token
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -133,31 +132,31 @@ class BootStrap(BaseApp):
     def _get_config(self):
         self.username = (
             os.environ.get('OS_BOOTSTRAP_USERNAME') or
-            CONF.command.bootstrap_username)
+            conf.command.bootstrap_username)
         self.project_name = (
             os.environ.get('OS_BOOTSTRAP_PROJECT_NAME') or
-            CONF.command.bootstrap_project_name)
+            conf.command.bootstrap_project_name)
         self.role_name = (
             os.environ.get('OS_BOOTSTRAP_ROLE_NAME') or
-            CONF.command.bootstrap_role_name)
+            conf.command.bootstrap_role_name)
         self.password = (
             os.environ.get('OS_BOOTSTRAP_PASSWORD') or
-            CONF.command.bootstrap_password)
+            conf.command.bootstrap_password)
         self.service_name = (
             os.environ.get('OS_BOOTSTRAP_SERVICE_NAME') or
-            CONF.command.bootstrap_service_name)
+            conf.command.bootstrap_service_name)
         self.admin_url = (
             os.environ.get('OS_BOOTSTRAP_ADMIN_URL') or
-            CONF.command.bootstrap_admin_url)
+            conf.command.bootstrap_admin_url)
         self.public_url = (
             os.environ.get('OS_BOOTSTRAP_PUBLIC_URL') or
-            CONF.command.bootstrap_public_url)
+            conf.command.bootstrap_public_url)
         self.internal_url = (
             os.environ.get('OS_BOOTSTRAP_INTERNAL_URL') or
-            CONF.command.bootstrap_internal_url)
+            conf.command.bootstrap_internal_url)
         self.region_id = (
             os.environ.get('OS_BOOTSTRAP_REGION_ID') or
-            CONF.command.bootstrap_region_id)
+            conf.command.bootstrap_region_id)
 
     def do_bootstrap(self):
         """Perform the bootstrap actions.
@@ -176,7 +175,7 @@ class BootStrap(BaseApp):
 
         # NOTE(morganfainberg): Ensure the default domain is in-fact created
         default_domain = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': 'Default',
             'enabled': True,
             'description': 'The default domain'
@@ -384,8 +383,8 @@ class DbSync(BaseApp):
 
     @staticmethod
     def main():
-        version = CONF.command.version
-        extension = CONF.command.extension
+        version = conf.command.version
+        extension = conf.command.extension
         migration_helpers.sync_database_to_version(extension, version)
 
 
@@ -405,7 +404,7 @@ class DbVersion(BaseApp):
 
     @staticmethod
     def main():
-        extension = CONF.command.extension
+        extension = conf.command.extension
         migration_helpers.print_db_version(extension)
 
 
@@ -427,14 +426,14 @@ class BasePermissionsSetup(BaseApp):
         keystone_group_id = None
 
         try:
-            a = CONF.command.keystone_user
+            a = conf.command.keystone_user
             if a:
                 keystone_user_id = utils.get_unix_user(a)[0]
         except KeyError:
             raise ValueError("Unknown user '%s' in --keystone-user" % a)
 
         try:
-            a = CONF.command.keystone_group
+            a = conf.command.keystone_group
             if a:
                 keystone_group_id = utils.get_unix_group(a)[0]
         except KeyError:
@@ -477,7 +476,7 @@ class PKISetup(BaseCertificateSetup):
                         'production use.'))
         keystone_user_id, keystone_group_id = cls.get_user_group()
         conf_pki = openssl.ConfigurePKI(keystone_user_id, keystone_group_id,
-                                        rebuild=CONF.command.rebuild)
+                                        rebuild=conf.command.rebuild)
         conf_pki.run()
 
 
@@ -577,18 +576,18 @@ class MappingPurge(BaseApp):
             # dangerous as a default.  So we use it in a slightly
             # unconventional way, where all parameters are optional, but you
             # must specify at least one.
-            if (CONF.command.all is False and
-                CONF.command.domain_name is None and
-                CONF.command.public_id is None and
-                CONF.command.local_id is None and
-                    CONF.command.type is None):
+            if (conf.command.all is False and
+                conf.command.domain_name is None and
+                conf.command.public_id is None and
+                conf.command.local_id is None and
+                    conf.command.type is None):
                 raise ValueError(_('At least one option must be provided'))
 
-            if (CONF.command.all is True and
-                (CONF.command.domain_name is not None or
-                 CONF.command.public_id is not None or
-                 CONF.command.local_id is not None or
-                 CONF.command.type is not None)):
+            if (conf.command.all is True and
+                (conf.command.domain_name is not None or
+                 conf.command.public_id is not None or
+                 conf.command.local_id is not None or
+                 conf.command.type is not None)):
                 raise ValueError(_('--all option cannot be mixed with '
                                    'other options'))
 
@@ -611,14 +610,14 @@ class MappingPurge(BaseApp):
         # The mapping dict is used to filter which mappings are purged, so
         # leaving it empty means purge them all
         mapping = {}
-        if CONF.command.domain_name is not None:
-            mapping['domain_id'] = get_domain_id(CONF.command.domain_name)
-        if CONF.command.public_id is not None:
-            mapping['public_id'] = CONF.command.public_id
-        if CONF.command.local_id is not None:
-            mapping['local_id'] = CONF.command.local_id
-        if CONF.command.type is not None:
-            mapping['type'] = CONF.command.type
+        if conf.command.domain_name is not None:
+            mapping['domain_id'] = get_domain_id(conf.command.domain_name)
+        if conf.command.public_id is not None:
+            mapping['public_id'] = conf.command.public_id
+        if conf.command.local_id is not None:
+            mapping['local_id'] = conf.command.local_id
+        if conf.command.type is not None:
+            mapping['type'] = conf.command.type
 
         mapping_manager.purge_mappings(mapping)
 
@@ -673,14 +672,14 @@ class DomainConfigUploadFiles(object):
         parameters are optional, but you must specify at least one.
 
         """
-        if (CONF.command.all is False and
-                CONF.command.domain_name is None):
+        if (conf.command.all is False and
+                conf.command.domain_name is None):
             print(_('At least one option must be provided, use either '
                     '--all or --domain-name'))
             return False
 
-        if (CONF.command.all is True and
-                CONF.command.domain_name is not None):
+        if (conf.command.all is True and
+                conf.command.domain_name is not None):
             print(_('The --all option cannot be used with '
                     'the --domain-name option'))
             return False
@@ -753,8 +752,8 @@ class DomainConfigUploadFiles(object):
         config files.
 
         """
-        domain_name = CONF.command.domain_name
-        conf_dir = CONF.identity.domain_config_dir
+        domain_name = conf.command.domain_name
+        conf_dir = conf.identity.domain_config_dir
         if not os.path.exists(conf_dir):
             print(_('Unable to locate domain config directory: %s') % conf_dir)
             raise ValueError
@@ -863,7 +862,7 @@ class MappingEngineTester(BaseApp):
                 raise SystemExit(msg % {'line': line, 'err': e})
         assertion = assertion.split('\n')
         assertion_dict = {}
-        prefix = CONF.command.prefix
+        prefix = conf.command.prefix
         for line in assertion:
             k, v = split(line)
             if prefix:
@@ -882,14 +881,14 @@ class MappingEngineTester(BaseApp):
 
     @classmethod
     def main(cls):
-        if not CONF.command.engine_debug:
+        if not conf.command.engine_debug:
             mapping_engine.LOG.logger.setLevel('WARN')
 
-        rules = MappingEngineTester.read_rules(CONF.command.rules)
+        rules = MappingEngineTester.read_rules(conf.command.rules)
         rules = MappingEngineTester.normalize_rules(rules)
         mapping_engine.validate_mapping_structure(rules)
 
-        assertion = MappingEngineTester.read_file(CONF.command.input)
+        assertion = MappingEngineTester.read_file(conf.command.input)
         assertion = MappingEngineTester.normalize_assertion(assertion)
         rp = mapping_engine.RuleProcessor(rules['rules'])
         print(jsonutils.dumps(rp.process(assertion), indent=2))
@@ -953,18 +952,19 @@ command_opt = cfg.SubCommandOpt('command',
 
 
 def main(argv=None, config_files=None):
-    CONF.register_cli_opt(command_opt)
+    conf.register_cli_opt(command_opt)
 
-    config.configure()
+    conf.configure()
     sql.initialize()
-    config.set_default_for_default_log_levels()
+    conf.set_default_for_default_log_levels()
 
-    CONF(args=argv[1:],
-         project='keystone',
-         version=pbr.version.VersionInfo('keystone').version_string(),
-         usage='%(prog)s [' + '|'.join([cmd.name for cmd in CMDS]) + ']',
-         default_config_files=config_files)
-    if not CONF.default_config_files:
+    cfg.CONF(
+        args=argv[1:],
+        project='keystone',
+        version=pbr.version.VersionInfo('keystone').version_string(),
+        usage='%(prog)s [' + '|'.join([cmd.name for cmd in CMDS]) + ']',
+        default_config_files=config_files)
+    if not conf.default_config_files:
         LOG.warning(_LW('Config file not found, using default configs.'))
-    config.setup_logging()
-    CONF.command.cmd_class.main()
+    conf.setup_logging()
+    conf.command.cmd_class.main()

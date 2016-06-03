@@ -13,18 +13,15 @@
 import abc
 import six
 
+from keystone import conf
 from keystone import exception
-from oslo_config import cfg
-
-
-CONF = cfg.CONF
 
 
 @six.add_metaclass(abc.ABCMeta)
 class PolicyDriverV8(object):
 
     def _get_list_limit(self):
-        return CONF.policy.list_limit or CONF.list_limit
+        return conf.policy.list_limit or conf.list_limit
 
     @abc.abstractmethod
     def enforce(self, context, credentials, action, target):

@@ -14,7 +14,6 @@
 
 """Extensions supporting OAuth1."""
 
-from oslo_config import cfg
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 
@@ -23,15 +22,13 @@ from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import validation
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
 from keystone.oauth1 import core as oauth1
 from keystone.oauth1 import schema
 from keystone.oauth1 import validator
-
-
-CONF = cfg.CONF
 
 
 def _emit_user_oauth_consumer_token_invalidate(payload):
@@ -243,7 +240,7 @@ class OAuthControllerV3(controller.V3Controller):
             msg = _('Invalid signature')
             raise exception.Unauthorized(message=msg)
 
-        request_token_duration = CONF.oauth1.request_token_duration
+        request_token_duration = conf.oauth1.request_token_duration
         initiator = notifications._get_request_audit_info(context)
         token_ref = self.oauth_api.create_request_token(consumer_id,
                                                         requested_project_id,
@@ -254,7 +251,7 @@ class OAuthControllerV3(controller.V3Controller):
                   % {'key': token_ref['id'],
                      'secret': token_ref['request_secret']})
 
-        if CONF.oauth1.request_token_duration:
+        if conf.oauth1.request_token_duration:
             expiry_bit = '&oauth_expires_at=%s' % token_ref['expires_at']
             result += expiry_bit
 
@@ -324,7 +321,7 @@ class OAuthControllerV3(controller.V3Controller):
             msg = _('Request Token does not have an authorizing user id')
             raise exception.Unauthorized(message=msg)
 
-        access_token_duration = CONF.oauth1.access_token_duration
+        access_token_duration = conf.oauth1.access_token_duration
         initiator = notifications._get_request_audit_info(context)
         token_ref = self.oauth_api.create_access_token(request_token_id,
                                                        access_token_duration,
@@ -334,7 +331,7 @@ class OAuthControllerV3(controller.V3Controller):
                   % {'key': token_ref['id'],
                      'secret': token_ref['access_secret']})
 
-        if CONF.oauth1.access_token_duration:
+        if conf.oauth1.access_token_duration:
             expiry_bit = '&oauth_expires_at=%s' % (token_ref['expires_at'])
             result += expiry_bit
 

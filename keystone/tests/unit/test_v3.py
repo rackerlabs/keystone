@@ -35,7 +35,6 @@ from keystone.tests import unit
 from keystone.tests.unit import rest
 
 
-CONF = cfg.CONF
 DEFAULT_DOMAIN_ID = 'default'
 
 TIME_FORMAT = unit.TIME_FORMAT

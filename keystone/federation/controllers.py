@@ -14,7 +14,6 @@
 
 import string
 
-from oslo_config import cfg
 from oslo_log import log
 from six.moves import urllib
 import webob
@@ -26,6 +25,7 @@ from keystone.common import dependency
 from keystone.common import utils as k_utils
 from keystone.common import validation
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.federation import idp as keystone_idp
 from keystone.federation import schema
@@ -34,7 +34,6 @@ from keystone.i18n import _
 from keystone.models import token_model
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -271,7 +270,7 @@ class Auth(auth_controllers.Auth):
 
         # change trusted_dashboard hostnames to lowercase before comparison
         trusted_dashboards = [k_utils.lower_case_hostname(trusted)
-                              for trusted in CONF.federation.trusted_dashboard]
+                              for trusted in conf.federation.trusted_dashboard]
 
         if host not in trusted_dashboards:
             msg = _('%(host)s is not a trusted dashboard host')
@@ -333,7 +332,7 @@ class Auth(auth_controllers.Auth):
         """Form an HTML Form from a template with autosubmit."""
         headers = [('Content-Type', 'text/html')]
 
-        with open(CONF.federation.sso_callback_template) as template:
+        with open(conf.federation.sso_callback_template) as template:
             src = string.Template(template.read())
 
         subs = {'host': host, 'token': token_id}
@@ -342,7 +341,7 @@ class Auth(auth_controllers.Auth):
                               headerlist=headers)
 
     def _create_base_saml_assertion(self, context, auth):
-        issuer = CONF.saml.idp_entity_id
+        issuer = conf.saml.idp_entity_id
         sp_id = auth['scope']['service_provider']['id']
         service_provider = self.federation_api.get_sp(sp_id)
         utils.assert_enabled_service_provider_object(service_provider)
@@ -475,7 +474,7 @@ class ServiceProvider(_ControllerBase):
         service_provider = self._normalize_dict(service_provider)
         service_provider.setdefault('enabled', False)
         service_provider.setdefault('relay_state_prefix',
-                                    CONF.saml.relay_state_prefix)
+                                    conf.saml.relay_state_prefix)
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(context, sp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -508,7 +507,7 @@ class SAMLMetadataV3(_ControllerBase):
     member_name = 'metadata'
 
     def get_metadata(self, context):
-        metadata_path = CONF.saml.idp_metadata_path
+        metadata_path = conf.saml.idp_metadata_path
         try:
             with open(metadata_path, 'r') as metadata_handler:
                 metadata = metadata_handler.read()

@@ -17,7 +17,6 @@
 import abc
 import copy
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
@@ -25,12 +24,12 @@ import six
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _LW
 from keystone.token import utils
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='token')
 REVOCATION_MEMOIZE = cache.get_memoization_decorator(group='token',
@@ -50,7 +49,7 @@ class PersistenceManager(manager.Manager):
     driver_namespace = 'keystone.token.persistence'
 
     def __init__(self):
-        super(PersistenceManager, self).__init__(CONF.token.driver)
+        super(PersistenceManager, self).__init__(conf.token.driver)
 
     def _assert_valid(self, token_id, token_ref):
         """Raise TokenNotFound if the token is expired."""
@@ -87,7 +86,7 @@ class PersistenceManager(manager.Manager):
         return ret
 
     def delete_token(self, token_id):
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         unique_id = utils.generate_unique_id(token_id)
         self.driver.delete_token(unique_id)
@@ -96,7 +95,7 @@ class PersistenceManager(manager.Manager):
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
                       consumer_id=None):
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         token_list = self.driver.delete_tokens(user_id, tenant_id, trust_id,
                                                consumer_id)
@@ -125,7 +124,7 @@ class PersistenceManager(manager.Manager):
         However, deletion of domain_scoped tokens will still need to be
         implemented as stated in TODO below.
         """
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         projects = self.resource_api.list_projects()
         for project in projects:
@@ -146,7 +145,7 @@ class PersistenceManager(manager.Manager):
         revocations in a single call instead of needing to explicitly handle
         trusts in the caller's logic.
         """
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         self.delete_tokens(user_id, tenant_id=project_id)
         for trust in self.trust_api.list_trusts_for_trustee(user_id):
@@ -175,7 +174,7 @@ class PersistenceManager(manager.Manager):
         :param user_ids: list of user identifiers
         :param project_id: optional project identifier
         """
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         for user_id in user_ids:
             self.delete_tokens_for_user(user_id, project_id=project_id)
@@ -302,7 +301,7 @@ class TokenDriverV8(object):
         :raises keystone.exception.TokenNotFound: If the token doesn't exist.
 
         """
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return
         token_list = self._list_tokens(user_id,
                                        tenant_id=tenant_id,

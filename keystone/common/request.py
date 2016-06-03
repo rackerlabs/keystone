@@ -10,17 +10,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 import webob
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 
 
 # Environment variable used to pass the request context
 CONTEXT_ENV = 'openstack.context'
-
-CONF = cfg.CONF
 
 
 class Request(webob.Request):
@@ -41,7 +39,7 @@ class Request(webob.Request):
 
         context['headers'] = dict(self.headers.items())
         context['path'] = self.environ['PATH_INFO']
-        scheme = self.environ.get(CONF.secure_proxy_ssl_header)
+        scheme = self.environ.get(conf.secure_proxy_ssl_header)
         if scheme:
             # NOTE(andrey-mp): "wsgi.url_scheme" contains the protocol used
             # before the proxy removed it ('https' usually). So if

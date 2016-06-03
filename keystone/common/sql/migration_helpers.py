@@ -31,7 +31,6 @@ from keystone import exception
 from keystone.i18n import _
 
 
-CONF = cfg.CONF
 DEFAULT_EXTENSIONS = []
 
 MIGRATED_EXTENSIONS = ['endpoint_policy',

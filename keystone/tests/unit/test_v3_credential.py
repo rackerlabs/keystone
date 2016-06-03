@@ -28,7 +28,6 @@ from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
 
-CONF = cfg.CONF
 CRED_TYPE_EC2 = controllers.CRED_TYPE_EC2
 
 

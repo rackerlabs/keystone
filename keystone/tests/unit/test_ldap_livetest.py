@@ -16,21 +16,18 @@ import subprocess
 import uuid
 
 import ldap.modlist
-from oslo_config import cfg
 from six.moves import range
 
+from keystone import conf
 from keystone import exception
 from keystone.identity.backends import ldap as identity_ldap
 from keystone.tests import unit
 from keystone.tests.unit import test_backend_ldap
 
 
-CONF = cfg.CONF
-
-
 def create_object(dn, attrs):
-    conn = ldap.initialize(CONF.ldap.url)
-    conn.simple_bind_s(CONF.ldap.user, CONF.ldap.password)
+    conn = ldap.initialize(conf.ldap.url)
+    conn.simple_bind_s(conf.ldap.user, conf.ldap.password)
     ldif = ldap.modlist.addModlist(attrs)
     conn.add_s(dn, ldif)
     conn.unbind_s()
@@ -49,27 +46,27 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
         devnull = open('/dev/null', 'w')
         subprocess.call(['ldapdelete',
                          '-x',
-                         '-D', CONF.ldap.user,
-                         '-H', CONF.ldap.url,
-                         '-w', CONF.ldap.password,
-                         '-r', CONF.ldap.suffix],
+                         '-D', conf.ldap.user,
+                         '-H', conf.ldap.url,
+                         '-w', conf.ldap.password,
+                         '-r', conf.ldap.suffix],
                         stderr=devnull)
 
-        if CONF.ldap.suffix.startswith('ou='):
+        if conf.ldap.suffix.startswith('ou='):
             tree_dn_attrs = {'objectclass': 'organizationalUnit',
                              'ou': 'openstack'}
         else:
             tree_dn_attrs = {'objectclass': ['dcObject', 'organizationalUnit'],
                              'dc': 'openstack',
                              'ou': 'openstack'}
-        create_object(CONF.ldap.suffix, tree_dn_attrs)
-        create_object(CONF.ldap.user_tree_dn,
+        create_object(conf.ldap.suffix, tree_dn_attrs)
+        create_object(conf.ldap.user_tree_dn,
                       {'objectclass': 'organizationalUnit',
                        'ou': 'Users'})
-        create_object(CONF.ldap.role_tree_dn,
+        create_object(conf.ldap.role_tree_dn,
                       {'objectclass': 'organizationalUnit',
                        'ou': 'Roles'})
-        create_object(CONF.ldap.group_tree_dn,
+        create_object(conf.ldap.group_tree_dn,
                       {'objectclass': 'organizationalUnit',
                        'ou': 'UserGroups'})
 
@@ -81,9 +78,9 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
     def test_build_tree(self):
         """Regression test for building the tree names."""
         # logic is different from the fake backend.
-        user_api = identity_ldap.UserApi(CONF)
+        user_api = identity_ldap.UserApi(conf)
         self.assertTrue(user_api)
-        self.assertEqual(user_api.tree_dn, CONF.ldap.user_tree_dn)
+        self.assertEqual(user_api.tree_dn, conf.ldap.user_tree_dn)
 
     def test_ldap_dereferencing(self):
         alt_users_ldif = {'objectclass': ['top', 'organizationalUnit'],
@@ -93,12 +90,12 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
                               'sn': 'alt_fake1'}
         aliased_users_ldif = {'objectclass': ['alias', 'extensibleObject'],
                               'aliasedobjectname': "ou=alt_users,%s" %
-                              CONF.ldap.suffix}
-        create_object("ou=alt_users,%s" % CONF.ldap.suffix, alt_users_ldif)
+                              conf.ldap.suffix}
+        create_object("ou=alt_users,%s" % conf.ldap.suffix, alt_users_ldif)
         create_object("%s=alt_fake1,ou=alt_users,%s" %
-                      (CONF.ldap.user_id_attribute, CONF.ldap.suffix),
+                      (conf.ldap.user_id_attribute, conf.ldap.suffix),
                       alt_fake_user_ldif)
-        create_object("ou=alt_users,%s" % CONF.ldap.user_tree_dn,
+        create_object("ou=alt_users,%s" % conf.ldap.user_tree_dn,
                       aliased_users_ldif)
 
         self.config_fixture.config(group='ldap',
@@ -164,7 +161,7 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
             self.assertEqual(0, len(group_refs))
 
         driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         driver.group.ldap_filter = '(dn=xx)'
 
         group_refs = self.identity_api.list_groups_for_user(

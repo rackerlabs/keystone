@@ -17,7 +17,6 @@ import functools
 import uuid
 
 import mock
-from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
 from six.moves import range
@@ -27,6 +26,7 @@ from testtools import matchers
 
 from keystone.common import driver_hints
 from keystone.common import sql
+from keystone import conf
 from keystone import exception
 from keystone.identity.backends import sql_model as identity_sql
 from keystone.resource.backends import base as resource
@@ -41,9 +41,6 @@ from keystone.tests.unit.resource import test_backends as resource_tests
 from keystone.tests.unit.token import test_backends as token_tests
 from keystone.tests.unit.trust import test_backends as trust_tests
 from keystone.token.persistence.backends import sql as token_sql
-
-
-CONF = cfg.CONF
 
 
 class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
@@ -218,7 +215,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
     def test_create_user_with_null_password(self):
         user_dict = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         user_dict["password"] = None
         new_user_dict = self.identity_api.create_user(user_dict)
         with sql.session_for_read() as session:
@@ -228,7 +225,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
     def test_update_user_with_null_password(self):
         user_dict = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.assertTrue(user_dict['password'])
         new_user_dict = self.identity_api.create_user(user_dict)
         new_user_dict["password"] = None
@@ -240,7 +237,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
             self.assertFalse(new_user_ref.local_user.passwords)
 
     def test_delete_user_with_project_association(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                                 user['id'])
@@ -251,14 +248,14 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
     def test_create_null_user_name(self):
         user = unit.new_user_ref(name=None,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           user)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user_by_name,
                           user['name'],
-                          CONF.identity.default_domain_id)
+                          conf.identity.default_domain_id)
 
     def test_create_user_case_sensitivity(self):
         # user name case sensitivity is down to the fact that it is marked as
@@ -267,7 +264,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
         # create a ref with a lowercase name
         ref = unit.new_user_ref(name=uuid.uuid4().hex.lower(),
-                                domain_id=CONF.identity.default_domain_id)
+                                domain_id=conf.identity.default_domain_id)
         ref = self.identity_api.create_user(ref)
 
         # assign a new ID with the same name, but this time in uppercase
@@ -318,7 +315,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         # like LDAP.
 
         # create a ref with a lowercase name
-        ref = unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        ref = unit.new_project_ref(domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
@@ -328,7 +325,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
     def test_create_null_project_name(self):
         project = unit.new_project_ref(
-            name=None, domain_id=CONF.identity.default_domain_id)
+            name=None, domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'],
@@ -339,10 +336,10 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           project['name'],
-                          CONF.identity.default_domain_id)
+                          conf.identity.default_domain_id)
 
     def test_delete_project_with_user_association(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                                 user['id'])
@@ -363,7 +360,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         arbitrary_key = uuid.uuid4().hex
         arbitrary_value = uuid.uuid4().hex
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project[arbitrary_key] = arbitrary_value
         ref = self.resource_api.create_project(project['id'], project)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
@@ -386,7 +383,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         """
         arbitrary_key = uuid.uuid4().hex
         arbitrary_value = uuid.uuid4().hex
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user[arbitrary_key] = arbitrary_value
         del user["id"]
         ref = self.identity_api.create_user(user)
@@ -403,7 +400,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
     def test_sql_user_to_dict_null_default_project_id(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         with sql.session_for_read() as session:
             query = session.query(identity_sql.User)
@@ -522,7 +519,7 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
 
         """
         spoiler_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(spoiler_project['id'],
                                          spoiler_project)
 
@@ -905,7 +902,7 @@ class SqlFilterTests(SqlTests, identity_tests.FilterTests):
 
         # See if we can add a SQL command...use the group table instead of the
         # user table since 'user' is reserved word for SQLAlchemy.
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
 
         hints = driver_hints.Hints()

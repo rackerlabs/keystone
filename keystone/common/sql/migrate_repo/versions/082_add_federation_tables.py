@@ -12,12 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 import sqlalchemy as sql
 
 from keystone.common.sql import migration_helpers
+from keystone import conf
 
-CONF = cfg.CONF
 _RELAY_STATE_PREFIX = 'relay_state_prefix'
 
 
@@ -70,7 +69,7 @@ def upgrade(migrate_engine):
         mysql_charset='utf8')
     mapping_table.create(migrate_engine, checkfirst=True)
 
-    relay_state_prefix_default = CONF.saml.relay_state_prefix
+    relay_state_prefix_default = conf.saml.relay_state_prefix
     sp_table = sql.Table(
         'service_provider',
         meta,

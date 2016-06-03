@@ -155,7 +155,7 @@ class OAuthValidator(oauth1.RequestValidator):
     # implemented. The real implementation logic is in the backend.
     def save_access_token(self, token, request):
         pass
-#        token_duration = CONF.oauth1.request_token_duration
+#        token_duration = conf.oauth1.request_token_duration
 #        request_token_id = request.client_key
 #        self.oauth_api.create_access_token(request_token_id,
 #                                           token_duration,
@@ -165,7 +165,7 @@ class OAuthValidator(oauth1.RequestValidator):
     def save_request_token(self, token, request):
         pass
 #        project_id = request.headers.get('Requested-Project-Id')
-#        token_duration = CONF.oauth1.request_token_duration
+#        token_duration = conf.oauth1.request_token_duration
 #        self.oauth_api.create_request_token(request.client_key,
 #                                            project_id,
 #                                            token_duration,
