@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_d2e75ee2",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-03T16:05:26Z",
+      "side": 1,
+      "message": "nit: this blank line can be removed.",
+      "revId": "5687403e18ec64e7d59db9e880a0ba0a6df4c9b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
