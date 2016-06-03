@@ -16,6 +16,24 @@
       "revId": "81e5d8ef123f090ace011922bf45295cdfc9b968",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_38684987",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-03T16:19:44Z",
+      "side": 1,
+      "message": "The pattern is that they\u0027re all copied from the pep257 documentation: http://pep257.readthedocs.io/en/latest/error_codes.html",
+      "parentUuid": "9abb7d3a_9be7bc3f",
+      "revId": "81e5d8ef123f090ace011922bf45295cdfc9b968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
