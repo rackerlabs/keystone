@@ -19,7 +19,6 @@ import sys
 
 import migrate
 from migrate import exceptions
-from oslo_config import cfg
 from oslo_db.sqlalchemy import migration
 from oslo_utils import importutils
 import six
@@ -31,7 +30,6 @@ from keystone import exception
 from keystone.i18n import _
 
 
-CONF = cfg.CONF
 DEFAULT_EXTENSIONS = []
 
 MIGRATED_EXTENSIONS = ['endpoint_policy',

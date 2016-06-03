@@ -24,7 +24,6 @@ import itertools
 import re
 import wsgiref.util
 
-from oslo_config import cfg
 import oslo_i18n
 from oslo_log import log
 from oslo_serialization import jsonutils
@@ -39,6 +38,7 @@ from keystone.common import dependency
 from keystone.common import json_home
 from keystone.common import request as request_mod
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LI
@@ -46,7 +46,6 @@ from keystone.i18n import _LW
 from keystone.models import token_model
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Environment variable used to pass the request context
@@ -60,7 +59,7 @@ JSON_ENCODE_CONTENT_TYPES = set(['application/json',
 
 
 def validate_token_bind(context, token_ref):
-    bind_mode = CONF.token.enforce_token_bind
+    bind_mode = conf.token.enforce_token_bind
 
     if bind_mode == 'disabled':
         return
@@ -336,7 +335,7 @@ class Application(BaseApplication):
         Returns None if token is not trust scoped
         """
         if ('token_id' not in context or
-                context.get('token_id') == CONF.admin_token):
+                context.get('token_id') == conf.admin_token):
             LOG.debug(('will not lookup trust as the request auth token is '
                        'either absent or it is the system admin token'))
             return None
@@ -345,11 +344,12 @@ class Application(BaseApplication):
 
     @classmethod
     def base_url(cls, context, endpoint_type):
-        url = CONF['%s_endpoint' % endpoint_type]
+        url = conf.getattr('%s_endpoint' % endpoint_type)
 
         if url:
+            # FIXME(dolph): What should CONF.items() be, post-keystone.conf?
             substitutions = dict(
-                itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+                itertools.chain(conf.items(), conf.eventlet_server.items()))
 
             url = url % substitutions
         elif 'environment' in context:
@@ -364,7 +364,7 @@ class Application(BaseApplication):
             # if we don't have enough information to come up with a base URL,
             # then fall back to localhost. This should never happen in
             # production environment.
-            url = 'http://localhost:%d' % CONF.eventlet_server.public_port
+            url = 'http://localhost:%d' % conf.eventlet_server.public_port
 
         return url.rstrip('/')
 

@@ -15,15 +15,14 @@
 
 """Policy engine for keystone."""
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_policy import policy as common_policy
 
+from keystone import conf
 from keystone import exception
 from keystone.policy.backends import base
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -38,7 +37,7 @@ def reset():
 def init():
     global _ENFORCER
     if not _ENFORCER:
-        _ENFORCER = common_policy.Enforcer(CONF)
+        _ENFORCER = common_policy.Enforcer(conf)
 
 
 def enforce(credentials, action, target, do_raise=True):

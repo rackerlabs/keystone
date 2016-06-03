@@ -20,7 +20,6 @@ import uuid
 import fixtures
 from lxml import etree
 import mock
-from oslo_config import cfg
 from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
@@ -34,6 +33,7 @@ if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
 from keystone.auth import controllers as auth_controllers
+from keystone import conf
 from keystone.contrib.federation import routers
 from keystone import exception
 from keystone.federation import controllers as federation_controllers
@@ -49,7 +49,6 @@ from keystone.tests.unit import utils
 from keystone.token.providers import common as token_common
 
 
-CONF = cfg.CONF
 ROOTDIR = os.path.dirname(os.path.abspath(__file__))
 XMLDIR = os.path.join(ROOTDIR, 'saml2/')
 
@@ -2693,7 +2692,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
             'enabled': True,
             'description': uuid.uuid4().hex,
             'sp_url': self.RECIPIENT,
-            'relay_state_prefix': CONF.saml.relay_state_prefix,
+            'relay_state_prefix': conf.saml.relay_state_prefix,
 
         }
         return ref
@@ -2863,7 +2862,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         self.assertIsNotNone(signature)
         self.assertIsInstance(signature, xmldsig.Signature)
 
-        idp_public_key = sigver.read_cert_from_file(CONF.saml.certfile, 'pem')
+        idp_public_key = sigver.read_cert_from_file(conf.saml.certfile, 'pem')
         cert_text = signature.key_info.x509_data[0].x509_certificate.text
         # NOTE(stevemar): Rather than one line of text, the certificate is
         # printed with newlines for readability, we remove these so we can
@@ -3060,7 +3059,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         header = env_response[0]
 
         # Verify the relay state starts with 'ss:mem'
-        prefix = CONF.saml.relay_state_prefix
+        prefix = conf.saml.relay_state_prefix
         self.assertThat(header[0].text, matchers.StartsWith(prefix))
 
         # Verify that the content in the body matches the expected assertion
@@ -3110,7 +3109,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         sample_returncode = 1
         sample_output = self.getUniqueString()
         check_output_mock.side_effect = subprocess.CalledProcessError(
-            returncode=sample_returncode, cmd=CONF.saml.xmlsec1_binary,
+            returncode=sample_returncode, cmd=conf.saml.xmlsec1_binary,
             output=sample_output)
 
         logger_fixture = self.useFixture(fixtures.LoggerFixture())
@@ -3120,7 +3119,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         expected_log = (
             "Error when signing assertion, reason: Command '%s' returned "
             "non-zero exit status %s %s\n" %
-            (CONF.saml.xmlsec1_binary, sample_returncode, sample_output))
+            (conf.saml.xmlsec1_binary, sample_returncode, sample_output))
         self.assertEqual(expected_log, logger_fixture.output)
 
     @mock.patch('oslo_utils.fileutils.write_to_tempfile')
@@ -3295,7 +3294,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
             'enabled': True,
             'description': uuid.uuid4().hex,
             'sp_url': 'https://' + uuid.uuid4().hex + '.com',
-            'relay_state_prefix': CONF.saml.relay_state_prefix
+            'relay_state_prefix': conf.saml.relay_state_prefix
         }
         return ref
 
@@ -3438,7 +3437,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         resp = self.put(url, body={'service_provider': sp},
                         expected_status=http_client.CREATED)
         sp_result = resp.result['service_provider']
-        self.assertEqual(CONF.saml.relay_state_prefix,
+        self.assertEqual(conf.saml.relay_state_prefix,
                          sp_result['relay_state_prefix'])
 
     def test_create_sp_relay_state_non_default(self):
@@ -3783,7 +3782,7 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
             'enabled': True,
             'description': uuid.uuid4().hex,
             'sp_url': uuid.uuid4().hex,
-            'relay_state_prefix': CONF.saml.relay_state_prefix,
+            'relay_state_prefix': conf.saml.relay_state_prefix,
         }
         return ref
 

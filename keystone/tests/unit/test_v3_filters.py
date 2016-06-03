@@ -13,18 +13,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_serialization import jsonutils
 from six.moves import range
 
+from keystone import conf
 from keystone.tests import unit
 from keystone.tests.unit import filtering
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
-
-
-CONF = cfg.CONF
 
 
 class IdentityTestFilteredCase(filtering.FilterTests,
@@ -146,14 +143,14 @@ class IdentityTestFilteredCase(filtering.FilterTests,
             self.assertEqual(3, len(id_list))
             self.assertIn(self.domainA['id'], id_list)
             self.assertIn(self.domainB['id'], id_list)
-            self.assertIn(CONF.identity.default_domain_id, id_list)
+            self.assertIn(conf.identity.default_domain_id, id_list)
 
         r = self.get('/domains?enabled', auth=self.auth)
         id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(3, len(id_list))
         self.assertIn(self.domainA['id'], id_list)
         self.assertIn(self.domainB['id'], id_list)
-        self.assertIn(CONF.identity.default_domain_id, id_list)
+        self.assertIn(conf.identity.default_domain_id, id_list)
 
     def test_multiple_filters(self):
         """GET /domains?enabled&name=myname.

@@ -16,17 +16,15 @@
 
 import abc
 
-from oslo_config import cfg
 from oslo_log import log
 import six
 
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 
-
-CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 
@@ -43,7 +41,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.credential'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.credential.driver)
+        super(Manager, self).__init__(conf.credential.driver)
 
     @manager.response_truncated
     def list_credentials(self, hints=None):

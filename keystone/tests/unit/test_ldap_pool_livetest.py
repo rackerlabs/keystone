@@ -15,17 +15,14 @@
 import uuid
 
 import ldappool
-from oslo_config import cfg
 
+from keystone import conf
 from keystone.identity.backends import ldap
 from keystone.identity.backends.ldap import common as ldap_common
 from keystone.tests import unit
 from keystone.tests.unit import fakeldap
 from keystone.tests.unit import test_backend_ldap_pool
 from keystone.tests.unit import test_ldap_livetest
-
-
-CONF = cfg.CONF
 
 
 class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
@@ -48,7 +45,7 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
         return config_files
 
     def test_assert_connector_used_not_fake_ldap_pool(self):
-        handler = ldap_common._get_connection(CONF.ldap.url, use_pool=True)
+        handler = ldap_common._get_connection(conf.ldap.url, use_pool=True)
         self.assertNotEqual(type(handler.Connector),
                             type(fakeldap.FakeLdapPool))
         self.assertEqual(type(ldappool.StateConnector),
@@ -60,10 +57,10 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
 
     def test_pool_size_expands_correctly(self):
 
-        who = CONF.ldap.user
-        cred = CONF.ldap.password
+        who = conf.ldap.user
+        cred = conf.ldap.password
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[conf.ldap.url]
 
         def _get_conn():
             return ldappool_cm.connection(who, cred)
@@ -107,7 +104,7 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
     def _create_user_and_authenticate(self, password):
         # TODO(shaleh): port to new_user_ref()
         user_dict = {
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': conf.identity.default_domain_id,
             'name': uuid.uuid4().hex,
             'password': password}
         user = self.identity_api.create_user(user_dict)
@@ -121,7 +118,7 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
 
     def _get_auth_conn_pool_cm(self):
         pool_url = (
-            ldap_common.PooledLDAPHandler.auth_pool_prefix + CONF.ldap.url)
+            ldap_common.PooledLDAPHandler.auth_pool_prefix + conf.ldap.url)
         return self.conn_pools[pool_url]
 
     def _do_password_change_for_one_user(self, password, new_password):
@@ -144,7 +141,7 @@ class LiveLDAPPoolIdentity(test_backend_ldap_pool.LdapPoolCommonTestMixin,
         # connection pool size remains 1 even for different user ldap bind
         # as there is only one active connection at a time
 
-        user_api = ldap.UserApi(CONF)
+        user_api = ldap.UserApi(conf)
         u1_dn = user_api._id_to_dn_string(user1['id'])
         u2_dn = user_api._id_to_dn_string(user2['id'])
         u3_dn = user_api._id_to_dn_string(user3['id'])

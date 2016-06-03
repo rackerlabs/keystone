@@ -15,11 +15,10 @@ import oslo_messaging
 import osprofiler.notifier
 import osprofiler.web
 
-from keystone.common import config
+from keystone import conf
 from keystone.i18n import _LI
 
 
-CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -31,12 +30,12 @@ def setup(name, host='0.0.0.0'):  # nosec
                  running on. By default host will be set to 0.0.0.0, but more
                  specified host name / address usage is highly recommended.
     """
-    if CONF.profiler.enabled:
+    if conf.profiler.enabled:
         _notifier = osprofiler.notifier.create(
             "Messaging", oslo_messaging, {},
-            oslo_messaging.get_transport(CONF), "keystone", name, host)
+            oslo_messaging.get_transport(conf), "keystone", name, host)
         osprofiler.notifier.set(_notifier)
-        osprofiler.web.enable(CONF.profiler.hmac_keys)
+        osprofiler.web.enable(conf.profiler.hmac_keys)
         LOG.info(_LI("OSProfiler is enabled.\n"
                      "Traces provided from the profiler "
                      "can only be subscribed to using the same HMAC keys that "

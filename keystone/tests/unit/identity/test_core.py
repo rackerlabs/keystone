@@ -17,27 +17,24 @@ import os
 import uuid
 
 import mock
-from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 
+from keystone import conf
 from keystone import exception
 from keystone import identity
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 
 
-CONF = cfg.CONF
-
-
 class TestDomainConfigs(unit.BaseTestCase):
 
     def setUp(self):
         super(TestDomainConfigs, self).setUp()
-        self.addCleanup(CONF.reset)
+        self.addCleanup(conf.reset)
 
         self.tmp_dir = unit.dirs.tmp()
 
-        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture = self.useFixture(config_fixture.Config(conf))
         self.config_fixture.config(domain_config_dir=self.tmp_dir,
                                    group='identity')
 
@@ -133,7 +130,7 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.load_backends()
 
     def test_domain_config_in_database_disabled_by_default(self):
-        self.assertFalse(CONF.identity.domain_configurations_from_database)
+        self.assertFalse(conf.identity.domain_configurations_from_database)
 
     def test_loading_config_from_database(self):
         self.config_fixture.config(domain_configurations_from_database=True,
@@ -155,10 +152,10 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         res = domain_config.get_domain_conf(domain['id'])
         self.assertEqual(conf['ldap']['url'], res.ldap.url)
         self.assertEqual(conf['ldap']['suffix'], res.ldap.suffix)
-        self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+        self.assertEqual(conf.ldap.query_scope, res.ldap.query_scope)
 
         # Make sure the override is not changing the type of the config value
-        use_tls_type = type(CONF.ldap.use_tls)
+        use_tls_type = type(conf.ldap.use_tls)
         self.assertEqual(use_tls_type(conf['ldap']['use_tls']),
                          res.ldap.use_tls)
 
@@ -172,10 +169,10 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         domain_config.setup_domain_drivers(fake_standard_driver,
                                            self.resource_api)
         res = domain_config.get_domain_conf(domain['id'])
-        self.assertEqual(CONF.ldap.url, res.ldap.url)
-        self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
-        self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
-        self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+        self.assertEqual(conf.ldap.url, res.ldap.url)
+        self.assertEqual(conf.ldap.suffix, res.ldap.suffix)
+        self.assertEqual(conf.ldap.use_tls, res.ldap.use_tls)
+        self.assertEqual(conf.ldap.query_scope, res.ldap.query_scope)
 
 
 class TestShadowUsers(unit.TestCase):

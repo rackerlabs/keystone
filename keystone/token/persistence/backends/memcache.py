@@ -13,13 +13,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import versionutils
 
+from keystone import conf
 from keystone.token.persistence.backends import kvs
-
-
-CONF = cfg.CONF
 
 
 class Token(kvs.Token):
@@ -34,6 +31,6 @@ class Token(kvs.Token):
     def __init__(self, *args, **kwargs):
         kwargs['memcached_backend'] = self.memcached_backend
         kwargs['no_expiry_keys'] = [self.revocation_key]
-        kwargs['memcached_expire_time'] = CONF.token.expiration
-        kwargs['url'] = CONF.memcache.servers
+        kwargs['memcached_expire_time'] = conf.token.expiration
+        kwargs['url'] = conf.memcache.servers
         super(Token, self).__init__(*args, **kwargs)

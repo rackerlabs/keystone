@@ -14,14 +14,13 @@
 
 import abc
 
-from oslo_config import cfg
 from oslo_log import log
 import six
 
+from keystone import conf
 from keystone import exception
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -30,7 +29,7 @@ class CatalogDriverV8(object):
     """Interface description for the Catalog driver."""
 
     def _get_list_limit(self):
-        return CONF.catalog.list_limit or CONF.list_limit
+        return conf.catalog.list_limit or conf.list_limit
 
     def _ensure_no_circle_in_hierarchical_regions(self, region_ref):
         if region_ref.get('parent_region_id') is None:

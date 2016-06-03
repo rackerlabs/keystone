@@ -13,18 +13,15 @@
 import copy
 import uuid
 
-from oslo_config import cfg
 from oslo_utils import timeutils
 from six.moves import range
 
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.models import token_model
 from keystone.tests.unit import core
 from keystone.tests.unit import test_token_provider
-
-
-CONF = cfg.CONF
 
 
 class TestKeystoneTokenModel(core.TestCase):
@@ -174,10 +171,10 @@ class TestKeystoneTokenModel(core.TestCase):
                          token_data.user_id)
         self.assertEqual(self.v2_sample_token['access']['user']['name'],
                          token_data.user_name)
-        self.assertEqual(CONF.identity.default_domain_id,
+        self.assertEqual(conf.identity.default_domain_id,
                          token_data.user_domain_id)
         self.assertEqual('Default', token_data.user_domain_name)
-        self.assertEqual(CONF.identity.default_domain_id,
+        self.assertEqual(conf.identity.default_domain_id,
                          token_data.project_domain_id)
         self.assertEqual('Default',
                          token_data.project_domain_name)

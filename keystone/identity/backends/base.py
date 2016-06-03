@@ -14,13 +14,10 @@
 
 import abc
 
-from oslo_config import cfg
 import six
 
+from keystone import conf
 from keystone import exception
-
-
-CONF = cfg.CONF
 
 
 def filter_user(user_ref):
@@ -130,16 +127,16 @@ class IdentityDriverV8(object):
 
     def _get_conf(self):
         try:
-            return self.conf or CONF
+            return self.conf or conf
         except AttributeError:
-            return CONF
+            return conf
 
     def _get_list_limit(self):
         conf = self._get_conf()
         # use list_limit from domain-specific config. If list_limit in
         # domain-specific config is not set, look it up in the default config
         return (conf.identity.list_limit or conf.list_limit or
-                CONF.identity.list_limit or CONF.list_limit)
+                conf.identity.list_limit or conf.list_limit)
 
     def is_domain_aware(self):
         """Indicate if the driver supports domains."""
@@ -158,7 +155,7 @@ class IdentityDriverV8(object):
     @property
     def multiple_domains_supported(self):
         return (self.is_domain_aware() or
-                CONF.identity.domain_specific_drivers_enabled)
+                conf.identity.domain_specific_drivers_enabled)
 
     def generates_uuids(self):
         """Indicate if Driver generates UUIDs as the local entity ID."""

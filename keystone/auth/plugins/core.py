@@ -14,15 +14,14 @@
 
 import sys
 
-from oslo_config import cfg
 from oslo_log import log
 import six
 
 from keystone.common import dependency
+from keystone import conf
 from keystone import exception
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -34,7 +33,7 @@ def construct_method_map_from_config():
     """
     method_map = dict()
     method_index = 1
-    for method in CONF.auth.methods:
+    for method in conf.auth.methods:
         method_map[method_index] = method
         method_index = method_index * 2
 

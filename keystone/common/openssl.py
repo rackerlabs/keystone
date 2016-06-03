@@ -16,14 +16,14 @@
 import os
 import subprocess  # nosec : see comments in the code below
 
-from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import utils
+from keystone import conf
 from keystone.i18n import _LI, _LE, _LW
 
+
 LOG = log.getLogger(__name__)
-CONF = cfg.CONF
 
 PUBLIC_DIR_PERMS = 0o755        # -rwxr-xr-x
 PRIVATE_DIR_PERMS = 0o750       # -rwxr-x---
@@ -249,7 +249,7 @@ class ConfigurePKI(BaseCertificateConfigure):
     """
 
     def __init__(self, keystone_user, keystone_group, rebuild=False):
-        super(ConfigurePKI, self).__init__(CONF.signing, keystone_user,
+        super(ConfigurePKI, self).__init__(conf.signing. keystone_user,
                                            keystone_group, rebuild=rebuild)
 
 

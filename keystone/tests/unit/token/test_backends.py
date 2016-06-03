@@ -16,18 +16,17 @@ import hashlib
 import uuid
 
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_utils import timeutils
 import six
 from six.moves import range
 
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import utils as test_utils
 from keystone.token import provider
 
 
-CONF = cfg.CONF
 NULL_OBJECT = object()
 
 
@@ -38,8 +37,8 @@ class TokenTests(object):
         for i in range(1, 20):
             token_id += uuid.uuid4().hex
         return cms.cms_sign_token(token_id,
-                                  CONF.signing.certfile,
-                                  CONF.signing.keyfile)
+                                  conf.signing.certfile,
+                                  conf.signing.keyfile)
 
     def _assert_revoked_token_list_matches_token_persistence(
             self, revoked_token_id_list):
@@ -462,9 +461,9 @@ class TokenTests(object):
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
         self.user = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.tenant = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,

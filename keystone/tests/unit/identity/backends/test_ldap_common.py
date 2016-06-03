@@ -18,19 +18,16 @@ import uuid
 import fixtures
 import ldap.dn
 import mock
-from oslo_config import cfg
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone import conf
 from keystone.identity.backends.ldap import common as common_ldap
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import fakeldap
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
-
-
-CONF = cfg.CONF
 
 
 class DnCompareTest(unit.BaseTestCase):
@@ -285,14 +282,14 @@ class MultiURLTests(unit.TestCase):
     def test_multiple_urls_with_comma_no_conn_pool(self):
         urls = 'ldap://localhost,ldap://backup.localhost'
         self.config_fixture.config(group='ldap', url=urls, use_pool=False)
-        base_ldap = common_ldap.BaseLdap(CONF)
+        base_ldap = common_ldap.BaseLdap(conf)
         ldap_connection = base_ldap.get_connection()
         self.assertEqual(urls, ldap_connection.conn.conn._uri)
 
     def test_multiple_urls_with_comma_with_conn_pool(self):
         urls = 'ldap://localhost,ldap://backup.localhost'
         self.config_fixture.config(group='ldap', url=urls, use_pool=True)
-        base_ldap = common_ldap.BaseLdap(CONF)
+        base_ldap = common_ldap.BaseLdap(conf)
         ldap_connection = base_ldap.get_connection()
         self.assertEqual(urls, ldap_connection.conn.conn_pool.uri)
 
@@ -317,7 +314,7 @@ class SslTlsTest(unit.TestCase):
                                    use_tls=True,
                                    tls_cacertfile=certfile)
 
-        self._init_ldap_connection(CONF)
+        self._init_ldap_connection(conf)
 
         # Ensure the cert trust option is set.
         self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
@@ -330,7 +327,7 @@ class SslTlsTest(unit.TestCase):
                                    use_tls=True,
                                    tls_cacertdir=certdir)
 
-        self._init_ldap_connection(CONF)
+        self._init_ldap_connection(conf)
 
         # Ensure the cert trust option is set.
         self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
@@ -345,7 +342,7 @@ class SslTlsTest(unit.TestCase):
                                    use_tls=False,
                                    tls_cacertfile=certfile)
 
-        self._init_ldap_connection(CONF)
+        self._init_ldap_connection(conf)
 
         # Ensure the cert trust option is set.
         self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
@@ -358,7 +355,7 @@ class SslTlsTest(unit.TestCase):
                                    use_tls=False,
                                    tls_cacertdir=certdir)
 
-        self._init_ldap_connection(CONF)
+        self._init_ldap_connection(conf)
 
         # Ensure the cert trust option is set.
         self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))

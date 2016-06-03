@@ -15,19 +15,16 @@
 
 import uuid
 
-from oslo_config import cfg
 from oslo_serialization import jsonutils
 from six.moves import http_client
 
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
 from keystone.tests.unit import utils
-
-
-CONF = cfg.CONF
 
 
 class IdentityTestProtectedCase(test_v3.RestfulTestCase):
@@ -336,13 +333,13 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
 
         self.just_a_user = unit.create_user(
             self.identity_api,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.another_user = unit.create_user(
             self.identity_api,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.admin_user = unit.create_user(
             self.identity_api,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
         self.role = unit.new_role_ref()
         self.role_api.create_role(self.role['id'], self.role)
@@ -351,7 +348,7 @@ class IdentityTestPolicySample(test_v3.RestfulTestCase):
 
         # Create and assign roles to the project
         self.project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(self.project['id'], self.project)
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],

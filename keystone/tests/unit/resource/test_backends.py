@@ -14,18 +14,15 @@ import copy
 import uuid
 
 import mock
-from oslo_config import cfg
 from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import utils as test_utils
-
-
-CONF = cfg.CONF
 
 
 class ResourceTests(object):
@@ -44,14 +41,14 @@ class ResourceTests(object):
     def test_get_project_by_name(self):
         tenant_ref = self.resource_api.get_project_by_name(
             self.tenant_bar['name'],
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         self.assertDictEqual(self.tenant_bar, tenant_ref)
 
     @unit.skip_if_no_multiple_domains_support
     def test_get_project_by_name_for_project_acting_as_a_domain(self):
         """Test get_project_by_name works when the domain_id is None."""
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, is_domain=False)
+            domain_id=conf.identity.default_domain_id, is_domain=False)
         project = self.resource_api.create_project(project['id'], project)
 
         self.assertRaises(exception.ProjectNotFound,
@@ -75,11 +72,11 @@ class ResourceTests(object):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           uuid.uuid4().hex,
-                          CONF.identity.default_domain_id)
+                          conf.identity.default_domain_id)
 
     def test_create_duplicate_project_id_fails(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_id = project['id']
         self.resource_api.create_project(project_id, project)
         project['name'] = 'fake2'
@@ -90,7 +87,7 @@ class ResourceTests(object):
 
     def test_create_duplicate_project_name_fails(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_id = project['id']
         self.resource_api.create_project(project_id, project)
         project['id'] = 'fake2'
@@ -101,7 +98,7 @@ class ResourceTests(object):
 
     def test_create_project_name_with_trailing_whitespace(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_id = project['id']
         project_name = project['name'] = (project['name'] + '    ')
         project_returned = self.resource_api.create_project(project_id,
@@ -113,7 +110,7 @@ class ResourceTests(object):
         new_domain = unit.new_domain_ref()
         self.resource_api.create_domain(new_domain['id'], new_domain)
         project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project2 = unit.new_project_ref(name=project1['name'],
                                         domain_id=new_domain['id'])
         self.resource_api.create_project(project1['id'], project1)
@@ -227,9 +224,9 @@ class ResourceTests(object):
 
     def test_rename_duplicate_project_name_fails(self):
         project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project2 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project1['id'], project1)
         self.resource_api.create_project(project2['id'], project2)
         project2['name'] = project1['name']
@@ -240,7 +237,7 @@ class ResourceTests(object):
 
     def test_update_project_id_does_nothing(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_id = project['id']
         self.resource_api.create_project(project['id'], project)
         project['id'] = 'fake2'
@@ -253,7 +250,7 @@ class ResourceTests(object):
 
     def test_update_project_name_with_trailing_whitespace(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_id = project['id']
         project_create = self.resource_api.create_project(project_id, project)
         self.assertEqual(project_id, project_create['id'])
@@ -281,13 +278,13 @@ class ResourceTests(object):
         unicode_project_name = u'name \u540d\u5b57'
         project = unit.new_project_ref(
             name=unicode_project_name,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project = self.resource_api.create_project(project['id'], project)
         self.resource_api.update_project(project['id'], project)
         self.resource_api.delete_project(project['id'])
 
     def test_create_project_with_no_enabled_field(self):
-        ref = unit.new_project_ref(domain_id=CONF.identity.default_domain_id)
+        ref = unit.new_project_ref(domain_id=conf.identity.default_domain_id)
         del ref['enabled']
         self.resource_api.create_project(ref['id'], ref)
 
@@ -296,7 +293,7 @@ class ResourceTests(object):
 
     def test_create_project_long_name_fails(self):
         project = unit.new_project_ref(
-            name='a' * 65, domain_id=CONF.identity.default_domain_id)
+            name='a' * 65, domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'],
@@ -304,7 +301,7 @@ class ResourceTests(object):
 
     def test_create_project_blank_name_fails(self):
         project = unit.new_project_ref(
-            name='', domain_id=CONF.identity.default_domain_id)
+            name='', domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'],
@@ -312,13 +309,13 @@ class ResourceTests(object):
 
     def test_create_project_invalid_name_fails(self):
         project = unit.new_project_ref(
-            name=None, domain_id=CONF.identity.default_domain_id)
+            name=None, domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'],
                           project)
         project = unit.new_project_ref(
-            name=123, domain_id=CONF.identity.default_domain_id)
+            name=123, domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           project['id'],
@@ -326,7 +323,7 @@ class ResourceTests(object):
 
     def test_update_project_blank_name_fails(self):
         project = unit.new_project_ref(
-            name='fake1', domain_id=CONF.identity.default_domain_id)
+            name='fake1', domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         project['name'] = ''
         self.assertRaises(exception.ValidationError,
@@ -336,7 +333,7 @@ class ResourceTests(object):
 
     def test_update_project_long_name_fails(self):
         project = unit.new_project_ref(
-            name='fake1', domain_id=CONF.identity.default_domain_id)
+            name='fake1', domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         project['name'] = 'a' * 65
         self.assertRaises(exception.ValidationError,
@@ -346,7 +343,7 @@ class ResourceTests(object):
 
     def test_update_project_invalid_name_fails(self):
         project = unit.new_project_ref(
-            name='fake1', domain_id=CONF.identity.default_domain_id)
+            name='fake1', domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         project['name'] = None
         self.assertRaises(exception.ValidationError,
@@ -362,7 +359,7 @@ class ResourceTests(object):
 
     def test_update_project_invalid_enabled_type_string(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertTrue(project_ref['enabled'])
@@ -376,7 +373,7 @@ class ResourceTests(object):
 
     def test_create_project_invalid_enabled_type_string(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             # invalid string value
             enabled="true")
         self.assertRaises(exception.ValidationError,
@@ -401,7 +398,7 @@ class ResourceTests(object):
         domain_ids = []
         for domain in domains:
             domain_ids.append(domain.get('id'))
-        self.assertIn(CONF.identity.default_domain_id, domain_ids)
+        self.assertIn(conf.identity.default_domain_id, domain_ids)
         self.assertIn(domain1['id'], domain_ids)
         self.assertIn(domain2['id'], domain_ids)
 
@@ -415,7 +412,7 @@ class ResourceTests(object):
     def test_list_projects_with_multiple_filters(self):
         # Create a project
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project = self.resource_api.create_project(project['id'], project)
 
         # Build driver hints with the project's name and inexistent description
@@ -442,7 +439,7 @@ class ResourceTests(object):
     def test_list_projects_for_domain(self):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
-                           CONF.identity.default_domain_id)])
+                           conf.identity.default_domain_id)])
         # Only the projects from the default fixtures are expected, since
         # filtering by domain does not include any project that acts as a
         # domain.
@@ -511,7 +508,7 @@ class ResourceTests(object):
 
         """
         if domain_id is None:
-            domain_id = CONF.identity.default_domain_id
+            domain_id = conf.identity.default_domain_id
         if parent_project_id:
             project = unit.new_project_ref(parent_id=parent_project_id,
                                            domain_id=domain_id,
@@ -579,7 +576,7 @@ class ResourceTests(object):
         # Finally, it should be OK to create a project with same name as one of
         # these acting as a domain, as long as it is a regular project
         project3 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, name=project2['name'])
+            domain_id=conf.identity.default_domain_id, name=project2['name'])
         self.resource_api.create_project(project3['id'], project3)
         # In fact, it should be OK to create such a project in the domain which
         # has the matching name.
@@ -591,7 +588,7 @@ class ResourceTests(object):
     @test_utils.wip('waiting for sub projects acting as domains support')
     def test_is_domain_sub_project_has_parent_domain_id(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, is_domain=True)
+            domain_id=conf.identity.default_domain_id, is_domain=True)
         self.resource_api.create_project(project['id'], project)
 
         sub_project = unit.new_project_ref(domain_id=project['id'],
@@ -674,7 +671,7 @@ class ResourceTests(object):
 
     def test_create_project_without_is_domain_flag(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         del project['is_domain']
         ref = self.resource_api.create_project(project['id'], project)
         # The is_domain flag should be False by default
@@ -689,7 +686,7 @@ class ResourceTests(object):
 
     def test_create_project_passing_is_domain_flag_false(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, is_domain=False)
+            domain_id=conf.identity.default_domain_id, is_domain=False)
 
         ref = self.resource_api.create_project(project['id'], project)
         self.assertIs(False, ref['is_domain'])
@@ -726,7 +723,7 @@ class ResourceTests(object):
         # Now try to create a child with the above as its parent, but
         # specifying a different domain.
         sub_project = unit.new_project_ref(
-            parent_id=project['id'], domain_id=CONF.identity.default_domain_id)
+            parent_id=project['id'], domain_id=conf.identity.default_domain_id)
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
                           sub_project['id'], sub_project)
@@ -754,7 +751,7 @@ class ResourceTests(object):
         project2 = projects_hierarchy[1]
         project3 = projects_hierarchy[2]
         project4 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=project2['id'])
         self.resource_api.create_project(project4['id'], project4)
 
@@ -820,11 +817,11 @@ class ResourceTests(object):
 
     def test_list_projects_in_subtree_with_circular_reference(self):
         project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project1 = self.resource_api.create_project(project1['id'], project1)
 
         project2 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=project1['id'])
         self.resource_api.create_project(project2['id'], project2)
 
@@ -857,7 +854,7 @@ class ResourceTests(object):
         project2 = projects_hierarchy[1]
         project3 = projects_hierarchy[2]
         project4 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=project2['id'])
         self.resource_api.create_project(project4['id'], project4)
 
@@ -931,7 +928,7 @@ class ResourceTests(object):
     def test_update_cascade_only_accepts_enabled(self):
         # Update cascade does not accept any other attribute but 'enabled'
         new_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(new_project['id'], new_project)
 
         new_project['name'] = 'project1'
@@ -952,14 +949,14 @@ class ResourceTests(object):
 
     def test_create_project_doesnt_modify_passed_in_dict(self):
         new_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         original_project = new_project.copy()
         self.resource_api.create_project(new_project['id'], new_project)
         self.assertDictEqual(original_project, new_project)
 
     def test_update_project_enable(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
         self.assertTrue(project_ref['enabled'])
@@ -1054,9 +1051,9 @@ class ResourceTests(object):
         called.
         """
         project1_ref = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project2_ref = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         projects = (project1_ref, project2_ref)
         for project in projects:
             self.resource_api.create_project(project['id'], project)
@@ -1082,7 +1079,7 @@ class ResourceTests(object):
         the backend.
         """
         project_ref = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
 
         # Setting up the ID's list
@@ -1213,7 +1210,7 @@ class ResourceTests(object):
 
     def test_create_project_with_invalid_parent(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, parent_id='fake')
+            domain_id=conf.identity.default_domain_id, parent_id='fake')
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.create_project,
                           project['id'],
@@ -1222,7 +1219,7 @@ class ResourceTests(object):
     @unit.skip_if_no_multiple_domains_support
     def test_create_leaf_project_with_different_domain(self):
         root_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(root_project['id'], root_project)
 
         domain = unit.new_domain_ref()
@@ -1276,11 +1273,11 @@ class ResourceTests(object):
 
     def test_create_project_under_disabled_one(self):
         project1 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id, enabled=False)
+            domain_id=conf.identity.default_domain_id, enabled=False)
         self.resource_api.create_project(project1['id'], project1)
 
         project2 = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=project1['id'])
 
         # It's not possible to create a project under a disabled one in the
@@ -1337,15 +1334,15 @@ class ResourceTests(object):
         # in the config option plus one (to allow for the additional project
         # acting as a domain after an upgrade)
         projects_hierarchy = self._create_projects_hierarchy(
-            CONF.max_project_tree_depth)
-        leaf_project = projects_hierarchy[CONF.max_project_tree_depth - 1]
+            conf.max_project_tree_depth)
+        leaf_project = projects_hierarchy[conf.max_project_tree_depth - 1]
 
         depth = self._get_hierarchy_depth(leaf_project['id'])
-        self.assertEqual(CONF.max_project_tree_depth + 1, depth)
+        self.assertEqual(conf.max_project_tree_depth + 1, depth)
 
         # Creating another project in the hierarchy shouldn't be allowed
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=leaf_project['id'])
         self.assertRaises(exception.ForbiddenNotSecurity,
                           self.resource_api.create_project,
@@ -1355,7 +1352,7 @@ class ResourceTests(object):
     def test_project_update_missing_attrs_with_a_value(self):
         # Creating a project with no description attribute.
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         del project['description']
         project = self.resource_api.create_project(project['id'], project)
 
@@ -1369,7 +1366,7 @@ class ResourceTests(object):
     def test_project_update_missing_attrs_with_a_falsey_value(self):
         # Creating a project with no description attribute.
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         del project['description']
         project = self.resource_api.create_project(project['id'], project)
 
@@ -1434,7 +1431,7 @@ class ResourceTests(object):
 
     def test_project_attribute_update(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
 
         # pick a key known to be non-existent
@@ -1641,7 +1638,7 @@ class ResourceTests(object):
 
     def test_project_update_and_project_get_return_same_response(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
         self.resource_api.create_project(project['id'], project)
 
@@ -1660,8 +1657,8 @@ class ResourceTests(object):
     @test_utils.wip('waiting for fix to bug #1523369')
     def test_delete_project_clears_default_project_id(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id,
                                  project_id=project['id'])
         self.resource_api.create_project(project['id'], project)
         user = self.identity_api.create_user(user)
@@ -1675,8 +1672,8 @@ class ResourceTests(object):
     @test_utils.wip('waiting for fix to bug #1523369')
     def test_delete_project_with_roles_clears_default_project_id(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id,
                                  project_id=project['id'])
         self.resource_api.create_project(project['id'], project)
         user = self.identity_api.create_user(user)

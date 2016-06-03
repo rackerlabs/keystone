@@ -12,16 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _LW
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Header used to transmit the auth token
@@ -69,7 +68,7 @@ class AdminTokenAuthMiddleware(wsgi.Middleware):
     def process_request(self, request):
         token = request.headers.get(AUTH_TOKEN_HEADER)
         context = request.environ.get(CONTEXT_ENV, {})
-        context['is_admin'] = CONF.admin_token and (token == CONF.admin_token)
+        context['is_admin'] = conf.admin_token and (token == conf.admin_token)
         request.environ[CONTEXT_ENV] = context
 
 

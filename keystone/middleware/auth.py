@@ -11,7 +11,6 @@
 # under the License.
 
 from keystonemiddleware import auth_token
-from oslo_config import cfg
 from oslo_context import context as oslo_context
 from oslo_log import log
 from oslo_log import versionutils
@@ -20,6 +19,7 @@ from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import tokenless_auth
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
@@ -28,7 +28,6 @@ from keystone.middleware import core
 from keystone.models import token_model
 from keystone.token.providers import common
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 __all__ = ('AuthContextMiddleware',)
@@ -39,13 +38,13 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
     """Build the authentication context from the request auth token."""
 
     def __init__(self, app):
-        bind = CONF.token.enforce_token_bind
+        bind = conf.token.enforce_token_bind
         super(AuthContextMiddleware, self).__init__(app,
                                                     log=LOG,
                                                     enforce_token_bind=bind)
 
     def fetch_token(self, token):
-        if CONF.admin_token and token == CONF.admin_token:
+        if conf.admin_token and token == conf.admin_token:
             return {}
 
         try:
@@ -90,7 +89,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             token_helper = common.V3TokenDataHelper()
             token_data = token_helper.get_token_data(
                 user_id=user_ref['id'],
-                method_names=[CONF.tokenless_auth.protocol],
+                method_names=[conf.tokenless_auth.protocol],
                 domain_id=domain_id,
                 project_id=project_id)
 
@@ -115,24 +114,24 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         :type env: dict
         :returns: True if client_issuer is trusted; otherwise False
         """
-        if not CONF.tokenless_auth.trusted_issuer:
+        if not conf.tokenless_auth.trusted_issuer:
             return False
 
-        issuer = request.environ.get(CONF.tokenless_auth.issuer_attribute)
+        issuer = request.environ.get(conf.tokenless_auth.issuer_attribute)
         if not issuer:
             msg = _LI('Cannot find client issuer in env by the '
                       'issuer attribute - %s.')
-            LOG.info(msg, CONF.tokenless_auth.issuer_attribute)
+            LOG.info(msg, conf.tokenless_auth.issuer_attribute)
             return False
 
-        if issuer in CONF.tokenless_auth.trusted_issuer:
+        if issuer in conf.tokenless_auth.trusted_issuer:
             return True
 
         msg = _LI('The client issuer %(client_issuer)s does not match with '
                   'the trusted issuer %(trusted_issuer)s')
         LOG.info(
             msg, {'client_issuer': issuer,
-                  'trusted_issuer': CONF.tokenless_auth.trusted_issuer})
+                  'trusted_issuer': conf.tokenless_auth.trusted_issuer})
 
         return False
 
@@ -172,7 +171,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
             request_context.is_admin = True
             auth_context = {}
 
-        elif CONF.admin_token and request.user_token == CONF.admin_token:
+        elif conf.admin_token and request.user_token == conf.admin_token:
             versionutils.report_deprecated_feature(
                 LOG,
                 _LW('build_auth_context middleware checking for the admin '

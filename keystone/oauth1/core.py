@@ -20,13 +20,13 @@ import uuid
 
 import oauthlib.common
 from oauthlib import oauth1
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _LE
 from keystone import notifications
@@ -53,7 +53,6 @@ class Token(object):
         self.verifier = verifier
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -124,7 +123,7 @@ class Manager(manager.Manager):
     _CONSUMER = "OS-OAUTH1:consumer"
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.oauth1.driver)
+        super(Manager, self).__init__(conf.oauth1.driver)
 
     def create_consumer(self, consumer_ref, initiator=None):
         consumer_ref = consumer_ref.copy()

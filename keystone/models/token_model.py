@@ -13,16 +13,15 @@
 """Unified in-memory token model."""
 
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _
 
-CONF = cfg.CONF
 # supported token versions
 V2 = 'v2.0'
 V3 = 'v3.0'
@@ -56,7 +55,7 @@ class KeystoneToken(dict):
             raise exception.UnsupportedTokenVersionException()
         self.token_id = token_id
         self.short_id = cms.cms_hash_token(token_id,
-                                           mode=CONF.token.hash_algorithm)
+                                           mode=conf.token.hash_algorithm)
 
         if self.project_scoped and self.domain_scoped:
             raise exception.UnexpectedError(_('Found invalid token: scoped to '
@@ -131,7 +130,7 @@ class KeystoneToken(dict):
             if self.version == V3:
                 return self['user']['domain']['id']
             elif 'user' in self:
-                return CONF.identity.default_domain_id
+                return conf.identity.default_domain_id
         except KeyError:  # nosec
             # Do not raise KeyError, raise UnexpectedError
             pass
@@ -187,7 +186,7 @@ class KeystoneToken(dict):
             if self.version is V3:
                 return self['project']['domain']['id']
             elif 'tenant' in self['token']:
-                return CONF.identity.default_domain_id
+                return conf.identity.default_domain_id
         except KeyError:  # nosec
             # Do not raise KeyError, raise UnexpectedError
             pass

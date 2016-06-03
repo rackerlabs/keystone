@@ -12,16 +12,12 @@
 
 import ldap
 
-from oslo_config import cfg
-
 from keystone.common import cache
+from keystone import conf
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.ksfixtures import ldapdb
-
-
-CONF = cfg.CONF
 
 
 def create_group_container(identity_api):
@@ -45,11 +41,11 @@ class BaseBackendLdapCommon(object):
 
     def _get_domain_fixture(self):
         """Return the static domain, since domains in LDAP are read-only."""
-        return self.resource_api.get_domain(CONF.identity.default_domain_id)
+        return self.resource_api.get_domain(conf.identity.default_domain_id)
 
     def get_config(self, domain_id):
         # Only one conf structure unless we are using separate domain backends
-        return CONF
+        return conf
 
     def config_overrides(self):
         super(BaseBackendLdapCommon, self).config_overrides()
@@ -63,7 +59,7 @@ class BaseBackendLdapCommon(object):
     def get_user_enabled_vals(self, user):
             user_dn = (
                 self.identity_api.driver.user._id_to_dn_string(user['id']))
-            enabled_attr_name = CONF.ldap.user_enabled_attribute
+            enabled_attr_name = conf.ldap.user_enabled_attribute
 
             ldap_ = self.identity_api.driver.user.get_connection()
             res = ldap_.search_s(user_dn,

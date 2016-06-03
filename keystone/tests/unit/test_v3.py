@@ -15,7 +15,6 @@
 import uuid
 
 import mock
-from oslo_config import cfg
 import oslo_context.context
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
@@ -35,7 +34,6 @@ from keystone.tests import unit
 from keystone.tests.unit import rest
 
 
-CONF = cfg.CONF
 DEFAULT_DOMAIN_ID = 'default'
 
 TIME_FORMAT = unit.TIME_FORMAT

@@ -17,7 +17,6 @@ import uuid
 
 import fixtures
 import mock
-from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 from oslo_log import log
 from oslotest import mockpatch
@@ -26,12 +25,10 @@ from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.common import dependency
+from keystone import conf
 from keystone.i18n import _
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
-
-
-CONF = cfg.CONF
 
 
 class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
@@ -49,7 +46,7 @@ class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
 class CliNoConfigTestCase(unit.BaseTestCase):
 
     def setUp(self):
-        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture = self.useFixture(config_fixture.Config(conf))
         self.config_fixture.register_cli_opt(cli.command_opt)
         self.useFixture(mockpatch.Patch(
             'oslo_config.cfg.find_config_files', return_value=[]))
@@ -61,7 +58,7 @@ class CliNoConfigTestCase(unit.BaseTestCase):
             def __init__(self):
                 self.cmd_class = mock.Mock()
         self.useFixture(mockpatch.PatchObject(
-            CONF, 'command', FakeConfCommand()))
+            conf, 'command', FakeConfCommand()))
 
         self.logging = self.useFixture(fixtures.FakeLogger(level=log.WARN))
 
@@ -84,7 +81,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         return config_files
 
     def config(self, config_files):
-        CONF(args=['bootstrap', '--bootstrap-password', uuid.uuid4().hex],
+        conf(args=['bootstrap', '--bootstrap-password', uuid.uuid4().hex],
              project='keystone',
              default_config_files=config_files)
 
@@ -171,7 +168,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
     def config(self, config_files):
-        CONF(args=['bootstrap'], project='keystone',
+        conf(args=['bootstrap'], project='keystone',
              default_config_files=config_files)
 
     def setUp(self):
@@ -186,7 +183,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self.admin_url = uuid.uuid4().hex
         self.region_id = uuid.uuid4().hex
         self.default_domain = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': 'Default',
         }
         self.useFixture(
@@ -310,7 +307,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
                 # Not allowed to delete the default domain, but should at least
                 # delete any domain-specific config for it.
                 self.domain_config_api.delete_config(
-                    CONF.identity.default_domain_id)
+                    conf.identity.default_domain_id)
                 continue
             this_domain = self.domains[domain]
             this_domain['enabled'] = False
@@ -319,7 +316,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.domains = {}
 
     def config(self, config_files):
-        CONF(args=['domain_config_upload', '--all'], project='keystone',
+        conf(args=['domain_config_upload', '--all'], project='keystone',
              default_config_files=config_files)
 
     def setup_initial_domains(self):
@@ -335,7 +332,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
                 {'id': uuid.uuid4().hex, 'name': domain})
         self.default_domain = unit.new_domain_ref(
             description=u'The default domain',
-            id=CONF.identity.default_domain_id,
+            id=conf.identity.default_domain_id,
             name=u'Default')
         self.domains['domain_default'] = create_domain(self.default_domain)
 
@@ -372,7 +369,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
         cli.DomainConfigUpload.main()
 
         res = self.domain_config_api.get_config_with_sensitive_info(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         self.assertEqual(default_config, res)
         res = self.domain_config_api.get_config_with_sensitive_info(
             self.domains['domain1']['id'])
@@ -385,7 +382,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
 
     def config(self, config_files):
-        CONF(args=['domain_config_upload', '--domain-name', 'Default'],
+        conf(args=['domain_config_upload', '--domain-name', 'Default'],
              project='keystone', default_config_files=config_files)
 
     def test_config_upload(self):
@@ -404,7 +401,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         cli.DomainConfigUpload.main()
 
         res = self.domain_config_api.get_config_with_sensitive_info(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         self.assertEqual(default_config, res)
         res = self.domain_config_api.get_config_with_sensitive_info(
             self.domains['domain1']['id'])
@@ -420,7 +417,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
             'identity': {'driver': 'ldap'}
         }
         self.domain_config_api.create_config(
-            CONF.identity.default_domain_id, default_config)
+            conf.identity.default_domain_id, default_config)
 
         # Now try and upload the settings in the configuration file for the
         # default domain
@@ -432,12 +429,12 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
                 'Domain: %(domain)s already has a configuration defined - '
                 'ignoring file: %(file)s.') % {
                     'domain': self.default_domain['name'],
-                    'file': os.path.join(CONF.identity.domain_config_dir,
+                    'file': os.path.join(conf.identity.domain_config_dir,
                                          file_name)}
             mock_print.assert_has_calls([mock.call(error_msg)])
 
         res = self.domain_config_api.get_config(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
         # The initial config should not have been overwritten
         self.assertEqual(default_config, res)
 
@@ -445,7 +442,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
 class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
 
     def config(self, config_files):
-        CONF(args=['domain_config_upload'],
+        conf(args=['domain_config_upload'],
              project='keystone', default_config_files=config_files)
 
     def test_config_upload(self):
@@ -461,7 +458,7 @@ class CliDomainConfigNoOptionsTestCase(CliDomainConfigAllTestCase):
 class CliDomainConfigTooManyOptionsTestCase(CliDomainConfigAllTestCase):
 
     def config(self, config_files):
-        CONF(args=['domain_config_upload', '--all', '--domain-name',
+        conf(args=['domain_config_upload', '--all', '--domain-name',
                    'Default'],
              project='keystone', default_config_files=config_files)
 
@@ -478,7 +475,7 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
 
     def config(self, config_files):
         self.invalid_domain_name = uuid.uuid4().hex
-        CONF(args=['domain_config_upload', '--domain-name',
+        conf(args=['domain_config_upload', '--domain-name',
                    self.invalid_domain_name],
              project='keystone', default_config_files=config_files)
 
@@ -491,7 +488,7 @@ class CliDomainConfigInvalidDomainTestCase(CliDomainConfigAllTestCase):
                 'Invalid domain name: %(domain)s found in config file name: '
                 '%(file)s - ignoring this file.') % {
                     'domain': self.invalid_domain_name,
-                    'file': os.path.join(CONF.identity.domain_config_dir,
+                    'file': os.path.join(conf.identity.domain_config_dir,
                                          file_name)})
             mock_print.assert_has_calls([mock.call(error_msg)])
 

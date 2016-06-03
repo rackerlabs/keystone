@@ -16,21 +16,18 @@ import copy
 import hashlib
 import uuid
 
-from oslo_config import cfg
 from six.moves import http_client
 import webtest
 
 from keystone.common import authorization
 from keystone.common import tokenless_auth
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone import middleware
 from keystone.tests import unit
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_backend_sql
-
-
-CONF = cfg.CONF
 
 
 class MiddlewareRequestTestBase(unit.TestCase):
@@ -757,7 +754,7 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         expected_msg = ('Could not determine Identity Provider ID. The '
                         'configuration option %s was not found in the '
                         'request environment.' %
-                        CONF.tokenless_auth.issuer_attribute)
+                        conf.tokenless_auth.issuer_attribute)
         # Check the content of the exception message as well
         self.assertRaisesRegexp(exception.TokenlessAuthConfigError,
                                 expected_msg,
