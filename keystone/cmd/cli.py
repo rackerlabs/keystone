@@ -215,6 +215,17 @@ class BootStrap(BaseApp):
                                                           default_domain['id'])
             LOG.info(_LI('User %s already exists, skipping creation.'),
                      self.username)
+
+            # To keep bootstrap idempotent, try to reset the user's password
+            # and ensure that they are enabled. This allows bootstrap to act as
+            # a recovery tool, without having to create a new user.
+            self.identity_manager.update_user(
+                user['id'],
+                {'enabled': True,
+                 'password': self.password})
+            LOG.info(_LI('Reset password for user %s.'), self.username)
+            if not user['enabled']:
+                LOG.info(_LI('Enabled user %s.'), self.username)
         except exception.UserNotFound:
             user = self.identity_manager.create_user(
                 user_ref={'name': self.username,
