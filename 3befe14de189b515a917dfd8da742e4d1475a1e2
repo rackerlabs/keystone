@@ -22,6 +22,30 @@
       "revId": "3befe14de189b515a917dfd8da742e4d1475a1e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_e6358cdb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-03T14:52:01Z",
+      "side": 1,
+      "message": "This cache has the same trade-off as that in KMW and persistent tokens, so I\u0027ve decided to extend this behavior to non-persistent.\n\nAdditionally, caching on issue makes token cache to expire faster as the caching itself is done earlier.",
+      "parentUuid": "9abb7d3a_a6ed7290",
+      "range": {
+        "startLine": 291,
+        "startChar": 53,
+        "endLine": 291,
+        "endChar": 55
+      },
+      "revId": "3befe14de189b515a917dfd8da742e4d1475a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
