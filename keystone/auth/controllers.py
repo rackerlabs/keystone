@@ -23,10 +23,12 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.auth import schema
 from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
 from keystone.federation import constants
@@ -391,6 +393,7 @@ class Auth(controller.V3Controller):
         super(Auth, self).__init__(*args, **kw)
         config.setup_authentication()
 
+    @validation.validated(schema.token_create, 'auth')
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in context['query_string']
