@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_36c97579",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3336,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-03T18:26:09Z",
+      "side": 1,
+      "message": "You will likely need the skip decorator if cache is disabled (we have one) for these tests.",
+      "revId": "f7ca95b4c47b53725941e7c8778dffa11b81efb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
