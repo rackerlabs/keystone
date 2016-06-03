@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_a6ec4d90",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-03T00:59:11Z",
+      "side": 1,
+      "message": "this might be re-usable on both line 40 - 41 and on line 68.",
+      "revId": "24a225fbd0f12d7b38095eae8ad0b1bdd0096548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
