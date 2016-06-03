@@ -1182,12 +1182,8 @@ def configure(conf=None):
         cfg.PortOpt('pydev-debug-port',
                     help='Port to connect to for remote debugger.'))
 
-    for section in FILE_OPTIONS:
-        for option in FILE_OPTIONS[section]:
-            if section:
-                conf.register_opt(option, group=section)
-            else:
-                conf.register_opt(option)
+    # Options are registered on import.
+    from keystone import conf
 
     # register any non-default auth methods here (used by extensions, etc)
     setup_authentication(conf)
