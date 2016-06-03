@@ -16,6 +16,24 @@
       "revId": "f7ca95b4c47b53725941e7c8778dffa11b81efb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_51852357",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3336,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-03T18:37:40Z",
+      "side": 1,
+      "message": "Actually - I think we need a way to enable caching for federation. I\u0027m not seeing it as a configuration option in the federation session.",
+      "parentUuid": "9abb7d3a_36c97579",
+      "revId": "f7ca95b4c47b53725941e7c8778dffa11b81efb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
