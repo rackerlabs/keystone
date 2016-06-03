@@ -15,7 +15,6 @@
 
 import itertools
 
-from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.sql import true
 
@@ -23,11 +22,9 @@ from keystone.catalog.backends import base
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
-
-
-CONF = cfg.CONF
 
 
 class Region(sql.ModelBase, sql.DictBase):
@@ -266,8 +263,9 @@ class Catalog(base.CatalogDriverV8):
                   empty dict.
 
         """
+        # FIXME(dolph): What should CONF.items() be post-keystone.conf?
         substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            itertools.chain(conf.items(), conf.eventlet_server.items()))
         substitutions.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:
@@ -326,8 +324,9 @@ class Catalog(base.CatalogDriverV8):
         :returns: A list representing the service catalog or an empty list
 
         """
+        # FIXME(dolph): What should CONF.items() be, post-keystone.conf?
         d = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            itertools.chain(conf.items(), conf.eventlet_server.items()))
         d.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:

@@ -29,7 +29,6 @@ import uuid
 import warnings
 
 import fixtures
-from oslo_config import cfg
 from oslo_config import fixture as config_fixture
 from oslo_context import context as oslo_context
 from oslo_context import fixture as oslo_ctx_fixture
@@ -43,11 +42,11 @@ import testtools
 from testtools import testcase
 
 from keystone import auth
-from keystone.common import config
 from keystone.common import dependency
 from keystone.common.kvs import core as kvs_core
 from keystone.common import request
 from keystone.common import sql
+from keystone import conf
 from keystone import exception
 from keystone.identity.backends.ldap import common as ks_ldap
 from keystone import notifications
@@ -57,8 +56,8 @@ from keystone.version import controllers
 from keystone.version import service
 
 
-config.configure()
-config.set_config_defaults()
+conf.configure()
+conf.set_config_defaults()
 
 PID = six.text_type(os.getpid())
 TESTSDIR = os.path.dirname(os.path.abspath(__file__))
@@ -77,8 +76,7 @@ def _calc_tmpdir():
 
 TMPDIR = _calc_tmpdir()
 
-CONF = cfg.CONF
-log.register_options(CONF)
+log.register_options(conf.CONF)
 
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 
@@ -192,10 +190,10 @@ def skip_if_cache_disabled(*sections):
     def wrapper(f):
         @functools.wraps(f)
         def inner(*args, **kwargs):
-            if not CONF.cache.enabled:
+            if not conf.cache.enabled:
                 raise testcase.TestSkipped('Cache globally disabled.')
             for s in sections:
-                conf_sec = getattr(CONF, s, None)
+                conf_sec = getattr(conf, s, None)
                 if conf_sec is not None:
                     if not getattr(conf_sec, 'caching', True):
                         raise testcase.TestSkipped('%s caching disabled.' % s)
@@ -208,9 +206,9 @@ def skip_if_cache_is_enabled(*sections):
     def wrapper(f):
         @functools.wraps(f)
         def inner(*args, **kwargs):
-            if CONF.cache.enabled:
+            if conf.cache.enabled:
                 for s in sections:
-                    conf_sec = getattr(CONF, s, None)
+                    conf_sec = getattr(conf, s, None)
                     if conf_sec is not None:
                         if getattr(conf_sec, 'caching', True):
                             raise testcase.TestSkipped('%s caching enabled.' %
@@ -654,7 +652,7 @@ class TestCase(BaseTestCase):
         super(TestCase, self).setUp()
         self.__config_overrides_called = False
         self.__load_backends_called = False
-        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture = self.useFixture(config_fixture.Config(conf))
         self.addCleanup(delattr, self, 'config_fixture')
         self.config(self.config_files())
 
@@ -664,7 +662,7 @@ class TestCase(BaseTestCase):
         def mocked_register_auth_plugin_opt(conf, opt):
             self.config_fixture.register_opt(opt, group='auth')
         self.useFixture(fixtures.MockPatchObject(
-            config, '_register_auth_plugin_opt',
+            conf, '_register_auth_plugin_opt',
             new=mocked_register_auth_plugin_opt))
 
         self.sql_driver_version_overrides = {}
@@ -679,7 +677,7 @@ class TestCase(BaseTestCase):
         # without having a CONF object to setup logging. This should help to
         # reduce the log size by limiting what we log (similar to how Keystone
         # would run under mod_wsgi).
-        for pair in CONF.default_log_levels:
+        for pair in conf.default_log_levels:
             mod, _sep, level_name = pair.partition('=')
             logger = log.getLogger(mod)
             logger.logger.setLevel(level_name)
@@ -701,7 +699,8 @@ class TestCase(BaseTestCase):
 
     def config(self, config_files):
         sql.initialize()
-        CONF(args=[], project='keystone', default_config_files=config_files)
+        # FIXME(dolph): Is this right..?
+        conf(args=[], project='keystone', default_config_files=config_files)
 
     def load_backends(self):
         """Initialize each manager and assigns them to an attribute."""

@@ -15,15 +15,12 @@ import uuid
 
 import fixtures
 import mock
-from oslo_config import cfg
 from testtools import matchers
 
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
-
-
-CONF = cfg.CONF
 
 
 class TestResourceManagerNoFixtures(unit.SQLDriverOverrides, unit.TestCase):
@@ -40,14 +37,14 @@ class TestResourceManagerNoFixtures(unit.SQLDriverOverrides, unit.TestCase):
         # First make sure there's no default domain.
         self.assertRaises(
             exception.DomainNotFound,
-            self.resource_api.get_domain, CONF.identity.default_domain_id)
+            self.resource_api.get_domain, conf.identity.default_domain_id)
 
         self.resource_api.ensure_default_domain_exists()
         default_domain = self.resource_api.get_domain(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
 
         expected_domain = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': 'Default',
             'enabled': True,
             'description': 'Domain created automatically to support V2.0 '
@@ -62,20 +59,20 @@ class TestResourceManagerNoFixtures(unit.SQLDriverOverrides, unit.TestCase):
         name = uuid.uuid4().hex
         description = uuid.uuid4().hex
         domain_attrs = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': name,
             'description': description,
         }
-        self.resource_api.create_domain(CONF.identity.default_domain_id,
+        self.resource_api.create_domain(conf.identity.default_domain_id,
                                         domain_attrs)
 
         self.resource_api.ensure_default_domain_exists()
 
         default_domain = self.resource_api.get_domain(
-            CONF.identity.default_domain_id)
+            conf.identity.default_domain_id)
 
         expected_domain = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': name,
             'enabled': True,
             'description': description,
@@ -97,12 +94,12 @@ class TestResourceManagerNoFixtures(unit.SQLDriverOverrides, unit.TestCase):
         name = uuid.uuid4().hex
         description = uuid.uuid4().hex
         domain_attrs = {
-            'id': CONF.identity.default_domain_id,
+            'id': conf.identity.default_domain_id,
             'name': name,
             'description': description,
         }
         domain = self.resource_api.create_domain(
-            CONF.identity.default_domain_id, domain_attrs)
+            conf.identity.default_domain_id, domain_attrs)
         project1 = unit.new_project_ref(domain_id=domain['id'],
                                         name=uuid.uuid4().hex)
         self.resource_api.create_project(project1['id'], project1)

@@ -15,7 +15,6 @@ import os
 import subprocess  # nosec : see comments in the code below
 import uuid
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import fileutils
 from oslo_utils import importutils
@@ -33,12 +32,12 @@ if not xmldsig:
     xmldsig = importutils.try_import("xmldsig")
 
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LE
 
 
 LOG = log.getLogger(__name__)
-CONF = cfg.CONF
 
 
 class SAMLGenerator(object):
@@ -92,7 +91,7 @@ class SAMLGenerator(object):
 
     def _determine_expiration_time(self, expires_in):
         if expires_in is None:
-            expires_in = CONF.saml.assertion_expiration_time
+            expires_in = conf.saml.assertion_expiration_time
         now = timeutils.utcnow()
         future = now + datetime.timedelta(seconds=expires_in)
         return utils.isotime(future, subsecond=True)
@@ -400,9 +399,9 @@ def _sign_assertion(assertion):
     :returns: XML <Assertion> object
 
     """
-    xmlsec_binary = CONF.saml.xmlsec1_binary
-    idp_private_key = CONF.saml.keyfile
-    idp_public_key = CONF.saml.certfile
+    xmlsec_binary = conf.saml.xmlsec1_binary
+    idp_private_key = conf.saml.keyfile
+    idp_public_key = conf.saml.certfile
 
     # xmlsec1 --sign --privkey-pem privkey,cert --id-attr:ID <tag> <file>
     certificates = '%(idp_private_key)s,%(idp_public_key)s' % {
@@ -473,18 +472,18 @@ class MetadataGenerator(object):
 
     def _create_entity_descriptor(self):
         ed = md.EntityDescriptor()
-        ed.entity_id = CONF.saml.idp_entity_id
+        ed.entity_id = conf.saml.idp_entity_id
         return ed
 
     def _create_idp_sso_descriptor(self):
 
         def get_cert():
             try:
-                return sigver.read_cert_from_file(CONF.saml.certfile, 'pem')
+                return sigver.read_cert_from_file(conf.saml.certfile, 'pem')
             except (IOError, sigver.CertificateError) as e:
                 msg = _('Cannot open certificate %(cert_file)s. '
                         'Reason: %(reason)s')
-                msg = msg % {'cert_file': CONF.saml.certfile, 'reason': e}
+                msg = msg % {'cert_file': conf.saml.certfile, 'reason': e}
                 LOG.error(msg)
                 raise IOError(msg)
 
@@ -499,32 +498,32 @@ class MetadataGenerator(object):
             )
 
         def single_sign_on_service():
-            idp_sso_endpoint = CONF.saml.idp_sso_endpoint
+            idp_sso_endpoint = conf.saml.idp_sso_endpoint
             return md.SingleSignOnService(
                 binding=saml2.BINDING_URI,
                 location=idp_sso_endpoint)
 
         def organization():
-            name = md.OrganizationName(lang=CONF.saml.idp_lang,
-                                       text=CONF.saml.idp_organization_name)
+            name = md.OrganizationName(lang=conf.saml.idp_lang,
+                                       text=conf.saml.idp_organization_name)
             display_name = md.OrganizationDisplayName(
-                lang=CONF.saml.idp_lang,
-                text=CONF.saml.idp_organization_display_name)
-            url = md.OrganizationURL(lang=CONF.saml.idp_lang,
-                                     text=CONF.saml.idp_organization_url)
+                lang=conf.saml.idp_lang,
+                text=conf.saml.idp_organization_display_name)
+            url = md.OrganizationURL(lang=conf.saml.idp_lang,
+                                     text=conf.saml.idp_organization_url)
 
             return md.Organization(
                 organization_display_name=display_name,
                 organization_url=url, organization_name=name)
 
         def contact_person():
-            company = md.Company(text=CONF.saml.idp_contact_company)
-            given_name = md.GivenName(text=CONF.saml.idp_contact_name)
-            surname = md.SurName(text=CONF.saml.idp_contact_surname)
-            email = md.EmailAddress(text=CONF.saml.idp_contact_email)
+            company = md.Company(text=conf.saml.idp_contact_company)
+            given_name = md.GivenName(text=conf.saml.idp_contact_name)
+            surname = md.SurName(text=conf.saml.idp_contact_surname)
+            email = md.EmailAddress(text=conf.saml.idp_contact_email)
             telephone = md.TelephoneNumber(
-                text=CONF.saml.idp_contact_telephone)
-            contact_type = CONF.saml.idp_contact_type
+                text=conf.saml.idp_contact_telephone)
+            contact_type = conf.saml.idp_contact_type
 
             return md.ContactPerson(
                 company=company, given_name=given_name, sur_name=surname,
@@ -547,21 +546,21 @@ class MetadataGenerator(object):
 
     def _ensure_required_values_present(self):
         """Ensure idp_sso_endpoint and idp_entity_id have values."""
-        if CONF.saml.idp_entity_id is None:
+        if conf.saml.idp_entity_id is None:
             msg = _('Ensure configuration option idp_entity_id is set.')
             raise exception.ValidationError(msg)
-        if CONF.saml.idp_sso_endpoint is None:
+        if conf.saml.idp_sso_endpoint is None:
             msg = _('Ensure configuration option idp_sso_endpoint is set.')
             raise exception.ValidationError(msg)
 
     def _check_contact_person_values(self):
         """Determine if contact information is included in metadata."""
         # Check if we should include contact information
-        params = [CONF.saml.idp_contact_company,
-                  CONF.saml.idp_contact_name,
-                  CONF.saml.idp_contact_surname,
-                  CONF.saml.idp_contact_email,
-                  CONF.saml.idp_contact_telephone]
+        params = [conf.saml.idp_contact_company,
+                  conf.saml.idp_contact_name,
+                  conf.saml.idp_contact_surname,
+                  conf.saml.idp_contact_email,
+                  conf.saml.idp_contact_telephone]
         for value in params:
             if value is None:
                 return False
@@ -569,7 +568,7 @@ class MetadataGenerator(object):
         # Check if contact type is an invalid value
         valid_type_values = ['technical', 'other', 'support', 'administrative',
                              'billing']
-        if CONF.saml.idp_contact_type not in valid_type_values:
+        if conf.saml.idp_contact_type not in valid_type_values:
             msg = _('idp_contact_type must be one of: [technical, other, '
                     'support, administrative or billing.')
             raise exception.ValidationError(msg)
@@ -577,9 +576,9 @@ class MetadataGenerator(object):
 
     def _check_organization_values(self):
         """Determine if organization information is included in metadata."""
-        params = [CONF.saml.idp_organization_name,
-                  CONF.saml.idp_organization_display_name,
-                  CONF.saml.idp_organization_url]
+        params = [conf.saml.idp_organization_name,
+                  conf.saml.idp_organization_display_name,
+                  conf.saml.idp_organization_url]
         for value in params:
             if value is None:
                 return False

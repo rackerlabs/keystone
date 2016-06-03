@@ -17,7 +17,6 @@ import json
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
-from oslo_config import cfg
 from six.moves import http_client
 from testtools import matchers
 
@@ -28,7 +27,6 @@ from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
 
-CONF = cfg.CONF
 CRED_TYPE_EC2 = controllers.CRED_TYPE_EC2
 
 

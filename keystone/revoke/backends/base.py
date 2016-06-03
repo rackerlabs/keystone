@@ -15,19 +15,16 @@
 import abc
 import datetime
 
-from oslo_config import cfg
 from oslo_utils import timeutils
 import six
 
+from keystone import conf
 from keystone import exception
-
-
-CONF = cfg.CONF
 
 
 def revoked_before_cutoff_time():
     expire_delta = datetime.timedelta(
-        seconds=CONF.token.expiration + CONF.revoke.expiration_buffer)
+        seconds=conf.token.expiration + conf.revoke.expiration_buffer)
     oldest = timeutils.utcnow() - expire_delta
     return oldest
 

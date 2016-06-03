@@ -15,7 +15,6 @@
 import functools
 import uuid
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import strutils
@@ -26,13 +25,13 @@ from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import utils
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.models import token_model
 
 
 LOG = log.getLogger(__name__)
-CONF = cfg.CONF
 
 
 def v2_deprecated(f):
@@ -269,7 +268,7 @@ class V2Controller(wsgi.Application):
         specified in the v2 call.
 
         """
-        ref['domain_id'] = CONF.identity.default_domain_id
+        ref['domain_id'] = conf.identity.default_domain_id
         return ref
 
     @staticmethod
@@ -709,7 +708,7 @@ class V3Controller(wsgi.Application):
         # TODO(henry-nash): It might be safer and more efficient to do this
         # check in the managers affected, so look to migrate this check to
         # there in the future.
-        if CONF.domain_id_immutable and 'domain_id' in ref:
+        if conf.domain_id_immutable and 'domain_id' in ref:
             existing_ref = get_member(ref_id)
             if ref['domain_id'] != existing_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
@@ -727,7 +726,7 @@ class V3Controller(wsgi.Application):
         specify a domain_id either as a filter or as part of the token scope.
 
         """
-        if not CONF.identity.domain_specific_drivers_enabled:
+        if not conf.identity.domain_specific_drivers_enabled:
             # We don't need to specify a domain ID in this case
             return
 
@@ -784,7 +783,7 @@ class V3Controller(wsgi.Application):
                     'plan to remove this compatibility, however, future API '
                     'versions may remove this, so please specify the domain '
                     'explicitly or use a domain-scoped token.'))
-            return CONF.identity.default_domain_id
+            return conf.identity.default_domain_id
 
     def _normalize_domain_id(self, context, ref):
         """Fill in domain_id if not specified in a v3 call."""

@@ -12,17 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.sql.expression import false
 
 from keystone.assignment.backends import base
 from keystone.common import sql
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
-
-
-CONF = cfg.CONF
 
 
 class AssignmentType(object):
@@ -216,7 +213,7 @@ class Assignment(base.AssignmentDriverV8):
             RoleAssignment.inherited == false(),
             RoleAssignment.target_id == project_id)
 
-        if CONF.os_inherit.enabled:
+        if conf.os_inherit.enabled:
             # Inherited roles from domains
             sql_constraints = sqlalchemy.or_(
                 sql_constraints,

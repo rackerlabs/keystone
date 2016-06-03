@@ -17,20 +17,19 @@ from __future__ import absolute_import
 import copy
 import threading
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
 
 from keystone.common import kvs
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 from keystone import token
 from keystone.token import provider
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 STORE_CONF_LOCK = threading.Lock()
@@ -123,7 +122,7 @@ class Token(token.persistence.TokenDriverV8):
         user_id = data['user']['id']
         user_key = self._prefix_user_id(user_id)
         self._update_user_token_list(user_key, token_id, expires_str)
-        if CONF.trust.enabled and data.get('trust_id'):
+        if conf.trust.enabled and data.get('trust_id'):
             # NOTE(morganfainberg): If trusts are enabled and this is a trust
             # scoped token, we add the token to the trustee list as well.  This
             # allows password changes of the trustee to also expire the token.
@@ -329,7 +328,7 @@ class Token(token.persistence.TokenDriverV8):
         # performed.  In order to test the revocation events, tokens shouldn't
         # be deleted from the backends.  This check ensures that tokens are
         # still recorded.
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             return []
         tokens = []
         user_key = self._prefix_user_id(user_id)

@@ -15,18 +15,17 @@
 
 import hashlib
 
-from oslo_config import cfg
 from oslo_log import log
 
 from keystone.auth import controllers
 from keystone.common import dependency
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.federation import utils
 from keystone.i18n import _
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -110,10 +109,10 @@ class TokenlessAuthHelper(object):
         """
         idp_id = self._build_idp_id()
         LOG.debug('The IdP Id %s and protocol Id %s are used to look up '
-                  'the mapping.', idp_id, CONF.tokenless_auth.protocol)
+                  'the mapping.', idp_id, conf.tokenless_auth.protocol)
 
         mapped_properties, mapping_id = self.federation_api.evaluate(
-            idp_id, CONF.tokenless_auth.protocol, self.env)
+            idp_id, conf.tokenless_auth.protocol, self.env)
 
         user = mapped_properties.get('user', {})
         user_id = user.get('id')
@@ -147,7 +146,7 @@ class TokenlessAuthHelper(object):
             user_ref['group_ids'] = list(group_ids)
             user_ref[federation_constants.IDENTITY_PROVIDER] = idp_id
             user_ref[federation_constants.PROTOCOL] = (
-                CONF.tokenless_auth.protocol)
+                conf.tokenless_auth.protocol)
             return user_ref
 
         if user_id:
@@ -183,10 +182,10 @@ class TokenlessAuthHelper(object):
         :returns: base64_idp like the above example
         :rtype: str
         """
-        idp = self.env.get(CONF.tokenless_auth.issuer_attribute)
+        idp = self.env.get(conf.tokenless_auth.issuer_attribute)
         if idp is None:
             raise exception.TokenlessAuthConfigError(
-                issuer_attribute=CONF.tokenless_auth.issuer_attribute)
+                issuer_attribute=conf.tokenless_auth.issuer_attribute)
 
         hashed_idp = hashlib.sha256(idp.encode('utf-8'))
         return hashed_idp.hexdigest()

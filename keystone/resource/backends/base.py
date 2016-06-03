@@ -15,17 +15,16 @@
 import abc
 import copy
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 import six
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LE
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -57,7 +56,7 @@ NULL_DOMAIN_ID = '<<keystone.domain.root>>'
 class ResourceDriverBase(object):
 
     def _get_list_limit(self):
-        return CONF.resource.list_limit or CONF.list_limit
+        return conf.resource.list_limit or conf.list_limit
 
     # project crud
     @abc.abstractmethod
@@ -193,13 +192,13 @@ class ResourceDriverBase(object):
 
         """
         ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
+        domain_id = ref.pop('domain_id', conf.identity.default_domain_id)
         self._validate_default_domain_id(domain_id)
         return ref
 
     def _validate_default_domain_id(self, domain_id):
         """Validate that the domain ID belongs to the default domain."""
-        if domain_id != CONF.identity.default_domain_id:
+        if domain_id != conf.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
 
 
@@ -271,7 +270,7 @@ class ResourceDriverV8(ResourceDriverBase):
         if isinstance(ref, dict):
             if 'domain_id' not in ref:
                 ref = ref.copy()
-                ref['domain_id'] = CONF.identity.default_domain_id
+                ref['domain_id'] = conf.identity.default_domain_id
             return ref
         elif isinstance(ref, list):
             return [self._set_default_domain(x) for x in ref]

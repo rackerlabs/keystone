@@ -22,12 +22,12 @@ from dogpile.cache import proxy
 from dogpile.cache import region
 from dogpile.cache import util as dogpile_util
 from dogpile.core import nameregistry
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 from oslo_utils import importutils
 from oslo_utils import reflection
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LI
@@ -39,7 +39,6 @@ __all__ = ('KeyValueStore', 'KeyValueStoreLock', 'LockTimeout',
 
 
 BACKENDS_REGISTERED = False
-CONF = cfg.CONF
 KEY_VALUE_STORE_REGISTRY = weakref.WeakValueDictionary()
 LOCK_WINDOW = 1
 LOG = log.getLogger(__name__)
@@ -58,7 +57,7 @@ def _register_backends():
 
     if not BACKENDS_REGISTERED:
         prefix = 'openstack.kvs.%s'
-        for backend in CONF.kvs.backends:
+        for backend in conf.kvs.backends:
             module, cls = backend.rsplit('.', 1)
             backend_name = prefix % cls
             LOG.debug(('Registering Dogpile Backend %(backend_path)s as '
@@ -132,7 +131,7 @@ class KeyValueStore(object):
 
         self.locking = locking
         self._lock_timeout = region_config_args.pop(
-            'lock_timeout', CONF.kvs.default_lock_timeout)
+            'lock_timeout', conf.kvs.default_lock_timeout)
         self._configure_region(backing_store, **region_config_args)
         self._set_key_mangler(key_mangler)
         self._apply_region_proxy(proxy_list)
@@ -211,7 +210,7 @@ class KeyValueStore(object):
             # the first choice.
             key_mangler = self._region.backend.key_mangler
 
-        if CONF.kvs.enable_key_mangler:
+        if conf.kvs.enable_key_mangler:
             if key_mangler is not None:
                 msg = _LI('Using %(func)s as KVS region %(name)s key_mangler')
                 if callable(key_mangler):
@@ -240,7 +239,7 @@ class KeyValueStore(object):
             self._set_keymangler_on_backend(None)
 
     def _configure_region(self, backend, **config_args):
-        prefix = CONF.kvs.config_prefix
+        prefix = conf.kvs.config_prefix
         conf_dict = {}
         conf_dict['%s.backend' % prefix] = backend
 

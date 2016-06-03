@@ -14,15 +14,14 @@
 
 import uuid
 
-from oslo_config import cfg
-
+from keystone import conf
 from keystone import exception
 from keystone.identity import controllers
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
 
 
-CONF = cfg.CONF
+_ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
 
 
 class UserTestCaseNoDefaultDomain(unit.TestCase):
@@ -38,7 +37,7 @@ class UserTestCaseNoDefaultDomain(unit.TestCase):
         # sure the setUp worked as expected.
         self.assertRaises(
             exception.DomainNotFound,
-            self.resource_api.get_domain, CONF.identity.default_domain_id)
+            self.resource_api.get_domain, conf.identity.default_domain_id)
 
     def test_get_users(self):
         # When list_users is done and there's no default domain, the result is

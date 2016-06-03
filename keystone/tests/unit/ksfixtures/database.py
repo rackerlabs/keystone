@@ -15,14 +15,11 @@ import functools
 import os
 
 import fixtures
-from oslo_config import cfg
 from oslo_db import options as db_options
 
 from keystone.common import sql
+from keystone import conf
 from keystone.tests import unit
-
-
-CONF = cfg.CONF
 
 
 def run_once(f):
@@ -47,7 +44,7 @@ def initialize_sql_session(connection_str=unit.IN_MEM_DB_CONN_STRING):
     # the default value, as this should be able to be overridden in some
     # test cases.
     db_options.set_defaults(
-        CONF,
+        conf,
         connection=connection_str)
 
 

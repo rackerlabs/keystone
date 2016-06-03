@@ -13,15 +13,12 @@
 import uuid
 
 import mock
-from oslo_config import cfg
 from six.moves import range
 from testtools import matchers
 
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
-
-
-CONF = cfg.CONF
 
 
 class AssignmentTestHelperMixin(object):
@@ -487,11 +484,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
     def test_list_user_ids_for_project_no_duplicates(self):
         # Create user
-        user_ref = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_ref = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         # Create project
         project_ref = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(
             project_ref['id'], project_ref)
         # Create 2 roles and give user each role in project
@@ -539,7 +536,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         """Test listing of role assignments filtered by role ID."""
         test_plan = {
             # Create a user, group & project in the default domain
-            'entities': {'domains': {'id': CONF.identity.default_domain_id,
+            'entities': {'domains': {'id': conf.identity.default_domain_id,
                                      'users': 1, 'groups': 1, 'projects': 1},
                          'roles': 3},
             # Create a grant of each type (user/group on project/domain)
@@ -562,7 +559,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         # listed then the group role assignment is included in the list.
 
         test_plan = {
-            'entities': {'domains': {'id': CONF.identity.default_domain_id,
+            'entities': {'domains': {'id': conf.identity.default_domain_id,
                                      'groups': 1, 'projects': 1},
                          'roles': 1},
             'assignments': [{'group': 0, 'role': 0, 'project': 0}],
@@ -600,14 +597,14 @@ class AssignmentTests(AssignmentTestHelperMixin):
         - Check the role list get by the user and project was as expected
 
         """
-        user_ref = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user_ref = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user_ref = self.identity_api.create_user(user_ref)
 
         project_ref = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project_ref['id'], project_ref)
 
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group_id = self.identity_api.create_group(group)['id']
         self.identity_api.add_user_to_group(user_ref['id'], group_id)
 
@@ -1239,12 +1236,12 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.assertRaises(exception.RoleNotFound, f,
                               role_id=uuid.uuid4().hex, **kwargs)
 
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user_resp = self.identity_api.create_user(user)
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group_resp = self.identity_api.create_group(group)
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project_resp = self.resource_api.create_project(project['id'], project)
 
         for manager_call in [self.assignment_api.create_grant,
@@ -1259,11 +1256,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
             assert_role_not_found_exception(
                 manager_call,
                 user_id=user_resp['id'],
-                domain_id=CONF.identity.default_domain_id)
+                domain_id=conf.identity.default_domain_id)
             assert_role_not_found_exception(
                 manager_call,
                 group_id=group_resp['id'],
-                domain_id=CONF.identity.default_domain_id)
+                domain_id=conf.identity.default_domain_id)
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         role_list = []
@@ -1567,7 +1564,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         test_plan = {
             # The default domain with 3 users, 3 groups, 3 projects,
             # plus 3 roles.
-            'entities': {'domains': {'id': CONF.identity.default_domain_id,
+            'entities': {'domains': {'id': conf.identity.default_domain_id,
                                      'users': 3, 'groups': 3, 'projects': 3},
                          'roles': 3},
             # Users 0 & 1 are in the group 0, User 0 also in group 1
@@ -1639,7 +1636,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
     def test_list_role_assignment_fails_with_userid_and_source_groups(self):
         """Show we trap this unsupported internal combination of params."""
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
         self.assertRaises(exception.UnexpectedError,
                           self.assignment_api.list_role_assignments,
@@ -1655,16 +1652,16 @@ class AssignmentTests(AssignmentTestHelperMixin):
         self.assertIn(self.tenant_baz, tenants)
 
     def test_add_user_to_project_missing_default_role(self):
-        self.role_api.delete_role(CONF.member_role_id)
+        self.role_api.delete_role(conf.member_role_id)
         self.assertRaises(exception.RoleNotFound,
                           self.role_api.get_role,
-                          CONF.member_role_id)
+                          conf.member_role_id)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 self.user_foo['id'])
         tenants = (
             self.assignment_api.list_projects_for_user(self.user_foo['id']))
         self.assertIn(self.tenant_baz, tenants)
-        default_role = self.role_api.get_role(CONF.member_role_id)
+        default_role = self.role_api.get_role(conf.member_role_id)
         self.assertIsNotNone(default_role)
 
     def test_add_user_to_project_returns_not_found(self):
@@ -1733,7 +1730,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
                           uuid.uuid4().hex)
 
     def test_delete_user_with_project_association(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                                 user['id'])
@@ -1743,7 +1740,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
                           user['id'])
 
     def test_delete_user_with_project_roles(self):
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_role_to_user_and_project(
             user['id'],
@@ -1761,7 +1758,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
     def test_delete_project_with_role_assignments(self):
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(project['id'], project)
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], project['id'], 'member')
@@ -1861,12 +1858,12 @@ class AssignmentTests(AssignmentTestHelperMixin):
 
         # Create a group.
         new_group = unit.new_group_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         new_group = self.identity_api.create_group(new_group)
 
         # Create a project.
         new_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         self.resource_api.create_project(new_project['id'], new_project)
 
         # Assign a role to the group.
@@ -2301,16 +2298,16 @@ class AssignmentTests(AssignmentTestHelperMixin):
         common_id = uuid.uuid4().hex
         # Create a project
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project = self.resource_api.create_project(project['id'], project)
         # Create a user
         user = unit.new_user_ref(id=common_id,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         user = self.identity_api.driver.create_user(common_id, user)
         self.assertEqual(common_id, user['id'])
         # Create a group
         group = unit.new_group_ref(id=common_id,
-                                   domain_id=CONF.identity.default_domain_id)
+                                   domain_id=conf.identity.default_domain_id)
         group = self.identity_api.driver.create_group(common_id, group)
         self.assertEqual(common_id, group['id'])
         # Create four roles
@@ -2320,14 +2317,14 @@ class AssignmentTests(AssignmentTestHelperMixin):
             roles.append(self.role_api.create_role(role['id'], role))
         # Assign roles for user
         self.assignment_api.driver.create_grant(
-            user_id=user['id'], domain_id=CONF.identity.default_domain_id,
+            user_id=user['id'], domain_id=conf.identity.default_domain_id,
             role_id=roles[0]['id'])
         self.assignment_api.driver.create_grant(user_id=user['id'],
                                                 project_id=project['id'],
                                                 role_id=roles[1]['id'])
         # Assign roles for group
         self.assignment_api.driver.create_grant(
-            group_id=group['id'], domain_id=CONF.identity.default_domain_id,
+            group_id=group['id'], domain_id=conf.identity.default_domain_id,
             role_id=roles[2]['id'])
         self.assignment_api.driver.create_grant(group_id=group['id'],
                                                 project_id=project['id'],
@@ -2368,16 +2365,16 @@ class AssignmentTests(AssignmentTestHelperMixin):
         common_id = uuid.uuid4().hex
         # Create a project
         project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         project = self.resource_api.create_project(project['id'], project)
         # Create a user
         user = unit.new_user_ref(id=common_id,
-                                 domain_id=CONF.identity.default_domain_id)
+                                 domain_id=conf.identity.default_domain_id)
         user = self.identity_api.driver.create_user(common_id, user)
         self.assertEqual(common_id, user['id'])
         # Create a group
         group = unit.new_group_ref(id=common_id,
-                                   domain_id=CONF.identity.default_domain_id)
+                                   domain_id=conf.identity.default_domain_id)
         group = self.identity_api.driver.create_group(common_id, group)
         self.assertEqual(common_id, group['id'])
         # Create four roles
@@ -2387,14 +2384,14 @@ class AssignmentTests(AssignmentTestHelperMixin):
             roles.append(self.role_api.create_role(role['id'], role))
         # Assign roles for user
         self.assignment_api.driver.create_grant(
-            user_id=user['id'], domain_id=CONF.identity.default_domain_id,
+            user_id=user['id'], domain_id=conf.identity.default_domain_id,
             role_id=roles[0]['id'])
         self.assignment_api.driver.create_grant(user_id=user['id'],
                                                 project_id=project['id'],
                                                 role_id=roles[1]['id'])
         # Assign roles for group
         self.assignment_api.driver.create_grant(
-            group_id=group['id'], domain_id=CONF.identity.default_domain_id,
+            group_id=group['id'], domain_id=conf.identity.default_domain_id,
             role_id=roles[2]['id'])
         self.assignment_api.driver.create_grant(group_id=group['id'],
                                                 project_id=project['id'],
@@ -2424,7 +2421,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         # two new domains. This test makes sure that when one of the new
         # domains is deleted, the role assignments for the user and the group
         # from the default domain are deleted only on that domain.
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
 
         role = unit.new_role_ref()
@@ -2583,21 +2580,21 @@ class InheritanceTests(AssignmentTestHelperMixin):
     def test_crud_inherited_and_direct_assignment_for_user_on_domain(self):
         self._test_crud_inherited_and_direct_assignment(
             user_id=self.user_foo['id'],
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
     def test_crud_inherited_and_direct_assignment_for_group_on_domain(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
 
         self._test_crud_inherited_and_direct_assignment(
-            group_id=group['id'], domain_id=CONF.identity.default_domain_id)
+            group_id=group['id'], domain_id=conf.identity.default_domain_id)
 
     def test_crud_inherited_and_direct_assignment_for_user_on_project(self):
         self._test_crud_inherited_and_direct_assignment(
             user_id=self.user_foo['id'], project_id=self.tenant_baz['id'])
 
     def test_crud_inherited_and_direct_assignment_for_group_on_project(self):
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
 
         self._test_crud_inherited_and_direct_assignment(
@@ -2911,16 +2908,16 @@ class InheritanceTests(AssignmentTestHelperMixin):
         # Enable OS-INHERIT extension
         self.config_fixture.config(group='os_inherit', enabled=True)
         root_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         root_project = self.resource_api.create_project(root_project['id'],
                                                         root_project)
         leaf_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=root_project['id'])
         leaf_project = self.resource_api.create_project(leaf_project['id'],
                                                         leaf_project)
 
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
 
         # Grant inherited user role
@@ -2958,7 +2955,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
             # A domain with a project and sub-project, plus a user.
             # Also, create 2 roles.
             'entities': {
-                'domains': {'id': CONF.identity.default_domain_id, 'users': 1,
+                'domains': {'id': conf.identity.default_domain_id, 'users': 1,
                             'projects': {'project': 1}},
                 'roles': 2},
             # A direct role and an inherited role on the parent
@@ -3107,19 +3104,19 @@ class InheritanceTests(AssignmentTestHelperMixin):
         """
         self.config_fixture.config(group='os_inherit', enabled=True)
         root_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         root_project = self.resource_api.create_project(root_project['id'],
                                                         root_project)
         leaf_project = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id,
+            domain_id=conf.identity.default_domain_id,
             parent_id=root_project['id'])
         leaf_project = self.resource_api.create_project(leaf_project['id'],
                                                         leaf_project)
 
-        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=conf.identity.default_domain_id)
         user = self.identity_api.create_user(user)
 
-        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = unit.new_group_ref(domain_id=conf.identity.default_domain_id)
         group = self.identity_api.create_group(group)
         self.identity_api.add_user_to_group(user['id'], group['id'])
 
@@ -3158,7 +3155,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
             # A domain with a project ans sub-project, plus a user.
             # Also, create 2 roles.
             'entities': {
-                'domains': {'id': CONF.identity.default_domain_id, 'users': 1,
+                'domains': {'id': conf.identity.default_domain_id, 'users': 1,
                             'groups': 1,
                             'projects': {'project': 1}},
                 'roles': 2},
@@ -3436,7 +3433,7 @@ class InheritanceTests(AssignmentTestHelperMixin):
             # A domain with a project and sub-project, plus four users,
             # two groups, as well as 4 roles.
             'entities': {
-                'domains': {'id': CONF.identity.default_domain_id, 'users': 4,
+                'domains': {'id': conf.identity.default_domain_id, 'users': 4,
                             'groups': 2,
                             'projects': {'project': 1}},
                 'roles': 4},

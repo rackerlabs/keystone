@@ -1,0 +1,67 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+from oslo_config import cfg
+
+
+_DEPRECATE_EVENTLET_MSG = ('Support for running keystone under eventlet has '
+                           'been removed in the N release. These options '
+                           'remain for backwards compatibility because they '
+                           'are used for URL substitutions.')
+
+GROUP_NAME = __name__.split('.')[-1]
+ALL_OPTS = [
+    cfg.StrOpt('public_bind_host',
+               default='0.0.0.0',  # nosec : Bind to all interfaces by
+               # default for backwards compatibility.
+               deprecated_opts=[cfg.DeprecatedOpt('bind_host',
+                                                  group='DEFAULT'),
+                                cfg.DeprecatedOpt('public_bind_host',
+                                                  group='DEFAULT'), ],
+               deprecated_for_removal=True,
+               deprecated_reason=_DEPRECATE_EVENTLET_MSG,
+               help='The IP address of the network interface for the '
+                    'public service to listen on.'),
+    cfg.PortOpt('public_port', default=5000,
+                deprecated_name='public_port',
+                deprecated_group='DEFAULT',
+                deprecated_for_removal=True,
+                deprecated_reason=_DEPRECATE_EVENTLET_MSG,
+                help='The port number which the public service listens '
+                     'on.'),
+    cfg.StrOpt('admin_bind_host',
+               default='0.0.0.0',  # nosec : Bind to all interfaces by
+               # default for backwards compatibility.
+               deprecated_opts=[cfg.DeprecatedOpt('bind_host',
+                                                  group='DEFAULT'),
+                                cfg.DeprecatedOpt('admin_bind_host',
+                                                  group='DEFAULT')],
+               deprecated_for_removal=True,
+               deprecated_reason=_DEPRECATE_EVENTLET_MSG,
+               help='The IP address of the network interface for the '
+                    'admin service to listen on.'),
+    cfg.PortOpt('admin_port', default=35357,
+                deprecated_name='admin_port',
+                deprecated_group='DEFAULT',
+                deprecated_for_removal=True,
+                deprecated_reason=_DEPRECATE_EVENTLET_MSG,
+                help='The port number which the admin service listens '
+                     'on.'),
+]
+
+
+def register_opts(conf):
+    conf.register_opts(ALL_OPTS, group=GROUP_NAME)
+
+
+def list_opts():
+    return {GROUP_NAME: ALL_OPTS}

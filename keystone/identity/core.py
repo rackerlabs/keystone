@@ -26,10 +26,10 @@ from oslo_log import versionutils
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.common import cache
 from keystone.common import clean
-from keystone.common import config
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.backends import base as identity_interface
@@ -38,8 +38,6 @@ from keystone.identity.mapping_backends import mapping
 from keystone.identity.shadow_backends import base as shadow_interface
 from keystone import notifications
 
-
-CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 
@@ -117,7 +115,7 @@ class DomainConfigs(dict):
         # config dict to make sure we call the right driver
         domain_config = {}
         domain_config['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=domain_config['cfg'])
+        conf.configure(conf=domain_config['cfg'])
         domain_config['cfg'](args=[], project='keystone',
                              default_config_files=file_list)
         domain_config['driver'] = self._load_driver(domain_config)
@@ -142,7 +140,7 @@ class DomainConfigs(dict):
         - Initialise a new instance of the required driver with this new config
 
         """
-        conf_dir = CONF.identity.domain_config_dir
+        conf_dir = conf.identity.domain_config_dir
         if not os.path.exists(conf_dir):
             LOG.warning(_LW('Unable to locate domain config directory: %s'),
                         conf_dir)
@@ -254,7 +252,7 @@ class DomainConfigs(dict):
 
         domain_config = {}
         domain_config['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=domain_config['cfg'])
+        conf.configure(conf=domain_config['cfg'])
         domain_config['cfg'](args=[], project='keystone',
                              default_config_files=[])
 
@@ -296,7 +294,7 @@ class DomainConfigs(dict):
         # This is called by the api call wrapper
         self.driver = standard_driver
 
-        if CONF.identity.domain_configurations_from_database:
+        if conf.identity.domain_configurations_from_database:
             self._setup_domain_drivers_from_database(standard_driver,
                                                      resource_api)
         else:
@@ -314,7 +312,7 @@ class DomainConfigs(dict):
         if domain_id in self:
             return self[domain_id]['cfg']
         else:
-            return CONF
+            return conf
 
     def reload_domain_driver(self, domain_id):
         # Only used to support unit tests that want to set
@@ -353,8 +351,8 @@ class DomainConfigs(dict):
         process, next time it accesses the driver it will pickup the new one.
 
         """
-        if (not CONF.identity.domain_specific_drivers_enabled or
-                not CONF.identity.domain_configurations_from_database):
+        if (not conf.identity.domain_specific_drivers_enabled or
+                not conf.identity.domain_configurations_from_database):
             # If specific drivers are not enabled, then there is nothing to do.
             # If we are not storing the configurations in the database, then
             # we'll only re-read the domain specific config files on startup
@@ -399,7 +397,7 @@ def domains_configured(f):
     @functools.wraps(f)
     def wrapper(self, *args, **kwargs):
         if (not self.domain_configs.configured and
-                CONF.identity.domain_specific_drivers_enabled):
+                conf.identity.domain_specific_drivers_enabled):
             # If domain specific driver has not been configured, acquire the
             # lock and proceed with loading the driver.
             with self.domain_configs.lock:
@@ -481,7 +479,7 @@ class Manager(manager.Manager):
     _GROUP = 'group'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.identity.driver)
+        super(Manager, self).__init__(conf.identity.driver)
         self.domain_configs = DomainConfigs()
 
         self.event_callbacks = {
@@ -547,21 +545,22 @@ class Manager(manager.Manager):
           multi-domain configs), then we don't both with the mapping at all.
 
         """
-        conf = CONF.identity
-
         if not self._needs_post_processing(driver):
             # a classic case would be when running with a single SQL driver
             return ref
 
-        LOG.debug('ID Mapping - Domain ID: %(domain)s, '
-                  'Default Driver: %(driver)s, '
-                  'Domains: %(aware)s, UUIDs: %(generate)s, '
-                  'Compatible IDs: %(compat)s',
-                  {'domain': domain_id,
-                   'driver': (driver == self.driver),
-                   'aware': driver.is_domain_aware(),
-                   'generate': driver.generates_uuids(),
-                   'compat': CONF.identity_mapping.backward_compatible_ids})
+        LOG.debug(
+            'ID Mapping - Domain ID: %(domain)s, Default Driver: %(driver)s, '
+            'Domains: %(aware)s, UUIDs: %(generate)s, Compatible IDs: '
+            '%(compat)s', {
+                'domain': domain_id,
+                'driver': (driver == self.driver),
+                'aware': driver.is_domain_aware(),
+                'generate': driver.generates_uuids(),
+                'compat':
+                    conf.identity.identity_mapping.backward_compatible_ids
+            }
+        )
 
         if isinstance(ref, dict):
             return self._set_domain_id_and_mapping_for_single_ref(
@@ -630,7 +629,7 @@ class Manager(manager.Manager):
         is_not_default_driver = driver is not self.driver
         return (is_not_default_driver or (
             not driver.generates_uuids() and
-            not CONF.identity_mapping.backward_compatible_ids))
+            not conf.identity_mapping.backward_compatible_ids))
 
     def _clear_domain_id_if_domain_unaware(self, driver, ref):
         """Clear domain_id details if driver is not domain aware."""
@@ -664,7 +663,7 @@ class Manager(manager.Manager):
         # that would happen is that the default driver is LDAP and the
         # domain is anything other than None or the default domain.
         if (not driver.is_domain_aware() and driver == self.driver and
-            domain_id != CONF.identity.default_domain_id and
+            domain_id != conf.identity.default_domain_id and
                 domain_id is not None):
                     LOG.warning(_LW('Found multiple domains being mapped to a '
                                     'driver that does not support that (e.g. '
@@ -691,11 +690,10 @@ class Manager(manager.Manager):
         UUIDs etc.)
 
         """
-        conf = CONF.identity
         # First, since we don't know anything about the entity yet, we must
         # assume it needs mapping, so long as we are using domain specific
         # drivers.
-        if conf.domain_specific_drivers_enabled:
+        if conf.identity.domain_specific_drivers_enabled:
             local_id_ref = self.id_mapping_api.get_id_mapping(public_id)
             if local_id_ref:
                 return (
@@ -719,11 +717,11 @@ class Manager(manager.Manager):
             else:
                 # Although we don't have any drivers of this type, i.e. that
                 # understand UUIDs but not domains, conceptually you could.
-                return (conf.default_domain_id, driver, public_id)
+                return (conf.identity.default_domain_id, driver, public_id)
 
         # So the only place left to find the ID is in the default driver which
         # we now know doesn't generate UUIDs
-        if not CONF.identity_mapping.backward_compatible_ids:
+        if not conf.identity.identity_mapping.backward_compatible_ids:
             # We are not running in backward compatibility mode, so we
             # must use a mapping.
             local_id_ref = self.id_mapping_api.get_id_mapping(public_id)
@@ -743,7 +741,7 @@ class Manager(manager.Manager):
         #
         # It is still possible that the public ID is just invalid in
         # which case we leave this to the caller to check.
-        return (conf.default_domain_id, driver, public_id)
+        return (conf.identity.default_domain_id, driver, public_id)
 
     def _assert_user_and_group_in_same_backend(
             self, user_entity_id, user_driver, group_entity_id, group_driver):
@@ -1281,7 +1279,7 @@ class MappingManager(manager.Manager):
     driver_namespace = 'keystone.identity.id_mapping'
 
     def __init__(self):
-        super(MappingManager, self).__init__(CONF.identity_mapping.driver)
+        super(MappingManager, self).__init__(conf.identity_mapping.driver)
 
 
 @versionutils.deprecated(
@@ -1303,7 +1301,7 @@ class ShadowUsersManager(manager.Manager):
     driver_namespace = 'keystone.identity.shadow_users'
 
     def __init__(self):
-        shadow_driver = CONF.shadow_users.driver
+        shadow_driver = conf.shadow_users.driver
 
         super(ShadowUsersManager, self).__init__(shadow_driver)
 

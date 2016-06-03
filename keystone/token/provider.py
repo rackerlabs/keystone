@@ -20,7 +20,6 @@ import datetime
 import sys
 import uuid
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
@@ -28,6 +27,7 @@ import six
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.models import token_model
@@ -37,7 +37,6 @@ from keystone.token import providers
 from keystone.token import utils
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='token')
 
@@ -95,7 +94,7 @@ def default_expire_time():
     :returns: a naive UTC datetime.datetime object
 
     """
-    expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
+    expire_delta = datetime.timedelta(seconds=conf.token.expiration)
     return timeutils.utcnow() + expire_delta
 
 
@@ -140,7 +139,7 @@ class Manager(manager.Manager):
     _persistence_manager = None
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.token.provider)
+        super(Manager, self).__init__(conf.token.provider)
         self._register_callback_listeners()
 
     def _register_callback_listeners(self):
@@ -217,7 +216,7 @@ class Manager(manager.Manager):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
         token_values = self.revoke_api.model.build_token_values_v2(
-            token_data, CONF.identity.default_domain_id)
+            token_data, conf.identity.default_domain_id)
         self.revoke_api.check_token(token_values)
 
     def validate_v2_token(self, token_id, belongs_to=None):
@@ -451,7 +450,7 @@ class Manager(manager.Manager):
         else:
             self.revoke_api.revoke_by_audit_id(token_ref.audit_id)
 
-        if CONF.token.revoke_by_id and self._needs_persistence:
+        if conf.token.revoke_by_id and self._needs_persistence:
             self._persistence.delete_token(token_id=token_id)
 
     def list_revoked_tokens(self):
@@ -459,7 +458,7 @@ class Manager(manager.Manager):
 
     def _trust_deleted_event_callback(self, service, resource_type, operation,
                                       payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             trust_id = payload['resource_info']
             trust = self.trust_api.get_trust(trust_id, deleted=True)
             self._persistence.delete_tokens(user_id=trust['trustor_user_id'],
@@ -467,19 +466,19 @@ class Manager(manager.Manager):
 
     def _delete_user_tokens_callback(self, service, resource_type, operation,
                                      payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             user_id = payload['resource_info']
             self._persistence.delete_tokens_for_user(user_id)
 
     def _delete_domain_tokens_callback(self, service, resource_type,
                                        operation, payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             domain_id = payload['resource_info']
             self._persistence.delete_tokens_for_domain(domain_id=domain_id)
 
     def _delete_user_project_tokens_callback(self, service, resource_type,
                                              operation, payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             user_id = payload['resource_info']['user_id']
             project_id = payload['resource_info']['project_id']
             self._persistence.delete_tokens_for_user(user_id=user_id,
@@ -487,7 +486,7 @@ class Manager(manager.Manager):
 
     def _delete_project_tokens_callback(self, service, resource_type,
                                         operation, payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             project_id = payload['resource_info']
             self._persistence.delete_tokens_for_users(
                 self.assignment_api.list_user_ids_for_project(project_id),
@@ -496,7 +495,7 @@ class Manager(manager.Manager):
     def _delete_user_oauth_consumer_tokens_callback(self, service,
                                                     resource_type, operation,
                                                     payload):
-        if CONF.token.revoke_by_id:
+        if conf.token.revoke_by_id:
             user_id = payload['resource_info']['user_id']
             consumer_id = payload['resource_info']['consumer_id']
             self._persistence.delete_tokens(user_id=user_id,

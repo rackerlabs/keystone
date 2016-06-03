@@ -13,15 +13,12 @@
 import copy
 import uuid
 
-from oslo_config import cfg
 from six.moves import http_client
 
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-
-
-CONF = cfg.CONF
 
 
 class DomainConfigTestCase(test_v3.RestfulTestCase):
@@ -412,7 +409,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         default_config = r.result['config']
         for group in default_config:
             for option in default_config[group]:
-                self.assertEqual(getattr(getattr(CONF, group), option),
+                self.assertEqual(getattr(getattr(conf, group), option),
                                  default_config[group][option])
 
     def test_get_config_default_by_group(self):
@@ -424,7 +421,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         r = self.get(url)
         default_config = r.result['config']
         for option in default_config['ldap']:
-            self.assertEqual(getattr(CONF.ldap, option),
+            self.assertEqual(getattr(conf.ldap. option),
                              default_config['ldap'][option])
 
     def test_get_config_default_by_option(self):
@@ -435,7 +432,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         url = '/domains/config/ldap/url/default'
         r = self.get(url)
         default_config = r.result['config']
-        self.assertEqual(CONF.ldap.url, default_config['url'])
+        self.assertEqual(conf.ldap.url, default_config['url'])
 
     def test_get_config_default_by_invalid_group(self):
         """Call ``GET for /domains/config/{bad-group}/default``."""

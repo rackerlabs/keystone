@@ -14,20 +14,17 @@
 # under the License.
 
 import ldap.modlist
-from oslo_config import cfg
 
+from keystone import conf
 from keystone import exception
 from keystone import identity
 from keystone.tests import unit
 from keystone.tests.unit import test_ldap_livetest
 
 
-CONF = cfg.CONF
-
-
 def create_object(dn, attrs):
-    conn = ldap.initialize(CONF.ldap.url)
-    conn.simple_bind_s(CONF.ldap.user, CONF.ldap.password)
+    conn = ldap.initialize(conf.ldap.url)
+    conn.simple_bind_s(conf.ldap.user, conf.ldap.password)
     ldif = ldap.modlist.addModlist(attrs)
     conn.add_s(dn, ldif)
     conn.unbind_s()

@@ -16,7 +16,6 @@
 """Main entry point into the Catalog service."""
 
 from oslo_cache import core as oslo_cache
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 
@@ -25,12 +24,12 @@ from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone import notifications
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -64,7 +63,7 @@ class Manager(manager.Manager):
     _REGION = 'region'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.catalog.driver)
+        super(Manager, self).__init__(conf.catalog.driver)
 
     def create_region(self, region_ref, initiator=None):
         # Check duplicate ID

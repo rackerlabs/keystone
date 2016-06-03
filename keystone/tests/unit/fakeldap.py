@@ -27,13 +27,14 @@ import re
 import shelve
 
 import ldap
-from oslo_config import cfg
 from oslo_log import log
 import six
 from six import moves
 
+from keystone import conf
 from keystone import exception
 from keystone.identity.backends.ldap import common
+
 
 SCOPE_NAMES = {
     ldap.SCOPE_BASE: 'SCOPE_BASE',
@@ -45,7 +46,6 @@ SCOPE_NAMES = {
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
 
 LOG = log.getLogger(__name__)
-CONF = cfg.CONF
 
 
 def _internal_attr(attr_name, value_or_values):
@@ -298,9 +298,9 @@ class FakeLdap(common.LDAPHandler):
         """Provide for compatibility but this method is ignored."""
         if server_fail:
             raise ldap.SERVER_DOWN
-        whos = ['cn=Admin', CONF.ldap.user]
+        whos = ['cn=Admin', conf.ldap.user]
         if (common.utf8_decode(who) in whos and
-                common.utf8_decode(cred) in ['password', CONF.ldap.password]):
+                common.utf8_decode(cred) in ['password', conf.ldap.password]):
             return
 
         try:

@@ -14,11 +14,9 @@
 
 import uuid
 
-from oslo_config import cfg
 from six.moves import range
 
-
-CONF = cfg.CONF
+from keystone import conf
 
 
 class FilterTests(object):
@@ -110,7 +108,7 @@ class FilterTests(object):
         """
         entity_list = []
         if domain_id is None:
-            domain_id = CONF.identity.default_domain_id
+            domain_id = conf.identity.default_domain_id
         name_dict = name_dict or {}
         for x in range(number):
             # If this index has a name defined in the name_dict, then use it

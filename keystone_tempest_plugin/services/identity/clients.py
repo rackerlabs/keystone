@@ -15,11 +15,9 @@
 import json
 
 from six.moves import http_client
-from tempest import config
 from tempest.lib.common import rest_client
 
-
-CONF = config.CONF
+from keystone import conf
 
 # We only use the identity catalog type
 SERVICE_TYPE = 'identity'
@@ -35,7 +33,7 @@ class Identity(rest_client.RestClient):
         super(Identity, self).__init__(
             auth_provider,
             SERVICE_TYPE,
-            CONF.identity.region,
+            conf.identity.region,
             endpoint_type='adminURL')
 
 

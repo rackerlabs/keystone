@@ -21,13 +21,13 @@ import six
 
 from keystone.catalog.backends import base
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _LC
 
 
-LOG = log.getLogger(__name__)
-
 CONF = cfg.CONF
+LOG = log.getLogger(__name__)
 
 
 def parse_templates(template_lines):
@@ -94,7 +94,7 @@ class Catalog(base.CatalogDriverV8):
         if templates:
             self.templates = templates
         else:
-            template_file = CONF.catalog.template_file
+            template_file = conf.catalog.template_file
             if not os.path.exists(template_file):
                 template_file = CONF.find_file(template_file)
             self._load_templates(template_file)
@@ -211,7 +211,7 @@ class Catalog(base.CatalogDriverV8):
 
         """
         substitutions = dict(
-            itertools.chain(CONF.items(), CONF.eventlet_server.items()))
+            itertools.chain(CONF.items(), conf.eventlet_server.items()))
         substitutions.update({'user_id': user_id})
         silent_keyerror_failures = []
         if tenant_id:

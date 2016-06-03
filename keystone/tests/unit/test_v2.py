@@ -16,20 +16,18 @@ import time
 import uuid
 
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_serialization import jsonutils
 import six
 from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import extension as keystone_extension
+from keystone import conf
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import rest
 from keystone.tests.unit.schema import v2
-
-CONF = cfg.CONF
 
 
 class CoreApiTests(object):
@@ -483,7 +481,7 @@ class CoreApiTests(object):
             },
             token=token,
             expected_status=http_client.OK)
-        self.assertEqual(CONF.member_role_name, self._get_role_name(r.result))
+        self.assertEqual(conf.member_role_name, self._get_role_name(r.result))
 
         # Create a new tenant
         r = self.admin_request(
@@ -628,7 +626,7 @@ class CoreApiTests(object):
             },
             token=token,
             expected_status=http_client.OK)
-        self.assertEqual(CONF.member_role_name, self._get_role_name(r.result))
+        self.assertEqual(conf.member_role_name, self._get_role_name(r.result))
 
         # Update user's tenant with old tenant id
         r = self.admin_request(
@@ -1254,8 +1252,8 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             expected_status=http_client.OK)
         signed_text = r.result['signed']
 
-        data_json = cms.cms_verify(signed_text, CONF.signing.certfile,
-                                   CONF.signing.ca_certs)
+        data_json = cms.cms_verify(signed_text, conf.signing.certfile,
+                                   conf.signing.ca_certs)
 
         data = jsonutils.loads(data_json)
 

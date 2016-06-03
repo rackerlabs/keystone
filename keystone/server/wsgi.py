@@ -14,7 +14,6 @@
 
 import os
 
-from oslo_config import cfg
 import oslo_i18n
 from oslo_log import log
 
@@ -28,12 +27,10 @@ from keystone.common import profiler
 oslo_i18n.enable_lazy()
 
 
-from keystone.common import config
+from keystone import conf
+from keystone import exception
 from keystone.server import common
 from keystone.version import service as keystone_service
-
-
-CONF = cfg.CONF
 
 
 def initialize_application(name,
@@ -56,14 +53,14 @@ def initialize_application(name,
     common.configure(config_files=config_files)
 
     # Log the options used when starting if we're in debug mode...
-    if CONF.debug:
-        CONF.log_opt_values(log.getLogger(CONF.prog), log.DEBUG)
+    if conf.debug:
+        conf.log_opt_values(log.getLogger(conf.prog), log.DEBUG)
 
     post_log_configured_function()
 
     def loadapp():
         return keystone_service.loadapp(
-            'config:%s' % config.find_paste_config(), name)
+            'config:%s' % find_paste_config(), name)
 
     _unused, application = common.setup_backends(
         startup_application_fn=loadapp)
@@ -73,6 +70,41 @@ def initialize_application(name,
     profiler.setup(name)
 
     return application
+
+
+def find_paste_config():
+    """Find Keystone's paste.deploy configuration file.
+
+    Keystone's paste.deploy configuration file is specified in the
+    ``[paste_deploy]`` section of the main Keystone configuration file,
+    ``keystone.conf``.
+
+    For example::
+
+        [paste_deploy]
+        config_file = keystone-paste.ini
+
+    :returns: The selected configuration filename
+    :raises: exception.ConfigFileNotFound
+
+    """
+    if conf.paste_deploy.config_file:
+        paste_config = conf.paste_deploy.config_file
+        paste_config_value = paste_config
+        if not os.path.isabs(paste_config):
+            paste_config = conf.find_file(paste_config)
+    elif conf.CONF.config_file:
+        paste_config = conf.CONF.config_file[0]
+        paste_config_value = paste_config
+    else:
+        # this provides backwards compatibility for keystone.conf files that
+        # still have the entire paste configuration included, rather than just
+        # a [paste_deploy] configuration section referring to an external file
+        paste_config = conf.CONF.find_file('keystone.conf')
+        paste_config_value = 'keystone.conf'
+    if not paste_config or not os.path.exists(paste_config):
+        raise exception.ConfigFileNotFound(config_file=paste_config_value)
+    return paste_config
 
 
 def _get_config_files(env=None):

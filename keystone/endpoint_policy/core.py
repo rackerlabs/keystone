@@ -12,18 +12,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone.endpoint_policy.backends import base
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -40,7 +39,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.endpoint_policy'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.endpoint_policy.driver)
+        super(Manager, self).__init__(conf.endpoint_policy.driver)
 
     def _assert_valid_association(self, endpoint_id, service_id, region_id):
         """Assert that the association is supported.

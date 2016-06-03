@@ -14,17 +14,14 @@
 
 """Main entry point into the Policy service."""
 
-from oslo_config import cfg
 from oslo_log import versionutils
 
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone import notifications
 from keystone.policy.backends import base
-
-
-CONF = cfg.CONF
 
 
 @dependency.provider('policy_api')
@@ -41,7 +38,7 @@ class Manager(manager.Manager):
     _POLICY = 'policy'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.policy.driver)
+        super(Manager, self).__init__(conf.policy.driver)
 
     def create_policy(self, policy_id, policy, initiator=None):
         ref = self.driver.create_policy(policy_id, policy)
