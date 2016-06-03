@@ -119,26 +119,92 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
                           auth_info.get_method_data,
                           method_name)
 
-    def test_empty_domain_in_scope(self):
+
+class TestAuthValidation(test_v3.RestfulTestCase):
+
+    def test_empty_domain_in_scope_not_using_jsonschema(self):
+        # When authentication without a jsonschema, AttributeError occurs
+        # because id or name does not exist in the auth['scope']['domain'].
         auth_data = self.build_authentication_request(
             user_id='test',
             password='test',
             domain_name='')['auth']
         auth_data['scope']['domain'] = []
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(AttributeError,
                           auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
-    def test_empty_project_in_scope(self):
+    def test_empty_project_in_scope_not_using_jsonschema(self):
+        # When authentication without a jsonschema, AttributeError occurs
+        # because id or name does not exist in the auth['scope']['project'].
         auth_data = self.build_authentication_request(
             user_id='test',
             password='test',
             project_name='')['auth']
         auth_data['scope']['project'] = []
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(AttributeError,
                           auth.controllers.AuthInfo.create,
                           None,
+                          auth_data)
+
+    def test_empty_domain_in_scope(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            domain_name='')['auth']
+        auth_data['scope']['domain'] = []
+        context_data = {'environment': {}, 'query_string': {}}
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          context_data,
+                          auth_data)
+
+    def test_empty_project_in_scope(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_name='')['auth']
+        auth_data['scope']['project'] = []
+        context_data = {'environment': {}, 'query_string': {}}
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          context_data,
+                          auth_data)
+
+    def test_empty_domain_in_identity(self):
+        path = '/domains/%s/users/%s/roles/%s' % (
+            self.domain['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_name=self.domain['name'],
+            domain_name=self.domain['name'])['auth']
+
+        auth_data['identity']['password']['user']['domain'] = []
+        context_data = {'environment': {}, 'query_string': {}}
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          context_data,
+                          auth_data)
+
+    def test_empty_user_in_identity(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            domain_name=self.domain['name'])['auth']
+
+        auth_data['identity']['password']['user'] = []
+        context_data = {'environment': {}, 'query_string': {}}
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          context_data,
                           auth_data)
 
 
