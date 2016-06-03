@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_d592d19e",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-03T03:32:05Z",
+      "side": 1,
+      "message": "I would prefer this was isolated into it\u0027s own dependant patch. Easier to see the code shuffle (restruture) then the addition of caching.",
+      "revId": "ee57e441a706138b52037bf4d31ee0d09ba6421c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
