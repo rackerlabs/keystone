@@ -23,10 +23,12 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.auth import schema
 from keystone.common import config
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
 from keystone.federation import constants
@@ -170,9 +172,6 @@ class AuthInfo(object):
                         sys.exc_info()[2])
 
     def _lookup_domain(self, domain_info):
-        if isinstance(domain_info, dict) is False:
-            raise exception.ValidationError(attribute='dict',
-                                            target='domain')
         domain_id = domain_info.get('id')
         domain_name = domain_info.get('name')
         domain_ref = None
@@ -196,9 +195,6 @@ class AuthInfo(object):
         return domain_ref
 
     def _lookup_project(self, project_info):
-        if isinstance(project_info, dict) is False:
-            raise exception.ValidationError(attribute='dict',
-                                            target='project')
         project_id = project_info.get('id')
         project_name = project_info.get('name')
         project_ref = None
@@ -391,6 +387,7 @@ class Auth(controller.V3Controller):
         super(Auth, self).__init__(*args, **kw)
         config.setup_authentication()
 
+    @validation.validated(schema.token_create, 'auth')
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in context['query_string']
