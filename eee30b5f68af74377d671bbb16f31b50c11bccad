@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_37721c4a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-03T15:45:08Z",
+      "side": 1,
+      "message": "isn\u0027t this always set on line 224?",
+      "range": {
+        "startLine": 227,
+        "startChar": 19,
+        "endLine": 227,
+        "endChar": 35
+      },
+      "revId": "eee30b5f68af74377d671bbb16f31b50c11bccad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_0c7d4f1c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 3
