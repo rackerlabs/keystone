@@ -13,16 +13,13 @@
 import random
 import uuid
 
-from oslo_config import cfg
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
 
+from keystone import conf
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-
-
-CONF = cfg.CONF
 
 
 class AssignmentTestCase(test_v3.RestfulTestCase,
@@ -84,14 +81,14 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
     def test_create_member_role(self):
         """Call ``POST /roles``."""
         # specify only the name on creation
-        ref = unit.new_role_ref(name=CONF.member_role_name)
+        ref = unit.new_role_ref(name=conf.member_role_name)
         r = self.post(
             '/roles',
             body={'role': ref})
         self.assertValidRoleResponse(r, ref)
 
         # but the ID should be set as defined in CONF
-        self.assertEqual(CONF.member_role_id, r.json['role']['id'])
+        self.assertEqual(conf.member_role_id, r.json['role']['id'])
 
     # Role Grants tests
 
@@ -891,7 +888,7 @@ class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase,
     """Base class for testing /v3/role_assignments API behavior."""
 
     MAX_HIERARCHY_BREADTH = 3
-    MAX_HIERARCHY_DEPTH = CONF.max_project_tree_depth - 1
+    MAX_HIERARCHY_DEPTH = conf.max_project_tree_depth - 1
 
     def load_sample_data(self):
         """Create sample data to be used on tests.

@@ -17,7 +17,6 @@ import uuid
 
 from cryptography import fernet
 import msgpack
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
@@ -26,13 +25,13 @@ from six.moves import urllib
 
 from keystone.auth import plugins as auth_plugins
 from keystone.common import utils as ks_utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LI
 from keystone.token import provider
 from keystone.token.providers.fernet import utils
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Fernet byte indexes as as computed by pypi/keyless_fernet and defined in
@@ -380,7 +379,7 @@ class DomainScopedPayload(BasePayload):
             b_domain_id = cls.convert_uuid_hex_to_bytes(domain_id)
         except ValueError:
             # the default domain ID is configurable, and probably isn't a UUID
-            if domain_id == CONF.identity.default_domain_id:
+            if domain_id == conf.identity.default_domain_id:
                 b_domain_id = domain_id
             else:
                 raise
@@ -399,7 +398,7 @@ class DomainScopedPayload(BasePayload):
             domain_id = cls.convert_uuid_bytes_to_hex(payload[2])
         except ValueError:
             # the default domain ID is configurable, and probably isn't a UUID
-            if payload[2] == CONF.identity.default_domain_id:
+            if payload[2] == conf.identity.default_domain_id:
                 domain_id = payload[2]
             else:
                 raise

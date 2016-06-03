@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 import six
@@ -21,6 +20,7 @@ from six.moves.urllib import parse
 from keystone.common import controller as common_controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.i18n import _, _LE
@@ -29,7 +29,6 @@ from keystone.token import provider
 
 
 LOG = log.getLogger(__name__)
-CONF = cfg.CONF
 
 
 @dependency.requires('catalog_api', 'resource_api', 'assignment_api')
@@ -56,7 +55,7 @@ class V2TokenDataHelper(object):
         # NOTE(lbragstad): Version 2.0 tokens don't know about any domain other
         # than the default domain specified in the configuration.
         domain_id = v3_token.get('domain', {}).get('id')
-        if domain_id and CONF.identity.default_domain_id != domain_id:
+        if domain_id and conf.identity.default_domain_id != domain_id:
             msg = ('Unable to validate domain-scoped tokens outside of the '
                    'default domain')
             raise exception.Unauthorized(msg)
@@ -169,7 +168,7 @@ class V2TokenDataHelper(object):
                 o['access']['metadata'] = {'is_admin': 0}
         if 'roles' in metadata_ref:
             o['access']['metadata']['roles'] = metadata_ref['roles']
-        if CONF.trust.enabled and trust_ref:
+        if conf.trust.enabled and trust_ref:
             o['access']['trust'] = {'trustee_user_id':
                                     trust_ref['trustee_user_id'],
                                     'id': trust_ref['id'],
@@ -272,8 +271,8 @@ class V3TokenDataHelper(object):
         # acting as domains is merged.  Code will likely be:
         # (r.admin_project_name == None and project['is_domain'] == True
         #  and project['name'] == r.admin_project_domain_name)
-        admin_project_name = CONF.resource.admin_project_name
-        admin_project_domain_name = CONF.resource.admin_project_domain_name
+        admin_project_name = conf.resource.admin_project_name
+        admin_project_domain_name = conf.resource.admin_project_domain_name
 
         if not (admin_project_name and admin_project_domain_name):
             return  # admin project not enabled
@@ -344,7 +343,7 @@ class V3TokenDataHelper(object):
             return
 
         user_ref = self.identity_api.get_user(user_id)
-        if CONF.trust.enabled and trust and 'OS-TRUST:trust' not in token_data:
+        if conf.trust.enabled and trust and 'OS-TRUST:trust' not in token_data:
             trustor_user_ref = (self.identity_api.get_user(
                                 trust['trustor_user_id']))
             try:
@@ -391,7 +390,7 @@ class V3TokenDataHelper(object):
             token_data['roles'] = filtered_roles
             return
 
-        if CONF.trust.enabled and trust:
+        if conf.trust.enabled and trust:
             # If redelegated_trust_id is set, then we must traverse the
             # trust_chain in order to determine who the original trustor is. We
             # need to do this because the user ID of the original trustor helps
@@ -412,7 +411,7 @@ class V3TokenDataHelper(object):
 
         if token_domain_id or token_project_id:
             filtered_roles = []
-            if CONF.trust.enabled and trust:
+            if conf.trust.enabled and trust:
                 # First expand out any roles that were in the trust to include
                 # any implied roles, whether global or domain specific
                 refs = [{'role_id': role['id']} for role in trust['roles']]
@@ -470,7 +469,7 @@ class V3TokenDataHelper(object):
             # no need to repopulate service catalog
             return
 
-        if CONF.trust.enabled and trust:
+        if conf.trust.enabled and trust:
             user_id = trust['trustor_user_id']
         if project_id or domain_id:
             service_catalog = self.catalog_api.get_v3_catalog(
@@ -571,7 +570,7 @@ class BaseProvider(provider.Provider):
 
         metadata_ref = token_ref['metadata']
         trust_ref = None
-        if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
+        if conf.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
             trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
 
         token_data = self.v2_token_data_helper.format_token(
@@ -597,11 +596,11 @@ class BaseProvider(provider.Provider):
                     'authentication.'))
 
         # for V2, trust is stashed in metadata_ref
-        if (CONF.trust.enabled and not trust and metadata_ref and
+        if (conf.trust.enabled and not trust and metadata_ref and
                 'trust_id' in metadata_ref):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
-        if CONF.trust.enabled and trust:
+        if conf.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden(_('User is not a trustee.'))
 
@@ -646,8 +645,8 @@ class BaseProvider(provider.Provider):
                     'protocol': {'id': protocol}
                 },
                 'domain': {
-                    'id': CONF.federation.federated_domain_name,
-                    'name': CONF.federation.federated_domain_name
+                    'id': conf.federation.federated_domain_name,
+                    'name': conf.federation.federated_domain_name
                 }
             }
         }
@@ -689,22 +688,22 @@ class BaseProvider(provider.Provider):
             # be in the default domain. Furthermore, the delegated project
             # must also be in the default domain
             metadata_ref = token_ref['metadata']
-            if CONF.trust.enabled and 'trust_id' in metadata_ref:
+            if conf.trust.enabled and 'trust_id' in metadata_ref:
                 trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
                 trustee_user_ref = self.identity_api.get_user(
                     trust_ref['trustee_user_id'])
                 if (trustee_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                        conf.identity.default_domain_id):
                     raise exception.Unauthorized(msg)
                 trustor_user_ref = self.identity_api.get_user(
                     trust_ref['trustor_user_id'])
                 if (trustor_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                        conf.identity.default_domain_id):
                     raise exception.Unauthorized(msg)
                 project_ref = self.resource_api.get_project(
                     trust_ref['project_id'])
                 if (project_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                        conf.identity.default_domain_id):
                     raise exception.Unauthorized(msg)
 
     def validate_v2_token(self, token_ref):

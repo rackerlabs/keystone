@@ -17,15 +17,13 @@
 import fixtures
 import ldappool
 import mock
-from oslo_config import cfg
 
+from keystone import conf
 from keystone.identity.backends import ldap
 from keystone.identity.backends.ldap import common as common_ldap
 from keystone.tests import unit
 from keystone.tests.unit import fakeldap
 from keystone.tests.unit import test_backend_ldap
-
-CONF = cfg.CONF
 
 
 class LdapPoolCommonTestMixin(object):
@@ -40,7 +38,7 @@ class LdapPoolCommonTestMixin(object):
         self.user_foo.pop('password')
         self.assertDictEqual(self.user_foo, user_ref)
 
-        handler = common_ldap._get_connection(CONF.ldap.url, use_pool=True)
+        handler = common_ldap._get_connection(conf.ldap.url, use_pool=True)
         self.assertIsInstance(handler, common_ldap.PooledLDAPHandler)
 
     @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
@@ -51,7 +49,7 @@ class LdapPoolCommonTestMixin(object):
         self.config_fixture.config(group='ldap', use_auth_pool=True)
         self.cleanup_pools()
 
-        user_api = ldap.UserApi(CONF)
+        user_api = ldap.UserApi(conf)
         handler = user_api.get_connection(user=None, password=None,
                                           end_user_auth=True)
         # use_auth_pool flag does not matter when use_pool is False
@@ -67,7 +65,7 @@ class LdapPoolCommonTestMixin(object):
         self.config_fixture.config(group='ldap', use_auth_pool=False)
         self.cleanup_pools()
 
-        user_api = ldap.UserApi(CONF)
+        user_api = ldap.UserApi(conf)
         handler = user_api.get_connection(user=None, password=None,
                                           end_user_auth=True)
         self.assertIsInstance(handler.conn, common_ldap.PythonLDAPHandler)
@@ -80,50 +78,50 @@ class LdapPoolCommonTestMixin(object):
 
     def test_pool_size_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.pool_size, ldappool_cm.size)
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.pool_size, ldappool_cm.size)
 
     def test_pool_retry_max_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.pool_retry_max, ldappool_cm.retry_max)
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.pool_retry_max, ldappool_cm.retry_max)
 
     def test_pool_retry_delay_set(self):
         # just make one identity call to initiate ldap connection if not there
         self.identity_api.get_user(self.user_foo['id'])
 
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.pool_retry_delay, ldappool_cm.retry_delay)
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.pool_retry_delay, ldappool_cm.retry_delay)
 
     def test_pool_use_tls_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.use_tls, ldappool_cm.use_tls)
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.use_tls, ldappool_cm.use_tls)
 
     def test_pool_timeout_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.pool_connection_timeout,
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.pool_connection_timeout,
                          ldappool_cm.timeout)
 
     def test_pool_use_pool_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.use_pool, ldappool_cm.use_pool)
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.use_pool, ldappool_cm.use_pool)
 
     def test_pool_connection_lifetime_set(self):
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
-        self.assertEqual(CONF.ldap.pool_connection_lifetime,
+        ldappool_cm = self.conn_pools[conf.ldap.url]
+        self.assertEqual(conf.ldap.pool_connection_lifetime,
                          ldappool_cm.max_lifetime)
 
     def test_max_connection_error_raised(self):
 
-        who = CONF.ldap.user
-        cred = CONF.ldap.password
+        who = conf.ldap.user
+        cred = conf.ldap.password
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[conf.ldap.url]
         ldappool_cm.size = 2
 
         # 3rd connection attempt should raise Max connection error
@@ -136,14 +134,14 @@ class LdapPoolCommonTestMixin(object):
                 except Exception as ex:
                     self.assertIsInstance(ex,
                                           ldappool.MaxConnectionReachedError)
-        ldappool_cm.size = CONF.ldap.pool_size
+        ldappool_cm.size = conf.ldap.pool_size
 
     def test_pool_size_expands_correctly(self):
 
-        who = CONF.ldap.user
-        cred = CONF.ldap.password
+        who = conf.ldap.user
+        cred = conf.ldap.password
         # get related connection manager instance
-        ldappool_cm = self.conn_pools[CONF.ldap.url]
+        ldappool_cm = self.conn_pools[conf.ldap.url]
         ldappool_cm.size = 3
 
         def _get_conn():
@@ -239,5 +237,5 @@ class LDAPIdentity(LdapPoolCommonTestMixin,
         self.identity_api.get_user.invalidate(self.identity_api,
                                               self.user_foo['id'])
         self.identity_api.get_user(self.user_foo['id'])
-        mocked_method.assert_any_call(CONF.ldap.user)
-        mocked_method.assert_any_call(CONF.ldap.password)
+        mocked_method.assert_any_call(conf.ldap.user)
+        mocked_method.assert_any_call(conf.ldap.password)

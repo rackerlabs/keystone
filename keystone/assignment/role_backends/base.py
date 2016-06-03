@@ -14,16 +14,15 @@
 
 import abc
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 import six
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -38,7 +37,7 @@ LOG = log.getLogger(__name__)
 class RoleDriverBase(object):
 
     def _get_list_limit(self):
-        return CONF.role.list_limit or CONF.list_limit
+        return conf.role.list_limit or conf.list_limit
 
     @abc.abstractmethod
     def create_role(self, role_id, role):

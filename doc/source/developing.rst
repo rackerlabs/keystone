@@ -639,7 +639,7 @@ Example of using a section specific ``cache_time`` (in this example, ``identity`
     SHOULD_CACHE = cache.should_cache_fn('identity')
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=CONF.identity.cache_time)
+                        expiration_time=conf.identity.cache_time)
     def cachable_function(arg1, arg2, arg3):
         ...
         return some_value

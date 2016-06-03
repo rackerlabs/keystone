@@ -20,14 +20,13 @@ import time
 from dogpile.cache import api
 from dogpile.cache.backends import memcached
 from oslo_cache.backends import memcache_pool
-from oslo_config import cfg
 from six.moves import range
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 
 
-CONF = cfg.CONF
 NO_VALUE = api.NO_VALUE
 random = _random.SystemRandom()
 
@@ -97,7 +96,7 @@ class MemcachedBackend(object):
             # configuration once full dict_config style configuration for
             # KVS backends is supported.  For now use the current memcache
             # section of the configuration.
-            arguments['url'] = CONF.memcache.servers
+            arguments['url'] = conf.memcache.servers
 
         if backend is None:
             # NOTE(morganfainberg): Use the basic memcached backend if nothing

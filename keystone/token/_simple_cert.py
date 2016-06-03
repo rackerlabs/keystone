@@ -14,7 +14,6 @@
 # it is only used in support of the PKI/PKIz token providers.
 import functools
 
-from oslo_config import cfg
 import webob
 
 from keystone.common import controller
@@ -22,10 +21,10 @@ from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import json_home
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 
 
-CONF = cfg.CONF
 EXTENSION_DATA = {
     'name': 'OpenStack Simple Certificate API',
     'namespace': 'http://docs.openstack.org/identity/api/ext/'
@@ -85,7 +84,7 @@ class SimpleCert(controller.V3Controller):
         return webob.Response(body=body, headerlist=headers, status="200 OK")
 
     def get_ca_certificate(self, context):
-        return self._get_certificate(CONF.signing.ca_certs)
+        return self._get_certificate(conf.signing.ca_certs)
 
     def list_certificates(self, context):
-        return self._get_certificate(CONF.signing.certfile)
+        return self._get_certificate(conf.signing.certfile)

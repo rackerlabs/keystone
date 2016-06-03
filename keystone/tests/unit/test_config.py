@@ -14,14 +14,9 @@
 
 import uuid
 
-from oslo_config import cfg
-
-from keystone.common import config
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
-
-
-CONF = cfg.CONF
 
 
 class ConfigTestCase(unit.TestCase):
@@ -36,22 +31,22 @@ class ConfigTestCase(unit.TestCase):
 
     def test_paste_config(self):
         self.assertEqual(unit.dirs.etc('keystone-paste.ini'),
-                         config.find_paste_config())
+                         conf.find_paste_config())
         self.config_fixture.config(group='paste_deploy',
                                    config_file=uuid.uuid4().hex)
         self.assertRaises(exception.ConfigFileNotFound,
-                          config.find_paste_config)
+                          conf.find_paste_config)
         self.config_fixture.config(group='paste_deploy', config_file='')
         self.assertEqual(unit.dirs.etc('keystone.conf.sample'),
-                         config.find_paste_config())
+                         conf.find_paste_config())
 
     def test_config_default(self):
-        self.assertIs(None, CONF.auth.password)
-        self.assertIs(None, CONF.auth.token)
+        self.assertIs(None, conf.auth.password)
+        self.assertIs(None, conf.auth.token)
 
     def test_profiler_config_default(self):
         """Check config.set_config_defaults() has set [profiler]enabled."""
-        self.assertEqual(False, CONF.profiler.enabled)
+        self.assertEqual(False, conf.profiler.enabled)
 
 
 class DeprecatedTestCase(unit.TestCase):
@@ -66,8 +61,8 @@ class DeprecatedTestCase(unit.TestCase):
         # Options in [sql] were moved to [database] in Icehouse for the change
         # to use oslo-incubator's db.sqlalchemy.sessions.
 
-        self.assertEqual('sqlite://deprecated', CONF.database.connection)
-        self.assertEqual(54321, CONF.database.idle_timeout)
+        self.assertEqual('sqlite://deprecated', conf.database.connection)
+        self.assertEqual(54321, conf.database.idle_timeout)
 
 
 class DeprecatedOverrideTestCase(unit.TestCase):
@@ -82,5 +77,5 @@ class DeprecatedOverrideTestCase(unit.TestCase):
         # Options in [sql] were moved to [database] in Icehouse for the change
         # to use oslo-incubator's db.sqlalchemy.sessions.
 
-        self.assertEqual('sqlite://new', CONF.database.connection)
-        self.assertEqual(65432, CONF.database.idle_timeout)
+        self.assertEqual('sqlite://new', conf.database.connection)
+        self.assertEqual(65432, conf.database.idle_timeout)

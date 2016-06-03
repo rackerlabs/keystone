@@ -16,18 +16,15 @@ import uuid
 
 import fixtures
 import mock
-from oslo_config import cfg
 from oslo_log import log
 from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import controller
+from keystone import conf
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
-
-
-CONF = cfg.CONF
 
 
 # NOTE(morganfainberg): To be removed when admin_token_auth middleware is
@@ -46,7 +43,7 @@ class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
         # disallowed when domain-specific drivers are enabled
         self.config_fixture.config(group='identity',
                                    domain_specific_drivers_enabled=True)
-        self.get('/users', token=CONF.admin_token,
+        self.get('/users', token=conf.admin_token,
                  expected_status=exception.Unauthorized.code)
 
     def test_create_user_with_admin_token_and_no_domain(self):
@@ -61,7 +58,7 @@ class IdentityTestCaseStaticAdminToken(test_v3.RestfulTestCase):
         ref = unit.new_user_ref(domain_id=self.domain_id)
         # Delete the domain id before sending the request.
         del ref['domain_id']
-        self.post('/users', body={'user': ref}, token=CONF.admin_token,
+        self.post('/users', body={'user': ref}, token=conf.admin_token,
                   expected_status=http_client.BAD_REQUEST)
 
 
@@ -138,7 +135,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             r = self.post('/users', body={'user': ref_nd}, auth=auth)
             self.assertTrue(mock_dep.called)
 
-        ref['domain_id'] = CONF.identity.default_domain_id
+        ref['domain_id'] = conf.identity.default_domain_id
         return self.assertValidUserResponse(r, ref)
 
     def test_create_user_with_admin_token_and_domain(self):
@@ -430,7 +427,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``PATCH /users/{user_id}`` with domain_id."""
         user = unit.new_user_ref(domain_id=self.domain['id'])
         user = self.identity_api.create_user(user)
-        user['domain_id'] = CONF.identity.default_domain_id
+        user['domain_id'] = conf.identity.default_domain_id
         r = self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user},
@@ -535,7 +532,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_update_group_domain_id(self):
         """Call ``PATCH /groups/{group_id}`` with domain_id."""
-        self.group['domain_id'] = CONF.identity.default_domain_id
+        self.group['domain_id'] = conf.identity.default_domain_id
         r = self.patch('/groups/%(group_id)s' % {
             'group_id': self.group['id']},
             body={'group': self.group},
@@ -597,7 +594,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # domain_id should result in HTTP 400
         ref = unit.new_user_ref(domain_id=self.domain_id,
                                 project_id=self.domain_id)
-        self.post('/users', body={'user': ref}, token=CONF.admin_token,
+        self.post('/users', body={'user': ref}, token=conf.admin_token,
                   expected_status=http_client.BAD_REQUEST)
 
         # updating user's default_project_id to a domain_id should result
@@ -606,7 +603,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body={'user': user},
-            token=CONF.admin_token,
+            token=conf.admin_token,
             expected_status=http_client.BAD_REQUEST)
 
 
@@ -636,25 +633,25 @@ class IdentityV3toV2MethodsTestCase(unit.TestCase):
             id=user_id,
             name=user_id,
             project_id=project_id,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         # User without default_project_id or tenantId in ref
         self.user2 = self.new_user_ref(
             id=user_id,
             name=user_id,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         # User with both tenantId and default_project_id in ref
         self.user3 = self.new_user_ref(
             id=user_id,
             name=user_id,
             project_id=project_id,
             tenantId=project_id,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
         # User with only tenantId in ref
         self.user4 = self.new_user_ref(
             id=user_id,
             name=user_id,
             tenantId=project_id,
-            domain_id=CONF.identity.default_domain_id)
+            domain_id=conf.identity.default_domain_id)
 
         # Expected result if the user is meant to have a tenantId element
         self.expected_user = {'id': user_id,

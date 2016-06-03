@@ -21,11 +21,11 @@ from oslo_log import log
 from oslo_utils import timeutils
 import six
 
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LW
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -266,12 +266,13 @@ def get_remote_id_parameter(protocol):
     # This allows the user to register protocols other than oidc and saml2.
     remote_id_parameter = None
     try:
-        remote_id_parameter = CONF[protocol]['remote_id_attribute']
+        remote_id_parameter = conf.getattr(protocol)['remote_id_attribute']
     except AttributeError:
-        CONF.register_opt(cfg.StrOpt('remote_id_attribute'),
-                          group=protocol)
+        # FIXME(dolph): options should only be registered in keystone.conf
+        cfg.CONF.register_opt(cfg.StrOpt('remote_id_attribute'),
+                              group=protocol)
         try:
-            remote_id_parameter = CONF[protocol]['remote_id_attribute']
+            remote_id_parameter = conf.getattr(protocol)['remote_id_attribute']
         except AttributeError:  # nosec
             # No remote ID attr, will be logged and use the default instead.
             pass
@@ -279,7 +280,7 @@ def get_remote_id_parameter(protocol):
         LOG.debug('Cannot find "remote_id_attribute" in configuration '
                   'group %s. Trying default location in '
                   'group federation.', protocol)
-        remote_id_parameter = CONF.federation.remote_id_attribute
+        remote_id_parameter = conf.federation.remote_id_attribute
 
     return remote_id_parameter
 
@@ -424,7 +425,7 @@ def transform_to_group_ids(group_names, mapping_id,
 
 def get_assertion_params_from_env(context):
     LOG.debug('Environment variables: %s', context['environment'])
-    prefix = CONF.federation.assertion_prefix
+    prefix = conf.federation.assertion_prefix
     for k, v in list(context['environment'].items()):
         if not k.startswith(prefix):
             continue
@@ -602,7 +603,7 @@ class RuleProcessor(object):
 
             if user_type == UserType.EPHEMERAL:
                 user['domain'] = {
-                    'id': CONF.federation.federated_domain_name
+                    'id': conf.federation.federated_domain_name
                 }
 
         # initialize the group_ids as a set to eliminate duplicates

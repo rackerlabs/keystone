@@ -10,13 +10,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import versionutils
 
+from keystone import conf
 from keystone.token.persistence.backends import memcache
-
-
-CONF = cfg.CONF
 
 
 class Token(memcache.Token):
@@ -30,5 +27,5 @@ class Token(memcache.Token):
     def __init__(self, *args, **kwargs):
         for arg in ('dead_retry', 'socket_timeout', 'pool_maxsize',
                     'pool_unused_timeout', 'pool_connection_get_timeout'):
-            kwargs[arg] = getattr(CONF.memcache, arg)
+            kwargs[arg] = getattr(conf.memcache. arg)
         super(Token, self).__init__(*args, **kwargs)

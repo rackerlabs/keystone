@@ -16,15 +16,12 @@
 
 import abc
 
-from oslo_config import cfg
 import six
 
 from keystone.common import dependency
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
-
-
-CONF = cfg.CONF
 
 
 @dependency.provider('id_generator_api')
@@ -34,7 +31,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.identity.id_generator'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.identity_mapping.generator)
+        super(Manager, self).__init__(conf.identity.mapping.generator)
 
 
 @six.add_metaclass(abc.ABCMeta)

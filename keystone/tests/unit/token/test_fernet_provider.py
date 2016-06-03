@@ -20,8 +20,8 @@ import msgpack
 from oslo_utils import timeutils
 from six.moves import urllib
 
-from keystone.common import config
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.tests import unit
@@ -31,9 +31,6 @@ from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
 from keystone.token.providers.fernet import utils as fernet_utils
-
-
-CONF = config.CONF
 
 
 class TestFernetTokenProvider(unit.TestCase):
@@ -141,8 +138,8 @@ class TestValidate(unit.TestCase):
         exp_user_info = {
             'id': user_ref['id'],
             'name': user_ref['id'],
-            'domain': {'id': CONF.federation.federated_domain_name,
-                       'name': CONF.federation.federated_domain_name, },
+            'domain': {'id': conf.federation.federated_domain_name,
+                       'name': conf.federation.federated_domain_name, },
             federation_constants.FEDERATION: {
                 'groups': [{'id': group_id} for group_id in group_ids],
                 'identity_provider': {'id': identity_provider, },
@@ -382,7 +379,7 @@ class TestPayloads(unit.TestCase):
 
     def test_domain_scoped_payload_with_default_domain(self):
         self._test_payload(token_formatters.DomainScopedPayload,
-                           exp_domain_id=CONF.identity.default_domain_id)
+                           exp_domain_id=conf.identity.default_domain_id)
 
     def test_trust_scoped_payload(self):
         self._test_payload(token_formatters.TrustScopedPayload,
@@ -486,7 +483,7 @@ class TestFernetKeyRotation(unit.TestCase):
     def keys(self):
         """Key files converted to numbers."""
         return sorted(
-            int(x) for x in os.listdir(CONF.fernet_tokens.key_repository))
+            int(x) for x in os.listdir(conf.fernet_tokens.key_repository))
 
     @property
     def key_repository_size(self):
@@ -587,13 +584,13 @@ class TestFernetKeyRotation(unit.TestCase):
 
     def test_non_numeric_files(self):
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
-        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '99.bak')
+        evil_file = os.path.join(conf.fernet_tokens.key_repository, '99.bak')
         with open(evil_file, 'w'):
             pass
         fernet_utils.rotate_keys()
         self.assertTrue(os.path.isfile(evil_file))
         keys = 0
-        for x in os.listdir(CONF.fernet_tokens.key_repository):
+        for x in os.listdir(conf.fernet_tokens.key_repository):
             if x == '99.bak':
                 continue
             keys += 1
@@ -603,7 +600,7 @@ class TestFernetKeyRotation(unit.TestCase):
 class TestLoadKeys(unit.TestCase):
     def test_non_numeric_files(self):
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
-        evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
+        evil_file = os.path.join(conf.fernet_tokens.key_repository, '~1')
         with open(evil_file, 'w'):
             pass
         keys = fernet_utils.load_keys()

@@ -12,20 +12,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
-
 from keystone.catalog.backends import sql
 from keystone.common import dependency
 from keystone.common import utils
-
-
-CONF = cfg.CONF
+from keystone import conf
 
 
 @dependency.requires('catalog_api')
 class EndpointFilterCatalog(sql.Catalog):
     def get_v3_catalog(self, user_id, project_id):
-        substitutions = dict(CONF.items())
+        # FIXME(dolph): What should CONF.items() be, post-keystone.conf?
+        substitutions = dict(conf.items())
         substitutions.update({
             'tenant_id': project_id,
             'project_id': project_id,
@@ -38,7 +35,7 @@ class EndpointFilterCatalog(sql.Catalog):
                                  list_endpoints_for_project(project_id))
 
         if (not dict_of_endpoint_refs and
-                CONF.endpoint_filter.return_all_endpoints_if_no_filter):
+                conf.endpoint_filter.return_all_endpoints_if_no_filter):
             return super(EndpointFilterCatalog, self).get_v3_catalog(
                 user_id, project_id)
 

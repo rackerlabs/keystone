@@ -14,7 +14,6 @@
 
 import os
 
-from oslo_config import cfg
 import oslo_i18n
 from oslo_log import log
 
@@ -28,12 +27,9 @@ from keystone.common import profiler
 oslo_i18n.enable_lazy()
 
 
-from keystone.common import config
+from keystone import conf
 from keystone.server import common
 from keystone.version import service as keystone_service
-
-
-CONF = cfg.CONF
 
 
 def initialize_application(name,
@@ -56,14 +52,14 @@ def initialize_application(name,
     common.configure(config_files=config_files)
 
     # Log the options used when starting if we're in debug mode...
-    if CONF.debug:
-        CONF.log_opt_values(log.getLogger(CONF.prog), log.DEBUG)
+    if conf.debug:
+        conf.log_opt_values(log.getLogger(conf.prog), log.DEBUG)
 
     post_log_configured_function()
 
     def loadapp():
         return keystone_service.loadapp(
-            'config:%s' % config.find_paste_config(), name)
+            'config:%s' % conf.find_paste_config(), name)
 
     _unused, application = common.setup_backends(
         startup_application_fn=loadapp)

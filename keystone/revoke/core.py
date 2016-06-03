@@ -13,21 +13,18 @@
 """Main entry point into the Revoke service."""
 
 import oslo_cache
-from oslo_config import cfg
 from oslo_log import versionutils
 
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import revoke_model
 from keystone import notifications
 from keystone.revoke.backends import base
-
-
-CONF = cfg.CONF
 
 
 EXTENSION_DATA = {
@@ -71,7 +68,7 @@ class Manager(manager.Manager):
     driver_namespace = 'keystone.revoke'
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.revoke.driver)
+        super(Manager, self).__init__(conf.revoke.driver)
         self._register_listeners()
         self.model = revoke_model
 

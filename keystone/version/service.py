@@ -15,7 +15,6 @@
 import functools
 import sys
 
-from oslo_config import cfg
 from oslo_log import log
 from paste import deploy
 import routes
@@ -24,6 +23,7 @@ from keystone.assignment import routers as assignment_routers
 from keystone.auth import routers as auth_routers
 from keystone.catalog import routers as catalog_routers
 from keystone.common import wsgi
+from keystone import conf
 from keystone.credential import routers as credential_routers
 from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
@@ -42,7 +42,6 @@ from keystone.version import controllers
 from keystone.version import routers
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -145,10 +144,10 @@ def v3_app_factory(global_conf, **local_conf):
                        # when PKI and PKIZ tokens are removed.
                        simple_cert_ext]
 
-    if CONF.trust.enabled:
+    if conf.trust.enabled:
         all_api_routers.append(trust_routers)
 
-    if CONF.endpoint_policy.enabled:
+    if conf.endpoint_policy.enabled:
         all_api_routers.append(endpoint_policy_routers)
 
     for api_routers in all_api_routers:

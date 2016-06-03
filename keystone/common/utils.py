@@ -25,7 +25,6 @@ import os
 import pwd
 import uuid
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import reflection
@@ -36,11 +35,11 @@ import six
 from six import moves
 
 from keystone.common import authorization
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 WHITELISTED_PROPERTIES = [
     'tenant_id', 'project_id', 'user_id',
@@ -124,10 +123,10 @@ class PKIEncoder(SmarterEncoder):
 
 def verify_length_and_trunc_password(password):
     """Verify and truncate the provided password to the max_password_length."""
-    max_length = CONF.identity.max_password_length
+    max_length = conf.identity.max_password_length
     try:
         if len(password) > max_length:
-            if CONF.strict_password_check:
+            if conf.strict_password_check:
                 raise exception.PasswordVerificationError(size=max_length)
             else:
                 LOG.warning(
@@ -161,7 +160,7 @@ def hash_password(password):
     """Hash a password. Hard."""
     password_utf8 = verify_length_and_trunc_password(password).encode('utf-8')
     return passlib.hash.sha512_crypt.encrypt(
-        password_utf8, rounds=CONF.crypt_strength)
+        password_utf8, rounds=conf.crypt_strength)
 
 
 def check_password(password, hashed):
@@ -256,15 +255,15 @@ def auth_str_equal(provided, known):
 
 
 def setup_remote_pydev_debug():
-    if CONF.pydev_debug_host and CONF.pydev_debug_port:
+    if conf.pydev_debug_host and conf.pydev_debug_port:
         try:
             try:
                 from pydev import pydevd
             except ImportError:
                 import pydevd
 
-            pydevd.settrace(CONF.pydev_debug_host,
-                            port=CONF.pydev_debug_port,
+            pydevd.settrace(conf.pydev_debug_host,
+                            port=conf.pydev_debug_port,
                             stdoutToServer=True,
                             stderrToServer=True)
             return True

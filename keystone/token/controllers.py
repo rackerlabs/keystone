@@ -17,7 +17,6 @@ import sys
 
 from keystone.common import utils
 from keystoneclient.common import cms
-from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
@@ -26,13 +25,13 @@ import six
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
 from keystone.token import provider
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -49,13 +48,13 @@ class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
     def ca_cert(self, request, auth=None):
-        with open(CONF.signing.ca_certs, 'r') as ca_file:
+        with open(conf.signing.ca_certs, 'r') as ca_file:
             data = ca_file.read()
         return data
 
     @controller.v2_deprecated
     def signing_cert(self, request, auth=None):
-        with open(CONF.signing.certfile, 'r') as cert_file:
+        with open(conf.signing.certfile, 'r') as cert_file:
             data = cert_file.read()
         return data
 
@@ -145,7 +144,7 @@ class Auth(controller.V2Controller):
 
         # NOTE(wanghong): We consume a trust use only when we are using trusts
         # and have successfully issued a token.
-        if CONF.trust.enabled and 'trust_id' in auth:
+        if conf.trust.enabled and 'trust_id' in auth:
             self.trust_api.consume_use(auth['trust_id'])
 
         return token_data
@@ -154,7 +153,7 @@ class Auth(controller.V2Controller):
         # A trust token cannot be used to get another token
         if token_model_ref.trust_scoped:
             raise exception.Forbidden()
-        if not CONF.token.allow_rescope_scoped_token:
+        if not conf.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
             if token_model_ref.project_scoped or token_model_ref.domain_scoped:
                 raise exception.Forbidden(action=_("rescope a scoped token"))
@@ -173,9 +172,9 @@ class Auth(controller.V2Controller):
                 attribute="id", target="token")
 
         old_token = auth['token']['id']
-        if len(old_token) > CONF.max_token_size:
+        if len(old_token) > conf.max_token_size:
             raise exception.ValidationSizeError(attribute='token',
-                                                size=CONF.max_token_size)
+                                                size=conf.max_token_size)
 
         try:
             token_model_ref = token_model.KeystoneToken(
@@ -191,9 +190,9 @@ class Auth(controller.V2Controller):
         user_id = token_model_ref.user_id
         tenant_id = self._get_project_id_from_auth(auth)
 
-        if not CONF.trust.enabled and 'trust_id' in auth:
+        if not conf.trust.enabled and 'trust_id' in auth:
             raise exception.Forbidden('Trusts are disabled.')
-        elif CONF.trust.enabled and 'trust_id' in auth:
+        elif conf.trust.enabled and 'trust_id' in auth:
             try:
                 trust_ref = self.trust_api.get_trust(auth['trust_id'])
             except exception.TrustNotFound:
@@ -230,7 +229,7 @@ class Auth(controller.V2Controller):
             user_id, tenant_id)
 
         expiry = token_model_ref.expires
-        if CONF.trust.enabled and 'trust_id' in auth:
+        if conf.trust.enabled and 'trust_id' in auth:
             trust_id = auth['trust_id']
             trust_roles = []
             for role in trust_ref['roles']:
@@ -268,9 +267,9 @@ class Auth(controller.V2Controller):
                 attribute='password', target='passwordCredentials')
 
         password = auth['passwordCredentials']['password']
-        if password and len(password) > CONF.identity.max_password_length:
+        if password and len(password) > conf.identity.max_password_length:
             raise exception.ValidationSizeError(
-                attribute='password', size=CONF.identity.max_password_length)
+                attribute='password', size=conf.identity.max_password_length)
 
         if (not auth['passwordCredentials'].get("userId") and
                 not auth['passwordCredentials'].get("username")):
@@ -279,19 +278,19 @@ class Auth(controller.V2Controller):
                 target='passwordCredentials')
 
         user_id = auth['passwordCredentials'].get('userId')
-        if user_id and len(user_id) > CONF.max_param_size:
+        if user_id and len(user_id) > conf.max_param_size:
             raise exception.ValidationSizeError(attribute='userId',
-                                                size=CONF.max_param_size)
+                                                size=conf.max_param_size)
 
         username = auth['passwordCredentials'].get('username', '')
 
         if username:
-            if len(username) > CONF.max_param_size:
+            if len(username) > conf.max_param_size:
                 raise exception.ValidationSizeError(attribute='username',
-                                                    size=CONF.max_param_size)
+                                                    size=conf.max_param_size)
             try:
                 user_ref = self.identity_api.get_user_by_name(
-                    username, CONF.identity.default_domain_id)
+                    username, conf.identity.default_domain_id)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
@@ -326,7 +325,7 @@ class Auth(controller.V2Controller):
         username = environment['REMOTE_USER']
         try:
             user_ref = self.identity_api.get_user_by_name(
-                username, CONF.identity.default_domain_id)
+                username, conf.identity.default_domain_id)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)
@@ -338,7 +337,7 @@ class Auth(controller.V2Controller):
 
         expiry = provider.default_expire_time()
         bind = None
-        if ('kerberos' in CONF.token.bind and
+        if ('kerberos' in conf.token.bind and
                 environment.get('AUTH_TYPE', '').lower() == 'negotiate'):
             bind = {'kerberos': username}
         audit_id = None
@@ -358,23 +357,23 @@ class Auth(controller.V2Controller):
         Returns a valid tenant_id if it exists, or None if not specified.
         """
         tenant_id = auth.get('tenantId')
-        if tenant_id and len(tenant_id) > CONF.max_param_size:
+        if tenant_id and len(tenant_id) > conf.max_param_size:
             raise exception.ValidationSizeError(attribute='tenantId',
-                                                size=CONF.max_param_size)
+                                                size=conf.max_param_size)
 
         tenant_name = auth.get('tenantName')
-        if tenant_name and len(tenant_name) > CONF.max_param_size:
+        if tenant_name and len(tenant_name) > conf.max_param_size:
             raise exception.ValidationSizeError(attribute='tenantName',
-                                                size=CONF.max_param_size)
+                                                size=conf.max_param_size)
 
         if tenant_name:
-            if (CONF.resource.project_name_url_safe == 'strict' and
+            if (conf.resource.project_name_url_safe == 'strict' and
                     utils.is_not_url_safe(tenant_name)):
                 msg = _('Tenant name cannot contain reserved characters.')
                 raise exception.Unauthorized(message=msg)
             try:
                 tenant_ref = self.resource_api.get_project_by_name(
-                    tenant_name, CONF.identity.default_domain_id)
+                    tenant_name, conf.identity.default_domain_id)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:
                 raise exception.Unauthorized(e)
@@ -459,7 +458,7 @@ class Auth(controller.V2Controller):
     @controller.v2_deprecated
     @controller.protected()
     def revocation_list(self, request, auth=None):
-        if not CONF.token.revoke_by_id:
+        if not conf.token.revoke_by_id:
             raise exception.Gone()
         tokens = self.token_provider_api.list_revoked_tokens()
 
@@ -470,8 +469,8 @@ class Auth(controller.V2Controller):
         data = {'revoked': tokens}
         json_data = jsonutils.dumps(data)
         signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
+                                        conf.signing.certfile,
+                                        conf.signing.keyfile)
 
         return {'signed': signed_text}
 

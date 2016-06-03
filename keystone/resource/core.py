@@ -12,7 +12,6 @@
 
 """Main entry point into the Resource service."""
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 import six
@@ -24,13 +23,13 @@ from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import utils
+from keystone import conf
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 from keystone import notifications
 from keystone.resource.backends import base
 from keystone.resource.config_backends import base as config_base
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
@@ -54,7 +53,7 @@ class Manager(manager.Manager):
     def __init__(self):
         # If there is a specific driver specified for resource, then use it.
         # Otherwise retrieve the driver type from the assignment driver.
-        resource_driver = CONF.resource.driver
+        resource_driver = conf.resource.driver
 
         if resource_driver is None:
             assignment_manager = dependency.get_provider('assignment_api')
@@ -80,7 +79,7 @@ class Manager(manager.Manager):
         # increase the depth of any existing project hierarchy by one. To avoid
         # pushing any existing hierarchies over the limit, we add one to the
         # maximum depth allowed, as specified in the configuration file.
-        max_depth = CONF.max_project_tree_depth + 1
+        max_depth = conf.max_project_tree_depth + 1
         if self._get_hierarchy_depth(parents_list) > max_depth:
             raise exception.ForbiddenNotSecurity(
                 _('Max hierarchy depth reached for %s branch.') % project_id)
@@ -98,7 +97,7 @@ class Manager(manager.Manager):
             was not satisfied.
         """
         if (not self.identity_api.multiple_domains_supported and
-                project_ref['id'] != CONF.identity.default_domain_id):
+                project_ref['id'] != conf.identity.default_domain_id):
             raise exception.ValidationError(
                 message=_('Multiple domains are not supported'))
 
@@ -189,7 +188,7 @@ class Manager(manager.Manager):
     def create_project(self, project_id, project, initiator=None):
         project = project.copy()
 
-        if (CONF.resource.project_name_url_safe != 'off' and
+        if (conf.resource.project_name_url_safe != 'off' and
                 utils.is_not_url_safe(project['name'])):
             self._raise_reserved_character_exception('Project',
                                                      project['name'])
@@ -255,7 +254,7 @@ class Manager(manager.Manager):
         """
         # NOTE(marek-denis): We cannot create this attribute in the __init__ as
         # config values are always initialized to default value.
-        federated_domain = CONF.federation.federated_domain_name.lower()
+        federated_domain = conf.federation.federated_domain_name.lower()
         if (domain.get('name') and domain['name'].lower() == federated_domain):
             raise AssertionError(_('Domain cannot be named %s')
                                  % domain['name'])
@@ -302,10 +301,10 @@ class Manager(manager.Manager):
             self.assert_domain_not_federated(project_id, domain)
             if 'enabled' in domain:
                 domain['enabled'] = clean.domain_enabled(domain['enabled'])
-            url_safe_option = CONF.resource.domain_name_url_safe
+            url_safe_option = conf.resource.domain_name_url_safe
             exception_entity = 'Domain'
         else:
-            url_safe_option = CONF.resource.project_name_url_safe
+            url_safe_option = conf.resource.project_name_url_safe
             exception_entity = 'Project'
 
         project_name_changed = ('name' in project and project['name'] !=
@@ -736,7 +735,7 @@ class Manager(manager.Manager):
         return domain_ref
 
     def create_domain(self, domain_id, domain, initiator=None):
-        if (CONF.resource.domain_name_url_safe != 'off' and
+        if (conf.resource.domain_name_url_safe != 'off' and
                 utils.is_not_url_safe(domain['name'])):
             self._raise_reserved_character_exception('Domain', domain['name'])
         project_from_domain = base.get_project_from_domain(domain)
@@ -878,11 +877,11 @@ class Manager(manager.Manager):
         try:
             default_domain_attrs = {
                 'name': 'Default',
-                'id': CONF.identity.default_domain_id,
+                'id': conf.identity.default_domain_id,
                 'description': 'Domain created automatically to support V2.0 '
                                'operations.',
             }
-            self.create_domain(CONF.identity.default_domain_id,
+            self.create_domain(conf.identity.default_domain_id,
                                default_domain_attrs)
             LOG.warning(_LW(
                 'The default domain was created automatically to contain V2 '
@@ -986,7 +985,7 @@ class DomainConfigManager(manager.Manager):
     }
 
     def __init__(self):
-        super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
+        super(DomainConfigManager, self).__init__(conf.domain_config.driver)
 
     def _assert_valid_config(self, config):
         """Ensure the options in the config are valid.
@@ -1406,9 +1405,9 @@ class DomainConfigManager(manager.Manager):
 
         """
         def _option_dict(group, option):
-            group_attr = getattr(CONF, group)
+            group_attr = getattr(conf, group)
             if group_attr is None:
-                msg = _('Group  %s not found in config') % group
+                msg = _('Group %s not found in config') % group
                 raise exception.UnexpectedError(msg)
             return {'group': group, 'option': option,
                     'value': getattr(group_attr, option)}

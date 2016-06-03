@@ -12,15 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import encodeutils
 import six
 
+from keystone import conf
 from keystone.i18n import _, _LW
 
 
-CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Tests use this to make exception message format errors fatal
@@ -180,7 +179,7 @@ class SecurityError(Error):
 
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in insecure_debug mode."""
-        if message and CONF.insecure_debug:
+        if message and conf.insecure_debug:
             if isinstance(message, six.string_types):
                 # Only do replacement if message is string. The message is
                 # sometimes a different exception or bytes, which would raise
@@ -217,7 +216,7 @@ class AuthMethodNotSupported(AuthPluginException):
 
     def __init__(self, *args, **kwargs):
         super(AuthMethodNotSupported, self).__init__(*args, **kwargs)
-        self.authentication = {'methods': CONF.auth.methods}
+        self.authentication = {'methods': conf.auth.methods}
 
 
 class AdditionalAuthRequired(AuthPluginException):
