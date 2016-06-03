@@ -134,6 +134,9 @@ class BaseUserInfo(object):
                         sys.exc_info()[2])
 
     def _lookup_domain(self, domain_info):
+        if isinstance(domain_info, dict) is False:
+            raise exception.ValidationError(attribute='dict',
+                                            target='domain')
         domain_id = domain_info.get('id')
         domain_name = domain_info.get('name')
         domain_ref = None
@@ -157,6 +160,9 @@ class BaseUserInfo(object):
             raise exception.ValidationError(attribute='user',
                                             target=self.METHOD_NAME)
         user_info = auth_payload['user']
+        if isinstance(user_info, dict) is False:
+            raise exception.ValidationError(attribute='dict',
+                                            target='user')
         user_id = user_info.get('id')
         user_name = user_info.get('name')
         user_ref = None
