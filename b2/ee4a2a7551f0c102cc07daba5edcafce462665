@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hpe.com>
+Workflow+1: guang-yee <guang.yee@hpe.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 03 Jun 2016 01:38:52 +0000
+Reviewed-on: https://review.openstack.org/324891
+Project: openstack/keystone
+Branch: refs/heads/master
