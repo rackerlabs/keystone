@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_9be7bc3f",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-03T13:49:45Z",
+      "side": 1,
+      "message": "nit: use the same patter as the comments above:\n\n  Missing blank line before class docstring (deprecated in pep257)",
+      "revId": "81e5d8ef123f090ace011922bf45295cdfc9b968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
