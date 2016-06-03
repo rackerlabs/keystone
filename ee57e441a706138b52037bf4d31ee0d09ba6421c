@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_70e85317",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-03T04:16:57Z",
+      "side": 1,
+      "message": "s/assignment/service providers?",
+      "range": {
+        "startLine": 27,
+        "startChar": 37,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "ee57e441a706138b52037bf4d31ee0d09ba6421c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_d592d19e",
         "filename": "keystone/federation/core.py",
         "patchSetId": 5
