@@ -119,16 +119,20 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
                           auth_info.get_method_data,
                           method_name)
 
+
+class TestAuthValidation(test_v3.RestfulTestCase):
+
     def test_empty_domain_in_scope(self):
         auth_data = self.build_authentication_request(
             user_id='test',
             password='test',
             domain_name='')['auth']
         auth_data['scope']['domain'] = []
+        self.auth_v3_controller = auth.controllers.Auth()
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
-                          None,
-                          auth_data)
+                          self.auth_v3_controller.authenticate_for_token,
+                          {'environment': {},
+                           'query_string': {}}, auth_data)
 
     def test_empty_project_in_scope(self):
         auth_data = self.build_authentication_request(
@@ -136,10 +140,42 @@ class TestAuthInfo(common_auth.AuthTestMixin, testcase.TestCase):
             password='test',
             project_name='')['auth']
         auth_data['scope']['project'] = []
+        self.auth_v3_controller = auth.controllers.Auth()
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
-                          None,
-                          auth_data)
+                          self.auth_v3_controller.authenticate_for_token,
+                          {'environment': {},
+                           'query_string': {}}, auth_data)
+
+    def test_empty_domain_in_identity(self):
+        path = '/domains/%s/users/%s/roles/%s' % (
+            self.domain['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            password=self.user['password'],
+            user_domain_name=self.domain['name'],
+            domain_name=self.domain['name'])['auth']
+
+        auth_data['identity']['password']['user']['domain'] = []
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          {'environment': {},
+                           'query_string': {}}, auth_data)
+
+    def test_empty_user_in_identity(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            domain_name=self.domain['name'])['auth']
+
+        auth_data['identity']['password']['user'] = []
+        self.auth_v3_controller = auth.controllers.Auth()
+        self.assertRaises(exception.ValidationError,
+                          self.auth_v3_controller.authenticate_for_token,
+                          {'environment': {},
+                           'query_string': {}}, auth_data)
 
 
 class TokenAPITests(object):
