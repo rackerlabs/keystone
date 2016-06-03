@@ -1,0 +1,11 @@
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 03 Jun 2016 14:13:34 +0000
+Reviewed-on: https://review.openstack.org/314679
+Project: openstack/keystone
+Branch: refs/heads/master
