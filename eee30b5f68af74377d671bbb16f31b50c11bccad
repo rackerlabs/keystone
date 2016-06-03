@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_0c7d4f1c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-03T15:24:08Z",
+      "side": 1,
+      "message": "Bootstrap has a very narrow scope of action and doesn\u0027t work outside this scope (aka if the bootstrap user was removed because the structure bootstrap created is not the same as the running cloud).\n\ndo we want to place this in bootstrap or offer a separate command?",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 64
+      },
+      "revId": "eee30b5f68af74377d671bbb16f31b50c11bccad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
