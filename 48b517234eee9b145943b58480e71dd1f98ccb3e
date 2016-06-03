@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_e2dd6f71",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-03T17:13:04Z",
+      "side": 1,
+      "message": "this needs to be \n\n  .invalidate(self)\n\nThe self needs to be explicit due to the way that the decorator works. I know... not intuitive, but it\u0027s on my long list of things to improve with dogpile.cache.\n\nThis applies to all the things added here.",
+      "range": {
+        "startLine": 99,
+        "startChar": 43,
+        "endLine": 99,
+        "endChar": 55
+      },
+      "revId": "48b517234eee9b145943b58480e71dd1f98ccb3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
