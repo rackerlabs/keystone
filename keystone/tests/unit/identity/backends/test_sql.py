@@ -143,3 +143,28 @@ class AuthenticatorTests(object):
         ret_user = sql_backend.Authenticator().authenticate(user['id'],
                                                             password)
         self.assertEqual(user['id'], ret_user['id'])
+
+
+class PasswordHistoryValidatorTests(object):
+    def test_validate_invalid_password(self):
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=4)
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': 'default',
+            'enabled': True,
+            'password': 'mypassword1'
+        }
+        user = self.identity_api.create_user(user)
+        user['password'] = 'mypassword2'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        user['password'] = 'mypassword3'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        # attempt to update password matching the 2nd password
+        user['password'] = 'mypassword2'
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
