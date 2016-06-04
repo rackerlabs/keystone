@@ -85,6 +85,8 @@ class Identity(base.IdentityDriverV8):
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if user.get('password') is not None:
+                PasswordHistoryValidator().validate(user['password'], user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -243,20 +245,11 @@ class Authenticator(object):
                 # fallout from rolling upgrade
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-            if not self._password_matches(password, user_ref.password):
+            if not utils.check_password(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
             elif self._is_password_expired(user_ref.password_expires_at):
                 raise exception.PasswordExpired(user_id=user_id)
             return base.filter_user(user_ref.to_dict())
-
-    def _password_matches(self, password, hashed_password):
-        """Check the specified password against the data store.
-
-        For more info, please see the follow up suggestion at
-        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
-
-        """
-        return utils.check_password(password, hashed_password)
 
     def _get_user(self, session, user_id):
         user_ref = session.query(model.User).get(user_id)
@@ -268,3 +261,18 @@ class Authenticator(object):
         if expires_at:
             return datetime.datetime.utcnow() >= expires_at
         return False
+
+
+class PasswordHistoryValidator(object):
+    def validate(self, password, user_ref):
+        cnt = 0
+        maxCnt = CONF.security_compliance.unique_last_password_count
+        passwords = user_ref.local_user.passwords.sort(
+            key=lambda ref: ref.created_at, reverse=True)
+        for password_ref in passwords:
+            if cnt >= maxCnt:
+                break
+            elif utils.check_password(password, password_ref.password):
+                detail = _('Invalid password: matches value in history')
+                raise exception.PasswordValidationError(detail=detail)
+            cnt = cnt + 1
