@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c993924e",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-04T18:18:05Z",
+      "side": 1,
+      "message": "i\u0027m okay with renaming this to default.py",
+      "revId": "2eb968290220205ecbd90de1de398494116fb702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
