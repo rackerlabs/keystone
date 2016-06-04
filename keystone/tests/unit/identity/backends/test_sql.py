@@ -29,6 +29,32 @@ from keystone.tests.unit.ksfixtures import database
 CONF = cfg.CONF
 
 
+class PasswordHistoryValidatorTests(object):
+    def test_validate_invalid_password(self):
+        user = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': 'default',
+            'enabled': True,
+            'password': 'mypassword1'
+        }
+        user_ret = self.driver.create_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        user['password'] = 'mypassword2'
+        user_ret = self.driver.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        user['password'] = 'mypassword3'
+        user_ret = self.driver.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        # attempt to update password matching the 2nd password
+        CONF.security_compliance.unique_last_password_count = 4
+        user['password'] = 'mypassword2'
+        self.assertRaises(exception.PasswordValidationError,
+                          self.driver.update_user,
+                          user['id'],
+                          user)
+
+
 class AuthenticatorTests(object):
     def _get_test_user_dict(self, password):
         test_user_dict = {
@@ -107,6 +133,7 @@ class AuthenticatorTests(object):
 
 class TestIdentityDriver(db_test.DbTestCase,
                          test_base.IdentityDriverV8Tests,
+                         PasswordHistoryValidatorTests,
                          AuthenticatorTests):
 
     expected_is_domain_aware = True
