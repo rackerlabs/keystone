@@ -213,6 +213,7 @@ class SqlModels(SqlTests):
 class SqlIdentity(SqlTests,
                   identity_tests.IdentityTests,
                   identity_sql_tests.AuthenticatorTests,
+                  identity_sql_tests.PasswordHistoryValidatorTests,
                   assignment_tests.AssignmentTests,
                   resource_tests.ResourceTests):
     def test_password_hashed(self):
