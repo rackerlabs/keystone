@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_551c1e13",
+        "filename": "devstack/README.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-06T17:45:34Z",
+      "side": 1,
+      "message": "It can be automated, but the IdP doesn\u0027t need to know about the SP before hand, so leaving it as a step to be done after stack.sh leaves some room for flexibility.",
+      "parentUuid": "7aa08908_208e7978",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "f51c2da5e6c5b695d4b7e5ba6f19a5ec57a311a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_20bcb904",
         "filename": "devstack/README.rst",
         "patchSetId": 10
@@ -105,6 +129,30 @@
       "writtenOn": "2016-06-06T15:15:42Z",
       "side": 1,
       "message": "again, not automated?",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 68
+      },
+      "revId": "f51c2da5e6c5b695d4b7e5ba6f19a5ec57a311a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_75967a4d",
+        "filename": "devstack/README.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-06-06T17:45:34Z",
+      "side": 1,
+      "message": "These variables are set in local.conf prior to running stack.sh. I will update the Readme to better reflect that.",
+      "parentUuid": "7aa08908_20bcb904",
       "range": {
         "startLine": 62,
         "startChar": 0,
