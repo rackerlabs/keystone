@@ -16,6 +16,24 @@
       "revId": "2eb968290220205ecbd90de1de398494116fb702",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_32023d70",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-06T21:26:26Z",
+      "side": 1,
+      "message": "I was tempted to do exactly the same thing, but nova called it base.py. I\u0027ll experiment with a rename later, and probably propose the same to nova.",
+      "parentUuid": "7aa08908_c993924e",
+      "revId": "2eb968290220205ecbd90de1de398494116fb702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
