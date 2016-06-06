@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_43047d7d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Hacking rules: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_83fe6569",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_a323a104",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Why is there a new class when there is no state of its own?",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_de48465e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "The renames and refactoring should be in their own patch.",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fe90a297",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Needing a copy of this is a code smell that usually indicates the classes should be merged.",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fe5542c6",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Use the config fixture so that the values are properly set to their defaults after the test executes. You should already have it setup, just check self.config_fixture.",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_deaa0670",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fec42241",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3edd0a15",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1e092e96",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:34:36Z",
+      "side": 1,
+      "message": "What\u0027s the case where this won\u0027t be in the user_ref?",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
