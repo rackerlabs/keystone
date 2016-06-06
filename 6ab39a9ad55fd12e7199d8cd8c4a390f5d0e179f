@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_47cc9035",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-06-06T10:16:44Z",
+      "side": 1,
+      "message": "it is duplicate with the 53 line.",
+      "range": {
+        "startLine": 49,
+        "startChar": 36,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "6ab39a9ad55fd12e7199d8cd8c4a390f5d0e179f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
