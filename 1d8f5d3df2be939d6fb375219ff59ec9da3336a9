@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_af9edf53",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:12:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_43047d7d",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_83fe6569",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-06T12:34:36Z",
       "side": 1,
       "message": "Same here",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0fa453a4",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:12:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_83fe6569",
       "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_c0997570",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:12:02Z",
+      "side": 1,
+      "message": "Hmm... when I add self.config_fixture, I get:AttributeError: \u0027TestIdentityDriver\u0027 object has no attribute \u0027config_fixture\u0027\n\nHowever, I tested it and the config values are properly getting set back to the default value for each test.",
+      "parentUuid": "7aa08908_fe5542c6",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_deaa0670",
         "filename": "keystone/tests/unit/identity/backends/test_sql.py",
         "patchSetId": 46
@@ -166,6 +220,24 @@
       "writtenOn": "2016-06-06T12:34:36Z",
       "side": 1,
       "message": "What\u0027s the case where this won\u0027t be in the user_ref?",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ba5c5f26",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:12:02Z",
+      "side": 1,
+      "message": "If the identity driver is something other than sql, this attribute won\u0027t be there.",
+      "parentUuid": "7aa08908_1e092e96",
       "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
