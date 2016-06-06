@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_0691eef0",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-06T09:25:28Z",
+      "side": 1,
+      "message": "in all other examples (where we have added a server default), we have also specified it here....I\u0027ve never been entirely sure if this is required, but that has certainly been our convention.",
+      "range": {
+        "startLine": 133,
+        "startChar": 25,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "10f620999bc1d06b8200dc98166b4fb3005c8b10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
