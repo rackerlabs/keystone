@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_906e912d",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "If this isn\u0027t an id that will be exposed to users, it should be an integer.",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 6
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f015559b",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "Why do we need extra?",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 9
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b08f4dcb",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "If you are only looking for password, why not put this check under keystone/identity?",
+      "range": {
+        "startLine": 402,
+        "startChar": 29,
+        "endLine": 402,
+        "endChar": 38
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c31e9162",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "This should now be removed from core and put under /backends/base.py\n\nHere is an example of this:\nhttps://review.openstack.org/#/c/317045/",
+      "range": {
+        "startLine": 131,
+        "startChar": 6,
+        "endLine": 131,
+        "endChar": 18
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_437d816d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "Do we really need to make this a driver to be customized?  I mean, do we really see operators creating their own implementation for this?  If not, lets not do this.",
+      "range": {
+        "startLine": 820,
+        "startChar": 20,
+        "endLine": 820,
+        "endChar": 26
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_a38c2580",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_failed_attempts_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T19:30:33Z",
+      "side": 1,
+      "message": "Again, why extra?",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
