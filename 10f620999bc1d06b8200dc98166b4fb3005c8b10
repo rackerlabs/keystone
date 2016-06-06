@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_e3bbe90c",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:15:48Z",
+      "side": 1,
+      "message": "Needs to follow hacking rules: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "10f620999bc1d06b8200dc98166b4fb3005c8b10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c3206d4c",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:15:48Z",
+      "side": 1,
+      "message": "Will all existing rows get the default value?",
+      "revId": "10f620999bc1d06b8200dc98166b4fb3005c8b10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_63e25905",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:15:48Z",
+      "side": 1,
+      "message": "Needs to follow hacking rules: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "10f620999bc1d06b8200dc98166b4fb3005c8b10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_83994571",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:15:48Z",
+      "side": 1,
+      "message": "This doesn\u0027t match the migration. Nullable is False here, but True there.",
+      "revId": "10f620999bc1d06b8200dc98166b4fb3005c8b10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_0691eef0",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 48
