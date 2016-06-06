@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1e176ea4",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:37:53Z",
+      "side": 1,
+      "message": "This is third-party so the sections need to rearranged.",
+      "revId": "4a61acfb0665df3b7f447ebbe45c85fc24981c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_be89facc",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-06T12:37:53Z",
+      "side": 1,
+      "message": "Use the config fixture to make sure the defaults are set back after the test executes.",
+      "revId": "4a61acfb0665df3b7f447ebbe45c85fc24981c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
