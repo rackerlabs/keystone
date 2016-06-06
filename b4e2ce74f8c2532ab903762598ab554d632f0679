@@ -70,6 +70,30 @@
       "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_169d8765",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-06T15:39:08Z",
+      "side": 0,
+      "message": "I figured it was related, since this commit is all about ldap group filtering. Do you think it really has to be split out? And as for tests, same issue I mentioned in the commit and a previous comment, that the current UT infrastructure does not really give us a way to test this that I could figure out.",
+      "parentUuid": "7aa08908_c03b35ea",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
