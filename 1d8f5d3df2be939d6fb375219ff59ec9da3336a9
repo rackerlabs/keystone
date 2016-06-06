@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_c05a1583",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:17:37Z",
+      "side": 1,
+      "message": "No state of it\u0027s own?  Not following.",
+      "parentUuid": "7aa08908_a323a104",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_de48465e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -106,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a0d6e9c2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:17:37Z",
+      "side": 1,
+      "message": "I think minimal refactoring while adding new features should be acceptable.",
+      "parentUuid": "7aa08908_de48465e",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_fe90a297",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -117,6 +153,24 @@
       "writtenOn": "2016-06-06T12:34:36Z",
       "side": 1,
       "message": "Needing a copy of this is a code smell that usually indicates the classes should be merged.",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_601d2173",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-06T15:17:37Z",
+      "side": 1,
+      "message": "I don\u0027t like the copy, but disagree that the class should be merged.  The new class makes the code more modular and supports single responsibility principle.",
+      "parentUuid": "7aa08908_fe90a297",
       "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
