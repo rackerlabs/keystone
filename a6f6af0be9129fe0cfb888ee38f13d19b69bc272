@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_13d1bdfa",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-07T21:42:43Z",
+      "side": 1,
+      "message": "this is strange because it\u0027s got the private method, _validate_non_persistent_token, calling the public method, validate_non_persistent_token. It should be the other way around just like in the other methods. (e.g., validate_v3_token calls _validate_v3_token, not the other way around).",
+      "revId": "a6f6af0be9129fe0cfb888ee38f13d19b69bc272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
