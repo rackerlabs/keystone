@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_0486ad64",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-07T14:48:10Z",
+      "side": 1,
+      "message": "disabled user? think it is \"deleted grant\", right?",
+      "range": {
+        "startLine": 415,
+        "startChar": 42,
+        "endLine": 415,
+        "endChar": 55
+      },
+      "revId": "f165842335d9d0c5477ce1a4a3bc2319786af256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
