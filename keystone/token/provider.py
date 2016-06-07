@@ -288,6 +288,10 @@ class Manager(manager.Manager):
             raise exception.TokenNotFound(token_id=token_id)
 
     @MEMOIZE
+    def validate_non_persistent_token(self, token_id):
+        return self.driver.validate_non_persistent_token(token_id)
+
+    @MEMOIZE
     def _validate_token(self, token_id):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
