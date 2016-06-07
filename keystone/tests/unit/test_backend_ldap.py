@@ -539,6 +539,9 @@ class BaseLDAPIdentity(identity_tests.IdentityTests,
     def test_get_roles_for_groups_on_project(self):
         self.skipTest('Blocked by bug: 1390125')
 
+    def test_get_roles_for_groups_on_project_no_inheritance(self):
+        self.skipTest('Blocked by bug: 1390125')
+
     def test_list_domains_for_groups(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 

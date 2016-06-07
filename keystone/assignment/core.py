@@ -166,6 +166,10 @@ class Manager(manager.Manager):
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
+        return self._get_roles_for_groups(group_ids, project_id, domain_id)
+
+    @MEMOIZE_COMPUTED_ASSIGNMENTS
+    def _get_roles_for_groups(self, group_ids, project_id, domain_id):
         if project_id is not None:
             self.resource_api.get_project(project_id)
             assignment_list = self.list_role_assignments(
