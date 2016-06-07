@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2cc73697",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-06-07T23:07:14Z",
+      "side": 1,
+      "message": "I very much appreciate the comment in the sample config file that shows how to do a 7 char minimum with at least decimal and one alphabetic char.  I know that came in a previous patch but its still much appreciated!",
+      "revId": "1049bc2c2befbf74ab83d0c1808ebe8245536e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_cceaf2ab",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-06-07T23:07:14Z",
+      "side": 1,
+      "message": "should have a comment that says # password requires: 1 letter, 1 digit, 7 chars",
+      "revId": "1049bc2c2befbf74ab83d0c1808ebe8245536e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8c8f4a29",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-06-07T23:07:14Z",
+      "side": 1,
+      "message": "should have comment that says # password requires: any non-whitespace character",
+      "revId": "1049bc2c2befbf74ab83d0c1808ebe8245536e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
