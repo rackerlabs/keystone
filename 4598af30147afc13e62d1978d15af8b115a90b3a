@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_92b80eca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-06-07T19:42:21Z",
+      "side": 1,
+      "message": "This code looks like the last password count is configurable. That is great but does not match the commit message.  Commit message says last four passwords. Commit message should be updated to be more accurate of what the code does",
+      "revId": "4598af30147afc13e62d1978d15af8b115a90b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_12ea5edb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-06-07T19:42:21Z",
+      "side": 1,
+      "message": "This code looks like the last password count is configurable. That is great but does not match the commit message.  Commit message should be updated.",
+      "revId": "4598af30147afc13e62d1978d15af8b115a90b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
