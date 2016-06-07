@@ -239,7 +239,7 @@ class Manager(manager.Manager):
             # is one where the token providers just handle data and the
             # controller layers handle interpreting the token data in a format
             # that makes sense for the request.
-            v3_token_ref = self.validate_non_persistent_token(token_id)
+            v3_token_ref = self._validate_non_persistent_token(token_id)
             v2_token_data_helper = providers.common.V2TokenDataHelper()
             token = v2_token_data_helper.v3_to_v2_token(v3_token_ref)
 
@@ -274,7 +274,7 @@ class Manager(manager.Manager):
             # Otherwise the information about the token must be in the token
             # id.
             if not self._needs_persistence:
-                token_ref = self.validate_non_persistent_token(token_id)
+                token_ref = self._validate_non_persistent_token(token_id)
             else:
                 unique_id = utils.generate_unique_id(token_id)
                 # NOTE(morganfainberg): Ensure we never use the long-form
@@ -286,6 +286,10 @@ class Manager(manager.Manager):
         except exception.Unauthorized as e:
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
+
+    @MEMOIZE
+    def _validate_non_persistent_token(self, token_id):
+        return self.driver.validate_non_persistent_token(token_id)
 
     @MEMOIZE
     def _validate_token(self, token_id):
