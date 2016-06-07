@@ -118,6 +118,30 @@
       "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7bb748f5",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-07T17:20:33Z",
+      "side": 0,
+      "message": "@guang-yee I don\u0027t follow... The change proposed here can\u0027t possibly cause what you describe.",
+      "parentUuid": "7aa08908_18928df6",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
