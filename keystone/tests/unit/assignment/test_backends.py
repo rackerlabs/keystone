@@ -1931,21 +1931,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         self.assertIn(role_list[0], role_refs)
         self.assertIn(role_list[1], role_refs)
 
-    def test_get_roles_for_groups_on_project(self):
-        """Test retrieving group project roles.
-
-        Test Plan:
-
-        - Create two domains, two projects, six groups and six roles
-        - Project1 is in Domain1, Project2 is in Domain2
-        - Domain2/Project2 are spoilers
-        - Assign a different direct group role to each project as well
-          as both an inherited and non-inherited role to each domain
-        - Get the group roles for Project 1 - depending on whether we have
-          enabled inheritance, we should either get back just the direct role
-          or both the direct one plus the inherited domain role from Domain 1
-
-        """
+    def _setup_roles_for_groups_on_project(self):
         domain1 = unit.new_domain_ref()
         self.resource_api.create_domain(domain1['id'], domain1)
         domain2 = unit.new_domain_ref()
@@ -1992,25 +1978,53 @@ class AssignmentTests(AssignmentTestHelperMixin):
                                          project_id=project2['id'],
                                          role_id=role_list[5]['id'])
 
-        # Now get the effective roles for all groups on the Project1. With
-        # inheritance off, we should only get back the direct role.
+        return role_list, group_id_list, project1
 
-        self.config_fixture.config(group='os_inherit', enabled=False)
-        role_refs = self.assignment_api.get_roles_for_groups(
-            group_id_list, project_id=project1['id'])
+    def test_get_roles_for_groups_on_project_no_inheritance(self):
+        """Test retrieving group project roles without inheritance.
 
-        self.assertThat(role_refs, matchers.HasLength(1))
-        self.assertIn(role_list[2], role_refs)
+        Test Plan:
 
-        # With inheritance on, we should also get back the inherited role from
-        # its owning domain.
+        - Create two domains, two projects, six groups and six roles
+        - Project1 is in Domain1, Project2 is in Domain2
+        - Domain2/Project2 are spoilers
+        - Assign a different direct group role to each project as well
+          as both an inherited and non-inherited role to each domain
+        - Get the group roles for Project 1 - without inheritance we should
+          just get back just the direct role
 
+        """
+        role_list, group_id_list, project1 = (
+            self._setup_roles_for_groups_on_project())
         self.config_fixture.config(group='os_inherit', enabled=True)
         role_refs = self.assignment_api.get_roles_for_groups(
             group_id_list, project_id=project1['id'])
 
         self.assertThat(role_refs, matchers.HasLength(2))
         self.assertIn(role_list[1], role_refs)
+        self.assertIn(role_list[2], role_refs)
+
+    def test_get_roles_for_groups_on_project(self):
+        """Test retrieving group project roles.
+
+        Test Plan:
+
+        - Create two domains, two projects, six groups and six roles
+        - Project1 is in Domain1, Project2 is in Domain2
+        - Domain2/Project2 are spoilers
+        - Assign a different direct group role to each project as well
+          as both an inherited and non-inherited role to each domain
+        - Get the group roles for Project 1 - we should get back both the
+          direct role and the inherited domain role from Domain 1
+
+        """
+        role_list, group_id_list, project1 = (
+            self._setup_roles_for_groups_on_project())
+        self.config_fixture.config(group='os_inherit', enabled=False)
+        role_refs = self.assignment_api.get_roles_for_groups(
+            group_id_list, project_id=project1['id'])
+
+        self.assertThat(role_refs, matchers.HasLength(1))
         self.assertIn(role_list[2], role_refs)
 
     def test_list_domains_for_groups(self):
