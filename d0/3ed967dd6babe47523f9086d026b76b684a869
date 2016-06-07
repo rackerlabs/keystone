@@ -1,0 +1,13 @@
+Code-Review+2: Jamie Lennox <jamielennox@gmail.com>
+Code-Review-1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Workflow+1: Steve Martinelli <s.martinelli@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 07 Jun 2016 03:15:47 +0000
+Reviewed-on: https://review.openstack.org/325677
+Project: openstack/keystone
+Branch: refs/heads/master
