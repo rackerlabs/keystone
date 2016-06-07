@@ -1,0 +1,16 @@
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Juan Antonio Osorio Robles <jaosorior@redhat.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+1: Andreas Jaeger <jaegerandi@gmail.com>
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Workflow+1: Steve Martinelli <s.martinelli@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 07 Jun 2016 10:35:52 +0000
+Reviewed-on: https://review.openstack.org/319260
+Project: openstack/keystone
+Branch: refs/heads/master
