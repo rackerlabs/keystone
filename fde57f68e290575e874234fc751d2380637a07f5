@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_d6f603f8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T22:10:23Z",
+      "side": 1,
+      "message": "nice, this is the right place to put this tests, it will be run by: TestPKITokenAPIs, TestUUIDTokenAPIs and TestFernetTokenAPIs",
+      "range": {
+        "startLine": 396,
+        "startChar": 8,
+        "endLine": 396,
+        "endChar": 65
+      },
+      "revId": "fde57f68e290575e874234fc751d2380637a07f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
