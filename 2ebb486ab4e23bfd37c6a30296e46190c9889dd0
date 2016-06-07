@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_0d789b29",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:13:27Z",
+      "side": 1,
+      "message": "Given this represents a link to all the implied roles of a given prior role, the link should be:\n\n    /v3/roles/--prior-role-id--/implies\"",
+      "range": {
+        "startLine": 478,
+        "startChar": 31,
+        "endLine": 478,
+        "endChar": 59
+      },
+      "revId": "2ebb486ab4e23bfd37c6a30296e46190c9889dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
