@@ -274,7 +274,7 @@ class Manager(manager.Manager):
             # Otherwise the information about the token must be in the token
             # id.
             if not self._needs_persistence:
-                token_ref = self.validate_non_persistent_token(token_id)
+                token_ref = self._validate_non_persistent_token(token_id)
             else:
                 unique_id = utils.generate_unique_id(token_id)
                 # NOTE(morganfainberg): Ensure we never use the long-form
@@ -286,6 +286,10 @@ class Manager(manager.Manager):
         except exception.Unauthorized as e:
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
+
+    @MEMOIZE
+    def _validate_non_persistent_token(self, token_id):
+        return self.driver.validate_non_persistent_token(token_id)
 
     @MEMOIZE
     def _validate_token(self, token_id):
