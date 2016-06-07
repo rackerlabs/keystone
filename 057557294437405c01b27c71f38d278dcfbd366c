@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_3f32de10",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3336,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "This tests is also valid if cache is disabled. I think the ideal test would mock the cache region and make sure invalidate was called ?",
+      "range": {
+        "startLine": 3336,
+        "startChar": 4,
+        "endLine": 3336,
+        "endChar": 46
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dfa63a52",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3341,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "it\u0027s checking the first parameter evaluates to true. the second (1) is taken as the exception message\n\nhttps://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertTrue\n\nuse assertThat instead, see \n\nhttps://github.com/openstack/keystone/blob/8a56c161ee29e34e70c6334b048881e8fbbd7514/keystone/tests/unit/token/test_token_data_helper.py#L35",
+      "range": {
+        "startLine": 3341,
+        "startChar": 13,
+        "endLine": 3341,
+        "endChar": 23
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_df2bda92",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3354,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 3354,
+        "startChar": 0,
+        "endLine": 3354,
+        "endChar": 46
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5f3fead5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3359,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 3359,
+        "startChar": 13,
+        "endLine": 3359,
+        "endChar": 23
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7f13c666",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3380,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 3380,
+        "startChar": 0,
+        "endLine": 3380,
+        "endChar": 46
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_df02ba0a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3385,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-07T13:33:49Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 3385,
+        "startChar": 13,
+        "endLine": 3385,
+        "endChar": 23
+      },
+      "revId": "057557294437405c01b27c71f38d278dcfbd366c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
