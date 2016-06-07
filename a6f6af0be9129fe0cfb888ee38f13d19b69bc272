@@ -16,6 +16,24 @@
       "revId": "a6f6af0be9129fe0cfb888ee38f13d19b69bc272",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1626cb14",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-07T22:09:31Z",
+      "side": 1,
+      "message": "this should be\n\n @MEMOIZE\n def validate_non_persistent_token(self, token_id):\n    return self.driver.validate_non_persistent_token(token_id)",
+      "parentUuid": "7aa08908_13d1bdfa",
+      "revId": "a6f6af0be9129fe0cfb888ee38f13d19b69bc272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
