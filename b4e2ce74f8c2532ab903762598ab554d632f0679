@@ -94,6 +94,30 @@
       "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_18928df6",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-06-07T16:22:47Z",
+      "side": 0,
+      "message": "If we remove this code and if (say) user_filter is not configured in keystone.conf, this code may ended up with something weird like \"(member\u003dcn\u003dfoo,o\u003dbar)None\". I am surprised we don\u0027t have a test for this.",
+      "parentUuid": "7aa08908_169d8765",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
