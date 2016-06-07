@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ec76d9d5",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-07T19:06:43Z",
+      "side": 1,
+      "message": "Andrew, technically we can do it for all of auth plugins, but I\u0027m afraid it will involve changing plugin interface: it should support returning user_id even after failure. And it will be plugin\u0027s duty as every plugin discovers user it\u0027s own way.",
+      "parentUuid": "7aa08908_fe716645",
+      "range": {
+        "startLine": 402,
+        "startChar": 16,
+        "endLine": 402,
+        "endChar": 24
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c31e9162",
         "filename": "keystone/auth/core.py",
         "patchSetId": 7
