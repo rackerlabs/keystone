@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_6f381bf0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-06-07T19:32:56Z",
+      "side": 1,
+      "message": "Right, https://review.openstack.org/#/c/277436/ didn\u0027t fix the issue for fernet case, since the bug was masked by token caching.",
+      "parentUuid": "7aa08908_5e0fe587",
+      "range": {
+        "startLine": 397,
+        "startChar": 26,
+        "endLine": 397,
+        "endChar": 33
+      },
+      "revId": "f165842335d9d0c5477ce1a4a3bc2319786af256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_0486ad64",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "++ Maybe:\n\n\"Ensure the token has been revoked\"",
       "parentUuid": "7aa08908_0486ad64",
+      "range": {
+        "startLine": 415,
+        "startChar": 42,
+        "endLine": 415,
+        "endChar": 55
+      },
+      "revId": "f165842335d9d0c5477ce1a4a3bc2319786af256",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0f287799",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-06-07T19:32:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_24bda968",
       "range": {
         "startLine": 415,
         "startChar": 42,
