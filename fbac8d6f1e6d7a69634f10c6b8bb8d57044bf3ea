@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_e52358bb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T12:56:27Z",
+      "side": 1,
+      "message": "There\u0027s no need to have .driver on this call since the manager doesn\u0027t re-implement the validate_non_persistent_token method.",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c543bc6a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T12:56:27Z",
+      "side": 1,
+      "message": "there\u0027s no need to have .driver on this call either.",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
