@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_3f9f3360",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T12:28:27Z",
+      "side": 1,
+      "message": "yes, I think that\u0027s true - Liberty would also cache in this case...",
+      "parentUuid": "7aa08908_56a14cf7",
+      "range": {
+        "startLine": 242,
+        "startChar": 27,
+        "endLine": 242,
+        "endChar": 71
+      },
+      "revId": "8b7c7848dab32d13613297a4aa5c2fb9750a0905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_56ef8c1d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-08T11:45:54Z",
       "side": 1,
       "message": "So this never gets invalidated ? (other than when cache expires?)",
+      "range": {
+        "startLine": 291,
+        "startChar": 8,
+        "endLine": 291,
+        "endChar": 38
+      },
+      "revId": "8b7c7848dab32d13613297a4aa5c2fb9750a0905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7ca429b9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T12:28:27Z",
+      "side": 1,
+      "message": "Correct, but the validation will fail if there is a relevant revoke event (see _is_valid_token() ).  This was true in Liberty as well.",
+      "parentUuid": "7aa08908_56ef8c1d",
       "range": {
         "startLine": 291,
         "startChar": 8,
