@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_d356e304",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T13:59:38Z",
+      "side": 0,
+      "message": "why did you change this? AuthInfo.create() should still fail, since you are not modifying it. Think you can remove all the \"manual\" validations in another patchset.",
+      "range": {
+        "startLine": 130,
+        "startChar": 26,
+        "endLine": 130,
+        "endChar": 30
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_13eb4be0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T13:59:38Z",
+      "side": 1,
+      "message": "should have a similar test for projects",
+      "range": {
+        "startLine": 149,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 37
+      },
+      "revId": "1d52f89fb3f6cad4f5bb6078908ffeaf5c5c0f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f3cf9f53",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T13:59:38Z",
+      "side": 1,
+      "message": "think would be better to read if this is in the same line, since it is the same param. Even better if it could be a variable assigned before.",
+      "range": {
+        "startLine": 164,
+        "startChar": 26,
+        "endLine": 165,
+        "endChar": 46
+      },
+      "revId": "1d52f89fb3f6cad4f5bb6078908ffeaf5c5c0f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
