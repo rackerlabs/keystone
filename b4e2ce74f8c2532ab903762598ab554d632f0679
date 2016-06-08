@@ -190,6 +190,30 @@
       "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0213215c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-06-08T00:05:25Z",
+      "side": 0,
+      "message": "Say I have an existing configuration in my keystone.conf\n\ngroup_filter \u003d (status\u003dactive)(cn!\u003dignorethisgroup)\n\nWill this change still honor it? Your commit msg seem to suggest this is not necessary. But we do have use cases where we need to be able to do additional filtering.",
+      "parentUuid": "7aa08908_6f065b1e",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "b4e2ce74f8c2532ab903762598ab554d632f0679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
