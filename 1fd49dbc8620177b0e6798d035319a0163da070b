@@ -62,6 +62,24 @@
       "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b0b84912",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T23:46:38Z",
+      "side": 1,
+      "message": "Hmm... yeah, it\u0027s good point. The only downside that I see is that we\u0027re possibly authenticating against multiple passwords, as opposed to always having a single active password. But I do like the other benefits, and it eliminates the need for created_at and a default datetime value :) Reworking...",
+      "parentUuid": "7aa08908_356f2bfd",
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
