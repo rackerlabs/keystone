@@ -128,6 +128,30 @@
       "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_31b3df51",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T14:13:34Z",
+      "side": 1,
+      "message": "Actually, I don\u0027t want to do too many changes here to make inheritance work. This class will be removed with the shadows backend.",
+      "parentUuid": "7aa08908_d343836a",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 73
+      },
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
