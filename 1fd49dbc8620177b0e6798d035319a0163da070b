@@ -45,6 +45,23 @@
       "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_356f2bfd",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-08T23:34:28Z",
+      "side": 1,
+      "message": "Do we specifically care about the creation date? If created_at and expired were reduced to a single expires_at column (or expired_at... granted, the values may be in the future or past), then you A) would only have to do the math to compute expiration once, B) would not have to update a password as being expired because you could simply filter against the current time, and C) we\u0027d gain the ability to administratively extend or reduce the expiration time frame per password.",
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
