@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f765ab1d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T22:38:08Z",
+      "side": 1,
+      "message": "This should not be happening since we just retrieved user\u0027s groups in L125. However I agree it\u0027s good to have this try:except just in the case.\n\nCould you add a warning here saying the user was expected to be in this group but it has been already removed ? There are other places where we do a similar behavior (LOG), e.g when a circular reference is found in a project hierarchy (that\u0027s should not be possible since our code does not allow such situation, but we made the code robust)",
+      "range": {
+        "startLine": 131,
+        "startChar": 12,
+        "endLine": 131,
+        "endChar": 42
+      },
+      "revId": "f57cdba04713eee29f6e86ec78814d547893f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

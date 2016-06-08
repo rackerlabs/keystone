@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5ac2e685",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T22:38:08Z",
+      "side": 0,
+      "message": "why are you removing this ? this way group_filter option won\u0027t be honored in this case",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "a0bf8a02ca567276fd37b8e12fe6b79edaf363de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
