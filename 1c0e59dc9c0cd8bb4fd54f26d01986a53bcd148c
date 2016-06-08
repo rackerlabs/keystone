@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_ff29129c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T18:11:10Z",
+      "side": 1,
+      "message": "nice test plan!",
+      "revId": "1c0e59dc9c0cd8bb4fd54f26d01986a53bcd148c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1f497ed0",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T18:11:10Z",
+      "side": 1,
+      "message": "would be better if you use self.assertItemsEqual() here (and below) to verify the content, not just the length",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 264,
+        "endChar": 48
+      },
+      "revId": "1c0e59dc9c0cd8bb4fd54f26d01986a53bcd148c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
