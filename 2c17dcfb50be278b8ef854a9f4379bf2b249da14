@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_5d814bfa",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T19:15:22Z",
+      "side": 1,
+      "message": "I am not getting where is the limitation, at sql_model.py you set the column\u0027s default to be utcnow(), which is fine. So we ensure this column will never be null",
+      "parentUuid": "7aa08908_9ad459ec",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 48
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_50b933cb",
         "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
         "patchSetId": 51
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "Everytime a user updates their password, it will create a new password record.  From there, I need to be able to distinguish which password is the active password and which ones are expired.",
       "parentUuid": "7aa08908_50b933cb",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_bdbe6fab",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T19:15:22Z",
+      "side": 1,
+      "message": "Expired sounds to me like it has timed out or something like that. If it\u0027s only for the case where a new password has been defined as the old one became stale, what about \u0027enabled\u0027 (we use this everywhere else), so old passwords become disabled.\n\nIn addition, you could still do it without this column. The latest password is the one with more recent created_at value.",
+      "parentUuid": "7aa08908_bab83512",
       "range": {
         "startLine": 25,
         "startChar": 32,
