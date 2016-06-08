@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_906a9fb1",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T10:31:46Z",
+      "side": 1,
+      "message": "What domain table?",
+      "parentUuid": "7aa08908_fd25da08",
+      "range": {
+        "startLine": 25,
+        "startChar": 20,
+        "endLine": 25,
+        "endChar": 29
+      },
+      "revId": "5e34a983b1557e655a13d2d09009c67a2ca31567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_7d80cac0",
         "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_d0d9c723",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_nonlocal_user_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T10:31:46Z",
+      "side": 1,
+      "message": "Was just following example from previous upgrades and to be honest, I\u0027m not sure what this does.  Suggestion?",
+      "parentUuid": "7aa08908_7d80cac0",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 29
+      },
+      "revId": "5e34a983b1557e655a13d2d09009c67a2ca31567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_bd15124a",
         "filename": "keystone/identity/backends/shadow.py",
         "patchSetId": 7
@@ -59,6 +107,30 @@
       "writtenOn": "2016-06-08T01:22:42Z",
       "side": 1,
       "message": "Why do we need a separate file shadow.py? Why can\u0027t we stash the code in sql.py?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 1
+      },
+      "revId": "5e34a983b1557e655a13d2d09009c67a2ca31567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1097cfec",
+        "filename": "keystone/identity/backends/shadow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T10:31:46Z",
+      "side": 1,
+      "message": "Because it is used to shadow LDAP and federated users; not used by the sql driver.",
+      "parentUuid": "7aa08908_bd15124a",
       "range": {
         "startLine": 3,
         "startChar": 0,
