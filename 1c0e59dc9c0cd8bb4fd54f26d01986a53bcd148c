@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_7ddb677c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T19:07:43Z",
+      "side": 1,
+      "message": "the if above prevents entering here if self.ldap_filter is None",
+      "parentUuid": "7aa08908_1a4d099a",
+      "range": {
+        "startLine": 419,
+        "startChar": 36,
+        "endLine": 419,
+        "endChar": 52
+      },
+      "revId": "1c0e59dc9c0cd8bb4fd54f26d01986a53bcd148c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_ff29129c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 2
