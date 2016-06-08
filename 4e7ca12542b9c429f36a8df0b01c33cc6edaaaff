@@ -54,6 +54,29 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_5025a559",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T23:50:41Z",
+      "side": 1,
+      "message": "I also agree there is a need to validate this somehow, in order to show it really improves efficiency.",
+      "range": {
+        "startLine": 10,
+        "startChar": 59,
+        "endLine": 11,
+        "endChar": 71
+      },
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_b039ab41",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -82,6 +105,24 @@
       "writtenOn": "2016-05-10T19:45:42Z",
       "side": 1,
       "message": "Please open a bug/tracker for this. I would like this to also have a releasenote",
+      "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_904eed38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T23:50:41Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dab17558_d1bf12a8",
       "revId": "4e7ca12542b9c429f36a8df0b01c33cc6edaaaff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
