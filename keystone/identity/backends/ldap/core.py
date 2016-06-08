@@ -124,7 +124,12 @@ class Identity(base.IdentityDriverV8):
         user_dn = user['dn']
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
-            self.group.remove_user(user_dn, group['id'], user_id)
+            group_ref = self.group.get(group['id'], '*')  # unfiltered
+            group_dn = group_ref['dn']
+            try:
+                super(GroupApi, self.group).remove_member(user_dn, group_dn)
+            except ldap.NO_SUCH_ATTRIBUTE:
+                pass  # user has already been removed
 
         if hasattr(user, 'tenant_id'):
             self.project.remove_user(user.tenant_id, user_dn)
@@ -374,9 +379,8 @@ class GroupApi(common_ldap.BaseLdap):
     def list_user_groups(self, user_dn):
         """Return a list of groups for which the user is a member."""
         user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(%s=%s)%s' % (self.member_attribute,
-                               user_dn_esc,
-                               self.ldap_filter or '')
+        query = '(%s=%s)' % (self.member_attribute,
+                             user_dn_esc)
         return self.get_all(query)
 
     def list_user_groups_filtered(self, user_dn, hints):
