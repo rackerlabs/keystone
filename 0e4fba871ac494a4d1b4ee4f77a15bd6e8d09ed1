@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_7318cfd3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T14:02:15Z",
+      "side": 1,
+      "message": "Initially when coding shadow users, I followed the pattern for how we implement backends. However, I never really intended for this to be a custom backend driver. And really, it shouldn\u0027t be. So I\u0027m trying to correct this now.",
+      "parentUuid": "7aa08908_dd6c340a",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 42
+      },
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_802cff99",
         "filename": "keystone/identity/backends/shadow.py",
         "patchSetId": 7
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_739baf18",
+        "filename": "keystone/identity/backends/shadow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T14:02:15Z",
+      "side": 1,
+      "message": "Yeah, I still need the sql code, but want to implement it in a way that doesn\u0027t allow for a custom backend driver. See my comment in the commit message as to why.",
+      "parentUuid": "7aa08908_802cff99",
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_00ae4fe5",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 7
@@ -53,6 +95,30 @@
       "writtenOn": "2016-06-08T13:41:15Z",
       "side": 1,
       "message": "why create a new ShadowUsers() instance everytime you call one of these functions ? couldn\u0027t you just make this class inherit from ShadowUsers ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 73
+      },
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d343836a",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T14:02:15Z",
+      "side": 1,
+      "message": "Good suggestion, I\u0027ll make this change.",
+      "parentUuid": "7aa08908_00ae4fe5",
       "range": {
         "startLine": 19,
         "startChar": 9,
