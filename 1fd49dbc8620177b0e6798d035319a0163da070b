@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_757533c9",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T23:32:08Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure about this comment. That being said, if you are able to get a datetime default value to work, beer is on me at the mid-cycle.",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_15bf8f61",
         "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
         "patchSetId": 52
