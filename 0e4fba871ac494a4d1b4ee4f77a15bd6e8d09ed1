@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_dd6c340a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:41:15Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 42
+      },
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_802cff99",
+        "filename": "keystone/identity/backends/shadow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:41:15Z",
+      "side": 1,
+      "message": "this still is sql specific code, why did you move it from keystone/identity/shadow_backends/sql.py ?",
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_00ae4fe5",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:41:15Z",
+      "side": 1,
+      "message": "why create a new ShadowUsers() instance everytime you call one of these functions ? couldn\u0027t you just make this class inherit from ShadowUsers ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 9,
+        "endLine": 19,
+        "endChar": 73
+      },
+      "revId": "0e4fba871ac494a4d1b4ee4f77a15bd6e8d09ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
