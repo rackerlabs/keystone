@@ -69,6 +69,24 @@
       "revId": "90a5c75201bcb2c412511be47964473248503964",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d74fcf8f",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-08T22:28:54Z",
+      "side": 1,
+      "message": "Bandit flags any pass in except. So you\u0027ll want a # nosec here. For example:\n\n\nhttps://github.com/openstack/keystone/blob/8a56c161ee29e34e70c6334b048881e8fbbd7514/keystone/token/providers/fernet/utils.py#L250",
+      "parentUuid": "7aa08908_6424670c",
+      "revId": "90a5c75201bcb2c412511be47964473248503964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
