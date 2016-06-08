@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5085b357",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T18:41:01Z",
+      "side": 1,
+      "message": "why nullable ?",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 48
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_50b933cb",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T18:41:01Z",
+      "side": 1,
+      "message": "why do we need this column ? we can determine if the password is expired by comparing its created_at against the password_expires_days value from the config file",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_907b9b7a",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T18:41:01Z",
+      "side": 1,
+      "message": "updating all created_at to now ? there is a way to set a default value for the column when defining it (server_default, as you did for expired)",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 18
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
