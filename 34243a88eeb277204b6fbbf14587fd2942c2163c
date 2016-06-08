@@ -129,6 +129,24 @@
       "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5a9e74b9",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T17:56:46Z",
+      "side": 1,
+      "message": "let me check.....but I\u0027m pretty sure that the only place invalidate_individual_token_cache() gets called is from inside the persistent driver code (which would never get called for fernet)",
+      "parentUuid": "7aa08908_3a056810",
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
