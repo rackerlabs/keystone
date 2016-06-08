@@ -247,6 +247,8 @@ class Authenticator(object):
                 raise AssertionError(_('Invalid user / password'))
             if not utils.check_password(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
+            elif self._is_user_disabled(user_ref):
+                raise exception.UserDisabled(user_id=user_id)
             elif self._is_password_expired(user_ref.password_expires_at):
                 raise exception.PasswordExpired(user_id=user_id)
             return base.filter_user(user_ref.to_dict())
@@ -262,16 +264,28 @@ class Authenticator(object):
             return datetime.datetime.utcnow() >= expires_at
         return False
 
+    def _is_user_disabled(self, user_ref):
+        max_days_inactive = (
+            CONF.security_compliance.disable_user_account_days_inactive)
+        return not user_ref.enabled
+
+    def _disable_user(self, user_id):
+        with sql.session_for_write() as session:
+            query = session.query(model.User)
+            query = query.filter(model.User.id == user_id)
+            query.update({'enabled': False})
+            return
+
 
 class PasswordHistoryValidator(object):
     def validate(self, password, user_ref):
         cnt = 0
-        maxCnt = (CONF.security_compliance.unique_last_password_count if
-                  CONF.security_compliance.unique_last_password_count else 0)
+        max_cnt = (CONF.security_compliance.unique_last_password_count if
+                   CONF.security_compliance.unique_last_password_count else 0)
         passwords = sorted(user_ref.local_user.passwords,
                            key=lambda x: x.created_at, reverse=True)
         for password_ref in passwords:
-            if cnt >= maxCnt:
+            if cnt >= max_cnt:
                 break
             elif utils.check_password(password, password_ref.password):
                 detail = _('Invalid password: matches value in history')
