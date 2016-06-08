@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f0f65f5b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T18:44:44Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/316991/",
+      "range": {
+        "startLine": 436,
+        "startChar": 10,
+        "endLine": 436,
+        "endChar": 24
+      },
+      "revId": "9c89e07b11afa2e12c97d0af514ce5fcc04e2ac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
