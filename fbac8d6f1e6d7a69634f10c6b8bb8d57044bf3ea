@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_7fad229a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T17:39:06Z",
+      "side": 1,
+      "message": "y, in my earlier comment I said to do:\n\n def validate_non_persistent_token(...)\n\n(without the _ prefix) which would hide the driver implementation, then self.driver would be needed to actually call the driver implementation rather than get in an infinite loop.\n\nI still think that this should be validate_non_persistent_token since then the driver implementation would be hidden and users would get the memoized version \"by default\". I\u0027m fine with it either way.",
+      "parentUuid": "7aa08908_eb0f9834",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c543bc6a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
