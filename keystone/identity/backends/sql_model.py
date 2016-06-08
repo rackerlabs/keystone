@@ -138,7 +138,7 @@ class User(sql.ModelBase, sql.DictBase):
 
 class LocalUser(sql.ModelBase, sql.DictBase):
     __tablename__ = 'local_user'
-    attributes = ['id', 'user_id', 'domain_id', 'name']
+    attributes = ['id', 'user_id', 'domain_id', 'name', 'last_auth_at']
     id = sql.Column(sql.Integer, primary_key=True)
     user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
                          ondelete='CASCADE'), unique=True)
@@ -147,6 +147,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
     passwords = orm.relationship('Password', single_parent=True,
                                  cascade='all,delete-orphan',
                                  backref='local_user')
+    last_auth_at = sql.Column(sql.DateTime, nullable=True)
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
