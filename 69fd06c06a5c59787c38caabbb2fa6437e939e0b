@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_fdf6508d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 2611,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-08T13:33:12Z",
+      "side": 1,
+      "message": "would be nice to check scoping token to a domain as well",
+      "range": {
+        "startLine": 2611,
+        "startChar": 8,
+        "endLine": 2611,
+        "endChar": 33
+      },
+      "revId": "69fd06c06a5c59787c38caabbb2fa6437e939e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f0ae782c",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 51
