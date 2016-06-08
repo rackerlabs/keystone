@@ -247,6 +247,8 @@ class Authenticator(object):
                 raise AssertionError(_('Invalid user / password'))
             if not utils.check_password(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
+            elif self._is_user_disabled(user_ref):
+                raise exception.UserDisabled(user_id=user_id)
             elif self._is_password_expired(user_ref.password_expires_at):
                 raise exception.PasswordExpired(user_id=user_id)
             return base.filter_user(user_ref.to_dict())
@@ -261,6 +263,26 @@ class Authenticator(object):
         if expires_at:
             return datetime.datetime.utcnow() >= expires_at
         return False
+
+    def _is_user_disabled(self, user_ref):
+        max_days_inactive = (
+            CONF.security_compliance.disable_user_account_days_inactive)
+        if user_ref.last_auth_at and max_days_inactive > 0:
+            days_inactive = (
+                (datetime.datetime.utcnow() - user_ref.last_auth_at).days
+            )
+            if days_inactive >= max_days_inactive:
+                self._disable_user(user_ref['id'])
+                return True
+        return (user_ref.enabled is not None if
+                not user_ref.enabled else False)
+
+    def _disable_user(self, user_id):
+        with sql.session_for_write() as session:
+            query = session.query(model.User)
+            query = query.filter(model.User.id == user_id)
+            query.update({'enabled': False})
+            return
 
 
 class PasswordHistoryValidator(object):
