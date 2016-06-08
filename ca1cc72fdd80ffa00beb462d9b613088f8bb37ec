@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_eb116953",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:12:47Z",
+      "side": 1,
+      "message": "list_users_with_default_project_id should go here",
+      "range": {
+        "startLine": 300,
+        "startChar": 4,
+        "endLine": 300,
+        "endChar": 8
+      },
+      "revId": "ca1cc72fdd80ffa00beb462d9b613088f8bb37ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_9cbd17da",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 10
@@ -18,6 +41,52 @@
         "startChar": 8,
         "endLine": 365,
         "endChar": 42
+      },
+      "revId": "ca1cc72fdd80ffa00beb462d9b613088f8bb37ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_cb562d05",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:12:47Z",
+      "side": 1,
+      "message": "backend",
+      "range": {
+        "startLine": 88,
+        "startChar": 55,
+        "endLine": 88,
+        "endChar": 61
+      },
+      "revId": "ca1cc72fdd80ffa00beb462d9b613088f8bb37ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_abf5a1ed",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T13:12:47Z",
+      "side": 1,
+      "message": "you\u0027re not deleting the project, you\u0027re updating its default_project_id property, please update this message accordingly",
+      "range": {
+        "startLine": 543,
+        "startChar": 61,
+        "endLine": 545,
+        "endChar": 40
       },
       "revId": "ca1cc72fdd80ffa00beb462d9b613088f8bb37ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
