@@ -46,6 +46,47 @@
       "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1faa1e19",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T17:50:29Z",
+      "side": 1,
+      "message": "I agree with henry. Double caching would be weird. This whole area needs refactoring so that there\u0027s a single entry point that\u0027s cached anyways.",
+      "parentUuid": "7aa08908_bf002a35",
+      "range": {
+        "startLine": 302,
+        "startChar": 24,
+        "endLine": 302,
+        "endChar": 31
+      },
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1f817e8f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T17:50:29Z",
+      "side": 1,
+      "message": "I still think the new memoized fn needs to be invalidated:\n\n self.validate_non_persistent_token.invalidate(self, token_id)",
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
