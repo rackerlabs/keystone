@@ -144,6 +144,38 @@ class AuthenticatorTests(object):
                                                             password)
         self.assertEqual(user['id'], ret_user['id'])
 
+    def test_last_auth_date(self):
+        # create user
+        password = uuid.uuid4().hex
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': password
+        }
+        user_created = self.identity_api.create_user(user)
+        # authenticate, last_auth_at gets set here
+        date_before = datetime.datetime.now()
+        user_ret = sql_backend.Authenticator().authenticate(user_created['id'],
+                                                            password)
+        self.assertEqual(user_ret['id'], user_created['id'])
+        date_after = datetime.datetime.now()
+        # test last_auth_at, checking before/after to account for midnight
+        user_ref = self._get_user_ref(user_created['id'])
+        if date_before.date() != date_after.date():
+            self.assertEqual(user_ref.local_user.last_auth_at.date(),
+                             date_after.date())
+        else:
+            self.assertEqual(user_ref.local_user.last_auth_at.date(),
+                             date_before.date())
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return self.identity_api._get_user(session, user_id)
+
+    def test_user_disabled_due_to_inactivity(self):
+        pass
+
 
 class PasswordHistoryValidatorTests(object):
     def test_validate_invalid_password(self):
@@ -151,7 +183,7 @@ class PasswordHistoryValidatorTests(object):
                                    unique_last_password_count=4)
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': 'default',
+            'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
             'password': 'mypassword1'
         }
