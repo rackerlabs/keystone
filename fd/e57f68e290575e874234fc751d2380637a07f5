@@ -1,0 +1,10 @@
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review-1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 08 Jun 2016 00:34:25 +0000
+Reviewed-on: https://review.openstack.org/322280
+Project: openstack/keystone
+Branch: refs/heads/master
