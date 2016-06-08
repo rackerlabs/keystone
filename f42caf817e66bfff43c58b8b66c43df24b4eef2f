@@ -16,6 +16,24 @@
       "revId": "f42caf817e66bfff43c58b8b66c43df24b4eef2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_36f120ce",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T11:47:51Z",
+      "side": 1,
+      "message": "It is necessary to invalidate _get_token cache, which is a private method to the persistence layer",
+      "parentUuid": "9abb7d3a_9738ff3e",
+      "revId": "f42caf817e66bfff43c58b8b66c43df24b4eef2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
