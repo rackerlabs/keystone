@@ -22,6 +22,30 @@
       "revId": "a0bf8a02ca567276fd37b8e12fe6b79edaf363de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5a1e660c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T22:40:29Z",
+      "side": 0,
+      "message": "Notice get_all [1] don\u0027t honor this filter\n\n[1] https://github.com/openstack/keystone/blob/d5cca09/keystone/identity/backends/ldap/common.py#L1540-L1543",
+      "parentUuid": "7aa08908_5ac2e685",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "a0bf8a02ca567276fd37b8e12fe6b79edaf363de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
