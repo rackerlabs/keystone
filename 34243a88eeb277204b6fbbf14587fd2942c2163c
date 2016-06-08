@@ -87,6 +87,24 @@
       "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3a056810",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T17:53:07Z",
+      "side": 1,
+      "message": "In liberty, fernet would call validate_v3_token (or validate_v2_token) which would call _validate_v3_token, which was memoized and also invalidated in this function, so I don\u0027t think that invalidating was not done in the liberty case.",
+      "parentUuid": "7aa08908_1f817e8f",
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
