@@ -247,6 +247,8 @@ class Authenticator(object):
                 raise AssertionError(_('Invalid user / password'))
             if not utils.check_password(password, user_ref.password):
                 raise AssertionError(_('Invalid user / password'))
+            elif self._is_user_disabled(user_ref):
+                raise exception.UserDisabled(user_id=user_id)
             elif self._is_password_expired(user_ref.password_expires_at):
                 raise exception.PasswordExpired(user_id=user_id)
             return base.filter_user(user_ref.to_dict())
@@ -261,6 +263,9 @@ class Authenticator(object):
         if expires_at:
             return datetime.datetime.utcnow() >= expires_at
         return False
+
+    def _is_user_disabled(self, user_ref):
+        not user_ref.enabled
 
 
 class PasswordHistoryValidator(object):

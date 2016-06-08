@@ -207,6 +207,10 @@ class PasswordExpired(Unauthorized):
     message_format = _("The password is expired for user: %(user_id)s")
 
 
+class UserDisabled(Unauthorized):
+    message_format = _("The user account is disabled: %(user_id)s")
+
+
 class AuthPluginException(Unauthorized):
     message_format = _("Authentication plugin error.")
 
