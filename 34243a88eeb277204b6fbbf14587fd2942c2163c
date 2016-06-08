@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_70ea6f75",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T18:43:12Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "7aa08908_dab2644b",
+      "range": {
+        "startLine": 302,
+        "startChar": 24,
+        "endLine": 302,
+        "endChar": 31
+      },
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1f817e8f",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
