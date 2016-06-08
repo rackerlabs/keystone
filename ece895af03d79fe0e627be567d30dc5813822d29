@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_9466e8ea",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T20:56:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dab17558_4c4d003d",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2c1d1c0f",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -30,6 +48,29 @@
       "writtenOn": "2016-05-17T21:05:06Z",
       "side": 1,
       "message": "nit: I\u0027d suggest giving a little more information about the behavior of this option. The fact that the option defaults to False will be documented in the sample config.",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b4b2044a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T20:56:37Z",
+      "side": 1,
+      "message": "this isn\u0027t needed",
+      "range": {
+        "startLine": 212,
+        "startChar": 26,
+        "endLine": 212,
+        "endChar": 48
+      },
       "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +129,29 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_34ec5429",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T20:56:37Z",
+      "side": 1,
+      "message": "What about \"Can\u0027t list users without a filter.\" ? Does it seem better for you?",
+      "range": {
+        "startLine": 228,
+        "startChar": 25,
+        "endLine": 228,
+        "endChar": 66
+      },
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_4c7ea019",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 3
@@ -117,6 +181,24 @@
       "side": 1,
       "message": "Perhaps it would be best if this test first ensures that you CAN list the users without a filter with the default config option setting (i.e. disabled), then change the config and try again, showing that it fails.",
       "parentUuid": "dab17558_4c7ea019",
+      "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_14d6784e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T20:56:37Z",
+      "side": 1,
+      "message": "I agree with Henry\u0027s suggestion",
+      "parentUuid": "bab6814e_c5340ee0",
       "revId": "ece895af03d79fe0e627be567d30dc5813822d29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
