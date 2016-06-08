@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_6b63a842",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T16:39:43Z",
+      "side": 1,
+      "message": "I thought that\u0027s what you were asking me to do with your comment on the earlier version?",
+      "parentUuid": "7aa08908_e52358bb",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c543bc6a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_abb3d008",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T16:39:43Z",
+      "side": 1,
+      "message": "this is only called for persistent tokens....via the persistent token manager",
+      "parentUuid": "7aa08908_8b29c58c",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_709ba818",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -117,6 +153,24 @@
       "writtenOn": "2016-06-08T13:10:09Z",
       "side": 1,
       "message": "it\u0027s up at line 433 where all the other token cache invalidations happen.",
+      "parentUuid": "7aa08908_709ba818",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2b81a08f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T16:39:43Z",
+      "side": 1,
+      "message": "Well, I could.  We certainly didn\u0027t do that in Liberty, so I was trying to make this first patch just to revert to the way it ways....but if you feel strongly, I agree it would be better to have it!",
       "parentUuid": "7aa08908_709ba818",
       "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
