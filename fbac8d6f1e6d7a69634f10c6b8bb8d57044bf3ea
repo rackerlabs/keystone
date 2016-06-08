@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_8b29c58c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T13:10:09Z",
+      "side": 1,
+      "message": "Here\u0027s where all the other cache invalidations happen.",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_709ba818",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -83,6 +100,24 @@
       "writtenOn": "2016-06-08T13:06:54Z",
       "side": 1,
       "message": "you should add an invalidate to the new method here if you want to invalidate the cache at least for the case of explicit token revocation",
+      "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ab0be122",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-08T13:10:09Z",
+      "side": 1,
+      "message": "it\u0027s up at line 433 where all the other token cache invalidations happen.",
+      "parentUuid": "7aa08908_709ba818",
       "revId": "fbac8d6f1e6d7a69634f10c6b8bb8d57044bf3ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
