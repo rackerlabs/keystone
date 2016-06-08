@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_20b9b2cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-08T19:39:39Z",
+      "side": 1,
+      "message": "Yeah, like I mentioned in IRC, I tried several ways to implement a default date value, but couldn\u0027t get this to work.  Failed in sqlplus and at the gate.",
+      "parentUuid": "7aa08908_5d814bfa",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 48
+      },
+      "revId": "2c17dcfb50be278b8ef854a9f4379bf2b249da14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_50b933cb",
         "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
         "patchSetId": 51
