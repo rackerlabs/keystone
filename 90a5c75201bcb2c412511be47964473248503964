@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_44f20b07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-08T21:53:59Z",
+      "side": 1,
+      "message": "Sounds bug worthy",
+      "revId": "90a5c75201bcb2c412511be47964473248503964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_043ac398",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-08T21:53:59Z",
+      "side": 1,
+      "message": "I suspect bandit will flag this.",
+      "revId": "90a5c75201bcb2c412511be47964473248503964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
