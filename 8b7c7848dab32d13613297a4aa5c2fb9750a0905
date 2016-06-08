@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_56a14cf7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T11:45:54Z",
+      "side": 1,
+      "message": "This should be updated to _validate_non_persistent_token as well",
+      "range": {
+        "startLine": 242,
+        "startChar": 27,
+        "endLine": 242,
+        "endChar": 71
+      },
+      "revId": "8b7c7848dab32d13613297a4aa5c2fb9750a0905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_56ef8c1d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-08T11:45:54Z",
+      "side": 1,
+      "message": "So this never gets invalidated ? (other than when cache expires?)",
+      "range": {
+        "startLine": 291,
+        "startChar": 8,
+        "endLine": 291,
+        "endChar": 38
+      },
+      "revId": "8b7c7848dab32d13613297a4aa5c2fb9750a0905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
