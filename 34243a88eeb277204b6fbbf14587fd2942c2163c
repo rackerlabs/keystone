@@ -147,6 +147,24 @@
       "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5a0834da",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-08T17:58:22Z",
+      "side": 1,
+      "message": "...but I\u0027ve no issue adding here just in case!",
+      "parentUuid": "7aa08908_5a9e74b9",
+      "revId": "34243a88eeb277204b6fbbf14587fd2942c2163c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
