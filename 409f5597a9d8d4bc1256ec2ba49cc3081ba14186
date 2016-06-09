@@ -105,6 +105,24 @@
       "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dcbd0fd9",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T14:15:47Z",
+      "side": 1,
+      "message": "Is this changing behavior of the queries?",
+      "parentUuid": "7aa08908_5c647fe4",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
