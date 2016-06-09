@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_2e921ca0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T13:04:57Z",
+      "side": 1,
+      "message": "This class has no state. No self.X variables. That\u0027s typically a code smell.",
+      "parentUuid": "7aa08908_c05a1583",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_de48465e",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "I don\u0027t like the copy, but disagree that the class should be merged.  The new class makes the code more modular and supports single responsibility principle.",
       "parentUuid": "7aa08908_fe90a297",
+      "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0e5760cb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T13:04:57Z",
+      "side": 1,
+      "message": "If all you ever do is create a new instance with no state and call a single method then this really is the wrong abstraction. I don\u0027t see this a an SRP thing at all.",
+      "parentUuid": "7aa08908_601d2173",
       "revId": "1d8f5d3df2be939d6fb375219ff59ec9da3336a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
