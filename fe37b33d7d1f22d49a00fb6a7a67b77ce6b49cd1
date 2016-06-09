@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_fda6210d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-09T06:35:09Z",
+      "side": 1,
+      "message": "its not it\u0027s",
+      "range": {
+        "startLine": 481,
+        "startChar": 63,
+        "endLine": 481,
+        "endChar": 67
+      },
+      "revId": "fe37b33d7d1f22d49a00fb6a7a67b77ce6b49cd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
