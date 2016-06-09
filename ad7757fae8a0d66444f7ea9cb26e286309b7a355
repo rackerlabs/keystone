@@ -120,6 +120,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_0b292e8a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-09T00:18:21Z",
+      "side": 1,
+      "message": "I agree with Lance and Steve\u0027s suggestion, this way it will be clear what configs were successful to upload and what weren\u0027t. Also, keep this statement here to warn the case no configs were found at all in the specified dir (wrong permissions/wrong dir was specified)",
+      "parentUuid": "ba0121b8_1451170f",
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_839ea261",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 9
