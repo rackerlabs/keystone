@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c636c6e6",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:23:49Z",
+      "side": 1,
+      "message": "see below comment",
+      "range": {
+        "startLine": 75,
+        "startChar": 23,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "aaf338570fe5feaec4ad25ff8a0ae84dc535a726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_667392b5",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:23:49Z",
+      "side": 1,
+      "message": "this can be accessed from obj.name below",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 38
+      },
+      "revId": "aaf338570fe5feaec4ad25ff8a0ae84dc535a726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_462ad67f",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:23:49Z",
+      "side": 1,
+      "message": "This is the descriptor object, not the instance (which is \u0027obj\u0027 in this case). you don\u0027t need to store \"region\" on the descriptor.\n\nRemember a single descriptor object is used for every instance (shared) of the region here.",
+      "range": {
+        "startLine": 84,
+        "startChar": 22,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "aaf338570fe5feaec4ad25ff8a0ae84dc535a726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_46781690",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:23:49Z",
+      "side": 1,
+      "message": "see above.",
+      "range": {
+        "startLine": 90,
+        "startChar": 7,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "aaf338570fe5feaec4ad25ff8a0ae84dc535a726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_e66782e8",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:23:49Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 13
+      },
+      "revId": "aaf338570fe5feaec4ad25ff8a0ae84dc535a726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
