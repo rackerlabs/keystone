@@ -87,6 +87,24 @@
       "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5c647fe4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T14:10:52Z",
+      "side": 1,
+      "message": "I missed this setting during the initial implementation; fixing it now. It\u0027s part of this refactor, as it\u0027s related to shadow users.",
+      "parentUuid": "7aa08908_5f3e342a",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
