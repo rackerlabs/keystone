@@ -22,6 +22,30 @@
       "revId": "f57cdba04713eee29f6e86ec78814d547893f30d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c415379c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-09T13:49:19Z",
+      "side": 1,
+      "message": "Sure, I can add a log statement. That\u0027s a good idea.",
+      "parentUuid": "7aa08908_f765ab1d",
+      "range": {
+        "startLine": 131,
+        "startChar": 12,
+        "endLine": 131,
+        "endChar": 42
+      },
+      "revId": "f57cdba04713eee29f6e86ec78814d547893f30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -46,6 +46,30 @@
       "revId": "a0bf8a02ca567276fd37b8e12fe6b79edaf363de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_84ee8fb2",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-09T13:49:19Z",
+      "side": 0,
+      "message": "Yes, that\u0027s intentional. It\u0027s actually the main piece of the fix. The group_filter has to be ignored here so that the only caller of this method (delete_user) can see all groups of which this user is a member and therefore can remove them from all of those groups, so we\u0027re not leaving behind member references for a deleted user. This also fits with the name of the method, as opposed to the list_user_groups_filtered method immediately after it, so I would not expect to see other code that wants filtering to start using this and be broken... they would use the filtered method..",
+      "parentUuid": "7aa08908_5a1e660c",
+      "range": {
+        "startLine": 379,
+        "startChar": 31,
+        "endLine": 379,
+        "endChar": 53
+      },
+      "revId": "a0bf8a02ca567276fd37b8e12fe6b79edaf363de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
