@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_fa3e0ed9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T14:08:36Z",
+      "side": 1,
+      "message": "That being said, I\u0027ll save this fight for another day :)",
+      "parentUuid": "7aa08908_fa70cede",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5f3e342a",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 13
