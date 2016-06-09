@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_5bb593ce",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-09T19:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_dbc34389",
+      "range": {
+        "startLine": 74,
+        "startChar": 6,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "e1e8d8e2eb12838cf59b8c2b800c2eed6917f1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_fb9b9f70",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-09T19:08:28Z",
       "side": 1,
       "message": "Is this supposed to be self.region_key?",
+      "range": {
+        "startLine": 84,
+        "startChar": 51,
+        "endLine": 84,
+        "endChar": 66
+      },
+      "revId": "e1e8d8e2eb12838cf59b8c2b800c2eed6917f1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fba9df7c",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-09T19:11:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_fb9b9f70",
       "range": {
         "startLine": 84,
         "startChar": 51,
