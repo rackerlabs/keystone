@@ -17,7 +17,6 @@ from oslo_log import log
 from oslo_log import versionutils
 import six
 
-from keystone import assignment
 from keystone.common import cache
 from keystone.common import clean
 from keystone.common import dependency
@@ -414,8 +413,6 @@ class Manager(manager.Manager):
             # If the project's domain_id has been updated, invalidate user
             # role assignments cache region, as it may be caching inherited
             # assignments from the old domain to the specified project
-            assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
         return ret
 
     def _only_allow_enabled_to_update_cascade(self, project, original_project):
@@ -468,6 +465,7 @@ class Manager(manager.Manager):
         self.get_project.invalidate(self, project_id)
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
+<<<<<<< HEAD
         self.credential_api.delete_credentials_for_project(project_id)
         notifications.Audit.deleted(self._PROJECT, project_id, initiator)
         # Invalidate user role assignments cache region, as it may
@@ -523,6 +521,10 @@ class Manager(manager.Manager):
             ret = self.driver.delete_project(project_id)
             self._post_delete_cleanup_project(project_id, project, initiator)
 
+=======
+        self.credential_api.delete_credentials_for_project(tenant_id)
+        notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
+>>>>>>> 3bcac6f... Revert "Add caching to role assignments"
         return ret
 
     def _filter_projects_list(self, projects_list, user_id):
@@ -793,10 +795,6 @@ class Manager(manager.Manager):
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
-
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments where the target is the specified domain
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def _delete_domain_contents(self, domain_id):
         """Delete the contents of a domain.

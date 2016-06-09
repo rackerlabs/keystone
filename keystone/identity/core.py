@@ -23,7 +23,6 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
 
-from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.common import cache
 from keystone.common import clean
 from keystone.common import config
@@ -984,10 +983,6 @@ class Manager(manager.Manager):
         self.id_mapping_api.delete_id_mapping(user_id)
         notifications.Audit.deleted(self._USER, user_id, initiator)
 
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments where the actor is the specified user
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
     @domains_configured
     @exception_translated('group')
     def create_group(self, group_ref, initiator=None):
@@ -1065,10 +1060,6 @@ class Manager(manager.Manager):
         for uid in user_ids:
             self.emit_invalidate_user_token_persistence(uid)
 
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments expanded from the specified group to its users
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
     @domains_configured
     @exception_translated('group')
     def add_user_to_group(self, user_id, group_id, initiator=None):
@@ -1087,12 +1078,6 @@ class Manager(manager.Manager):
             user_entity_id, user_driver, group_entity_id, group_driver)
 
         group_driver.add_user_to_group(user_entity_id, group_entity_id)
-
-        # Invalidate user role assignments cache region, as it may now need to
-        # include role assignments from the specified group to its users
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-        notifications.Audit.added_to(self._GROUP, group_id, self._USER,
-                                     user_id, initiator)
 
     @domains_configured
     @exception_translated('group')
@@ -1113,12 +1098,6 @@ class Manager(manager.Manager):
 
         group_driver.remove_user_from_group(user_entity_id, group_entity_id)
         self.emit_invalidate_user_token_persistence(user_id)
-
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments expanded from this group to this user
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-        notifications.Audit.removed_from(self._GROUP, group_id, self._USER,
-                                         user_id, initiator)
 
     def emit_invalidate_user_token_persistence(self, user_id):
         """Emit a notification to the callback system to revoke user tokens.
