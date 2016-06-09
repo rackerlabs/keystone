@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_6412835a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-09T13:43:43Z",
+      "side": 1,
+      "message": "-1: I assume you\u0027re making this change because you\u0027re assuming that no one will ever run anything besides SQL, which *may* be true (although, historically it is not). However, even if we can assume that everyone will run SQL, that doesn\u0027t mean that deployers won\u0027t want to wrap or extend the upstream drivers -- which is exactly where this config will come in handy.",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
