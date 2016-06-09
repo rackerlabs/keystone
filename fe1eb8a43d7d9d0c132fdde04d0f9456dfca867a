@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a759f490",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T20:43:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_49c0427d",
+      "revId": "fe1eb8a43d7d9d0c132fdde04d0f9456dfca867a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_09711ae1",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 34
@@ -118,6 +136,24 @@
       "writtenOn": "2016-06-09T14:29:59Z",
       "side": 1,
       "message": "Good suggestion, thanks.  I\u0027ll get this in the next patch.",
+      "parentUuid": "7aa08908_09b8fae4",
+      "revId": "fe1eb8a43d7d9d0c132fdde04d0f9456dfca867a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c7d7e0bd",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T20:43:37Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7aa08908_09b8fae4",
       "revId": "fe1eb8a43d7d9d0c132fdde04d0f9456dfca867a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
