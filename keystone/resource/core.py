@@ -19,7 +19,6 @@ from oslo_log import log
 from oslo_log import versionutils
 import six
 
-from keystone import assignment
 from keystone.common import cache
 from keystone.common import clean
 from keystone.common import dependency
@@ -332,14 +331,6 @@ class Manager(manager.Manager):
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
                                             original_tenant['domain_id'])
-
-        if ('domain_id' in tenant and
-           tenant['domain_id'] != original_tenant['domain_id']):
-            # If the project's domain_id has been updated, invalidate user
-            # role assignments cache region, as it may be caching inherited
-            # assignments from the old domain to the specified project
-            assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -368,11 +359,6 @@ class Manager(manager.Manager):
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
-
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments where the target is the specified project
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
-
         return ret
 
     def _filter_projects_list(self, projects_list, user_id):
@@ -606,10 +592,6 @@ class Manager(manager.Manager):
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
-
-        # Invalidate user role assignments cache region, as it may be caching
-        # role assignments where the target is the specified domain
-        assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def _delete_domain_contents(self, domain_id):
         """Delete the contents of a domain.
