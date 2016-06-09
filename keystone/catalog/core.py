@@ -40,6 +40,7 @@ MEMOIZE = cache.get_memoization_decorator(group='catalog')
 # modify or delete elements of the service catalog should invalidate this
 # entire cache region.
 COMPUTED_CATALOG_REGION = oslo_cache.create_region()
+COMPUTED_CATALOG_REGION.name = 'catalog'
 MEMOIZE_COMPUTED_CATALOG = cache.get_memoization_decorator(
     group='catalog',
     region=COMPUTED_CATALOG_REGION)
