@@ -116,6 +116,24 @@
       "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dfece494",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T13:52:48Z",
+      "side": 1,
+      "message": "Yeah, but if the expectation is that all passwords should expire in 90 days when I change the config setting, why not just implement that functionality?  \n\nLikewise, if I have a user in the whitelist, where their password doesn\u0027t expire, and then I remove them from the whitelist, operators will also have to run a SQL command.\n\nWhile this may not seem like a big deal, I\u0027m not sure what we are getting out of it, having passwords that have different expiration times. What is the use case for this? I mean, I\u0027ve never been able to log into a system with 2 different passwords.",
+      "parentUuid": "7aa08908_2b850ace",
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
