@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_c42ed7f9",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T13:40:40Z",
+      "side": 1,
+      "message": "I dislike just functions :)  I suppose this could be a static method.",
+      "parentUuid": "7aa08908_09711ae1",
+      "revId": "fe1eb8a43d7d9d0c132fdde04d0f9456dfca867a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_09b8fae4",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 34
