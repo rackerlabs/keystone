@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_75133e0e",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-09T18:27:15Z",
+      "side": 1,
+      "message": "you were correct before, putting this in the controller call.\n\nThe issue in the last patch was modifying the test behavior, before your change, everything was verified manually during AuthInfo.create(), not using a JSON schema. All these manual validations can be removed in a next patchset, but for now, the tests should remain the same (the ones testing AuthInfo.create()) and this decorator placed in the controller and new tests added, as you did.",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 138,
+        "endChar": 54
+      },
+      "revId": "95fdf2dae23afa908e7fbd351b110e855eae3a4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
