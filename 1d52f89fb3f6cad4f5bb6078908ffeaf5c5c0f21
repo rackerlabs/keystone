@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_b22b2381",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-06-09T07:31:21Z",
+      "side": 1,
+      "message": "Can project set in auth[\u0027identity\u0027][\u0027password\u0027][\u0027user\u0027]?\nI recognized that is only id, name, password, and domain. i think the test about projects is unnecessary.",
+      "parentUuid": "7aa08908_13eb4be0",
+      "range": {
+        "startLine": 149,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 37
+      },
+      "revId": "1d52f89fb3f6cad4f5bb6078908ffeaf5c5c0f21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f3cf9f53",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4

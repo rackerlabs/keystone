@@ -22,6 +22,30 @@
       "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4f28589a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-06-09T07:31:21Z",
+      "side": 0,
+      "message": "Validate using a jsonschema had not been performed in AuthInfo.create().\nBecause validated decorator had been set to authenticate_for_token.\nSo, i move decorator to AuthInfo.create() and fix a tests.",
+      "parentUuid": "7aa08908_d356e304",
+      "range": {
+        "startLine": 130,
+        "startChar": 26,
+        "endLine": 130,
+        "endChar": 30
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
