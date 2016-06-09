@@ -98,6 +98,24 @@
       "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2b850ace",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-09T00:46:12Z",
+      "side": 1,
+      "message": "\u003e we\u0027re possibly authenticating against multiple passwords\n\nYou could avoid that by setting currently-future expires_at to *now* when you do a change password operation, so that they\u0027re immediately expired.\n\nAs for upgrades, it\u0027d be pretty trivial to document a SQL command in the release notes to introduce expiring passwords (update password set expires_at\u003d(+90 days) where expires_at is null)",
+      "parentUuid": "7aa08908_d0a99525",
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
