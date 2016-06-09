@@ -16,6 +16,41 @@
       "revId": "d34b4b62024c73509db2b240d37032fc6a0cbfde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2b118a04",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_switch_index_order_in_token_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-09T00:29:57Z",
+      "side": 1,
+      "message": "++\n\nThis is an example of how to find constraints programatically from the database, and I believe it\u0027s the case Morgan was talking about:\n\nhttps://github.com/openstack/keystone/blob/9e81843/keystone/common/sql/migrate_repo/versions/096_drop_role_name_constraint.py#L37",
+      "parentUuid": "dab17558_2a389c3c",
+      "revId": "d34b4b62024c73509db2b240d37032fc6a0cbfde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ab8a9a61",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-09T00:29:57Z",
+      "side": 1,
+      "message": "This is causig pep8 to fail. Add a new blank line here (it needs 2 before class declarations)",
+      "revId": "d34b4b62024c73509db2b240d37032fc6a0cbfde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
