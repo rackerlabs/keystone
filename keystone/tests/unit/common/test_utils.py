@@ -14,6 +14,7 @@
 import datetime
 import uuid
 
+import dogpile.cache
 from oslo_config import fixture as config_fixture
 from oslo_serialization import jsonutils
 import six
@@ -22,6 +23,7 @@ from keystone.common import utils as common_utils
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import utils
 from keystone.version import service
 
@@ -204,3 +206,28 @@ class ServiceHelperTests(unit.BaseTestCase):
 
     def test_fail_gracefully(self):
         self.assertRaises(unit.UnexpectedExit, self._do_test)
+
+
+class CacheTestCase(unit.TestCase):
+
+    def setUp(self):
+        self.load_backends()
+        super(CacheTestCase, self).setUp()
+
+    def test_invalidation_is_shared(self):
+        """Test that apply_invalidation_patch worked."""
+        # make sure nothing is invalidated yet
+        # pick a region
+        region = ksfixtures.cache.CACHE_REGIONS[0]
+        name = region.name
+        key = '_RegionExpiration.hard.{0}'.format(name)
+        value = region.get(key)
+        self.assertEqual(dogpile.cache.api.NO_VALUE, value)
+        self.assertIsNone(region._hard_invalidated)
+        # invalidate the region
+        region.invalidate(hard=True)
+        # there should be an entry about that in the backend
+        # and the region should become invalidated
+        value = region.get(key)
+        self.assertNotEqual(dogpile.cache.api.NO_VALUE, value)
+        self.assertIsNotNone(region._hard_invalidated)
