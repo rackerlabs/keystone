@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_46b4a1d0",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T16:28:23Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed.",
+      "revId": "1c1d60028cca664652f924bf3c77a08a961dc839",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c3ed23f1",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 16
