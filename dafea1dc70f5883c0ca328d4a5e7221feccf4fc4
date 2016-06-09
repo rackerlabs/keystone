@@ -16,6 +16,29 @@
       "revId": "dafea1dc70f5883c0ca328d4a5e7221feccf4fc4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_668747b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-09T01:34:30Z",
+      "side": 1,
+      "message": "Brant comment in previous patchset: \"so now if the cache invalidate raises there will be no audit sent...\"\n\nIf we do need to ensure both a) set of invalidations; and b) audit code; are run, what about using a try: finally clause ?",
+      "range": {
+        "startLine": 340,
+        "startChar": 8,
+        "endLine": 340,
+        "endChar": 72
+      },
+      "revId": "dafea1dc70f5883c0ca328d4a5e7221feccf4fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
