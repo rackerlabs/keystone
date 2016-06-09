@@ -71,46 +71,26 @@ dogpile.cache.register_backend(
 # so we can handle region-wide invalidations or alternatively propose
 # a fix to dogpile.cache to make region-wide invalidates possible to
 # work across distributed processes.
-class _RegionInvalidator(object):
-
-    def __init__(self, region, region_name):
+class Invalidated(object):
+    def __init__(self, region, region_name, invalidate_type):
+        self.invalidate_type = invalidate_type
         self.region = region
         self.region_name = region_name
-        region_key = '_RegionExpiration.%(type)s.%(region_name)s'
-        self.soft_region_key = region_key % {'type': 'soft',
-                                             'region_name': self.region_name}
-        self.hard_region_key = region_key % {'type': 'hard',
-                                             'region_name': self.region_name}
+        self.region_key = '_RegionExpiration.%(type)s.%(region_name)s' % {
+            'type': invalidate_type,
+            'region_name': region_name}
 
-    @property
-    def hard_invalidated(self):
+    def __get__(self, obj, objtype=None):
         invalidated = self.region.backend.get(self.hard_region_key)
         if invalidated is not api.NO_VALUE:
             return invalidated.payload
         return None
 
-    @hard_invalidated.setter
-    def hard_invalidated(self, value):
-        self.region.set(self.hard_region_key, value)
+    def __set__(self, obj, value):
+        self.region.set(self.region_key, value)
 
-    @hard_invalidated.deleter
-    def hard_invalidated(self):
-        self.region.delete(self.hard_region_key)
-
-    @property
-    def soft_invalidated(self):
-        invalidated = self.region.backend.get(self.soft_region_key)
-        if invalidated is not api.NO_VALUE:
-            return invalidated.payload
-        return None
-
-    @soft_invalidated.setter
-    def soft_invalidated(self, value):
-        self.region.set(self.soft_region_key, value)
-
-    @soft_invalidated.deleter
-    def soft_invalidated(self):
-        self.region.delete(self.soft_region_key)
+    def __delete__(self, obj):
+        self.region.delete(self.region_key)
 
 
 def apply_invalidation_patch(region, region_name):
@@ -122,6 +102,7 @@ def apply_invalidation_patch(region, region_name):
     # Patch the region object. This logic needs to be moved up into dogpile
     # itself. Patching the internal interfaces, unfortunately, is the only
     # way to handle this at the moment.
-    invalidator = _RegionInvalidator(region=region, region_name=region_name)
-    setattr(region, '_hard_invalidated', invalidator.hard_invalidated)
-    setattr(region, '_soft_invalidated', invalidator.soft_invalidated)
+    setattr(region, '_hard_invalidated',
+            Invalidated(region, region_name, 'hard'))
+    setattr(region, '_soft_invalidated',
+            Invalidated(region, region_name, 'soft'))
