@@ -80,6 +80,24 @@
       "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d0a99525",
+        "filename": "keystone/common/sql/migrate_repo/versions/103_add_new_password_columns.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T00:10:32Z",
+      "side": 1,
+      "message": "Actually, thinking about this some more, expires_at would get set at password create/update. For existing deployments though, if they turn this on, when would their current passwords expire? Not until the user updates their password, which is not what I would expect. I would expect all passwords at that point to expire after 90 days.",
+      "parentUuid": "7aa08908_b0b84912",
+      "revId": "1fd49dbc8620177b0e6798d035319a0163da070b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
