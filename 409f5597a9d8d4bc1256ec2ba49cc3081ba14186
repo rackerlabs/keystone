@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_fa70cede",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T14:07:59Z",
+      "side": 1,
+      "message": "I just think we ought to be able to say that some features will always exist in the database and we will not allow custom implementations. When we allow custom implementation for everything, we limit our ability to make changes and lose out on things such as referential integrity.  And if no one ever creates a custom implementation for shadow users, then why are we doing it?",
+      "parentUuid": "7aa08908_6412835a",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5f3e342a",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 13
