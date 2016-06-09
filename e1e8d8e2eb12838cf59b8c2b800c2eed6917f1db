@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_dbc34389",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:08:28Z",
+      "side": 1,
+      "message": "Keep this as a private interface, prefix with _",
+      "range": {
+        "startLine": 74,
+        "startChar": 6,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "e1e8d8e2eb12838cf59b8c2b800c2eed6917f1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fb9b9f70",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-09T19:08:28Z",
+      "side": 1,
+      "message": "Is this supposed to be self.region_key?",
+      "range": {
+        "startLine": 84,
+        "startChar": 51,
+        "endLine": 84,
+        "endChar": 66
+      },
+      "revId": "e1e8d8e2eb12838cf59b8c2b800c2eed6917f1db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
