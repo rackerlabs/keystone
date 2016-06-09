@@ -123,6 +123,24 @@
       "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_42aad486",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-09T14:42:12Z",
+      "side": 1,
+      "message": "subquery loading is eager loading that creates separate SQL statements when the object is loading, as opposed to a single SQL statement.  It\u0027s what I intended and consistent with the other relationships within the User class. By default, objects are lazy loading.",
+      "parentUuid": "7aa08908_dcbd0fd9",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
