@@ -16,6 +16,41 @@
       "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_9fc37c38",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T13:52:58Z",
+      "side": 1,
+      "message": "I agree. This is the seam that allows deployers to use their own implementation.",
+      "parentUuid": "7aa08908_6412835a",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5f3e342a",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-09T13:52:58Z",
+      "side": 1,
+      "message": "How is this part of the refactor? I think it may deserve it\u0027s own commit so that you can document why this is necessary.",
+      "revId": "409f5597a9d8d4bc1256ec2ba49cc3081ba14186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
