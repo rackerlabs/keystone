@@ -113,6 +113,32 @@ class _RegionInvalidator(object):
         self.region.delete(self.soft_region_key)
 
 
+# TODO(morganfainberg): Move this logic up into oslo.cache directly
+# so we can handle region-wide invalidations or alternatively propose
+# a fix to dogpile.cache to make region-wide invalidates possible to
+# work across distributed processes.
+class Invalidated(object):
+    def __init__(self, region, region_name, invalidate_type):
+        self.invalidate_type = invalidate_type
+        self.region = region
+        self.region_name = region_name
+        self.region_key = '_RegionExpiration.%(type)s.%(region_name)s' % {
+            'type': invalidate_type,
+            'region_name': region_name}
+
+    def __get__(self, obj, objtype=None):
+        invalidated = self.region.backend.get(self.hard_region_key)
+        if invalidated is not api.NO_VALUE:
+            return invalidated.payload
+        return None
+
+    def __set__(self, obj, value):
+        self.region.set(self.region_key, value)
+
+    def __delete__(self, obj):
+        self.region.delete(self.region_key)
+
+
 def apply_invalidation_patch(region, region_name):
     """Patch the region interfaces to ensure we share the expiration time.
 
@@ -122,6 +148,5 @@ def apply_invalidation_patch(region, region_name):
     # Patch the region object. This logic needs to be moved up into dogpile
     # itself. Patching the internal interfaces, unfortunately, is the only
     # way to handle this at the moment.
-    invalidator = _RegionInvalidator(region=region, region_name=region_name)
-    setattr(region, '_hard_invalidated', invalidator.hard_invalidated)
-    setattr(region, '_soft_invalidated', invalidator.soft_invalidated)
+    setattr(region, '_hard_invalidated', Invalidated(region, region_name, 'hard'))
+    setattr(region, '_soft_invalidated', Invalidated(region, region_name, 'soft'))
