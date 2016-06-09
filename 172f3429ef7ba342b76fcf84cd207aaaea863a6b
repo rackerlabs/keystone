@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1602ce6f",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-09T15:44:15Z",
+      "side": 1,
+      "message": "This is going to broken out into it\u0027s own change right? Separate from the rest of the refactor provided in this patch.",
+      "revId": "172f3429ef7ba342b76fcf84cd207aaaea863a6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
