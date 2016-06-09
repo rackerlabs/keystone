@@ -44,6 +44,7 @@ MEMOIZE = cache.get_memoization_decorator(group='role')
 # for a given user + project/domain pair. Any write operation to add or remove
 # any role assignment should invalidate this entire cache region.
 COMPUTED_ASSIGNMENTS_REGION = oslo_cache.create_region()
+COMPUTED_ASSIGNMENTS_REGION.name = 'assignment'
 MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
     group='role',
     region=COMPUTED_ASSIGNMENTS_REGION)
