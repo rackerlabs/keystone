@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_fc50c00c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-09T16:53:03Z",
+      "side": 1,
+      "message": "Isn\u0027t this generated automatically? Looks like it is: \n\nhttps://review.openstack.org/#/c/321781/",
+      "revId": "2e74617da70505a92a8ed79fd8cdb4d78c2a71fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_99f8aec6",
         "filename": "keystone/common/config.py",
         "patchSetId": 13
