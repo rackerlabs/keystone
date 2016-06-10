@@ -68,10 +68,9 @@ class User(sql.ModelBase, sql.DictBase):
     # password properties
     @hybrid_property
     def password_ref(self):
-        """Return the last password."""
+        """Return the current password."""
         if self.local_user and self.local_user.passwords:
             return self.local_user.passwords[-1]
-        return None
 
     @hybrid_property
     def password(self):
@@ -155,7 +154,8 @@ class Password(sql.ModelBase, sql.DictBase):
     local_user_id = sql.Column(sql.Integer, sql.ForeignKey('local_user.id',
                                ondelete='CASCADE'))
     password = sql.Column(sql.String(128))
-    created_at = sql.Column(sql.DateTime, nullable=True)
+    created_at = sql.Column(sql.DateTime, nullable=False,
+                            default=datetime.datetime.utcnow)
     expires_at = sql.Column(sql.DateTime, nullable=True)
 
 
