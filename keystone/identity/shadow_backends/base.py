@@ -94,6 +94,15 @@ class ShadowUsersDriverV10(ShadowUsersDriverBase):
         """
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
+    def set_last_active_at(self, user_id):
+        """Set the last active at date for the user.
+
+        :param user_id: Identity of the user
+
+        """
+        raise exception.NotImplemented()
+
 
 class V10ShadowUsersWrapperForV9Driver(ShadowUsersDriverV10):
     def get_user(self, user_id):
@@ -101,3 +110,6 @@ class V10ShadowUsersWrapperForV9Driver(ShadowUsersDriverV10):
 
     def create_nonlocal_user(self, user_dict):
         return user_dict
+
+    def set_last_active_at(self, user_id):
+        pass
