@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -48,22 +50,32 @@ class Identity(base.IdentityDriverV8):
     # Identity interface
     def authenticate(self, user_id, password):
         with sql.session_for_read() as session:
-            user_ref = None
             try:
                 user_ref = self._get_user(session, user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        if not self._check_password(password, user_ref):
+            raise AssertionError(_('Invalid user / password'))
+        elif not user_ref.enabled:
+            # ensure the user is disabled in the database
+            self._disable_user(user_id)
+            raise exception.UserDisabled(user_id=user_id)
+        return base.filter_user(user_ref.to_dict())
 
     # user crud
+
+    def _disable_user(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            if user_ref._enabled:
+                user_ref._enabled = False
 
     @sql.handle_conflicts(conflict_type='user')
     def create_user(self, user_id, user):
         user = utils.hash_user_password(user)
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
