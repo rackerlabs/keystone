@@ -1,0 +1,10 @@
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 10 Jun 2016 14:39:45 +0000
+Reviewed-on: https://review.openstack.org/327922
+Project: openstack/keystone
+Branch: refs/heads/master
