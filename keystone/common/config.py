@@ -1072,9 +1072,10 @@ FILE_OPTIONS = {
                         'feature. Note: this feature is only supported '
                         'via the SQL backend driver for identity.'),
         cfg.IntOpt('unique_last_password_count',
-                   default=0,
+                   default=None,
+                   min=2,
                    help='Number of latest password iterations for which the '
-                        'password must be unique. Setting the value to 0 '
+                        'password must be unique. Setting the value to None '
                         'disables this feature. Note: this feature is only '
                         'supported via the SQL backend driver for identity.'),
         cfg.IntOpt('password_change_limit_per_day',
