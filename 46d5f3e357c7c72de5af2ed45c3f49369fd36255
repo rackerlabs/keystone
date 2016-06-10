@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_ca0fafdf",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-10T18:41:22Z",
+      "side": 1,
+      "message": "The inline comment above shouldn\u0027t have to explain WHAT this code is doing, it should explain WHY it\u0027s doing it... but as-is, it\u0027s absolutely necessary to explain WHAT it\u0027s doing, because the WHAT is quite obfuscated.\n\nOverriding the dictionary created by create_association with None in this manner is SUPER confusing. I don\u0027t consider these to be readable tests at all. Refactor this so that it\u0027s clear what the endpoint-policy relationships actually are, instead of what they\u0027re not.",
+      "revId": "46d5f3e357c7c72de5af2ed45c3f49369fd36255",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
