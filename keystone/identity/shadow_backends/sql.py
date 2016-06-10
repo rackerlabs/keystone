@@ -11,6 +11,7 @@
 # under the License.
 
 import copy
+import datetime
 import uuid
 
 from keystone.common import sql
@@ -23,6 +24,7 @@ from keystone.identity.shadow_backends import base
 class ShadowUsers(base.ShadowUsersDriverV10):
     @sql.handle_conflicts(conflict_type='federated_user')
     def create_federated_user(self, federated_dict):
+        now = datetime.datetime.utcnow()
         user = {
             'id': uuid.uuid4().hex,
             'enabled': True
@@ -30,12 +32,15 @@ class ShadowUsers(base.ShadowUsersDriverV10):
         with sql.session_for_write() as session:
             federated_ref = model.FederatedUser.from_dict(federated_dict)
             user_ref = model.User.from_dict(user)
+            user_ref.created_at = now
+            user_ref.last_auth_at = now
             user_ref.federated_users.append(federated_ref)
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
 
     def get_federated_user(self, idp_id, protocol_id, unique_id):
         user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
+        self._set_last_auth(user_ref.id)
         return identity_base.filter_user(user_ref.to_dict())
 
     def _get_federated_user(self, idp_id, protocol_id, unique_id):
@@ -59,6 +64,11 @@ class ShadowUsers(base.ShadowUsersDriverV10):
             except sql.NotFound:
                 raise exception.UserNotFound(user_id=unique_id)
             return user_ref
+
+    def _set_last_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.last_auth_at = datetime.datetime.now()
 
     @sql.handle_conflicts(conflict_type='federated_user')
     def update_federated_user_display_name(self, idp_id, protocol_id,
