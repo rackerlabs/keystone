@@ -121,6 +121,7 @@ def create_group_container(identity_api):
 
 
 class BaseLDAPIdentity(identity_tests.IdentityTests,
+                       identity_tests.ShadowUsersTests,
                        assignment_tests.AssignmentTests,
                        resource_tests.ResourceTests):
 
