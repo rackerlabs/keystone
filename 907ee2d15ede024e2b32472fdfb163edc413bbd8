@@ -34,6 +34,24 @@
       "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_73d31660",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-10T19:39:38Z",
+      "side": 1,
+      "message": "This is a much better report/not bailing on error. However*** are you sure you\u0027re looking for the group_ref unfiltered? This seems to break the configured filter within keystone and could end up with a wildly different impact to your ldap. This seems like a bad idea(tm)",
+      "parentUuid": "7aa08908_4d07591c",
+      "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
