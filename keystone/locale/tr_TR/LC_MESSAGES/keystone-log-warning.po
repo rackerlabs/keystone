@@ -6,9 +6,9 @@
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.1.dev10\n"
+"Project-Id-Version: keystone 9.0.3.dev4\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-05-03 20:05+0000\n"
+"POT-Creation-Date: 2016-06-09 18:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,31 +22,32 @@ msgstr ""
 
 #, python-format
 msgid "%s is not a dogpile.proxy.ProxyBackend"
-msgstr "%s dogpile.proxy.ProxyBackend değil"
+msgstr "%s dogpile.proxy.ProxyBackend de??il"
 
 #, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
-msgstr "Yetkilendirme başarısız. %(remote_addr)s den %(exception)s"
+msgstr "Yetkilendirme ba??ar??s??z. %(remote_addr)s den %(exception)s"
 
 #, python-format
 msgid ""
 "Endpoint %(endpoint_id)s referenced in association for policy %(policy_id)s "
 "not found."
 msgstr ""
-"%(policy_id)s ile ilişkisi için başvurulan bitiş noktası %(endpoint_id)s "
-"bulunamadı."
+"%(policy_id)s ile ili??kisi i??in ba??vurulan biti?? noktas?? "
+"%(endpoint_id)s bulunamad??."
 
 msgid "Failed to invoke ``openssl version``, assuming is v1.0 or newer"
 msgstr ""
-"``openssl version`` çalıştırılamadı, v1.0 ya da daha yeni olarak varsayılıyor"
+"``openssl version`` ??al????t??r??lamad??, v1.0 ya da daha yeni olarak "
+"varsay??l??yor"
 
 #, python-format
 msgid ""
 "Found multiple domains being mapped to a driver that does not support that "
 "(e.g. LDAP) - Domain ID: %(domain)s, Default Driver: %(driver)s"
 msgstr ""
-"Bunu desteklemeyen bir sürücüye eşleştirilen birden fazla alan bulundu (örn. "
-"LDAP) - Alan ID: %(domain)s, Varsayılan Sürücü: %(driver)s"
+"Bunu desteklemeyen bir s??r??c??ye e??le??tirilen birden fazla alan bulundu "
+"(??rn. LDAP) - Alan ID: %(domain)s, Varsay??lan S??r??c??: %(driver)s"
 
 #, python-format
 msgid ""
@@ -54,9 +55,9 @@ msgid ""
 "reference - domain: %(domain)s, group: %(group)s, option: %(option)s, value: "
 "%(value)s."
 msgstr ""
-"Düzgün inşa edilmemiş yapılandırma seçeneği yer değiştirme referansına "
-"benzeyen bir şey bulundu - alan: %(domain)s, grup: %(group)s, seçenek: "
-"%(option)s, değer: %(value)s."
+"D??zg??n in??a edilmemi?? yap??land??rma se??ene??i yer de??i??tirme "
+"referans??na benzeyen bir ??ey bulundu - alan: %(domain)s, grup: %(group)s, "
+"se??enek: %(option)s, de??er: %(value)s."
 
 #, python-format
 msgid ""
@@ -64,175 +65,177 @@ msgid ""
 "domain: %(domain)s, group: %(group)s, option: %(option)s, value: %(value)s. "
 "Perhaps the config option to which it refers has yet to be added?"
 msgstr ""
-"Eşleşmemiş yapılandırma seçeneği yer değiştirme referansı gibi görünen bir "
-"şey bulundu - alan: %(domain)s, grup: %(group)s, seçenek: %(option)s, değer: "
-"%(value)s. Belki başvurduğu yapılandırma seçeneği henüz eklenmemiştir?"
+"E??le??memi?? yap??land??rma se??ene??i yer de??i??tirme referans?? gibi g??"
+"r??nen bir ??ey bulundu - alan: %(domain)s, grup: %(group)s, se??enek: "
+"%(option)s, de??er: %(value)s. Belki ba??vurdu??u yap??land??rma se??ene??i "
+"hen??z eklenmemi??tir?"
 
 #, python-format
 msgid "Ignoring file (%s) while scanning domain config directory"
-msgstr "Alan yapılandırma dizini taranırken dosya (%s) atlanıyor"
+msgstr "Alan yap??land??rma dizini taran??rken dosya (%s) atlan??yor"
 
 msgid "Ignoring user name"
-msgstr "Kullanıcı adı atlanıyor"
+msgstr "Kullan??c?? ad?? atlan??yor"
 
 #, python-format
 msgid ""
 "Invalid additional attribute mapping: \"%s\". Format must be "
 "<ldap_attribute>:<keystone_attribute>"
 msgstr ""
-"Geçersiz ek öznitelik eşleştirmesi: \"%s\". Biçim <ldap_attribute>:"
-"<keystone_attribute> olmalı"
+"Ge??ersiz ek ??znitelik e??le??tirmesi: \"%s\". Bi??im <ldap_attribute>:"
+"<keystone_attribute> olmal??"
 
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
-msgstr "Yapılandırma dosyası isminde geçersiz alan adı (%s) bulundu"
+msgstr "Yap??land??rma dosyas?? isminde ge??ersiz alan ad?? (%s) bulundu"
 
 msgid ""
 "It is recommended to only use the base key-value-store implementation for "
 "the token driver for testing purposes. Please use 'memcache' or 'sql' "
 "instead."
 msgstr ""
-"Jeton sürücüsü için temel anahtar-değer-depolama uygulamasının yalnızca test "
-"amaçlı kullanımı önerilir. Lütfen 'memcache' ya da 'sql' kullanın."
+"Jeton s??r??c??s?? i??in temel anahtar-de??er-depolama uygulamas??n??n yaln??"
+"zca test ama??l?? kullan??m?? ??nerilir. L??tfen 'memcache' ya da 'sql' "
+"kullan??n."
 
 #, python-format
 msgid "KVS lock released (timeout reached) for: %s"
-msgstr "KVS kilidi kaldırıldı (zaman aşımına uğradı): %s"
+msgstr "KVS kilidi kald??r??ld?? (zaman a????m??na u??rad??): %s"
 
 msgid ""
 "LDAP Server does not support paging. Disable paging in keystone.conf to "
 "avoid this message."
 msgstr ""
-"LDAP Sunucu sayfalamayı desteklemiyor. Bu iletiyi almamak için sayfalamayı "
-"keystone.conf'da kapatın."
+"LDAP Sunucu sayfalamay?? desteklemiyor. Bu iletiyi almamak i??in "
+"sayfalamay?? keystone.conf'da kapat??n."
 
 msgid "No domain information specified as part of list request"
-msgstr "Listeleme isteğinin parçası olarak alan bilgisi belirtilmedi"
+msgstr "Listeleme iste??inin par??as?? olarak alan bilgisi belirtilmedi"
 
 #, python-format
 msgid ""
 "Policy %(policy_id)s referenced in association for endpoint %(endpoint_id)s "
 "not found."
 msgstr ""
-"%(endpoint_id)s bitiş noktası için ilişkisi için başvurulan %(policy_id)s "
-"ilkesi bulunamadı."
+"%(endpoint_id)s biti?? noktas?? i??in ili??kisi i??in ba??vurulan "
+"%(policy_id)s ilkesi bulunamad??."
 
 msgid "RBAC: Bypassing authorization"
 msgstr "RBAC: Yetkilendirme baypas ediliyor"
 
 msgid "RBAC: Invalid token"
-msgstr "RBAC: Geçersiz jeton"
+msgstr "RBAC: Ge??ersiz jeton"
 
 msgid "RBAC: Invalid user data in token"
-msgstr "RBAC: Jetonda geçersiz kullanıcı verisi"
+msgstr "RBAC: Jetonda ge??ersiz kullan??c?? verisi"
 
 #, python-format
 msgid ""
 "Removing `%s` from revocation list due to invalid expires data in revocation "
 "list."
 msgstr ""
-"feshetme listesindeki geçersiz sona erme tarihi verisi sebebiyle `%s` "
-"feshetme listesinden kaldırılıyor."
+"feshetme listesindeki ge??ersiz sona erme tarihi verisi sebebiyle `%s` "
+"feshetme listesinden kald??r??l??yor."
 
 #, python-format
 msgid "Token `%s` is expired, not adding to the revocation list."
-msgstr "`%s` jetonunun süresi dolmuş, feshetme listesine eklenmiyor."
+msgstr "`%s` jetonunun s??resi dolmu??, feshetme listesine eklenmiyor."
 
 #, python-format
 msgid "Truncating user password to %d characters."
-msgstr "Kullanıcı parolası %d karaktere kırpılıyor."
+msgstr "Kullan??c?? parolas?? %d karaktere k??rp??l??yor."
 
 #, python-format
 msgid "Unable to add user %(user)s to %(tenant)s."
-msgstr "Kullanıcı %(user)s %(tenant)s'e eklenemiyor."
+msgstr "Kullan??c?? %(user)s %(tenant)s'e eklenemiyor."
 
 #, python-format
 msgid ""
 "Unable to change the ownership of [fernet_tokens] key_repository without a "
 "keystone user ID and keystone group ID both being provided: %s"
 msgstr ""
-"Hem keystone kullanıcı kimliği hem keystone grup kimliği verilmeden "
-"[fernet_tokens] key_repository sahipliği değiştirilemiyor: %s"
+"Hem keystone kullan??c?? kimli??i hem keystone grup kimli??i verilmeden "
+"[fernet_tokens] key_repository sahipli??i de??i??tirilemiyor: %s"
 
 #, python-format
 msgid ""
 "Unable to change the ownership of the new key without a keystone user ID and "
 "keystone group ID both being provided: %s"
 msgstr ""
-"Hem keystone kullanıcı kimliği hem keystone grup kimliği verilmeden yeni "
-"anahtarın sahipliği değiştirilemiyor: %s"
+"Hem keystone kullan??c?? kimli??i hem keystone grup kimli??i verilmeden yeni "
+"anahtar??n sahipli??i de??i??tirilemiyor: %s"
 
 #, python-format
 msgid "Unable to locate domain config directory: %s"
-msgstr "Alan yapılandırma dizini bulunamadı: %s"
+msgstr "Alan yap??land??rma dizini bulunamad??: %s"
 
 #, python-format
 msgid "Unable to remove user %(user)s from %(tenant)s."
-msgstr "Kullanıcı %(user)s %(tenant)s'den çıkarılamadı."
+msgstr "Kullan??c?? %(user)s %(tenant)s'den ????kar??lamad??."
 
 #, python-format
 msgid ""
 "Unsupported policy association found - Policy %(policy_id)s, Endpoint "
 "%(endpoint_id)s, Service %(service_id)s, Region %(region_id)s, "
 msgstr ""
-"Desteklenmeyen ilke ilişkilendirmesi bulundu - İlke %(policy_id)s, Bitiş "
-"noktası %(endpoint_id)s, Servis %(service_id)s, Bölge %(region_id)s, "
+"Desteklenmeyen ilke ili??kilendirmesi bulundu - ??lke %(policy_id)s, Biti?? "
+"noktas?? %(endpoint_id)s, Servis %(service_id)s, B??lge %(region_id)s, "
 
 #, python-format
 msgid ""
 "User %(user_id)s doesn't have access to default project %(project_id)s. The "
 "token will be unscoped rather than scoped to the project."
 msgstr ""
-"%(user_id)s kullanıcısı varsayılan proje %(project_id)s erişimine sahip "
-"değil. Jeton projeye kapsamsız olacak, kapsamlı değil."
+"%(user_id)s kullan??c??s?? varsay??lan proje %(project_id)s eri??imine sahip "
+"de??il. Jeton projeye kapsams??z olacak, kapsaml?? de??il."
 
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s is disabled. The token "
 "will be unscoped rather than scoped to the project."
 msgstr ""
-"%(user_id)s kullanıcısının varsayılan projesi %(project_id)s kapalı. Jeton "
-"projeye kapsamsız olacak, kapsamlı değil."
+"%(user_id)s kullan??c??s??n??n varsay??lan projesi %(project_id)s kapal??. "
+"Jeton projeye kapsams??z olacak, kapsaml?? de??il."
 
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s not found. The token will "
 "be unscoped rather than scoped to the project."
 msgstr ""
-"%(user_id)s kullanıcısının varsayılan projesi %(project_id)s bulunamadı. "
-"Jeton projeye kapsamsız olacak, kapsamlı değil."
+"%(user_id)s kullan??c??s??n??n varsay??lan projesi %(project_id)s "
+"bulunamad??. Jeton projeye kapsams??z olacak, kapsaml?? de??il."
 
 #, python-format
 msgid ""
 "When deleting entries for %(search_base)s, could not delete nonexistent "
 "entries %(entries)s%(dots)s"
 msgstr ""
-"%(search_base)s için girdiler silinirken, mevcut olmayan girdiler %(entries)s"
-"%(dots)s silinemedi"
+"%(search_base)s i??in girdiler silinirken, mevcut olmayan girdiler "
+"%(entries)s%(dots)s silinemedi"
 
 #, python-format
 msgid "[fernet_tokens] key_repository is world readable: %s"
-msgstr "[fernet_tokens] key_repository herkesçe okunabilir: %s"
+msgstr "[fernet_tokens] key_repository herkes??e okunabilir: %s"
 
 msgid ""
 "[fernet_tokens] max_active_keys must be at least 1 to maintain a primary key."
 msgstr ""
-"[fernet_tokens] max_active_keys bir birincil anahtarı korumak için en az 1 "
-"olmalı."
+"[fernet_tokens] max_active_keys bir birincil anahtar?? korumak i??in en az 1 "
+"olmal??."
 
 #, python-format
 msgid ""
 "`token_api.%s` is deprecated as of Juno in favor of utilizing methods on "
 "`token_provider_api` and may be removed in Kilo."
 msgstr ""
-"`token_provider_api` üzerindeki yöntemlerden faydalanmak için `token_api.%s` "
-"Juno'dan sonra tercih edilmeyecek ve Kilo'da kaldırılabilir."
+"`token_provider_api` ??zerindeki y??ntemlerden faydalanmak i??in `token_api."
+"%s` Juno'dan sonra tercih edilmeyecek ve Kilo'da kald??r??labilir."
 
 msgid "keystone-manage pki_setup is not recommended for production use."
-msgstr "keystone-manage pki_setup üretimde kullanmak için tavsiye edilmez."
+msgstr "keystone-manage pki_setup ??retimde kullanmak i??in tavsiye edilmez."
 
 msgid "keystone-manage ssl_setup is not recommended for production use."
-msgstr "keystone-manage ssl_setup üretimde kullanmak için tavsiye edilmez."
+msgstr "keystone-manage ssl_setup ??retimde kullanmak i??in tavsiye edilmez."
 
 msgid "missing exception kwargs (programmer error)"
-msgstr "istisna kwargs eksik (programcı hatası)"
+msgstr "istisna kwargs eksik (programc?? hatas??)"
