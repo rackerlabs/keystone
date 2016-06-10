@@ -16,6 +16,23 @@
       "revId": "bdba65e055928d339cb9fcca61af58f0b88f680f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_616eb5ca",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-10T12:43:31Z",
+      "side": 1,
+      "message": "(nit) both __set__ and __delete__ return nothing so you can use:\n\nif region.is_configured:\n   \u003clogic here\u003e",
+      "revId": "bdba65e055928d339cb9fcca61af58f0b88f680f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
