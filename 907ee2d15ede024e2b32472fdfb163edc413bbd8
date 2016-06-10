@@ -70,6 +70,24 @@
       "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_64306a02",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-10T21:06:45Z",
+      "side": 1,
+      "message": "This bug inherently makes me think we\u0027re supporting something terrible. I am with adam, the only way you get wedged here is if someone manually edited LDAP outside of the scope of keystone or changed the whole way keystone is matching groups mid-run [new config] (which would break a ton of other things).\n\nThis is highlighting why keystone needs to own it\u0027s data store *or* be a read only consumer (and one of many reasons we\u0027re droping read-write ldap)",
+      "parentUuid": "7aa08908_a4d09254",
+      "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
