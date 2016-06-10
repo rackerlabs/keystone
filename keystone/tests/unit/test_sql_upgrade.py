@@ -1187,6 +1187,23 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'created_at',
                                  'expires_at'])
 
+    def test_add_last_auth_at_column(self):
+        user_table = 'user'
+        self.upgrade(104)
+        self.assertTableColumns(user_table,
+                                ['id',
+                                 'extra',
+                                 'enabled',
+                                 'default_project_id'])
+        self.upgrade(105)
+        self.assertTableColumns(user_table,
+                                ['id',
+                                 'extra',
+                                 'enabled',
+                                 'default_project_id',
+                                 'created_at',
+                                 'last_auth_at'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
