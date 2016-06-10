@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_ca0e8431",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-10T23:15:18Z",
+      "side": 1,
+      "message": "do we want to specify this like on line 43? and add it to setup.cfg: https://github.com/openstack/keystone/blob/master/setup.cfg#L204",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f0093196",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
