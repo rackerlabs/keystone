@@ -22,6 +22,30 @@
       "revId": "53b186306ce7379d869e93ad324326625fd95818",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6d1b3581",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-10T19:17:41Z",
+      "side": 0,
+      "message": "I confirmed with Adam, this method needs to honor self.ldap_filter (group_filter from config).\n\nBoth list_user_groups and list_user_groups_filtered (and all the other query methods) need to honor group_filter. The difference of list_user_groups_filtered is that it takes *additional* filters (hints parameter).",
+      "parentUuid": "7aa08908_8d7941ff",
+      "range": {
+        "startLine": 378,
+        "startChar": 42,
+        "endLine": 379,
+        "endChar": 54
+      },
+      "revId": "53b186306ce7379d869e93ad324326625fd95818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
