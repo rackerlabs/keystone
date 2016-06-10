@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -21,6 +22,9 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = cfg.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -101,6 +105,8 @@ class Identity(base.IdentityDriverV8):
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if user.get('password') is not None:
+                PasswordHistoryValidator().validate(user['password'], user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -247,3 +253,23 @@ class Identity(base.IdentityDriverV8):
             q.delete(False)
 
             session.delete(ref)
+
+
+class PasswordHistoryValidator(object):
+    def validate(self, password, user_ref):
+        max_cnt = (CONF.security_compliance.unique_last_password_count if
+                   CONF.security_compliance.unique_last_password_count else 0)
+        self._truncate_passwords(max_cnt, user_ref)
+        if max_cnt > 0:
+            for password_ref in user_ref.local_user.passwords:
+                if utils.check_password(password, password_ref.password):
+                    detail = _('Invalid password: matches value in history')
+                    raise exception.PasswordValidationError(detail=detail)
+
+    def _truncate_passwords(self, max_cnt, user_ref):
+        n = len(user_ref.local_user.passwords)
+        if max_cnt == 0:
+            user_ref.local_user.passwords = [user_ref.local_user.passwords[-1]]
+        elif n > max_cnt:
+            n -= max_cnt
+            del user_ref.local_user.passwords[:n]
