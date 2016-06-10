@@ -42,6 +42,8 @@ class User(sql.ModelBase, sql.DictBase):
                                       lazy='subquery',
                                       cascade='all,delete-orphan',
                                       backref='user')
+    created_at = sql.Column(sql.DateTime, nullable=True)
+    last_auth_at = sql.Column(sql.DateTime, nullable=True)
 
     # name property
     @hybrid_property
@@ -52,8 +54,6 @@ class User(sql.ModelBase, sql.DictBase):
             return self.nonlocal_users[0].name
         elif self.federated_users:
             return self.federated_users[0].display_name
-        else:
-            return None
 
     @name.setter
     def name(self, value):
@@ -76,13 +76,11 @@ class User(sql.ModelBase, sql.DictBase):
     def password(self):
         if self.password_ref:
             return self.password_ref.password
-        return None
 
     @hybrid_property
     def password_expires_at(self):
         if self.password_ref:
             return self.password_ref.expires_at
-        return None
 
     @password.setter
     def password(self, value):
@@ -109,8 +107,6 @@ class User(sql.ModelBase, sql.DictBase):
             return self.local_user.domain_id
         elif self.nonlocal_users:
             return self.nonlocal_users[0].domain_id
-        else:
-            return None
 
     @domain_id.setter
     def domain_id(self, value):
