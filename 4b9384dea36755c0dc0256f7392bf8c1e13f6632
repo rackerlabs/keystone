@@ -22,6 +22,30 @@
       "revId": "4b9384dea36755c0dc0256f7392bf8c1e13f6632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_72c96579",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-10T13:43:18Z",
+      "side": 1,
+      "message": "Yes, it would improve performance in that the lazy loading would always be executed. In addition, the separate SQL statements can prevent some errors.",
+      "parentUuid": "7aa08908_9a036376",
+      "range": {
+        "startLine": 9,
+        "startChar": 61,
+        "endLine": 11,
+        "endChar": 55
+      },
+      "revId": "4b9384dea36755c0dc0256f7392bf8c1e13f6632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
