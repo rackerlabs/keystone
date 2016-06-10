@@ -12,6 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
+from oslo_config import cfg
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -21,6 +24,9 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = cfg.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -34,28 +40,8 @@ class Identity(base.IdentityDriverV8):
     def is_sql(self):
         return True
 
-    def _check_password(self, password, user_ref):
-        """Check the specified password against the data store.
-
-        Note that we'll pass in the entire user_ref in case the subclass
-        needs things like user_ref.get('name')
-        For further justification, please see the follow up suggestion at
-        https://blueprints.launchpad.net/keystone/+spec/sql-identiy-pam
-
-        """
-        return utils.check_password(password, user_ref.password)
-
-    # Identity interface
     def authenticate(self, user_id, password):
-        with sql.session_for_read() as session:
-            user_ref = None
-            try:
-                user_ref = self._get_user(session, user_id)
-            except exception.UserNotFound:
-                raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        return Authenticator().authenticate(user_id, password)
 
     # user crud
 
@@ -247,3 +233,43 @@ class Identity(base.IdentityDriverV8):
             q.delete(False)
 
             session.delete(ref)
+
+
+class Authenticator(object):
+    def authenticate(self, user_id, password):
+        user = self._get_user(user_id)
+        if not user or not utils.check_password(password, user.password):
+            raise AssertionError(_('Invalid user / password'))
+        elif self._is_user_disabled(user):
+            raise exception.UserDisabled(user_id=user_id)
+        self._set_last_auth(user_id)
+        return base.filter_user(user.to_dict())
+
+    def _get_user(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
+
+    def _is_user_disabled(self, user):
+        if not user.enabled:
+            return True
+        else:
+            last_auth_at = user.local_user.last_auth_at
+            max_days_inactive = (
+                CONF.security_compliance.disable_user_account_days_inactive)
+            if last_auth_at and max_days_inactive > 0:
+                now = datetime.datetime.utcnow()
+                days_inactive = (now - last_auth_at).days
+                if days_inactive >= max_days_inactive:
+                    self._disable_user(user['id'])
+                    return True
+            return False
+
+    def _disable_user(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.enabled = False
+
+    def _set_last_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.local_user.last_auth_at = datetime.datetime.now()
