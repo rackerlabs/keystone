@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c6069f1f",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-10T12:41:07Z",
+      "side": 1,
+      "message": "You have to either repeat it every time you generate a key or  move it to _get_region_key",
+      "revId": "bdba65e055928d339cb9fcca61af58f0b88f680f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
