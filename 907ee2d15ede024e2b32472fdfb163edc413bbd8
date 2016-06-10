@@ -52,6 +52,24 @@
       "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_a4d09254",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-10T21:00:02Z",
+      "side": 1,
+      "message": "@morgan Yes, I\u0027m sure. If you\u0027re removing a user, then that user cannot continue to be a member of ANY group... either groups that are managed by keystone (match group_filter) OR groups that are not. The user no longer exists. So we need to clean up the membership for ALL groups to reflect that.",
+      "parentUuid": "7aa08908_73d31660",
+      "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

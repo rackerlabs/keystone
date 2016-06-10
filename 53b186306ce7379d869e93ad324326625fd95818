@@ -94,6 +94,30 @@
       "revId": "53b186306ce7379d869e93ad324326625fd95818",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_441c4ec1",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-10T21:00:02Z",
+      "side": 0,
+      "message": "Samuel/Adam/Morgan, I think everyone\u0027s confusing this method with list_groups_for_user. The latter is a driver method, and absolutely needs to honor group_filter. But this method is not a driver method. It\u0027s only ever called by delete_user. And in the case where delete_user calls it, it is essential that it NOT honor group_filter, as explained in the comment there.",
+      "parentUuid": "7aa08908_531eda63",
+      "range": {
+        "startLine": 378,
+        "startChar": 42,
+        "endLine": 379,
+        "endChar": 54
+      },
+      "revId": "53b186306ce7379d869e93ad324326625fd95818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
