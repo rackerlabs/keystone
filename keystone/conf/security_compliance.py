@@ -49,10 +49,13 @@ feature is only supported via the SQL backend driver for identity.
 
 unique_last_password_count = cfg.IntOpt(
     'unique_last_password_count',
-    default=0,
+    default=1,
+    min=1,
     help=utils.fmt("""
 Number of latest password iterations for which the password must be unique.
-Setting the value to 0 disables this feature. Note: this feature is only
+Thus when set, validation will be added to ensure that new passwords do not
+match the previous passwords. This feature is disabled by default. To enable
+this feature, values must be greater than 1. Note: this feature is only
 supported via the SQL backend driver for identity.
 """))
 
