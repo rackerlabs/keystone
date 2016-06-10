@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the keystone project.
 #
 # Translators:
-# Alper Çiftçi <alprciftci@gmail.com>, 2015
+# Alper ??ift??i <alprciftci@gmail.com>, 2015
 # Andreas Jaeger <jaegerandi@gmail.com>, 2015
 # catborise <muhammetalisag@gmail.com>, 2013
 # catborise <muhammetalisag@gmail.com>, 2013
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.1.dev95\n"
+"Project-Id-Version: keystone 10.0.0.0b2.dev49\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-20 19:33+0000\n"
+"POT-Creation-Date: 2016-06-09 19:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,12 +32,12 @@ msgstr "%(detail)s"
 msgid ""
 "%(event)s is not a valid notification event, must be one of: %(actions)s"
 msgstr ""
-"%(event)s geçerli bir bilgilendirme olayı değil, şunlardan biri olmalı: "
+"%(event)s ge??erli bir bilgilendirme olay?? de??il, ??unlardan biri olmal??: "
 "%(actions)s"
 
 #, python-format
 msgid "%(host)s is not a trusted dashboard host"
-msgstr "%(host)s güvenilir bir gösterge paneli istemcisi değil"
+msgstr "%(host)s g??venilir bir g??sterge paneli istemcisi de??il"
 
 #, python-format
 msgid "%(message)s %(amendment)s"
@@ -48,8 +48,8 @@ msgid ""
 "%(mod_name)s doesn't provide database migrations. The migration repository "
 "path at %(path)s doesn't exist or isn't a directory."
 msgstr ""
-"%(mod_name)s veri tabanı göçü sağlamıyor. %(path)s yolundaki göç deposu yolu "
-"mevcut değil ya da bir dizin değil."
+"%(mod_name)s veri taban?? g?????? sa??lam??yor. %(path)s yolundaki g???? "
+"deposu yolu mevcut de??il ya da bir dizin de??il."
 
 #, python-format
 msgid "%(property_name)s cannot be less than %(min_length)s characters."
@@ -57,289 +57,294 @@ msgstr "%(property_name)s %(min_length)s karakterden az olamaz."
 
 #, python-format
 msgid "%(property_name)s is not a %(display_expected_type)s"
-msgstr "%(property_name)s bir %(display_expected_type)s değil"
+msgstr "%(property_name)s bir %(display_expected_type)s de??il"
 
 #, python-format
 msgid "%(property_name)s should not be greater than %(max_length)s characters."
-msgstr "%(property_name)s %(max_length)s karakterden büyük olmamalı."
+msgstr "%(property_name)s %(max_length)s karakterden b??y??k olmamal??."
 
 #, python-format
 msgid "%s cannot be empty."
-msgstr "%s boş olamaz."
+msgstr "%s bo?? olamaz."
 
 #, python-format
 msgid "%s extension does not exist."
-msgstr "%s eklentisi mevcut değil."
+msgstr "%s eklentisi mevcut de??il."
 
 #, python-format
 msgid "%s field is required and cannot be empty"
-msgstr "%s alanı gerekli ve boş olamaz"
+msgstr "%s alan?? gerekli ve bo?? olamaz"
 
 #, python-format
 msgid "%s field(s) cannot be empty"
-msgstr "%s alan(lar)ı boş olamaz"
+msgstr "%s alan(lar)?? bo?? olamaz"
 
 msgid "--all option cannot be mixed with other options"
-msgstr "--all seçeneği diğer seçeneklerle birleştirilemez"
+msgstr "--all se??ene??i di??er se??eneklerle birle??tirilemez"
 
 msgid "A project-scoped token is required to produce a service catalog."
-msgstr "Servis kataloğu oluşturmak için proje-kapsamlı bir jeton gerekli."
+msgstr "Servis katalo??u olu??turmak i??in proje-kapsaml?? bir jeton gerekli."
 
 msgid "Access token is expired"
-msgstr "Erişim jetonunun süresi dolmuş"
+msgstr "Eri??im jetonunun s??resi dolmu??"
 
 msgid "Access token not found"
-msgstr "Erişim jetonu bulunamadı"
+msgstr "Eri??im jetonu bulunamad??"
 
 msgid "Additional authentications steps required."
-msgstr "Ek kimlik doğrulama adımları gerekli."
+msgstr "Ek kimlik do??rulama ad??mlar?? gerekli."
 
 msgid "An unexpected error occurred when retrieving domain configs"
-msgstr "Alan yapılandırmaları alınırken beklenmedik hata oluştu"
+msgstr "Alan yap??land??rmalar?? al??n??rken beklenmedik hata olu??tu"
 
 #, python-format
 msgid "An unexpected error occurred when trying to store %s"
-msgstr "%s depolanırken beklenmedik bir hata oluştu"
+msgstr "%s depolan??rken beklenmedik bir hata olu??tu"
 
 msgid "An unexpected error prevented the server from fulfilling your request."
-msgstr "Beklenmedik bir hata sunucunun isteğinizi tamamlamasını engelledi."
+msgstr "Beklenmedik bir hata sunucunun iste??inizi tamamlamas??n?? engelledi."
 
 #, python-format
 msgid ""
 "An unexpected error prevented the server from fulfilling your request: "
 "%(exception)s"
 msgstr ""
-"Beklenmedik bir hata sunucunun isteğinizi tamamlamasını engelledi: "
+"Beklenmedik bir hata sunucunun iste??inizi tamamlamas??n?? engelledi: "
 "%(exception)s"
 
 msgid "An unhandled exception has occurred: Could not find metadata."
-msgstr "Ele alınmayan istisna oluştu: Metadata bulunamadı."
+msgstr "Ele al??nmayan istisna olu??tu: Metadata bulunamad??."
 
 msgid "At least one option must be provided"
-msgstr "En az bir seçenek sağlanmalıdır"
+msgstr "En az bir se??enek sa??lanmal??d??r"
 
 msgid "At least one option must be provided, use either --all or --domain-name"
-msgstr "En az bir seçenek sağlanmalıdır, ya --all ya da --domain-name kullanın"
+msgstr ""
+"En az bir se??enek sa??lanmal??d??r, ya --all ya da --domain-name kullan??n"
 
 msgid "At least one role should be specified."
 msgstr "En az bir kural belirtilmeli."
 
 msgid "Attempted to authenticate with an unsupported method."
-msgstr "Desteklenmeyen yöntem ile doğrulama girişiminde bulunuldu."
+msgstr "Desteklenmeyen y??ntem ile do??rulama giri??iminde bulunuldu."
 
 msgid ""
 "Attempting to use OS-FEDERATION token with V2 Identity Service, use V3 "
 "Authentication"
 msgstr ""
-"OS-FEDERATION jetonu V2 Kimlik Servisi ile kullanılmaya çalışılıyor, V3 "
-"Kimlik Doğrulama kullanın"
+"OS-FEDERATION jetonu V2 Kimlik Servisi ile kullan??lmaya ??al??????l??yor, "
+"V3 Kimlik Do??rulama kullan??n"
 
 msgid "Authentication plugin error."
-msgstr "Kimlik doğrulama eklenti hatası."
+msgstr "Kimlik do??rulama eklenti hatas??."
 
 #, python-format
 msgid ""
 "Backend `%(backend)s` is not a valid memcached backend. Valid backends: "
 "%(backend_list)s"
 msgstr ""
-"Arka uç `%(backend)s` geçerli bir memcached arka ucu değil. Geçerli arka "
-"uçlar: %(backend_list)s"
+"Arka u?? `%(backend)s` ge??erli bir memcached arka ucu de??il. Ge??erli arka "
+"u??lar: %(backend_list)s"
 
 msgid "Cannot authorize a request token with a token issued via delegation."
-msgstr "Vekil ile sağlanan bir jeton ile istek yetkilendirilemez."
+msgstr "Vekil ile sa??lanan bir jeton ile istek yetkilendirilemez."
 
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
-msgstr "%(option_name)s %(attr)s değiştirilemiyor"
+msgstr "%(option_name)s %(attr)s de??i??tirilemiyor"
 
 msgid "Cannot change Domain ID"
-msgstr "Alan ID'si değiştirilemez"
+msgstr "Alan ID'si de??i??tirilemez"
 
 msgid "Cannot change user ID"
-msgstr "Kullanıcı ID'si değiştirilemiyor"
+msgstr "Kullan??c?? ID'si de??i??tirilemiyor"
 
 msgid "Cannot change user name"
-msgstr "Kullanıcı adı değiştirilemiyor"
+msgstr "Kullan??c?? ad?? de??i??tirilemiyor"
 
 #, python-format
 msgid "Cannot create an endpoint with an invalid URL: %(url)s"
-msgstr "%(url)s geçersiz URL' si ile bir bitiş noktası yaratılamıyor"
+msgstr "%(url)s ge??ersiz URL' si ile bir biti?? noktas?? yarat??lam??yor"
 
 #, python-format
 msgid "Cannot create project with parent: %(project_id)s"
-msgstr "Üst proje %(project_id)s ye sahip proje oluşturulamıyor"
+msgstr "??st proje %(project_id)s ye sahip proje olu??turulam??yor"
 
 msgid "Cannot list request tokens with a token issued via delegation."
-msgstr "Vekalet ile sağlanan bir jeton ile istek jetonları listelenemez."
+msgstr "Vekalet ile sa??lanan bir jeton ile istek jetonlar?? listelenemez."
 
 #, python-format
 msgid "Cannot open certificate %(cert_file)s. Reason: %(reason)s"
-msgstr "Sertifika %(cert_file)s açılamıyor. Sebep: %(reason)s"
+msgstr "Sertifika %(cert_file)s a????lam??yor. Sebep: %(reason)s"
 
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
-msgstr "Verilmemiş rol silinemez, %s"
+msgstr "Verilmemi?? rol silinemez, %s"
 
 msgid ""
 "Cannot truncate a driver call without hints list as first parameter after "
 "self "
 msgstr ""
-"self'den sonra ilk parametre olarak ipucu listesi verilmeden bir sürücü "
-"çağrısı kırpılamıyor "
+"self'den sonra ilk parametre olarak ipucu listesi verilmeden bir s??r??c?? ??"
+"a??r??s?? k??rp??lam??yor "
 
 msgid ""
 "Cannot use parents_as_list and parents_as_ids query params at the same time."
 msgstr ""
-"parents_as_list ve parents_as_ids sorgu parametreleri aynı anda kullanılamaz."
+"parents_as_list ve parents_as_ids sorgu parametreleri ayn?? anda kullan??"
+"lamaz."
 
 msgid ""
 "Cannot use subtree_as_list and subtree_as_ids query params at the same time."
 msgstr ""
-"subtree_as_list ve subtree_as_ids sorgu parametreleri aynı anda kullanılamaz."
+"subtree_as_list ve subtree_as_ids sorgu parametreleri ayn?? anda kullan??"
+"lamaz."
 
 msgid ""
 "Combining effective and group filter will always result in an empty list."
 msgstr ""
-"Efektif ve grup filtresini birleştirmek her zaman boş bir listeye yol açar."
+"Efektif ve grup filtresini birle??tirmek her zaman bo?? bir listeye yol a??"
+"ar."
 
 msgid ""
 "Combining effective, domain and inherited filters will always result in an "
 "empty list."
 msgstr ""
-"Efektif, alan ve miras filtrelerin birleştirilmesi her zaman boş bir listeye "
-"yol açar."
+"Efektif, alan ve miras filtrelerin birle??tirilmesi her zaman bo?? bir "
+"listeye yol a??ar."
 
 #, python-format
 msgid "Conflict occurred attempting to store %(type)s - %(details)s"
-msgstr "%(type)s depolanırken çatışma oluştu- %(details)s"
+msgstr "%(type)s depolan??rken ??at????ma olu??tu- %(details)s"
 
 #, python-format
 msgid "Conflicting region IDs specified: \"%(url_id)s\" != \"%(ref_id)s\""
-msgstr "Çatışan bölge kimlikleri belirtildi: \"%(url_id)s\" != \"%(ref_id)s\""
+msgstr ""
+"??at????an b??lge kimlikleri belirtildi: \"%(url_id)s\" != \"%(ref_id)s\""
 
 msgid "Consumer not found"
-msgstr "Tüketici bulunamadı"
+msgstr "T??ketici bulunamad??"
 
 #, python-format
 msgid ""
 "Could not change immutable attribute(s) '%(attributes)s' in target %(target)s"
 msgstr ""
-"%(target)s hedefindeki değişmez öznitelik(ler) '%(attributes)s' "
-"değiştirilemiyor"
+"%(target)s hedefindeki de??i??mez ??znitelik(ler) '%(attributes)s' de??i??"
+"tirilemiyor"
 
 #, python-format
 msgid ""
 "Could not find %(group_or_option)s in domain configuration for domain "
 "%(domain_id)s"
 msgstr ""
-"%(domain_id)s alanı için alan yapılandırmasında %(group_or_option)s "
-"bulunamadı"
+"%(domain_id)s alan?? i??in alan yap??land??rmas??nda %(group_or_option)s "
+"bulunamad??"
 
 #, python-format
 msgid "Could not find Endpoint Group: %(endpoint_group_id)s"
-msgstr "Bitişnoktası Grubu bulunamadı: %(endpoint_group_id)s"
+msgstr "Biti??noktas?? Grubu bulunamad??: %(endpoint_group_id)s"
 
 msgid "Could not find Identity Provider identifier in environment"
-msgstr "Kimlik Sağlayıcı tanımlayıcısı ortamda bulunamıyor"
+msgstr "Kimlik Sa??lay??c?? tan??mlay??c??s?? ortamda bulunam??yor"
 
 #, python-format
 msgid "Could not find Identity Provider: %(idp_id)s"
-msgstr "Kimlik Sağlayıcı bulunamadı: %(idp_id)s"
+msgstr "Kimlik Sa??lay??c?? bulunamad??: %(idp_id)s"
 
 #, python-format
 msgid "Could not find Service Provider: %(sp_id)s"
-msgstr "Servis Sağlayıcı bulunamadı: %(sp_id)s"
+msgstr "Servis Sa??lay??c?? bulunamad??: %(sp_id)s"
 
 #, python-format
 msgid "Could not find credential: %(credential_id)s"
-msgstr "Kimlik bilgisi bulunamadı: %(credential_id)s"
+msgstr "Kimlik bilgisi bulunamad??: %(credential_id)s"
 
 #, python-format
 msgid "Could not find domain: %(domain_id)s"
-msgstr "Alan bulunamadı: %(domain_id)s"
+msgstr "Alan bulunamad??: %(domain_id)s"
 
 #, python-format
 msgid "Could not find endpoint: %(endpoint_id)s"
-msgstr "Bitiş noktası bulunamadı: %(endpoint_id)s"
+msgstr "Biti?? noktas?? bulunamad??: %(endpoint_id)s"
 
 #, python-format
 msgid ""
 "Could not find federated protocol %(protocol_id)s for Identity Provider: "
 "%(idp_id)s"
 msgstr ""
-"Kimlik Sağlayıcı: %(idp_id)s için birleşmiş iletişim kuralı %(protocol_id)s "
-"bulunamadı"
+"Kimlik Sa??lay??c??: %(idp_id)s i??in birle??mi?? ileti??im kural?? "
+"%(protocol_id)s bulunamad??"
 
 #, python-format
 msgid "Could not find group: %(group_id)s"
-msgstr "Grup bulunamadı: %(group_id)s"
+msgstr "Grup bulunamad??: %(group_id)s"
 
 #, python-format
 msgid "Could not find mapping: %(mapping_id)s"
-msgstr "Eşleştirme bulunamadı: %(mapping_id)s"
+msgstr "E??le??tirme bulunamad??: %(mapping_id)s"
 
 msgid "Could not find policy association"
-msgstr "İlke ilişkilendirme bulunamadı"
+msgstr "??lke ili??kilendirme bulunamad??"
 
 #, python-format
 msgid "Could not find policy: %(policy_id)s"
-msgstr "İlke bulunamadı: %(policy_id)s"
+msgstr "??lke bulunamad??: %(policy_id)s"
 
 #, python-format
 msgid "Could not find project: %(project_id)s"
-msgstr "Proje bulunamadı: %(project_id)s"
+msgstr "Proje bulunamad??: %(project_id)s"
 
 #, python-format
 msgid "Could not find region: %(region_id)s"
-msgstr "Bölge bulunamadı: %(region_id)s"
+msgstr "B??lge bulunamad??: %(region_id)s"
 
 #, python-format
 msgid ""
 "Could not find role assignment with role: %(role_id)s, user or group: "
 "%(actor_id)s, project or domain: %(target_id)s"
 msgstr ""
-"Rol: %(role_id)s, kullanıcı veya grup: %(actor_id)s, proje veya alan: "
-"%(target_id)s ile rol ataması bulunamadı"
+"Rol: %(role_id)s, kullan??c?? veya grup: %(actor_id)s, proje veya alan: "
+"%(target_id)s ile rol atamas?? bulunamad??"
 
 #, python-format
 msgid "Could not find role: %(role_id)s"
-msgstr "Rol bulunamadı: %(role_id)s"
+msgstr "Rol bulunamad??: %(role_id)s"
 
 #, python-format
 msgid "Could not find service: %(service_id)s"
-msgstr "Servis bulunamadı: %(service_id)s"
+msgstr "Servis bulunamad??: %(service_id)s"
 
 #, python-format
 msgid "Could not find token: %(token_id)s"
-msgstr "Jeton bulunamadı: %(token_id)s"
+msgstr "Jeton bulunamad??: %(token_id)s"
 
 #, python-format
 msgid "Could not find trust: %(trust_id)s"
-msgstr "Güven bulunamadı: %(trust_id)s"
+msgstr "G??ven bulunamad??: %(trust_id)s"
 
 #, python-format
 msgid "Could not find user: %(user_id)s"
-msgstr "Kullanıcı bulunamadı: %(user_id)s"
+msgstr "Kullan??c?? bulunamad??: %(user_id)s"
 
 #, python-format
 msgid "Could not find version: %(version)s"
-msgstr "Sürüm bulunamadı: %(version)s"
+msgstr "S??r??m bulunamad??: %(version)s"
 
 #, python-format
 msgid "Could not find: %(target)s"
-msgstr "Bulunamadı: %(target)s"
+msgstr "Bulunamad??: %(target)s"
 
 msgid "Could not validate the access token"
-msgstr "Erişim jetonu doğrulanamadı"
+msgstr "Eri??im jetonu do??rulanamad??"
 
 msgid "Credential belongs to another user"
-msgstr "Kimlik bilgisi başka bir kullanıcıya ait"
+msgstr "Kimlik bilgisi ba??ka bir kullan??c??ya ait"
 
 msgid ""
 "Disabling an entity where the 'enable' attribute is ignored by configuration."
 msgstr ""
-"'enable' özniteliği yapılandırma tarafından göz ardı edilen bir öğe "
-"kapatılıyor."
+"'enable' ??zniteli??i yap??land??rma taraf??ndan g??z ard?? edilen bir ????e "
+"kapat??l??yor."
 
 #, python-format
 msgid "Domain (%s)"
@@ -347,7 +352,7 @@ msgstr "Alan (%s)"
 
 #, python-format
 msgid "Domain cannot be named %s"
-msgstr "Alan %s olarak adlandırılamaz"
+msgstr "Alan %s olarak adland??r??lamaz"
 
 #, python-format
 msgid "Domain cannot have ID %s"
@@ -355,18 +360,18 @@ msgstr "Alan %s ID'sine sahip olamaz"
 
 #, python-format
 msgid "Domain is disabled: %s"
-msgstr "Alan kapalı: %s"
+msgstr "Alan kapal??: %s"
 
 msgid "Domain scoped token is not supported"
-msgstr "Alan kapsamlı jeton desteklenmiyor"
+msgstr "Alan kapsaml?? jeton desteklenmiyor"
 
 #, python-format
 msgid ""
 "Domain: %(domain)s already has a configuration defined - ignoring file: "
 "%(file)s."
 msgstr ""
-"Alan: %(domain)s zaten tanımlanmış bir yapılandırmaya sahip - dosya "
-"atlanıyor: %(file)s."
+"Alan: %(domain)s zaten tan??mlanm???? bir yap??land??rmaya sahip - dosya "
+"atlan??yor: %(file)s."
 
 msgid "Duplicate Entry"
 msgstr "Kopya Girdi"
@@ -380,57 +385,58 @@ msgid "Duplicate name, %s."
 msgstr "Kopya isim, %s."
 
 msgid "Enabled field must be a boolean"
-msgstr "Etkin alan bool olmalı"
+msgstr "Etkin alan bool olmal??"
 
 msgid "Enabled field should be a boolean"
-msgstr "Etkin alan bool olmalı"
+msgstr "Etkin alan bool olmal??"
 
 #, python-format
 msgid "Endpoint %(endpoint_id)s not found in project %(project_id)s"
-msgstr "Bitiş noktası %(endpoint_id)s %(project_id)s projesinde bulunamadı"
+msgstr "Biti?? noktas?? %(endpoint_id)s %(project_id)s projesinde bulunamad??"
 
 msgid "Endpoint Group Project Association not found"
-msgstr "Bitiş Noktası Grup Proje İlişkisi bulunamadı"
+msgstr "Biti?? Noktas?? Grup Proje ??li??kisi bulunamad??"
 
 msgid "Ensure configuration option idp_entity_id is set."
-msgstr "idp_entity_id yapılandırma seçeneğinin ayarlandığına emin olun."
+msgstr "idp_entity_id yap??land??rma se??ene??inin ayarland??????na emin olun."
 
 msgid "Ensure configuration option idp_sso_endpoint is set."
-msgstr "idp_sso_endpoint yapılandırma seçeneğinin ayarlandığına emin olun."
+msgstr ""
+"idp_sso_endpoint yap??land??rma se??ene??inin ayarland??????na emin olun."
 
 #, python-format
 msgid ""
 "Error parsing configuration file for domain: %(domain)s, file: %(file)s."
 msgstr ""
-"Alan: %(domain)s için yapılandırma dosyası ayrıştırılırken hata, dosya: "
-"%(file)s."
+"Alan: %(domain)s i??in yap??land??rma dosyas?? ayr????t??r??l??rken hata, "
+"dosya: %(file)s."
 
 #, python-format
 msgid "Error while opening file %(path)s: %(err)s"
-msgstr "Dosya açılırken hata %(path)s: %(err)s"
+msgstr "Dosya a????l??rken hata %(path)s: %(err)s"
 
 #, python-format
 msgid "Error while parsing line: '%(line)s': %(err)s"
-msgstr "Satır ayrıştırılırken hata: '%(line)s': %(err)s"
+msgstr "Sat??r ayr????t??r??l??rken hata: '%(line)s': %(err)s"
 
 #, python-format
 msgid "Error while parsing rules %(path)s: %(err)s"
-msgstr "Kurallar ayrıştırılırken hata %(path)s: %(err)s"
+msgstr "Kurallar ayr????t??r??l??rken hata %(path)s: %(err)s"
 
 #, python-format
 msgid "Error while reading metadata file, %(reason)s"
-msgstr "Metadata dosyası okunurken hata, %(reason)s"
+msgstr "Metadata dosyas?? okunurken hata, %(reason)s"
 
 #, python-format
 msgid "Expected dict or list: %s"
-msgstr "Sözlük ya da liste beklendi: %s"
+msgstr "S??zl??k ya da liste beklendi: %s"
 
 msgid ""
 "Expected signing certificates are not available on the server. Please check "
 "Keystone configuration."
 msgstr ""
-"Beklenen imzalama sertifikaları sunucuda kullanılabilir değil. Lütfen "
-"Keystone yapılandırmasını kontrol edin."
+"Beklenen imzalama sertifikalar?? sunucuda kullan??labilir de??il. L??tfen "
+"Keystone yap??land??rmas??n?? kontrol edin."
 
 #, python-format
 msgid ""
@@ -438,106 +444,107 @@ msgid ""
 "with the request since it is either malformed or otherwise incorrect. The "
 "client is assumed to be in error."
 msgstr ""
-"%(target)s içinde %(attribute)s bulunması bekleniyordu - sunucu talebi "
-"yerine getiremedi çünkü ya istek kusurluydu ya da geçersizdi. İstemcinin "
-"hatalı olduğu varsayılıyor."
+"%(target)s i??inde %(attribute)s bulunmas?? bekleniyordu - sunucu talebi "
+"yerine getiremedi ????nk?? ya istek kusurluydu ya da ge??ersizdi. ??"
+"stemcinin hatal?? oldu??u varsay??l??yor."
 
 msgid "Failed to validate token"
-msgstr "Jeton doğrulama başarısız"
+msgstr "Jeton do??rulama ba??ar??s??z"
 
 msgid "Federation token is expired"
-msgstr "Federasyon jetonunun süresi dolmuş"
+msgstr "Federasyon jetonunun s??resi dolmu??"
 
 #, python-format
 msgid ""
 "Field \"remaining_uses\" is set to %(value)s while it must not be set in "
 "order to redelegate a trust"
 msgstr ""
-"\"remaining_uses\" alanı %(value)s olarak ayarlanmış, bir güvene tekrar "
-"yetki vermek için böyle ayarlanmamalı"
+"\"remaining_uses\" alan?? %(value)s olarak ayarlanm????, bir g??vene tekrar "
+"yetki vermek i??in b??yle ayarlanmamal??"
 
 msgid "Found invalid token: scoped to both project and domain."
-msgstr "Geçersiz jeton bulundu: hem proje hem alana kapsanmış."
+msgstr "Ge??ersiz jeton bulundu: hem proje hem alana kapsanm????."
 
 #, python-format
 msgid "Group %(group)s is not supported for domain specific configurations"
-msgstr "%(group)s grubu alana özel yapılandırmalar için desteklenmiyor"
+msgstr "%(group)s grubu alana ??zel yap??land??rmalar i??in desteklenmiyor"
 
 #, python-format
 msgid ""
 "Group %(group_id)s returned by mapping %(mapping_id)s was not found in the "
 "backend."
 msgstr ""
-"%(mapping_id)s eşleştirmesi tarafından döndürülen %(group_id)s grubu arka "
-"uçta bulunamadı."
+"%(mapping_id)s e??le??tirmesi taraf??ndan d??nd??r??len %(group_id)s grubu "
+"arka u??ta bulunamad??."
 
 #, python-format
 msgid ""
 "Group membership across backend boundaries is not allowed, group in question "
 "is %(group_id)s, user is %(user_id)s"
 msgstr ""
-"Arka uç sınırları arasında grup üyeliğine izin verilmez, sorudaki grup "
-"%(group_id)s, kullanıcı ise %(user_id)s"
+"Arka u?? s??n??rlar?? aras??nda grup ??yeli??ine izin verilmez, sorudaki "
+"grup %(group_id)s, kullan??c?? ise %(user_id)s"
 
 #, python-format
 msgid "ID attribute %(id_attr)s not found in LDAP object %(dn)s"
-msgstr "ID özniteliği %(id_attr)s %(dn)s LDAP nesnesinde bulunamadı"
+msgstr "ID ??zniteli??i %(id_attr)s %(dn)s LDAP nesnesinde bulunamad??"
 
 #, python-format
 msgid "Identity Provider %(idp)s is disabled"
-msgstr "Kimlik Sağlayıcı %(idp)s kapalı"
+msgstr "Kimlik Sa??lay??c?? %(idp)s kapal??"
 
 msgid ""
 "Incoming identity provider identifier not included among the accepted "
 "identifiers."
 msgstr ""
-"Gelen kimlik sağlayıcı tanımlayıcısı kabul edilen tanımlayıcılar arasında "
-"yok."
+"Gelen kimlik sa??lay??c?? tan??mlay??c??s?? kabul edilen tan??mlay??c??lar "
+"aras??nda yok."
 
 #, python-format
 msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 msgstr ""
-"Geçersiz LDAP TLS sertifika seçeneği: %(option)s. Şunlardan birini seçin: "
-"%(options)s"
+"Ge??ersiz LDAP TLS sertifika se??ene??i: %(option)s. ??unlardan birini se??"
+"in: %(options)s"
 
 #, python-format
 msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
-msgstr "Geçersiz LDAP TLS_AVAIL seçeneği: %s. TLS kullanılabilir değil"
+msgstr "Ge??ersiz LDAP TLS_AVAIL se??ene??i: %s. TLS kullan??labilir de??il"
 
 #, python-format
 msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
 msgstr ""
-"Geçersiz LDAP referans kaldırma seçeneği: %(option)s. Şunlardan birini "
-"seçin: %(options)s"
+"Ge??ersiz LDAP referans kald??rma se??ene??i: %(option)s. ??unlardan birini "
+"se??in: %(options)s"
 
 #, python-format
 msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
-msgstr "Geçersiz LDAP kapsamı: %(scope)s. Şunlardan birini seçin: %(options)s"
+msgstr ""
+"Ge??ersiz LDAP kapsam??: %(scope)s. ??unlardan birini se??in: %(options)s"
 
 msgid "Invalid TLS / LDAPS combination"
-msgstr "Geçersiz TLS / LDAPS kombinasyonu"
+msgstr "Ge??ersiz TLS / LDAPS kombinasyonu"
 
 #, python-format
 msgid "Invalid audit info data type: %(data)s (%(type)s)"
-msgstr "Geçersiz denetim bilgisi veri türü: %(data)s (%(type)s)"
+msgstr "Ge??ersiz denetim bilgisi veri t??r??: %(data)s (%(type)s)"
 
 msgid "Invalid blob in credential"
-msgstr "Kimlik bilgisinde geçersiz düğüm"
+msgstr "Kimlik bilgisinde ge??ersiz d??????m"
 
 #, python-format
 msgid ""
 "Invalid domain name: %(domain)s found in config file name: %(file)s - "
 "ignoring this file."
 msgstr ""
-"Yapılandırma dosyası isminde: %(file)s geçersiz alan adı: %(domain)s bulundu "
-"- bu dosya atlanıyor."
+"Yap??land??rma dosyas?? isminde: %(file)s ge??ersiz alan ad??: %(domain)s "
+"bulundu - bu dosya atlan??yor."
 
 #, python-format
 msgid "Invalid domain specific configuration: %(reason)s"
-msgstr "Geçersiz alana özel yapılandırma: %(reason)s"
+msgstr "Ge??ersiz alana ??zel yap??land??rma: %(reason)s"
 
 msgid "Invalid limit value"
-msgstr "Geçersiz sınır değeri"
+msgstr "Ge??ersiz s??n??r de??eri"
 
 #, python-format
 msgid ""
@@ -545,38 +552,39 @@ msgid ""
 "Region+Service allowed. Request was - Endpoint: %(endpoint_id)s, Service: "
 "%(service_id)s, Region: %(region_id)s"
 msgstr ""
-"İlke ilişkilendirmeleri için geçersiz öğe karışımı - yalnızca Bitişnoktası, "
-"Servis veya Bölge+Servise izin verilir. İstek şuydu Bitişnoktası: "
-"%(endpoint_id)s, Servis: %(service_id)s, Bölge: %(region_id)s"
+"??lke ili??kilendirmeleri i??in ge??ersiz ????e kar??????m?? - yaln??zca "
+"Biti??noktas??, Servis veya B??lge+Servise izin verilir. ??stek ??uydu Biti??"
+"noktas??: %(endpoint_id)s, Servis: %(service_id)s, B??lge: %(region_id)s"
 
 #, python-format
 msgid ""
 "Invalid rule: %(identity_value)s. Both 'groups' and 'domain' keywords must "
 "be specified."
 msgstr ""
-"Geçersiz kural: %(identity_value)s. Hem 'gruplar' hem 'alan' anahtar "
+"Ge??ersiz kural: %(identity_value)s. Hem 'gruplar' hem 'alan' anahtar "
 "kelimeleri belirtilmeli."
 
 msgid "Invalid signature"
-msgstr "Geçersiz imza"
+msgstr "Ge??ersiz imza"
 
 msgid "Invalid user / password"
-msgstr "Geçersiz kullanıcı / parola"
+msgstr "Ge??ersiz kullan??c?? / parola"
 
 msgid "Invalid username or password"
-msgstr "Geçersiz kullanıcı adı ve parola"
+msgstr "Ge??ersiz kullan??c?? ad?? ve parola"
 
 #, python-format
 msgid "KVS region %s is already configured. Cannot reconfigure."
-msgstr "KVS bölgesi %s zaten yapılandırılmış. Yeniden yapılandırılamıyor."
+msgstr ""
+"KVS b??lgesi %s zaten yap??land??r??lm????. Yeniden yap??land??r??lam??yor."
 
 #, python-format
 msgid "Key Value Store not configured: %s"
-msgstr "Anahtar Değer Deposu yapılandırılmamış: %s"
+msgstr "Anahtar De??er Deposu yap??land??r??lmam????: %s"
 
 #, python-format
 msgid "LDAP %s create"
-msgstr "LDAP %s oluştur"
+msgstr "LDAP %s olu??tur"
 
 #, python-format
 msgid "LDAP %s delete"
@@ -584,107 +592,107 @@ msgstr "LDAP %s sil"
 
 #, python-format
 msgid "LDAP %s update"
-msgstr "LDAP %s güncelle"
+msgstr "LDAP %s g??ncelle"
 
 #, python-format
 msgid "Lock Timeout occurred for key, %(target)s"
-msgstr "Anahtar için Kilit Zaman Aşımı oluştu, %(target)s"
+msgstr "Anahtar i??in Kilit Zaman A????m?? olu??tu, %(target)s"
 
 #, python-format
 msgid "Lock key must match target key: %(lock)s != %(target)s"
-msgstr "Kilit anahtarı hedef anahtarla eşleşmeli: %(lock)s != %(target)s"
+msgstr "Kilit anahtar?? hedef anahtarla e??le??meli: %(lock)s != %(target)s"
 
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 msgstr ""
-"Kusurlu bitiş noktası URL'si (%(endpoint)s), detaylar için HATA kaydına "
-"bakın."
+"Kusurlu biti?? noktas?? URL'si (%(endpoint)s), detaylar i??in HATA kayd??na "
+"bak??n."
 
 msgid "Marker could not be found"
-msgstr "İşaretçi bulunamadı"
+msgstr "????aret??i bulunamad??"
 
 #, python-format
 msgid "Maximum lock attempts on %s occurred."
-msgstr "%s üzerinde azami kilit girişimi yapıldı."
+msgstr "%s ??zerinde azami kilit giri??imi yap??ld??."
 
 #, python-format
 msgid "Member %(member)s is already a member of group %(group)s"
-msgstr "Üye %(member)s zaten %(group)s grubunun üyesi"
+msgstr "??ye %(member)s zaten %(group)s grubunun ??yesi"
 
 #, python-format
 msgid "Method not callable: %s"
-msgstr "Metod çağrılabilir değil: %s"
+msgstr "Metod ??a??r??labilir de??il: %s"
 
 msgid "Missing entity ID from environment"
-msgstr "Öğe kimliği ortamdan eksik"
+msgstr "????e kimli??i ortamdan eksik"
 
 msgid ""
 "Modifying \"redelegation_count\" upon redelegation is forbidden. Omitting "
 "this parameter is advised."
 msgstr ""
-"Tekrar yetkilendirme üzerine \"redelegation_count\" değiştirmeye izin "
-"verilmez. Tavsiye edildiği gibi bu parametre atlanıyor."
+"Tekrar yetkilendirme ??zerine \"redelegation_count\" de??i??tirmeye izin "
+"verilmez. Tavsiye edildi??i gibi bu parametre atlan??yor."
 
 msgid "Multiple domains are not supported"
-msgstr "Birden çok alan desteklenmiyor"
+msgstr "Birden ??ok alan desteklenmiyor"
 
 msgid "Must be called within an active lock context."
-msgstr "Etkin kilik içeriği içinde çağrılmalı."
+msgstr "Etkin kilik i??eri??i i??inde ??a??r??lmal??."
 
 msgid "Must specify either domain or project"
 msgstr "Alan ya da projeden biri belirtilmelidir"
 
 msgid "Name field is required and cannot be empty"
-msgstr "İsim alanı gerekli ve boş olamaz"
+msgstr "??sim alan?? gerekli ve bo?? olamaz"
 
 msgid ""
 "No Authorization headers found, cannot proceed with OAuth related calls, if "
 "running under HTTPd or Apache, ensure WSGIPassAuthorization is set to On."
 msgstr ""
-"Yetkilendirme başlıkları bulunamadı, OAuth ile ilişkili çağrılarla devam "
-"edilemez, HTTPd veya Apache altında çalışıyorsanız, WSGIPassAuthorization "
-"ayarını açtığınızdan emin olun."
+"Yetkilendirme ba??l??klar?? bulunamad??, OAuth ile ili??kili ??a??r??larla "
+"devam edilemez, HTTPd veya Apache alt??nda ??al??????yorsan??z, "
+"WSGIPassAuthorization ayar??n?? a??t??????n??zdan emin olun."
 
 msgid "No authenticated user"
-msgstr "Kimlik denetimi yapılmamış kullanıcı"
+msgstr "Kimlik denetimi yap??lmam???? kullan??c??"
 
 msgid ""
 "No encryption keys found; run keystone-manage fernet_setup to bootstrap one."
 msgstr ""
-"Şifreleme anahtarları bulundu; birini yükletmek için keystone-manage "
-"fernet_setup çalıştırın."
+"??ifreleme anahtarlar?? bulundu; birini y??kletmek i??in keystone-manage "
+"fernet_setup ??al????t??r??n."
 
 msgid "No options specified"
-msgstr "Hiçbir seçenek belirtilmedi"
+msgstr "Hi??bir se??enek belirtilmedi"
 
 #, python-format
 msgid "No policy is associated with endpoint %(endpoint_id)s."
-msgstr "Hiçbir ilke %(endpoint_id)s bitiş noktasıyla ilişkilendirilmemiş."
+msgstr "Hi??bir ilke %(endpoint_id)s biti?? noktas??yla ili??kilendirilmemi??."
 
 #, python-format
 msgid "No remaining uses for trust: %(trust_id)s"
-msgstr "Güven için kalan kullanım alanı yok: %(trust_id)s"
+msgstr "G??ven i??in kalan kullan??m alan?? yok: %(trust_id)s"
 
 msgid "Non-default domain is not supported"
-msgstr "Varsayılan olmayan alan desteklenmiyor"
+msgstr "Varsay??lan olmayan alan desteklenmiyor"
 
 msgid "One of the trust agents is disabled or deleted"
-msgstr "Güven ajanlarından biri kapalı ya da silinmiş"
+msgstr "G??ven ajanlar??ndan biri kapal?? ya da silinmi??"
 
 #, python-format
 msgid ""
 "Option %(option)s found with no group specified while checking domain "
 "configuration request"
 msgstr ""
-"%(option)s seçeneği alan yapılandırma isteği kontrol edilirken hiçbir grup "
-"belirtilmemiş şekilde bulundu"
+"%(option)s se??ene??i alan yap??land??rma iste??i kontrol edilirken hi??bir "
+"grup belirtilmemi?? ??ekilde bulundu"
 
 #, python-format
 msgid ""
 "Option %(option)s in group %(group)s is not supported for domain specific "
 "configurations"
 msgstr ""
-"%(group)s grubundaki %(option)s seçeneği alana özel yapılandırmalarda "
+"%(group)s grubundaki %(option)s se??ene??i alana ??zel yap??land??rmalarda "
 "desteklenmiyor"
 
 #, python-format
@@ -693,30 +701,30 @@ msgstr "Proje (%s)"
 
 #, python-format
 msgid "Project ID not found: %(t_id)s"
-msgstr "Proje kimliği bulunamadı: %(t_id)s"
+msgstr "Proje kimli??i bulunamad??: %(t_id)s"
 
 msgid "Project field is required and cannot be empty."
-msgstr "Proje alanı gerekli ve boş olamaz."
+msgstr "Proje alan?? gerekli ve bo?? olamaz."
 
 #, python-format
 msgid "Project is disabled: %s"
-msgstr "Proje kapalı: %s"
+msgstr "Proje kapal??: %s"
 
 msgid "Redelegation allowed for delegated by trust only"
 msgstr ""
-"Tekrar yetki vermeye yalnızca güven tarafından yetki verilenler için izin "
-"verilir"
+"Tekrar yetki vermeye yaln??zca g??ven taraf??ndan yetki verilenler i??in "
+"izin verilir"
 
 #, python-format
 msgid ""
 "Remaining redelegation depth of %(redelegation_depth)d out of allowed range "
 "of [0..%(max_count)d]"
 msgstr ""
-"izin verilen [0..%(max_count)d] aralığı içinden %(redelegation_depth)d izin "
-"verilen tekrar yetki verme derinliği"
+"izin verilen [0..%(max_count)d] aral?????? i??inden %(redelegation_depth)d "
+"izin verilen tekrar yetki verme derinli??i"
 
 msgid "Request Token does not have an authorizing user id"
-msgstr "İstek Jetonu yetki veren bir kullanıcı id'sine sahip değil"
+msgstr "??stek Jetonu yetki veren bir kullan??c?? id'sine sahip de??il"
 
 #, python-format
 msgid ""
@@ -724,235 +732,238 @@ msgid ""
 "server could not comply with the request because the attribute size is "
 "invalid (too large). The client is assumed to be in error."
 msgstr ""
-"İstek özniteliği %(attribute)s %(size)i boyutuna eşit ya da daha küçük "
-"olmalı. Sunucu talebi yerine getiremedi çünkü öznitelik boyutu geçersiz (çok "
-"büyük). İstemcinin hata durumunda olduğu varsayılıyor."
+"??stek ??zniteli??i %(attribute)s %(size)i boyutuna e??it ya da daha k??????"
+"k olmal??. Sunucu talebi yerine getiremedi ????nk?? ??znitelik boyutu ge??"
+"ersiz (??ok b??y??k). ??stemcinin hata durumunda oldu??u varsay??l??yor."
 
 msgid "Request must have an origin query parameter"
-msgstr "İstek bir başlangıç noktası sorgu parametresine sahip olmalı"
+msgstr "??stek bir ba??lang???? noktas?? sorgu parametresine sahip olmal??"
 
 msgid "Request token is expired"
-msgstr "İstek jetonunun süresi dolmuş"
+msgstr "??stek jetonunun s??resi dolmu??"
 
 msgid "Request token not found"
-msgstr "İstek jetonu bulunamadı"
+msgstr "??stek jetonu bulunamad??"
 
 msgid "Requested expiration time is more than redelegated trust can provide"
 msgstr ""
-"İstenen zaman bitim süresi tekrar yetkilendirilen güvenin "
-"sağlayabileceğinden fazla"
+"??stenen zaman bitim s??resi tekrar yetkilendirilen g??venin sa??layabilece??"
+"inden fazla"
 
 #, python-format
 msgid ""
 "Requested redelegation depth of %(requested_count)d is greater than allowed "
 "%(max_count)d"
 msgstr ""
-"%(requested_count)d istenen tekrar yetki verme derinliği izin verilen "
+"%(requested_count)d istenen tekrar yetki verme derinli??i izin verilen "
 "%(max_count)d den fazla"
 
 msgid "Scoping to both domain and project is not allowed"
 msgstr "Hem alan hem projeye kapsamlamaya izin verilmez"
 
 msgid "Scoping to both domain and trust is not allowed"
-msgstr "Hem alan hem güvene kapsamlamaya izin verilmez"
+msgstr "Hem alan hem g??vene kapsamlamaya izin verilmez"
 
 msgid "Scoping to both project and trust is not allowed"
-msgstr "Hem proje hem güvene kapsamlamaya izin verilmez"
+msgstr "Hem proje hem g??vene kapsamlamaya izin verilmez"
 
 #, python-format
 msgid "Service Provider %(sp)s is disabled"
-msgstr "Servis Sağlayıcı %(sp)s kapalı"
+msgstr "Servis Sa??lay??c?? %(sp)s kapal??"
 
 msgid "Some of requested roles are not in redelegated trust"
-msgstr "İstenen rollerin bazıları tekrar yetki verilen güven içinde değil"
+msgstr ""
+"??stenen rollerin baz??lar?? tekrar yetki verilen g??ven i??inde de??il"
 
 msgid "Specify a domain or project, not both"
 msgstr "Bir alan ya da proje belirtin, ya da her ikisini"
 
 msgid "Specify a user or group, not both"
-msgstr "Bir kullanıcı ya da grup belirtin, ikisini birden değil"
+msgstr "Bir kullan??c?? ya da grup belirtin, ikisini birden de??il"
 
 msgid "Specify one of domain or project"
 msgstr "Alandan ya da projeden birini belirtin"
 
 msgid "Specify one of user or group"
-msgstr "Kullanıcı ya da grup belirtin"
+msgstr "Kullan??c?? ya da grup belirtin"
 
 #, python-format
 msgid ""
 "String length exceeded.The length of string '%(string)s' exceeded the limit "
 "of column %(type)s(CHAR(%(length)d))."
 msgstr ""
-"Karakter dizisi uzunluğu aşıldı. '%(string)s' karakter dizisiz uzunluğu "
-"%(type)s(CHAR(%(length)d)) sütunu sınırını aşıyor."
+"Karakter dizisi uzunlu??u a????ld??. '%(string)s' karakter dizisiz uzunlu??u "
+"%(type)s(CHAR(%(length)d)) s??tunu s??n??r??n?? a????yor."
 
 msgid ""
 "The 'expires_at' must not be before now. The server could not comply with "
 "the request since it is either malformed or otherwise incorrect. The client "
 "is assumed to be in error."
 msgstr ""
-"'expires_at' şu andan önce olmamalı. Sunucu talebi yerine getiremedi çünkü "
-"istek ya kusurlu ya da geçersiz. İstemcinin hata durumunda olduğu "
-"varsayılıyor."
+"'expires_at' ??u andan ??nce olmamal??. Sunucu talebi yerine getiremedi ????"
+"nk?? istek ya kusurlu ya da ge??ersiz. ??stemcinin hata durumunda oldu??u "
+"varsay??l??yor."
 
 msgid "The --all option cannot be used with the --domain-name option"
-msgstr "--all seçeneği --domain-name seçeneğiyle kullanılamaz"
+msgstr "--all se??ene??i --domain-name se??ene??iyle kullan??lamaz"
 
 #, python-format
 msgid "The Keystone configuration file %(config_file)s could not be found."
-msgstr "Keystone yapılandırma dosyası %(config_file)s bulunamadı."
+msgstr "Keystone yap??land??rma dosyas?? %(config_file)s bulunamad??."
 
 #, python-format
 msgid ""
 "The Keystone domain-specific configuration has specified more than one SQL "
 "driver (only one is permitted): %(source)s."
 msgstr ""
-"Keystone alana özel yapılandırması birden fazla SQL sürücüsü belirtti "
-"(yalnızca birine izin verilir): %(source)s."
+"Keystone alana ??zel yap??land??rmas?? birden fazla SQL s??r??c??s?? "
+"belirtti (yaln??zca birine izin verilir): %(source)s."
 
 msgid "The action you have requested has not been implemented."
-msgstr "İstediğiniz eylem uygulanmamış."
+msgstr "??stedi??iniz eylem uygulanmam????."
 
 msgid "The authenticated user should match the trustor."
-msgstr "Yetkilendirilen kullanıcı güven verenle eşleşmeli."
+msgstr "Yetkilendirilen kullan??c?? g??ven verenle e??le??meli."
 
 msgid ""
 "The certificates you requested are not available. It is likely that this "
 "server does not use PKI tokens otherwise this is the result of "
 "misconfiguration."
 msgstr ""
-"İstediğiniz sertifikalar kullanılabilir değil. Bu sunucu muhtemelen PKI "
-"jetonlarını kullanmıyor ya da bu bir yanlış yapılandırmanın sonucu."
+"??stedi??iniz sertifikalar kullan??labilir de??il. Bu sunucu muhtemelen PKI "
+"jetonlar??n?? kullanm??yor ya da bu bir yanl???? yap??land??rman??n sonucu."
 
 #, python-format
 msgid ""
 "The password length must be less than or equal to %(size)i. The server could "
 "not comply with the request because the password is invalid."
 msgstr ""
-"Parola uzunluğu %(size)i ye eşit ya da daha küçük olmalı. Sunucu talebe "
-"cevap veremedi çünkü parola geçersiz."
+"Parola uzunlu??u %(size)i ye e??it ya da daha k??????k olmal??. Sunucu "
+"talebe cevap veremedi ????nk?? parola ge??ersiz."
 
 msgid "The request you have made requires authentication."
-msgstr "Yaptığınız istek kimlik doğrulama gerektiriyor."
+msgstr "Yapt??????n??z istek kimlik do??rulama gerektiriyor."
 
 msgid "The resource could not be found."
-msgstr "Kaynak bulunamadı."
+msgstr "Kaynak bulunamad??."
 
 msgid ""
 "The revoke call must not have both domain_id and project_id. This is a bug "
 "in the Keystone server. The current request is aborted."
 msgstr ""
-"İptal etme çağrısı hem domain_id hem project_id'ye sahip olmamalı. Bu "
+"??ptal etme ??a??r??s?? hem domain_id hem project_id'ye sahip olmamal??. Bu "
 "Keystone sunucudaki bir hata. Mevcut istek iptal edildi."
 
 msgid "The service you have requested is no longer available on this server."
-msgstr "İstediğiniz servis artık bu sunucu üzerinde kullanılabilir değil."
+msgstr ""
+"??stedi??iniz servis art??k bu sunucu ??zerinde kullan??labilir de??il."
 
 #, python-format
 msgid ""
 "The specified parent region %(parent_region_id)s would create a circular "
 "region hierarchy."
 msgstr ""
-"Belirtilen üst bölge %(parent_region_id)s dairesel bölge sıralı dizisi "
-"oluştururdu."
+"Belirtilen ??st b??lge %(parent_region_id)s dairesel b??lge s??ral?? dizisi "
+"olu??tururdu."
 
 #, python-format
 msgid ""
 "The value of group %(group)s specified in the config should be a dictionary "
 "of options"
 msgstr ""
-"Yapılandırmada belirtilen %(group)s grubunun değeri seçenekler sözlüğü olmalı"
+"Yap??land??rmada belirtilen %(group)s grubunun de??eri se??enekler s??"
+"zl?????? olmal??"
 
 msgid "There should not be any non-oauth parameters"
-msgstr "Herhangi bir non-oauth parametresi olmamalı"
+msgstr "Herhangi bir non-oauth parametresi olmamal??"
 
 #, python-format
 msgid "This is not a recognized Fernet payload version: %s"
-msgstr "Bu bilinen bir Fernet faydalı yük sürümü değil: %s"
+msgstr "Bu bilinen bir Fernet faydal?? y??k s??r??m?? de??il: %s"
 
 msgid ""
 "Timestamp not in expected format. The server could not comply with the "
 "request since it is either malformed or otherwise incorrect. The client is "
 "assumed to be in error."
 msgstr ""
-"Zaman damgası beklenen biçimde değil. Sunucu talebi yerine getiremedi çünkü "
-"istek ya kusurlu ya da geçersiz. İstemcinin hata durumunda olduğu "
-"varsayılıyor."
+"Zaman damgas?? beklenen bi??imde de??il. Sunucu talebi yerine getiremedi ????"
+"nk?? istek ya kusurlu ya da ge??ersiz. ??stemcinin hata durumunda oldu??u "
+"varsay??l??yor."
 
 msgid "Token belongs to another user"
-msgstr "Jeton başka bir kullanıcıya ait"
+msgstr "Jeton ba??ka bir kullan??c??ya ait"
 
 msgid "Token does not belong to specified tenant."
-msgstr "Jeton belirtilen kiracıya ait değil."
+msgstr "Jeton belirtilen kirac??ya ait de??il."
 
 msgid "Trustee has no delegated roles."
-msgstr "Yedieminin emanet edilen kuralları yok."
+msgstr "Yedieminin emanet edilen kurallar?? yok."
 
 msgid "Trustor is disabled."
-msgstr "Güven kurucu kapalı."
+msgstr "G??ven kurucu kapal??."
 
 #, python-format
 msgid ""
 "Trying to update group %(group)s, so that, and only that, group must be "
 "specified in the config"
 msgstr ""
-"%(group)s grubu güncellenmeye çalışılıyor, böylece yapılandırmada yalnızca "
-"grup belirtilmeli"
+"%(group)s grubu g??ncellenmeye ??al??????l??yor, b??ylece yap??land??rmada "
+"yaln??zca grup belirtilmeli"
 
 #, python-format
 msgid ""
 "Trying to update option %(option)s in group %(group)s, but config provided "
 "contains option %(option_other)s instead"
 msgstr ""
-"%(group)s grubundaki %(option)s seçeneği güncellenmeye çalışılıyor, ama "
-"sağlanan yapılandırma %(option_other)s seçeneğini içeriyor"
+"%(group)s grubundaki %(option)s se??ene??i g??ncellenmeye ??al??????l??yor, "
+"ama sa??lanan yap??land??rma %(option_other)s se??ene??ini i??eriyor"
 
 #, python-format
 msgid ""
 "Trying to update option %(option)s in group %(group)s, so that, and only "
 "that, option must be specified  in the config"
 msgstr ""
-"%(group)s grubundaki %(option)s seçeneği güncellenmeye çalışıldı, böylece, "
-"yapılandırmada  yalnızca bu seçenek belirtilmeli"
+"%(group)s grubundaki %(option)s se??ene??i g??ncellenmeye ??al??????ld??, b??"
+"ylece, yap??land??rmada  yaln??zca bu se??enek belirtilmeli"
 
 msgid ""
 "Unable to access the keystone database, please check it is configured "
 "correctly."
 msgstr ""
-"Keystone veri tabanına erişilemiyor, lütfen doğru yapılandırıldığından emin "
-"olun."
+"Keystone veri taban??na eri??ilemiyor, l??tfen do??ru yap??land??r??ld??????"
+"ndan emin olun."
 
 #, python-format
 msgid "Unable to consume trust %(trust_id)s, unable to acquire lock."
-msgstr "%(trust_id)s güveni tüketilemedi, kilit elde edilemiyor."
+msgstr "%(trust_id)s g??veni t??ketilemedi, kilit elde edilemiyor."
 
 #, python-format
 msgid ""
 "Unable to delete region %(region_id)s because it or its child regions have "
 "associated endpoints."
 msgstr ""
-"Bölge %(region_id)s silinemedi çünkü kendisi ya da alt bölgelerinin "
-"ilişkilendirilmiş bitiş noktaları var."
+"B??lge %(region_id)s silinemedi ????nk?? kendisi ya da alt b??lgelerinin "
+"ili??kilendirilmi?? biti?? noktalar?? var."
 
 #, python-format
 msgid "Unable to find valid groups while using mapping %(mapping_id)s"
-msgstr "Eşleştirme %(mapping_id)s kullanırken geçerli gruplar bulunamadı"
+msgstr "E??le??tirme %(mapping_id)s kullan??rken ge??erli gruplar bulunamad??"
 
 #, python-format
 msgid "Unable to locate domain config directory: %s"
-msgstr "Alan yapılandırma dizini bulunamıyor: %s"
+msgstr "Alan yap??land??rma dizini bulunam??yor: %s"
 
 #, python-format
 msgid "Unable to lookup user %s"
-msgstr "%s kullanıcısı aranamadı"
+msgstr "%s kullan??c??s?? aranamad??"
 
 #, python-format
 msgid ""
 "Unable to reconcile identity attribute %(attribute)s as it has conflicting "
 "values %(new)s and %(old)s"
 msgstr ""
-"Kimlik özniteliği %(attribute)s bağdaştırılamıyor çünkü çatışan değerleri "
-"var %(new)s ve %(old)s"
+"Kimlik ??zniteli??i %(attribute)s ba??da??t??r??lam??yor ????nk?? ??at????an "
+"de??erleri var %(new)s ve %(old)s"
 
 #, python-format
 msgid ""
@@ -960,118 +971,120 @@ msgid ""
 "xmlsec1 installed, or this is the result of misconfiguration. Reason "
 "%(reason)s"
 msgstr ""
-"SAML ifadesi imzalanamıyor. Muhtemelen bu sunucuda xmlsec1 kurulu değil, "
-"veya bu bir yanlış yapılandırmanın sonucu. Sebep %(reason)s"
+"SAML ifadesi imzalanam??yor. Muhtemelen bu sunucuda xmlsec1 kurulu de??il, "
+"veya bu bir yanl???? yap??land??rman??n sonucu. Sebep %(reason)s"
 
 msgid "Unable to sign token."
-msgstr "Jeton imzalanamıyor."
+msgstr "Jeton imzalanam??yor."
 
 #, python-format
 msgid "Unexpected assignment type encountered, %s"
-msgstr "Beklenmedik atama türüyle karşılaşıldı, %s"
+msgstr "Beklenmedik atama t??r??yle kar????la????ld??, %s"
 
 #, python-format
 msgid ""
 "Unexpected combination of grant attributes - User: %(user_id)s, Group: "
 "%(group_id)s, Project: %(project_id)s, Domain: %(domain_id)s"
 msgstr ""
-"İzin özniteliklerinin beklenmedik katışımı - Kullanıcı: %(user_id)s, Grup: "
-"%(group_id)s, Proje: %(project_id)s, Alan: %(domain_id)s"
+"??zin ??zniteliklerinin beklenmedik kat??????m?? - Kullan??c??: %(user_id)s, "
+"Grup: %(group_id)s, Proje: %(project_id)s, Alan: %(domain_id)s"
 
 #, python-format
 msgid "Unexpected status requested for JSON Home response, %s"
-msgstr "JSON Home yanıtı için beklenmedik durum istendi, %s"
+msgstr "JSON Home yan??t?? i??in beklenmedik durum istendi, %s"
 
 msgid "Unknown Target"
 msgstr "Bilinmeyen Hedef"
 
 #, python-format
 msgid "Unknown domain '%(name)s' specified by --domain-name"
-msgstr "--domain-name ile bilinmeyen alan '%(name)s' belirtilmiş"
+msgstr "--domain-name ile bilinmeyen alan '%(name)s' belirtilmi??"
 
 #, python-format
 msgid "Unknown token version %s"
-msgstr "Bilinmeyen jeton sürümü %s"
+msgstr "Bilinmeyen jeton s??r??m?? %s"
 
 #, python-format
 msgid "Unregistered dependency: %(name)s for %(targets)s"
-msgstr "Kaydı silinmiş bağımlılık: %(targets)s için %(name)s"
+msgstr "Kayd?? silinmi?? ba????ml??l??k: %(targets)s i??in %(name)s"
 
 msgid "Update of `parent_id` is not allowed."
-msgstr "`parent_id` güncellemesine izin verilmiyor."
+msgstr "`parent_id` g??ncellemesine izin verilmiyor."
 
 msgid "Use a project scoped token when attempting to create a SAML assertion"
 msgstr ""
-"SAML iddiası oluşturma girişimi sırasında proje kapsamlı bir jeton kullan"
+"SAML iddias?? olu??turma giri??imi s??ras??nda proje kapsaml?? bir jeton "
+"kullan"
 
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
-msgstr "%(u_id)s kullanıcısı %(t_id)s kiracısı için yetkilendirilmemiş"
+msgstr "%(u_id)s kullan??c??s?? %(t_id)s kirac??s?? i??in yetkilendirilmemi??"
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
-msgstr "%(user_id)s kullanıcısının %(domain_id)s alanına erişimi yok"
+msgstr "%(user_id)s kullan??c??s??n??n %(domain_id)s alan??na eri??imi yok"
 
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
-msgstr "%(user_id)s kullanıcısının %(project_id)s projesine erişimi yok"
+msgstr "%(user_id)s kullan??c??s??n??n %(project_id)s projesine eri??imi yok"
 
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
-msgstr "Kullanıcı %(user_id)s zaten %(group_id)s grubu üyesi"
+msgstr "Kullan??c?? %(user_id)s zaten %(group_id)s grubu ??yesi"
 
 #, python-format
 msgid "User '%(user_id)s' not found in group '%(group_id)s'"
-msgstr "Kullanıcı '%(user_id)s' '%(group_id)s' grubunda bulunamadı"
+msgstr "Kullan??c?? '%(user_id)s' '%(group_id)s' grubunda bulunamad??"
 
 msgid "User IDs do not match"
-msgstr "Kullanıcı ID leri uyuşmuyor"
+msgstr "Kullan??c?? ID leri uyu??muyor"
 
 #, python-format
 msgid "User is disabled: %s"
-msgstr "Kullanıcı kapalı: %s"
+msgstr "Kullan??c?? kapal??: %s"
 
 msgid "User is not a member of the requested project"
-msgstr "Kullanıcı istenen projenin üyesi değil"
+msgstr "Kullan??c?? istenen projenin ??yesi de??il"
 
 msgid "User is not a trustee."
-msgstr "Kullanıcı güvenilir değil."
+msgstr "Kullan??c?? g??venilir de??il."
 
 msgid "User not found"
-msgstr "Kullanıcı bulunamadı"
+msgstr "Kullan??c?? bulunamad??"
 
 msgid "User roles not supported: tenant_id required"
-msgstr "Kullanıcı rolleri desteklenmiyor: tenant_id gerekli"
+msgstr "Kullan??c?? rolleri desteklenmiyor: tenant_id gerekli"
 
 #, python-format
 msgid "User type %s not supported"
-msgstr "Kullanıcı türü %s desteklenmiyor"
+msgstr "Kullan??c?? t??r?? %s desteklenmiyor"
 
 msgid "You are not authorized to perform the requested action."
-msgstr "İstenen eylemi gerçekleştirmek için yetkili değilsiniz."
+msgstr "??stenen eylemi ger??ekle??tirmek i??in yetkili de??ilsiniz."
 
 #, python-format
 msgid "You are not authorized to perform the requested action: %(action)s"
-msgstr "İstenen eylemi gerçekleştirmek için yetkili değilsiniz: %(action)s"
+msgstr ""
+"??stenen eylemi ger??ekle??tirmek i??in yetkili de??ilsiniz: %(action)s"
 
 msgid "`key_mangler` functions must be callable."
-msgstr "`key_mangler` fonksiyonları çağrılabilir olmalı."
+msgstr "`key_mangler` fonksiyonlar?? ??a??r??labilir olmal??."
 
 msgid "`key_mangler` option must be a function reference"
-msgstr "`key_mangler` seçeneği fonksiyon referansı olmalı"
+msgstr "`key_mangler` se??ene??i fonksiyon referans?? olmal??"
 
 msgid "any options"
-msgstr "herhangi bir seçenek"
+msgstr "herhangi bir se??enek"
 
 msgid "auth_type is not Negotiate"
-msgstr "auth_type Negotiate değil"
+msgstr "auth_type Negotiate de??il"
 
 msgid "authorizing user does not have role required"
-msgstr "yetkilendiren kullanıcı gerekli role sahip değil"
+msgstr "yetkilendiren kullan??c?? gerekli role sahip de??il"
 
 #, python-format
 msgid "cannot create a project in a branch containing a disabled project: %s"
-msgstr "kapalı bir proje içeren bir alt grupta proje oluşturulamaz: %s"
+msgstr "kapal?? bir proje i??eren bir alt grupta proje olu??turulamaz: %s"
 
 #, python-format
 msgid "group %(group)s"
@@ -1081,51 +1094,52 @@ msgid ""
 "idp_contact_type must be one of: [technical, other, support, administrative "
 "or billing."
 msgstr ""
-"idp_contact_type şunlardan biri olmalı: [teknik, diğer, destek, idari veya "
-"faturalama."
+"idp_contact_type ??unlardan biri olmal??: [teknik, di??er, destek, idari "
+"veya faturalama."
 
 #, python-format
 msgid "invalid date format %s"
-msgstr "geçersiz tarih biçimi %s"
+msgstr "ge??ersiz tarih bi??imi %s"
 
 #, python-format
 msgid "option %(option)s in group %(group)s"
-msgstr "%(group)s grubundaki %(option)s seçeneği"
+msgstr "%(group)s grubundaki %(option)s se??ene??i"
 
 msgid "provided consumer key does not match stored consumer key"
-msgstr "sağlanan tüketici anahtarı depolanan tüketici anahtarıyla eşleşmiyor"
+msgstr ""
+"sa??lanan t??ketici anahtar?? depolanan t??ketici anahtar??yla e??le??miyor"
 
 msgid "provided request key does not match stored request key"
-msgstr "sağlanan istek anahtarı depolanan istek anahtarıyla eşleşmiyor"
+msgstr "sa??lanan istek anahtar?? depolanan istek anahtar??yla e??le??miyor"
 
 msgid "provided verifier does not match stored verifier"
-msgstr "sağlanan doğrulayıcı depolanan doğrulayıcı ile eşleşmiyor"
+msgstr "sa??lanan do??rulay??c?? depolanan do??rulay??c?? ile e??le??miyor"
 
 msgid "remaining_uses must be a positive integer or null."
-msgstr "remaining_uses pozitif bir değer ya da null olmalı."
+msgstr "remaining_uses pozitif bir de??er ya da null olmal??."
 
 msgid "remaining_uses must not be set if redelegation is allowed"
-msgstr "tekrar yetkilendirmeye izin veriliyorsa remaining_uses ayarlanmamalı"
+msgstr "tekrar yetkilendirmeye izin veriliyorsa remaining_uses ayarlanmamal??"
 
 #, python-format
 msgid ""
 "request to update group %(group)s, but config provided contains group "
 "%(group_other)s instead"
 msgstr ""
-"%(group)s grubunu güncelleme isteği, ama sağlanan yapılandırma "
-"%(group_other)s grubunu içeriyor"
+"%(group)s grubunu g??ncelleme iste??i, ama sa??lanan yap??land??rma "
+"%(group_other)s grubunu i??eriyor"
 
 msgid "rescope a scoped token"
-msgstr "kapsamlı bir jeton tekrar kapsamlandı"
+msgstr "kapsaml?? bir jeton tekrar kapsamland??"
 
 #, python-format
 msgid "tls_cacertdir %s not found or is not a directory"
-msgstr "tls_cacertdir %s bulunamadı ya da bir dizin"
+msgstr "tls_cacertdir %s bulunamad?? ya da bir dizin"
 
 #, python-format
 msgid "tls_cacertfile %s not found or is not a file"
-msgstr "tls_cacertfile %s bulunamadı ya da bir dosya değil"
+msgstr "tls_cacertfile %s bulunamad?? ya da bir dosya de??il"
 
 #, python-format
 msgid "token reference must be a KeystoneToken type, got: %s"
-msgstr "jeton referansı bir KeystoneToken türünde olmalı, alınan: %s"
+msgstr "jeton referans?? bir KeystoneToken t??r??nde olmal??, al??nan: %s"

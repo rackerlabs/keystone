@@ -6,14 +6,14 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.1.dev95\n"
+"Project-Id-Version: keystone 10.0.0.0b2.dev49\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-04-20 19:33+0000\n"
+"POT-Creation-Date: 2016-06-09 19:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-08-04 01:50+0000\n"
-"Last-Translator: İşbaran Akçayır <isbaran@gmail.com>\n"
+"Last-Translator: ????baran Ak??ay??r <isbaran@gmail.com>\n"
 "Language: tr-TR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.0\n"
@@ -21,21 +21,21 @@ msgstr ""
 "Language-Team: Turkish (Turkey)\n"
 
 msgid "Cannot retrieve Authorization headers"
-msgstr "Yetkilendirme başlıkları alınamıyor"
+msgstr "Yetkilendirme ba??l??klar?? al??nam??yor"
 
 #, python-format
 msgid ""
 "Circular reference or a repeated entry found in projects hierarchy - "
 "%(project_id)s."
 msgstr ""
-"Proje sıra düzeninde çember başvuru ya da tekrar eden girdi bulundu - "
+"Proje s??ra d??zeninde ??ember ba??vuru ya da tekrar eden girdi bulundu - "
 "%(project_id)s."
 
 #, python-format
 msgid ""
 "Circular reference or a repeated entry found in region tree - %(region_id)s."
 msgstr ""
-"Bölge ağacında çember başvuru ya da tekrar eden girdi bulundu - "
+"B??lge a??ac??nda ??ember ba??vuru ya da tekrar eden girdi bulundu - "
 "%(region_id)s."
 
 #, python-format
@@ -43,7 +43,7 @@ msgid ""
 "Circular reference or a repeated entry found projects hierarchy - "
 "%(project_id)s."
 msgstr ""
-"Proje sıra düzeninde çember başvuru ya da tekrar eden girdi bulundu - "
+"Proje s??ra d??zeninde ??ember ba??vuru ya da tekrar eden girdi bulundu - "
 "%(project_id)s."
 
 #, python-format
@@ -51,65 +51,65 @@ msgid ""
 "Either [fernet_tokens] key_repository does not exist or Keystone does not "
 "have sufficient permission to access it: %s"
 msgstr ""
-"[fernet_tokents] key_repository mevcut değil ya da Keystone erişmek için "
-"yeterli izine sahip değil: %s"
+"[fernet_tokents] key_repository mevcut de??il ya da Keystone eri??mek i??in "
+"yeterli izine sahip de??il: %s"
 
 msgid ""
 "Error setting up the debug environment. Verify that the option --debug-url "
 "has the format <host>:<port> and that a debugger processes is listening on "
 "that port."
 msgstr ""
-"Hata ayıklama ortamının ayarlanmasında hata. --debug-url seçeneğinin "
-"<istemci>:<bağlantı noktası> biçimine sahip olduğunu ve bu bağlantı "
-"noktasında hata ayıklama sürecinin dinlediğini doğrulayın."
+"Hata ay??klama ortam??n??n ayarlanmas??nda hata. --debug-url se??ene??inin "
+"<istemci>:<ba??lant?? noktas??> bi??imine sahip oldu??unu ve bu ba??lant?? "
+"noktas??nda hata ay??klama s??recinin dinledi??ini do??rulay??n."
 
 msgid "Failed to construct notifier"
-msgstr "Bildirici inşa etme başarısız"
+msgstr "Bildirici in??a etme ba??ar??s??z"
 
 msgid ""
 "Failed to create [fernet_tokens] key_repository: either it already exists or "
 "you don't have sufficient permissions to create it"
 msgstr ""
-"[fernet_tokens] key_repository oluşturulamıyor: ya zaten mevcut ya da "
-"oluşturmak için yeterli izniniz yok"
+"[fernet_tokens] key_repository olu??turulam??yor: ya zaten mevcut ya da olu??"
+"turmak i??in yeterli izniniz yok"
 
 #, python-format
 msgid "Failed to remove file %(file_path)r: %(error)s"
-msgstr "%(file_path)r dosyası silinemedi: %(error)s"
+msgstr "%(file_path)r dosyas?? silinemedi: %(error)s"
 
 #, python-format
 msgid "Failed to send %(action)s %(event_type)s notification"
-msgstr "%(action)s %(event_type)s bildirimi gönderilemedi"
+msgstr "%(action)s %(event_type)s bildirimi g??nderilemedi"
 
 #, python-format
 msgid "Failed to send %(res_id)s %(event_type)s notification"
-msgstr "%(res_id)s %(event_type)s bildirimi gönderilemedi"
+msgstr "%(res_id)s %(event_type)s bildirimi g??nderilemedi"
 
 msgid "Failed to validate token"
-msgstr "Jeton doğrulama başarısız"
+msgstr "Jeton do??rulama ba??ar??s??z"
 
 #, python-format
 msgid "Malformed endpoint %(url)s - unknown key %(keyerror)s"
-msgstr "Kusurlu bitiş noktası %(url)s - bilinmeyen anahtar %(keyerror)s"
+msgstr "Kusurlu biti?? noktas?? %(url)s - bilinmeyen anahtar %(keyerror)s"
 
 #, python-format
 msgid ""
 "Malformed endpoint %s - incomplete format (are you missing a type notifier ?)"
 msgstr ""
-"Kusurlu bitiş noktası %s - tamamlanmamış biçim (bir tür bildiriciniz eksik "
-"olabilir mi ?)"
+"Kusurlu biti?? noktas?? %s - tamamlanmam???? bi??im (bir t??r bildiriciniz "
+"eksik olabilir mi ?)"
 
 #, python-format
 msgid ""
 "Malformed endpoint '%(url)s'. The following type error occurred during "
 "string substitution: %(typeerror)s"
 msgstr ""
-"Kusurlu bitiş noktası '%(url)s'. Karakter dizisi yer değiştirme sırasında şu "
-"tür hatası oluştu: %(typeerror)s"
+"Kusurlu biti?? noktas?? '%(url)s'. Karakter dizisi yer de??i??tirme s??ras??"
+"nda ??u t??r hatas?? olu??tu: %(typeerror)s"
 
 #, python-format
 msgid "Malformed endpoint - %(url)r is not a string"
-msgstr "Kusurlu bitiş noktası - %(url)r bir karakter dizisi değil"
+msgstr "Kusurlu biti?? noktas?? - %(url)r bir karakter dizisi de??il"
 
 #, python-format
 msgid ""
@@ -117,16 +117,17 @@ msgid ""
 "backend.  Expected `list` type got `%(type)s`. Old revocation list data: "
 "%(list)r"
 msgstr ""
-"Arka uçtan feshetme listesi yüklemedeki hata sebebiyle fesih listesi yeniden "
-"ilklendiriliyor.  `list` beklendi `%(type)s` alındı. Eski fesih listesi "
-"verisi: %(list)r"
+"Arka u??tan feshetme listesi y??klemedeki hata sebebiyle fesih listesi "
+"yeniden ilklendiriliyor.  `list` beklendi `%(type)s` al??nd??. Eski fesih "
+"listesi verisi: %(list)r"
 
 #, python-format
 msgid "Unable to convert Keystone user or group ID. Error: %s"
-msgstr "Keystone kullanıcı veya grup kimliği dönüştürülemiyor. Hata: %s"
+msgstr ""
+"Keystone kullan??c?? veya grup kimli??i d??n????t??r??lemiyor. Hata: %s"
 
 msgid "Unable to sign token"
-msgstr "Jeton imzalanamıyor"
+msgstr "Jeton imzalanam??yor"
 
 #, python-format
 msgid "Unexpected error or malformed token determining token expiry: %s"
@@ -137,5 +138,5 @@ msgid ""
 "Unexpected results in response for domain config - %(count)s responses, "
 "first option is %(option)s, expected option %(expected)s"
 msgstr ""
-"Alan yapılandırması yanıtında beklenmedik sonuçlar - %(count)s yanıt, ilk "
-"seçenek %(option)s, beklenen seçenek %(expected)s"
+"Alan yap??land??rmas?? yan??t??nda beklenmedik sonu??lar - %(count)s yan??t, "
+"ilk se??enek %(option)s, beklenen se??enek %(expected)s"

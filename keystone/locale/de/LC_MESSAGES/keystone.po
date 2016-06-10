@@ -9,9 +9,9 @@
 # Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 9.0.1.dev251\n"
+"Project-Id-Version: keystone 10.0.0.0b2.dev49\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2016-06-02 04:14+0000\n"
+"POT-Creation-Date: 2016-06-09 19:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "%(detail)s"
 
 #, python-format
 msgid "%(driver)s is not supported driver version"
-msgstr "%(driver)s ist keine unterstützte Treiberversion."
+msgstr "%(driver)s ist keine unterst??tzte Treiberversion."
 
 #, python-format
 msgid ""
@@ -42,12 +42,12 @@ msgstr ""
 msgid ""
 "%(event)s is not a valid notification event, must be one of: %(actions)s"
 msgstr ""
-"%(event)s ist kein gültiges Benachrichtigungsereignis; erforderlich ist "
+"%(event)s ist kein g??ltiges Benachrichtigungsereignis; erforderlich ist "
 "%(actions)s"
 
 #, python-format
 msgid "%(host)s is not a trusted dashboard host"
-msgstr "%(host)s ist kein vertrauenswürdiger Dashboard-Host"
+msgstr "%(host)s ist kein vertrauensw??rdiger Dashboard-Host"
 
 #, python-format
 msgid "%(key_repo)s does not exist"
@@ -79,7 +79,8 @@ msgstr "%(property_name)s ist nicht %(display_expected_type)s"
 
 #, python-format
 msgid "%(property_name)s should not be greater than %(max_length)s characters."
-msgstr "%(property_name)s sollte nicht größer als %(max_length)s Zeichen sein."
+msgstr ""
+"%(property_name)s sollte nicht gr????er als %(max_length)s Zeichen sein."
 
 #, python-format
 msgid "%(role_id)s cannot be an implied roles"
@@ -99,7 +100,7 @@ msgstr "%s-Feld ist erforderlich und darf nicht leer sein"
 
 #, python-format
 msgid "%s field(s) cannot be empty"
-msgstr "%s-Felder können nicht leer sein"
+msgstr "%s-Felder k??nnen nicht leer sein"
 
 #, python-format
 msgid ""
@@ -107,11 +108,12 @@ msgid ""
 "in favor of read-only identity LDAP access. It will be removed in the \"O\" "
 "release."
 msgstr ""
-"%s für das LDAP-ID-Back-End wurde in Mitaka zugunsten des schreibgeschützten "
-"ID-LDAP-Zugriffs eingestellt und wird im \"O\"-Release entfernt."
+"%s f??r das LDAP-ID-Back-End wurde in Mitaka zugunsten des schreibgesch??"
+"tzten ID-LDAP-Zugriffs eingestellt und wird im \"O\"-Release entfernt."
 
 msgid "(Disable insecure_debug mode to suppress these details.)"
-msgstr "(Modus insecure_debug inaktivieren, um diese Details zu unterdrücken.)"
+msgstr ""
+"(Modus insecure_debug inaktivieren, um diese Details zu unterdr??cken.)"
 
 msgid "--all option cannot be mixed with other options"
 msgstr "--all-Option kann nicht zusammen mit anderen Optionen verwendet werden"
@@ -128,11 +130,11 @@ msgid "Access token not found"
 msgstr "Zugriffstoken nicht gefunden"
 
 msgid "Additional authentications steps required."
-msgstr "Zusätzliche Authentifizierungsschritte sind notwendig."
+msgstr "Zus??tzliche Authentifizierungsschritte sind notwendig."
 
 msgid "An unexpected error occurred when retrieving domain configs"
 msgstr ""
-"Beim Abrufen der Domänenkonfigurationen ist ein unerwarteter Fehler "
+"Beim Abrufen der Dom??nenkonfigurationen ist ein unerwarteter Fehler "
 "aufgetreten"
 
 #, python-format
@@ -142,7 +144,7 @@ msgstr "Beim Versuch, %s zu speichern, ist ein unerwarteter Fehler aufgetreten"
 msgid "An unexpected error prevented the server from fulfilling your request."
 msgstr ""
 "Wegen eines unerwarteten Fehlers konnte der Server Ihre Anforderung nicht "
-"ausführen."
+"ausf??hren."
 
 #, python-format
 msgid ""
@@ -150,7 +152,7 @@ msgid ""
 "%(exception)s"
 msgstr ""
 "Wegen eines unerwarteten Fehlers konnte der Server Ihre Anforderung nicht "
-"ausführen: %(exception)s"
+"ausf??hren: %(exception)s"
 
 msgid "An unhandled exception has occurred: Could not find metadata."
 msgstr ""
@@ -174,13 +176,14 @@ msgid ""
 "[identity]\\driver option failed since driver %s is not found. Set "
 "[assignment]/driver to a valid driver in keystone config."
 msgstr ""
-"Der Versuch, für die Zuordnung den Treiber basierend auf der Option "
-"[identity]\\driver automatisch auszuwählen, ist fehlgeschlagen, da der "
+"Der Versuch, f??r die Zuordnung den Treiber basierend auf der Option "
+"[identity]\\driver automatisch auszuw??hlen, ist fehlgeschlagen, da der "
 "Treiber %s nicht gefunden wurde. Setzen Sie die Option [assignment]/driver "
-"in der Keystone-Konfiguration auf einen gültigen Treiber."
+"in der Keystone-Konfiguration auf einen g??ltigen Treiber."
 
 msgid "Attempted to authenticate with an unsupported method."
-msgstr "Versuch einer Authentifizierung mit einer nicht unterstützten Methode."
+msgstr ""
+"Versuch einer Authentifizierung mit einer nicht unterst??tzten Methode."
 
 msgid ""
 "Attempting to use OS-FEDERATION token with V2 Identity Service, use V3 "
@@ -197,7 +200,7 @@ msgid ""
 "Backend `%(backend)s` is not a valid memcached backend. Valid backends: "
 "%(backend_list)s"
 msgstr ""
-"Back-End '%(backend)s' ist kein gültiges memcached Back-End. Gültige Back-"
+"Back-End '%(backend)s' ist kein g??ltiges memcached Back-End. G??ltige Back-"
 "Ends: %(backend_list)s"
 
 msgid "Cannot authorize a request token with a token issued via delegation."
@@ -207,26 +210,26 @@ msgstr ""
 
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
-msgstr "%(option_name)s %(attr)s kann nicht geändert werden"
+msgstr "%(option_name)s %(attr)s kann nicht ge??ndert werden"
 
 msgid "Cannot change Domain ID"
-msgstr "Die Domänen-ID kann nicht geändert werden"
+msgstr "Die Dom??nen-ID kann nicht ge??ndert werden"
 
 msgid "Cannot change user ID"
-msgstr "Benutzer-ID kann nicht geändert werden"
+msgstr "Benutzer-ID kann nicht ge??ndert werden"
 
 msgid "Cannot change user name"
-msgstr "Benutzername kann nicht geändert werden"
+msgstr "Benutzername kann nicht ge??ndert werden"
 
 #, python-format
 msgid "Cannot create an endpoint with an invalid URL: %(url)s"
 msgstr ""
-"Es kann kein Endpunkt mit einer ungültigen URL erstellt werden: %(url)s"
+"Es kann kein Endpunkt mit einer ung??ltigen URL erstellt werden: %(url)s"
 
 #, python-format
 msgid "Cannot create project with parent: %(project_id)s"
 msgstr ""
-"Projekt kann nicht mit dem übergeordneten Element %(project_id)s erstellt "
+"Projekt kann nicht mit dem ??bergeordneten Element %(project_id)s erstellt "
 "werden"
 
 #, python-format
@@ -234,9 +237,9 @@ msgid ""
 "Cannot create project, since it specifies its owner as domain %(domain_id)s, "
 "but specifies a parent in a different domain (%(parent_domain_id)s)."
 msgstr ""
-"Das Projekt kann nicht erstellt werden, da es den zugehörigen Eigner als "
-"Domäne %(domain_id)s angibt, jedoch ein übergeordnetes Projekt in einer "
-"anderen Domäne (%(parent_domain_id)s) angibt."
+"Das Projekt kann nicht erstellt werden, da es den zugeh??rigen Eigner als "
+"Dom??ne %(domain_id)s angibt, jedoch ein ??bergeordnetes Projekt in einer "
+"anderen Dom??ne (%(parent_domain_id)s) angibt."
 
 #, python-format
 msgid ""
@@ -244,14 +247,14 @@ msgid ""
 "domain, but project's specified parent_id (%(parent_id)s) does not match "
 "this domain_id."
 msgstr ""
-"Das Projekt kann nicht erstellt werden, da das zugehörige übergeordnete "
-"Projekt (%(domain_id)s) als Domäne fungiert, aber die für das Projekt "
-"angegebene 'parent_id' (%(parent_id)s) nicht mit dieser 'domain_id' "
-"übereinstimmt."
+"Das Projekt kann nicht erstellt werden, da das zugeh??rige ??bergeordnete "
+"Projekt (%(domain_id)s) als Dom??ne fungiert, aber die f??r das Projekt "
+"angegebene 'parent_id' (%(parent_id)s) nicht mit dieser 'domain_id' ??"
+"bereinstimmt."
 
 msgid "Cannot delete a domain that is enabled, please disable it first."
 msgstr ""
-"Eine aktivierte Domäne kann nicht gelöscht werden. Inaktivieren Sie sie "
+"Eine aktivierte Dom??ne kann nicht gel??scht werden. Inaktivieren Sie sie "
 "zuerst."
 
 #, python-format
@@ -259,95 +262,95 @@ msgid ""
 "Cannot delete project %(project_id)s since its subtree contains enabled "
 "projects."
 msgstr ""
-"Kann Projekt %(project_id)s nicht löschen, da die zugehörige untergeordnete "
-"Baumstruktur aktivierte Projekte enthält."
+"Kann Projekt %(project_id)s nicht l??schen, da die zugeh??rige "
+"untergeordnete Baumstruktur aktivierte Projekte enth??lt."
 
 #, python-format
 msgid ""
 "Cannot delete the project %s since it is not a leaf in the hierarchy. Use "
 "the cascade option if you want to delete a whole subtree."
 msgstr ""
-"Das Projekt %s kann nicht gelöscht werden, da es kein Blattelement in der "
+"Das Projekt %s kann nicht gel??scht werden, da es kein Blattelement in der "
 "Hierarchie darstellt. Verwenden Sie die Option 'cascade', wenn Sie eine "
-"vollständige, untergeordnete Baumstruktur löschen möchten. "
+"vollst??ndige, untergeordnete Baumstruktur l??schen m??chten. "
 
 #, python-format
 msgid ""
 "Cannot disable project %(project_id)s since its subtree contains enabled "
 "projects."
 msgstr ""
-"Kann Projekt %(project_id)s nicht inaktivieren, da die zugehörige "
-"untergeordnete Baumstruktur aktivierte Projekte enthält."
+"Kann Projekt %(project_id)s nicht inaktivieren, da die zugeh??rige "
+"untergeordnete Baumstruktur aktivierte Projekte enth??lt."
 
 #, python-format
 msgid "Cannot enable project %s since it has disabled parents"
 msgstr ""
-"Kann Projekt %s nicht aktivieren, da es über inaktivierte übergeordnete "
-"Projekte verfügt"
+"Kann Projekt %s nicht aktivieren, da es ??ber inaktivierte ??bergeordnete "
+"Projekte verf??gt"
 
 msgid "Cannot list assignments sourced from groups and filtered by user ID."
 msgstr ""
-"Aus Gruppen erstellte und nach Benutzer-ID gefilterte Zuordnungen können "
+"Aus Gruppen erstellte und nach Benutzer-ID gefilterte Zuordnungen k??nnen "
 "nicht aufgelistet werden."
 
 msgid "Cannot list request tokens with a token issued via delegation."
 msgstr ""
-"Anforderungstokens können mit einem per Delegierung ausgegebenen Token nicht "
-"aufgelistet werden."
+"Anforderungstokens k??nnen mit einem per Delegierung ausgegebenen Token "
+"nicht aufgelistet werden."
 
 #, python-format
 msgid "Cannot open certificate %(cert_file)s. Reason: %(reason)s"
 msgstr ""
-"Zertifikat %(cert_file)s kann nicht geöffnet werden. Ursache: %(reason)s"
+"Zertifikat %(cert_file)s kann nicht ge??ffnet werden. Ursache: %(reason)s"
 
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
-msgstr "Nicht gewährte Rolle kann nicht entfernt werden, %s"
+msgstr "Nicht gew??hrte Rolle kann nicht entfernt werden, %s"
 
 msgid ""
 "Cannot truncate a driver call without hints list as first parameter after "
 "self "
 msgstr ""
 "Abschneiden eines Treiberaufrufs ohne Hinweisliste als erstem Parameter nach "
-"dem Treiber nicht möglich "
+"dem Treiber nicht m??glich "
 
 msgid "Cannot update domain_id of a project that has children."
 msgstr ""
 "Die Aktualisierung von 'domain_id' eines Projekts mit untergeordneten "
-"Projekten ist nicht möglich."
+"Projekten ist nicht m??glich."
 
 msgid ""
 "Cannot use parents_as_list and parents_as_ids query params at the same time."
 msgstr ""
-"Die Abfrageparameter parents_as_list und parents_as_ids können nicht "
+"Die Abfrageparameter parents_as_list und parents_as_ids k??nnen nicht "
 "gleichzeitig verwendet werden."
 
 msgid ""
 "Cannot use subtree_as_list and subtree_as_ids query params at the same time."
 msgstr ""
-"Die Abfrageparameter subtree_as_list und subtree_as_ids können nicht "
+"Die Abfrageparameter subtree_as_list und subtree_as_ids k??nnen nicht "
 "gleichzeitig verwendet werden."
 
 msgid "Cascade update is only allowed for enabled attribute."
 msgstr ""
-"Die Aktualisierungsweitergabe ist nur für aktivierte Attribute zulässig."
+"Die Aktualisierungsweitergabe ist nur f??r aktivierte Attribute zul??ssig."
 
 msgid ""
 "Combining effective and group filter will always result in an empty list."
 msgstr ""
-"Die Kombination von effektivem Filter und Gruppenfilter führt immer zu einer "
-"leeren Liste."
+"Die Kombination von effektivem Filter und Gruppenfilter f??hrt immer zu "
+"einer leeren Liste."
 
 msgid ""
 "Combining effective, domain and inherited filters will always result in an "
 "empty list."
 msgstr ""
-"Die Kombination von effektivem Filter, Domänenfilter und vererbten Filtern "
-"führt immer zu einer leeren Liste."
+"Die Kombination von effektivem Filter, Dom??nenfilter und vererbten Filtern "
+"f??hrt immer zu einer leeren Liste."
 
 #, python-format
 msgid "Config API entity at /domains/%s/config"
-msgstr "Konfigurations-API-Entität unter /domains/%s/config"
+msgstr "Konfigurations-API-Entit??t unter /domains/%s/config"
 
 #, python-format
 msgid "Conflict occurred attempting to store %(type)s - %(details)s"
@@ -366,15 +369,15 @@ msgstr "Kunde nicht gefunden"
 msgid ""
 "Could not change immutable attribute(s) '%(attributes)s' in target %(target)s"
 msgstr ""
-"Unveränderliche Attribute '%(attributes)s' konnten nicht geändert werden in "
-"Ziel %(target)s"
+"Unver??nderliche Attribute '%(attributes)s' konnten nicht ge??ndert werden "
+"in Ziel %(target)s"
 
 #, python-format
 msgid ""
 "Could not determine Identity Provider ID. The configuration option "
 "%(issuer_attribute)s was not found in the request environment."
 msgstr ""
-"Identitätsprovider-ID nicht gefunden. Die Konfigurationsoption "
+"Identit??tsprovider-ID nicht gefunden. Die Konfigurationsoption "
 "%(issuer_attribute)s wurde in der Anforderungsumgebung nicht gefunden."
 
 #, python-format
@@ -382,7 +385,7 @@ msgid ""
 "Could not find %(group_or_option)s in domain configuration for domain "
 "%(domain_id)s"
 msgstr ""
-"%(group_or_option)s konnte in der Domänenkonfiguration für Domäne "
+"%(group_or_option)s konnte in der Dom??nenkonfiguration f??r Dom??ne "
 "%(domain_id)s nicht gefunden werden"
 
 #, python-format
@@ -390,11 +393,11 @@ msgid "Could not find Endpoint Group: %(endpoint_group_id)s"
 msgstr "Endpunktgruppe konnte nicht gefunden werden: %(endpoint_group_id)s"
 
 msgid "Could not find Identity Provider identifier in environment"
-msgstr "Identitätsprovider-ID konnte in der Umgebung nicht gefunden werden"
+msgstr "Identit??tsprovider-ID konnte in der Umgebung nicht gefunden werden"
 
 #, python-format
 msgid "Could not find Identity Provider: %(idp_id)s"
-msgstr "Identitätsprovider %(idp_id)s konnte nicht gefunden werden"
+msgstr "Identit??tsprovider %(idp_id)s konnte nicht gefunden werden"
 
 #, python-format
 msgid "Could not find Service Provider: %(sp_id)s"
@@ -406,7 +409,7 @@ msgstr "Berechtigungsnachweis %(credential_id)s konnte nicht gefunden werden"
 
 #, python-format
 msgid "Could not find domain: %(domain_id)s"
-msgstr "Domäne %(domain_id)s konnte nicht gefunden werden"
+msgstr "Dom??ne %(domain_id)s konnte nicht gefunden werden"
 
 #, python-format
 msgid "Could not find endpoint: %(endpoint_id)s"
@@ -417,8 +420,8 @@ msgid ""
 "Could not find federated protocol %(protocol_id)s for Identity Provider: "
 "%(idp_id)s"
 msgstr ""
-"Föderiertes Protokoll %(protocol_id)s konnte nicht gefunden werden für "
-"Identitätsprovider: %(idp_id)s"
+"F??deriertes Protokoll %(protocol_id)s konnte nicht gefunden werden f??r "
+"Identit??tsprovider: %(idp_id)s"
 
 #, python-format
 msgid "Could not find group: %(group_id)s"
@@ -449,7 +452,7 @@ msgid ""
 "%(actor_id)s, project or domain: %(target_id)s"
 msgstr ""
 "Rollenzuordnung mit Rolle: %(role_id)s, Benutzer oder Gruppe: %(actor_id)s, "
-"Projekt oder Domäne: %(target_id)s, konnte nicht gefunden werden"
+"Projekt oder Dom??ne: %(target_id)s, konnte nicht gefunden werden"
 
 #, python-format
 msgid "Could not find role: %(role_id)s"
@@ -486,8 +489,8 @@ msgid ""
 "Could not map any federated user properties to identity values. Check debug "
 "logs or the mapping used for additional details."
 msgstr ""
-"Es konnten keine eingebundenen Benutzereigenschaften Identitätswerten "
-"zugeordnet werden. Überprüfen Sie die Debugprotokolle oder die verwendete "
+"Es konnten keine eingebundenen Benutzereigenschaften Identit??tswerten "
+"zugeordnet werden. ??berpr??fen Sie die Debugprotokolle oder die verwendete "
 "Zuordnung, um weitere Details zu erhalten."
 
 msgid ""
@@ -495,18 +498,18 @@ msgid ""
 "rules must specify user id/name or REMOTE_USER environment variable must be "
 "set."
 msgstr ""
-"Benutzer konnte beim Festlegen der ephemeren Benutzeridentität nicht "
+"Benutzer konnte beim Festlegen der ephemeren Benutzeridentit??t nicht "
 "zugeordnet werden. Entweder muss in Zuordnungsregeln Benutzer-ID/Name "
 "angegeben werden oder Umgebungsvariable REMOTE_USER muss festgelegt werden."
 
 msgid "Could not validate the access token"
-msgstr "Das Zugriffstoken konnte nicht geprüft werden"
+msgstr "Das Zugriffstoken konnte nicht gepr??ft werden"
 
 msgid "Credential belongs to another user"
-msgstr "Berechtigungsnachweis gehört einem anderen Benutzer"
+msgstr "Berechtigungsnachweis geh??rt einem anderen Benutzer"
 
 msgid "Credential signature mismatch"
-msgstr "Übereinstimmungsfehler bei Berechtigungssignatur"
+msgstr "??bereinstimmungsfehler bei Berechtigungssignatur"
 
 #, python-format
 msgid ""
@@ -514,22 +517,23 @@ msgid ""
 "of its entrypoint from %(namespace)r and may be removed in N."
 msgstr ""
 "Der direkte Import des Authentifizierungsplugins %(name)r wird zugunsten des "
-"zugehörigen Einstiegspunkts aus %(namespace)r seit Liberty nicht mehr "
-"unterstützt und wird möglicherweise im N-Release entfernt."
+"zugeh??rigen Einstiegspunkts aus %(namespace)r seit Liberty nicht mehr "
+"unterst??tzt und wird m??glicherweise im N-Release entfernt."
 
 #, python-format
 msgid ""
 "Direct import of driver %(name)r is deprecated as of Liberty in favor of its "
 "entrypoint from %(namespace)r and may be removed in N."
 msgstr ""
-"Der direkte Import des Treibers %(name)r wird zugunsten des zugehörigen "
-"Einstiegspunkts aus %(namespace)r seit Liberty nicht mehr unterstützt und "
-"wird möglicherweise im N-Release entfernt."
+"Der direkte Import des Treibers %(name)r wird zugunsten des zugeh??rigen "
+"Einstiegspunkts aus %(namespace)r seit Liberty nicht mehr unterst??tzt und "
+"wird m??glicherweise im N-Release entfernt."
 
 msgid ""
 "Disabling an entity where the 'enable' attribute is ignored by configuration."
 msgstr ""
-"Eine Entität inaktivieren, in der das Attribut 'enable' ignoriert wird von   "
+"Eine Entit??t inaktivieren, in der das Attribut 'enable' ignoriert wird "
+"von   "
 
 #, python-format
 msgid "Domain (%s)"
@@ -537,33 +541,33 @@ msgstr "Domain (%s)"
 
 #, python-format
 msgid "Domain cannot be named %s"
-msgstr "Domäne kann nicht mit %s benannt werden"
+msgstr "Dom??ne kann nicht mit %s benannt werden"
 
 #, python-format
 msgid "Domain cannot have ID %s"
-msgstr "Domäne kann nicht die ID %s haben"
+msgstr "Dom??ne kann nicht die ID %s haben"
 
 #, python-format
 msgid "Domain is disabled: %s"
-msgstr "Domäne ist inaktiviert: %s"
+msgstr "Dom??ne ist inaktiviert: %s"
 
 msgid "Domain name cannot contain reserved characters."
-msgstr "Der Domänenname darf keine reservierten Zeichen enthalten."
+msgstr "Der Dom??nenname darf keine reservierten Zeichen enthalten."
 
 msgid "Domain scoped token is not supported"
-msgstr "Bereichsorientiertes Token der Domäne wird nicht unterstützt"
+msgstr "Bereichsorientiertes Token der Dom??ne wird nicht unterst??tzt"
 
 msgid "Domain specific roles are not supported in the V8 role driver"
 msgstr ""
-"Domänenspezifische rollen werden im V8-Rollentreiber nicht unterstützt."
+"Dom??nenspezifische rollen werden im V8-Rollentreiber nicht unterst??tzt."
 
 #, python-format
 msgid ""
 "Domain: %(domain)s already has a configuration defined - ignoring file: "
 "%(file)s."
 msgstr ""
-"Domäne: für %(domain)s ist bereits eine Konfiguration definiert - Datei wird "
-"ignoriert: %(file)s."
+"Dom??ne: f??r %(domain)s ist bereits eine Konfiguration definiert - Datei "
+"wird ignoriert: %(file)s."
 
 msgid "Duplicate Entry"
 msgstr "Doppelter Eintrag"
@@ -585,7 +589,7 @@ msgid "Duplicate remote ID: %s"
 msgstr "Doppelte ferne ID: %s"
 
 msgid "EC2 access key not found."
-msgstr "EC2 Zugriffsschlüssel nicht gefunden."
+msgstr "EC2 Zugriffsschl??ssel nicht gefunden."
 
 msgid "EC2 signature not supplied."
 msgstr "EC2-Signatur nicht angegeben."
@@ -607,7 +611,7 @@ msgid "Endpoint %(endpoint_id)s not found in project %(project_id)s"
 msgstr "Endpunkt %(endpoint_id)s nicht gefunden in Projekt %(project_id)s"
 
 msgid "Endpoint Group Project Association not found"
-msgstr "Projektzuordnung für Endpunktgruppe nicht gefunden"
+msgstr "Projektzuordnung f??r Endpunktgruppe nicht gefunden"
 
 msgid "Ensure configuration option idp_entity_id is set."
 msgstr ""
@@ -622,12 +626,12 @@ msgstr ""
 msgid ""
 "Error parsing configuration file for domain: %(domain)s, file: %(file)s."
 msgstr ""
-"Fehler bei der Auswertung der Konfigurationsdatei für Domäne: %(domain)s, "
+"Fehler bei der Auswertung der Konfigurationsdatei f??r Dom??ne: %(domain)s, "
 "Datei: %(file)s."
 
 #, python-format
 msgid "Error while opening file %(path)s: %(err)s"
-msgstr "Fehler beim Öffnen der Datei %(path)s: %(err)s"
+msgstr "Fehler beim ??ffnen der Datei %(path)s: %(err)s"
 
 #, python-format
 msgid "Error while parsing line: '%(line)s': %(err)s"
@@ -646,10 +650,10 @@ msgid ""
 "Exceeded attempts to register domain %(domain)s to use the SQL driver, the "
 "last domain that appears to have had it is %(last_domain)s, giving up"
 msgstr ""
-"Die maximal zulässige Anzahl an Versuchen, die Domäne %(domain)s für die "
-"Verwendung des SQL-Treibers zu registrieren, wurde überschritten. Die letzte "
-"Domäne, bei der die Registrierung erfolgreich gewesen zu sein scheint, war "
-"%(last_domain)s. Abbruch."
+"Die maximal zul??ssige Anzahl an Versuchen, die Dom??ne %(domain)s f??r die "
+"Verwendung des SQL-Treibers zu registrieren, wurde ??berschritten. Die "
+"letzte Dom??ne, bei der die Registrierung erfolgreich gewesen zu sein "
+"scheint, war %(last_domain)s. Abbruch."
 
 #, python-format
 msgid "Expected dict or list: %s"
@@ -659,8 +663,8 @@ msgid ""
 "Expected signing certificates are not available on the server. Please check "
 "Keystone configuration."
 msgstr ""
-"Erwartete Signierzertifikate sind auf dem Server nicht verfügbar. Überprüfen "
-"Sie die Keystone-Konfiguration."
+"Erwartete Signierzertifikate sind auf dem Server nicht verf??gbar. ??berpr??"
+"fen Sie die Keystone-Konfiguration."
 
 #, python-format
 msgid ""
@@ -669,14 +673,14 @@ msgid ""
 "client is assumed to be in error."
 msgstr ""
 "Es wurde erwartet, %(attribute)s in %(target)s zu finden. Der Server konnte "
-"die Anforderung nicht erfüllen, da ein fehlerhaftes Format oder ein anderer "
+"die Anforderung nicht erf??llen, da ein fehlerhaftes Format oder ein anderer "
 "Fehler vorliegt. Es wird angenommen, dass der Fehler beim Client liegt."
 
 msgid "Failed to validate token"
-msgstr "Token konnte nicht geprüft werden"
+msgstr "Token konnte nicht gepr??ft werden"
 
 msgid "Federation token is expired"
-msgstr "Föderationstoken ist abgelaufen"
+msgstr "F??derationstoken ist abgelaufen"
 
 #, python-format
 msgid ""
@@ -684,11 +688,12 @@ msgid ""
 "order to redelegate a trust"
 msgstr ""
 "Feld \"remaining_uses\" ist auf %(value)s festgelegt, es darf jedoch nicht "
-"festgelegt werden, um eine Vertrauensbeziehung zu übertragen"
+"festgelegt werden, um eine Vertrauensbeziehung zu ??bertragen"
 
 msgid "Found invalid token: scoped to both project and domain."
 msgstr ""
-"Ungültiges Token gefunden. Es ist sowohl projekt- als auch domänenorientiert."
+"Ung??ltiges Token gefunden. Es ist sowohl projekt- als auch dom??"
+"nenorientiert."
 
 #, python-format
 msgid "Group  %s not found in config"
@@ -697,15 +702,15 @@ msgstr "Die Gruppe %s wurde nicht in der Konfiguration gefunden."
 #, python-format
 msgid "Group %(group)s is not supported for domain specific configurations"
 msgstr ""
-"Gruppe %(group)s wird für domänenspezifische Konfigurationen nicht "
-"unterstützt"
+"Gruppe %(group)s wird f??r dom??nenspezifische Konfigurationen nicht "
+"unterst??tzt"
 
 #, python-format
 msgid ""
 "Group %(group_id)s returned by mapping %(mapping_id)s was not found in the "
 "backend."
 msgstr ""
-"Die von der Zuordnung %(mapping_id)s zurückgegebene Gruppe %(group_id)s "
+"Die von der Zuordnung %(mapping_id)s zur??ckgegebene Gruppe %(group_id)s "
 "konnte im Back-End nicht gefunden werden."
 
 #, python-format
@@ -713,8 +718,8 @@ msgid ""
 "Group membership across backend boundaries is not allowed, group in question "
 "is %(group_id)s, user is %(user_id)s"
 msgstr ""
-"Back-End-übergreifende Gruppenmitgliedschaft ist nicht zulässig, betroffene "
-"Gruppe ist %(group_id)s, Benutzer ist %(user_id)s"
+"Back-End-??bergreifende Gruppenmitgliedschaft ist nicht zul??ssig, "
+"betroffene Gruppe ist %(group_id)s, Benutzer ist %(user_id)s"
 
 #, python-format
 msgid "ID attribute %(id_attr)s not found in LDAP object %(dn)s"
@@ -722,59 +727,61 @@ msgstr "ID-Attribut %(id_attr)s wurde in LDAP-Objekt %(dn)s nicht gefunden"
 
 #, python-format
 msgid "Identity Provider %(idp)s is disabled"
-msgstr "Identitätsprovider %(idp)s ist inaktiviert"
+msgstr "Identit??tsprovider %(idp)s ist inaktiviert"
 
 msgid ""
 "Incoming identity provider identifier not included among the accepted "
 "identifiers."
 msgstr ""
-"Eingehende Identitätsprovider-ID ist nicht in den akzeptierten IDs enthalten."
+"Eingehende Identit??tsprovider-ID ist nicht in den akzeptierten IDs "
+"enthalten."
 
 msgid "Invalid EC2 signature."
-msgstr "Ungültige EC2-Signatur."
+msgstr "Ung??ltige EC2-Signatur."
 
 #, python-format
 msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 msgstr ""
-"Ungültige LDAP-TLS-Zertifikatsoption: %(option)s. Wählen Sie aus: %(options)s"
+"Ung??ltige LDAP-TLS-Zertifikatsoption: %(option)s. W??hlen Sie aus: "
+"%(options)s"
 
 #, python-format
 msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
-msgstr "Ungültige LDAP TLS_AVAIL Option: %s. TLS nicht verfügbar"
+msgstr "Ung??ltige LDAP TLS_AVAIL Option: %s. TLS nicht verf??gbar"
 
 #, python-format
 msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
 msgstr ""
-"Ungültige LDAP-TLS-deref-Option: %(option)s. Wählen Sie aus: %(options)s"
+"Ung??ltige LDAP-TLS-deref-Option: %(option)s. W??hlen Sie aus: %(options)s"
 
 #, python-format
 msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
-msgstr "Ungültiger LDAP Bereich: %(scope)s. Wählen Sie aus: %(options)s"
+msgstr "Ung??ltiger LDAP Bereich: %(scope)s. W??hlen Sie aus: %(options)s"
 
 msgid "Invalid TLS / LDAPS combination"
-msgstr "Ungültige TLS /LDAPS Kombination"
+msgstr "Ung??ltige TLS /LDAPS Kombination"
 
 #, python-format
 msgid "Invalid audit info data type: %(data)s (%(type)s)"
-msgstr "Ungültiger Datentyp für Prüfungsinformationen: %(data)s (%(type)s)"
+msgstr "Ung??ltiger Datentyp f??r Pr??fungsinformationen: %(data)s (%(type)s)"
 
 msgid "Invalid blob in credential"
-msgstr "Ungültiges Blob-Objekt im Berechtigungsnachweis"
+msgstr "Ung??ltiges Blob-Objekt im Berechtigungsnachweis"
 
 #, python-format
 msgid ""
 "Invalid domain name: %(domain)s found in config file name: %(file)s - "
 "ignoring this file."
 msgstr ""
-"Ungültiger Domänenname: %(domain)s im Konfigurationsdateinamen gefunden: "
+"Ung??ltiger Dom??nenname: %(domain)s im Konfigurationsdateinamen gefunden: "
 "%(file)s - diese Datei wird ignoriert."
 
 #, python-format
 msgid "Invalid domain specific configuration: %(reason)s"
-msgstr "Ungültige domänenspezifische Konfiguration: %(reason)s"
+msgstr "Ung??ltige dom??nenspezifische Konfiguration: %(reason)s"
 
 msgid "Invalid limit value"
-msgstr "Ungültiger Grenzwert"
+msgstr "Ung??ltiger Grenzwert"
 
 #, python-format
 msgid ""
@@ -782,8 +789,8 @@ msgid ""
 "Region+Service allowed. Request was - Endpoint: %(endpoint_id)s, Service: "
 "%(service_id)s, Region: %(region_id)s"
 msgstr ""
-"Ungültige Mischung von Entitäten für Richtlinienzuordnung - nur Endpunkt, "
-"Service oder Region+Service zulässig. Anforderung war - Endpunkt: "
+"Ung??ltige Mischung von Entit??ten f??r Richtlinienzuordnung - nur Endpunkt, "
+"Service oder Region+Service zul??ssig. Anforderung war - Endpunkt: "
 "%(endpoint_id)s, Service: %(service_id)s, Region: %(region_id)s"
 
 #, python-format
@@ -791,28 +798,29 @@ msgid ""
 "Invalid rule: %(identity_value)s. Both 'groups' and 'domain' keywords must "
 "be specified."
 msgstr ""
-"Ungültige Regel: %(identity_value)s. Die Suchbegriffe 'groups' und 'domain' "
-"müssen angegeben sein."
+"Ung??ltige Regel: %(identity_value)s. Die Suchbegriffe 'groups' und 'domain' "
+"m??ssen angegeben sein."
 
 msgid "Invalid signature"
-msgstr "Ungültige Signatur"
+msgstr "Ung??ltige Signatur"
 
 msgid "Invalid user / password"
-msgstr "Ungültiger Benutzer / Passwort"
+msgstr "Ung??ltiger Benutzer / Passwort"
 
 msgid "Invalid username or TOTP passcode"
-msgstr "Ungültiger Benutzername oder TOTP-Kenncode"
+msgstr "Ung??ltiger Benutzername oder TOTP-Kenncode"
 
 msgid "Invalid username or password"
-msgstr "Ungültiger Benutzername oder ungültiges Passwort."
+msgstr "Ung??ltiger Benutzername oder ung??ltiges Passwort."
 
 #, python-format
 msgid "KVS region %s is already configured. Cannot reconfigure."
-msgstr "KVS-Region %s ist bereits konfiguriert. Rekonfiguration nicht möglich."
+msgstr ""
+"KVS-Region %s ist bereits konfiguriert. Rekonfiguration nicht m??glich."
 
 #, python-format
 msgid "Key Value Store not configured: %s"
-msgstr "Schlüsselwertspeicher nicht konfiguriert: %s"
+msgstr "Schl??sselwertspeicher nicht konfiguriert: %s"
 
 #, python-format
 msgid "LDAP %s create"
@@ -820,7 +828,7 @@ msgstr "LDAP %s erstellen"
 
 #, python-format
 msgid "LDAP %s delete"
-msgstr "LDAP %s löschen"
+msgstr "LDAP %s l??schen"
 
 #, python-format
 msgid "LDAP %s update"
@@ -829,8 +837,8 @@ msgstr "LDAP %s aktualisieren"
 msgid ""
 "Length of transformable resource id > 64, which is max allowed characters"
 msgstr ""
-"Länge der transformierbaren Ressourcen-ID liegt über der maximal zulässigen "
-"Anzahl von 64 Zeichen. "
+"L??nge der transformierbaren Ressourcen-ID liegt ??ber der maximal zul??"
+"ssigen Anzahl von 64 Zeichen. "
 
 #, python-format
 msgid ""
@@ -838,17 +846,18 @@ msgid ""
 "doesn't exist (e.g. {0} in a local section)."
 msgstr ""
 "Der lokale Abschnitt in der Zuordnung %(mapping_id)s bezieht sich auf eine "
-"ferne Übereinstimmung, die nicht vorhanden ist (z. B. '{0}' in einem lokalen "
-"Abschnitt)."
+"ferne ??bereinstimmung, die nicht vorhanden ist (z. B. '{0}' in einem "
+"lokalen Abschnitt)."
 
 #, python-format
 msgid "Lock Timeout occurred for key, %(target)s"
-msgstr "Überschreitung der Sperrzeit aufgetreten für Schlüssel %(target)s"
+msgstr "??berschreitung der Sperrzeit aufgetreten f??r Schl??ssel %(target)s"
 
 #, python-format
 msgid "Lock key must match target key: %(lock)s != %(target)s"
 msgstr ""
-"Sperrschlüssel muss mit Zielschlüssel übereinstimmen: %(lock)s != %(target)s"
+"Sperrschl??ssel muss mit Zielschl??ssel ??bereinstimmen: %(lock)s != "
+"%(target)s"
 
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
@@ -860,7 +869,7 @@ msgstr "Marker konnte nicht gefunden werden"
 
 #, python-format
 msgid "Max hierarchy depth reached for %s branch."
-msgstr "Die maximale Hierarchietiefe für den %s-Branch wurde erreicht."
+msgstr "Die maximale Hierarchietiefe f??r den %s-Branch wurde erreicht."
 
 #, python-format
 msgid "Maximum lock attempts on %s occurred."
@@ -875,37 +884,37 @@ msgid "Method not callable: %s"
 msgstr "Methode kann nicht aufgerufen werden: %s"
 
 msgid "Missing entity ID from environment"
-msgstr "Fehlende Entitäts-ID von Umgebung"
+msgstr "Fehlende Entit??ts-ID von Umgebung"
 
 msgid ""
 "Modifying \"redelegation_count\" upon redelegation is forbidden. Omitting "
 "this parameter is advised."
 msgstr ""
-"Das Ändern von \"redelegation_count\" ist bei der Redelegation nicht "
-"zulässig. Es wird empfohlen, diesen Parameter auszulassen."
+"Das ??ndern von \"redelegation_count\" ist bei der Redelegation nicht zul??"
+"ssig. Es wird empfohlen, diesen Parameter auszulassen."
 
 msgid "Multiple domains are not supported"
-msgstr "Mehrere Domänen werden nicht unterstützt"
+msgstr "Mehrere Dom??nen werden nicht unterst??tzt"
 
 msgid "Must be called within an active lock context."
 msgstr "Aufruf innerhalb des Kontexts einer aktiven Sperre erforderlich."
 
 msgid "Must specify either domain or project"
-msgstr "Entweder Domäne oder Projekt muss angegeben werden"
+msgstr "Entweder Dom??ne oder Projekt muss angegeben werden"
 
 msgid "Name field is required and cannot be empty"
 msgstr "Namensfeld ist erforderlich und darf nicht leer sein"
 
 msgid "Neither Project Domain ID nor Project Domain Name was provided."
-msgstr "Weder Projektdomänen-ID noch Projektdomänenname wurde angegeben."
+msgstr "Weder Projektdom??nen-ID noch Projektdom??nenname wurde angegeben."
 
 msgid ""
 "No Authorization headers found, cannot proceed with OAuth related calls, if "
 "running under HTTPd or Apache, ensure WSGIPassAuthorization is set to On."
 msgstr ""
-"Keine Autorisierungskopfzeilen gefunden, zu OAuth zugehörige Aufrufe können "
-"nicht fortgesetzt werden. Stellen Sie bei Ausführung unter HTTPd oder Apache "
-"sicher, dass WSGIPassAuthorization auf 'On' gesetzt ist."
+"Keine Autorisierungskopfzeilen gefunden, zu OAuth zugeh??rige Aufrufe k??"
+"nnen nicht fortgesetzt werden. Stellen Sie bei Ausf??hrung unter HTTPd oder "
+"Apache sicher, dass WSGIPassAuthorization auf 'On' gesetzt ist."
 
 msgid "No authenticated user"
 msgstr "Kein authentifizierter Benutzer"
@@ -913,8 +922,8 @@ msgstr "Kein authentifizierter Benutzer"
 msgid ""
 "No encryption keys found; run keystone-manage fernet_setup to bootstrap one."
 msgstr ""
-"Keine Chiffrierschlüssel gefunden; Führen Sie keystone-manage fernet_setup "
-"aus, um über Bootstrapping einen Schlüssel zu erhalten."
+"Keine Chiffrierschl??ssel gefunden; F??hren Sie keystone-manage fernet_setup "
+"aus, um ??ber Bootstrapping einen Schl??ssel zu erhalten."
 
 msgid "No options specified"
 msgstr "Keine Optionen angegeben"
@@ -925,32 +934,32 @@ msgstr "Endpunkt %(endpoint_id)s ist keine Richtlinie zugeordnet. "
 
 #, python-format
 msgid "No remaining uses for trust: %(trust_id)s"
-msgstr "Keine verbleibende Verwendung für Vertrauensbeziehung %(trust_id)s"
+msgstr "Keine verbleibende Verwendung f??r Vertrauensbeziehung %(trust_id)s"
 
 msgid "No token in the request"
 msgstr "Kein Token in der Anforderung"
 
 msgid "Non-default domain is not supported"
-msgstr "Nicht-Standard-Domäne wird nicht unterstützt"
+msgstr "Nicht-Standard-Dom??ne wird nicht unterst??tzt"
 
 msgid "One of the trust agents is disabled or deleted"
-msgstr "Einer der Vertrauensagenten wurde inaktiviert oder gelöscht"
+msgstr "Einer der Vertrauensagenten wurde inaktiviert oder gel??scht"
 
 #, python-format
 msgid ""
 "Option %(option)s found with no group specified while checking domain "
 "configuration request"
 msgstr ""
-"Option %(option)s ohne angegebene Gruppe gefunden, während die Domänen- "
-"Konfigurationsanforderung geprüft wurde"
+"Option %(option)s ohne angegebene Gruppe gefunden, w??hrend die Dom??nen- "
+"Konfigurationsanforderung gepr??ft wurde"
 
 #, python-format
 msgid ""
 "Option %(option)s in group %(group)s is not supported for domain specific "
 "configurations"
 msgstr ""
-"Option %(option)s in Gruppe %(group)s wird für domänenspezifische "
-"Konfigurationen nicht unterstützt"
+"Option %(option)s in Gruppe %(group)s wird f??r dom??nenspezifische "
+"Konfigurationen nicht unterst??tzt"
 
 #, python-format
 msgid "Project (%s)"
@@ -977,27 +986,27 @@ msgstr "Abfragezeichenfolge ist nicht UTF-8-codiert"
 msgid ""
 "Reading the default for option %(option)s in group %(group)s is not supported"
 msgstr ""
-"Lesen des Standardwerts für die Option %(option)s in der Gruppe %(group)s "
-"wird nicht unterstützt."
+"Lesen des Standardwerts f??r die Option %(option)s in der Gruppe %(group)s "
+"wird nicht unterst??tzt."
 
 msgid "Redelegation allowed for delegated by trust only"
-msgstr "Redelegation nur zulässig für im Vertrauen redelegierte"
+msgstr "Redelegation nur zul??ssig f??r im Vertrauen redelegierte"
 
 #, python-format
 msgid ""
 "Remaining redelegation depth of %(redelegation_depth)d out of allowed range "
 "of [0..%(max_count)d]"
 msgstr ""
-"Verbleibende Redelegationstiefe von %(redelegation_depth)d aus dem "
-"zulässigen Bereich von [0..%(max_count)d]"
+"Verbleibende Redelegationstiefe von %(redelegation_depth)d aus dem zul??"
+"ssigen Bereich von [0..%(max_count)d]"
 
 msgid ""
 "Remove admin_crud_extension from the paste pipeline, the admin_crud "
 "extension is now always available. Updatethe [pipeline:admin_api] section in "
 "keystone-paste.ini accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'admin_crud_extension' aus der Einfügepipeline. "
-"'admin_crud_extension' ist jetzt immer verfügbar. Aktualisieren Sie den "
+"Entfernen Sie 'admin_crud_extension' aus der Einf??gepipeline. "
+"'admin_crud_extension' ist jetzt immer verf??gbar. Aktualisieren Sie den "
 "Abschnitt [pipeline:admin_api] in der Datei 'keystone-paste.ini' "
 "entsprechend, da er im 'O'-Release entfernt wird. "
 
@@ -1007,8 +1016,8 @@ msgid ""
 "section in keystone-paste.ini accordingly as it will be removed in the O "
 "release."
 msgstr ""
-"Entfernen Sie 'endpoint_filter_extension' aus der Einfügepipeline. Die "
-"Endpunktfiltererweiterung ist jetzt immer verfügbar. Aktualisieren Sie den "
+"Entfernen Sie 'endpoint_filter_extension' aus der Einf??gepipeline. Die "
+"Endpunktfiltererweiterung ist jetzt immer verf??gbar. Aktualisieren Sie den "
 "Abschnitt [pipeline:api_v3] in der Datei 'keystone-paste.ini' entsprechend, "
 "da er im 'O'-Release entfernt wird."
 
@@ -1017,8 +1026,8 @@ msgid ""
 "extension is now always available. Update the [pipeline:api_v3] section in "
 "keystone-paste.ini accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'federation_extension' aus der Einfügepipeline. Sie ist jetzt "
-"immer verfügbar. Aktualisieren Sie den Abschnitt  [pipeline:api_v3] in der "
+"Entfernen Sie 'federation_extension' aus der Einf??gepipeline. Sie ist jetzt "
+"immer verf??gbar. Aktualisieren Sie den Abschnitt  [pipeline:api_v3] in der "
 "Datei 'keystone-paste.ini' entsprechend, da er im 'O'-Release entfernt wird."
 
 msgid ""
@@ -1026,8 +1035,8 @@ msgid ""
 "always available. Update the [pipeline:api_v3] section in keystone-paste.ini "
 "accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'oauth1_extension' aus der Einfügepipeline. Die oauth1-"
-"Erweiterung ist jetzt immer verfügbar.  Aktualisieren Sie den Abschnitt "
+"Entfernen Sie 'oauth1_extension' aus der Einf??gepipeline. Die oauth1-"
+"Erweiterung ist jetzt immer verf??gbar.  Aktualisieren Sie den Abschnitt "
 "[pipeline:api_v3] in der Datei 'keystone-paste.ini' entsprechend, da er im "
 "'O'-Release entfernt wird."
 
@@ -1036,8 +1045,8 @@ msgid ""
 "always available. Update the [pipeline:api_v3] section in keystone-paste.ini "
 "accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'revoke_extension' aus der Einfügepipeline. Die revoke-"
-"Erweiterung ist jetzt immer verfügbar. Aktualisieren Sie den Abschnitt "
+"Entfernen Sie 'revoke_extension' aus der Einf??gepipeline. Die revoke-"
+"Erweiterung ist jetzt immer verf??gbar. Aktualisieren Sie den Abschnitt "
 "[pipeline:api_v3] in der Datei 'keystone-paste.ini' entsprechend, da er im "
 "'O'-Release entfernt wird. "
 
@@ -1047,19 +1056,19 @@ msgid ""
 "providers. Update the [pipeline:api_v3] section in keystone-paste.ini "
 "accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'simple_cert' aus der Einfügepipeline. Die PKI- und PKIz-Token-"
-"Provider sind jetzt veraltet und 'simple_cert' wurde nur zur Unterstützung "
-"dieser Token-Provider verwendet. Aktualisieren Sie den Abschnitt [pipeline:"
-"api_v3] in der Datei 'keystone-paste.ini' entsprechend, da er im 'O'-Release "
-"entfernt wird."
+"Entfernen Sie 'simple_cert' aus der Einf??gepipeline. Die PKI- und PKIz-"
+"Token-Provider sind jetzt veraltet und 'simple_cert' wurde nur zur Unterst??"
+"tzung dieser Token-Provider verwendet. Aktualisieren Sie den Abschnitt "
+"[pipeline:api_v3] in der Datei 'keystone-paste.ini' entsprechend, da er im "
+"'O'-Release entfernt wird."
 
 msgid ""
 "Remove user_crud_extension from the paste pipeline, the user_crud extension "
 "is now always available. Updatethe [pipeline:public_api] section in keystone-"
 "paste.ini accordingly, as it will be removed in the O release."
 msgstr ""
-"Entfernen Sie 'user_crud_extension' aus der Einfügepipeline. 'user_crud "
-"extension' ist jetzt immer verfügbar. Aktualisieren Sie den Abschnitt "
+"Entfernen Sie 'user_crud_extension' aus der Einf??gepipeline. 'user_crud "
+"extension' ist jetzt immer verf??gbar. Aktualisieren Sie den Abschnitt "
 "[pipeline:public_api] in der Datei 'keystone-paste.ini' entsprechend, da er "
 "im 'O'-Release entfernt wird."
 
@@ -1073,11 +1082,12 @@ msgid ""
 "invalid (too large). The client is assumed to be in error."
 msgstr ""
 "Anforderungsattribut %(attribute)s muss kleiner-gleich %(size)i sein. Der "
-"Server konnte die Anforderung nicht erfüllen, da die Attributgröße ungültig "
-"ist (zu groß). Es wird angenommen, dass der Fehler beim Client liegt."
+"Server konnte die Anforderung nicht erf??llen, da die Attributgr????e ung??"
+"ltig ist (zu gro??). Es wird angenommen, dass der Fehler beim Client liegt."
 
 msgid "Request must have an origin query parameter"
-msgstr "Anforderung muss über einen ursprünglichen Abfrageparameter verfügen"
+msgstr ""
+"Anforderung muss ??ber einen urspr??nglichen Abfrageparameter verf??gen"
 
 msgid "Request token is expired"
 msgstr "Anforderungstoken ist abgelaufen"
@@ -1087,7 +1097,7 @@ msgstr "Anforderungstoken nicht gefunden"
 
 msgid "Requested expiration time is more than redelegated trust can provide"
 msgstr ""
-"Angeforderte Ablaufzeit übersteigt die, die von der redelegierten "
+"Angeforderte Ablaufzeit ??bersteigt die, die von der redelegierten "
 "Vertrauensbeziehung bereitgestellt werden kann"
 
 #, python-format
@@ -1095,17 +1105,17 @@ msgid ""
 "Requested redelegation depth of %(requested_count)d is greater than allowed "
 "%(max_count)d"
 msgstr ""
-"Die angeforderte Redelegationstiefe von %(requested_count)d übersteigt den "
-"zulässigen Wert von %(max_count)d"
+"Die angeforderte Redelegationstiefe von %(requested_count)d ??bersteigt den "
+"zul??ssigen Wert von %(max_count)d"
 
 msgid "Scoping to both domain and project is not allowed"
-msgstr "Scoping sowohl auf 'domain' als auch auf 'project' ist nicht zulässig"
+msgstr "Scoping sowohl auf 'domain' als auch auf 'project' ist nicht zul??ssig"
 
 msgid "Scoping to both domain and trust is not allowed"
-msgstr "Scoping sowohl auf 'domain' als auch auf 'trust' ist nicht zulässig"
+msgstr "Scoping sowohl auf 'domain' als auch auf 'trust' ist nicht zul??ssig"
 
 msgid "Scoping to both project and trust is not allowed"
-msgstr "Scoping sowohl auf 'project' als auch auf 'trust' ist nicht zulässig"
+msgstr "Scoping sowohl auf 'project' als auch auf 'trust' ist nicht zul??ssig"
 
 #, python-format
 msgid "Service Provider %(sp)s is disabled"
@@ -1117,13 +1127,13 @@ msgstr ""
 "Vertrauensbeziehung"
 
 msgid "Specify a domain or project, not both"
-msgstr "Geben Sie eine Domäne oder ein Projekt an, nicht beides"
+msgstr "Geben Sie eine Dom??ne oder ein Projekt an, nicht beides"
 
 msgid "Specify a user or group, not both"
 msgstr "Geben Sie einen Benutzer oder eine Gruppe an, nicht beides"
 
 msgid "Specify one of domain or project"
-msgstr "Entweder eine Domäne oder ein Projekt muss angegeben werden"
+msgstr "Entweder eine Dom??ne oder ein Projekt muss angegeben werden"
 
 msgid "Specify one of user or group"
 msgstr "Entweder ein Benutzer oder eine Gruppe muss angegeben werden"
@@ -1133,8 +1143,8 @@ msgid ""
 "String length exceeded.The length of string '%(string)s' exceeded the limit "
 "of column %(type)s(CHAR(%(length)d))."
 msgstr ""
-"Zeichenfolgelänge überschritten. Die Länge der Zeichenfolge '%(string)s' hat "
-"den Grenzwert von Spalte %(type)s(CHAR(%(length)d)) überschritten."
+"Zeichenfolgel??nge ??berschritten. Die L??nge der Zeichenfolge '%(string)s' "
+"hat den Grenzwert von Spalte %(type)s(CHAR(%(length)d)) ??berschritten."
 
 msgid "Tenant name cannot contain reserved characters."
 msgstr "Der Name des Mandanten darf keine reservierten Zeichen enthalten."
@@ -1146,8 +1156,8 @@ msgid ""
 "command: keystone-manage db_sync"
 msgstr ""
 "Die Erweiterung %s wurde in den Keystone-Kern verschoben. Daher werden die "
-"zugehörigen Migrationen über die Keystone-Hauptdatenbanksteuerung verwaltet. "
-"Verwenden Sie den Befehl keystone-manage db_sync"
+"zugeh??rigen Migrationen ??ber die Keystone-Hauptdatenbanksteuerung "
+"verwaltet. Verwenden Sie den Befehl keystone-manage db_sync"
 
 msgid ""
 "The 'expires_at' must not be before now. The server could not comply with "
@@ -1175,8 +1185,8 @@ msgid ""
 "The Keystone domain-specific configuration has specified more than one SQL "
 "driver (only one is permitted): %(source)s."
 msgstr ""
-"Die domänenspezifische Keystone-Konfiguration hat mehrere SQL-Treiber "
-"angegeben (nur einer ist zulässig): %(source)s."
+"Die dom??nenspezifische Keystone-Konfiguration hat mehrere SQL-Treiber "
+"angegeben (nur einer ist zul??ssig): %(source)s."
 
 msgid "The action you have requested has not been implemented."
 msgstr "Die von Ihnen angeforderte Aktion wurde nicht implementiert."
@@ -1189,27 +1199,27 @@ msgid ""
 "server does not use PKI tokens otherwise this is the result of "
 "misconfiguration."
 msgstr ""
-"Die Zertifikate, die Sie angefordert haben, sind nicht verfügbar. Es ist "
+"Die Zertifikate, die Sie angefordert haben, sind nicht verf??gbar. Es ist "
 "wahrscheinlich, dass dieser Server keine PKI-Tokens verwendet; andernfalls "
 "ist dies die Folge einer fehlerhaften Konfiguration."
 
 msgid "The configured token provider does not support bind authentication."
 msgstr ""
-"Der konfigurierte Token-Provider unterstützt die Bindungsauthentifizierung "
+"Der konfigurierte Token-Provider unterst??tzt die Bindungsauthentifizierung "
 "nicht."
 
 msgid "The creation of projects acting as domains is not allowed in v2."
 msgstr ""
-"Die Erstellung von Projekten die als Domänen agieren, ist in v2 nicht "
-"zulässig."
+"Die Erstellung von Projekten die als Dom??nen agieren, ist in v2 nicht zul??"
+"ssig."
 
 #, python-format
 msgid ""
 "The password length must be less than or equal to %(size)i. The server could "
 "not comply with the request because the password is invalid."
 msgstr ""
-"Die Kennwortlänge muss kleiner-gleich %(size)i sein. Der Server konnte die "
-"Anforderung nicht erfüllen, da das Kennwort ungültig ist."
+"Die Kennwortl??nge muss kleiner-gleich %(size)i sein. Der Server konnte die "
+"Anforderung nicht erf??llen, da das Kennwort ung??ltig ist."
 
 msgid "The request you have made requires authentication."
 msgstr "Die von Ihnen gestellte Anfrage erfoderdert eine Authentifizierung."
@@ -1228,15 +1238,15 @@ msgstr ""
 msgid "The service you have requested is no longer available on this server."
 msgstr ""
 "Der Service, den Sie angefordert haben, ist auf diesem Server nicht mehr "
-"verfügbar."
+"verf??gbar."
 
 #, python-format
 msgid ""
 "The specified parent region %(parent_region_id)s would create a circular "
 "region hierarchy."
 msgstr ""
-"Die angegebene übergeordnete Region %(parent_region_id)s würde eine "
-"zirkuläre Regionshierarchie erstellen."
+"Die angegebene ??bergeordnete Region %(parent_region_id)s w??rde eine "
+"zirkul??re Regionshierarchie erstellen."
 
 #, python-format
 msgid ""
@@ -1267,13 +1277,13 @@ msgstr ""
 "vorliegt. Es wird angenommen, dass der Fehler beim Client liegt."
 
 msgid "Token belongs to another user"
-msgstr "Token gehört einem anderen Benutzer"
+msgstr "Token geh??rt einem anderen Benutzer"
 
 msgid "Token does not belong to specified tenant."
-msgstr "Token gehört nicht zu angegebenem Nutzer."
+msgstr "Token geh??rt nicht zu angegebenem Nutzer."
 
 msgid "Token version is unrecognizable or unsupported."
-msgstr "Tokenversion ist nicht erkennbar oder wird nicht unterstützt."
+msgstr "Tokenversion ist nicht erkennbar oder wird nicht unterst??tzt."
 
 msgid "Trustee has no delegated roles."
 msgstr "Trustee hat keine beauftragten Rollen."
@@ -1295,7 +1305,7 @@ msgid ""
 "contains option %(option_other)s instead"
 msgstr ""
 "Es wird versucht, Option %(option)s in Gruppe %(group)s zu aktualisieren, "
-"die angegebene Konfiguration enthält jedoch stattdessen Option "
+"die angegebene Konfiguration enth??lt jedoch stattdessen Option "
 "%(option_other)s"
 
 #, python-format
@@ -1310,8 +1320,8 @@ msgid ""
 "Unable to access the keystone database, please check it is configured "
 "correctly."
 msgstr ""
-"Auf die Keystone-Datenbank kann nicht zugegriffen werden, überprüfen Sie, ob "
-"sie ordnungsgemäß konfiguriert ist. "
+"Auf die Keystone-Datenbank kann nicht zugegriffen werden, ??berpr??fen Sie, "
+"ob sie ordnungsgem???? konfiguriert ist. "
 
 #, python-format
 msgid "Unable to consume trust %(trust_id)s, unable to acquire lock."
@@ -1324,8 +1334,8 @@ msgid ""
 "Unable to delete region %(region_id)s because it or its child regions have "
 "associated endpoints."
 msgstr ""
-"Region %(region_id)s kann nicht gelöscht werden, da sie oder ihr "
-"untergeordnete Regionen über zugeordnete Endpunkte verfügen. "
+"Region %(region_id)s kann nicht gel??scht werden, da sie oder ihr "
+"untergeordnete Regionen ??ber zugeordnete Endpunkte verf??gen. "
 
 msgid "Unable to downgrade schema"
 msgstr "Das Schema konnte nicht herabgestuft werden."
@@ -1333,23 +1343,23 @@ msgstr "Das Schema konnte nicht herabgestuft werden."
 #, python-format
 msgid "Unable to find valid groups while using mapping %(mapping_id)s"
 msgstr ""
-"Beim Verwenden der Zuordnung %(mapping_id)s können keine gültigen Gruppen "
+"Beim Verwenden der Zuordnung %(mapping_id)s k??nnen keine g??ltigen Gruppen "
 "gefunden werden"
 
 #, python-format
 msgid "Unable to locate domain config directory: %s"
-msgstr "Domänenkonfigurationsverzeichnis wurde nicht gefunden: %s"
+msgstr "Dom??nenkonfigurationsverzeichnis wurde nicht gefunden: %s"
 
 #, python-format
 msgid "Unable to lookup user %s"
-msgstr "Suche nach Benutzer %s nicht möglich"
+msgstr "Suche nach Benutzer %s nicht m??glich"
 
 #, python-format
 msgid ""
 "Unable to reconcile identity attribute %(attribute)s as it has conflicting "
 "values %(new)s and %(old)s"
 msgstr ""
-"Identitätsattribut %(attribute)s kann nicht abgeglichen werden, da es die "
+"Identit??tsattribut %(attribute)s kann nicht abgeglichen werden, da es die "
 "kollidierenden Werte %(new)s und %(old)s aufweist"
 
 #, python-format
@@ -1375,18 +1385,18 @@ msgid ""
 "%(group_id)s, Project: %(project_id)s, Domain: %(domain_id)s"
 msgstr ""
 "Unerwartete Kombination von Grant-Attributen - Benutzer: %(user_id)s, "
-"Gruppe: %(group_id)s, Projekt: %(project_id)s, Domäne: %(domain_id)s"
+"Gruppe: %(group_id)s, Projekt: %(project_id)s, Dom??ne: %(domain_id)s"
 
 #, python-format
 msgid "Unexpected status requested for JSON Home response, %s"
-msgstr "Unerwarteter Status für JSON-Home-Antwort angefordert, %s"
+msgstr "Unerwarteter Status f??r JSON-Home-Antwort angefordert, %s"
 
 msgid "Unknown Target"
 msgstr "Unbekanntes Ziel"
 
 #, python-format
 msgid "Unknown domain '%(name)s' specified by --domain-name"
-msgstr "Unbekannte Domäne '%(name)s' angegeben durch --domain-name"
+msgstr "Unbekannte Dom??ne '%(name)s' angegeben durch --domain-name"
 
 #, python-format
 msgid "Unknown token version %s"
@@ -1394,24 +1404,25 @@ msgstr "Unbekannte Tokenversion %s"
 
 #, python-format
 msgid "Unregistered dependency: %(name)s for %(targets)s"
-msgstr "Nicht registrierte Abhängigkeit: %(name)s für %(targets)s"
+msgstr "Nicht registrierte Abh??ngigkeit: %(name)s f??r %(targets)s"
 
 msgid "Update of `domain_id` is not allowed."
-msgstr "Das Aktualisieren von `domain_id` ist nicht zulässig. "
+msgstr "Das Aktualisieren von `domain_id` ist nicht zul??ssig. "
 
 msgid "Update of `is_domain` is not allowed."
-msgstr "Das Aktualisieren von 'is_domain' ist nicht zulässig."
+msgstr "Das Aktualisieren von 'is_domain' ist nicht zul??ssig."
 
 msgid "Update of `parent_id` is not allowed."
-msgstr "Das Aktualisieren von 'parent_id' ist nicht zulässig."
+msgstr "Das Aktualisieren von 'parent_id' ist nicht zul??ssig."
 
 msgid "Update of domain_id is only allowed for root projects."
-msgstr "Die Aktualisierung von 'domain_id' ist nur für Rootprojekte zulässig."
+msgstr ""
+"Die Aktualisierung von 'domain_id' ist nur f??r Rootprojekte zul??ssig."
 
 msgid "Update of domain_id of projects acting as domains is not allowed."
 msgstr ""
-"Es ist nicht zulässig, die 'domain_id' von Projekten zu aktualisieren, die "
-"als Domänen agieren."
+"Es ist nicht zul??ssig, die 'domain_id' von Projekten zu aktualisieren, die "
+"als Dom??nen agieren."
 
 msgid "Use a project scoped token when attempting to create a SAML assertion"
 msgstr ""
@@ -1424,18 +1435,18 @@ msgid ""
 "driver will need to be expicitly configured if different than the default "
 "(SQL)."
 msgstr ""
-"Die Verwendung der Identitätstreiberkonfiguration für die automatische "
+"Die Verwendung der Identit??tstreiberkonfiguration f??r die automatische "
 "Konfiguration desselben Zuordnungstreibers ist veraltet. Der "
 "Zuordnungstreiber muss im \"O\"-Release explizit konfiguriert werden, wenn "
 "er sich vom Standardtreiber (SQL) unterscheidet."
 
 #, python-format
 msgid "User %(u_id)s is unauthorized for tenant %(t_id)s"
-msgstr "Benutzer %(u_id)s ist nicht berechtigt für Nutzer %(t_id)s"
+msgstr "Benutzer %(u_id)s ist nicht berechtigt f??r Nutzer %(t_id)s"
 
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
-msgstr "Benutzer %(user_id)s hat keinen Zugriff auf Domäne %(domain_id)s"
+msgstr "Benutzer %(user_id)s hat keinen Zugriff auf Dom??ne %(domain_id)s"
 
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
@@ -1450,14 +1461,15 @@ msgid "User '%(user_id)s' not found in group '%(group_id)s'"
 msgstr "Benutzer '%(user_id)s' nicht gefunden in Gruppe '%(group_id)s'"
 
 msgid "User IDs do not match"
-msgstr "Benutzerkennungen stimmen nicht überein"
+msgstr "Benutzerkennungen stimmen nicht ??berein"
 
 msgid ""
 "User auth cannot be built due to missing either user id, or user name with "
 "domain id, or user name with domain name."
 msgstr ""
 "Benutzerauthentifizierung kann nicht erstellt werden, da entweder Benutzer-"
-"ID oder Benutzername mit Domänen-ID oder Benutzername mit Domänenname fehlt."
+"ID oder Benutzername mit Dom??nen-ID oder Benutzername mit Dom??nenname "
+"fehlt."
 
 #, python-format
 msgid "User is disabled: %s"
@@ -1473,23 +1485,23 @@ msgid "User not found"
 msgstr "Benutzer nicht gefunden"
 
 msgid "User not valid for tenant."
-msgstr "Benutzer nicht gültig für Mandant."
+msgstr "Benutzer nicht g??ltig f??r Mandant."
 
 msgid "User roles not supported: tenant_id required"
-msgstr "Benutzerrollen nicht unterstützt: tenant_id erforderlich"
+msgstr "Benutzerrollen nicht unterst??tzt: tenant_id erforderlich"
 
 #, python-format
 msgid "User type %s not supported"
-msgstr "Benutzertyp %s nicht unterstützt"
+msgstr "Benutzertyp %s nicht unterst??tzt"
 
 msgid "You are not authorized to perform the requested action."
 msgstr ""
-"Sie sind nicht dazu authorisiert, die angeforderte Aktion durchzuführen."
+"Sie sind nicht dazu authorisiert, die angeforderte Aktion durchzuf??hren."
 
 #, python-format
 msgid "You are not authorized to perform the requested action: %(action)s"
 msgstr ""
-"Sie sind nicht berechtigt, die angeforderte Aktion %(action)s auszuführen"
+"Sie sind nicht berechtigt, die angeforderte Aktion %(action)s auszuf??hren"
 
 msgid ""
 "You have tried to create a resource using the admin token. As this token is "
@@ -1497,11 +1509,11 @@ msgid ""
 "to belong to."
 msgstr ""
 "Sie haben versucht, eine Ressourcen mit dem Admin-Token zu erstellen. Da "
-"sich dieses Token nicht innerhalb einer Domäne befindet, müssen Sie explizit "
-"eine Domäne angeben, zu der diese Ressource gehört. "
+"sich dieses Token nicht innerhalb einer Dom??ne befindet, m??ssen Sie "
+"explizit eine Dom??ne angeben, zu der diese Ressource geh??rt. "
 
 msgid "`key_mangler` functions must be callable."
-msgstr "`key_mangler`-Funktionen müssen aufrufbar sein."
+msgstr "`key_mangler`-Funktionen m??ssen aufrufbar sein."
 
 msgid "`key_mangler` option must be a function reference"
 msgstr "Option `key_mangler` muss eine Funktionsreferenz sein"
@@ -1513,21 +1525,21 @@ msgid "auth_type is not Negotiate"
 msgstr "auth_type ist nicht 'Negotiate'"
 
 msgid "authorizing user does not have role required"
-msgstr "Der autorisierte Benutzer verfügt nicht über die erforderliche Rolle"
+msgstr "Der autorisierte Benutzer verf??gt nicht ??ber die erforderliche Rolle"
 
 #, python-format
 msgid "cannot create a project in a branch containing a disabled project: %s"
 msgstr ""
 "kann kein Projekt in einer Niederlassung erstellen, die ein inaktiviertes "
-"Projekt enthält: %s"
+"Projekt enth??lt: %s"
 
 #, python-format
 msgid ""
 "cannot delete an enabled project acting as a domain. Please disable the "
 "project %s first."
 msgstr ""
-"Ein aktiviertes Projekt, das als Domäne agiert, kann nicht gelöscht werden. "
-"Inaktivieren Sie zuerst das Projekt %s."
+"Ein aktiviertes Projekt, das als Dom??ne agiert, kann nicht gel??scht "
+"werden. Inaktivieren Sie zuerst das Projekt %s."
 
 #, python-format
 msgid "group %(group)s"
@@ -1542,18 +1554,18 @@ msgstr ""
 
 #, python-format
 msgid "invalid date format %s"
-msgstr "ungültiges Datumsformat %s"
+msgstr "ung??ltiges Datumsformat %s"
 
 #, python-format
 msgid ""
 "it is not permitted to have two projects acting as domains with the same "
 "name: %s"
 msgstr ""
-"Es ist nicht zulässig, zwei Projekte zu haben, die als Domänen mit demselben "
-"Namen agieren: %s"
+"Es ist nicht zul??ssig, zwei Projekte zu haben, die als Dom??nen mit "
+"demselben Namen agieren: %s"
 
 msgid "only root projects are allowed to act as domains."
-msgstr "Nur Rootprojekte dürfen als Domänen agieren."
+msgstr "Nur Rootprojekte d??rfen als Dom??nen agieren."
 
 #, python-format
 msgid "option %(option)s in group %(group)s"
@@ -1561,26 +1573,26 @@ msgstr "Option %(option)s in Gruppe %(group)s"
 
 msgid "provided consumer key does not match stored consumer key"
 msgstr ""
-"bereitgestellter Konsumentenschlüssel stimmt nicht mit dem gespeicherten "
-"Konsumentenschlüssel überein"
+"bereitgestellter Konsumentenschl??ssel stimmt nicht mit dem gespeicherten "
+"Konsumentenschl??ssel ??berein"
 
 msgid "provided request key does not match stored request key"
 msgstr ""
-"bereitgestellter Anforderungsschlüssel stimmt nicht mit dem gespeicherten "
-"Anforderungsschlüssel überein"
+"bereitgestellter Anforderungsschl??ssel stimmt nicht mit dem gespeicherten "
+"Anforderungsschl??ssel ??berein"
 
 msgid "provided verifier does not match stored verifier"
 msgstr ""
-"bereitgestellte Prüffunktion stimmt nicht mit gespeicherter Prüffunktion "
-"überein"
+"bereitgestellte Pr??ffunktion stimmt nicht mit gespeicherter Pr??ffunktion ??"
+"berein"
 
 msgid "remaining_uses must be a positive integer or null."
 msgstr "remaining_uses muss eine positive Ganzzahl oder null sein."
 
 msgid "remaining_uses must not be set if redelegation is allowed"
 msgstr ""
-"remaining_uses darf nicht festgelegt werden, wenn eine Redelegation zulässig "
-"ist"
+"remaining_uses darf nicht festgelegt werden, wenn eine Redelegation zul??"
+"ssig ist"
 
 #, python-format
 msgid ""
@@ -1588,10 +1600,10 @@ msgid ""
 "%(group_other)s instead"
 msgstr ""
 "Anforderung zur Aktualisierung von Gruppe %(group)s, die angegebene "
-"Konfiguration enthält jedoch stattdessen Gruppe %(group_other)s"
+"Konfiguration enth??lt jedoch stattdessen Gruppe %(group_other)s"
 
 msgid "rescope a scoped token"
-msgstr "Bereich für bereichsorientierten Token ändern"
+msgstr "Bereich f??r bereichsorientierten Token ??ndern"
 
 #, python-format
 msgid "role %s is not defined"
@@ -1624,4 +1636,4 @@ msgid ""
 "validated expected to find %(param_name)r in function signature for "
 "%(func_name)r."
 msgstr ""
-"Validierung erwartete %(param_name)r in Funktionssignatur für %(func_name)r."
+"Validierung erwartete %(param_name)r in Funktionssignatur f??r %(func_name)r."
