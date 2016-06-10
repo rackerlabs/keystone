@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_9a036376",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-10T04:38:02Z",
+      "side": 1,
+      "message": "what\u0027s the motivation for doing this? aside from consistency with the User class? better performance?",
+      "range": {
+        "startLine": 9,
+        "startChar": 61,
+        "endLine": 11,
+        "endChar": 55
+      },
+      "revId": "4b9384dea36755c0dc0256f7392bf8c1e13f6632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
