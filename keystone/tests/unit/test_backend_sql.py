@@ -34,6 +34,8 @@ from keystone.tests import unit
 from keystone.tests.unit.assignment import test_backends as assignment_tests
 from keystone.tests.unit.catalog import test_backends as catalog_tests
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit.identity.backends import (
+    test_sql as identity_sql_tests)
 from keystone.tests.unit.identity import test_backends as identity_tests
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit.policy import test_backends as policy_tests
@@ -139,7 +141,8 @@ class SqlModels(SqlTests):
         cols = (('id', sql.Integer, None),
                 ('user_id', sql.String, 64),
                 ('name', sql.String, 255),
-                ('domain_id', sql.String, 64))
+                ('domain_id', sql.String, 64),
+                ('last_auth_at', sql.DateTime, None))
         self.assertExpectedSchema('local_user', cols)
 
     def test_password_model(self):
@@ -217,6 +220,7 @@ class SqlModels(SqlTests):
 class SqlIdentity(SqlTests,
                   identity_tests.IdentityTests,
                   identity_tests.ShadowUsersTests,
+                  identity_sql_tests.AuthenticatorTests,
                   assignment_tests.AssignmentTests,
                   resource_tests.ResourceTests):
     def test_password_hashed(self):
