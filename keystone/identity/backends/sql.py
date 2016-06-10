@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -21,6 +22,9 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = cfg.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -101,6 +105,8 @@ class Identity(base.IdentityDriverV8):
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if user.get('password') is not None:
+                PasswordHistoryValidator().validate(user['password'], user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -247,3 +253,19 @@ class Identity(base.IdentityDriverV8):
             q.delete(False)
 
             session.delete(ref)
+
+
+class PasswordHistoryValidator(object):
+    def validate(self, password, user_ref):
+        cnt = 0
+        max_cnt = (CONF.security_compliance.unique_last_password_count if
+                   CONF.security_compliance.unique_last_password_count else 0)
+        passwords = sorted(user_ref.local_user.passwords,
+                           key=lambda x: x.created_at, reverse=True)
+        for password_ref in passwords:
+            if cnt >= max_cnt:
+                break
+            elif utils.check_password(password, password_ref.password):
+                detail = _('Invalid password: matches value in history')
+                raise exception.PasswordValidationError(detail=detail)
+            cnt = cnt + 1
