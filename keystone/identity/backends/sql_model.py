@@ -68,6 +68,7 @@ class User(sql.ModelBase, sql.DictBase):
     # password properties
     @hybrid_property
     def password_ref(self):
+        """Return the last past password."""
         if self.local_user and self.local_user.passwords:
             return self.local_user.passwords[-1]
         return None
@@ -78,13 +79,24 @@ class User(sql.ModelBase, sql.DictBase):
             return self.password_ref.password
         return None
 
+    @hybrid_property
+    def password_expires_at(self):
+        if self.password_ref:
+            return self.password_ref.expires_at
+        return None
+
     @password.setter
     def password(self, value):
+        now = datetime.datetime.utcnow()
         if not self.local_user:
             self.local_user = LocalUser()
+        # set all previous passwords to be expired
+        for ref in self.local_user.passwords:
+            if not ref.expires_at or ref.expires_at > now:
+                ref.expires_at = now
         new_password_ref = Password()
         new_password_ref.password = value
-        new_password_ref.created_at = datetime.datetime.utcnow()
+        new_password_ref.created_at = now
         self.local_user.passwords.append(new_password_ref)
 
     @password.expression
