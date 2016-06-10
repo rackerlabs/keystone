@@ -150,3 +150,139 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
             user_ref = session.query(model.User).get(user_id)
             user_ref.last_active_at = last_active_at
             return user_ref
+
+
+class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
+    def test_validate_password_history_with_invalid_password(self):
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=4)
+        user = self._create_user('mypassword1')
+        user['password'] = 'mypassword2'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        user['password'] = 'mypassword3'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        # Attempt to update password matching the 2nd password.
+        user['password'] = 'mypassword2'
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
+
+    def test_validate_password_history_with_valid_password(self):
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=2)
+        first_password = 'mypassword1'
+        user = self._create_user(first_password)
+        user['password'] = 'mypassword2'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        user['password'] = 'mypassword3'
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        # Now you should be able to change the password to the match first
+        # password because the password history only contains the 2nd and 3rd
+        # passwords.
+        user['password'] = first_password
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user['id'],
+                                       password=first_password)
+
+    def test_validate_password_history_with_no_password(self):
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=2)
+        password = None
+        user = self._create_user(password)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertIsNone(user_ref.password)
+        user['password'] = 'mypassword2'
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self._get_user_ref(user['id'])
+        first_password = user_ref.password
+        self.assertIsNotNone(user_ref.password)
+        user['password'] = 'mypassword3'
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertIsNotNone(user_ref.password)
+        second_password = user_ref.password
+        self.assertNotEqual(first_password, second_password)
+
+    def test_disabled_validate_password_history_and_repeat_same_password(self):
+        password = 'samepassword1'
+        user = self._create_user(password)
+        # update the same password and test
+        user['password'] = password
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+        # repeat
+        user['password'] = password
+        user_ret = self.identity_api.update_user(user['id'], user)
+        self.assertEqual(user['id'], user_ret['id'])
+
+    def test_truncate_passwords(self):
+        max_cnt = 2
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=max_cnt)
+        user = self._create_user(uuid.uuid4().hex)
+        self._add_passwords(user, 4)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertEqual(len(user_ref.local_user.passwords), (max_cnt + 1))
+
+    def test_truncate_passwords_when_max_is_default(self):
+        expected_length = 2
+        max_cnt = 1
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=max_cnt)
+        user = self._create_user(uuid.uuid4().hex)
+        self._add_passwords(user, 4)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertEqual(len(user_ref.local_user.passwords), expected_length)
+        # start with multiple passwords and then change max_cnt to one
+        max_cnt = 4
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=max_cnt)
+        self._add_passwords(user, max_cnt)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertEqual(len(user_ref.local_user.passwords), (max_cnt + 1))
+        max_cnt = 1
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=max_cnt)
+        self._add_passwords(user, 1)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertEqual(len(user_ref.local_user.passwords), expected_length)
+
+    def test_truncate_passwords_when_max_is_default_and_no_password(self):
+        expected_length = 1
+        max_cnt = 1
+        self.config_fixture.config(group='security_compliance',
+                                   unique_last_password_count=max_cnt)
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': 'default',
+            'enabled': True,
+        }
+        user = self.identity_api.create_user(user)
+        self._add_passwords(user, 1)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertEqual(len(user_ref.local_user.passwords), expected_length)
+
+    def _create_user(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': 'default',
+            'enabled': True,
+            'password': password
+        }
+        return self.identity_api.create_user(user)
+
+    def _add_passwords(self, user, n):
+        for _ in range(n):
+            user['password'] = uuid.uuid4().hex
+            self.identity_api.update_user(user['id'], user)
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return self.identity_api._get_user(session, user_id)
