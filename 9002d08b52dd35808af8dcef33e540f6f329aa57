@@ -164,6 +164,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_d12bed31",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-10T16:45:36Z",
+      "side": 1,
+      "message": "Nevermind, I\u0027m okay with this",
+      "parentUuid": "7aa08908_437d816d",
+      "range": {
+        "startLine": 820,
+        "startChar": 20,
+        "endLine": 820,
+        "endChar": 26
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_a38c2580",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_failed_attempts_table.py",
         "patchSetId": 7
