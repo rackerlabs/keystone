@@ -69,9 +69,7 @@ class User(sql.ModelBase, sql.DictBase):
     @hybrid_property
     def password_ref(self):
         if self.local_user and self.local_user.passwords:
-            passwords = sorted(self.local_user.passwords,
-                               key=lambda x: x.created_at, reverse=True)
-            return passwords[0]
+            return self.local_user.passwords[-1]
         return None
 
     @hybrid_property
@@ -128,9 +126,12 @@ class LocalUser(sql.ModelBase, sql.DictBase):
                          ondelete='CASCADE'), unique=True)
     domain_id = sql.Column(sql.String(64), nullable=False)
     name = sql.Column(sql.String(255), nullable=False)
-    passwords = orm.relationship('Password', single_parent=True,
+    passwords = orm.relationship('Password',
+                                 single_parent=True,
                                  cascade='all,delete-orphan',
-                                 backref='local_user')
+                                 lazy='subquery',
+                                 backref='local_user',
+                                 order_by='Password.created_at')
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
