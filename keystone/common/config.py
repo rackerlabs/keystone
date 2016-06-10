@@ -1052,10 +1052,12 @@ FILE_OPTIONS = {
     ],
     'security_compliance': [
         cfg.IntOpt('disable_user_account_days_inactive',
-                   default=0,
+                   default=None,
+                   min=1,
                    help='Number of days for which a user can be inactive '
-                        'before the account becomes disabled. Setting the '
-                        'value to 0 disables this feature.'),
+                        'before the account becomes disabled. This feature '
+                        'is disabled by default. Note: this feature is only '
+                        'supported via the SQL backend driver for identity.'),
         cfg.IntOpt('lockout_failure_attempts',
                    default=0,
                    help='Number of times a user can fail login attempts until '
