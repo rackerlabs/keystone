@@ -16,6 +16,24 @@
       "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4d07591c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-06-10T19:18:03Z",
+      "side": 1,
+      "message": "WHile the error reporting is better, think this patch is not a good idea; it is based on too intimiate LDAP knowledge, and Keystone really should not be used to manage LDAP.  I won\u0027t hold it up, but can\u0027t say I\u0027m convinced this is the right approach",
+      "parentUuid": "7aa08908_ca820f00",
+      "revId": "907ee2d15ede024e2b32472fdfb163edc413bbd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
