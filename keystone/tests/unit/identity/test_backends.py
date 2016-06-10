@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 import mock
@@ -20,7 +21,9 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone.common import sql
 from keystone import exception
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
@@ -102,6 +105,31 @@ class IdentityTests(object):
                           context={},
                           user_id=id_,
                           password='password')
+
+    def test_last_auth_date(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        now = datetime.datetime.now()
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertTrue(now.date() >= user_ref.last_auth_at.date())
+
+    def test_last_auth_date_when_disable_inactive_is_zero(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=0)
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertIsNone(user_ref.last_auth_at)
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
 
     def test_create_unicode_user_name(self):
         unicode_name = u'name \u540d\u5b57'

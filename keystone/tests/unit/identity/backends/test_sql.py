@@ -10,13 +10,23 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+import uuid
 
+from oslo_config import cfg
 from oslo_db.sqlalchemy import test_base as db_test
 
 from keystone.common import sql
+from keystone.common import utils
+from keystone import exception
+from keystone.identity.backends import base
 from keystone.identity.backends import sql as sql_backend
+from keystone.identity.backends import sql_model as model
 from keystone.tests.unit.identity.backends import test_base
 from keystone.tests.unit.ksfixtures import database
+
+
+CONF = cfg.CONF
 
 
 class TestIdentityDriver(db_test.DbTestCase,
@@ -53,3 +63,58 @@ class MySQLOpportunisticIdentityDriverTestCase(TestIdentityDriver):
 
 class PostgreSQLOpportunisticIdentityDriverTestCase(TestIdentityDriver):
     FIXTURE = db_test.PostgreSQLOpportunisticFixture
+
+
+class AuthenticatorTests(object):
+    def test_user_disabled_due_to_inactivity(self):
+        password = uuid.uuid4().hex
+        user = self._get_user_dict(password)
+        # create user and set last_auth_at beyond the max
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        last_auth_at = datetime.datetime.utcnow() - datetime.timedelta(days=91)
+        user_create = (
+            self._create_user_and_set_last_auth_at(user, last_auth_at))
+        self.assertRaises(exception.UserDisabled,
+                          sql_backend.Authenticator().authenticate,
+                          user_create['id'],
+                          password)
+        # verify that the user is actually disabled
+        user_found = self._get_user_ref(user_create['id'])
+        self.assertFalse(user_found.enabled)
+
+    def test_user_not_disabled_due_to_inactivity(self):
+        password = uuid.uuid4().hex
+        user = self._get_user_dict(password)
+        # create user and set last_auth_at below the max
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        last_auth_at = (
+            datetime.datetime.utcnow() - datetime.timedelta(days=89))
+        user_create = (
+            self._create_user_and_set_last_auth_at(user, last_auth_at))
+        user_auth = sql_backend.Authenticator().authenticate(user_create['id'],
+                                                             password)
+        self.assertTrue(user_auth['enabled'])
+
+    def _get_user_dict(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': password
+        }
+        return user
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
+
+    def _create_user_and_set_last_auth_at(self, user_dict, last_auth_at):
+        user_dict['id'] = uuid.uuid4().hex
+        user_dict = utils.hash_user_password(user_dict)
+        with sql.session_for_write() as session:
+            user_ref = model.User.from_dict(user_dict)
+            user_ref.last_auth_at = last_auth_at
+            session.add(user_ref)
+            return base.filter_user(user_ref.to_dict())
