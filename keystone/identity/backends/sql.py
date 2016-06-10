@@ -17,10 +17,14 @@ import sqlalchemy
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = keystone.conf.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -101,6 +105,8 @@ class Identity(base.IdentityDriverV8):
     def update_user(self, user_id, user):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if 'password' in user:
+                self._validate_password_history(user['password'], user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -112,6 +118,20 @@ class Identity(base.IdentityDriverV8):
             user_ref.extra = new_user.extra
             return base.filter_user(
                 user_ref.to_dict(include_extra_dict=True))
+
+    def _validate_password_history(self, password, user_ref):
+        max_cnt = CONF.security_compliance.unique_last_password_count
+        # Slice off all of the extra passwords.
+        user_ref.local_user.passwords = (
+            user_ref.local_user.passwords[-max_cnt:])
+        # Validate the new password against the remaining passwords.
+        for password_ref in user_ref.local_user.passwords:
+            if utils.check_password(password, password_ref.password):
+                detail = _('The new password cannot be identical to a '
+                           'previous password. Number of previous '
+                           'passwords: '
+                           '%(message)s') % {'message': max_cnt}
+                raise exception.PasswordValidationError(detail=detail)
 
     def add_user_to_group(self, user_id, group_id):
         with sql.session_for_write() as session:
