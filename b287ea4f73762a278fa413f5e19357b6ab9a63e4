@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_89784391",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-10T01:54:32Z",
+      "side": 1,
+      "message": "I opened a bug report to track this: https://bugs.launchpad.net/keystone/+bug/1591022\n\n  Closes-Bug: 1591022",
+      "revId": "b287ea4f73762a278fa413f5e19357b6ab9a63e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
