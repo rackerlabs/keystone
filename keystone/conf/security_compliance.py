@@ -17,10 +17,12 @@ from keystone.conf import utils
 
 disable_user_account_days_inactive = cfg.IntOpt(
     'disable_user_account_days_inactive',
-    default=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
 Number of days for which a user can be inactive before the account becomes
-disabled. Setting the value to 0 disables this feature.
+disabled. This feature is disabled by default. Note: this feature is only
+supported via the SQL backend driver for identity.
 """))
 
 lockout_failure_attempts = cfg.IntOpt(
