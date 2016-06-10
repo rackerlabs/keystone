@@ -14,6 +14,7 @@
 
 import datetime
 
+from oslo_config import cfg
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
@@ -21,12 +22,15 @@ from sqlalchemy import orm
 from keystone.common import sql
 
 
+CONF = cfg.CONF
+
+
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    enabled = sql.Column(sql.Boolean)
+    _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
     local_user = orm.relationship('LocalUser', uselist=False,
@@ -42,6 +46,8 @@ class User(sql.ModelBase, sql.DictBase):
                                       lazy='subquery',
                                       cascade='all,delete-orphan',
                                       backref='user')
+    created_at = sql.Column(sql.DateTime, nullable=True)
+    last_active_at = sql.Column(sql.Date, nullable=True)
 
     # name property
     @hybrid_property
@@ -122,6 +128,29 @@ class User(sql.ModelBase, sql.DictBase):
     @domain_id.expression
     def domain_id(cls):
         return LocalUser.domain_id
+
+    # enabled property
+    @hybrid_property
+    def enabled(self):
+        if self._enabled:
+            self._enabled = UserEnabledChecker().check(self.id,
+                                                       self.last_active_at,
+                                                       self.created_at)
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, value):
+        # if user was disabled and now enabled, reset last_active_at
+        # note: for create user, _enabled will be None, so specifically
+        # checking for False here
+        if (self._enabled is False and value and
+                CONF.security_compliance.disable_user_account_days_inactive):
+            self.last_active_at = datetime.datetime.utcnow().date()
+        self._enabled = value
+
+    @enabled.expression
+    def enabled(cls):
+        return User._enabled
 
     def to_dict(self, include_extra_dict=False):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
@@ -215,3 +244,22 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
+
+
+class UserEnabledChecker(object):
+    def check(self, user_id, last_active_at, created_at):
+        max_days = CONF.security_compliance.disable_user_account_days_inactive
+        if not last_active_at and created_at:
+            last_active_at = created_at.date()
+        if max_days and last_active_at:
+            now = datetime.datetime.utcnow().date()
+            days_inactive = (now - last_active_at).days
+            if days_inactive >= max_days:
+                self._disable_user(user_id)
+                return False
+        return True
+
+    def _disable_user(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(User).get(user_id)
+            user_ref._enabled = False
