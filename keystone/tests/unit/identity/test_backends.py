@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 import mock
@@ -20,7 +21,9 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone.common import sql
 from keystone import exception
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
@@ -1419,3 +1422,28 @@ class ShadowUsersTests(object):
         self.assertEqual(user_ref.federated_users[0].display_name,
                          new_display_name)
         self.assertEqual(user_dict_create["id"], user_ref.id)
+
+    def test_set_last_active_at(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        now = datetime.datetime.utcnow().date()
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertGreaterEqual(now, user_ref.last_active_at)
+
+    def test_set_last_active_at_when_config_setting_is_none(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=None)
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertIsNone(user_ref.last_active_at)
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
