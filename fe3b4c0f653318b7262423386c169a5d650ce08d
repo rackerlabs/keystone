@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_ed33be11",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-10T11:49:48Z",
+      "side": 0,
+      "message": "suggest you undo this, we should first introduce the JSON schema to make the validation right, then, we can go after the places where they have been done manually.",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 60
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6dd6aec4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-10T11:49:48Z",
+      "side": 0,
+      "message": "think this can be removed too (in another patch - not this one)",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 60
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ad2a568e",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-10T11:49:48Z",
+      "side": 0,
+      "message": "suggest you undo this, we should first introduce the JSON schema to make the validation right, then, we can go after the places where they have been done manually.",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 61
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0dee0a8b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-10T11:49:48Z",
+      "side": 0,
+      "message": "think this can be removed too (in another patch - not this one)",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 61
+      },
+      "revId": "fe3b4c0f653318b7262423386c169a5d650ce08d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_d356e304",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 4

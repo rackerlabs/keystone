@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2d7026dc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-10T11:49:48Z",
+      "side": 1,
+      "message": "undo the changes in _lookup_project and _lookup_domain and keep this tests above as they are",
+      "revId": "0c0edbc4d984e7460ad4999f59a6b8a373b61aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
