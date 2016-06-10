@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -48,14 +50,15 @@ class Identity(base.IdentityDriverV8):
     # Identity interface
     def authenticate(self, user_id, password):
         with sql.session_for_read() as session:
-            user_ref = None
             try:
                 user_ref = self._get_user(session, user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        if not self._check_password(password, user_ref):
+            raise AssertionError(_('Invalid user / password'))
+        elif not user_ref.enabled:
+            raise exception.UserDisabled(user_id=user_id)
+        return base.filter_user(user_ref.to_dict())
 
     # user crud
 
@@ -64,6 +67,7 @@ class Identity(base.IdentityDriverV8):
         user = utils.hash_user_password(user)
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
@@ -72,7 +76,7 @@ class Identity(base.IdentityDriverV8):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
             user_refs = sql.filter_limit_query(model.User, query, hints)
-            return [base.filter_user(x.to_dict()) for x in user_refs]
+        return [base.filter_user(x.to_dict()) for x in user_refs]
 
     def _get_user(self, session, user_id):
         user_ref = session.query(model.User).get(user_id)
@@ -82,8 +86,8 @@ class Identity(base.IdentityDriverV8):
 
     def get_user(self, user_id):
         with sql.session_for_read() as session:
-            return base.filter_user(
-                self._get_user(session, user_id).to_dict())
+            user_ref = self._get_user(session, user_id)
+        return base.filter_user(user_ref.to_dict())
 
     def get_user_by_name(self, user_name, domain_id):
         with sql.session_for_read() as session:
@@ -95,7 +99,7 @@ class Identity(base.IdentityDriverV8):
                 user_ref = query.one()
             except sql.NotFound:
                 raise exception.UserNotFound(user_id=user_name)
-            return base.filter_user(user_ref.to_dict())
+        return base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='user')
     def update_user(self, user_id, user):
