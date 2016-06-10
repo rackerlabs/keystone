@@ -42,6 +42,8 @@ class User(sql.ModelBase, sql.DictBase):
                                       lazy='subquery',
                                       cascade='all,delete-orphan',
                                       backref='user')
+    created_at = sql.Column(sql.DateTime, nullable=True)
+    last_auth_at = sql.Column(sql.DateTime, nullable=True)
 
     # name property
     @hybrid_property
