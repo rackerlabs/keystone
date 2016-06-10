@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import uuid
 
 import mock
@@ -20,7 +21,9 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.common import driver_hints
+from keystone.common import sql
 from keystone import exception
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
@@ -102,6 +105,63 @@ class IdentityTests(object):
                           context={},
                           user_id=id_,
                           password='password')
+
+    def test_last_active_at(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        now = datetime.datetime.utcnow().date()
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertGreaterEqual(now, user_ref.last_active_at)
+
+    def test_last_active_at_when_disable_inactive_config_is_none(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=None)
+        user_ref = self.identity_api.authenticate(
+            context={},
+            user_id=self.user_sna['id'],
+            password=self.user_sna['password'])
+        user_ref = self._get_user_ref(user_ref['id'])
+        self.assertIsNone(user_ref.last_active_at)
+
+    def test_last_active_at_after_create_user_and_update_enabled(self):
+        self.config_fixture.config(group='security_compliance',
+                                   disable_user_account_days_inactive=90)
+        user_dict = (
+            unit.new_user_ref(domain_id=CONF.identity.default_domain_id))
+        del user_dict['id']
+        del user_dict['enabled']
+        # create user
+        user = self.identity_api.create_user(user_dict)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertTrue(user_ref.enabled)
+        self.assertIsNone(user_ref.last_active_at)
+        # set enabled and test
+        user['enabled'] = True
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertTrue(user_ref.enabled)
+        self.assertIsNone(user_ref.last_active_at)
+        # set disabled and test
+        user['enabled'] = False
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertFalse(user_ref.enabled)
+        self.assertIsNone(user_ref.last_active_at)
+        # re-enable user, last_active_at should now be set
+        user['enabled'] = True
+        self.identity_api.update_user(user['id'], user)
+        user_ref = self._get_user_ref(user['id'])
+        self.assertTrue(user_ref.enabled)
+        now = datetime.datetime.utcnow().date()
+        self.assertGreaterEqual(now, user_ref.last_active_at)
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
 
     def test_create_unicode_user_name(self):
         unicode_name = u'name \u540d\u5b57'
