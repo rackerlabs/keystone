@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1f29e289",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-11T21:51:15Z",
+      "side": 1,
+      "message": "Please move this out of the try statement. We\u0027re using \u0027try\u0027 for cache invalidate calls only, while the \u0027finally\u0027 statement is only for audit calls.\n\nIt\u0027s a matter of exception sensitive for cache/audit changes, as the commit message says.",
+      "range": {
+        "startLine": 473,
+        "startChar": 12,
+        "endLine": 473,
+        "endChar": 70
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7f574602",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-11T21:51:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 478,
+        "startChar": 12,
+        "endLine": 478,
+        "endChar": 74
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1f50c209",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-11T21:51:15Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 800,
+        "startChar": 12,
+        "endLine": 802,
+        "endChar": 66
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
