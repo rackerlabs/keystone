@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_b8c192e6",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T19:33:22Z",
+      "side": 1,
+      "message": "++ that\u0027s a good point. Pruning the old passwords would be a good idea.",
+      "parentUuid": "7aa08908_fdf4acf1",
+      "revId": "c0e2ea8d95b593611219d2da8accb9470bb72693",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c24d8b73",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
