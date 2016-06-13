@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_fd84acd3",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T19:06:43Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this. I\u0027d actually like to see the schema here be more context sensitive to what we expect for this call.",
+      "parentUuid": "7aa08908_5dab4e75",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_653b0cd2",
         "filename": "keystone/auth/schema.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-13T14:57:43Z",
       "side": 1,
       "message": "Does this break if we reuse a schema from keystone/resource/schema.py? There are some additional attributes included in that schema, but if we could use a singe `_project_properties` schema instead of two, it would be less code to maintain in the long term.\n\nMaybe we are getting to the point where the `*_properties` dictionaries need to be in a more common place if we plan on reusing them.",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1dced82c",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T19:06:43Z",
+      "side": 1,
+      "message": "See my comment above",
+      "parentUuid": "7aa08908_653b0cd2",
       "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
