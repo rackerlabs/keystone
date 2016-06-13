@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_eb4a2d82",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 67
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:54:28Z",
+      "side": 1,
+      "message": "Is the number of stored passwords configurable? As an admin I want to be able to set the number of previous passwords a user can\u0027t reuse.",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8b6609b9",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
         "patchSetId": 67
