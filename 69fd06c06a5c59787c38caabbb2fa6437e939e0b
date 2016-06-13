@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_f35fb80c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 2660,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T20:59:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_f0ae782c",
+      "range": {
+        "startLine": 2660,
+        "startChar": 8,
+        "endLine": 2660,
+        "endChar": 54
+      },
+      "revId": "69fd06c06a5c59787c38caabbb2fa6437e939e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_907c54ed",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 51
@@ -59,6 +83,24 @@
       "writtenOn": "2016-06-08T13:08:14Z",
       "side": 1,
       "message": "nice! I\u0027d like to see another testcase to make sure it is working for the groups use case:\n\n1. create project1 and role1\n2. create group1\n3. assign role1 to group1 at project1\n4. authenticate via saml and get a user_id\n5. get auth projects\n6. get federation projects\n7. compare\n\nFor this, you would need to be using a mapping that creates a user in a certain group.",
+      "revId": "69fd06c06a5c59787c38caabbb2fa6437e939e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d35c3c1b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 2689,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T20:59:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_907c54ed",
       "revId": "69fd06c06a5c59787c38caabbb2fa6437e939e0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
