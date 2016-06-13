@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2c3f28b5",
+        "filename": "keystone/common/sql/migrate_repo/versions/105_add_last_auth_date_column.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:56:46Z",
+      "side": 1,
+      "message": "Random question - this means that we won\u0027t be mirroring last_auth_at for shadowed users at all. Which should be fine because this is a PCI thing and if someone is already using an Identity Provider or LDAP somewhere, chances are they should just use that for PCI anyway (just thinking out loud).",
+      "revId": "9512681ba4333e03f780f4ac7fbe4657faf4ed39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2ce56808",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:56:46Z",
+      "side": 1,
+      "message": "Couldn\u0027t this if/else just check that the date_after is always greater than the user_ref.local_user.last_auth_at.date()?",
+      "revId": "9512681ba4333e03f780f4ac7fbe4657faf4ed39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
