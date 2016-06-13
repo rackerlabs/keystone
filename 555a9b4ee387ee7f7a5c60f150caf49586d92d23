@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_3683ee57",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2450,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-13T21:25:42Z",
+      "side": 1,
+      "message": "this needs to be actual_implied_ids",
+      "range": {
+        "startLine": 2450,
+        "startChar": 52,
+        "endLine": 2450,
+        "endChar": 77
+      },
+      "revId": "555a9b4ee387ee7f7a5c60f150caf49586d92d23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
