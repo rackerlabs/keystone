@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_29aefa2d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:40:47Z",
+      "side": 1,
+      "message": "This would technically all still work as expected regardless of it being within the try/finally, I think. In the event something happens during the delete_project_assignments() call that raises an exception an audit notification will still be sent before the exception is raised (at least that\u0027s what I understand from [0]). \n\nI agree with the organization but I think I\u0027d be fine with it happening in a separate patch.\n\n[0] https://docs.python.org/3/tutorial/errors.html#defining-clean-up-actions",
+      "parentUuid": "7aa08908_1f29e289",
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_7f574602",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
