@@ -16,6 +16,23 @@
       "revId": "28f778827e73811190572c0e67200d66f4490a13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8beba9db",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_mapping_rules.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:43:12Z",
+      "side": 1,
+      "message": "For negative tests it would be nice to have the failure expressed in a test naming convention: \n\n    def test_mapping_rules_create_without_mandatory_attributes_fails(self):",
+      "revId": "28f778827e73811190572c0e67200d66f4490a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
