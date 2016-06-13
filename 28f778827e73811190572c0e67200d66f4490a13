@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_d3d55ce5",
+        "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-13T21:17:35Z",
+      "side": 1,
+      "message": "It seems like the base client should be doing all the JSON handling.",
+      "revId": "28f778827e73811190572c0e67200d66f4490a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f31df8be",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_mapping_rules.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-13T21:17:35Z",
+      "side": 1,
+      "message": "nit/aside: I\u0027ve seen these methods made private elsewhere in our code, and that makes no sense to me -- why should this be a private method? If this were written as a native part of unittest, the test framework that we\u0027re extending here, then it would be named something like:\n\n  assertValidMappingRules",
+      "revId": "28f778827e73811190572c0e67200d66f4490a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8beba9db",
         "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_mapping_rules.py",
         "patchSetId": 12
@@ -30,6 +64,23 @@
       "writtenOn": "2016-06-13T15:43:12Z",
       "side": 1,
       "message": "For negative tests it would be nice to have the failure expressed in a test naming convention: \n\n    def test_mapping_rules_create_without_mandatory_attributes_fails(self):",
+      "revId": "28f778827e73811190572c0e67200d66f4490a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b3037041",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_mapping_rules.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-13T21:17:35Z",
+      "side": 1,
+      "message": "This would be a stronger comparison if you were comparing the result of a subsequent get_mapping_table() call to the expected mapping_ref as well.",
       "revId": "28f778827e73811190572c0e67200d66f4490a13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
