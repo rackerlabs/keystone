@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_f0732e4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-13T21:04:55Z",
+      "side": 1,
+      "message": "No, I believe David is asking you to remove this logging at all , not the mention to it in the commit message :)",
+      "parentUuid": "7aa08908_a5b6943b",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c2091697",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
