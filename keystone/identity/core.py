@@ -577,6 +577,7 @@ class Manager(manager.Manager):
         return (driver is not self.driver or not driver.generates_uuids() or
                 not driver.is_domain_aware())
 
+    @MEMOIZE
     def _set_domain_id_and_mapping_for_single_ref(self, ref, domain_id,
                                                   driver, entity_type, conf):
         LOG.debug('Local ID: %s', ref['id'])

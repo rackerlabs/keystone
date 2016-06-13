@@ -442,6 +442,40 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'user': user})
         self.assertValidUserResponse(r, user)
 
+    @unit.skip_if_cache_disabled('identity')
+    def test_list_users_domain_mapping_cache(self):
+        user = unit.new_user_ref(domain_id=self.domain['id'])
+        user = self.identity_api.create_user(user)
+        resource_url = '/users'
+        r = self.get(resource_url)
+        self.assertValidUserListResponse(r, ref=user,
+                                         resource_url=resource_url)
+
+    @unit.skip_if_cache_disabled('identity')
+    def test_user_domain_mapping_cache(self):
+        local_id_user = unit.new_user_ref(domain_id=self.domain['id'])
+        user1 = self.identity_api.create_user(local_id_user)
+        user2 = self.identity_api.get_user_by_name(local_id_user['name'],
+                                                   self.domain['id'])
+        r = self.get('/users/%(user_id)s' % {'user_id': user1['id']})
+        self.assertValidUserResponse(r, ref=user2)
+
+    @unit.skip_if_cache_disabled('identity')
+    def test_domain_mapping_cache_after_domain_id_updated(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = self.identity_api.create_user(user)
+        r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
+        self.assertValidUserResponse(r, ref=user)
+        self.config_fixture.config(domain_id_immutable=False)
+        user['domain_id'] = self.domain['id']
+        r = self.patch('/users/%(user_id)s' % {'user_id': user['id']},
+                       body={'user': user})
+        self.assertValidUserResponse(r, ref=user)
+        resource_url = '/users'
+        r = self.get(resource_url)
+        self.assertValidUserListResponse(r, ref=user,
+                                         resource_url=resource_url)
+
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
 
