@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_89bbae0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:22:52Z",
+      "side": 1,
+      "message": "nit: remove `is seeing` since it\u0027s duplicated",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c2e2b6d4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_c93776ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:22:52Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7aa08908_c2e2b6d4",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c2091697",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -47,6 +82,24 @@
       "writtenOn": "2016-06-13T14:48:12Z",
       "side": 1,
       "message": "Since this really isn\u0027t a bug I don\u0027t think a backport patch would be accepted.",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_694f6234",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T17:22:52Z",
+      "side": 1,
+      "message": "++ we could probably remove this bit of information.",
+      "parentUuid": "7aa08908_c2091697",
       "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
