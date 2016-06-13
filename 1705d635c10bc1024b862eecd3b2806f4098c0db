@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c2e2b6d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T14:48:12Z",
+      "side": 1,
+      "message": "Since we don\u0027t support eventlet anymore I think you should just remove reference to it.",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c2091697",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T14:48:12Z",
+      "side": 1,
+      "message": "Since this really isn\u0027t a bug I don\u0027t think a backport patch would be accepted.",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
