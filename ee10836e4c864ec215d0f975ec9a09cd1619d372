@@ -16,6 +16,24 @@
       "revId": "ee10836e4c864ec215d0f975ec9a09cd1619d372",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d8d3be36",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T19:20:33Z",
+      "side": 1,
+      "message": "The cache key here won\u0027t cache across processes. You should only memoize a function that accepts data arguments. I think driver and conf are a no go here.",
+      "parentUuid": "7aa08908_967bd0bd",
+      "revId": "ee10836e4c864ec215d0f975ec9a09cd1619d372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
