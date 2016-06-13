@@ -41,6 +41,9 @@ def load_backends():
     cache.configure_cache(region=revoke.REVOKE_REGION)
     cache.apply_invalidation_patch(region=revoke.REVOKE_REGION,
                                    region_name=revoke.REVOKE_REGION.name)
+    cache.configure_cache(region=identity.ID_MAPPING_REGION)
+    cache.apply_invalidation_patch(region=identity.ID_MAPPING_REGION,
+                                   region_name=identity.ID_MAPPING_REGION.name)
 
     # Ensure that the identity driver is created before the assignment manager
     # and that the assignment driver is created before the resource manager.
