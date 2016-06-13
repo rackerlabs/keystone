@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_183c34c7",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:24:39Z",
+      "side": 1,
+      "message": "Why not make all of these public except _build_path()?",
+      "revId": "23c23fcbf34cf6043f0037eb1c61657a4295d2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_385db015",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:24:39Z",
+      "side": 1,
+      "message": "Should we use http_client here? We use it in most other status assertions in keystone.\n\n    from six.moves import http_client\n    ...\n    self.expected_success(http_client.OK, resp.status)",
+      "revId": "23c23fcbf34cf6043f0037eb1c61657a4295d2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
