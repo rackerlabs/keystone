@@ -156,6 +156,24 @@
       "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f1633e18",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:28:12Z",
+      "side": 1,
+      "message": "Should be good enough for this requirement.",
+      "parentUuid": "7aa08908_f15e9ee7",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
