@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_967bd0bd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:09:14Z",
+      "side": 1,
+      "message": "What if the entity is updated? Shouldn\u0027t this be invalidated?",
+      "revId": "ee10836e4c864ec215d0f975ec9a09cd1619d372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
