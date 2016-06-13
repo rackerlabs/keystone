@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f373384c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-13T21:08:28Z",
+      "side": 1,
+      "message": "As soon as a commit message includes the word \"also,\" that\u0027s a red flag that the commit is too big. In fact, there are a lot of substantial changes in this patch which would have been much easier to review as individual patches. All together, they\u0027re confusing to review.",
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_70573e5a",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-13T21:08:28Z",
+      "side": 1,
+      "message": "Where is the rest of the trust API documentation?\n\n  https://github.com/openstack/keystone-specs/blob/master/api/v3/identity-api-v3-os-trust-ext.rst",
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
