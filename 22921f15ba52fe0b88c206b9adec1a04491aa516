@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f62694b8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:03:47Z",
+      "side": 1,
+      "message": "nit: this could probably be done by the PCI documentation we\u0027ll add but we could say that equivalents for this in LDAP will be specific to the LDAP implementation you choose to integrate with keystone.",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_36c77c99",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:03:47Z",
+      "side": 1,
+      "message": "nit: this might read different depending on which perspective you use, because the message is going to output like: \n\n    The user account is disabled: f66b45207f7c4d00abc3a03c2e795111\n\nThe way the message reads makes it seem like f66b45207f7c4d00abc3a03c2e795111 is the ID of the account, not the user.\n\nMaybe we could do something like: \n\n    The account for user f66b45207f7c4d00abc3a03c2e795111 has been disabled.",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b6eeccea",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:03:47Z",
+      "side": 1,
+      "message": "nit: are the returns needed since the method has no more statements? The return would essentially be the default behavior in this case.",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_16b6c0f8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:03:47Z",
+      "side": 1,
+      "message": "nit: same comment here.",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d6943838",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T16:03:47Z",
+      "side": 1,
+      "message": "Should `last_auth_at` also be updated when a user validates a token?",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
