@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_8848cfb4",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:29:46Z",
+      "side": 1,
+      "message": "Oh - interesting... So we only do this because RestClient also has delete(), get(), patch(), put() methods.",
+      "parentUuid": "7aa08908_388e50d0",
+      "revId": "23c23fcbf34cf6043f0037eb1c61657a4295d2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_385db015",
         "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
         "patchSetId": 15
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "++\n\nare you ok with this being fixed in a follow up patch?",
       "parentUuid": "7aa08908_385db015",
+      "revId": "23c23fcbf34cf6043f0037eb1c61657a4295d2b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_48d9c7f2",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:29:46Z",
+      "side": 1,
+      "message": "Sure - we can do it in a follow on patch.",
+      "parentUuid": "7aa08908_18b27494",
       "revId": "23c23fcbf34cf6043f0037eb1c61657a4295d2b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
