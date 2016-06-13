@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_7f69d48b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T18:18:19Z",
+      "side": 1,
+      "message": "Do we literally want --prior-role-id-- or the actual role id?",
+      "revId": "3870f611160f50e366044562a46f18e4e01e3e73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
