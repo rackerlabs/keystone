@@ -16,6 +16,40 @@
       "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_653b0cd2",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:57:43Z",
+      "side": 1,
+      "message": "Does this break if we reuse a schema from keystone/resource/schema.py? There are some additional attributes included in that schema, but if we could use a singe `_project_properties` schema instead of two, it would be less code to maintain in the long term.\n\nMaybe we are getting to the point where the `*_properties` dictionaries need to be in a more common place if we plan on reusing them.",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_226a9aed",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:57:43Z",
+      "side": 1,
+      "message": "When would jsonschema not be used to validate an auth request? If we have jsonschema available for validating things - shouldn\u0027t we always be using it?",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
