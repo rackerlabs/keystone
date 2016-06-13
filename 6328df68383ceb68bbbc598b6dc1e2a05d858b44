@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5dab4e75",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-13T14:10:41Z",
+      "side": 1,
+      "message": "Please reuse the schemas that have already been created here: https://github.com/openstack/keystone/blob/master/keystone/resource/schema.py#L17\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/schema.py#L50\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/schema.py#L25",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
