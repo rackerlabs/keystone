@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1fd9b0f3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T18:26:51Z",
+      "side": 1,
+      "message": "So, this is essentially a lazy migration because we are allowing last_auth_at to be nullable in the migration but it should never be null once someone authenticates. That will always be the case, right? Do we ever have the need to change last_auth_at to not be nullable in a release or two?",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ffe304d6",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T18:26:51Z",
+      "side": 1,
+      "message": "++ thanks!",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
