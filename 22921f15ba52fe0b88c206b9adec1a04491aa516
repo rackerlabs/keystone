@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_3106661c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_36c77c99",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b6eeccea",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 15
@@ -47,6 +65,24 @@
       "writtenOn": "2016-06-13T16:03:47Z",
       "side": 1,
       "message": "nit: are the returns needed since the method has no more statements? The return would essentially be the default behavior in this case.",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b148965d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_b6eeccea",
       "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_f174de9c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:15:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_16b6c0f8",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_d6943838",
         "filename": "keystone/tests/unit/identity/backends/test_sql.py",
         "patchSetId": 15
@@ -81,6 +135,24 @@
       "writtenOn": "2016-06-13T16:03:47Z",
       "side": 1,
       "message": "Should `last_auth_at` also be updated when a user validates a token?",
+      "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f15e9ee7",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:15:42Z",
+      "side": 1,
+      "message": "Would add some complexity; my preference would be to only base this on the last password authentication. However, let me know if you feel strongly otherwise.",
+      "parentUuid": "7aa08908_d6943838",
       "revId": "22921f15ba52fe0b88c206b9adec1a04491aa516",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
