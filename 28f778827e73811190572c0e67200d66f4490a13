@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_a855cb1e",
+        "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:38:36Z",
+      "side": 1,
+      "message": "Same comment here about using http_client for status codes.\n\n    from six.moves import http_client\n    ...\n    self.expected_status(http_client.OK, resp.status)\n\nWe can do this in a follow on patch and get all of these at once.",
+      "revId": "28f778827e73811190572c0e67200d66f4490a13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
