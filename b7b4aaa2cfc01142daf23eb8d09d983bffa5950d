@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2228dde1",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:04:55Z",
+      "side": 1,
+      "message": "I wonder if we should use the http_client library here like we do in other places in keystone [0].\n\n    self.expected_success(http_client.CREATED, resp.status)\n\nThis is something we should do in a separate patch since it would need to be applied to other instances outside the scope of this patch (I\u0027m just typing out-loud and commenting here so we don\u0027t forget about it).\n\n[0] https://github.com/openstack/keystone/blob/3ff204a414f12555750770ab500eef706329f80a/keystone/tests/unit/test_v3_auth.py#L770",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c2b8f977",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:04:55Z",
+      "side": 1,
+      "message": "This seems like something we can do with jsonschema. Kind of similar to the token response validation that we do in our unit tests [0].\n\n[0] https://github.com/openstack/keystone/blob/3ff204a414f12555750770ab500eef706329f80a/keystone/tests/unit/test_v3.py#L686-L693",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7d53aa17",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:04:55Z",
+      "side": 1,
+      "message": "These are all successful tests, right? None of these are negative tests? Maybe we could add the outcome of the test as a naming convention to the tests.",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
