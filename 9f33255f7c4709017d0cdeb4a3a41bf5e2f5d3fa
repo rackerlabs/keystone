@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_13b3679b",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T19:59:23Z",
+      "side": 1,
+      "message": "++ to consistency",
+      "parentUuid": "7aa08908_537def1a",
+      "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f0093196",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -102,6 +120,23 @@
       "side": 1,
       "message": "actually, we do now, the proposal bot is being removed :(",
       "parentUuid": "7aa08908_f0093196",
+      "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4e3b84d1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T19:59:23Z",
+      "side": 1,
+      "message": "Couldn\u0027t we also add a deprecation message here - https://github.com/openstack/keystone/blob/3ff204a414f12555750770ab500eef706329f80a/keystone/common/request.py#L45-L52 ?",
       "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
