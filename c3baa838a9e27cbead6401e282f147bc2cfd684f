@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_76ad7683",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-13T21:39:06Z",
+      "side": 1,
+      "message": "I thought it might be best to try to clean up the assignments and credentials before sending the audit notification, in case there might be a race condition with something seeing the audit notification and then coming and reading the assignments/credentials. If we don\u0027t think that\u0027s a valid concern, I could certainly move those 3 lines out after this try/finally clause, and put the delete_project_assignments in a try block with the assignments invalidate in a corresponding finally block. I\u0027m just not sure which would be better.",
+      "parentUuid": "7aa08908_7f574602",
+      "range": {
+        "startLine": 478,
+        "startChar": 12,
+        "endLine": 478,
+        "endChar": 74
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1f50c209",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
@@ -77,6 +101,30 @@
       "writtenOn": "2016-06-11T21:51:15Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 800,
+        "startChar": 12,
+        "endLine": 802,
+        "endChar": 66
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_160a328a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-13T21:39:06Z",
+      "side": 1,
+      "message": "similarly, I thought we\u0027d probably want to try to clean up everything about the domain before sending the audit notification, to avoid potential race conditions as described above. But as I said above, I\u0027m not certain whether that\u0027s a valid concern or not. If we think it\u0027s not, I\u0027d be happy to move it. I\u0027ll leave things this way until/unless I heard that\u0027s not a concern.",
+      "parentUuid": "7aa08908_1f50c209",
       "range": {
         "startLine": 800,
         "startChar": 12,
