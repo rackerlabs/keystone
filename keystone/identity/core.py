@@ -19,6 +19,7 @@ import os
 import threading
 import uuid
 
+from oslo_cache import core as oslo_cache
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
@@ -44,6 +45,10 @@ CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 MEMOIZE = cache.get_memoization_decorator(group='identity')
+
+ID_MAPPING_REGION = oslo_cache.create_region()
+MEMOIZE_ID_MAPPING = cache.get_memoization_decorator(group='identity',
+                                                     region=ID_MAPPING_REGION)
 
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'
@@ -1282,6 +1287,31 @@ class MappingManager(manager.Manager):
 
     def __init__(self):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
+
+    @MEMOIZE_ID_MAPPING
+    def get_public_id(self, local_entity):
+        return self.driver.get_public_id(local_entity)
+
+    @MEMOIZE_ID_MAPPING
+    def get_id_mapping(self, public_id):
+        return self.driver.get_id_mapping(public_id)
+
+    def create_id_mapping(self, local_entity, public_id=None):
+        public_id = self.driver.create_id_mapping(local_entity, public_id)
+        if MEMOIZE_ID_MAPPING.should_cache(public_id):
+            self.get_public_id.set(public_id, self, local_entity)
+            self.get_id_mapping.set(local_entity, self, public_id)
+        return public_id
+
+    def delete_id_mapping(self, public_id):
+        self.driver.delete_id_mapping(public_id)
+        local_entity = self.get_id_mapping.get(self, public_id)
+        self.get_public_id.invalidate(self, local_entity)
+        self.get_id_mapping.invalidate(self, public_id)
+
+    def purge_mappings(self, purge_filter):
+        self.driver.purge_mappings(purge_filter)
+        ID_MAPPING_REGION.invalidate()
 
 
 @versionutils.deprecated(
