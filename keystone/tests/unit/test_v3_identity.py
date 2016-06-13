@@ -90,7 +90,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/users',
             body={'user': ref})
-        return self.assertValidUserResponse(r, ref)
+        return self.assertValidUserResponse(r, ref=ref)
 
     def test_create_user_without_domain(self):
         """Call ``POST /users`` without specifying domain.
@@ -117,7 +117,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             password=user['password'],
             domain_id=domain['id'])
         r = self.post('/users', body={'user': ref_nd}, auth=auth)
-        self.assertValidUserResponse(r, ref)
+        self.assertValidUserResponse(r, ref=ref)
 
         # Now try the same thing without a domain token - which should fail
         ref = unit.new_user_ref(domain_id=domain['id'])
@@ -139,7 +139,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             self.assertTrue(mock_dep.called)
 
         ref['domain_id'] = CONF.identity.default_domain_id
-        return self.assertValidUserResponse(r, ref)
+        self.assertValidUserResponse(r, ref=ref)
 
     def test_create_user_with_admin_token_and_domain(self):
         """Call ``POST /users`` with admin token and domain id."""
@@ -178,7 +178,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/users',
             body={'user': user})
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
         user['id'] = r.json['user']['id']
 
         # Query strings are not normalized: so we get all users back (like
@@ -200,7 +200,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertEqual(domain1['id'], r.json['user']['domain_id'])
         # (move this attribute back so we can use assertValidUserResponse)
         user['domain_id'] = user.pop('domain-id')
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
         user['id'] = r.json['user']['id']
 
         # If we try updating the user's 'domain_id' by specifying a
@@ -212,7 +212,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertEqual(domain2['id'], r.json['user']['domain-id'])
         self.assertEqual(user['domain_id'], r.json['user']['domain_id'])
         self.assertNotEqual(domain2['id'], user['domain_id'])
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
 
     def test_create_user_bad_request(self):
         """Call ``POST /users``."""
@@ -297,7 +297,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         resource_url = '/users/%(user_id)s' % {
             'user_id': self.user['id']}
         r = self.get(resource_url)
-        self.assertValidUserResponse(r, self.user)
+        self.assertValidUserResponse(r, ref=self.user)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_get_user_with_default_project(self):
@@ -306,7 +306,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                                  project_id=self.project_id)
         user = self.identity_api.create_user(user)
         r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
 
     def test_add_user_to_group(self):
         """Call ``PUT /groups/{group_id}/users/{user_id}``."""
@@ -389,7 +389,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body={'user': user})
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
 
     def test_admin_password_reset(self):
         # bootstrap a user as admin
@@ -440,7 +440,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user})
-        self.assertValidUserResponse(r, user)
+        self.assertValidUserResponse(r, ref=user)
 
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
