@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_13d6c44e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2453,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-13T21:02:28Z",
+      "side": 1,
+      "message": "This could be replaced with assertItemsEqual(..)",
+      "range": {
+        "startLine": 2450,
+        "startChar": 8,
+        "endLine": 2453,
+        "endChar": 56
+      },
+      "revId": "ff748037748aacefc098bf4a879617c0cb658a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
