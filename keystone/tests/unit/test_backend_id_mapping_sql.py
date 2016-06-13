@@ -102,11 +102,14 @@ class SqlIDMapping(test_backend_sql.SqlTests):
 
         # Create another mappings, this time specifying a public ID to use
         new_public_id = uuid.uuid4().hex
+        local_entity3 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id2,
+                         'entity_type': mapping.EntityType.USER}
         public_id3 = self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainB['id'], 'local_id': local_id2,
-             'entity_type': mapping.EntityType.USER},
-            public_id=new_public_id)
+            local_entity3, public_id=new_public_id)
         self.assertEqual(new_public_id, public_id3)
+        self.assertEqual(new_public_id,
+                         self.id_mapping_api.get_public_id(local_entity3))
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings + 3))
 
@@ -115,6 +118,9 @@ class SqlIDMapping(test_backend_sql.SqlTests):
         self.id_mapping_api.delete_id_mapping(public_id1)
         self.id_mapping_api.delete_id_mapping(public_id2)
         self.id_mapping_api.delete_id_mapping(public_id3)
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity1))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity2))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity3))
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings))
 
@@ -134,6 +140,8 @@ class SqlIDMapping(test_backend_sql.SqlTests):
                         matchers.HasLength(initial_mappings + 1))
         self.assertEqual(
             public_id, self.id_mapping_api.get_public_id(local_entity))
+        self.id_mapping_api.delete_id_mapping(public_id)
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity))
 
     def test_delete_public_id_is_silent(self):
         # Test that deleting an invalid public key is silent
@@ -148,21 +156,27 @@ class SqlIDMapping(test_backend_sql.SqlTests):
         local_id5 = uuid.uuid4().hex
 
         # Create five mappings,two in domainA, three in domainB
-        self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainA['id'], 'local_id': local_id1,
-             'entity_type': mapping.EntityType.USER})
-        self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainA['id'], 'local_id': local_id2,
-             'entity_type': mapping.EntityType.USER})
-        public_id3 = self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainB['id'], 'local_id': local_id3,
-             'entity_type': mapping.EntityType.GROUP})
-        public_id4 = self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainB['id'], 'local_id': local_id4,
-             'entity_type': mapping.EntityType.USER})
-        public_id5 = self.id_mapping_api.create_id_mapping(
-            {'domain_id': self.domainB['id'], 'local_id': local_id5,
-             'entity_type': mapping.EntityType.USER})
+        local_entity1 = {'domain_id': self.domainA['id'],
+                         'local_id': local_id1,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity2 = {'domain_id': self.domainA['id'],
+                         'local_id': local_id2,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity3 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id3,
+                         'entity_type': mapping.EntityType.GROUP}
+        local_entity4 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id4,
+                         'entity_type': mapping.EntityType.USER}
+        local_entity5 = {'domain_id': self.domainB['id'],
+                         'local_id': local_id5,
+                         'entity_type': mapping.EntityType.USER}
+
+        self.id_mapping_api.create_id_mapping(local_entity1)
+        self.id_mapping_api.create_id_mapping(local_entity2)
+        public_id3 = self.id_mapping_api.create_id_mapping(local_entity3)
+        public_id4 = self.id_mapping_api.create_id_mapping(local_entity4)
+        public_id5 = self.id_mapping_api.create_id_mapping(local_entity5)
 
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings + 5))
@@ -172,6 +186,8 @@ class SqlIDMapping(test_backend_sql.SqlTests):
             {'domain_id': self.domainA['id']})
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings + 3))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity1))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity2))
         self.id_mapping_api.get_id_mapping(public_id3)
         self.id_mapping_api.get_id_mapping(public_id4)
         self.id_mapping_api.get_id_mapping(public_id5)
@@ -181,6 +197,7 @@ class SqlIDMapping(test_backend_sql.SqlTests):
             {'entity_type': mapping.EntityType.GROUP})
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings + 2))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity3))
         self.id_mapping_api.get_id_mapping(public_id4)
         self.id_mapping_api.get_id_mapping(public_id5)
 
@@ -190,9 +207,11 @@ class SqlIDMapping(test_backend_sql.SqlTests):
              'entity_type': mapping.EntityType.USER})
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings + 1))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity4))
         self.id_mapping_api.get_id_mapping(public_id5)
 
         # Purge mappings the remaining mappings
         self.id_mapping_api.purge_mappings({})
         self.assertThat(mapping_sql.list_id_mappings(),
                         matchers.HasLength(initial_mappings))
+        self.assertIsNone(self.id_mapping_api.get_public_id(local_entity5))

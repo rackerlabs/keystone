@@ -12,10 +12,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_cache import core as oslo_cache
+
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.identity.mapping_backends import base
 from keystone.identity.mapping_backends import mapping as identity_mapping
+
+
+ID_MAPPING_REGION = oslo_cache.create_region()
+MEMOIZE = cache.get_memoization_decorator(group='identity',
+                                          region=ID_MAPPING_REGION)
 
 
 class IDMapping(sql.ModelBase, sql.ModelDictMixin):
@@ -38,6 +46,15 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
 @dependency.requires('id_generator_api')
 class Mapping(base.MappingDriverV8):
 
+    def __init__(self, *args, **kwargs):
+        super(Mapping, self).__init__(*args, **kwargs)
+        cache.configure_cache()
+        cache.configure_cache(region=ID_MAPPING_REGION)
+        cache.apply_invalidation_patch(
+            region=ID_MAPPING_REGION,
+            region_name=ID_MAPPING_REGION.name)
+
+    @MEMOIZE
     def get_public_id(self, local_entity):
         # NOTE(henry-nash): Since the Public ID is regeneratable, rather
         # than search for the entry using the local entity values, we
@@ -57,6 +74,7 @@ class Mapping(base.MappingDriverV8):
             except sql.NotFound:
                 return None
 
+    @MEMOIZE
     def get_id_mapping(self, public_id):
         with sql.session_for_read() as session:
             mapping_ref = session.query(IDMapping).get(public_id)
@@ -71,6 +89,9 @@ class Mapping(base.MappingDriverV8):
             entity['public_id'] = public_id
             mapping_ref = IDMapping.from_dict(entity)
             session.add(mapping_ref)
+        if MEMOIZE.should_cache(public_id):
+            self.get_public_id.set(public_id, self, local_entity)
+            self.get_id_mapping.set(local_entity, self, public_id)
         return public_id
 
     def delete_id_mapping(self, public_id):
@@ -82,6 +103,7 @@ class Mapping(base.MappingDriverV8):
                 # NOTE(morganfainberg): There is nothing to delete and nothing
                 # to do.
                 pass
+        ID_MAPPING_REGION.invalidate()
 
     def purge_mappings(self, purge_filter):
         with sql.session_for_write() as session:
@@ -96,3 +118,4 @@ class Mapping(base.MappingDriverV8):
                 query = query.filter_by(
                     entity_type=purge_filter['entity_type'])
             query.delete()
+        ID_MAPPING_REGION.invalidate()
