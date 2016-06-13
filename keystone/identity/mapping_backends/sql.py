@@ -12,10 +12,35 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import six
+
+import dogpile.cache
+from dogpile.cache import util
+
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.identity.mapping_backends import base
 from keystone.identity.mapping_backends import mapping as identity_mapping
+
+
+def _key_generate_to_str(s):
+    try:
+        if six.PY2 and isinstance(s, dict):
+            return str({k: v.encode('utf-8') for k, v in s.items()})
+        return str(s)
+    except UnicodeEncodeError:
+        return s.encode('utf-8')
+
+
+def _function_key_generator(namespace, fn, to_str=_key_generate_to_str):
+    return util.function_key_generator(namespace, fn, to_str=to_str)
+
+
+ID_MAPPING_REGION = dogpile.cache.make_region(
+    function_key_generator=_function_key_generator)
+MEMOIZE = cache.get_memoization_decorator(group='identity',
+                                          region=ID_MAPPING_REGION)
 
 
 class IDMapping(sql.ModelBase, sql.ModelDictMixin):
@@ -38,6 +63,15 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
 @dependency.requires('id_generator_api')
 class Mapping(base.MappingDriverV8):
 
+    def __init__(self, *args, **kwargs):
+        super(Mapping, self).__init__(*args, **kwargs)
+        cache.configure_cache()
+        cache.configure_cache(region=ID_MAPPING_REGION)
+        cache.apply_invalidation_patch(
+            region=ID_MAPPING_REGION,
+            region_name=ID_MAPPING_REGION.name)
+
+    @MEMOIZE
     def get_public_id(self, local_entity):
         # NOTE(henry-nash): Since the Public ID is regeneratable, rather
         # than search for the entry using the local entity values, we
@@ -71,9 +105,12 @@ class Mapping(base.MappingDriverV8):
             entity['public_id'] = public_id
             mapping_ref = IDMapping.from_dict(entity)
             session.add(mapping_ref)
+        if MEMOIZE.should_cache(public_id):
+            self.get_public_id.set(public_id, self, local_entity)
         return public_id
 
     def delete_id_mapping(self, public_id):
+        entity = self.get_id_mapping(public_id)
         with sql.session_for_write() as session:
             try:
                 session.query(IDMapping).filter(
@@ -82,6 +119,9 @@ class Mapping(base.MappingDriverV8):
                 # NOTE(morganfainberg): There is nothing to delete and nothing
                 # to do.
                 pass
+        if entity:
+            del entity['public_id']
+            self.get_public_id.invalidate(self, entity)
 
     def purge_mappings(self, purge_filter):
         with sql.session_for_write() as session:
@@ -89,6 +129,7 @@ class Mapping(base.MappingDriverV8):
             if 'domain_id' in purge_filter:
                 query = query.filter_by(domain_id=purge_filter['domain_id'])
             if 'public_id' in purge_filter:
+
                 query = query.filter_by(public_id=purge_filter['public_id'])
             if 'local_id' in purge_filter:
                 query = query.filter_by(local_id=purge_filter['local_id'])
@@ -96,3 +137,4 @@ class Mapping(base.MappingDriverV8):
                 query = query.filter_by(
                     entity_type=purge_filter['entity_type'])
             query.delete()
+        ID_MAPPING_REGION.invalidate()
