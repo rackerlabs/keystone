@@ -140,6 +140,29 @@
       "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f61de6be",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-06-13T21:43:36Z",
+      "side": 1,
+      "message": "Whether",
+      "range": {
+        "startLine": 1619,
+        "startChar": 2,
+        "endLine": 1619,
+        "endChar": 8
+      },
+      "revId": "9f33255f7c4709017d0cdeb4a3a41bf5e2f5d3fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
