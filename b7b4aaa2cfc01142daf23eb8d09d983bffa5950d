@@ -86,6 +86,24 @@
       "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0b84d908",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T15:45:13Z",
+      "side": 1,
+      "message": "++ it would be nice to establish that kind of convention early on since this is a new \"set\" or type of testing we are doing. \n\nI\u0027d be fine with this as a follow on patch though. Just trying to catch these types of things early - before we have *tons* of instances to correct ;)",
+      "parentUuid": "7aa08908_6bc59d8c",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
