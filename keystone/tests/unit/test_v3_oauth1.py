@@ -413,7 +413,7 @@ class AuthTokenTests(OAuthFlowTests):
         ref = unit.new_user_ref(domain_id=self.domain_id)
         r = self.admin_request(path='/v3/users', headers=headers,
                                method='POST', body={'user': ref})
-        self.assertValidUserResponse(r, ref)
+        self.assertValidUserResponse(r, ref=ref)
 
     def test_delete_access_token_also_revokes_token(self):
         self.test_oauth_flow()

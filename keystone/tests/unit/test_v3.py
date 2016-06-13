@@ -375,7 +375,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                                             enable_project=True):
         ref = unit.new_project_ref(domain_id=domain_id, enabled=enable_project)
         r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
+        project = self.assertValidProjectResponse(r, ref=ref)
         # set the user's preferred project
         body = {'user': {'default_project_id': project['id']}}
         r = self.patch('/users/%(user_id)s' % {
@@ -1111,8 +1111,8 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         return entity
 
     # role assignment validation
-
-    def assertValidRoleAssignmentListResponse(self, resp, expected_length=None,
+    def assertValidRoleAssignmentListResponse(self, resp,
+                                              expected_length=None,
                                               resource_url=None):
         entities = resp.result.get('role_assignments')
 
@@ -1232,7 +1232,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             **kwargs)
 
     def assertValidTrustSummary(self, entity, ref=None):
-        return self.assertValidTrust(entity, ref, summary=True)
+        return self.assertValidTrust(entity, ref=ref, summary=True)
 
     def assertValidTrust(self, entity, ref=None, summary=False):
         self.assertIsNotNone(entity.get('trustor_user_id'))

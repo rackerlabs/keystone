@@ -39,7 +39,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.post(
             '/domains',
             body={'domain': ref})
-        return self.assertValidDomainResponse(r, ref)
+        return self.assertValidDomainResponse(r, ref=ref)
 
     def test_create_domain_case_sensitivity(self):
         """Call `POST /domains`` twice with upper() and lower() cased name."""
@@ -50,14 +50,14 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.post(
             '/domains',
             body={'domain': ref})
-        self.assertValidDomainResponse(r, ref)
+        self.assertValidDomainResponse(r, ref=ref)
 
         # ensure the name is uppercase
         ref['name'] = ref['name'].upper()
         r = self.post(
             '/domains',
             body={'domain': ref})
-        self.assertValidDomainResponse(r, ref)
+        self.assertValidDomainResponse(r, ref=ref)
 
     def test_create_domain_bad_request(self):
         """Call ``POST /domains``."""
@@ -102,7 +102,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Create a new domain
         domain_ref = unit.new_domain_ref()
         r = self.post('/domains', body={'domain': domain_ref})
-        self.assertValidDomainResponse(r, domain_ref)
+        self.assertValidDomainResponse(r, ref=domain_ref)
 
         # Retrieve its correspondent project
         r = self.get('/projects/%(project_id)s' % {
@@ -142,7 +142,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         resource_url = '/domains/%(domain_id)s' % {
             'domain_id': self.domain_id}
         r = self.get(resource_url)
-        self.assertValidDomainResponse(r, self.domain)
+        self.assertValidDomainResponse(r, ref=self.domain)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_domain(self):
@@ -152,7 +152,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.patch('/domains/%(domain_id)s' % {
             'domain_id': self.domain_id},
             body={'domain': ref})
-        self.assertValidDomainResponse(r, ref)
+        self.assertValidDomainResponse(r, ref=ref)
 
     def test_update_domain_unsafe(self):
         """Call ``POST /domains/{domain_id} with unsafe names``."""
@@ -196,7 +196,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Create a new domain
         domain_ref = unit.new_domain_ref()
         r = self.post('/domains', body={'domain': domain_ref})
-        self.assertValidDomainResponse(r, domain_ref)
+        self.assertValidDomainResponse(r, ref=domain_ref)
 
         # Disable it
         self.patch('/domains/%s' % r.result['domain']['id'],
@@ -250,7 +250,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.patch('/domains/%(domain_id)s' % {
             'domain_id': domain2['id']},
             body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, domain2)
+        self.assertValidDomainResponse(r, ref=domain2)
 
         # Make sure the user can no longer authenticate, via
         # either API
@@ -342,7 +342,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.patch('/domains/%(domain_id)s' % {
             'domain_id': domain2['id']},
             body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, domain2)
+        self.assertValidDomainResponse(r, ref=domain2)
         self.delete('/domains/%(domain_id)s' % {'domain_id': domain2['id']})
 
         # Check all the domain2 relevant entities are gone
@@ -383,7 +383,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Create a new domain
         domain_ref = unit.new_domain_ref()
         r = self.post('/domains', body={'domain': domain_ref})
-        self.assertValidDomainResponse(r, domain_ref)
+        self.assertValidDomainResponse(r, ref=domain_ref)
 
         # Retrieve its correspondent project
         self.get('/projects/%(project_id)s' % {
@@ -558,7 +558,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.post(
             '/projects',
             body={'project': ref})
-        self.assertValidProjectResponse(r, ref)
+        self.assertValidProjectResponse(r, ref=ref)
 
     def test_create_project_bad_request(self):
         """Call ``POST /projects``."""
@@ -628,7 +628,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             auth=auth,
             body={'project': ref})
         ref['domain_id'] = self.domain['id']
-        self.assertValidProjectResponse(r, ref)
+        self.assertValidProjectResponse(r, ref=ref)
 
     def test_create_project_without_parent_id_and_without_domain_id(self):
         """Call ``POST /projects``."""
@@ -657,7 +657,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             auth=auth,
             body={'project': ref})
         ref['domain_id'] = self.domain['id']
-        self.assertValidProjectResponse(r, ref)
+        self.assertValidProjectResponse(r, ref=ref)
 
     @test_utils.wip('waiting for support for parent_id to imply domain_id')
     def test_create_project_with_parent_id_and_no_domain_id(self):
@@ -672,7 +672,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertEqual(r.result['project']['domain_id'],
                          self.project['domain_id'])
         ref_child['domain_id'] = self.domain['id']
-        self.assertValidProjectResponse(r, ref_child)
+        self.assertValidProjectResponse(r, ref=ref_child)
 
     def _create_projects_hierarchy(self, hierarchy_size=1):
         """Create a single-branched project hierarchy with the specified size.
@@ -694,7 +694,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 parent_id=projects[i]['project']['id'])
             resp = self.post('/projects',
                              body={'project': new_ref})
-            self.assertValidProjectResponse(resp, new_ref)
+            self.assertValidProjectResponse(resp, ref=new_ref)
 
             projects.append(resp.result)
 
@@ -710,7 +710,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             parent_id=projects[1]['project']['id'])
         resp = self.post('/projects',
                          body={'project': new_ref})
-        self.assertValidProjectResponse(resp, new_ref)
+        self.assertValidProjectResponse(resp, ref=new_ref)
 
         projects.append(resp.result)
 
@@ -761,7 +761,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         resource_url = '/projects/%(project_id)s' % {
             'project_id': self.project_id}
         r = self.get(resource_url)
-        self.assertValidProjectResponse(r, self.project)
+        self.assertValidProjectResponse(r, ref=self.project)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_get_project_with_parents_as_list_with_invalid_id(self):
@@ -791,7 +791,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s?parents_as_ids' % {
                 'project_id': projects[2]['project']['id']})
 
-        self.assertValidProjectResponse(r, projects[2]['project'])
+        self.assertValidProjectResponse(r, ref=projects[2]['project'])
         parents_as_ids = r.result['project']['parents']
 
         # Assert parents_as_ids is a structured dictionary correctly
@@ -819,7 +819,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s?parents_as_ids' % {
                 'project_id': projects[0]['project']['id']})
 
-        self.assertValidProjectResponse(r, projects[0]['project'])
+        self.assertValidProjectResponse(r, ref=projects[0]['project'])
         parents_as_ids = r.result['project']['parents']
 
         # projects[0] has only the project that acts as a domain as parent
@@ -862,7 +862,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Make the API call
         r = self.get('/projects/%(project_id)s?parents_as_list' %
                      {'project_id': subproject['project']['id']})
-        self.assertValidProjectResponse(r, subproject['project'])
+        self.assertValidProjectResponse(r, ref=subproject['project'])
 
         # Assert only 'project' and 'parent' are in the parents list
         self.assertIn(project, r.result['project']['parents'])
@@ -892,7 +892,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Make the API call
         r = self.get('/projects/%(project_id)s?parents_as_list' %
                      {'project_id': subproject['project']['id']})
-        self.assertValidProjectResponse(r, subproject['project'])
+        self.assertValidProjectResponse(r, ref=subproject['project'])
 
         # Assert only 'parent' is in the parents list
         self.assertIn(parent, r.result['project']['parents'])
@@ -998,7 +998,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             parent_id=projects[0]['project']['id'])
         resp = self.post('/projects',
                          body={'project': new_ref})
-        self.assertValidProjectResponse(resp, new_ref)
+        self.assertValidProjectResponse(resp, ref=new_ref)
         projects.append(resp.result)
 
         # Add another child to projects[1] - it will be projects[4]
@@ -1007,14 +1007,14 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             parent_id=projects[1]['project']['id'])
         resp = self.post('/projects',
                          body={'project': new_ref})
-        self.assertValidProjectResponse(resp, new_ref)
+        self.assertValidProjectResponse(resp, ref=new_ref)
         projects.append(resp.result)
 
         # Query for projects[0] subtree_as_ids
         r = self.get(
             '/projects/%(project_id)s?subtree_as_ids' % {
                 'project_id': projects[0]['project']['id']})
-        self.assertValidProjectResponse(r, projects[0]['project'])
+        self.assertValidProjectResponse(r, ref=projects[0]['project'])
         subtree_as_ids = r.result['project']['subtree']
 
         # The subtree hierarchy from projects[0] should have the following
@@ -1039,7 +1039,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.get(
             '/projects/%(project_id)s?subtree_as_ids' % {
                 'project_id': projects[1]['project']['id']})
-        self.assertValidProjectResponse(r, projects[1]['project'])
+        self.assertValidProjectResponse(r, ref=projects[1]['project'])
         subtree_as_ids = r.result['project']['subtree']
 
         # The subtree hierarchy from projects[1] should have the following
@@ -1058,7 +1058,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.get(
             '/projects/%(project_id)s?subtree_as_ids' % {
                 'project_id': projects[3]['project']['id']})
-        self.assertValidProjectResponse(r, projects[3]['project'])
+        self.assertValidProjectResponse(r, ref=projects[3]['project'])
         subtree_as_ids = r.result['project']['subtree']
 
         # projects[3] has no subtree, subtree_as_ids must be None
@@ -1087,7 +1087,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Make the API call
         r = self.get('/projects/%(project_id)s?subtree_as_list' %
                      {'project_id': parent['project']['id']})
-        self.assertValidProjectResponse(r, parent['project'])
+        self.assertValidProjectResponse(r, ref=parent['project'])
 
         # Assert only 'project' and 'subproject' are in the subtree
         self.assertIn(project, r.result['project']['subtree'])
@@ -1116,7 +1116,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # Make the API call
         r = self.get('/projects/%(project_id)s?subtree_as_list' %
                      {'project_id': parent['project']['id']})
-        self.assertValidProjectResponse(r, parent['project'])
+        self.assertValidProjectResponse(r, ref=parent['project'])
 
         # Assert only 'subproject' is in the subtree
         self.assertIn(subproject, r.result['project']['subtree'])
@@ -1146,7 +1146,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': self.project_id},
             body={'project': ref})
-        self.assertValidProjectResponse(r, ref)
+        self.assertValidProjectResponse(r, ref=ref)
 
     def test_update_project_unsafe(self):
         """Call ``POST /projects/{project_id} with unsafe names``."""
@@ -1205,7 +1205,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.patch('/projects/%(project_id)s' % {
             'project_id': project['id']},
             body={'project': project})
-        self.assertValidProjectResponse(r, project)
+        self.assertValidProjectResponse(r, ref=project)
 
     def test_update_project_parent_id(self):
         """Call ``PATCH /projects/{project_id}``."""

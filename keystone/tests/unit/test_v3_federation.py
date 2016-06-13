@@ -1443,7 +1443,8 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 
     def test_mapping_create(self):
         resp = self._create_default_mapping_entry()
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+        self.assertValidMappingResponse(
+            resp, ref=mapping_fixtures.MAPPING_LARGE)
 
     def test_mapping_list(self):
         url = self.MAPPING_URL
@@ -1470,7 +1471,8 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         mapping_id = self._get_id_from_response(resp)
         url = url % {'mapping_id': mapping_id}
         resp = self.get(url)
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+        self.assertValidMappingResponse(
+            resp, ref=mapping_fixtures.MAPPING_LARGE)
 
     def test_mapping_update(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -1479,9 +1481,11 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         url = url % {'mapping_id': mapping_id}
         resp = self.patch(url,
                           body={'mapping': mapping_fixtures.MAPPING_SMALL})
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+        self.assertValidMappingResponse(
+            resp, ref=mapping_fixtures.MAPPING_SMALL)
         resp = self.get(url)
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+        self.assertValidMappingResponse(
+            resp, ref=mapping_fixtures.MAPPING_SMALL)
 
     def test_delete_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
@@ -1575,7 +1579,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
             },
             expected_status=http_client.CREATED)
         self.assertValidMappingResponse(
-            resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
+            resp, ref=mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
 
     def test_create_mapping_with_ephemeral(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
@@ -1584,7 +1588,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
             body={'mapping': mapping_fixtures.MAPPING_EPHEMERAL_USER},
             expected_status=http_client.CREATED)
         self.assertValidMappingResponse(
-            resp, mapping_fixtures.MAPPING_EPHEMERAL_USER)
+            resp, ref=mapping_fixtures.MAPPING_EPHEMERAL_USER)
 
     def test_create_mapping_with_bad_user_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex

@@ -37,7 +37,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/regions/%s' % region_id,
             body={'region': ref},
             expected_status=http_client.CREATED)
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
         # Double-check that the region ID was kept as-is and not
         # populated with a UUID, as is the case with POST /v3/regions
         self.assertEqual(region_id, r.json['region']['id'])
@@ -50,7 +50,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/regions/%s' % region_id,
             body={'region': ref},
             expected_status=http_client.CREATED)
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
         # Double-check that the region ID was kept as-is and not
         # populated with a UUID, as is the case with POST /v3/regions
         self.assertEqual(region_id, r.json['region']['id'])
@@ -73,20 +73,20 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/regions',
             body={'region': ref})
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
 
         # we should be able to get the region, having defined the ID ourselves
         r = self.get(
             '/regions/%(region_id)s' % {
                 'region_id': ref['id']})
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
 
     def test_create_region_with_empty_id(self):
         """Call ``POST /regions`` with an empty ID in the request body."""
         ref = unit.new_region_ref(id='')
 
         r = self.post('/regions', body={'region': ref})
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
         self.assertNotEmpty(r.result['region'].get('id'))
 
     def test_create_region_without_id(self):
@@ -98,7 +98,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # let the service define the ID
         r = self.post('/regions', body={'region': ref})
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
 
     def test_create_region_without_description(self):
         """Call ``POST /regions`` without description in the request body."""
@@ -111,7 +111,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         # response should now have a description, even though we didn't send
         # it with the original reference.
         ref['description'] = ''
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
 
     def test_create_regions_with_same_description_string(self):
         """Call ``POST /regions`` with duplicate descriptions."""
@@ -123,10 +123,10 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref2 = unit.new_region_ref(description=region_desc)
 
         resp1 = self.post('/regions', body={'region': ref1})
-        self.assertValidRegionResponse(resp1, ref1)
+        self.assertValidRegionResponse(resp1, ref=ref1)
 
         resp2 = self.post('/regions', body={'region': ref2})
-        self.assertValidRegionResponse(resp2, ref2)
+        self.assertValidRegionResponse(resp2, ref=ref2)
 
     def test_create_regions_without_descriptions(self):
         """Call ``POST /regions`` with no description."""
@@ -147,8 +147,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         # a description with the original references.
         ref1['description'] = ''
         ref2['description'] = ''
-        self.assertValidRegionResponse(resp1, ref1)
-        self.assertValidRegionResponse(resp2, ref2)
+        self.assertValidRegionResponse(resp1, ref=ref1)
+        self.assertValidRegionResponse(resp2, ref=ref2)
 
     def test_create_region_with_conflicting_ids(self):
         """Call ``PUT /regions/{region_id}`` with conflicting region IDs."""
@@ -192,7 +192,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         resource_url = '/regions/%(region_id)s' % {
             'region_id': self.region_id}
         r = self.get(resource_url)
-        self.assertValidRegionResponse(r, self.region)
+        self.assertValidRegionResponse(r, ref=self.region)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_region(self):
@@ -202,7 +202,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.patch('/regions/%(region_id)s' % {
             'region_id': self.region_id},
             body={'region': region})
-        self.assertValidRegionResponse(r, region)
+        self.assertValidRegionResponse(r, ref=region)
 
     def test_update_region_without_description_keeps_original(self):
         """Call ``PATCH /regions/{region_id}``."""
@@ -232,7 +232,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         # NOTE(dstanek): Keystone should turn the provided None value into
         # an empty string before storing in the backend.
         region['description'] = ''
-        self.assertValidRegionResponse(r, region)
+        self.assertValidRegionResponse(r, ref=region)
 
     def test_delete_region(self):
         """Call ``DELETE /regions/{region_id}``."""
@@ -240,7 +240,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/regions',
             body={'region': ref})
-        self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref=ref)
 
         self.delete('/regions/%(region_id)s' % {
             'region_id': ref['id']})
@@ -253,7 +253,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/services',
             body={'service': ref})
-        self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref=ref)
 
     def test_create_service_no_name(self):
         """Call ``POST /services``."""
@@ -263,7 +263,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/services',
             body={'service': ref})
         ref['name'] = ''
-        self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref=ref)
 
     def test_create_service_no_enabled(self):
         """Call ``POST /services``."""
@@ -273,7 +273,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/services',
             body={'service': ref})
         ref['enabled'] = True
-        self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref=ref)
         self.assertIs(True, r.result['service']['enabled'])
 
     def test_create_service_enabled_false(self):
@@ -282,7 +282,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/services',
             body={'service': ref})
-        self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref=ref)
         self.assertIs(False, r.result['service']['enabled'])
 
     def test_create_service_enabled_true(self):
@@ -291,7 +291,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/services',
             body={'service': ref})
-        self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref=ref)
         self.assertIs(True, r.result['service']['enabled'])
 
     def test_create_service_enabled_str_true(self):
@@ -365,7 +365,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         resource_url = '/services/%(service_id)s' % {
             'service_id': self.service_id}
         r = self.get(resource_url)
-        self.assertValidServiceResponse(r, self.service)
+        self.assertValidServiceResponse(r, ref=self.service)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_service(self):
@@ -375,7 +375,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.patch('/services/%(service_id)s' % {
             'service_id': self.service_id},
             body={'service': service})
-        self.assertValidServiceResponse(r, service)
+        self.assertValidServiceResponse(r, ref=service)
 
     def test_delete_service(self):
         """Call ``DELETE /services/{service_id}``."""
@@ -525,7 +525,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                                     region_id=self.region_id)
         r = self.post('/endpoints', body={'endpoint': ref})
         ref['enabled'] = True
-        self.assertValidEndpointResponse(r, ref)
+        self.assertValidEndpointResponse(r, ref=ref)
 
     def test_create_endpoint_enabled_true(self):
         """Call ``POST /endpoints`` with enabled: true."""
@@ -534,7 +534,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                                     region_id=self.region_id,
                                     enabled=True)
         r = self.post('/endpoints', body={'endpoint': ref})
-        self.assertValidEndpointResponse(r, ref)
+        self.assertValidEndpointResponse(r, ref=ref)
 
     def test_create_endpoint_enabled_false(self):
         """Call ``POST /endpoints`` with enabled: false."""
@@ -543,7 +543,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                                     region_id=self.region_id,
                                     enabled=False)
         r = self.post('/endpoints', body={'endpoint': ref})
-        self.assertValidEndpointResponse(r, ref)
+        self.assertValidEndpointResponse(r, ref=ref)
 
     def test_create_endpoint_enabled_str_true(self):
         """Call ``POST /endpoints`` with enabled: 'True'."""
@@ -606,7 +606,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         resource_url = '/endpoints/%(endpoint_id)s' % {
             'endpoint_id': self.endpoint_id}
         r = self.get(resource_url)
-        self.assertValidEndpointResponse(r, self.endpoint)
+        self.assertValidEndpointResponse(r, ref=self.endpoint)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_endpoint(self):
@@ -620,7 +620,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': ref})
         ref['enabled'] = True
-        self.assertValidEndpointResponse(r, ref)
+        self.assertValidEndpointResponse(r, ref=ref)
 
     def test_update_endpoint_enabled_true(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: True."""
@@ -628,7 +628,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints/%(endpoint_id)s' % {
                 'endpoint_id': self.endpoint_id},
             body={'endpoint': {'enabled': True}})
-        self.assertValidEndpointResponse(r, self.endpoint)
+        self.assertValidEndpointResponse(r, ref=self.endpoint)
 
     def test_update_endpoint_enabled_false(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: False."""
@@ -638,7 +638,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'endpoint': {'enabled': False}})
         exp_endpoint = copy.copy(self.endpoint)
         exp_endpoint['enabled'] = False
-        self.assertValidEndpointResponse(r, exp_endpoint)
+        self.assertValidEndpointResponse(r, ref=exp_endpoint)
 
     def test_update_endpoint_enabled_str_true(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: 'True'."""

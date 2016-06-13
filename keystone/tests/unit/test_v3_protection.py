@@ -928,7 +928,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self.assertEqual(self.domainB['id'], r.json['user']['domain-id'])
         self.assertEqual(self.domainA['id'], r.json['user']['domain_id'])
         self.assertNotEqual(self.domainB['id'], self.just_a_user['domain_id'])
-        self.assertValidUserResponse(r, self.just_a_user)
+        self.assertValidUserResponse(r, ref=self.just_a_user)
 
         # Finally, show that we can create a new user without any surprises.
         # But if we specify a 'domain-id' instead of a 'domain_id', we get a

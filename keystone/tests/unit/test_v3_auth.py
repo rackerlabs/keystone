@@ -2659,7 +2659,7 @@ class TestAuth(test_v3.RestfulTestCase):
     def _second_project_as_default(self):
         ref = unit.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
+        project = self.assertValidProjectResponse(r, ref=ref)
 
         # grant the user a role on the project
         self.put(
@@ -3389,7 +3389,7 @@ class TestAuth(test_v3.RestfulTestCase):
     def test_disabled_default_project_domain_result_in_unscoped_token(self):
         domain_ref = unit.new_domain_ref()
         r = self.post('/domains', body={'domain': domain_ref})
-        domain = self.assertValidDomainResponse(r, domain_ref)
+        domain = self.assertValidDomainResponse(r, ref=domain_ref)
 
         project = self.create_new_default_project_for_user(
             self.user['id'], domain['id'])
@@ -3981,7 +3981,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user['id'])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-        self.assertValidTrustResponse(r, ref)
+        self.assertValidTrustResponse(r, ref=ref)
 
     def test_create_trust_no_roles(self):
         ref = unit.new_trust_ref(
@@ -4001,7 +4001,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
         # make sure the trust exists
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
         r = self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']})
         # get a token for the trustee
@@ -4051,7 +4051,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             remaining_uses=None,
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         r = self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']})
@@ -4235,7 +4235,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             trust_id=trust_id)
         r = self.v3_create_token(auth_data)
         self.assertValidProjectScopedTokenResponse(
-            r, self.trustee_user)
+            r, user=self.trustee_user)
         trust_token = r.headers['X-Subject-Token']
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust_id})
@@ -4259,7 +4259,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
 
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user['id'],
@@ -4287,7 +4287,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
 
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user['id'],
@@ -4315,7 +4315,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
 
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
 
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']})
@@ -4345,7 +4345,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
 
-        self.assertValidProjectScopedTokenResponse(r, self.user)
+        self.assertValidProjectScopedTokenResponse(r, user=self.user)
         trust_token = r.headers.get('X-Subject-Token')
 
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
@@ -4369,7 +4369,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
             '/OS-TRUST/trusts/%(trust_id)s/roles' % {
                 'trust_id': trust['id']},
             token=trust_token)
-        self.assertValidRoleListResponse(resp, self.role)
+        self.assertValidRoleListResponse(resp, ref=self.role)
 
         self.head(
             '/OS-TRUST/trusts/%(trust_id)s/roles/%(role_id)s' % {
@@ -4383,7 +4383,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
                 'trust_id': trust['id'],
                 'role_id': self.role['id']},
             token=trust_token)
-        self.assertValidRoleResponse(resp, self.role)
+        self.assertValidRoleResponse(resp, ref=self.role)
 
     def test_do_not_consume_remaining_uses_when_get_token_fails(self):
         ref = unit.new_trust_ref(
@@ -4820,7 +4820,7 @@ class TestAuthTOTP(test_v3.RestfulTestCase):
         self.secret = ref['blob']
 
         r = self.post('/credentials', body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
 
         self.addCleanup(self.cleanup)
 

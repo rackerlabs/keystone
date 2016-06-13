@@ -38,7 +38,7 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         """Call ``POST /policies``."""
         ref = unit.new_policy_ref()
         r = self.post('/policies', body={'policy': ref})
-        return self.assertValidPolicyResponse(r, ref)
+        return self.assertValidPolicyResponse(r, ref=ref)
 
     def test_list_head_policies(self):
         """Call ``GET & HEAD /policies``."""
@@ -52,7 +52,7 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         resource_url = ('/policies/%(policy_id)s' %
                         {'policy_id': self.policy_id})
         r = self.get(resource_url)
-        self.assertValidPolicyResponse(r, self.policy)
+        self.assertValidPolicyResponse(r, ref=self.policy)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_policy(self):
@@ -61,7 +61,7 @@ class PolicyTestCase(test_v3.RestfulTestCase):
         r = self.patch(
             '/policies/%(policy_id)s' % {'policy_id': self.policy_id},
             body={'policy': self.policy})
-        self.assertValidPolicyResponse(r, self.policy)
+        self.assertValidPolicyResponse(r, ref=self.policy)
 
     def test_delete_policy(self):
         """Call ``DELETE /policies/{policy_id}``."""

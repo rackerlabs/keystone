@@ -152,14 +152,14 @@ class CredentialTestCase(CredentialBaseTestCase):
         r = self.post(
             '/credentials',
             body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
 
     def test_get_credential(self):
         """Call ``GET /credentials/{credential_id}``."""
         r = self.get(
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential['id']})
-        self.assertValidCredentialResponse(r, self.credential)
+        self.assertValidCredentialResponse(r, ref=self.credential)
 
     def test_update_credential(self):
         """Call ``PATCH /credentials/{credential_id}``."""
@@ -170,7 +170,7 @@ class CredentialTestCase(CredentialBaseTestCase):
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential['id']},
             body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
 
     def test_delete_credential(self):
         """Call ``DELETE /credentials/{credential_id}``."""
@@ -183,7 +183,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         blob, ref = unit.new_ec2_credential(user_id=self.user['id'],
                                             project_id=self.project_id)
         r = self.post('/credentials', body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
         # Assert credential id is same as hash of access key id for
         # ec2 credentials
         access = blob['access'].encode('utf-8')
@@ -231,7 +231,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         blob, ref = unit.new_cert_credential(user_id=self.user['id'])
 
         r = self.post('/credentials', body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
         # Assert credential id is not same as hash of access key id for
         # non-ec2 credentials
         access = blob['access'].encode('utf-8')
@@ -272,7 +272,7 @@ class CredentialTestCase(CredentialBaseTestCase):
             '/credentials',
             body={'credential': ref},
             token=self.get_admin_token())
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
 
 
 class TestCredentialTrustScoped(test_v3.RestfulTestCase):
@@ -314,7 +314,7 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
             password=self.trustee_user['password'],
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
-        self.assertValidProjectScopedTokenResponse(r, self.user)
+        self.assertValidProjectScopedTokenResponse(r, user=self.user)
         trust_id = r.result['token']['OS-TRUST:trust']['id']
         token_id = r.headers.get('X-Subject-Token')
 
@@ -382,7 +382,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         blob, ref = unit.new_ec2_credential(user_id=self.user['id'],
                                             project_id=self.project_id)
         r = self.post('/credentials', body={'credential': ref})
-        self.assertValidCredentialResponse(r, ref)
+        self.assertValidCredentialResponse(r, ref=ref)
         # Assert credential id is same as hash of access key id
         access = blob['access'].encode('utf-8')
         self.assertEqual(hashlib.sha256(access).hexdigest(),

@@ -44,7 +44,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         r = self.post(
             '/roles',
             body={'role': ref})
-        return self.assertValidRoleResponse(r, ref)
+        return self.assertValidRoleResponse(r, ref=ref)
 
     def test_create_role_bad_request(self):
         """Call ``POST /roles``."""
@@ -64,7 +64,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         resource_url = '/roles/%(role_id)s' % {
             'role_id': self.role_id}
         r = self.get(resource_url)
-        self.assertValidRoleResponse(r, self.role)
+        self.assertValidRoleResponse(r, ref=self.role)
         self.head(resource_url, expected_status=http_client.OK)
 
     def test_update_role(self):
@@ -74,7 +74,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         r = self.patch('/roles/%(role_id)s' % {
             'role_id': self.role_id},
             body={'role': ref})
-        self.assertValidRoleResponse(r, ref)
+        self.assertValidRoleResponse(r, ref=ref)
 
     def test_delete_role(self):
         """Call ``DELETE /roles/{role_id}``."""
@@ -88,7 +88,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         r = self.post(
             '/roles',
             body={'role': ref})
-        self.assertValidRoleResponse(r, ref)
+        self.assertValidRoleResponse(r, ref=ref)
 
         # but the ID should be set as defined in CONF
         self.assertEqual(CONF.member_role_id, r.json['role']['id'])
@@ -2411,7 +2411,7 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
         """Call ``POST /roles``."""
         ref = unit.new_role_ref()
         r = self.post('/roles', body={'role': ref})
-        return self.assertValidRoleResponse(r, ref)
+        return self.assertValidRoleResponse(r, ref=ref)
 
     def test_list_implied_roles_none(self):
         self.prior = self._create_role()
@@ -2714,7 +2714,7 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
             r = self.post(
                 '/roles',
                 body={'role': ref})
-            return self.assertValidRoleResponse(r, ref)
+            return self.assertValidRoleResponse(r, ref=ref)
 
         super(DomainSpecificRoleTests, self).setUp()
         self.domainA = unit.new_domain_ref()
@@ -2738,7 +2738,7 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
     def test_get_and_list_domain_specific_roles(self):
         # Check we can get a domain specific role
         r = self.get('/roles/%s' % self.domainA_role1['id'])
-        self.assertValidRoleResponse(r, self.domainA_role1)
+        self.assertValidRoleResponse(r, ref=self.domainA_role1)
 
         # If we list without specifying a domain, we should only get global
         # roles back.
@@ -2763,7 +2763,7 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
             'role_id': self.domainA_role1['id']},
             body={'role': self.domainA_role1})
         r = self.get('/roles/%s' % self.domainA_role1['id'])
-        self.assertValidRoleResponse(r, self.domainA_role1)
+        self.assertValidRoleResponse(r, ref=self.domainA_role1)
 
     def test_delete_domain_specific_roles(self):
         # Check delete only removes that one domain role

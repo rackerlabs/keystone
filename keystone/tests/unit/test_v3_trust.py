@@ -49,18 +49,18 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             project_id=self.project_id,
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         # get the trust
         r = self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']})
-        self.assertValidTrustResponse(r, ref)
+        self.assertValidTrustResponse(r, ref=ref)
 
         # validate roles on the trust
         r = self.get(
             '/OS-TRUST/trusts/%(trust_id)s/roles' % {
                 'trust_id': trust['id']})
-        roles = self.assertValidRoleListResponse(r, self.role)
+        roles = self.assertValidRoleListResponse(r, ref=self.role)
         self.assertIn(self.role['id'], [x['id'] for x in roles])
         self.head(
             '/OS-TRUST/trusts/%(trust_id)s/roles/%(role_id)s' % {
@@ -71,11 +71,11 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             '/OS-TRUST/trusts/%(trust_id)s/roles/%(role_id)s' % {
                 'trust_id': trust['id'],
                 'role_id': self.role['id']})
-        self.assertValidRoleResponse(r, self.role)
+        self.assertValidRoleResponse(r, ref=self.role)
 
         # list all trusts
         r = self.get('/OS-TRUST/trusts')
-        self.assertValidTrustListResponse(r, trust)
+        self.assertValidTrustListResponse(r, ref=trust)
 
         # trusts are immutable
         self.patch(
@@ -105,7 +105,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             ref['expires_at'] = datetime.datetime.utcnow().replace(
                 year=2032).strftime(unit.TIME_FORMAT)
             r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-            self.assertValidTrustResponse(r, ref)
+            self.assertValidTrustResponse(r, ref=ref)
 
         # list all trusts
         r = self.get('/OS-TRUST/trusts')
@@ -141,7 +141,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             expires=dict(minutes=1),
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-        trust = self.assertValidTrustResponse(r, ref)
+        trust = self.assertValidTrustResponse(r, ref=ref)
 
         # delete the trust
         self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
@@ -259,7 +259,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
         self.assertValidProjectScopedTokenResponse(
-            r, self.default_domain_user)
+            r, user=self.default_domain_user)
         token = r.headers.get('X-Subject-Token')
 
         # now validate the v3 token with v2 API
@@ -294,7 +294,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
         self.assertValidProjectScopedTokenResponse(
-            r, self.trustee_user)
+            r, user=self.trustee_user)
         token = r.headers.get('X-Subject-Token')
 
         # now validate the v3 token with v2 API
@@ -334,7 +334,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             password=trustee_user['password'],
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
-        self.assertValidProjectScopedTokenResponse(r, trustee_user)
+        self.assertValidProjectScopedTokenResponse(r, user=trustee_user)
         token = r.headers.get('X-Subject-Token')
 
         # ensure the token is invalid against v2
@@ -364,7 +364,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         resp_body = resp.json_body['token']
 
         self.assertValidProjectScopedTokenResponse(resp,
-                                                   self.trustee_user)
+                                                   user=self.trustee_user)
         self.assertEqual(self.trustee_user['id'], resp_body['user']['id'])
         self.assertEqual(self.trustee_user['name'], resp_body['user']['name'])
         self.assertEqual(self.domain['id'], resp_body['user']['domain']['id'])
@@ -393,7 +393,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         resp = self.v3_create_token(auth_data)
         resp_body = resp.json_body['token']
 
-        self.assertValidProjectScopedTokenResponse(resp, self.user)
+        self.assertValidProjectScopedTokenResponse(resp, user=self.user)
         self.assertEqual(self.user['id'], resp_body['user']['id'])
         self.assertEqual(self.user['name'], resp_body['user']['name'])
         self.assertEqual(self.domain['id'], resp_body['user']['domain']['id'])

@@ -142,7 +142,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         resource_url = '/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
                        'project_id': self.default_domain_project_id}
         r = self.get(resource_url)
-        self.assertValidEndpointListResponse(r, self.endpoint,
+        self.assertValidEndpointListResponse(r, ref=self.endpoint,
                                              resource_url=resource_url)
 
     def test_list_endpoints_associated_with_invalid_project(self):
@@ -166,7 +166,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         resource_url = '/OS-EP-FILTER/endpoints/%(endpoint_id)s/projects' % {
                        'endpoint_id': self.endpoint_id}
         r = self.get(resource_url)
-        self.assertValidProjectListResponse(r, self.default_domain_project,
+        self.assertValidProjectListResponse(r, ref=self.default_domain_project,
                                             resource_url=resource_url)
 
     def test_list_projects_with_no_endpoint_project_association(self):
@@ -393,7 +393,7 @@ class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
         # create a project to work with
         ref = unit.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
+        project = self.assertValidProjectResponse(r, ref=ref)
 
         # grant the user a role on the project
         self.put(
@@ -1133,7 +1133,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # create new project and associate with endpoint_group
         project_ref = unit.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': project_ref})
-        project = self.assertValidProjectResponse(r, project_ref)
+        project = self.assertValidProjectResponse(r, ref=project_ref)
         url = self._get_project_endpoint_group_url(endpoint_group_id,
                                                    project['id'])
         self.put(url)
@@ -1155,7 +1155,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         # create new project and associate with endpoint_group
         project_ref = unit.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': project_ref})
-        project = self.assertValidProjectResponse(r, project_ref)
+        project = self.assertValidProjectResponse(r, ref=project_ref)
         url = self._get_project_endpoint_group_url(endpoint_group_id,
                                                    project['id'])
         self.put(url)
