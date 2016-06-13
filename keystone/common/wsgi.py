@@ -211,7 +211,7 @@ class Application(BaseApplication):
         # NOTE(morganfainberg): use the request method to normalize the
         # response code between GET and HEAD requests. The HTTP status should
         # be the same.
-        LOG.info('%(req_method)s %(uri)s', {
+        LOG.debug('%(req_method)s %(uri)s', {
             'req_method': req.method.upper(),
             'uri': wsgiref.util.request_uri(req.environ),
         })
