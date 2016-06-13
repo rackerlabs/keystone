@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_02b15301",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T18:39:09Z",
+      "side": 1,
+      "message": "That could be fixed after we implement account linking, right? If two accounts are linked, give last_auth_at precedence to the shadowed user versus checking the local user?",
+      "parentUuid": "7aa08908_825f030e",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_ffe304d6",
         "filename": "keystone/tests/unit/identity/backends/test_sql.py",
         "patchSetId": 18
