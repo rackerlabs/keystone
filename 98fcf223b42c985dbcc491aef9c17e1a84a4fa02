@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_76c5848c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 67
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:05:15Z",
+      "side": 1,
+      "message": "Yes, you\u0027ll find it here:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L1071",
+      "parentUuid": "7aa08908_eb4a2d82",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8b6609b9",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
         "patchSetId": 67
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_360c9ceb",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 67
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:05:15Z",
+      "side": 1,
+      "message": "Couldn\u0027t get a datetime default value to work; doesn\u0027t seem to be supported by all of the databases.",
+      "parentUuid": "7aa08908_8b6609b9",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8bd569e6",
         "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
         "patchSetId": 67
@@ -47,6 +83,24 @@
       "writtenOn": "2016-06-13T15:52:20Z",
       "side": 1,
       "message": "The sql.DateTime() format might not persist subsecond accuracy in some backends by default (and it might for some others). Do we have any reason to be concerned by those cases? Do we want to override the sql.DateTime class with our own implementation that does an explicit behavior? Something like this - https://review.openstack.org/#/c/315735/2/keystone/common/sql/core.py,unified ?",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_96a750a6",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 67
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:05:15Z",
+      "side": 1,
+      "message": "Yeah, I don\u0027t think we need this.",
+      "parentUuid": "7aa08908_8bd569e6",
       "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2016-06-13T15:52:20Z",
       "side": 1,
       "message": "You mean letting the database determine the created_at time?",
+      "parentUuid": "7aa08908_c5c120e6",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7640e4a5",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 67
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T16:05:15Z",
+      "side": 1,
+      "message": "Mentioned this is the previous comment, having a default datetime value is not supported among all of the databases (at least I could not get this to work).",
       "parentUuid": "7aa08908_c5c120e6",
       "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
