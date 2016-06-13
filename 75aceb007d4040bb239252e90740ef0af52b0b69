@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_30893627",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 2716,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T20:48:38Z",
+      "side": 1,
+      "message": "little extra whitespace here that we could remove.",
+      "revId": "75aceb007d4040bb239252e90740ef0af52b0b69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
