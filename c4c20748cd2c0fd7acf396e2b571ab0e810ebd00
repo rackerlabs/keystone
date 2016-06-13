@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ddda9e4a",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-13T14:10:00Z",
+      "side": 1,
+      "message": "++ I think we should be doing this a little higher in the stack, with the rest of the validation logic perhaps. This seems like something that should be handled by the managers and not the backend code.",
+      "parentUuid": "7aa08908_47b41b34",
+      "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_9de6de42",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
