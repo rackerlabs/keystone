@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_824b83b0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T18:47:08Z",
+      "side": 1,
+      "message": "Correct, however I think when you re-enable a user, you would set last_auth_at back to null.  Otherwise, they would be automatically disabled again.",
+      "parentUuid": "7aa08908_1fd9b0f3",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3f262cce",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
