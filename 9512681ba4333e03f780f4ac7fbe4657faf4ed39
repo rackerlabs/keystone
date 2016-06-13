@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_0cfb4c7c",
+        "filename": "keystone/common/sql/migrate_repo/versions/105_add_last_auth_date_column.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T18:09:02Z",
+      "side": 1,
+      "message": "Yeah, agree.",
+      "parentUuid": "7aa08908_2c3f28b5",
+      "revId": "9512681ba4333e03f780f4ac7fbe4657faf4ed39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_2ce56808",
         "filename": "keystone/tests/unit/identity/backends/test_sql.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-13T17:56:46Z",
       "side": 1,
       "message": "Couldn\u0027t this if/else just check that the date_after is always greater than the user_ref.local_user.last_auth_at.date()?",
+      "revId": "9512681ba4333e03f780f4ac7fbe4657faf4ed39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6c7bf0be",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-13T18:09:02Z",
+      "side": 1,
+      "message": "True, and it does feel a little like overkill here.",
+      "parentUuid": "7aa08908_2ce56808",
       "revId": "9512681ba4333e03f780f4ac7fbe4657faf4ed39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
