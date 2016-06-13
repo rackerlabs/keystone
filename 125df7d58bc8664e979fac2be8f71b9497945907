@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_ff402461",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T18:32:21Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of this being a separate class here as I don\u0027t think it makes sense, but I won\u0027t block because of that.",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1fd9b0f3",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -13,6 +30,40 @@
       "writtenOn": "2016-06-13T18:26:51Z",
       "side": 1,
       "message": "So, this is essentially a lazy migration because we are allowing last_auth_at to be nullable in the migration but it should never be null once someone authenticates. That will always be the case, right? Do we ever have the need to change last_auth_at to not be nullable in a release or two?",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3f262cce",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T18:32:21Z",
+      "side": 1,
+      "message": "So as a cloud operator I need to unset this boolean and fake the last_auth_at to re-enable the user?",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_825f030e",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T18:32:21Z",
+      "side": 1,
+      "message": "Can this actually be here? What if they have a LocalUser and a FederatedUser, but usually use the federated identity. The first time they auth with local credentials *after* the 90 days will disable their account even them they authed using federation yesterday.",
       "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
