@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_8b8a8962",
+        "filename": "keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T15:40:35Z",
+      "side": 1,
+      "message": "++ to a separate path for this",
+      "parentUuid": "7aa08908_2228dde1",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c2b8f977",
         "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2016-06-13T14:04:55Z",
       "side": 1,
       "message": "These are all successful tests, right? None of these are negative tests? Maybe we could add the outcome of the test as a naming convention to the tests.",
+      "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6bc59d8c",
+        "filename": "keystone_tempest_plugin/tests/api/identity/v3/test_identity_providers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-13T15:40:35Z",
+      "side": 1,
+      "message": "++ if you look back at tests i write i\u0027ll often name tests like test_blah_succeeds or test_blah_fails.",
+      "parentUuid": "7aa08908_7d53aa17",
       "revId": "b7b4aaa2cfc01142daf23eb8d09d983bffa5950d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
