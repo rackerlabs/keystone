@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_c5a000f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-06-13T17:29:13Z",
+      "side": 1,
+      "message": "these logs are seen in all cases and muddy the water, however they become particularly concerning in multi-region deployments where we are running two Openstack clusters using a shared Keystone service in one of the regions.",
+      "parentUuid": "7aa08908_627822c5",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_89bbae0e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a5b6943b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-06-13T17:29:13Z",
+      "side": 1,
+      "message": "ok, I\u0027ll not mention them in the commit log",
+      "parentUuid": "7aa08908_c2e2b6d4",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c2091697",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -99,6 +135,24 @@
       "writtenOn": "2016-06-13T17:22:52Z",
       "side": 1,
       "message": "++ we could probably remove this bit of information.",
+      "parentUuid": "7aa08908_c2091697",
+      "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_25790483",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-06-13T17:29:13Z",
+      "side": 1,
+      "message": "thank you for confirming David. Will clean up this comment as well as the above.",
       "parentUuid": "7aa08908_c2091697",
       "revId": "1705d635c10bc1024b862eecd3b2806f4098c0db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
