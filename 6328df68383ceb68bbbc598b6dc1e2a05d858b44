@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ea1df5be",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-06-14T00:36:39Z",
+      "side": 1,
+      "message": "There are the some unnecessary attributes, and not contain the necessary attributes.\nthe purpose is different, so I think that it is not suitable for auth schema.",
+      "parentUuid": "7aa08908_336b0320",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_653b0cd2",
         "filename": "keystone/auth/schema.py",
         "patchSetId": 7
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "++\n\nthis is the old behavior, suggested to remove those manual checks in a follow up patch so we don\u0027t mess stuff in this change.",
       "parentUuid": "7aa08908_226a9aed",
+      "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_aa03ed40",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 19985
+      },
+      "writtenOn": "2016-06-14T00:36:39Z",
+      "side": 1,
+      "message": "I will remove this tests in follow-up patch.",
+      "parentUuid": "7aa08908_d379dffd",
       "revId": "6328df68383ceb68bbbc598b6dc1e2a05d858b44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
