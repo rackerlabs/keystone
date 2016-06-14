@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ea74d5fe",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 67
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-14T00:31:28Z",
+      "side": 1,
+      "message": "Yeah, that was part of shadowing ldap. I struggled to come up with a good table name for not only shadowing ldap, but custom drivers as well.",
+      "parentUuid": "7aa08908_d8ff3eff",
+      "revId": "98fcf223b42c985dbcc491aef9c17e1a84a4fa02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_183ee68a",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 67
