@@ -156,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_4e87da60",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-14T14:18:49Z",
+      "side": 1,
+      "message": "It will support it just fine if the encoding is properly set. I think we try to force UTF-8 encoding which is why it appears to not work and what I thought we should validate. If we are trying to store UTF-16 data in a UTF-8 database...",
+      "parentUuid": "7aa08908_beccb36a",
+      "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_9de6de42",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
