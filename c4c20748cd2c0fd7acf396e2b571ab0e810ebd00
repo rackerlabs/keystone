@@ -120,6 +120,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_538f9374",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-06-14T10:37:25Z",
+      "side": 1,
+      "message": "Hi David Stanek, Lance Bragstad, Ron De Rose\n\nWe cannot validate input in manager because postgresql or DB2 allows 4 byte data in the database but mysql does not allow 4 byte unicode characters.\nIf we do input validation beforehand then in case of postgresql database backened user will not be able to insert or retrieve data from the database.",
+      "parentUuid": "7aa08908_388bf069",
+      "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_9de6de42",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -167,6 +185,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "9abb7d3a_9de6de42",
+      "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d6b25105",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 20181
+      },
+      "writtenOn": "2016-06-14T10:37:25Z",
+      "side": 1,
+      "message": "Hi Raildo Mascena, Rodrigo Duarte, David Stanek\n\nIf we display column name through e.inner_exception.orig.args[1], user will get error message as:\n\nError writing field to database. Incorrect string value: \u0027\\xF0\\x9F\\x9A\\x93\u0027 for column \u0027name\u0027 at row 1 (HTTP 400) (Request-ID: req-98bbe8a2-761d-4180-b013-f596f6ac9a63)\n\nHere, row 1 doesn\u0027t seem useful to the user because we simply cannot extract field name directly from the e.inner_exception.",
+      "parentUuid": "7aa08908_2743cf43",
       "revId": "c4c20748cd2c0fd7acf396e2b571ab0e810ebd00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
