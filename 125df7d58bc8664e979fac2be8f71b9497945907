@@ -54,6 +54,29 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_2d041b13",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-14T12:57:12Z",
+      "side": 1,
+      "message": "the fact that we allow None here...does that mean that if, after migration, a user doesn\u0027t log in for 1 year....they will still be able to log in the first time, and that will start the clock ticking for 90 days? Is there a reason we don\u0027t set last_auth_at to now() in the migration?",
+      "range": {
+        "startLine": 259,
+        "startChar": 15,
+        "endLine": 259,
+        "endChar": 27
+      },
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3f262cce",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -83,6 +106,29 @@
       "side": 1,
       "message": "That sounds like something we can add to keystone-manage.",
       "parentUuid": "7aa08908_3f262cce",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6d362352",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-14T12:57:12Z",
+      "side": 1,
+      "message": "Wouldn\u0027t we want the maintaining of last_auth to be optional, controlled by a config switch? I.e. if CONF.security_compliance.disable_user_account_days_inactive was zero? Otherwise, we are now further forcing user table replication of write updates on authentication...which could be very bad in multi-data centre configurations.",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 275,
+        "endChar": 70
+      },
       "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
