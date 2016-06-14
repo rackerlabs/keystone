@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_6652d968",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-14T05:35:50Z",
+      "side": 1,
+      "message": "Really hoping in future to simply replace these with actual properties on the request.",
+      "parentUuid": "7aa08908_b8b240e3",
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f887a8b2",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2016-06-13T14:54:01Z",
       "side": 1,
       "message": "nit: You could replace the try/except with pop(k, None):\n\n  https://docs.python.org/2/library/stdtypes.html#dict.pop",
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_46e51da2",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-14T05:35:50Z",
+      "side": 1,
+      "message": "In which case you would have None values set and then in update() at L588 you would override the real values with Nones",
+      "parentUuid": "7aa08908_f887a8b2",
       "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
