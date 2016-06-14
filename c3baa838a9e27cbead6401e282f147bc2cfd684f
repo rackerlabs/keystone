@@ -134,6 +134,30 @@
       "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d7786f91",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-14T18:43:10Z",
+      "side": 1,
+      "message": "you may want to indicate if there was an error? orphaned resources? etc in the notification? *shrug*",
+      "parentUuid": "7aa08908_160a328a",
+      "range": {
+        "startLine": 800,
+        "startChar": 12,
+        "endLine": 802,
+        "endChar": 66
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
