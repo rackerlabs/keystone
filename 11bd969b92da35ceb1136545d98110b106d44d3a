@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_b0f697d4",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-14T15:43:47Z",
+      "side": 1,
+      "message": "nit: comparing this to line 439, does d represent `dictionary` or `domain`? If it represent `dictionary` then the `for d in domains` and `for d in projects` makes sense. If it is shorthand for domain then should this be `for p in projects`?",
+      "revId": "11bd969b92da35ceb1136545d98110b106d44d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_10484bcb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 2677,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-14T15:43:47Z",
+      "side": 1,
+      "message": "Thanks for adding this check.",
+      "revId": "11bd969b92da35ceb1136545d98110b106d44d3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_be431341",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 53
