@@ -54,6 +54,75 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_6d5903fd",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-14T13:24:30Z",
+      "side": 1,
+      "message": "why leave this line alone? maybe rename \"context\" here and L211 to \"request\" so that it looks more clear.",
+      "range": {
+        "startLine": 208,
+        "startChar": 41,
+        "endLine": 208,
+        "endChar": 48
+      },
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8d6b8ff0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-14T13:24:30Z",
+      "side": 1,
+      "message": "it will be consistent with L202.",
+      "range": {
+        "startLine": 211,
+        "startChar": 12,
+        "endLine": 211,
+        "endChar": 19
+      },
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2d0a5bd2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-14T13:24:30Z",
+      "side": 1,
+      "message": "and here.",
+      "range": {
+        "startLine": 213,
+        "startChar": 40,
+        "endLine": 213,
+        "endChar": 47
+      },
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f887a8b2",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 7
