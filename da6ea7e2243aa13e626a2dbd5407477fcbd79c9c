@@ -77,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_21ded13d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-14T18:11:06Z",
+      "side": 1,
+      "message": "I left a number of these as context because they are not called from an API but from other functions. Basically i was trying to do the minimum in this patch to make it work and we can come back for cleanup later.",
+      "parentUuid": "7aa08908_6d5903fd",
+      "range": {
+        "startLine": 208,
+        "startChar": 41,
+        "endLine": 208,
+        "endChar": 48
+      },
+      "revId": "da6ea7e2243aa13e626a2dbd5407477fcbd79c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8d6b8ff0",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 7
