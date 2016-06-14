@@ -39,6 +39,24 @@
       "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f94775b9",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-14T13:56:52Z",
+      "side": 1,
+      "message": "Currently we don\u0027t, in that we\u0027re only relying on the regex in the configuration.  We could also have operators input the rules description in HTML somewhere (config maybe) and return that in a new API and/or the error message.  What are your thoughts on this?",
+      "parentUuid": "7aa08908_1396c73d",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
