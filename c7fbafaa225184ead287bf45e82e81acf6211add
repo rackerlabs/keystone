@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_6f24455f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-14T17:50:52Z",
+      "side": 1,
+      "message": "-1: Instead of overloading the resource_id with two different types and handling the difference - add the resource_name as a standard part of this API, and ALWAYS include it for ALL types of resources. Very few models don\u0027t have names (endpoints, for example), and I think it would be acceptable to pass null in those cases.",
+      "revId": "c7fbafaa225184ead287bf45e82e81acf6211add",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2fd23d5c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-14T17:50:52Z",
+      "side": 0,
+      "message": "-1: The notifications we emit are an API, and this should has a substantial impact on that API which is not at all documented in this patch.",
+      "revId": "cbe0a1e07cb5876ab9c56698c7db86557d53c98f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
