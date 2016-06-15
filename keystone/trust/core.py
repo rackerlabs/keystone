@@ -87,6 +87,12 @@ class Manager(manager.Manager):
             raise exception.Forbidden(
                 _('Some of requested roles are not in redelegated trust'))
 
+        # forbid to create a trust (with impersonation set to true) from a
+        # redelegated trust (with impersonation set to false)
+        if not redelegated_trust['impersonation'] and trust['impersonation']:
+            raise exception.Forbidden(
+                _('Impersonation is not allowed by redelegated trust'))
+
     def get_trust_pedigree(self, trust_id):
         trust = self.driver.get_trust(trust_id)
         trust_chain = [trust]
