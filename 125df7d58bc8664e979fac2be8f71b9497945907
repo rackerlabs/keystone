@@ -77,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_acc8bba9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-15T18:46:27Z",
+      "side": 1,
+      "message": "It\u0027s a good point. I didn\u0027t want to give last_auth_at a default value, because I didn\u0027t want to assume that the user actually had authenticated previously. Perhaps what I could do is if last_auth_at is None, use the date when the user was created. I\u0027ll give this some thought. Let me know if you have any ideas.",
+      "parentUuid": "7aa08908_2d041b13",
+      "range": {
+        "startLine": 259,
+        "startChar": 15,
+        "endLine": 259,
+        "endChar": 27
+      },
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3f262cce",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
