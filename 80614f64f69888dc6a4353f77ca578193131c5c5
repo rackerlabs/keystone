@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_9aab8a75",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-15T12:24:47Z",
+      "side": 1,
+      "message": "You should not be doing all of this yourself. Use our existing cache code as a base.",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5a24820d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-15T12:24:47Z",
+      "side": 1,
+      "message": "Also, dict keys are not guaranteed in order. A better approach to have a consistent cache key is to just use .items() and make an ordered tuple.",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fa460e7a",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-15T12:24:47Z",
+      "side": 1,
+      "message": "Why is this not cached?",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1ab4ba80",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-15T12:24:47Z",
+      "side": 1,
+      "message": "unrelated change",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
