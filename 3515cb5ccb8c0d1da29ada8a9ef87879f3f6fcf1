@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_e514aaa0",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-15T13:24:36Z",
+      "side": 1,
+      "message": "please use a better varaible than \u0027c\u0027",
+      "revId": "3515cb5ccb8c0d1da29ada8a9ef87879f3f6fcf1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
