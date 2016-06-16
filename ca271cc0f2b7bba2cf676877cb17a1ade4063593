@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_fa9379fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T10:07:24Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is strictly true - the test you are remove creates a new token  (using the v2 token as credentials), while test_v2_v3_unscoped_token_intermix() just does a validate.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 50
+      },
+      "revId": "ca271cc0f2b7bba2cf676877cb17a1ade4063593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
