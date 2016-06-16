@@ -71,6 +71,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_2a1ab618",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T17:03:44Z",
+      "side": 1,
+      "message": "nit: Leave the above if block alone, and treat it as a short circuit ... remove the else and un-indent the rest of the method :) Just a good habit to reduce  make the 79 char limit easier to maintain with a lower perceived mccabe complexity for readers.",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_bb6bb384",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 29
@@ -142,6 +159,40 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_6a667ebc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T17:03:44Z",
+      "side": 1,
+      "message": "if last_auth_at is a date, then this could probably be a datetime.date() as well",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4a7622d9",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T17:03:44Z",
+      "side": 1,
+      "message": "nit: although both are no-ops, I would think pass would be more appropriate here",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b502a2b2",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 29
@@ -177,6 +228,24 @@
       "side": 1,
       "message": "We should probably change this if we respin disable_user_account_days_inactive to have a minimum value of 1.",
       "parentUuid": "7aa08908_b502a2b2",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4a0bc22b",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T17:03:44Z",
+      "side": 1,
+      "message": "Then you don\u0027t have to check for a specific value here, just something truthy.",
+      "parentUuid": "7aa08908_8a75aa33",
       "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
