@@ -113,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_914a0554",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-16T15:55:40Z",
+      "side": 1,
+      "message": "Yeah, was thinking that as well.",
+      "parentUuid": "7aa08908_7e700841",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_9ef17498",
         "filename": "keystone/exception.py",
         "patchSetId": 37
