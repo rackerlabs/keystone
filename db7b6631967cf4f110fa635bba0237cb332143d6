@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_8ddcba75",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T11:15:36Z",
+      "side": 1,
+      "message": "so password is (I think) an optional attribute, so if the user_ref doesn\u0027t have a password, which might cause this is error? In fact, I\u0027m not sure how we handle having no password if unique_last_password_count is set? Is that even a valid scenario (but not sure we prevent it)?",
+      "range": {
+        "startLine": 272,
+        "startChar": 45,
+        "endLine": 272,
+        "endChar": 79
+      },
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
