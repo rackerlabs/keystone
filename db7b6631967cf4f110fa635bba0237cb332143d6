@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_b113c1b6",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:22:03Z",
+      "side": 1,
+      "message": "Wasn\u0027t this in another review as well?",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b4a28fab",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:22:03Z",
+      "side": 1,
+      "message": "If you set unique_last_password_count to -1, this looks like it\u0027ll have some wonky behaviors. In fact, I don\u0027t see any use case for the configuration value to be set to anything less than two. Disabled should be None / null / not set / set to whitespace, not zero.\n\nkeystone.conf should be revised similar to the following, and you won\u0027t have to handle so many edge cases here:\n\n  http://cdn.pasteraw.com/mwo41c5yhzxgxj2gqqv6a541zhtix0z",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8ddcba75",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
