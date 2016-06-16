@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_44ed6eb6",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:39:16Z",
+      "side": 1,
+      "message": "Can we change it like this (removing the old entries) ? At very least this change will need a release not saying such entries were replaced",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 41
+      },
+      "revId": "13084b8490a1cd4b6a8358120fc9d5687201880a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c40e7e8b",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:39:16Z",
+      "side": 1,
+      "message": "Isn\u0027t this a public attribute ? Can we simply change its name this way?",
+      "range": {
+        "startLine": 432,
+        "startChar": 8,
+        "endLine": 432,
+        "endChar": 29
+      },
+      "revId": "13084b8490a1cd4b6a8358120fc9d5687201880a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_24266216",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 56
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:39:16Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 460,
+        "startChar": 8,
+        "endLine": 460,
+        "endChar": 30
+      },
+      "revId": "13084b8490a1cd4b6a8358120fc9d5687201880a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
