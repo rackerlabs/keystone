@@ -173,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_91e68542",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T15:57:38Z",
+      "side": 1,
+      "message": "Yeah - that\u0027s definitely something we can do. We would really have to rely on the ability of the operator to test and document their regular expression to provide good u-x.\n\nPossibility of a big foot gun?",
+      "parentUuid": "7aa08908_7e700841",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_9ef17498",
         "filename": "keystone/exception.py",
         "patchSetId": 37
