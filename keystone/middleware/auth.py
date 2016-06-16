@@ -136,6 +136,9 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
         return False
 
+    # FIXME(henry-nash): This will currently lead to failure, since we are
+    # re-using the wsgi exception handling even though the request structure
+    # used by AuthContextMiddleware is totally different.
     @wsgi.middleware_exceptions
     def process_request(self, request):
         resp = super(AuthContextMiddleware, self).process_request(request)

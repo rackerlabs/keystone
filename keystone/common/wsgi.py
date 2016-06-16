@@ -198,6 +198,16 @@ class Application(BaseApplication):
 
     @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, req):
+        # Set the version of the API requested based on the header
+        try:
+            req.set_api_version_request()
+        except (exception.InvalidAPIVersionString,
+                exception.InvalidGlobalAPIVersion) as e:
+            return render_exception(e,
+                                    req,
+                                    context=req.context_dict,
+                                    user_locale=best_match_language(req))
+
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
@@ -723,7 +733,14 @@ def render_response(
         headers = []
     else:
         headers = list(headers)
-    headers.append(('Vary', 'X-Auth-Token'))
+    vary_header = 'X-Auth-Token'
+
+    if not request.api_version_request.is_null():
+        headers.append((request_mod.API_VERSION_REQUEST_HEADER,
+                        request.api_version_request.get_string()))
+        vary_header += ("," + request_mod.API_VERSION_REQUEST_HEADER)
+
+    headers.append(('Vary', vary_header))
 
     if body is None:
         body = b''
