@@ -266,4 +266,4 @@ class V9RoleWrapperForV8Driver(RoleDriverV9):
         raise exception.NotImplemented()  # pragma: no cover
 
     def list_role_inference_rules(self):
-        raise exception.NotImplemented()  # pragma: no cover
+        return []

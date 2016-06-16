@@ -320,6 +320,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
                                      domain_id=self.domain_id)
         self.user_id = self.user['id']
 
+        context = oslo_context.context.get_current()
+        context.user = self.user_id
+
         self.default_domain_project_id = uuid.uuid4().hex
         self.default_domain_project = unit.new_project_ref(
             domain_id=DEFAULT_DOMAIN_ID)
