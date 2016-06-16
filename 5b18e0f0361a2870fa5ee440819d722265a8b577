@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5a545bc9",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T03:32:30Z",
+      "side": 1,
+      "message": "add a comment above this check as well, all the other blocks have useful comments",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 79
+      },
+      "revId": "5b18e0f0361a2870fa5ee440819d722265a8b577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1ac3f38b",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T03:32:30Z",
+      "side": 1,
+      "message": "the outer ()s are not needed",
+      "range": {
+        "startLine": 90,
+        "startChar": 11,
+        "endLine": 90,
+        "endChar": 78
+      },
+      "revId": "5b18e0f0361a2870fa5ee440819d722265a8b577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
