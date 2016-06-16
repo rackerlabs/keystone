@@ -267,6 +267,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         headers = [('Content-Type', 'application/x-www-form-urlencoded')]
         response = wsgi.render_response(
+            request,
             result,
             status=(http_client.CREATED,
                     http_client.responses[http_client.CREATED]),
@@ -359,6 +360,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         headers = [('Content-Type', 'application/x-www-form-urlencoded')]
         response = wsgi.render_response(
+            request,
             result,
             status=(http_client.CREATED,
                     http_client.responses[http_client.CREATED]),

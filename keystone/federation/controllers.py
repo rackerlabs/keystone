@@ -98,6 +98,7 @@ class IdentityProvider(_ControllerBase):
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(request.context_dict, idp_ref)
         return wsgi.render_response(
+            request,
             body=response, status=(http_client.CREATED,
                                    http_client.responses[http_client.CREATED]))
 
@@ -189,6 +190,7 @@ class FederationProtocol(_ControllerBase):
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = FederationProtocol.wrap_member(request.context_dict, ref)
         return wsgi.render_response(
+            request,
             body=response, status=(http_client.CREATED,
                                    http_client.responses[http_client.CREATED]))
 
@@ -230,6 +232,7 @@ class MappingController(_ControllerBase):
         response = MappingController.wrap_member(request.context_dict,
                                                  mapping_ref)
         return wsgi.render_response(
+            request,
             body=response, status=(http_client.CREATED,
                                    http_client.responses[http_client.CREATED]))
 
@@ -404,6 +407,7 @@ class Auth(auth_controllers.Auth):
 
         headers = self._build_response_headers(service_provider)
         return wsgi.render_response(
+            request,
             body=response.to_string(),
             status=(http_client.OK, http_client.responses[http_client.OK]),
             headers=headers)
@@ -425,6 +429,7 @@ class Auth(auth_controllers.Auth):
 
         headers = self._build_response_headers(service_provider)
         return wsgi.render_response(
+            request,
             body=ecp_assertion.to_string(),
             status=(http_client.OK, http_client.responses[http_client.OK]),
             headers=headers)
@@ -504,6 +509,7 @@ class ServiceProvider(_ControllerBase):
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(request.context_dict, sp_ref)
         return wsgi.render_response(
+            request,
             body=response, status=(http_client.CREATED,
                                    http_client.responses[http_client.CREATED]))
 
@@ -536,7 +542,7 @@ class ServiceProvider(_ControllerBase):
 class SAMLMetadataV3(_ControllerBase):
     member_name = 'metadata'
 
-    def get_metadata(self, context):
+    def get_metadata(self, request):
         metadata_path = CONF.saml.idp_metadata_path
         try:
             with open(metadata_path, 'r') as metadata_handler:
@@ -545,6 +551,7 @@ class SAMLMetadataV3(_ControllerBase):
             # Raise HTTP 500 in case Metadata file cannot be read.
             raise exception.MetadataFileError(reason=e)
         return wsgi.render_response(
+            request,
             body=metadata, status=(http_client.OK,
                                    http_client.responses[http_client.OK]),
             headers=[('Content-Type', 'text/xml')])
