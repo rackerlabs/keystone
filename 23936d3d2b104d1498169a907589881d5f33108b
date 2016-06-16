@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_1a7bf32a",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T03:41:06Z",
+      "side": 1,
+      "message": "just reiterating what is done on line 50",
+      "parentUuid": "7aa08908_da3fab85",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 44
+      },
+      "revId": "23936d3d2b104d1498169a907589881d5f33108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1453ca6d",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 1
