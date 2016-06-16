@@ -1,0 +1,12 @@
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Workflow+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 16 Jun 2016 17:54:50 +0000
+Reviewed-on: https://review.openstack.org/330215
+Project: openstack/keystone
+Branch: refs/heads/master
