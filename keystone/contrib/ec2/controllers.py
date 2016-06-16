@@ -433,6 +433,7 @@ def render_token_data_response(token_id, token_data):
 
     """
     headers = [('X-Subject-Token', token_id)]
-
-    return wsgi.render_response(body=token_data,
+    # FIXME(henry-nash): ....but authenticate doesn't get passed the request!
+    return wsgi.render_response(None,
+                                body=token_data,
                                 status=(200, 'OK'), headers=headers)

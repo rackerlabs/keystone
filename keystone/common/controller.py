@@ -21,10 +21,12 @@ from oslo_log import versionutils
 from oslo_utils import strutils
 import six
 
+from keystone.common import api_version_request as api_version
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import utils
+from keystone.common import versioned_method
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _, _LW
@@ -33,6 +35,9 @@ from keystone.models import token_model
 
 LOG = log.getLogger(__name__)
 CONF = cfg.CONF
+
+# name of attribute to keep version method information
+VER_METHOD_ATTR = 'versioned_methods'
 
 
 def v2_deprecated(f):
@@ -844,3 +849,131 @@ class V3Controller(wsgi.Application):
         for blocked_param in blocked_keys:
             del ref[blocked_param]
         return ref
+
+    def __getattribute__(self, key):
+        """Find and call the latest version of a method."""
+        def version_select(*args, **kwargs):
+            """Look for method which matches the name supplied and version.
+
+            If we find a method that matches the constraints and calls it with
+            the supplied arguments.
+
+            :returns Returns the result of the method called
+            :raises VersionNotFoundForAPIMethod if there is no method which
+                 matches the name and version constraints
+            """
+            # The first arg to all versioned methods is always the request
+            # object. The version for the request is attached to the
+            # request object
+            if len(args) == 0:
+                ver = kwargs['request'].api_version_request
+            else:
+                ver = args[0].api_version_request
+
+            func_list = self.versioned_methods[key]
+            for func in func_list:
+                if ver.matches(func.start_version, func.end_version):
+                    # Update the version_select wrapper function so
+                    # other decorator attributes like wsgi.response
+                    # are still respected.
+                    functools.update_wrapper(version_select, func.func)
+                    return func.func(self, *args, **kwargs)
+
+            # No version match
+            raise exception.VersionNotFoundForAPIMethod(version=ver)
+
+        try:
+            version_meth_dict = object.__getattribute__(self, VER_METHOD_ATTR)
+        except AttributeError:
+            # No versioning on this class
+            return object.__getattribute__(self, key)
+
+        if (version_meth_dict and
+                key in object.__getattribute__(self, VER_METHOD_ATTR)):
+            return version_select
+
+        return object.__getattribute__(self, key)
+
+    # NOTE(henry-nash): This decorator MUST appear first (the outermost
+    # decorator) on an API method for it to work correctly
+    @classmethod
+    def api_version(cls, min_ver, max_ver=None):
+        """Decorator for versioning api methods.
+
+        Add the decorator to any method which takes a request object
+        as the first parameter and belongs to a class which inherits from
+        wsgi.Controller.
+
+        :param min_ver: string representing minimum version
+        :param max_ver: optional string representing maximum version
+        """
+        def decorator(f):
+
+            def check_for_versions_intersection(func_list):
+                """Make sure there isn't clashing version in the version list.
+
+                This is copied from the nova implementation and is based on the
+                following general algorithm:
+
+                https://en.wikipedia.org/wiki/Intersection_algorithm
+
+                :param func_list: list of VersionedMethod objects
+                :returns boolean
+                """
+                pairs = []
+                counter = 0
+
+                for f in func_list:
+                    pairs.append((f.start_version, 1, f))
+                    pairs.append((f.end_version, -1, f))
+
+                def compare(x):
+                    return x[0]
+
+                pairs.sort(key=compare)
+
+                for p in pairs:
+                    counter += p[1]
+
+                    if counter > 1:
+                        return True
+
+                return False
+
+            obj_min_ver = api_version.APIVersionRequest(min_ver)
+            if max_ver:
+                obj_max_ver = api_version.APIVersionRequest(max_ver)
+            else:
+                obj_max_ver = api_version.APIVersionRequest()
+
+            # Add to list of versioned methods registered
+            func_name = f.__name__
+            new_func = versioned_method.VersionedMethod(
+                func_name, obj_min_ver, obj_max_ver, f)
+
+            func_dict = getattr(cls, VER_METHOD_ATTR, {})
+            if not func_dict:
+                setattr(cls, VER_METHOD_ATTR, func_dict)
+
+            func_list = func_dict.get(func_name, [])
+            if not func_list:
+                func_dict[func_name] = func_list
+            func_list.append(new_func)
+
+            # Ensure the list is sorted by minimum version (reversed)
+            # so later when we work through the list in order we find
+            # the method which has the latest version which supports
+            # the version requested.
+
+            if check_for_versions_intersection(func_list):
+                raise exception.ApiVersionsIntersect(
+                    name=new_func.name,
+                    min_ver=new_func.start_version,
+                    max_ver=new_func.end_version,
+                )
+
+            func_list.sort(key=lambda f: f.start_version, reverse=True)
+
+            return f
+
+        return decorator

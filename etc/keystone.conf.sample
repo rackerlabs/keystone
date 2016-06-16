@@ -62,10 +62,10 @@
 # [assignment]). (integer value)
 #list_limit = <None>
 
-# DEPRECATED: Set this to false if you want to enable the ability for user,
-# group and project entities to be moved between domains by updating their
-# domain_id. Allowing such movement is not recommended if the scope of a domain
-# admin is being restricted by use of an appropriate policy file (see
+# Set this to false if you want to enable the ability for user, group and
+# project entities to be moved between domains by updating their domain_id.
+# Allowing such movement is not recommended if the scope of a domain admin is
+# being restricted by use of an appropriate policy file (see
 # policy.v3cloudsample as an example). This ability is deprecated and will be
 # removed in a future release. (boolean value)
 # This option is deprecated for removal.
@@ -116,8 +116,8 @@
 # Note: This option can be changed without restarting.
 #debug = false
 
-# DEPRECATED: If set to false, the logging level will be set to WARNING instead
-# of the default INFO level. (boolean value)
+# If set to false, the logging level will be set to WARNING instead of the
+# default INFO level. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 #verbose = true
@@ -279,15 +279,13 @@
 # Seconds to wait for a response from a call. (integer value)
 #rpc_response_timeout = 60
 
-# A URL representing the messaging driver to use and its full configuration.
-# (string value)
+# A URL representing the messaging driver to use and its full configuration. If
+# not set, we fall back to the rpc_backend option and driver specific
+# configuration. (string value)
 #transport_url = <None>
 
-# DEPRECATED: The messaging driver to use, defaults to rabbit. Other drivers
-# include amqp and zmq. (string value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
+# The messaging driver to use, defaults to rabbit. Other drivers include amqp
+# and zmq. (string value)
 #rpc_backend = rabbit
 
 # The default exchange under which topics are scoped. May be overridden by an
@@ -643,7 +641,7 @@
 # From keystone
 #
 
-# DEPRECATED: Enable endpoint_policy functionality. (boolean value)
+# Enable endpoint_policy functionality. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: The option to enable the OS-ENDPOINT-POLICY extension has been
@@ -662,8 +660,8 @@
 # From keystone
 #
 
-# DEPRECATED: The IP address of the network interface for the public service to
-# listen on. (string value)
+# The IP address of the network interface for the public service to listen on.
+# (string value)
 # Deprecated group/name - [DEFAULT]/bind_host
 # Deprecated group/name - [DEFAULT]/public_bind_host
 # This option is deprecated for removal.
@@ -673,7 +671,7 @@
 # used for URL substitutions.
 #public_bind_host = 0.0.0.0
 
-# DEPRECATED: The port number which the public service listens on. (port value)
+# The port number which the public service listens on. (port value)
 # Minimum value: 0
 # Maximum value: 65535
 # Deprecated group/name - [DEFAULT]/public_port
@@ -684,8 +682,8 @@
 # used for URL substitutions.
 #public_port = 5000
 
-# DEPRECATED: The IP address of the network interface for the admin service to
-# listen on. (string value)
+# The IP address of the network interface for the admin service to listen on.
+# (string value)
 # Deprecated group/name - [DEFAULT]/bind_host
 # Deprecated group/name - [DEFAULT]/admin_bind_host
 # This option is deprecated for removal.
@@ -695,7 +693,7 @@
 # used for URL substitutions.
 #admin_bind_host = 0.0.0.0
 
-# DEPRECATED: The port number which the admin service listens on. (port value)
+# The port number which the admin service listens on. (port value)
 # Minimum value: 0
 # Maximum value: 65535
 # Deprecated group/name - [DEFAULT]/admin_port
@@ -985,21 +983,21 @@
 # LDAP attribute mapped to default_project_id for users. (string value)
 #user_default_project_id_attribute = <None>
 
-# DEPRECATED: Allow user creation in LDAP backend. (boolean value)
+# Allow user creation in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
 # release and will be removed in the O release.
 #user_allow_create = true
 
-# DEPRECATED: Allow user updates in LDAP backend. (boolean value)
+# Allow user updates in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
 # release and will be removed in the O release.
 #user_allow_update = true
 
-# DEPRECATED: Allow user deletion in LDAP backend. (boolean value)
+# Allow user deletion in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
@@ -1049,21 +1047,21 @@
 # List of attributes stripped off the group on update. (list value)
 #group_attribute_ignore =
 
-# DEPRECATED: Allow group creation in LDAP backend. (boolean value)
+# Allow group creation in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
 # release and will be removed in the O release.
 #group_allow_create = true
 
-# DEPRECATED: Allow group update in LDAP backend. (boolean value)
+# Allow group update in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
 # release and will be removed in the O release.
 #group_allow_update = true
 
-# DEPRECATED: Allow group deletion in LDAP backend. (boolean value)
+# Allow group deletion in LDAP backend. (boolean value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: Write support for Identity LDAP backends has been deprecated in the M
@@ -1133,31 +1131,19 @@
 # From oslo.messaging
 #
 
-# DEPRECATED: Host to locate redis. (string value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
+# Host to locate redis. (string value)
 #host = 127.0.0.1
 
-# DEPRECATED: Use this port to connect to redis host. (port value)
+# Use this port to connect to redis host. (port value)
 # Minimum value: 0
 # Maximum value: 65535
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #port = 6379
 
-# DEPRECATED: Password for Redis server (optional). (string value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
+# Password for Redis server (optional). (string value)
 #password =
 
-# DEPRECATED: List of Redis Sentinel hosts (fault tolerance mode) e.g.
+# List of Redis Sentinel hosts (fault tolerance mode) e.g.
 # [host:port, host1:port ... ] (list value)
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #sentinel_hosts =
 
 # Redis replica set name. (string value)
@@ -1231,10 +1217,10 @@
 # From keystone
 #
 
-# DEPRECATED: role-assignment inheritance to projects from owning domain or
-# from projects higher in the hierarchy can be optionally disabled. In the
-# future, this option will be removed and the hierarchy will be always enabled.
-# (boolean value)
+# role-assignment inheritance to projects from owning domain or from projects
+# higher in the hierarchy can be optionally disabled. In the future, this
+# option will be removed and the hierarchy will be always enabled. (boolean
+# value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: The option to enable the OS-INHERIT extension has been deprecated in
@@ -1389,58 +1375,38 @@
 # Allowed values: round-robin, shuffle
 #kombu_failover_strategy = round-robin
 
-# DEPRECATED: The RabbitMQ broker address where a single node is used. (string
-# value)
+# The RabbitMQ broker address where a single node is used. (string value)
 # Deprecated group/name - [DEFAULT]/rabbit_host
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_host = localhost
 
-# DEPRECATED: The RabbitMQ broker port where a single node is used. (port
-# value)
+# The RabbitMQ broker port where a single node is used. (port value)
 # Minimum value: 0
 # Maximum value: 65535
 # Deprecated group/name - [DEFAULT]/rabbit_port
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_port = 5672
 
-# DEPRECATED: RabbitMQ HA cluster host:port pairs. (list value)
+# RabbitMQ HA cluster host:port pairs. (list value)
 # Deprecated group/name - [DEFAULT]/rabbit_hosts
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_hosts = $rabbit_host:$rabbit_port
 
 # Connect over SSL for RabbitMQ. (boolean value)
 # Deprecated group/name - [DEFAULT]/rabbit_use_ssl
 #rabbit_use_ssl = false
 
-# DEPRECATED: The RabbitMQ userid. (string value)
+# The RabbitMQ userid. (string value)
 # Deprecated group/name - [DEFAULT]/rabbit_userid
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_userid = guest
 
-# DEPRECATED: The RabbitMQ password. (string value)
+# The RabbitMQ password. (string value)
 # Deprecated group/name - [DEFAULT]/rabbit_password
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_password = guest
 
 # The RabbitMQ login method. (string value)
 # Deprecated group/name - [DEFAULT]/rabbit_login_method
 #rabbit_login_method = AMQPLAIN
 
-# DEPRECATED: The RabbitMQ virtual host. (string value)
+# The RabbitMQ virtual host. (string value)
 # Deprecated group/name - [DEFAULT]/rabbit_virtual_host
-# This option is deprecated for removal.
-# Its value may be silently ignored in the future.
-# Reason: Replaced by [DEFAULT]/transport_url
 #rabbit_virtual_host = /
 
 # How frequently to retry connecting with RabbitMQ. (integer value)
@@ -1517,10 +1483,6 @@
 # Set delay for reconnection to some host which has connection error (floating
 # point value)
 #host_connection_reconnect_delay = 0.25
-
-# Connection factory implementation (string value)
-# Allowed values: new, single, read_write
-#connection_factory = single
 
 # Maximum number of connections to keep queued. (integer value)
 #pool_max_size = 30
@@ -1606,9 +1568,9 @@
 # Deprecated group/name - [DEFAULT]/max_request_body_size
 #max_request_body_size = 114688
 
-# DEPRECATED: The HTTP Header that will be used to determine what the original
-# request protocol scheme was, even if it was hidden by an SSL termination
-# proxy. (string value)
+# The HTTP Header that will be used to determine what the original request
+# protocol scheme was, even if it was hidden by an SSL termination proxy.
+# (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 #secure_proxy_ssl_header = X-Forwarded-Proto
@@ -1950,38 +1912,38 @@
 # From keystone
 #
 
-# DEPRECATED: Path of the certfile for token signing. For non-production
-# environments, you may be interested in using `keystone-manage pki_setup` to
-# generate self-signed certificates. (string value)
+# Path of the certfile for token signing. For non-production environments, you
+# may be interested in using `keystone-manage pki_setup` to generate self-
+# signed certificates. (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
 # removed in the O release. Fernet or UUID tokens are recommended.
 #certfile = /etc/keystone/ssl/certs/signing_cert.pem
 
-# DEPRECATED: Path of the keyfile for token signing. (string value)
+# Path of the keyfile for token signing. (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
 # removed in the O release. Fernet or UUID tokens are recommended.
 #keyfile = /etc/keystone/ssl/private/signing_key.pem
 
-# DEPRECATED: Path of the CA for token signing. (string value)
+# Path of the CA for token signing. (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
 # removed in the O release. Fernet or UUID tokens are recommended.
 #ca_certs = /etc/keystone/ssl/certs/ca.pem
 
-# DEPRECATED: Path of the CA key for token signing. (string value)
+# Path of the CA key for token signing. (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
 # removed in the O release. Fernet or UUID tokens are recommended.
 #ca_key = /etc/keystone/ssl/private/cakey.pem
 
-# DEPRECATED: Key size (in bits) for token signing cert (auto generated
-# certificate). (integer value)
+# Key size (in bits) for token signing cert (auto generated certificate).
+# (integer value)
 # Minimum value: 1024
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
@@ -1989,16 +1951,16 @@
 # removed in the O release. Fernet or UUID tokens are recommended.
 #key_size = 2048
 
-# DEPRECATED: Days the token signing cert is valid for (auto generated
-# certificate). (integer value)
+# Days the token signing cert is valid for (auto generated certificate).
+# (integer value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
 # removed in the O release. Fernet or UUID tokens are recommended.
 #valid_days = 3650
 
-# DEPRECATED: Certificate subject (auto generated certificate) for token
-# signing. (string value)
+# Certificate subject (auto generated certificate) for token signing. (string
+# value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be
@@ -2055,10 +2017,10 @@
 # value)
 #allow_rescope_scoped_token = true
 
-# DEPRECATED: The hash algorithm to use for PKI tokens. This can be set to any
-# algorithm that hashlib supports. WARNING: Before changing this value, the
-# auth_token middleware must be configured with the hash_algorithms, otherwise
-# token revocation will not be processed correctly. (string value)
+# The hash algorithm to use for PKI tokens. This can be set to any algorithm
+# that hashlib supports. WARNING: Before changing this value, the auth_token
+# middleware must be configured with the hash_algorithms, otherwise token
+# revocation will not be processed correctly. (string value)
 # This option is deprecated for removal.
 # Its value may be silently ignored in the future.
 # Reason: PKI token support has been deprecated in the M release and will be

@@ -96,7 +96,8 @@ class IdentityProvider(_ControllerBase):
         identity_provider.setdefault('enabled', False)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(request.context_dict, idp_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.filterprotected('id', 'enabled')
     def list_identity_providers(self, request, filters):
@@ -184,7 +185,8 @@ class FederationProtocol(_ControllerBase):
         ref = self._normalize_dict(protocol)
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = FederationProtocol.wrap_member(request.context_dict, ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.protected()
     @validation.validated(schema.protocol_update, 'protocol')
@@ -223,7 +225,8 @@ class MappingController(_ControllerBase):
         mapping_ref = self.federation_api.create_mapping(mapping_id, ref)
         response = MappingController.wrap_member(request.context_dict,
                                                  mapping_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.protected()
     def list_mappings(self, request):
@@ -394,7 +397,8 @@ class Auth(auth_controllers.Auth):
         (response, service_provider) = t
 
         headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(body=response.to_string(),
+        return wsgi.render_response(request,
+                                    body=response.to_string(),
                                     status=('200', 'OK'),
                                     headers=headers)
 
@@ -414,7 +418,9 @@ class Auth(auth_controllers.Auth):
                                                relay_state_prefix)
 
         headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(body=ecp_assertion.to_string(),
+        # FIXME(henry-nash):....but request not passed in!
+        return wsgi.render_response(None,
+                                    body=ecp_assertion.to_string(),
                                     status=('200', 'OK'),
                                     headers=headers)
 
@@ -487,7 +493,8 @@ class ServiceProvider(_ControllerBase):
                                     CONF.saml.relay_state_prefix)
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(request.context_dict, sp_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.filterprotected('id', 'enabled')
     def list_service_providers(self, request, filters):
@@ -525,5 +532,6 @@ class SAMLMetadataV3(_ControllerBase):
         except IOError as e:
             # Raise HTTP 500 in case Metadata file cannot be read.
             raise exception.MetadataFileError(reason=e)
-        return wsgi.render_response(body=metadata, status=('200', 'OK'),
+        # FIXME(henry-nash):....but request not passed in!
+        return wsgi.render_response(None, body=metadata, status=('200', 'OK'),
                                     headers=[('Content-Type', 'text/xml')])

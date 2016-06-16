@@ -198,6 +198,16 @@ class Application(BaseApplication):
 
     @webob.dec.wsgify(RequestClass=request_mod.Request)
     def __call__(self, req):
+        # Set the version of the API requested based on the header
+        try:
+            req.set_api_version_request()
+        except (exception.InvalidAPIVersionString,
+                exception.InvalidGlobalAPIVersion) as e:
+            return render_exception(e,
+                                    req,
+                                    context=req.context_dict,
+                                    user_locale=best_match_language(req))
+
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
@@ -226,26 +236,30 @@ class Application(BaseApplication):
                     "%(remote_addr)s"),
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
             return render_exception(e,
+                                    req,
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
         except exception.Error as e:
             LOG.warning(six.text_type(e))
             return render_exception(e,
+                                    req,
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
         except TypeError as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.ValidationError(e),
+                                    req,
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
         except Exception as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.UnexpectedError(exception=e),
+                                    req,
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
 
         if result is None:
-            return render_response(status=(204, 'No Content'))
+            return render_response(req, status=(204, 'No Content'))
         elif isinstance(result, six.string_types):
             return result
         elif isinstance(result, webob.Response):
@@ -254,7 +268,8 @@ class Application(BaseApplication):
             return result
 
         response_code = self._get_response_code(req)
-        return render_response(body=result,
+        return render_response(req,
+                               body=result,
                                status=response_code,
                                method=req.method)
 
@@ -377,17 +392,17 @@ def middleware_exceptions(method):
             return method(self, request)
         except exception.Error as e:
             LOG.warning(six.text_type(e))
-            return render_exception(e, request=request,
+            return render_exception(e, request,
                                     user_locale=best_match_language(request))
         except TypeError as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.ValidationError(e),
-                                    request=request,
+                                    request,
                                     user_locale=best_match_language(request))
         except Exception as e:
             LOG.exception(six.text_type(e))
             return render_exception(exception.UnexpectedError(exception=e),
-                                    request=request,
+                                    request,
                                     user_locale=best_match_language(request))
 
     return _inner
@@ -533,7 +548,7 @@ class Router(object):
         if not match:
             msg = _('The resource could not be found.')
             return render_exception(exception.NotFound(msg),
-                                    request=req,
+                                    req,
                                     user_locale=best_match_language(req))
         app = match['controller']
         return app
@@ -711,13 +726,21 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
         return response
 
 
-def render_response(body=None, status=None, headers=None, method=None):
+def render_response(
+        request, body=None, status=None, headers=None, method=None):
     """Form a WSGI response."""
     if headers is None:
         headers = []
     else:
         headers = list(headers)
-    headers.append(('Vary', 'X-Auth-Token'))
+    vary_header = 'X-Auth-Token'
+
+    if not request.api_version_request.is_null():
+        headers.append((request_mod.API_VERSION_REQUEST_HEADER,
+                        request.api_version_request.get_string()))
+        vary_header += ("," + request_mod.API_VERSION_REQUEST_HEADER)
+
+    headers.append(('Vary', vary_header))
 
     if body is None:
         body = b''
@@ -786,7 +809,7 @@ def render_response(body=None, status=None, headers=None, method=None):
     return resp
 
 
-def render_exception(error, context=None, request=None, user_locale=None):
+def render_exception(error, request, context=None, user_locale=None):
     """Form a WSGI response based on the current error."""
     error_message = error.args[0]
     message = oslo_i18n.translate(error_message, desired_locale=user_locale)
@@ -815,6 +838,6 @@ def render_exception(error, context=None, request=None, user_locale=None):
         url = Application.base_url(local_context, 'public')
 
         headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
-    return render_response(status=(error.code, error.title),
+    return render_response(request, status=(error.code, error.title),
                            body=body,
                            headers=headers)
