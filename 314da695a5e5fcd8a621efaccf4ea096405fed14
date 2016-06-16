@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1aada59b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T10:01:14Z",
+      "side": 1,
+      "message": "this sounds over general...I think this test is trying to be more specific that at the moment  we DON\u0027T let you get a project scoped token to a project acting as a domain.",
+      "range": {
+        "startLine": 770,
+        "startChar": 8,
+        "endLine": 770,
+        "endChar": 65
+      },
+      "revId": "314da695a5e5fcd8a621efaccf4ea096405fed14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
