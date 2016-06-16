@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_bbbba2e3",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-16T15:32:04Z",
+      "side": 1,
+      "message": "Not sure...",
+      "parentUuid": "7aa08908_e9fc4374",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_4971170c",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 84
