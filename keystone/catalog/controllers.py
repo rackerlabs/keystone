@@ -62,6 +62,7 @@ class RegionV3(controller.V3Controller):
             ref, initiator=request.audit_initiator
         )
         return wsgi.render_response(
+            request,
             RegionV3.wrap_member(request.context_dict, ref),
             status=(http_client.CREATED,
                     http_client.responses[http_client.CREATED]))
