@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_9a451545",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-16T09:55:06Z",
+      "side": 1,
+      "message": "Partially implements: bp drop-driver-version",
+      "revId": "e8a3d9cc5aee5e08b8ff35d055b1851c7eeac92f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
