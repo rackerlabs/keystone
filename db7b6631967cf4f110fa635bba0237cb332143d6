@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_1425635b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-16T16:45:21Z",
+      "side": 1,
+      "message": "So I don\u0027t get the order of operations with regards to truncation. Will the truncation using -1 in local passwords lead to having 2 passwords even when the unique_last_password_count is 0?",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b4a28fab",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
@@ -30,6 +47,23 @@
       "writtenOn": "2016-06-16T16:22:03Z",
       "side": 1,
       "message": "If you set unique_last_password_count to -1, this looks like it\u0027ll have some wonky behaviors. In fact, I don\u0027t see any use case for the configuration value to be set to anything less than two. Disabled should be None / null / not set / set to whitespace, not zero.\n\nkeystone.conf should be revised similar to the following, and you won\u0027t have to handle so many edge cases here:\n\n  http://cdn.pasteraw.com/mwo41c5yhzxgxj2gqqv6a541zhtix0z",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_74178745",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-16T16:45:21Z",
+      "side": 1,
+      "message": "check_password can fail for other reasons too",
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -119,6 +153,30 @@
       "side": 1,
       "message": "I wrote a test for that locally here http://cdn.pasteraw.com/c742f35crl7h6cfp0wcnemudfu89dof",
       "parentUuid": "7aa08908_2e4ad127",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f18429d4",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-16T16:45:21Z",
+      "side": 1,
+      "message": "If you can get into a situation where a  user has no passwords then this line would raise an IndexError. The tests mask this issue because they always create a user with a password.\n\n+    def test_truncate_passwords_when_max_is_zero(self):\n+        expected_length \u003d 1\n+        max_cnt \u003d 0\n+        self.config_fixture.config(group\u003d\u0027security_compliance\u0027,\n+                                   unique_last_password_count\u003dmax_cnt)\n+        #user \u003d self._create_user(uuid.uuid4().hex)\n+        user \u003d {\n+            \u0027name\u0027: uuid.uuid4().hex,\n+            \u0027domain_id\u0027: \u0027default\u0027,\n+            \u0027enabled\u0027: True,\n+        }\n+        user \u003d self.identity_api.create_user(user)\n+        self._add_passwords(user, 1)\n+",
+      "parentUuid": "7aa08908_2e4ad127",
+      "range": {
+        "startLine": 272,
+        "startChar": 45,
+        "endLine": 272,
+        "endChar": 79
+      },
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
