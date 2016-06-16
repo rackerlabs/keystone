@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_9e4cc977",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-16T18:40:58Z",
+      "side": 1,
+      "message": "I don\u0027t know what \"already\" means here... somebody else did it?",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3ab1e5e0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -19,6 +42,52 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_de565105",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-16T18:40:58Z",
+      "side": 1,
+      "message": "polishes",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 18
+      },
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3e46754f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-16T18:40:58Z",
+      "side": 1,
+      "message": "migrates",
+      "range": {
+        "startLine": 12,
+        "startChar": 55,
+        "endLine": 12,
+        "endChar": 62
+      },
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f373384c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +99,52 @@
       "writtenOn": "2016-06-13T21:08:28Z",
       "side": 1,
       "message": "As soon as a commit message includes the word \"also,\" that\u0027s a red flag that the commit is too big. In fact, there are a lot of substantial changes in this patch which would have been much easier to review as individual patches. All together, they\u0027re confusing to review.",
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_9ee84918",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-16T18:40:58Z",
+      "side": 1,
+      "message": "includes",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 41
+      },
+      "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3e8b156a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-16T18:40:58Z",
+      "side": 1,
+      "message": "does",
+      "range": {
+        "startLine": 23,
+        "startChar": 34,
+        "endLine": 23,
+        "endChar": 36
+      },
       "revId": "3b394426c176903596422b3c61eaf661fcc4b761",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
