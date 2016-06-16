@@ -22,6 +22,30 @@
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fa9d2b0b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-16T14:05:02Z",
+      "side": 1,
+      "message": "If the password is not set, the password value would be None, so we would always have a password record to compare.",
+      "parentUuid": "7aa08908_8ddcba75",
+      "range": {
+        "startLine": 272,
+        "startChar": 45,
+        "endLine": 272,
+        "endChar": 79
+      },
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
