@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_945e9a77",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T02:20:16Z",
+      "side": 1,
+      "message": "independent of this review, but this should be:\n\n  auth_type \u003d (request.auth_type or \u0027\u0027).lower()\n  if auth_type !\u003d \u0027negotiate\u0027:",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 44
+      },
+      "revId": "23936d3d2b104d1498169a907589881d5f33108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1453ca6d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T02:20:16Z",
+      "side": 1,
+      "message": "rm context",
+      "range": {
+        "startLine": 45,
+        "startChar": 43,
+        "endLine": 45,
+        "endChar": 50
+      },
+      "revId": "23936d3d2b104d1498169a907589881d5f33108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
