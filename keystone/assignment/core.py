@@ -15,7 +15,9 @@
 """Main entry point into the Assignment service."""
 
 import copy
+import functools
 
+from oslo_context import context as oslo_context
 from oslo_cache import core as oslo_cache
 from oslo_config import cfg
 from oslo_log import log
@@ -105,6 +107,60 @@ class Manager(manager.Manager):
                 'domain': [self._delete_domain_assignments],
             },
         }
+
+    def _detect_redelegated(self, role_id, agent_id, domain_id=None,
+                            project_id=None):
+        """Discover best matching candidate for delegation to be linked to.
+
+        Agent user is the user creating the grant.
+
+        New grant is marked with agent id and linked to the delegation,
+        which grants the agent the scope it redelegates.
+
+        This function detects the delegation granting the agent the required
+        scope:
+          - delegation has required role OR its implications
+          - user_id is agent id OR agent is a member of the delegation's group
+          - delegation is scoped to the either of:
+             -- project requested
+             -- domain, containing the project requested
+             -- project, the requested project is inherited from
+
+        """
+
+        # Gather delegation candidates:
+        # - filtered by role_id
+        # - not filtered by project inheritance (both inherited
+        #   and non-iniherited are included)
+        # - filtered by domain_id if applicable
+        # - filtered by agent_id or its groups
+
+        _list_agent_role_assignments = functools.partial(
+            self.list_role_assignments,
+            user_id=agent_id,
+            project_id=project_id,
+            domain_id=domain_id,
+            effective=True,
+            strip_domain_roles=False
+        )
+
+        # Traverse role ancestry to find closest delegation candidate
+        inference_rules = self.role_api.list_role_inference_rules()
+        role_ancestry = [role_id]
+        for ir in inference_rules:
+            if ir['implied_role_id'] == role_id:
+                role_id = ir['prior_role_id']
+                role_ancestry.append(role_id)
+                break
+
+        best_match = None
+        for ancestor_role_id in role_ancestry:
+            candidates = _list_agent_role_assignments(role_id=ancestor_role_id)
+            if len(candidates) > 0:
+                best_match = candidates[0]
+                break
+
+        return best_match
 
     def _delete_domain_assignments(self, service, resource_type, operations,
                                    payload):
