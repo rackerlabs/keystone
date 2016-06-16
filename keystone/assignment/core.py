@@ -15,14 +15,17 @@
 """Main entry point into the Assignment service."""
 
 import copy
+import functools
 
 from oslo_cache import core as oslo_cache
 from oslo_config import cfg
+from oslo_context import context as oslo_context
 from oslo_log import log
 from oslo_log import versionutils
 
 from keystone.assignment.backends import base
 from keystone.assignment.role_backends import base as role_base
+from keystone.common import authorization
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -105,6 +108,59 @@ class Manager(manager.Manager):
                 'domain': [self._delete_domain_assignments],
             },
         }
+
+    def _detect_redelegated(self, role_id, agent_id, domain_id=None,
+                            project_id=None):
+        """Discover best matching candidate for delegation to be linked to.
+
+        Agent user is the user creating the grant.
+
+        New grant is marked with agent id and linked to the delegation,
+        which grants the agent the scope it redelegates.
+
+        This function detects the delegation granting the agent the required
+        scope:
+          - delegation has required role OR its implications
+          - user_id is agent id OR agent is a member of the delegation's group
+          - delegation is scoped to the either of:
+             -- project requested
+             -- domain, containing the project requested
+             -- project, the requested project is inherited from
+
+        """
+        # Gather delegation candidates:
+        # - filtered by role_id
+        # - not filtered by project inheritance (both inherited
+        #   and non-iniherited are included)
+        # - filtered by domain_id if applicable
+        # - filtered by agent_id or its groups
+
+        _list_agent_role_assignments = functools.partial(
+            self.list_role_assignments,
+            user_id=agent_id,
+            project_id=project_id,
+            domain_id=domain_id,
+            effective=True,
+            strip_domain_roles=False
+        )
+
+        # Traverse role ancestry to find closest delegation candidate
+        inference_rules = self.role_api.list_role_inference_rules()
+        role_ancestry = [role_id]
+        for ir in inference_rules:
+            if ir['implied_role_id'] == role_id:
+                role_id = ir['prior_role_id']
+                role_ancestry.append(role_id)
+                break
+
+        best_match = None
+        for ancestor_role_id in role_ancestry:
+            candidates = _list_agent_role_assignments(role_id=ancestor_role_id)
+            if len(candidates) > 0:
+                best_match = candidates[0]
+                break
+
+        return best_match
 
     def _delete_domain_assignments(self, service, resource_type, operations,
                                    payload):
@@ -189,13 +245,8 @@ class Manager(manager.Manager):
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
 
         """
-        self.resource_api.get_project(tenant_id)
         try:
             self.role_api.get_role(CONF.member_role_id)
-            self.driver.add_role_to_user_and_project(
-                user_id,
-                tenant_id,
-                CONF.member_role_id)
         except exception.RoleNotFound:
             LOG.info(_LI("Creating the default role %s "
                          "because it does not exist."),
@@ -208,11 +259,14 @@ class Manager(manager.Manager):
                 LOG.info(_LI("Creating the default role %s failed because it "
                              "was already created"),
                          CONF.member_role_id)
-            # now that default role exists, the add should succeed
-            self.driver.add_role_to_user_and_project(
-                user_id,
-                tenant_id,
-                CONF.member_role_id)
+
+        self.resource_api.get_project(tenant_id)
+
+        self.driver.add_role_to_user_and_project(
+            user_id,
+            tenant_id,
+            CONF.member_role_id)
+
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.role_assignment('created')
@@ -228,6 +282,7 @@ class Manager(manager.Manager):
 
         self.resource_api.get_project(project_id)
         self.role_api.get_role(role_id)
+
         self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
@@ -338,14 +393,28 @@ class Manager(manager.Manager):
     @notifications.role_assignment('created')
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
-                     inherited_to_projects=False, context=None):
+                     inherited_to_projects=False, context=None,
+                     agent_id=None, redelegated_id=None):
         self.role_api.get_role(role_id)
         if domain_id:
             self.resource_api.get_domain(domain_id)
         if project_id:
             self.resource_api.get_project(project_id)
+
+        if context:
+            environment = context.get('environment', {})
+            auth_context = environment.get(authorization.AUTH_CONTEXT_ENV, {})
+            agent_id = auth_context.get('user_id')
+        else:
+            request_context = oslo_context.get_current()
+            agent_id = request_context.user
+
+        redelegated = self._detect_redelegated(role_id, agent_id,
+                                               domain_id, project_id) or {}
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
+                                 project_id, inherited_to_projects,
+                                 agent_id, redelegated.get('id'))
+
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
