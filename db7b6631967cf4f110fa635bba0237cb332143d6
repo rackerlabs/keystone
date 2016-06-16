@@ -46,6 +46,30 @@
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2e4ad127",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T15:01:23Z",
+      "side": 1,
+      "message": "...I guess my concern is whether that would cause this method to be called when len(user_ref.local_user.passwords) is zero....which would result in this line throwing an error.  Maybe worth having a test for a user with no password?",
+      "parentUuid": "7aa08908_fa9d2b0b",
+      "range": {
+        "startLine": 272,
+        "startChar": 45,
+        "endLine": 272,
+        "endChar": 79
+      },
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
