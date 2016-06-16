@@ -50,7 +50,7 @@ class Assignment(base.AssignmentDriverV9):
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     inherited_to_projects=False, *args, **kwargs):
 
         assignment_type = AssignmentType.calculate_type(
             user_id, group_id, project_id, domain_id)
