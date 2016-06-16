@@ -249,6 +249,23 @@
       "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0d41d139",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T17:38:02Z",
+      "side": 1,
+      "message": "This will return better error messages in the event of an assertion failure:\n  https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertGreaterEqual\n\nYou could also use freezegun (it\u0027s in global requirements, but we don\u0027t use it in keystone yet) in this test to stop the clock, and ensure that the dates are actually equal.",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
