@@ -347,7 +347,7 @@ class V9AssignmentWrapperForV8Driver(AssignmentDriverV9):
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     inherited_to_projects=False, *args, **kwargs):
         self.driver.create_grant(
             role_id, user_id=user_id, group_id=group_id,
             domain_id=domain_id, project_id=project_id,
