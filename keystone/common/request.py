@@ -10,9 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import microversion_parse
 from oslo_config import cfg
 import webob
 
+from keystone.common import api_version_request as api_version
 from keystone import exception
 from keystone.i18n import _
 
@@ -21,6 +23,10 @@ from keystone.i18n import _
 CONTEXT_ENV = 'openstack.context'
 
 CONF = cfg.CONF
+
+# Name of header used by clients to request a specific version
+# of the REST API
+API_VERSION_REQUEST_HEADER = 'X-OpenStack-API-Version'
 
 
 class Request(webob.Request):
@@ -66,3 +72,30 @@ class Request(webob.Request):
             self._context_dict = self._get_context_dict()
 
         return self._context_dict
+
+    def set_api_version_request(self):
+        """Set API version request based on the request header information."""
+        hdr_string = microversion_parse.get_version(
+            self.headers, service_type='identity',
+            legacy_headers=[API_VERSION_REQUEST_HEADER])
+
+        if hdr_string is None:
+            self.api_version_request = api_version.APIVersionRequest(
+                api_version.DEFAULT_API_VERSION)
+        elif hdr_string == 'latest':
+            # 'latest' is a special keyword which is equivalent to
+            # requesting the maximum version of the API supported
+            self.api_version_request = api_version.max_api_version()
+        else:
+            self.api_version_request = api_version.APIVersionRequest(
+                hdr_string)
+
+            # Check that the version requested is within the global
+            # minimum/maximum of supported API versions
+            if not self.api_version_request.matches(
+                    api_version.min_api_version(),
+                    api_version.max_api_version()):
+                raise exception.InvalidGlobalAPIVersion(
+                    req_ver=self.api_version_request.get_string(),
+                    min_ver=api_version.min_api_version().get_string(),
+                    max_ver=api_version.max_api_version().get_string())
