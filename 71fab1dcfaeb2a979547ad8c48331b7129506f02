@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_bb6bb384",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T11:01:18Z",
+      "side": 1,
+      "message": "So I know you have done this to try and keep last_auth always \"correct\" (i.e. it\u0027s None if they haven\u0027t authenticated yet after upgrading to Newton). However, this new solution swaps a \"temporary incorrectness\", for a larger percentage of items bering \"permanently incorrect\" - i.e. all those users created prior to Newton. I\u0027m not quite sure that\u0027s a good trade-off.",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 67
+      },
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b502a2b2",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T11:01:18Z",
+      "side": 1,
+      "message": "thanks for fixing that.",
+      "range": {
+        "startLine": 71,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 70
+      },
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
