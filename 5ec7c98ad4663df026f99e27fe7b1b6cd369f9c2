@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_4071e176",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T17:10:24Z",
+      "side": 1,
+      "message": "I remember moving our job to the regular gate. Was there ever a reason given for why other cover jobs are running in the post queue? What\u0027s the point?",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "5ec7c98ad4663df026f99e27fe7b1b6cd369f9c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
