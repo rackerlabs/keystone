@@ -608,3 +608,31 @@ class LDAPServerConnectionError(UnexpectedError):
 class LDAPInvalidCredentialsError(UnexpectedError):
     message_format = _('Unable to authenticate against Identity backend - '
                        'Invalid username or password')
+
+
+class NotAcceptable(Error):
+    message_format = _('The service you have requested cannot generate a '
+                       'response that is acceptable according to the '
+                       'request headers.')
+    code = 406
+    title = 'Not Acceptable'
+
+
+class InvalidAPIVersionString(ValidationError):
+    message_format = _('API Version String %(version)s is of invalid format. '
+                       'Must be of format MajorNum.MinorNum.')
+
+
+class VersionNotFoundForAPIMethod(ValidationError):
+    message_format = _('API version %(version)s is not supported on this '
+                       'method.')
+
+
+class InvalidGlobalAPIVersion(NotAcceptable):
+    message_format = _('Version %(req_ver)s is not supported by the API. '
+                       'Minimum is %(min_ver)s and maximum is %(max_ver)s.')
+
+
+class ApiVersionsIntersect(ValidationError):
+    message_format = _('Version of %(name) %(min_ver) %(max_ver) intersects '
+                       'with another version.')
