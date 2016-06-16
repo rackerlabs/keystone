@@ -142,6 +142,8 @@ class Version(wsgi.Application):
         if 'v3' in _VERSIONS:
             versions['v3'] = {
                 'id': 'v3.8',
+                'max_version': '3.8',
+                'min_version': '3.8',
                 'status': 'stable',
                 'updated': '2017-02-22T00:00:00Z',
                 'links': [

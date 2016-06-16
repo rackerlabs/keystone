@@ -12,12 +12,14 @@
 
 from oslo_log import log as logging
 
+import microversion_parse
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import host
 from pycadf import resource
 import webob
 from webob.descriptors import environ_getter
 
+from keystone.common import api_version_request as api_version
 from keystone.common import authorization
 from keystone.common import context
 from keystone.common import utils
@@ -32,10 +34,19 @@ CONTEXT_ENV = 'openstack.context'
 CONF = keystone.conf.CONF
 LOG = logging.getLogger(__name__)
 
+# Name of header used by clients to request a specific version
+# of the REST API
+API_VERSION_REQUEST_HEADER = 'X-OpenStack-API-Version'
+
 
 class Request(webob.Request):
 
     _context_dict = None
+
+    def __init__(self, *args, **kwargs):
+        super(Request, self).__init__(*args, **kwargs)
+        if not hasattr(self, 'api_version_request'):
+            self.api_version_request = api_version.APIVersionRequest()
 
     def _get_context_dict(self):
         # allow middleware up the stack to provide context, params and headers.
@@ -118,6 +129,33 @@ class Request(webob.Request):
             initiator.domain_id = self.context.domain_id
 
         return initiator
+
+    def set_api_version_request(self):
+        """Set API version request based on the request header information."""
+        hdr_string = microversion_parse.get_version(
+            self.headers, service_type='identity',
+            legacy_headers=[API_VERSION_REQUEST_HEADER])
+
+        if hdr_string is None:
+            self.api_version_request = api_version.APIVersionRequest(
+                api_version.DEFAULT_API_VERSION)
+        elif hdr_string == 'latest':
+            # 'latest' is a special keyword which is equivalent to
+            # requesting the maximum version of the API supported
+            self.api_version_request = api_version.max_api_version()
+        else:
+            self.api_version_request = api_version.APIVersionRequest(
+                hdr_string)
+
+            # Check that the version requested is within the global
+            # minimum/maximum of supported API versions
+            if not self.api_version_request.matches(
+                    api_version.min_api_version(),
+                    api_version.max_api_version()):
+                raise exception.InvalidGlobalAPIVersion(
+                    req_ver=self.api_version_request.get_string(),
+                    min_ver=api_version.min_api_version().get_string(),
+                    max_ver=api_version.max_api_version().get_string())
 
     auth_type = environ_getter('AUTH_TYPE', None)
     remote_domain = environ_getter('REMOTE_DOMAIN', None)
