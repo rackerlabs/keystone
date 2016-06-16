@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_8460f6a5",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:31:49Z",
+      "side": 1,
+      "message": "Please expand this message to make it clear the cause, that is impersonation is not allowed by *because redelegated trust does not specify impersonation*.",
+      "range": {
+        "startLine": 94,
+        "startChar": 19,
+        "endLine": 94,
+        "endChar": 68
+      },
+      "revId": "d15e2268e74114d08b4099ccd2c407245b6af81f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
