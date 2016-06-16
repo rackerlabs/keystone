@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_7baf8b2b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 1189,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T11:07:54Z",
+      "side": 1,
+      "message": "I think it would be worth have some rows in here pre-migration and making sure their create_at and expires_at values are as expected.",
+      "revId": "7794057246753f6ceb57d7dab1b7275a32e082a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
