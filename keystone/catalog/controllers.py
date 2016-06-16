@@ -230,6 +230,7 @@ class RegionV3(controller.V3Controller):
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.catalog_api.create_region(ref, initiator)
         return wsgi.render_response(
+            request,
             RegionV3.wrap_member(request.context_dict, ref),
             status=(201, 'Created'))
 
