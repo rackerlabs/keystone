@@ -16,6 +16,52 @@
       "revId": "c7fbafaa225184ead287bf45e82e81acf6211add",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dab4cb83",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T03:59:57Z",
+      "side": 1,
+      "message": "you probably want to do something like:\n\n  target \u003d resource.Resource(typeURI\u003dtarget_uri,\n                id\u003dresource[\u0027id\u0027])\n  if \u0027name\u0027 in resource:\n    target.name \u003d resource[\u0027name\u0027]\n  if \u0027domain_id\u0027 in resource:\n    target.domain_id \u003d resource[\u0027domain_id\u0027]",
+      "range": {
+        "startLine": 393,
+        "startChar": 8,
+        "endLine": 394,
+        "endChar": 65
+      },
+      "revId": "c7fbafaa225184ead287bf45e82e81acf6211add",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dae68baf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-16T03:59:57Z",
+      "side": 1,
+      "message": "i think we could pass in the resource being deleted \u0027project\u0027 and pick out the ID and name in the notification code",
+      "range": {
+        "startLine": 474,
+        "startChar": 51,
+        "endLine": 474,
+        "endChar": 65
+      },
+      "revId": "c7fbafaa225184ead287bf45e82e81acf6211add",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
