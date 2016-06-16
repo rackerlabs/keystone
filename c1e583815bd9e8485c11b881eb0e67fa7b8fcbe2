@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c927c761",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T15:22:09Z",
+      "side": 1,
+      "message": "Always nice to see migrations treated uniformly across different databases engines.",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_29948b42",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T15:22:09Z",
+      "side": 1,
+      "message": "nice refactor",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_e9fc4374",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T15:22:09Z",
+      "side": 1,
+      "message": "Does oslo.db have a way to manage this column for you?",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4971170c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 1194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T15:22:09Z",
+      "side": 1,
+      "message": "This would be a stronger test if the table contained some data before the upgrade to 103",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
