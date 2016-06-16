@@ -132,6 +132,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a7c9b1ae",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-06-16T21:04:09Z",
+      "side": 1,
+      "message": "no, 795-6 are actually doing the delete of the domain. Remember domains are really just special projects now, so the delete_project on 796 is really deleting the domain. Would not want to send an audit event saying the domain was deleted if that raised.",
+      "parentUuid": "7aa08908_b47ba17a",
+      "range": {
+        "startLine": 478,
+        "startChar": 12,
+        "endLine": 478,
+        "endChar": 74
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_17aaded2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
