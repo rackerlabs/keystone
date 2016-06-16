@@ -95,7 +95,7 @@ class JsonBodyMiddleware(wsgi.Middleware):
         if request.content_type not in ('application/json', ''):
             e = exception.ValidationError(attribute='application/json',
                                           target='Content-Type header')
-            return wsgi.render_exception(e, request=request)
+            return wsgi.render_exception(e, request)
 
         params_parsed = {}
         try:
@@ -103,7 +103,7 @@ class JsonBodyMiddleware(wsgi.Middleware):
         except ValueError:
             e = exception.ValidationError(attribute='valid JSON',
                                           target='request body')
-            return wsgi.render_exception(e, request=request)
+            return wsgi.render_exception(e, request)
         finally:
             if not params_parsed:
                 params_parsed = {}
@@ -111,7 +111,7 @@ class JsonBodyMiddleware(wsgi.Middleware):
         if not isinstance(params_parsed, dict):
             e = exception.ValidationError(attribute='valid JSON object',
                                           target='request body')
-            return wsgi.render_exception(e, request=request)
+            return wsgi.render_exception(e, request)
 
         params = {}
         for k, v in params_parsed.items():

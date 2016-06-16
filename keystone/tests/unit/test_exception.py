@@ -17,6 +17,7 @@ import uuid
 from oslo_config import fixture as config_fixture
 from oslo_serialization import jsonutils
 import six
+import webob
 
 from keystone.common import wsgi
 import keystone.conf
@@ -28,8 +29,16 @@ CONF = keystone.conf.CONF
 
 
 class ExceptionTestCase(unit.BaseTestCase):
+
+    def _make_request(self, url='/'):
+        req = webob.Request.blank(url)
+        args = {'action': 'index', 'controller': None}
+        req.environ['wsgiorg.routing_args'] = [None, args]
+        return req
+
     def assertValidJsonRendering(self, e):
-        resp = wsgi.render_exception(e)
+        req = self._make_request(url='/')
+        resp = wsgi.render_exception(e, req)
         self.assertEqual(e.code, resp.status_int)
         self.assertEqual('%s %s' % (e.code, e.title), resp.status)
 
@@ -71,8 +80,9 @@ class ExceptionTestCase(unit.BaseTestCase):
         self.assertIn(target, six.text_type(e))
 
     def test_forbidden_title(self):
+        req = self._make_request(url='/')
         e = exception.Forbidden()
-        resp = wsgi.render_exception(e)
+        resp = wsgi.render_exception(e, req)
         j = jsonutils.loads(resp.body)
         self.assertEqual('Forbidden', e.title)
         self.assertEqual('Forbidden', j['error'].get('title'))

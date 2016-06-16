@@ -509,6 +509,7 @@ class ImpliedRolesV3(controller.V3Controller):
     def create_implied_role(self, request, prior_role_id, implied_role_id):
         self.role_api.create_implied_role(prior_role_id, implied_role_id)
         return wsgi.render_response(
+            request,
             self.get_implied_role(request,
                                   prior_role_id,
                                   implied_role_id),

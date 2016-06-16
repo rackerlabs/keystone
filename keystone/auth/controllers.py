@@ -428,7 +428,7 @@ class Auth(controller.V3Controller):
             if trust:
                 self.trust_api.consume_use(trust['id'])
 
-            return render_token_data_response(token_id, token_data,
+            return render_token_data_response(request, token_id, token_data,
                                               created=True)
         except exception.TrustNotFound as e:
             raise exception.Unauthorized(e)
@@ -548,7 +548,7 @@ class Auth(controller.V3Controller):
         # NOTE(morganfainberg): The code in
         # ``keystone.common.wsgi.render_response`` will remove the content
         # body.
-        return render_token_data_response(token_id, token_data)
+        return render_token_data_response(request, token_id, token_data)
 
     @controller.protected()
     def revoke_token(self, request):
@@ -564,7 +564,7 @@ class Auth(controller.V3Controller):
             token_id)
         if not include_catalog and 'catalog' in token_data['token']:
             del token_data['token']['catalog']
-        return render_token_data_response(token_id, token_data)
+        return render_token_data_response(request, token_id, token_data)
 
     @controller.protected()
     def revocation_list(self, request, auth=None):
@@ -673,7 +673,7 @@ class Auth(controller.V3Controller):
 
 # FIXME(gyee): not sure if it belongs here or keystone.common. Park it here
 # for now.
-def render_token_data_response(token_id, token_data, created=False):
+def render_token_data_response(request, token_id, token_data, created=False):
     """Render token data HTTP response.
 
     Stash token ID into the X-Subject-Token header.
@@ -686,5 +686,6 @@ def render_token_data_response(token_id, token_data, created=False):
     else:
         status = (200, 'OK')
 
-    return wsgi.render_response(body=token_data,
+    return wsgi.render_response(request,
+                                body=token_data,
                                 status=status, headers=headers)

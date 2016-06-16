@@ -379,7 +379,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
         # check_protection to properly be able to perform policy enforcement.
         self.check_protection(context, prep_info, ref)
 
-    def authenticate(self, context, credentials=None, ec2Credentials=None):
+    def authenticate(self, request, credentials=None, ec2Credentials=None):
         (user_ref, project_ref, metadata_ref, roles_ref,
          catalog_ref) = self._authenticate(credentials=credentials,
                                            ec2credentials=ec2Credentials)
@@ -389,7 +389,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
         token_id, token_data = self.token_provider_api.issue_v3_token(
             user_ref['id'], method_names, project_id=project_ref['id'],
             metadata_ref=metadata_ref)
-        return render_token_data_response(token_id, token_data)
+        return render_token_data_response(request, token_id, token_data)
 
     @controller.protected(callback=_check_credential_owner_and_user_id_match)
     def ec2_get_credential(self, request, user_id, credential_id):
@@ -426,7 +426,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
         ref['links']['self'] = url
 
 
-def render_token_data_response(token_id, token_data):
+def render_token_data_response(request, token_id, token_data):
     """Render token data HTTP response.
 
     Stash token ID into the X-Subject-Token header.
@@ -434,5 +434,6 @@ def render_token_data_response(token_id, token_data):
     """
     headers = [('X-Subject-Token', token_id)]
 
-    return wsgi.render_response(body=token_data,
+    return wsgi.render_response(request,
+                                body=token_data,
                                 status=(200, 'OK'), headers=headers)

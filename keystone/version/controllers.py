@@ -165,22 +165,28 @@ class Version(wsgi.Application):
         if req_mime_type == MimeTypes.JSON_HOME:
             v3_json_home = request_v3_json_home('/v3')
             return wsgi.render_response(
+                request,
                 body=v3_json_home,
                 headers=(('Content-Type', MimeTypes.JSON_HOME),))
 
         versions = self._get_versions_list(request.context_dict)
-        return wsgi.render_response(status=(300, 'Multiple Choices'), body={
-            'versions': {
-                'values': list(versions.values())
+        return wsgi.render_response(
+            request,
+            status=(300, 'Multiple Choices'),
+            body={
+                'versions': {
+                    'values': list(versions.values())
+                }
             }
-        })
+        )
 
     def get_version_v2(self, request):
         versions = self._get_versions_list(request.context_dict)
         if 'v2.0' in _VERSIONS:
-            return wsgi.render_response(body={
-                'version': versions['v2.0']
-            })
+            return wsgi.render_response(
+                request,
+                body={'version': versions['v2.0']}
+            )
         else:
             raise exception.VersionNotFound(version='v2.0')
 
@@ -202,11 +208,13 @@ class Version(wsgi.Application):
 
             if req_mime_type == MimeTypes.JSON_HOME:
                 return wsgi.render_response(
+                    request,
                     body=self._get_json_home_v3(),
                     headers=(('Content-Type', MimeTypes.JSON_HOME),))
 
-            return wsgi.render_response(body={
-                'version': versions['v3']
-            })
+            return wsgi.render_response(
+                request,
+                body={'version': versions['v3']}
+            )
         else:
             raise exception.VersionNotFound(version='v3')

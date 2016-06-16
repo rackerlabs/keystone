@@ -96,7 +96,8 @@ class IdentityProvider(_ControllerBase):
         identity_provider.setdefault('enabled', False)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(request.context_dict, idp_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.filterprotected('id', 'enabled')
     def list_identity_providers(self, request, filters):
@@ -184,7 +185,8 @@ class FederationProtocol(_ControllerBase):
         ref = self._normalize_dict(protocol)
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = FederationProtocol.wrap_member(request.context_dict, ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.protected()
     @validation.validated(schema.protocol_update, 'protocol')
@@ -223,7 +225,8 @@ class MappingController(_ControllerBase):
         mapping_ref = self.federation_api.create_mapping(mapping_id, ref)
         response = MappingController.wrap_member(request.context_dict,
                                                  mapping_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.protected()
     def list_mappings(self, request):
@@ -394,18 +397,19 @@ class Auth(auth_controllers.Auth):
         (response, service_provider) = t
 
         headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(body=response.to_string(),
+        return wsgi.render_response(request,
+                                    body=response.to_string(),
                                     status=('200', 'OK'),
                                     headers=headers)
 
     @validation.validated(schema.saml_create, 'auth')
-    def create_ecp_assertion(self, context, auth):
+    def create_ecp_assertion(self, request, auth):
         """Exchange a scoped token for an ECP assertion.
 
         :param auth: Dictionary that contains a token and service provider ID
         :returns: ECP Assertion based on properties from the token
         """
-        t = self._create_base_saml_assertion(context, auth)
+        t = self._create_base_saml_assertion(request.context_dict, auth)
         (saml_assertion, service_provider) = t
         relay_state_prefix = service_provider['relay_state_prefix']
 
@@ -414,7 +418,8 @@ class Auth(auth_controllers.Auth):
                                                relay_state_prefix)
 
         headers = self._build_response_headers(service_provider)
-        return wsgi.render_response(body=ecp_assertion.to_string(),
+        return wsgi.render_response(request,
+                                    body=ecp_assertion.to_string(),
                                     status=('200', 'OK'),
                                     headers=headers)
 
@@ -487,7 +492,8 @@ class ServiceProvider(_ControllerBase):
                                     CONF.saml.relay_state_prefix)
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(request.context_dict, sp_ref)
-        return wsgi.render_response(body=response, status=('201', 'Created'))
+        return wsgi.render_response(
+            request, body=response, status=('201', 'Created'))
 
     @controller.filterprotected('id', 'enabled')
     def list_service_providers(self, request, filters):
@@ -517,7 +523,7 @@ class ServiceProvider(_ControllerBase):
 class SAMLMetadataV3(_ControllerBase):
     member_name = 'metadata'
 
-    def get_metadata(self, context):
+    def get_metadata(self, request):
         metadata_path = CONF.saml.idp_metadata_path
         try:
             with open(metadata_path, 'r') as metadata_handler:
@@ -525,5 +531,6 @@ class SAMLMetadataV3(_ControllerBase):
         except IOError as e:
             # Raise HTTP 500 in case Metadata file cannot be read.
             raise exception.MetadataFileError(reason=e)
-        return wsgi.render_response(body=metadata, status=('200', 'OK'),
+        return wsgi.render_response(request,
+                                    body=metadata, status=('200', 'OK'),
                                     headers=[('Content-Type', 'text/xml')])
