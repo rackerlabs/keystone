@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_4fc9145a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T16:33:16Z",
+      "side": 1,
+      "message": "I wrote a test for that locally here http://cdn.pasteraw.com/c742f35crl7h6cfp0wcnemudfu89dof",
+      "parentUuid": "7aa08908_2e4ad127",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_2fd76850",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
