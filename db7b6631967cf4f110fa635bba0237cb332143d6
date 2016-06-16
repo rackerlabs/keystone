@@ -104,6 +104,23 @@
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2fd76850",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:30:26Z",
+      "side": 1,
+      "message": "This could be simplified to:\n\n  del user_ref.local_user.passwords[:-max_cnt]\n\nAnd you wouldn\u0027t need the elif, either. Perform the truncation unconditionally.",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
