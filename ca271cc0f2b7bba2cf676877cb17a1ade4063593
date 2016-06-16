@@ -22,6 +22,24 @@
       "revId": "ca271cc0f2b7bba2cf676877cb17a1ade4063593",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_680211b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T14:29:07Z",
+      "side": 1,
+      "message": "The test I am removing here is refactored and named properly here - https://review.openstack.org/#/c/330221/1/keystone/tests/unit/test_v3_auth.py",
+      "parentUuid": "7aa08908_fa9379fe",
+      "revId": "ca271cc0f2b7bba2cf676877cb17a1ade4063593",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
