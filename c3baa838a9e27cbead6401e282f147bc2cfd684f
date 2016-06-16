@@ -108,6 +108,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_b47ba17a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T20:42:14Z",
+      "side": 1,
+      "message": "Hmm, actually I think this is the right behavior .... if there is an exception while deleting assingments it doesn\u0027t matter because the proejct has been deleted already, so it\u0027s okay to send a notification out saying the project\u0027s been deleted\n\nIn this case, L795-796 should be in accordance with this and inside the try in L797\n\nDo you agree?",
+      "parentUuid": "7aa08908_76ad7683",
+      "range": {
+        "startLine": 478,
+        "startChar": 12,
+        "endLine": 478,
+        "endChar": 74
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_17aaded2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
