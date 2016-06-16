@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_f710a45b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-16T13:52:19Z",
+      "side": 1,
+      "message": "Not following. This issue was that if the user never authenticated, then the clock wouldn\u0027t start ticking until then. Now if that is the case, the clock would start at when the user was created. Seems reasonable to me... What am I missing?",
+      "parentUuid": "7aa08908_bb6bb384",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 67
+      },
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b502a2b2",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 29
