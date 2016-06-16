@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_2af3d6e8",
+        "filename": "keystone/common/sql/migrate_repo/versions/105_add_user_date_columns.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T16:48:45Z",
+      "side": 1,
+      "message": "++ that would still allow this to be sanely replicate-able.",
+      "parentUuid": "7aa08908_af2cf801",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_8fa93c27",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 29
@@ -141,6 +159,24 @@
         "endLine": 71,
         "endChar": 70
       },
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8a75aa33",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T16:48:45Z",
+      "side": 1,
+      "message": "We should probably change this if we respin disable_user_account_days_inactive to have a minimum value of 1.",
+      "parentUuid": "7aa08908_b502a2b2",
       "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
