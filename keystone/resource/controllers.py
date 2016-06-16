@@ -186,9 +186,10 @@ class DomainConfigV3(controller.V3Controller):
         ref = self.domain_config_api.create_config(domain_id, config)
         if original_config:
             # Return status code 200, since config already existed
-            return wsgi.render_response(body={self.member_name: ref})
+            return wsgi.render_response(request, body={self.member_name: ref})
         else:
-            return wsgi.render_response(body={self.member_name: ref},
+            return wsgi.render_response(request,
+                                        body={self.member_name: ref},
                                         status=('201', 'Created'))
 
     @controller.protected()
@@ -203,7 +204,7 @@ class DomainConfigV3(controller.V3Controller):
         self.resource_api.get_domain(domain_id)
         ref = self.domain_config_api.update_config(
             domain_id, config, group, option)
-        return wsgi.render_response(body={self.member_name: ref})
+        return wsgi.render_response(request, body={self.member_name: ref})
 
     def update_domain_config_group(self, context, domain_id, group, config):
         self.resource_api.get_domain(domain_id)

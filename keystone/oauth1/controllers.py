@@ -263,7 +263,8 @@ class OAuthControllerV3(controller.V3Controller):
             result += expiry_bit
 
         headers = [('Content-Type', 'application/x-www-urlformencoded')]
-        response = wsgi.render_response(result,
+        response = wsgi.render_response(request,
+                                        result,
                                         status=(201, 'Created'),
                                         headers=headers)
 
@@ -343,7 +344,8 @@ class OAuthControllerV3(controller.V3Controller):
             result += expiry_bit
 
         headers = [('Content-Type', 'application/x-www-urlformencoded')]
-        response = wsgi.render_response(result,
+        response = wsgi.render_response(request,
+                                        result,
                                         status=(201, 'Created'),
                                         headers=headers)
 

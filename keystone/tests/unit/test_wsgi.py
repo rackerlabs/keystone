@@ -109,7 +109,8 @@ class ApplicationTest(BaseWSGITest):
         data = {'attribute': 'value'}
         body = b'{"attribute": "value"}'
 
-        resp = wsgi.render_response(body=data)
+        req = self._make_request()
+        resp = wsgi.render_response(req, body=data)
         self.assertEqual('200 OK', resp.status)
         self.assertEqual(http_client.OK, resp.status_int)
         self.assertEqual(body, resp.body)
@@ -117,7 +118,9 @@ class ApplicationTest(BaseWSGITest):
         self.assertEqual(str(len(body)), resp.headers.get('Content-Length'))
 
     def test_render_response_custom_status(self):
+        req = self._make_request()
         resp = wsgi.render_response(
+            req,
             status=(http_client.NOT_IMPLEMENTED, 'Not Implemented'))
         self.assertEqual('501 Not Implemented', resp.status)
         self.assertEqual(http_client.NOT_IMPLEMENTED, resp.status_int)
@@ -165,12 +168,16 @@ class ApplicationTest(BaseWSGITest):
                         matchers.Contains('missing_attribute2'))
 
     def test_render_response_custom_headers(self):
-        resp = wsgi.render_response(headers=[('Custom-Header', 'Some-Value')])
+        req = self._make_request()
+        resp = wsgi.render_response(req,
+                                    headers=[('Custom-Header', 'Some-Value')])
         self.assertEqual('Some-Value', resp.headers.get('Custom-Header'))
         self.assertEqual('X-Auth-Token', resp.headers.get('Vary'))
 
     def test_render_response_non_str_headers_converted(self):
+        req = self._make_request()
         resp = wsgi.render_response(
+            req,
             headers=[('Byte-Header', 'Byte-Value'),
                      (u'Unicode-Header', u'Unicode-Value')])
         # assert that all headers are identified.
@@ -182,7 +189,8 @@ class ApplicationTest(BaseWSGITest):
                          type(resp.headers.get('Unicode-Header')))
 
     def test_render_response_no_body(self):
-        resp = wsgi.render_response()
+        req = self._make_request()
+        resp = wsgi.render_response(req)
         self.assertEqual('204 No Content', resp.status)
         self.assertEqual(http_client.NO_CONTENT, resp.status_int)
         self.assertEqual(b'', resp.body)
@@ -190,7 +198,9 @@ class ApplicationTest(BaseWSGITest):
         self.assertIsNone(resp.headers.get('Content-Type'))
 
     def test_render_response_head_with_body(self):
-        resp = wsgi.render_response({'id': uuid.uuid4().hex}, method='HEAD')
+        req = self._make_request()
+        resp = wsgi.render_response(req,
+                                    {'id': uuid.uuid4().hex}, method='HEAD')
         self.assertEqual(http_client.OK, resp.status_int)
         self.assertEqual(b'', resp.body)
         self.assertNotEqual('0', resp.headers.get('Content-Length'))
@@ -207,7 +217,8 @@ class ApplicationTest(BaseWSGITest):
 
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
-        resp = wsgi.render_exception(e)
+        req = self._make_request(url='/')
+        resp = wsgi.render_exception(e, req)
         self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
 
     def test_render_exception_host(self):
@@ -215,7 +226,7 @@ class ApplicationTest(BaseWSGITest):
         req = self._make_request(url='/')
         context = {'host_url': 'http://%s:5000' % uuid.uuid4().hex,
                    'environment': req.environ}
-        resp = wsgi.render_exception(e, context=context)
+        resp = wsgi.render_exception(e, req, context=context)
 
         self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
 
