@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_63751231",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-16T14:53:39Z",
+      "side": 1,
+      "message": "so I may be misreading this, but seems like there are two solutions to the original problem:\n\n1) you only have last_auth_at, and this is set to now() for all existing rows at migration time (this was what I was trying to suggest)\n2) you have last_auth_at and create_at, with last_auth_at set to None and created_at set to now() at migration time.\n\nI think you said you didn\u0027t like 1) because it gave an \"incorrect\" last_auth_at (until the user really did authenticate).  However, with 2) for all users that exist prior to migration, created_at will be set to now() and never be updated....i.e. per permanently \"wrong\" (since for sure, none of those users where actually created at now()). With 1) the, period of \"incorrectness\" only lasts as along as it takes for the user to next authenticate or of the user.\n\nBoth \"work\" in terms of the PCI functionally, just seems odd to have a scheme that creates permanently incorrect data. An alternative would be to not call it \"created_at\"....you could call it \"migrated_at\"....?",
+      "parentUuid": "7aa08908_f710a45b",
+      "range": {
+        "startLine": 257,
+        "startChar": 28,
+        "endLine": 257,
+        "endChar": 67
+      },
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b502a2b2",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 29
