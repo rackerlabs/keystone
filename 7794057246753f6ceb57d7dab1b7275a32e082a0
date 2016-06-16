@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_ef9a8061",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:41:36Z",
+      "side": 0,
+      "message": "This should default to None, and have a min\u003d1 to force a user to login every day.",
+      "revId": "7794057246753f6ceb57d7dab1b7275a32e082a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

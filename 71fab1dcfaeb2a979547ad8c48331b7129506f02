@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_af2cf801",
+        "filename": "keystone/common/sql/migrate_repo/versions/105_add_user_date_columns.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:41:36Z",
+      "side": 1,
+      "message": "This should just be a date, not a datetime. We don\u0027t need or want the extra precision, because we don\u0027t want to update this more than once a day. http://docs.sqlalchemy.org/en/latest/core/type_basics.html#sqlalchemy.types.Date",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8fa93c27",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:41:36Z",
+      "side": 1,
+      "message": "Is something explicitly expecting an AssertionError from this method\u0027s caller? I know there used to be. If that code still exists, I don\u0027t know how it\u0027ll handle a specific 401 exception being raised instead.",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_af199889",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-16T16:41:36Z",
+      "side": 1,
+      "message": "It\u0027d require a lot of refactoring and I\u0027m not sure it\u0027s possible to stomp on the model\u0027s existing property, but it\u0027d be easier for me to read this as a hybrid property on the user object, and just have it read as the normal \"user.enabled\"",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_bb6bb384",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 29
