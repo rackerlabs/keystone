@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_f98367a7",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:17:00Z",
+      "side": 1,
+      "message": "Change in request.py [1] explicitly sets auth_type and remote_domain as request properties. I have checked and it\u0027s webob that sets this property into Request instances\n\n\n[1] https://review.openstack.org/#/c/330290/1/keystone/common/request.py",
+      "range": {
+        "startLine": 505,
+        "startChar": 19,
+        "endLine": 505,
+        "endChar": 30
+      },
+      "revId": "23936d3d2b104d1498169a907589881d5f33108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_945e9a77",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 1
@@ -84,6 +107,30 @@
       "writtenOn": "2016-06-16T02:20:16Z",
       "side": 1,
       "message": "rm context",
+      "range": {
+        "startLine": 45,
+        "startChar": 43,
+        "endLine": 45,
+        "endChar": 50
+      },
+      "revId": "23936d3d2b104d1498169a907589881d5f33108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_79c93725",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-16T19:17:00Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7aa08908_1453ca6d",
       "range": {
         "startLine": 45,
         "startChar": 43,
