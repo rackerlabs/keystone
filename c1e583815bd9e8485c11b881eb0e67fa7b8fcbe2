@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_db482e8d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-16T15:38:58Z",
+      "side": 1,
+      "message": "I think we could totally rely on the column\u0027s default, but having it set here makes it closer to the expires_at of the previous password. Is that something we need to think about here too?",
+      "parentUuid": "7aa08908_dbecae94",
+      "revId": "c1e583815bd9e8485c11b881eb0e67fa7b8fcbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_bb90c243",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 84
