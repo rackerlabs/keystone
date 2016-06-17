@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_72b2dee6",
+        "filename": "keystone_tempest_plugin/services/identity/v3/service_providers_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-17T04:17:01Z",
+      "side": 1,
+      "message": "much cleaner!",
+      "revId": "874a91afbeb28efc24e573bd4f192b43a3cdcecf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
