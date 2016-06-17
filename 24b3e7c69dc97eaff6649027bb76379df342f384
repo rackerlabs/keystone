@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_1f7ba2f5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:37:25Z",
+      "side": 1,
+      "message": "Please add a TODO or FIXME note here so we now there is something to be looked at",
+      "range": {
+        "startLine": 337,
+        "startChar": 37,
+        "endLine": 337,
+        "endChar": 73
+      },
+      "revId": "24b3e7c69dc97eaff6649027bb76379df342f384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1fc9e225",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:37:25Z",
+      "side": 1,
+      "message": "What if this attribute isn\u0027t there ? We should keep it with .get",
+      "range": {
+        "startLine": 47,
+        "startChar": 64,
+        "endLine": 47,
+        "endChar": 72
+      },
+      "revId": "24b3e7c69dc97eaff6649027bb76379df342f384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_d20bd229",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 1
@@ -13,6 +59,30 @@
       "writtenOn": "2016-06-17T04:33:09Z",
       "side": 1,
       "message": "not needed?",
+      "range": {
+        "startLine": 274,
+        "startChar": 8,
+        "endLine": 274,
+        "endChar": 38
+      },
+      "revId": "24b3e7c69dc97eaff6649027bb76379df342f384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dff63a5c",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:37:25Z",
+      "side": 1,
+      "message": "this is used in L298, L303 and L311; are you suggesting to simply call request.context_dict there instead ?",
+      "parentUuid": "7aa08908_d20bd229",
       "range": {
         "startLine": 274,
         "startChar": 8,
