@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_1c0a6120",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-17T22:26:03Z",
+      "side": 1,
+      "message": "In the line above we check \u0027name\u0027 is in params - i don\u0027t see how it possible this could fail.",
+      "parentUuid": "7aa08908_1fc9e225",
+      "range": {
+        "startLine": 47,
+        "startChar": 64,
+        "endLine": 47,
+        "endChar": 72
+      },
+      "revId": "24b3e7c69dc97eaff6649027bb76379df342f384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_d20bd229",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 1
