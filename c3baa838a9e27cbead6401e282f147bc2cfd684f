@@ -156,6 +156,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_7f40e607",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:16:22Z",
+      "side": 1,
+      "message": "You\u0027re right",
+      "parentUuid": "7aa08908_a7c9b1ae",
+      "range": {
+        "startLine": 478,
+        "startChar": 12,
+        "endLine": 478,
+        "endChar": 74
+      },
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_17aaded2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
@@ -190,6 +214,24 @@
       "writtenOn": "2016-06-15T13:48:05Z",
       "side": 1,
       "message": "This will also be fired if the deletions themselves fail.",
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_9f903298",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:16:22Z",
+      "side": 1,
+      "message": "No, the deletions happen before this method (_post_delete_cleanup_project) is called",
+      "parentUuid": "7aa08908_bf821c50",
       "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
