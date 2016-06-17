@@ -16,6 +16,24 @@
       "revId": "f0fefe115256b7683108f19517ce644e9f117c17",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3f2adee7",
+        "filename": "keystone/common/sql/migrate_repo/versions/102_alter_service_type_unique.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-17T05:30:04Z",
+      "side": 1,
+      "message": "++ and you can\u0027t fix it easily. If you want a migration to remove duplicates, which one you remove ? Is it the right one ?",
+      "parentUuid": "dab17558_6a5d8446",
+      "revId": "f0fefe115256b7683108f19517ce644e9f117c17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
