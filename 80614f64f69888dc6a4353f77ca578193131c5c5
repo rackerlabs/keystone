@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_d6710de0",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-06-17T00:00:04Z",
+      "side": 1,
+      "message": "I add this functions, is because when setting cache items, the domain_id/local_id/entity_type in entity dict are ASCII, but when I usepublic_id to get the entity from database when delete_id_mapping, the string domain_id/local_id/entity_type in entity dict are Unicode, so if I don\u0027t add this function \"_key_generate_to_str\" to cache region, in the circumstance above, two different key will be generated.\n\nCould you give me some advice about this problem?",
+      "parentUuid": "7aa08908_9aab8a75",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5a24820d",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 3
