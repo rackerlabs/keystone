@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_a9b678d9",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-17T17:41:45Z",
+      "side": 1,
+      "message": "great comment, think it should be a docstring though, add it as a docstring in the test.",
+      "revId": "debeb41607d9eda93c353c976aef02b462a4d74c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_093d0c2b",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-17T17:41:45Z",
+      "side": 1,
+      "message": "trust",
+      "range": {
+        "startLine": 432,
+        "startChar": 40,
+        "endLine": 432,
+        "endChar": 45
+      },
+      "revId": "debeb41607d9eda93c353c976aef02b462a4d74c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
