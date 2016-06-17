@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_2a5f2410",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-17T13:41:32Z",
+      "side": 1,
+      "message": "can we add some trust information here? like the trust_id...",
+      "revId": "33bb3feba5f0c0fa7e654a2a8b8eec495a38024b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
