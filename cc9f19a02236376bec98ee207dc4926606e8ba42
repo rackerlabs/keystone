@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5896ae94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-18T07:35:13Z",
+      "side": 1,
+      "message": "link to the original patch?",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3893e2a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-18T07:35:13Z",
+      "side": 1,
+      "message": "I didn\u0027t get it.",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7dbd5cb0",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-18T07:35:13Z",
+      "side": 1,
+      "message": "nit, pls remove the whitespace here since six should be third party lib.",
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_985e5611",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-18T07:35:13Z",
+      "side": 1,
+      "message": "I\u0027d like this to be default value from kwargs instead of hard coded here, the return status is not always predefined, for example, some API in keystone return 204 for put.",
+      "range": {
+        "startLine": 76,
+        "startChar": 30,
+        "endLine": 76,
+        "endChar": 49
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_983016eb",
+        "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-18T07:35:13Z",
+      "side": 1,
+      "message": "jsonutils.dumps is used widely in keystone project, why change to use native json lib on purpose?",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 29
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
