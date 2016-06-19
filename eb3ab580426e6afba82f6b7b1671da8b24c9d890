@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a9d85d2_9c51d111",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-19T08:26:32Z",
+      "side": 1,
+      "message": "hmm, IIUC, json is from python lib but six and tempest are from third party.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 33
+      },
+      "revId": "eb3ab580426e6afba82f6b7b1671da8b24c9d890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
