@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_d645fa17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-19T03:05:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_5896ae94",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3893e2a4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-18T07:35:13Z",
       "side": 1,
       "message": "I didn\u0027t get it.",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_d6ce9ab3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-19T03:05:28Z",
+      "side": 1,
+      "message": "jsonutils is used mostly for compatibility, which is not necessary in this specific case",
+      "parentUuid": "7aa08908_3893e2a4",
       "range": {
         "startLine": 12,
         "startChar": 2,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_963b729c",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-19T03:05:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_7dbd5cb0",
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_985e5611",
         "filename": "keystone_tempest_plugin/services/identity/clients.py",
         "patchSetId": 2
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_b6366eb2",
+        "filename": "keystone_tempest_plugin/services/identity/clients.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-19T03:05:28Z",
+      "side": 1,
+      "message": "it isn\u0027t in a general sense, but this client is for the Federation API, which has a consistent 201 return value for this kind of operation.",
+      "parentUuid": "7aa08908_985e5611",
+      "range": {
+        "startLine": 76,
+        "startChar": 30,
+        "endLine": 76,
+        "endChar": 49
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_983016eb",
         "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
         "patchSetId": 2
@@ -99,6 +189,30 @@
       "writtenOn": "2016-06-18T07:35:13Z",
       "side": 1,
       "message": "jsonutils.dumps is used widely in keystone project, why change to use native json lib on purpose?",
+      "range": {
+        "startLine": 26,
+        "startChar": 19,
+        "endLine": 26,
+        "endChar": 29
+      },
+      "revId": "cc9f19a02236376bec98ee207dc4926606e8ba42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_f640f609",
+        "filename": "keystone_tempest_plugin/services/identity/v3/mapping_rules_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-19T03:05:28Z",
+      "side": 1,
+      "message": "jsonutils is used for compatibility reasons (for Python 2.6 to be more specific), keystone has dropped Python 2.6 for a while.\n\nsee comment at line 17: https://review.openstack.org/#/c/302299/11/keystone_tempest_plugin/services/identity/v3/identity_providers_client.py",
+      "parentUuid": "7aa08908_983016eb",
       "range": {
         "startLine": 26,
         "startChar": 19,
