@@ -34,6 +34,23 @@
       "revId": "f42caf817e66bfff43c58b8b66c43df24b4eef2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_f31c6d79",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-20T12:30:23Z",
+      "side": 1,
+      "message": "the comment in the other file also applies here",
+      "revId": "f42caf817e66bfff43c58b8b66c43df24b4eef2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
