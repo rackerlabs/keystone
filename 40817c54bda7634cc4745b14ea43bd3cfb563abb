@@ -46,6 +46,30 @@
       "revId": "40817c54bda7634cc4745b14ea43bd3cfb563abb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_2691889a",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-20T15:18:26Z",
+      "side": 1,
+      "message": "So the rolling upgrade test allows you to add migrations to a list of \"migrations that are actually safe but don\u0027t look like they are\" (!) I think this would definitely qualify, if you would prefer to update the column...",
+      "parentUuid": "5a9d85d2_0b7575f8",
+      "range": {
+        "startLine": 22,
+        "startChar": 58,
+        "endLine": 22,
+        "endChar": 71
+      },
+      "revId": "40817c54bda7634cc4745b14ea43bd3cfb563abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
