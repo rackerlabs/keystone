@@ -851,14 +851,13 @@ class Manager(manager.Manager):
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
         user['enabled'] = clean.user_enabled(user['enabled'])
-        domain_id = user['domain_id']
-        self.resource_api.get_domain(domain_id)
+
+        # verify provided domain id is correct written
+        domain_id = self.resource_api.get_domain(user_ref['domain_id'])['id']
 
         self._assert_default_project_id_is_not_domain(
             user_ref.get('default_project_id'))
 
-        # For creating a user, the domain is in the object itself
-        domain_id = user_ref['domain_id']
         driver = self._select_identity_driver(domain_id)
         user = self._clear_domain_id_if_domain_unaware(driver, user)
         # Generate a local ID - in the future this might become a function of
