@@ -692,6 +692,9 @@ class Manager(manager.Manager):
         try:
             # Retrieve the corresponding project that acts as a domain
             project = self.driver.get_project(domain_id)
+            # default in mysql is to be not case sensitive therefore verify
+            if domain_id != project['id']:
+                raise exception.DomainNotFound(domain_id=domain_id)
         except exception.ProjectNotFound:
             raise exception.DomainNotFound(domain_id=domain_id)
 
