@@ -380,7 +380,12 @@ class Manager(manager.Manager):
 
     @MEMOIZE
     def get_domain(self, domain_id):
-        return self.driver.get_domain(domain_id)
+        domain_ref = self.driver.get_domain(domain_id)
+        # the DB backend might not operate in case sensitive mode,
+        # therefore verify for exact match of IDs
+        if domain_id != domain_ref['id']:
+            raise exception.DomainNotFound(domain_id=domain_id)
+        return domain_ref
 
     @MEMOIZE
     def get_domain_by_name(self, domain_name):
