@@ -22,6 +22,30 @@
       "revId": "40817c54bda7634cc4745b14ea43bd3cfb563abb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_0b7575f8",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T15:09:38Z",
+      "side": 1,
+      "message": "Ideally, I would like to change column to be not nullable after the migration. However, the rolling upgrades gate prevents column changes. Thus, this purposely does not match the sql model.",
+      "parentUuid": "5a9d85d2_eb3aa9cc",
+      "range": {
+        "startLine": 22,
+        "startChar": 58,
+        "endLine": 22,
+        "endChar": 71
+      },
+      "revId": "40817c54bda7634cc4745b14ea43bd3cfb563abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
