@@ -219,6 +219,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.post('/users', body={'user': {}},
                   expected_status=http_client.BAD_REQUEST)
 
+    def test_create_user_bad_domain_id(self):
+        """Call ``POST /users``."""
+
+        # create user with 'Default' domain_id instead if 'default
+        domain_id = 'Default'
+        user = unit.create_user(self.identity_api, domain_id)
+
+        self.assertEqual(user['domain_id'], CONF.identity.default_domain_id)
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'
