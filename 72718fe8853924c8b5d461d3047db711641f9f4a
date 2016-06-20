@@ -191,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_ebaf49e1",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T16:08:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_7e700841",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_9ef17498",
         "filename": "keystone/exception.py",
         "patchSetId": 37
@@ -219,6 +237,24 @@
       "writtenOn": "2016-06-16T15:53:09Z",
       "side": 1,
       "message": "Can the validator support null values? The .get() will default to returning None if there\u0027s no password set.",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_cba08d93",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T16:08:12Z",
+      "side": 1,
+      "message": "It should.  I\u0027ll create a test case for this.",
+      "parentUuid": "7aa08908_7e8da8d2",
       "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -260,6 +296,42 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_4b8dbd30",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T16:08:12Z",
+      "side": 1,
+      "message": "If updating the password, the password will be part of the user dict. Otherwise not.",
+      "parentUuid": "7aa08908_b1eaa10c",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_ab26e165",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T16:08:12Z",
+      "side": 1,
+      "message": "It does make sense.  Will fix this.",
+      "parentUuid": "7aa08908_9ee4d4ac",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5e6c2c36",
         "filename": "keystone/identity/core.py",
         "patchSetId": 37
@@ -271,6 +343,24 @@
       "writtenOn": "2016-06-16T15:53:09Z",
       "side": 1,
       "message": "You don\u0027t need to call .get() here if you\u0027ve already checked that there\u0027s a password.",
+      "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_2b77913b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-20T16:08:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_5e6c2c36",
       "revId": "72718fe8853924c8b5d461d3047db711641f9f4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
