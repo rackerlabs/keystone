@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_a47466fd",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-06-20T08:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_9aab8a75",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5a24820d",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2016-06-15T12:24:47Z",
       "side": 1,
       "message": "Also, dict keys are not guaranteed in order. A better approach to have a consistent cache key is to just use .items() and make an ordered tuple.",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_0460da34",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-06-20T08:37:48Z",
+      "side": 1,
+      "message": "For this changes, I meant to fix a string encoding problem that when string stored in a database, then get it out, the string encode format may changed.\n\nWith the latest code, I just wipe out all cache, it may not be the solution with best performance, but it\u0027s the simplest way to avoid the encoding problem.\n\nDone",
+      "parentUuid": "7aa08908_5a24820d",
       "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "5a9d85d2_445ae284",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-06-20T08:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_fa460e7a",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1ab4ba80",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 3
@@ -82,6 +136,24 @@
       "writtenOn": "2016-06-15T12:24:47Z",
       "side": 1,
       "message": "unrelated change",
+      "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_245fd673",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-06-20T08:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_1ab4ba80",
       "revId": "80614f64f69888dc6a4353f77ca578193131c5c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
