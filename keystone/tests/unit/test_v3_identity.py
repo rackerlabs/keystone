@@ -219,8 +219,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.post('/users', body={'user': {}},
                   expected_status=http_client.BAD_REQUEST)
 
-    def test_list_users(self):
-        """Call ``GET /users``."""
+    def test_create_user_bad_domain_id(self):
+        """Call ``POST /users``."""
+        # create user with 'DEFaUlT' domain_id instead if 'default'
+        # and verify it fails
+        self.post('/users',
+                  body={'user': {"name": "baddomain", "domain_id":
+                        "DEFaUlT"}},
+                  expected_status=http_client.NOT_FOUND)
+
+    def test_list_head_users(self):
+        """Call ``GET & HEAD /users``."""
         resource_url = '/users'
         r = self.get(resource_url)
         self.assertValidUserListResponse(r, ref=self.user,
