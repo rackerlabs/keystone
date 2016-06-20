@@ -97,7 +97,10 @@ class Manager(manager.Manager):
         # driver, then wrap it.
         if isinstance(self.driver, base.AssignmentDriverV8):
             self.driver = base.V9AssignmentWrapperForV8Driver(self.driver)
-        elif not isinstance(self.driver, base.AssignmentDriverV9):
+            self.driver = base.V10AssignmentWrapperForV9Driver(self.driver)
+        elif isinstance(self.driver, base.AssignmentDriverV9):
+            self.driver = base.V10AssignmentWrapperForV9Driver(self.driver)
+        elif not isinstance(self.driver, base.AssignmentDriverV10):
             raise exception.UnsupportedDriverVersion(driver=assignment_driver)
 
         self.event_callbacks = {

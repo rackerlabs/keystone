@@ -40,7 +40,7 @@ class AssignmentType(object):
         raise exception.AssignmentTypeCalculationError(**locals())
 
 
-class Assignment(base.AssignmentDriverV9):
+class Assignment(base.AssignmentDriverV10):
 
     def default_role_driver(self):
         return 'sql'
@@ -50,7 +50,8 @@ class Assignment(base.AssignmentDriverV9):
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     inherited_to_projects=False,
+                     agent_id=None, redelegated_id=None):
 
         assignment_type = AssignmentType.calculate_type(
             user_id, group_id, project_id, domain_id)
