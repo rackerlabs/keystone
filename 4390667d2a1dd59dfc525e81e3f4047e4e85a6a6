@@ -22,6 +22,30 @@
       "revId": "4390667d2a1dd59dfc525e81e3f4047e4e85a6a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_a9c5525c",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 12549
+      },
+      "writtenOn": "2016-06-20T13:02:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_cc083d83",
+      "range": {
+        "startLine": 76,
+        "startChar": 43,
+        "endLine": 76,
+        "endChar": 50
+      },
+      "revId": "4390667d2a1dd59dfc525e81e3f4047e4e85a6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
