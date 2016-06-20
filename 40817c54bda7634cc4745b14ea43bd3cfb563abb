@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a9d85d2_eb3aa9cc",
+        "filename": "keystone/common/sql/migrate_repo/versions/104_add_password_date_columns.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-20T15:04:06Z",
+      "side": 1,
+      "message": "so this doesn\u0027t match what\u0027s in the sql model...did you mean to update this to be non-nullable at the end of this migration?",
+      "range": {
+        "startLine": 22,
+        "startChar": 58,
+        "endLine": 22,
+        "endChar": 71
+      },
+      "revId": "40817c54bda7634cc4745b14ea43bd3cfb563abb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
