@@ -293,6 +293,24 @@
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_984b9259",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T20:17:59Z",
+      "side": 1,
+      "message": "Made this change, but test cases failed and it hurt my brain to try to figure out why :)",
+      "parentUuid": "3aaa91ec_2f0ce541",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
