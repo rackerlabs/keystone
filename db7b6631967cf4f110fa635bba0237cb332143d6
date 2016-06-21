@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_9890b297",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T20:44:51Z",
+      "side": 1,
+      "message": "Yes, it will always only have 2 passwords even if unique_last_password_count is set to zero. In the validation, I\u0027m not assuming that the password will actually get saved successfully even though it is part of the same transaction.",
+      "parentUuid": "7aa08908_1425635b",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b4a28fab",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
