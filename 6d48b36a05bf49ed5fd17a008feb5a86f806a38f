@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a9d85d2_2b83f505",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-21T02:57:29Z",
+      "side": 1,
+      "message": "++",
+      "revId": "6d48b36a05bf49ed5fd17a008feb5a86f806a38f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_4bcda15c",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-21T02:57:29Z",
+      "side": 1,
+      "message": "I thought I remember a way to pass a regular expression to a jsonschema Validator and have it validate like you would any other schema. \n\nSomething that leverages `is_regex()` here I think? Then we might be able to roll the validation into the decorator like we do with the rest of the create_user and update_user calls (versus having a separate call to the validation module just to validate passwords).\n\nhttp://python-jsonschema.readthedocs.io/en/latest/_modules/jsonschema/_format/?highlight\u003dregex",
+      "revId": "6d48b36a05bf49ed5fd17a008feb5a86f806a38f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
