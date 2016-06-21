@@ -1,0 +1,11 @@
+Code-Review+1: Raildo Mascena <raildom@gmail.com>
+Code-Review+2: Steve Martinelli <s.martinelli@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 21 Jun 2016 14:51:32 +0000
+Reviewed-on: https://review.openstack.org/329855
+Project: openstack/keystone
+Branch: refs/heads/master
