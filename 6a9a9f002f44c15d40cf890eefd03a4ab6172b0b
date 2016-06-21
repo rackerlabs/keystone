@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_380c1794",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-21T23:18:02Z",
+      "side": 1,
+      "message": "could do `return limit_query` here,\n\nnot sure which convention is more appropriate",
+      "range": {
+        "startLine": 378,
+        "startChar": 12,
+        "endLine": 378,
+        "endChar": 31
+      },
+      "revId": "6a9a9f002f44c15d40cf890eefd03a4ab6172b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
