@@ -33,6 +33,24 @@
       "revId": "6d48b36a05bf49ed5fd17a008feb5a86f806a38f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_22a50f04",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-21T19:42:41Z",
+      "side": 1,
+      "message": "Ah ha - in think about this a little bit deeper the reason why we can\u0027t pass the regular expression to the validator is because we can\u0027t enforce when configuration is loaded (import errors). This *is* something we should be able to do once Dolph\u0027s work is done though, right?\n\nWe could maybe add a comment to this method saying to collapse it into the normal validation path once Dolph\u0027s work lands.",
+      "parentUuid": "5a9d85d2_4bcda15c",
+      "revId": "6d48b36a05bf49ed5fd17a008feb5a86f806a38f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
