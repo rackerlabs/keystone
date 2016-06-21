@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_1b2207ba",
+        "filename": "etc/policy.json",
+        "patchSetId": 56
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T17:54:49Z",
+      "side": 1,
+      "message": "I\u0027ll create a release note for this.",
+      "parentUuid": "5a9d85d2_c1c79710",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 41
+      },
+      "revId": "13084b8490a1cd4b6a8358120fc9d5687201880a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c40e7e8b",
         "filename": "keystone/federation/controllers.py",
         "patchSetId": 56
