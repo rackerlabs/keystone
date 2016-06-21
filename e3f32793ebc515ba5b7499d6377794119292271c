@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_bb03f375",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-06-21T17:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9d85d2_8e2b1794",
+      "range": {
+        "startLine": 375,
+        "startChar": 8,
+        "endLine": 375,
+        "endChar": 13
+      },
+      "revId": "e3f32793ebc515ba5b7499d6377794119292271c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a9d85d2_390a2f22",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-21T04:01:36Z",
       "side": 1,
       "message": "you could use 1 here",
+      "range": {
+        "startLine": 366,
+        "startChar": 35,
+        "endLine": 366,
+        "endChar": 47
+      },
+      "revId": "e3f32793ebc515ba5b7499d6377794119292271c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_fbfd7b6f",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-06-21T17:48:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9d85d2_390a2f22",
       "range": {
         "startLine": 366,
         "startChar": 35,
