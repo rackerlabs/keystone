@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_4c033f10",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T16:57:24Z",
+      "side": 1,
+      "message": "Yes: https://review.openstack.org/#/c/320586/42/keystone/exception.py\n\nI\u0027ll prefix it with \"Invalid password: \" for both patches.",
+      "parentUuid": "7aa08908_b113c1b6",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1425635b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2f4b452d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T16:57:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_b4a28fab",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_74178745",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
@@ -64,6 +100,24 @@
       "writtenOn": "2016-06-16T16:45:21Z",
       "side": 1,
       "message": "check_password can fail for other reasons too",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4f17b1ed",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T16:57:24Z",
+      "side": 1,
+      "message": "But if it does fail, it means the passwords don\u0027t match, right?",
+      "parentUuid": "7aa08908_74178745",
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -183,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cf71e1e2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T16:57:24Z",
+      "side": 1,
+      "message": "Thanks lbragstad and dstanek, I\u0027ll add this test and make the necessary changes in the next patch.",
+      "parentUuid": "7aa08908_f18429d4",
+      "range": {
+        "startLine": 272,
+        "startChar": 45,
+        "endLine": 272,
+        "endChar": 79
+      },
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_2fd76850",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
@@ -194,6 +272,24 @@
       "writtenOn": "2016-06-16T16:30:26Z",
       "side": 1,
       "message": "This could be simplified to:\n\n  del user_ref.local_user.passwords[:-max_cnt]\n\nAnd you wouldn\u0027t need the elif, either. Perform the truncation unconditionally.",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2f0ce541",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T16:57:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_2fd76850",
       "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
