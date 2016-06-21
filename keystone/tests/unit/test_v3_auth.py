@@ -4653,9 +4653,10 @@ class TestAuthContext(unit.TestCase):
         self.auth_context = auth.controllers.AuthContext()
 
     def test_pick_lowest_expires_at(self):
-        expires_at_1 = utils.isotime(timeutils.utcnow())
+        expires_at_1 = utils.isotime(timeutils.utcnow(), subsecond=True)
         expires_at_2 = utils.isotime(timeutils.utcnow() +
-                                     datetime.timedelta(seconds=10))
+                                     datetime.timedelta(seconds=10),
+                                     subsecond=True)
         # make sure auth_context picks the lowest value
         self.auth_context['expires_at'] = expires_at_1
         self.auth_context['expires_at'] = expires_at_2

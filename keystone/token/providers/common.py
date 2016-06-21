@@ -128,7 +128,7 @@ class V2TokenDataHelper(object):
         expires = token_ref.get('expires', provider.default_expire_time())
         if expires is not None:
             if not isinstance(expires, six.text_type):
-                expires = utils.isotime(expires)
+                expires = utils.isotime(expires, subsecond=True)
 
         token_data = token_ref.get('token_data')
         if token_data:

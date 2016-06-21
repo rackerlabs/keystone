@@ -662,7 +662,7 @@ def create_v2_token():
         "access": {
             "token": {
                 "expires": utils.isotime(timeutils.utcnow() +
-                                         FUTURE_DELTA),
+                                         FUTURE_DELTA, subsecond=True),
                 "issued_at": "2013-05-21T00:02:43.941473Z",
                 "tenant": {
                     "enabled": True,
@@ -677,7 +677,7 @@ def create_v2_token():
 SAMPLE_V2_TOKEN_EXPIRED = {
     "access": {
         "token": {
-            "expires": utils.isotime(CURRENT_DATE),
+            "expires": utils.isotime(CURRENT_DATE, subsecond=True),
             "issued_at": "2013-05-21T00:02:43.941473Z",
             "tenant": {
                 "enabled": True,
@@ -693,7 +693,8 @@ def create_v3_token():
     return {
         "token": {
             'methods': [],
-            "expires_at": utils.isotime(timeutils.utcnow() + FUTURE_DELTA),
+            "expires_at": utils.isotime(timeutils.utcnow() + FUTURE_DELTA,
+                                        subsecond=True),
             "issued_at": "2013-05-21T00:02:43.941473Z",
         }
     }
@@ -701,7 +702,7 @@ def create_v3_token():
 
 SAMPLE_V3_TOKEN_EXPIRED = {
     "token": {
-        "expires_at": utils.isotime(CURRENT_DATE),
+        "expires_at": utils.isotime(CURRENT_DATE, subsecond=True),
         "issued_at": "2013-05-21T00:02:43.941473Z",
     }
 }
