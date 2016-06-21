@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_5e5bd354",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-21T20:51:25Z",
+      "side": 1,
+      "message": "The one exception would be if no password is supplied when the user is created. In that case, there would only be one password after the update.",
+      "parentUuid": "3aaa91ec_9890b297",
+      "revId": "db7b6631967cf4f110fa635bba0237cb332143d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b4a28fab",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 13
