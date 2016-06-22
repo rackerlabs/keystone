@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b30c8195",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T16:56:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_af199889",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_2a1ab618",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 29
@@ -82,6 +100,24 @@
       "writtenOn": "2016-06-16T17:03:44Z",
       "side": 1,
       "message": "nit: Leave the above if block alone, and treat it as a short circuit ... remove the else and un-indent the rest of the method :) Just a good habit to reduce  make the 79 char limit easier to maintain with a lower perceived mccabe complexity for readers.",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f3b0c98d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T16:56:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_2a1ab618",
       "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -176,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_134755bc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T16:56:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_6a667ebc",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_4a7622d9",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 29
@@ -245,6 +299,42 @@
       "writtenOn": "2016-06-16T17:03:44Z",
       "side": 1,
       "message": "Then you don\u0027t have to check for a specific value here, just something truthy.",
+      "parentUuid": "7aa08908_8a75aa33",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_3804f0be",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T16:56:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_4a0bc22b",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d8f68cd6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T16:56:34Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7aa08908_8a75aa33",
       "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
