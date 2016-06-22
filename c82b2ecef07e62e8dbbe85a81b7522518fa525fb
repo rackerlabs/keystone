@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_2bd2c300",
+        "filename": "keystone/backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T22:17:21Z",
+      "side": 1,
+      "message": "very nice to see those proveider annotations going away!",
+      "revId": "c82b2ecef07e62e8dbbe85a81b7522518fa525fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
