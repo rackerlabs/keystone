@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_37f08490",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-22T12:25:56Z",
+      "side": 1,
+      "message": "this is not accurate, see comment in previous patchset.",
+      "range": {
+        "startLine": 442,
+        "startChar": 42,
+        "endLine": 443,
+        "endChar": 77
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f7655ce1",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-22T12:25:56Z",
+      "side": 1,
+      "message": "suggest you change the sentence a bit so it is clearer that what is printed is the field:\n\n  Error writing field \"%s\" to database.",
+      "range": {
+        "startLine": 446,
+        "startChar": 27,
+        "endLine": 446,
+        "endChar": 63
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
