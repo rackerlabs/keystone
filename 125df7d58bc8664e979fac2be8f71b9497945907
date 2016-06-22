@@ -136,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cef35c9d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T17:01:33Z",
+      "side": 1,
+      "message": "This has been fixed so that when admin re-enables a user, the last_active_at gets reset.",
+      "parentUuid": "7aa08908_3f262cce",
+      "revId": "125df7d58bc8664e979fac2be8f71b9497945907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_6d362352",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
