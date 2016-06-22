@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_4b9bcf72",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T22:13:59Z",
+      "side": 1,
+      "message": "nice!",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 48
+      },
+      "revId": "694c390f6e78b729b69d0bb0bd46893455c8bf39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
