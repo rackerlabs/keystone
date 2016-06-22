@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_9b96e292",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-06-22T01:12:17Z",
+      "side": 1,
+      "message": "this should be the filtered len as filter has already been applied at this point. Anyway, I am also good with this.",
+      "range": {
+        "startLine": 374,
+        "startChar": 8,
+        "endLine": 374,
+        "endChar": 20
+      },
+      "revId": "6a9a9f002f44c15d40cf890eefd03a4ab6172b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_380c1794",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 6
