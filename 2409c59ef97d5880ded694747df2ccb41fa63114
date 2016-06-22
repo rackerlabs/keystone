@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_69c194e4",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-22T12:48:01Z",
+      "side": 1,
+      "message": "This is not a validation error because nothing is being validated. We don\u0027t really know what the error is. https://www.python.org/dev/peps/pep-0249/#internalerror\n\nI think in most cases a 500 is actually valid for InternalErrors.\n\nIs there a way to validate the data after the exception and only raise a ValidationError if it\u0027s a 4-byte character?",
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f7655ce1",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 2
