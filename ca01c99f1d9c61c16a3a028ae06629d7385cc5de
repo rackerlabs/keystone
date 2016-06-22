@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_67c5348d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T14:51:26Z",
+      "side": 1,
+      "message": "this should be user[\u0027domain_id\u0027] for consistency with the calls above.\n\nAlso, leaving the code as it is and just adding the domain check looks cleaner to me:\n\n    self.resource_api.get_domain(domain_id)\n\nIn addition, this needs tests",
+      "range": {
+        "startLine": 856,
+        "startChar": 49,
+        "endLine": 856,
+        "endChar": 57
+      },
+      "revId": "ca01c99f1d9c61c16a3a028ae06629d7385cc5de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
