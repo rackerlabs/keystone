@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_7f5649d3",
+        "filename": "keystone/common/sql/migrate_repo/versions/091_migrate_data_to_local_user_and_password_tables.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T20:31:39Z",
+      "side": 1,
+      "message": "nit: You could create variables for the column names, e.g. _DOMAIN_ID_COLUMN and _NAME_COLUMN since you are using it more than once.",
+      "range": {
+        "startLine": 66,
+        "startChar": 21,
+        "endLine": 66,
+        "endChar": 30
+      },
+      "revId": "a4be3399eec5eac6bbcd5540b4b057e8a9f562d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
