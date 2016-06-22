@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_213f91d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T17:30:23Z",
+      "side": 1,
+      "message": "What does this buy us? Is this saving clients a request to keystone API ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 47,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "456aa8d442e33b175ae59d1e6bbf371735f2fa75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_f9702f0d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
