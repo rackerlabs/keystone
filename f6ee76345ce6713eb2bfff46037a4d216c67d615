@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_ab37d3ae",
+        "filename": "keystone/common/sql/migrate_repo/versions/096_add_idp_id_to_token_column.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T22:10:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa0719c6_e3d5e0b9",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa0719c6_e7e77ee2",
         "filename": "keystone/common/sql/migrate_repo/versions/096_add_idp_id_to_token_column.py",
         "patchSetId": 6
@@ -105,6 +123,29 @@
         "startChar": 31,
         "endLine": 30,
         "endChar": 70
+      },
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4bff4faa",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T22:10:16Z",
+      "side": 1,
+      "message": "Is this unrelated ? I don\u0027t have a clue to this and revoking tokens upon IPD deletion.",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 68
       },
       "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -176,6 +217,24 @@
       "side": 1,
       "message": "I think the original author did it for consistency. Agreed it is not needed currently.",
       "parentUuid": "1af94dfe_9e0bc27c",
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_abd35337",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-22T22:10:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1af94dfe_aac2b350",
       "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
