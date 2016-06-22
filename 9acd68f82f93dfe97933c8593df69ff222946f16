@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_2bce52b4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 2745,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-22T16:35:46Z",
+      "side": 1,
+      "message": "I suggest add other test case using user and domain and role, to match this federation domains",
+      "revId": "9acd68f82f93dfe97933c8593df69ff222946f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4bcbdea5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-06-22T16:35:46Z",
+      "side": 1,
+      "message": "I think we can make this more readable, (I know set can be used to remove duplicates, but we can do something like:\nroles_without_duplicate \u003d []\nfor role in roles:\n   if role not in roles_without_duplicate:\n         role_without_duplicate.append(role)",
+      "revId": "9acd68f82f93dfe97933c8593df69ff222946f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
