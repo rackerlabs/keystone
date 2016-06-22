@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_e1f1096c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-22T17:24:54Z",
+      "side": 1,
+      "message": "The AssertionError gets caught here, which raises an Unauthorized exception:\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/plugins/password.py#L40",
+      "parentUuid": "7aa08908_8fa93c27",
+      "revId": "71fab1dcfaeb2a979547ad8c48331b7129506f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_af199889",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 29
