@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_9aa4eaa6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-22T18:24:22Z",
+      "side": 1,
+      "message": "Random question, is there a way to make this required if password_regex is defined?",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_9f785cc6",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-22T18:24:22Z",
+      "side": 1,
+      "message": "++",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
