@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_1c55af4f",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-22T12:12:39Z",
+      "side": 1,
+      "message": "nit (not related): it is better as a docstring, when reading that comment I thought it was referring to the lines below it.",
+      "range": {
+        "startLine": 159,
+        "startChar": 8,
+        "endLine": 159,
+        "endChar": 63
+      },
+      "revId": "6872f85560cda415799520ae0ddbe4e39a431376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
