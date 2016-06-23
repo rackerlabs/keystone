@@ -68,6 +68,24 @@
       "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a25a1828",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T20:00:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_d70d64e9",
+      "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
