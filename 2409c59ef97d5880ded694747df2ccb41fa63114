@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_10bf5dd1",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-23T04:28:09Z",
+      "side": 1,
+      "message": "This doesn\u0027t sound like the exception that should be handled by the @sql.handle_conflicts decorator.",
+      "range": {
+        "startLine": 437,
+        "startChar": 12,
+        "endLine": 438,
+        "endChar": 64
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_37f08490",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 2
@@ -58,6 +81,52 @@
         "startChar": 27,
         "endLine": 446,
         "endChar": 63
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_90222db8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-23T04:28:09Z",
+      "side": 1,
+      "message": "unicode.",
+      "range": {
+        "startLine": 315,
+        "startChar": 33,
+        "endLine": 315,
+        "endChar": 38
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_889653ee",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-23T04:28:09Z",
+      "side": 1,
+      "message": "This doesn\u0027t looks like test the change correctly, ideally, the assertion below could pass without the mock here. If this is MySQL specific issue, let\u0027s write a MySQL specific testcase, and ignore it when it\u0027s using SQLite?",
+      "range": {
+        "startLine": 325,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 69
       },
       "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
