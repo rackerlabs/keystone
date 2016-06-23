@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_835a8d28",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:22:01Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we use type references from `keystone.common.sql` like we do for everything else? https://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L48-L66\n\nIt looks like we would have to add sqlalchemy.Date to `keystone.common.sql.core`.\n\n    Date \u003d sql.Date",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_038cdd7d",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:22:01Z",
+      "side": 1,
+      "message": "nit: s/Identity/Unique identifier/",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
