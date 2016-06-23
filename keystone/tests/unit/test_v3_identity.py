@@ -300,6 +300,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidUserResponse(r, self.user)
         self.head(resource_url, expected_status=http_client.OK)
 
+    def test_get_user_includes_required_attributes(self):
+        """Call ``GET /users/{user_id}`` required attributes are included."""
+        user = unit.new_user_ref(domain_id=self.domain_id,
+                                 project_id=self.project_id)
+        user = self.identity_api.create_user(user)
+        self.assertIn('id', user)
+        self.assertIn('name', user)
+        self.assertIn('enabled', user)
+        self.assertIn('password_expires_at', user)
+        r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
+        self.assertValidUserResponse(r, user)
+
     def test_get_user_with_default_project(self):
         """Call ``GET /users/{user_id}`` making sure of default_project_id."""
         user = unit.new_user_ref(domain_id=self.domain_id,
