@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_927011de",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-23T17:52:18Z",
+      "side": 1,
+      "message": "though this is only the project domain, this is a limitation i\u0027m OK with",
+      "range": {
+        "startLine": 31,
+        "startChar": 51,
+        "endLine": 31,
+        "endChar": 74
+      },
+      "revId": "79ed31b893a14f6da20cf4c642a26a970f4deda3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
