@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b4a25649",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T19:32:47Z",
+      "side": 1,
+      "message": "Did we want to move this up under the `update_user` method?",
+      "revId": "eafe85a235a71bab5e94113a12d07e406a41ac55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
