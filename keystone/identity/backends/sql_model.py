@@ -85,6 +85,12 @@ class User(sql.ModelBase, sql.DictBase):
             return self.password_ref.expires_at
         return None
 
+    @hybrid_property
+    def password_is_expired(self):
+        if self.password_expires_at:
+            return datetime.datetime.utcnow() >= self.password_expires_at
+        return False
+
     @password.setter
     def password(self, value):
         now = datetime.datetime.utcnow()

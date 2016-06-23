@@ -53,9 +53,11 @@ class Identity(base.IdentityDriverV8):
                 user_ref = self._get_user(session, user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        if not self._check_password(password, user_ref):
+            raise AssertionError(_('Invalid user / password'))
+        elif user_ref.password_is_expired:
+            raise exception.PasswordExpired(user_id=user_id)
+        return base.filter_user(user_ref.to_dict())
 
     # user crud
 
