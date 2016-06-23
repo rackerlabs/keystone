@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_261f67b8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:32:39Z",
+      "side": 1,
+      "message": "Looks like I published my comments on patch set 46 after you got a few more iterations up. My comments will still apply.",
+      "revId": "265d142c5ad041ab761042b7dc52567a12fcecbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
