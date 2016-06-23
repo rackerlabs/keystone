@@ -43,6 +43,8 @@ def filter_user(user_ref):
         except KeyError:  # nosec
             # ok to not have extra in the user_ref.
             pass
+        if 'password_expires_at' not in user_ref:
+            user_ref['password_expires_at'] = None
     return user_ref
 
 
