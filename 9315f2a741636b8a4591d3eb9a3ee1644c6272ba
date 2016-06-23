@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_5454d2c8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:22:57Z",
+      "side": 1,
+      "message": "This should default to None and have a min\u003d1, so:\ndefault\u003dNone,\nmin\u003d1,\n...",
+      "range": {
+        "startLine": 1094,
+        "startChar": 28,
+        "endLine": 1094,
+        "endChar": 29
+      },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b45b76f5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:22:57Z",
+      "side": 1,
+      "message": "Change this to something like, \"this feature is disabled by default.\"",
+      "range": {
+        "startLine": 1095,
+        "startChar": 61,
+        "endLine": 1095,
+        "endChar": 62
+      },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_23c3d939",
         "filename": "keystone/common/config.py",
         "patchSetId": 37
@@ -13,6 +59,30 @@
       "writtenOn": "2016-06-23T16:16:19Z",
       "side": 1,
       "message": "duplicate?",
+      "range": {
+        "startLine": 1096,
+        "startChar": 5,
+        "endLine": 1101,
+        "endChar": 6
+      },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_74890e75",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:22:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3aaa91ec_23c3d939",
       "range": {
         "startLine": 1096,
         "startChar": 5,
