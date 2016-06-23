@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_b629f38b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-23T00:26:04Z",
+      "side": 1,
+      "message": "You can now remove this",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 53
+      },
+      "revId": "5337eb6173cbd245eada90f0bb42dc7c1434ce57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_759dfe58",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 8
