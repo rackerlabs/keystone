@@ -32,7 +32,7 @@ oslo.service>=0.7.0 # Apache-2.0
 oslo.utils!=2.6.0,>=2.0.0 # Apache-2.0
 oauthlib>=0.6
 pysaml2>=2.4.0
-dogpile.cache>=0.5.4
+dogpile.cache>=0.5.4,<=0.5.7
 jsonschema!=2.5.0,<3.0.0,>=2.0.0
 pycadf>=1.1.0
 msgpack-python>=0.4.0
