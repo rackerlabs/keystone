@@ -58,6 +58,8 @@ class Identity(base.IdentityDriverV8):
             raise AssertionError(_('Invalid user / password'))
         elif not user_ref.enabled:
             raise exception.UserDisabled(user_id=user_id)
+        elif user_ref.password_is_expired:
+            raise exception.PasswordExpired(user_id=user_id)
         return base.filter_user(user_ref.to_dict())
 
     # user crud
@@ -111,7 +113,7 @@ class Identity(base.IdentityDriverV8):
                 old_user_dict[k] = user[k]
             new_user = model.User.from_dict(old_user_dict)
             for attr in model.User.attributes:
-                if attr != 'id':
+                if attr != 'id' and attr not in model.User.readonly_attributes:
                     setattr(user_ref, attr, getattr(new_user, attr))
             user_ref.extra = new_user.extra
             return base.filter_user(

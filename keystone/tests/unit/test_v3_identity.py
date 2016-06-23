@@ -316,6 +316,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user = self.identity_api.create_user(user)
         self.assertNotIn('created_at', user)
         self.assertNotIn('last_active_at', user)
+
+    def test_get_user_includes_required_attributes(self):
+        """Call ``GET /users/{user_id}`` required attributes are included."""
+        user = unit.new_user_ref(domain_id=self.domain_id,
+                                 project_id=self.project_id)
+        user = self.identity_api.create_user(user)
+        self.assertIn('id', user)
+        self.assertIn('name', user)
+        self.assertIn('enabled', user)
+        self.assertIn('password_expires_at', user)
         r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
         self.assertValidUserResponse(r, user)
 
