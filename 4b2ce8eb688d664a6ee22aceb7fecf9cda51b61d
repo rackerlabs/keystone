@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2e54591f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a6b4f781",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e660bf03",
         "filename": "keystone/common/config.py",
         "patchSetId": 43
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-23T18:18:06Z",
       "side": 1,
       "message": "Write this as instructions to operators, rather than a description of a description, which is a little bit of a mind bender. \"Describe your password regular expression here in language for humans. If a password fails to match the regular expression, the contents of this configuration variable will be returned to users to explain why their requested password was insufficient.\"",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4e056512",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:01:16Z",
+      "side": 1,
+      "message": "Makes sense.  Thanks.",
+      "parentUuid": "3aaa91ec_e660bf03",
       "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_717be08c",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:01:16Z",
+      "side": 1,
+      "message": "Added a check for isinstance(password, basestring) here.  Seems to still make sense.",
+      "parentUuid": "3aaa91ec_795ab02b",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_483efc8c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 43
@@ -116,6 +170,24 @@
       "writtenOn": "2016-06-23T18:18:06Z",
       "side": 1,
       "message": ":)\n\n  if \u0027password\u0027 in user:\n    validators.validate_password(user[\u0027password\u0027])",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b1cd48b9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T19:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_483efc8c",
       "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
