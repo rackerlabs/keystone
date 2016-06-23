@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_a6b4f781",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T18:18:06Z",
+      "side": 1,
+      "message": "Spell out description?",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e660bf03",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T18:18:06Z",
+      "side": 1,
+      "message": "Write this as instructions to operators, rather than a description of a description, which is a little bit of a mind bender. \"Describe your password regular expression here in language for humans. If a password fails to match the regular expression, the contents of this configuration variable will be returned to users to explain why their requested password was insufficient.\"",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_9aa4eaa6",
         "filename": "keystone/common/config.py",
         "patchSetId": 43
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cd767ed6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T18:18:06Z",
+      "side": 1,
+      "message": "Not with oslo.config, but it\u0027d be a good keystone-manage doctor check. We could also include a basic, terrible default here like \"Your password strength is not sufficient.\"",
+      "parentUuid": "3aaa91ec_9aa4eaa6",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_9f785cc6",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 43
@@ -30,6 +82,40 @@
       "writtenOn": "2016-06-22T18:24:22Z",
       "side": 1,
       "message": "++",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_795ab02b",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T18:18:06Z",
+      "side": 1,
+      "message": "After discussing, it sounded like you needed to check isinstance(password, basestring) here, rather than casting the input to a binary type in py2.\n\nMy original comment: Is this Python 3 compatible? I would think this should be the same across py 2 and py 3, so this would be six.binary_type (what you have) or, I would think six.text_type (but it looks like re.match expects a binary type, so I\u0027m probably wrong).",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_483efc8c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T18:18:06Z",
+      "side": 1,
+      "message": ":)\n\n  if \u0027password\u0027 in user:\n    validators.validate_password(user[\u0027password\u0027])",
       "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
