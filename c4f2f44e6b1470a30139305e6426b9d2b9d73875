@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_77c11054",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T19:47:28Z",
+      "side": 1,
+      "message": "++ much better.",
+      "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f77b4026",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T19:47:28Z",
+      "side": 1,
+      "message": "Do we have a test that exercises the basestring check?",
+      "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d70d64e9",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T19:47:28Z",
+      "side": 1,
+      "message": "Interesting, I\u0027ve never seen self.assertIsNone used like this before for the validation tests. Typically, we just make the call because if a validation error is raised it will be captured in the test output and fail.\n\n    password \u003d \u0027mypassword2\u0027\n    self.validator.validate(password)\n\nThe absence of wrapping the validation in an assertRaises() essentially confirms that the call to validate the password did what we expected it to.",
+      "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
