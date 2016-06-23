@@ -16,6 +16,24 @@
       "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_8ba3c9ff",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 92
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T15:32:55Z",
+      "side": 1,
+      "message": "Yes, because the schema changed.",
+      "parentUuid": "3aaa91ec_7085a805",
+      "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
