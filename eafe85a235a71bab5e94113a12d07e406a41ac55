@@ -16,6 +16,24 @@
       "revId": "eafe85a235a71bab5e94113a12d07e406a41ac55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_420254b5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T20:06:39Z",
+      "side": 1,
+      "message": "My preference is that we not move this up. While I understand the reason for wanting to move it, there is an argument for keeping it here as well.",
+      "parentUuid": "3aaa91ec_b4a25649",
+      "revId": "eafe85a235a71bab5e94113a12d07e406a41ac55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
