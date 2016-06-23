@@ -129,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_77dab04d",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-23T19:45:52Z",
+      "side": 1,
+      "message": "it really is a 4byte test. mysql generally handles unicode just fine",
+      "parentUuid": "3aaa91ec_90222db8",
+      "range": {
+        "startLine": 315,
+        "startChar": 33,
+        "endLine": 315,
+        "endChar": 38
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_889653ee",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 2
@@ -140,6 +164,30 @@
       "writtenOn": "2016-06-23T04:28:09Z",
       "side": 1,
       "message": "This doesn\u0027t looks like test the change correctly, ideally, the assertion below could pass without the mock here. If this is MySQL specific issue, let\u0027s write a MySQL specific testcase, and ignore it when it\u0027s using SQLite?",
+      "range": {
+        "startLine": 325,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 69
+      },
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f7cd0086",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-23T19:45:52Z",
+      "side": 1,
+      "message": "This is just checking the exception catching logic and not using any database. I\u0027m perfectly happy with a test like this. That doesn\u0027t mean we cant\u0027 add a MySQL specific test where we actually hit MySQL with no mocking.",
+      "parentUuid": "3aaa91ec_889653ee",
       "range": {
         "startLine": 325,
         "startChar": 0,
