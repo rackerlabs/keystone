@@ -321,9 +321,15 @@ class V2Controller(wsgi.Application):
                 # would override it in either case.
                 del ref['tenantId']
 
+        def _filter_password_expires_at(ref):
+            """Remove password_expires_at from v2 calls."""
+            ref.pop('password_expires_at', None)
+            return ref
+
         def _normalize_and_filter_user_properties(ref):
             """Run through the various filter/normalization methods."""
             _format_default_project_id(ref)
+            _filter_password_expires_at(ref)
             V2Controller.filter_domain(ref)
             V2Controller.filter_domain_id(ref)
             V2Controller.normalize_username_in_response(ref)
