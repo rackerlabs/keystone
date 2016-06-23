@@ -1065,12 +1065,20 @@ FILE_OPTIONS = {
                    default=1800,
                    help='Number of seconds a user account will be locked.'),
         cfg.IntOpt('password_expires_days',
-                   default=0,
+                   default=None,
+                   min=1,
                    help='Number of days for which a password will be '
                         'considered valid before requiring the user to '
-                        'change it. Setting the value to 0 disables this '
-                        'feature. Note: this feature is only supported '
+                        'change it. This feature is disabled by default '
+                        'Note: this feature is only supported '
                         'via the SQL backend driver for identity.'),
+        cfg.StrOpt('password_expires_ignore_list',
+                   default=None,
+                   help='Comma separated list of user IDs to be ignored when '
+                        'checking if a password is expired. Thus, passwords '
+                        'will not expire for users entered here. This feature '
+                        'will only be enabled if password_expires_days is '
+                        'set.'),
         cfg.IntOpt('unique_last_password_count',
                    default=0,
                    help='Number of latest password iterations for which the '
