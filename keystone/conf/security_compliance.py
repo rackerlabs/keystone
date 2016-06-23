@@ -57,12 +57,24 @@ driver`.
 
 password_expires_days = cfg.IntOpt(
     'password_expires_days',
-    default=0,
-    min=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
-The number of days which a password will be considered valid before requiring
-the user to change it. Setting the value to zero (the default) disables this
-feature. This feature depends on the `sql` backend for the `[identity] driver`.
+The number of days for which a password will be considered valid
+before requiring it to be changed. This feature is disabled by default. If
+enabled, newly created passwords will have an expired date, however existing
+passwords would not be impacted. This feature depends on the `sql` backend for
+the `[identity] driver`.
+"""))
+
+password_expires_ignore_list = cfg.ListOpt(
+    'password_expires_ignore_list',
+    default=[],
+    help=utils.fmt("""
+Comma separated list of user IDs to be ignored when checking if a password
+is expired. Passwords for users in this list will not expire regardless if
+they are new or old. This feature will only be enabled if
+password_expires_days is set.
 """))
 
 unique_last_password_count = cfg.IntOpt(
@@ -115,6 +127,7 @@ ALL_OPTS = [
     lockout_failure_attempts,
     lockout_duration,
     password_expires_days,
+    password_expires_ignore_list,
     unique_last_password_count,
     password_change_limit_per_day,
     password_regex,
