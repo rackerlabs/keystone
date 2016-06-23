@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_c6ff8da8",
+        "filename": "keystone/conf/assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T14:23:19Z",
+      "side": 1,
+      "message": "++ nice",
+      "revId": "70cf1284fa9857d1ca97b7731d75fb1c958470cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
