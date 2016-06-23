@@ -199,6 +199,10 @@ class Unauthorized(SecurityError):
     title = 'Unauthorized'
 
 
+class PasswordExpired(Unauthorized):
+    message_format = _("The password is expired for user: %(user_id)s")
+
+
 class AuthPluginException(Unauthorized):
     message_format = _("Authentication plugin error.")
 
