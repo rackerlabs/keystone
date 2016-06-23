@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_79d470bc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:58:00Z",
+      "side": 1,
+      "message": "maybe move this all up to the update_user method to tie this logic closer to the whole overall operation?",
+      "revId": "e926b4a5ce24748e4a803e65678b618a8bae43fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_5991b446",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:58:00Z",
+      "side": 1,
+      "message": "so in this case we only ever keep the last, or most recent password.",
+      "revId": "e926b4a5ce24748e4a803e65678b618a8bae43fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_393828ef",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:58:00Z",
+      "side": 1,
+      "message": "Could use assertGreater here",
+      "revId": "e926b4a5ce24748e4a803e65678b618a8bae43fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_3c2db695",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:58:00Z",
+      "side": 1,
+      "message": "Could use assertEqual here",
+      "revId": "e926b4a5ce24748e4a803e65678b618a8bae43fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7c23bea7",
+        "filename": "keystone/tests/unit/identity/backends/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T16:58:00Z",
+      "side": 1,
+      "message": "Could use assertEqual here",
+      "revId": "e926b4a5ce24748e4a803e65678b618a8bae43fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
