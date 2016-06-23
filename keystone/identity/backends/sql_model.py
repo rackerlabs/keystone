@@ -14,17 +14,25 @@
 
 import datetime
 
+from oslo_log import log
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
 from keystone.common import sql
+import keystone.conf
+from keystone.i18n import _LW
+
+
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
+                  'default_project_id', 'password_expires_at']
+    readonly_attributes = ['password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -85,6 +93,12 @@ class User(sql.ModelBase, sql.DictBase):
             return self.password_ref.expires_at
         return None
 
+    @hybrid_property
+    def password_is_expired(self):
+        if self.password_expires_at:
+            return datetime.datetime.utcnow() >= self.password_expires_at
+        return False
+
     @password.setter
     def password(self, value):
         now = datetime.datetime.utcnow()
@@ -97,6 +111,7 @@ class User(sql.ModelBase, sql.DictBase):
         new_password_ref = Password()
         new_password_ref.password = value
         new_password_ref.created_at = now
+        new_password_ref.expires_at = PasswordExpiresAtGetter.get(self.id, now)
         self.local_user.passwords.append(new_password_ref)
 
     @password.expression
@@ -128,6 +143,13 @@ class User(sql.ModelBase, sql.DictBase):
         if 'default_project_id' in d and d['default_project_id'] is None:
             del d['default_project_id']
         return d
+
+    @classmethod
+    def from_dict(cls, user_dict):
+        for attribute in cls.readonly_attributes:
+            if attribute in user_dict:
+                del user_dict[attribute]
+        return super(User, cls).from_dict(user_dict)
 
 
 class LocalUser(sql.ModelBase, sql.DictBase):
@@ -215,3 +237,28 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
+
+
+class PasswordExpiresAtGetter(object):
+    @classmethod
+    def get(cls, user_id, created_at):
+        if not cls._is_in_ignore_list(user_id):
+            expires_days = CONF.security_compliance.password_expires_days
+            if expires_days and expires_days > 0:
+                expired_date = (
+                    created_at + datetime.timedelta(days=expires_days))
+                return expired_date.replace(microsecond=0)
+        return None
+
+    @staticmethod
+    def _is_in_ignore_list(user_id):
+        ignore_str = CONF.security_compliance.password_expires_ignore_list
+        if ignore_str:
+            try:
+                ignore_list = ignore_str.split(',')
+                return user_id in ignore_list
+            except Exception:
+                LOG.warning(
+                    _LW('Invalid config setting: '
+                        'security_compliance.password_expires_ignore_list'))
+        return False
