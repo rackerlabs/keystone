@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_51dfce0c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1059,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T16:23:30Z",
+      "side": 1,
+      "message": "you can\u0027t actually set this to \"None\" in keystone conf, as that would be a string value of \"None\", not a null value (the actual default). Instead, simply don\u0027t set a value to disable the feature.",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f1a51a47",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T16:23:30Z",
+      "side": 1,
+      "message": "This line isn\u0027t necessary.",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_835a8d28",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -13,6 +47,40 @@
       "writtenOn": "2016-06-23T16:22:01Z",
       "side": 1,
       "message": "Shouldn\u0027t we use type references from `keystone.common.sql` like we do for everything else? https://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L48-L66\n\nIt looks like we would have to add sqlalchemy.Date to `keystone.common.sql.core`.\n\n    Date \u003d sql.Date",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_03ba1d0a",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T16:23:30Z",
+      "side": 1,
+      "message": "`not self._enabled` is more \"pythonic\" than `self._enabled is False`, unless you need to distinguish between False and None and 0, for example, which it doesn\u0027t look like is the case here.",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a37a2975",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T16:23:30Z",
+      "side": 1,
+      "message": "Why does this need to be a class? It never uses `self`.",
       "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
