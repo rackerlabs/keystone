@@ -20,6 +20,10 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
 from keystone.common import sql
+import keystone.conf
+
+
+CONF = keystone.conf.CONF
 
 
 CONF = cfg.CONF
@@ -28,7 +32,8 @@ CONF = cfg.CONF
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
+                  'default_project_id', 'password_expires_at']
+    readonly_attributes = ['password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -91,6 +96,12 @@ class User(sql.ModelBase, sql.DictBase):
             return self.password_ref.expires_at
         return None
 
+    @hybrid_property
+    def password_is_expired(self):
+        if self.password_expires_at:
+            return datetime.datetime.utcnow() >= self.password_expires_at
+        return False
+
     @password.setter
     def password(self, value):
         now = datetime.datetime.utcnow()
@@ -103,6 +114,7 @@ class User(sql.ModelBase, sql.DictBase):
         new_password_ref = Password()
         new_password_ref.password = value
         new_password_ref.created_at = now
+        new_password_ref.expires_at = _get_password_expires_at(self.id, now)
         self.local_user.passwords.append(new_password_ref)
 
     @password.expression
@@ -161,6 +173,23 @@ class User(sql.ModelBase, sql.DictBase):
         if 'default_project_id' in d and d['default_project_id'] is None:
             del d['default_project_id']
         return d
+
+    @classmethod
+    def from_dict(cls, user_dict):
+        new_dict = user_dict.copy()
+        for attribute in cls.readonly_attributes:
+            if attribute in user_dict:
+                del new_dict[attribute]
+        return super(User, cls).from_dict(new_dict)
+
+
+def _get_password_expires_at(user_id, created_at):
+    expires_days = CONF.security_compliance.password_expires_days
+    ignore_list = CONF.security_compliance.password_expires_ignore_list
+    if expires_days and (user_id not in ignore_list):
+        expired_date = (created_at + datetime.timedelta(days=expires_days))
+        return expired_date.replace(microsecond=0)
+    return None
 
 
 class LocalUser(sql.ModelBase, sql.DictBase):
