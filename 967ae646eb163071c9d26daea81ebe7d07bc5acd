@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b95d3849",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1059,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_51dfce0c",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f1a51a47",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-23T16:23:30Z",
       "side": 1,
       "message": "This line isn\u0027t necessary.",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_9c1e6a5d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "It was there previously, but took it out.",
+      "parentUuid": "3aaa91ec_f1a51a47",
       "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_26576727",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "Yeah, there isn\u0027t a sql.Date, so chose to use sqlalchemy instead of extending keystone sql.",
+      "parentUuid": "3aaa91ec_835a8d28",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_03ba1d0a",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-23T16:23:30Z",
       "side": 1,
       "message": "`not self._enabled` is more \"pythonic\" than `self._enabled is False`, unless you need to distinguish between False and None and 0, for example, which it doesn\u0027t look like is the case here.",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7c29fe36",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "I want to exclude when _enabled is None, so specifically checking False.  I\u0027ll add a comment here.",
+      "parentUuid": "3aaa91ec_03ba1d0a",
       "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_7cb73ef5",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "I like having small, well-focused classes. It groups together common functionality and makes it more readable. It\u0027s probably the Java in me (Oops, did I say that) :)",
+      "parentUuid": "3aaa91ec_a37a2975",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038cdd7d",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 46
@@ -98,6 +188,24 @@
       "writtenOn": "2016-06-23T16:22:01Z",
       "side": 1,
       "message": "nit: s/Identity/Unique identifier/",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_9ce5cadd",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T17:06:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_038cdd7d",
       "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
