@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_0b6199d3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 92
+      },
+      "lineNbr": 1416,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T15:38:50Z",
+      "side": 1,
+      "message": "Either of these would produce easier to read error messages on failure:\n\n  assertTrue(cnt) # 0 is not true\n  assertGreater(cnt, 0) # 0 is not greater than 0\n\nexample:\n\n  http://cdn.pasteraw.com/7krk5sdd5od6d4uehxtg3vvlhm05k2o",
+      "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7085a805",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 92
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "Yes, because the schema changed.",
       "parentUuid": "3aaa91ec_7085a805",
+      "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ebf7ed56",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 92
+      },
+      "lineNbr": 1431,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T15:38:50Z",
+      "side": 1,
+      "message": "assertEqual",
+      "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6ba2dd4c",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 92
+      },
+      "lineNbr": 1435,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-23T15:38:50Z",
+      "side": 1,
+      "message": "assertGreater",
       "revId": "ad0e22ecff808dab58848d4bee3de757a6cf6640",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
