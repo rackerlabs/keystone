@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_371ca8c0",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-23T19:51:48Z",
+      "side": 1,
+      "message": "For the sake of consistency we should think about extending keystone.common.sql to include the sqlalchemy.Date type. That way all models get their types from the same place, at least until we refactor keystone.common.sql to not have types that don\u0027t need to be extended.",
+      "revId": "f113a51c968d307924e9ff375eabbedcbe654cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
