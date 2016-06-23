@@ -40,11 +40,22 @@ Number of seconds a user account will be locked.
 
 password_expires_days = cfg.IntOpt(
     'password_expires_days',
-    default=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
-Number of days for which a password will be considered valid before requiring
-the user to change it. Setting the value to 0 disables this feature. Note: this
-feature is only supported via the SQL backend driver for identity.
+Number of days for which a password will be considered valid. For example,
+if you set this for 90 days, all new passwords would expire in 90 days.
+This feature is disabled by default. Note: this feature is only supported
+via the SQL backend driver for identity.
+"""))
+
+password_expires_ignore_list = cfg.StrOpt(
+    'password_expires_ignore_list',
+    default=None,
+    help=utils.fmt("""
+Comma separated list of user IDs to be ignored when checking if a password
+is expired. Thus, passwords will never expire for users entered here. This
+feature will only be enabled if password_expires_days is set.
 """))
 
 unique_last_password_count = cfg.IntOpt(
@@ -81,6 +92,7 @@ ALL_OPTS = [
     lockout_failure_attempts,
     lockout_duration,
     password_expires_days,
+    password_expires_ignore_list,
     unique_last_password_count,
     password_change_limit_per_day,
     password_regex,
