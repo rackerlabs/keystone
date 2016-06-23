@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_7405b178",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-23T10:33:14Z",
+      "side": 1,
+      "message": "++ good point David",
+      "parentUuid": "3aaa91ec_69c194e4",
+      "revId": "2409c59ef97d5880ded694747df2ccb41fa63114",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f7655ce1",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 2
