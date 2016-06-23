@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b715384a",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-23T20:00:14Z",
+      "side": 1,
+      "message": "Yes, it\u0027s handled here (ln 2189):\nhttps://review.openstack.org/#/c/320586/47/keystone/tests/unit/test_validation.py",
+      "parentUuid": "3aaa91ec_f77b4026",
+      "revId": "c4f2f44e6b1470a30139305e6426b9d2b9d73875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d70d64e9",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 47
