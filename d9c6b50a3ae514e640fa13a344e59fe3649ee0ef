@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_3ec3ae58",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 1,
+      "message": "?",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_ee385bd5",
         "filename": "keystone/conf/__init__.py",
         "patchSetId": 8
@@ -162,6 +179,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_beb83e76",
+        "filename": "keystone/conf/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 1,
+      "message": "At first I was thinking that this should use textwrap.dedent, but that doesn\u0027t handle the embedded newlines.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_2eb9c315",
         "filename": "keystone/server/wsgi.py",
         "patchSetId": 8
@@ -173,6 +207,41 @@
       "writtenOn": "2016-06-24T17:13:27Z",
       "side": 1,
       "message": "This was moved from keystone.common.config - there\u0027s an explanation in that file.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b19b4f65",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 1,
+      "message": "This seem to be better off here anyway.",
+      "parentUuid": "3aaa91ec_2eb9c315",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_31b47f33",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 1,
+      "message": "?",
       "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

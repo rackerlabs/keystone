@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_9e074281",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 0,
+      "message": "It didn\u0027t really belong here anyway.",
+      "parentUuid": "3aaa91ec_631e4471",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_c36c580a",
         "filename": "keystone/common/config.py",
         "patchSetId": 8
@@ -47,6 +65,23 @@
       "writtenOn": "2016-06-24T17:13:27Z",
       "side": 0,
       "message": "This for block is replaced by something much simpler in keystone.conf.__init__ - and this is one of the only changes to the code in this file (it was otherwise just moved).",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_516cab9b",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-24T18:40:51Z",
+      "side": 0,
+      "message": "Unrelated, but I like it!",
       "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
