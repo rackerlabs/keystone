@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2a108856",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T20:13:07Z",
+      "side": 1,
+      "message": "It *can* be imported either way, but my goal in this patchset was to copy nova\u0027s work, and nova took the approach of API-first, and \"import nova.conf\" / \"import keystone.conf\" reads pretty well to me.",
+      "parentUuid": "3aaa91ec_94d3a15f",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038dc0d5",
         "filename": "keystone/assignment/V8_backends/sql.py",
         "patchSetId": 8
@@ -77,6 +95,24 @@
       "writtenOn": "2016-06-24T18:40:51Z",
       "side": 1,
       "message": "?",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_c559f536",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T20:13:07Z",
+      "side": 1,
+      "message": "Oops, will fix in follow up",
+      "parentUuid": "3aaa91ec_3ec3ae58",
       "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -220,6 +256,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_455d0514",
+        "filename": "keystone/conf/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T20:13:07Z",
+      "side": 1,
+      "message": "I\u0027d be handy if there was something that did this already, but I was thinking we should upstream this to oslo.config so that other projects can take the same approach as well.",
+      "parentUuid": "3aaa91ec_beb83e76",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_2eb9c315",
         "filename": "keystone/server/wsgi.py",
         "patchSetId": 8
@@ -266,6 +320,24 @@
       "writtenOn": "2016-06-24T18:40:51Z",
       "side": 1,
       "message": "?",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_85a1adfa",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T20:13:07Z",
+      "side": 1,
+      "message": "Will remove in follow up.",
+      "parentUuid": "3aaa91ec_31b47f33",
       "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

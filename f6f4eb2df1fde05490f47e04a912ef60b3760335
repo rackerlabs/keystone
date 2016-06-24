@@ -85,6 +85,24 @@
       "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_65b9212e",
+        "filename": "keystone_tempest_plugin/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T20:13:07Z",
+      "side": 0,
+      "message": "Ha, I think my sed work removed the oslo_config line below, and when manually adding it back, I probably removed this line. I agree, I\u0027ll leave this change here, as there shouldn\u0027t be two blank lines between the copyright header and the first line of code.",
+      "parentUuid": "3aaa91ec_516cab9b",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
