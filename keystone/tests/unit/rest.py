@@ -16,7 +16,6 @@ from oslo_serialization import jsonutils
 from six.moves import http_client
 import webtest
 
-from keystone.auth import controllers as auth_controllers
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
