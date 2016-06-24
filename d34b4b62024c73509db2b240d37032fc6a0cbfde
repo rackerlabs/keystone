@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_7479fcc7",
+        "filename": "keystone/common/sql/migrate_repo/versions/092_switch_index_order_in_token_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-24T04:47:10Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "d34b4b62024c73509db2b240d37032fc6a0cbfde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_2a389c3c",
         "filename": "keystone/common/sql/migrate_repo/versions/092_switch_index_order_in_token_table.py",
         "patchSetId": 1
