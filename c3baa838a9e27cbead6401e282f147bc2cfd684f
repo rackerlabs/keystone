@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_dadbc04d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-24T01:28:38Z",
+      "side": 1,
+      "message": "Does this deserve a bug, any testcases are needed for the change like this?",
+      "revId": "c3baa838a9e27cbead6401e282f147bc2cfd684f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_1f29e289",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
