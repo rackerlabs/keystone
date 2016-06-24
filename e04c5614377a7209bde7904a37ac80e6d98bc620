@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_afb92ace",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T19:26:22Z",
+      "side": 1,
+      "message": "Nice, I also added details on why it was passing on master as a comment in the bug report : https://bugs.launchpad.net/keystone/+bug/1595819",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "e04c5614377a7209bde7904a37ac80e6d98bc620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
