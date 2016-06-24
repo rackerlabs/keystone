@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_5b1a0c18",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T17:58:49Z",
+      "side": 1,
+      "message": "how, I see more logs being added",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d4cd5032",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -59,6 +82,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_3bb90016",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T17:58:49Z",
+      "side": 1,
+      "message": "++ I don\u0027t think they need this info at all",
+      "parentUuid": "3aaa91ec_d7937659",
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_77d60229",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 1
@@ -104,6 +145,30 @@
       "writtenOn": "2016-06-24T15:27:22Z",
       "side": 1,
       "message": "i don\u0027t like logging a stacktrace, same goes for line 195 and the two below",
+      "range": {
+        "startLine": 231,
+        "startChar": 12,
+        "endLine": 231,
+        "endChar": 41
+      },
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_1be1a42d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T17:58:49Z",
+      "side": 1,
+      "message": "++ I don\u0027t think it\u0027s useful for cloud operators",
+      "parentUuid": "3aaa91ec_b7b34a09",
       "range": {
         "startLine": 231,
         "startChar": 12,
