@@ -579,7 +579,7 @@ class Auth(controller.V3Controller):
 
         for t in tokens:
             expires = t['expires']
-            if not (expires and isinstance(expires, six.text_type)):
+            if !expires or isinstance(expires, datetime.datetime):
                 t['expires'] = utils.isotime(expires)
             if audit_id_only:
                 t.pop('id', None)
