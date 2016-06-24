@@ -119,6 +119,29 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cc28fd9c",
+        "filename": "keystone/common/sql/migrate_repo/versions/082_add_federation_tables.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-24T22:38:43Z",
+      "side": 1,
+      "message": "needs an extra line break",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 0
+      },
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_ee385bd5",
         "filename": "keystone/conf/__init__.py",
         "patchSetId": 8
@@ -216,6 +239,52 @@
       "side": 1,
       "message": "++",
       "parentUuid": "3aaa91ec_4ee7ef3f",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ac0ad123",
+        "filename": "keystone/conf/constants.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-24T22:38:43Z",
+      "side": 1,
+      "message": "hmm i thought there were more of these messages",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ec005904",
+        "filename": "keystone/conf/eventlet_server.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-24T22:38:43Z",
+      "side": 1,
+      "message": "move to constants? meh, it\u0027ll be removed anyway",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
       "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
