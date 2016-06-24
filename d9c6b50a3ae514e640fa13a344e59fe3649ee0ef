@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_5edb1a1b",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T18:22:33Z",
+      "side": 1,
+      "message": "is there a reason for importing it like this rather than\n\n    from keystone import conf\n\n\nThis ^ is how I\u0027ve seen imports in our code so far. I am not against, just want to check",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 20
+      },
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038dc0d5",
         "filename": "keystone/assignment/V8_backends/sql.py",
         "patchSetId": 8
@@ -98,6 +121,24 @@
       "writtenOn": "2016-06-24T17:13:27Z",
       "side": 1,
       "message": "Note that keystone.conf.base gets registered as [DEFAULT] -- I\u0027d like to consider renaming this to keystone.conf.default because that\u0027s more logical to me, but I want to copy nova\u0027s lead first, then propose that later.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ee1e9b0a",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T18:22:33Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3aaa91ec_4ee7ef3f",
       "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
