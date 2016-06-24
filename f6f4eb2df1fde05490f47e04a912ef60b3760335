@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_e3aeb42c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 0,
+      "message": "This entire file is split into the keystone.conf package.",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_631e4471",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 0,
+      "message": "This was moved into keystone.server.wsgi where it\u0027s used, because it needs to consume both CONF and keystone.exception. If we left it in keystone.conf, it would have resulted in a circular import, because keystone.exception needs keystone.conf, too.",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_c36c580a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 0,
+      "message": "This for block is replaced by something much simpler in keystone.conf.__init__ - and this is one of the only changes to the code in this file (it was otherwise just moved).",
+      "revId": "f6f4eb2df1fde05490f47e04a912ef60b3760335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_038dc0d5",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "Most files in keystone (all of them that use conf) have these same 4 line changes.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ee385bd5",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "This bit is new vs keystone.common.config",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ae593337",
+        "filename": "keystone/conf/__init__.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "This for loop is simplified vs keystone.common.config (you used to have to loop through a dictionary of lists).",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_8e85575b",
+        "filename": "keystone/conf/assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "Nova had the idea to move configuration options to be top level, and then define all the help text as docstrings. That prevents us from having to deal with arbitrarily indented single quotes, escaping things, etc, which made writing config help a nightmare. This should make it much easier for us to write better help text :)",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_0e9a07b9",
+        "filename": "keystone/conf/assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "From here through the bottom of the file, every keystone.conf module is basically the same.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4ee7ef3f",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "Note that keystone.conf.base gets registered as [DEFAULT] -- I\u0027d like to consider renaming this to keystone.conf.default because that\u0027s more logical to me, but I want to copy nova\u0027s lead first, then propose that later.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6ed62b50",
+        "filename": "keystone/conf/opts.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "This module is entirely copied from nova, with a few references to nova removed from the documentation.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2eb9c315",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-24T17:13:27Z",
+      "side": 1,
+      "message": "This was moved from keystone.common.config - there\u0027s an explanation in that file.",
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
