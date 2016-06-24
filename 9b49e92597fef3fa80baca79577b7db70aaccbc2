@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_8f88ae72",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-24T19:16:21Z",
+      "side": 1,
+      "message": "Yes, this wasn\u0027t set, so it was nullable by default.",
+      "parentUuid": "3aaa91ec_74c275ea",
+      "range": {
+        "startLine": 157,
+        "startChar": 41,
+        "endLine": 157,
+        "endChar": 56
+      },
+      "revId": "9b49e92597fef3fa80baca79577b7db70aaccbc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7469d5f8",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-24T19:10:01Z",
       "side": 1,
       "message": "Does this make any difference on the tests or it is just about making things more correct ?",
+      "range": {
+        "startLine": 237,
+        "startChar": 17,
+        "endLine": 237,
+        "endChar": 29
+      },
+      "revId": "9b49e92597fef3fa80baca79577b7db70aaccbc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6f90e295",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-24T19:16:21Z",
+      "side": 1,
+      "message": "Making things more correct and it also highlights the tests we currently have in place.",
+      "parentUuid": "3aaa91ec_7469d5f8",
       "range": {
         "startLine": 237,
         "startChar": 17,
