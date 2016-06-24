@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_94d3a15f",
+        "filename": "keystone/assignment/V8_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-24T18:54:56Z",
+      "side": 1,
+      "message": "I\u0027ve asked for David input on this. It looks like there isn\u0027t a convention, and I agree with him it\u0027s clearer if we use keystone.conf throughout the files",
+      "parentUuid": "3aaa91ec_5edb1a1b",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 20
+      },
+      "revId": "d9c6b50a3ae514e640fa13a344e59fe3649ee0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038dc0d5",
         "filename": "keystone/assignment/V8_backends/sql.py",
         "patchSetId": 8
