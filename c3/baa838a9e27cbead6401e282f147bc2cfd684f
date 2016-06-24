@@ -1,0 +1,15 @@
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Ryosuke Mizuno <r-mizuno@rs.jp.nec.com>
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Mikhail Nikolaenko <mnikolaenko@mirantis.com>
+Workflow+1: Dave Chen <dave.jungler@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 24 Jun 2016 02:43:30 +0000
+Reviewed-on: https://review.openstack.org/273218
+Project: openstack/keystone
+Branch: refs/heads/master
