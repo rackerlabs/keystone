@@ -56,7 +56,7 @@ Setting the value to 0 disables this feature. Note: this feature is only
 supported via the SQL backend driver for identity.
 """))
 
-assword_change_limit_per_day = cfg.IntOpt(
+password_change_limit_per_day = cfg.IntOpt(
     'password_change_limit_per_day',
     default=0,
     help=utils.fmt("""
