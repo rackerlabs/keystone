@@ -34,6 +34,29 @@
       "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e34e9f39",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-25T07:51:12Z",
+      "side": 1,
+      "message": "When you move this to a separate patch (as per the comments), I\u0027d suggest making this more obvious, e.g. \"DeFaUlT\", since \"Default\" is also the name of the default domain.",
+      "range": {
+        "startLine": 226,
+        "startChar": 21,
+        "endLine": 226,
+        "endChar": 28
+      },
+      "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
