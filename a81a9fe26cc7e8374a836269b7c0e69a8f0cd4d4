@@ -16,6 +16,24 @@
       "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_23bee7fe",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-25T07:49:21Z",
+      "side": 1,
+      "message": "What it is actually doing is ensuring that the domain_id we write in the user record is the one we read from the rescue driver, not the one passed in to the create method.  These could differ in case for installations where the database is running in case-insensitive mode. This is probably only a likely a practical issue for the default domain.",
+      "parentUuid": "3aaa91ec_3ed60ef1",
+      "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
