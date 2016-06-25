@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_77b6e5f9",
+        "filename": "keystone/tests/unit/ksfixtures/auth_plugins.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-25T13:42:09Z",
+      "side": 1,
+      "message": "Maybe leave a TODO here?",
+      "revId": "5dfa16a5cfeb302db22207f27be524266c0bd2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
