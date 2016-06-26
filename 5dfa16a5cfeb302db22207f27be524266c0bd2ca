@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_6c345749",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-26T06:16:53Z",
+      "side": 0,
+      "message": "what about the cleanup, it\u0027s not in rest.py?",
+      "range": {
+        "startLine": 697,
+        "startChar": 8,
+        "endLine": 697,
+        "endChar": 56
+      },
+      "revId": "5dfa16a5cfeb302db22207f27be524266c0bd2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
