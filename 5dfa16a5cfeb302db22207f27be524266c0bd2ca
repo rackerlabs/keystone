@@ -22,6 +22,30 @@
       "revId": "5dfa16a5cfeb302db22207f27be524266c0bd2ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_adb2b949",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-26T13:15:07Z",
+      "side": 0,
+      "message": "The only time, to my knowledge, that we have to worry about auth plugins being loaded is when we use the fixture or when we load backends. The new fixture already cleans up after itself and right now we are calling this method before we load backends. We are really good about hide-and-seek in our code.",
+      "parentUuid": "3aaa91ec_6c345749",
+      "range": {
+        "startLine": 697,
+        "startChar": 8,
+        "endLine": 697,
+        "endChar": 56
+      },
+      "revId": "5dfa16a5cfeb302db22207f27be524266c0bd2ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
