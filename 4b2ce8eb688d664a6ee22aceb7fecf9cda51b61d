@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_070acc89",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-26T08:42:01Z",
+      "side": 1,
+      "message": "Actually changed this to check isinstance(password, six.string_types) in the latest branch in order to be py2 and p3 compatible.  \n\nre.match expects a string for the 2nd argument, so I think having a check makes sense here.",
+      "parentUuid": "3aaa91ec_717be08c",
+      "revId": "4b2ce8eb688d664a6ee22aceb7fecf9cda51b61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_483efc8c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 43
