@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_a8cd5688",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T18:29:07Z",
+      "side": 1,
+      "message": "It only happens when someone has merged before with the version number you\u0027re using. I don\u0027t think it\u0027s that often. Not worth it imo",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 47
+      },
+      "revId": "933e78ea68a3f5d635fd6a9a110b6582c5060033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
