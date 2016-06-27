@@ -12,6 +12,9 @@
 """Internal implementation of request body validating middleware."""
 
 import jsonschema
+import types
+
+import six
 
 from keystone import exception
 from keystone.i18n import _
@@ -36,8 +39,21 @@ class SchemaValidator(object):
         fc = jsonschema.FormatChecker()
         self.validator = validator_cls(schema, format_checker=fc)
 
+    def _resolve_config_values_in_schema(self, schema):
+        for key, value in six.iteritems(schema):
+            if isinstance(value, types.FunctionType):
+                schema[key] = value()
+            elif isinstance(value, dict):
+                self._resolve_config_values_in_schema(value)
+        return schema
+
     def validate(self, *args, **kwargs):
         try:
+            # NOTE(lbragstad): Make sure that we resolve any configuration
+            # options for validation.
+            self.validator.schema = self._resolve_config_values_in_schema(
+                self.validator.schema
+            )
             self.validator.validate(*args, **kwargs)
         except jsonschema.ValidationError as ex:
             # NOTE: For whole OpenStack message consistency, this error
