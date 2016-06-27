@@ -49,6 +49,7 @@ from keystone.conf import signing
 from keystone.conf import token
 from keystone.conf import tokenless_auth
 from keystone.conf import trust
+from keystone.conf import validation
 
 
 CONF = cfg.CONF
@@ -85,6 +86,7 @@ conf_modules = [
     token,
     tokenless_auth,
     trust,
+    validation,
 ]
 
 
