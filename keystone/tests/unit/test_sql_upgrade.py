@@ -32,6 +32,7 @@ WARNING::
 """
 
 import json
+import re
 import uuid
 
 import migrate
@@ -260,6 +261,18 @@ class SqlMigrateBase(test_base.DbTestCase):
 
     def upgrade(self, *args, **kwargs):
         self._migrate(*args, **kwargs)
+
+    def upgrade_by_name(self, upgrade_name):
+        version_re = re.compile(r'(\d+)_%s' % upgrade_name)
+        for version in self.schema_.repository.versions.versions.values():
+            module_name = version.script().module.__name__
+            match = version_re.match(module_name)
+            if match:
+                version = int(match.groups()[0])
+                self._migrate(version)
+                break
+        else:
+            raise exception.VersionNotFound(version=upgrade_name)
 
     def _migrate(self, version, repository=None, downgrade=False,
                  current_schema=None):
