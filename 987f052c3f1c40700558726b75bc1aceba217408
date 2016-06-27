@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_d585ee07",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T12:54:50Z",
+      "side": 1,
+      "message": "Updating the commit message",
+      "parentUuid": "3aaa91ec_ecfcab74",
+      "range": {
+        "startLine": 301,
+        "startChar": 6,
+        "endLine": 301,
+        "endChar": 19
+      },
+      "revId": "987f052c3f1c40700558726b75bc1aceba217408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_4cba1f0c",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 3
@@ -107,6 +131,30 @@
       "side": 1,
       "message": "I still don\u0027t see why we need to add this",
       "parentUuid": "3aaa91ec_cc5baff5",
+      "range": {
+        "startLine": 309,
+        "startChar": 8,
+        "endLine": 309,
+        "endChar": 69
+      },
+      "revId": "987f052c3f1c40700558726b75bc1aceba217408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d5ae8e97",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T12:54:50Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s need, but it\u0027s included in the setup of virtually all of the ldap tests. See line 320.",
+      "parentUuid": "3aaa91ec_0cf49785",
       "range": {
         "startLine": 309,
         "startChar": 8,
