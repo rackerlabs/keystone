@@ -46,6 +46,30 @@
       "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_be8f5774",
+        "filename": "keystone/tests/unit/ksfixtures/backendloader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T15:54:21Z",
+      "side": 1,
+      "message": "It\u0027d be nice to expand the comment to say so ? It isn\u0027t obvious what the circular reference is",
+      "parentUuid": "3aaa91ec_814de8c6",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 54
+      },
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
