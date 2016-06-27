@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_73a9af7b",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1956,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:06:33Z",
+      "side": 1,
+      "message": "How so ? We don\u0027t support LDAP resource. It\u0027s likely testing against SQL, which is not the intent of this class, so something else might be broken (test setup?)",
+      "parentUuid": "3aaa91ec_467b162a",
+      "revId": "e544c94d2b656b56350a0bce2f580dd4fab9f71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_60df21d6",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 3
