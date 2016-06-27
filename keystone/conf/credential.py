@@ -19,7 +19,7 @@ driver = cfg.StrOpt(
     'driver',
     default='sql',
     help=utils.fmt("""
-Entrypoint for the credential backend driver in the keystone.credential
+Entry point for the credential backend driver in the `keystone.credential`
 namespace.
 """))
 
