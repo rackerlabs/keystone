@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_c986f615",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:41:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3aaa91ec_5454d2c8",
+      "range": {
+        "startLine": 1094,
+        "startChar": 28,
+        "endLine": 1094,
+        "endChar": 29
+      },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_b45b76f5",
         "filename": "keystone/common/config.py",
         "patchSetId": 37
@@ -113,6 +137,46 @@
         "endLine": 1101,
         "endChar": 6
       },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_692b8295",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:41:08Z",
+      "side": 1,
+      "message": "I\u0027d remove this ... also the year number is outdated (if you want to keep it)",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_29085a2d",
+        "filename": "keystone/delegation/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:41:08Z",
+      "side": 1,
+      "message": "where is the manager code ? looks like this is still WIP?",
       "revId": "9315f2a741636b8a4591d3eb9a3ee1644c6272ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
