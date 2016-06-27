@@ -196,6 +196,24 @@
       "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_81da0816",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 18115
+      },
+      "writtenOn": "2016-06-27T13:52:04Z",
+      "side": 1,
+      "message": "I don\u0027t get it. That is exactly the reason why I changed the logging from LOG.exception (with traceback) to LOG.warning (no traceback and just a warning level).\nAnd the exceptions message does (can?) contain valuable information that is worth logging",
+      "parentUuid": "3aaa91ec_b7b34a09",
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
