@@ -83,6 +83,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_4df4c786",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T17:24:14Z",
+      "side": 1,
+      "message": "That has be be a bug in the check. I\u0027ll look at that today.",
+      "parentUuid": "3aaa91ec_33aa9c85",
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d7937659",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 1
