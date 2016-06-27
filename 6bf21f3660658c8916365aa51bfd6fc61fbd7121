@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_c8eee2b3",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T18:31:53Z",
+      "side": 0,
+      "message": "I suppose it does noew",
+      "range": {
+        "startLine": 72,
+        "startChar": 42,
+        "endLine": 73,
+        "endChar": 27
+      },
+      "revId": "6bf21f3660658c8916365aa51bfd6fc61fbd7121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
