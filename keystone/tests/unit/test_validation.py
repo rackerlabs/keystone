@@ -13,6 +13,7 @@
 
 import uuid
 
+from oslo_config import fixture as config_fixture
 import six
 
 from keystone.assignment import schema as assignment_schema
@@ -20,6 +21,7 @@ from keystone.catalog import schema as catalog_schema
 from keystone.common import validation
 from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
+import keystone.conf
 from keystone.credential import schema as credential_schema
 from keystone import exception
 from keystone.federation import schema as federation_schema
@@ -29,6 +31,8 @@ from keystone.policy import schema as policy_schema
 from keystone.resource import schema as resource_schema
 from keystone.tests import unit
 from keystone.trust import schema as trust_schema
+
+CONF = keystone.conf.CONF
 
 """Example model to validate create requests against. Assume that this is
 the only backend for the create and validate schemas. This is just an
@@ -132,6 +136,10 @@ class EntityValidationTestCase(unit.BaseTestCase):
             entity_create)
         self.update_schema_validator = validators.SchemaValidator(
             entity_update)
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+
+    def config_overrides(self):
+        super(EntityValidationTestCase, self).config_overrides()
 
     def test_create_entity_with_all_valid_parameters_validates(self):
         """Validate all parameter values against test schema."""
@@ -174,6 +182,29 @@ class EntityValidationTestCase(unit.BaseTestCase):
         """Test that we successfully validate a unicode string."""
         request_to_validate = {'name': u'αβγδ'}
         self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_entity_with_configurable_id_string(self):
+        """Validate an ID string with a user defined regular expression."""
+        id_string = 'randomidstring0192875'
+        request_to_validate = {'name': self.resource_name,
+                               'id_string': id_string}
+        self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_entity_with_strict_id_string_validation(self):
+        # NOTE(lbragstad): Tighten up the validation to only allow uuid-like
+        # identifier strings.
+        self.config_fixture.config(group='validation',
+                                   id_string_regex='^[a-fA-F0-9]+$')
+        id_string = uuid.uuid4().hex
+        request_to_validate = {'name': self.resource_name,
+                               'id_string': id_string}
+        self.create_schema_validator.validate(request_to_validate)
+        non_uuid_id_string = 'somerandomnonuuidstring01234'
+        request_to_validate = {'name': self.resource_name,
+                               'id_string': non_uuid_id_string}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_schema_validator.validate,
+                          request_to_validate)
 
     def test_create_entity_with_invalid_enabled_format_raises_exception(self):
         """Validate invalid enabled formats.
