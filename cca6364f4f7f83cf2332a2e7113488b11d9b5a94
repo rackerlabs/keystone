@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b03322f5",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-27T07:56:15Z",
+      "side": 1,
+      "message": "I agree using datatime explicitly is better, but I don\u0027t think the token without the expiration properly set should be retrieved back. \n\nMaybe you can consider what we did in V2? I think that is more clear.\nhttps://github.com/openstack/keystone/blob/master/keystone/token/controllers.py#L468",
+      "range": {
+        "startLine": 583,
+        "startChar": 12,
+        "endLine": 583,
+        "endChar": 69
+      },
+      "revId": "cca6364f4f7f83cf2332a2e7113488b11d9b5a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
