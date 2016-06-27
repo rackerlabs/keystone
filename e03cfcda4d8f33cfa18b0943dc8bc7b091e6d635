@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_e5a04344",
+        "filename": "keystone/tests/unit/ksfixtures/backendloader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T11:07:49Z",
+      "side": 1,
+      "message": "I don\u0027t get why this would cause circular reference. Perhaps this comment should be expanded to say why ?",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 54
+      },
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
