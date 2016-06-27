@@ -214,6 +214,24 @@
       "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4c7694d9",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:51:53Z",
+      "side": 1,
+      "message": "I don\u0027t see you anything it from LOG.exception to LOG.warning. I only see you adding new LOGs here",
+      "parentUuid": "3aaa91ec_81da0816",
+      "revId": "eb7a0178bf251789b907b5821d554d2eaac6768d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
