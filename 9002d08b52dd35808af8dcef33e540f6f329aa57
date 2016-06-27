@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_567621d9",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-27T14:26:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_906e912d",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 6
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f015559b",
         "filename": "keystone/auth/backends/sql_model.py",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-06T19:30:33Z",
       "side": 1,
       "message": "Why do we need extra?",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 9
+      },
+      "revId": "9002d08b52dd35808af8dcef33e540f6f329aa57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f6474d75",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-27T14:26:32Z",
+      "side": 1,
+      "message": "It\u0027s a requirement for DictBase",
+      "parentUuid": "7aa08908_f015559b",
       "range": {
         "startLine": 24,
         "startChar": 4,
