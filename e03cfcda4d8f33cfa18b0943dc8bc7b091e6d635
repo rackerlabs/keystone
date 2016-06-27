@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_81e67e14",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2772,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T16:12:20Z",
+      "side": 0,
+      "message": "Should this test and the test above be moved, too?",
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_611c3214",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3097,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T16:12:20Z",
+      "side": 0,
+      "message": "What about the rest of the skipped tests here? Should those be moved as well?",
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a168da88",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3187,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T16:12:20Z",
+      "side": 0,
+      "message": "What about this test? Should this be moved, too?",
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e10822dc",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T16:12:20Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
