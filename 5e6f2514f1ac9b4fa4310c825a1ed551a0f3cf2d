@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_2feb28b2",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T20:21:06Z",
+      "side": 1,
+      "message": "now that dolph\u0027s patch merged, we should be able to import the password regular expression from configuration and apply it in the user schema.",
+      "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
