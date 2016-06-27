@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_964ff390",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T12:00:08Z",
+      "side": 1,
+      "message": "Where else is this being used ? The commit message says it\u0027s common setup but I only see it being used in a single place",
+      "range": {
+        "startLine": 301,
+        "startChar": 6,
+        "endLine": 301,
+        "endChar": 19
+      },
+      "revId": "987f052c3f1c40700558726b75bc1aceba217408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4cba1f0c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T12:00:08Z",
+      "side": 1,
+      "message": "I don\u0027t see a need to store this as an attribute",
+      "range": {
+        "startLine": 306,
+        "startChar": 8,
+        "endLine": 306,
+        "endChar": 22
+      },
+      "revId": "987f052c3f1c40700558726b75bc1aceba217408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_cc5baff5",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T12:00:08Z",
+      "side": 1,
+      "message": "Where did this come from ?",
+      "range": {
+        "startLine": 309,
+        "startChar": 8,
+        "endLine": 309,
+        "endChar": 69
+      },
+      "revId": "987f052c3f1c40700558726b75bc1aceba217408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
