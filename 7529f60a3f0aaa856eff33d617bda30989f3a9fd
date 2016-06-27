@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_5f9a9bc6",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T23:03:00Z",
+      "side": 1,
+      "message": "not gonna mention how you dont need to change this unless you are overriding it?",
+      "revId": "7529f60a3f0aaa856eff33d617bda30989f3a9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
