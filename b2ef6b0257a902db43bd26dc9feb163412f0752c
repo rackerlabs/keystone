@@ -16,6 +16,24 @@
       "revId": "b2ef6b0257a902db43bd26dc9feb163412f0752c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_749fc350",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-27T19:53:17Z",
+      "side": 1,
+      "message": "So if you set disable inactive users after 90 days and a user is created on day 1.  If the user tries to authenticate on day 91, they would be disabled. An admin would then need to re-enable their account. So yes, to me that is the expected behavior.",
+      "parentUuid": "3aaa91ec_19cf9ab4",
+      "revId": "b2ef6b0257a902db43bd26dc9feb163412f0752c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
