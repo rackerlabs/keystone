@@ -22,6 +22,30 @@
       "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_814de8c6",
+        "filename": "keystone/tests/unit/ksfixtures/backendloader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T13:53:47Z",
+      "side": 1,
+      "message": "TestCase owns a reference to the fixture instance because of useFixture(). When the fixture also owns a reference to the testcase then we have a circular reference and neither object can be easily cleaned up.",
+      "parentUuid": "3aaa91ec_e5a04344",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 54
+      },
+      "revId": "e03cfcda4d8f33cfa18b0943dc8bc7b091e6d635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
