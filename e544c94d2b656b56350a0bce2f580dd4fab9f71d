@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_467b162a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1956,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T13:36:07Z",
+      "side": 1,
+      "message": "Actually it looks like we don\u0027t need to skip this test. It works fine for now.",
+      "revId": "e544c94d2b656b56350a0bce2f580dd4fab9f71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_60df21d6",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 3
