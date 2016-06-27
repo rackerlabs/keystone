@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_132012f7",
+        "filename": "keystone/conf/validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T21:36:47Z",
+      "side": 1,
+      "message": "consider stating what the default validates, not everyone wants to lookup regex patterns ;)",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "d89d550ccfde06cc0c9c27c983e5fe77bdfbf358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
