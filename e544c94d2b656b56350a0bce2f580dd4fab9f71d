@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_60df21d6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1959,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T11:20:56Z",
+      "side": 1,
+      "message": "We don\u0027t support LDAP for resource at all anymore. So this should be skipped for all (and have the message fixed)",
+      "revId": "e544c94d2b656b56350a0bce2f580dd4fab9f71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
