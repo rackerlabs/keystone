@@ -11,6 +11,16 @@
 # under the License.
 """Common parameter types for validating a request reference."""
 
+import keystone.conf
+
+CONF = keystone.conf.CONF
+
+
+def get_id_string():
+    """Return the regex used to validate ID strings from configuration."""
+    return CONF.validation.id_string_regex
+
+
 boolean = {
     'type': 'boolean',
     'enum': [True, False]
@@ -39,9 +49,7 @@ id_string = {
     'type': 'string',
     'minLength': 1,
     'maxLength': 64,
-    # TODO(lbragstad): Find a way to make this configurable such that the end
-    # user chooses how much control they want over id_strings with a regex
-    'pattern': '^[a-zA-Z0-9-]+$'
+    'pattern': get_id_string
 }
 
 mapping_id_string = {
