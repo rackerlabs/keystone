@@ -12,6 +12,7 @@
 """Internal implementation of request body validating middleware."""
 
 import jsonschema
+import six
 
 from keystone import exception
 from keystone.i18n import _
@@ -36,8 +37,32 @@ class SchemaValidator(object):
         fc = jsonschema.FormatChecker()
         self.validator = validator_cls(schema, format_checker=fc)
 
+    def _resolve_config_values_in_schema(self, schema):
+        # NOTE(lbragstad): This is the magic that makes schemas lazy-loading.
+        # Currently, all the schemas are defined as module-level dictionaries,
+        # which are instantiated when they are imported into other modules. It
+        # is usually at this point where we fail to build a schema that relies
+        # on values defined in config because the entire configuration hasn't
+        # been registered yet. Instead, what we can do is build the schema with
+        # a pointer to a factory that returns the value from configuration.
+        # Right before we go to validate the request, we can recursively parse
+        # the entire schema and see if any values are actually callable to
+        # resolve the now registered values from config.  The good ol'
+        # switcheroo!
+        for key, value in six.iteritems(schema):
+            if callable(value):
+                schema[key] = value()
+            elif isinstance(value, dict):
+                self._resolve_config_values_in_schema(value)
+        return schema
+
     def validate(self, *args, **kwargs):
         try:
+            # NOTE(lbragstad): Make sure that we resolve any configuration
+            # options for validation.
+            self.validator.schema = self._resolve_config_values_in_schema(
+                self.validator.schema
+            )
             self.validator.validate(*args, **kwargs)
         except jsonschema.ValidationError as ex:
             # NOTE: For whole OpenStack message consistency, this error
