@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_d207b27f",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-27T17:01:12Z",
+      "side": 1,
+      "message": "Like I said in earlier reviews. Classes should have state. This is simply a utility function.",
+      "parentUuid": "3aaa91ec_7cb73ef5",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038cdd7d",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 46
