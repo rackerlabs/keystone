@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_963c1394",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3035,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T11:44:29Z",
+      "side": 0,
+      "message": "This initial call disappeared! (which is good :))",
+      "range": {
+        "startLine": 3035,
+        "startChar": 8,
+        "endLine": 3035,
+        "endChar": 28
+      },
+      "revId": "e544c94d2b656b56350a0bce2f580dd4fab9f71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
