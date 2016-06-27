@@ -37,6 +37,75 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2ce34807",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:45:19Z",
+      "side": 1,
+      "message": "this isn\u0027t necessary; I\u0027d leave all the code in this function as it was, but only adding:\n\n    self.resource_api.get_domain(domain_id)",
+      "range": {
+        "startLine": 857,
+        "startChar": 8,
+        "endLine": 857,
+        "endChar": 37
+      },
+      "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ac08d8da",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:45:19Z",
+      "side": 1,
+      "message": "missing \u0027 after default",
+      "range": {
+        "startLine": 225,
+        "startChar": 58,
+        "endLine": 225,
+        "endChar": 66
+      },
+      "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6c51d0d8",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-06-27T14:45:19Z",
+      "side": 1,
+      "message": "of",
+      "range": {
+        "startLine": 225,
+        "startChar": 55,
+        "endLine": 225,
+        "endChar": 57
+      },
+      "revId": "a81a9fe26cc7e8374a836269b7c0e69a8f0cd4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e34e9f39",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 3
