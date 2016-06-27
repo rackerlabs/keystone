@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_be190c7c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-27T19:01:06Z",
+      "side": 1,
+      "message": "This is gone now, checkout the latest patch.",
+      "parentUuid": "3aaa91ec_d207b27f",
+      "revId": "967ae646eb163071c9d26daea81ebe7d07bc5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_038cdd7d",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 46
