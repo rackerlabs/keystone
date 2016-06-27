@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_f65e1411",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "you can probably get rid of this and write it on line 150. it was only separated out since in the old conf setup we had very little room to write.\n\nOTOH, it would be nice to have a standard looking deprecation reason for our options, and having them up top may make that easier for devs to follow.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d6ae78e6",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "*NOT* ? :)",
+      "range": {
+        "startLine": 30,
+        "startChar": 22,
+        "endLine": 30,
+        "endChar": 25
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f68c5481",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "backticks?\n\nmaybe we should say \"remove ``admin_token_auth`` from your...\"\n\nhttps://github.com/openstack/keystone/blob/8b5c095d6f7e4dca93306f00416784303392a67c/etc/keystone-paste.ini#L15",
+      "range": {
+        "startLine": 37,
+        "startChar": 40,
+        "endLine": 37,
+        "endChar": 64
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b6476c1c",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "Setting*",
+      "range": {
+        "startLine": 70,
+        "startChar": 45,
+        "endLine": 70,
+        "endChar": 46
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b6f5accc",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "out of scope: do we want to deprecate this options now that PKI is deprecated?\n\nedit: wow this and max_param_size have a lot of history, and i\u0027m not sure how valid it is any longer",
+      "range": {
+        "startLine": 83,
+        "startChar": 5,
+        "endLine": 83,
+        "endChar": 19
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_36625cae",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "backticks",
+      "range": {
+        "startLine": 86,
+        "startChar": 11,
+        "endLine": 86,
+        "endChar": 25
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d66cb838",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-27T22:01:59Z",
+      "side": 1,
+      "message": "actually cadf is completely backwards compatible, the \"basic\" format only included one field \"resource_info\", which is also included in cadf\n\nhttp://docs.openstack.org/developer/keystone/event_notifications.html#example-notification\n\nwe should probably put up a patch to switch this over",
+      "range": {
+        "startLine": 207,
+        "startChar": 24,
+        "endLine": 208,
+        "endChar": 63
+      },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
