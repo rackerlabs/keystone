@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_8fae9ce5",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T20:15:15Z",
+      "side": 1,
+      "message": "would we just be able to validate this with: \n\n    if expires_days \u003e 0:\n\n?",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
