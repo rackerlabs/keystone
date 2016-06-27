@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_19cf9ab4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-06-27T19:32:12Z",
+      "side": 1,
+      "message": "In the event users are disabled after X days, a user is created, but don\u0027t authenticate for X + 1 days, the first time that user authenticates will result in them being locked out, right? \n\nThat should be the intended behavior of that specific case, shouldn\u0027t it? \n\n(I\u0027m just thinking out loud here)",
+      "revId": "b2ef6b0257a902db43bd26dc9feb163412f0752c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
