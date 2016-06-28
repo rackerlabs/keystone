@@ -988,3 +988,35 @@ class SqlCredential(SqlTests):
         credentials = self.credential_api.list_credentials_for_user(
             self.user_foo['id'], type=cred['type'])
         self._validateCredentialList(credentials, [cred])
+
+
+# @dependency.requires('resource_api')
+class SqlHMTPerformance(SqlTests):
+
+    NODE_WIDTH = 5
+
+    def setUp(self):
+        super(SqlHMTPerformance, self).setUp()
+        project_ref = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id)
+        self.test_root = self.resource_api.create_project(
+            project_ref['id'], project_ref)
+
+        parents = [project_ref]
+        for _ in range(CONF.max_project_tree_depth - 1):
+            leaves = []
+            for parent in parents:
+                for _ in range(self.NODE_WIDTH):
+                    project_ref = unit.new_project_ref(
+                        domain_id=CONF.identity.default_domain_id,
+                        parent_id=parent['id'])
+                    leaf = self.resource_api.create_project(
+                        project_ref['id'], project_ref)
+                    leaves.append(leaf)
+            parents = leaves
+
+    def test_hmt(self):
+        for p in self.resource_api.list_projects_in_subtree(
+                self.test_root['id']):
+            self.resource_api.list_projects_in_subtree(p['id'])
+            self.resource_api.list_project_parents(p['id'])
