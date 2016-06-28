@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_f0f1f196",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 60
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-28T05:10:47Z",
+      "side": 1,
+      "message": "whitespace here and below?",
+      "range": {
+        "startLine": 175,
+        "startChar": 31,
+        "endLine": 175,
+        "endChar": 33
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_01c4313e",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-28T05:10:47Z",
+      "side": 1,
+      "message": "this works, i tested it, but damn this is this some black magic python,\n\nadd a comment linking to: http://stackoverflow.com/questions/9427163/remove-duplicate-dict-in-list-in-python if you have to do another revision :)",
+      "range": {
+        "startLine": 446,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 77
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_0149d1d0",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-28T05:10:47Z",
+      "side": 1,
+      "message": "same comment",
+      "range": {
+        "startLine": 474,
+        "startChar": 8,
+        "endLine": 474,
+        "endChar": 79
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
