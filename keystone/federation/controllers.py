@@ -442,8 +442,6 @@ class DomainV3(controller.V3Controller):
             auth_context['group_ids'])
         domains = domains + self.assignment_api.list_domains_for_user(
             auth_context['user_id'])
-        # remove duplicates
-        domains = [dict(t) for t in set([tuple(d.items()) for d in domains])]
         return DomainV3.wrap_collection(request.context_dict, domains)
 
 
