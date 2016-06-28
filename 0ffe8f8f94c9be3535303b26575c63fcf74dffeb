@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_ed03c574",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 60
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-28T12:38:52Z",
+      "side": 1,
+      "message": "++ need to remove this",
+      "parentUuid": "3aaa91ec_f0f1f196",
+      "range": {
+        "startLine": 175,
+        "startChar": 31,
+        "endLine": 175,
+        "endChar": 33
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_01c4313e",
         "filename": "keystone/federation/controllers.py",
         "patchSetId": 60
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "++ I made similar comment in a previous patch set, it\u0027s really hard to the maintainability.",
       "parentUuid": "3aaa91ec_01c4313e",
+      "range": {
+        "startLine": 446,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 77
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_0d5d7179",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-28T12:38:52Z",
+      "side": 1,
+      "message": "I like single liners, but this can take a while to understand",
+      "parentUuid": "3aaa91ec_e7492490",
       "range": {
         "startLine": 446,
         "startChar": 8,
