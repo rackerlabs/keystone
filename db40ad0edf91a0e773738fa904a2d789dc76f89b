@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_bc12a256",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-28T05:30:41Z",
+      "side": 1,
+      "message": "don\u0027t initialize this here, this is something that should happen in the manager not in the driver itself.",
+      "range": {
+        "startLine": 49,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 47
+      },
+      "revId": "db40ad0edf91a0e773738fa904a2d789dc76f89b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_dc304eeb",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-28T05:30:41Z",
+      "side": 1,
+      "message": "are we really invalidating *all* the cache if a single public id is killed? I think we can be a bit more surgical about this.",
+      "range": {
+        "startLine": 106,
+        "startChar": 7,
+        "endLine": 106,
+        "endChar": 38
+      },
+      "revId": "db40ad0edf91a0e773738fa904a2d789dc76f89b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
