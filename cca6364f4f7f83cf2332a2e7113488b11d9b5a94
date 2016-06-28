@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_651a5e19",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-06-28T06:57:12Z",
+      "side": 1,
+      "message": "Close_bug",
+      "revId": "cca6364f4f7f83cf2332a2e7113488b11d9b5a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a5b9e6ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-06-28T06:57:12Z",
+      "side": 1,
+      "message": "Closes-Bug: #1594231\n\nTo file bug in lanchpad automaic",
+      "revId": "cca6364f4f7f83cf2332a2e7113488b11d9b5a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_b03322f5",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 4
