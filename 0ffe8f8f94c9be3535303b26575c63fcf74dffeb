@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_044a6383",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 60
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-28T14:37:38Z",
+      "side": 1,
+      "message": "This doesn\u0027t have extra whitespace, it\u0027s only showing that because the new name is smaller than the older name.",
+      "parentUuid": "3aaa91ec_ed03c574",
+      "range": {
+        "startLine": 175,
+        "startChar": 31,
+        "endLine": 175,
+        "endChar": 33
+      },
+      "revId": "0ffe8f8f94c9be3535303b26575c63fcf74dffeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_01c4313e",
         "filename": "keystone/federation/controllers.py",
         "patchSetId": 60
