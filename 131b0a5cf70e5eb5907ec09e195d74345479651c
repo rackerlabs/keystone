@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_aee077fb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-28T21:41:24Z",
+      "side": 1,
+      "message": "add a similar test where the token is scoped to a domain",
+      "range": {
+        "startLine": 2640,
+        "startChar": 8,
+        "endLine": 2640,
+        "endChar": 33
+      },
+      "revId": "131b0a5cf70e5eb5907ec09e195d74345479651c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6ed68f28",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 2803,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-28T21:41:24Z",
+      "side": 1,
+      "message": "add a similar test for the list_projects_for_user",
+      "range": {
+        "startLine": 2803,
+        "startChar": 8,
+        "endLine": 2803,
+        "endChar": 45
+      },
+      "revId": "131b0a5cf70e5eb5907ec09e195d74345479651c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
