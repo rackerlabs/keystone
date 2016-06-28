@@ -61,25 +61,34 @@ class Revoke(base.RevokeDriverV8):
         with sql.session_for_write() as session:
             dialect = session.bind.dialect.name
             batch_size = self._flush_batch_size(dialect)
+
+            # NOTE(shaleh): the query below needs to be ordered in the
+            # same way as the call in list_events to ensure a deadlock
+            # is not triggered when using mysql. Details here
+            # http://dev.mysql.com/doc/refman/5.7/en/innodb-deadlocks.html
+            query = session.query(RevocationEvent.id)
+            query = query.order_by(RevocationEvent.revoked_at)
+            query = query.filter(RevocationEvent.revoked_at < oldest)
             if batch_size > 0:
-                query = session.query(RevocationEvent.id)
-                query = query.filter(RevocationEvent.revoked_at < oldest)
                 query = query.limit(batch_size).subquery()
-                delete_query = (session.query(RevocationEvent).
-                                filter(RevocationEvent.id.in_(query)))
+
+            delete_query = (session.query(RevocationEvent).
+                            filter(RevocationEvent.id.in_(query)))
+            if batch_size > 0:
                 while True:
                     rowcount = delete_query.delete(synchronize_session=False)
                     if rowcount == 0:
                         break
             else:
-                query = session.query(RevocationEvent)
-                query = query.filter(RevocationEvent.revoked_at < oldest)
-                query.delete(synchronize_session=False)
+                delete_query.delete(synchronize_session=False)
 
             session.flush()
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
+            # NOTE(shaleh): the query below needs to be ordered in the
+            # same manner as the call in prune_expired_events above to
+            # avoid deadlocks. See the note above for details.
             query = session.query(RevocationEvent).order_by(
                 RevocationEvent.revoked_at)
 
