@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_57c8b074",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-06-28T09:00:41Z",
+      "side": 1,
+      "message": "Can this be consolidated into upgrade(...)? so that if `upgrade_name`is set then the script will match in this way?",
+      "range": {
+        "startLine": 265,
+        "startChar": 4,
+        "endLine": 265,
+        "endChar": 44
+      },
+      "revId": "3142c8b32fad95acdfde72ec59200e901edb0f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
