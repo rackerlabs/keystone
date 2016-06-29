@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_5515e9e2",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-29T18:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_f65e1411",
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d6ae78e6",
         "filename": "keystone/conf/base.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_35e93de7",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-29T18:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_d6ae78e6",
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f68c5481",
         "filename": "keystone/conf/base.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
         "endLine": 37,
         "endChar": 64
       },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d5ad599c",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-29T18:55:56Z",
+      "side": 1,
+      "message": "You can nickname the middleware whatever you want within paste, so it\u0027s really the class name that matters to me, but I\u0027ll include both.",
+      "parentUuid": "3aaa91ec_f68c5481",
       "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_157b6129",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-29T18:55:56Z",
+      "side": 1,
+      "message": "I had the same thoughts.",
+      "parentUuid": "3aaa91ec_b6f5accc",
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_36625cae",
         "filename": "keystone/conf/base.py",
         "patchSetId": 1
@@ -157,6 +229,24 @@
         "endLine": 208,
         "endChar": 63
       },
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_15f7e18b",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-29T18:55:56Z",
+      "side": 1,
+      "message": "+++",
+      "parentUuid": "3aaa91ec_d66cb838",
       "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
