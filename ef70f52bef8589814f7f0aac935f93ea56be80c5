@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cfc97a7b",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-29T01:38:38Z",
+      "side": 1,
+      "message": "right, we don\u0027t need to manually inject it into the context because it\u0027ll be correctly determined from the request object.",
+      "parentUuid": "3aaa91ec_9dddeb16",
+      "range": {
+        "startLine": 577,
+        "startChar": 8,
+        "endLine": 580,
+        "endChar": 16
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_bd854708",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_efe71610",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-29T01:38:38Z",
+      "side": 1,
+      "message": "it\u0027s still used in one place, i could probably just refactor that out.",
+      "parentUuid": "3aaa91ec_bd854708",
+      "range": {
+        "startLine": 210,
+        "startChar": 8,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7db91fcb",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2016-06-29T01:10:09Z",
       "side": 1,
       "message": "why deepcopy some and not others?",
+      "range": {
+        "startLine": 3727,
+        "startChar": 22,
+        "endLine": 3727,
+        "endChar": 35
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2ff2bed2",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3727,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-06-29T01:38:38Z",
+      "side": 1,
+      "message": "i deepcopy only the times where i\u0027m copying the whole environment. when you update(d) it doesn\u0027t change d so we don\u0027t need it there.",
+      "parentUuid": "3aaa91ec_7db91fcb",
       "range": {
         "startLine": 3727,
         "startChar": 22,
