@@ -633,13 +633,14 @@ class BaseProvider(provider.Provider):
 
     def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
+        user_name = auth_context.get('user_name', user_id)
         group_ids = auth_context['group_ids']
         idp = auth_context[federation_constants.IDENTITY_PROVIDER]
         protocol = auth_context[federation_constants.PROTOCOL]
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id),
+                'name': parse.unquote(user_name),
                 federation_constants.FEDERATION: {
                     'groups': [{'id': x} for x in group_ids],
                     'identity_provider': {'id': idp},

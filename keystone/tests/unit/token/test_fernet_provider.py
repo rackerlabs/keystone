@@ -140,6 +140,7 @@ class TestValidate(unit.TestCase):
         token = token_data['token']
         exp_user_info = {
             'id': user_ref['id'],
+            # FIXME: bug 1482701 - name should be user_ref['name']
             'name': user_ref['id'],
             'domain': {'id': CONF.federation.federated_domain_name,
                        'name': CONF.federation.federated_domain_name, },
