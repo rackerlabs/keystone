@@ -250,6 +250,24 @@
       "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d822b0a2",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T19:02:35Z",
+      "side": 1,
+      "message": "I was thinking about proposing this, but it produces a ton of notifications for authentication, infra will bring the rain down on us if we fill the logs",
+      "parentUuid": "3aaa91ec_15f7e18b",
+      "revId": "e9e8457c2dc0046b4a627509e5306fa69d8bf17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
