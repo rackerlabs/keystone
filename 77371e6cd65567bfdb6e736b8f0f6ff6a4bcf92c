@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_7a372cff",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T22:19:24Z",
+      "side": 1,
+      "message": "this is no longer true, it\u0027s created (optionally) with the bootstrap command, or the admin uses the ADMIN_TOKEN to create a domain called default",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 25,
+        "endChar": 43
+      },
+      "revId": "77371e6cd65567bfdb6e736b8f0f6ff6a4bcf92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
