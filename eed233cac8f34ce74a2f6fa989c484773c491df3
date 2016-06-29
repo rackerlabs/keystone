@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_06023509",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-29T11:48:49Z",
+      "side": 1,
+      "message": "leaving as reference how the duplicates were removed in auth/controller.py: https://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L595-L601",
+      "revId": "eed233cac8f34ce74a2f6fa989c484773c491df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_8691059d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 2852,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-29T11:48:49Z",
+      "side": 1,
+      "message": "this needs to check both /auth/domains and /OS-FEDERATION/domains",
+      "range": {
+        "startLine": 2852,
+        "startChar": 21,
+        "endLine": 2852,
+        "endChar": 45
+      },
+      "revId": "eed233cac8f34ce74a2f6fa989c484773c491df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_66f3390b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 2878,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-29T11:48:49Z",
+      "side": 1,
+      "message": "this needs to check both /auth/projects and /OS-FEDERATION/projects",
+      "range": {
+        "startLine": 2878,
+        "startChar": 21,
+        "endLine": 2878,
+        "endChar": 46
+      },
+      "revId": "eed233cac8f34ce74a2f6fa989c484773c491df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
