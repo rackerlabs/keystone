@@ -239,8 +239,8 @@ class BasePayload(object):
         :param audit_ids: list of the token's audit IDs
         :param trust_id: ID of the trust in effect
         :param federated_info: dictionary containing group IDs, the identity
-                               provider ID, protocol ID, and federated domain
-                               ID
+                               provider ID, protocol ID, federated domain ID
+                               and federated user name
         :param access_token_id: ID of the secret in OAuth1 authentication
         :returns: the payload of a token
 
@@ -252,16 +252,13 @@ class BasePayload(object):
         """Disassemble an unscoped payload into the component data.
 
         The tuple consists of::
-
             (user_id, methods, project_id, domain_id, expires_at_str,
              audit_ids, trust_id, federated_info, access_token_id)
-
         * ``methods`` are the auth methods.
         * federated_info is a dict contains the group IDs, the identity
-          provider ID, the protocol ID, and the federated domain ID
-
+          provider ID, the protocol ID, the federated domain ID and the
+          federated user name
         Fields will be set to None if they didn't apply to this payload type.
-
         :param payload: this variant of payload
         :returns: a tuple of the payloads component data
 
@@ -518,12 +515,13 @@ class FederatedUnscopedPayload(BasePayload):
         b_idp_id = cls.attempt_convert_uuid_hex_to_bytes(
             federated_info['idp_id'])
         protocol_id = federated_info['protocol_id']
+        user_name = federated_info['user_name']
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
 
         return (b_user_id, methods, b_group_ids, b_idp_id, protocol_id,
-                expires_at_int, b_audit_ids)
+                user_name, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -540,10 +538,13 @@ class FederatedUnscopedPayload(BasePayload):
         protocol_id = payload[4]
         if isinstance(protocol_id, six.binary_type):
             protocol_id = protocol_id.decode('utf-8')
-        expires_at_str = cls._convert_float_to_time_string(payload[5])
-        audit_ids = list(map(provider.base64_encode, payload[6]))
+        user_name = payload[5]
+        if isinstance(user_name, six.binary_type):
+            user_name = user_name.decode('utf-8')
+        expires_at_str = cls._convert_float_to_time_string(payload[6])
+        audit_ids = list(map(provider.base64_encode, payload[7]))
         federated_info = dict(group_ids=group_ids, idp_id=idp_id,
-                              protocol_id=protocol_id)
+                              protocol_id=protocol_id, user_name=user_name)
         project_id = None
         domain_id = None
         trust_id = None
@@ -567,12 +568,13 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         b_idp_id = cls.attempt_convert_uuid_hex_to_bytes(
             federated_info['idp_id'])
         protocol_id = federated_info['protocol_id']
+        user_name = federated_info['user_name']
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
 
         return (b_user_id, methods, b_scope_id, b_group_ids, b_idp_id,
-                protocol_id, expires_at_int, b_audit_ids)
+                protocol_id, user_name, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -594,10 +596,11 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         if is_stored_as_bytes:
             idp_id = cls.convert_uuid_bytes_to_hex(idp_id)
         protocol_id = payload[5]
-        expires_at_str = cls._convert_float_to_time_string(payload[6])
-        audit_ids = list(map(provider.base64_encode, payload[7]))
+        user_name = payload[6]
+        expires_at_str = cls._convert_float_to_time_string(payload[7])
+        audit_ids = list(map(provider.base64_encode, payload[8]))
         federated_info = dict(idp_id=idp_id, protocol_id=protocol_id,
-                              group_ids=group_ids)
+                              group_ids=group_ids, user_name=user_name)
         trust_id = None
         access_token_id = None
         return (user_id, methods, project_id, domain_id, expires_at_str,

@@ -91,6 +91,7 @@ class Provider(common.BaseProvider):
         token_data = token_data['token']
         try:
             user = token_data['user']
+            user_name = user['name']
             federation = user[federation_constants.FEDERATION]
             idp_id = federation['identity_provider']['id']
             protocol_id = federation['protocol']['id']
@@ -103,7 +104,8 @@ class Provider(common.BaseProvider):
 
         return {'group_ids': group_ids,
                 'idp_id': idp_id,
-                'protocol_id': protocol_id}
+                'protocol_id': protocol_id,
+                'user_name': user_name}
 
     def _rebuild_federated_info(self, federated_dict, user_id):
         """Format federated information into the token reference.
@@ -117,6 +119,7 @@ class Provider(common.BaseProvider):
         g_ids = federated_dict['group_ids']
         idp_id = federated_dict['idp_id']
         protocol_id = federated_dict['protocol_id']
+        user_name = federated_dict['user_name']
 
         federated_info = {
             'groups': g_ids,
@@ -128,7 +131,7 @@ class Provider(common.BaseProvider):
             'user': {
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
-                'name': user_id,
+                'name': user_name,
                 'domain': {'id': CONF.federation.federated_domain_name,
                            'name': CONF.federation.federated_domain_name, },
             }
@@ -184,8 +187,8 @@ class Provider(common.BaseProvider):
             'access_token_id')
         federated_info = self._build_federated_info(token_data)
 
-        return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info)
+        return (user_id, expires_at, audit_ids, methods, domain_id,
+                project_id, trust_id, access_token_id, federated_info)
 
     def _get_token_id(self, token_data):
         """Generate the token_id based upon the data in token_data.
@@ -205,7 +208,6 @@ class Provider(common.BaseProvider):
             (user_id, expires_at, audit_ids, methods, domain_id, project_id,
                 trust_id, access_token_id, federated_info) = (
                     self._extract_v3_token_data(token_data))
-
         return self.token_formatter.create_token(
             user_id,
             expires_at,
