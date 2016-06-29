@@ -259,6 +259,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_a975d898",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T20:09:18Z",
+      "side": 1,
+      "message": "Why wouldn\u0027t we catch these individually are make the error message specific to what is happening? I would imagine that we\u0027d only want the allow plaintext logic on the InvalidToken right?",
+      "parentUuid": "3aaa91ec_0e94f240",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d79c4410",
         "filename": "keystone/tests/unit/credential/test_controllers.py",
         "patchSetId": 15
