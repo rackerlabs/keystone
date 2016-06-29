@@ -129,6 +129,7 @@ class TestValidate(unit.TestCase):
         protocol = uuid.uuid4().hex
         auth_context = {
             'user_id': user_ref['id'],
+            'user_name': user_ref['name'],
             'group_ids': group_ids,
             federation_constants.IDENTITY_PROVIDER: identity_provider,
             federation_constants.PROTOCOL: protocol,
@@ -140,7 +141,7 @@ class TestValidate(unit.TestCase):
         token = token_data['token']
         exp_user_info = {
             'id': user_ref['id'],
-            'name': user_ref['id'],
+            'name': user_ref['name'],
             'domain': {'id': CONF.federation.federated_domain_name,
                        'name': CONF.federation.federated_domain_name, },
             federation_constants.FEDERATION: {
@@ -336,21 +337,23 @@ class TestPayloads(unit.TestCase):
             actual_time_float)
         self.assertEqual(expected_time_str, actual_time_str)
 
-    def _test_payload(self, payload_class, exp_user_id=None, exp_methods=None,
+    def _test_payload(self, payload_class, exp_user_id=None,
+                      exp_user_name=None, exp_methods=None,
                       exp_project_id=None, exp_domain_id=None,
                       exp_trust_id=None, exp_federated_info=None,
                       exp_access_token_id=None):
         exp_user_id = exp_user_id or uuid.uuid4().hex
+        exp_user_name = exp_user_name or uuid.uuid4().hex
         exp_methods = exp_methods or ['password']
         exp_expires_at = utils.isotime(timeutils.utcnow(), subsecond=True)
         exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = payload_class.assemble(
-            exp_user_id, exp_methods, exp_project_id, exp_domain_id,
-            exp_expires_at, exp_audit_ids, exp_trust_id, exp_federated_info,
-            exp_access_token_id)
+            exp_user_id, exp_user_name, exp_methods, exp_project_id,
+            exp_domain_id, exp_expires_at, exp_audit_ids, exp_trust_id,
+            exp_federated_info, exp_access_token_id)
 
-        (user_id, methods, project_id,
+        (user_id, user_name, methods, project_id,
          domain_id, expires_at, audit_ids,
          trust_id, federated_info,
          access_token_id) = payload_class.disassemble(payload)
@@ -366,8 +369,11 @@ class TestPayloads(unit.TestCase):
 
         if exp_federated_info:
             self.assertDictEqual(exp_federated_info, federated_info)
+            self.assertEqual(exp_user_name, user_name)
         else:
             self.assertIsNone(federated_info)
+            # validate that user_name doesn't appear in non-federated tokens
+            self.assertIsNone(user_name)
 
     def test_unscoped_payload(self):
         self._test_payload(token_formatters.UnscopedPayload)
@@ -397,6 +403,10 @@ class TestPayloads(unit.TestCase):
         self._test_payload(token_formatters.UnscopedPayload,
                            exp_user_id='0123456789abcdef')
 
+    def test_unscoped_payload_with_user_name(self):
+        self._test_payload(token_formatters.UnscopedPayload,
+                           exp_user_name=uuid.uuid4().hex)
+
     def test_project_scoped_payload_with_non_uuid_ids(self):
         self._test_payload(token_formatters.ProjectScopedPayload,
                            exp_user_id='someNonUuidUserId',
@@ -406,6 +416,11 @@ class TestPayloads(unit.TestCase):
         self._test_payload(token_formatters.ProjectScopedPayload,
                            exp_user_id='0123456789abcdef',
                            exp_project_id='0123456789abcdef')
+
+    def test_project_scoped_payload_with_user_name(self):
+        self._test_payload(token_formatters.ProjectScopedPayload,
+                           exp_project_id=uuid.uuid4().hex,
+                           exp_user_name=uuid.uuid4().hex)
 
     def test_domain_scoped_payload_with_non_uuid_user_id(self):
         self._test_payload(token_formatters.DomainScopedPayload,
@@ -429,13 +444,15 @@ class TestPayloads(unit.TestCase):
                            exp_project_id='0123456789abcdef',
                            exp_trust_id=uuid.uuid4().hex)
 
-    def _test_federated_payload_with_ids(self, exp_user_id, exp_group_id):
+    def _test_federated_payload_with_ids(self, exp_user_id, exp_group_id,
+                                         exp_user_name=None):
         exp_federated_info = {'group_ids': [{'id': exp_group_id}],
                               'idp_id': uuid.uuid4().hex,
                               'protocol_id': uuid.uuid4().hex}
 
         self._test_payload(token_formatters.FederatedUnscopedPayload,
                            exp_user_id=exp_user_id,
+                           exp_user_name=exp_user_name,
                            exp_federated_info=exp_federated_info)
 
     def test_federated_payload_with_non_uuid_ids(self):
@@ -446,6 +463,11 @@ class TestPayloads(unit.TestCase):
         self._test_federated_payload_with_ids('0123456789abcdef',
                                               '0123456789abcdef')
 
+    def test_federated_payload_with_user_name(self):
+        self._test_federated_payload_with_ids('0123456789abcdef',
+                                              '0123456789abcdef',
+                                              exp_user_name='0123456789abcdef')
+
     def test_federated_project_scoped_payload(self):
         exp_federated_info = {'group_ids': [{'id': 'someNonUuidGroupId'}],
                               'idp_id': uuid.uuid4().hex,
@@ -453,6 +475,7 @@ class TestPayloads(unit.TestCase):
 
         self._test_payload(token_formatters.FederatedProjectScopedPayload,
                            exp_user_id='someNonUuidUserId',
+                           exp_user_name='someUserName',
                            exp_methods=['token'],
                            exp_project_id=uuid.uuid4().hex,
                            exp_federated_info=exp_federated_info)

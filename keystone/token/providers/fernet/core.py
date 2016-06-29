@@ -105,7 +105,7 @@ class Provider(common.BaseProvider):
                 'idp_id': idp_id,
                 'protocol_id': protocol_id}
 
-    def _rebuild_federated_info(self, federated_dict, user_id):
+    def _rebuild_federated_info(self, federated_dict, user_id, user_name):
         """Format federated information into the token reference.
 
         The federated_dict is passed back from the federated token formatters.
@@ -128,7 +128,7 @@ class Provider(common.BaseProvider):
             'user': {
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
-                'name': user_id,
+                'name': user_name,
                 'domain': {'id': CONF.federation.federated_domain_name,
                            'name': CONF.federation.federated_domain_name, },
             }
@@ -168,12 +168,14 @@ class Provider(common.BaseProvider):
         trust_id = None
         access_token_id = None
         federated_info = None
-        return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info)
+        user_name = None
+        return (user_id, user_name, expires_at, audit_ids, methods, domain_id,
+                project_id, trust_id, access_token_id, federated_info)
 
     def _extract_v3_token_data(self, token_data):
         """Extract information from a v3 token reference."""
         user_id = token_data['token']['user']['id']
+        user_name = token_data['token']['user']['name']
         expires_at = token_data['token']['expires_at']
         audit_ids = token_data['token']['audit_ids']
         methods = token_data['token'].get('methods')
@@ -184,8 +186,8 @@ class Provider(common.BaseProvider):
             'access_token_id')
         federated_info = self._build_federated_info(token_data)
 
-        return (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info)
+        return (user_id, user_name, expires_at, audit_ids, methods, domain_id,
+                project_id, trust_id, access_token_id, federated_info)
 
     def _get_token_id(self, token_data):
         """Generate the token_id based upon the data in token_data.
@@ -198,16 +200,16 @@ class Provider(common.BaseProvider):
         # NOTE(lbragstad): Only v2.0 token responses include an 'access'
         # attribute.
         if token_data.get('access'):
-            (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info) = (
-                    self._extract_v2_token_data(token_data))
+            (user_id, user_name, expires_at, audit_ids, methods, domain_id,
+             project_id, trust_id, access_token_id, federated_info) = (
+                 self._extract_v2_token_data(token_data))
         else:
-            (user_id, expires_at, audit_ids, methods, domain_id, project_id,
-                trust_id, access_token_id, federated_info) = (
-                    self._extract_v3_token_data(token_data))
-
+            (user_id, user_name, expires_at, audit_ids, methods, domain_id,
+             project_id, trust_id, access_token_id, federated_info) = (
+                self._extract_v3_token_data(token_data))
         return self.token_formatter.create_token(
             user_id,
+            user_name,
             expires_at,
             audit_ids,
             methods=methods,
