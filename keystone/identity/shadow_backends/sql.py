@@ -38,7 +38,13 @@ class ShadowUsers(base.ShadowUsersDriverV10):
         user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
         return identity_base.filter_user(user_ref.to_dict())
 
-    def _get_federated_user(self, idp_id, protocol_id, unique_id):
+    def get_federated_user_by_id(self, idp_id, protocol_id, user_id):
+        user_ref = self._get_federated_user(idp_id, protocol_id,
+                                            user_id=user_id)
+        return identity_base.filter_user(user_ref.to_dict())
+
+    def _get_federated_user(self, idp_id, protocol_id, unique_id=None,
+                            user_id=None):
         """Return the found user for the federated identity.
 
         :param idp_id: The identity provider ID
@@ -53,7 +59,12 @@ class ShadowUsers(base.ShadowUsersDriverV10):
             query = query.filter(model.FederatedUser.idp_id == idp_id)
             query = query.filter(model.FederatedUser.protocol_id ==
                                  protocol_id)
-            query = query.filter(model.FederatedUser.unique_id == unique_id)
+            if unique_id:
+                query = query.filter(model.FederatedUser.unique_id ==
+                                     unique_id)
+            elif user_id:
+                query = query.filter(model.FederatedUser.user_id ==
+                                     user_id)
             try:
                 user_ref = query.one()
             except sql.NotFound:
