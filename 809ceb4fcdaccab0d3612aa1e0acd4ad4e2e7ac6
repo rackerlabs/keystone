@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_9284910b",
+        "filename": "keystone/conf/domain_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T15:22:44Z",
+      "side": 1,
+      "message": "want to write it out?\n\n Time to live (TTL)\n\nUnless we\u0027re talking about Transistor–transistor logic :)",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 3
+      },
+      "revId": "809ceb4fcdaccab0d3612aa1e0acd4ad4e2e7ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
