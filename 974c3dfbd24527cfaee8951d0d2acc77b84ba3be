@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_29c6089a",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T20:14:01Z",
+      "side": 1,
+      "message": "We should put this in the docs too",
+      "parentUuid": "3aaa91ec_2e272ecb",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_77959031",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 15
