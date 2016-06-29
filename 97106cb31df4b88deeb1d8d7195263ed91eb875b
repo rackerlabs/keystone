@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_5a5350e2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "maybe print this out and prompt the user if they want to continue or include a --force? this sounds like it could go really bad if done in a wrong sequence.\n\ncan we check if it\u0027s already been run? and look to see if allow_plaintext is set to true?",
+      "range": {
+        "startLine": 396,
+        "startChar": 4,
+        "endLine": 405,
+        "endChar": 17
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_1a3c28c7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "call it credentials_encrypt? we\u0027re only doing one db. unless there are plans to do more dbs?",
+      "range": {
+        "startLine": 408,
+        "startChar": 12,
+        "endLine": 408,
+        "endChar": 22
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_5a1b5073",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "these should be argparse arguments, with 100 and 0 as defaults, don\u0027t hardcode them",
+      "range": {
+        "startLine": 411,
+        "startChar": 8,
+        "endLine": 412,
+        "endChar": 23
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7f69def8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "name this something different than refs? since we\u0027re already using it above",
+      "range": {
+        "startLine": 435,
+        "startChar": 12,
+        "endLine": 435,
+        "endChar": 16
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7f371eff",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "what\u0027s the point of this? we\u0027re not returning anything here",
+      "range": {
+        "startLine": 441,
+        "startChar": 12,
+        "endLine": 441,
+        "endChar": 73
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7a0bacd6",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "Entry point*\n\nyes, line 22 is incorrect",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 30,
+        "endChar": 72
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_1afb88c2",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "backticks around this",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_9a0658cc",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T21:38:33Z",
+      "side": 1,
+      "message": "backticks around this",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 26
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
