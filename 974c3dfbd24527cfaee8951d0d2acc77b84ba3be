@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cb001c69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_576054cf",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 73
+      },
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_776470b8",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 15
@@ -36,6 +60,24 @@
       "writtenOn": "2016-06-29T17:11:24Z",
       "side": 1,
       "message": "I expected this to be a description of what \u0027Credential Encryption\u0027 actually means. I\u0027m not sure what Fernet token keys has to do with it.",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_cb5c9c7f",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_776470b8",
       "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +118,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_abef9085",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_77959031",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f73d002c",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 15
@@ -87,6 +147,24 @@
       "writtenOn": "2016-06-29T17:11:24Z",
       "side": 1,
       "message": "Do we really want to change the config file every time we rotate keys?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2b79e0c8",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "I discussed this with Dolph and he was ok with it.  Credential encryption keys do not need to be rotated as often as fernet keys.",
+      "parentUuid": "3aaa91ec_f73d002c",
       "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -110,6 +188,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_ee3ec689",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "I think invalidToken can be removed but the other two are still required.\nAttributeError: The fernet key is not defined.\nTypeError: The provided fernet key is not valid.",
+      "parentUuid": "3aaa91ec_b78538d0",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_b7d378d4",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 15
@@ -127,6 +223,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_0e94f240",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "All exceptions are valid reasons for failure:\n\nInvalidToken:  the token could not be decrypted\nValueError: No fernet keys where provided.\nTypeError: The provided fernet key is not valid",
+      "parentUuid": "3aaa91ec_b7d378d4",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d79c4410",
         "filename": "keystone/tests/unit/credential/test_controllers.py",
         "patchSetId": 15
@@ -138,6 +252,24 @@
       "writtenOn": "2016-06-29T17:11:24Z",
       "side": 1,
       "message": "Are there any tests for the plaintext cases?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6e749635",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T19:57:21Z",
+      "side": 1,
+      "message": "Yes, all previously existing test use plaintext.",
+      "parentUuid": "3aaa91ec_d79c4410",
       "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
