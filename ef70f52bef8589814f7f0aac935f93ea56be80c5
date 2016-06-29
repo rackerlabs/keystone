@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_9dddeb16",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T01:10:09Z",
+      "side": 1,
+      "message": "i guess we don\u0027t keep query_string cause we have request.params",
+      "range": {
+        "startLine": 577,
+        "startChar": 8,
+        "endLine": 580,
+        "endChar": 16
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_bd854708",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T01:10:09Z",
+      "side": 1,
+      "message": "is this used any longer? you replaced one instance on line 163, may not be necessary any longer",
+      "range": {
+        "startLine": 210,
+        "startChar": 8,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_7db91fcb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3727,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T01:10:09Z",
+      "side": 1,
+      "message": "why deepcopy some and not others?",
+      "range": {
+        "startLine": 3727,
+        "startChar": 22,
+        "endLine": 3727,
+        "endChar": 35
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
