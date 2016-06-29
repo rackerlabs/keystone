@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_a62cdeac",
+        "filename": "keystone/conf/endpoint_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-29T23:09:26Z",
+      "side": 1,
+      "message": "Can probably be updated from M to Mitaka since you\u0027re updating the text",
+      "range": {
+        "startLine": 24,
+        "startChar": 7,
+        "endLine": 24,
+        "endChar": 8
+      },
+      "revId": "32ab2353d7a7f64300445688b0bd583fbe1a13fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_8b88d472",
         "filename": "keystone/conf/endpoint_policy.py",
         "patchSetId": 1
