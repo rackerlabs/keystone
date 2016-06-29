@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_576054cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "(nit) These lines should be wrapped at 72 characters: https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 73
+      },
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_776470b8",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "I expected this to be a description of what \u0027Credential Encryption\u0027 actually means. I\u0027m not sure what Fernet token keys has to do with it.",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a20b3823",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "What is the process for rotating the keys?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_77959031",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "Core? What does that mean?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f73d002c",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "Do we really want to change the config file every time we rotate keys?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b78538d0",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "Which one of the exceptions is raised when this happens? We probably don\u0027t need to catch all three.",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b7d378d4",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "Same here as above",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d79c4410",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T17:11:24Z",
+      "side": 1,
+      "message": "Are there any tests for the plaintext cases?",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
