@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b21d4d64",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_2a9f7304",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_aae523a9",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 14
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-28T19:58:44Z",
       "side": 1,
       "message": "backticks",
+      "range": {
+        "startLine": 27,
+        "startChar": 6,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b2542dfe",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_aae523a9",
       "range": {
         "startLine": 27,
         "startChar": 6,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_d26619ec",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_ea628b15",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 61
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_0a70b7db",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 14
@@ -82,6 +154,30 @@
       "writtenOn": "2016-06-28T19:58:44Z",
       "side": 1,
       "message": "add*",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 6
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b2a26dfa",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_0a70b7db",
       "range": {
         "startLine": 34,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_d294598c",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_6a54db53",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 15
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_0a29d737",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 14
@@ -128,6 +248,30 @@
       "writtenOn": "2016-06-28T19:58:44Z",
       "side": 1,
       "message": "lower case",
+      "range": {
+        "startLine": 50,
+        "startChar": 5,
+        "endLine": 50,
+        "endChar": 15
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_b2f0adfe",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_0a29d737",
       "range": {
         "startLine": 50,
         "startChar": 5,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_32531de4",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_8d2fa187",
+      "range": {
+        "startLine": 62,
+        "startChar": 16,
+        "endLine": 62,
+        "endChar": 19
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_ed4c6578",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 14
@@ -174,6 +342,30 @@
       "writtenOn": "2016-06-28T19:58:44Z",
       "side": 1,
       "message": "add a $ before the command to show it is run in a shell",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 30
+      },
+      "revId": "4b6a14800874ad3bd41bc89740283867378d4868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_520b49d6",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T15:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_ed4c6578",
       "range": {
         "startLine": 64,
         "startChar": 4,
