@@ -16,6 +16,7 @@ import hashlib
 
 from oslo_serialization import jsonutils
 
+from keystone.api.views.v3 import credential as view
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -68,33 +69,19 @@ class CredentialV3(controller.V3Controller):
         ref = self._assign_unique_id(self._normalize_dict(credential),
                                      trust_id)
         ref = self.credential_api.create_credential(ref['id'], ref)
-        return CredentialV3.wrap_member(request.context_dict, ref)
-
-    @staticmethod
-    def _blob_to_json(ref):
-        # credentials stored via ec2tokens before the fix for #1259584
-        # need json serializing, as that's the documented API format
-        blob = ref.get('blob')
-        if isinstance(blob, dict):
-            new_ref = ref.copy()
-            new_ref['blob'] = jsonutils.dumps(blob)
-            return new_ref
-        else:
-            return ref
+        return view.CredentialView(request).show(ref)
 
     @controller.filterprotected('user_id', 'type')
     def list_credentials(self, request, filters):
         hints = CredentialV3.build_driver_hints(request.context_dict, filters)
         refs = self.credential_api.list_credentials(hints)
-        ret_refs = [self._blob_to_json(r) for r in refs]
-        return CredentialV3.wrap_collection(request.context_dict, ret_refs,
-                                            hints=hints)
+        limited, refs = self.apply_hints(request.context_dict, refs, hints)
+        return view.CredentialView(request).list(refs, truncated=limited)
 
     @controller.protected()
     def get_credential(self, request, credential_id):
         ref = self.credential_api.get_credential(credential_id)
-        ret_ref = self._blob_to_json(ref)
-        return CredentialV3.wrap_member(request.context_dict, ret_ref)
+        return view.CredentialView(request).show(ref)
 
     @controller.protected()
     @validation.validated(schema.credential_update, 'credential')
@@ -102,7 +89,7 @@ class CredentialV3(controller.V3Controller):
         self._require_matching_id(credential_id, credential)
 
         ref = self.credential_api.update_credential(credential_id, credential)
-        return CredentialV3.wrap_member(request.context_dict, ref)
+        return view.CredentialView(request).show(ref)
 
     @controller.protected()
     def delete_credential(self, request, credential_id):
