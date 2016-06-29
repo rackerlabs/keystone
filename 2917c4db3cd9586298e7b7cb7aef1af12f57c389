@@ -22,6 +22,29 @@
       "revId": "2917c4db3cd9586298e7b7cb7aef1af12f57c389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_06d332d6",
+        "filename": "keystone/conf/identity_mapping.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-06-29T23:03:06Z",
+      "side": 1,
+      "message": "keystone",
+      "range": {
+        "startLine": 53,
+        "startChar": 54,
+        "endLine": 53,
+        "endChar": 62
+      },
+      "revId": "2917c4db3cd9586298e7b7cb7aef1af12f57c389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
