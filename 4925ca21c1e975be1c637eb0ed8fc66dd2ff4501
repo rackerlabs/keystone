@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_05e36134",
+        "filename": "keystone/auth/backends/sql_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T03:09:06Z",
+      "side": 1,
+      "message": "nit: take out this comment",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 5
+      },
+      "revId": "4925ca21c1e975be1c637eb0ed8fc66dd2ff4501",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_c52159fe",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T03:09:06Z",
+      "side": 1,
+      "message": "Should change this config option to default to None with a minimum of 1, e.g.:\ndefault\u003dNone,\nmin\u003d1,",
+      "range": {
+        "startLine": 113,
+        "startChar": 36,
+        "endLine": 113,
+        "endChar": 60
+      },
+      "revId": "4925ca21c1e975be1c637eb0ed8fc66dd2ff4501",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_45b9e9ca",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T03:09:06Z",
+      "side": 1,
+      "message": "Move the abstract base class to keystone/auth/backends/base.py\n\nThis is the new standard. For example, see identity:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/base.py",
+      "range": {
+        "startLine": 131,
+        "startChar": 6,
+        "endLine": 131,
+        "endChar": 18
+      },
+      "revId": "4925ca21c1e975be1c637eb0ed8fc66dd2ff4501",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
