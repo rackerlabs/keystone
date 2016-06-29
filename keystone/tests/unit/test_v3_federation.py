@@ -151,8 +151,8 @@ class FederatedSetupMixin(object):
         self.assertIn('identity_provider', user['OS-FEDERATION'])
         self.assertIn('protocol', user['OS-FEDERATION'])
 
-        # Make sure user_id is url safe
-        self.assertEqual(urllib.parse.quote(user['name']), user['id'])
+        # Make sure user_name is url safe
+        self.assertEqual(urllib.parse.quote(user['name']), user['name'])
 
     def _issue_unscoped_token(self,
                               idp=None,
@@ -2504,6 +2504,21 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                           self._issue_unscoped_token,
                           assertion='ANOTHER_LOCAL_USER_ASSERTION')
 
+    def test_user_name_and_id_in_federation_token(self):
+        r = self._issue_unscoped_token(assertion='EMPLOYEE_ASSERTION')
+        token = r.json_body['token']
+        self.assertEqual(
+            token['user']['name'],
+            mapping_fixtures.EMPLOYEE_ASSERTION['UserName'])
+        self.assertNotEqual(token['user']['name'], token['user']['id'])
+        r = self.v3_create_token(
+            self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
+        token = r.json_body['token']
+        self.assertEqual(
+            token['user']['name'],
+            mapping_fixtures.EMPLOYEE_ASSERTION['UserName'])
+        self.assertNotEqual(token['user']['name'], token['user']['id'])
+
 
 class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
@@ -2530,7 +2545,7 @@ class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     def test_federated_unscoped_token_with_multiple_groups(self):
         assertion = 'ANOTHER_CUSTOMER_ASSERTION'
         resp = self._issue_unscoped_token(assertion=assertion)
-        self.assertEqual(226, len(resp.headers['X-Subject-Token']))
+        self.assertEqual(247, len(resp.headers['X-Subject-Token']))
         self.assertValidMappedUser(resp.json_body['token'])
 
     def test_validate_federated_unscoped_token(self):
