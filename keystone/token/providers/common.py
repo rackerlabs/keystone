@@ -633,13 +633,14 @@ class BaseProvider(provider.Provider):
 
     def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
+        user_name = auth_context.get('user_name', user_id)
         group_ids = auth_context['group_ids']
         idp = auth_context[federation_constants.IDENTITY_PROVIDER]
         protocol = auth_context[federation_constants.PROTOCOL]
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id),
+                'name': parse.unquote(user_name),
                 federation_constants.FEDERATION: {
                     'groups': [{'id': x} for x in group_ids],
                     'identity_provider': {'id': idp},
@@ -739,9 +740,10 @@ class BaseProvider(provider.Provider):
 
     def validate_non_persistent_token(self, token_id):
         try:
-            (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-                federated_info, access_token_id, created_at, expires_at) = (
-                    self.token_formatter.validate_token(token_id))
+            (user_id, user_name, methods, audit_ids, domain_id, project_id,
+             trust_id, federated_info, access_token_id, created_at,
+             expires_at) = (
+                 self.token_formatter.validate_token(token_id))
         except exception.ValidationError as e:
             raise exception.TokenNotFound(e)
 
@@ -755,7 +757,8 @@ class BaseProvider(provider.Provider):
             # As a result, we have to extract it from the token itself and
             # rebuild the federated context. These private methods currently
             # live in the keystone.token.providers.fernet.Provider() class.
-            token_dict = self._rebuild_federated_info(federated_info, user_id)
+            token_dict = self._rebuild_federated_info(federated_info, user_id,
+                                                      user_name)
             if project_id or domain_id:
                 self._rebuild_federated_token_roles(token_dict, federated_info,
                                                     user_id, project_id,

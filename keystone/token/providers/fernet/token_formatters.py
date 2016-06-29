@@ -144,9 +144,9 @@ class TokenFormatter(object):
 
         return created_at
 
-    def create_token(self, user_id, expires_at, audit_ids, methods=None,
-                     domain_id=None, project_id=None, trust_id=None,
-                     federated_info=None, access_token_id=None):
+    def create_token(self, user_id, user_name, expires_at, audit_ids,
+                     methods=None, domain_id=None, project_id=None,
+                     trust_id=None, federated_info=None, access_token_id=None):
         """Given a set of payload attributes, generate a Fernet token."""
         for payload_class in PAYLOAD_CLASSES:
             if payload_class.create_arguments_apply(
@@ -157,8 +157,8 @@ class TokenFormatter(object):
 
         version = payload_class.version
         payload = payload_class.assemble(
-            user_id, methods, project_id, domain_id, expires_at, audit_ids,
-            trust_id, federated_info, access_token_id
+            user_id, user_name, methods, project_id, domain_id, expires_at,
+            audit_ids, trust_id, federated_info, access_token_id
         )
 
         versioned_payload = (version,) + payload
@@ -190,8 +190,9 @@ class TokenFormatter(object):
 
         for payload_class in PAYLOAD_CLASSES:
             if version == payload_class.version:
-                (user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id) = (
+                (user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id) = (
                     payload_class.disassemble(payload))
                 break
         else:
@@ -207,8 +208,9 @@ class TokenFormatter(object):
         expires_at = timeutils.parse_isotime(expires_at)
         expires_at = ks_utils.isotime(at=expires_at, subsecond=True)
 
-        return (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-                federated_info, access_token_id, created_at, expires_at)
+        return (user_id, user_name, methods, audit_ids, domain_id, project_id,
+                trust_id, federated_info, access_token_id, created_at,
+                expires_at)
 
 
 class BasePayload(object):
@@ -227,11 +229,14 @@ class BasePayload(object):
         raise NotImplementedError()
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         """Assemble the payload of a token.
 
         :param user_id: identifier of the user in the token request
+        :param user_name: username in the token request, will be included
+                          in the payload for Fernet federated tokens only
         :param methods: list of authentication methods used
         :param project_id: ID of the project to scope to
         :param domain_id: ID of the domain to scope to
@@ -338,8 +343,9 @@ class UnscopedPayload(BasePayload):
         return True
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         expires_at_int = cls._convert_time_string_to_float(expires_at)
@@ -360,8 +366,10 @@ class UnscopedPayload(BasePayload):
         trust_id = None
         federated_info = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        user_name = None
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class DomainScopedPayload(BasePayload):
@@ -372,8 +380,9 @@ class DomainScopedPayload(BasePayload):
         return kwargs['domain_id']
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         try:
@@ -409,8 +418,10 @@ class DomainScopedPayload(BasePayload):
         trust_id = None
         federated_info = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        user_name = None
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class ProjectScopedPayload(BasePayload):
@@ -421,8 +432,9 @@ class ProjectScopedPayload(BasePayload):
         return kwargs['project_id']
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
@@ -446,8 +458,10 @@ class ProjectScopedPayload(BasePayload):
         trust_id = None
         federated_info = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        user_name = None
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class TrustScopedPayload(BasePayload):
@@ -458,8 +472,9 @@ class TrustScopedPayload(BasePayload):
         return kwargs['trust_id']
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
@@ -486,8 +501,10 @@ class TrustScopedPayload(BasePayload):
         domain_id = None
         federated_info = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        user_name = None
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class FederatedUnscopedPayload(BasePayload):
@@ -509,8 +526,9 @@ class FederatedUnscopedPayload(BasePayload):
         return {'id': group_id}
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_group_ids = list(map(cls.pack_group_id,
@@ -521,43 +539,47 @@ class FederatedUnscopedPayload(BasePayload):
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
-
-        return (b_user_id, methods, b_group_ids, b_idp_id, protocol_id,
-                expires_at_int, b_audit_ids)
+        return (b_user_id, user_name, methods, b_group_ids, b_idp_id,
+                protocol_id, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.convert_uuid_bytes_to_hex(user_id)
-        methods = auth_plugins.convert_integer_to_method_list(payload[1])
-        group_ids = list(map(cls.unpack_group_id, payload[2]))
-        (is_stored_as_bytes, idp_id) = payload[3]
+        user_name = payload[1]
+        if isinstance(user_name, six.binary_type):
+            user_name = user_name.decode('utf-8')
+        methods = auth_plugins.convert_integer_to_method_list(payload[2])
+        group_ids = list(map(cls.unpack_group_id, payload[3]))
+        (is_stored_as_bytes, idp_id) = payload[4]
         if is_stored_as_bytes:
             idp_id = cls.convert_uuid_bytes_to_hex(idp_id)
         else:
             idp_id = idp_id.decode('utf-8')
-        protocol_id = payload[4]
+        protocol_id = payload[5]
         if isinstance(protocol_id, six.binary_type):
             protocol_id = protocol_id.decode('utf-8')
-        expires_at_str = cls._convert_float_to_time_string(payload[5])
-        audit_ids = list(map(provider.base64_encode, payload[6]))
+        expires_at_str = cls._convert_float_to_time_string(payload[6])
+        audit_ids = list(map(provider.base64_encode, payload[7]))
         federated_info = dict(group_ids=group_ids, idp_id=idp_id,
                               protocol_id=protocol_id)
         project_id = None
         domain_id = None
         trust_id = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class FederatedScopedPayload(FederatedUnscopedPayload):
     version = None
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_scope_id = cls.attempt_convert_uuid_hex_to_bytes(
@@ -570,17 +592,19 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(provider.random_urlsafe_str_to_bytes,
                                audit_ids))
-
-        return (b_user_id, methods, b_scope_id, b_group_ids, b_idp_id,
-                protocol_id, expires_at_int, b_audit_ids)
+        return (b_user_id, user_name, methods, b_scope_id, b_group_ids,
+                b_idp_id, protocol_id, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         (is_stored_as_bytes, user_id) = payload[0]
         if is_stored_as_bytes:
             user_id = cls.convert_uuid_bytes_to_hex(user_id)
-        methods = auth_plugins.convert_integer_to_method_list(payload[1])
-        (is_stored_as_bytes, scope_id) = payload[2]
+        user_name = payload[1]
+        if isinstance(user_name, six.binary_type):
+            user_name = user_name.decode('utf-8')
+        methods = auth_plugins.convert_integer_to_method_list(payload[2])
+        (is_stored_as_bytes, scope_id) = payload[3]
         if is_stored_as_bytes:
             scope_id = cls.convert_uuid_bytes_to_hex(scope_id)
         project_id = (
@@ -589,19 +613,20 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         domain_id = (
             scope_id
             if cls.version == FederatedDomainScopedPayload.version else None)
-        group_ids = list(map(cls.unpack_group_id, payload[3]))
-        (is_stored_as_bytes, idp_id) = payload[4]
+        group_ids = list(map(cls.unpack_group_id, payload[4]))
+        (is_stored_as_bytes, idp_id) = payload[5]
         if is_stored_as_bytes:
             idp_id = cls.convert_uuid_bytes_to_hex(idp_id)
-        protocol_id = payload[5]
-        expires_at_str = cls._convert_float_to_time_string(payload[6])
-        audit_ids = list(map(provider.base64_encode, payload[7]))
+        protocol_id = payload[6]
+        expires_at_str = cls._convert_float_to_time_string(payload[7])
+        audit_ids = list(map(provider.base64_encode, payload[8]))
         federated_info = dict(idp_id=idp_id, protocol_id=protocol_id,
                               group_ids=group_ids)
         trust_id = None
         access_token_id = None
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 class FederatedProjectScopedPayload(FederatedScopedPayload):
@@ -628,8 +653,9 @@ class OauthScopedPayload(BasePayload):
         return kwargs['access_token_id']
 
     @classmethod
-    def assemble(cls, user_id, methods, project_id, domain_id, expires_at,
-                 audit_ids, trust_id, federated_info, access_token_id):
+    def assemble(cls, user_id, user_name, methods, project_id, domain_id,
+                 expires_at, audit_ids, trust_id, federated_info,
+                 access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
@@ -658,9 +684,11 @@ class OauthScopedPayload(BasePayload):
         domain_id = None
         trust_id = None
         federated_info = None
+        user_name = None
 
-        return (user_id, methods, project_id, domain_id, expires_at_str,
-                audit_ids, trust_id, federated_info, access_token_id)
+        return (user_id, user_name, methods, project_id, domain_id,
+                expires_at_str, audit_ids, trust_id, federated_info,
+                access_token_id)
 
 
 # For now, the order of the classes in the following list is important. This
