@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b8836455",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T19:05:23Z",
+      "side": 1,
+      "message": "When was it deprecated and when will this be removed?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 61
+      },
+      "revId": "4eb93c070fc726734b415a3c790ca3dfa48f21d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f86b2cb7",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-06-29T19:05:23Z",
+      "side": 1,
+      "message": "nice addition",
+      "range": {
+        "startLine": 99,
+        "startChar": 16,
+        "endLine": 99,
+        "endChar": 25
+      },
+      "revId": "4eb93c070fc726734b415a3c790ca3dfa48f21d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
