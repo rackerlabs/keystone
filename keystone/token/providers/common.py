@@ -545,7 +545,8 @@ class V3TokenDataHelper(object):
 
 
 @dependency.requires('catalog_api', 'identity_api', 'oauth_api',
-                     'resource_api', 'role_api', 'trust_api')
+                     'resource_api', 'role_api', 'trust_api',
+                     'shadow_users_api')
 class BaseProvider(provider.Provider):
     def __init__(self, *args, **kwargs):
         super(BaseProvider, self).__init__(*args, **kwargs)
@@ -641,10 +642,15 @@ class BaseProvider(provider.Provider):
         group_ids = auth_context['group_ids']
         idp = auth_context[federation_constants.IDENTITY_PROVIDER]
         protocol = auth_context[federation_constants.PROTOCOL]
+        try:
+            user_dict = self.shadow_users_api.get_user(user_id)
+        except exception.UserNotFound:
+            return None
+        user_name = user_dict['name']
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id),
+                'name': parse.unquote(user_name),
                 federation_constants.FEDERATION: {
                     'groups': [{'id': x} for x in group_ids],
                     'identity_provider': {'id': idp},
