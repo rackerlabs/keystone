@@ -294,12 +294,12 @@ class V3TokenDataHelper(object):
                 user_id, project_id)
         return [self.role_api.get_role(role_id) for role_id in roles]
 
-    def populate_roles_for_groups(self, token_data, group_ids,
-                                  project_id=None, domain_id=None,
-                                  user_id=None):
+    def populate_roles_for_federated_user(self, token_data, group_ids,
+                                          project_id=None, domain_id=None,
+                                          user_id=None):
         """Populate roles basing on provided groups and project/domain.
 
-        Used for ephemeral users with dynamically assigned groups.
+        Used for federated users with dynamically assigned groups.
         This method does not return anything, yet it modifies token_data in
         place.
 
@@ -309,8 +309,7 @@ class V3TokenDataHelper(object):
         :param domain_id: domain ID to scope to
         :param user_id: user ID
 
-        :raises keystone.exception.Unauthorized: when no roles were found for a
-            (group_ids, project_id) or (group_ids, domain_id) pairs.
+        :raises keystone.exception.Unauthorized: when no roles were found
 
         """
         def check_roles(roles, user_id, project_id, domain_id):
@@ -335,6 +334,12 @@ class V3TokenDataHelper(object):
         roles = self.assignment_api.get_roles_for_groups(group_ids,
                                                          project_id,
                                                          domain_id)
+        roles = roles + self._get_roles_for_user(user_id, domain_id,
+                                                 project_id)
+
+        # remove duplicates
+        roles = [dict(t) for t in set([tuple(d.items()) for d in roles])]
+
         check_roles(roles, user_id, project_id, domain_id)
         token_data['roles'] = roles
 
@@ -540,7 +545,8 @@ class V3TokenDataHelper(object):
 
 
 @dependency.requires('catalog_api', 'identity_api', 'oauth_api',
-                     'resource_api', 'role_api', 'trust_api')
+                     'resource_api', 'role_api', 'trust_api',
+                     'shadow_users_api')
 class BaseProvider(provider.Provider):
     def __init__(self, *args, **kwargs):
         super(BaseProvider, self).__init__(*args, **kwargs)
@@ -636,10 +642,13 @@ class BaseProvider(provider.Provider):
         group_ids = auth_context['group_ids']
         idp = auth_context[federation_constants.IDENTITY_PROVIDER]
         protocol = auth_context[federation_constants.PROTOCOL]
+        user_dict = self.shadow_users_api.get_federated_user_by_id(
+            idp, protocol, user_id)
+        user_name = user_dict['name']
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id),
+                'name': parse.unquote(user_name),
                 federation_constants.FEDERATION: {
                     'groups': [{'id': x} for x in group_ids],
                     'identity_provider': {'id': idp},
@@ -653,7 +662,7 @@ class BaseProvider(provider.Provider):
         }
 
         if project_id or domain_id:
-            self.v3_token_data_helper.populate_roles_for_groups(
+            self.v3_token_data_helper.populate_roles_for_federated_user(
                 token_data, group_ids, project_id, domain_id, user_id)
 
         return token_data

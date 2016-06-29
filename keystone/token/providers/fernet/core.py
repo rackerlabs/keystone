@@ -25,7 +25,7 @@ from keystone.token.providers.fernet import token_formatters as tf
 CONF = keystone.conf.CONF
 
 
-@dependency.requires('trust_api', 'oauth_api')
+@dependency.requires('trust_api', 'oauth_api', 'shadow_users_api')
 class Provider(common.BaseProvider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
@@ -124,11 +124,15 @@ class Provider(common.BaseProvider):
             'protocol': {'id': protocol_id}
         }
 
+        user_dict = self.shadow_users_api.get_federated_user_by_id(
+            idp_id, protocol_id, user_id)
+        user_name = user_dict['name']
+
         token_dict = {
             'user': {
                 federation_constants.FEDERATION: federated_info,
                 'id': user_id,
-                'name': user_id,
+                'name': user_name,
                 'domain': {'id': CONF.federation.federated_domain_name,
                            'name': CONF.federation.federated_domain_name, },
             }
@@ -153,7 +157,7 @@ class Provider(common.BaseProvider):
 
         """
         group_ids = [x['id'] for x in federated_dict['group_ids']]
-        self.v3_token_data_helper.populate_roles_for_groups(
+        self.v3_token_data_helper.populate_roles_for_federated_user(
             token_dict, group_ids, project_id, domain_id, user_id)
 
     def _extract_v2_token_data(self, token_data):
