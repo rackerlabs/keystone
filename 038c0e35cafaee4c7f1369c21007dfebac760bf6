@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_916bf6b8",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "I think these should all be ID rather than UUID. That it\u0027s a UUID is an implementation detail that clients shouldn\u0027t rely on.",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6b377d4d",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "why do these all have \"required: false\"? Parameters in the path are required.",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_abcfa554",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "why doesn\u0027t this have UUID?",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_0bf07990",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "we have group names in paths?",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_11e54637",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "can we make this endpoint_id rather than id_1?\n\nThis applies to all these \"id\" parameters.\n\nI grepped through the files and I don\u0027t see this used anywhere.",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d1fa9ebc",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "I couldn\u0027t find this used anywhere.",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_91dad649",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "remove extra spaces.",
+      "range": {
+        "startLine": 120,
+        "startChar": 45,
+        "endLine": 120,
+        "endChar": 48
+      },
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_11ef06ea",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-06-29T14:02:49Z",
+      "side": 1,
+      "message": "This should be \"endpoint_links\"\n\nAlso, I don\u0027t see this used anywhere.",
+      "revId": "038c0e35cafaee4c7f1369c21007dfebac760bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
