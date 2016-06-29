@@ -101,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2e272ecb",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-29T20:05:43Z",
+      "side": 1,
+      "message": "To allow having no downtime:\n\nUpdate encryption_keys adding a new encryption_key to all nodes.  This should be at the end of the list.\nExecute keystone-manage db_encrypt.\nUpdate encryption_keys to set active encryption_key to the new key.  Move the new key to the beginning of the list.\n\nThis is done to only use the active key for encryption once all nodes have the key.",
+      "parentUuid": "3aaa91ec_a20b3823",
+      "revId": "974c3dfbd24527cfaee8951d0d2acc77b84ba3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_77959031",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 15
