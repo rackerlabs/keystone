@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_0b4a2426",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-06-29T19:34:33Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be oslo_middleware?",
+      "range": {
+        "startLine": 25,
+        "startChar": 17,
+        "endLine": 25,
+        "endChar": 18
+      },
+      "revId": "1b0a5530f9935a0d7d166b4b92fd6a9cfe85e72f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
