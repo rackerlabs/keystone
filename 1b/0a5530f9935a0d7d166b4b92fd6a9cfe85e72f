@@ -1,0 +1,11 @@
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 29 Jun 2016 21:48:16 +0000
+Reviewed-on: https://review.openstack.org/335643
+Project: openstack/keystone
+Branch: refs/heads/master
