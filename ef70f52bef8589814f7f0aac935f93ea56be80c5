@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_af0fcedf",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-29T01:39:10Z",
+      "side": 1,
+      "message": "can we fix this right after this patchset?",
+      "range": {
+        "startLine": 336,
+        "startChar": 7,
+        "endLine": 337,
+        "endChar": 73
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_9dddeb16",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 2
@@ -40,6 +63,29 @@
       "range": {
         "startLine": 577,
         "startChar": 8,
+        "endLine": 580,
+        "endChar": 16
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4fbd8ad6",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-29T01:39:10Z",
+      "side": 1,
+      "message": "rewrite as context.pop(\u0027is_admin\u0027, None)",
+      "range": {
+        "startLine": 577,
+        "startChar": 0,
         "endLine": 580,
         "endChar": 16
       },
@@ -96,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_6fa166a9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-29T01:39:10Z",
+      "side": 1,
+      "message": "same question",
+      "parentUuid": "3aaa91ec_bd854708",
+      "range": {
+        "startLine": 210,
+        "startChar": 8,
+        "endLine": 210,
+        "endChar": 25
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7db91fcb",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 2
@@ -130,6 +200,30 @@
       "writtenOn": "2016-06-29T01:38:38Z",
       "side": 1,
       "message": "i deepcopy only the times where i\u0027m copying the whole environment. when you update(d) it doesn\u0027t change d so we don\u0027t need it there.",
+      "parentUuid": "3aaa91ec_7db91fcb",
+      "range": {
+        "startLine": 3727,
+        "startChar": 22,
+        "endLine": 3727,
+        "endChar": 35
+      },
+      "revId": "ef70f52bef8589814f7f0aac935f93ea56be80c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_8fae5296",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3727,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-29T01:39:10Z",
+      "side": 1,
+      "message": "isolation? please comment on deepcopy reasons soon(ish)",
       "parentUuid": "3aaa91ec_7db91fcb",
       "range": {
         "startLine": 3727,
