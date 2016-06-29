@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_a3e2109e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "nit: remove \"table\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 23,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_03a16446",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "nit: suggest instead, \"This patch creates a new auth backend to capture failed authentication attempt...\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 77
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e3bc186e",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "++ Thanks for moving this",
+      "range": {
+        "startLine": 19,
+        "startChar": 6,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a355f01e",
+        "filename": "keystone/auth/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "Not crazy about the \"Auth\" name, I think FailedAuthTracker or something would be more appropriate. \"Auth\" is too generic.",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 10
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a6b69e3b",
+        "filename": "keystone/auth/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "nit: I don\u0027t think you need a return here",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a6521edc",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "Do if lock duration is not set, the account is permanently locked?",
+      "range": {
+        "startLine": 119,
+        "startChar": 40,
+        "endLine": 119,
+        "endChar": 56
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_86fd62b3",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "Why not raise a more specific exception, e.g.:\nraise exception.AccountLocked(user_id\u003duser_id)\n\nYou could create a new exception here: \nkeystone/exception.py\n\nclass AccountLocked(Unauthorized):\n    message_format \u003d _(\"The account is locked for user: %(user_id)s\")",
+      "range": {
+        "startLine": 127,
+        "startChar": 28,
+        "endLine": 127,
+        "endChar": 40
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_06285232",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 16
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a6733e4d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 5065,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-29T22:55:00Z",
+      "side": 1,
+      "message": "How about confirming reset_auth_attempts here?",
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
