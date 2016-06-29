@@ -43,6 +43,57 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_ce430a12",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T20:03:21Z",
+      "side": 1,
+      "message": "\u0027You should only need to set option if\u0027 sounds weird..... set this option? Or below in other messages you say \u0027You do not need to set this value....\u0027",
+      "revId": "4eb93c070fc726734b415a3c790ca3dfa48f21d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2e228e52",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T20:03:21Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "4eb93c070fc726734b415a3c790ca3dfa48f21d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_aea2feab",
+        "filename": "keystone/conf/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-29T20:03:21Z",
+      "side": 1,
+      "message": "(nit) Setting a large value",
+      "revId": "4eb93c070fc726734b415a3c790ca3dfa48f21d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f86b2cb7",
         "filename": "keystone/conf/base.py",
         "patchSetId": 2
