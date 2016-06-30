@@ -1099,6 +1099,13 @@ password_2:
   in: body
   required: true
   type: string
+password_expires_at:
+  description: |
+    The date and time when the password expires.
+    A ``None`` value indicates that the password never expires.
+  in: body
+  required: true
+  type: string
 policies:
   description: |
     A ``policies`` object.
