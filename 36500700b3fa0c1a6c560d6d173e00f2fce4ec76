@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_2676f505",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T21:17:35Z",
+      "side": 1,
+      "message": "Docs are actually in api-site.  I created a separate patch for the documentation changes:\nhttps://review.openstack.org/#/c/336292/",
+      "parentUuid": "3aaa91ec_0f54b7c7",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e59d110b",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 23
