@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_1a70853f",
+        "filename": "keystone/auth/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T14:50:14Z",
+      "side": 1,
+      "message": "I think it rather be generic as it is the only driver for auth component. We can\u0027t predict what will it do in the future...\nBesides, naming something a \"doer\" usually is not the best idea.",
+      "parentUuid": "3aaa91ec_a355f01e",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 10
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_a6b69e3b",
         "filename": "keystone/auth/backends/sql.py",
         "patchSetId": 10
@@ -105,6 +129,30 @@
       "writtenOn": "2016-06-29T22:55:00Z",
       "side": 1,
       "message": "nit: I don\u0027t think you need a return here",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_5ad5ed40",
+        "filename": "keystone/auth/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T14:50:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a6b69e3b",
       "range": {
         "startLine": 33,
         "startChar": 12,
@@ -140,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_8928b187",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T14:50:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a6521edc",
+      "range": {
+        "startLine": 119,
+        "startChar": 40,
+        "endLine": 119,
+        "endChar": 56
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_86fd62b3",
         "filename": "keystone/auth/core.py",
         "patchSetId": 10
@@ -151,6 +223,30 @@
       "writtenOn": "2016-06-29T22:55:00Z",
       "side": 1,
       "message": "Why not raise a more specific exception, e.g.:\nraise exception.AccountLocked(user_id\u003duser_id)\n\nYou could create a new exception here: \nkeystone/exception.py\n\nclass AccountLocked(Unauthorized):\n    message_format \u003d _(\"The account is locked for user: %(user_id)s\")",
+      "range": {
+        "startLine": 127,
+        "startChar": 28,
+        "endLine": 127,
+        "endChar": 40
+      },
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_c95599fa",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T14:50:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_86fd62b3",
       "range": {
         "startLine": 127,
         "startChar": 28,
@@ -214,6 +310,24 @@
       "writtenOn": "2016-06-30T14:06:59Z",
       "side": 1,
       "message": "Or, add a new test case for this.",
+      "parentUuid": "3aaa91ec_a6733e4d",
+      "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_49e6c944",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 5065,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T14:50:14Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3aaa91ec_a6733e4d",
       "revId": "74c64b1de20585ce48ab502c217583dd7722fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
