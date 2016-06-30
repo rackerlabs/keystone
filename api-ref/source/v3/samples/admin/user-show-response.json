@@ -9,6 +9,7 @@
         "links": {
             "self": "https://identity:35357/v3/users/9fe1d3"
         },
-        "name": "jsmith"
+        "name": "jsmith",
+        "password_expires_at": "2016-11-06T15:32:17.893769Z"
     }
 }
