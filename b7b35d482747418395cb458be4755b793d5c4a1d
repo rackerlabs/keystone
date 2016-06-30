@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_20a6e0c0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:09:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_ef07b215",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_0f115e52",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 26
@@ -65,6 +83,24 @@
       "writtenOn": "2016-06-30T18:38:40Z",
       "side": 1,
       "message": "nit: CONF \u003d keystone.conf.CONF",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_80a99492",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:09:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_0f115e52",
       "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_009e4462",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:09:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_6f8f4275",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_fa9da766",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 26
@@ -134,6 +188,24 @@
       "writtenOn": "2016-06-30T18:38:40Z",
       "side": 1,
       "message": "I *think* this can be simplified to a one-liner: https://review.openstack.org/#/c/328339/26/keystone/identity/backends/sql.py",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_808074f8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:09:37Z",
+      "side": 1,
+      "message": "Nice simplification!  Thanks Dolph :)",
+      "parentUuid": "3aaa91ec_fa9da766",
       "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
