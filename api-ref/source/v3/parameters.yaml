@@ -1099,6 +1099,17 @@ password_2:
   in: body
   required: true
   type: string
+password_expires_at:
+  description: |
+    The date and time when the password expires. The time zone
+    is UTC.
+
+    This is a response object attribue; not valid for requests.
+    A ``null`` value indicates that the password never expires.
+  in: body
+  required: true
+  type: string
+  min_version: 3.7
 policies:
   description: |
     A ``policies`` object.
