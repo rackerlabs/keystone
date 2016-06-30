@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_0f5cbe49",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T16:41:17Z",
+      "side": 1,
+      "message": "It would be nice if we could be sqlalchemy to do this for us....",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_4ab87411",
         "filename": "keystone/identity/core.py",
         "patchSetId": 61
