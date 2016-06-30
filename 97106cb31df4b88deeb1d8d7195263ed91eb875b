@@ -164,6 +164,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_9e9d82be",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-30T15:40:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_7a0bacd6",
+      "range": {
+        "startLine": 30,
+        "startChar": 62,
+        "endLine": 30,
+        "endChar": 72
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_1afb88c2",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 17
@@ -187,6 +211,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_7ea096f4",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-30T15:40:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_1afb88c2",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_9a0658cc",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 17
@@ -198,6 +246,30 @@
       "writtenOn": "2016-06-29T21:38:33Z",
       "side": 1,
       "message": "backticks around this",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 26
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_bea67e0c",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-06-30T15:40:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_9a0658cc",
       "range": {
         "startLine": 50,
         "startChar": 0,
