@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_c66f3c29",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-06-30T17:21:36Z",
+      "side": 1,
+      "message": "suggestion: improve the Exception with: \n\n  \"Invalid test skip, %r is not a previously defined test method\"",
+      "revId": "6c6484fc0b53924cb78d1d20d5c03a63202a0691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
