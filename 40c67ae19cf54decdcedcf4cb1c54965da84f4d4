@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_23a43c49",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3213,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T14:27:35Z",
+      "side": 1,
+      "message": "Should be a private method, right? _assert...",
+      "range": {
+        "startLine": 3213,
+        "startChar": 8,
+        "endLine": 3213,
+        "endChar": 23
+      },
+      "revId": "40c67ae19cf54decdcedcf4cb1c54965da84f4d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
