@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_a5c94928",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "Don\u0027t forget to propose the keystone-spec/api change first!",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e59d110b",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "ListOpt",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a0013707",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "default\u003d[]",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e06cdfd1",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "-2 without a spec proposal: This is exposing a new attribute to the API!",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e0a33ffe",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "attribute",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a0ebf711",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "keystone.conf etc",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_8fae9ce5",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -31,6 +133,23 @@
       "side": 1,
       "message": "I think now we could even just say \"if expires_days\" because in the config, we have a minimum set to 1. I\u0027ll refactor this if I create another patch.",
       "parentUuid": "3aaa91ec_8fae9ce5",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_c0ac43a1",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:56:44Z",
+      "side": 1,
+      "message": "This would be the only line left in this method",
       "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
