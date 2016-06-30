@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_3ea44e49",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:24:20Z",
+      "side": 1,
+      "message": "It\u0027s or the while loop. So that he can iterate through all the records",
+      "parentUuid": "3aaa91ec_7f371eff",
+      "range": {
+        "startLine": 441,
+        "startChar": 12,
+        "endLine": 441,
+        "endChar": 73
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7a0bacd6",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 17
