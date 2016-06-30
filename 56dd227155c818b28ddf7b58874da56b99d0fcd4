@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_743c3593",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-06-30T15:47:33Z",
+      "side": 1,
+      "message": "I think this class can be treated the same way.",
+      "revId": "56dd227155c818b28ddf7b58874da56b99d0fcd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
