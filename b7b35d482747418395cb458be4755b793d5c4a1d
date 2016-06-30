@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_89cf0728",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T18:05:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_0f667eec",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_8fa6eebe",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 26
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cc6f5d29",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T18:05:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_8fa6eebe",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_6fc3c238",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 26
@@ -47,6 +83,24 @@
       "writtenOn": "2016-06-30T16:11:13Z",
       "side": 1,
       "message": "Instead of using a could a more pythonic way would be \"for _ in range(n):\"",
+      "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2f041313",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T18:05:51Z",
+      "side": 1,
+      "message": "Thanks David :)",
+      "parentUuid": "3aaa91ec_6fc3c238",
       "revId": "b7b35d482747418395cb458be4755b793d5c4a1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
