@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_ef58528c",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "\"will be handled by the API\" \n\nThe interface doesn\u0027t do anything by itself :) I\u0027d phrase this as \"keystone will enforce this behavior regardless of the value of the `enabled` column in the database.\" So, it\u0027s an implementation detail of keystone, not a \"behavior of the API.\"",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_4ab87411",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "I really want this API to be touch_user()",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_0accac87",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": ".\n\n  def touch_user(self, user_id):\n    \"\"\"Reach out and touch someone.\"\"\"",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_aa2e3840",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "import keystone.conf",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_ca274461",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "CONF \u003d keystone.conf.CONF",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_2a0fe837",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "On L65, etc, you call .date() here",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e556b1cc",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T16:41:05Z",
+      "side": 1,
+      "message": "Example of using freezegun in keystone:\n\n  https://review.openstack.org/#/c/227995/17/keystone/tests/unit/test_v3_os_revoke.py",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
