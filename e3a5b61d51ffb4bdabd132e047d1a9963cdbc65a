@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_efb20b48",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T18:09:04Z",
+      "side": 1,
+      "message": "Nice :)",
+      "parentUuid": "3aaa91ec_0accac87",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_aa2e3840",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 61
