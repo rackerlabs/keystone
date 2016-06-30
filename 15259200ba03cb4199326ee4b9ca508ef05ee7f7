@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_5aee8d22",
+        "filename": "keystone/conf/endpoint_filter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-06-30T13:29:47Z",
+      "side": 1,
+      "message": "did you mean to leave this line still in there? It seems an odd way to finish the paragraph and seems to repeat what you added before this.",
+      "range": {
+        "startLine": 35,
+        "startChar": 73,
+        "endLine": 36,
+        "endChar": 50
+      },
+      "revId": "15259200ba03cb4199326ee4b9ca508ef05ee7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
