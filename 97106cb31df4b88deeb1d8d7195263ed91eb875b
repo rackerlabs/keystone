@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b16eaffd",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:40:48Z",
+      "side": 1,
+      "message": "0 has to be hardcoded since it\u0027s the internal state. We could rename it to _offset to make that clearer.",
+      "parentUuid": "3aaa91ec_5a1b5073",
+      "range": {
+        "startLine": 411,
+        "startChar": 8,
+        "endLine": 412,
+        "endChar": 23
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_7f69def8",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 17
@@ -82,6 +106,30 @@
       "writtenOn": "2016-06-29T21:38:33Z",
       "side": 1,
       "message": "name this something different than refs? since we\u0027re already using it above",
+      "range": {
+        "startLine": 435,
+        "startChar": 12,
+        "endLine": 435,
+        "endChar": 16
+      },
+      "revId": "97106cb31df4b88deeb1d8d7195263ed91eb875b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d1425b67",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:40:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3aaa91ec_7f69def8",
       "range": {
         "startLine": 435,
         "startChar": 12,
