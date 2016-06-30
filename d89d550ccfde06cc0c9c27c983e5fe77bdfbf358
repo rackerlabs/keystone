@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3aaa91ec_bb0e8138",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-06-30T19:42:16Z",
+      "side": 1,
+      "message": "DO NOT reference config options on import *ever*",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 46
+      },
+      "revId": "d89d550ccfde06cc0c9c27c983e5fe77bdfbf358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_132012f7",
         "filename": "keystone/conf/validation.py",
         "patchSetId": 1
