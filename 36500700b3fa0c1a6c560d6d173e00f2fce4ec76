@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_45522536",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T16:58:07Z",
+      "side": 1,
+      "message": "Should this be a List?",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_a0013707",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 23
@@ -104,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_80eebb1f",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T16:58:07Z",
+      "side": 1,
+      "message": "Should we make a copy of this dict before we edit it?",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_8fae9ce5",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -133,6 +167,41 @@
       "side": 1,
       "message": "I think now we could even just say \"if expires_days\" because in the config, we have a minimum set to 1. I\u0027ll refactor this if I create another patch.",
       "parentUuid": "3aaa91ec_8fae9ce5",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_606bcf85",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T16:58:07Z",
+      "side": 1,
+      "message": "Yes, \"if expires_dates:\" would work",
+      "parentUuid": "3aaa91ec_2a24b6ad",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_404fb333",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T16:58:07Z",
+      "side": 1,
+      "message": "do you need to strip possible spaces?",
       "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
