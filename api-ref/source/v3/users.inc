@@ -47,6 +47,7 @@ Response Parameters
    - id: id
    - domain_id: domain_id
    - name: name
+   - password_expires_at: password_expires_at
 
 Response Example
 ----------------
@@ -103,6 +104,7 @@ Response Parameters
    - id: id
    - domain_id: domain_id
    - name: name
+   - password_expires_at: password_expires_at
 
 Response Example
 ----------------
@@ -221,6 +223,7 @@ Response Parameters
    - id: id
    - domain_id: domain_id
    - name: name
+   - password_expires_at: password_expires_at
 
 
 List users
@@ -256,6 +259,7 @@ Response Parameters
    - users: users
    - domain_id: domain_id
    - name: name
+   - password_expires_at: password_expires_at
 
 Response Example
 ----------------
