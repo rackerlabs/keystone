@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_74bb95c4",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T15:58:27Z",
+      "side": 1,
+      "message": "Do not attribute copyright in new files with the OpenStack Foundation, unless you work directly for the OpenStack Foundation.",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_9401e107",
         "filename": "keystone/auth/backends/base.py",
         "patchSetId": 11
@@ -30,6 +47,23 @@
       "writtenOn": "2016-06-30T15:56:12Z",
       "side": 1,
       "message": "Missing newline above and below this line",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d4b40983",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-06-30T15:58:27Z",
+      "side": 1,
+      "message": "This feels like it should just be a few new methods in the existing identity backend - I don\u0027t see a reason why this is \"auth\" specific, especially when the authenticate() method is part of identity, etc.",
       "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
