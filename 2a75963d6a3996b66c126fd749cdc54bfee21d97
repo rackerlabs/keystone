@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b1134f64",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:56:12Z",
+      "side": 1,
+      "message": "Unless you work for the foundation remove this.",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_9401e107",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:56:12Z",
+      "side": 1,
+      "message": "Missing newline above and below this line",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d407e915",
+        "filename": "keystone/auth/backends/base.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:56:12Z",
+      "side": 1,
+      "message": "abstractmethods?",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_d41ec95d",
+        "filename": "keystone/auth/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:56:12Z",
+      "side": 1,
+      "message": "same",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f49305a1",
+        "filename": "keystone/common/sql/migrate_repo/versions/107_add_failed_attempts_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-06-30T15:56:12Z",
+      "side": 1,
+      "message": "why this?",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
