@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_0f54b7c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "As we discussed, I\u0027ll make the api change in this patch instead.",
+      "parentUuid": "3aaa91ec_a5c94928",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e59d110b",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 23
@@ -53,6 +71,42 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_cfa58fa2",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Yes, it should be a list.  Changed it in the latest patch.",
+      "parentUuid": "3aaa91ec_45522536",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_8f80a7f8",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_e59d110b",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_a0013707",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-30T16:56:44Z",
       "side": 1,
       "message": "default\u003d[]",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6f83bb03",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a0013707",
       "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_95a0b491",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_e0a33ffe",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_a0ebf711",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_35c90027",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a0ebf711",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_80eebb1f",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -132,6 +240,24 @@
       "writtenOn": "2016-06-30T16:58:07Z",
       "side": 1,
       "message": "Should we make a copy of this dict before we edit it?",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_80b4f481",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_80eebb1f",
       "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_dbb70d1f",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_606bcf85",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_404fb333",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -208,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_5b595dfc",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Replaced this by using the ListOpt from the config.",
+      "parentUuid": "3aaa91ec_404fb333",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_c0ac43a1",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 23
@@ -219,6 +381,24 @@
       "writtenOn": "2016-06-30T16:56:44Z",
       "side": 1,
       "message": "This would be the only line left in this method",
+      "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_bb74c167",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-06-30T19:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_c0ac43a1",
       "revId": "36500700b3fa0c1a6c560d6d173e00f2fce4ec76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
