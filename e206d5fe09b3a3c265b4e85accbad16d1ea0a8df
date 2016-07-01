@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_87498762",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T11:16:43Z",
+      "side": 1,
+      "message": "it might be nice to use a similar approach to the limit() method here, by having something like NOT_LIMITED \u003d False defined, and then use NOT_LIMITED here for clarity",
+      "range": {
+        "startLine": 508,
+        "startChar": 15,
+        "endLine": 508,
+        "endChar": 20
+      },
+      "revId": "e206d5fe09b3a3c265b4e85accbad16d1ea0a8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
