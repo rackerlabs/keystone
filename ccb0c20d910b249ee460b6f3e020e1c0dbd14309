@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_5d947c8b",
+        "filename": "keystone/conf/catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-01T17:32:45Z",
+      "side": 1,
+      "message": "there is no kvs driver: https://github.com/openstack/keystone/blob/master/setup.cfg#L112-L115",
+      "range": {
+        "startLine": 31,
+        "startChar": 21,
+        "endLine": 31,
+        "endChar": 26
+      },
+      "revId": "ccb0c20d910b249ee460b6f3e020e1c0dbd14309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
