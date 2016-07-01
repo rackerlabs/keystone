@@ -341,6 +341,19 @@ class HackingLogging(fixtures.Fixture):
             """,
             'expected_errors': [],
         },
+        {
+            'code': """
+                # this should not be an error
+                LOG = log.getLogger(__name__)
+                try:
+                    pass
+                except AssertionError as e:
+                    msg = _('some message')
+                    LOG.warning(msg)
+                    raise exception.Unauthorized(message=msg)
+            """,
+            'expected_errors': [],
+        },
     ]
 
     assert_not_using_deprecated_warn = {
