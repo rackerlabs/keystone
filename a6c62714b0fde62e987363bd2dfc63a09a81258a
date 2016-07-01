@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_87b4d535",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T16:47:45Z",
+      "side": 1,
+      "message": "nit: \"can\" rather than \"will\" ??",
+      "range": {
+        "startLine": 24,
+        "startChar": 45,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "a6c62714b0fde62e987363bd2dfc63a09a81258a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
