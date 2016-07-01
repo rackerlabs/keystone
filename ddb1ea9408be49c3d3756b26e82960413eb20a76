@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ab172953",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T22:33:40Z",
+      "side": 1,
+      "message": "since the default is enabled, should this be disable? (which is why in my suggestion I said enable/disable here)",
+      "range": {
+        "startLine": 19,
+        "startChar": 14,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "ddb1ea9408be49c3d3756b26e82960413eb20a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
