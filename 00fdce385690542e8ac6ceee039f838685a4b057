@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_c532670f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T12:06:18Z",
+      "side": 1,
+      "message": "need to remove the trailing space!",
+      "range": {
+        "startLine": 695,
+        "startChar": 70,
+        "endLine": 695,
+        "endChar": 71
+      },
+      "revId": "00fdce385690542e8ac6ceee039f838685a4b057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
