@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_275521fa",
+        "filename": "keystone/conf/fernet_tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T16:43:50Z",
+      "side": 1,
+      "message": "great explanation!",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 6
+      },
+      "revId": "b93cd2205bacea29a4a333c3c62df1497fe63ad1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
