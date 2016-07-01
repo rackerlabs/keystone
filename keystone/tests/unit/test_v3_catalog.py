@@ -940,3 +940,21 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         for k in keys:
             self.assertEqual(ref.get(k), entity[k], k)
         self.assertEqual(entity['region_id'], entity['region'])
+
+
+class TestCatalogAPITemplatedProject(test_v3.RestfulTestCase):
+    """Templated Catalog doesn't support full API.
+
+    Eg. No region/endpoint creation.
+
+    """
+    def config_overrides(self):
+        super(TestCatalogAPITemplatedProject, self).config_overrides()
+        self.config_fixture.config(group='catalog', driver='templated')
+
+    def load_fixtures(self, fixtures):
+        self.load_sample_data(create_region_and_endpoints=False)
+
+    def test_project_delete(self):
+        """Delete project triggers notifications to catalog API."""
+        self.resource_api.delete_project(self.project_id)
