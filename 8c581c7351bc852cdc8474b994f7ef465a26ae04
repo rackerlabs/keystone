@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_aeb577d1",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-01T23:10:29Z",
+      "side": 1,
+      "message": "s/Keystone/keystone",
+      "range": {
+        "startLine": 22,
+        "startChar": 30,
+        "endLine": 22,
+        "endChar": 38
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2eca2750",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-01T23:10:29Z",
+      "side": 1,
+      "message": "s/cache cache/cache",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 19
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0e3c8b2e",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-01T23:10:29Z",
+      "side": 1,
+      "message": "s/therefore/thereby",
+      "range": {
+        "startLine": 78,
+        "startChar": 50,
+        "endLine": 78,
+        "endChar": 59
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4e4693c0",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-01T23:10:29Z",
+      "side": 1,
+      "message": "s/therefore/thereby",
+      "range": {
+        "startLine": 90,
+        "startChar": 41,
+        "endLine": 90,
+        "endChar": 50
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
