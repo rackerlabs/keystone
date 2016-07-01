@@ -17,6 +17,8 @@ import uuid
 from oslo_utils import timeutils
 import six
 
+from keystone.api.views.v3 import role as role_view
+from keystone.api.views.v3 import trust as trust_view
 from keystone import assignment
 from keystone.common import controller
 from keystone.common import dependency
@@ -249,6 +251,7 @@ class TrustV3(controller.V3Controller):
         _admin_trustor_only(request.context_dict, trust, user_id)
         initiator = notifications._get_request_audit_info(request.context_dict)
         self.trust_api.delete_trust(trust_id, initiator)
+        return trust_view.TrustView(request).delete(trust_id)
 
     @controller.protected()
     def list_roles_for_trust(self, request, trust_id):
@@ -263,5 +266,4 @@ class TrustV3(controller.V3Controller):
         """Get a role that has been assigned to a trust."""
         self._check_role_for_trust(request.context_dict, trust_id, role_id)
         role = self.role_api.get_role(role_id)
-        return assignment.controllers.RoleV3.wrap_member(request.context_dict,
-                                                         role)
+        return role_view.RoleView(request).show(role)
