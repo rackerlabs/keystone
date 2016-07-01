@@ -22,6 +22,8 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.api.views.v3 import domain as domain_view
+from keystone.api.views.v3 import project as project_view
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
@@ -30,7 +32,6 @@ import keystone.conf
 from keystone import exception
 from keystone.federation import constants
 from keystone.i18n import _, _LI, _LW
-from keystone.resource import controllers as resource_controllers
 
 
 LOG = log.getLogger(__name__)
@@ -615,8 +616,7 @@ class Auth(controller.V3Controller):
             grp_refs = self.assignment_api.list_projects_for_groups(group_ids)
 
         refs = self._combine_lists_uniquely(user_refs, grp_refs)
-        return resource_controllers.ProjectV3.wrap_collection(
-            request.context_dict, refs)
+        return project_view.ProjectView(request).list(refs)
 
     @controller.protected()
     def get_auth_domains(self, request):
@@ -636,8 +636,7 @@ class Auth(controller.V3Controller):
             grp_refs = self.assignment_api.list_domains_for_groups(group_ids)
 
         refs = self._combine_lists_uniquely(user_refs, grp_refs)
-        return resource_controllers.DomainV3.wrap_collection(
-            request.context_dict, refs)
+        return domain_view.DomainView(request).list(refs)
 
     @controller.protected()
     def get_auth_catalog(self, request):

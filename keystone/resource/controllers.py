@@ -19,6 +19,8 @@ import uuid
 
 from six.moves import http_client
 
+from keystone.api.views.v3 import domain as domain_view
+from keystone.api.views.v3 import project as project_view
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -133,36 +135,37 @@ class DomainV3(controller.V3Controller):
         validation.lazy_validate(schema.domain_create, domain)
         ref = self._assign_unique_id(self._normalize_dict(domain))
         ref = self.resource_api.create_domain(
-            ref['id'], ref, initiator=request.audit_initiator
-        )
-        return DomainV3.wrap_member(request.context_dict, ref)
+            ref['id'],
+            ref,
+            initiator=request.audit_initiator)
+        return domain_view.DomainView(request).create(ref)
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, request, filters):
         hints = DomainV3.build_driver_hints(request, filters)
         refs = self.resource_api.list_domains(hints=hints)
-        return DomainV3.wrap_collection(request.context_dict,
-                                        refs, hints=hints)
+        return self.render_list(domain_view.DomainView(request), refs, hints)
 
     @controller.protected()
     def get_domain(self, request, domain_id):
         ref = self.resource_api.get_domain(domain_id)
-        return DomainV3.wrap_member(request.context_dict, ref)
+        return domain_view.DomainView(request).show(ref)
 
     @controller.protected()
     def update_domain(self, request, domain_id, domain):
         validation.lazy_validate(schema.domain_update, domain)
         self._require_matching_id(domain_id, domain)
         ref = self.resource_api.update_domain(
-            domain_id, domain, initiator=request.audit_initiator
-        )
-        return DomainV3.wrap_member(request.context_dict, ref)
+            domain_id,
+            domain,
+            initiator=request.audit_initiator)
+        return domain_view.DomainView(request).show(ref)
 
     @controller.protected()
     def delete_domain(self, request, domain_id):
-        return self.resource_api.delete_domain(
-            domain_id, initiator=request.audit_initiator
-        )
+        self.resource_api.delete_domain(domain_id,
+                                        initiator=request.audit_initiator)
+        return domain_view.DomainView(request).delete(domain_id)
 
 
 @dependency.requires('domain_config_api')
@@ -250,23 +253,23 @@ class ProjectV3(controller.V3Controller):
                 initiator=request.audit_initiator)
         except (exception.DomainNotFound, exception.ProjectNotFound) as e:
             raise exception.ValidationError(e)
-        return ProjectV3.wrap_member(request.context_dict, ref)
+
+        return project_view.ProjectView(request).create(ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
                                 'parent_id', 'is_domain')
     def list_projects(self, request, filters):
-        hints = ProjectV3.build_driver_hints(request, filters)
+        hints = self.build_driver_hints(request, filters)
         # If 'is_domain' has not been included as a query, we default it to
         # False (which in query terms means '0'
         if 'is_domain' not in request.params:
             hints.add_filter('is_domain', '0')
         refs = self.resource_api.list_projects(hints=hints)
-        return ProjectV3.wrap_collection(request.context_dict,
-                                         refs, hints=hints)
+        return self.render_list(project_view.ProjectView(request), refs, hints)
 
-    def _expand_project_ref(self, request, ref):
-        params = request.params
-        context = request.context_dict
+    def _expand_project_ref(self, view, ref):
+        params = view.request.params
+        context = view.request.context_dict
 
         parents_as_list = 'parents_as_list' in params and (
             self.query_filter_is_true(params['parents_as_list']))
@@ -293,16 +296,14 @@ class ProjectV3(controller.V3Controller):
         if parents_as_list:
             parents = self.resource_api.list_project_parents(
                 ref['id'], request.context.user_id)
-            ref['parents'] = [ProjectV3.wrap_member(context, p)
-                              for p in parents]
+            ref['parents'] = [{'project': view.render(p)} for p in parents]
         elif parents_as_ids:
             ref['parents'] = self.resource_api.get_project_parents_as_ids(ref)
 
         if subtree_as_list:
             subtree = self.resource_api.list_projects_in_subtree(
                 ref['id'], request.context.user_id)
-            ref['subtree'] = [ProjectV3.wrap_member(context, p)
-                              for p in subtree]
+            ref['subtree'] = [{'project': view.render(p)} for p in subtree]
         elif subtree_as_ids:
             ref['subtree'] = self.resource_api.get_projects_in_subtree_as_ids(
                 ref['id'])
@@ -310,8 +311,9 @@ class ProjectV3(controller.V3Controller):
     @controller.protected()
     def get_project(self, request, project_id):
         ref = self.resource_api.get_project(project_id)
-        self._expand_project_ref(request, ref)
-        return ProjectV3.wrap_member(request.context_dict, ref)
+        view = project_view.ProjectView(request)
+        self._expand_project_ref(view, ref)
+        return view.show(ref)
 
     @controller.protected()
     def update_project(self, request, project_id, project):
@@ -323,10 +325,10 @@ class ProjectV3(controller.V3Controller):
             project_id,
             project,
             initiator=request.audit_initiator)
-        return ProjectV3.wrap_member(request.context_dict, ref)
+        return project_view.ProjectView(request).show(ref)
 
     @controller.protected()
     def delete_project(self, request, project_id):
-        return self.resource_api.delete_project(
-            project_id,
-            initiator=request.audit_initiator)
+        self.resource_api.delete_project(project_id,
+                                         initiator=request.audit_initiator)
+        return project_view.ProjectView(request).delete(project_id)

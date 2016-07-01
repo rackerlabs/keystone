@@ -21,6 +21,8 @@ import uuid
 from oslo_log import log
 from six.moves import urllib
 
+from keystone.api.views.v3 import project as project_view
+from keystone.api.views.v3 import role as role_view
 from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
@@ -268,9 +270,7 @@ class ProjectAssignmentV3(controller.V3Controller):
         hints = ProjectAssignmentV3.build_driver_hints(request, filters)
         refs = self.assignment_api.list_projects_for_user(user_id,
                                                           hints=hints)
-        return ProjectAssignmentV3.wrap_collection(request.context_dict,
-                                                   refs,
-                                                   hints=hints)
+        return self.render_list(project_view.ProjectView(request), refs, hints)
 
 
 @dependency.requires('role_api')
@@ -400,26 +400,27 @@ class RoleV3(controller.V3Controller):
         ref = self.role_api.create_role(ref['id'],
                                         ref,
                                         initiator=request.audit_initiator)
-        return RoleV3.wrap_member(request.context_dict, ref)
+        return role_view.RoleView(request).create(ref)
 
     def _list_roles(self, request, filters):
-        hints = RoleV3.build_driver_hints(request, filters)
+        hints = self.build_driver_hints(request, filters)
         refs = self.role_api.list_roles(hints=hints)
-        return RoleV3.wrap_collection(request.context_dict, refs, hints=hints)
+        return self.render_list(role_view.RoleView(request), refs, hints)
 
     def _get_role(self, request, role_id):
         ref = self.role_api.get_role(role_id)
-        return RoleV3.wrap_member(request.context_dict, ref)
+        return role_view.RoleView(request).show(ref)
 
     def _update_role(self, request, role_id, role):
         self._require_matching_id(role_id, role)
         ref = self.role_api.update_role(
             role_id, role, initiator=request.audit_initiator
         )
-        return RoleV3.wrap_member(request.context_dict, ref)
+        return role_view.RoleView(request).show(ref)
 
     def _delete_role(self, request, role_id):
         self.role_api.delete_role(role_id, initiator=request.audit_initiator)
+        return role_view.RoleView(request).delete(role_id)
 
     @classmethod
     def build_driver_hints(cls, request, supported_filters):
@@ -656,7 +657,8 @@ class GrantAssignmentV3(controller.V3Controller):
         refs = self.assignment_api.list_grants(
             user_id, group_id, domain_id, project_id,
             self._check_if_inherited(request.context_dict))
-        return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
+
+        return role_view.RoleView(request).list(refs)
 
     @controller.protected(callback=_check_grant_protection)
     def check_grant(self, request, role_id, user_id=None,

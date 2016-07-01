@@ -19,6 +19,7 @@ from oslo_serialization import jsonutils
 from oslo_utils import timeutils
 from six.moves import http_client
 
+from keystone.api.views.v3 import oauth1 as oauth_view
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
@@ -53,14 +54,6 @@ class ConsumerCrudV3(controller.V3Controller):
     collection_name = 'consumers'
     member_name = 'consumer'
 
-    @classmethod
-    def base_url(cls, context, path=None):
-        """Construct a path and pass it to V3Controller.base_url method."""
-        # NOTE(stevemar): Overriding path to /OS-OAUTH1/consumers so that
-        # V3Controller.base_url handles setting the self link correctly.
-        path = '/OS-OAUTH1/' + cls.collection_name
-        return controller.V3Controller.base_url(context, path=path)
-
     @controller.protected()
     def create_consumer(self, request, consumer):
         validation.lazy_validate(schema.consumer_create, consumer)
@@ -68,27 +61,27 @@ class ConsumerCrudV3(controller.V3Controller):
         consumer_ref = self.oauth_api.create_consumer(
             ref, initiator=request.audit_initiator
         )
-        return ConsumerCrudV3.wrap_member(request.context_dict, consumer_ref)
+        return oauth_view.ConsumerView(request).create(consumer_ref)
 
     @controller.protected()
     def update_consumer(self, request, consumer_id, consumer):
         validation.lazy_validate(schema.consumer_update, consumer)
         self._require_matching_id(consumer_id, consumer)
         ref = self._normalize_dict(consumer)
-        ref = self.oauth_api.update_consumer(
-            consumer_id, ref, initiator=request.audit_initiator
-        )
-        return ConsumerCrudV3.wrap_member(request.context_dict, ref)
+        ref = self.oauth_api.update_consumer(consumer_id,
+                                             ref,
+                                             initiator=request.audit_initiator)
+        return oauth_view.ConsumerView(request).show(ref)
 
     @controller.protected()
     def list_consumers(self, request):
         ref = self.oauth_api.list_consumers()
-        return ConsumerCrudV3.wrap_collection(request.context_dict, ref)
+        return oauth_view.ConsumerView(request).list(ref)
 
     @controller.protected()
     def get_consumer(self, request, consumer_id):
         ref = self.oauth_api.get_consumer(consumer_id)
-        return ConsumerCrudV3.wrap_member(request.context_dict, ref)
+        return oauth_view.ConsumerView(request).show(ref)
 
     @controller.protected()
     def delete_consumer(self, request, consumer_id):
@@ -96,9 +89,9 @@ class ConsumerCrudV3(controller.V3Controller):
         payload = {'user_id': user_token_ref.user_id,
                    'consumer_id': consumer_id}
         _emit_user_oauth_consumer_token_invalidate(payload)
-        self.oauth_api.delete_consumer(
-            consumer_id, initiator=request.audit_initiator
-        )
+        self.oauth_api.delete_consumer(consumer_id,
+                                       initiator=request.audit_initiator)
+        return oauth_view.ConsumerView(request).delete(consumer_id)
 
 
 @dependency.requires('oauth_api')
@@ -120,10 +113,7 @@ class AccessTokenCrudV3(controller.V3Controller):
         access_token = self.oauth_api.get_access_token(access_token_id)
         if access_token['authorizing_user_id'] != user_id:
             raise exception.NotFound()
-        access_token = self._format_token_entity(request.context_dict,
-                                                 access_token)
-        return AccessTokenCrudV3.wrap_member(request.context_dict,
-                                             access_token)
+        return oauth_view.AccessTokenView(request).show(access_token)
 
     @controller.protected()
     def list_access_tokens(self, request, user_id):
@@ -132,10 +122,7 @@ class AccessTokenCrudV3(controller.V3Controller):
                 _('Cannot list request tokens'
                   ' with a token issued via delegation.'))
         refs = self.oauth_api.list_access_tokens(user_id)
-        formatted_refs = ([self._format_token_entity(request.context_dict, x)
-                           for x in refs])
-        return AccessTokenCrudV3.wrap_collection(request.context_dict,
-                                                 formatted_refs)
+        return oauth_view.AccessTokenView(request).list(refs)
 
     @controller.protected()
     def delete_access_token(self, request, user_id, access_token_id):
@@ -143,32 +130,14 @@ class AccessTokenCrudV3(controller.V3Controller):
         consumer_id = access_token['consumer_id']
         payload = {'user_id': user_id, 'consumer_id': consumer_id}
         _emit_user_oauth_consumer_token_invalidate(payload)
-        return self.oauth_api.delete_access_token(
-            user_id, access_token_id, initiator=request.audit_initiator
-        )
+        self.oauth_api.delete_access_token(user_id,
+                                           access_token_id,
+                                           initiator=request.audit_initiator)
+        return oauth_view.AccessTokenView(request).delete(access_token_id)
 
     @staticmethod
     def _get_user_id(entity):
         return entity.get('authorizing_user_id', '')
-
-    def _format_token_entity(self, context, entity):
-
-        formatted_entity = entity.copy()
-        access_token_id = formatted_entity['id']
-        user_id = self._get_user_id(formatted_entity)
-        if 'role_ids' in entity:
-            formatted_entity.pop('role_ids')
-        if 'access_secret' in entity:
-            formatted_entity.pop('access_secret')
-
-        url = ('/users/%(user_id)s/OS-OAUTH1/access_tokens/%(access_token_id)s'
-               '/roles' % {'user_id': user_id,
-                           'access_token_id': access_token_id})
-
-        formatted_entity.setdefault('links', {})
-        formatted_entity['links']['roles'] = (self.base_url(context, url))
-
-        return formatted_entity
 
 
 @dependency.requires('oauth_api', 'role_api')
@@ -183,8 +152,8 @@ class AccessTokenRolesV3(controller.V3Controller):
             raise exception.NotFound()
         authed_role_ids = access_token['role_ids']
         authed_role_ids = jsonutils.loads(authed_role_ids)
-        refs = ([self._format_role_entity(x) for x in authed_role_ids])
-        return AccessTokenRolesV3.wrap_collection(request.context_dict, refs)
+        refs = ([self.role_api.get_role(x) for x in authed_role_ids])
+        return oauth_view.AccessTokenRoles(request).list(refs)
 
     @controller.protected()
     def get_access_token_role(self, request, user_id,
@@ -196,19 +165,10 @@ class AccessTokenRolesV3(controller.V3Controller):
         authed_role_ids = jsonutils.loads(authed_role_ids)
         for authed_role_id in authed_role_ids:
             if authed_role_id == role_id:
-                role = self._format_role_entity(role_id)
-                return AccessTokenRolesV3.wrap_member(request.context_dict,
-                                                      role)
-        raise exception.RoleNotFound(role_id=role_id)
+                role = self.role_api.get_role(role_id)
+                return oauth_view.AccessTokenRoles(request).show(role)
 
-    def _format_role_entity(self, role_id):
-        role = self.role_api.get_role(role_id)
-        formatted_entity = role.copy()
-        if 'description' in role:
-            formatted_entity.pop('description')
-        if 'enabled' in role:
-            formatted_entity.pop('enabled')
-        return formatted_entity
+        raise exception.RoleNotFound(role_id=role_id)
 
 
 @dependency.requires('assignment_api', 'oauth_api',
