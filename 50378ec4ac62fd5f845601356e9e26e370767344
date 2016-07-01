@@ -22,6 +22,30 @@
       "revId": "50378ec4ac62fd5f845601356e9e26e370767344",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6afc22b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T11:41:38Z",
+      "side": 1,
+      "message": "Good point, maybe just say \"In case the backend is running in case in-sensitive mode, check there is an exact match of IDs\"",
+      "parentUuid": "3aaa91ec_477e7f19",
+      "range": {
+        "startLine": 695,
+        "startChar": 14,
+        "endLine": 695,
+        "endChar": 30
+      },
+      "revId": "50378ec4ac62fd5f845601356e9e26e370767344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
