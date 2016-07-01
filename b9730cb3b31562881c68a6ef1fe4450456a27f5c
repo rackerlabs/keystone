@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_bda3e0b0",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-01T17:41:43Z",
+      "side": 1,
+      "message": "so I thought we were trying to eradicate the \"extension\" word...since nearly everything is now in core...  maybe just say \"The option to enable/disable the OS-INHERIT functionality has been...\"?",
+      "range": {
+        "startLine": 19,
+        "startChar": 36,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "b9730cb3b31562881c68a6ef1fe4450456a27f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
