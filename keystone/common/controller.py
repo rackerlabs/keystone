@@ -508,7 +508,7 @@ class V3Controller(wsgi.Application):
         return False, refs
 
     @classmethod
-    def render_list(cls, view, refs, hints=None)
+    def render_list(cls, view, refs, hints=None):
         """Apply hints to an object list and then render with a view.
 
         A replacement for the following wrap_collection func, we take the ref

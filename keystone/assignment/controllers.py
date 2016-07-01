@@ -21,6 +21,8 @@ import uuid
 from oslo_log import log
 from six.moves import urllib
 
+from keystone.api.views.v3 import project as project_view
+from keystone.api.views.v3 import role as role_view
 from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
@@ -273,9 +275,7 @@ class ProjectAssignmentV3(controller.V3Controller):
                                                        filters)
         refs = self.assignment_api.list_projects_for_user(user_id,
                                                           hints=hints)
-        return ProjectAssignmentV3.wrap_collection(request.context_dict,
-                                                   refs,
-                                                   hints=hints)
+        return self.render_list(project_view.ProjectView(request), refs, hints)
 
 
 @dependency.requires('role_api')
@@ -323,12 +323,12 @@ class RoleV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.role_create, 'role')
     def create_role(self, request, role):
-        return self._create_role(request.context_dict, role)
+        return self._create_role(request, role)
 
     @controller.protected()
     @validation.validated(schema.role_create, 'role')
     def create_domain_role(self, request, role):
-        return self._create_role(request.context_dict, role)
+        return self._create_role(request, role)
 
     def list_roles_wrapper(self, request):
         # If there is no domain_id filter defined, then we only want to return
@@ -346,11 +346,11 @@ class RoleV3(controller.V3Controller):
 
     @controller.filterprotected('name', 'domain_id')
     def list_roles(self, request, filters):
-        return self._list_roles(request.context_dict, filters)
+        return self._list_roles(request, filters)
 
     @controller.filterprotected('name', 'domain_id')
     def list_domain_roles(self, request, filters):
-        return self._list_roles(request.context_dict, filters)
+        return self._list_roles(request, filters)
 
     def get_role_wrapper(self, context, role_id):
         if self._is_domain_role_target(role_id):
@@ -360,11 +360,11 @@ class RoleV3(controller.V3Controller):
 
     @controller.protected()
     def get_role(self, request, role_id):
-        return self._get_role(request.context_dict, role_id)
+        return self._get_role(request, role_id)
 
     @controller.protected()
     def get_domain_role(self, request, role_id):
-        return self._get_role(request.context_dict, role_id)
+        return self._get_role(request, role_id)
 
     def update_role_wrapper(self, context, role_id, role):
         # Since we don't allow you change whether a role is global or domain
@@ -379,12 +379,12 @@ class RoleV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.role_update, 'role')
     def update_role(self, request, role_id, role):
-        return self._update_role(request.context_dict, role_id, role)
+        return self._update_role(request, role_id, role)
 
     @controller.protected()
     @validation.validated(schema.role_update, 'role')
     def update_domain_role(self, request, role_id, role):
-        return self._update_role(request.context_dict, role_id, role)
+        return self._update_role(request, role_id, role)
 
     def delete_role_wrapper(self, context, role_id):
         if self._is_domain_role_target(role_id):
@@ -394,13 +394,13 @@ class RoleV3(controller.V3Controller):
 
     @controller.protected()
     def delete_role(self, request, role_id):
-        return self._delete_role(request.context_dict, role_id)
+        return self._delete_role(request, role_id)
 
     @controller.protected()
     def delete_domain_role(self, request, role_id):
-        return self._delete_role(request.context_dict, role_id)
+        return self._delete_role(request, role_id)
 
-    def _create_role(self, context, role):
+    def _create_role(self, request, role):
         if role['name'] == CONF.member_role_name:
             # Use the configured member role ID when creating the configured
             # member role name. This avoids the potential of creating a
@@ -411,29 +411,29 @@ class RoleV3(controller.V3Controller):
 
         ref = self._normalize_dict(role)
 
-        initiator = notifications._get_request_audit_info(context)
+        initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.role_api.create_role(ref['id'], ref, initiator)
-        return RoleV3.wrap_member(context, ref)
+        return role_view.RoleView(request).create(ref)
 
-    def _list_roles(self, context, filters):
-        hints = RoleV3.build_driver_hints(context, filters)
-        refs = self.role_api.list_roles(
-            hints=hints)
-        return RoleV3.wrap_collection(context, refs, hints=hints)
+    def _list_roles(self, request, filters):
+        hints = self.build_driver_hints(request.context_dict, filters)
+        refs = self.role_api.list_roles(hints=hints)
+        return self.render_list(role_view.RoleView(request), refs, hints)
 
-    def _get_role(self, context, role_id):
+    def _get_role(self, request, role_id):
         ref = self.role_api.get_role(role_id)
-        return RoleV3.wrap_member(context, ref)
+        return role_view.RoleView(request).show(ref)
 
-    def _update_role(self, context, role_id, role):
+    def _update_role(self, request, role_id, role):
         self._require_matching_id(role_id, role)
-        initiator = notifications._get_request_audit_info(context)
+        initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.role_api.update_role(role_id, role, initiator)
-        return RoleV3.wrap_member(context, ref)
+        return role_view.RoleView(request).show(ref)
 
-    def _delete_role(self, context, role_id):
-        initiator = notifications._get_request_audit_info(context)
+    def _delete_role(self, request, role_id):
+        initiator = notifications._get_request_audit_info(request.context_dict)
         self.role_api.delete_role(role_id, initiator)
+        return role_view.RoleView(request).delete(role_id)
 
 
 @dependency.requires('role_api')
@@ -645,7 +645,8 @@ class GrantAssignmentV3(controller.V3Controller):
         refs = self.assignment_api.list_grants(
             user_id, group_id, domain_id, project_id,
             self._check_if_inherited(request.context_dict))
-        return GrantAssignmentV3.wrap_collection(request.context_dict, refs)
+
+        return role_view.RoleView(request).list(refs)
 
     @controller.protected(callback=_check_grant_protection)
     def check_grant(self, request, role_id, user_id=None,
