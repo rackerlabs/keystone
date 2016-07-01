@@ -70,6 +70,24 @@
       "revId": "15259200ba03cb4199326ee4b9ca508ef05ee7f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f3e91fb9",
+        "filename": "keystone/conf/endpoint_filter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-01T15:34:25Z",
+      "side": 1,
+      "message": "Yep, that\u0027s exactly what happened. Thanks for the catch!",
+      "parentUuid": "3aaa91ec_31711f0d",
+      "revId": "15259200ba03cb4199326ee4b9ca508ef05ee7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
