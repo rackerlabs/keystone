@@ -22,6 +22,40 @@
       "revId": "b9730cb3b31562881c68a6ef1fe4450456a27f5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8b3b4d9c",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-01T21:54:38Z",
+      "side": 1,
+      "message": "Agree with Henry. Don\u0027t forget the extension on this line",
+      "revId": "b9730cb3b31562881c68a6ef1fe4450456a27f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ab5d69ee",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-01T21:54:38Z",
+      "side": 1,
+      "message": "This one too",
+      "revId": "b9730cb3b31562881c68a6ef1fe4450456a27f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
