@@ -627,10 +627,10 @@ class FernetAuthWithToken(AuthWithToken):
                           body_dict)
 
     def test_revoke_with_no_audit_info(self):
-        self.skipTest('Fernet with v2.0 and revocation is broken')
+        self.skip_test_overrides('Fernet with v2.0 and revocation is broken')
 
     def test_deleting_role_revokes_token(self):
-        self.skipTest('Fernet with v2.0 and revocation is broken')
+        self.skip_test_overrides('Fernet with v2.0 and revocation is broken')
 
 
 class AuthWithPasswordCredentials(AuthTest):
