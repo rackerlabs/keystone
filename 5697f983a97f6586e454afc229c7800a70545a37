@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_1eb94b7a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-01T18:50:21Z",
+      "side": 1,
+      "message": "I mentioned this is the previous review and I think the reason it\u0027s done this way is a deficiency in my hacking checks. I think the fact that line 188 uses a kwarg makes the check fail and require a _LW. I\u0027ll look into this now and fix in a different patch.",
+      "parentUuid": "3aaa91ec_c78a5d1a",
+      "range": {
+        "startLine": 185,
+        "startChar": 26,
+        "endLine": 185,
+        "endChar": 30
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e78cb930",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
