@@ -16,6 +16,8 @@
 
 from oslo_log import log
 
+from keystone.api.views.v3 import group as group_view
+from keystone.api.views.v3 import user as user_view
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -223,39 +225,39 @@ class UserV3(controller.V3Controller):
         ref = self._normalize_domain_id(request.context_dict, ref)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_user(ref, initiator)
-        return UserV3.wrap_member(request.context_dict, ref)
+        return user_view.UserView(request).create(ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_users(self, request, filters):
-        hints = UserV3.build_driver_hints(request, filters)
+        hints = self.build_driver_hints(request, filters)
         domain = self._get_domain_id_for_list_request(request)
         refs = self.identity_api.list_users(domain_scope=domain, hints=hints)
-        return UserV3.wrap_collection(request.context_dict, refs, hints=hints)
+        return self.render_list(user_view.UserView(request), refs, hints)
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
                                 callback=_check_group_protection)
     def list_users_in_group(self, request, filters, group_id):
-        hints = UserV3.build_driver_hints(request, filters)
+        hints = self.build_driver_hints(request, filters)
         refs = self.identity_api.list_users_in_group(group_id, hints=hints)
-        return UserV3.wrap_collection(request.context_dict, refs, hints=hints)
+        return self.render_list(user_view.UserView(request), refs, hints)
 
     @controller.protected()
     def get_user(self, request, user_id):
         ref = self.identity_api.get_user(user_id)
-        return UserV3.wrap_member(request.context_dict, ref)
+        return user_view.UserView(request).show(ref)
 
-    def _update_user(self, context, user_id, user):
+    def _update_user(self, request, user_id, user):
         self._require_matching_id(user_id, user)
         self._require_matching_domain_id(
             user_id, user, self.identity_api.get_user)
-        initiator = notifications._get_request_audit_info(context)
+        initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.update_user(user_id, user, initiator)
-        return UserV3.wrap_member(context, ref)
+        return user_view.UserView(request).show(ref)
 
     @controller.protected()
     @validation.validated(schema.user_update, 'user')
     def update_user(self, request, user_id, user):
-        return self._update_user(request.context_dict, user_id, user)
+        return self._update_user(request, user_id, user)
 
     @controller.protected(callback=_check_user_and_group_protection)
     def add_user_to_group(self, request, user_id, group_id):
@@ -274,7 +276,8 @@ class UserV3(controller.V3Controller):
     @controller.protected()
     def delete_user(self, request, user_id):
         initiator = notifications._get_request_audit_info(request.context_dict)
-        return self.identity_api.delete_user(user_id, initiator)
+        self.identity_api.delete_user(user_id, initiator)
+        return user_view.UserView(request).delete(user_id)
 
     @controller.protected()
     def change_password(self, request, user_id, user):
@@ -316,25 +319,25 @@ class GroupV3(controller.V3Controller):
         ref = self._normalize_domain_id(request.context_dict, ref)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_group(ref, initiator)
-        return GroupV3.wrap_member(request.context_dict, ref)
+        return group_view.GroupView(request).create(ref)
 
     @controller.filterprotected('domain_id', 'name')
     def list_groups(self, request, filters):
         hints = GroupV3.build_driver_hints(request, filters)
         domain = self._get_domain_id_for_list_request(request)
         refs = self.identity_api.list_groups(domain_scope=domain, hints=hints)
-        return GroupV3.wrap_collection(request.context_dict, refs, hints=hints)
+        return self.render_list(group_view.GroupView(request), refs, hints)
 
     @controller.filterprotected('name', callback=_check_user_protection)
     def list_groups_for_user(self, request, filters, user_id):
         hints = GroupV3.build_driver_hints(request, filters)
         refs = self.identity_api.list_groups_for_user(user_id, hints=hints)
-        return GroupV3.wrap_collection(request.context_dict, refs, hints=hints)
+        return self.render_list(group_view.GroupView(request), refs, hints)
 
     @controller.protected()
     def get_group(self, request, group_id):
         ref = self.identity_api.get_group(group_id)
-        return GroupV3.wrap_member(request.context_dict, ref)
+        return group_view.GroupView(request).show(ref)
 
     @controller.protected()
     @validation.validated(schema.group_update, 'group')
@@ -344,9 +347,10 @@ class GroupV3(controller.V3Controller):
             group_id, group, self.identity_api.get_group)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.update_group(group_id, group, initiator)
-        return GroupV3.wrap_member(request.context_dict, ref)
+        return group_view.GroupView(request).show(ref)
 
     @controller.protected()
     def delete_group(self, request, group_id):
         initiator = notifications._get_request_audit_info(request.context_dict)
         self.identity_api.delete_group(group_id, initiator)
+        return group_view.GroupView(request).delete(group_id)
