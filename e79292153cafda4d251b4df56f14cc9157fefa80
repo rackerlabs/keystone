@@ -34,6 +34,24 @@
       "revId": "e79292153cafda4d251b4df56f14cc9157fefa80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_74ad1e88",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-07-02T00:43:37Z",
+      "side": 1,
+      "message": "Ended up fixing this in this review.",
+      "parentUuid": "3aaa91ec_6a9e1064",
+      "revId": "e79292153cafda4d251b4df56f14cc9157fefa80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
