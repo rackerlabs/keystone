@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_f4862912",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "I believe most LDAP servers require user/pwd to do any kind of connection with encryption.  Pretty sure AD does.",
+      "parentUuid": "1aa78d24_9f8c2337",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 7
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_dfb86be8",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 1
@@ -87,6 +111,29 @@
         "startChar": 9,
         "endLine": 59,
         "endChar": 17
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1499356f",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "Should be marked deprecated then.",
+      "range": {
+        "startLine": 61,
+        "startChar": 40,
+        "endLine": 62,
+        "endChar": 11
       },
       "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -239,6 +286,29 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_f4b469d2",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "What is meant by system?  The underlying ldap native client? Or the LDAP server?",
+      "range": {
+        "startLine": 131,
+        "startChar": 11,
+        "endLine": 131,
+        "endChar": 17
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7a34e5dd",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 1
@@ -331,6 +401,29 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b42f81f5",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "Its not quite clear if both tls_cacertfile and tls_cacertdir have to be set, or just one.  Maybe you can add a blurb to clarify",
+      "range": {
+        "startLine": 431,
+        "startChar": 5,
+        "endLine": 431,
+        "endChar": 18
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9a78b191",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 1
@@ -347,6 +440,69 @@
         "startChar": 70,
         "endLine": 442,
         "endChar": 73
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d4116db1",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "I think it would be useful to detail more about the choices.",
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9449a5d3",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "What does a value of 0 indicate? Infinite retries? Or no retries?",
+      "range": {
+        "startLine": 475,
+        "startChar": 8,
+        "endLine": 475,
+        "endChar": 9
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7446b9c0",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-02T08:05:48Z",
+      "side": 1,
+      "message": "0.0",
+      "range": {
+        "startLine": 484,
+        "startChar": 8,
+        "endLine": 484,
+        "endChar": 9
       },
       "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
