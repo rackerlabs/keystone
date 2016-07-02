@@ -2,6 +2,167 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_9f8c2337",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "just a thought - Do we want to mention that these are not necessary for most LDAPs? Or that most support anonymous querying? I\u0027ve often responded to requests asking what username and password should be.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 7
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dfb86be8",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "so not a big deal, but you prefix \"dumb_member\" with [ldap] on line 59, but these two are not prefixed with [ldap], if you are tossing up another patch, consider adding it",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 33
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7ff177cd",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "so much better",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 34
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_5fee3bed",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "keystone*",
+      "range": {
+        "startLine": 59,
+        "startChar": 9,
+        "endLine": 59,
+        "endChar": 17
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bfa0ffa6",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "we should mark this option as deprecated and add the deprecation message here..",
+      "range": {
+        "startLine": 69,
+        "startChar": 74,
+        "endLine": 70,
+        "endChar": 40
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9fa543b7",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "we should mark this option as deprecated and add the deprecation message here..",
+      "range": {
+        "startLine": 78,
+        "startChar": 44,
+        "endLine": 79,
+        "endChar": 11
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_df86ab12",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "i believe specifying this option is only meaning if username and password are set, and that username has sufficient privileges to actually perform paging - consider adding that if you think it\u0027s useful",
+      "range": {
+        "startLine": 96,
+        "startChar": 5,
+        "endLine": 96,
+        "endChar": 14
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_eb1f7159",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 1
@@ -49,6 +210,144 @@
       "side": 1,
       "message": "K, Wasn\u0027t a big deal either way",
       "parentUuid": "1aa78d24_ab2ba932",
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_5f73db4d",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "keystone* there are a bunch of these below, i\u0027m okay with either Keystone or keystone, i forget what we\u0027ve been using in your patches so far.",
+      "range": {
+        "startLine": 130,
+        "startChar": 5,
+        "endLine": 130,
+        "endChar": 13
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7a34e5dd",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "we should deprecate this option too",
+      "range": {
+        "startLine": 237,
+        "startChar": 5,
+        "endLine": 237,
+        "endChar": 26
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_da5b592d",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "see line 365",
+      "range": {
+        "startLine": 332,
+        "startChar": 10,
+        "endLine": 332,
+        "endChar": 21
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1a3e81b8",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "objectclass vs objectClass (theres another example of this for users)",
+      "range": {
+        "startLine": 365,
+        "startChar": 48,
+        "endLine": 365,
+        "endChar": 59
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ba73edb3",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "we should deprecate this option",
+      "range": {
+        "startLine": 381,
+        "startChar": 57,
+        "endLine": 382,
+        "endChar": 16
+      },
+      "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9a78b191",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:32:30Z",
+      "side": 1,
+      "message": "this?",
+      "range": {
+        "startLine": 442,
+        "startChar": 70,
+        "endLine": 442,
+        "endChar": 73
+      },
       "revId": "c7aa00225467164e044b500ba3f109682a7fa8f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
