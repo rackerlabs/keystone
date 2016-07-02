@@ -46,6 +46,53 @@
       "revId": "ddb1ea9408be49c3d3756b26e82960413eb20a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_59892eca",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-02T21:40:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1aa78d24_34d1d6fc",
+      "range": {
+        "startLine": 19,
+        "startChar": 14,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "ddb1ea9408be49c3d3756b26e82960413eb20a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3986e2b9",
+        "filename": "keystone/conf/os_inherit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-02T21:40:36Z",
+      "side": 1,
+      "message": "this may also need to be rewritten, since it looks to be in accordance with the idea above of OS-INHERIT being disabled by default",
+      "range": {
+        "startLine": 21,
+        "startChar": 20,
+        "endLine": 21,
+        "endChar": 56
+      },
+      "revId": "ddb1ea9408be49c3d3756b26e82960413eb20a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
