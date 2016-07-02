@@ -22,6 +22,53 @@
       "revId": "67d9d81a971d063ed2f2759b1781e2a2a3e3d8f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d9623e16",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-02T21:54:06Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1aa78d24_0df3e80b",
+      "range": {
+        "startLine": 145,
+        "startChar": 8,
+        "endLine": 145,
+        "endChar": 46
+      },
+      "revId": "67d9d81a971d063ed2f2759b1781e2a2a3e3d8f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_79a7ca4f",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-02T21:54:06Z",
+      "side": 1,
+      "message": "assertItemsEqual could replace these 2 calls",
+      "range": {
+        "startLine": 144,
+        "startChar": 7,
+        "endLine": 145,
+        "endChar": 46
+      },
+      "revId": "67d9d81a971d063ed2f2759b1781e2a2a3e3d8f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
