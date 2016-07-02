@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_fa7bb579",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-02T02:36:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1aa78d24_2eca2750",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 19
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_0e3c8b2e",
         "filename": "keystone/conf/resource.py",
         "patchSetId": 1
