@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_57c1f27f",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-03T15:41:12Z",
+      "side": 1,
+      "message": "why isn\u0027t this taken care of by the limit() method in the V3Controller class? Is it more efficient to do this here, or leave it to that?",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 31
+      },
+      "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
