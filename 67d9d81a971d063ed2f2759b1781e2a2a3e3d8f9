@@ -69,6 +69,30 @@
       "revId": "67d9d81a971d063ed2f2759b1781e2a2a3e3d8f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a62c6eac",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-03T09:44:33Z",
+      "side": 1,
+      "message": "Good point, thanks Steve \u0026 Samuel.",
+      "parentUuid": "1aa78d24_d9623e16",
+      "range": {
+        "startLine": 145,
+        "startChar": 8,
+        "endLine": 145,
+        "endChar": 46
+      },
+      "revId": "67d9d81a971d063ed2f2759b1781e2a2a3e3d8f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
