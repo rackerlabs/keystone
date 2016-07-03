@@ -46,6 +46,29 @@
       "revId": "a088d7f1e9a38d034bb9b7d03c4262092e1cd808",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d7784292",
+        "filename": "keystone/conf/revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-03T15:18:53Z",
+      "side": 1,
+      "message": "revoke event caching?",
+      "range": {
+        "startLine": 51,
+        "startChar": 32,
+        "endLine": 51,
+        "endChar": 37
+      },
+      "revId": "a088d7f1e9a38d034bb9b7d03c4262092e1cd808",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
