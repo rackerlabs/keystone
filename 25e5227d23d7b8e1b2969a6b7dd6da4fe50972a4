@@ -34,6 +34,24 @@
       "revId": "25e5227d23d7b8e1b2969a6b7dd6da4fe50972a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2d0156af",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-04T15:05:30Z",
+      "side": 1,
+      "message": "I think the same second is pretty safe it\u0027s something we already do in our tests: (https://github.com/openstack/keystone/blob/d9c6b50a3ae514e640fa13a344e59fe3649ee0ef/keystone/tests/unit/test_v3_auth.py#L1242-L1260)",
+      "parentUuid": "1aa78d24_8ef5f284",
+      "revId": "25e5227d23d7b8e1b2969a6b7dd6da4fe50972a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
