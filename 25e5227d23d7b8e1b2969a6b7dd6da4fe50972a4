@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_2e267eba",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-04T10:25:25Z",
+      "side": 1,
+      "message": "I *think* this test can cause some intermittent failures due seconds comparison, we can\u0027t be sure both \"revoked_at\" and the revoke event will be *always* within the same second. Or is there any mechanism to make this will happen?",
+      "revId": "25e5227d23d7b8e1b2969a6b7dd6da4fe50972a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
