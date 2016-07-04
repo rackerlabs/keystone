@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e30c9644",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "It\u0027s only SQL and template driver, maybe just say template driver doesn\u0027t support this?",
+      "range": {
+        "startLine": 414,
+        "startChar": 18,
+        "endLine": 414,
+        "endChar": 57
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_63bc266d",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "service is not allowed as well, pls change the name of this argument.",
+      "range": {
+        "startLine": 308,
+        "startChar": 31,
+        "endLine": 308,
+        "endChar": 58
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_43e2cad6",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 948,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "This seems okay but I prefer to test this in the existing module rather than create a new one.\n\npls see:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_backend_templated.py",
+      "range": {
+        "startLine": 945,
+        "startChar": 0,
+        "endLine": 948,
+        "endChar": 36
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a383aecb",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "I feel this change is not need if test this in test_backend_templated.py.",
+      "range": {
+        "startLine": 957,
+        "startChar": 8,
+        "endLine": 957,
+        "endChar": 64
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c33cfa31",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "The name could more illustrative itself, maybe test_ignore_ise_on_delete_project or something like that?",
+      "range": {
+        "startLine": 959,
+        "startChar": 8,
+        "endLine": 959,
+        "endChar": 27
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_5e373db0",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-04T08:59:20Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 962,
+        "startChar": 0,
+        "endLine": 967,
+        "endChar": 53
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
