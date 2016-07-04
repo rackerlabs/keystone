@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_969b3cc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-04T14:22:50Z",
+      "side": 1,
+      "message": "typo: should be references",
+      "revId": "f7cddcb128dff7cc69e69994ba1f3d002191ff16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
