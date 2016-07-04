@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_fc9f1eb2",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-04T02:04:40Z",
+      "side": 1,
+      "message": "a comment or docstring on why this test exists would be good for future devs",
+      "range": {
+        "startLine": 955,
+        "startChar": 8,
+        "endLine": 955,
+        "endChar": 57
+      },
+      "revId": "990c5e74e047f94cf801c271755fdcb057019257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
