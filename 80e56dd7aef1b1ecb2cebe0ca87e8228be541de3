@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_7c6fae92",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-04T02:33:31Z",
+      "side": 1,
+      "message": "For this, there is a condition, that, the local_entity is None, if the public_id is not exist in the cache. So we need to check whether the local_entity is empty here.\n\n\nFor the race condition, as the cache invalidate operation calls the delete of the cache, and the delete is idempotent (can be called multiple times, or on a non-existent key, safely).\nplease refer to: https://github.com/thruflo/dogpile.cache/blob/master/dogpile/cache/region.py#L814\n\n\nSo it safely to invalidate the local_entity even if it\u0027s invalidated before.",
+      "parentUuid": "3aaa91ec_cf00c169",
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_af28d5ef",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2016-07-01T13:38:49Z",
       "side": 1,
       "message": "So you want to delete everything from this regions even if there is a purge filter? I\u0027m not sure how you can account for the filter and only invalidate part of the region, but I\u0027m curious about the impact.",
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dcc4e241",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-04T02:33:31Z",
+      "side": 1,
+      "message": "Currently the purge is only used by the client, which can purge the mapping base on domain_id/public_id/local_id/type, or a combination of the above ids.\n\n\nplease refer to: \nhttps://github.com/openstack/keystone/blob/master/keystone/cmd/cli.py#L572\n\n\nif we invalidate part of the region based on the filter, it will be become a little complex for the code to implemented.\n\n\nAs it will be very rare condition for user to purge mapping using client. and invalidate all cache, just like become to the situation like no cache used or restart keystone, and after some operation about the id mappings, it will be cache again.\n\n\nSo comparing to the complexity of the implementation based on the purge filter, I think it\u0027s acceptable to invalidate all cache.",
+      "parentUuid": "3aaa91ec_0f72c9e3",
       "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
