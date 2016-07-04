@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_fcba7ebf",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-04T02:28:53Z",
+      "side": 1,
+      "message": "If I may add a bit more here....\n\n\"\"\"\nDeleting a project should not result in an 500 ISE\n\nThe EndpointFilter extension of the Catalog API will create a notification when a project is deleted (attempting to clean up project-\u003eendpoint relationships). In the case of a templated catalog, no deletions (via catalog_api.delete_association_by_project) can be performed and result in a NotImplemented exception. We catch this exception and ignore it since it is expected.",
+      "range": {
+        "startLine": 959,
+        "startChar": 8,
+        "endLine": 959,
+        "endChar": 67
+      },
+      "revId": "48d85a918098e6fec1dbf5ca234796e6c8481d10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
