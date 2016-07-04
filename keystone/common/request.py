@@ -33,7 +33,7 @@ class Request(webob.Request):
         context = self.environ.get(CONTEXT_ENV, {})
 
         try:
-            context['query_string'] = dict(self.params.items())
+            self.params.mixed()
         except UnicodeDecodeError:
             # The webob package throws UnicodeError when a request cannot be
             # decoded. Raise ValidationError instead to avoid an UnknownError.
