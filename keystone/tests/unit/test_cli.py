@@ -25,6 +25,7 @@ from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.common import dependency
+from keystone.common.sql import migration_helpers
 import keystone.conf
 from keystone.i18n import _
 from keystone.tests import unit
@@ -534,3 +535,99 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class CliDBSyncTestCase(unit.BaseTestCase):
+
+    class FakeConfCommand(object):
+        def __init__(self, parent):
+            self.extension = False
+            self.expand = parent.command_expand
+            self.rolling_upgrade_complete = (
+                parent.command_rolling_upgrade_complete)
+            self.rolling_restart_complete = (
+                parent.command_rolling_restart_complete)
+            self.migrate = parent.command_migrate
+            self.contract = parent.command_contract
+            self.status = parent.command_status
+            self.version = None
+
+    def setUp(self):
+        super(CliDBSyncTestCase, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        migration_helpers.offline_sync_database_to_version = mock.Mock()
+        migration_helpers.migration_expand = mock.Mock()
+        migration_helpers.rolling_upgrade_complete = mock.Mock()
+        migration_helpers.rolling_restart_complete = mock.Mock()
+        migration_helpers.force_migration_complete = mock.Mock()
+        migration_helpers.migration_contract = mock.Mock()
+        migration_helpers.migration_status = mock.Mock()
+        self.command_expand = False
+        self.command_rolling_upgrade_complete = False
+        self.command_rolling_restart_complete = False
+        self.command_migrate = False
+        self.command_contract = False
+        self.command_status = False
+
+    def _assert_correct_call(self, mocked_function):
+        for func in [migration_helpers.offline_sync_database_to_version,
+                     migration_helpers.migration_expand,
+                     migration_helpers.rolling_upgrade_complete,
+                     migration_helpers.rolling_restart_complete,
+                     migration_helpers.force_migration_complete,
+                     migration_helpers.migration_contract,
+                     migration_helpers.migration_status]:
+            if func == mocked_function:
+                self.assertTrue(func.called)
+            else:
+                self.assertFalse(func.called)
+
+    def test_db_sync(self):
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(
+            migration_helpers.offline_sync_database_to_version)
+
+    def test_db_sync_expand(self):
+        self.command_expand = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.migration_expand)
+
+    def test_db_sync_rolling_upgrade_complete(self):
+        self.command_rolling_upgrade_complete = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.rolling_upgrade_complete)
+
+    def test_db_sync_rolling_restart_complete(self):
+        self.command_rolling_restart_complete = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.rolling_restart_complete)
+
+    def test_db_sync_migrate(self):
+        self.command_migrate = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.force_migration_complete)
+
+    def test_db_sync_contract(self):
+        self.command_contract = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.migration_contract)
+
+    def test_db_sync_status(self):
+        self.command_status = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(migration_helpers.migration_status)
