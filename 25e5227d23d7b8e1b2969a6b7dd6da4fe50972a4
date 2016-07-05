@@ -52,6 +52,24 @@
       "revId": "25e5227d23d7b8e1b2969a6b7dd6da4fe50972a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8f97908f",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-05T02:29:05Z",
+      "side": 1,
+      "message": "@Rodrigo, the fact is not just the second but also the *microseconds* should be exactly the same since it has been set explicitly in L154 (this doesn\u0027t mean it must be set just for sake of a easier test), assertTimestampEqual is used here to ignore *microseconds* since it maybe deliberately abandoned in the future.",
+      "parentUuid": "1aa78d24_2d0156af",
+      "revId": "25e5227d23d7b8e1b2969a6b7dd6da4fe50972a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
