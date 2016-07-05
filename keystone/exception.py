@@ -400,8 +400,8 @@ class KeystoneConfigurationError(Exception):
 
 
 class Conflict(Error):
-    message_format = _("Conflict occurred attempting to store %(type)s -"
-                       " %(details)s")
+    message_format = _("Conflict occurred attempting to store %(type)s"
+                       " %(name)s- %(details)s")
     code = 409
     title = 'Conflict'
 
