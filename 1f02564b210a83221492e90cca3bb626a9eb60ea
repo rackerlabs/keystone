@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_aad34d37",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-05T09:26:57Z",
+      "side": 1,
+      "message": "This is because there is a semantic difference between specifying domain_id\u003dNone (which means I want all global roles), vs not specifying a filter at all (which would mean I want all roles). For now, we do not provide an ability for the caller to semantically ask for all roles, so as to avoid confusion after upgrading to a version of keystone that started supporting domain specific roles. I would either update the comment to say this, and/or remove the \"for some reason\" line",
+      "range": {
+        "startLine": 432,
+        "startChar": 16,
+        "endLine": 433,
+        "endChar": 22
+      },
+      "revId": "1f02564b210a83221492e90cca3bb626a9eb60ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_03c28233",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-05T09:26:57Z",
+      "side": 1,
+      "message": "nit: that vs from which? My english language was never that good, but it sounds better (to me) the way it was.....",
+      "range": {
+        "startLine": 636,
+        "startChar": 73,
+        "endLine": 636,
+        "endChar": 77
+      },
+      "revId": "1f02564b210a83221492e90cca3bb626a9eb60ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
