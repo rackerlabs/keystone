@@ -160,8 +160,41 @@ def _assert_not_schema_downgrade(version=None):
             pass
 
 
-def sync_database_to_version(version=None):
+def offline_sync_database_to_version(version=None):
+    """Perform and off-line sync of the database.
+
+    Migrate the database upto the latest version, allowing a migration across
+    two release versions. In addition, run all the tidy-up, force data
+    migration and contract phases to ensure the resulting database is the same
+    irrespective of whether an offline or online (i.e. rolling) upgrade was
+    performed.
+
+    If a version is specified then only migrate the database up to that
+    version. Downgrading is not supported. If version is specified, then only
+    the main database migration is carried out - and the tidy-up, force data
+    migration and contract phases will NOT be run.
+
+    """
+    # TODO(henry-nash): Currently this implementation will work for a 1 or 2
+    # release upgrade to Newton, but won't work for a 2 release upgrade to
+    # Ocata. In order to support that, we must run the upgrade, tidyup, migrate
+    # and contract cycles in sequence, rather than run all the available
+    # upgrades, then all the available tidyups, migrations and contracts. This
+    # support will be added in a patch to be ready for Ocata.
+
     _sync_common_repo(version)
+
+    if not version:
+
+        # We could call each of the individual methods for the various
+        # migration phases to drive the whole migration. However, one of the
+        # goals of still supporting the raw db_sync command is to try and
+        # force through an off-line upgrade if the operator has run into issues
+        # with an on-line rolling upgrade. So instead we duplicate the actions
+        # and then stamp the status row at the end.
+
+        # TODO(henry-nash): Call the migration helpers here.
+        pass
 
 
 def get_db_version():
@@ -173,3 +206,43 @@ def get_db_version():
 
 def print_db_version():
     print(get_db_version())
+
+
+def migration_expand():
+    """Expand the database ahead of code upgrade.
+
+    Since we currently do not support on-the-fly migration at the point of
+    object access, we run all the migration scripts now.
+
+    This is run manually by the keystone-manage command before the first
+    keystone node is migrated to the latest release.
+
+    """
+    # TODO(henry-nash): Add implementation here.
+    pass
+
+
+def force_migration_complete():
+    """Tidy the database after migration.
+
+    This is run manually by the keystone-manage command once all keystone
+    nodes have been migrated to the latest release.
+
+    This method should ensure all data has been migrated to its new locations
+    as well as ensuring that any data inconsistencies that could have been
+    created during a rolling upgrade are tidied up.
+
+    """
+    # TODO(henry-nash): Add implementation here.
+    pass
+
+
+def migration_contract():
+    """Contract the database.
+
+    This is run manually by the keystone-manage command once all nodes are
+    running code that no longer looks at old tables/columns.
+
+    """
+    # TODO(henry-nash): Add implementation here.
+    pass
