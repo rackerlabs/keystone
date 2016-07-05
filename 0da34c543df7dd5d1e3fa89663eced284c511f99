@@ -22,6 +22,30 @@
       "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cdc5f78e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-07-05T17:44:51Z",
+      "side": 1,
+      "message": "the limit is applied here by the driver in cases where all the filters have been satisfied already. My code change is only setting the \u0027truncated\u0027 attribute if the list limit is applied here because in the V3Controller we can\u0027t know any more if the limit was applied or there was no limit at all from the beginning.",
+      "parentUuid": "1aa78d24_57c1f27f",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 31
+      },
+      "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
