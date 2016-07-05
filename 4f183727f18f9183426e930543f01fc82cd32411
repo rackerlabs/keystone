@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_a850700b",
+        "filename": "api-ref/source/v2-admin/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-05T11:45:49Z",
+      "side": 1,
+      "message": "We should rename the title of these so they show up, for example, as \"Admin Tenants\" rather than simply \"Tenants\" in the list. See http://docs-draft.openstack.org/63/337363/1/check/gate-keystone-api-ref/4f83c21//api-ref/build/html/\n\nThis should be done in a followup",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "4f183727f18f9183426e930543f01fc82cd32411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
