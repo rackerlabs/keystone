@@ -1,0 +1,9 @@
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 05 Jul 2016 13:53:54 +0000
+Reviewed-on: https://review.openstack.org/337373
+Project: openstack/keystone
+Branch: refs/heads/master
