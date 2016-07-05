@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_8596514a",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-05T04:32:42Z",
+      "side": 1,
+      "message": "same reasoning as Sam said in the other comment, we need to test it here and not in the backend, since it\u0027s the notification (at the controller level) that causes the behaviour seen in the bug. If we test the backend only we won\u0027t see the exception being raised",
+      "parentUuid": "1aa78d24_a383aecb",
+      "range": {
+        "startLine": 957,
+        "startChar": 8,
+        "endLine": 957,
+        "endChar": 64
+      },
+      "revId": "8232f4f23c1c33a6e45073386f40e79139d9b980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c33cfa31",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 5
