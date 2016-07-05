@@ -22,6 +22,29 @@
       "revId": "a1596aa49311255f65705709acd28c8ec684436c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_70f2ea70",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-05T13:22:35Z",
+      "side": 1,
+      "message": "i don\u0027t get this, maybe add a comment?",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 31
+      },
+      "revId": "a1596aa49311255f65705709acd28c8ec684436c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
