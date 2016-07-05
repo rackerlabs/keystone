@@ -407,14 +407,37 @@ class DbSync(BaseApp):
                                   'now part of the main repository, '
                                   'specifying db_sync without this option '
                                   'will cause all extensions to be migrated.'))
-
+        parser.add_argument('--expand', default=False, action='store_true',
+                            help=('Migrate the database ahead of running the '
+                                  'first upgraded keystone node.'))
+        parser.add_argument('--migrate', default=False,
+                            action='store_true',
+                            help=('Once all keystone nodes have been upgraded '
+                                  'to the latest code version, this command '
+                                  'will ensure that any data created during '
+                                  'the upgrade process is correct and has '
+                                  'indeed been migrated. This command should '
+                                  'always be run at the end of a migration - '
+                                  'even if this was a single node keystone '
+                                  'configuration.'))
+        parser.add_argument('--contract', default=False, action='store_true',
+                            help=('Remove any database tables and columns '
+                                  'that are no longer required.'))
         return parser
 
     @staticmethod
     def main():
         assert_not_extension(CONF.command.extension)
-        version = CONF.command.version
-        migration_helpers.sync_database_to_version(version)
+
+        if CONF.command.expand:
+            migration_helpers.migration_expand()
+        elif CONF.command.migrate:
+            migration_helpers.force_migration_complete()
+        elif CONF.command.contract:
+            migration_helpers.migration_contract()
+        else:
+            migration_helpers.offline_sync_database_to_version(
+                CONF.command.version)
 
 
 class DbVersion(BaseApp):
