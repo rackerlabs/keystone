@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e1e2722e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-05T23:09:24Z",
+      "side": 1,
+      "message": "don\u0027t think try/except/else is most readable and maintainable option here (you can check the same thing if hasattr()), also, please give assign a variable for args[2] and add a comment of what is expected in each arg so we can understand better what is going on.",
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_41d2665d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-05T23:09:24Z",
+      "side": 1,
+      "message": "what happens if we don\u0027t pass \"name\"? There is an example where you don\u0027t pass it in the wrapper",
+      "range": {
+        "startLine": 404,
+        "startChar": 25,
+        "endLine": 404,
+        "endChar": 36
+      },
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
