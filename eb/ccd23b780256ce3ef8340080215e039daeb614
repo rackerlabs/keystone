@@ -1,0 +1,10 @@
+Code-Review+2: Dave Chen <dave.jungler@gmail.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 05 Jul 2016 13:54:03 +0000
+Reviewed-on: https://review.openstack.org/337375
+Project: openstack/keystone
+Branch: refs/heads/master
