@@ -22,6 +22,30 @@
       "revId": "e55dfe490c959309dd3bfb20c959eb6431379de3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2dfe5238",
+        "filename": "api-ref/source/v3-ext/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-05T11:40:42Z",
+      "side": 1,
+      "message": "Yeah, but looks like something that can be cleaned up in a follow up",
+      "parentUuid": "1aa78d24_3e367ee7",
+      "range": {
+        "startLine": 10,
+        "startChar": 32,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "e55dfe490c959309dd3bfb20c959eb6431379de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
