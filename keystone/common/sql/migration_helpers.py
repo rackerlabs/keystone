@@ -23,6 +23,8 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.common.sql import force_migrations
+from keystone.common.sql import migration_phase_sql
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -162,6 +164,9 @@ def _assert_not_schema_downgrade(version=None):
 
 def sync_database_to_version(version=None):
     _sync_common_repo(version)
+    if not version:
+        # FIXME(henry-nash): need to call contract and set the status here.
+        pass
 
 
 def get_db_version():
@@ -173,3 +178,185 @@ def get_db_version():
 
 def print_db_version():
     print(get_db_version())
+
+
+MIGRATION_STATUS_STARTED = 'Started'
+MIGRATION_STATUS_UPGRADE_COMPLETED = 'Upgrade Completed'
+MIGRATION_STATUS_RESTART_COMPLETED = 'Restart Completed'
+MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED = 'Force Migrate Completed'
+MIGRATION_STATUS_COMPLETED = 'Completed'
+
+NO_VERSION = 'None'
+EARLIER_VERSION = 'Pre-Newton'
+NEWTON_VERSION = 'Newton'
+OCATA_VERSION = 'Ocata'
+
+CURRENT_VERSION = NEWTON_VERSION
+
+PHASE_STATE_DIAGRAM = {
+    MIGRATION_STATUS_STARTED: {
+        'next': MIGRATION_STATUS_UPGRADE_COMPLETED,
+        'help': _("You are currently in the code upgrading phase. The "
+                  "next command in the sequence should be "
+                  "'keystone-manage db_sync --rolling-upgrade-complete' once "
+                  "the nodes have been upgraded and started.")
+    },
+    MIGRATION_STATUS_UPGRADE_COMPLETED: {
+        'next': MIGRATION_STATUS_RESTART_COMPLETED,
+        'help': _("You are currently in the phase of restarting after "
+                  "upgrading each of your keystone nodes. The next command in "
+                  "the sequence should be "
+                  "'keystone-manage db_sync --rolling-restart-complete' once "
+                  "the nodes have been restarted again.")
+    },
+    MIGRATION_STATUS_RESTART_COMPLETED: {
+        'next': MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED,
+        'help': _("You are currently in the phase of background data "
+                  "migration after upgrading your keystone nodes. The next "
+                  "command in the sequence should be "
+                  "'keystone-manage db_sync --force-migration-complete' to "
+                  "complete this phase.")
+    },
+    MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED: {
+        'next': MIGRATION_STATUS_COMPLETED,
+        'help': _("You have completed all the data migration. The next (and "
+                  "last) command in the sequence should be "
+                  "'keystone-manage db_sync --contract' to remove any "
+                  "database structures that are no longer needed.")
+    },
+    MIGRATION_STATUS_COMPLETED: {
+        'next': MIGRATION_STATUS_STARTED,
+        'help': _("You are not currently undertaking a migration. The first "
+                  "command in the sequence should be "
+                  "'keystone-manage db_sync --expand'")
+    },
+}
+
+
+def _assert_correct_migration_phase(current_status, next_status):
+    if current_status is None:
+        print(_("No upgrade is in progress, you need to start with "
+                "'keystone-manage db_sync --expand'"))
+        raise RuntimeError
+
+    current_phase = current_status['current_phase']
+    if next_status != PHASE_STATE_DIAGRAM[current_phase]['next']:
+        print(_('You are trying to execute an upgrade phase out of order'))
+        print(PHASE_STATE_DIAGRAM[current_phase]['help'])
+        raise RuntimeError
+
+
+def _get_migration_status(driver):
+    try:
+        current_status = driver.get_migration_status()
+    except exception.NotFound:
+        pass
+    return current_status
+
+
+def migration_expand():
+    """Expand the database ahead of code upgrade.
+
+    Since we currently do not support on-the-fly migration at the point of
+    object access, we run all the migration scripts now.
+
+    This is run manually by the keystone-manage command before the first
+    keystone node is migrated to the latest release.
+
+    """
+    _sync_common_repo(version=None)
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    next_status = {'migrating_to_version': CURRENT_VERSION,
+                   'current_phase': MIGRATION_STATUS_STARTED}
+    if current_status is None:
+        next_status['current_version'] = EARLIER_VERSION
+        migration_phase.create_migration_status(next_status)
+    else:
+        _assert_correct_migration_phase(current_status,
+                                        MIGRATION_STATUS_STARTED)
+        migration_phase.update_migration_status(next_status)
+
+
+def rolling_upgrade_complete():
+    """Mark the database phase as all nodes running new code.
+
+    This is run manually by the keystone-manage command once the
+    last keystone node is upgraded to the new code release. Any
+    tidy-up migration code can be run here, since we know that there are
+    no nodes left running the old release.
+
+    """
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_UPGRADE_COMPLETED)
+    force_migrations.tidy_up_migration()
+    next_status = {'current_phase': MIGRATION_STATUS_UPGRADE_COMPLETED}
+    migration_phase.update_migration_status(next_status)
+
+
+def rolling_restart_complete():
+    """Mark the database phase as all nodes aware of upgrade is complete.
+
+    This is run manually by the keystone-manage command once the
+    last keystone node is restarted following the setting
+    rolling_upgrade_complete.
+
+    """
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_RESTART_COMPLETED)
+    next_status = {'current_phase': MIGRATION_STATUS_RESTART_COMPLETED}
+    migration_phase.update_migration_status(next_status)
+
+
+def migration_force_complete():
+    """Tidy the database after migration.
+
+    This is run manually by the keystone-manage command once all keystone
+    nodes have been migrated to the latest release.
+
+    This method should ensure all data has been migrated to its new locations
+    as well as ensuring that any data inconsistencies that could have been
+    created during a rolling upgrade are tidied up.
+
+    """
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED)
+    force_migrations.force_data_migration()
+    next_status = {'current_phase': MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED}
+    migration_phase.update_migration_status(next_status)
+
+
+def migration_contract():
+    """Contract the database.
+
+    This is run manually by the keystone-manage command once all nodes are
+    running code that no longer looks at old tables/columns.
+
+    """
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_COMPLETED)
+    if current_status['current_version'] == EARLIER_VERSION:
+        # Nothing to do, since we didn't support contraction then
+        pass
+    else:
+        # TODO(henry-nash): Migrate contract repo here.
+        pass
+    next_status = {'current_phase': MIGRATION_STATUS_COMPLETED,
+                   'current_version': CURRENT_VERSION,
+                   'migrating_to_version': NO_VERSION}
+    migration_phase.update_migration_status(next_status)
+
+
+def migration_status():
+    """Print the status of the migration."""
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = migration_phase.get_migration_status()
+    print(PHASE_STATE_DIAGRAM[current_status['current_phase']]['help'])
