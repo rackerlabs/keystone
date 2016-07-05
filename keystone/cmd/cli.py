@@ -407,14 +407,57 @@ class DbSync(BaseApp):
                                   'now part of the main repository, '
                                   'specifying db_sync without this option '
                                   'will cause all extensions to be migrated.'))
-
+        parser.add_argument('--expand', default=False, action='store_true',
+                            help=('Migrate the database ahead of running the '
+                                  'first upgraded keystone node.'))
+        parser.add_argument('--rolling-upgrade-complete', default=False,
+                            action='store_true',
+                            help=('Confirm that all keystone nodes have been '
+                                  'upgraded to the new release.'))
+        parser.add_argument('--rolling-restart-complete', default=False,
+                            action='store_true',
+                            help=('Confirm that all keystone nodes have been '
+                                  'restart following the issuing of the '
+                                  '--rolling-upgrade-complete command.'))
+        parser.add_argument('--force-migration-complete', default=False,
+                            action='store_true',
+                            help=('Once all keystone nodes have been upgraded '
+                                  'to the latest code version, this command '
+                                  'will ensure that any data created during '
+                                  'the upgrade process is correct and has '
+                                  'indeed been migrated. This command should '
+                                  'always be run at the end of a migration - '
+                                  'even if this was a single node keystone '
+                                  'configuration.'))
+        parser.add_argument('--contract', default=False, action='store_true',
+                            help=('Remove any database tables and columns '
+                                  'that are no longer required.'))
+        parser.add_argument('--status', default=False,
+                            action='store_true',
+                            help=('Prints the current phase of any rolling '
+                                  'upgrade process that is underway, and '
+                                  'indicates the next step required.'))
         return parser
 
     @staticmethod
     def main():
         assert_not_extension(CONF.command.extension)
-        version = CONF.command.version
-        migration_helpers.sync_database_to_version(version)
+
+        if CONF.command.expand:
+            migration_helpers.migration_expand()
+        elif CONF.command.rolling_upgrade_complete:
+            migration_helpers.rolling_upgrade_complete()
+        elif CONF.command.rolling_restart_complete:
+            migration_helpers.rolling_restart_complete()
+        elif CONF.command.force_migration_complete:
+            migration_helpers.force_migration_complete()
+        elif CONF.command.contract:
+            migration_helpers.migration_contract()
+        elif CONF.command.status:
+            migration_helpers.migration_status()
+        else:
+            migration_helpers.offline_sync_database_to_version(
+                CONF.command.version)
 
 
 class DbVersion(BaseApp):
