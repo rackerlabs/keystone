@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_4538803d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-06T18:04:46Z",
+      "side": 1,
+      "message": "oh wow. This introduces pagination to keystone. Why do you need it for ecnrypting credentials? This definitely should go to another patch.",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 381,
+        "endChar": 55
+      },
+      "revId": "483c1cbc2b227d8638336c8e8221fdebd3e1b382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
