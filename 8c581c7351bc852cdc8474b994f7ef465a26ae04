@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_30515e37",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-06T03:01:51Z",
+      "side": 1,
+      "message": "Could just remove the \u0027therefore\u0027 imo.  Otherwise ++",
+      "parentUuid": "1aa78d24_0e3c8b2e",
+      "range": {
+        "startLine": 78,
+        "startChar": 50,
+        "endLine": 78,
+        "endChar": 59
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_4e4693c0",
         "filename": "keystone/conf/resource.py",
         "patchSetId": 1
@@ -129,6 +153,30 @@
       "writtenOn": "2016-07-01T23:10:29Z",
       "side": 1,
       "message": "s/therefore/thereby",
+      "range": {
+        "startLine": 90,
+        "startChar": 41,
+        "endLine": 90,
+        "endChar": 50
+      },
+      "revId": "8c581c7351bc852cdc8474b994f7ef465a26ae04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f0535637",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-06T03:01:51Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "1aa78d24_4e4693c0",
       "range": {
         "startLine": 90,
         "startChar": 41,
