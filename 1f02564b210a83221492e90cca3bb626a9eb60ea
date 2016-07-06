@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_59a2379a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-06T14:30:05Z",
+      "side": 1,
+      "message": "As an aside, I think this can be removed (since by definition domain_id is None for global roles) - but this change is outside the scope of this patch",
+      "range": {
+        "startLine": 338,
+        "startChar": 40,
+        "endLine": 338,
+        "endChar": 51
+      },
+      "revId": "1f02564b210a83221492e90cca3bb626a9eb60ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_aad34d37",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
