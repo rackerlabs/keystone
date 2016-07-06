@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_1cdb7850",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-06T15:48:18Z",
+      "side": 1,
+      "message": "The hashtag is optional, so at minimum, the commit message needs to have just:\n\n  Closes-Bug: 1594231\n\nThis should appear in the footer with the Change-Id (either before or after - it doesn\u0027t matter). A bot will then be able to track the commit against the bug and take care of Launchpad for us.",
+      "parentUuid": "3aaa91ec_a5b9e6ee",
+      "revId": "cca6364f4f7f83cf2332a2e7113488b11d9b5a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_b03322f5",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 4
