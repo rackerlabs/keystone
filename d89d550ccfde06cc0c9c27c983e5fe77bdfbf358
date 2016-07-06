@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_39976b3b",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-06T14:20:39Z",
+      "side": 1,
+      "message": "Should we pull this all out into a class so that the dictionary isn\u0027t referenced on import?",
+      "parentUuid": "3aaa91ec_6d010005",
+      "revId": "d89d550ccfde06cc0c9c27c983e5fe77bdfbf358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_132012f7",
         "filename": "keystone/conf/validation.py",
         "patchSetId": 1
