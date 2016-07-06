@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_6e282287",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-06T07:15:15Z",
+      "side": 1,
+      "message": "del \u0027both\u0027",
+      "range": {
+        "startLine": 413,
+        "startChar": 65,
+        "endLine": 413,
+        "endChar": 69
+      },
+      "revId": "6184f41c44ebd19fb4501bc31ee75aad200421ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2e33baf7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-06T07:15:15Z",
+      "side": 1,
+      "message": "They both fall into PKI category I think.",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 9
+      },
+      "revId": "6184f41c44ebd19fb4501bc31ee75aad200421ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
