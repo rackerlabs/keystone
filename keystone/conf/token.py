@@ -42,7 +42,7 @@ Amount of time a token should remain valid (in seconds).
 
 provider = cfg.StrOpt(
     'provider',
-    default='uuid',
+    default='fernet',
     help=utils.fmt("""
 Controls the token construction, validation, and revocation operations.
 Entrypoint in the keystone.token.provider namespace. Core providers are
