@@ -43,8 +43,10 @@ class Role(base.RoleDriverV9):
         # filter_limit_query() below, which will remove the filter from the
         # hints (hence ensuring our substitution is not exposed to the caller).
         for f in hints.filters:
-            if (f['name'] == 'domain_id' and f['value'] is None):
-                f['value'] = NULL_DOMAIN_ID
+            if f['name'] == 'domain_id':
+                break
+        else:
+            hints.add_filter('domain_id', NULL_DOMAIN_ID)
 
         with sql.session_for_read() as session:
             query = session.query(RoleTable)

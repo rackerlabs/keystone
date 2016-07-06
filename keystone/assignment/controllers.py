@@ -335,11 +335,7 @@ class RoleV3(controller.V3Controller):
         # global roles, so we set the domain_id filter to None.
         # NOTE(jamielennox): this is still using context_dict because it's
         # writing to the query dict. Why is it writing to the query dict?
-        params = request.context_dict['query_string']
-        if 'domain_id' not in params:
-            request.context_dict['query_string']['domain_id'] = None
-
-        if request.context_dict['query_string']['domain_id'] is not None:
+        if request.params.get('domain_id'):
             return self.list_domain_roles(request)
         else:
             return self.list_roles(request)
