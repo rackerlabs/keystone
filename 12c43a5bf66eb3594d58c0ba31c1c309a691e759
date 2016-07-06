@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_8b53a4e1",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-06T14:58:58Z",
+      "side": 1,
+      "message": "Would this be an empty string value then instead of \u0027null\u0027 or null?",
+      "revId": "12c43a5bf66eb3594d58c0ba31c1c309a691e759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
