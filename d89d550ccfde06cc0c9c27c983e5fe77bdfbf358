@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b9fa3b41",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-06T14:24:24Z",
+      "side": 1,
+      "message": "What you will have to do is create a decorator that only when called references a function like keystone.common.validation.parameter_types.get_id_string(). This way it\u0027s lazy and read the config value.",
+      "parentUuid": "1aa78d24_39976b3b",
+      "revId": "d89d550ccfde06cc0c9c27c983e5fe77bdfbf358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_132012f7",
         "filename": "keystone/conf/validation.py",
         "patchSetId": 1
