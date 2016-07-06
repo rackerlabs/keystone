@@ -153,6 +153,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_70945342",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-07-06T19:48:53Z",
+      "side": 1,
+      "message": "In a previous version of the review it was decided that adding these for consistency was the right thing to do.",
+      "parentUuid": "3aaa91ec_4bff4faa",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 68
+      },
+      "revId": "f6ee76345ce6713eb2bfff46037a4d216c67d615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af94dfe_5e92da4c",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
