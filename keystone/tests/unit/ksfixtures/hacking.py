@@ -16,6 +16,8 @@
 # test_hacking_checks test cases.
 # flake8: noqa
 
+import sys
+
 import fixtures
 
 
@@ -77,6 +79,14 @@ class HackingCode(fixtures.Fixture):
             (29, 21, 'K001'),
             (32, 11, 'K001'),
         ]}
+
+    # NOTE(browne): This is gross, but in Python 3.4 and earlier, the ast
+    # module returns the incorrect col_offset for two of the defined functions
+    # in the code sample above.
+    py_version = float('%d.%d' % (sys.version_info[0], sys.version_info[1]))
+    if py_version >= 3.5:
+        mutable_default_args['expected_errors'][12] = (28, 26, 'K001')
+        mutable_default_args['expected_errors'][14] = (32, 10, 'K001')
 
     comments_begin_with_space = {
         'code': """
