@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_f31e8d6e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2512,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-06T20:31:20Z",
+      "side": 1,
+      "message": "Would it make sense to add this same assertion for the user id?",
+      "revId": "bfa3da7f904a4bdc3160873db753a53129f98b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_53104159",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2519,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-06T20:31:20Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "bfa3da7f904a4bdc3160873db753a53129f98b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9360e902",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-06T20:31:20Z",
+      "side": 1,
+      "message": "ooo this is just *barely* under the 255 limit",
+      "revId": "bfa3da7f904a4bdc3160873db753a53129f98b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_aed65cee",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-06T20:31:20Z",
+      "side": 1,
+      "message": "Packing the username is only specific to federated fernet tokens, right? If that is the case should we just put it into the federated_info dictionary? Then the other token formatters don\u0027t have to change their method signatures for something they don\u0027t really need. The federated_info dict is essentially just a bunch of metadata about federated authentication for that user, user name could apply to that as well.",
+      "revId": "bfa3da7f904a4bdc3160873db753a53129f98b68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
