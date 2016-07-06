@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b37ffca9",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-06T13:52:50Z",
+      "side": 1,
+      "message": "This is saying it was already deprecated, which is odd",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 75
+      },
+      "revId": "6917389f1e8bc18c0e4edc5a47cf358ca40850ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
