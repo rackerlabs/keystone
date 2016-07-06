@@ -104,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_5eb97814",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-06T15:13:18Z",
+      "side": 1,
+      "message": "Minor suggestion: This could be pulled out into a constant, maybe something like PASSWORD_METHOD?",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f49305a1",
         "filename": "keystone/common/sql/migrate_repo/versions/107_add_failed_attempts_table.py",
         "patchSetId": 11
