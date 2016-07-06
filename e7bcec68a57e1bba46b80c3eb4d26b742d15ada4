@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b3243360",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-06T07:02:56Z",
+      "side": 1,
+      "message": "It\u0027s not always args[2], the code should be more clever to get what you want, for example, it\u0027s args[1] instead of args[2].\n\npls see https://github.com/openstack/keystone/blob/master/keystone/catalog/backends/sql.py#L151\n\n\nThere are more code affected that should be updated as well.\nfor example,\nhttps://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L76",
+      "range": {
+        "startLine": 435,
+        "startChar": 20,
+        "endLine": 435,
+        "endChar": 35
+      },
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_41d2665d",
         "filename": "keystone/exception.py",
         "patchSetId": 1
@@ -30,6 +53,30 @@
       "writtenOn": "2016-07-05T23:09:24Z",
       "side": 1,
       "message": "what happens if we don\u0027t pass \"name\"? There is an example where you don\u0027t pass it in the wrapper",
+      "range": {
+        "startLine": 404,
+        "startChar": 25,
+        "endLine": 404,
+        "endChar": 36
+      },
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d36c5f37",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-06T07:02:56Z",
+      "side": 1,
+      "message": "The change here can also applied to limited cases, for example, there is no \u0027name\u0027 for creating/updating region, and most update APIs doesn\u0027t need \u0027name\u0027 to be presented.",
+      "parentUuid": "1aa78d24_41d2665d",
       "range": {
         "startLine": 404,
         "startChar": 25,
