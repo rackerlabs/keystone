@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_1f6c17cf",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-06T12:36:55Z",
+      "side": 1,
+      "message": "no, this won\u0027t work, since if the user has explcitely set domain\u003dNone, we still need to patch this to be NULL_DOMAIN_ID",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 21
+      },
+      "revId": "376b4471c174e5d34d512e58e3f9a6ec2f16bb87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7fb43b34",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-06T12:36:55Z",
+      "side": 1,
+      "message": "if we add this here, how would I ever ask for all roles, whether global or not?",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 49,
+        "endChar": 57
+      },
+      "revId": "376b4471c174e5d34d512e58e3f9a6ec2f16bb87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
