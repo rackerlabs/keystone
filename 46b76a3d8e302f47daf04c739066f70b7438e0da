@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_fe5bb783",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 0,
+      "message": "Follow the indentation convention of the other block quotes-- makes whitespace easier for others to maintain later.",
+      "revId": "46b76a3d8e302f47daf04c739066f70b7438e0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

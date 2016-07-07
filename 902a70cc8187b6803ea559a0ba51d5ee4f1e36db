@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_9e48b3cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "You can wrap the body of the commit message at 79 chars.",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9e1f13b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "Be sure to include Closes-Bug: ### to the footer (either before or after the Change-Id, doesn\u0027t matter) so that the bots will automatically track this commit against the Launchpad bug.",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_becc8f35",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "disable the \"external auth method\"",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3e009f33",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "Briefly explain how to disable it -- or point to documentation on the topic (I\u0027m not sure if there is any? It\u0027s just a matter of removing \u0027external\u0027 from the `keystone.conf [auth] methods` option, though.\n\n\"Mapped plugin\" is a little informal and non-specific (it\u0027s sort of colloquial for the output of the federated login process), as there isn\u0027t actually a \"mapped plugin\" at all. Instead, just refer to \"federation\" as a whole.\n\n  External auth and federation both...",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f2592bfe",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "s/distince/distinct/",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f283eb00",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "sets it to `foo`",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_72bedbae",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "Cut the \"which\"\n\n  s/Mapping which/The federated mapping engine/",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_528c7fd9",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-07T18:23:25Z",
+      "side": 1,
+      "message": "This sort of skips the step where the external auth module also tries to handle the REMOTE_USER variable. You could trim the subsequent paragraph if you added it as an explicit step.",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
