@@ -46,6 +46,24 @@
       "revId": "3d3ce6f452dababf846b1fd1c35e813e73b3c0fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_19a7ca0b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:54:35Z",
+      "side": 1,
+      "message": "Ah yes - I see what you mean. Refactoring the test now.",
+      "parentUuid": "1aa78d24_03a47db7",
+      "revId": "3d3ce6f452dababf846b1fd1c35e813e73b3c0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
