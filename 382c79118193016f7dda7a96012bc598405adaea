@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_086c8806",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2488,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T18:53:15Z",
+      "side": 1,
+      "message": "why is this only needed for fernet ?",
+      "range": {
+        "startLine": 2485,
+        "startChar": 0,
+        "endLine": 2488,
+        "endChar": 26
+      },
+      "revId": "382c79118193016f7dda7a96012bc598405adaea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a8c1f4e5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T18:53:15Z",
+      "side": 1,
+      "message": "why NotFound ? what was not found ? perhaps this should be exception.TokenNotFound ?",
+      "range": {
+        "startLine": 361,
+        "startChar": 32,
+        "endLine": 361,
+        "endChar": 40
+      },
+      "revId": "382c79118193016f7dda7a96012bc598405adaea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
