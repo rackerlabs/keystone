@@ -57,6 +57,23 @@ class Mapping(base.MappingDriverV8):
             except sql.NotFound:
                 return None
 
+    def get_domain_mapping_list(self, domain_id):
+        with sql.session_for_read() as session:
+            return session.query(IDMapping).filter_by(domain_id=domain_id)
+
+    def bulk_create_id_mappings(self, local_entities):
+        mapping_refs = []
+        public_ids = []
+        for entity in local_entities:
+            if 'public_id' not in entity:
+                public_id = self.id_generator_api.generate_public_ID(entity)
+                entity['public_id'] = public_id
+            public_ids.append(entity['public_id'])
+            mapping_refs.append(IDMapping.from_dict(entity))
+        with sql.session_for_write() as session:
+            session.bulk_save_objects(mapping_refs)
+        return public_ids
+
     def get_id_mapping(self, public_id):
         with sql.session_for_read() as session:
             mapping_ref = session.query(IDMapping).get(public_id)
