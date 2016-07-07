@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_50d665f1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-07T06:12:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_09effcb0",
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_af28d5ef",
         "filename": "keystone/identity/core.py",
         "patchSetId": 10
@@ -125,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_70dba11b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-07T06:12:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_89100caa",
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_8b1ba472",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 10
@@ -148,6 +184,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b007c980",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-07T06:12:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_8b1ba472",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 75
+      },
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_eb7ea868",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 10
@@ -159,6 +219,30 @@
       "writtenOn": "2016-07-06T14:57:45Z",
       "side": 1,
       "message": "it seems to me that this check has nothing to do with unicode. Maybe it should be moved to another test?",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 74
+      },
+      "revId": "80e56dd7aef1b1ecb2cebe0ca87e8228be541de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_103e9d27",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-07T06:12:16Z",
+      "side": 1,
+      "message": "This part is needed for the cache test, because some cache item used the local_id as key, so it should be test.\nAnd I add some comments for it, to make it more clear.",
+      "parentUuid": "1aa78d24_eb7ea868",
       "range": {
         "startLine": 143,
         "startChar": 0,
