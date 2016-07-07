@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_72238056",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-07T16:48:04Z",
+      "side": 1,
+      "message": "thanks for the explanation",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 68
+      },
+      "revId": "8645d57165527f729f890d724f9ff0fa541b4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
