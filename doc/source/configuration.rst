@@ -224,6 +224,12 @@ specifying the domain name:
     backend. This could be either the default driver or a single
     domain-specific backend, perhaps for storing service users in a
     predominantly LDAP installation.
+    
+.. NOTE::
+
+    Keystone has recently deprecated the keystone-manage domain_config_upload
+    option. The keystone team recommends setting domain config options via the
+    API instead.
 
 Due to the need for user and group IDs to be unique across an OpenStack
 installation and for Keystone to be able to deduce which domain and backend to
