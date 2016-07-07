@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_a4e781aa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 21465
+      },
+      "writtenOn": "2016-07-07T10:41:42Z",
+      "side": 1,
+      "message": "I think you can just specify user_id, password and trust_id to create trust scoped token. No need to create unscoped token.",
+      "range": {
+        "startLine": 1117,
+        "startChar": 12,
+        "endLine": 1117,
+        "endChar": 33
+      },
+      "revId": "db13522c6b78f09c24eb83a83a6b7c54af9d552e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
