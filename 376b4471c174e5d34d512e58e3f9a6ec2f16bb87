@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_124fc537",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-07T03:41:10Z",
+      "side": 1,
+      "message": "woops, that\u0027s just a mistake, there would need to be an additional \n\nif value is None:\n   value \u003d NULL_DOMAIN_ID",
+      "parentUuid": "1aa78d24_1f6c17cf",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 21
+      },
+      "revId": "376b4471c174e5d34d512e58e3f9a6ec2f16bb87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7fb43b34",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 1
