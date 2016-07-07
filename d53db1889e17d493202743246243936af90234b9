@@ -22,6 +22,24 @@
       "revId": "d53db1889e17d493202743246243936af90234b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0b3bdd39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T20:57:57Z",
+      "side": 1,
+      "message": "It could close the bug - but the bug would still be present if caching is enabled. I\u0027m working on a few more patches to fix that case, too.",
+      "parentUuid": "1aa78d24_cb855508",
+      "revId": "d53db1889e17d493202743246243936af90234b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
