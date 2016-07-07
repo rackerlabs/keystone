@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_3471d678",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-07-07T21:52:50Z",
+      "side": 1,
+      "message": "Invalidate before notifications, a failure in notifications does not make the cache continued to be valid.\n\nIn short, move this to top of the finally block and isolate into it\u0027s own try/except so a failure to invalidate doesn\u0027t block notifications.\n\nThis theoretically could be moved to under 409, maybe all invalidates should be isolated into their own explicit try-blocks as well?",
+      "revId": "3546a0e60f93cc48d511840f486d30fdae2d9d83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
