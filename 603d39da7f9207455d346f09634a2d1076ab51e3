@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_31956888",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-07T21:22:47Z",
+      "side": 1,
+      "message": "(nit) ^ :)",
+      "parentUuid": "1aa78d24_4b4a05ae",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "603d39da7f9207455d346f09634a2d1076ab51e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_0efe4b38",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 3
