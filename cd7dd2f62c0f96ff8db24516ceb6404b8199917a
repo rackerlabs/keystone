@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_3150e40a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "is this necessary ( both assignments) ?",
+      "range": {
+        "startLine": 1079,
+        "startChar": 0,
+        "endLine": 1089,
+        "endChar": 43
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_26b9cccc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "this and the comments above tell what the code do, which is clear, they\u0027re not necessary",
+      "range": {
+        "startLine": 1091,
+        "startChar": 8,
+        "endLine": 1091,
+        "endChar": 50
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e64d04c5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "project-scoped",
+      "range": {
+        "startLine": 1109,
+        "startChar": 22,
+        "endLine": 1109,
+        "endChar": 28
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_46d338d5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "project-scoped",
+      "range": {
+        "startLine": 1116,
+        "startChar": 37,
+        "endLine": 1116,
+        "endChar": 43
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_86d9a0f5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "this is clear, doesn\u0027t need a comment",
+      "range": {
+        "startLine": 1119,
+        "startChar": 8,
+        "endLine": 1119,
+        "endChar": 38
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_261b8c82",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T13:53:59Z",
+      "side": 1,
+      "message": "what happens if the project is on trustor\u0027s domain ? as the trustee is alone in another doamin (that will be disabled) I expect the trust to be invalid too (since the trustee can\u0027t use tokens anymore)",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
