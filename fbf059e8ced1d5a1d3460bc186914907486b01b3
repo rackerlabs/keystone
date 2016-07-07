@@ -16,6 +16,24 @@
       "revId": "fbf059e8ced1d5a1d3460bc186914907486b01b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ff112253",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-07T02:57:42Z",
+      "side": 1,
+      "message": "Sure will do in next patch set.",
+      "parentUuid": "1aa78d24_c8563305",
+      "revId": "fbf059e8ced1d5a1d3460bc186914907486b01b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
