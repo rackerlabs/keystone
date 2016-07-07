@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0b22bd01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-07T21:22:07Z",
+      "side": 1,
+      "message": "nit: this seems to be a little too long",
+      "range": {
+        "startLine": 9,
+        "startChar": 71,
+        "endLine": 9,
+        "endChar": 75
+      },
+      "revId": "603d39da7f9207455d346f09634a2d1076ab51e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4b4a05ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-07T21:22:07Z",
+      "side": 1,
+      "message": "Closes-Bug: #1563454",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "603d39da7f9207455d346f09634a2d1076ab51e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0efe4b38",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-07T21:22:07Z",
+      "side": 1,
+      "message": "To disable this, remove `external` from the `methods` setting in `keystone.conf`",
+      "range": {
+        "startLine": 43,
+        "startChar": 16,
+        "endLine": 43,
+        "endChar": 73
+      },
+      "revId": "603d39da7f9207455d346f09634a2d1076ab51e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1164ace3",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-07T21:22:07Z",
+      "side": 1,
+      "message": "To me it would be clearer to first describe the problem and then give the solution at the end. Also, I think you can consolidate the bullets into a paragraph like this:\nhttp://paste.openstack.org/show/527391/",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 59
+      },
+      "revId": "603d39da7f9207455d346f09634a2d1076ab51e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
