@@ -37,6 +37,28 @@ provided by Keystone:
   the domain for the user. If this variable is not present, the configured
   default domain will be used. The ``REMOTE_USER`` variable is the username.
 
+.. caution:: You should disable external auth if you are currently using
+             federation. External auth and the Mapped plugin used by
+             federation both use the ``REMOTE_USER`` variable. Since both the
+             mapped and external plugin are being invoked to validate
+             attributes in the request environment, it can cause conflicts. For
+             example, imagine the following scenario:
+
+             * There are two distince users with the same username "foo", one
+               in the "Default" domain while the other is in the "BAR" domain
+
+             * The external Federation modules (i.e. mod_shib) sets the
+               ``REMOTE_USER`` attribute
+
+             * Mapping which maps the incoming identity to "foo" in the "BAR"
+               domain
+
+             This results in user_id conflict because the first "external"
+             plugin sets the user_id for user "foo" in the "Default" domain,
+             while the Mapped plugin is trying to set the user_id for "foo"
+             in the "BAR" domain.
+
+
 Using HTTPD authentication
 ==========================
 
