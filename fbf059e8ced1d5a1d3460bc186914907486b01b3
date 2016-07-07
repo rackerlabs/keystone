@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_c8563305",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-07T01:53:32Z",
+      "side": 1,
+      "message": "please add why you changed the response codes from string to int and why it was needed for py35",
+      "revId": "fbf059e8ced1d5a1d3460bc186914907486b01b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
