@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_688d4cd2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-07T18:52:07Z",
+      "side": 1,
+      "message": "yeah, add:\n\nCloses-Bug: 1563454\n\nto the message near Change-Id",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9e48b3cd",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -47,6 +64,29 @@
       "writtenOn": "2016-07-07T18:23:25Z",
       "side": 1,
       "message": "disable the \"external auth method\"",
+      "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_88a99826",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-07T18:52:07Z",
+      "side": 1,
+      "message": "look at line 100 below for an example of how to format this block",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 12
+      },
       "revId": "902a70cc8187b6803ea559a0ba51d5ee4f1e36db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
