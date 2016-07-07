@@ -66,5 +66,13 @@ class Request(webob.Request):
 
         return self._context_dict
 
+    @property
+    def is_admin(self):
+        return self.context_dict.get('is_admin', False)
+
+    @is_admin.setter
+    def is_admin(self, value):
+        self.context_dict['is_admin'] = True
+
     auth_type = environ_getter('AUTH_TYPE', None)
     remote_domain = environ_getter('REMOTE_DOMAIN', None)
