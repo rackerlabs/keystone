@@ -29,6 +29,7 @@ from keystone.i18n import _, _LE, _LW
 from keystone import notifications
 from keystone.resource.backends import base
 from keystone.resource.config_backends import base as config_base
+from keystone.token import provider as token_provider
 
 CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
@@ -417,6 +418,7 @@ class Manager(manager.Manager):
                 if original_project_enabled and not project_enabled:
                     notifications.Audit.disabled(self._DOMAIN, project_id,
                                                  public=False)
+                token_provider.COMPUTED_TOKENS_REGION.invalidate()
 
         return ret
 
