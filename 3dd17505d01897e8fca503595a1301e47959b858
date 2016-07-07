@@ -22,6 +22,30 @@
       "revId": "3dd17505d01897e8fca503595a1301e47959b858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_540e508c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-07T09:13:56Z",
+      "side": 1,
+      "message": "The thing i see is that if we always set this, then there\u0027s no option for the user to do anything else. The backend won\u0027t know the difference here so it would be just a default.\n\nAnyway, fixing that isn\u0027t part of this review i just wanted to make sure i understood what was going on for the refactor.",
+      "parentUuid": "1aa78d24_28d6cd4e",
+      "range": {
+        "startLine": 430,
+        "startChar": 10,
+        "endLine": 433,
+        "endChar": 69
+      },
+      "revId": "3dd17505d01897e8fca503595a1301e47959b858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
