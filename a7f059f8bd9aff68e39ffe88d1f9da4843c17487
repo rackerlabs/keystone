@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_69fc3bb8",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2483,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "We could\u0027ve simply used @wip in this case, but I am fine either way, let\u0027s get this fixed in a follow up",
+      "revId": "a7f059f8bd9aff68e39ffe88d1f9da4843c17487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
