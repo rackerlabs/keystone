@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_28d6cd4e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-07T07:46:43Z",
+      "side": 1,
+      "message": "so I\u0027m OK with this...and maybe I\u0027m being dumb at missing why you think the backend is doing something unusual here...I don\u0027t believe it is:\n\nThe domain_id attribute in the role entity is defined (at the manager level) as:\n\nNone - means this is a global role\n\u003cvalid domain_id\u003e - means this is a domain specific role for the named domain\n\nLike any other attribute filter, if you don\u0027t define it then you expect all entities to be returned regardless of their value of that attribute. If the attribute is defined in the filter, you expect a collection of entities that match that attribute value. \"None\" is just a supported attribute value, like any other.\n\nThe subtlety is that in the API today (for backward compatibility reasons) we don\u0027t want to allow you to fetch all roles, regardless of whether they are global or not - hence this special handling of the domain_id setting is in the controller (since that\u0027s where an API restriction like this should be handled).",
+      "range": {
+        "startLine": 430,
+        "startChar": 10,
+        "endLine": 433,
+        "endChar": 69
+      },
+      "revId": "3dd17505d01897e8fca503595a1301e47959b858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
