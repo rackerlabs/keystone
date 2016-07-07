@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_ac3d9bc5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-07T14:05:17Z",
+      "side": 1,
+      "message": "differing opinions on that sort of thing....anything that eases the reading of code is good, imho",
+      "parentUuid": "1aa78d24_26b9cccc",
+      "range": {
+        "startLine": 1091,
+        "startChar": 8,
+        "endLine": 1091,
+        "endChar": 50
+      },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_e64d04c5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
