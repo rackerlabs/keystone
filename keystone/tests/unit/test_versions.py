@@ -584,14 +584,14 @@ V3_JSON_HOME_RESOURCES = {
         '/domains/{domain_id}/config',
         'href-vars': {
             'domain_id': json_home.Parameters.DOMAIN_ID},
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
     json_home.build_v3_resource_relation('domain_config_group'): {
         'href-template':
         '/domains/{domain_id}/config/{group}',
         'href-vars': {
             'domain_id': json_home.Parameters.DOMAIN_ID,
             'group': json_home.build_v3_parameter_relation('config_group')},
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
     json_home.build_v3_resource_relation('domain_config_option'): {
         'href-template':
         '/domains/{domain_id}/config/{group}/{option}',
@@ -599,21 +599,21 @@ V3_JSON_HOME_RESOURCES = {
             'domain_id': json_home.Parameters.DOMAIN_ID,
             'group': json_home.build_v3_parameter_relation('config_group'),
             'option': json_home.build_v3_parameter_relation('config_option')},
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
     json_home.build_v3_resource_relation('domain_config_default'): {
         'href': '/domains/config/default',
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
     json_home.build_v3_resource_relation('domain_config_default_group'): {
         'href-template': '/domains/config/{group}/default',
         'href-vars': {
             'group': json_home.build_v3_parameter_relation('config_group')},
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
     json_home.build_v3_resource_relation('domain_config_default_option'): {
         'href-template': '/domains/config/{group}/{option}/default',
         'href-vars': {
             'group': json_home.build_v3_parameter_relation('config_group'),
             'option': json_home.build_v3_parameter_relation('config_option')},
-        'hints': {'status': 'experimental'}},
+        'hints': {'status': 'stable'}},
 }
 
 
