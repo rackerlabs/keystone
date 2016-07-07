@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_06fd996d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T19:37:17Z",
+      "side": 1,
+      "message": "Because a callback is registered that will go through and delete uuid tokens when a domain is disabled. This invalidates the cache when the uuid provider is used.\n\nhttps://github.com/openstack/keystone/blob/5f7377f5abaf46e491d9c580ec59547cd8478aa3/keystone/token/provider.py#L155-L158\nhttps://github.com/openstack/keystone/blob/5f7377f5abaf46e491d9c580ec59547cd8478aa3/keystone/token/provider.py#L474-L478\n\nThose methods should be made more generic for fernet.",
+      "parentUuid": "1aa78d24_086c8806",
+      "revId": "382c79118193016f7dda7a96012bc598405adaea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_a8c1f4e5",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 361,
         "endChar": 40
       },
+      "revId": "382c79118193016f7dda7a96012bc598405adaea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c64c31a0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T19:37:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_a8c1f4e5",
       "revId": "382c79118193016f7dda7a96012bc598405adaea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
