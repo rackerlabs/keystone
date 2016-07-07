@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_0302bd09",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_3150e40a",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_26b9cccc",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_71254c5a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_26b9cccc",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_e64d04c5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
@@ -89,6 +125,24 @@
         "endLine": 1109,
         "endChar": 28
       },
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f19e5c61",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_e64d04c5",
       "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -118,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_d199a07a",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_46d338d5",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_86d9a0f5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
@@ -141,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_911ef809",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_86d9a0f5",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_261b8c82",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 3
@@ -152,6 +242,24 @@
       "writtenOn": "2016-07-07T13:53:59Z",
       "side": 1,
       "message": "what happens if the project is on trustor\u0027s domain ? as the trustee is alone in another doamin (that will be disabled) I expect the trust to be invalid too (since the trustee can\u0027t use tokens anymore)",
+      "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_40b5db7b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-07T14:25:41Z",
+      "side": 1,
+      "message": "correct",
+      "parentUuid": "1aa78d24_261b8c82",
       "revId": "cd7dd2f62c0f96ff8db24516ceb6404b8199917a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
