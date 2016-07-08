@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_3bfebe05",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:32:24Z",
+      "side": 1,
+      "message": "why is an ID needed ? see the example of role assignments, they don\u0027t have an ID. Just make (\u0027parent_id\u0027, \u0027child_id\u0027) unique",
+      "range": {
+        "startLine": 290,
+        "startChar": 18,
+        "endLine": 290,
+        "endChar": 24
+      },
+      "revId": "c0e6baeb48fc929920350f8ba71de5542420e9a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
