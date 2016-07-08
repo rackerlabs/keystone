@@ -45,6 +45,30 @@
       "revId": "8645d57165527f729f890d724f9ff0fa541b4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_03a0d4a4",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-08T07:41:49Z",
+      "side": 1,
+      "message": "OK, I\u0027ll believe you! Although in that case I\u0027m unsure how it worked before? i.e. when the request class set context_dict[\u0027query_string\u0027] \u003d dict(self.parms.items())",
+      "parentUuid": "1aa78d24_54245dc5",
+      "range": {
+        "startLine": 92,
+        "startChar": 23,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "8645d57165527f729f890d724f9ff0fa541b4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
