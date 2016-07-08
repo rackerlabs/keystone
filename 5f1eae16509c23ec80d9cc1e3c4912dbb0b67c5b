@@ -16,6 +16,24 @@
       "revId": "5f1eae16509c23ec80d9cc1e3c4912dbb0b67c5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7d5796ca",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-08T16:03:14Z",
+      "side": 1,
+      "message": "We discussed this in the Keystone weekly meeting and agreed 1 cycle was enough.",
+      "parentUuid": "1aa78d24_5d245aae",
+      "revId": "5f1eae16509c23ec80d9cc1e3c4912dbb0b67c5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
