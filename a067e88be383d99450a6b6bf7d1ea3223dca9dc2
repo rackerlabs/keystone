@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_54d0ddf7",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T01:06:24Z",
+      "side": 1,
+      "message": "looks like these need to be removed, not changed to \"stable\"; if no status is present, it defaults to stable",
+      "range": {
+        "startLine": 587,
+        "startChar": 8,
+        "endLine": 587,
+        "endChar": 37
+      },
+      "revId": "a067e88be383d99450a6b6bf7d1ea3223dca9dc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
