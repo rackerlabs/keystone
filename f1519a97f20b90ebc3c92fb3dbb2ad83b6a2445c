@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_be92a19d",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T13:35:09Z",
+      "side": 0,
+      "message": "I liked having this is a separate line, but I am fine either way",
+      "range": {
+        "startLine": 1171,
+        "startChar": 12,
+        "endLine": 1171,
+        "endChar": 49
+      },
+      "revId": "f1519a97f20b90ebc3c92fb3dbb2ad83b6a2445c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
