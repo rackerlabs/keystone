@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_8da99827",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-08T03:30:44Z",
+      "side": 1,
+      "message": "a copy of ref is needed here.",
+      "revId": "cab12d6e77d8dd22a6c5cb4029bc480652c1df10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2d2184b5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-08T03:30:44Z",
+      "side": 1,
+      "message": "a copy of the ref list should be returned.",
+      "revId": "cab12d6e77d8dd22a6c5cb4029bc480652c1df10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
