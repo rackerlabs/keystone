@@ -905,8 +905,7 @@ class RoleAssignmentV3(controller.V3Controller):
         params = request.params
         effective = 'effective' in params and (
             self.query_filter_is_true(params['effective']))
-        include_names = ('include_names' in params and
-                         self.query_filter_is_true(params['include_names']))
+        include_names = ('include_names' in params)
 
         if 'scope.OS-INHERIT:inherited_to' in params:
             inherited = (
