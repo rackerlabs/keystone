@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_5d245aae",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T15:59:56Z",
+      "side": 1,
+      "message": "Do we have a requirement to keep these interfaces around for 2 cycles?",
+      "revId": "5f1eae16509c23ec80d9cc1e3c4912dbb0b67c5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
