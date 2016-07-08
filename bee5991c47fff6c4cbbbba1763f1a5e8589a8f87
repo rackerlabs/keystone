@@ -22,6 +22,53 @@
       "revId": "bee5991c47fff6c4cbbbba1763f1a5e8589a8f87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_fb8f1673",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:35:43Z",
+      "side": 1,
+      "message": "Yes please remove this, it\u0027s not a manager :)",
+      "parentUuid": "1aa78d24_5c7b578c",
+      "range": {
+        "startLine": 993,
+        "startChar": 0,
+        "endLine": 993,
+        "endChar": 38
+      },
+      "revId": "bee5991c47fff6c4cbbbba1763f1a5e8589a8f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7b25e65a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:35:43Z",
+      "side": 1,
+      "message": "perhaps there is a better name for this ? also, how can we gather data visualize the performance gain of the closure tables ?",
+      "range": {
+        "startLine": 1018,
+        "startChar": 8,
+        "endLine": 1018,
+        "endChar": 16
+      },
+      "revId": "bee5991c47fff6c4cbbbba1763f1a5e8589a8f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
