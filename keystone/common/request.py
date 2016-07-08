@@ -73,6 +73,21 @@ class Request(webob.Request):
     def auth_context(self):
         return self.environ.get(authorization.AUTH_CONTEXT_ENV, {})
 
+    def assert_authenticated(self):
+        """Ensure that the current request has been authenticated."""
+        if not self.context:
+            LOG.warning(_LW('An authenticated call was made and there is '
+                            'no request.context. This means the '
+                            'auth_context middleware is not in place. You '
+                            'must have this middleware in your pipeline '
+                            'to perform authenticated calls'))
+            raise exception.Unauthorized()
+
+        if not self.context.authenticated:
+            # auth_context didn't decode anything we can use
+            raise exception.Unauthorized()
+
+
     auth_type = environ_getter('AUTH_TYPE', None)
     remote_domain = environ_getter('REMOTE_DOMAIN', None)
     context = environ_getter(context.REQUEST_CONTEXT_ENV, None)
