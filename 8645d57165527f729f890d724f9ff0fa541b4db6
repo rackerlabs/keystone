@@ -22,6 +22,29 @@
       "revId": "8645d57165527f729f890d724f9ff0fa541b4db6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_54245dc5",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-08T01:19:29Z",
+      "side": 1,
+      "message": "note to henry: mixed() here returns a dict like the tests expect rather than .items() which returns a list",
+      "range": {
+        "startLine": 92,
+        "startChar": 23,
+        "endLine": 92,
+        "endChar": 30
+      },
+      "revId": "8645d57165527f729f890d724f9ff0fa541b4db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
