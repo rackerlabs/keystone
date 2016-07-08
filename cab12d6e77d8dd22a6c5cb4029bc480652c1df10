@@ -69,6 +69,29 @@
       "revId": "cab12d6e77d8dd22a6c5cb4029bc480652c1df10",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dcfb4246",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-08T10:17:08Z",
+      "side": 1,
+      "message": "race condition is awaiting here",
+      "range": {
+        "startLine": 654,
+        "startChar": 0,
+        "endLine": 655,
+        "endChar": 27
+      },
+      "revId": "cab12d6e77d8dd22a6c5cb4029bc480652c1df10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
