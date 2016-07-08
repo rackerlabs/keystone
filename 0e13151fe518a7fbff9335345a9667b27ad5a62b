@@ -22,6 +22,52 @@
       "revId": "0e13151fe518a7fbff9335345a9667b27ad5a62b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e3c3f688",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T13:14:53Z",
+      "side": 1,
+      "message": "the only nit I have it to wrap this in a backtick too. `BAR`",
+      "range": {
+        "startLine": 48,
+        "startChar": 65,
+        "endLine": 48,
+        "endChar": 70
+      },
+      "revId": "0e13151fe518a7fbff9335345a9667b27ad5a62b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c3c07a7f",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T13:14:53Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 54,
+        "startChar": 59,
+        "endLine": 54,
+        "endChar": 62
+      },
+      "revId": "0e13151fe518a7fbff9335345a9667b27ad5a62b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
