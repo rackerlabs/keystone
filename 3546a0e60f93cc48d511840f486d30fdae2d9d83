@@ -16,6 +16,24 @@
       "revId": "3546a0e60f93cc48d511840f486d30fdae2d9d83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_fbe6f642",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T14:35:47Z",
+      "side": 1,
+      "message": "I wanted to keep the cache invalidation under the if block on line 418 because that is where we check if we disabled a domain. If I move the cache invalidation up to line 409, we aren\u0027t sure if the domain was disabled unless we restructure the if statements somehow. I can move the above the notification on line 419.",
+      "parentUuid": "1aa78d24_3471d678",
+      "revId": "3546a0e60f93cc48d511840f486d30fdae2d9d83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
