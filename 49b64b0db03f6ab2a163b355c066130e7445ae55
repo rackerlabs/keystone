@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ad661427",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T03:00:35Z",
+      "side": 1,
+      "message": "this should also be oslo.cache\n\n  oslo_cache.mongo",
+      "range": {
+        "startLine": 506,
+        "startChar": 8,
+        "endLine": 506,
+        "endChar": 28
+      },
+      "revId": "49b64b0db03f6ab2a163b355c066130e7445ae55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
