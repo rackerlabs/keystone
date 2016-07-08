@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_544ee796",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T21:30:36Z",
+      "side": 1,
+      "message": "should be in backticks ``keystone-manage...``",
+      "range": {
+        "startLine": 230,
+        "startChar": 41,
+        "endLine": 230,
+        "endChar": 77
+      },
+      "revId": "f3759b8aa9ccffb6e55388e245e94f95fb2e2490",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_34587b56",
+        "filename": "releasenotes/notes/bp-domain-config-as-stable-716ca5ab33c0cc42.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T21:30:36Z",
+      "side": 1,
+      "message": "more backticks",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "f3759b8aa9ccffb6e55388e245e94f95fb2e2490",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_14557f1c",
+        "filename": "releasenotes/notes/bp-domain-config-as-stable-716ca5ab33c0cc42.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-08T21:30:36Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 10,
+        "startChar": 60,
+        "endLine": 10,
+        "endChar": 80
+      },
+      "revId": "f3759b8aa9ccffb6e55388e245e94f95fb2e2490",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
