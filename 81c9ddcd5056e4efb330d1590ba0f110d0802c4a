@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e0ac7537",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-08T19:44:34Z",
+      "side": 1,
+      "message": "Can you add a test case for this?",
+      "range": {
+        "startLine": 419,
+        "startChar": 20,
+        "endLine": 426,
+        "endChar": 50
+      },
+      "revId": "81c9ddcd5056e4efb330d1590ba0f110d0802c4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
