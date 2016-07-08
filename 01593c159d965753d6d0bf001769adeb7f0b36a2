@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_246ce49b",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:06:06Z",
+      "side": 1,
+      "message": "What does adding these fixtures  buy us ? I can\u0027t see any code being re-used or reduced",
+      "range": {
+        "startLine": 520,
+        "startChar": 8,
+        "endLine": 520,
+        "endChar": 74
+      },
+      "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
