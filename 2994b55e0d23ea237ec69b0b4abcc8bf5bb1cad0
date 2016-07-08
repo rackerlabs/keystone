@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b4d0ebca",
+        "filename": "releasenotes/notes/bp-domain-config-as-stable-716ca5ab33c0cc42.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-08T21:26:07Z",
+      "side": 1,
+      "message": "Looks like you have an extra space here.",
+      "range": {
+        "startLine": 5,
+        "startChar": 54,
+        "endLine": 5,
+        "endChar": 55
+      },
+      "revId": "2994b55e0d23ea237ec69b0b4abcc8bf5bb1cad0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
