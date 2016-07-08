@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ddc04a2d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T16:07:40Z",
+      "side": 1,
+      "message": "We\u0027ve agreed to only keeping these around for one cycle?",
+      "revId": "093f2c207bd3ae6d09e0cef8210a0215486a4f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
