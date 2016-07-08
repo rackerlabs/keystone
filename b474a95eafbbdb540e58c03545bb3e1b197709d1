@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_c74a3d27",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T15:38:27Z",
+      "side": 1,
+      "message": "mapping*",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8798356c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T15:38:27Z",
+      "side": 1,
+      "message": "These arguments can\u0027t be passed as kwargs can they? \n\n    self._get_public_id.invalidate(self, domain_id\u003dlocal_entity[\u0027domain_id\u0027], ...)",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_87aaf583",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T15:38:27Z",
+      "side": 1,
+      "message": "How often do we expect people to purge mappings? This seems like an infrequent operation.",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_672a692e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-08T15:38:27Z",
+      "side": 1,
+      "message": "Can\u0027t this be done with: \n\n    self.get_id_mapping.invalidate(self, public_id)\n\nOr don\u0027t we do it that way because we don\u0027t have the public_id available?",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
