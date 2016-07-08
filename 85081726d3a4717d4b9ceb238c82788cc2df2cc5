@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_1e311eed",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2510,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-08T20:17:55Z",
+      "side": 1,
+      "message": "should be assertEqual(expected, actual)",
+      "range": {
+        "startLine": 2510,
+        "startChar": 13,
+        "endLine": 2510,
+        "endChar": 24
+      },
+      "revId": "85081726d3a4717d4b9ceb238c82788cc2df2cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9e722eac",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2517,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-08T20:17:55Z",
+      "side": 1,
+      "message": "should be assertEqual(expected, actual)",
+      "range": {
+        "startLine": 2517,
+        "startChar": 13,
+        "endLine": 2517,
+        "endChar": 24
+      },
+      "revId": "85081726d3a4717d4b9ceb238c82788cc2df2cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
