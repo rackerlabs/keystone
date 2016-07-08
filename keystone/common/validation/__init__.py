@@ -14,6 +14,8 @@
 import functools
 import inspect
 
+import six
+
 from keystone.common.validation import validators
 from keystone import exception
 from keystone.i18n import _
@@ -37,7 +39,10 @@ def validated(request_body_schema, resource_to_validate):
     schema_validator = validators.SchemaValidator(request_body_schema)
 
     def add_validator(func):
-        argspec = inspect.getargspec(func)
+        if six.PY2:
+            argspec = inspect.getargspec(func)
+        else:
+            argspec = inspect.getfullargspec(func)
         try:
             arg_index = argspec.args.index(resource_to_validate)
         except ValueError:
