@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_f8c39c36",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:24:54Z",
+      "side": 1,
+      "message": "this is not used",
+      "range": {
+        "startLine": 276,
+        "startChar": 8,
+        "endLine": 276,
+        "endChar": 15
+      },
+      "revId": "a60040d45b45e1cb54314c0ee8dfa6ade2741979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_38dc0418",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T14:24:54Z",
+      "side": 1,
+      "message": "perhaps this should be view.request ?",
+      "range": {
+        "startLine": 300,
+        "startChar": 18,
+        "endLine": 300,
+        "endChar": 25
+      },
+      "revId": "a60040d45b45e1cb54314c0ee8dfa6ade2741979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
