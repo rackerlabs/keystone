@@ -48,6 +48,53 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a3828ec6",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T13:22:37Z",
+      "side": 1,
+      "message": "So we\u0027d wrap \"Default\" too ?",
+      "parentUuid": "1aa78d24_e3c3f688",
+      "range": {
+        "startLine": 48,
+        "startChar": 65,
+        "endLine": 48,
+        "endChar": 70
+      },
+      "revId": "0e13151fe518a7fbff9335345a9667b27ad5a62b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c3223a01",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-08T13:22:37Z",
+      "side": 1,
+      "message": "(nit) different",
+      "range": {
+        "startLine": 53,
+        "startChar": 66,
+        "endLine": 53,
+        "endChar": 74
+      },
+      "revId": "0e13151fe518a7fbff9335345a9667b27ad5a62b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c3c07a7f",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 4
