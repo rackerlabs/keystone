@@ -1863,3 +1863,22 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase,
         self._domain_role_management_cases(
             self.domainA['id'], read_status_OK=True,
             expected=exception.ForbiddenAction.code)
+
+    @utils.wip('waiting on bug #1593813')
+    def test_implied_domain_specific_roles_through_rest_api(self):
+        domain_admin_auth = self.build_authentication_request(
+            user_id=self.domain_admin_user['id'],
+            password=self.domain_admin_user['password'],
+            domain_id=self.domainA['id'])
+        admin_token = self.get_requested_token(domain_admin_auth)
+
+        appdev_role = unit.new_role_ref(domain_id=self.domainA['id'])
+        self.post('/roles', token=admin_token, body={'role': appdev_role})
+
+        appadmin_role = unit.new_role_ref(domain_id=self.domainA['id'])
+        self.post('/roles', token=admin_token, body={'role': appadmin_role})
+
+        self.put('/roles/%s/implies/%s'
+                 % (appadmin_role['id'], appdev_role['id']),
+                 token=admin_token,
+                 expected_status=http_client.CREATED)
