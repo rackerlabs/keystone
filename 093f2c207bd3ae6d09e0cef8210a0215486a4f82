@@ -16,6 +16,24 @@
       "revId": "093f2c207bd3ae6d09e0cef8210a0215486a4f82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1dc012e0",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-08T16:11:24Z",
+      "side": 1,
+      "message": "Yes, in the weekly Keystone meeting.",
+      "parentUuid": "1aa78d24_ddc04a2d",
+      "revId": "093f2c207bd3ae6d09e0cef8210a0215486a4f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
