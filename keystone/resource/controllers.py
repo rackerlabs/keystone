@@ -295,11 +295,9 @@ class ProjectV3(controller.V3Controller):
                     'params at the same time.')
             raise exception.ValidationError(msg)
 
-        user_id = request.auth_context.get('user_id')
-
         if parents_as_list:
             parents = self.resource_api.list_project_parents(
-                ref['id'], user_id)
+                ref['id'], request.context.user_id)
             ref['parents'] = [ProjectV3.wrap_member(context, p)
                               for p in parents]
         elif parents_as_ids:
