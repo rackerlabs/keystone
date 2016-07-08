@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_2fe78641",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 20089
+      },
+      "writtenOn": "2016-07-08T21:49:58Z",
+      "side": 1,
+      "message": "I figured there was a better way to do this.  I\u0027ll work on that implementation then.\nI used args[2] because when this decorator is called on a user it has the actual user object in args[2], which allows me to grab the name of the user being checked.  I agree that is a little hard to glean from this.  I thought about making it easier by adjusting how the decorator was called, but you can\u0027t pass values from the function to the decorator except for args.  If there is a better way to do this let me know.",
+      "parentUuid": "1aa78d24_e1e2722e",
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_b3243360",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2016-07-06T07:02:56Z",
       "side": 1,
       "message": "It\u0027s not always args[2], the code should be more clever to get what you want, for example, it\u0027s args[1] instead of args[2].\n\npls see https://github.com/openstack/keystone/blob/master/keystone/catalog/backends/sql.py#L151\n\n\nThere are more code affected that should be updated as well.\nfor example,\nhttps://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L76",
+      "range": {
+        "startLine": 435,
+        "startChar": 20,
+        "endLine": 435,
+        "endChar": 35
+      },
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_af089629",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 20089
+      },
+      "writtenOn": "2016-07-08T21:49:58Z",
+      "side": 1,
+      "message": "That was part of the reason why I had the try/except/else here.  I knew that some objects don\u0027t have names and others don\u0027t have an args[2] so I just wanted to catch the case when they do, which includes users.  I created this for a specific use case, duplicate users, and I\u0027m hoping that it can be extended to all of the objects.  I will add the code as well for the other backends.  I was working with sql so that is what I changed at first.",
+      "parentUuid": "1aa78d24_b3243360",
       "range": {
         "startLine": 435,
         "startChar": 20,
@@ -76,6 +118,30 @@
       "writtenOn": "2016-07-06T07:02:56Z",
       "side": 1,
       "message": "The change here can also applied to limited cases, for example, there is no \u0027name\u0027 for creating/updating region, and most update APIs doesn\u0027t need \u0027name\u0027 to be presented.",
+      "parentUuid": "1aa78d24_41d2665d",
+      "range": {
+        "startLine": 404,
+        "startChar": 25,
+        "endLine": 404,
+        "endChar": 36
+      },
+      "revId": "e7bcec68a57e1bba46b80c3eb4d26b742d15ada4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2fc82674",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 20089
+      },
+      "writtenOn": "2016-07-08T21:49:58Z",
+      "side": 1,
+      "message": "That will probably fail. I need to handle that",
       "parentUuid": "1aa78d24_41d2665d",
       "range": {
         "startLine": 404,
