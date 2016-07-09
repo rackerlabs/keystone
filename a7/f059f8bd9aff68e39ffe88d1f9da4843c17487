@@ -1,0 +1,10 @@
+Code-Review+2: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: Samuel de Medeiros Queiroz <samueldmq@gmail.com>
+Code-Review+1: Ron De Rose <ronald.de.rose@intel.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 09 Jul 2016 00:48:34 +0000
+Reviewed-on: https://review.openstack.org/265455
+Project: openstack/keystone
+Branch: refs/heads/master
