@@ -12,15 +12,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 import sqlalchemy
 
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = keystone.conf.CONF
 
 
 class Identity(base.IdentityDriverV8):
@@ -53,9 +59,47 @@ class Identity(base.IdentityDriverV8):
                 user_ref = self._get_user(session, user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-            if not self._check_password(password, user_ref):
-                raise AssertionError(_('Invalid user / password'))
-            return base.filter_user(user_ref.to_dict())
+        if self._is_account_locked(user_id, user_ref):
+            raise exception.AccountLocked(user_id=user_id)
+        elif not self._check_password(password, user_ref):
+            self._record_failed_auth(user_id)
+            raise AssertionError(_('Invalid user / password'))
+        # successful auth, reset failed cnt if present
+        if user_ref.local_user.failed_auth_cnt:
+            self._reset_failed_auth(user_id)
+        return base.filter_user(user_ref.to_dict())
+
+    def _is_account_locked(self, user_id, user_ref):
+        is_locked = False
+        attempts = (user_ref.local_user.failed_auth_cnt if
+                    user_ref.local_user.failed_auth_cnt else 0)
+        max_attempts = CONF.security_compliance.lockout_failure_attempts
+        lockout_duration = CONF.security_compliance.lockout_duration
+        if max_attempts and (attempts >= max_attempts):
+            if not lockout_duration:
+                is_locked = True
+            else:
+                delta = datetime.timedelta(seconds=lockout_duration)
+                last_failure = user_ref.local_user.failed_auth_at
+                if (last_failure + delta) > datetime.datetime.now():
+                    is_locked = True
+                else:
+                    self._reset_failed_auth(user_id)
+        return is_locked
+
+    def _record_failed_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            if not user_ref.local_user.failed_auth_cnt:
+                user_ref.local_user.failed_auth_cnt = 0
+            user_ref.local_user.failed_auth_cnt += 1
+            user_ref.local_user.failed_auth_at = datetime.datetime.utcnow()
+
+    def _reset_failed_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.local_user.failed_auth_cnt = 0
+            user_ref.local_user.failed_auth_at = None
 
     # user crud
 
