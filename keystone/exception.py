@@ -216,6 +216,10 @@ class UserDisabled(Unauthorized):
     message_format = _("The account is disabled for user: %(user_id)s")
 
 
+class AccountLocked(Unauthorized):
+    message_format = _("The user account is locked")
+
+
 class AuthMethodNotSupported(AuthPluginException):
     message_format = _("Attempted to authenticate with an unsupported method.")
 
