@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_00d6cf26",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-09T15:39:41Z",
+      "side": 1,
+      "message": "Very nice! Cool to see this all in one place.",
+      "revId": "2db5adad43c99e6abf8d4c05aa76bd18705d72de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c0c32756",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-09T15:39:41Z",
+      "side": 1,
+      "message": "Removal of a \"only used twice\" instance variable. Dolph will really like this!",
+      "revId": "2db5adad43c99e6abf8d4c05aa76bd18705d72de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
