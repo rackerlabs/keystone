@@ -26,7 +26,7 @@ class User(sql.ModelBase, sql.DictBase):
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id']
     id = sql.Column(sql.String(64), primary_key=True)
-    enabled = sql.Column(sql.Boolean)
+    _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
     local_user = orm.relationship('LocalUser', uselist=False,
@@ -123,6 +123,22 @@ class User(sql.ModelBase, sql.DictBase):
     def domain_id(cls):
         return LocalUser.domain_id
 
+    # enabled property
+    @hybrid_property
+    def enabled(self):
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, value):
+        if value and self.local_user:
+            self.local_user.failed_auth_cnt = 0
+            self.local_user.failed_auth_at = None
+        self._enabled = value
+
+    @enabled.expression
+    def enabled(cls):
+        return User._enabled
+
     def to_dict(self, include_extra_dict=False):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
         if 'default_project_id' in d and d['default_project_id'] is None:
@@ -144,6 +160,8 @@ class LocalUser(sql.ModelBase, sql.DictBase):
                                  lazy='subquery',
                                  backref='local_user',
                                  order_by='Password.created_at')
+    failed_auth_cnt = sql.Column(sql.Integer, nullable=True)
+    failed_auth_at = sql.Column(sql.DateTime, nullable=True)
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
