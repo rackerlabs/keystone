@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_af508cd5",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-09T08:11:03Z",
+      "side": 1,
+      "message": "although benign, I don\u0027t think we need to explicitly set these to stable either....I don\u0027t believe other routers do this...that could be done as a follow-up patch for consistency.",
+      "range": {
+        "startLine": 56,
+        "startChar": 12,
+        "endLine": 56,
+        "endChar": 42
+      },
+      "revId": "a5c5f5bce812fad3c6c88a23203bd6c00451e7b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
