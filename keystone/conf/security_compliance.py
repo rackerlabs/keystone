@@ -25,17 +25,22 @@ disabled. Setting the value to 0 disables this feature.
 
 lockout_failure_attempts = cfg.IntOpt(
     'lockout_failure_attempts',
-    default=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
-Number of times a user can fail login attempts until the user account is
-locked. Setting the value to 0  disables this feature.
+The number of times a user can fail logging in before their account is locked.
+If lockout_failure_attempts is set and lockout_duration is not set, manual override is required to
+unlock the user account. This can be done by setting enable to True for the user. This feature is
+disabled by default. Note: this feature is only supported via the SQL backend driver for identity.
 """))
 
 lockout_duration = cfg.IntOpt(
     'lockout_duration',
-    default=1800,
+    default=None,
+    min=1,
     help=utils.fmt("""
-Number of seconds a user account will be locked.
+If a user account becomes locked, this defines the number of seconds the user
+will be locked out from attempting to login.
 """))
 
 password_expires_days = cfg.IntOpt(
