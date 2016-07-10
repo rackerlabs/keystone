@@ -46,6 +46,30 @@
       "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4ae2a930",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-10T17:15:57Z",
+      "side": 1,
+      "message": "Sorry - I had missed that this was a back port. So my concern is that this is a generic change (that impacts all sql queries). I don\u0027t see any testing that ensures this logic is correct (and that it is correct to set \u0027truncated\u0027 here - which, as an aside, I agree with).  imho, we should have added some more generic testing of sql limits that show 1) what was wrong before (there must have been a test somewhere that we should have had and would have failed), and 2) the new fix is correct. These should be outside the scope of the specific catalog fix you are making. However, this concern should not hold up the back port.",
+      "parentUuid": "1aa78d24_cdc5f78e",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 31
+      },
+      "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
