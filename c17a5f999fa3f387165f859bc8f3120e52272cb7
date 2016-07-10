@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_78b9432e",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1868,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-10T02:52:59Z",
+      "side": 1,
+      "message": "So all the other test_domain_XXX tests do a really nice job of providing comments that describe what is being tested by the domain test.  This one does not have it and it makes it harder to understand and inconsistent from the rest of the domain tests. It really should have explanatory comments like the other domain tests.",
+      "revId": "c17a5f999fa3f387165f859bc8f3120e52272cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
