@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_fb1d0467",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:30:06Z",
+      "side": 1,
+      "message": "Do we want to log anything here?",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_db2f6886",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:30:06Z",
+      "side": 1,
+      "message": "Would it be useful to log anything here?",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_fb4b4457",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:30:06Z",
+      "side": 1,
+      "message": "Would it be useful to log anything here?",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
