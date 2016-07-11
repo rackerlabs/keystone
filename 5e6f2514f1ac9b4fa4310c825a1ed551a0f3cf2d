@@ -34,6 +34,23 @@
       "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_71e775e4",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T16:20:46Z",
+      "side": 1,
+      "message": "Isn\u0027t this enforced by using cfg.StrOpt ? Using cfg.StrOpt will cast whatever the value is to be a string.\n\nhttp://cdn.pasteraw.com/144mufonfm5xrz74jyp6uyskfezy8kv",
+      "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
