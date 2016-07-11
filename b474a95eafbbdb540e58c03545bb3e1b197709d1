@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_473271a8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-11T20:33:34Z",
+      "side": 1,
+      "message": "Why is it a dangerous operation? We guarantee to be able to recreate the same mapping....is there something about you changes that makes this more dangerous?",
+      "parentUuid": "1aa78d24_57b08d8b",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_672a692e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
