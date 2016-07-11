@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_5a06c4ce",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-11T20:57:16Z",
+      "side": 1,
+      "message": "There is a script included in the patch that encrypts existing credentials.  Pagination was added to avoid having to load all credentials to memory.",
+      "parentUuid": "1aa78d24_4538803d",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 381,
+        "endChar": 55
+      },
+      "revId": "483c1cbc2b227d8638336c8e8221fdebd3e1b382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c57c70b7",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 20
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_30c2fee9",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-11T20:57:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_c57c70b7",
+      "range": {
+        "startLine": 44,
+        "startChar": 29,
+        "endLine": 44,
+        "endChar": 42
+      },
+      "revId": "483c1cbc2b227d8638336c8e8221fdebd3e1b382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_85af0829",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 20
@@ -59,6 +107,30 @@
       "writtenOn": "2016-07-06T18:10:53Z",
       "side": 1,
       "message": "make this (and the one below) abstract in Utils",
+      "range": {
+        "startLine": 277,
+        "startChar": 4,
+        "endLine": 277,
+        "endChar": 29
+      },
+      "revId": "483c1cbc2b227d8638336c8e8221fdebd3e1b382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_309b1e1a",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-11T20:57:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_85af0829",
       "range": {
         "startLine": 277,
         "startChar": 4,
