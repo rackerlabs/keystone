@@ -22,6 +22,24 @@
       "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4f2c4d02",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T18:41:46Z",
+      "side": 1,
+      "message": "It looks like it\u0027s being moved from TestCase to BaseTestCase?",
+      "parentUuid": "1aa78d24_246ce49b",
+      "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
