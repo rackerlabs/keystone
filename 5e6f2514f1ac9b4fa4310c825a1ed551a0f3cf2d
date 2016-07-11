@@ -51,6 +51,24 @@
       "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2c7914fd",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T16:23:10Z",
+      "side": 1,
+      "message": "Should we have a way to validate the regular expression? If the regular expression isn\u0027t valid then the user will get an error saying that the password doesn\u0027t meet the requirements, even though it might.",
+      "parentUuid": "1aa78d24_71e775e4",
+      "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
