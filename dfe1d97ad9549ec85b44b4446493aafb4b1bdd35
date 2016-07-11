@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_098b5869",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-11T23:28:20Z",
+      "side": 1,
+      "message": "Not sure if I understand this. If shadow user is expected to exist, we should let UserNotFound exception bubble up. If this is an ephemeral user, wouldn\u0027t the old logic still applicable?",
+      "range": {
+        "startLine": 647,
+        "startChar": 37,
+        "endLine": 647,
+        "endChar": 38
+      },
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
