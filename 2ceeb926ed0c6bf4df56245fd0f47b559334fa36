@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ed00ca68",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-11T05:09:38Z",
+      "side": 1,
+      "message": "A docstring here would be nice",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 50
+      },
+      "revId": "2ceeb926ed0c6bf4df56245fd0f47b559334fa36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2df3f2a0",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-11T05:09:38Z",
+      "side": 1,
+      "message": "It would nice to say why you\u0027re re-mapping these values, (due to limitation in oslo.context that doesn\u0027t specify ID or name, and still uses tenant :( )\n\nhttp://docs.openstack.org/developer/oslo.context/usage.html#context-variables",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 47
+      },
+      "revId": "2ceeb926ed0c6bf4df56245fd0f47b559334fa36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
