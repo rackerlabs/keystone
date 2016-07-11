@@ -16,6 +16,24 @@
       "revId": "74608779455d34789352c3434c94edc1ac1d0b22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7753093a",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-11T04:53:14Z",
+      "side": 0,
+      "message": "no, the local_entity3 is used below for checking cache.",
+      "parentUuid": "1aa78d24_47112daf",
+      "revId": "74608779455d34789352c3434c94edc1ac1d0b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

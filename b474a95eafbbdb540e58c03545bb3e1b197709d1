@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b71a917a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-11T04:53:14Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "1aa78d24_c74a3d27",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_8798356c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-08T15:38:27Z",
       "side": 1,
       "message": "These arguments can\u0027t be passed as kwargs can they? \n\n    self._get_public_id.invalidate(self, domain_id\u003dlocal_entity[\u0027domain_id\u0027], ...)",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_97c4b540",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-11T04:53:14Z",
+      "side": 1,
+      "message": "it seems that the dogpile.cache doesn\u0027t accept kwargs:\nhttps://github.com/thruflo/dogpile.cache/blob/master/dogpile/cache/util.py#L79",
+      "parentUuid": "1aa78d24_8798356c",
       "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_57b08d8b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-11T04:53:14Z",
+      "side": 1,
+      "message": "Yes, it\u0027s an infrequent operation. It\u0027s quite a dangerous operation. As my understanding, only when some identity doesn\u0027t use anymore, then the purge operation is used to avoid delete them one by one, such as if there are some domain is not used any more, you can purge the mapping based on the domain_id.",
+      "parentUuid": "1aa78d24_87aaf583",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_672a692e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-08T15:38:27Z",
       "side": 1,
       "message": "Can\u0027t this be done with: \n\n    self.get_id_mapping.invalidate(self, public_id)\n\nOr don\u0027t we do it that way because we don\u0027t have the public_id available?",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d7491d90",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-11T04:53:14Z",
+      "side": 1,
+      "message": "Here the public_id is not available, because the purge filter can be one of \"domain_id/public_id/local_id/identity type\", or a combination of them.\nSo it\u0027s very hard to retrieve the public id based on the purge_filters.",
+      "parentUuid": "1aa78d24_672a692e",
       "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
