@@ -70,6 +70,30 @@
       "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0f6085ce",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-07-11T18:24:41Z",
+      "side": 1,
+      "message": "hi Henry, you\u0027re right: there were 2 tests that were failing: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/test_backends.py#L1006 and https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/test_backends.py#L1358 at the point where they were verifying the truncated attribute. this code fixes that behavior.",
+      "parentUuid": "1aa78d24_4ae2a930",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 31
+      },
+      "revId": "0da34c543df7dd5d1e3fa89663eced284c511f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
