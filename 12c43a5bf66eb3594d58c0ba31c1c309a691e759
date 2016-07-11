@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_50134ab8",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T19:56:57Z",
+      "side": 1,
+      "message": "Thanks Lance, added None instead of null.",
+      "parentUuid": "1aa78d24_7543d813",
+      "revId": "12c43a5bf66eb3594d58c0ba31c1c309a691e759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_6a14974c",
         "filename": "api-ref/source/v3/samples/admin/group-users-list-response.json",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2016-07-11T19:12:39Z",
       "side": 1,
       "message": "Should microsecond level precision be zero\u0027d out? It looks like the keystone implementation will set microsecond level precision to 0, I\u0027m wondering if we want to do the same with the spec. This applies to all other occurrences in this patch.\n\nhttp://cdn.pasteraw.com/ofbu7upp7qaii0t1fvdevfubvfn1slk",
+      "revId": "12c43a5bf66eb3594d58c0ba31c1c309a691e759",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b0242e0d",
+        "filename": "api-ref/source/v3/samples/admin/group-users-list-response.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T19:56:57Z",
+      "side": 1,
+      "message": "I zero\u0027d this out just to be consistent.",
+      "parentUuid": "1aa78d24_6a14974c",
       "revId": "12c43a5bf66eb3594d58c0ba31c1c309a691e759",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
