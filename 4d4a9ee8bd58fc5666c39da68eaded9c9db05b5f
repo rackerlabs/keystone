@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_4e957de2",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T14:48:30Z",
+      "side": 1,
+      "message": "I think so because all of the following would still include names:\n\n    - ?include_names\n    - ?include_names\u003dTrue\n    - ?include_names\u003dFalse\n\nIt would be nice to have a python library that took care of key only query strings.",
+      "parentUuid": "1aa78d24_d27662a2",
+      "revId": "4d4a9ee8bd58fc5666c39da68eaded9c9db05b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_12a8eada",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 1
