@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_fa2e908a",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-11T21:38:40Z",
+      "side": 1,
+      "message": "Wow. First time I have seen hybrid properties used.  Pretty slick!",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_4ab87411",
         "filename": "keystone/identity/core.py",
         "patchSetId": 61
@@ -167,6 +184,24 @@
       "writtenOn": "2016-06-30T16:41:05Z",
       "side": 1,
       "message": "Example of using freezegun in keystone:\n\n  https://review.openstack.org/#/c/227995/17/keystone/tests/unit/test_v3_os_revoke.py",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1d9d5666",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-11T21:38:40Z",
+      "side": 1,
+      "message": "freezegun: coolest. python. package. name. ever!",
+      "parentUuid": "3aaa91ec_e556b1cc",
       "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
