@@ -82,6 +82,23 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_9bab201e",
+        "filename": "keystone/tests/unit/identity/test_controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:42:03Z",
+      "side": 1,
+      "message": "This seems like something we should put in https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_identity.py",
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_93a2fb49",
         "filename": "keystone/tests/unit/identity/test_controllers.py",
         "patchSetId": 1
