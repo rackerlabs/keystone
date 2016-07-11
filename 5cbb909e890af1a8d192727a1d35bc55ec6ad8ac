@@ -16,6 +16,24 @@
       "revId": "5cbb909e890af1a8d192727a1d35bc55ec6ad8ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7a43c013",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-11T20:56:36Z",
+      "side": 1,
+      "message": "+1! I was actually going to do that in a follow up patch because I\u0027ve missed it in all/most of the module-specific patches thus far... so I want to go back and make it consistent all at once.",
+      "parentUuid": "1aa78d24_9884c6b1",
+      "revId": "5cbb909e890af1a8d192727a1d35bc55ec6ad8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
