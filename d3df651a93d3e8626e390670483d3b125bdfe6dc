@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_842297a1",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T20:11:22Z",
+      "side": 1,
+      "message": "max_cnt cannot be -1.  this is handled in the configuration, min\u003d1.",
+      "parentUuid": "1aa78d24_d5d28cff",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_4a2d5b45",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 30
@@ -82,6 +100,24 @@
       "writtenOn": "2016-07-11T19:24:38Z",
       "side": 1,
       "message": "I think you need a test for when max_cnt is -1",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_64ea0b11",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T20:11:22Z",
+      "side": 1,
+      "message": "This should be handled in the configuration.  -1 is not a valid config value.",
+      "parentUuid": "1aa78d24_b5f6e08c",
       "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
