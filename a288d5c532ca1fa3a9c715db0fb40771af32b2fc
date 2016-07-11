@@ -16,6 +16,24 @@
       "revId": "a288d5c532ca1fa3a9c715db0fb40771af32b2fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7a5aa0f3",
+        "filename": "keystone/conf/role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-11T20:57:04Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/336728/2/keystone/conf/resource.py",
+      "parentUuid": "1aa78d24_d89ace6d",
+      "revId": "a288d5c532ca1fa3a9c715db0fb40771af32b2fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
