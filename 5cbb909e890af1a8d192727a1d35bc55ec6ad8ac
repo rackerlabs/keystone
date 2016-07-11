@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_9884c6b1",
+        "filename": "keystone/conf/resource.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:26:28Z",
+      "side": 1,
+      "message": "Can we point people to the actual option for global caching?",
+      "revId": "5cbb909e890af1a8d192727a1d35bc55ec6ad8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
