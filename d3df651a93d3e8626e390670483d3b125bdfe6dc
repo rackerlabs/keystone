@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_d5c56c8e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-11T19:24:38Z",
+      "side": 1,
+      "message": "So 1 is the default and the value must be greater than or equal to 1?  All of this should be made more clear.",
+      "parentUuid": "1aa78d24_8af0e3fe",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d5d28cff",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-11T19:24:38Z",
+      "side": 1,
+      "message": "so if max_cnt is -1 no exception for invalid value is thrown?",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_4a2d5b45",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 30
@@ -30,6 +65,23 @@
       "writtenOn": "2016-07-11T18:56:16Z",
       "side": 1,
       "message": "What if CONF.security_compliance.unique_last_password_count is 10, but the user has only changed their password once?\n\n Number of previous passwords: 10\n\nThis may seem confusing to a user since they\u0027ve only ever had two passwords. Not sure if there is a better way to word this though.",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b5f6e08c",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-11T19:24:38Z",
+      "side": 1,
+      "message": "I think you need a test for when max_cnt is -1",
       "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
