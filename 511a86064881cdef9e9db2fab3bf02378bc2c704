@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_d6445fb8",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-11T15:55:04Z",
+      "side": 1,
+      "message": "I don\u0027t think there is a need for that - since those drivers that don\u0027t support this don\u0027t support the creating of the associations in the first place. So all that would happen is you would get a log entry everytime you deleted a project, for something that is expected for, say, the templates catalog.",
+      "parentUuid": "1aa78d24_fb1d0467",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_db2f6886",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_1615479a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-11T15:55:04Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "1aa78d24_db2f6886",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_fb4b4457",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-11T15:30:06Z",
       "side": 1,
       "message": "Would it be useful to log anything here?",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_560fcf87",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-11T15:55:04Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "1aa78d24_fb4b4457",
       "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
