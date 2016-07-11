@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e726fdcc",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-11T20:50:05Z",
+      "side": 1,
+      "message": "++ i\u0027m just going to cut the bit advertising pki_setup",
+      "parentUuid": "1aa78d24_87d3b9d4",
+      "revId": "b1df34fac0f8c388b665f585e0ac361d8ca9ea06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_274c85c7",
         "filename": "keystone/conf/saml.py",
         "patchSetId": 1
