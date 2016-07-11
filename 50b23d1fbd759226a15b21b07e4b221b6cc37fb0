@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_3377c73b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-11T10:48:23Z",
+      "side": 1,
+      "message": "please describe here the change, not bug number it fixes",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 16
+      },
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_33c5073c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +59,74 @@
       "writtenOn": "2016-07-11T10:42:33Z",
       "side": 1,
       "message": "the commit messages from reviews that are intended to close a bug should have:\n\n  Closes-Bug: ######\n\nIn this specific case, something like:\n\n  Closes-Bug: 1600725\n\nRefer the link in the comment above for more details",
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9385db08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-11T10:48:23Z",
+      "side": 1,
+      "message": "it should be\nCloses-Bug: 1600725",
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_93a2fb49",
+        "filename": "keystone/tests/unit/identity/test_controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-11T10:48:23Z",
+      "side": 1,
+      "message": "this is a negative test case. There should be a test showing that getting the group works.",
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d3abe31c",
+        "filename": "keystone/tests/unit/identity/test_controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-11T10:48:23Z",
+      "side": 1,
+      "message": "same here. There should be a test showing that updating the group works",
+      "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_93703bde",
+        "filename": "keystone/tests/unit/identity/test_controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-11T10:48:23Z",
+      "side": 1,
+      "message": "same here. There should be a test showing that deleting the group works.",
       "revId": "50b23d1fbd759226a15b21b07e4b221b6cc37fb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
