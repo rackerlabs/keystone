@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_44d6ef4f",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T20:12:30Z",
+      "side": 1,
+      "message": "Reworded this so that greater than 1 indicates that the feature is enabled.",
+      "parentUuid": "1aa78d24_d5c56c8e",
+      "revId": "d3df651a93d3e8626e390670483d3b125bdfe6dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d5d28cff",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 30
