@@ -63,3 +63,41 @@ class UserTestCaseNoDefaultDomain(unit.TestCase):
         self.user_controller.create_user(self.make_request(is_admin=True),
                                          user)
         # If the above doesn't fail then this is successful.
+
+
+class GroupV3TestCase(unit.TestCase):
+
+    def setUp(self):
+        super(GroupV3TestCase, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+        self.domain = unit.new_domain_ref()
+        self.resource_api.create_domain(self.domain['id'], self.domain)
+        self.groupv3_controller = controllers.GroupV3()
+
+    def test_create_group(self):
+        group = {'name': uuid.uuid4().hex, 'domain_id': self.domain['id']}
+        self.groupv3_controller.create_group(
+            self.make_request(is_admin=True), group)
+
+    def test_get_group(self):
+        group_id = uuid.uuid4().hex
+        self.assertRaises(
+            exception.GroupNotFound,
+            self.groupv3_controller.get_group,
+            self.make_request(is_admin=True), group_id)
+
+    def test_update_group(self):
+        group_id = uuid.uuid4().hex
+        group = {'name': uuid.uuid4().hex}
+        self.assertRaises(
+            exception.GroupNotFound,
+            self.groupv3_controller.update_group,
+            self.make_request(is_admin=True), group_id, group)
+
+    def test_delete_group(self):
+        group_id = uuid.uuid4().hex
+        self.assertRaises(
+            exception.GroupNotFound,
+            self.groupv3_controller.delete_group,
+            self.make_request(is_admin=True), group_id)
