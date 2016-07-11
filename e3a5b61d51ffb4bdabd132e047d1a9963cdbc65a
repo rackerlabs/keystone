@@ -122,6 +122,23 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_1ef3c7a0",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-11T20:11:50Z",
+      "side": 1,
+      "message": "I *think* the idea of the unit test directory structure, is that this file should go in /unit/identity/backends and be called test_sql.py?? That seems to be the structure followed by other components (e.g. resource, assignment etc.)",
+      "revId": "e3a5b61d51ffb4bdabd132e047d1a9963cdbc65a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_2a0fe837",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 61
