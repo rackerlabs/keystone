@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_aa52ff64",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T19:37:38Z",
+      "side": 1,
+      "message": "Just new passwords or passwords in general won\u0027t expire here?",
+      "revId": "63ce5268ea14b1c2ad39229fd16b2be6da4cc498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_95b12404",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T19:37:38Z",
+      "side": 1,
+      "message": "is domain id required?",
+      "revId": "63ce5268ea14b1c2ad39229fd16b2be6da4cc498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
