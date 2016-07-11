@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_782748b6",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T21:50:32Z",
+      "side": 1,
+      "message": "After the lockout duration, do users get another X attempts to authenticate? When I tested this locally, I set lockout_failure_attempts to 5 and lockout_duration to 60. I failed to authenticate 5 times and my user was locked out for 60 seconds, which is exactly what I was expecting. When the 60 second timeout was up, I tried to authenticate with a bad password again and my account was immediately locked (because the failed_auth_cnt was not reset in the database).\n\nI was thinking that after the first 60 second wait period I would have another five chances to authenticate.",
+      "revId": "ceb46a67f0e2a866f330879b23d45a8ac06c7fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bd3fe2b2",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T21:50:32Z",
+      "side": 1,
+      "message": "(nit):\n\n  this defines the number of seconds until the user can attempt to login.",
+      "revId": "ceb46a67f0e2a866f330879b23d45a8ac06c7fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
