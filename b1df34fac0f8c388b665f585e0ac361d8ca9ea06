@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_878579d0",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-11T20:43:31Z",
+      "side": 1,
+      "message": "hmm, but this is deprecated now, womp womp",
+      "range": {
+        "startLine": 43,
+        "startChar": 46,
+        "endLine": 43,
+        "endChar": 71
+      },
+      "revId": "b1df34fac0f8c388b665f585e0ac361d8ca9ea06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_274c85c7",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-11T20:43:31Z",
+      "side": 1,
+      "message": "this can go on line 53",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "b1df34fac0f8c388b665f585e0ac361d8ca9ea06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
