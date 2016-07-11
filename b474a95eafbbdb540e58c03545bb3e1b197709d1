@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_36d3233a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-11T15:51:18Z",
+      "side": 1,
+      "message": "Ah ha - that\u0027s right.",
+      "parentUuid": "1aa78d24_97c4b540",
+      "revId": "b474a95eafbbdb540e58c03545bb3e1b197709d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_87aaf583",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
