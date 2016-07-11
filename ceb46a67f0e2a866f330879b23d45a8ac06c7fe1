@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_18a8c476",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-11T22:04:27Z",
+      "side": 1,
+      "message": "Yep, that would be the expected behavior.  I\u0027ll add a test case for this.",
+      "parentUuid": "1aa78d24_782748b6",
+      "revId": "ceb46a67f0e2a866f330879b23d45a8ac06c7fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_bd3fe2b2",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 4
