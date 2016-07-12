@@ -540,8 +540,13 @@ class TokenFlush(BaseApp):
     @classmethod
     def main(cls):
         token_manager = token.persistence.PersistenceManager()
-        token_manager.flush_expired_tokens()
-
+        try:
+            token_manager.flush_expired_tokens()
+        except exception.NotImplemented:
+            # NOTE(ravelar159): Stop NotImplemented from unsupported token
+            # driver kvs when using token_flush and print out warning
+            LOG.warning('KVS does not support token_flush. '
+                        'token_flush did not flush any tokens.')
 
 class MappingPurge(BaseApp):
     """Purge the mapping table."""
