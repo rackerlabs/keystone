@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_96e8d2b4",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "Is this still the approach we are going with? According to the configuration, it looks like there is going to be file-backed keys stored on disk, not in config?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_16dfc2d6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "nit: s/refs/credentials/\n\nJust to have the name more accurately reflect what is being stored.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d651ba63",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "We typically only import modules, not classes. \n\n    from keystone.token.providers.fernet import utils as fernet_utils\n    fernet \u003d fernet_utils.FernetUtils()",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_965bb285",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "We typically only import modules, not classes. \n\n    from keystone.token.providers.fernet import utils as fernet_utils\n    fernet \u003d fernet_utils.FernetUtils()",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1671820c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "We typically only import modules, not classes. \n\n    from keystone.token.providers.fernet import utils as fernet_utils\n    utils \u003d fernet_utils.CredentialUtils()",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_569aea14",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "Credentials can\u0027t expire can they?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_968452d3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "We typically only import modules, not classes. \n\n    from keystone.token.providers.fernet import utils as fernet_utils\n    utils \u003d fernet_utils.CredentialUtils()",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_96ac52a0",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "This should be sure to explain that these keys are used for encrypting credentials and have no relationship to the fernet-keys used for tokens.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_568dca2f",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T18:02:35Z",
+      "side": 1,
+      "message": "Isn\u0027t all this handled by config? It seems that way according to the documentation.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
