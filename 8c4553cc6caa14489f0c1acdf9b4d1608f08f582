@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_ed86a1b7",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T19:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_dd4ba0af",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_dda7204e",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-12T15:57:40Z",
       "side": 1,
       "message": "types is a builtin Python module, whereas six jsonchema and six art thirdparty",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0d7a0dbd",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T19:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_dda7204e",
       "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_8801cb07",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T19:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_13007900",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_53f041fd",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e8104f50",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T19:41:23Z",
+      "side": 1,
+      "message": "Yeah - we should.. any good recommendations on how we should do this for each schema?",
+      "parentUuid": "1aa78d24_53f041fd",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_1338799f",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2016-07-12T15:57:40Z",
       "side": 1,
       "message": "Do you actually need this?",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_282ed78b",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T19:41:23Z",
+      "side": 1,
+      "message": "Maybe? Let me double check.",
+      "parentUuid": "1aa78d24_1338799f",
       "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
