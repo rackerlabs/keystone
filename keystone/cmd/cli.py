@@ -540,8 +540,13 @@ class TokenFlush(BaseApp):
     @classmethod
     def main(cls):
         token_manager = token.persistence.PersistenceManager()
-        token_manager.flush_expired_tokens()
-
+        try:
+            token_manager.flush_expired_tokens()
+        except exception.NotImplemented:
+        #because we already have a Log.Warning which informs the user that
+        #KVM is recommended for testing and to switch to sql or memcache
+        #we don't need to relog a warning again.
+            pass
 
 class MappingPurge(BaseApp):
     """Purge the mapping table."""
