@@ -87,6 +87,24 @@
       "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_369aec6e",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T01:58:51Z",
+      "side": 1,
+      "message": "Added a check for validating the regular expression.",
+      "parentUuid": "1aa78d24_2c7914fd",
+      "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
