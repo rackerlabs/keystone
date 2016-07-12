@@ -52,6 +52,7 @@ class EndpointPolicyV3Controller(controller.V3Controller):
     @controller.protected()
     def create_policy_association_for_endpoint(self, request,
                                                policy_id, endpoint_id):
+        validation.lazy_validate(schema.endpoint_policy_create, request)
         """Create an association between a policy and an endpoint."""
         self.policy_api.get_policy(policy_id)
         self.catalog_api.get_endpoint(endpoint_id)
@@ -79,6 +80,7 @@ class EndpointPolicyV3Controller(controller.V3Controller):
     @controller.protected()
     def create_policy_association_for_service(self, request,
                                               policy_id, service_id):
+        validation.lazy_validate(schema.service_policy_create, request)
         """Create an association between a policy and a service."""
         self.policy_api.get_policy(policy_id)
         self.catalog_api.get_service(service_id)
@@ -106,6 +108,7 @@ class EndpointPolicyV3Controller(controller.V3Controller):
     @controller.protected()
     def create_policy_association_for_region_and_service(
             self, request, policy_id, service_id, region_id):
+	validation.lazy_validate(schema.region_service_policy_create, request)
         """Create an association between a policy and region+service."""
         self.policy_api.get_policy(policy_id)
         self.catalog_api.get_service(service_id)
