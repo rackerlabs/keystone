@@ -22,6 +22,30 @@
       "revId": "187490fd7ec80b8c8c932d897408e5e185705dfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_94f6265b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-12T10:24:33Z",
+      "side": 0,
+      "message": "I think this is covered because the only way it isn\u0027t present is if auth_context is not in the pipeline and in that case the warnings in the protected methods will be triggered.",
+      "parentUuid": "1aa78d24_57a36d9e",
+      "range": {
+        "startLine": 84,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 68
+      },
+      "revId": "187490fd7ec80b8c8c932d897408e5e185705dfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
