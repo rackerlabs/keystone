@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_93b104e3",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T17:35:35Z",
+      "side": 1,
+      "message": "s/certfile/certificate file",
+      "range": {
+        "startLine": 42,
+        "startChar": 21,
+        "endLine": 42,
+        "endChar": 29
+      },
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b3e520dd",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T17:35:35Z",
+      "side": 1,
+      "message": "s/keyfile/private key file",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 28
+      },
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_935bc485",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T17:35:35Z",
+      "side": 1,
+      "message": "Why not just use URIOpt since the help states it must be a URI.",
+      "range": {
+        "startLine": 54,
+        "startChar": 20,
+        "endLine": 54,
+        "endChar": 26
+      },
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_73c9f825",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T17:35:35Z",
+      "side": 1,
+      "message": "URIOpt",
+      "range": {
+        "startLine": 64,
+        "startChar": 23,
+        "endLine": 64,
+        "endChar": 29
+      },
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b3e6c0ad",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T17:35:35Z",
+      "side": 1,
+      "message": "URIOpt",
+      "range": {
+        "startLine": 94,
+        "startChar": 27,
+        "endLine": 94,
+        "endChar": 33
+      },
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
