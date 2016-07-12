@@ -45,6 +45,14 @@ class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self.load_backends()
         cli.TokenFlush.main()
 
+    def test_bad_token_flush(self):
+        self.useFixture(database.Database())
+        self.load_backends()
+        self.config_fixture.config(group='token', driver='kvs')
+        log_info = self.useFixture(fixtures.FakeLogger(level=log.WARN))
+        cli.TokenFlush.main()
+        self.assertIn("did not flush any tokens", log_info.output)
+
 
 class CliNoConfigTestCase(unit.BaseTestCase):
 
