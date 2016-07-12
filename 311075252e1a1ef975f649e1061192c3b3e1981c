@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_9cd2ac5a",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-12T20:09:47Z",
+      "side": 1,
+      "message": "how about a real docstring, what does this actually do?",
+      "revId": "311075252e1a1ef975f649e1061192c3b3e1981c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
