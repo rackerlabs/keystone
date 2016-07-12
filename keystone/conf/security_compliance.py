@@ -22,9 +22,9 @@ disable_user_account_days_inactive = cfg.IntOpt(
     help=utils.fmt("""
 Number of days for which a user can be inactive before the account becomes
 disabled. This feature is disabled by default. Note: this feature is only
-supported via the SQL backend driver for identity. In addition, whether or
-not a user is disabled will be handled by the API and may not match the
-user table enabled column in the database.
+supported via the SQL backend driver for identity. In addition, keystone will
+enforce this behavior regardless of the value of the enabled column in the
+database.
 """))
 
 lockout_failure_attempts = cfg.IntOpt(

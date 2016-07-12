@@ -95,8 +95,8 @@ class ShadowUsersDriverV10(ShadowUsersDriverBase):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def set_last_active_at(self, user_id):
-        """Set the last active at date for the user.
+    def touch_user(self, user_id):
+        """Reach out and touch someone.
 
         :param user_id: Unique identifier of the user
 
@@ -111,5 +111,5 @@ class V10ShadowUsersWrapperForV9Driver(ShadowUsersDriverV10):
     def create_nonlocal_user(self, user_dict):
         return user_dict
 
-    def set_last_active_at(self, user_id):
+    def touch_user(self, user_id):
         pass

@@ -14,8 +14,7 @@ import copy
 import datetime
 import uuid
 
-from oslo_config import cfg
-
+import keystone.conf
 from keystone.common import sql
 from keystone import exception
 from keystone.identity.backends import base as identity_base
@@ -23,7 +22,7 @@ from keystone.identity.backends import sql_model as model
 from keystone.identity.shadow_backends import base
 
 
-CONF = cfg.CONF
+CONF = keystone.conf.CONF
 
 
 class ShadowUsers(base.ShadowUsersDriverV10):
@@ -67,7 +66,7 @@ class ShadowUsers(base.ShadowUsersDriverV10):
                 raise exception.UserNotFound(user_id=unique_id)
             return user_ref
 
-    def set_last_active_at(self, user_id):
+    def touch_user(self, user_id):
         if CONF.security_compliance.disable_user_account_days_inactive:
             with sql.session_for_write() as session:
                 user_ref = session.query(model.User).get(user_id)
