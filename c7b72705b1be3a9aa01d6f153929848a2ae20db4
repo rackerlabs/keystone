@@ -16,6 +16,24 @@
       "revId": "c7b72705b1be3a9aa01d6f153929848a2ae20db4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bc84c8d2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-12T20:19:54Z",
+      "side": 0,
+      "message": "++ for wrapping it and catching, it\u0027s still valid for folks using SQL driver and UUID format -- the defaults... https://github.com/openstack/keystone/blob/master/keystone/conf/token.py#L43-L59",
+      "parentUuid": "1aa78d24_7c8d4030",
+      "revId": "c7b72705b1be3a9aa01d6f153929848a2ae20db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
