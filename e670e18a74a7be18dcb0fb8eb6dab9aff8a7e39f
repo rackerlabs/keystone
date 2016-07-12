@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_2613bab9",
+        "filename": "api-ref/source/v3/samples/admin/users-list-response.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T15:08:59Z",
+      "side": 1,
+      "message": "According to the proposed implementation, it looks like these come back as null. \n\nhttp://cdn.pasteraw.com/8i36ay0hzaoikwb2uj6yk91gil6yep8\n\nIf this patch merges as is, we\u0027ll have to make a note to respin the implementation to match.",
+      "revId": "e670e18a74a7be18dcb0fb8eb6dab9aff8a7e39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
