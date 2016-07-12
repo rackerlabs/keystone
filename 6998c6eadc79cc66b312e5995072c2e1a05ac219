@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_cb10e802",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-12T22:08:03Z",
+      "side": 1,
+      "message": "This line should be indented to align with pass. And there should be a space after # (usually pep8 will complain)",
+      "revId": "6998c6eadc79cc66b312e5995072c2e1a05ac219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
