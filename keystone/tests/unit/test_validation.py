@@ -2083,3 +2083,86 @@ class OAuth1ValidationTestCase(unit.BaseTestCase):
         request_to_validate = {'description': None}
         self.create_consumer_validator.validate(request_to_validate)
         self.update_consumer_validator.validate(request_to_validate)
+
+
+class EndpointPolicyValidationTestCase(unit.BaseTestCase):
+
+    def setUp(self):
+        super(EndpointPolicyValidationTestCase, self).setUp()
+
+        endpoint_schema = endpoint_policy_schema.endpoint_policy_create
+	service_schema = endpoint_policy_schema.service_policy_create
+	region_schema = endpoint_policy_schema.region_service_policy_create
+	self.endpoint_validator = validators.SchemaValidator(endpoint_schema)
+	self.service_validator = validators.SchemaValidator(service_schema)
+	self.region_validator = validators.SchemaValidator(region_schema)
+
+
+    def test_endpoint_policy_schema_request_succeeds(self):
+        endpoint_request = {
+            'policy_id': 'a1b2c3',
+	    'endpoint_id': '8675309'
+        }
+        service_request = {
+            'policy_id': 'a1b2c3',
+            'service_id': 'f8a01'
+        }
+	region_request = {
+            'policy_id': 'a1b2c3',
+            'region_id': 'abcd',
+	    'service_id': 'f9a01'
+        }
+
+	self.endpoint_validator.validate(endpoint_request)
+	self.service_validator.validate(service_request)
+	self.region_request.validate(region_request)
+
+    def test_validate_endpoint_policy_requests_fail_with_invalid_params(self):
+        request = {
+            'bogus': uuid.uuid4().hex
+        }
+	self.assertRaises(exception.SchemaValidationError,
+	                  self.endpoint_validator.validate,
+	                  request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.service_validator.validate,
+                          request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.region_validator.validate,
+                          request)
+
+    def test_validate_endpoint_policy_requests_fail_with_no_parameters(self):
+        request = { }
+	self.assertRaises(exception.SchemaValidationError,
+	                  self.endpoint_validator.validate,
+	                  request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.service_validator.validate,
+                          request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.region_validator.validate,
+                          request)
+
+    def test_validate_endpoint_policy_requests_fail_with_no_parameters(self):
+        endpoint_request = {
+            'policy_id': 1234,
+	    'endpoint_id': uuid.uuid4().hex
+        }
+        service_request = {
+            'policy_id': 8675309,
+            'service_id': uuid.uuid4().hex
+        }
+	region_request = {
+            'policy_id': 1234,
+            'region_id': 5678,
+	    'service_id': uuid.uuid4().hex
+        }
+	self.assertRaises(exception.SchemaValidationError,
+	                  self.endpoint_validator.validate,
+	                  endpoint_request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.service_validator.validate,
+                          service_request)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.region_validator.validate,
+                          region_request)
