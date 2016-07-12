@@ -16,6 +16,24 @@
       "revId": "e670e18a74a7be18dcb0fb8eb6dab9aff8a7e39f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a4431dae",
+        "filename": "api-ref/source/v3/samples/admin/users-list-response.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T16:55:06Z",
+      "side": 1,
+      "message": "Okay, updated the specs to null.",
+      "parentUuid": "1aa78d24_2613bab9",
+      "revId": "e670e18a74a7be18dcb0fb8eb6dab9aff8a7e39f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
