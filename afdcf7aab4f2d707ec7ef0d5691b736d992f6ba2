@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_a042f23b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T14:28:32Z",
+      "side": 1,
+      "message": "In testing this locally - if I don\u0027t configure keystone with a lockout_duration and a user exceeds the number of failed authentication attempts - it will lock the user out and the only way for them to be unlocked would be for an admin to reset their enabled attribute, right?\n\nThat seems like the desired outcome but maybe we can clarify that in the help text of the lockout_duration option. Just saying that if lockout_failure_attempts is set and not given a duration, manual override is required to unlock user accounts.",
+      "revId": "afdcf7aab4f2d707ec7ef0d5691b736d992f6ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ba733f7f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T14:28:32Z",
+      "side": 1,
+      "message": "Cool - this seems to have fixed the issue I was running into on patch set 4. Is there a way we can add a test case for this?",
+      "revId": "afdcf7aab4f2d707ec7ef0d5691b736d992f6ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
