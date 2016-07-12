@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b63fce85",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T17:45:32Z",
+      "side": 1,
+      "message": "Sorry, missed that.  Reworded so that it makes more sense.",
+      "parentUuid": "1aa78d24_dd1720ec",
+      "revId": "08c500f8365b066e8b96b2a32014511f0fcfd45b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_5a3856ee",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-12T15:25:00Z",
       "side": 1,
       "message": "Does: \n\n    for _ in range(n):\n\nnot work? I think having the underscore would be more pythonic here because we\u0027re not actually using i for anything (i\u0027ll assume dstanek can keep me correct since he made the original comment).",
+      "revId": "08c500f8365b066e8b96b2a32014511f0fcfd45b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_56a66ac1",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T17:45:32Z",
+      "side": 1,
+      "message": "Got it.  Thx.",
+      "parentUuid": "1aa78d24_5a3856ee",
       "revId": "08c500f8365b066e8b96b2a32014511f0fcfd45b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
