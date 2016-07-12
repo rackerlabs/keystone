@@ -540,8 +540,6 @@ class TokenFlush(BaseApp):
     @classmethod
     def main(cls):
         token_manager = token.persistence.PersistenceManager()
-        token_manager.flush_expired_tokens()
-
 
 class MappingPurge(BaseApp):
     """Purge the mapping table."""
