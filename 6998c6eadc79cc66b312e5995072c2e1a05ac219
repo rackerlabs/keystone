@@ -16,6 +16,23 @@
       "revId": "6998c6eadc79cc66b312e5995072c2e1a05ac219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cbb588ed",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T22:13:56Z",
+      "side": 1,
+      "message": "Getting there!\n\nWe typically leave comments as NOTES\n\n  # NOTE(ravelar159): \u003cnote/reason\u003e\n\nThis makes it easier when others are reading the code, and if they have questions they\u0027re able to find someone in IRC who left the comment.\n\nWe could actually log something here saying the the token flush operation didn\u0027t actually flush any tokens because the token driver doesn\u0027t support it.",
+      "revId": "6998c6eadc79cc66b312e5995072c2e1a05ac219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
