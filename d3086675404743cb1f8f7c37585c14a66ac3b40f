@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_9cdf4c0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T20:16:39Z",
+      "side": 1,
+      "message": "This should be recreatable regardless of the token.provider being used, right? If I have uuid set as the token provider and kvs set as the token.driver, I should be able to recreate this.",
+      "revId": "d3086675404743cb1f8f7c37585c14a66ac3b40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1ca6bcad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T20:16:39Z",
+      "side": 1,
+      "message": "errors*",
+      "revId": "d3086675404743cb1f8f7c37585c14a66ac3b40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
