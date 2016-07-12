@@ -105,6 +105,24 @@
       "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9ade3e6b",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T15:10:33Z",
+      "side": 1,
+      "message": "Ah ha - you\u0027re right... password !\u003d pattern",
+      "parentUuid": "1aa78d24_ad5a0ff0",
+      "revId": "5e6f2514f1ac9b4fa4310c825a1ed551a0f3cf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
