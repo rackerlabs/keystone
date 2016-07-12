@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a83c87e1",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T20:09:47Z",
+      "side": 1,
+      "message": "Ah, right.  Done.",
+      "parentUuid": "1aa78d24_68a0dff4",
+      "revId": "1a8abfa650157edfe7b608b3299f01cdf0418fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_e86faf8f",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-12T19:47:40Z",
       "side": 1,
       "message": "we should make sure we can attempt to authenticate (or fail to authenticate) self.max_attempts.. that way we know for sure that failed_auth_cnt was reset in the database.",
+      "revId": "1a8abfa650157edfe7b608b3299f01cdf0418fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9cebcc12",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T20:09:47Z",
+      "side": 1,
+      "message": "Added a new test case for this where:\n1. lockout user\n2. go past duration\n3. immediately test again with wrong password, expecting AssertionError and not AccountLocked exception.",
+      "parentUuid": "1aa78d24_e86faf8f",
       "revId": "1a8abfa650157edfe7b608b3299f01cdf0418fc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
