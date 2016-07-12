@@ -22,6 +22,30 @@
       "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f5f5c382",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 15640
+      },
+      "writtenOn": "2016-07-12T21:24:35Z",
+      "side": 1,
+      "message": "good question. The reason for adding the try;except was because of this test failing: https://github.com/openstack/keystone/blob/master/keystone/tests/unit/token/test_fernet_provider.py#L114. that test calls issue_v3_token directly without authenticating so the shadow user is not in the database yet. If we think this can create an issue, maybe I should focus on modifying the test..?",
+      "parentUuid": "1aa78d24_098b5869",
+      "range": {
+        "startLine": 647,
+        "startChar": 37,
+        "endLine": 647,
+        "endChar": 38
+      },
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
