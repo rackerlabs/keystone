@@ -51,6 +51,24 @@
       "revId": "afdcf7aab4f2d707ec7ef0d5691b736d992f6ba2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_209602f0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-12T14:35:57Z",
+      "side": 1,
+      "message": "Working on a test case for this; need to learn FreezeGun :)",
+      "parentUuid": "1aa78d24_ba733f7f",
+      "revId": "afdcf7aab4f2d707ec7ef0d5691b736d992f6ba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
