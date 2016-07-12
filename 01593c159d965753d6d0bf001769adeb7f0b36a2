@@ -40,6 +40,30 @@
       "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_08b2fb4b",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T19:43:55Z",
+      "side": 1,
+      "message": "Line 35 needs the config_fixture. By changing from TestCase to BaseTestCase I no longer get all the tons of setup for these tests. Although I do need the config fixture.",
+      "parentUuid": "1aa78d24_246ce49b",
+      "range": {
+        "startLine": 520,
+        "startChar": 8,
+        "endLine": 520,
+        "endChar": 74
+      },
+      "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
