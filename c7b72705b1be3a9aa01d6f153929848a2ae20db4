@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_7c8d4030",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T20:14:50Z",
+      "side": 0,
+      "message": "We should probably wrap this in a try/except that catches if a NotImplemented is raised. This will remove the flush token functionality regardless of which token.driver is being used.",
+      "revId": "c7b72705b1be3a9aa01d6f153929848a2ae20db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
