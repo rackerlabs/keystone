@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_eb420467",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T22:27:29Z",
+      "side": 1,
+      "message": "We do use other attributes that URIOpt might not support (max_length)",
+      "parentUuid": "1aa78d24_935bc485",
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_73c9f825",
         "filename": "keystone/conf/saml.py",
         "patchSetId": 2
