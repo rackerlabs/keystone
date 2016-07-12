@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_dd1720ec",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T15:30:19Z",
+      "side": 1,
+      "message": "See comment from patch set 30. Thoughts?",
+      "revId": "08c500f8365b066e8b96b2a32014511f0fcfd45b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_5a3856ee",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 31
