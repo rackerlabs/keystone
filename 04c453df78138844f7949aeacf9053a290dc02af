@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_66a2e2fd",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-12T14:56:07Z",
+      "side": 1,
+      "message": "++ awesome!",
+      "revId": "04c453df78138844f7949aeacf9053a290dc02af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
