@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_dd4ba0af",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T15:57:40Z",
+      "side": 1,
+      "message": "(nit) newline",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dda7204e",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T15:57:40Z",
+      "side": 1,
+      "message": "types is a builtin Python module, whereas six jsonchema and six art thirdparty",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_13007900",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T15:57:40Z",
+      "side": 1,
+      "message": "Why not just use \u0027if callable(value)\u0027 here? That way it can work for other callables too.",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_53f041fd",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T15:57:40Z",
+      "side": 1,
+      "message": "Should we be caching this at all so we don\u0027t have to traverse the tree every time? I\u0027ve not timed it myself so it may not actually be slow.",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1338799f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-12T15:57:40Z",
+      "side": 1,
+      "message": "Do you actually need this?",
+      "revId": "8c4553cc6caa14489f0c1acdf9b4d1608f08f582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
