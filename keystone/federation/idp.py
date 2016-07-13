@@ -400,18 +400,23 @@ def _sign_assertion(assertion):
     :returns: XML <Assertion> object
 
     """
-    xmlsec_binary = CONF.saml.xmlsec1_binary
-    idp_private_key = CONF.saml.keyfile
-    idp_public_key = CONF.saml.certfile
+    # Validate certificate configuration.
+    for option in ('keyfile', 'certfile'):
+        if ',' in getattr(CONF.saml, option, ''):
+            raise exception.UnexpectedError(_LE(
+                'The configuration value in `keystone.conf [saml] %s` cannot '
+                'contain a comma (`,`). Please fix your configuration.'),
+                option)
 
     # xmlsec1 --sign --privkey-pem privkey,cert --id-attr:ID <tag> <file>
     certificates = '%(idp_private_key)s,%(idp_public_key)s' % {
-        'idp_public_key': idp_public_key,
-        'idp_private_key': idp_private_key
+        'idp_public_key': CONF.saml.certfile,
+        'idp_private_key': CONF.saml.keyfile,
     }
 
-    command_list = [xmlsec_binary, '--sign', '--privkey-pem', certificates,
-                    '--id-attr:ID', 'Assertion']
+    command_list = [
+        CONF.saml.xmlsec1_binary, '--sign', '--privkey-pem', certificates,
+        '--id-attr:ID', 'Assertion']
 
     file_path = None
     try:
