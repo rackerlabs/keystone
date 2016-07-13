@@ -55,7 +55,8 @@ Create consumer
 
 Enables a user to create a consumer.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -120,7 +121,8 @@ Revoke access token
 
 Enables a user to revoke an access token, which prevents the consumer from requesting new Identity Service API tokens. Also, revokes any Identity Service API tokens that were issued to the consumer through that access token.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -255,7 +257,8 @@ Deletes a consumer.
 When you delete a consumer, any associated request tokens, access
 tokens, and Identity API tokens are also deleted.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
