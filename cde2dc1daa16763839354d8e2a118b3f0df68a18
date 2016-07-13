@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_2c0d21e8",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:37:00Z",
+      "side": 1,
+      "message": "The best way to answer is with a follow up patch: https://review.openstack.org/#/c/341525/",
+      "parentUuid": "1aa78d24_c5e55538",
+      "revId": "cde2dc1daa16763839354d8e2a118b3f0df68a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c5bc3508",
         "filename": "keystone/conf/saml.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-13T13:16:00Z",
       "side": 1,
       "message": "Is this just arbitrary?",
+      "revId": "cde2dc1daa16763839354d8e2a118b3f0df68a18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cc09fdde",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:37:00Z",
+      "side": 1,
+      "message": "Maybe :) The SAML v2.0 spec dictates that limitation itself.",
+      "parentUuid": "1aa78d24_c5bc3508",
       "revId": "cde2dc1daa16763839354d8e2a118b3f0df68a18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
