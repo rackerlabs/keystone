@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0097343b",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:41:07Z",
+      "side": 1,
+      "message": "Error response codes have no space after : whereas Normal response codes do.",
+      "revId": "36af27f442d54b6dd82a27e1bc99405942a9c4d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
