@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0b591d5c",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Suggest standardizing on a header description for response codes such as  \nResponse code: 204.\nor\nNormal Response codes: 200, 204\nError Response codes: 500",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4b016506",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Do you want to list the HEAD ... API as well?",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0e0e4b32",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Is there a response?",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4e2fb388",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "If no response, it may be useful to state that there\nis no response expected upon successful DELETE.",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8e76bba1",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Response?",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cea7230a",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Add a message about no response expected for successful delete.",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cef563ee",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:46:07Z",
+      "side": 1,
+      "message": "Response?",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
