@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_4a24b60d",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T20:47:34Z",
+      "side": 1,
+      "message": "whoops, the capital ones above should not have been literals.",
+      "parentUuid": "1aa78d24_4accb68a",
+      "revId": "9993cb9f2d606c0962e90b10086fc513e1bca7be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_2a3ccabe",
         "filename": "keystone/conf/signing.py",
         "patchSetId": 1
