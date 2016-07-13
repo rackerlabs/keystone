@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ef382ba2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:53:28Z",
+      "side": 1,
+      "message": "I\u0027d suggest also documenting the API\u0027s expected behavior after this point in time.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_6fb1db46",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:53:28Z",
+      "side": 1,
+      "message": "This is not the time format used by the rest of the v3 API. It\u0027s missing microseconds (even if you return .00000), and the time zone should ALWAYS be in UTC.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4fda1f79",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:53:28Z",
+      "side": 1,
+      "message": "You can remove this in favor of using the same datetime format as the rest of the API.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0f7db76c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:53:28Z",
+      "side": 1,
+      "message": "``None`` is a Python constant, and would NEVER appear in the API. It\u0027s just null.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_af0103b1",
+        "filename": "api-ref/source/v3/samples/admin/group-users-list-response.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T13:53:28Z",
+      "side": 1,
+      "message": "This matches neither the date time format specified in this patch, nor the API\u0027s conventional date time format.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
