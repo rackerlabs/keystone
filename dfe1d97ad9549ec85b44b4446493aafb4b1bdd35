@@ -64,6 +64,24 @@
       "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3e3c08bf",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-07-13T22:02:47Z",
+      "side": 1,
+      "message": "Lance, right - that\u0027s my understanding as well. I will add Ron to the review, maybe we can get some shadow-users coaching from him..",
+      "parentUuid": "1aa78d24_4377813b",
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
