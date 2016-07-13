@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_ff18f51f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-07-13T03:39:45Z",
+      "side": 1,
+      "message": "These should not be kwargs but be positional since they are expected to always be present. This also poses less issues with the keymangler (convert args/object/etc to memcache key) being generally unhappy about the use of kwargs.",
+      "range": {
+        "startLine": 1292,
+        "startChar": 24,
+        "endLine": 1292,
+        "endChar": 78
+      },
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_62a14ef8",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 13
