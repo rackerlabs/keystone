@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b2568827",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-13T14:54:51Z",
+      "side": 1,
+      "message": "Wow!  This looks much nicer than than the code that was there before :-)",
+      "revId": "1d7c96d6a3e839dc64ae590da08cbee4b2108273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_722700ca",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-13T14:54:51Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "1d7c96d6a3e839dc64ae590da08cbee4b2108273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a3c63c65",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4701,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-13T14:54:51Z",
+      "side": 1,
+      "message": "Well yes that test case just isn\u0027t \"exciting\" anymore. Or needed!",
+      "revId": "1d7c96d6a3e839dc64ae590da08cbee4b2108273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
