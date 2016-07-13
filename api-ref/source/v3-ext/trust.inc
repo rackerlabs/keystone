@@ -99,7 +99,8 @@ Creates a trust.
 
 Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trusts
 
-Response codes: 201, 400, 401, 403, 404, 405, 409, 413, 415, 503
+Normal response codes: 201
+Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request
 -------
