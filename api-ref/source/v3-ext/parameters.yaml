@@ -19,6 +19,12 @@ domain_id:
   in: path
   required: false
   type: string
+endpoint_group_id:
+  description: |
+    The UUID of the endpoint group.
+  in: path
+  required: false
+  type: string
 endpoint_id:
   description: |
     The endpoint ID.
