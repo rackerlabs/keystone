@@ -16,6 +16,23 @@
       "revId": "75da9db519798318d22d39ed5a2d7aff3ba45eee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f5b0f5dd",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:40:13Z",
+      "side": 1,
+      "message": "We could add a test for this to make sure we preserve good user-experience.",
+      "revId": "75da9db519798318d22d39ed5a2d7aff3ba45eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
