@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_8dc6b866",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T20:57:15Z",
+      "side": 1,
+      "message": "Love it!",
+      "range": {
+        "startLine": 405,
+        "startChar": 21,
+        "endLine": 405,
+        "endChar": 47
+      },
+      "revId": "459dd8b287fcad2dfb15ba833ae3090bc10d72d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
