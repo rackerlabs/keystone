@@ -25,6 +25,47 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_76225d53",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T12:09:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1aa78d24_ff18f51f",
+      "range": {
+        "startLine": 1292,
+        "startChar": 24,
+        "endLine": 1292,
+        "endChar": 78
+      },
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d664f149",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T12:09:30Z",
+      "side": 1,
+      "message": "Will this work correctly if you\u0027ve already deleted it from the backend? It seems to me that this will only work when the cache for get_id_mapping has a value, but when it doesn\u0027t there still may be a cached value in _get_public_id that need invalidated.",
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_62a14ef8",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 13
