@@ -46,6 +46,24 @@
       "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4377813b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T21:46:36Z",
+      "side": 1,
+      "message": "When a federated user authenticates against keystone for the first time, we don\u0027t create the shadow user reference until *after* authentication is successful, right? We should get Ron\u0027s eyes on this, too.",
+      "parentUuid": "1aa78d24_f5f5c382",
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
