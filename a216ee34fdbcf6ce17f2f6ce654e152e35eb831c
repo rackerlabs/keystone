@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_2a3a0a35",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T20:42:12Z",
+      "side": 1,
+      "message": "I think this is still going to fail for the reasons noted in patch set 2. We could keep this as StrOpt until Eric\u0027s patch to oslo.config lands.",
+      "revId": "a216ee34fdbcf6ce17f2f6ce654e152e35eb831c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
