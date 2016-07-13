@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_2b7a1926",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 15293
+      },
+      "writtenOn": "2016-07-13T17:27:49Z",
+      "side": 1,
+      "message": "nit: Do you need string as part of this description? The type is string.\nAlso, the parameters that are optional should be set to false. Not sure if any of these params need updating.",
+      "revId": "863b9da54fea609534de795e74c391ce3b87e364",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
