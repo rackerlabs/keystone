@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_dd05257a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T14:24:33Z",
+      "side": 1,
+      "message": "We could do this with self.skipTest(). That way it\u0027s easier to find when we figure out what is going on with the keystone-coverage job.\n\nhttps://github.com/openstack/keystone/blob/7923a4669278c1386bea2520adf097760a3ec4fd/keystone/tests/unit/backend/legacy_drivers/resource/V8/sql.py#L39",
+      "revId": "f3a68e230d602d0c3ae8e1e2ae79db6aa43fd5c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
