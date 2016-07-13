@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_14d81a7f",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-13T18:26:11Z",
+      "side": 1,
+      "message": "do we still do it in keystone? Isn\u0027t it webserver-specific?\nhttp://paste.openstack.org/show/532105/",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 19
+      },
+      "revId": "c9b5e7eeaa7971e49bbcacdd00d96ca6fba27aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b434a6ac",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-13T18:26:11Z",
+      "side": 1,
+      "message": "huh?",
+      "range": {
+        "startLine": 142,
+        "startChar": 9,
+        "endLine": 142,
+        "endChar": 22
+      },
+      "revId": "c9b5e7eeaa7971e49bbcacdd00d96ca6fba27aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f43e2e8a",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-13T18:26:11Z",
+      "side": 1,
+      "message": "huh?",
+      "range": {
+        "startLine": 145,
+        "startChar": 20,
+        "endLine": 145,
+        "endChar": 23
+      },
+      "revId": "c9b5e7eeaa7971e49bbcacdd00d96ca6fba27aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_146dba99",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-13T18:26:11Z",
+      "side": 1,
+      "message": "i think we use \"error\" everywhere",
+      "range": {
+        "startLine": 164,
+        "startChar": 9,
+        "endLine": 164,
+        "endChar": 21
+      },
+      "revId": "c9b5e7eeaa7971e49bbcacdd00d96ca6fba27aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d4117206",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-13T18:26:11Z",
+      "side": 1,
+      "message": "we don\u0027t do it any more",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 22
+      },
+      "revId": "c9b5e7eeaa7971e49bbcacdd00d96ca6fba27aa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
