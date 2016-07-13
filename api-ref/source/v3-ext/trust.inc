@@ -29,7 +29,8 @@ Create trust
 
 Creates a trust.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
