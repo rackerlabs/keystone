@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_4835ded9",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T21:23:53Z",
+      "side": 1,
+      "message": "HTTPS doesn\u0027t have to be implemented on this port.",
+      "revId": "fb0ead92c642fc1a487f92f49bbfb623d5f46df8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_087f5667",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T21:23:53Z",
+      "side": 1,
+      "message": "It\u0027d probably make more sense to have the token section before this line. That way it\u0027s more explicit in what kind of token we\u0027re talking about.",
+      "revId": "fb0ead92c642fc1a487f92f49bbfb623d5f46df8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
