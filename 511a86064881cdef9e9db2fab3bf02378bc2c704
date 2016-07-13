@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_8bac09ee",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-13T09:50:15Z",
+      "side": 1,
+      "message": "True, this method is not exposed to outside, I agree no log is needed here.",
+      "parentUuid": "1aa78d24_dd1b7771",
+      "revId": "511a86064881cdef9e9db2fab3bf02378bc2c704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_db2f6886",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 3
