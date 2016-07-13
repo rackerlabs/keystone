@@ -11,7 +11,6 @@
 #    under the License.
 
 from oslo_log import log
-import oslo_messaging
 import osprofiler.notifier
 import osprofiler.web
 
@@ -32,11 +31,13 @@ def setup(name, host='0.0.0.0'):  # nosec
                  specified host name / address usage is highly recommended.
     """
     if CONF.profiler.enabled:
-        _notifier = osprofiler.notifier.create(
-            "Messaging", oslo_messaging, {},
-            oslo_messaging.get_transport(CONF), "keystone", name, host)
-        osprofiler.notifier.set(_notifier)
-        osprofiler.web.enable(CONF.profiler.hmac_keys)
+        osprofiler.notifier.init_from_conf(
+            conf=CONF,
+            context={},
+            project="keystone",
+            service=name,
+            host=host
+        )
         LOG.info(_LI("OSProfiler is enabled.\n"
                      "Traces provided from the profiler "
                      "can only be subscribed to using the same HMAC keys that "
