@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_2a3ccabe",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T20:31:07Z",
+      "side": 1,
+      "message": "subject",
+      "range": {
+        "startLine": 100,
+        "startChar": 16,
+        "endLine": 100,
+        "endChar": 23
+      },
+      "revId": "9993cb9f2d606c0962e90b10086fc513e1bca7be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
