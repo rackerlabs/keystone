@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_60ed58b7",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:43:29Z",
+      "side": 1,
+      "message": "commas removed on other lines but not here",
+      "range": {
+        "startLine": 160,
+        "startChar": 49,
+        "endLine": 160,
+        "endChar": 50
+      },
+      "revId": "6b1268440caafedf0e61c4bf2058e311d0ab5b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
