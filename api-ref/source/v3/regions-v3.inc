@@ -113,7 +113,8 @@ The following error might occur:
 - ``Conflict (409)``. The region cannot be deleted because it has
   child regions.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -180,7 +181,8 @@ The following errors might occur:
 - ``Conflict (409)``. The user-defined region ID is not unique to
   the OpenStack deployment.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
