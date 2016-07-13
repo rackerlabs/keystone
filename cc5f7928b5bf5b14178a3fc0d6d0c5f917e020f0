@@ -1,0 +1,480 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_f8fe2f68",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "credential*",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d82c1304",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "s/should/will need to/",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_386a771a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "missing period at the end of this sentence.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f83bcfe7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "I\u0027m wondering if we should be using the word \u0027token\u0027 here. Maybe just using: \n\n  Setup a key repository for encrypted credentials.\n\nwould be more straight-forward? I want to be really careful to make sure people understand the difference between what we\u0027re doing here and what we do with fernet - even though they both use the same model/tooling.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_433798e2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Is there a need to ever have more than one secondary key? Once everything is re-encrypted with the new key, shouldn\u0027t we only need two keys?",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c39f08b2",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Is this implementing paging support for the credential api?",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_43231805",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "The way this is phrased makes it seem like this option only exists to migrate/encrypt credentials. Is it possible for someone to maintain the existing credential-at-rest behavior with this option?",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a3bc7c06",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here about the use of \u0027token\u0027.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_831980d3",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "I\u0027m wondering if we ever need this to be more than 3. Technically - people wouldn\u0027t need more than 3 keys in order to rotate keys for credentials. Do we want to expose the ability for them to have more?\n\nAlso, if we absolutely need 3 keys to do this successfully, we should add a min_value.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9eab9374",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "The OpenStack projects typically do not import classes. \n\nAlso - maybe this is a sign that the fernet utils needs to be pulled into a more generic place. Instead of having the credential provider have a dependency on a specific token provider.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_fe0c5794",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "The fernet token approach does this using a @crypto property. This would make it so that we don\u0027t have duplicate code loading the keys between encrypt and decrypt.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9e7553fb",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "This should be a more specific Error. We\u0027ll probably have to create a new one in keystone/exception.py.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9ee393a3",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "These could be broken into multiple except statements, which would make it easier to explain the reason for excepting each error and handing them in specific ways if needed.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7e706708",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7e51872f",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Interesting, do the credential tests not use sql by default?",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f2576bfe",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "We should also make sure we have a test that ensure we aren\u0027t returning encrypted text to the user whenever they create or update a credential.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b2784390",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "The OpenStack projects typically don\u0027t import classes.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_126cb7ce",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f2412b0b",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "As in an invalid fernet key? If that\u0027s the case we should make sure we are raising an Error that is specific to that case.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_72137b01",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "The name of this test seems to contradict the name of the previous one. Maybe we should include in the name the fact that one of them allows plain text and the other doesn\u0027t (since that seems to be the distinguishing difference between the two tests).",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f2992b6e",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d2b7cfd5",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d2050f7a",
+        "filename": "keystone/tests/unit/ksfixtures/credential_repository.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "We typically don\u0027t import classes.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b2084392",
+        "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here about imports.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_52fabf75",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here about imports.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_12331763",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_72425bac",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d2bd0f69",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:32:03Z",
+      "side": 1,
+      "message": "A more descriptive name might be something like KeyRepositoryUtils.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
