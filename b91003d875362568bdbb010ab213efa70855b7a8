@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_153f8187",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:35:45Z",
+      "side": 1,
+      "message": "Yeah - I didn\u0027t see it anywhere in the docs, I had to go dig out the code.\n\nhttps://github.com/openstack/oslo.config/blob/d4b7650ee0a6f51b37ee55d887729602573225ad/oslo_config/cfg.py#L1279\n\nURIOpt also won\u0027t support max_length (at least it didn\u0027t when I tried it locally).",
+      "parentUuid": "1aa78d24_34ac4d9e",
+      "revId": "b91003d875362568bdbb010ab213efa70855b7a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_73c9f825",
         "filename": "keystone/conf/saml.py",
         "patchSetId": 2
