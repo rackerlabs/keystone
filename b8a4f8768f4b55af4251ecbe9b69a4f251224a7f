@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_de2d1b47",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "The time zone should always be UTC.",
+      "range": {
+        "startLine": 121,
+        "startChar": 46,
+        "endLine": 121,
+        "endChar": 55
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_be3bef9a",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "This format doesn\u0027t match what actually gets returned:\n\"2015-11-07T02:58:43.578887Z\"",
+      "range": {
+        "startLine": 124,
+        "startChar": 17,
+        "endLine": 124,
+        "endChar": 47
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_feabb785",
+        "filename": "api-ref/source/v3-ext/samples/OS-TRUST/trust-get-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "Doesn\u0027t match format defined in parameters.yaml",
+      "range": {
+        "startLine": 4,
+        "startChar": 23,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_be35aff7",
+        "filename": "api-ref/source/v3-ext/samples/OS-TRUST/trust-get-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "remaining_uses?",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_72bd3bb0",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "trust is not really a parameter, right?",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f25acb80",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "roles_links? Don\u0027t see this in the docs",
+      "range": {
+        "startLine": 64,
+        "startChar": 5,
+        "endLine": 64,
+        "endChar": 16
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_728c1bd7",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 29
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_126b17f2",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 165,
+        "startChar": 5,
+        "endLine": 165,
+        "endChar": 16
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_520e3f3b",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T15:33:22Z",
+      "side": 1,
+      "message": "is this the user name or role name?",
+      "range": {
+        "startLine": 166,
+        "startChar": 5,
+        "endLine": 166,
+        "endChar": 9
+      },
+      "revId": "b8a4f8768f4b55af4251ecbe9b69a4f251224a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
