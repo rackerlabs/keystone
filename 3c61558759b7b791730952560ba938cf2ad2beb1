@@ -16,6 +16,24 @@
       "revId": "3c61558759b7b791730952560ba938cf2ad2beb1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c84c2ea0",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T21:35:48Z",
+      "side": 0,
+      "message": "No, just removed the extra line out of habit. Is that okay?",
+      "parentUuid": "1aa78d24_c806ee84",
+      "revId": "3c61558759b7b791730952560ba938cf2ad2beb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
