@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0e212bfd",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-13T17:53:10Z",
+      "side": 1,
+      "message": "these should probably be alphabetical (with \"policy\" at the top)",
+      "range": {
+        "startLine": 340,
+        "startChar": 5,
+        "endLine": 343,
+        "endChar": 11
+      },
+      "revId": "2e3e241878ecee6f78e0cf95332be0296a5c5a70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
