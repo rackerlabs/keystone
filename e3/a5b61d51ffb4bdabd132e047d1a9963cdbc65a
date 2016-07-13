@@ -1,0 +1,12 @@
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 13 Jul 2016 01:51:46 +0000
+Reviewed-on: https://review.openstack.org/328447
+Project: openstack/keystone
+Branch: refs/heads/master
