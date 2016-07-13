@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_aeda971b",
+        "filename": "keystone/conf/tokenless_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-13T17:57:26Z",
+      "side": 1,
+      "message": "In some ways this is harder to understand than what was there previously. I would change \"and the following line would contain a second\"  to instead say \"and the line in the keystone.conf file that follows this line would contain a second trusted DN and look something like `trusted_issuer \u003d CN\u003dmary,OU\u003deng,O\u003dabc` \"",
+      "revId": "f19b4f2e9ace8111bba5d3c6898dfde33905272c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
