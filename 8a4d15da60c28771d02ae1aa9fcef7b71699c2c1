@@ -19,6 +19,52 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_0ab46e80",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T20:49:42Z",
+      "side": 1,
+      "message": "nit: failed authentication attempts...",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 14
+      },
+      "revId": "8a4d15da60c28771d02ae1aa9fcef7b71699c2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_aa339a12",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T20:49:42Z",
+      "side": 1,
+      "message": "You can remove this line now.",
+      "range": {
+        "startLine": 63,
+        "startChar": 9,
+        "endLine": 64,
+        "endChar": 10
+      },
+      "revId": "8a4d15da60c28771d02ae1aa9fcef7b71699c2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_4a5cb64c",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 1
