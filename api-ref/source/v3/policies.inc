@@ -29,7 +29,8 @@ Create policy
 
 Creates a policy.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -191,7 +192,8 @@ Delete policy
 
 Deletes a policy.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
