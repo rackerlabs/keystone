@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_8236b54e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-13T07:29:42Z",
+      "side": 1,
+      "message": "is this really an improvement? Cute name, sure (Dolphm), but I think the previous version was more clear what it is actually doing.",
+      "range": {
+        "startLine": 831,
+        "startChar": 30,
+        "endLine": 831,
+        "endChar": 40
+      },
+      "revId": "311075252e1a1ef975f649e1061192c3b3e1981c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9cd2ac5a",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 1
