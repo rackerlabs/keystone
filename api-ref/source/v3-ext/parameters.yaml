@@ -107,18 +107,6 @@ id:
   in: body
   required: true
   type: string
-id_1:
-  description: |
-    The endpoint UUID.
-  in: body
-  required: true
-  type: string
-id_2:
-  description: |
-    The ID of the policy.
-  in: body
-  required: true
-  type: string
 impersonation:
   description: |
     The impersonation flag. Default is false.
@@ -142,30 +130,6 @@ links:
   in: body
   required: true
   type: object
-links_1:
-  description: |
-    The links for the ``endpoints`` resource.
-  in: body
-  required: true
-  type: object
-links_2:
-  description: |
-    The links for the ``policy`` resource.
-  in: body
-  required: true
-  type: object
-name_1:
-  description: |
-    The role name.
-  in: body
-  required: true
-  type: string
-name_2:
-  description: |
-    The name of the group.
-  in: body
-  required: true
-  type: string
 next:
   description: |
     The ``next`` relative link for the ``endpoints``
@@ -207,12 +171,6 @@ previous:
   in: body
   required: true
   type: string
-project_id_1:
-  description: |
-    The ID of the project.
-  in: body
-  required: true
-  type: string
 region:
   description: |
     (Deprecated in v3.2) The geographic location of
@@ -249,13 +207,6 @@ self:
   description: |
     The ``self`` relative link for the ``endpoints``
     resource.
-  in: body
-  required: true
-  type: string
-service_id_1:
-  description: |
-    The UUID of the service to which the endpoint
-    belongs.
   in: body
   required: true
   type: string
