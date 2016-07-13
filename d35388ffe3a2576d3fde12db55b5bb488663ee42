@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_bc001202",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "This says not stored in the trust but it is also `in: body`. Maybe we should elaborate on the \u0027not stored in the trust.\u0027 part.",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7c1b4a73",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "trust manipulation? Trusts are immutable.",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3c6a62b3",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "Do we describe the `chain` anywhere, or how to create the chain? Maybe we should include that a trust chain is a trust created using a trust scoped token.",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bc5f72e3",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "`1` to be consistent with line 261?",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9cd43647",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "nit: s/regular/project-scoped/ or something more specific.",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3cc6e299",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "``allow_redelegation``*",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dc419e0b",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "nit: s/on the server side.//",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bc0652cb",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "`0` to be consistent with line 261?",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_fc961a3c",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "nit: representing the delegated authority of the trustor.",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bcde520e",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "The only resource we allow trusts to work on are projects, right?",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bc05b27a",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T16:58:39Z",
+      "side": 1,
+      "message": "s/the trustee/a user/ ?",
+      "revId": "d35388ffe3a2576d3fde12db55b5bb488663ee42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
