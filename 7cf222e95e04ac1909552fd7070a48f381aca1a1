@@ -51,6 +51,24 @@
       "revId": "7cf222e95e04ac1909552fd7070a48f381aca1a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8074c436",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T19:40:33Z",
+      "side": 1,
+      "message": "Adam could probably provide a more detailed answer than myself, but IIRC, this directly affects token revocation *events*, and everything else is a side effect. So yes, it applies equally to Fernet.",
+      "parentUuid": "1aa78d24_e6b04dde",
+      "revId": "7cf222e95e04ac1909552fd7070a48f381aca1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
