@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_d7016f6f",
+        "filename": "api-ref/source/v3-ext/inherit.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T20:21:05Z",
+      "side": 1,
+      "message": "trailing comma",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "49803a87b87b8230c4176f4a1e50dadb3469099f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
