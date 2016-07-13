@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_35d8bdee",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T15:41:58Z",
+      "side": 0,
+      "message": "We will either have to keep this as StrOpt or patch oslo.config\u0027s URIOpt to support max_length. \n\nhttp://logs.openstack.org/14/341514/2/check/gate-keystone-python27-db/f6b0bb6/console.html#_2016-07-13_13_47_00_327933\n\nI hit this locally yesterday, too.",
+      "revId": "dfac754aa50f3460352b68f52e9722fdc9f4e3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
