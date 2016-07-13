@@ -16,6 +16,24 @@
       "revId": "dfac754aa50f3460352b68f52e9722fdc9f4e3d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e05ae8f1",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:36:29Z",
+      "side": 0,
+      "message": "I tossed up a patch to oslo.config for this. However it\u0027ll take a while to merge and release through g-r. For now, StrOpt is the only option for idp_entity_id.\n\nhttps://review.openstack.org/#/c/341763/",
+      "parentUuid": "1aa78d24_35d8bdee",
+      "revId": "dfac754aa50f3460352b68f52e9722fdc9f4e3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
