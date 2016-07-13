@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_ffa8c78e",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T18:50:34Z",
+      "side": 1,
+      "message": "How about \"User\u0027s new password\"?",
+      "revId": "86ae7cef8c0c1d8cbe40b6f87ee9219dc97e7085",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7f9df765",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T18:50:34Z",
+      "side": 1,
+      "message": "How about \"User\u0027s old password\"",
+      "revId": "86ae7cef8c0c1d8cbe40b6f87ee9219dc97e7085",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
