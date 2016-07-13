@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b7278db4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T17:04:42Z",
+      "side": 1,
+      "message": "It could be that other things don\u0027t support token_flush as well.",
+      "revId": "6f0e06a267c9700ec7ca8e9f41dc40eb13c6ac47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
