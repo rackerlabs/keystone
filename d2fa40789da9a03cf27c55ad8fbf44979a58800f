@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a58668b6",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f66f9628",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_96e8d2b4",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-12T18:02:35Z",
       "side": 1,
       "message": "Is this still the approach we are going with? According to the configuration, it looks like there is going to be file-backed keys stored on disk, not in config?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_65b76085",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_96e8d2b4",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_85108c5a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_16dfc2d6",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7f21bc4c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-12T19:27:38Z",
       "side": 1,
       "message": "Generally speaking we only import modules and not individual objects.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e8168547",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_7f21bc4c",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_282b6d83",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_bf17a4ec",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_965bb285",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 21
@@ -115,6 +205,24 @@
       "writtenOn": "2016-07-12T18:02:35Z",
       "side": 1,
       "message": "We typically only import modules, not classes. \n\n    from keystone.token.providers.fernet import utils as fernet_utils\n    fernet \u003d fernet_utils.FernetUtils()",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_6821f59d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_965bb285",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a83e3db5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_ffd3ec35",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_569aea14",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 21
@@ -166,6 +292,24 @@
       "writtenOn": "2016-07-12T18:02:35Z",
       "side": 1,
       "message": "Credentials can\u0027t expire can they?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_886c21d1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_569aea14",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a8659de1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_56794a92",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_96ac52a0",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 21
@@ -217,6 +379,24 @@
       "writtenOn": "2016-07-12T18:02:35Z",
       "side": 1,
       "message": "This should be sure to explain that these keys are used for encrypting credentials and have no relationship to the fernet-keys used for tokens.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a893dda1",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_96ac52a0",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +420,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e8896570",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_16fd02b1",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_568dca2f",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 21
@@ -251,6 +449,24 @@
       "writtenOn": "2016-07-12T18:02:35Z",
       "side": 1,
       "message": "Isn\u0027t all this handled by config? It seems that way according to the documentation.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_48eb5913",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_568dca2f",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +490,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_c8c62999",
+        "filename": "keystone/credential/provider.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_16d502e4",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_f6d31602",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 21
@@ -285,6 +519,24 @@
       "writtenOn": "2016-07-12T19:27:38Z",
       "side": 1,
       "message": "This should be using keystone.conf now.",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_883f0186",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f6d31602",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +560,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_c84d893f",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_5665ca42",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_164862b2",
         "filename": "keystone/tests/unit/credential/test_controllers.py",
         "patchSetId": 21
@@ -319,6 +589,24 @@
       "writtenOn": "2016-07-12T19:27:38Z",
       "side": 1,
       "message": "Is this needed?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a848fd2d",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_164862b2",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +630,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e865e5ae",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "The fixture reuses the key_repository",
+      "parentUuid": "1aa78d24_56f30a73",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_16f6a25c",
         "filename": "keystone/tests/unit/ksfixtures/credential_repository.py",
         "patchSetId": 21
@@ -353,6 +659,24 @@
       "writtenOn": "2016-07-12T19:27:38Z",
       "side": 1,
       "message": "Is there really nothing to cleanup? Will TempDir take care of everything?",
+      "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c8fbc9bf",
+        "filename": "keystone/tests/unit/ksfixtures/credential_repository.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-13T01:10:31Z",
+      "side": 1,
+      "message": "TempDir should do cleanup.",
+      "parentUuid": "1aa78d24_16f6a25c",
       "revId": "d2fa40789da9a03cf27c55ad8fbf44979a58800f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
