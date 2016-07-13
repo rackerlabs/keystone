@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_809de468",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:40:18Z",
+      "side": 1,
+      "message": "Space after : to be consistent with line above.",
+      "revId": "1ecc5a51a9fb086d5b7e337b62586301090c80e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_609a7870",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:40:18Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 125,
+        "startChar": 20,
+        "endLine": 125,
+        "endChar": 21
+      },
+      "revId": "1ecc5a51a9fb086d5b7e337b62586301090c80e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c0852c0b",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-13T19:40:18Z",
+      "side": 1,
+      "message": "same",
+      "revId": "1ecc5a51a9fb086d5b7e337b62586301090c80e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
