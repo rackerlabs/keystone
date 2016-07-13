@@ -63,7 +63,8 @@ Create service
 
 Creates a service.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -189,7 +190,8 @@ Delete endpoint
 
 Deletes an endpoint.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -246,7 +248,8 @@ Create endpoint
 
 Creates an endpoint.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
@@ -382,7 +385,8 @@ If you try to delete a service that still has associated endpoints,
 this call either deletes all associated endpoints or fails until
 all endpoints are deleted.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+Error response codes:413,415,405,404,403,401,400,503,409,
 
 Request
 -------
