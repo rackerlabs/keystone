@@ -16,6 +16,24 @@
       "revId": "24c14b6d9eaa19c1575f70dd9aa3cc885ce5753f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_802de4aa",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T19:49:06Z",
+      "side": 1,
+      "message": "Yep - good catch. Fixing",
+      "parentUuid": "1aa78d24_c0b36ceb",
+      "revId": "24c14b6d9eaa19c1575f70dd9aa3cc885ce5753f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
