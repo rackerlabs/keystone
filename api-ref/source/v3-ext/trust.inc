@@ -29,7 +29,7 @@ Create trust
 
 Creates a trust.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Response codes: 201, 400, 401, 403, 404, 405, 409, 413, 415, 503
 
 Request
 -------
@@ -41,13 +41,15 @@ Request
    - trustor_user_id: trustor_user_id
    - name: name
    - roles: roles
-   - oauth_expires_at: oauth_expires_at
+   - expires_at: expires_at
    - remaining_uses: remaining_uses
    - trustee_user_id: trustee_user_id
    - project_id: project_id
 
 Request Example
 ---------------
+
+Status: 201 Created
 
 .. literalinclude:: samples/OS-TRUST/trust-create-request.json
    :language: javascript
@@ -57,15 +59,216 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
+   - id: id
    - impersonation: impersonation
    - roles_links: roles_links
    - trust: trust
    - trustor_user_id: trustor_user_id
    - name: name
    - links: links
-   - oauth_expires_at: oauth_expires_at
+   - expires_at: expires_at
    - remaining_uses: remaining_uses
    - trustee_user_id: trustee_user_id
    - roles: roles
    - project_id: project_id
+
+Response Example
+----------------
+
+.. literalinclude:: samples/OS-TRUST/trust-create-response.json
+   :language: javascript
+
+List trusts
+===========
+
+.. rest_method:: GET /v3/OS-TRUST/trusts
+
+Lists all trusts.
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+The following optional query strings are supported:
+
+- ``page``
+- ``per_page``
+- ``trustor_user_id``
+- ``trustee_user_id``
+
+In order to list trusts for a given trustor, filter the collection using a query string (e.g., ``?trustor_user_id={user_id}``).
+
+::
+
+   GET /v3/OS-TRUST/trusts?trustor_user_id=a0fdfd
+
+In order to list trusts for a given trustee, filter the collection using a query string (e.g., ``?trustee_user_id={user_id}``).
+
+::
+
+   GET /v3/OS-TRUST/trusts?trustee_user_id=86c0d5
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - trusts: trusts
    - id: id
+   - expires_at: expires_at
+   - impersonation: impersonation
+   - links: links
+   - roles: roles
+   - roles_links: roles_links
+   - name: name
+   - project_id: project_id
+   - trustee_user_id: trustee_user_id
+   - trustor_user_id: trustor_user_id
+   - remaining_uses: remaining_uses
+   - redelegation_count: redelegation_count
+   - redelegated_trust_id: redelegated_trust_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-list-response.json
+   :language: javascript
+
+
+Get trust
+=========
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}
+
+Gets the trust information for ``{trust_id}``.
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust: trust
+   - id: id
+   - expires_at: expires_at
+   - impersonation: impersonation
+   - links: links
+   - roles: roles
+   - roles_links: roles_links
+   - name: name
+   - project_id: project_id
+   - trustee_user_id: trustee_user_id
+   - trustor_user_id: trustor_user_id
+   - remaining_uses: remaining_uses
+   - redelegation_count: redelegation_count
+   - redelegated_trust_id: redelegated_trust_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-get-response.json
+   :language: javascript
+
+
+Delete trust
+============
+
+.. rest_method:: DELETE /v3/OS-TRUST/trusts/{trust_id}
+
+Deletes a trust with ``{trust_id}``.
+
+Response codes: 204, 400, 401, 403, 404, 405, 409, 413, 415, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Example
+----------------
+
+Status: 204 No Content
+
+
+List roles delegated by a trust
+===============================
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}/roles
+
+Lists roles delegated by a trust with ``{trust_id}``.
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Example
+----------------
+
+.. literalinclude:: samples/OS-TRUST/trust-list-roles-delegated-response.json
+   :language: javascript
+
+
+Check if a role is delegated by a trust
+=======================================
+
+.. rest_method:: HEAD /v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}
+
+Checks if a role is delegated by a trust.
+
+Response Codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+   - role_id: role_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+
+Get role delegated by a trust
+=============================
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}
+
+Gets a role with delegated by a trust.
+
+Response Codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+   - role_id: role_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-get-role-delegated-response.json
+   :language: javascript

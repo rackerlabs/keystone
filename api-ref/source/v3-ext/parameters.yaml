@@ -67,6 +67,12 @@ service_id:
   in: path
   required: false
   type: string
+trust_id:
+  description: |
+    The trust ID.
+  in: path
+  required: false
+  type: string
 user_id:
   description: |
     The UUID of the user.
@@ -101,6 +107,27 @@ endpoints:
   in: body
   required: true
   type: array
+expires_at:
+  description: |
+    The date and time when a request token expires.
+
+    The date and time stamp format is `ISO 8601
+    <https://en.wikipedia.org/wiki/ISO_8601>`_:
+
+    ::
+
+       CCYY-MM-DDThh:mm:ss±hh:mm
+
+    The ``±hh:mm`` value, if included, is the time zone as an offset
+    from UTC.
+
+    For example, ``2015-08-27T09:49:58-05:00``.
+
+    If the Identity API does not include this attribute or its value is
+    ``null``, the token never expires.
+  in: body
+  required: false
+  type: string
 id:
   description: |
     The ID of the trust.
@@ -213,6 +240,18 @@ project_id_1:
   in: body
   required: true
   type: string
+redelegated_trust_id:
+  description: |
+    Trust ID of the predecessor in trust chain.
+  in: body
+  required: false
+  type: string
+redelegation_count:
+  description: |
+    Maximum remaining depth of redelegated trust chain. Can be null.
+  in: body
+  required: false
+  type: integer
 region:
   description: |
     (Deprecated in v3.2) The geographic location of
@@ -277,6 +316,12 @@ trustor_user_id:
   in: body
   required: true
   type: string
+trusts:
+  description: |
+    An array of trust objects.
+  in: body
+  required: true
+  type: array
 type:
   description: |
     The MIME media type of the serialized policy
