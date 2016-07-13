@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_fce45ae0",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-13T17:00:24Z",
+      "side": 1,
+      "message": "yeah, they should be",
+      "parentUuid": "1aa78d24_35ac3dec",
+      "revId": "9100dd34a013d6215a028cdfb900a8893340fd0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_b5930d4e",
         "filename": "api-ref/source/v3-ext/parameters.yaml",
         "patchSetId": 1
@@ -82,6 +100,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_bc13f2b6",
+        "filename": "api-ref/source/v3-ext/revoke.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-13T17:00:24Z",
+      "side": 1,
+      "message": "this is copy and paste from the spec repo: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-revoke-ext.html \n\ni agree the way we handle versioning of these things is weird and probably pointless, we can hash out how we do it later (and conform all the APIs)",
+      "parentUuid": "1aa78d24_35ff1d35",
+      "revId": "9100dd34a013d6215a028cdfb900a8893340fd0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_e8413c0b",
         "filename": "api-ref/source/v3-ext/revoke.inc",
         "patchSetId": 1
@@ -93,6 +129,24 @@
       "writtenOn": "2016-07-13T15:49:35Z",
       "side": 1,
       "message": "Are all params required?",
+      "revId": "9100dd34a013d6215a028cdfb900a8893340fd0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9c08b692",
+        "filename": "api-ref/source/v3-ext/revoke.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-13T17:00:24Z",
+      "side": 1,
+      "message": "no, but we set required: true/false in the yaml file",
+      "parentUuid": "1aa78d24_e8413c0b",
       "revId": "9100dd34a013d6215a028cdfb900a8893340fd0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
