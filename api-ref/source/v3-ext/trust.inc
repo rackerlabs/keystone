@@ -4,19 +4,43 @@
  OS-TRUST API 
 ==============
 
-Creates a trust.
+Trusts provide project-specific role delegation between users, with optional impersonation.
 
-A trust is an OpenStack Identity extension that enables delegation
-and, optionally, impersonation through ``keystone``. A trust
-extension defines a relationship between a trustor and trustee. A
-trustor is the user who delegates a limited set of their own rights
-to another user, known as the trustee, for a limited time.
+API Resources
+=============
 
-The trust can eventually enable the trustee to impersonate the
-trustor. For security reasons, some safety measures are added. For
-example, if a trustor loses a given role, the API automatically
-revokes any trusts and the related tokens that the user issued with
-that role.
+Trusts
+------
+
+A trust represents a user’s (the trustor) authorization to delegate
+roles to another user (the trustee), and optionally allow the trustee
+to impersonate the trustor. After the trustor has created a trust, the
+trustee can specify the trust’s id attribute as part of an authentication
+request to then create a token representing the delegated authority.
+
+The trust contains constraints on the delegated attributes. A token created
+based on a trust will convey a subset of the trustor’s roles on the specified
+project. Optionally, the trust may only be valid for a specified time period,
+as defined by ``expires_at``. If no ``expires_at`` is specified, then the trust is
+valid until it is explicitly revoked.
+
+The ``impersonation`` flag allows the trustor to optionally delegate impersonation
+abilities to the trustee. To services validating the token, the trustee will
+appear as the trustor, although the token will also contain the ``impersonation`` flag
+to indicate that this behavior is in effect.
+
+A ``project_id`` may not be specified without at least one role, and vice versa.
+In other words, there is no way of implicitly delegating all roles to a trustee, in
+order to prevent users accidentally creating trust that are much more broad in scope
+than intended. A trust without a ``project_id`` or any delegated roles is unscoped,
+and therefore does not represent authorization on a specific resource.
+
+Trusts are immutable. If the trustee wishes to modify the attributes of the trust,
+they should create a new trust and delete the old trust. If a trust is deleted, any
+tokens generated based on the trust are immediately revoked.
+
+If the trustor loses access to any delegated attributes, the trust becomes immediately
+invalid and any tokens generated based on the trust are immediately revoked.
 
 For more information, see `Use trusts <http://docs.openstack.org
 /admin-guide/keystone_use_trusts.html>`_.
@@ -29,7 +53,9 @@ Create trust
 
 Creates a trust.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trusts
+
+Response codes: 201, 400, 401, 403, 404, 405, 409, 413, 415, 503
 
 Request
 -------
@@ -39,15 +65,16 @@ Request
    - impersonation: impersonation
    - trust: trust
    - trustor_user_id: trustor_user_id
-   - name: name
-   - roles: roles
-   - oauth_expires_at: oauth_expires_at
+   - roles: trust_roles
+   - expires_at: trust_expires_at
    - remaining_uses: remaining_uses
    - trustee_user_id: trustee_user_id
-   - project_id: project_id
+   - project_id: trust_project_id
 
 Request Example
 ---------------
+
+Status: 201 Created
 
 .. literalinclude:: samples/OS-TRUST/trust-create-request.json
    :language: javascript
@@ -57,15 +84,227 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
+   - id: id
    - impersonation: impersonation
    - roles_links: roles_links
    - trust: trust
    - trustor_user_id: trustor_user_id
-   - name: name
    - links: links
-   - oauth_expires_at: oauth_expires_at
+   - expires_at: expires_at
    - remaining_uses: remaining_uses
    - trustee_user_id: trustee_user_id
    - roles: roles
    - project_id: project_id
+
+Response Example
+----------------
+
+.. literalinclude:: samples/OS-TRUST/trust-create-response.json
+   :language: javascript
+
+List trusts
+===========
+
+.. rest_method:: GET /v3/OS-TRUST/trusts
+
+Lists all trusts.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trusts
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+The following optional query strings are supported:
+
+- ``page``
+- ``per_page`` (default 30)
+- ``trustor_user_id``
+- ``trustee_user_id``
+
+In order to list trusts for a given trustor, filter the collection using a query string (e.g., ``?trustor_user_id={user_id}``).
+
+::
+
+   GET /v3/OS-TRUST/trusts?trustor_user_id=a0fdfd
+
+In order to list trusts for a given trustee, filter the collection using a query string (e.g., ``?trustee_user_id={user_id}``).
+
+::
+
+   GET /v3/OS-TRUST/trusts?trustee_user_id=86c0d5
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - trusts: trusts
    - id: id
+   - expires_at: expires_at
+   - impersonation: impersonation
+   - links: links
+   - roles: roles
+   - roles_links: roles_links
+   - name: name
+   - project_id: project_id
+   - trustee_user_id: trustee_user_id
+   - trustor_user_id: trustor_user_id
+   - remaining_uses: remaining_uses
+   - redelegation_count: redelegation_count
+   - redelegated_trust_id: redelegated_trust_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-list-response.json
+   :language: javascript
+
+
+Get trust
+=========
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}
+
+Gets the trust information for ``{trust_id}``.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trust
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust: trust
+   - id: id
+   - expires_at: expires_at
+   - impersonation: impersonation
+   - links: links
+   - roles: roles
+   - roles_links: roles_links
+   - name: name
+   - project_id: project_id
+   - trustee_user_id: trustee_user_id
+   - trustor_user_id: trustor_user_id
+   - remaining_uses: remaining_uses
+   - redelegation_count: redelegation_count
+   - redelegated_trust_id: redelegated_trust_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-get-response.json
+   :language: javascript
+
+
+Delete trust
+============
+
+.. rest_method:: DELETE /v3/OS-TRUST/trusts/{trust_id}
+
+Deletes a trust with ``{trust_id}``.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trust
+
+Response codes: 204, 400, 401, 403, 404, 405, 409, 413, 415, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Example
+----------------
+
+Status: 204 No Content
+
+
+List roles delegated by a trust
+===============================
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}/roles
+
+Lists roles delegated by a trust with ``{trust_id}``.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trust_roles
+
+Response codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+
+Response Example
+----------------
+
+.. literalinclude:: samples/OS-TRUST/trust-list-roles-delegated-response.json
+   :language: javascript
+
+
+Check if a role is delegated by a trust
+=======================================
+
+.. rest_method:: HEAD /v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}
+
+Checks if a role is delegated by a trust.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trust_role
+
+Response Codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+   - role_id: role_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+
+Get role delegated by a trust
+=============================
+
+.. rest_method:: GET /v3/OS-TRUST/trusts/{trust_id}/roles/{role_id}
+
+Gets a role with delegated by a trust.
+
+Relationship: http://docs.openstack.org/api/openstack-identity/3/ext/OS-TRUST/1.0/rel/trust_role
+
+Response Codes: 200, 400, 401, 403, 404, 405, 413, 503
+
+Request
+-------
+
+.. rest_parameters:: parameters.yaml
+
+   - trust_id: trust_id
+   - role_id: role_id
+
+Response Example
+----------------
+
+Status: 200 OK
+
+.. literalinclude:: samples/OS-TRUST/trust-get-role-delegated-response.json
+   :language: javascript
