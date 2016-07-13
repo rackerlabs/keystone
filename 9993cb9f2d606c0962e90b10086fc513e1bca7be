@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_4accb68a",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T20:37:48Z",
+      "side": 1,
+      "message": "`PKI` or `pki` (same for `pkiz`)? Some reference them as all capitals and some don\u0027t. We should try and make them consistent as far as case is concerned.",
+      "revId": "9993cb9f2d606c0962e90b10086fc513e1bca7be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_2a3ccabe",
         "filename": "keystone/conf/signing.py",
         "patchSetId": 1
