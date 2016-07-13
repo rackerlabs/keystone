@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_6311dd53",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T21:35:48Z",
+      "side": 1,
+      "message": "Does this noticeably speed the tests up? Can we document by how much if we know?",
+      "revId": "01593c159d965753d6d0bf001769adeb7f0b36a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_246ce49b",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 4
