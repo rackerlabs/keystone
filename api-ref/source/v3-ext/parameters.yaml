@@ -130,18 +130,6 @@ id:
   in: body
   required: true
   type: string
-id_1:
-  description: |
-    The endpoint UUID.
-  in: body
-  required: true
-  type: string
-id_2:
-  description: |
-    The ID of the policy.
-  in: body
-  required: true
-  type: string
 impersonation:
   description: |
     If set to `true`, then the user attribute of tokens generated based on the
@@ -169,30 +157,6 @@ links:
   in: body
   required: true
   type: object
-links_1:
-  description: |
-    The links for the ``endpoints`` resource.
-  in: body
-  required: true
-  type: object
-links_2:
-  description: |
-    The links for the ``policy`` resource.
-  in: body
-  required: true
-  type: object
-name_1:
-  description: |
-    The role name.
-  in: body
-  required: true
-  type: string
-name_2:
-  description: |
-    The name of the group.
-  in: body
-  required: true
-  type: string
 next:
   description: |
     The ``next`` relative link for the ``endpoints``
@@ -231,12 +195,6 @@ previous:
   description: |
     The ``previous`` relative link for the
     ``endpoints`` resource.
-  in: body
-  required: true
-  type: string
-project_id_1:
-  description: |
-    The ID of the project.
   in: body
   required: true
   type: string
@@ -416,13 +374,6 @@ self:
   in: body
   required: true
   type: string
-service_id_1:
-  description: |
-    The UUID of the service to which the endpoint
-    belongs.
-  in: body
-  required: true
-  type: string
 trust:
   description: |
     A trust object.
@@ -502,4 +453,3 @@ url:
   in: body
   required: true
   type: string
-
