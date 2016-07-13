@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_4ebfb3aa",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T17:53:27Z",
+      "side": 1,
+      "message": "Response codes have been addressed in a follow up patch",
+      "parentUuid": "1aa78d24_0b591d5c",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_4b016506",
         "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-13T17:46:07Z",
       "side": 1,
       "message": "Do you want to list the HEAD ... API as well?",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_cee9e3b9",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T17:53:27Z",
+      "side": 1,
+      "message": "No,  because I don\u0027t see any extra value in it.",
+      "parentUuid": "1aa78d24_4b016506",
       "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2016-07-13T17:46:07Z",
       "side": 1,
       "message": "If no response, it may be useful to state that there\nis no response expected upon successful DELETE.",
+      "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ce0e038c",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-13T17:53:27Z",
+      "side": 1,
+      "message": "This patch is just moving things around. I\u0027m not making any content changes here.",
+      "parentUuid": "1aa78d24_4e2fb388",
       "revId": "c29d65b5d1087c41792bb83b335c4518e05ddf2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
