@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_378433b0",
+        "filename": "keystone/conf/tokenless_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-07-13T20:26:38Z",
+      "side": 1,
+      "message": "This looks much better!",
+      "revId": "88e26fde4594a77a64a2ba06d7f2d1df9327bf2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
