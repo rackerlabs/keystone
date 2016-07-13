@@ -16,6 +16,24 @@
       "revId": "f19b4f2e9ace8111bba5d3c6898dfde33905272c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_daccf9bd",
+        "filename": "keystone/conf/tokenless_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-13T18:59:54Z",
+      "side": 1,
+      "message": "It\u0027s not obvious here, but the problem I was trying to solve was that the line breaks are not rendered all the way through to the final keystone.conf.sample file the way that it was written in the docstring -- everything needs to be in paragraph format.\n\nI know that\u0027s not what you\u0027re commenting on, but I\u0027ll take your comment to mean that I made a complete mess of this bit in the process, and rewrite it from scratch rather than tweaking it.",
+      "parentUuid": "1aa78d24_aeda971b",
+      "revId": "f19b4f2e9ace8111bba5d3c6898dfde33905272c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
