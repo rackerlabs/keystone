@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_832d0091",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T14:46:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b23208f0",
+      "revId": "6cc0b00a67f805a05902fcb27722ab8b44f456ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_22c38139",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
