@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b87dc7e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T14:41:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_4f221fba",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_ef382ba2",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 11
@@ -170,6 +188,24 @@
       "writtenOn": "2016-07-13T13:53:28Z",
       "side": 1,
       "message": "This matches neither the date time format specified in this patch, nor the API\u0027s conventional date time format.",
+      "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_78eb5fa4",
+        "filename": "api-ref/source/v3/samples/admin/group-users-list-response.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-13T14:41:10Z",
+      "side": 1,
+      "message": "Fixed the date time format; the sample matches an example of what would actually be returned.",
+      "parentUuid": "1aa78d24_af0103b1",
       "revId": "d56f47534aeae209be2b2351525e84d62c82e351",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
