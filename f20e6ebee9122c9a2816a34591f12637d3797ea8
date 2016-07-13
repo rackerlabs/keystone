@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e5a79a09",
+        "filename": "api-ref/source/v3-ext/endpoint-policy.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-13T19:14:51Z",
+      "side": 0,
+      "message": "Can we remove this one? It doesn\u0027t have any codes associated to it so it probably doesn\u0027t make sense to have it here.",
+      "revId": "f20e6ebee9122c9a2816a34591f12637d3797ea8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
