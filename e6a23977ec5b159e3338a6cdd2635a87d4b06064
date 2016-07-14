@@ -1,0 +1,418 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_11a2da4b",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/endpoint-group-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "currently the API returns \u0027localhost/identity/v3/\u0027 instead.\nsame for all the other endpoint occurrences.",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7187deb6",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/endpoint-groups-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 12,
+        "startChar": 36,
+        "endLine": 12,
+        "endChar": 55
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_518462b0",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/endpoint-groups-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 25,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 55
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_71aebe30",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/endpoint-groups-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto. also, i think it should be changed to localhost, in order to avoid identity/identity/ endpoint.",
+      "range": {
+        "startLine": 32,
+        "startChar": 25,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b1a82622",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/endpoint-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f160ee0f",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/get-projects-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 8,
+        "startChar": 32,
+        "endLine": 8,
+        "endChar": 49
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_316b96f3",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/get-projects-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 18,
+        "startChar": 32,
+        "endLine": 18,
+        "endChar": 50
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_11701adc",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/get-projects-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 25,
+        "startChar": 24,
+        "endLine": 25,
+        "endChar": 39
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_71751ecb",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 6,
+        "startChar": 20,
+        "endLine": 6,
+        "endChar": 42
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b17f86aa",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 9,
+        "startChar": 32,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_917c0ab7",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 17,
+        "startChar": 20,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f1474e78",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 50
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d14cd29f",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 25,
+        "startChar": 17,
+        "endLine": 25,
+        "endChar": 42
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_715cfe4c",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-project-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "extra space here",
+      "range": {
+        "startLine": 25,
+        "startChar": 64,
+        "endLine": 25,
+        "endChar": 65
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_5159025b",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-service-endpoints.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 9,
+        "startChar": 25,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f12e2eaa",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-service-endpoints.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 21,
+        "startChar": 25,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3139d6f3",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-service-endpoints.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 33,
+        "startChar": 25,
+        "endLine": 33,
+        "endChar": 50
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d1333212",
+        "filename": "api-ref/source/v3-ext/samples/OS-EP-FILTER/list-service-endpoints.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T01:33:15Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 41,
+        "startChar": 22,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "e6a23977ec5b159e3338a6cdd2635a87d4b06064",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
