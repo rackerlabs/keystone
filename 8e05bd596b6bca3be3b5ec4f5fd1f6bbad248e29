@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_864f8433",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-14T19:18:38Z",
+      "side": 1,
+      "message": "It is still necessary to use the command with sql driver.",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_868ae462",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-14T19:18:38Z",
+      "side": 1,
+      "message": "please indent this so that it matches the first \u0027",
+      "range": {
+        "startLine": 549,
+        "startChar": 24,
+        "endLine": 549,
+        "endChar": 25
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a6bd6004",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-14T19:18:38Z",
+      "side": 1,
+      "message": "lets not use this generic driver. Lets do something more commonly used. Like memcache.",
+      "range": {
+        "startLine": 55,
+        "startChar": 57,
+        "endLine": 55,
+        "endChar": 62
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
