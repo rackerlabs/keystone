@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_21884cc6",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T14:11:48Z",
+      "side": 1,
+      "message": "nit: are there any specific cases we want to highlight here? s/the right authorization/the proper project role assignments on a project/",
+      "revId": "c7b9441c9e7bab488da45488a89bf6030df50082",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_81bf805f",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T14:11:48Z",
+      "side": 1,
+      "message": "No Content*",
+      "revId": "c7b9441c9e7bab488da45488a89bf6030df50082",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
