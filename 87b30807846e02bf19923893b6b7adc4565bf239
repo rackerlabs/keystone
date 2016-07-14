@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_c9e0a699",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T05:00:59Z",
+      "side": 1,
+      "message": "wrap to 80 chars",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "87b30807846e02bf19923893b6b7adc4565bf239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_29104aab",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T05:00:59Z",
+      "side": 1,
+      "message": "from experience with keystoneauth and oslo.context and others an even better API here would be to take this whole setup function and change it to:\n\nosprofiler.init_from_conf(CONF, service\u003dname, host\u003dhost)\n\nbecause everything here is coming from standard CONF and you could add and remove things without having to go and change every service. (I don\u0027t know where service and host come from)",
+      "range": {
+        "startLine": 43,
+        "startChar": 21,
+        "endLine": 43,
+        "endChar": 22
+      },
+      "revId": "87b30807846e02bf19923893b6b7adc4565bf239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
