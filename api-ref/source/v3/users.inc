@@ -31,22 +31,22 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
+   - user: user_object
+   - description: description_user_response_body
+   - links: links_user
+   - enabled: enabled_user_response_body
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -73,15 +73,15 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - user: user_object
    - name: name
-   - user: user
-   - enabled: enabled
+   - enabled: enabled_user_update_body
    - email: email
    - default_project_id: default_project_id
-   - password: password
+   - password: password_request_body
    - domain_id: domain_id
-   - description: description
-   - user_id: user_id
+   - description: description_user_request_body
+   - user_id: user_id_path
 
 Request Example
 ---------------
@@ -94,15 +94,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
+   - user: user_object
+   - description: description_user_response_body
+   - links: links_user
+   - enabled: enabled_user_response_body
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -125,7 +125,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 
 List groups to which a user belongs
@@ -143,7 +143,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Example
 ----------------
@@ -166,10 +166,10 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - user: user_object
    - original_password: original_password
-   - password: password
-   - user: user
-   - user_id: user_id
+   - password: password_update_body
+   - user_id: user_id_path
 
 Request Example
 ---------------
@@ -192,14 +192,14 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
-   - user: user
-   - enabled: enabled
+   - user: user_object
+   - name: name_user_body
+   - enabled: enabled_user_request_body
    - email: email
    - default_project_id: default_project_id
-   - password: password
+   - password: password_request_body
    - domain_id: domain_id
-   - description: description
+   - description: description_user_request_body
 
 Request Example
 ---------------
@@ -212,15 +212,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
+   - user: user_object
+   - description: description_user_response_body
+   - links: links_user
+   - enabled: enabled_user_response_body
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 
 List users
@@ -238,24 +238,24 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - name: name
-   - enabled: enabled
+   - domain_id: domain_id_query
+   - name: name_user_query
+   - enabled: enabled_user_query
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - enabled: enabled
+   - users: users_object
+   - description: description_user_response_body
+   - links: links_user
+   - enabled: enabled_user_response_body
    - email: email
    - default_project_id: default_project_id
-   - id: id
-   - users: users
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -279,7 +279,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Example
 ----------------
