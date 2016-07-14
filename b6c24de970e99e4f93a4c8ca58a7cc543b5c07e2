@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_a67589cd",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T04:22:15Z",
+      "side": 1,
+      "message": "love it",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 49
+      },
+      "revId": "b6c24de970e99e4f93a4c8ca58a7cc543b5c07e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2648798a",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T04:22:15Z",
+      "side": 1,
+      "message": "love it",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 67
+      },
+      "revId": "b6c24de970e99e4f93a4c8ca58a7cc543b5c07e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_262fd9a8",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T04:22:15Z",
+      "side": 1,
+      "message": "no default here?",
+      "range": {
+        "startLine": 98,
+        "startChar": 5,
+        "endLine": 98,
+        "endChar": 15
+      },
+      "revId": "b6c24de970e99e4f93a4c8ca58a7cc543b5c07e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e604b119",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T04:22:15Z",
+      "side": 1,
+      "message": "this gives me back a set(), i thought ``choices`` had to be a list?\n\n\u003e\u003e\u003e hashlib.algorithms_guaranteed\nset([\u0027sha1\u0027, \u0027sha224\u0027, \u0027sha384\u0027, \u0027sha256\u0027, \u0027sha512\u0027, \u0027md5\u0027])",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 72
+      },
+      "revId": "b6c24de970e99e4f93a4c8ca58a7cc543b5c07e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
