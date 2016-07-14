@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_14e2da01",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f8fe2f68",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d82c1304",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "s/should/will need to/",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_54ec62f3",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_d82c1304",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_54710244",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_386a771a",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_f83bcfe7",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "I\u0027m wondering if we should be using the word \u0027token\u0027 here. Maybe just using: \n\n  Setup a key repository for encrypted credentials.\n\nwould be more straight-forward? I want to be really careful to make sure people understand the difference between what we\u0027re doing here and what we do with fernet - even though they both use the same model/tooling.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_74f07e92",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f83bcfe7",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_54f74259",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "I think it\u0027s safer to have multiple keys.  There is less of a chance of losing data by an ops mistake.",
+      "parentUuid": "1aa78d24_433798e2",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c39f08b2",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 22
@@ -98,6 +188,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Is this implementing paging support for the credential api?",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_345c364c",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "This does not implement paging.  This allows setting the offset of a search, that can then be used to implement paging.",
+      "parentUuid": "1aa78d24_c39f08b2",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_54010206",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_43231805",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_a3bc7c06",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 22
@@ -132,6 +258,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment here about the use of \u0027token\u0027.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1f0e7332",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_a3bc7c06",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_1f35d3da",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_831980d3",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9eab9374",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 22
@@ -166,6 +328,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "The OpenStack projects typically do not import classes. \n\nAlso - maybe this is a sign that the fernet utils needs to be pulled into a more generic place. Instead of having the credential provider have a dependency on a specific token provider.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d93cd0c1",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_9eab9374",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_1947784c",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_fe0c5794",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9e7553fb",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 22
@@ -200,6 +398,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "This should be a more specific Error. We\u0027ll probably have to create a new one in keystone/exception.py.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b90d84ea",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_9e7553fb",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_99e088fc",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "They are included in the same block to avoid duplicating code.  They should be handled the same way.",
+      "parentUuid": "1aa78d24_9ee393a3",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7e706708",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 22
@@ -234,6 +468,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment here.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_b9dbc44e",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_7e706708",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b9e584dd",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_7e51872f",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_f2576bfe",
         "filename": "keystone/tests/unit/credential/test_controllers.py",
         "patchSetId": 22
@@ -268,6 +538,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "We should also make sure we have a test that ensure we aren\u0027t returning encrypted text to the user whenever they create or update a credential.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_f9aeec2d",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f2576bfe",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_79483c8b",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b2784390",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_126cb7ce",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 22
@@ -302,6 +608,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment as above.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1954981f",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_126cb7ce",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_d92050b3",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f2412b0b",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_72137b01",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 22
@@ -336,6 +678,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "The name of this test seems to contradict the name of the previous one. Maybe we should include in the name the fact that one of them allows plain text and the other doesn\u0027t (since that seems to be the distinguishing difference between the two tests).",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_747203b2",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_72137b01",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_b47aab75",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f2992b6e",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d2b7cfd5",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 22
@@ -370,6 +748,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_947faf65",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_d2b7cfd5",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_4075bcca",
+        "filename": "keystone/tests/unit/ksfixtures/credential_repository.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_d2050f7a",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_b2084392",
         "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
         "patchSetId": 22
@@ -404,6 +818,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment here about imports.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e0b82878",
+        "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b2084392",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +859,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e085c8cf",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_52fabf75",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_12331763",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 22
@@ -438,6 +888,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "Same comment here.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_000a9479",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_12331763",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -461,6 +929,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_407adc26",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_72425bac",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d2bd0f69",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 22
@@ -472,6 +958,24 @@
       "writtenOn": "2016-07-13T15:32:03Z",
       "side": 1,
       "message": "A more descriptive name might be something like KeyRepositoryUtils.",
+      "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2090704e",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2016-07-14T18:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_d2bd0f69",
       "revId": "cc5f7928b5bf5b14178a3fc0d6d0c5f917e020f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
