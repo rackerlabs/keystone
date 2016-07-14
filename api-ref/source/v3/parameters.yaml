@@ -68,6 +68,36 @@ option:
   in: path
   required: false
   type: string
+path_domain_id:
+  description: |
+    The domain ID.
+  in: path
+  required: true
+  type: string
+path_group_id:
+  description: |
+    The group ID.
+  in: path
+  required: true
+  type: string
+path_project_id:
+  description: |
+    The project ID.
+  in: path
+  required: true
+  type: string
+path_role_id:
+  description: |
+    The role ID.
+  in: path
+  required: true
+  type: string
+path_user_id:
+  description: |
+    The user ID.
+  in: path
+  required: true
+  type: string
 policy_id:
   description: |
     The policy ID.
@@ -326,6 +356,12 @@ catalog:
   in: body
   required: true
   type: array
+collection_link:
+  description: |
+    The link to the collection of resources.
+  in: body
+  required: true
+  type: string
 config:
   description: |
     A ``config`` object.
@@ -1225,21 +1261,39 @@ regions:
   in: body
   required: true
   type: array
+response_object_link:
+  description: |
+    The link to the resources in question.
+  in: body
+  required: true
+  type: string
+response_object_role_id:
+  description: |
+    The role ID.
+  in: body
+  required: true
+  type: string
+response_object_role_name:
+  description: |
+    The role name.
+  in: body
+  required: true
+  type: string
 role:
   description: |
-    A ``role`` object.
+    A ``role`` object, containing:
   in: body
   required: true
   type: object
 role_assignments:
   description: |
-    A ``role_assignments`` object.
+    A list of ``role_assignment`` objects.
   in: body
   required: true
   type: array
 roles:
   description: |
-    A ``roles`` object.
+    A list of ``role`` objects, each containing:
   in: body
   required: true
   type: array
