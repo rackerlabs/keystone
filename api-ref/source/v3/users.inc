@@ -31,22 +31,21 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
-   - email: email
+   - user: user_object
    - default_project_id: default_project_id
-   - id: id
+   - description: description_user_response_body
    - domain_id: domain_id
-   - name: name
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -60,7 +59,8 @@ Update user
 
 .. rest_method::  PATCH /v3/users/{user_id}
 
-Updates the password for or enables or disables a user.
+Updates a user's password, or whether they are enabled or
+disabled.
 
 If the back-end driver does not support this functionality, this
 call might return the HTTP ``Not Implemented (501)`` response code.
@@ -73,15 +73,14 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
-   - user: user
-   - enabled: enabled
-   - email: email
+   - user_id: user_id_path
+   - user: user_object
    - default_project_id: default_project_id
-   - password: password
+   - description: description_user_request_body
    - domain_id: domain_id
-   - description: description
-   - user_id: user_id
+   - enabled: enabled_user_update_body
+   - name: name
+   - password: password_request_body
 
 Request Example
 ---------------
@@ -94,15 +93,14 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
-   - email: email
+   - user: user_object
    - default_project_id: default_project_id
-   - id: id
+   - description: description_user_response_body
    - domain_id: domain_id
-   - name: name
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -125,7 +123,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 
 List groups to which a user belongs
@@ -143,7 +141,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Example
 ----------------
@@ -166,10 +164,10 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - user_id: user_id_path
+   - user: user_object
    - original_password: original_password
-   - password: password
-   - user: user
-   - user_id: user_id
+   - password: password_update_body
 
 Request Example
 ---------------
@@ -192,14 +190,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
-   - user: user
-   - enabled: enabled
-   - email: email
+   - user: user_object
    - default_project_id: default_project_id
-   - password: password
+   - description: description_user_request_body
    - domain_id: domain_id
-   - description: description
+   - enabled: enabled_user_request_body
+   - name: name_user_body
+   - password: password_request_body
 
 Request Example
 ---------------
@@ -212,15 +209,14 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - user: user
-   - enabled: enabled
-   - email: email
+   - user: user_object
    - default_project_id: default_project_id
-   - id: id
+   - description: description_user_response_body
    - domain_id: domain_id
-   - name: name
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: name_user_body
 
 
 List users
@@ -238,24 +234,23 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - name: name
-   - enabled: enabled
+   - domain_id: domain_id_query
+   - enabled: enabled_user_query
+   - name: name_user_query
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - enabled: enabled
-   - email: email
+   - users: users_object
    - default_project_id: default_project_id
-   - id: id
-   - users: users
+   - description: description_user_response_body
    - domain_id: domain_id
-   - name: name
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -279,7 +274,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
+   - user_id: user_id_path
 
 Response Example
 ----------------
