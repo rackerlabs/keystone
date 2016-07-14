@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_aa16d155",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T14:55:36Z",
+      "side": 1,
+      "message": "Per our conversation in IRC - what if we use http://identity.example.com/ ?",
+      "parentUuid": "1aa78d24_4473e615",
+      "revId": "f8c40c80b70e1ff67cc50aa81e59d9e98e2a5429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_0421deb4",
         "filename": "api-ref/source/v2/samples/client/authenticate-response.json",
         "patchSetId": 1
