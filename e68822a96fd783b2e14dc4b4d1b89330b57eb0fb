@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_646b8286",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T14:19:56Z",
+      "side": 1,
+      "message": "why not just http://localhost/v3 ? Having /identity in there makes it seem like part of the path.",
+      "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
