@@ -45,6 +45,24 @@
       "revId": "e02c5b6f1299d1c2bc48a4b5a5b06703534bf309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7d5676cf",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T13:35:31Z",
+      "side": 1,
+      "message": "Ah - these must have been added after the rest of the trust docs I had a merge conflict with. Fixing.",
+      "parentUuid": "1aa78d24_dd468a4e",
+      "revId": "e02c5b6f1299d1c2bc48a4b5a5b06703534bf309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
