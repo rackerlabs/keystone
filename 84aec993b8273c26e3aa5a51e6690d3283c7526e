@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aa78d24_09290e8a",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:26:38Z",
+      "side": 1,
+      "message": "keystone-manage pki_setup is marked deprecated for removal in Ocata. I konw it was there before but do we want to keep it?\n\nOn second thoughts everything here is deprecated for removal in O",
+      "range": {
+        "startLine": 27,
+        "startChar": 25,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "84aec993b8273c26e3aa5a51e6690d3283c7526e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_2d6d049a",
         "filename": "keystone/conf/signing.py",
         "patchSetId": 2
@@ -41,6 +64,75 @@
         "startChar": 15,
         "endLine": 67,
         "endChar": 32
+      },
+      "revId": "84aec993b8273c26e3aa5a51e6690d3283c7526e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e9492262",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:26:38Z",
+      "side": 1,
+      "message": "certificate with `keystone-manage pki_setup`.",
+      "range": {
+        "startLine": 79,
+        "startChar": 12,
+        "endLine": 79,
+        "endChar": 13
+      },
+      "revId": "84aec993b8273c26e3aa5a51e6690d3283c7526e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_696c12d1",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:26:38Z",
+      "side": 1,
+      "message": "certificate with `keystone-manage pki_setup`.",
+      "range": {
+        "startLine": 91,
+        "startChar": 21,
+        "endLine": 91,
+        "endChar": 26
+      },
+      "revId": "84aec993b8273c26e3aa5a51e6690d3283c7526e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_89633edd",
+        "filename": "keystone/conf/signing.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:26:38Z",
+      "side": 1,
+      "message": "certificate with `keystone-manage pki_setup`.",
+      "range": {
+        "startLine": 103,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 13
       },
       "revId": "84aec993b8273c26e3aa5a51e6690d3283c7526e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
