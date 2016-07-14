@@ -49,7 +49,7 @@ Response Parameters
    - links: links
    - domain_id: domain_id
    - id: id
-   - description: description
+   - description: description_1
 
 Response Example
 ----------------
@@ -77,7 +77,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - group: group
-   - description: description
+   - description: description_1
    - name: name
    - domain_id: domain_id
    - group_id: group_id
@@ -98,7 +98,7 @@ Response Parameters
    - links: links
    - domain_id: domain_id
    - id: id
-   - description: description
+   - description: description_1
 
 Response Example
 ----------------
@@ -233,7 +233,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - group: group
-   - description: description
+   - description: description_1
    - name: name
    - domain_id: domain_id
 
@@ -253,7 +253,7 @@ Response Parameters
    - links: links
    - domain_id: domain_id
    - id: id
-   - description: description
+   - description: description_1
 
 
 List groups
@@ -284,7 +284,7 @@ Response Parameters
    - domain_id: domain_id
    - groups: groups
    - id: id
-   - description: description
+   - description: description_1
 
 Response Example
 ----------------

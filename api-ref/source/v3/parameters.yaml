@@ -14,21 +14,8 @@ X-Subject-Token:
   in: header
   required: true
   type: string
-X-Subject-Token_1:
-  description: |
-    The authentication token for which you want to
-    perform the operation.
-  in: header
-  required: true
-  type: string
 
 # variables in path
-access_token_id:
-  description: |
-    The ID of the access token.
-  in: path
-  required: true
-  type: string
 credential_id:
   description: |
     The UUID for the credential.
@@ -44,13 +31,6 @@ domain_id:
 endpoint_id:
   description: |
     The endpoint ID.
-  in: path
-  required: false
-  type: string
-group_1:
-  description: |
-    The group name, which is ``ldap`` or
-    ``identity``.
   in: path
   required: false
   type: string
@@ -80,21 +60,9 @@ project_id:
   in: path
   required: false
   type: string
-region_id_2:
-  description: |
-    The region ID.
-  in: path
-  required: false
-  type: string
 role_id:
   description: |
     The role ID.
-  in: path
-  required: false
-  type: string
-service_id_2:
-  description: |
-    The service ID.
   in: path
   required: false
   type: string
@@ -106,115 +74,11 @@ user_id:
   type: string
 
 # variables in query
-domain_id_7:
-  description: |
-    Filters the response by a domain ID.
-  in: query
-  required: false
-  type: string
-enabled_11:
-  description: |
-    Filters the response by either enabled (``true``)
-    or disabled (``false``) users.
-  in: query
-  required: false
-  type: string
-enabled_6:
-  description: |
-    Filters the response by either enabled (``true``)
-    or disabled (``false``) domains.  Users can authorize against an
-    enabled domain and any of its projects. Users that are owned by an
-    enabled domain can authenticate and receive additional
-    authorization.  Users cannot authorize against a disabled domain
-    or any of its projects. Users that are owned by a disabled domain
-    cannot authenticate or receive additional authorization. All
-    tokens that are authorized for a disabled domain or its projects
-    become no longer valid. If you reenable the domain, these tokens
-    are not re- enabled.
-  in: query
-  required: false
-  type: string
-enabled_9:
-  description: |
-    Filters the response by either enabled (``true``)
-    or disabled (``false``) projects.
-  in: query
-  required: false
-  type: string
-interface_2:
-  description: |
-    Filters the response by an interface.
-  in: query
-  required: false
-  type: string
-name_10:
-  description: |
-    Filters the response by a domain name.
-  in: query
-  required: false
-  type: string
-name_13:
-  description: |
-    Filters the response by a project name.
-  in: query
-  required: false
-  type: string
-name_14:
-  description: |
-    Filters the response by a role name.
-  in: query
-  required: false
-  type: string
-name_16:
-  description: |
-    Filters the response by a user name.
-  in: query
-  required: false
-  type: string
 nocatalog:
   description: |
     (Since v3.1) The authentication response excludes
     the service catalog. By default, the response includes the service
     catalog.
-  in: query
-  required: false
-  type: string
-parent_id_2:
-  description: |
-    (Since v3.4) Filters the response by a parent ID.
-  in: query
-  required: false
-  type: string
-parent_region_id_1:
-  description: |
-    Filters the response by a parent region, by ID.
-  in: query
-  required: false
-  type: string
-service_id_3:
-  description: |
-    Filters the response by a service ID.
-  in: query
-  required: false
-  type: string
-type_4:
-  description: |
-    Filters the response by a MIME media type for the
-    serialized policy blob. For example, ``application/json``.
-  in: query
-  required: false
-  type: string
-type_5:
-  description: |
-    Filters the response by a service type. A valid
-    value is ``compute``, ``ec2``, ``identity``, ``image``,
-    ``network``, or ``volume``.
-  in: query
-  required: false
-  type: string
-user_id_3:
-  description: |
-    Filters the response by a user ID.
   in: query
   required: false
   type: string
@@ -245,24 +109,6 @@ blob:
     The credential itself, as a serialized blob.
   in: body
   required: true
-  type: string
-blob_1:
-  description: |
-    The policy rule set itself, as a serialized blob.
-  in: body
-  required: true
-  type: string
-blob_2:
-  description: |
-    The policy rule itself, as a serialized blob.
-  in: body
-  required: true
-  type: object
-blob_3:
-  description: |
-    The credential itself, as a serialized blob.
-  in: body
-  required: false
   type: string
 catalog:
   description: |
@@ -302,12 +148,6 @@ default_project_id:
   in: body
   required: false
   type: string
-default_project_id_1:
-  description: |
-    The ID of the default project for the user.
-  in: body
-  required: true
-  type: string
 description:
   description: |
     The domain description.
@@ -319,18 +159,6 @@ description_1:
     The group description.
   in: body
   required: false
-  type: string
-description_10:
-  description: |
-    The service description.
-  in: body
-  required: true
-  type: string
-description_11:
-  description: |
-    The user description.
-  in: body
-  required: true
   type: string
 description_2:
   description: |
@@ -356,89 +184,17 @@ description_5:
   in: body
   required: false
   type: string
-description_6:
-  description: |
-    The project description.
-  in: body
-  required: true
-  type: string
-description_7:
-  description: |
-    The domain description.
-  in: body
-  required: true
-  type: string
-description_8:
-  description: |
-    The group description.
-  in: body
-  required: true
-  type: string
-description_9:
-  description: |
-    The region description.
-  in: body
-  required: true
-  type: string
 domain:
   description: |
     A ``domain`` object.
   in: body
   required: true
   type: object
-domain_1:
-  description: |
-    A ``domain`` object. Required if you specify a
-    user name.
-  in: body
-  required: false
-  type: object
-domain_2:
-  description: |
-    Specify either ``id`` or ``name`` to uniquely
-    identify the domain.
-  in: body
-  required: false
-  type: object
 domain_id_1:
   description: |
-    The ID of the domain that owns the group.  If you
-    omit the domain ID, defaults to the domain to which the client
-    token is scoped.
+    The ID of the domain.
   in: body
   required: false
-  type: string
-domain_id_2:
-  description: |
-    The ID of the domain for the project.  If you
-    omit the domain ID, default is the domain to which your token is
-    scoped.
-  in: body
-  required: false
-  type: string
-domain_id_3:
-  description: |
-    The ID of the domain for the user.
-  in: body
-  required: false
-  type: string
-domain_id_4:
-  description: |
-    The ID of the domain for the project.
-  in: body
-  required: true
-  type: string
-domain_id_5:
-  description: |
-    The ID of the domain for the group.
-  in: body
-  required: true
-  type: string
-domain_id_6:
-  description: |
-    The ID of the domain for the user.
-  in: body
-  required: true
   type: string
 domains:
   description: |
@@ -452,23 +208,11 @@ driver:
   in: body
   required: true
   type: string
-driver_1:
-  description: |
-    The Identity back-end driver.
-  in: body
-  required: false
-  type: string
 email:
   description: |
     The email address for the user.
   in: body
   required: false
-  type: string
-email_1:
-  description: |
-    The email address for the user.
-  in: body
-  required: true
   type: string
 enabled:
   description: |
@@ -504,6 +248,8 @@ enabled_10:
   in: body
   required: true
   type: boolean
+
+# Need to check the following parameters
 enabled_12:
   description: |
     Indicates whether the domain is enabled or

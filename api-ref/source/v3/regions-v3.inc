@@ -39,7 +39,7 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - links: links
    - id: id
 
@@ -74,7 +74,7 @@ Request
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - region_id: region_id
 
 Request Example
@@ -90,7 +90,7 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - links: links
    - id: id
 
@@ -147,7 +147,7 @@ Response Parameters
 
    - regions: regions
    - parent_region_id: parent_region_id
-   - description: description
+   - description: description_3
    - links: links
    - id: id
 
@@ -189,7 +189,7 @@ Request
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - id: id
 
 Request Example
@@ -205,6 +205,6 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - links: links
    - id: id

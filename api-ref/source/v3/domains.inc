@@ -51,7 +51,7 @@ Response Parameters
    - enabled: enabled
    - domains: domains
    - id: id
-   - description: description
+   - description: description_6
 
 Response Example
 ----------------
@@ -77,7 +77,7 @@ Request
 
    - domain: domain
    - enabled: enabled
-   - description: description
+   - description: description_6
    - name: name
 
 Request Example
@@ -96,7 +96,7 @@ Response Parameters
    - links: links
    - enabled: enabled
    - id: id
-   - description: description
+   - description: description_6
 
 
 Show domain details
@@ -126,7 +126,7 @@ Response Parameters
    - links: links
    - enabled: enabled
    - id: id
-   - description: description
+   - description: description_6
 
 Response Example
 ----------------
@@ -152,7 +152,7 @@ Request
 
    - domain: domain
    - enabled: enabled
-   - description: description
+   - description: description_6
    - name: name
    - domain_id: domain_id
 
@@ -172,7 +172,7 @@ Response Parameters
    - links: links
    - enabled: enabled
    - id: id
-   - description: description
+   - description: description_6
 
 Response Example
 ----------------

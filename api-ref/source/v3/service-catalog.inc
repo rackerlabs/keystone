@@ -43,11 +43,11 @@ Response Parameters
 
    - name: name
    - links: links
-   - enabled: enabled
+   - enabled: enabled_10
    - services: services
    - type: type
    - id: id
-   - description: description
+   - description: description_4
 
 Response Example
 ----------------
@@ -70,7 +70,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
+   - description: description_4
    - service: service
    - enabled: enabled
    - service_id: service_id
@@ -93,7 +93,7 @@ Response Parameters
    - links: links
    - type: type
    - id: id
-   - description: description
+   - description: description_4
 
 
 Show endpoint details
@@ -226,7 +226,7 @@ Response Parameters
    - links: links
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_1
    - interface: interface
    - service_id: service_id
    - endpoints: endpoints
@@ -277,7 +277,7 @@ Response Parameters
    - links: links
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_1
    - interface: interface
    - service_id: service_id
    - id: id
@@ -311,7 +311,7 @@ Response Parameters
    - links: links
    - type: type
    - id: id
-   - description: description
+   - description: description_4
 
 Response Example
 ----------------
@@ -341,7 +341,7 @@ Request
 
    - type: type
    - enabled: enabled
-   - description: description
+   - description: description_4
    - service: service
    - name: name
    - service_id: service_id
@@ -362,7 +362,7 @@ Response Parameters
    - links: links
    - type: type
    - id: id
-   - description: description
+   - description: description_4
 
 Response Example
 ----------------
