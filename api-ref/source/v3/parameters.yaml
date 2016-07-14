@@ -136,7 +136,7 @@ user_id_path:
   type: string
 
 # variables in query
-domain_id_7:
+domain_id_query:
   description: |
     Filters the response by a domain ID.
   in: query
@@ -149,7 +149,7 @@ effective_query:
   in: query
   required: false
   type: key-only (no value required)
-enabled_11:
+enabled_user_query:
   description: |
     Filters the response by either enabled (``true``)
     or disabled (``false``) users.
@@ -221,7 +221,7 @@ name_13:
   in: query
   required: false
   type: string
-name_16:
+name_user_query:
   description: |
     Filters the response by a user name.
   in: query
@@ -430,7 +430,7 @@ description_4:
   in: body
   required: false
   type: string
-description_5:
+description_user_body:
   description: |
     The user description.
   in: body
@@ -629,7 +629,7 @@ enabled_3:
   in: body
   required: false
   type: boolean
-enabled_4:
+enabled_user_update_body:
   description: |
     Enables or disables the user.  An enabled user
     can authenticate and receive authorization.  A disabled user
@@ -662,12 +662,19 @@ enabled_7:
   in: body
   required: true
   type: boolean
-enabled_8:
+enabled_user_body_required:
   description: |
     If the user is enabled, this value is ``true``.
     If the user is disabled, this value is ``false``.
   in: body
   required: true
+  type: boolean
+enabled_user_body_not_required:
+  description: |
+    If the user is enabled, this value is ``true``.
+    If the user is disabled, this value is ``false``.
+  in: body
+  required: false
   type: boolean
 endpoint:
   description: |
@@ -757,7 +764,7 @@ id_13:
   in: body
   required: true
   type: string
-id_14:
+id_user_body:
   description: |
     The user ID.
   in: body
@@ -945,7 +952,7 @@ links_13:
   in: body
   required: true
   type: object
-links_14:
+links_users:
   description: |
     The links for the ``users`` resource.
   in: body
@@ -993,7 +1000,7 @@ links_8:
   in: body
   required: true
   type: object
-links_9:
+links_user:
   description: |
     The links for the ``user`` resource.
   in: body
@@ -1051,7 +1058,7 @@ name_11:
   in: body
   required: true
   type: string
-name_12:
+name_user_body:
   description: |
     The user name. Must be unique within the domain.
   in: body
@@ -1173,13 +1180,13 @@ password:
   in: body
   required: true
   type: string
-password_1:
+password_body_not_required:
   description: |
     The password for the user.
   in: body
-  required: true
+  required: false
   type: string
-password_2:
+password_update_body:
   description: |
     The new password for the user.
   in: body
