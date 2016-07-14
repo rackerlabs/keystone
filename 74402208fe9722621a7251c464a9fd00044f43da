@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b08640d9",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-14T15:18:49Z",
+      "side": 1,
+      "message": "(nit) other docs are using 2 spaces between sections",
+      "revId": "74402208fe9722621a7251c464a9fd00044f43da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_10cd9486",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-14T15:18:49Z",
+      "side": 1,
+      "message": "Some of the new docs include the /v3. Should we add that here or remove it there.",
+      "revId": "74402208fe9722621a7251c464a9fd00044f43da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
