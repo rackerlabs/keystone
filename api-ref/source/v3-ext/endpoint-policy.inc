@@ -299,7 +299,7 @@ Response Parameters
    - next: next
    - self: self
    - interface: interface
-   - service_id: service_id
+   - service_id: service_id_1
    - endpoints: endpoints
    - id: id
    - previous: previous
