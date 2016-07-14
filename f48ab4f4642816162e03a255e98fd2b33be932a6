@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_c62a5590",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:20:58Z",
+      "side": 1,
+      "message": "change in tense from above. \n\ndisabled by default; set any value to enable it \nvs\nSetting this value to zero (the default) disables this feature.",
+      "revId": "f48ab4f4642816162e03a255e98fd2b33be932a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
