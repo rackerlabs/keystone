@@ -16,6 +16,24 @@
       "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a761ec13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T14:39:24Z",
+      "side": 1,
+      "message": "localhost/v3 is too general, isn\u0027t it? we can\u0027t tell what API we\u0027re talking to. localhost/identity/v3 is exactly what we\u0027ve got from API as of today.",
+      "parentUuid": "1aa78d24_646b8286",
+      "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
