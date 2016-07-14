@@ -40,6 +40,24 @@
       "revId": "2f99a0b34946a7175b2121ab86a63e7105869723",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bd11fe55",
+        "filename": "api-ref/source/v3-ext/inherit.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-07-14T13:29:56Z",
+      "side": 1,
+      "message": "Makes sense",
+      "parentUuid": "1aa78d24_422f5ba7",
+      "revId": "2f99a0b34946a7175b2121ab86a63e7105869723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
