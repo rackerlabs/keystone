@@ -38,15 +38,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
+   - description: description_user_body
+   - links: links_user
    - user: user
-   - enabled: enabled
+   - enabled: enabled_user_body_required
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -75,12 +75,12 @@ Request
 
    - name: name
    - user: user
-   - enabled: enabled
+   - enabled: enabled_user_update_body
    - email: email
    - default_project_id: default_project_id
-   - password: password
+   - password: password_body_not_required
    - domain_id: domain_id
-   - description: description
+   - description: description_user_body
    - user_id: user_id
 
 Request Example
@@ -94,15 +94,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
+   - description: description_user_body
+   - links: links_user
    - user: user
-   - enabled: enabled
+   - enabled: enabled_user_body_required
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: user_id
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------
@@ -167,7 +167,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - original_password: original_password
-   - password: password
+   - password: password_update_body
    - user: user
    - user_id: user_id
 
@@ -192,14 +192,14 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_user_body
    - user: user
-   - enabled: enabled
+   - enabled: enabled_user_body_not_required
    - email: email
    - default_project_id: default_project_id
-   - password: password
+   - password: password_body_not_required
    - domain_id: domain_id
-   - description: description
+   - description: description_user_body
 
 Request Example
 ---------------
@@ -212,15 +212,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
+   - description: description_user_body
+   - links: links_user
    - user: user
-   - enabled: enabled
+   - enabled: enabled_user_body_required
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 
 List users
@@ -238,24 +238,24 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - name: name
-   - enabled: enabled
+   - domain_id: domain_id_query
+   - name: name_user_query
+   - enabled: enabled_user_query
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - links: links
-   - enabled: enabled
+   - description: description_user_body
+   - links: links_users
+   - enabled: enabled_user_body_required
    - email: email
    - default_project_id: default_project_id
-   - id: id
+   - id: id_user_body
    - users: users
    - domain_id: domain_id
-   - name: name
+   - name: name_user_body
 
 Response Example
 ----------------

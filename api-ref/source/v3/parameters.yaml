@@ -136,7 +136,7 @@ user_id_path:
   type: string
 
 # variables in query
-domain_id_7:
+domain_id_query:
   description: |
     Filters the response by a domain ID.
   in: query
@@ -149,13 +149,6 @@ effective_query:
   in: query
   required: false
   type: key-only (no value required)
-enabled_11:
-  description: |
-    Filters the response by either enabled (``true``)
-    or disabled (``false``) users.
-  in: query
-  required: false
-  type: string
 enabled_6:
   description: |
     Filters the response by either enabled (``true``)
@@ -175,6 +168,13 @@ enabled_9:
   description: |
     Filters the response by either enabled (``true``)
     or disabled (``false``) projects.
+  in: query
+  required: false
+  type: string
+enabled_user_query:
+  description: |
+    Filters the response by either enabled (``true``)
+    or disabled (``false``) users.
   in: query
   required: false
   type: string
@@ -221,7 +221,7 @@ name_13:
   in: query
   required: false
   type: string
-name_16:
+name_user_query:
   description: |
     Filters the response by a user name.
   in: query
@@ -430,12 +430,6 @@ description_4:
   in: body
   required: false
   type: string
-description_5:
-  description: |
-    The user description.
-  in: body
-  required: false
-  type: string
 description_6:
   description: |
     The project description.
@@ -459,6 +453,12 @@ description_9:
     The region description.
   in: body
   required: true
+  type: string
+description_user_body:
+  description: |
+    The user description.
+  in: body
+  required: false
   type: string
 domain:
   description: |
@@ -629,18 +629,6 @@ enabled_3:
   in: body
   required: false
   type: boolean
-enabled_4:
-  description: |
-    Enables or disables the user.  An enabled user
-    can authenticate and receive authorization.  A disabled user
-    cannot authenticate or receive authorization. Additionally, all
-    tokens that the user holds become no longer valid. If you reenable
-    this user, pre-existing tokens do not become valid.  To enable the
-    user, set to ``true``. To disable the user, set to ``false``.
-    Default is ``true``.
-  in: body
-  required: false
-  type: boolean
 enabled_5:
   description: |
     Enables or disables the project and its subtree.
@@ -662,12 +650,31 @@ enabled_7:
   in: body
   required: true
   type: boolean
-enabled_8:
+enabled_user_body_not_required:
+  description: |
+    If the user is enabled, this value is ``true``.
+    If the user is disabled, this value is ``false``.
+  in: body
+  required: false
+  type: boolean
+enabled_user_body_required:
   description: |
     If the user is enabled, this value is ``true``.
     If the user is disabled, this value is ``false``.
   in: body
   required: true
+  type: boolean
+enabled_user_update_body:
+  description: |
+    Enables or disables the user.  An enabled user
+    can authenticate and receive authorization.  A disabled user
+    cannot authenticate or receive authorization. Additionally, all
+    tokens that the user holds become no longer valid. If you reenable
+    this user, pre-existing tokens do not become valid.  To enable the
+    user, set to ``true``. To disable the user, set to ``false``.
+    Default is ``true``.
+  in: body
+  required: false
   type: boolean
 endpoint:
   description: |
@@ -757,12 +764,6 @@ id_13:
   in: body
   required: true
   type: string
-id_14:
-  description: |
-    The user ID.
-  in: body
-  required: true
-  type: string
 id_2:
   description: |
     A token ID.
@@ -813,6 +814,12 @@ id_9:
     to the region.
   in: body
   required: false
+  type: string
+id_user_body:
+  description: |
+    The user ID.
+  in: body
+  required: true
   type: string
 identity:
   description: |
@@ -945,12 +952,6 @@ links_13:
   in: body
   required: true
   type: object
-links_14:
-  description: |
-    The links for the ``users`` resource.
-  in: body
-  required: true
-  type: object
 links_2:
   description: |
     The links for the ``endpoint`` resource.
@@ -993,9 +994,15 @@ links_8:
   in: body
   required: true
   type: object
-links_9:
+links_user:
   description: |
     The links for the ``user`` resource.
+  in: body
+  required: true
+  type: object
+links_users:
+  description: |
+    The links for the ``users`` resource.
   in: body
   required: true
   type: object
@@ -1048,12 +1055,6 @@ name_1:
 name_11:
   description: |
     The name of the group.
-  in: body
-  required: true
-  type: string
-name_12:
-  description: |
-    The user name. Must be unique within the domain.
   in: body
   required: true
   type: string
@@ -1132,6 +1133,12 @@ name_9:
   in: body
   required: true
   type: string
+name_user_body:
+  description: |
+    The user name. Must be unique within the domain.
+  in: body
+  required: true
+  type: string
 original_password:
   description: |
     The original password for the user.
@@ -1173,13 +1180,13 @@ password:
   in: body
   required: true
   type: string
-password_1:
+password_body_not_required:
   description: |
     The password for the user.
   in: body
-  required: true
+  required: false
   type: string
-password_2:
+password_update_body:
   description: |
     The new password for the user.
   in: body
