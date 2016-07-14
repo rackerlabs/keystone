@@ -145,3 +145,35 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         # Strip off the microseconds from `revoked_at`.
         self.assertTimestampEqual(utils.isotime(revoked_at),
                                   events[0]['revoked_at'])
+
+    def test_deleted_consumer_in_list(self):
+        ref = {'description': uuid.uuid4().hex}
+        resp = self.post('/OS-OAUTH1/consumers', body={'consumer': ref})
+        consumer_id = resp.result['consumer']['id']
+        self.oauth_api.delete_consumer(consumer_id)
+
+        resp = self.get('/OS-REVOKE/events')
+        events = resp.json_body['events']
+        self.assertThat(events, matchers.HasLength(1))
+        event = events[0]
+        self.assertEqual(consumer_id, event['OS-OAUTH1:consumer_id'])
+        keys = ['user_id',
+                'role_id',
+                'domain_id',
+                'domain_scope_id',
+                'project_id',
+                'audit_id',
+                'audit_chain_id',
+                'OS-TRUST:trust_id',
+                'OS-OAUTH1:consumer_id',
+                'OS-OAUTH1:access_token_id',
+                'expires_at',
+                'issued_before',
+                'revoked_at'
+                ]
+        # attr with None needn't return to end user, this is restricted by the
+        # current implementation.
+        for key in keys:
+            if key in event:
+                self.assertIsNotNone(event[key],
+                                     "'None' is returned to end user")
