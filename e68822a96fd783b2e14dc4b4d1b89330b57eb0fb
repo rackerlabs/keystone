@@ -70,6 +70,24 @@
       "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_55542ec9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T14:59:49Z",
+      "side": 1,
+      "message": "++ new patch set soon",
+      "parentUuid": "1aa78d24_ea6bb9ef",
+      "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
