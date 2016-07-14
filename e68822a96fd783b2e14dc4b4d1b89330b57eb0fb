@@ -34,6 +34,24 @@
       "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_eadbb94d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-14T14:48:02Z",
+      "side": 1,
+      "message": "That makes sense, but the slash in between localhost and identity makes it seem like /identity/ is a part of the API path (doesn\u0027t it). I\u0027m just wondering if this is going to cause confusing when people read this in the responses.",
+      "parentUuid": "1aa78d24_a761ec13",
+      "revId": "e68822a96fd783b2e14dc4b4d1b89330b57eb0fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
