@@ -10,3 +10,4 @@
 .. include:: admin-tokens.inc
 .. include:: admin-users.inc
 .. include:: admin-versions.inc
+.. include:: admin-endpoints.inc
