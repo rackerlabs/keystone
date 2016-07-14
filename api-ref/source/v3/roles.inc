@@ -92,9 +92,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - group_id: group_id
+   - group_id: group_id_path
+   - project_id: project_id_path
+   - role_id: role_id_path
 
 
 Check whether group has role assignment on project
@@ -112,9 +112,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - group_id: group_id
+   - group_id: group_id_path
+   - project_id: project_id_path
+   - role_id: role_id_path
 
 
 Unassign role from group on project
@@ -132,9 +132,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - group_id: group_id
+   - group_id: group_id_path
+   - project_id: project_id_path
+   - role_id: role_id_path
 
 
 Assign role to user on project
@@ -152,9 +152,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - user_id: user_id
+   - project_id: project_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 Check whether user has role assignment on project
@@ -172,9 +172,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - user_id: user_id
+   - project_id: project_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 Unassign role from user on project
@@ -192,9 +192,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
-   - project_id: project_id
-   - user_id: user_id
+   - project_id: project_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 List role assignments for user on project
@@ -212,8 +212,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - project_id: project_id
-   - user_id: user_id
+   - project_id: project_id_path
+   - user_id: user_id_path
 
 Response Example
 ----------------
@@ -237,8 +237,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - project_id: project_id
-   - group_id: group_id
+   - project_id: project_id_path
+   - group_id: group_id_path
 
 Response Example
 ----------------
@@ -267,10 +267,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - group_id: group_id
-
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - group_id: group_id_path
 
 Check whether group has role assignment on domain
 =================================================
@@ -287,9 +286,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - group_id: group_id
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - group_id: group_id_path
 
 
 Unassign role from group on domain
@@ -307,9 +306,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - group_id: group_id
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - group_id: group_id_path
 
 
 List role assignments for user on domain
@@ -327,8 +326,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - user_id: user_id
+   - domain_id: domain_id_path
+   - user_id: user_id_path
 
 Response Parameters
 -------------------
@@ -336,9 +335,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - roles: roles
-   - id: id
-   - links: links
-   - name: name
+   - id: role_id_response_object
+   - links: link_response_object
+   - name: role_name_response_object
 
 Response Example
 ----------------
@@ -374,10 +373,11 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
+   - links: link_collection
    - roles: roles
-   - id: id
-   - links: links
-   - name: name
+   - id: role_id_response_object
+   - links: link_response_object
+   - name: role_name_response_object
 
 Response Example
 ----------------
@@ -416,9 +416,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
-   - name: name
+   - id: role_id_response_object
+   - links: link_response_object
+   - name: role_name_response_object
 
 
 Assign role to user on domain
@@ -436,9 +436,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - user_id: user_id
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 Check whether user has role assignment on domain
@@ -456,9 +456,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - user_id: user_id
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 Unassigns role from user on domain
@@ -476,9 +476,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - role_id: role_id
-   - user_id: user_id
+   - domain_id: domain_id_path
+   - role_id: role_id_path
+   - user_id: user_id_path
 
 
 List role assignments
@@ -535,7 +535,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
+   - role_id: role_id_path
 
 Response Parameters
 -------------------
@@ -543,9 +543,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
-   - name: name
+   - id: role_id_response_object
+   - links: link_response_object
+   - name: role_name_response_object
 
 Response Example
 ----------------
@@ -569,9 +569,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - role_id: role_id_path
    - role: role
    - name: name
-   - role_id: role_id
 
 Request Example
 ---------------
@@ -585,9 +585,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
-   - name: name
+   - id: role_id_response_object
+   - links: link_response_object
+   - name: role_name_response_object
 
 Response Example
 ----------------
@@ -611,7 +611,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - role_id: role_id
+   - role_id: role_id_path
 
 
 List role assignments for group on domain
@@ -629,8 +629,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - group_id: group_id
+   - domain_id: domain_id_path
+   - group_id: group_id_path
 
 Response Example
 ----------------
