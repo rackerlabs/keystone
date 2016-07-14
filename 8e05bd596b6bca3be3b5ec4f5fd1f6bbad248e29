@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e62ac82e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-14T19:21:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1aa78d24_864f8433",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_868ae462",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 6
