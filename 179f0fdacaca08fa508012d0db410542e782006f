@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e98e4278",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:29:10Z",
+      "side": 1,
+      "message": "it\u0027d be good if these were in order. \n\nAlso i can think of no reason that a 5XX would be even a standard error response.",
+      "range": {
+        "startLine": 100,
+        "startChar": 54,
+        "endLine": 100,
+        "endChar": 57
+      },
+      "revId": "179f0fdacaca08fa508012d0db410542e782006f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
