@@ -82,6 +82,71 @@
       "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_ef661eed",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-14T18:27:03Z",
+      "side": 1,
+      "message": "That is correct Lance, after user authenticates, there is not reason to reference shadow users.",
+      "parentUuid": "1aa78d24_4377813b",
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4f02d20a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-14T18:27:03Z",
+      "side": 1,
+      "message": "Yes, you should let UserNotFound bubble up.",
+      "parentUuid": "1aa78d24_098b5869",
+      "range": {
+        "startLine": 647,
+        "startChar": 37,
+        "endLine": 647,
+        "endChar": 38
+      },
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d407771b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-14T18:27:03Z",
+      "side": 1,
+      "message": "Since the user has already authenticated, the user will be in the backend; thus, you don\u0027t need a try/except and you don\u0027t need to call shadow_users_api. Use the identity_api instead:\nuser_dict \u003d self.identity_api.get_user(user_id)",
+      "range": {
+        "startLine": 645,
+        "startChar": 8,
+        "endLine": 649,
+        "endChar": 37
+      },
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
