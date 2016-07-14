@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_865ca41a",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T19:13:07Z",
+      "side": 1,
+      "message": "this is filled in in a follow-on patch",
+      "range": {
+        "startLine": 345,
+        "startChar": 0,
+        "endLine": 354,
+        "endChar": 3
+      },
+      "revId": "d8606eec5df3463c7e67943bc959e6e6e5c688be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
