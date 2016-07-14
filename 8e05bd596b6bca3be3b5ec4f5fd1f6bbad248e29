@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_864304af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-07-14T19:52:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_e62ac82e",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_868ae462",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 6
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_663ed82a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-07-14T19:52:30Z",
+      "side": 1,
+      "message": "Agreed, good eye",
+      "parentUuid": "1aa78d24_868ae462",
+      "range": {
+        "startLine": 549,
+        "startChar": 24,
+        "endLine": 549,
+        "endChar": 25
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_a6bd6004",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -83,6 +131,30 @@
       "writtenOn": "2016-07-14T19:18:38Z",
       "side": 1,
       "message": "lets not use this generic driver. Lets do something more commonly used. Like memcache.",
+      "range": {
+        "startLine": 55,
+        "startChar": 57,
+        "endLine": 55,
+        "endChar": 62
+      },
+      "revId": "8e05bd596b6bca3be3b5ec4f5fd1f6bbad248e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_2634d048",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-07-14T19:52:30Z",
+      "side": 1,
+      "message": "Alright will change. I am a little confused by the urgency of this, however, since the original bug was caused using kvs, and the point of the unit test is to make it fail and either one accomplishes this.",
+      "parentUuid": "1aa78d24_a6bd6004",
       "range": {
         "startLine": 55,
         "startChar": 57,
