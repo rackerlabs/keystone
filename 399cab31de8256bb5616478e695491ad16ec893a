@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_709e98b9",
+        "filename": "api-ref/source/v3-ext/trust.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-14T15:09:51Z",
+      "side": 1,
+      "message": "The spacing is different for this line and many others below (and other files). Do we want spaces after commas or none?",
+      "range": {
+        "startLine": 168,
+        "startChar": 22,
+        "endLine": 168,
+        "endChar": 55
+      },
+      "revId": "399cab31de8256bb5616478e695491ad16ec893a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
