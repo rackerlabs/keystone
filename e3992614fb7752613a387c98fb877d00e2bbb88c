@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_66b44182",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-14T04:16:38Z",
+      "side": 1,
+      "message": "I\u0027m not sure you want to suggest changing the token driver. We would hope people put thought into what token driver they are using. \n\nI think it sufficient to say \n\n\"Token driver %s does not support token_flush. The token_flush command has had no effect\" % CONF.token.driver\n\nalso you should wrap this in a _LW() from keystone.i18n",
+      "range": {
+        "startLine": 550,
+        "startChar": 45,
+        "endLine": 550,
+        "endChar": 50
+      },
+      "revId": "e3992614fb7752613a387c98fb877d00e2bbb88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
