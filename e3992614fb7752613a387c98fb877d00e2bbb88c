@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_4adac818",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-07-14T16:14:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_66b44182",
+      "range": {
+        "startLine": 550,
+        "startChar": 45,
+        "endLine": 550,
+        "endChar": 50
+      },
+      "revId": "e3992614fb7752613a387c98fb877d00e2bbb88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_9d91a29d",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2016-07-14T13:34:19Z",
       "side": 1,
       "message": "We could probably improve the naming here to include a few more bits of information when we read it.\n\n    def test_token_flush_excepts_not_implemented_and_logs_warning(self):",
+      "revId": "e3992614fb7752613a387c98fb877d00e2bbb88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_8a02f070",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-07-14T16:14:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_9d91a29d",
       "revId": "e3992614fb7752613a387c98fb877d00e2bbb88c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
