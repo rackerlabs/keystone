@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_3d3a17e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T21:30:13Z",
+      "side": 1,
+      "message": "true",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 43
+      },
+      "revId": "b3e065efaaaecf3a2fe83f45631567d63e19f47b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7d5dbf47",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-14T21:30:13Z",
+      "side": 1,
+      "message": "this is so much more readable",
+      "range": {
+        "startLine": 197,
+        "startChar": 8,
+        "endLine": 207,
+        "endChar": 77
+      },
+      "revId": "b3e065efaaaecf3a2fe83f45631567d63e19f47b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
