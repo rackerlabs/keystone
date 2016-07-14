@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_8a29558c",
+        "filename": "api-ref/source/v2/samples/client/authenticate-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-14T14:43:05Z",
+      "side": 1,
+      "message": "although i think that localhost/identity/v2.0 would be more consistent, that\u0027s what i\u0027ve got as response for this API call.",
+      "parentUuid": "1aa78d24_0421deb4",
+      "revId": "f8c40c80b70e1ff67cc50aa81e59d9e98e2a5429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_642ee2a6",
         "filename": "api-ref/source/v2/samples/client/authenticate-response.json",
         "patchSetId": 1
