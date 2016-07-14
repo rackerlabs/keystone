@@ -47,11 +47,11 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - name: name
-   - links: links
-   - enabled: enabled
+   - links: links_11
+   - enabled: enabled_9
    - domains: domains
-   - id: id
-   - description: description
+   - id: id_4
+   - description: description_6
 
 Response Example
 ----------------
@@ -77,7 +77,7 @@ Request
 
    - domain: domain
    - enabled: enabled
-   - description: description
+   - description: description_6
    - name: name
 
 Request Example
@@ -93,10 +93,10 @@ Response Parameters
 
    - domain: domain
    - name: name
-   - links: links
-   - enabled: enabled
-   - id: id
-   - description: description
+   - links: links_1
+   - enabled: enabled_9
+   - id: id_4
+   - description: description_6
 
 
 Show domain details
@@ -123,10 +123,10 @@ Response Parameters
 
    - domain: domain
    - name: name
-   - links: links
-   - enabled: enabled
-   - id: id
-   - description: description
+   - links: links_1
+   - enabled: enabled_9
+   - id: id_4
+   - description: description_6
 
 Response Example
 ----------------
@@ -152,7 +152,7 @@ Request
 
    - domain: domain
    - enabled: enabled
-   - description: description
+   - description: description_6
    - name: name
    - domain_id: domain_id
 
@@ -169,10 +169,10 @@ Response Parameters
 
    - domain: domain
    - name: name
-   - links: links
-   - enabled: enabled
-   - id: id
-   - description: description
+   - links: links_1
+   - enabled: enabled_9
+   - id: id_4
+   - description: description_6
 
 Response Example
 ----------------

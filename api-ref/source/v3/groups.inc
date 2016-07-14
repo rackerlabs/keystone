@@ -46,10 +46,10 @@ Response Parameters
 
    - group: group
    - name: name
-   - links: links
+   - links: links_3
    - domain_id: domain_id
-   - id: id
-   - description: description
+   - id: id_6
+   - description: description_1
 
 Response Example
 ----------------
@@ -77,7 +77,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - group: group
-   - description: description
+   - description: description_1
    - name: name
    - domain_id: domain_id
    - group_id: group_id
@@ -95,10 +95,10 @@ Response Parameters
 
    - group: group
    - name: name
-   - links: links
+   - links: links_3
    - domain_id: domain_id
-   - id: id
-   - description: description
+   - id: id_6
+   - description: description_1
 
 Response Example
 ----------------
@@ -203,11 +203,11 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - name: name
-   - links: links
+   - links: links_3
    - enabled: enabled
    - domain_id: domain_id
    - email: email
-   - id: id
+   - id: id_6
    - users: users
 
 Response Example
@@ -233,7 +233,7 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - group: group
-   - description: description
+   - description: description_1
    - name: name
    - domain_id: domain_id
 
@@ -250,10 +250,10 @@ Response Parameters
 
    - group: group
    - name: name
-   - links: links
+   - links: links_3
    - domain_id: domain_id
-   - id: id
-   - description: description
+   - id: id_6
+   - description: description_1
 
 
 List groups
@@ -280,11 +280,11 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - name: name
-   - links: links
+   - links: links_15
    - domain_id: domain_id
    - groups: groups
-   - id: id
-   - description: description
+   - id: id_6
+   - description: description_1
 
 Response Example
 ----------------

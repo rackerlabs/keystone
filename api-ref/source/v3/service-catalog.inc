@@ -41,13 +41,13 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
-   - links: links
-   - enabled: enabled
+   - name: name_15
+   - links: links_18
+   - enabled: enabled_8
    - services: services
    - type: type
-   - id: id
-   - description: description
+   - id: id_11
+   - description: description_4
 
 Response Example
 ----------------
@@ -71,12 +71,12 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
+   - description: description_4
    - service: service
-   - enabled: enabled
+   - enabled: enabled_3
    - service_id: service_id
    - type: type
-   - name: name
+   - name: name_15
 
 Request Example
 ---------------
@@ -89,12 +89,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_15
    - service: service
-   - links: links
+   - links: links_8
    - type: type
-   - id: id
-   - description: description
+   - id: id_11
+   - enabled: enabled_8
 
 
 Show endpoint details
@@ -120,8 +120,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - endpoint: endpoint
-   - name: name
-   - links: links
+   - name: name_3
+   - links: links_2
    - url: url
    - region: region
    - interface: interface
@@ -223,14 +223,14 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - region_id: region_id
-   - links: links
+   - links: links_13
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_6
    - interface: interface
    - service_id: service_id
    - endpoints: endpoints
-   - id: id
+   - id: id_5
 
 Response Example
 ----------------
@@ -256,7 +256,7 @@ Request
 
    - endpoint: endpoint
    - url: url
-   - enabled: enabled
+   - enabled: enabled_1
    - interface: interface
    - service_id: service_id
    - region_id: region_id
@@ -276,10 +276,10 @@ Response Parameters
    - links: links
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_6
    - interface: interface
    - service_id: service_id
-   - id: id
+   - id: id_5
    - region_id: region_id
 
 
@@ -305,12 +305,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_15
    - service: service
-   - links: links
+   - links: links_8
    - type: type
-   - id: id
-   - description: description
+   - id: id_11
+   - description: description_4
 
 Response Example
 ----------------
@@ -339,10 +339,10 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - type: type
-   - enabled: enabled
-   - description: description
+   - enabled: enabled_3
+   - description: description_4
    - service: service
-   - name: name
+   - name: name_7
    - service_id: service_id
 
 Request Example
@@ -356,12 +356,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_15
    - service: service
-   - links: links
+   - links: links_8
    - type: type
-   - id: id
-   - description: description
+   - id: id_11
+   - description: description_4
 
 Response Example
 ----------------

@@ -318,8 +318,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - roles: roles
-   - id: id
-   - links: links
+   - id: id_10
+   - links: links_7
    - name: name
 
 Response Example
@@ -352,8 +352,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - roles: roles
-   - id: id
-   - links: links
+   - id: id_10
+   - links: links_12
    - name: name
 
 Response Example
@@ -393,8 +393,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
+   - id: id_10
+   - links: links_7
    - name: name
 
 
@@ -505,8 +505,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
+   - id: id_10
+   - links: links_7
    - name: name
 
 Response Example
@@ -547,8 +547,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - role: role
-   - id: id
-   - links: links
+   - id: id_10
+   - links: links_7
    - name: name
 
 Response Example

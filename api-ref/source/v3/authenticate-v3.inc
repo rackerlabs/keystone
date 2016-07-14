@@ -134,7 +134,7 @@ Response Parameters
    - user: user
    - audit_ids: audit_ids
    - issued_at: issued_at
-   - id: id
+   - id: id_2
    - name: name
 
 
@@ -196,7 +196,7 @@ Response Parameters
    - interface: interface
    - endpoints: endpoints
    - type: type
-   - id: id
+   - id: id_2
    - name: name
 
 
@@ -250,7 +250,7 @@ Response Parameters
    - user: user
    - audit_ids: audit_ids
    - issued_at: issued_at
-   - id: id
+   - id: id_2
    - name: name
 
 
@@ -275,7 +275,7 @@ Request
    - token: token
    - id: id
    - auth: auth
-   - methods: methods
+   - methods: methods_1
    - nocatalog: nocatalog
 
 Request Example
@@ -311,7 +311,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - methods: methods
+   - methods: methods_1
    - auth: auth
    - token: token
    - audit_ids: audit_ids
@@ -366,7 +366,7 @@ Response Parameters
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
    - domain: domain
-   - methods: methods
+   - methods: methods_1
    - links: links
    - user: user
    - token: token
@@ -377,7 +377,7 @@ Response Parameters
    - roles: roles
    - audit_ids: audit_ids
    - issued_at: issued_at
-   - id: id
+   - id: id_2
    - name: name
 
 Response Example

@@ -60,7 +60,7 @@ Response Parameters
    - policy: policy
    - project_id: project_id
    - type: type
-   - id: id
+   - id: id_7
 
 
 List policies
@@ -86,12 +86,12 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - user_id: user_id
-   - links: links
+   - links: links_16
    - blob: blob
    - policies: policies
    - project_id: project_id
    - type: type
-   - id: id
+   - id: id_7
 
 Response Example
 ----------------
@@ -128,7 +128,7 @@ Response Parameters
    - policy: policy
    - project_id: project_id
    - type: type
-   - id: id
+   - id: id_7
 
 Response Example
 ----------------
@@ -176,7 +176,7 @@ Response Parameters
    - policy: policy
    - project_id: project_id
    - type: type
-   - id: id
+   - id: id_7
 
 Response Example
 ----------------

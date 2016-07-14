@@ -39,9 +39,9 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
-   - links: links
-   - id: id
+   - description: description_3
+   - links: links_6
+   - id: id_13
 
 Response Example
 ----------------
@@ -74,7 +74,7 @@ Request
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
+   - description: description_3
    - region_id: region_id
 
 Request Example
@@ -90,9 +90,9 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
-   - links: links
-   - id: id
+   - description: description_3
+   - links: links_6
+   - id: id_13
 
 Response Example
 ----------------
@@ -148,9 +148,9 @@ Response Parameters
 
    - regions: regions
    - parent_region_id: parent_region_id
-   - description: description
-   - links: links
-   - id: id
+   - description: description_3
+   - links: links_18
+   - id: id_13
 
 Response Example
 ----------------
@@ -191,8 +191,8 @@ Request
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
-   - id: id
+   - description: description_3
+   - id: id_9
 
 Request Example
 ---------------
@@ -207,6 +207,6 @@ Response Parameters
 
    - parent_region_id: parent_region_id
    - region: region
-   - description: description
-   - links: links
-   - id: id
+   - description: description_3
+   - links: links_6
+   - id: id_13
