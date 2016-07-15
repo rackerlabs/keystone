@@ -96,6 +96,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         return config_files
 
     def config(self, config_files):
+        assert False
         CONF(args=['bootstrap', '--bootstrap-password', uuid.uuid4().hex],
              project='keystone',
              default_config_files=config_files)
@@ -534,3 +535,31 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class TestPrepareLdap(unit.SQLDriverOverrides, unit.TestCase):
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(TestPrepareLdap, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def config(self, config_files):
+        CONF(args=['prepare_ldap', '--domain-id', uuid.uuid4().hex],
+             project='keystone',
+             default_config_files=config_files)
+
+    #def config(self, config_files):
+    #    CONF(args=['prepare_ldap', '--domain-id', 'default'],
+    #         project='keystone',
+    #         default_config_files=config_files)
+
+    #def config_files(self):
+    #    self.config_fixture.register_cli_opt(cli.command_opt)
+    #    config_files = super(TestPrepareLdap, self).config_files()
+    #    config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+    #    return config_files
+
+    def test_prepare_ldap(self):
+        cli.PrepareLdap.main()
