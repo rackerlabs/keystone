@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_f3941f45",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T13:42:08Z",
+      "side": 0,
+      "message": "its the latter, `A user that exists in keystone aka identity API service`",
+      "parentUuid": "1aa78d24_d020f9fa",
+      "revId": "91361b46d5e5a194132fa99fba3f32112d68aa08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_5384135c",
         "filename": "api-ref/source/v3-ext/oauth.inc",
         "patchSetId": 2
