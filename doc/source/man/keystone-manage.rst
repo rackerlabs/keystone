@@ -52,6 +52,7 @@ Available commands:
 * ``pki_setup``: Initialize the certificates used to sign tokens. **deprecated**
 * ``saml_idp_metadata``: Generate identity provider metadata.
 * ``token_flush``: Purge expired tokens.
+* ``prepare_ldap``: Prepare domain-specific LDAP backend.
 
 OPTIONS
 =======

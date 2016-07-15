@@ -280,6 +280,15 @@ with the following command:
 
     $ keystone-manage mapping_purge --all
 
+Generating public IDs in the first run may take a while, and most probably
+first API requests to fetch user list will fail by timeout. To prevent this,
+``prepare_ldap`` command should be executed. It should be executed right after
+LDAP has been configured or after ``mapping_purge``.
+
+.. code-block:: bash
+
+    $ keystone-manage prepare_ldap --domain DOMAINA
+
 Public ID Generators
 --------------------
 
@@ -1312,6 +1321,7 @@ through the normal REST API. At the moment, the following calls are supported:
 * ``pki_setup``: Initialize the certificates used to sign tokens.
 * ``saml_idp_metadata``: Generate identity provider metadata.
 * ``token_flush``: Purge expired tokens
+* ``prepare_ldap``: Prepare domain-specific LDAP backend
 
 Invoking ``keystone-manage`` by itself will give you additional usage
 information.
