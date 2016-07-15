@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_c6f2039b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T14:00:48Z",
+      "side": 1,
+      "message": "True should be a literal in backticks (I think?).\n\n  If set to ``true``,",
+      "revId": "3c065d70528feca7ac8a2bf344c32ea5ad39dbf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c68fa32c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T14:00:48Z",
+      "side": 1,
+      "message": "Should 0 be in backticks?",
+      "revId": "3c065d70528feca7ac8a2bf344c32ea5ad39dbf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a6aff77b",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T14:00:48Z",
+      "side": 1,
+      "message": "True should be a literal in backticks (I think?). \n\n  If set to ``true``,",
+      "revId": "3c065d70528feca7ac8a2bf344c32ea5ad39dbf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_069a4b6e",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T14:00:48Z",
+      "side": 1,
+      "message": "Same question here.",
+      "revId": "3c065d70528feca7ac8a2bf344c32ea5ad39dbf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
