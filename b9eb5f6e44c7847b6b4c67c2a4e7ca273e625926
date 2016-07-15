@@ -22,6 +22,23 @@
       "revId": "b9eb5f6e44c7847b6b4c67c2a4e7ca273e625926",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9c2b2d33",
+        "filename": "tox.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2016-07-15T13:02:25Z",
+      "side": 1,
+      "message": "Somehow I end up writing this comment for almost every project ...\n\nThis is the list of environments that get executed by default if you run tox without specifying one of them explicitly. As most systems will only have either py34 or py35 installed, I don\u0027t think it makes sense this way.\n\nI we agree that we are moving our default platform from Trusty to Xenial, then instead replacing py34 with py35 in this list would seem more useful.",
+      "revId": "b9eb5f6e44c7847b6b4c67c2a4e7ca273e625926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
