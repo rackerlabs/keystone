@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_988d577e",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T20:03:59Z",
+      "side": 1,
+      "message": "we should add\n\nmin_value: 3.7\n\nwhich will indicate in which version this attribute was added...see: https://review.openstack.org/#/c/342441/6/api-ref/source/v3/parameters.yaml as an example",
+      "revId": "f6bccb1fc78d66d17add92b4e4419607ebe11061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
