@@ -51,8 +51,7 @@ class Service(controller.V2Controller):
     @controller.v2_deprecated
     def delete_service(self, request, service_id):
         self.assert_admin(request)
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        self.catalog_api.delete_service(service_id, initiator)
+        self.catalog_api.delete_service(service_id, request.audit_initiator)
 
     @controller.v2_deprecated
     def create_service(self, request, OS_KSADM_service):
@@ -61,9 +60,8 @@ class Service(controller.V2Controller):
         service_id = uuid.uuid4().hex
         service_ref = OS_KSADM_service.copy()
         service_ref['id'] = service_id
-        initiator = notifications._get_request_audit_info(request.context_dict)
         new_service_ref = self.catalog_api.create_service(
-            service_id, service_ref, initiator)
+            service_id, service_ref, request.audit_initiator)
         return {'OS-KSADM:service': new_service_ref}
 
 
@@ -148,14 +146,12 @@ class Endpoint(controller.V2Controller):
             if interface_url:
                 utils.check_endpoint_url(interface_url)
 
-        initiator = notifications._get_request_audit_info(request.context_dict)
-
         if endpoint.get('region') is not None:
             try:
                 self.catalog_api.get_region(endpoint['region'])
             except exception.RegionNotFound:
                 region = dict(id=endpoint['region'])
-                self.catalog_api.create_region(region, initiator)
+                self.catalog_api.create_region(region, request.audit_initiator)
 
         legacy_endpoint_ref = endpoint.copy()
 
@@ -179,8 +175,9 @@ class Endpoint(controller.V2Controller):
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url
             endpoint_ref['region_id'] = endpoint_ref.pop('region')
-            self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref,
-                                             initiator)
+            self.catalog_api.create_endpoint(endpoint_ref['id'],
+                                             endpoint_ref,
+                                             request.audit_initiator)
 
         legacy_endpoint_ref['id'] = legacy_endpoint_id
         return {'endpoint': legacy_endpoint_ref}
@@ -189,12 +186,12 @@ class Endpoint(controller.V2Controller):
     def delete_endpoint(self, request, endpoint_id):
         """Delete up to three v3 endpoint refs based on a legacy ref ID."""
         self.assert_admin(request)
-        initiator = notifications._get_request_audit_info(request.context_dict)
 
         deleted_at_least_one = False
         for endpoint in self.catalog_api.list_endpoints():
             if endpoint['legacy_endpoint_id'] == endpoint_id:
-                self.catalog_api.delete_endpoint(endpoint['id'], initiator)
+                self.catalog_api.delete_endpoint(endpoint['id'],
+                                                 request.audit_initiator)
                 deleted_at_least_one = True
 
         if not deleted_at_least_one:
@@ -229,8 +226,7 @@ class RegionV3(controller.V3Controller):
         if not ref.get('id'):
             ref = self._assign_unique_id(ref)
 
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.create_region(ref, initiator)
+        ref = self.catalog_api.create_region(ref, request.audit_initiator)
         return wsgi.render_response(
             RegionV3.wrap_member(request.context_dict, ref),
             status=(http_client.CREATED,
@@ -253,14 +249,15 @@ class RegionV3(controller.V3Controller):
     def update_region(self, request, region_id, region):
         validation.lazy_validate(schema.region_update, region)
         self._require_matching_id(region_id, region)
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.update_region(region_id, region, initiator)
+        ref = self.catalog_api.update_region(region_id,
+                                             region,
+                                             request.audit_initiator)
         return RegionV3.wrap_member(request.context_dict, ref)
 
     @controller.protected()
     def delete_region(self, request, region_id):
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        return self.catalog_api.delete_region(region_id, initiator)
+        return self.catalog_api.delete_region(region_id,
+                                              request.audit_initiator)
 
 
 @dependency.requires('catalog_api')
@@ -276,8 +273,9 @@ class ServiceV3(controller.V3Controller):
     def create_service(self, request, service):
         validation.lazy_validate(schema.service_create, service)
         ref = self._assign_unique_id(self._normalize_dict(service))
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.create_service(ref['id'], ref, initiator)
+        ref = self.catalog_api.create_service(ref['id'],
+                                              ref,
+                                              request.audit_initiator)
         return ServiceV3.wrap_member(request.context_dict, ref)
 
     @controller.filterprotected('type', 'name')
@@ -297,14 +295,15 @@ class ServiceV3(controller.V3Controller):
     def update_service(self, request, service_id, service):
         validation.lazy_validate(schema.service_update, service)
         self._require_matching_id(service_id, service)
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.update_service(service_id, service, initiator)
+        ref = self.catalog_api.update_service(service_id,
+                                              service,
+                                              request.audit_initiator)
         return ServiceV3.wrap_member(request.context_dict, ref)
 
     @controller.protected()
     def delete_service(self, request, service_id):
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        return self.catalog_api.delete_service(service_id, initiator)
+        return self.catalog_api.delete_service(service_id,
+                                               request.audit_initiator)
 
 
 @dependency.requires('catalog_api')
@@ -328,7 +327,7 @@ class EndpointV3(controller.V3Controller):
         ref = cls.filter_endpoint(ref)
         return super(EndpointV3, cls).wrap_member(context, ref)
 
-    def _validate_endpoint_region(self, endpoint, context=None):
+    def _validate_endpoint_region(self, endpoint, request):
         """Ensure the region for the endpoint exists.
 
         If 'region_id' is used to specify the region, then we will let the
@@ -347,8 +346,7 @@ class EndpointV3(controller.V3Controller):
                 self.catalog_api.get_region(endpoint['region_id'])
             except exception.RegionNotFound:
                 region = dict(id=endpoint['region_id'])
-                initiator = notifications._get_request_audit_info(context)
-                self.catalog_api.create_region(region, initiator)
+                self.catalog_api.create_region(region, request.audit_initiator)
 
         return endpoint
 
@@ -357,9 +355,10 @@ class EndpointV3(controller.V3Controller):
         validation.lazy_validate(schema.endpoint_create, endpoint)
         utils.check_endpoint_url(endpoint['url'])
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
-        ref = self._validate_endpoint_region(ref, request.context_dict)
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.create_endpoint(ref['id'], ref, initiator)
+        ref = self._validate_endpoint_region(ref, request)
+        ref = self.catalog_api.create_endpoint(ref['id'],
+                                               ref,
+                                               request.audit_initiator)
         return EndpointV3.wrap_member(request.context_dict, ref)
 
     @controller.filterprotected('interface', 'service_id', 'region_id')
@@ -381,17 +380,17 @@ class EndpointV3(controller.V3Controller):
         self._require_matching_id(endpoint_id, endpoint)
 
         endpoint = self._validate_endpoint_region(endpoint.copy(),
-                                                  request.context_dict)
+                                                  request)
 
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        ref = self.catalog_api.update_endpoint(endpoint_id, endpoint,
-                                               initiator)
+        ref = self.catalog_api.update_endpoint(endpoint_id,
+                                               endpoint,
+                                               request.audit_initiator)
         return EndpointV3.wrap_member(request.context_dict, ref)
 
     @controller.protected()
     def delete_endpoint(self, request, endpoint_id):
-        initiator = notifications._get_request_audit_info(request.context_dict)
-        return self.catalog_api.delete_endpoint(endpoint_id, initiator)
+        return self.catalog_api.delete_endpoint(endpoint_id,
+                                                request.audit_initiator)
 
 
 @dependency.requires('catalog_api', 'resource_api')
