@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_9b1349b7",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T04:20:40Z",
+      "side": 1,
+      "message": "do you mean oauth_token_secret or something like that here?",
+      "range": {
+        "startLine": 237,
+        "startChar": 6,
+        "endLine": 237,
+        "endChar": 17
+      },
+      "revId": "989ab3a2a20158ca64685801f32a34339ea6422d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1b391940",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T04:20:40Z",
+      "side": 1,
+      "message": "do you mean oauth_token_secret or something like that here?",
+      "range": {
+        "startLine": 300,
+        "startChar": 6,
+        "endLine": 300,
+        "endChar": 17
+      },
+      "revId": "989ab3a2a20158ca64685801f32a34339ea6422d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
