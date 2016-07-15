@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_4af948c8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-15T19:33:07Z",
+      "side": 1,
+      "message": "Couldn\u0027t a user be enabled but also have a history of failed auth attempts?",
+      "revId": "561d9068e7e23764704716b57a3b99cb5729b81c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_0ae750e5",
+        "filename": "test-requirements.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-15T19:33:07Z",
+      "side": 1,
+      "message": "I think this might need an extra space to avoid the proposal bot re-updating it http://git.openstack.org/cgit/openstack/requirements/tree/global-requirements.txt#n300",
+      "revId": "561d9068e7e23764704716b57a3b99cb5729b81c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
