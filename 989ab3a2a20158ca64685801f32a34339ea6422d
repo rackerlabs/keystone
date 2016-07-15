@@ -45,6 +45,30 @@
       "revId": "989ab3a2a20158ca64685801f32a34339ea6422d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3e7683d8",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T05:12:56Z",
+      "side": 1,
+      "message": "righto!",
+      "parentUuid": "1aa78d24_1b391940",
+      "range": {
+        "startLine": 300,
+        "startChar": 6,
+        "endLine": 300,
+        "endChar": 17
+      },
+      "revId": "989ab3a2a20158ca64685801f32a34339ea6422d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
