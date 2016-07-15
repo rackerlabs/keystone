@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_60db8bee",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T18:48:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b398d76b",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_732aefe8",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-15T13:56:38Z",
       "side": 1,
       "message": "URL. For example, to assign ...",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_40d807f0",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T18:48:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_732aefe8",
       "revId": "7a45617e886fab980232f684aef9652c830e9f68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_40ada730",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T18:48:21Z",
+      "side": 1,
+      "message": "agreed - although I think the actual fix for that bug is in one of the following on patches - I\u0027ll add it to that patch",
+      "parentUuid": "1aa78d24_d32003fb",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_935cbb7e",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_80a79f4e",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T18:48:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_935cbb7e",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_73bb0f76",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2016-07-15T13:56:38Z",
       "side": 1,
       "message": "Is there suppose to be a space between \u0026 and scope?",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_c04eb795",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-15T18:48:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_73bb0f76",
       "revId": "7a45617e886fab980232f684aef9652c830e9f68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
