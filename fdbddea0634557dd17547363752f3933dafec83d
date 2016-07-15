@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_beb433d4",
+        "filename": "api-ref/source/v2-admin/admin-endpoints.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T04:57:04Z",
+      "side": 1,
+      "message": "Just call this Endpoints",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "fdbddea0634557dd17547363752f3933dafec83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_1ec4673f",
+        "filename": "api-ref/source/v2-admin/admin-endpoints_parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T04:57:04Z",
+      "side": 1,
+      "message": "ID* (since you use `Service ID` below)",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 15
+      },
+      "revId": "fdbddea0634557dd17547363752f3933dafec83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_5ebeefae",
+        "filename": "api-ref/source/v2-admin/admin-endpoints_parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T04:57:04Z",
+      "side": 1,
+      "message": "ID*",
+      "range": {
+        "startLine": 44,
+        "startChar": 13,
+        "endLine": 44,
+        "endChar": 15
+      },
+      "revId": "fdbddea0634557dd17547363752f3933dafec83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3e716378",
+        "filename": "api-ref/source/v2-admin/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T04:57:04Z",
+      "side": 1,
+      "message": "i think you should place this above versions",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "fdbddea0634557dd17547363752f3933dafec83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
