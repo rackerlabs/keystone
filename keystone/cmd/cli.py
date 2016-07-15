@@ -968,6 +968,51 @@ class MappingEngineTester(BaseApp):
                                   "engine."))
 
 
+class PrepareLdap(BaseApp):
+    """Preprocess entries from LDAP.
+
+    This command should be run right after LDAP was configured in Keystone. It
+    is not required to run it, though. It only improves the initial user
+    experience.
+
+    Another case when it should be ran is when many new users were added to
+    LDAP.
+    """
+
+    name = "prepare_ldap"
+
+    def __init__(self):
+        self.load_backends()
+
+    def load_backends(self):
+        drivers = backends.load_backends()
+        self.identity_manager = drivers['identity_api']
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(PrepareLdap, cls).add_argument_parser(
+            subparsers)
+
+        parser.add_argument('--domain-id', default=None, required=True,
+                            help=("ID of the domain configured to use LDAP "
+                                  "and that needs to be prepared"))
+        return parser
+
+    @classmethod
+    def main(cls):
+        domain_id = CONF.command.domain_id
+        klass = cls()
+        # the purpose of the command is to improve user experience when
+        # keystone was just configured to use LDAP or many new users were
+        # added to LDAP. Keystone needs to discover them and save to
+        # id_mapping_api backend.
+        # We don't actually need to tackle id_mapping_api in order to get
+        # entries there, because list_users does this anyway. That's why it
+        # will be enough to just make the call below.
+        klass.identity_manager.list_users(domain_scope=domain_id)
+
+
+
 CMDS = [
     BootStrap,
     DbSync,
@@ -981,6 +1026,7 @@ CMDS = [
     PKISetup,
     SamlIdentityProviderMetadata,
     TokenFlush,
+    PrepareLdap
 ]
 
 
