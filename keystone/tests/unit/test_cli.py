@@ -286,11 +286,11 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
 
-class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class MultidomainTestCase(unit.SQLDriverOverrides):
 
     def setUp(self):
         self.useFixture(database.Database())
-        super(CliDomainConfigAllTestCase, self).setUp()
+        super(MultidomainTestCase, self).setUp()
         self.load_backends()
         self.config_fixture.config(
             group='identity',
@@ -300,7 +300,7 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
 
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
-        config_files = super(CliDomainConfigAllTestCase, self).config_files()
+        config_files = super(MultidomainTestCase, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
@@ -318,10 +318,6 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
             self.resource_api.delete_domain(this_domain['id'])
         self.domains = {}
 
-    def config(self, config_files):
-        CONF(args=['domain_config_upload', '--all'], project='keystone',
-             default_config_files=config_files)
-
     def setup_initial_domains(self):
 
         def create_domain(domain):
@@ -338,6 +334,13 @@ class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
             id=CONF.identity.default_domain_id,
             name=u'Default')
         self.domains['domain_default'] = create_domain(self.default_domain)
+
+
+class CliDomainConfigAllTestCase(MultidomainTestCase, unit.TestCase):
+
+    def config(self, config_files):
+        CONF(args=['domain_config_upload', '--all'], project='keystone',
+             default_config_files=config_files)
 
     def test_config_upload(self):
         # The values below are the same as in the domain_configs_multi_ldap
@@ -522,3 +525,20 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class TestPrepareLdap(unit.SQLDriverOverrides, unit.TestCase):
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(TestPrepareLdap, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def config(self, config_files):
+        CONF(args=['prepare_ldap', '--domain-id', uuid.uuid4().hex],
+             project='keystone',
+             default_config_files=config_files)
+
+    def test_main(self):
+        cli.PrepareLdap.main()
