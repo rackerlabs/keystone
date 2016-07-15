@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_bc70a9a5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T13:04:08Z",
+      "side": 1,
+      "message": "I think this is the only spot where we may not have the user_id in the context, and that\u0027s why we were passing it in? i don\u0027t recall",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 70
+      },
+      "revId": "ac4b9f0e7d7ffb959efa2fb041cd5e9e989c4cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a17366b3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T13:04:08Z",
+      "side": 1,
+      "message": "remove this?",
+      "range": {
+        "startLine": 421,
+        "startChar": 4,
+        "endLine": 421,
+        "endChar": 51
+      },
+      "revId": "ac4b9f0e7d7ffb959efa2fb041cd5e9e989c4cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
