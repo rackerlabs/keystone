@@ -69,6 +69,24 @@
       "revId": "01c93795c9d7ea6e2473eeee2a7a9a692f44da5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d0c8f977",
+        "filename": "api-ref/source/v2/samples/client/authenticate-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:25:41Z",
+      "side": 1,
+      "message": "Gotcha - how come some samples include v2.0 in the path and other don\u0027t?",
+      "parentUuid": "1aa78d24_bb3565a9",
+      "revId": "01c93795c9d7ea6e2473eeee2a7a9a692f44da5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
