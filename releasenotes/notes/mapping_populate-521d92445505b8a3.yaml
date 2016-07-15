@@ -1,0 +1,10 @@
+---
+prelude: >
+    Add keystone-manage mapping_populate command, which
+    should be used when domain-specific LDAP backend is
+    used.
+features:
+  - Add keystone-manage mapping_populate command, which
+    should be used when domain-specific LDAP backend is
+    used. It fixes an issue when queries like
+    "list users" fail by timeout.
