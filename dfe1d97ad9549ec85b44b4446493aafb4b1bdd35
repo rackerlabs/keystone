@@ -127,6 +127,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_e0f8027f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-07-15T23:39:12Z",
+      "side": 1,
+      "message": "After using identity_api instead of shadow_users_api the culprit test that I was talking about works, so I eliminated the try/except block",
+      "parentUuid": "1aa78d24_ef661eed",
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d407771b",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 11
@@ -138,6 +156,30 @@
       "writtenOn": "2016-07-14T18:27:03Z",
       "side": 1,
       "message": "Since the user has already authenticated, the user will be in the backend; thus, you don\u0027t need a try/except and you don\u0027t need to call shadow_users_api. Use the identity_api instead:\nuser_dict \u003d self.identity_api.get_user(user_id)",
+      "range": {
+        "startLine": 645,
+        "startChar": 8,
+        "endLine": 649,
+        "endChar": 37
+      },
+      "revId": "dfe1d97ad9549ec85b44b4446493aafb4b1bdd35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_60b6d2dd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 20398
+      },
+      "writtenOn": "2016-07-15T23:39:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_d407771b",
       "range": {
         "startLine": 645,
         "startChar": 8,
