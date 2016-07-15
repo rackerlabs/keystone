@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_99be07d3",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T15:37:19Z",
+      "side": 1,
+      "message": "This seems more like a Validation error instead of a Forbidden.",
+      "revId": "813536b4dd021530339bf59f58240afba6ad0808",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_19921758",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T15:37:19Z",
+      "side": 1,
+      "message": "This all seems like code that should belong in the Manager, since it is business logic specific to how keystone implements trusts.",
+      "revId": "813536b4dd021530339bf59f58240afba6ad0808",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
