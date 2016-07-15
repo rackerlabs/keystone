@@ -166,7 +166,7 @@ Delete user (admin endpoint)
 Deletes a user.
 
 Normal response codes: 204
-Error response codes: 413,405,404,403,401,400,503
+Error response codes: 413, 405, 404, 403, 401, 400, 503
 
 Request
 -------
