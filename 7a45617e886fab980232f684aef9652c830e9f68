@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b398d76b",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:56:38Z",
+      "side": 1,
+      "message": "Also known as Role Based Access Control, or RBAC.",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_732aefe8",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:56:38Z",
+      "side": 1,
+      "message": "URL. For example, to assign ...",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d32003fb",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:56:38Z",
+      "side": 1,
+      "message": "I think we have a bug open saying we don\u0027t document query parameters. We should maybe add this as a partial bug if we are cleaning some of that up here.\n\nhttps://bugs.launchpad.net/keystone/+bug/1602854",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_935cbb7e",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:56:38Z",
+      "side": 1,
+      "message": "Since Identity service API v3.6, *",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_73bb0f76",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T13:56:38Z",
+      "side": 1,
+      "message": "Is there suppose to be a space between \u0026 and scope?",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
