@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_36c71d47",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T19:44:44Z",
+      "side": 1,
+      "message": "s/extra/previous/",
+      "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_761d15bd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T19:44:44Z",
+      "side": 1,
+      "message": "++",
+      "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
