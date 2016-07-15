@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_2114f2f3",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-15T21:32:07Z",
+      "side": 1,
+      "message": "It would be nice to have a small section that explains what effective means in the context of role assignments.",
+      "revId": "22ab8a8046bb4c63bfef04212c3a8b18fd0e1d69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
