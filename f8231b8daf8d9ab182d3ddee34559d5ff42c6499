@@ -91,6 +91,30 @@
       "revId": "f8231b8daf8d9ab182d3ddee34559d5ff42c6499",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_51f26707",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-15T02:03:42Z",
+      "side": 1,
+      "message": "Hold on for a moment, we would try to reuse these parameter instead of just delete them, the docs have huge of wrong description and misuse of these parameters.\n\nI am going to fix some of them in this commit:\nhttps://review.openstack.org/#/c/342089/",
+      "parentUuid": "1aa78d24_bb5d817b",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 14
+      },
+      "revId": "f8231b8daf8d9ab182d3ddee34559d5ff42c6499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
