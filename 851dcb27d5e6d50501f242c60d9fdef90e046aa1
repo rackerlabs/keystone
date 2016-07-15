@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_5b8a8165",
+        "filename": "api-ref/source/v3/samples/admin/identity-versions-response.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T04:01:00Z",
+      "side": 1,
+      "message": "this needs a /identity/ somewhere",
+      "range": {
+        "startLine": 25,
+        "startChar": 40,
+        "endLine": 25,
+        "endChar": 59
+      },
+      "revId": "851dcb27d5e6d50501f242c60d9fdef90e046aa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
