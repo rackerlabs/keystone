@@ -22,6 +22,30 @@
       "revId": "91361b46d5e5a194132fa99fba3f32112d68aa08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dea01f45",
+        "filename": "api-ref/source/v3-ext/oauth.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-15T05:09:05Z",
+      "side": 1,
+      "message": "that\u0027s the plan, we do specify it in the code base: https://github.com/openstack/keystone/blob/8a56c161ee29e34e70c6334b048881e8fbbd7514/keystone/common/json_home.py#L20-L41\n\nfor *all* resources!\n\nI think the goal is to eventually link these back to the APIs we\u0027re creating right now, but it looks like we weren\u0027t 100% accurate :\\\n\nI have an item on the API sprint to-do list to copy over all the \"relationship\" entries, i think we should do that first and then do a sweeping change to correct everything (once we figure out the actual proper link)",
+      "parentUuid": "1aa78d24_9bc86923",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 100
+      },
+      "revId": "91361b46d5e5a194132fa99fba3f32112d68aa08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
