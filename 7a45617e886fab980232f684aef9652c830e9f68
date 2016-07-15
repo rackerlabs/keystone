@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_1b8841e7",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-15T20:51:35Z",
+      "side": 1,
+      "message": "Sweet - thanks!",
+      "parentUuid": "fad55976_40ada730",
+      "revId": "7a45617e886fab980232f684aef9652c830e9f68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_935cbb7e",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 7
