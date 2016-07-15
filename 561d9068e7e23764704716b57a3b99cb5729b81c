@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_9800b7ac",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-15T20:10:40Z",
+      "side": 1,
+      "message": "Yes, but if you set enabled to True, it will reset failed auth attempts.  This will allow admins to manually unlock a user account.",
+      "parentUuid": "fad55976_4af948c8",
+      "revId": "561d9068e7e23764704716b57a3b99cb5729b81c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_0ae750e5",
         "filename": "test-requirements.txt",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-15T19:33:07Z",
       "side": 1,
       "message": "I think this might need an extra space to avoid the proposal bot re-updating it http://git.openstack.org/cgit/openstack/requirements/tree/global-requirements.txt#n300",
+      "revId": "561d9068e7e23764704716b57a3b99cb5729b81c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_787ce320",
+        "filename": "test-requirements.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-15T20:10:40Z",
+      "side": 1,
+      "message": "Hopefully this is fine; it did pass the requirements job.",
+      "parentUuid": "fad55976_0ae750e5",
       "revId": "561d9068e7e23764704716b57a3b99cb5729b81c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
