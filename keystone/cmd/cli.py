@@ -968,6 +968,57 @@ class MappingEngineTester(BaseApp):
                                   "engine."))
 
 
+class PrepareLdap(BaseApp):
+    """Preprocess entries from LDAP.
+
+    The purpose of the command is to improve user experience when
+    Keystone has just been configured to use LDAP or many new users have been
+    added to LDAP. Keystone needs to discover them and save to
+    id_mapping_api backend.
+
+    This command should be run right after LDAP was configured in Keystone. It
+    is not required to run it, though. It only improves the initial user
+    experience.
+
+    Another case when it should be ran is when many new users were added to
+    LDAP.
+
+    This command will take a while to run. It is perfectly fine for it to run
+    more than several minutes.
+    """
+
+    name = "prepare_ldap"
+
+    @classmethod
+    def load_backends(cls):
+        drivers = backends.load_backends()
+        cls.identity_api = drivers['identity_api']
+        cls.resource_api = drivers['resource_api']
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(PrepareLdap, cls).add_argument_parser(
+            subparsers)
+
+        parser.add_argument('--domain', default=None, required=True,
+                            help=("ID of the domain configured to use LDAP "
+                                  "and that needs to be prepared"))
+        return parser
+
+    @classmethod
+    def main(cls):
+        cls.load_backends()
+        domain_name = CONF.command.domain
+        try:
+            domain_id = cls.resource_api.get_domain_by_name(domain_name)['id']
+        except exception.DomainNotFound:
+            domain_id = domain_name
+        # We don't actually need to tackle id_mapping_api in order to get
+        # entries there, because list_users does this anyway. That's why it
+        # will be enough to just make the call below.
+        cls.identity_api.list_users(domain_scope=domain_id)
+
+
 CMDS = [
     BootStrap,
     DbSync,
@@ -981,6 +1032,7 @@ CMDS = [
     PKISetup,
     SamlIdentityProviderMetadata,
     TokenFlush,
+    PrepareLdap
 ]
 
 

@@ -27,8 +27,11 @@ from keystone.cmd import cli
 from keystone.common import dependency
 import keystone.conf
 from keystone.i18n import _
+from keystone.identity.mapping_backends import mapping as identity_mapping
 from keystone.tests import unit
+from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit.ksfixtures import ldapdb
 
 
 CONF = keystone.conf.CONF
@@ -534,3 +537,63 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class TestPrepareLdap(unit.SQLDriverOverrides, unit.TestCase):
+
+    def setUp(self):
+        sqldb = self.useFixture(database.Database())
+        super(TestPrepareLdap, self).setUp()
+        self.ldapdb = self.useFixture(ldapdb.LDAPDatabase())
+        self.ldapdb.clear()
+
+        self.load_backends()
+
+        sqldb.recreate()
+        self.load_fixtures(default_fixtures)
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(TestPrepareLdap, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_ldap_sql.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(TestPrepareLdap, self).config_overrides()
+        self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='identity_mapping',
+                                   backward_compatible_ids=False)
+
+    def config(self, config_files):
+        CONF(args=['prepare_ldap', '--domain',
+                   CONF.identity.default_domain_id],
+             project='keystone',
+             default_config_files=config_files)
+
+    def test_prepare_ldap(self):
+        # prepare_ldap should create id mappings. Test plan:
+        # 0. Purge mappings
+        # 1. Fetch user list directly via backend. It will not create any
+        #    mappings because it bypasses identity manager
+        # 2. Verify that users have no public_id yet
+        # 3. Execute prepare_ldap. It should create id mappings
+        # 4. For the same users verify that they have public_id now
+        self.id_mapping_api.purge_mappings({})  # {} for empty filter
+        users = self.identity_api.driver.list_users(None)  # None for hints
+        for user in users:
+            local_entity = {
+                'domain_id': CONF.identity.default_domain_id,
+                'local_id': user['id'],
+                'entity_type': identity_mapping.EntityType.USER}
+            self.assertIsNone(self.id_mapping_api.get_public_id(local_entity))
+
+        dependency.reset()  # backends are loaded again in the command handler
+        cli.PrepareLdap.main()
+
+        for user in users:
+            local_entity = {
+                'domain_id': CONF.identity.default_domain_id,
+                'local_id': user['id'],
+                'entity_type': identity_mapping.EntityType.USER}
+            self.assertIsNotNone(
+                self.id_mapping_api.get_public_id(local_entity))
