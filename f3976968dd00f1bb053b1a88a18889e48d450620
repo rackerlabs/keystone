@@ -1,0 +1,331 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_51d103fb",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "why decrypt first? shouldn\u0027t encrypt_credential() be idempotent?",
+      "range": {
+        "startLine": 433,
+        "startChar": 43,
+        "endLine": 433,
+        "endChar": 61
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_31d8cfef",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "this means encrypt credential must be executed while Keystone is offline? Pagination is known to be unreliable depending on backend.",
+      "range": {
+        "startLine": 439,
+        "startChar": 46,
+        "endLine": 439,
+        "endChar": 62
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_343efdb8",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "credential_encryption_key_setup?",
+      "range": {
+        "startLine": 597,
+        "startChar": 12,
+        "endLine": 597,
+        "endChar": 28
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_1409392d",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "I was under the impression we are going to use Castellan key manager for this. Maybe a follow-on patch?",
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_943409df",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be named credential_encryption_key_rotate?",
+      "range": {
+        "startLine": 626,
+        "startChar": 12,
+        "endLine": 626,
+        "endChar": 29
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_0581014b",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "we need a separate patch for this change as it is not specific to credentials",
+      "range": {
+        "startLine": 47,
+        "startChar": 58,
+        "endLine": 47,
+        "endChar": 59
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_65dd5d70",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "this need to be separate patch",
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_a503d5b7",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "What\u0027s this option going to buy us? We either need to encrypt them all offline or we don\u0027t encrypt them at all. I don\u0027t see a scenario where only some credential are encrypted while others are not.",
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_85ee91ea",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "3?",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 14
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_45cbf972",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "2 or 3?",
+      "range": {
+        "startLine": 58,
+        "startChar": 66,
+        "endLine": 58,
+        "endChar": 68
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_45adb930",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "credentail?",
+      "range": {
+        "startLine": 40,
+        "startChar": 22,
+        "endLine": 40,
+        "endChar": 27
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_c5c089e3",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "encrypted_cred right?",
+      "range": {
+        "startLine": 51,
+        "startChar": 22,
+        "endLine": 51,
+        "endChar": 27
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_2a1df40f",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "may want to use something more appropriate to its subsclass as this class is now shared by both fernet token and credential encryption keys",
+      "range": {
+        "startLine": 54,
+        "startChar": 28,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_aa8c4436",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 95,
+        "startChar": 38,
+        "endLine": 95,
+        "endChar": 54
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_8a76a03c",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-15T18:14:06Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 106,
+        "startChar": 55,
+        "endLine": 106,
+        "endChar": 70
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
