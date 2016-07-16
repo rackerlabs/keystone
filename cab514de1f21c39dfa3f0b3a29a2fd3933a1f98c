@@ -46,6 +46,76 @@
       "revId": "cab514de1f21c39dfa3f0b3a29a2fd3933a1f98c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_f6eebeb2",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-16T18:05:21Z",
+      "side": 1,
+      "message": "sorry, was confused by the order of the response parameters....",
+      "parentUuid": "fad55976_f6c4fe5f",
+      "range": {
+        "startLine": 101,
+        "startChar": 5,
+        "endLine": 101,
+        "endChar": 23
+      },
+      "revId": "cab514de1f21c39dfa3f0b3a29a2fd3933a1f98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_362fb6f7",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-16T18:05:21Z",
+      "side": 1,
+      "message": "this comes out as being an optional ID of a trust!?!?!? think using wrong parameters.yaml entry...",
+      "range": {
+        "startLine": 104,
+        "startChar": 9,
+        "endLine": 104,
+        "endChar": 11
+      },
+      "revId": "cab514de1f21c39dfa3f0b3a29a2fd3933a1f98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_d640daa7",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-16T18:05:21Z",
+      "side": 1,
+      "message": "should we include email in all our examples...since we don\u0027t support this a formal attribute anywhere...?",
+      "range": {
+        "startLine": 105,
+        "startChar": 5,
+        "endLine": 105,
+        "endChar": 17
+      },
+      "revId": "cab514de1f21c39dfa3f0b3a29a2fd3933a1f98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
