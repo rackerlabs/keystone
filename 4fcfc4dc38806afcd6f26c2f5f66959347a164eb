@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_e31c3bc3",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:50:45Z",
+      "side": 1,
+      "message": "I\u0027d be OK with removing all of these, they are already listed here:  http://docs.openstack.org/developer/keystone/federation/federated_identity.html#mapping-combinations",
+      "range": {
+        "startLine": 671,
+        "startChar": 0,
+        "endLine": 671,
+        "endChar": 21
+      },
+      "revId": "4fcfc4dc38806afcd6f26c2f5f66959347a164eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_437a67f2",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:50:45Z",
+      "side": 1,
+      "message": "this didn\u0027t render, maybe just say GET for now?",
+      "range": {
+        "startLine": 825,
+        "startChar": 18,
+        "endLine": 825,
+        "endChar": 26
+      },
+      "revId": "4fcfc4dc38806afcd6f26c2f5f66959347a164eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
