@@ -46,6 +46,99 @@
       "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_8358df33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T20:21:10Z",
+      "side": 1,
+      "message": "just drop the whole url in addition i suppose:\n\n  implements bp views\n  \n  url: https://blueprints.launchpad.net/keystone/+spec/views\n\nor try renaming it?  api-views?",
+      "parentUuid": "1aa78d24_49aacdd3",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_e35efb10",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T20:21:10Z",
+      "side": 1,
+      "message": "what about update?",
+      "range": {
+        "startLine": 226,
+        "startChar": 4,
+        "endLine": 236,
+        "endChar": 23
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_63a96bdf",
+        "filename": "keystone/api/views/v3/credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T20:21:10Z",
+      "side": 1,
+      "message": "whats the point of these? are they doing validation, like we do with json schema?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_e3471b49",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T20:21:10Z",
+      "side": 1,
+      "message": "nit, why does this even return anything?",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 65
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
