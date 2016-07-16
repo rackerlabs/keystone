@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_83e8dfb5",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-16T21:37:01Z",
+      "side": 1,
+      "message": "not sure if this is right.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "5703f5d94bf1434f0e2e9f26acbb4889a4bba68b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_c3d2d7ff",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-16T21:37:01Z",
+      "side": 1,
+      "message": "is there a better way to represent these?",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 419,
+        "endChar": 48
+      },
+      "revId": "5703f5d94bf1434f0e2e9f26acbb4889a4bba68b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_a3cd235f",
+        "filename": "api-ref/source/v3/samples/admin/role-assignments-effective-list-include-names-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-16T21:37:01Z",
+      "side": 1,
+      "message": "do we have a pattern for these sample IDs?",
+      "range": {
+        "startLine": 8,
+        "startChar": 27,
+        "endLine": 8,
+        "endChar": 38
+      },
+      "revId": "5703f5d94bf1434f0e2e9f26acbb4889a4bba68b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
