@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_63eb2bb1",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_f2ec3e94",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_329ec607",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "I wonder if we should clarify this to say it is setup with the Service Provider?",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_03dd0f0e",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "i disagree with this one. i don\u0027t want to further confuse the reader",
+      "parentUuid": "1aa78d24_329ec607",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_43054778",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_52aa721b",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7224cec5",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "Should we add Protocols to the definitions here?",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_23081391",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_7224cec5",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_63020b71",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_bd1c476b",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7d393fd8",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "Identity Provider* ?\n\nNot sure what the convention should be here but so far we have:\n\n Identity Provider\n identity provider\n IdP\n\nWe should apply this consistently throughout the document once we decide on a convention.",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_c3f93782",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "i\u0027ll fix this in a follow up",
+      "parentUuid": "1aa78d24_7d393fd8",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_a3f40387",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_ddde730f",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_5611bd5c",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "Should this be idp_id?",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_e3eefbb2",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "nope, this is correct, it\u0027s required in the body",
+      "parentUuid": "1aa78d24_5611bd5c",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_232f73f7",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "let\u0027s take it out now",
+      "parentUuid": "1aa78d24_d11c976c",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_31707ba4",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "s/unscoped// \n\nSince a federated user can get both scoped and unscoped tokens from the auth_url. Not only that, but they can also get a list of projects they have access to via the group assignment.",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_83361f50",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_31707ba4",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_c34017a8",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b1e10b2d",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_71be8301",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -217,6 +415,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "Do we list parameters in this section, too?",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_a33b6337",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "we need to do that for all the APIs in this doc -- create a table of parameters, but it\u0027s already huge, i expect this to be a follow-on. the examples are sufficient for a first pass",
+      "parentUuid": "1aa78d24_71be8301",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_e3455bb3",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_31ccfbba",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_b1c2ab51",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -251,6 +485,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "I think for these types of docs don\u0027t we usually supply the arguments as a list below? \n\nLike this - https://github.com/openstack/keystone/blob/master/api-ref/source/v3/roles.inc#L120-L124\n\nIf so, we should apply this to all occurrences in this doc.",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_231653a7",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "same comment as above",
+      "parentUuid": "1aa78d24_b1c2ab51",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +560,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_830d7f92",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_b1d58be6",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_91f7af8b",
         "filename": "api-ref/source/v3-ext/federation.inc",
         "patchSetId": 1
@@ -319,6 +589,24 @@
       "writtenOn": "2016-07-15T02:18:00Z",
       "side": 1,
       "message": "keystone*",
+      "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_63104ba9",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T21:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_91f7af8b",
       "revId": "7fa1217069911e9859fac49f710817c41e817c8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
