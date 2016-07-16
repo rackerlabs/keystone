@@ -1,0 +1,60 @@
+{
+        "role_assignments": [
+            {
+                "links": {
+                    "assignment": "http://example.com/identity/v3/domains/--domain-id--/users/--user-id--/roles/--role-id--"
+                },
+                "role": {
+                    "id": "--role-id--",
+                    "name": "--role-name--"
+                },
+                "scope": {
+                    "domain": {
+                        "id": "--domain-id--",
+                        "name": "--domain-name--"
+                    }
+                },
+                "user": {
+                    "domain": {
+                        "id": "--domain-id--",
+                        "name": "--domain-name--"
+                    },
+                    "id": "--user-id--",
+                    "name": "--user-name--"
+                }
+            },
+            {
+                "links": {
+                    "assignment": "http://example.com/identity/v3/projects/--project-id--/groups/--group-id--/roles/--role-id--",
+                    "membership": "http://example.com/identity/v3/groups/--group-id--/users/--user-id--"
+                },
+                "role": {
+                    "id": "--role-id--",
+                    "name": "--role-name--"
+                },
+                "scope": {
+                    "project": {
+                        "domain": {
+                            "id": "--domain-id--",
+                            "name": "--domain-name--"
+                        }
+                        "id": "--project-id--",
+                        "name": "--project-name--"
+                    }
+                },
+                "user": {
+                    "domain": {
+                        "id": "--domain-id--",
+                        "name": "--domain-name--"
+                    },
+                    "id": "--user-id--",
+                    "name": "--user-name--"
+                }
+            }
+        ],
+        "links": {
+            "self": "http://example.com/identity/v3/role_assignments?effective&include_names=true",
+            "previous": null,
+            "next": null
+        }
+    }

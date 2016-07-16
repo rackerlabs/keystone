@@ -1,0 +1,45 @@
+{
+        "role_assignments": [
+            {
+                "links": {
+                    "assignment": "http://example.com/identity/v3/OS-INHERIT/
+                                   domains/--domain-id--/users/--user-id--/
+                                   roles/--role-id--/inherited_to_projects"
+                },
+                "role": {
+                    "id": "--role-id--"
+                },
+                "scope": {
+                    "domain": {
+                        "id": "--domain-id--"
+                    },
+                    "OS-INHERIT:inherited_to": "projects"
+                },
+                "user": {
+                    "id": "--user-id--"
+                }
+            },
+            {
+                "group": {
+                    "id": "--group-id--"
+                },
+                "links": {
+                    "assignment": "http://example.com/identity/v3/projects/--project-id--/
+                                   groups/--group-id--/roles/--role-id--"
+                },
+                "role": {
+                    "id": "--role-id--"
+                },
+                "scope": {
+                    "project": {
+                        "id": "--project-id--"
+                    }
+                }
+            }
+        ],
+        "links": {
+            "self": "http://example.com/identity/v3/role_assignments",
+            "previous": null,
+            "next": null
+        }
+    }
