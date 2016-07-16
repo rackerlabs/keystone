@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_0a5c22ec",
+        "filename": "api-ref/source/v2-admin/samples/admin/users-list-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-16T09:43:32Z",
+      "side": 1,
+      "message": "looks like `username` is also missed here.\n\n\"users\": [{\n\t\t\"username\": \"admin\",\n\t\t\"enabled\": true,\n\t\t\"name\": \"admin\",\n\t\t\"id\": \"3c9530e253f44f588ade4989e52d8f59\"\n\t}, {\n\t\t\"username\": \"demo\",\n\t\t\"name\": \"demo\",\n\t\t\"enabled\": true,\n\t\t\"email\": \"demo@example.com\",\n\t\t\"id\": \"a0ae37b0c8b646589bac01afaab0f1d3\"\n\t},",
+      "range": {
+        "startLine": 1,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "6ce90f331ff3e1c1606acf9e1eaec81c490ecebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
