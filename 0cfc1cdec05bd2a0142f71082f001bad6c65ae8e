@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_e7d0e755",
+        "filename": "api-ref/source/v2-admin/samples/admin/user-show-response.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-16T09:36:38Z",
+      "side": 1,
+      "message": "I am afraid that the old one is correct although I think it\u0027s not necessary return `username` beside `name`.\n\nThe output of my test is as this,\n\ncurl -g -i -X GET http://10.239.159.68/identity_v2_admin/v2.0/users/acc163d0efa14fe5b84e1dcc62ff6404 -H \"Accept: application/json\" -H \"X-Auth-Token: 9b9e77ce5ce4440093ea2367028b04ff\"\n\n\n{\"user\": {\"username\": \"test_user\", \"name\": \"test_user\", \"enabled\": true, \"tenantId\": \"e9b5b0575cad498f8fce9e39ef209411\", \"id\": \"acc163d0efa14fe5b84e1dcc62ff6404\"}}",
+      "range": {
+        "startLine": 3,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "0cfc1cdec05bd2a0142f71082f001bad6c65ae8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
