@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_2f1b141d",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1269,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T03:34:24Z",
+      "side": 1,
+      "message": "this is defined twice, above on line 906",
+      "range": {
+        "startLine": 1264,
+        "startChar": 0,
+        "endLine": 1269,
+        "endChar": 14
+      },
+      "revId": "a7b3710475b44241ff9722009a6c08b76d8ce418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
