@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_4f52c814",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T03:31:10Z",
+      "side": 1,
+      "message": "we\u0027re missing:\n\n  scope.OS-INHERIT:inherited_to\n\nit may not be used, but it still works and should be documented",
+      "range": {
+        "startLine": 498,
+        "startChar": 3,
+        "endLine": 498,
+        "endChar": 18
+      },
+      "revId": "4e3d68e0d6b60918db22c46b6da51064f8172c13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_6fffcc01",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T03:31:10Z",
+      "side": 1,
+      "message": "this is group.id",
+      "range": {
+        "startLine": 503,
+        "startChar": 5,
+        "endLine": 503,
+        "endChar": 13
+      },
+      "revId": "4e3d68e0d6b60918db22c46b6da51064f8172c13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_ef13bc5a",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T03:31:10Z",
+      "side": 1,
+      "message": "this is role.id",
+      "range": {
+        "startLine": 504,
+        "startChar": 5,
+        "endLine": 504,
+        "endChar": 12
+      },
+      "revId": "4e3d68e0d6b60918db22c46b6da51064f8172c13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_0f1bb073",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-16T03:31:10Z",
+      "side": 1,
+      "message": "this is user.id",
+      "range": {
+        "startLine": 507,
+        "startChar": 5,
+        "endLine": 507,
+        "endChar": 12
+      },
+      "revId": "4e3d68e0d6b60918db22c46b6da51064f8172c13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
