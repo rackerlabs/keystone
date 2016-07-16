@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fad55976_c050290d",
+        "filename": "api-ref/source/v2-admin/samples/admin/users-list-response.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-16T10:09:28Z",
+      "side": 1,
+      "message": "These two names are identical, the V2 API doesn\u0027t accept to create two user with the same name.\n\nI tried it and hit the DB Conflict exception.",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "6ce90f331ff3e1c1606acf9e1eaec81c490ecebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_0a5c22ec",
         "filename": "api-ref/source/v2-admin/samples/admin/users-list-response.json",
         "patchSetId": 2
