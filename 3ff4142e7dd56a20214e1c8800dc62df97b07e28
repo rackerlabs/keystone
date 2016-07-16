@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_0b9096eb",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-16T14:14:55Z",
+      "side": 1,
+      "message": "nit",
+      "range": {
+        "startLine": 315,
+        "startChar": 0,
+        "endLine": 315,
+        "endChar": 4
+      },
+      "revId": "3ff4142e7dd56a20214e1c8800dc62df97b07e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_eb8a62be",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-16T14:14:55Z",
+      "side": 1,
+      "message": "We actually do not support this anymore....if you call it, it will always return NotImplemented. The equivalent versions of this that include a tenant (see below) are still supported",
+      "range": {
+        "startLine": 316,
+        "startChar": 0,
+        "endLine": 351,
+        "endChar": 19
+      },
+      "revId": "3ff4142e7dd56a20214e1c8800dc62df97b07e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
