@@ -187,3 +187,9 @@ users_links:
   in: body
   required: true
   type: array
+username:
+  description: |
+    The user name.
+  in: body
+  required: false
+  type: string
