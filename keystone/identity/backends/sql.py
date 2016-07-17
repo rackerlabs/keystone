@@ -14,15 +14,21 @@
 
 import datetime
 
+from oslo_log import log
 import sqlalchemy
 
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 class Identity(base.IdentityDriverV8):
@@ -100,6 +106,31 @@ class Identity(base.IdentityDriverV8):
             except sql.NotFound:
                 raise exception.UserNotFound(user_id=user_name)
             return base.filter_user(user_ref.to_dict())
+
+    def change_password(self, user_id, new_password):
+        self._validate_password_can_change(user_id)
+        update_dict = {'password': new_password}
+        self.update_user(user_id, update_dict)
+
+    def _validate_password_can_change(self, user_id):
+        with sql.session_for_read() as session:
+            user_ref = self._get_user(session, user_id)
+        min_age_days = CONF.security_compliance.minimum_password_age
+        if min_age_days and user_ref.password_created_at:
+            expires_days = CONF.security_compliance.password_expires_days
+            if expires_days and (expires_days <= min_age_days):
+                msg = _LE('Unable to validate the minimum password age, the '
+                          'configuration `[security_compliance] '
+                          'minimum_password_age` must be less than '
+                          '`[security_compliance] password_expires_days`')
+                LOG.error(msg)
+            else:
+                min_age = (user_ref.password_created_at +
+                           datetime.timedelta(days=min_age_days)).date()
+                if datetime.datetime.utcnow().date() < min_age:
+                    detail = _('The password cannot be changed at this time '
+                               'due to the minimum password age.')
+                    raise exception.PasswordValidationError(detail=detail)
 
     @sql.handle_conflicts(conflict_type='user')
     def update_user(self, user_id, user):
