@@ -930,7 +930,8 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('user')
-    def update_user(self, user_id, user_ref, initiator=None):
+    def update_user(self, user_id, user_ref, initiator=None,
+                    self_service=False):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
         if 'name' in user:
@@ -959,7 +960,7 @@ class Manager(manager.Manager):
         self.get_user_by_name.invalidate(self, old_user_ref['name'],
                                          old_user_ref['domain_id'])
 
-        ref = driver.update_user(entity_id, user)
+        ref = driver.update_user(entity_id, user, self_service)
 
         notifications.Audit.updated(self._USER, user_id, initiator)
 
@@ -1226,7 +1227,7 @@ class Manager(manager.Manager):
         self.authenticate(context, user_id, original_password)
 
         update_dict = {'password': new_password}
-        self.update_user(user_id, update_dict)
+        self.update_user(user_id, update_dict, self_service=True)
 
     @MEMOIZE
     def _shadow_nonlocal_user(self, user):
