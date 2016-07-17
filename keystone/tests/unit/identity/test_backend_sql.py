@@ -13,17 +13,19 @@
 import datetime
 import uuid
 
-from oslo_config import cfg
+import fixtures
+from oslo_log import log
 
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
 from keystone.tests.unit import test_backend_sql
 
 
-CONF = cfg.CONF
+CONF = keystone.conf.CONF
 
 
 class DisableInactiveUserTests(test_backend_sql.SqlTests):
@@ -150,3 +152,83 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
             user_ref = session.query(model.User).get(user_id)
             user_ref.last_active_at = last_active_at
             return user_ref
+
+
+class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(MinimumPasswordAgeTests, self).setUp()
+        self.min_age_days = 1
+        self.config_fixture.config(
+            group='security_compliance',
+            minimum_password_age=self.min_age_days)
+        self.log_info = self.useFixture(fixtures.FakeLogger(level=log.ERROR))
+
+    def test_user_cannot_change_password_before_min_age(self):
+        # create user and password
+        password = uuid.uuid4().hex
+        user = self._create_new_user(password)
+        # assert cannot change password before min age
+        new_password = uuid.uuid4().hex
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.change_password,
+                          self.make_request(),
+                          user_id=user['id'],
+                          original_password=password,
+                          new_password=new_password)
+
+    def test_user_can_change_password_after_min_age(self):
+        # create user and password
+        password = uuid.uuid4().hex
+        user = self._create_new_user(password)
+        # set password created at so that min age has past
+        password_created_at = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(days=self.min_age_days + 1))
+        self._update_user(user['id'], password_created_at)
+        # assert can change password after min age
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          user_id=user['id'],
+                                          original_password=password,
+                                          new_password=new_password)
+        # authenticate with new passowrd
+        user_ret = self.identity_api.authenticate(self.make_request(),
+                                                  user_id=user['id'],
+                                                  password=new_password)
+        self.assertEqual(user['id'], user_ret['id'])
+
+    def test_password_expires_days_less_than_min_password_age_error(self):
+        # set password_expires_days < minimum_password_age
+        self.config_fixture.config(
+            group='security_compliance',
+            password_expires_days=90)
+        self.config_fixture.config(
+            group='security_compliance',
+            minimum_password_age=91)
+        # create user and password
+        password = uuid.uuid4().hex
+        user = self._create_new_user(password)
+        # change password; test for log and exception
+        new_password = uuid.uuid4().hex
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.change_password,
+                          self.make_request(),
+                          user_id=user['id'],
+                          original_password=password,
+                          new_password=new_password)
+        self.assertIn('Unable to validate the minimum password age',
+                      self.log_info.output)
+
+    def _create_new_user(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': password
+        }
+        return self.identity_api.create_user(user)
+
+    def _update_user(self, user_id, password_create_at):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.password_ref.created_at = password_create_at
