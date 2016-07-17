@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fad55976_39320611",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1255,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-17T07:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fad55976_799abe64",
+      "range": {
+        "startLine": 1255,
+        "startChar": 4,
+        "endLine": 1255,
+        "endChar": 24
+      },
+      "revId": "1c3789314ccc7d9b603e5c67aa0df527d1aa19c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_7983de04",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-17T04:48:53Z",
       "side": 1,
       "message": "make this response_body, so we can differentiate between it being optional in a request and always there in there response.  See roles.inc as an example.",
+      "range": {
+        "startLine": 40,
+        "startChar": 40,
+        "endLine": 40,
+        "endChar": 50
+      },
+      "revId": "1c3789314ccc7d9b603e5c67aa0df527d1aa19c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_9cd96086",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-17T07:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fad55976_7983de04",
       "range": {
         "startLine": 40,
         "startChar": 40,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fad55976_fce85c12",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-17T07:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fad55976_198c6234",
+      "range": {
+        "startLine": 41,
+        "startChar": 5,
+        "endLine": 41,
+        "endChar": 26
+      },
+      "revId": "1c3789314ccc7d9b603e5c67aa0df527d1aa19c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_9978522d",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "fad55976_7ccbcca5",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-17T07:53:52Z",
+      "side": 1,
+      "message": "`links` only exists in response, so there is no need differentiate, others will be fixed.",
+      "parentUuid": "fad55976_9978522d",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "1c3789314ccc7d9b603e5c67aa0df527d1aa19c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_d972ca48",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2016-07-17T04:48:53Z",
       "side": 1,
       "message": "user a \"..._request_body\" version of each of these, since they will all be optional",
+      "range": {
+        "startLine": 75,
+        "startChar": 5,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "1c3789314ccc7d9b603e5c67aa0df527d1aa19c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_7c590cfe",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-17T07:53:52Z",
+      "side": 1,
+      "message": "·region_object` is not optional, `region_id` is a param in path, others will be fixed up.",
+      "parentUuid": "fad55976_d972ca48",
       "range": {
         "startLine": 75,
         "startChar": 5,
