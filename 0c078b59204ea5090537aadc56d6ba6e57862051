@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_384b952d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-17T19:50:45Z",
+      "side": 1,
+      "message": "this line is too long",
+      "range": {
+        "startLine": 71,
+        "startChar": 20,
+        "endLine": 71,
+        "endChar": 80
+      },
+      "revId": "0c078b59204ea5090537aadc56d6ba6e57862051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_58bbe90e",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-17T19:50:45Z",
+      "side": 1,
+      "message": "i\u0027m wondering if it\u0027ll be faster to try and get the entity first, and catch the NotFound exception.\n\ni guess in the case of pre-populating the data, the catch will only happen when the user authenticates.",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 56
+      },
+      "revId": "0c078b59204ea5090537aadc56d6ba6e57862051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
