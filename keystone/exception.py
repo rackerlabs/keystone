@@ -94,7 +94,7 @@ class URLValidationError(ValidationError):
 
 
 class PasswordValidationError(ValidationError):
-    message_format = _("Invalid password: %(detail)s")
+    message_format = _("Password validation error: %(detail)s")
 
 
 class SchemaValidationError(ValidationError):
