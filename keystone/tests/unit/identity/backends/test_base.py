@@ -237,6 +237,18 @@ class IdentityDriverV8Tests(object):
         self.assertRaises(exception.Conflict, self.driver.update_user,
                           user['id'], user_mod)
 
+    def test_change_password(self):
+        if not self.allows_name_update:
+            self.skipTest("Backend doesn't allow name update.")
+        # create user
+        password = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        user = self.create_user(domain_id=domain_id, password=password)
+        # change password
+        new_password = uuid.uuid4().hex
+        self.driver.change_password(user['id'], new_password)
+        self.driver.authenticate(user['id'], new_password)
+
     def test_delete_user(self):
         user = self.create_user()
 

@@ -87,6 +87,12 @@ class User(sql.ModelBase, sql.DictBase):
         return None
 
     @hybrid_property
+    def password_created_at(self):
+        if self.password_ref:
+            return self.password_ref.created_at
+        return None
+
+    @hybrid_property
     def password_expires_at(self):
         if self.password_ref:
             return self.password_ref.expires_at
