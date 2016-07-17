@@ -245,19 +245,22 @@ class IdentityDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def update_user(self, user_id, user):
+    def update_user(self, user_id, user, self_service):
         """Update an existing user.
 
         :param str user_id: User ID.
         :param dict user: User modification. See user schema in
             :class:`~.IdentityDriverV8`. Properties set to None will be
             removed. Required properties cannot be removed.
+        :param boolean self_service: Indicates self-service change password.
 
         :returns: user. See user schema in :class:`~.IdentityDriverV8`.
 
         :raises keystone.exception.UserNotFound: If the user doesn't exist.
         :raises keystone.exception.Conflict: If a duplicate user exists in the
             same domain.
+        :raises keystone.exception.PasswordValidation: If password fails
+            validation
 
         """
         raise exception.NotImplemented()  # pragma: no cover

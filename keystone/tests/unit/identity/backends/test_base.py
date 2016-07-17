@@ -190,7 +190,7 @@ class IdentityDriverV8Tests(object):
         user = self.create_user()
 
         user_mod = {'enabled': False}
-        actual_user = self.driver.update_user(user['id'], user_mod)
+        actual_user = self.driver.update_user(user['id'], user_mod, False)
         self.assertEqual(user['id'], actual_user['id'])
         self.assertIs(False, actual_user['enabled'])
 
@@ -200,7 +200,7 @@ class IdentityDriverV8Tests(object):
         self.assertIn('default_project_id', user)
 
         user_mod = {'default_project_id': None}
-        actual_user = self.driver.update_user(user['id'], user_mod)
+        actual_user = self.driver.update_user(user['id'], user_mod, False)
         self.assertNotIn('default_project_id', actual_user)
 
     def test_update_user_same_name_exc(self):
@@ -216,13 +216,13 @@ class IdentityDriverV8Tests(object):
 
         user_mod = {'name': user2['name']}
         self.assertRaises(exception.Conflict, self.driver.update_user,
-                          user1['id'], user_mod)
+                          user1['id'], user_mod, False)
 
     def test_update_user_no_user_exc(self):
         user_id = uuid.uuid4().hex
         user_mod = {'enabled': False}
         self.assertRaises(exception.UserNotFound,
-                          self.driver.update_user, user_id, user_mod)
+                          self.driver.update_user, user_id, user_mod, False)
 
     def test_update_user_name_not_allowed_exc(self):
         # For drivers that do not allow name update, attempting to change the
@@ -234,7 +234,26 @@ class IdentityDriverV8Tests(object):
         user = self.create_user()
         user_mod = {'name': uuid.uuid4().hex}
         self.assertRaises(exception.Conflict, self.driver.update_user,
-                          user['id'], user_mod)
+                          user['id'], user_mod, False)
+
+    def test_update_user_password(self):
+        if not self.allows_name_update:
+            self.skipTest("Backend doesn't allow name update.")
+        # create user
+        domain_id = uuid.uuid4().hex
+        user = self.create_user(domain_id=domain_id)
+        # update user's password, service_service = False
+        password = uuid.uuid4().hex
+        user['password'] = password
+        self.driver.update_user(user['id'], user, False)
+        user_ret = self.driver.authenticate(user['id'], password)
+        self.assertEqual(user['id'], user_ret['id'])
+        # update user's password, service_service = True (same behavior)
+        password = uuid.uuid4().hex
+        user['password'] = password
+        self.driver.update_user(user['id'], user, self_service=True)
+        user_ret = self.driver.authenticate(user['id'], password)
+        self.assertEqual(user['id'], user_ret['id'])
 
     def test_delete_user(self):
         user = self.create_user()
