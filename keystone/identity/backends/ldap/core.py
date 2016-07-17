@@ -96,7 +96,7 @@ class Identity(base.IdentityDriverV8):
         user_ref = self.user.create(user)
         return self.user.filter_attributes(user_ref)
 
-    def update_user(self, user_id, user):
+    def update_user(self, user_id, user, self_service):
         msg = _DEPRECATION_MSG % "update_user"
         versionutils.report_deprecated_feature(LOG, msg)
         self.user.check_allow_update()
