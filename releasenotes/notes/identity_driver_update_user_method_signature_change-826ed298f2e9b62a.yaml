@@ -1,0 +1,9 @@
+---
+upgrade:
+  - The identity backend driver interface has changed the
+    update_user method signature, adding a self_service
+    parameter. If you don't have a custom implementation
+    for the identity driver, you can ignore this.
+    Otherwiswe, you will need to update the method
+    signature for update_user and include the new
+    parameter.
