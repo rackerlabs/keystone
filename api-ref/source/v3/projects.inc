@@ -42,25 +42,26 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
-   - parent_id: parent_id
-   - name: name
-   - enabled: enabled
+   - domain_id: domain_id_query
+   - parent_id: parent_id_query
+   - name: project_name_query
+   - enabled: project_enabled_query
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - is_domain: is_domain
-   - description: description
-   - links: links
-   - enabled: enabled
-   - domain_id: domain_id
-   - parent_id: parent_id
-   - id: id
+   - links: link_collection
    - projects: projects
-   - name: name
+   - is_domain: is_domain_response_body
+   - description: project_description_response_body
+   - domain_id: project_domain_id_response_body
+   - enabled: project_enabled_response_body
+   - id: project_id_response_body
+   - name: project_name_response_body
+   - links: link_response_body
+   - parent_id: project_parent_id_response_body
 
 Response Example
 ----------------
@@ -90,13 +91,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - is_domain: is_domain
-   - description: description
-   - enabled: enabled
    - project: project
-   - parent_id: parent_id
-   - domain_id: domain_id
-   - name: name
+   - is_domain: is_domain_request_body
+   - description: project_description_request_body
+   - domain_id: project_domain_id_request_body
+   - enabled: project_enabled_request_body
+   - name: project_name_request_body
+   - parent_id: project_parent_id_request_body
 
 Request Example
 ---------------
@@ -109,15 +110,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - is_domain: is_domain
-   - description: description
-   - links: links
-   - enabled: enabled
-   - domain_id: domain_id
    - project: project
-   - parent_id: parent_id
-   - id: id
-   - name: name
+   - is_domain: is_domain_response_body
+   - description: project_description_response_body
+   - domain_id: project_domain_id_response_body
+   - enabled: project_enabled_response_body
+   - id: project_id_response_body
+   - name: project_name_response_body
+   - links: link_response_body
+   - parent_id: project_parent_id_response_body
 
 
 Show project details
@@ -135,22 +136,22 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - project_id: project_id
+   - project_id: project_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - is_domain: is_domain
-   - description: description
-   - links: links
-   - enabled: enabled
-   - domain_id: domain_id
    - project: project
-   - parent_id: parent_id
-   - id: id
-   - name: name
+   - is_domain: is_domain_response_body
+   - description: project_description_response_body
+   - domain_id: project_domain_id_response_body
+   - enabled: project_enabled_response_body
+   - id: project_id_response_body
+   - name: project_name_response_body
+   - links: link_response_body
+   - parent_id: project_parent_id_response_body
 
 Response Example
 ----------------
@@ -174,13 +175,12 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
-   - enabled: enabled
+   - project_id: project_id_path
    - project: project
-   - parent_id: parent_id
-   - domain_id: domain_id
-   - name: name
-   - project_id: project_id
+   - description: project_description_request_body
+   - domain_id: project_domain_id_update_request_body
+   - enabled: project_enabled_request_body
+   - name: project_name_update_request_body
 
 Request Example
 ---------------
@@ -193,15 +193,15 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - is_domain: is_domain
-   - description: description
-   - links: links
-   - enabled: enabled
-   - domain_id: domain_id
    - project: project
-   - parent_id: parent_id
-   - id: id
-   - name: name
+   - is_domain: is_domain_response_body
+   - description: project_description_response_body
+   - domain_id: project_domain_id_response_body
+   - enabled: project_enabled_response_body
+   - id: project_id_response_body
+   - name: project_name_response_body
+   - links: link_response_body
+   - parent_id: project_parent_id_response_body
 
 Response Example
 ----------------
@@ -225,7 +225,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - project_id: project_id
+   - project_id: project_id_path
 
 
 Enable or disable project and its subtree
@@ -254,9 +254,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
+   - project_id: project_id_path
    - project: project
    - enabled: enabled
-   - project_id: project_id
 
 Request Example
 ---------------
@@ -264,20 +264,6 @@ Request Example
 .. literalinclude:: ./samples/admin/project-enable-request.json
    :language: javascript
 
-Response Parameters
--------------------
-
-.. rest_parameters:: parameters.yaml
-
-   - is_domain: is_domain
-   - description: description
-   - links: links
-   - enabled: enabled
-   - domain_id: domain_id
-   - project: project
-   - parent_id: parent_id
-   - id: id
-   - name: name
 
 Response Example
 ----------------
@@ -305,4 +291,4 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - project_id: project_id
+   - project_id: project_id_path

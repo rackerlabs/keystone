@@ -136,7 +136,7 @@ user_id_path:
   type: string
 
 # variables in query
-domain_id_7:
+domain_id_query:
   description: |
     Filters the response by a domain ID.
   in: query
@@ -235,15 +235,29 @@ nocatalog:
   in: query
   required: false
   type: string
-parent_id_2:
+parent_id_query:
   description: |
-    (Since v3.4) Filters the response by a parent ID.
+    Filters the response by a parent ID.
   in: query
   required: false
   type: string
+  min_version: 3.4
 parent_region_id_1:
   description: |
     Filters the response by a parent region, by ID.
+  in: query
+  required: false
+  type: string
+project_enabled_query:
+  description: |
+    If set to true, then only enabled projects will be returned. Any value
+    other than ``0`` (including no value) will be interpreted as true.
+  in: query
+  required: false
+  type: boolen
+project_name_query:
+  description: |
+    Filters the response by a project name.
   in: query
   required: false
   type: string
@@ -436,12 +450,6 @@ description_5:
   in: body
   required: false
   type: string
-description_6:
-  description: |
-    The project description.
-  in: body
-  required: true
-  type: string
 description_7:
   description: |
     The domain description.
@@ -501,12 +509,6 @@ domain_id_3:
     The ID of the domain for the user.
   in: body
   required: false
-  type: string
-domain_id_4:
-  description: |
-    The ID of the domain for the project.
-  in: body
-  required: true
   type: string
 domain_id_5:
   description: |
@@ -597,13 +599,6 @@ enabled_12:
     are authorized for a disabled domain or its projects become no
     longer valid. If you reenable the domain, these tokens are not re-
     enabled.
-  in: body
-  required: true
-  type: boolean
-enabled_13:
-  description: |
-    If set to ``true``, project is enabled. If set to
-    ``false``, project is disabled.
   in: body
   required: true
   type: boolean
@@ -849,29 +844,29 @@ interface_1:
   in: body
   required: true
   type: string
-is_domain:
+is_domain_request_body:
   description: |
-    (Since v3.6) Indicates whether the project also
-    acts as a domain.  Set to ``true`` to define this project as both
-    a project and domain. As a domain, the project provides a name
-    space in which you can create users, groups, and other projects.
-    Set to ``false`` to define this project as a regular project that
-    contains only resources.  Default is ``false``.  You cannot update
+    Indicates whether the project also acts as a domain. If set to ``true``,
+    this project acts as both a project and domain. As a domain, the project
+    provides a name space in which you can create users, groups, and other
+    projects. If set to ``false``, this project behaves as a regular project
+    that contains only resources. Default is ``false``. You cannot update
     this parameter after you create the project.
   in: body
   required: false
   type: boolean
-is_domain_1:
+  min_version: 3.6
+is_domain_response_body:
   description: |
-    (Since v3.6) Indicates whether the project also
-    acts as a domain.  If set to ``true``, this project acts as both a
-    project and domain. As a domain, the project provides a name space
-    in which you can create users, groups, and other projects.
-    Otherwise, this field does not appear in the response and this
-    project behaves as a regular project that contains only resources.
+    Indicates whether the project also acts as a domain. If set to ``true``,
+    this project acts as both a project and domain. As a domain, the project
+    provides a name space in which you can create users, groups, and other
+    projects. If set to ``false``, this project behaves as a regular project
+    that contains only resources. 
   in: body
-  required: false
+  required: true
   type: boolean
+  min_version: 3.6
 issued_at:
   description: |
     The date and time when the token was issued.
@@ -966,12 +961,6 @@ links_3:
 links_4:
   description: |
     The links for the ``policy`` resource.
-  in: body
-  required: true
-  type: object
-links_5:
-  description: |
-    The links for the ``project`` resource.
   in: body
   required: true
   type: object
@@ -1099,13 +1088,6 @@ name_4:
   in: body
   required: true
   type: string
-name_5:
-  description: |
-    The project name, which must be unique within the
-    owning domain. The project can have the same name as its domain.
-  in: body
-  required: true
-  type: string
 name_6:
   description: |
     The role name.
@@ -1122,13 +1104,6 @@ name_8:
   description: |
     The user name, which must be unique within the
     owning domain.
-  in: body
-  required: true
-  type: string
-name_9:
-  description: |
-    The project name. The project can have the same
-    name as its domain.
   in: body
   required: true
   type: string
@@ -1199,25 +1174,127 @@ policy:
   type: object
 project:
   description: |
-    A ``project`` object.
+    A ``project`` object, containing:
   in: body
   required: true
   type: object
-project_id_1:
+project_description_request_body:
   description: |
-    The UUID for the associated project.
-  in: body
-  required: true
-  type: string
-project_id_2:
-  description: |
-    The UUID for the associated project.
+    The project description.
   in: body
   required: false
   type: string
+project_description_response_body:
+  description: |
+    The project description.
+  in: body
+  required: true
+  type: string
+project_domain_id_request_body:
+  description: |
+    The ID of the domain for the project.
+
+    For projects acting as a domain, the ``domain_id`` must not be specified,
+    it will be generated by the Identity service implementation.
+
+    For regular projects (i.e. those not acing as a domain), If ``domain_id`` is not specified,
+    but ``parent_id`` is specified, then the ID of the parent domain will be
+    used. If neither ``domain_id`` or ``parent_id`` is specified, the Identity
+    service implementation will default to the domain to which the client's
+    token is scoped. If both ``domain_id`` and ``parent_id`` are specified, and
+    they do not indicate the same domain, an ``Bad Request (400)`` will be
+    returned.
+  in: body
+  required: false
+  type: string
+project_domain_id_response_body:
+  description: |
+    The ID of the domain for the project.
+  in: body
+  required: true
+  type: string
+project_domain_id_update_request_body:
+  description: |
+    The ID of the new domain for the project. The ability to change the domain
+    of a project is now deprecated, and will be removed in subequent release.
+    It is already disabled by default in most Identity service implementations.
+  in: body
+  required: false
+  type: string
+project_enabled_request_body:
+  description: |
+    If set to ``true``, project is enabled. If set to
+    ``false``, project is disabled. The default is ``true``.
+  in: body
+  required: false
+  type: boolean
+project_enabled_response_body:
+  description: |
+    If set to ``true``, project is enabled. If set to
+    ``false``, project is disabled.
+  in: body
+  required: true
+  type: boolean
+project_enabled_update_request_body:
+  description: |
+    If set to ``true``, project is enabled. If set to
+    ``false``, project is disabled.
+  in: body
+  required: false
+  type: boolean
+project_id_response_body:
+  description: |
+    The ID for the project.
+  in: body
+  required: true
+  type: string
+project_name_request_body:
+  description: |
+    The project name, which must be unique within the
+    owning domain. The project can have the same name as its domain.
+  in: body
+  required: true
+  type: string
+project_name_response_body:
+  description: |
+    The project name.
+  in: body
+  required: true
+  type: string
+project_name_update_request_body:
+  description: |
+    The project name, which must be unique within the
+    owning domain. The project can have the same name as its domain.
+  in: body
+  required: false
+  type: string
+project_parent_id_request_body:
+  description: |
+    The ID of the parent of the project.
+
+    If specified on project creation, this places the project within a
+    hierarchy and implicitly defines the owning domain, which will be the
+    closest ancestor in the hierarchy acting as a domain. If ``parent_id`` is
+    not specified and ``is_domain`` is ``false``, then the project will use its
+    owning domain as its parent. If ``parent_id`` is not specified and
+    ``is_domain`` is ``true``, then the project is acting as a top level domain
+    with no parents and ``parent_id`` will be set to null. ``parent_id`` is
+    immutable, and can't be updated after the project is created - hence a
+    project cannot be moved within the hierarchy.
+  in: body
+  required: false
+  type: string
+  min_version: 3.4
+project_parent_id_response_body:
+  description: |
+    The ID of the parent for the project.
+  in: body
+  required: true
+  type: string
+  min_version: 3.4
 projects:
   description: |
-    A ``projects`` object.
+    A list of ``project`` objects, each containing:
   in: body
   required: true
   type: array
