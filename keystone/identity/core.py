@@ -1221,12 +1221,10 @@ class Manager(manager.Manager):
     @domains_configured
     def change_password(self, context, user_id, original_password,
                         new_password):
-
-        # authenticate() will raise an AssertionError if authentication fails
         self.authenticate(context, user_id, original_password)
-
-        update_dict = {'password': new_password}
-        self.update_user(user_id, update_dict)
+        domain_id, driver, entity_id = (
+            self._get_domain_driver_and_entity_id(user_id))
+        driver.change_password(user_id, new_password)
 
     @MEMOIZE
     def _shadow_nonlocal_user(self, user):
