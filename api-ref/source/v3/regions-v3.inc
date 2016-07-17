@@ -30,18 +30,18 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - region_id: region_id
+   - region_id: region_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
-   - region: region
-   - description: description
-   - links: links
-   - id: id
+   - parent_region_id: parent_region_id_body_false
+   - region: region_object
+   - description: description_region_body
+   - links: links_region
+   - id: id_region_body
 
 Response Example
 ----------------
@@ -72,10 +72,10 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
-   - region: region
-   - description: description
-   - region_id: region_id
+   - parent_region_id: parent_region_id_body_false
+   - region: region_object
+   - description: description_region_body
+   - region_id: region_id_path
 
 Request Example
 ---------------
@@ -88,11 +88,11 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
-   - region: region
-   - description: description
-   - links: links
-   - id: id
+   - parent_region_id: parent_region_id_body_false
+   - region: region_object
+   - description: description_region_body
+   - links: links_region
+   - id: id_region_body
 
 Response Example
 ----------------
@@ -121,7 +121,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - region_id: region_id
+   - region_id: region_id_path
 
 
 List regions
@@ -139,18 +139,18 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
+   - parent_region_id: parent_region_id_query
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - regions: regions
-   - parent_region_id: parent_region_id
-   - description: description
-   - links: links
-   - id: id
+   - regions: regions_object
+   - parent_region_id: parent_region_id_body_false
+   - description: description_region_body
+   - links: links_region
+   - id: id_region_body
 
 Response Example
 ----------------
@@ -189,10 +189,10 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
-   - region: region
-   - description: description
-   - id: id
+   - parent_region_id: parent_region_id_body_false
+   - region: region_object
+   - description: description_region_body
+   - id: id_region_body
 
 Request Example
 ---------------
@@ -205,8 +205,8 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - parent_region_id: parent_region_id
-   - region: region
-   - description: description
-   - links: links
-   - id: id
+   - parent_region_id: parent_region_id_body_false
+   - region: region_object
+   - description: description_region_body
+   - links: links_region
+   - id: id_region_body
