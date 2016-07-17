@@ -74,14 +74,20 @@ the value to zero (the default) disables this feature. This feature depends on
 the `sql` backend for the `[identity] driver`.
 """))
 
-password_change_limit_per_day = cfg.IntOpt(
-    'password_change_limit_per_day',
-    default=0,
-    min=0,
+minimum_password_age = cfg.IntOpt(
+    'minimum_password_age',
+    default=None,
+    min=1,
     help=utils.fmt("""
-The maximum number of times a user can change their password in a single day.
-Setting the value to zero (the default) disables this feature. This feature
-depends on the `sql` backend for the `[identity] driver`.
+The number of days that a password must be used before the user can change it.
+This prevents users from changing their passwords immediately in order to wipe
+the password history and reuse an old password. If a user needs to change their
+password before the minimum password age, the password can be changed via an
+administrative password reset. If `[security_compliance] password_expires_days`
+is set, then the value for this option should be less than the
+`password_expires_days`. This feature is disabled by default and allows for
+immediate password changes. This feature depends on the `sql` backend for the
+`[identity] driver`.
 """))
 
 password_regex = cfg.StrOpt(
@@ -113,7 +119,7 @@ ALL_OPTS = [
     lockout_duration,
     password_expires_days,
     unique_last_password_count,
-    password_change_limit_per_day,
+    minimum_password_age,
     password_regex,
     password_regex_description,
 ]

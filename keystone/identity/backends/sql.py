@@ -14,15 +14,21 @@
 
 import datetime
 
+from oslo_log import log
 import sqlalchemy
 
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
+
+
+CONF = keystone.conf.CONF
+LOG = log.getLogger(__name__)
 
 
 class Identity(base.IdentityDriverV8):
@@ -102,9 +108,11 @@ class Identity(base.IdentityDriverV8):
             return base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='user')
-    def update_user(self, user_id, user):
+    def update_user(self, user_id, user, self_service):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if 'password' in user and self_service:
+                self._validate_minimum_password_age(user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -116,6 +124,29 @@ class Identity(base.IdentityDriverV8):
             user_ref.extra = new_user.extra
             return base.filter_user(
                 user_ref.to_dict(include_extra_dict=True))
+
+    def _validate_minimum_password_age(self, user_ref):
+        min_age_days = CONF.security_compliance.minimum_password_age
+        if min_age_days and user_ref.password_created_at:
+            expires_days = CONF.security_compliance.password_expires_days
+            if expires_days and (expires_days <= min_age_days):
+                msg = _LE('Unable to validate the minimum password age, the '
+                          'configuration `[security_compliance] '
+                          'minimum_password_age` must be less than '
+                          '`[security_compliance] password_expires_days`')
+                LOG.error(msg)
+                detail = _('Unable to validate minimum password age due to '
+                           'invalid configuration')
+                raise exception.PasswordValidationError(detail=detail)
+            min_age = (user_ref.password_created_at +
+                       datetime.timedelta(days=min_age_days)).date()
+            if datetime.datetime.utcnow().date() < min_age:
+                detail = _('The password cannot be changed at this time '
+                           'due to the minimum password age. Once you '
+                           'change your password, it must be used for '
+                           '%(min_age_day)s day(s) before you can change it '
+                           'again.') % {'min_age_day': min_age_days}
+                raise exception.PasswordValidationError(detail=detail)
 
     def add_user_to_group(self, user_id, group_id):
         with sql.session_for_write() as session:
