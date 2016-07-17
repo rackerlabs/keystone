@@ -96,6 +96,10 @@ class Identity(base.IdentityDriverV8):
         user_ref = self.user.create(user)
         return self.user.filter_attributes(user_ref)
 
+    def change_password(self, user_id, new_password):
+        update_dict = {'password': new_password}
+        self.update_user(user_id, update_dict)
+
     def update_user(self, user_id, user):
         msg = _DEPRECATION_MSG % "update_user"
         versionutils.report_deprecated_feature(LOG, msg)

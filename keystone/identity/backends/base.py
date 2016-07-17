@@ -245,6 +245,18 @@ class IdentityDriverV8(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def change_password(self, user_id, new_password):
+        """Change the user's password.
+
+        :param str user_id: User ID.
+        :param str new_password: User's new password.
+
+        :raises keystone.exception.UserNotFound: If the user doesn't exist.
+        :raises keystone.exception.PasswordValidation: if validation fails.
+
+        """
+
+    @abc.abstractmethod
     def update_user(self, user_id, user):
         """Update an existing user.
 
