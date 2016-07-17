@@ -388,3 +388,55 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
                               self.make_request(),
                               user_id=user_id,
                               password=wrong_password)
+
+
+class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(MinimumPasswordAgeTests, self).setUp()
+        self.config_fixture.config(
+            group='security_compliance',
+            minimum_password_age=1)
+        self.password = uuid.uuid4().hex
+        self.user = self._create_new_user(self.password)
+
+    def test_user_cannot_change_password_before_min_age(self):
+        # test user cannot change password before min age
+        new_password = uuid.uuid4().hex
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.change_password,
+                          self.make_request(),
+                          user_id=self.user['id'],
+                          original_password=self.password,
+                          new_password=new_password)
+
+    def test_user_can_change_password_after_min_age(self):
+        # set password_created_at so that the min age has past
+        password_created_at = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(
+                days=CONF.security_compliance.minimum_password_age + 1))
+        self._update_user(self.user['id'], password_created_at)
+        # test that the user can change their password
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          user_id=self.user['id'],
+                                          original_password=self.password,
+                                          new_password=new_password)
+        # authenticate with the new passowrd
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=self.user['id'],
+                                       password=new_password)
+
+    def _create_new_user(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': password
+        }
+        return self.identity_api.create_user(user)
+
+    def _update_user(self, user_id, password_create_at):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.password_ref.created_at = password_create_at
