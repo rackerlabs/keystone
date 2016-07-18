@@ -10,9 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import random
 import uuid
 
+import freezegun
 from six.moves import http_client
 from six.moves import range
 from testtools import matchers
@@ -185,26 +187,34 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.put(member_url, expected_status=http_client.NOT_FOUND)
 
     def test_crud_group_project_role_grants(self):
-        collection_url = (
-            '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
-                'project_id': self.project_id,
-                'group_id': self.group_id})
-        member_url = '%(collection_url)s/%(role_id)s' % {
-            'collection_url': collection_url,
-            'role_id': self.role_id}
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            collection_url = (
+                '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
+                    'project_id': self.project_id,
+                    'group_id': self.group_id})
+            member_url = '%(collection_url)s/%(role_id)s' % {
+                'collection_url': collection_url,
+                'role_id': self.role_id}
 
-        self.put(member_url)
-        self.head(member_url)
-        r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role,
-                                         resource_url=collection_url)
-        self.head(collection_url, expected_status=http_client.OK)
+            self.put(member_url)
+            self.head(member_url)
+            r = self.get(collection_url)
+            self.assertValidRoleListResponse(r, ref=self.role,
+                                             resource_url=collection_url)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        self.delete(member_url)
-        r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, expected_length=0,
-                                         resource_url=collection_url)
-        self.head(collection_url, expected_status=http_client.OK)
+            self.delete(member_url)
+            # NOTE(lbragstad): Since Fernet tokens do not support sub-second
+            # precision we must freeze the clock and ensure we increment the
+            # time by a full second after a recovation event has occured.
+            # Otherwise the token will be considered revoked even though it is
+            # actually a valid token.
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            r = self.get(collection_url)
+            self.assertValidRoleListResponse(r, expected_length=0,
+                                             resource_url=collection_url)
+            self.head(collection_url, expected_status=http_client.OK)
 
     def test_crud_group_project_role_grants_no_group(self):
         """Grant role on a project to a group that doesn't exist.
@@ -226,26 +236,34 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.put(member_url, expected_status=http_client.NOT_FOUND)
 
     def test_crud_group_domain_role_grants(self):
-        collection_url = (
-            '/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
-                'domain_id': self.domain_id,
-                'group_id': self.group_id})
-        member_url = '%(collection_url)s/%(role_id)s' % {
-            'collection_url': collection_url,
-            'role_id': self.role_id}
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            collection_url = (
+                '/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
+                    'domain_id': self.domain_id,
+                    'group_id': self.group_id})
+            member_url = '%(collection_url)s/%(role_id)s' % {
+                'collection_url': collection_url,
+                'role_id': self.role_id}
 
-        self.put(member_url)
-        self.head(member_url)
-        r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role,
-                                         resource_url=collection_url)
-        self.head(collection_url, expected_status=http_client.OK)
+            self.put(member_url)
+            self.head(member_url)
+            r = self.get(collection_url)
+            self.assertValidRoleListResponse(r, ref=self.role,
+                                             resource_url=collection_url)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        self.delete(member_url)
-        r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, expected_length=0,
-                                         resource_url=collection_url)
-        self.head(collection_url, expected_status=http_client.OK)
+            self.delete(member_url)
+            # NOTE(lbragstad): Since Fernet tokens do not support sub-second
+            # precision we must freeze the clock and ensure we increment the
+            # time by a full second after a recovation event has occured.
+            # Otherwise the token will be considered revoked even though it is
+            # actually a valid token.
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            r = self.get(collection_url)
+            self.assertValidRoleListResponse(r, expected_length=0,
+                                             resource_url=collection_url)
+            self.head(collection_url, expected_status=http_client.OK)
 
     def test_crud_group_domain_role_grants_no_group(self):
         """Grant role on a domain to a group that doesn't exist.
@@ -314,37 +332,45 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         The revocation should be independently to the presence
         of the revoke API.
         """
-        # creates grant from group on project.
-        self.assignment_api.create_grant(role_id=self.role['id'],
-                                         project_id=self.project['id'],
-                                         group_id=self.group['id'])
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            # creates grant from group on project.
+            self.assignment_api.create_grant(role_id=self.role['id'],
+                                             project_id=self.project['id'],
+                                             group_id=self.group['id'])
 
-        # adds user to the group.
-        self.identity_api.add_user_to_group(user_id=self.user['id'],
-                                            group_id=self.group['id'])
+            # adds user to the group.
+            self.identity_api.add_user_to_group(user_id=self.user['id'],
+                                                group_id=self.group['id'])
 
-        # creates a token for the user
-        auth_body = self.build_authentication_request(
-            user_id=self.user['id'],
-            password=self.user['password'],
-            project_id=self.project['id'])
-        token_resp = self.post('/auth/tokens', body=auth_body)
-        token = token_resp.headers.get('x-subject-token')
+            # creates a token for the user
+            auth_body = self.build_authentication_request(
+                user_id=self.user['id'],
+                password=self.user['password'],
+                project_id=self.project['id'])
+            token_resp = self.post('/auth/tokens', body=auth_body)
+            token = token_resp.headers.get('x-subject-token')
 
-        # validates the returned token; it should be valid.
-        self.head('/auth/tokens',
-                  headers={'x-subject-token': token},
-                  expected_status=http_client.OK)
+            # validates the returned token; it should be valid.
+            self.head('/auth/tokens',
+                      headers={'x-subject-token': token},
+                      expected_status=http_client.OK)
 
-        # revokes the grant from group on project.
-        self.assignment_api.delete_grant(role_id=self.role['id'],
-                                         project_id=self.project['id'],
-                                         group_id=self.group['id'])
+            # revokes the grant from group on project.
+            self.assignment_api.delete_grant(role_id=self.role['id'],
+                                             project_id=self.project['id'],
+                                             group_id=self.group['id'])
 
-        # validates the same token again; it should not longer be valid.
-        self.head('/auth/tokens',
-                  headers={'x-subject-token': token},
-                  expected_status=http_client.NOT_FOUND)
+            # NOTE(lbragstad): Since Fernet tokens do not support sub-second
+            # precision we must freeze the clock and ensure we increment the
+            # time by a full second after a recovation event has occured.
+            # Otherwise the token will be considered revoked even though it is
+            # actually a valid token.
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            # validates the same token again; it should not longer be valid.
+            self.head('/auth/tokens',
+                      headers={'x-subject-token': token},
+                      expected_status=http_client.NOT_FOUND)
 
     @unit.skip_if_cache_disabled('assignment')
     def test_delete_grant_from_user_and_project_invalidate_cache(self):
@@ -494,86 +520,94 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
           been removed
 
         """
-        # Since the default fixtures already assign some roles to the
-        # user it creates, we also need a new user that will not have any
-        # existing assignments
-        user1 = unit.new_user_ref(domain_id=self.domain['id'])
-        user1 = self.identity_api.create_user(user1)
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            # Since the default fixtures already assign some roles to the
+            # user it creates, we also need a new user that will not have any
+            # existing assignments
+            user1 = unit.new_user_ref(domain_id=self.domain['id'])
+            user1 = self.identity_api.create_user(user1)
 
-        collection_url = '/role_assignments'
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r,
-                                                   resource_url=collection_url)
-        self.head(collection_url, expected_status=http_client.OK)
-        existing_assignments = len(r.result.get('role_assignments'))
+            collection_url = '/role_assignments'
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r, resource_url=collection_url)
+            self.head(collection_url, expected_status=http_client.OK)
+            existing_assignments = len(r.result.get('role_assignments'))
 
-        # Now add one of each of the four types of assignment, making sure
-        # that we get them all back.
-        gd_entity = self.build_role_assignment_entity(domain_id=self.domain_id,
-                                                      group_id=self.group_id,
-                                                      role_id=self.role_id)
-        self.put(gd_entity['links']['assignment'])
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(
-            r,
-            expected_length=existing_assignments + 1,
-            resource_url=collection_url)
-        self.assertRoleAssignmentInListResponse(r, gd_entity)
-        self.head(collection_url, expected_status=http_client.OK)
+            # Now add one of each of the four types of assignment, making sure
+            # that we get them all back.
+            gd_entity = self.build_role_assignment_entity(
+                domain_id=self.domain_id,
+                group_id=self.group_id,
+                role_id=self.role_id)
+            self.put(gd_entity['links']['assignment'])
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r,
+                expected_length=existing_assignments + 1,
+                resource_url=collection_url)
+            self.assertRoleAssignmentInListResponse(r, gd_entity)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        ud_entity = self.build_role_assignment_entity(domain_id=self.domain_id,
-                                                      user_id=user1['id'],
-                                                      role_id=self.role_id)
-        self.put(ud_entity['links']['assignment'])
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(
-            r,
-            expected_length=existing_assignments + 2,
-            resource_url=collection_url)
-        self.assertRoleAssignmentInListResponse(r, ud_entity)
-        self.head(collection_url, expected_status=http_client.OK)
+            ud_entity = self.build_role_assignment_entity(
+                domain_id=self.domain_id,
+                user_id=user1['id'],
+                role_id=self.role_id)
+            self.put(ud_entity['links']['assignment'])
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r,
+                expected_length=existing_assignments + 2,
+                resource_url=collection_url)
+            self.assertRoleAssignmentInListResponse(r, ud_entity)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        gp_entity = self.build_role_assignment_entity(
-            project_id=self.project_id, group_id=self.group_id,
-            role_id=self.role_id)
-        self.put(gp_entity['links']['assignment'])
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(
-            r,
-            expected_length=existing_assignments + 3,
-            resource_url=collection_url)
-        self.assertRoleAssignmentInListResponse(r, gp_entity)
-        self.head(collection_url, expected_status=http_client.OK)
+            gp_entity = self.build_role_assignment_entity(
+                project_id=self.project_id, group_id=self.group_id,
+                role_id=self.role_id)
+            self.put(gp_entity['links']['assignment'])
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r,
+                expected_length=existing_assignments + 3,
+                resource_url=collection_url)
+            self.assertRoleAssignmentInListResponse(r, gp_entity)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        up_entity = self.build_role_assignment_entity(
-            project_id=self.project_id, user_id=user1['id'],
-            role_id=self.role_id)
-        self.put(up_entity['links']['assignment'])
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(
-            r,
-            expected_length=existing_assignments + 4,
-            resource_url=collection_url)
-        self.assertRoleAssignmentInListResponse(r, up_entity)
-        self.head(collection_url, expected_status=http_client.OK)
+            up_entity = self.build_role_assignment_entity(
+                project_id=self.project_id, user_id=user1['id'],
+                role_id=self.role_id)
+            self.put(up_entity['links']['assignment'])
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r,
+                expected_length=existing_assignments + 4,
+                resource_url=collection_url)
+            self.assertRoleAssignmentInListResponse(r, up_entity)
+            self.head(collection_url, expected_status=http_client.OK)
 
-        # Now delete the four we added and make sure they are removed
-        # from the collection.
+            # Now delete the four we added and make sure they are removed
+            # from the collection.
 
-        self.delete(gd_entity['links']['assignment'])
-        self.delete(ud_entity['links']['assignment'])
-        self.delete(gp_entity['links']['assignment'])
-        self.delete(up_entity['links']['assignment'])
-        r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(
-            r,
-            expected_length=existing_assignments,
-            resource_url=collection_url)
-        self.assertRoleAssignmentNotInListResponse(r, gd_entity)
-        self.assertRoleAssignmentNotInListResponse(r, ud_entity)
-        self.assertRoleAssignmentNotInListResponse(r, gp_entity)
-        self.assertRoleAssignmentNotInListResponse(r, up_entity)
-        self.head(collection_url, expected_status=http_client.OK)
+            self.delete(gd_entity['links']['assignment'])
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            self.delete(ud_entity['links']['assignment'])
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            self.delete(gp_entity['links']['assignment'])
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            self.delete(up_entity['links']['assignment'])
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+            r = self.get(collection_url)
+            self.assertValidRoleAssignmentListResponse(
+                r,
+                expected_length=existing_assignments,
+                resource_url=collection_url)
+            self.assertRoleAssignmentNotInListResponse(r, gd_entity)
+            self.assertRoleAssignmentNotInListResponse(r, ud_entity)
+            self.assertRoleAssignmentNotInListResponse(r, gp_entity)
+            self.assertRoleAssignmentNotInListResponse(r, up_entity)
+            self.head(collection_url, expected_status=http_client.OK)
 
     def test_get_effective_role_assignments(self):
         """Call ``GET /role_assignments?effective``.
