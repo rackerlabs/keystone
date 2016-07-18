@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_825ae781",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 35
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-18T16:59:22Z",
+      "side": 1,
+      "message": "Just a side note, the whitespace between the footer lines is unnecessary.",
+      "revId": "241c87093a5c27eef8c0c0c18caeed207d80f05f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
