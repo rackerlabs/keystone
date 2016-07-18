@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_4009222c",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-18T09:33:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_384b952d",
+      "range": {
+        "startLine": 71,
+        "startChar": 20,
+        "endLine": 71,
+        "endChar": 80
+      },
+      "revId": "0c078b59204ea5090537aadc56d6ba6e57862051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_58bbe90e",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-17T19:50:45Z",
       "side": 1,
       "message": "i\u0027m wondering if it\u0027ll be faster to try and get the entity first, and catch the NotFound exception.\n\ni guess in the case of pre-populating the data, the catch will only happen when the user authenticates.",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 77,
+        "endChar": 56
+      },
+      "revId": "0c078b59204ea5090537aadc56d6ba6e57862051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_00ff2a02",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-18T09:33:34Z",
+      "side": 1,
+      "message": "Although it might be faster, it will be wrong. It is possible, that between the get and the insert another insert by the second process will happen.",
+      "parentUuid": "dada55a8_58bbe90e",
       "range": {
         "startLine": 68,
         "startChar": 8,
