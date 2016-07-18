@@ -16,6 +16,23 @@
       "revId": "2baa23bc3a7a37f1db109b1194592e15199c0e8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9de40a0e",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T17:10:59Z",
+      "side": 1,
+      "message": "Attempted to pull this into it\u0027s own patch in order to make this review more readable.\n\nhttps://review.openstack.org/#/c/343812/",
+      "revId": "2baa23bc3a7a37f1db109b1194592e15199c0e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
