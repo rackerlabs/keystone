@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_12e3dba4",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-18T22:51:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_a5ff4233",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_f4460abe",
         "filename": "keystone/cmd/doctor/tokens.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
         "endLine": 19,
         "endChar": 39
       },
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_92bb4b72",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-18T22:51:47Z",
+      "side": 1,
+      "message": "I kept it as one mostly to keep the help text in one place.",
+      "parentUuid": "dada55a8_f4460abe",
       "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_351ec963",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-18T22:51:47Z",
+      "side": 1,
+      "message": "I don\u0027t think we\u0027re ready to have a check to see if Fernet is in use or not, yet. A UUID deployment is still a perfectly valid choice until we\u0027re confident enough in Fernet to be able to deprecate it.",
+      "parentUuid": "dada55a8_e89c6f6b",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_8ef33b0a",
         "filename": "keystone/cmd/doctor/tokens_fernet.py",
         "patchSetId": 1
@@ -105,6 +159,24 @@
       "side": 1,
       "message": "i thought it was kinda helpful",
       "parentUuid": "dada55a8_8ef33b0a",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_752681bb",
+        "filename": "keystone/cmd/doctor/tokens_fernet.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-18T22:51:47Z",
+      "side": 1,
+      "message": "If you want to suppress it, I guess disable debug?",
+      "parentUuid": "dada55a8_94350e48",
       "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
