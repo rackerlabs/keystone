@@ -17,15 +17,15 @@ from oslo_context import context as oslo_context
 from oslo_serialization import msgpackutils
 
 
-# Register our new handler.
-_registry = msgpackutils.default_registry
+# # Register our new handler.
+# _registry = msgpackutils.default_registry
 
 
-def _register_model_handler(handler_class):
-    """Register a new model handler."""
-    _registry.frozen = False
-    _registry.register(handler_class(registry=_registry))
-    _registry.frozen = True
+# def _register_model_handler(handler_class):
+#     """Register a new model handler."""
+#     _registry.frozen = False
+#     _registry.register(handler_class(registry=_registry))
+#     _registry.frozen = True
 
 
 class _ResponseCacheProxy(proxy.ProxyBackend):

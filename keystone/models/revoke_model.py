@@ -330,23 +330,23 @@ def build_token_values(token_data):
     return token_values
 
 
-class _RevokeEventHandler(object):
-    # NOTE(morganfainberg): There needs to be reserved "registry" entries set
-    # in oslo_serialization for application-specific handlers. We picked 127
-    # here since it's waaaaaay far out before oslo_serialization will use it.
-    identity = 127
-    handles = (RevokeEvent,)
+# class _RevokeEventHandler(object):
+#     # NOTE(morganfainberg): There needs to be reserved "registry" entries set
+#     # in oslo_serialization for application-specific handlers. We picked 127
+#     # here since it's waaaaaay far out before oslo_serialization will use it.
+#     identity = 127
+#     handles = (RevokeEvent,)
 
-    def __init__(self, registry):
-        self._registry = registry
+#     def __init__(self, registry):
+#         self._registry = registry
 
-    def serialize(self, obj):
-        return msgpackutils.dumps(obj.__dict__, registry=self._registry)
+#     def serialize(self, obj):
+#         return msgpackutils.dumps(obj.__dict__, registry=self._registry)
 
-    def deserialize(self, data):
-        revoke_event_data = msgpackutils.loads(data, registry=self._registry)
-        revoke_event = RevokeEvent(**revoke_event_data)
-        return revoke_event
+#     def deserialize(self, data):
+#         revoke_event_data = msgpackutils.loads(data, registry=self._registry)
+#         revoke_event = RevokeEvent(**revoke_event_data)
+#         return revoke_event
 
 
-cache.register_model_handler(_RevokeEventHandler)
+# cache.register_model_handler(_RevokeEventHandler)

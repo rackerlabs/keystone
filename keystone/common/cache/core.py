@@ -25,7 +25,7 @@ CONF = keystone.conf.CONF
 CACHE_REGION = cache.create_region()
 
 
-register_model_handler = _context_cache._register_model_handler
+# register_model_handler = _context_cache._register_model_handler
 
 
 def configure_cache(region=None):
@@ -38,8 +38,8 @@ def configure_cache(region=None):
     cache.configure_cache_region(CONF, region)
     # Only wrap the region if it was not configured. This should be pushed
     # to oslo_cache lib somehow.
-    if not configured:
-        region.wrap(_context_cache._ResponseCacheProxy)
+    # if not configured:
+    #     region.wrap(_context_cache._ResponseCacheProxy)
 
 
 def get_memoization_decorator(group, expiration_group=None, region=None):
