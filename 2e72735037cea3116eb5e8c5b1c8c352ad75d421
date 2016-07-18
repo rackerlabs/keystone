@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_8b4ea4bf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:57:22Z",
+      "side": 1,
+      "message": "there\u0027s a keystone man page in the docs, update that file too",
+      "range": {
+        "startLine": 929,
+        "startChar": 6,
+        "endLine": 929,
+        "endChar": 17
+      },
+      "revId": "2e72735037cea3116eb5e8c5b1c8c352ad75d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ebec8091",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:57:22Z",
+      "side": 1,
+      "message": "UX suggestion: i would think domain name is more user friendly, or you could do how OSC does it and accept both\n\n  --domain \u003cdomain\u003e\n\nand in the main() you can call get_domain(), and catch any exceptions that may occur, and get_domain_by_name() as a fallback -\u003e https://github.com/openstack/keystone/blob/master/keystone/resource/core.py#L706-L730\n\nI\u0027m OK with either approach or even this one, but I would think name is much better than ID. (especially since domain names are globally unique)",
+      "range": {
+        "startLine": 954,
+        "startChar": 8,
+        "endLine": 956,
+        "endChar": 67
+      },
+      "revId": "2e72735037cea3116eb5e8c5b1c8c352ad75d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_eba3e04d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:57:22Z",
+      "side": 1,
+      "message": "why move this around? the new tests don\u0027t appear to use any of these classes",
+      "range": {
+        "startLine": 339,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 47
+      },
+      "revId": "2e72735037cea3116eb5e8c5b1c8c352ad75d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ab672824",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:57:22Z",
+      "side": 1,
+      "message": "there\u0027s nothing asserted in this test :( \n\nI don\u0027t have a good suggestion on how to assert something happened, aside from a mock call",
+      "range": {
+        "startLine": 544,
+        "startChar": 8,
+        "endLine": 544,
+        "endChar": 30
+      },
+      "revId": "2e72735037cea3116eb5e8c5b1c8c352ad75d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
