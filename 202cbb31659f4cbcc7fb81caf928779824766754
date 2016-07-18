@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_d3d152cf",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-18T18:27:25Z",
+      "side": 1,
+      "message": "takes a while to figure out why this works...it;s no immediately obvious this is updating the entry in ref_list..maybe a comment would be good",
+      "range": {
+        "startLine": 634,
+        "startChar": 0,
+        "endLine": 634,
+        "endChar": 39
+      },
+      "revId": "202cbb31659f4cbcc7fb81caf928779824766754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_d3aaf36f",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -47,6 +70,30 @@
       "writtenOn": "2016-07-18T17:56:42Z",
       "side": 1,
       "message": "do we need to add this MappingDriver interface?",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 60,
+        "endChar": 31
+      },
+      "revId": "202cbb31659f4cbcc7fb81caf928779824766754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_539442e1",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-18T18:27:25Z",
+      "side": 1,
+      "message": "++ agreed, this should go in the interface....",
+      "parentUuid": "dada55a8_078d6931",
       "range": {
         "startLine": 60,
         "startChar": 8,
