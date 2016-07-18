@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_339b8fcb",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-18T17:44:49Z",
+      "side": 1,
+      "message": "...only effects those when used as a query parameter..",
+      "parentUuid": "dada55a8_132beb83",
+      "range": {
+        "startLine": 413,
+        "startChar": 5,
+        "endLine": 413,
+        "endChar": 14
+      },
+      "revId": "4b4097ddf5faf331a98c986f987ec1e36834c825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_99570702",
         "filename": "api-ref/source/v3/inherit.inc",
         "patchSetId": 3
