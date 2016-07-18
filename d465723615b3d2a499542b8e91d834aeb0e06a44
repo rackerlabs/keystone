@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_1abb1b74",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-18T09:26:21Z",
+      "side": 1,
+      "message": "There are two issues in this API that makes this API actually doesn\u0027t work, pls see my report here.\nhttps://bugs.launchpad.net/keystone/+bug/1603905\n\nBut the change here looks good to me, that is a different scope.",
+      "range": {
+        "startLine": 31,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 66
+      },
+      "revId": "d465723615b3d2a499542b8e91d834aeb0e06a44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_fa172752",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-18T09:26:21Z",
+      "side": 1,
+      "message": "any need of Error response codes?",
+      "revId": "d465723615b3d2a499542b8e91d834aeb0e06a44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_dd305da1",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-18T09:26:21Z",
+      "side": 1,
+      "message": "- username, not sure why username is always returned, sadly, it did.",
+      "revId": "d465723615b3d2a499542b8e91d834aeb0e06a44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
