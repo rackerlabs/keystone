@@ -15,11 +15,9 @@ import fixtures
 
 from keystone import catalog
 from keystone.common import cache
-from keystone import revoke
 
 
-CACHE_REGIONS = (cache.CACHE_REGION, catalog.COMPUTED_CATALOG_REGION,
-                 revoke.REVOKE_REGION)
+CACHE_REGIONS = (cache.CACHE_REGION, catalog.COMPUTED_CATALOG_REGION)
 
 
 class Cache(fixtures.Fixture):

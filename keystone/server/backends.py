@@ -38,9 +38,6 @@ def load_backends():
     cache.apply_invalidation_patch(
         region=assignment.COMPUTED_ASSIGNMENTS_REGION,
         region_name=assignment.COMPUTED_ASSIGNMENTS_REGION.name)
-    cache.configure_cache(region=revoke.REVOKE_REGION)
-    cache.apply_invalidation_patch(region=revoke.REVOKE_REGION,
-                                   region_name=revoke.REVOKE_REGION.name)
     cache.configure_cache(region=token.provider.TOKENS_REGION)
     cache.configure_cache(region=identity.ID_MAPPING_REGION)
     cache.apply_invalidation_patch(region=identity.ID_MAPPING_REGION,
