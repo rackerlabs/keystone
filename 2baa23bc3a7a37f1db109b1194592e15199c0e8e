@@ -70,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_9f0eb432",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T21:39:55Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem specific to fernet. Any reason why this was included in the patch?",
+      "revId": "2baa23bc3a7a37f1db109b1194592e15199c0e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_3f1ea863",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T21:39:55Z",
+      "side": 1,
+      "message": "Same comment here - I can\u0027t seem to get these tests to fail with the fernet provider.",
+      "revId": "2baa23bc3a7a37f1db109b1194592e15199c0e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_fcdb7eeb",
         "filename": "keystone/tests/unit/token/test_backends.py",
         "patchSetId": 38
