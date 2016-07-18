@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_114f6b93",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-07-18T16:12:46Z",
+      "side": 1,
+      "message": "I suggest use a better variable name than \u0027m\u0027, maybe map?",
+      "revId": "202cbb31659f4cbcc7fb81caf928779824766754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
