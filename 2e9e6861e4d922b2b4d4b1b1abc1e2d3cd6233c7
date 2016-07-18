@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_4d6db797",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-18T21:12:48Z",
+      "side": 1,
+      "message": "If this is the case in the tests doesn\u0027t that mean there could be race conditions in a production environment? Is that a concern?",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_edf62bd6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-18T21:12:48Z",
+      "side": 1,
+      "message": "s/recovation/revocation/\n\ns/occured/occurred/\n\nsame typos below",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8d04cf7e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-18T21:12:48Z",
+      "side": 1,
+      "message": "Why do we need to tick four times? Wouldn\u0027t adding one second after all these deletes give the right result?",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
