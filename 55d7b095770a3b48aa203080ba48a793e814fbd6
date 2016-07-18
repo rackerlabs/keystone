@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_a5ff4233",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T14:36:49Z",
+      "side": 1,
+      "message": "making it unsuitable for real use in keystone. ?",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_65170a52",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T14:36:49Z",
+      "side": 1,
+      "message": "They should never exceed 255 bytes if the tokens are built using uuid-like id strings (which might not be the case if keystone is deployed with LDAP where the user ID/project ID are large and not uuid-like where we can convert them to bytes before packing up the payload.\n\nNot sure how we would relay that in a useful way here. Or the fact that the use of LDAP in another part of keystone can have an impact on token length when fernet is enabled.",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e89c6f6b",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T14:36:49Z",
+      "side": 1,
+      "message": "Do we want to add another check for max_active_keys if/when fernet is enabled? Do we want to add a check for making sure fernet is in use to avoid token bloat problems?",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8ef33b0a",
+        "filename": "keystone/cmd/doctor/tokens_fernet.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T14:36:49Z",
+      "side": 1,
+      "message": "The call to load_keys() also prints some stuff to the console [0]. Do we want to suppress that since its kind of noisy against the neatly formatted output of `keystone-manage doctor`? \n\n[0] http://cdn.pasteraw.com/ti408rdr6t5z3jgbnmm3ossx99tnk2q",
+      "revId": "55d7b095770a3b48aa203080ba48a793e814fbd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
