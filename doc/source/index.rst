@@ -68,6 +68,7 @@ Advanced Topics
    :maxdepth: 1
 
    configure_tokenless_x509
+   password-totp
    auth-totp
    event_notifications
    external-auth
