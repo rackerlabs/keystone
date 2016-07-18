@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_6bc5305a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-18T05:29:20Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "1aa78d24_76225d53",
+      "range": {
+        "startLine": 1292,
+        "startChar": 24,
+        "endLine": 1292,
+        "endChar": 78
+      },
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_d664f149",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -66,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_cba09ca8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-18T05:29:20Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "1aa78d24_d664f149",
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_62a14ef8",
         "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
         "patchSetId": 13
@@ -77,6 +119,30 @@
       "writtenOn": "2016-07-12T04:13:24Z",
       "side": 1,
       "message": "I think the change here wants to assure that cache is updated, right? but arguments (cache key) is not exactly the same as the `local_entity2`, so what\u0027s your purpose here?",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 74
+      },
+      "revId": "6d39f2f6682b424f1a640485589da00700b883ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_2bcb3874",
+        "filename": "keystone/tests/unit/test_backend_id_mapping_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 21463
+      },
+      "writtenOn": "2016-07-18T05:29:20Z",
+      "side": 1,
+      "message": "fixed this by move it to a dedicated test case method.",
+      "parentUuid": "1aa78d24_62a14ef8",
       "range": {
         "startLine": 105,
         "startChar": 0,
