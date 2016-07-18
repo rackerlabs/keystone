@@ -15,8 +15,8 @@
 Time-based One-time Password (TOTP)
 ===================================
 
-Configuring TOTP
-================
+Configuring Keystone for TOTP Auth
+==================================
 
 TOTP is not enabled in Keystone by default.  To enable it add the ``totp``
 authentication method to the ``[auth]`` section in ``keystone.conf``:
@@ -27,78 +27,15 @@ authentication method to the ``[auth]`` section in ``keystone.conf``:
     methods = external,password,token,oauth1,totp
 
 For a user to have access to TOTP, he must have configured TOTP credentials in
-Keystone and a TOTP device (i.e. `Google Authenticator`_).
+Keystone and a TOTP device for generating passcodes.
 
-.. _Google Authenticator: http://www.google.com/2step
+Configuring TOTP for your user
+==============================
 
-TOTP uses a base32 encoded string for the secret. The secret must be at least
-128 bits (16 bytes). The following python code can be used to generate a TOTP
-secret:
+Before you can use TOTP Auth you will need to setup a TOTP credential, how to do
+that is documented in:
 
-.. code-block:: python
-
-    import base64
-    message = '1234567890123456'
-    print base64.b32encode(message).rstrip('=')
-
-Example output::
-
-    GEZDGNBVGY3TQOJQGEZDGNBVGY
-
-This generated secret can then be used to add new 'totp' credentials to a
-specific user.
-
-Create a TOTP credential
-------------------------
-
-Create ``totp`` credentials for user:
-
-.. code-block:: bash
-
-    USER_ID=b7793000f8d84c79af4e215e9da78654
-    SECRET=GEZDGNBVGY3TQOJQGEZDGNBVGY
-
-    curl -i \
-      -H "Content-Type: application/json" \
-      -d '
-    {
-        "credential": {
-            "blob": "'$SECRET'",
-            "type": "totp",
-            "user_id": "'$USER_ID'"
-        }
-    }' \
-      http://localhost:5000/v3/credentials ; echo
-
-Google Authenticator
---------------------
-
-On a device install Google Authenticator and inside the app click on 'Set up
-account' and then click on 'Enter provided key'.  In the input fields enter
-account name and secret.  Optionally a QR code can be generated programatically
-to avoid having to type the information.
-
-QR code
--------
-
-Create TOTP QR code for device:
-
-.. code-block:: python
-
-    import qrcode
-
-    secret='GEZDGNBVGY3TQOJQGEZDGNBVGY'
-    uri = 'otpauth://totp/{name}?secret={secret}&issuer={issuer}'.format(
-        name='name',
-        secret=secret,
-        issuer='Keystone')
-
-    img = qrcode.make(uri)
-    img.save('totp.png')
-
-In Google Authenticator app click on 'Set up account' and then click on 'Scan
-a barcode', and then scan the 'totp.png' image.  This should create a new TOTP
-entry in the application.
+:doc:`totp-credentials`
 
 Authenticate with TOTP
 ======================
