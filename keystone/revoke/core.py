@@ -48,13 +48,13 @@ EXTENSION_DATA = {
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
-# This builds a discrete cache region dedicated to revoke events. The API can
-# return a filtered list based upon last fetchtime. This is deprecated but
-# must be maintained.
-REVOKE_REGION = oslo_cache.create_region()
-MEMOIZE = cache.get_memoization_decorator(
-    group='revoke',
-    region=REVOKE_REGION)
+# # This builds a discrete cache region dedicated to revoke events. The API can
+# # return a filtered list based upon last fetchtime. This is deprecated but
+# # must be maintained.
+# REVOKE_REGION = oslo_cache.create_region()
+# MEMOIZE = cache.get_memoization_decorator(
+#     group='revoke',
+#     region=REVOKE_REGION)
 
 
 @dependency.provider('revoke_api')
@@ -75,7 +75,7 @@ class Manager(manager.Manager):
         self._register_listeners()
         self.model = revoke_model
 
-    @MEMOIZE
+    # @MEMOIZE
     def _list_events(self, last_fetch):
         return self.driver.list_events(last_fetch)
 
@@ -209,7 +209,7 @@ class Manager(manager.Manager):
 
     def revoke(self, event):
         self.driver.revoke(event)
-        REVOKE_REGION.invalidate()
+        # REVOKE_REGION.invalidate()
 
 
 @versionutils.deprecated(
