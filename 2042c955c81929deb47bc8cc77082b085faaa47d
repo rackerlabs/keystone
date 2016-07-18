@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_8bf22499",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2507,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:41:47Z",
+      "side": 1,
+      "message": "nice test",
+      "range": {
+        "startLine": 2507,
+        "startChar": 8,
+        "endLine": 2507,
+        "endChar": 49
+      },
+      "revId": "2042c955c81929deb47bc8cc77082b085faaa47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0b359445",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-18T05:41:47Z",
+      "side": 1,
+      "message": "what if there is no name, or do we safe guard that by returning the ID?",
+      "range": {
+        "startLine": 646,
+        "startChar": 8,
+        "endLine": 646,
+        "endChar": 37
+      },
+      "revId": "2042c955c81929deb47bc8cc77082b085faaa47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
