@@ -43,7 +43,7 @@ METHOD_NAME = 'totp'
 LOG = log.getLogger(__name__)
 
 
-def _generate_totp_passcode(secret):
+def generate_totp_passcode(secret):
     """Generate TOTP passcode.
 
     :param bytes secret: A base32 encoded secret for the TOTP authentication
@@ -79,7 +79,7 @@ class TOTP(base.AuthMethodHandler):
         valid_passcode = False
         for credential in credentials:
             try:
-                generated_passcode = _generate_totp_passcode(
+                generated_passcode = generate_totp_passcode(
                     credential['blob'])
                 if auth_passcode == generated_passcode:
                     valid_passcode = True
