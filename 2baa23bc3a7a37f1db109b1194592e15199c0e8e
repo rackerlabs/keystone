@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_d941710d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-18T19:00:46Z",
+      "side": 1,
+      "message": "I attempted to break these fixes out into their own patch - https://review.openstack.org/#/c/343860/",
+      "revId": "2baa23bc3a7a37f1db109b1194592e15199c0e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_ce5fee0c",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 38
