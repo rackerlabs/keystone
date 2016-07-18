@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_c4c50f5c",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-18T16:29:18Z",
+      "side": 1,
+      "message": "sure. but then we\u0027d need to update all other occurrences in the doc to keep consistency, like role.id (L420) and user.id (L421), right?",
+      "parentUuid": "dada55a8_eef9174f",
+      "range": {
+        "startLine": 413,
+        "startChar": 5,
+        "endLine": 413,
+        "endChar": 14
+      },
+      "revId": "4b4097ddf5faf331a98c986f987ec1e36834c825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_99570702",
         "filename": "api-ref/source/v3/inherit.inc",
         "patchSetId": 3
