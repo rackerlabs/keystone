@@ -16,6 +16,7 @@ import copy
 import hashlib
 import uuid
 
+import fixtures
 from six.moves import http_client
 import webtest
 
@@ -31,7 +32,6 @@ from keystone.tests.unit import test_backend_sql
 
 
 CONF = keystone.conf.CONF
-
 
 class MiddlewareRequestTestBase(unit.TestCase):
 
@@ -762,3 +762,11 @@ class AuthContextMiddlewareTest(test_backend_sql.SqlTests,
         self.assertRaisesRegexp(exception.TokenlessAuthConfigError,
                                 expected_msg,
                                 auth._build_idp_id)
+
+    def test_admin_token_context(self):
+        self.config_fixture.config(admin_token='ADMIN')
+        log_fix = self.useFixture(fixtures.FakeLogger())
+        headers = {middleware.AUTH_TOKEN_HEADER: 'ADMIN',
+                   middleware.core.CONTEXT_ENV: {'is_admin': True}}
+        req = self._do_middleware_request(headers=headers)
+        assert 'Invalid user token' not in log_fix.output
