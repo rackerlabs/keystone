@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_941cd2c2",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_45bc866c",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 32
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_05abae1e",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-18T14:01:15Z",
       "side": 1,
       "message": "alphabetical",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 49
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_14d582b8",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_05abae1e",
       "range": {
         "startLine": 76,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_d4caca19",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "it\u0027s `region_id` pls see https://github.com/openstack/keystone/blob/master/keystone/common/router.py#L34",
+      "parentUuid": "dada55a8_c5db56ec",
+      "range": {
+        "startLine": 78,
+        "startChar": 5,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_05828e94",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-07-18T14:01:15Z",
       "side": 1,
       "message": "alphabetical",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 32
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_94e1729d",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_05828e94",
       "range": {
         "startLine": 92,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_74b15e8f",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "nice catch! this should be `parent_region_id_query`",
+      "parentUuid": "dada55a8_c50cf644",
+      "range": {
+        "startLine": 142,
+        "startChar": 23,
+        "endLine": 142,
+        "endChar": 52
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e503fa0d",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 2
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_b482b692",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_e503fa0d",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 32
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_c841ab3b",
         "filename": "api-ref/source/v3/regions-v3.inc",
         "patchSetId": 2
@@ -151,6 +295,30 @@
       "writtenOn": "2016-07-18T14:01:15Z",
       "side": 1,
       "message": "alphabetical",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 32
+      },
+      "revId": "2024fb34003ef95e52b68acb08a252c84f60a44b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_1448e286",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T03:30:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_c841ab3b",
       "range": {
         "startLine": 193,
         "startChar": 0,
