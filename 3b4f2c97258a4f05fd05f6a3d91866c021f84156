@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_41927fa0",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "s/roles/role assignments/",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_41c0bf7c",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "this needs to be domain_id_body....since the current \"domain_id\" parameter comes out as part of the path and optional",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_2184abd2",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "take a look at how I describe domain_id in an update in projects in https://review.openstack.org/#/c/343340/ - i.e. talk about the deprecation of the ability to change the domain_",
+      "range": {
+        "startLine": 80,
+        "startChar": 16,
+        "endLine": 80,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e1d3b336",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "I think this should be name_user_body",
+      "range": {
+        "startLine": 82,
+        "startChar": 11,
+        "endLine": 82,
+        "endChar": 15
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_4121dfb3",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "in the all the above, if you want to make it really specific, you can have an \u003cattribute\u003e_update_response_body for each of these, so the text can say something, for example,  like \"The new name for the user\". See update_domain in https://review.openstack.org/#/c/343944/ as an example",
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9c4cde71",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 99,
+        "startChar": 16,
+        "endLine": 99,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_dce9361c",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5c69c6bd",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 215,
+        "startChar": 16,
+        "endLine": 215,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_fc7fda63",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:26:59Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 249,
+        "startChar": 16,
+        "endLine": 249,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
