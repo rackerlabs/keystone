@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_227e6019",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T16:20:34Z",
+      "side": 1,
+      "message": "So in theory I would have thought this is useful on read as well (although unlikely). However, in reality I can\u0027t see that we actually support it at ALL anymore - maybe we removed it with the write support? If so, maybe a follow up patch could just remove this.",
+      "range": {
+        "startLine": 255,
+        "startChar": 0,
+        "endLine": 256,
+        "endChar": 45
+      },
+      "revId": "a7dd11f11eeb6a1edc781c2105e9b6d443c93f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
