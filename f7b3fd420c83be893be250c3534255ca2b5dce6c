@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_e94c4872",
+        "filename": "api-ref/source/v3/domains.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T09:04:27Z",
+      "side": 1,
+      "message": "pls see my comment in parameters.yaml",
+      "range": {
+        "startLine": 80,
+        "startChar": 18,
+        "endLine": 80,
+        "endChar": 49
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ae42563c",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T09:04:27Z",
+      "side": 1,
+      "message": "set this to false since the description is not needed in the request body.",
+      "range": {
+        "startLine": 501,
+        "startChar": 12,
+        "endLine": 501,
+        "endChar": 16
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_2ed14658",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T09:04:27Z",
+      "side": 1,
+      "message": "what do you mean \"additional authorization\"?",
+      "range": {
+        "startLine": 522,
+        "startChar": 4,
+        "endLine": 522,
+        "endChar": 28
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_2e894627",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T09:04:27Z",
+      "side": 1,
+      "message": "This is not required, it will enabled by default.\n\ncurl -g -i -X POST http://10.239.159.68/identity_v2_admin/v3/domains  -H \"Content-Type: application/json\" -H \"Accept: application/json\" -H \"X-Auth-Token: 034da9448b7d456d8b1b79ffaa0388a4\" -d \u0027{\"domain\": {\"name\": \"test_domain2\"}}\u0027\n\n\n{\"domain\": {\"links\": {\"self\": \"http://10.239.159.68/identity/v3/domains/d326e2adbacb41a8a02a9403ef8a84aa\"}, \"description\": \"\", \"name\": \"test_domain2\", \"enabled\": true, \"id\": \"d326e2adbacb41a8a02a9403ef8a84aa\"}}",
+      "range": {
+        "startLine": 526,
+        "startChar": 12,
+        "endLine": 526,
+        "endChar": 16
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_2ec82622",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-19T09:04:27Z",
+      "side": 1,
+      "message": "Can this just be named as \"domain_name_required\"?",
+      "range": {
+        "startLine": 603,
+        "startChar": 0,
+        "endLine": 614,
+        "endChar": 14
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
