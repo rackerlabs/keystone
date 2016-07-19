@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_442f16f6",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-19T20:38:24Z",
+      "side": 1,
+      "message": "This is a weird way to do this. The customary way is more like:\n    if sys.version_info \u003e\u003d (3, 5)",
+      "revId": "a5b8cb3d6e5fe0dda03cca747c8cbf3ef369fa84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2961403a",
         "filename": "keystone/tests/unit/ksfixtures/hacking.py",
         "patchSetId": 9
