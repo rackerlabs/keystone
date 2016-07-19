@@ -1398,6 +1398,20 @@ class V2TestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             },
             expected_status=http_client.OK)
 
+    def test_enable_a_user(self):
+        token = self.get_scoped_token()
+        user_id = self.user_badguy['id']
+
+        self.assertFalse(self.user_badguy['enabled'])
+        # enable the user
+        resp = self.admin_request(
+            method='PUT',
+            path='/v2.0/users/%s/OS-KSADM/enabled' % user_id,
+            token=token,
+            expected_status=http_client.OK)
+
+        self.assertTrue(resp.json['user']['enabled'])
+
 
 class RevokeApiTestCase(V2TestCase):
     def config_overrides(self):

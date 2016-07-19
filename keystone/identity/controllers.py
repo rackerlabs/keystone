@@ -173,8 +173,8 @@ class User(controller.V2Controller):
         self.identity_api.delete_user(user_id, initiator)
 
     @controller.v2_deprecated
-    def set_user_enabled(self, request, user_id, user):
-        return self.update_user(request, user_id, user)
+    def set_user_enabled(self, request, user_id):
+        return self.update_user(request, user_id, {'enabled': True})
 
     @controller.v2_deprecated
     def set_user_password(self, request, user_id, user):
