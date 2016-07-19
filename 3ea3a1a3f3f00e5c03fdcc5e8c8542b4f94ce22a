@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_c7030341",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-19T23:41:08Z",
+      "side": 1,
+      "message": "can we not check:\n\n  if not request_context.is_admin\n\nor is it not built at that point yet?",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 80
+      },
+      "revId": "3ea3a1a3f3f00e5c03fdcc5e8c8542b4f94ce22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
