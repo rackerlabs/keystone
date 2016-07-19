@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_eb544e55",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-19T00:46:00Z",
+      "side": 1,
+      "message": "Missing a /v3 here. Same for all routes.",
+      "revId": "53b5b9978517bb61611ece104828863a0b7fa11e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_4b68faf5",
+        "filename": "api-ref/source/v3-ext/samples/OS-FEDERATION/domain-list-response.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-07-19T00:46:00Z",
+      "side": 1,
+      "message": "Should be \u0027example.com/identity\u0027. Same for all other occurrences.",
+      "range": {
+        "startLine": 8,
+        "startChar": 32,
+        "endLine": 8,
+        "endChar": 46
+      },
+      "revId": "53b5b9978517bb61611ece104828863a0b7fa11e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
