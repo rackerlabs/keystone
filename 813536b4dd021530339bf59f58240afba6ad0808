@@ -33,6 +33,24 @@
       "revId": "813536b4dd021530339bf59f58240afba6ad0808",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e74a87ab",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-19T23:40:31Z",
+      "side": 1,
+      "message": "Yea, the line for that is really blurred and worse through this controller. Actually if anything this might be the one place where i think the controller makes sense because you are checking the data against the incoming user.\n\nhowever there are a bunch of things like: \n\n    self._require_trustor_has_role_in_project(trust)\n\nthat deserve to be on the manager. I guess that one is here because of the stupid _fill_in_roles method.",
+      "parentUuid": "fad55976_19921758",
+      "revId": "813536b4dd021530339bf59f58240afba6ad0808",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
