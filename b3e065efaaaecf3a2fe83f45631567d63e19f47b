@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_4789d325",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-19T23:30:05Z",
+      "side": 1,
+      "message": "there is a lot of places i\u0027m discovering where the line between controller, manager and driver are badly blurred.",
+      "parentUuid": "fad55976_1eaddd31",
+      "revId": "b3e065efaaaecf3a2fe83f45631567d63e19f47b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_7d5dbf47",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 2
