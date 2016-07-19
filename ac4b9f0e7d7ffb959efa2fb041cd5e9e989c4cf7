@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_675cd7ed",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-19T23:28:48Z",
+      "side": 1,
+      "message": "Interesting, so i haven\u0027t actually changed anything here but i think it might have been broken for a while. \n\nWe pass the user_id and group_ids we want to use but then we construct the notification using the context_dict - which probably doesn\u0027t contain anything useful at all. \n\nI would want to check with someone whether what the send_saml_audit_notification function is doing is correct anyway.",
+      "parentUuid": "1aa78d24_bc70a9a5",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 70
+      },
+      "revId": "ac4b9f0e7d7ffb959efa2fb041cd5e9e989c4cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_a17366b3",
         "filename": "keystone/notifications.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-15T13:04:08Z",
       "side": 1,
       "message": "remove this?",
+      "range": {
+        "startLine": 421,
+        "startChar": 4,
+        "endLine": 421,
+        "endChar": 51
+      },
+      "revId": "ac4b9f0e7d7ffb959efa2fb041cd5e9e989c4cf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_c797838e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-19T23:28:48Z",
+      "side": 1,
+      "message": "I\u0027d like to, there is one other place (in this file) that logs authentication requests where there is no auth context information that i\u0027m leaving it for. \n\nWe could probably inline it for that case but i don\u0027t want to complicate the patch.",
+      "parentUuid": "1aa78d24_a17366b3",
       "range": {
         "startLine": 421,
         "startChar": 4,

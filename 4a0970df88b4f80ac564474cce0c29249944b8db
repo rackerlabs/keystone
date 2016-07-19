@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_e7ed67f0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-19T23:28:48Z",
+      "side": 0,
+      "message": "see here, we are constructing the initiator (so getting remote_host and stuff) but we never passed in the user_id so that wasn\u0027t getting filled in previously anyway.",
+      "revId": "4a0970df88b4f80ac564474cce0c29249944b8db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
