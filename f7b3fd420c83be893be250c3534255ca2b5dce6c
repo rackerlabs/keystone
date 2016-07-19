@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_7cc48a5e",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T16:24:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_ae42563c",
+      "range": {
+        "startLine": 501,
+        "startChar": 12,
+        "endLine": 501,
+        "endChar": 16
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2ed14658",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2016-07-19T09:04:27Z",
       "side": 1,
       "message": "what do you mean \"additional authorization\"?",
+      "range": {
+        "startLine": 522,
+        "startChar": 4,
+        "endLine": 522,
+        "endChar": 28
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9cae9e83",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T16:24:15Z",
+      "side": 1,
+      "message": "good question...I copied this from the old text! I\u0027ve no idea what they mean!!! I\u0027ll re-word.",
+      "parentUuid": "dada55a8_2ed14658",
       "range": {
         "startLine": 522,
         "startChar": 4,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_1c83ce05",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T16:24:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_2e894627",
+      "range": {
+        "startLine": 526,
+        "startChar": 12,
+        "endLine": 526,
+        "endChar": 16
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2ec82622",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2016-07-19T09:04:27Z",
       "side": 1,
       "message": "Can this just be named as \"domain_name_required\"?",
+      "range": {
+        "startLine": 603,
+        "startChar": 0,
+        "endLine": 614,
+        "endChar": 14
+      },
+      "revId": "f7b3fd420c83be893be250c3534255ca2b5dce6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8de82612",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T16:24:15Z",
+      "side": 1,
+      "message": "we could, agreed...the \"name\" is the one attribute that this is true for...I was kind of following a pattern to try and cut down on mistakes",
+      "parentUuid": "dada55a8_2ec82622",
       "range": {
         "startLine": 603,
         "startChar": 0,
