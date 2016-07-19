@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_8f276763",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-19T20:49:07Z",
+      "side": 1,
+      "message": "Agreed, much nicer.",
+      "parentUuid": "dada55a8_442f16f6",
+      "revId": "a5b8cb3d6e5fe0dda03cca747c8cbf3ef369fa84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2961403a",
         "filename": "keystone/tests/unit/ksfixtures/hacking.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-19T09:33:27Z",
       "side": 1,
       "message": "If indeed the values returned here are the correct ones, maybe it would be better to place these into the default list and have the wrong ones for py\u003c\u003d3.4 here as workaround?",
+      "revId": "a5b8cb3d6e5fe0dda03cca747c8cbf3ef369fa84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_cf215f4f",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-19T20:49:07Z",
+      "side": 1,
+      "message": "Agreed, think I\u0027ll go that way instead.",
+      "parentUuid": "dada55a8_2961403a",
       "revId": "a5b8cb3d6e5fe0dda03cca747c8cbf3ef369fa84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
