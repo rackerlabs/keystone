@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_be343afb",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:10:59Z",
+      "side": 1,
+      "message": "nit: Maybe say \"A list of `region`` objects, each....\"",
+      "range": {
+        "startLine": 1286,
+        "startChar": 4,
+        "endLine": 1286,
+        "endChar": 24
+      },
+      "revId": "89529bf252b7f42601d27d5c960916e55722c311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5e737e80",
+        "filename": "api-ref/source/v3/regions-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-19T13:10:59Z",
+      "side": 1,
+      "message": "nit: might want to explain want to call this ID, since there isn\u0027t \"name\" attribute",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 12,
+        "endChar": 38
+      },
+      "revId": "89529bf252b7f42601d27d5c960916e55722c311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
