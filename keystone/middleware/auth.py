@@ -138,10 +138,11 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
 
     @wsgi.middleware_exceptions
     def process_request(self, request):
-        resp = super(AuthContextMiddleware, self).process_request(request)
+        if not request.environ.get(core.CONTEXT_ENV, {}).get('is_admin', False):
+            resp = super(AuthContextMiddleware, self).process_request(request)
 
-        if resp:
-            return resp
+            if resp:
+                return resp
 
         # NOTE(jamielennox): function is split so testing can check errors from
         # fill_context. There is no actual reason for fill_context to raise
