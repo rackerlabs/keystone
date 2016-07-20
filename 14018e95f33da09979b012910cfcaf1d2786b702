@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_a8378afd",
+        "filename": "api-ref/source/v3/samples/admin/user-projects-list-response.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 20380
+      },
+      "writtenOn": "2016-07-20T20:21:15Z",
+      "side": 1,
+      "message": "Comma flipped",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_882d66aa",
+        "filename": "api-ref/source/v3/samples/admin/user-projects-list-response.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 20380
+      },
+      "writtenOn": "2016-07-20T20:21:15Z",
+      "side": 1,
+      "message": "Comma flipped",
+      "range": {
+        "startLine": 23,
+        "startChar": 32,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_37ddbfe0",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 10
