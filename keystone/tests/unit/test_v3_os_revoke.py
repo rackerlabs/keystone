@@ -11,8 +11,10 @@
 # under the License.
 
 import datetime
+import mock
 import uuid
 
+from oslo_db import exception as oslo_db_exception
 from oslo_utils import timeutils
 import six
 from six.moves import http_client
@@ -160,3 +162,16 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         # `OS-OAUTH1:access_token_id` is None and won't be returned to
         # end user.
         self.assertNotIn('OS-OAUTH1:access_token_id', event)
+
+    @mock.patch('sqlalchemy.orm.query.Query.delete',
+                autospec=True,
+                side_effect=oslo_db_exception.DBDeadlock)
+    def test_retries_on_deadlock(self, mock_delete):
+        user_id = uuid.uuid4().hex
+        self.assertRaises(oslo_db_exception.DBDeadlock,
+                          self.revoke_api.revoke,
+                          revoke_model.RevokeEvent(user_id=user_id))
+
+        # initial attempt + 5 retries
+        revoke_attempt_count = 6
+        self.assertEqual(mock_delete.call_count, revoke_attempt_count)

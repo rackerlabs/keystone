@@ -14,6 +14,8 @@ from keystone.common import sql
 from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
+from oslo_db import api as oslo_db_api
+
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'revocation_event'
@@ -90,6 +92,8 @@ class Revoke(base.RevokeDriverV8):
 
             return events
 
+    # NOTE(mnikolaenko): 5 retries is used in nova and should be enough
+    @oslo_db_api.wrap_db_retry(max_retries=5, retry_on_deadlock=True)
     def revoke(self, event):
         kwargs = dict()
         for attr in revoke_model.REVOKE_KEYS:
