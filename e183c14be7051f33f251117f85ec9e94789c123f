@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_d200b103",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1409,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-20T18:30:34Z",
+      "side": 1,
+      "message": "nit: s/object/objects/",
+      "range": {
+        "startLine": 1409,
+        "startChar": 25,
+        "endLine": 1409,
+        "endChar": 31
+      },
+      "revId": "e183c14be7051f33f251117f85ec9e94789c123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
