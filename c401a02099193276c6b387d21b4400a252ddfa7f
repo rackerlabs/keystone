@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_9dd3e103",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-20T23:09:19Z",
+      "side": 1,
+      "message": "Will likely move this function somewhere else, or import from totp.py",
+      "parentUuid": "dada55a8_0cc18554",
+      "revId": "c401a02099193276c6b387d21b4400a252ddfa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_8ca29597",
         "filename": "keystone/auth/plugins/password.py",
         "patchSetId": 5
