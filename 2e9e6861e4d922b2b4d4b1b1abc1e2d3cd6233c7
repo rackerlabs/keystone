@@ -78,6 +78,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_04eb2c79",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-20T16:27:44Z",
+      "side": 1,
+      "message": "nevermind, freezegun does the right think underneath :)",
+      "parentUuid": "dada55a8_75f57d55",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_edf62bd6",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
