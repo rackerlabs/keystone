@@ -940,7 +940,7 @@ class LegacyV2UsernameTests(object):
             body={
                 'user': {
                     'username': uuid.uuid4().hex,
-                    'enabled': True,
+                    'enabled': True
                 },
             },
             expected_status=http_client.OK)
