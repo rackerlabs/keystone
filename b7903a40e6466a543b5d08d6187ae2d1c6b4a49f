@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_5807b717",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-20T23:21:51Z",
+      "side": 1,
+      "message": "I\u0027m not sure if the default should be 0 (i.e. no change to existing functionality at upgrade to N)",
+      "range": {
+        "startLine": 61,
+        "startChar": 12,
+        "endLine": 61,
+        "endChar": 28
+      },
+      "revId": "b7903a40e6466a543b5d08d6187ae2d1c6b4a49f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
