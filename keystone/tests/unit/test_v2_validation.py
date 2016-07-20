@@ -16,6 +16,7 @@ import uuid
 from keystone.assignment import schema as assignment_schema
 from keystone.common.validation import validators
 from keystone import exception
+from keystone.identity import schema as identity_schema
 from keystone.resource import schema as resource_schema
 from keystone.tests import unit
 
@@ -156,3 +157,41 @@ class TenantValidationTestCase(unit.BaseTestCase):
             self.assertRaises(exception.SchemaValidationError,
                               self.create_validator.validate,
                               request)
+
+
+class UserValidationTestCase(unit.BaseTestCase):
+    """Test for V2 User API Validation."""
+
+    def setUp(self):
+        super(UserValidationTestCase, self).setUp()
+
+        schema_user_update = identity_schema.user_update_v2
+        self.update_validator = validators.SchemaValidator(schema_user_update)
+
+    def test_validate_user_update_succeeds_with_name(self):
+        request = {
+            'name': uuid.uuid4().hex,
+            'enabled': True
+        }
+        self.update_validator.validate(request)
+
+    def test_validate_user_update_succeeds_with_username(self):
+        request = {
+            'name': uuid.uuid4().hex,
+            'enabled': True
+        }
+        self.update_validator.validate(request)
+
+    def test_validate_user_update_fails_with_no_params(self):
+        request = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_validator.validate,
+                          request)
+
+    def test_validate_user_update_fails_with_invalid_params(self):
+        request = {
+            'enabled': 'maybe'
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_validator.validate,
+                          request)

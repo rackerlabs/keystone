@@ -22,6 +22,27 @@ _identity_name = {
     'pattern': '[\S]+'
 }
 
+# Schema for Identity v2 API
+
+_user_properties_v2 = {
+    'description': validation.nullable(parameter_types.description),
+    'enabled': parameter_types.boolean,
+    'tenantId': parameter_types.id_string,
+    'name': _identity_name,
+    'password': {
+        'type': ['string', 'null']
+    }
+}
+
+user_update_v2 = {
+    'type': 'object',
+    'properties': _user_properties_v2,
+    'minProperties': 1,
+    'additionalProperties': True
+}
+
+# Schema for Identity v3 API
+
 _user_properties = {
     'default_project_id': validation.nullable(parameter_types.id_string),
     'description': validation.nullable(parameter_types.description),
