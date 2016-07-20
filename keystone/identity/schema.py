@@ -40,6 +40,21 @@ user_create = {
     'additionalProperties': True
 }
 
+user_create_v2 = {
+    'type': 'object',
+    'properties': _user_properties,
+    'anyOf': [
+        {
+            'required': ['username']
+        },
+        {
+            'required': ['name']
+        }
+    ],
+    'minProperties': 1,
+    'additionalProperties': True
+}
+
 user_update = {
     'type': 'object',
     'properties': _user_properties,
