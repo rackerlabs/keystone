@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_15dec1dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T15:07:50Z",
+      "side": 1,
+      "message": "Yeah - and this is something known that we\u0027ve talked about in larger groups. Our fix for this is to document the behavior of Fernet saying if any sort of revocation event happens and another token is immediately asked for within that same second - keystone is going to err on the side of security and not issue a token until a new second has rolled over.",
+      "parentUuid": "dada55a8_4d6db797",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_7c2e0f44",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
         "endLine": 191,
         "endChar": 40
       },
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_75f57d55",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T15:07:50Z",
+      "side": 1,
+      "message": "Safer?",
+      "parentUuid": "dada55a8_7c2e0f44",
       "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "dada55a8_edf62bd6",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_759c5d0f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T15:07:50Z",
+      "side": 1,
+      "message": "hah - nice catch!",
+      "parentUuid": "dada55a8_5cf06bfe",
       "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
