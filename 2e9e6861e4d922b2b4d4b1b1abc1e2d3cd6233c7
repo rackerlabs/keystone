@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_7c2e0f44",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-20T13:00:14Z",
+      "side": 1,
+      "message": "think it is safer to use like the following:\n\n   with freezegun.freeze_time(datetime.datetime.utcnow()) as fronzen_datetime:",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 40
+      },
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_edf62bd6",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -30,6 +53,24 @@
       "writtenOn": "2016-07-18T21:12:48Z",
       "side": 1,
       "message": "s/recovation/revocation/\n\ns/occured/occurred/\n\nsame typos below",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5cf06bfe",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-20T13:00:14Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "dada55a8_edf62bd6",
       "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
