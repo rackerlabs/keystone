@@ -224,8 +224,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # create user with 'DEFaUlT' domain_id instead if 'default'
         # and verify it fails
         self.post('/users',
-                  body={'user': {"name": "baddomain", "domain_id":
-                        "DEFaUlT"}},
+                  body={'user': {"name": "baddomain",
+                                 "domain_id": "DEFaUlT",
+                                 "enabled": True}},
                   expected_status=http_client.NOT_FOUND)
 
     def test_list_head_users(self):
