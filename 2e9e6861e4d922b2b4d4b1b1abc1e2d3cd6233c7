@@ -181,6 +181,24 @@
       "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d7189a20",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T21:57:28Z",
+      "side": 1,
+      "message": "Nope, I didn\u0027t need to forward the clock after every delete (it was just copied over from the original patch). I\u0027ve removed all but one of the tick() calls.\n\nGood catch!",
+      "parentUuid": "dada55a8_0f0ce539",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
