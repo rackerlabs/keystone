@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_7033d3f6",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-20T13:16:00Z",
+      "side": 1,
+      "message": "nit: import sys and import fixtures should be part of the same block since they are both third-party imports",
+      "revId": "05b5dfe144958b70331a84118440d6bb0e2863e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b0842b5e",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-20T13:16:00Z",
+      "side": 1,
+      "message": "why changing this?",
+      "range": {
+        "startLine": 53,
+        "startChar": 19,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "05b5dfe144958b70331a84118440d6bb0e2863e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
