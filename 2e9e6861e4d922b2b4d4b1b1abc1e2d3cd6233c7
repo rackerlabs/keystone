@@ -163,6 +163,24 @@
       "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0f0ce539",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T16:30:27Z",
+      "side": 1,
+      "message": "Probably - I\u0027ll try it out!",
+      "parentUuid": "dada55a8_8d04cf7e",
+      "revId": "2e9e6861e4d922b2b4d4b1b1abc1e2d3cd6233c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
