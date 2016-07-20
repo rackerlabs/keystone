@@ -59,7 +59,8 @@ class UserTestCaseNoDefaultDomain(unit.TestCase):
         # When a user is created using the v2 controller and there's no default
         # domain, it doesn't fail with can't find domain (a default domain is
         # created)
-        user = {'name': uuid.uuid4().hex}
+        user = {'name': uuid.uuid4().hex,
+                'enabled': True}
         self.user_controller.create_user(self.make_request(is_admin=True),
                                          user)
         # If the above doesn't fail then this is successful.

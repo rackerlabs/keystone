@@ -36,7 +36,16 @@ _user_properties = {
 user_create = {
     'type': 'object',
     'properties': _user_properties,
-    'required': ['name'],
+    'required': ['enabled'],
+    'anyOf': [
+        {
+            'required': ['username']
+        },
+        {
+            'required': ['name']
+        }
+    ],
+    'minProperties': 2,
     'additionalProperties': True
 }
 

@@ -1684,7 +1684,8 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_create_request_succeeds(self):
         """Test that validating a user create request succeeds."""
-        request_to_validate = {'name': self.user_name}
+        request_to_validate = {'name': self.user_name,
+                               'enabled': True}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_with_all_valid_parameters_succeeds(self):
@@ -1695,7 +1696,8 @@ class UserValidationTestCase(unit.BaseTestCase):
 
     def test_validate_user_create_fails_without_name(self):
         """Exception raised when validating a user without name."""
-        request_to_validate = {'email': uuid.uuid4().hex}
+        request_to_validate = {'email': uuid.uuid4().hex,
+                               'enabled': True}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_user_validator.validate,
                           request_to_validate)
@@ -1719,24 +1721,28 @@ class UserValidationTestCase(unit.BaseTestCase):
     def test_validate_user_create_succeeds_with_extra_attributes(self):
         """Validate extra parameters on user create requests."""
         request_to_validate = {'name': self.user_name,
+                               'enabled': True,
                                'other_attr': uuid.uuid4().hex}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_succeeds_with_password_of_zero_length(self):
         """Validate empty password on user create requests."""
         request_to_validate = {'name': self.user_name,
+                               'enabled': True,
                                'password': ''}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_succeeds_with_null_password(self):
         """Validate that password is nullable on create user."""
         request_to_validate = {'name': self.user_name,
+                               'enabled': True,
                                'password': None}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_fails_with_invalid_password_type(self):
         """Exception raised when user password is of the wrong type."""
         request_to_validate = {'name': self.user_name,
+                               'enabled': True,
                                'password': True}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_user_validator.validate,
@@ -1745,13 +1751,15 @@ class UserValidationTestCase(unit.BaseTestCase):
     def test_validate_user_create_succeeds_with_null_description(self):
         """Validate that description can be nullable on create user."""
         request_to_validate = {'name': self.user_name,
+                               'enabled': True,
                                'description': None}
         self.create_user_validator.validate(request_to_validate)
 
     def test_validate_user_create_fails_with_invalid_name(self):
         """Exception when validating a create request with invalid `name`."""
         for invalid_name in _INVALID_NAMES:
-            request_to_validate = {'name': invalid_name}
+            request_to_validate = {'name': invalid_name,
+                                   'enabled': True}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_user_validator.validate,
                               request_to_validate)
