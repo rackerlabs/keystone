@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_9d3ddcbd",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-20T00:46:30Z",
+      "side": 1,
+      "message": "this is where the empty dict is returned and then is unable to be converted into an AccessInfo. It means we\u0027d probably never hit this scenario now.",
+      "revId": "3ea3a1a3f3f00e5c03fdcc5e8c8542b4f94ce22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_c7030341",
         "filename": "keystone/middleware/auth.py",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2016-07-19T23:41:08Z",
       "side": 1,
       "message": "can we not check:\n\n  if not request_context.is_admin\n\nor is it not built at that point yet?",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 80
+      },
+      "revId": "3ea3a1a3f3f00e5c03fdcc5e8c8542b4f94ce22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_fd1e9861",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-20T00:46:30Z",
+      "side": 1,
+      "message": "no, because the request object is different between auth_token and keystone itself. At this point though it might be worth adding it to the middleware request object as well.\n\nI need to have a look at the middleware setting  core.CONTEXT_ENV is coming from and whether we need to handle the: \n\nCONF.admin_token and request.user_token \u003d\u003d CONF.admin_token:\n\ncase as well.",
+      "parentUuid": "dada55a8_c7030341",
       "range": {
         "startLine": 141,
         "startChar": 8,
