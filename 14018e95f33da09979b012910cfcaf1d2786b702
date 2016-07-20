@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_37ddbfe0",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-20T18:26:13Z",
+      "side": 1,
+      "message": "this comes out as required, and it should be optional (unlike the the /password API)",
+      "range": {
+        "startLine": 82,
+        "startChar": 15,
+        "endLine": 82,
+        "endChar": 40
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
