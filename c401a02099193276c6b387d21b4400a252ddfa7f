@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_2cd5691b",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-20T22:00:47Z",
+      "side": 1,
+      "message": "This need to be a separate plugin. We should not be mixing up Password and Password + TOTP in the same plugin.",
+      "revId": "c401a02099193276c6b387d21b4400a252ddfa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0cc18554",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-20T22:00:47Z",
+      "side": 1,
+      "message": "suggest refactoring the existing TOTP plugin to share code instead of duplicating code",
+      "revId": "c401a02099193276c6b387d21b4400a252ddfa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8ca29597",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-20T22:00:47Z",
+      "side": 1,
+      "message": "Currently, a given credential can scope to a project (i.e. project_id in cred ref). We may need to change the auth framework to check to see if the scope matches the credential as well.",
+      "revId": "c401a02099193276c6b387d21b4400a252ddfa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_97974247",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-20T22:00:47Z",
+      "side": 1,
+      "message": "this should be universally enforced instead of selectively enforced",
+      "revId": "c401a02099193276c6b387d21b4400a252ddfa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
