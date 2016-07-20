@@ -51,6 +51,24 @@
       "revId": "813536b4dd021530339bf59f58240afba6ad0808",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ad503c33",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-20T19:24:32Z",
+      "side": 1,
+      "message": "True - after talking about this a little more at the midcycle, I\u0027m happy to clean this up later.",
+      "parentUuid": "dada55a8_e74a87ab",
+      "revId": "813536b4dd021530339bf59f58240afba6ad0808",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
