@@ -22,6 +22,24 @@
       "revId": "b7903a40e6466a543b5d08d6187ae2d1c6b4a49f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9843ef41",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-20T23:24:49Z",
+      "side": 1,
+      "message": "I appreciate the concern, but I\u0027d rather that the default values in keystone.conf reflect the values that we recommend for deployers to use in production. If we\u0027re going to move forward with this, I don\u0027t want to do it without it being the recommended default.",
+      "parentUuid": "dada55a8_5807b717",
+      "revId": "b7903a40e6466a543b5d08d6187ae2d1c6b4a49f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
