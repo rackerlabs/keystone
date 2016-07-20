@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_f34c0972",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_41927fa0",
+      "range": {
+        "startLine": 14,
+        "startChar": 40,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_41c0bf7c",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-19T13:26:59Z",
       "side": 1,
       "message": "this needs to be domain_id_body....since the current \"domain_id\" parameter comes out as part of the path and optional",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_f31ec961",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "wth, I missed this one, thanks Henry!",
+      "parentUuid": "dada55a8_41c0bf7c",
       "range": {
         "startLine": 44,
         "startChar": 16,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_13d71d24",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_2184abd2",
+      "range": {
+        "startLine": 80,
+        "startChar": 16,
+        "endLine": 80,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e1d3b336",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 7
@@ -82,6 +154,30 @@
       "writtenOn": "2016-07-19T13:26:59Z",
       "side": 1,
       "message": "I think this should be name_user_body",
+      "range": {
+        "startLine": 82,
+        "startChar": 11,
+        "endLine": 82,
+        "endChar": 15
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_3305017a",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_e1d3b336",
       "range": {
         "startLine": 82,
         "startChar": 11,
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_c9479249",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_4121dfb3",
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_9c4cde71",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 7
@@ -122,6 +236,30 @@
       "writtenOn": "2016-07-19T13:26:59Z",
       "side": 1,
       "message": "as above",
+      "range": {
+        "startLine": 99,
+        "startChar": 16,
+        "endLine": 99,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_53ecf58e",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_9c4cde71",
       "range": {
         "startLine": 99,
         "startChar": 16,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_f3ab691b",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_dce9361c",
+      "range": {
+        "startLine": 196,
+        "startChar": 16,
+        "endLine": 196,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_5c69c6bd",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 7
@@ -180,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_537195df",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_5c69c6bd",
+      "range": {
+        "startLine": 215,
+        "startChar": 16,
+        "endLine": 215,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_fc7fda63",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 7
@@ -191,6 +377,30 @@
       "writtenOn": "2016-07-19T13:26:59Z",
       "side": 1,
       "message": "as above",
+      "range": {
+        "startLine": 249,
+        "startChar": 16,
+        "endLine": 249,
+        "endChar": 25
+      },
+      "revId": "3b4f2c97258a4f05fd05f6a3d91866c021f84156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_93730de7",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-20T07:46:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_fc7fda63",
       "range": {
         "startLine": 249,
         "startChar": 16,
