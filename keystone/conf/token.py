@@ -56,6 +56,17 @@ tokens are also bearer tokens, so a shorter duration will also reduce the
 potential security impact of a compromised token.
 """))
 
+expiration_grace_period = cfg.IntOpt(
+    'expiration_grace_period',
+    default=7 * 24 * 60 * 60,
+    help=utils.fmt("""
+After a token would normally be considered expired according to `[token]
+expiration`, the grace period defines an additional period of time which
+keystone *should* return token validation responses, even with expiration
+timestamps in the past. This means that for long-running operations, services
+can still validate "expired" user tokens.
+"""))
+
 provider = cfg.StrOpt(
     'provider',
     default='uuid',
@@ -157,6 +168,7 @@ ALL_OPTS = [
     bind,
     enforce_token_bind,
     expiration,
+    expiration_grace_period,
     provider,
     driver,
     caching,

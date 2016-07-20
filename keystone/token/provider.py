@@ -344,7 +344,9 @@ class Manager(manager.Manager):
                               'determining token expiry: %s'), token)
             raise exception.TokenNotFound(_('Failed to validate token'))
 
-        if current_time < expiry:
+        grace_period = datetime.timedelta(
+            seconds=CONF.token.expiration_grace_period)
+        if current_time < expiry + grace_period:
             self.check_revocation(token)
             # Token has not expired and has not been revoked.
             return None
