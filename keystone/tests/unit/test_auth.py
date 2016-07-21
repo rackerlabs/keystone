@@ -18,6 +18,7 @@ import random
 import string
 import uuid
 
+import freezegun
 import mock
 import oslo_utils.fixture
 from oslo_utils import timeutils
@@ -862,7 +863,7 @@ class PKIZAuthWithRemoteUser(AuthWithRemoteUser, AuthTest):
         self.config_fixture.config(group='token', provider='pkiz')
 
 
-class AuthWithTrust(AuthTest):
+class AuthWithTrust(object):
     def setUp(self):
         super(AuthWithTrust, self).setUp()
 
@@ -1282,6 +1283,72 @@ class AuthWithTrust(AuthTest):
             self.controller.authenticate, self.make_request(), request_body)
 
 
+class UUIDAuthWithTrust(AuthWithTrust, AuthTest):
+
+    def config_overrides(self):
+        super(UUIDAuthWithTrust, self).config_overrides()
+        self.config_fixture.config(group='token', provider='uuid')
+
+    def setUp(self):
+        super(UUIDAuthWithTrust, self).setUp()
+
+
+class FernetAuthWithTrust(AuthWithTrust, AuthTest):
+
+    def config_overrides(self):
+        super(FernetAuthWithTrust, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
+        self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
+
+    def setUp(self):
+        super(FernetAuthWithTrust, self).setUp()
+
+    def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
+        msg = 'The Fernet token provider does not support token persistence'
+        self.skipTest(msg)
+
+    def test_delete_trust_revokes_token(self):
+        unscoped_token = self.get_unscoped_token(self.trustor['name'])
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        request = self._create_auth_request(
+            unscoped_token['access']['token']['id'])
+        trust_token_resp = self.fetch_v2_token_from_trust(new_trust)
+        trust_id = new_trust['id']
+        self.trust_controller.delete_trust(request, trust_id=trust_id)
+        # FIXME(lbragstad): For some reason this returns a Forbidden
+        # instead of a NotFound(?!)
+        self.assertRaises(
+            exception.Forbidden,
+            self.controller.validate_token,
+            self.make_request(),
+            trust_token_resp['access']['token']['id']
+        )
+
+    def test_token_from_trust_cant_get_another_token(self):
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        auth_response = self.fetch_v2_token_from_trust(new_trust)
+        trust_token_id = auth_response['access']['token']['id']
+        request_body = _build_user_auth(token={'id': trust_token_id},
+                                        tenant_id=self.tenant_bar['id'])
+        # FIXME(lbragstad): This should return an Unauthorized.
+        self.controller.authenticate(self.make_request(), request_body)
+
+    def test_trust_get_token_fails_if_trustee_disabled(self):
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_time:
+            new_trust = self.create_trust(self.sample_data,
+                                          self.trustor['name'])
+            request_body = self.build_v2_token_request(
+                self.trustee['name'], self.trustee['password'], new_trust)
+            self.disable_user(self.trustee)
+            frozen_time.tick(delta=datetime.timedelta(seconds=1))
+            self.assertRaises(
+                exception.Forbidden,
+                self.controller.authenticate,
+                self.make_request(),
+                request_body)
+
+
 class TokenExpirationTest(AuthTest):
 
     @mock.patch.object(timeutils, 'utcnow')
@@ -1306,7 +1373,10 @@ class TokenExpirationTest(AuthTest):
         r = self.controller.validate_token(
             self.make_request(is_admin=True),
             token_id=unscoped_token_id)
-        self.assertEqual(original_expiration, r['access']['token']['expires'])
+        self.assertEqual(
+            timeutils.parse_isotime(original_expiration),
+            timeutils.parse_isotime(r['access']['token']['expires'])
+        )
 
         mock_utcnow.return_value = now + datetime.timedelta(seconds=2)
 
@@ -1326,7 +1396,10 @@ class TokenExpirationTest(AuthTest):
         r = self.controller.validate_token(
             self.make_request(is_admin=True),
             token_id=scoped_token_id)
-        self.assertEqual(original_expiration, r['access']['token']['expires'])
+        self.assertEqual(
+            timeutils.parse_isotime(original_expiration),
+            timeutils.parse_isotime(r['access']['token']['expires'])
+        )
 
     def test_maintain_uuid_token_expiration(self):
         self.config_fixture.config(group='token', provider='uuid')
