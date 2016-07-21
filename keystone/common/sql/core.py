@@ -46,6 +46,10 @@ ModelBase = declarative.declarative_base()
 
 
 # For exporting to other modules
+select = sql.select
+and_ = sql.and_
+or_ = sql.or_
+case = sql.case
 Column = sql.Column
 Index = sql.Index
 String = sql.String
