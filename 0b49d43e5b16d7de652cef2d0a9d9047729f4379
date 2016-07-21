@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_4a2fcfa0",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T08:05:15Z",
+      "side": 1,
+      "message": "...if the project is disabled.",
+      "range": {
+        "startLine": 1366,
+        "startChar": 36,
+        "endLine": 1366,
+        "endChar": 37
+      },
+      "revId": "0b49d43e5b16d7de652cef2d0a9d9047729f4379",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
