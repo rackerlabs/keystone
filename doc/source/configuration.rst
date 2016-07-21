@@ -437,14 +437,16 @@ The drivers Keystone provides are:
 Token Provider
 --------------
 
-Keystone supports customizable token provider and it is specified in the
-``[token]`` section of the configuration file. Keystone provides both UUID and
-PKI token providers. However, users may register their own token provider by
-configuring the following property.
+Keystone supports customizable token providers and it is specified in the
+``[token]`` section of the configuration file. Keystone provides UUID, Fernet,
+PKI, and PKIz token providers. However, users may register their own token
+provider by configuring the following property.
 
-* ``provider`` - token provider driver. Defaults to ``uuid``. Implemented by
-  :class:`keystone.token.providers.uuid.Provider`
+* ``provider`` - token provider driver. Defaults to ``fernet``. Implemented by
+  :class:`keystone.token.providers.fernet.Provider`
 
+
+More information regarding each provider can be found below.
 
 UUID, PKI, PKIZ, or Fernet?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
