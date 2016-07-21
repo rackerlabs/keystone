@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_a77e8667",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T07:11:34Z",
+      "side": 1,
+      "message": "pls don\u0027t refer to that document, there are many work left to fix those parameters for V2 API, just try it you will see that `enabled` is an optional argument.",
+      "parentUuid": "dada55a8_40fcd971",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "0fd6d28d4faaf56e317bf8f46b86ca323c72fba8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_a28e7dcd",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 3
