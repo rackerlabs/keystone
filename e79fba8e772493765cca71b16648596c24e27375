@@ -16,6 +16,24 @@
       "revId": "e79fba8e772493765cca71b16648596c24e27375",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8916d049",
+        "filename": "api-ref/source/v3/samples/admin/group-users-list-response.json",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-21T18:01:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_46568706",
+      "revId": "e79fba8e772493765cca71b16648596c24e27375",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
