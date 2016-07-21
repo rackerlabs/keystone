@@ -83,6 +83,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_6bd9ccf2",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-21T20:35:10Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "dada55a8_ac164749",
+      "range": {
+        "startLine": 45,
+        "startChar": 18,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_1b71ab0f",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 4
