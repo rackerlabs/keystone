@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_11116204",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-21T21:32:54Z",
+      "side": 1,
+      "message": "in v2 we check for \"tenantId\" not \"tenant_id\" because we were silly in v2 and didn\u0027t conform on anything",
+      "range": {
+        "startLine": 70,
+        "startChar": 39,
+        "endLine": 70,
+        "endChar": 47
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5170fa71",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-21T21:32:54Z",
+      "side": 1,
+      "message": "tenantId wasn\u0027t a typo :)\n\nhttp://developer.openstack.org/api-ref/identity/v2-admin/index.html?expanded\u003dcreate-user-admin-endpoint-detail#create-user-admin-endpoint",
+      "range": {
+        "startLine": 30,
+        "startChar": 5,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b1c7b662",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-21T21:32:54Z",
+      "side": 1,
+      "message": "we probably want a test that tries both username and name in a create\n\nsame with update",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_31dc6645",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-21T21:32:54Z",
+      "side": 1,
+      "message": "suggest using uuid.uuid4().hex here",
+      "range": {
+        "startLine": 33,
+        "startChar": 20,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_11dfa23a",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-21T21:32:54Z",
+      "side": 1,
+      "message": "suggest using uuid.uuid4().hex here",
+      "range": {
+        "startLine": 39,
+        "startChar": 23,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
