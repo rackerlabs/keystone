@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_40fcd971",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-21T03:33:49Z",
+      "side": 1,
+      "message": "I was basing the required part from: http://developer.openstack.org/api-ref/identity/v2-admin/?expanded\u003dcreate-user-admin-endpoint-detail#create-user-admin-endpoint\n\nIs enabled optional then?",
+      "parentUuid": "dada55a8_e21875d5",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "0fd6d28d4faaf56e317bf8f46b86ca323c72fba8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_a28e7dcd",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 3
@@ -59,6 +83,30 @@
       "writtenOn": "2016-07-21T02:12:25Z",
       "side": 1,
       "message": "Be careful here, I\u0027m afraid this will mess up V3 API, I\u0027d like to define another schema for v2 if necessary.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 9
+      },
+      "revId": "0fd6d28d4faaf56e317bf8f46b86ca323c72fba8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a0edd5b8",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-21T03:33:49Z",
+      "side": 1,
+      "message": "This is probably a safer thing to do, agreed",
+      "parentUuid": "dada55a8_a28e7dcd",
       "range": {
         "startLine": 40,
         "startChar": 0,
