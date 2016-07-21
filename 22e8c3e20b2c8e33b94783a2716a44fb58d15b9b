@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_85a7c8a5",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-21T23:56:31Z",
+      "side": 1,
+      "message": "Tried this with the schema: \u0027required\u0027: [\u0027name\u0027] for create_user_v2 and it still failed when the request only specified \u0027username\u0027.  Unless I\u0027m mistaken somewhere else?",
+      "parentUuid": "dada55a8_3198e669",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 55
+      },
+      "revId": "22e8c3e20b2c8e33b94783a2716a44fb58d15b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_11116204",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
