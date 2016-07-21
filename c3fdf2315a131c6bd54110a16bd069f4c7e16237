@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_db31dc5b",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-21T04:21:58Z",
+      "side": 1,
+      "message": "pep8 was failing on this saying \u0027_\u0027 was unused",
+      "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
