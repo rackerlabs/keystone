@@ -16,6 +16,70 @@
       "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e7c23e84",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T07:25:25Z",
+      "side": 1,
+      "message": "yep, it that is not used, just remove it.",
+      "parentUuid": "dada55a8_db31dc5b",
+      "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0771520f",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T07:25:25Z",
+      "side": 1,
+      "message": "this is for V3 only.",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 43
+      },
+      "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_47db4a1b",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T07:25:25Z",
+      "side": 1,
+      "message": "remove those unnecessary change, it\u0027s optional for both v2.0 and v3.",
+      "range": {
+        "startLine": 1688,
+        "startChar": 31,
+        "endLine": 1688,
+        "endChar": 46
+      },
+      "revId": "c3fdf2315a131c6bd54110a16bd069f4c7e16237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
