@@ -1,0 +1,11 @@
+---
+upgrade:
+  - The default token provider has switched from `uuid` to
+    `fernet`. This means existing deployments should ensure
+    a rotation policy in place, and a key distribution policy
+    for multi-node deployments before upgrading. A key rotation
+    strategy is provided through `keystone-manage` and a new
+    key repository can be introduced using
+    `keystone-manage fernet_setup`.
+other:
+  - Switch the default token provider from UUID to Fernet.
