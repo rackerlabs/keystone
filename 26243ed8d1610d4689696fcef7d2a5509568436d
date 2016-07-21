@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_1b5b74f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-21T04:06:54Z",
+      "side": 1,
+      "message": "Isn\u0027t one of the alternatives to use the x.509 client certificates (token-less auth)?  I haven\u0027t tried it myself, so not sure how complicated it is, but thought it allows services to authentication with certs and without tokens.",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 23,
+        "endChar": 61
+      },
+      "revId": "26243ed8d1610d4689696fcef7d2a5509568436d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
