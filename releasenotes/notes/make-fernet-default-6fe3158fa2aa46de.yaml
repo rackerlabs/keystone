@@ -1,0 +1,3 @@
+---
+other:
+  - Switch the default token provider from UUID to Fernet.
