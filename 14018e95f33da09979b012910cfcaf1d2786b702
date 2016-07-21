@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_c09d6967",
+        "filename": "api-ref/source/v3/samples/admin/user-projects-list-response.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T03:26:47Z",
+      "side": 1,
+      "message": "pls see https://review.openstack.org/#/c/345143/",
+      "parentUuid": "dada55a8_a8378afd",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_882d66aa",
         "filename": "api-ref/source/v3/samples/admin/user-projects-list-response.json",
         "patchSetId": 10
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_008ae11a",
+        "filename": "api-ref/source/v3/samples/admin/user-projects-list-response.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T03:26:47Z",
+      "side": 1,
+      "message": "pls see https://review.openstack.org/#/c/345143/",
+      "parentUuid": "dada55a8_882d66aa",
+      "range": {
+        "startLine": 23,
+        "startChar": 32,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_37ddbfe0",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 10
@@ -59,6 +107,30 @@
       "writtenOn": "2016-07-20T18:26:13Z",
       "side": 1,
       "message": "this comes out as required, and it should be optional (unlike the the /password API)",
+      "range": {
+        "startLine": 82,
+        "startChar": 15,
+        "endLine": 82,
+        "endChar": 40
+      },
+      "revId": "14018e95f33da09979b012910cfcaf1d2786b702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e08ead2c",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-21T03:26:47Z",
+      "side": 1,
+      "message": "fixed here https://review.openstack.org/#/c/345143/",
+      "parentUuid": "dada55a8_37ddbfe0",
       "range": {
         "startLine": 82,
         "startChar": 15,
