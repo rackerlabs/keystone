@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_8bc05b2c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T13:14:42Z",
+      "side": 1,
+      "message": "I can add it to the schema for clarity",
+      "parentUuid": "dada55a8_f8ae1d80",
+      "range": {
+        "startLine": 96,
+        "startChar": 40,
+        "endLine": 96,
+        "endChar": 51
+      },
+      "revId": "79c341d3d480a067179c5278f5539d5b32273a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0fd92984",
         "filename": "keystone/tests/unit/test_v2_validation.py",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2016-07-22T07:37:22Z",
       "side": 1,
       "message": "the only suggestion I have is creating a role with 2 attributes, name and bogus -- it should succeed.",
+      "revId": "79c341d3d480a067179c5278f5539d5b32273a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ab755f33",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T13:14:42Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "dada55a8_0fd92984",
       "revId": "79c341d3d480a067179c5278f5539d5b32273a3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
