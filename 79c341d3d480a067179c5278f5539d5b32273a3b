@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_0fd92984",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T07:37:22Z",
+      "side": 1,
+      "message": "the only suggestion I have is creating a role with 2 attributes, name and bogus -- it should succeed.",
+      "revId": "79c341d3d480a067179c5278f5539d5b32273a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
