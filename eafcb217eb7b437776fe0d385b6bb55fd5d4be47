@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_68eb84dc",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T03:59:23Z",
+      "side": 1,
+      "message": "So I should just remove the normalize_username... call since we are validating in the schema, right?",
+      "parentUuid": "dada55a8_2aa18494",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0afda06d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 7
@@ -76,6 +94,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_a8bf3cce",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T03:59:23Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "dada55a8_57fbc578",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0a400006",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 7
@@ -87,6 +123,24 @@
       "writtenOn": "2016-07-22T02:54:07Z",
       "side": 1,
       "message": "\u0027minProperties\u0027: 1",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_28498c31",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T03:59:23Z",
+      "side": 1,
+      "message": "I removed this because tempest was failing due to 2 of the tests passing {} for their update. I can put it back though if that\u0027s what it\u0027s supposed to be.",
+      "parentUuid": "dada55a8_0a400006",
       "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
