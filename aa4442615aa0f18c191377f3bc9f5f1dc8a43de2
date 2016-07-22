@@ -33,6 +33,23 @@
       "revId": "aa4442615aa0f18c191377f3bc9f5f1dc8a43de2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d46786e8",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1307,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-22T17:47:56Z",
+      "side": 1,
+      "message": "Add TODO here or rewrite this test to not rely on the persistence backend in the test.",
+      "revId": "aa4442615aa0f18c191377f3bc9f5f1dc8a43de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
