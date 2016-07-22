@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_763b4b39",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T14:57:19Z",
+      "side": 1,
+      "message": "ah ok, thanks!",
+      "parentUuid": "dada55a8_a9dbbd20",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0afda06d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 7
@@ -213,6 +231,24 @@
       "side": 1,
       "message": "So, this is a weird situation. The old tempest tests were expecting a 401. They assume that calling update with an empty body will trigger an unauthorized error -- assuming it\u0027ll be raised from the backends, see [1] and [2]. \n\nHowever, before it gets a chance to do that we are now throwing up a 400 BadRequest.\n\nWe have two options here, both of which would mean changes to tempest. We could make keystone continue to behave the same, but let\u0027s make keystone *do the right thing*.\n\nOur two options for tempest are:\n\nA) Change the tests to assert a 400 Bad Request on an empty body.\n\nB) Change the tests by adding in a parameter to actually update, see any of the other tests in [1] or [2] where they pass in \"name\u003duser_name\".\n\nI think we should do B and add another test in tempest that an empty body comes back with a 400. \n\nSo Gage, what we typically do in this scenario is:\n\n  - Create a patch in tempest to skip those 2 tests\n  - Merge this patch\n  - Unskip the tests in tempest (and make the appropriate changes)\n\n[1] https://github.com/openstack/tempest/blob/1fafc756a069ceb0988179e9c16e8d863c1b5582/tempest/api/identity/admin/v2/test_users_negative.py#L125 \n\n[2] https://github.com/openstack/tempest/blob/1fafc756a069ceb0988179e9c16e8d863c1b5582/tempest/api/identity/admin/v2/test_users_negative.py#L141",
       "parentUuid": "dada55a8_691f05b8",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_36027370",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T14:57:19Z",
+      "side": 1,
+      "message": "Interesting! I will take a look, thanks!",
+      "parentUuid": "dada55a8_0c693726",
       "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
