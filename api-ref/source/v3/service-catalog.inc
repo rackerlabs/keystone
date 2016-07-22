@@ -24,7 +24,7 @@ List services
 
 .. rest_method::  GET /v3/services
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/services``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Lists all services.
 
@@ -64,7 +64,7 @@ Create service
 
 .. rest_method::  POST /v3/services
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/services``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Creates a service.
 
@@ -107,7 +107,7 @@ Show endpoint details
 
 .. rest_method::  GET /v3/endpoints/{endpoint_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/endpoints``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Shows details for an endpoint.
 
@@ -147,7 +147,7 @@ Update endpoint
 
 .. rest_method::  PATCH /v3/endpoints/{endpoint_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/endpoint``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Updates an endpoint.
 
@@ -198,7 +198,7 @@ Delete endpoint
 
 .. rest_method::  DELETE /v3/endpoints/{endpoint_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/endpoint``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Deletes an endpoint.
 
@@ -219,7 +219,7 @@ List endpoints
 
 .. rest_method::  GET /v3/endpoints
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/endpoints``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Lists all available endpoints.
 
@@ -262,7 +262,7 @@ Create endpoint
 
 .. rest_method::  POST /v3/endpoints
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/endpoints``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Creates an endpoint.
 
@@ -309,7 +309,7 @@ Show service details
 
 .. rest_method::  GET /v3/services/{service_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/service``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Shows details for a service.
 
@@ -348,7 +348,7 @@ Update service
 
 .. rest_method::  PATCH /v3/services/{service_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/services``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Updates a service.
 
@@ -402,7 +402,7 @@ Delete service
 
 .. rest_method::  DELETE /v3/services/{service_id}
 
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/service``
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/``
 
 Deletes a service.
 
