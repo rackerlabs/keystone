@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_f8ae1d80",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T08:38:00Z",
+      "side": 1,
+      "message": "looks like v2 role has \u0027description\u0027 and \u0027id\u0027, does that matter?\n\nhttp://developer.openstack.org/api-ref/identity/v2-ext/index.html?expanded\u003dcreate-a-role-detail#os-kscrud-extension",
+      "range": {
+        "startLine": 96,
+        "startChar": 40,
+        "endLine": 96,
+        "endChar": 51
+      },
+      "revId": "79c341d3d480a067179c5278f5539d5b32273a3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0fd92984",
         "filename": "keystone/tests/unit/test_v2_validation.py",
         "patchSetId": 2
