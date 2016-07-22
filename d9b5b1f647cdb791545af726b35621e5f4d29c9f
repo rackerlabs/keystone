@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_4c5af951",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-22T14:10:47Z",
+      "side": 1,
+      "message": "I suggest to leave max_retries by default. And not to pass it.",
+      "parentUuid": "dada55a8_97d9d0f5",
+      "range": {
+        "startLine": 95,
+        "startChar": 31,
+        "endLine": 95,
+        "endChar": 44
+      },
+      "revId": "d9b5b1f647cdb791545af726b35621e5f4d29c9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_08ae9680",
         "filename": "keystone/tests/unit/test_v3_os_revoke.py",
         "patchSetId": 1
