@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_a83d57bd",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2016-07-22T16:39:54Z",
+      "side": 1,
+      "message": "I\u0027d insert the word \"two tier\" here or something to express that it\u0027s a web front-end DB back-end.",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e8162ff0",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2016-07-22T16:39:54Z",
+      "side": 1,
+      "message": "how does this affect perf? just on tokens it can\u0027t validate with the primary key it falls back to old keys right?",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
