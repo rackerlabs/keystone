@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_a2472b1c",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-22T20:46:02Z",
+      "side": 1,
+      "message": "is it a different response? \n\nThe individual views can do whatever they like i was just providing the basic information they would probably use.",
+      "parentUuid": "fad55976_e35efb10",
+      "range": {
+        "startLine": 226,
+        "startChar": 4,
+        "endLine": 236,
+        "endChar": 23
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_63a96bdf",
         "filename": "keystone/api/views/v3/credential.py",
         "patchSetId": 5
@@ -119,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_820e67e3",
+        "filename": "keystone/api/views/v3/credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-22T20:46:02Z",
+      "side": 1,
+      "message": "They do validation for required_params but they typically optional is ignored because we have to deal with extras. There are some views that don\u0027t accept extras and they use these a lot and hopefully in future i want to be configurably able to turn extras off.",
+      "parentUuid": "fad55976_63a96bdf",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_e3471b49",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 5
@@ -130,6 +178,30 @@
       "writtenOn": "2016-07-16T20:21:10Z",
       "side": 1,
       "message": "nit, why does this even return anything?",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 65
+      },
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8225c75d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-07-22T20:46:02Z",
+      "side": 1,
+      "message": "it returns a 204 with no body. We could still handle this at a higher level and return 204 if None is returned, but its better to return something - the view just doesn\u0027t really do anything.",
+      "parentUuid": "fad55976_e3471b49",
       "range": {
         "startLine": 96,
         "startChar": 8,
