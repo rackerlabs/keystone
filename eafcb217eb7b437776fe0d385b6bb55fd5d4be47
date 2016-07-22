@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_2aa18494",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T02:54:07Z",
+      "side": 1,
+      "message": "checkout this comment, still valid.\nhttps://review.openstack.org/#/c/238160/3/keystone/identity/controllers.py",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0afda06d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T02:54:07Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_57574557",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T02:54:07Z",
+      "side": 1,
+      "message": "this is nullable, change to:\n  validation.nullable(parameter_types.id_string)",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 42
+      },
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_57fbc578",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T02:54:07Z",
+      "side": 1,
+      "message": "as what api-ref said, email is a optional property, pls add it in the schema.",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0a400006",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T02:54:07Z",
+      "side": 1,
+      "message": "\u0027minProperties\u0027: 1",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
