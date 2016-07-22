@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_a9dbbd20",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T06:54:53Z",
+      "side": 1,
+      "message": "I think it meant remove the calling of method from clean.py since it becomes unnecessary after enable schema validation.\n\nsee the code here:\nhttps://github.com/openstack/keystone/blob/933e118eee3b494401123f3dc23d025b6c4d4803/keystone/identity/core.py#L812",
+      "parentUuid": "dada55a8_68eb84dc",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0afda06d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 7
@@ -159,6 +177,24 @@
       "side": 1,
       "message": "I mean two tempest tests for user_update were passing {} as the request and that was causing them to fail.",
       "parentUuid": "dada55a8_28498c31",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_691f05b8",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-22T06:54:53Z",
+      "side": 1,
+      "message": "I think it is not make sense to update a user with an empty body, I am okay to not mention \u0027minProperties\u0027 here.",
+      "parentUuid": "dada55a8_a8a61cbe",
       "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
