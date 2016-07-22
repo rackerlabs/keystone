@@ -144,6 +144,24 @@
       "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a8a61cbe",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-22T04:00:34Z",
+      "side": 1,
+      "message": "I mean two tempest tests for user_update were passing {} as the request and that was causing them to fail.",
+      "parentUuid": "dada55a8_28498c31",
+      "revId": "eafcb217eb7b437776fe0d385b6bb55fd5d4be47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
