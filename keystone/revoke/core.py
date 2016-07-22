@@ -210,6 +210,7 @@ class Manager(manager.Manager):
     def revoke(self, event):
         self.driver.revoke(event)
         REVOKE_REGION.invalidate()
+        self._list_events.invalidate(self, None)
 
 
 @versionutils.deprecated(
