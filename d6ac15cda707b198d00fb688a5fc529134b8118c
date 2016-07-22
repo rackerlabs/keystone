@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_99f26705",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-22T17:31:57Z",
+      "side": 1,
+      "message": "From ayoung: \n\nRevocation Lists were originally implemented for PKI and PKIZ tokens. These should be tested here.",
+      "revId": "d6ac15cda707b198d00fb688a5fc529134b8118c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
