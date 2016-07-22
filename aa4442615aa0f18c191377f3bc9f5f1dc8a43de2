@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_f419ea7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-22T17:45:58Z",
+      "side": 1,
+      "message": "This should be AuthWithTrust",
+      "revId": "aa4442615aa0f18c191377f3bc9f5f1dc8a43de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_342a627f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-22T17:45:58Z",
+      "side": 1,
+      "message": "This should be AuthWithTrust",
+      "revId": "aa4442615aa0f18c191377f3bc9f5f1dc8a43de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
