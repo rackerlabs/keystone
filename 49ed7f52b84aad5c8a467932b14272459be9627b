@@ -19,6 +19,47 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_64fd436e",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T21:02:59Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "dada55a8_a83d57bd",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_82b5c77f",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T21:02:59Z",
+      "side": 1,
+      "message": "SQL instead of locally?",
+      "range": {
+        "startLine": 44,
+        "startChar": 31,
+        "endLine": 44,
+        "endChar": 38
+      },
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e8162ff0",
         "filename": "doc/source/performance.rst",
         "patchSetId": 1
@@ -30,6 +71,70 @@
       "writtenOn": "2016-07-22T16:39:54Z",
       "side": 1,
       "message": "how does this affect perf? just on tokens it can\u0027t validate with the primary key it falls back to old keys right?",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e2f8034c",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T21:02:59Z",
+      "side": 1,
+      "message": "i\u0027ll leave this to the fernet experts",
+      "parentUuid": "dada55a8_e8162ff0",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e22be392",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T21:02:59Z",
+      "side": 1,
+      "message": "it may be superfluous but it would be nice to mention in parenthesis (nova, glance, etc) when describing the services.",
+      "range": {
+        "startLine": 71,
+        "startChar": 69,
+        "endLine": 72,
+        "endChar": 31
+      },
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a208cb2e",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-22T21:02:59Z",
+      "side": 1,
+      "message": "as a side note, the help text for this option is garbage: https://github.com/openstack/keystonemiddleware/blob/master/keystonemiddleware/auth_token/_opts.py#L64-L65",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 9
+      },
       "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
