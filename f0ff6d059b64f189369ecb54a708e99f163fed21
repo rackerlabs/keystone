@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_36ec338f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3764,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-22T14:59:58Z",
+      "side": 1,
+      "message": "typo: inherit",
+      "range": {
+        "startLine": 3764,
+        "startChar": 29,
+        "endLine": 3764,
+        "endChar": 37
+      },
+      "revId": "f0ff6d059b64f189369ecb54a708e99f163fed21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
