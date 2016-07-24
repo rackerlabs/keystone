@@ -151,6 +151,29 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_bc7c90ec",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "list?",
+      "range": {
+        "startLine": 32,
+        "startChar": 68,
+        "endLine": 32,
+        "endChar": 76
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_a503d5b7",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 24
@@ -214,6 +237,29 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_97017409",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "suggest to use a different variable other than ref here, maybe ret_ref? too many ref here :)",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 11
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_45adb930",
         "filename": "keystone/credential/providers/fernet.py",
         "patchSetId": 24
@@ -230,6 +276,29 @@
         "startChar": 22,
         "endLine": 40,
         "endChar": 27
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_173e24da",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "If `allow_plaintext` is True, the encryption will never fail?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 62
       },
       "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -260,6 +329,168 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_5c947443",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fad55976_c5c089e3",
+      "range": {
+        "startLine": 51,
+        "startChar": 22,
+        "endLine": 51,
+        "endChar": 27
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_97721410",
+        "filename": "keystone/credential/providers/fernet.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "If allow plaintext the decryption will never fail?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 62
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_770cc042",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "If the parent is UnexpectedError, the error code returned is 500 (Internal Server Error), what will we have if hit this exception?",
+      "range": {
+        "startLine": 551,
+        "startChar": 32,
+        "endLine": 551,
+        "endChar": 41
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_57209cb0",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "... when encrypt or decrypt credentials",
+      "range": {
+        "startLine": 553,
+        "startChar": 24,
+        "endLine": 553,
+        "endChar": 60
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9a187977",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "Pls move this to line 60, alphabetical.",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 62
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_37440873",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "How do we know it is correctly encrypted?\npossible to assertEqual(encrypt(created[\u0027credential\u0027][\u0027blob\u0027]), encrypted[\u0027blob\u0027])?",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 77
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5759bc5a",
+        "filename": "keystone/tests/unit/credential/test_controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "same here?",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 77
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_2a1df40f",
         "filename": "keystone/token/providers/fernet/utils.py",
         "patchSetId": 24
@@ -271,6 +502,30 @@
       "writtenOn": "2016-07-15T18:14:06Z",
       "side": 1,
       "message": "may want to use something more appropriate to its subsclass as this class is now shared by both fernet token and credential encryption keys",
+      "range": {
+        "startLine": 54,
+        "startChar": 28,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_7a6825bb",
+        "filename": "keystone/token/providers/fernet/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-24T11:22:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fad55976_2a1df40f",
       "range": {
         "startLine": 54,
         "startChar": 28,
