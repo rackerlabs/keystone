@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_c594c4e9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T09:44:38Z",
+      "side": 1,
+      "message": "I think the `msg` above is more detail than this one, fine with as it is.",
+      "range": {
+        "startLine": 140,
+        "startChar": 56,
+        "endLine": 140,
+        "endChar": 69
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_45b0d48b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T09:44:38Z",
+      "side": 1,
+      "message": "Any value to log these information too?",
+      "range": {
+        "startLine": 144,
+        "startChar": 16,
+        "endLine": 145,
+        "endChar": 62
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e2df3e38",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T09:44:38Z",
+      "side": 1,
+      "message": "There is no testcase to test update user with `self_service` default to False, so that we know it\u0027s different with updating user\u0027s password.",
+      "range": {
+        "startLine": 936,
+        "startChar": 0,
+        "endLine": 937,
+        "endChar": 40
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e85c3d7f",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T09:44:38Z",
+      "side": 1,
+      "message": "If default value of self_service set to False in driver level, there is no need to update all of these testcases.",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e27e1e69",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T09:44:38Z",
+      "side": 1,
+      "message": "use unit.new_user_ref(...) instead, fine with as it is.",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 9
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
