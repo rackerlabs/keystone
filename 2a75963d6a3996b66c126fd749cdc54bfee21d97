@@ -135,6 +135,24 @@
       "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_c34e216e",
+        "filename": "keystone/common/sql/migrate_repo/versions/107_add_failed_attempts_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-07-25T09:58:39Z",
+      "side": 1,
+      "message": "It is required for sql.DictBase",
+      "parentUuid": "3aaa91ec_f49305a1",
+      "revId": "2a75963d6a3996b66c126fd749cdc54bfee21d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
