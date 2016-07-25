@@ -104,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_55d34238",
+        "filename": "keystone/api/views/v3/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:11:06Z",
+      "side": 1,
+      "message": "Interesting. Since we use jsonschema on the front end to validate incoming requests - I wonder if we should follow that same pattern here to use jsonschema to validate responses on the way out.",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_ca966d93",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 6
