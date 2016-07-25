@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_d3eace73",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 17862
+      },
+      "writtenOn": "2016-07-25T10:08:46Z",
+      "side": 1,
+      "message": "This \u0027if\u0027 is also validates that password can be changes. Is it better to move it into _validate_password_can_change?",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8e014907",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 17862
+      },
+      "writtenOn": "2016-07-25T10:08:46Z",
+      "side": 1,
+      "message": "in \u0027ldap\u0027 we have method self.user.check_allow_update()\nMaybe it is better to have here the same and call _validate_password_can_change from it? Are you going to add more validation in future?",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_c594c4e9",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 15
@@ -65,6 +99,23 @@
         "endLine": 937,
         "endChar": 40
       },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_85c80c76",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1237,
+      "author": {
+        "id": 17862
+      },
+      "writtenOn": "2016-07-25T10:08:46Z",
+      "side": 1,
+      "message": "Why self_service is always True here? Is it mean, that change_password method is called only by owner?",
       "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
