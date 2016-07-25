@@ -33,6 +33,52 @@
       "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_93ffa800",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-25T14:40:53Z",
+      "side": 1,
+      "message": "I think it would be good to have another test that shows that if we ARE validating password history, and I issue an update with the same password, then this is also fine.",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 52
+      },
+      "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_904afe81",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-25T14:40:53Z",
+      "side": 1,
+      "message": "nit: I think you mean to one",
+      "range": {
+        "startLine": 222,
+        "startChar": 67,
+        "endLine": 222,
+        "endChar": 71
+      },
+      "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
