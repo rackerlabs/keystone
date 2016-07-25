@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_c020179e",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-25T18:01:45Z",
+      "side": 1,
+      "message": "nit: might better to say:\n\nIndicates whether the user should be enabled (``true``)  or disabled(``false``).",
+      "range": {
+        "startLine": 83,
+        "startChar": 31,
+        "endLine": 83,
+        "endChar": 33
+      },
+      "revId": "667fde9569159e26c73ea929cf6012b437233903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
