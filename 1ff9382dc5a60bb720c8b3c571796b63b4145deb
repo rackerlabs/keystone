@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_6fae7399",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-25T20:23:39Z",
+      "side": 1,
+      "message": "Previous tests implied that both \u0027id\u0027 and \u0027description\u0027 were optional, not sure if this is 100% correct.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
