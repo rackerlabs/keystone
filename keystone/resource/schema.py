@@ -74,3 +74,21 @@ domain_update = {
     'minProperties': 1,
     'additionalProperties': True
 }
+
+_tenant_properties = {
+    'description': validation.nullable(parameter_types.description),
+    'enabled': parameter_types.boolean,
+    'name': {
+        'type': 'string',
+        'minLength': 1,
+        'maxLength': 64,
+        'pattern': '[\S]+'
+    }
+}
+
+tenant_create = {
+    'type': 'object',
+    'properties': _tenant_properties,
+    'required': ['name'],
+    'additionalProperties': True
+}
