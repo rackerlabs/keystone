@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_6ff673fa",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "Well, I\u0027m only validating if a password can change if the user is attempting to update their password. So I don\u0027t think the if statements needs to move.",
+      "parentUuid": "dada55a8_d3eace73",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_8e014907",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_6fb313ea",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "The implementation for check_allow_update() is in the common module for LDAP. We don\u0027t have a common module for the SQL backend. I think this is fine here for now, but it\u0027s a good point should we add more validation specific to the SQL backend. I\u0027ll keep this in mind.",
+      "parentUuid": "dada55a8_8e014907",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_c594c4e9",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 15
@@ -47,6 +83,30 @@
       "writtenOn": "2016-07-25T09:44:38Z",
       "side": 1,
       "message": "I think the `msg` above is more detail than this one, fine with as it is.",
+      "range": {
+        "startLine": 140,
+        "startChar": 56,
+        "endLine": 140,
+        "endChar": 69
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0fdc1711",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "Yeah, and that was my intent, that the user would receive a more generic message, and the detailed message would be logged.",
+      "parentUuid": "dada55a8_c594c4e9",
       "range": {
         "startLine": 140,
         "startChar": 56,
@@ -129,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_2a8bc91f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "I\u0027ve added test cases to test_base. The test methods in test_backend_sql tests the validation logic.",
+      "parentUuid": "dada55a8_e2df3e38",
+      "range": {
+        "startLine": 936,
+        "startChar": 0,
+        "endLine": 937,
+        "endChar": 40
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_85c80c76",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -181,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_ca7cad22",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "Ah, good point.",
+      "parentUuid": "dada55a8_e85c3d7f",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e27e1e69",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 15
@@ -192,6 +294,30 @@
       "writtenOn": "2016-07-25T09:44:38Z",
       "side": 1,
       "message": "use unit.new_user_ref(...) instead, fine with as it is.",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 9
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_eaed31b8",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:52:22Z",
+      "side": 1,
+      "message": "new_user_ref has attributes that I don\u0027t want, such as email and id, but see your point.",
+      "parentUuid": "dada55a8_e27e1e69",
       "range": {
         "startLine": 223,
         "startChar": 0,
