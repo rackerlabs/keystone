@@ -82,6 +82,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_61ab3a1e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T15:29:23Z",
+      "side": 1,
+      "message": "No, I don\u0027t think it\u0027s appropriate to log this message. I log the above message because that is unexpected behavior.",
+      "parentUuid": "dada55a8_45b0d48b",
+      "range": {
+        "startLine": 144,
+        "startChar": 16,
+        "endLine": 145,
+        "endChar": 62
+      },
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e2df3e38",
         "filename": "keystone/identity/core.py",
         "patchSetId": 15
@@ -116,6 +140,24 @@
       "writtenOn": "2016-07-25T10:08:46Z",
       "side": 1,
       "message": "Why self_service is always True here? Is it mean, that change_password method is called only by owner?",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5c1edd63",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1237,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T15:29:23Z",
+      "side": 1,
+      "message": "Yes, that it is my understanding.",
+      "parentUuid": "dada55a8_85c80c76",
       "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
