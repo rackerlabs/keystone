@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_fdd52a1b",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T02:21:24Z",
+      "side": 1,
+      "message": "better to have a testcase for this one",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "80b4ffaa9f85bcf429c28040c213dc0f00563453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5ddd5641",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-25T02:21:24Z",
+      "side": 1,
+      "message": "same for this one.",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 44
+      },
+      "revId": "80b4ffaa9f85bcf429c28040c213dc0f00563453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
