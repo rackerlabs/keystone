@@ -42,6 +42,22 @@ region_update = {
     'additionalProperties': True
 }
 
+_service_properties_v2 = {
+    'Location': parameter_types.id_string,
+    'type': parameter_types.id_string,
+    'description': parameter_types.id_string,
+    'name': parameter_types.id_string,
+    'id': parameter_types.id_string
+}
+
+service_create_v2 = {
+    'type': 'object',
+    'properties': _service_properties_v2,
+    'required': ['id', 'name', 'type', 'description'],
+    'additionalProperties': True
+}
+
+
 _service_properties = {
     'enabled': parameter_types.boolean,
     'name': parameter_types.name,
@@ -56,7 +72,7 @@ service_create = {
     'type': 'object',
     'properties': _service_properties,
     'required': ['type'],
-    'additionalProperties': True,
+    'additionalProperties': True
 }
 
 service_update = {
