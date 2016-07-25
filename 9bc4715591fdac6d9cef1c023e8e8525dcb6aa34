@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_2a08e9d8",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "What happens if self.host_url ends up being something like:\n\n    self.host_url \u003d \u0027http://localhost:35357/v3/\u0027\n\nWe should make sure we parse the host_url and make sure it doesn\u0027t already have a version path on it, as well as trailing forward-slashes.",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_4a639d1a",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "This is tripping me up. The naming of this if statement makes it seem like we are checking if we can display extra attributes returned back from the Manager/Model, but the following logic blows up if we don\u0027t have all the required parameters. So it seems like we are doing a \"is everything we\u0027re required to display included\" check instead of a \"are we returning extra things\" check.\n\nIf we are checking if a view is allowed to display extra arguments, then do we want to do something with those before we display them? Here we check if we are going to display extra things, but only seem to care about parameters that are required.",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_6a01416a",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "So, this would technically mean that the credential Manager() didn\u0027t give everything the view needs to render the object, right?",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_154c2a6f",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "If we hit this line, we have a bug in our Manager()/Model() code, right? This would technically mean that our View is expecting a specific parameter but it never got it from the backend or Manager().",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_35ecce28",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "I think this could be a class level variable/property.",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_6aae6199",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "What results in the `KeyError` here?",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ca966d93",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:08:30Z",
+      "side": 1,
+      "message": "Should the view also render a list? All other methods here use views to render the results:\n\n    view.CredentialView(request).create(ref)\n    view.CredentialView(request).show(ref)\n\nShould we have one for listing, too?\n\n    view.CredentialView(request).list(ref)",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
