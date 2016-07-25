@@ -46,6 +46,30 @@
       "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_dd18f477",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-25T22:55:30Z",
+      "side": 1,
+      "message": "...although that\u0027s not true for other parameters....I can include them (as long as they are the current values) with no impact....for other attributes, we check to see if the value is the same as the old one, and if so, ignore that attribute",
+      "parentUuid": "dada55a8_4488b122",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 63
+      },
+      "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
