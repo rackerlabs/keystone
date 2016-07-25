@@ -2126,3 +2126,71 @@ class PasswordValidationTestCase(unit.TestCase):
         self.config_fixture.config(group='security_compliance',
                                    password_regex='[\S]+')
         validators.validate_password(password)
+
+
+class TenantValidationTestCase(unit.BaseTestCase):
+    """Test for v2 Tenant API Validation."""
+
+    def setUp(self):
+        super(TenantValidationTestCase, self).setUp()
+        schema_tenant_create = resource_schema.tenant_create
+        self.create_validator = validators.SchemaValidator(
+            schema_tenant_create)
+
+    def test_validate_tenant_create_success(self):
+        request = {
+            'name': uuid.uuid4().hex
+        }
+        self.create_validator.validate(request)
+
+    def test_validate_tenant_create_success_with_empty_description(self):
+        request = {
+            'name': uuid.uuid4().hex,
+            'description': ''
+        }
+        self.create_validator.validate(request)
+
+    def test_validate_tenant_create_success_with_extra_parameters(self):
+        request = {
+            'name': uuid.uuid4().hex,
+            'description': 'Test tenant',
+            'enabled': True,
+            'extra': 'test'
+        }
+        self.create_validator.validate(request)
+
+    def test_validate_tenant_create_failure_with_missing_name(self):
+        request = {
+            'description': 'Test tenant',
+            'enabled': True
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
+
+    def test_validate_tenant_create_failure_with_empty_name(self):
+        request = {
+            'name': '',
+            'description': 'Test tenant',
+            'enabled': True
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
+
+    def test_validate_tenant_create_failure_with_empty_request(self):
+        request = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
+
+    def test_validate_tenant_create_failure_with_is_domain(self):
+        request = {
+            'name': uuid.uuid4().hex,
+            'description': 'Test tenant',
+            'enabled': True,
+            'is_domain': False
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
