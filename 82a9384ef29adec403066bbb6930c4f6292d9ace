@@ -22,6 +22,30 @@
       "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_4488b122",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T21:48:58Z",
+      "side": 1,
+      "message": "The API states that the \u0027password\u0027 in the request represents the \u0027new\u0027 password for the user:\nhttp://developer.openstack.org/api-ref/identity/v3/index.html?expanded\u003dupdate-user-detail#update-user\n\nThus, if the password is included in the request, I think we have to assume the user is attempting change the password and validate against the history.",
+      "parentUuid": "dada55a8_b059ec5d",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 63
+      },
+      "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
