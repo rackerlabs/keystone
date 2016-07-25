@@ -196,8 +196,6 @@ class Manager(manager.Manager):
                                                      project['name'])
 
         project.setdefault('enabled', True)
-        project['enabled'] = clean.project_enabled(project['enabled'])
-        project['name'] = clean.project_name(project['name'])
         project.setdefault('description', '')
 
         # For regular projects, the controller will ensure we have a valid
