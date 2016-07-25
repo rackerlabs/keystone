@@ -70,6 +70,30 @@
       "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9d9e7c52",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-25T23:10:03Z",
+      "side": 1,
+      "message": "However, I guess this pretty much a corner case - I think we can worry about it later.",
+      "parentUuid": "dada55a8_dd18f477",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 63
+      },
+      "revId": "82a9384ef29adec403066bbb6930c4f6292d9ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
