@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_794ace84",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T16:49:10Z",
+      "side": 1,
+      "message": "This is tested here - https://github.com/openstack/keystone/blob/b84b6919157c309510dab94c1432aaf7abb067a4/keystone/tests/unit/test_v3_federation.py#L2468-L2480",
+      "revId": "5bbc78a9a814c711f694b1ba939d417875d30049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
