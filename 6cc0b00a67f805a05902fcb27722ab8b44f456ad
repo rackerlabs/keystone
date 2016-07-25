@@ -57,6 +57,30 @@
       "revId": "6cc0b00a67f805a05902fcb27722ab8b44f456ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_048fdecc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T20:11:44Z",
+      "side": 1,
+      "message": "Validating user input is handled in higher level code. However, this is needed here because when to_dict(...) is called, it will add the read-only attributes, which we want to ignore.",
+      "parentUuid": "1aa78d24_22c38139",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 78
+      },
+      "revId": "6cc0b00a67f805a05902fcb27722ab8b44f456ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
