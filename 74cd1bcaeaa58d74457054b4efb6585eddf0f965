@@ -22,6 +22,30 @@
       "revId": "74cd1bcaeaa58d74457054b4efb6585eddf0f965",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a55d357b",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-25T17:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_4556f9d2",
+      "range": {
+        "startLine": 84,
+        "startChar": 26,
+        "endLine": 84,
+        "endChar": 28
+      },
+      "revId": "74cd1bcaeaa58d74457054b4efb6585eddf0f965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
