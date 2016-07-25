@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_10c9d878",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "We should use the view here, too:\n\n  return region_view.RegionView(request).delete(region_id)",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_90994871",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "++ nice",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_10aef884",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "We could technically use a view for this.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b0cc4c62",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "We should use a view for this.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_90fe6869",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_900ca895",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "I assume we\u0027ll convert this once we have a view for auth?",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b021ecfe",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "We could use a view for this.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_908308cc",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_30ca1c1b",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "I imagine we will use views for these eventually?",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_70b93479",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "We could use a view here.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_30669c29",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Same comment as above.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b0728ce1",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Same comment as above.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d05e2044",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "This could use a view as well.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_4426f1ba",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "This logic could be encapsulated into a view.",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_046359dd",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Can we pull these things from the view instead?",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_443711b0",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "I wonder if we should create a view for this?",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_c472e17b",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 0,
+      "message": "Should we use a view here?",
+      "revId": "bc7822789e04da95c7d3560670ace2b48819f1c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

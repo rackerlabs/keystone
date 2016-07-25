@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_953bfaea",
+        "filename": "keystone/api/views/v3/endpoint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 1,
+      "message": "Are we planning on having a corresponding v2.0 view?",
+      "revId": "8249c0d3a90638212a0f46e0fe10fd70f73df4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b0aa8cd0",
+        "filename": "keystone/api/views/v3/endpoint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:44:55Z",
+      "side": 1,
+      "message": "use \u0027/\u0027.join() to be consistent with line 56?",
+      "revId": "8249c0d3a90638212a0f46e0fe10fd70f73df4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
