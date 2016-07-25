@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_4556f9d2",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-07-25T17:51:20Z",
+      "side": 1,
+      "message": "two dots?",
+      "range": {
+        "startLine": 84,
+        "startChar": 26,
+        "endLine": 84,
+        "endChar": 28
+      },
+      "revId": "74cd1bcaeaa58d74457054b4efb6585eddf0f965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
