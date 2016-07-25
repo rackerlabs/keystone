@@ -59,6 +59,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_509b50c9",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-25T21:21:12Z",
+      "side": 1,
+      "message": "Good suggestion.  I\u0027ve added a test_validate_password_history_with_valid_password test case to show reusing an existing password.",
+      "parentUuid": "dada55a8_93ffa800",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 52
+      },
+      "revId": "330c68c2b4c6e4d3062a92837d7ca508de0b0923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_904afe81",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 35
