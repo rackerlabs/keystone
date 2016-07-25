@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_90cae89f",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-25T21:22:19Z",
+      "side": 1,
+      "message": "We could make this an abstract base class.",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2a08e9d8",
         "filename": "keystone/api/views/v3/base.py",
         "patchSetId": 6
