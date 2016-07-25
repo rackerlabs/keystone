@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_545d2414",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9664
+      },
+      "writtenOn": "2016-07-25T11:01:23Z",
+      "side": 1,
+      "message": "I have emailed legal-discuss and the ML about the legality of this change given that the foundation didnt\u0027 exist till 2012.",
+      "revId": "d0328e3293d411c8d5ff9e17175511498cab78f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
