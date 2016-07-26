@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_3ae2d22f",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-26T14:16:37Z",
+      "side": 1,
+      "message": "maybe change from NOTE to FIXME?",
+      "range": {
+        "startLine": 1182,
+        "startChar": 10,
+        "endLine": 1182,
+        "endChar": 14
+      },
+      "revId": "1bc3df0a42bbdf6b125de32c04499f9e26112d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
