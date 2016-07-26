@@ -52,14 +52,14 @@ class RoleTests(object):
         self.role_api.create_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
-        self.assertDictEqual(role, role_ref_dict)
+        self.assertEqual(role, role_ref_dict)
 
         role['name'] = uuid.uuid4().hex
         updated_role_ref = self.role_api.update_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
-        self.assertDictEqual(role, role_ref_dict)
-        self.assertDictEqual(role_ref_dict, updated_role_ref)
+        self.assertEqual(role, role_ref_dict)
+        self.assertEqual(role_ref_dict, updated_role_ref)
 
         self.role_api.delete_role(role['id'])
         self.assertRaises(exception.RoleNotFound,
@@ -92,20 +92,20 @@ class RoleTests(object):
         # Update role, bypassing the role api manager
         self.role_api.driver.update_role(role_id, updated_role_ref)
         # Verify get_role still returns old ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertEqual(role_ref, self.role_api.get_role(role_id))
         # Invalidate Cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify get_role returns the new role_ref
-        self.assertDictEqual(updated_role_ref,
-                             self.role_api.get_role(role_id))
+        self.assertEqual(updated_role_ref,
+                         self.role_api.get_role(role_id))
         # Update role back to original via the assignment api manager
         self.role_api.update_role(role_id, role_ref)
         # Verify get_role returns the original role ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertEqual(role_ref, self.role_api.get_role(role_id))
         # Delete role bypassing the role api manager
         self.role_api.driver.delete_role(role_id)
         # Verify get_role still returns the role_ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertEqual(role_ref, self.role_api.get_role(role_id))
         # Invalidate cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify RoleNotFound is now raised

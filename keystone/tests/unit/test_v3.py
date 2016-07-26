@@ -815,7 +815,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
             b['token']['issued_at'])
         self.assertCloseEnoughForGovernmentWork(a_issued_at, b_issued_at)
 
-        return self.assertDictEqual(normalize(a), normalize(b))
+        return self.assertEqual(normalize(a), normalize(b))
 
     # catalog validation
 
@@ -1362,7 +1362,7 @@ class AuthContextMiddlewareAdminTokenTestCase(RestfulTestCase):
         extra_environ = {middleware.CONTEXT_ENV: {'is_admin': True}}
         req = self._middleware_request(token_id, extra_environ)
         auth_context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self.assertDictEqual({}, auth_context)
+        self.assertEqual({}, auth_context)
 
     @mock.patch.object(middleware_auth.versionutils,
                        'report_deprecated_feature')
@@ -1372,7 +1372,7 @@ class AuthContextMiddlewareAdminTokenTestCase(RestfulTestCase):
         # attempt to build the auth context. This is deprecated.
         req = self._middleware_request('ADMIN')
         auth_context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
-        self.assertDictEqual({}, auth_context)
+        self.assertEqual({}, auth_context)
         self.assertEqual(1, mock_report_deprecated.call_count)
 
 

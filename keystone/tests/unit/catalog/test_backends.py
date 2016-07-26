@@ -40,7 +40,7 @@ class CatalogTests(object):
         # the endpoint, with None value.
         expected_region = new_region.copy()
         expected_region['parent_region_id'] = None
-        self.assertDictEqual(expected_region, res)
+        self.assertEqual(expected_region, res)
 
         # Test adding another region with the one above
         # as its parent. We will check below whether deleting
@@ -49,7 +49,7 @@ class CatalogTests(object):
         new_region = unit.new_region_ref(parent_region_id=parent_region_id)
         region_id = new_region['id']
         res = self.catalog_api.create_region(new_region)
-        self.assertDictEqual(new_region, res)
+        self.assertEqual(new_region, res)
 
         # list
         regions = self.catalog_api.list_regions()
@@ -63,7 +63,7 @@ class CatalogTests(object):
         res = self.catalog_api.update_region(region_id, region_desc_update)
         expected_region = new_region.copy()
         expected_region['description'] = region_desc_update['description']
-        self.assertDictEqual(expected_region, res)
+        self.assertEqual(expected_region, res)
 
         # delete
         self.catalog_api.delete_region(parent_region_id)
@@ -241,7 +241,7 @@ class CatalogTests(object):
         new_service = unit.new_service_ref()
         service_id = new_service['id']
         res = self.catalog_api.create_service(service_id, new_service)
-        self.assertDictEqual(new_service, res)
+        self.assertEqual(new_service, res)
 
         # list
         services = self.catalog_api.list_services()
@@ -252,7 +252,7 @@ class CatalogTests(object):
         res = self.catalog_api.update_service(service_id, service_name_update)
         expected_service = new_service.copy()
         expected_service['name'] = service_name_update['name']
-        self.assertDictEqual(expected_service, res)
+        self.assertEqual(expected_service, res)
 
         # delete
         self.catalog_api.delete_service(service_id)
@@ -307,7 +307,7 @@ class CatalogTests(object):
         new_service = unit.new_service_ref()
         service_id = new_service['id']
         res = self.catalog_api.create_service(service_id, new_service)
-        self.assertDictEqual(new_service, res)
+        self.assertEqual(new_service, res)
         self.catalog_api.get_service(service_id)
         updated_service = copy.deepcopy(new_service)
         updated_service['description'] = uuid.uuid4().hex
@@ -491,7 +491,7 @@ class CatalogTests(object):
             expected_endpoint['legacy_endpoint_id'] = None
         if self._enabled_default_to_true_when_creating_endpoint:
             expected_endpoint['enabled'] = True
-        self.assertDictEqual(expected_endpoint, res)
+        self.assertEqual(expected_endpoint, res)
 
     def _create_endpoints(self):
         # Creates a service and 2 endpoints for the service in the same region.

@@ -424,7 +424,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         ec2_cred = self._get_ec2_cred()
         uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
         r = self.get(uri)
-        self.assertDictEqual(ec2_cred, r.result['credential'])
+        self.assertEqual(ec2_cred, r.result['credential'])
         self.assertThat(ec2_cred['links']['self'],
                         matchers.EndsWith(uri))
 

@@ -803,7 +803,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
@@ -889,7 +889,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          project_id=self.tenant_bar['id'],
@@ -926,7 +926,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          domain_id=new_domain['id'],
@@ -980,7 +980,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          domain_id=new_domain['id'],
@@ -1010,7 +1010,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
             domain_id=new_domain['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(user_id=new_user['id'],
                                          domain_id=new_domain['id'],
@@ -1055,11 +1055,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(group1_domain1_role, roles_ref[0])
+        self.assertEqual(group1_domain1_role, roles_ref[0])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(group1_domain2_role, roles_ref[0])
+        self.assertEqual(group1_domain2_role, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=group1['id'],
                                          domain_id=domain2['id'],
@@ -1102,11 +1102,11 @@ class AssignmentTests(AssignmentTestHelperMixin):
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(user1_domain1_role, roles_ref[0])
+        self.assertEqual(user1_domain1_role, roles_ref[0])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(user1_domain2_role, roles_ref[0])
+        self.assertEqual(user1_domain2_role, roles_ref[0])
 
         self.assignment_api.delete_grant(user_id=user1['id'],
                                          domain_id=domain2['id'],
@@ -1161,7 +1161,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
             group_id=group1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(role2, roles_ref[0])
+        self.assertEqual(role2, roles_ref[0])
 
     def test_role_grant_by_user_and_cross_domain_project(self):
         role1 = unit.new_role_ref()
@@ -1203,7 +1203,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(role2, roles_ref[0])
+        self.assertEqual(role2, roles_ref[0])
 
     def test_delete_user_grant_no_user(self):
         # Can delete a grant where the user doesn't exist.

@@ -118,7 +118,7 @@ class AuthTest(unit.TestCase):
             self.assertThat(len(b['access']['token']['audit_ids']),
                             matchers.LessThan(3))
 
-        return self.assertDictEqual(normalize(a), normalize(b))
+        return self.assertEqual(normalize(a), normalize(b))
 
 
 class AuthBadRequests(AuthTest):

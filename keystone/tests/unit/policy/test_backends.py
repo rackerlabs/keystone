@@ -20,14 +20,14 @@ class PolicyTests(object):
     def test_create(self):
         ref = unit.new_policy_ref()
         res = self.policy_api.create_policy(ref['id'], ref)
-        self.assertDictEqual(ref, res)
+        self.assertEqual(ref, res)
 
     def test_get(self):
         ref = unit.new_policy_ref()
         res = self.policy_api.create_policy(ref['id'], ref)
 
         res = self.policy_api.get_policy(ref['id'])
-        self.assertDictEqual(ref, res)
+        self.assertEqual(ref, res)
 
     def test_list(self):
         ref = unit.new_policy_ref()
@@ -35,7 +35,7 @@ class PolicyTests(object):
 
         res = self.policy_api.list_policies()
         res = [x for x in res if x['id'] == ref['id']][0]
-        self.assertDictEqual(ref, res)
+        self.assertEqual(ref, res)
 
     def test_update(self):
         ref = unit.new_policy_ref()
@@ -52,7 +52,7 @@ class PolicyTests(object):
 
         ref['id'] = orig['id']
         res = self.policy_api.update_policy(orig['id'], ref)
-        self.assertDictEqual(ref, res)
+        self.assertEqual(ref, res)
 
     def test_delete(self):
         ref = unit.new_policy_ref()

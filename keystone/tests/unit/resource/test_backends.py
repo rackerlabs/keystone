@@ -34,7 +34,7 @@ class ResourceTests(object):
 
     def test_get_project(self):
         tenant_ref = self.resource_api.get_project(self.tenant_bar['id'])
-        self.assertDictEqual(self.tenant_bar, tenant_ref)
+        self.assertEqual(self.tenant_bar, tenant_ref)
 
     def test_get_project_returns_not_found(self):
         self.assertRaises(exception.ProjectNotFound,
@@ -45,7 +45,7 @@ class ResourceTests(object):
         tenant_ref = self.resource_api.get_project_by_name(
             self.tenant_bar['name'],
             CONF.identity.default_domain_id)
-        self.assertDictEqual(self.tenant_bar, tenant_ref)
+        self.assertEqual(self.tenant_bar, tenant_ref)
 
     @unit.skip_if_no_multiple_domains_support
     def test_get_project_by_name_for_project_acting_as_a_domain(self):
@@ -816,7 +816,7 @@ class ResourceTests(object):
         prjs_hierarchy = self.resource_api.get_projects_in_subtree_as_ids(
             p1['id'])
 
-        self.assertDictEqual(expected_projects, prjs_hierarchy)
+        self.assertEqual(expected_projects, prjs_hierarchy)
 
     def test_list_projects_in_subtree_with_circular_reference(self):
         project1 = unit.new_project_ref(
@@ -955,7 +955,7 @@ class ResourceTests(object):
             domain_id=CONF.identity.default_domain_id)
         original_project = new_project.copy()
         self.resource_api.create_project(new_project['id'], new_project)
-        self.assertDictEqual(original_project, new_project)
+        self.assertEqual(original_project, new_project)
 
     def test_update_project_enable(self):
         project = unit.new_project_ref(
@@ -1191,7 +1191,7 @@ class ResourceTests(object):
         leaf_project['description'] = 'new description'
         self.resource_api.update_project(leaf_project['id'], leaf_project)
         proj_ref = self.resource_api.get_project(leaf_project['id'])
-        self.assertDictEqual(leaf_project, proj_ref)
+        self.assertEqual(leaf_project, proj_ref)
 
         # update the parent_id is not allowed
         leaf_project['parent_id'] = root_project1['id']
@@ -1364,7 +1364,7 @@ class ResourceTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
     def test_project_update_missing_attrs_with_a_falsey_value(self):
         # Creating a project with no description attribute.
@@ -1378,20 +1378,20 @@ class ResourceTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
     def test_domain_crud(self):
         domain = unit.new_domain_ref()
         domain_ref = self.resource_api.create_domain(domain['id'], domain)
-        self.assertDictEqual(domain, domain_ref)
+        self.assertEqual(domain, domain_ref)
         domain_ref = self.resource_api.get_domain(domain['id'])
-        self.assertDictEqual(domain, domain_ref)
+        self.assertEqual(domain, domain_ref)
 
         domain['name'] = uuid.uuid4().hex
         domain_ref = self.resource_api.update_domain(domain['id'], domain)
-        self.assertDictEqual(domain, domain_ref)
+        self.assertEqual(domain, domain_ref)
         domain_ref = self.resource_api.get_domain(domain['id'])
-        self.assertDictEqual(domain, domain_ref)
+        self.assertEqual(domain, domain_ref)
 
         # Ensure an 'enabled' domain cannot be deleted
         self.assertRaises(exception.ForbiddenNotSecurity,
@@ -1426,11 +1426,11 @@ class ResourceTests(object):
         # We can get each domain by name
         lower_case_domain_ref = self.resource_api.get_domain_by_name(
             domain_name)
-        self.assertDictEqual(lower_case_domain, lower_case_domain_ref)
+        self.assertEqual(lower_case_domain, lower_case_domain_ref)
 
         upper_case_domain_ref = self.resource_api.get_domain_by_name(
             domain_name.upper())
-        self.assertDictEqual(upper_case_domain, upper_case_domain_ref)
+        self.assertEqual(upper_case_domain, upper_case_domain_ref)
 
     def test_project_attribute_update(self):
         project = unit.new_project_ref(
@@ -1655,7 +1655,7 @@ class ResourceTests(object):
         self.assertIs(False, updated_project_ref['enabled'])
 
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(updated_project_ref, project_ref)
+        self.assertEqual(updated_project_ref, project_ref)
 
     @test_utils.wip('waiting for fix to bug #1523369')
     def test_delete_project_clears_default_project_id(self):

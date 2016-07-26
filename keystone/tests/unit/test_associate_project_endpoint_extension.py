@@ -856,7 +856,7 @@ class EndpointGroupCRUDTestCase(EndpointFilterTestCase):
         r = self.get(url)
         del r.result['endpoint_group']['id']
         del r.result['endpoint_group']['links']
-        self.assertDictEqual(self.DEFAULT_ENDPOINT_GROUP_BODY, r.result)
+        self.assertEqual(self.DEFAULT_ENDPOINT_GROUP_BODY, r.result)
 
     def test_delete_endpoint_group(self):
         """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}.

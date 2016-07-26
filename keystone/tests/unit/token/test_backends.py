@@ -65,7 +65,7 @@ class TokenTests(object):
         self.assertIsInstance(expires, datetime.datetime)
         data_ref.pop('id')
         data.pop('id')
-        self.assertDictEqual(data, data_ref)
+        self.assertEqual(data, data_ref)
 
         new_data_ref = self.token_provider_api._persistence.get_token(token_id)
         expires = new_data_ref.pop('expires')
@@ -244,7 +244,7 @@ class TokenTests(object):
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
-        self.assertDictEqual(data, data_ref)
+        self.assertEqual(data, data_ref)
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._persistence.get_token,
                           token_id)
@@ -316,7 +316,7 @@ class TokenTests(object):
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
-        self.assertDictEqual(data, data_ref)
+        self.assertEqual(data, data_ref)
 
         token_id = uuid.uuid4().hex
         expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
@@ -327,7 +327,7 @@ class TokenTests(object):
         data_ref = self.token_provider_api._persistence.create_token(token_id,
                                                                      data)
         data_ref.pop('user_id')
-        self.assertDictEqual(data, data_ref)
+        self.assertEqual(data, data_ref)
 
         self.token_provider_api._persistence.flush_expired_tokens()
         tokens = self.token_provider_api._persistence._list_tokens(

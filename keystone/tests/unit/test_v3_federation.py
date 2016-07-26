@@ -3812,8 +3812,8 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         resp = self.get(url)
         get_result = resp.result
 
-        self.assertDictEqual(patch_result['service_provider'],
-                             get_result['service_provider'])
+        self.assertEqual(patch_result['service_provider'],
+                         get_result['service_provider'])
 
     def test_update_service_provider_immutable_parameters(self):
         """Update immutable attributes in service provider.
@@ -4093,7 +4093,7 @@ class K2KServiceCatalogTests(test_v3.RestfulTestCase):
         for entity in service_providers:
             id = entity.get('id')
             ref_entity = self.sp_response(id, ref.get(id))
-            self.assertDictEqual(entity, ref_entity)
+            self.assertEqual(entity, ref_entity)
 
     def test_service_providers_in_token(self):
         """Check if service providers are listed in service catalog."""
