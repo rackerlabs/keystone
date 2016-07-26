@@ -316,7 +316,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
             }
         }
         for rule in mapped_properties['group_names']:
-            self.assertDictEqual(reference.get(rule.get('name')), rule)
+            self.assertEqual(reference.get(rule.get('name')), rule)
 
     def test_rule_engine_whitelist_and_direct_groups_mapping(self):
         """Should return user's groups Developer and Contractor.
@@ -349,7 +349,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
             }
         }
         for rule in mapped_properties['group_names']:
-            self.assertDictEqual(reference.get(rule.get('name')), rule)
+            self.assertEqual(reference.get(rule.get('name')), rule)
 
         self.assertEqual('tbo', mapped_properties['user']['name'])
         self.assertEqual([], mapped_properties['group_ids'])
@@ -378,7 +378,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
             }
         }
         for rule in mapped_properties['group_names']:
-            self.assertDictEqual(reference.get(rule.get('name')), rule)
+            self.assertEqual(reference.get(rule.get('name')), rule)
         self.assertEqual('tbo', mapped_properties['user']['name'])
         self.assertEqual([], mapped_properties['group_ids'])
 
@@ -406,7 +406,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
             }
         }
         for rule in mapped_properties['group_names']:
-            self.assertDictEqual(reference.get(rule.get('name')), rule)
+            self.assertEqual(reference.get(rule.get('name')), rule)
         self.assertEqual('tbo', mapped_properties['user']['name'])
         self.assertEqual([], mapped_properties['group_ids'])
 

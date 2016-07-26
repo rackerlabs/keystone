@@ -150,7 +150,7 @@ class TestValidate(unit.TestCase):
                 'protocol': {'id': protocol, },
             },
         }
-        self.assertDictEqual(exp_user_info, token['user'])
+        self.assertEqual(exp_user_info, token['user'])
 
     def test_validate_v3_token_trust(self):
         # Check the trust fields in the token result when use validate_v3_token
@@ -366,7 +366,7 @@ class TestPayloads(unit.TestCase):
         self.assertEqual(exp_access_token_id, access_token_id)
 
         if exp_federated_info:
-            self.assertDictEqual(exp_federated_info, federated_info)
+            self.assertEqual(exp_federated_info, federated_info)
         else:
             self.assertIsNone(federated_info)
 

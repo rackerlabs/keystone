@@ -64,7 +64,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
 
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
-        self.assertDictEqual(self.DEFAULT_FIXTURE, catalog_ref)
+        self.assertEqual(self.DEFAULT_FIXTURE, catalog_ref)
 
     # NOTE(lbragstad): This test is skipped because the catalog is being
     # modified within the test and not through the API.
@@ -95,7 +95,7 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
                         sorted(observed, key=sort_key)):
             expected_endpoints = e.pop('endpoints')
             observed_endpoints = o.pop('endpoints')
-            self.assertDictEqual(e, o)
+            self.assertEqual(e, o)
             self.assertItemsEqual(expected_endpoints, observed_endpoints)
 
     def test_get_v3_catalog(self):

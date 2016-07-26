@@ -404,7 +404,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertEqual(self.user_foo, user_ref)
 
         driver = self.identity_api._select_identity_driver(
             user_ref['domain_id'])
@@ -467,7 +467,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
@@ -504,7 +504,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
         self.assertNotEmpty(roles_ref)
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          project_id=self.tenant_bar['id'],
@@ -544,7 +544,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
-        self.assertDictEqual(self.role_member, roles_ref[0])
+        self.assertEqual(self.role_member, roles_ref[0])
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          domain_id=new_domain['id'],
@@ -853,14 +853,14 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.assertIn("create_group for the LDAP identity backend", args[1])
 
         group_ref = self.identity_api.get_group(group['id'])
-        self.assertDictEqual(group, group_ref)
+        self.assertEqual(group, group_ref)
         group['description'] = uuid.uuid4().hex
         self.identity_api.update_group(group['id'], group)
         args, _kwargs = mock_deprecator.call_args
         self.assertIn("update_group for the LDAP identity backend", args[1])
 
         group_ref = self.identity_api.get_group(group['id'])
-        self.assertDictEqual(group, group_ref)
+        self.assertEqual(group, group_ref)
 
         self.identity_api.delete_group(group['id'])
         args, _kwargs = mock_deprecator.call_args
@@ -1586,7 +1586,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         mapping = self.identity_api.driver.user._parse_extra_attrs(option_list)
         expected_dict = {'description': 'name', 'gecos': 'password',
                          'fake': 'invalid', 'invalid2': ''}
-        self.assertDictEqual(expected_dict, mapping)
+        self.assertEqual(expected_dict, mapping)
 
     def test_create_domain(self):
         domain = unit.new_domain_ref()
@@ -1626,12 +1626,12 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
 
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
         project['description'] = uuid.uuid4().hex
         self.resource_api.update_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
         self.resource_api.delete_project(project['id'])
         self.assertRaises(exception.ProjectNotFound,
@@ -1996,12 +1996,12 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         # key with a value of True when LDAPIdentityEnabledEmulation
         # is used so we now add this expected key to the project dictionary
         project['enabled'] = True
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
         project['description'] = uuid.uuid4().hex
         self.resource_api.update_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
         self.resource_api.delete_project(project['id'])
         self.assertRaises(exception.ProjectNotFound,
@@ -2405,7 +2405,7 @@ class BaseMultiLDAPandSQLIdentity(object):
                 ref, domain_id, driver, map.EntityType.USER)
             user = user.copy()
             del user['password']
-            self.assertDictEqual(user, ref)
+            self.assertEqual(user, ref)
         else:
             # TODO(henry-nash): Use AssertRaises here, although
             # there appears to be an issue with using driver.get_user
@@ -2722,7 +2722,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         self.resource_api.create_domain(domain['id'], domain)
         project = self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, project_ref)
+        self.assertEqual(project, project_ref)
 
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=project['id'],

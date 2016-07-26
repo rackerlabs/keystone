@@ -505,11 +505,11 @@ class SqlIdentity(SqlTests,
         project = unit.new_project_ref(domain_id=None, is_domain=True)
         project = self.resource_api.create_project(project['id'], project)
         ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, ref)
+        self.assertEqual(project, ref)
 
         # Can we get it by name?
         ref = self.resource_api.get_project_by_name(project['name'], None)
-        self.assertDictEqual(project, ref)
+        self.assertEqual(project, ref)
 
         # Can we filter for them - create a second domain to ensure we are
         # testing the receipt of more than one.
@@ -526,7 +526,7 @@ class SqlIdentity(SqlTests,
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project['id'], project)
         ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project, ref)
+        self.assertEqual(project, ref)
 
         # Finally, make sure we can delete it
         project['enabled'] = False

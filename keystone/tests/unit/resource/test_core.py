@@ -595,12 +595,12 @@ class DomainConfigTests(object):
         # delete, bypassing domain config manager api
         self.domain_config_api.delete_config_options(self.domain['id'])
 
-        self.assertDictEqual(
+        self.assertEqual(
             res, self.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id']))
         self.domain_config_api.get_config_with_sensitive_info.invalidate(
             self.domain_config_api, self.domain['id'])
-        self.assertDictEqual(
+        self.assertEqual(
             {},
             self.domain_config_api.get_config_with_sensitive_info(
                 self.domain['id']))
@@ -627,7 +627,7 @@ class DomainConfigTests(object):
 
         # The get_config_with_sensitive_info does not throw an exception if
         # the config is empty, it just returns an empty dict
-        self.assertDictEqual(
+        self.assertEqual(
             {},
             self.domain_config_api.get_config_with_sensitive_info(
                 domain['id']))

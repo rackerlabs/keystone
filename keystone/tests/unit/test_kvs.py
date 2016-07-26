@@ -494,14 +494,14 @@ class KVSTest(unit.TestCase):
         kvs_driver = kvs._region.backend.driver
 
         # Ensure the set_arguments are correct
-        self.assertDictEqual(
+        self.assertEqual(
             expected_set_args,
             kvs._region.backend._get_set_arguments_driver_attr())
 
         # Set a key that would have an expiry and verify the correct result
         # occurred and that the correct set_arguments were passed.
         kvs.set(self.key_foo, self.value_foo)
-        self.assertDictEqual(
+        self.assertEqual(
             expected_set_args,
             kvs._region.backend.driver.client.set_arguments_passed)
         observed_foo_keys = list(kvs_driver.client.keys_values.keys())
@@ -513,7 +513,7 @@ class KVSTest(unit.TestCase):
         # Set a key that would not have an expiry and verify the correct result
         # occurred and that the correct set_arguments were passed.
         kvs.set(self.key_bar, self.value_bar)
-        self.assertDictEqual(
+        self.assertEqual(
             expected_no_expiry_args,
             kvs._region.backend.driver.client.set_arguments_passed)
         observed_bar_keys = list(kvs_driver.client.keys_values.keys())
@@ -525,7 +525,7 @@ class KVSTest(unit.TestCase):
         # set_multi a dict that would have an expiry and verify the correct
         # result occurred and that the correct set_arguments were passed.
         kvs.set_multi(mapping_foo)
-        self.assertDictEqual(
+        self.assertEqual(
             expected_set_args,
             kvs._region.backend.driver.client.set_arguments_passed)
         observed_foo_keys = list(kvs_driver.client.keys_values.keys())
@@ -537,7 +537,7 @@ class KVSTest(unit.TestCase):
         # set_multi a dict that would not have an expiry and verify the correct
         # result occurred and that the correct set_arguments were passed.
         kvs.set_multi(mapping_bar)
-        self.assertDictEqual(
+        self.assertEqual(
             expected_no_expiry_args,
             kvs._region.backend.driver.client.set_arguments_passed)
         observed_bar_keys = list(kvs_driver.client.keys_values.keys())

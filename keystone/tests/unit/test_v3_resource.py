@@ -364,16 +364,16 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
         # ...and that all self.domain entities are still here
         r = self.resource_api.get_domain(self.domain['id'])
-        self.assertDictEqual(self.domain, r)
+        self.assertEqual(self.domain, r)
         r = self.resource_api.get_project(self.project['id'])
-        self.assertDictEqual(self.project, r)
+        self.assertEqual(self.project, r)
         r = self.identity_api.get_group(group['id'])
-        self.assertDictEqual(group, r)
+        self.assertEqual(group, r)
         r = self.identity_api.get_user(self.user['id'])
         self.user.pop('password')
-        self.assertDictEqual(self.user, r)
+        self.assertEqual(self.user, r)
         r = self.credential_api.get_credential(credential['id'])
-        self.assertDictEqual(credential, r)
+        self.assertEqual(credential, r)
 
     def test_delete_domain_deletes_is_domain_project(self):
         """Check the project that acts as a domain is deleted.
@@ -812,7 +812,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 projects[0]['project']['id']: {is_domain_project_id: None}
             }
         }
-        self.assertDictEqual(expected_dict, parents_as_ids)
+        self.assertEqual(expected_dict, parents_as_ids)
 
         # Query for projects[0] parents_as_ids
         r = self.get(
@@ -826,7 +826,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         expected_dict = {
             is_domain_project_id: None
         }
-        self.assertDictEqual(expected_dict, parents_as_ids)
+        self.assertEqual(expected_dict, parents_as_ids)
 
         # Query for is_domain_project parents_as_ids
         r = self.get(
@@ -1033,7 +1033,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             },
             projects[3]['project']['id']: None
         }
-        self.assertDictEqual(expected_dict, subtree_as_ids)
+        self.assertEqual(expected_dict, subtree_as_ids)
 
         # Now query for projects[1] subtree_as_ids
         r = self.get(
@@ -1052,7 +1052,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             projects[2]['project']['id']: None,
             projects[4]['project']['id']: None
         }
-        self.assertDictEqual(expected_dict, subtree_as_ids)
+        self.assertEqual(expected_dict, subtree_as_ids)
 
         # Now query for projects[3] subtree_as_ids
         r = self.get(
@@ -1272,7 +1272,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
         # First check the credential for this project is present
         r = self.credential_api.get_credential(credential['id'])
-        self.assertDictEqual(credential, r)
+        self.assertEqual(credential, r)
         # Create a second credential with a different project
         project2 = unit.new_project_ref(domain_id=self.domain['id'])
         self.resource_api.create_project(project2['id'], project2)
@@ -1292,7 +1292,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                           credential_id=credential['id'])
         # But the credential for project2 is unaffected
         r = self.credential_api.get_credential(credential2['id'])
-        self.assertDictEqual(credential2, r)
+        self.assertEqual(credential2, r)
 
     def test_delete_not_leaf_project(self):
         """Call ``DELETE /projects/{project_id}``."""
@@ -1340,11 +1340,11 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
 
         updated_ref = controller.V2Controller.filter_domain_id(ref)
         self.assertIs(ref, updated_ref)
-        self.assertDictEqual(expected_ref, ref)
+        self.assertEqual(expected_ref, ref)
         # Make sure we don't error/muck up data if domain_id isn't present
         updated_ref = controller.V2Controller.filter_domain_id(ref_no_domain)
         self.assertIs(ref_no_domain, updated_ref)
-        self.assertDictEqual(expected_ref, ref_no_domain)
+        self.assertEqual(expected_ref, ref_no_domain)
 
     def test_v3controller_filter_domain_id(self):
         # No data should be filtered out in this case.
@@ -1356,7 +1356,7 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         expected_ref = ref.copy()
         updated_ref = controller.V3Controller.filter_domain_id(ref)
         self.assertIs(ref, updated_ref)
-        self.assertDictEqual(expected_ref, ref)
+        self.assertEqual(expected_ref, ref)
 
     def test_v2controller_filter_domain(self):
         other_data = uuid.uuid4().hex
@@ -1383,12 +1383,12 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
 
         updated_ref = controller.V2Controller.filter_project_parent_id(ref)
         self.assertIs(ref, updated_ref)
-        self.assertDictEqual(expected_ref, ref)
+        self.assertEqual(expected_ref, ref)
         # Make sure we don't error/muck up data if parent_id isn't present
         updated_ref = controller.V2Controller.filter_project_parent_id(
             ref_no_parent)
         self.assertIs(ref_no_parent, updated_ref)
-        self.assertDictEqual(expected_ref, ref_no_parent)
+        self.assertEqual(expected_ref, ref_no_parent)
 
     def test_v3_to_v2_project_method(self):
         self._setup_initial_projects()
@@ -1406,15 +1406,15 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
         updated_project1 = controller.V2Controller.v3_to_v2_project(
             self.project1)
         self.assertIs(self.project1, updated_project1)
-        self.assertDictEqual(self.expected_project, self.project1)
+        self.assertEqual(self.expected_project, self.project1)
         updated_project2 = controller.V2Controller.v3_to_v2_project(
             self.project2)
         self.assertIs(self.project2, updated_project2)
-        self.assertDictEqual(self.expected_project, self.project2)
+        self.assertEqual(self.expected_project, self.project2)
         updated_project3 = controller.V2Controller.v3_to_v2_project(
             self.project3)
         self.assertIs(self.project3, updated_project3)
-        self.assertDictEqual(self.expected_project, self.project2)
+        self.assertEqual(self.expected_project, self.project2)
 
     def test_v3_to_v2_project_method_list(self):
         self._setup_initial_projects()
@@ -1434,6 +1434,6 @@ class ResourceV3toV2MethodsTestCase(unit.TestCase):
             # Order should not change.
             self.assertIs(ref, project_list[i])
 
-        self.assertDictEqual(self.expected_project, self.project1)
-        self.assertDictEqual(self.expected_project, self.project2)
-        self.assertDictEqual(self.expected_project, self.project3)
+        self.assertEqual(self.expected_project, self.project1)
+        self.assertEqual(self.expected_project, self.project2)
+        self.assertEqual(self.expected_project, self.project3)

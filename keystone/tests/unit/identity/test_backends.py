@@ -68,7 +68,7 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertDictEqual(self.user_sna, user_ref)
+        self.assertEqual(self.user_sna, user_ref)
 
     def test_authenticate_and_get_roles_no_metadata(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
@@ -119,7 +119,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertEqual(self.user_foo, user_ref)
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user(self):
@@ -134,7 +134,7 @@ class IdentityTests(object):
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
 
-        self.assertDictEqual(ref, self.identity_api.get_user(ref['id']))
+        self.assertEqual(ref, self.identity_api.get_user(ref['id']))
         self.identity_api.get_user.invalidate(self.identity_api, ref['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user, ref['id'])
@@ -165,7 +165,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(self.user_foo, user_ref)
+        self.assertEqual(self.user_foo, user_ref)
 
     @unit.skip_if_cache_disabled('identity')
     def test_cache_layer_get_user_by_name(self):
@@ -178,7 +178,7 @@ class IdentityTests(object):
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
 
-        self.assertDictEqual(ref, self.identity_api.get_user_by_name(
+        self.assertEqual(ref, self.identity_api.get_user_by_name(
             user['name'], CONF.identity.default_domain_id))
         self.identity_api.get_user_by_name.invalidate(
             self.identity_api, user['name'], CONF.identity.default_domain_id)
@@ -503,7 +503,7 @@ class IdentityTests(object):
         new_user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         original_user = new_user.copy()
         self.identity_api.create_user(new_user)
-        self.assertDictEqual(original_user, new_user)
+        self.assertEqual(original_user, new_user)
 
     def test_update_user_enable(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
@@ -563,7 +563,7 @@ class IdentityTests(object):
         #                SqlIdentity.test_update_project_returns_extra
         updated_user.pop('extra', None)
 
-        self.assertDictEqual(user_ref, updated_user)
+        self.assertEqual(user_ref, updated_user)
 
         user_ref = self.identity_api.get_user(user_ref['id'])
         self.assertEqual(changed_name, user_ref['name'])
@@ -831,7 +831,7 @@ class IdentityTests(object):
 
         group_ref = self.identity_api.get_group_by_name(
             group_name, CONF.identity.default_domain_id)
-        self.assertDictEqual(group, group_ref)
+        self.assertEqual(group, group_ref)
 
     def test_get_group_by_name_returns_not_found(self):
         self.assertRaises(exception.GroupNotFound,
@@ -1003,7 +1003,7 @@ class IdentityTests(object):
         self.assertIs(False, updated_user_ref['enabled'])
 
         user_ref = self.identity_api.get_user(user['id'])
-        self.assertDictEqual(updated_user_ref, user_ref)
+        self.assertEqual(updated_user_ref, user_ref)
 
     @unit.skip_if_no_multiple_domains_support
     def test_list_domains_filtered_and_limited(self):

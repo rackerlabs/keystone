@@ -2162,8 +2162,8 @@ class TokenAPITests(object):
         resp = self.get('/auth/tokens', headers=headers)
         token_data = resp.result
 
-        self.assertDictEqual(v2_token_data['access']['token']['bind'],
-                             token_data['token']['bind'])
+        self.assertEqual(v2_token_data['access']['token']['bind'],
+                         token_data['token']['bind'])
 
 
 class TokenDataTests(object):
@@ -2365,7 +2365,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests, TokenDataTests):
         headers = {'X-Subject-Token': hash_token_id}
         resp = self.get('/auth/tokens', headers=headers)
         expected_token_data = resp.result
-        self.assertDictEqual(expected_token_data, token_data)
+        self.assertEqual(expected_token_data, token_data)
 
     def test_v3_v2_hashed_pki_token_intermix(self):
         auth_data = self.build_authentication_request(
