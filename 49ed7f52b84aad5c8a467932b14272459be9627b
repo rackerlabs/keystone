@@ -95,6 +95,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_4dbc3b06",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-26T10:32:12Z",
+      "side": 1,
+      "message": "key files need to be loaded to memory. Each file \u003d read from disk. Which might be slow.\n\n(i wonder how well os caching works here though)",
+      "parentUuid": "dada55a8_e2f8034c",
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e22be392",
         "filename": "doc/source/performance.rst",
         "patchSetId": 1
@@ -134,6 +152,76 @@
         "startChar": 4,
         "endLine": 74,
         "endChar": 9
+      },
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_6d693ff9",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-26T10:32:12Z",
+      "side": 1,
+      "message": "https://review.openstack.org/347234",
+      "parentUuid": "dada55a8_a208cb2e",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 9
+      },
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0dfa4375",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-26T10:32:12Z",
+      "side": 1,
+      "message": "auth_token middleware",
+      "range": {
+        "startLine": 74,
+        "startChar": 18,
+        "endLine": 74,
+        "endChar": 26
+      },
+      "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ad6fb7fa",
+        "filename": "doc/source/performance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-26T10:32:12Z",
+      "side": 1,
+      "message": "auth_token middleware",
+      "range": {
+        "startLine": 75,
+        "startChar": 7,
+        "endLine": 75,
+        "endChar": 15
       },
       "revId": "49ed7f52b84aad5c8a467932b14272459be9627b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
