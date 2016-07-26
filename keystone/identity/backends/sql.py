@@ -75,6 +75,9 @@ class Identity(base.IdentityDriverV8):
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            query = query.options(
+                sqlalchemy.orm.joinedload(model.User.local_user)
+                .joinedload(model.LocalUser.passwords))
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
