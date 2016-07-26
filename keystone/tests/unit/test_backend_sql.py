@@ -602,6 +602,32 @@ class SqlIdentity(SqlTests,
         _exercise_project_api(uuid.uuid4().hex)
         _exercise_project_api(resource.NULL_DOMAIN_ID)
 
+    def test_list_users_call_count(self):
+        """There should not be O(N) queries."""
+        # create 15 users. 15 is just a random number
+        for i in range(15):
+            user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+            self.identity_api.create_user(user)
+
+        # sqlalchemy emits various events and allows to listen to them. Here
+        # bound method `query_counter` will be called each time when a query
+        # is compiled
+        class CallCounter(object):
+            def __init__(self):
+                self.calls = 0
+
+            def query_counter(self, query):
+                self.calls += 1
+
+        counter = CallCounter()
+        sqlalchemy.event.listen(sqlalchemy.orm.query.Query, 'before_compile',
+                                counter.query_counter)
+
+        self.identity_api.list_users()
+        # ensure that we have less than 15 calls. It would mean that there is
+        # no linear complexity
+        self.assertThat(counter.calls, matchers.LessThan(15))
+
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
     pass
