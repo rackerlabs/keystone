@@ -34,6 +34,24 @@
       "revId": "397007683aa0390a766772d8aa59ff4a7c15fa4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_38701972",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1242,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-26T14:09:20Z",
+      "side": 1,
+      "message": "The intent of change password is for it to be self service, the API requires the original password, which an admin should not know. You can also see this in the unit test name UserSelfServiceChangingPasswordsTestCase:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_identity.py#L720\n\nSo I think we can rely on change password being self service and this should work.",
+      "parentUuid": "dada55a8_318e8b79",
+      "revId": "397007683aa0390a766772d8aa59ff4a7c15fa4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
