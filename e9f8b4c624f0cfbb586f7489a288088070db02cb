@@ -22,6 +22,30 @@
       "revId": "e9f8b4c624f0cfbb586f7489a288088070db02cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d803a70e",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-26T23:30:19Z",
+      "side": 1,
+      "message": "This can\u0027t become configurable unless this also is:\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/plugins/totp.py#L64\nAs that\u0027s the passcode generation function I am using.\n\n6 digits with totp appears to be the commonly accepted default.",
+      "parentUuid": "dada55a8_2dcc4c88",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 51
+      },
+      "revId": "e9f8b4c624f0cfbb586f7489a288088070db02cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
