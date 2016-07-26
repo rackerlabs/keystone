@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_318e8b79",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1242,
+      "author": {
+        "id": 17862
+      },
+      "writtenOn": "2016-07-26T08:46:23Z",
+      "side": 1,
+      "message": "Policy file controls who can \u0027change password\u0027 for users.\nAnd it is not just \u0027admin or owner\u0027. You can set any rule you want.\nThis is not going to work.\nYou have to find way to get rid of \"self_service\" flag and compare current user id and id of user in request.",
+      "revId": "397007683aa0390a766772d8aa59ff4a7c15fa4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
