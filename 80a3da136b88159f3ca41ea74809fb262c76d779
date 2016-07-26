@@ -266,6 +266,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_d7d263d0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1237,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-26T16:58:09Z",
+      "side": 1,
+      "message": "True, but admins shouldn\u0027t know a user\u0027s original password; thus, this is intended for self service password changes. Admins would perform an administrative password reset if needed.",
+      "parentUuid": "dada55a8_5c288133",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e85c3d7f",
         "filename": "keystone/tests/unit/identity/backends/test_base.py",
         "patchSetId": 15
