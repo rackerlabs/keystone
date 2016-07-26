@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_5227a111",
+        "filename": "keystone/api/views/v3/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-26T17:20:54Z",
+      "side": 1,
+      "message": "Actually I wonder if we could abstract this out into another base class and share it between the v2 views and the v3 views.",
+      "parentUuid": "dada55a8_90cae89f",
+      "revId": "9bc4715591fdac6d9cef1c023e8e8525dcb6aa34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_2a08e9d8",
         "filename": "keystone/api/views/v3/base.py",
         "patchSetId": 6
