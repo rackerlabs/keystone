@@ -22,6 +22,30 @@
       "revId": "c5c2771132eaa89da2027404e2605d8ef64e3ae8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_f20a151f",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-26T17:03:02Z",
+      "side": 1,
+      "message": "Just so we are clear, there isn\u0027t a self_service param in the API call. Only the driver interface has changed; not the API. That being said, I\u0027ve added a couple of new tests to the API (test_v3_identity):\n* test_admin_password_reset_with_min_password_age_enabled\n* test_changing_password_with_min_password_age\n\nself_service would be False for admin password reset and True for self service password changes.",
+      "parentUuid": "dada55a8_9cae792c",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 239,
+        "endChar": 40
+      },
+      "revId": "c5c2771132eaa89da2027404e2605d8ef64e3ae8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
