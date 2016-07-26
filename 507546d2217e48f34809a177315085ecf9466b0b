@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_d89bbdc7",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-26T14:09:29Z",
+      "side": 1,
+      "message": "Will add next patchset.",
+      "parentUuid": "dada55a8_1b6a8681",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 28
+      },
+      "revId": "507546d2217e48f34809a177315085ecf9466b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_3bd66a4f",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2016-07-26T08:12:24Z",
       "side": 1,
       "message": "This is a new property which is landed in Mitaka for V3 API, let\u0027s not mention for V2 tenant creation.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 6
+      },
+      "revId": "507546d2217e48f34809a177315085ecf9466b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_788a9165",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-26T14:09:29Z",
+      "side": 1,
+      "message": "This property is currently validated in the v2 controller.  Should I remove the check?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L95-L98",
+      "parentUuid": "dada55a8_3bd66a4f",
       "range": {
         "startLine": 84,
         "startChar": 0,
@@ -105,6 +153,30 @@
       "writtenOn": "2016-07-26T08:12:24Z",
       "side": 1,
       "message": "Don\u0027t mention V3 property in V2.",
+      "range": {
+        "startLine": 2192,
+        "startChar": 12,
+        "endLine": 2192,
+        "endChar": 30
+      },
+      "revId": "507546d2217e48f34809a177315085ecf9466b0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9852e5dc",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2192,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-26T14:09:29Z",
+      "side": 1,
+      "message": "See other comment regarding checking \u0027is_domain\u0027.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L95-L98",
+      "parentUuid": "dada55a8_9b9cb60f",
       "range": {
         "startLine": 2192,
         "startChar": 12,
