@@ -248,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_5c288133",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1237,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-26T02:59:57Z",
+      "side": 1,
+      "message": "It\u0027s could be admin or owner, check the policy here.\n\"identity:change_password\": \"rule:admin_or_owner\", but I agree the owner is more appropriate than admin here.",
+      "parentUuid": "dada55a8_5c1edd63",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e85c3d7f",
         "filename": "keystone/tests/unit/identity/backends/test_base.py",
         "patchSetId": 15
