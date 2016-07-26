@@ -635,6 +635,26 @@ class SqlIdentity(SqlTests, identity_tests.IdentityTests,
         _exercise_project_api(uuid.uuid4().hex)
         _exercise_project_api(resource.NULL_DOMAIN_ID)
 
+    def test_list_users_call_count(self):
+        """There should not be O(N) queries"""
+        for i in range(15):
+            user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+            self.identity_api.create_user(user)
+
+        class CallCounter(object):
+            def __init__(self):
+                self.calls = 0
+
+            def query_counter(self, query):
+                self.calls += 1
+
+        counter = CallCounter()
+        sqlalchemy.event.listen(sqlalchemy.orm.query.Query, 'before_compile',
+                                counter.query_counter)
+
+        self.identity_api.list_users()
+        self.assertThat(counter.calls, matchers.LessThan(10))
+
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
     pass
