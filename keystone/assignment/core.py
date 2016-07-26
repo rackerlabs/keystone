@@ -15,6 +15,7 @@
 """Main entry point into the Assignment service."""
 
 import copy
+import functools
 
 from oslo_cache import core as oslo_cache
 from oslo_log import log
@@ -1159,6 +1160,16 @@ class RoleManager(manager.Manager):
         elif not isinstance(self.driver, role_base.RoleDriverV9):
             raise exception.UnsupportedDriverVersion(driver=role_driver)
 
+    def _append_null_domain_id(f):
+        @functools.wraps(f)
+        def wrapper(self, *args, **kwargs):
+            ref = f(self, *args, **kwargs)
+            if 'domain_id' not in ref:
+                ref['domain_id'] = None
+            return ref
+        return wrapper
+
+    @_append_null_domain_id
     @MEMOIZE
     def get_role(self, role_id):
         return self.driver.get_role(role_id)
