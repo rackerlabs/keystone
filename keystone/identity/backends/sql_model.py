@@ -174,7 +174,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
     passwords = orm.relationship('Password',
                                  single_parent=True,
                                  cascade='all,delete-orphan',
-                                 lazy='subquery',
+                                 lazy='joined',
                                  backref='local_user',
                                  order_by='Password.created_at')
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
