@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_9cae792c",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-26T02:58:25Z",
+      "side": 1,
+      "message": "Ah, this is not what I meant, sorry for my bad description. What I meant for what you did in patchset15 is as an end-user who might be a admin or owner.\n\n1. call rest API update user, self-service is default to False, so that there is no check for this feature at all.\n2. call rest API update user\u0027s password, self-service is default ot True, the feature to minimum password age is enabled by default.\n\nI think there should be testcases to show this difference since all your testcases in patchset15 is about password updating.",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 239,
+        "endChar": 40
+      },
+      "revId": "c5c2771132eaa89da2027404e2605d8ef64e3ae8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
