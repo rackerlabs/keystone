@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_e2d54ce5",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-26T03:40:36Z",
+      "side": 1,
+      "message": "service_id is definitely not needed for the create call",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 37
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_6fae7399",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 3
@@ -19,6 +42,70 @@
         "endLine": 47,
         "endChar": 26
       },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_22880471",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-26T03:40:36Z",
+      "side": 1,
+      "message": "where are these previous tests you speak of?",
+      "parentUuid": "dada55a8_6fae7399",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_220ac48a",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-26T03:40:36Z",
+      "side": 1,
+      "message": "probably want to remove this one, we generally don\u0027t allow user defined IDs for things",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 35
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_62115c04",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-26T03:40:36Z",
+      "side": 1,
+      "message": "unnecessary change",
       "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
