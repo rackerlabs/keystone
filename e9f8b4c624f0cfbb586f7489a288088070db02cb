@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_2dcc4c88",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-26T17:35:33Z",
+      "side": 1,
+      "message": "Should this be configurable?",
+      "range": {
+        "startLine": 65,
+        "startChar": 49,
+        "endLine": 65,
+        "endChar": 51
+      },
+      "revId": "e9f8b4c624f0cfbb586f7489a288088070db02cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
