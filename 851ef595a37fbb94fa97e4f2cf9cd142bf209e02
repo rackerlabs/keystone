@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_1793fea4",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T15:15:02Z",
+      "side": 1,
+      "message": "missing token to revoke here",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 138,
+        "endChar": 26
+      },
+      "revId": "851ef595a37fbb94fa97e4f2cf9cd142bf209e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_771a3a19",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T15:15:02Z",
+      "side": 1,
+      "message": "this sounds like we\u0027re encouraging someone to possibly develop this feature. can we be a bit more firm with our language and state that we do not intend to implement offline validation for uuid and possibly fernet",
+      "range": {
+        "startLine": 162,
+        "startChar": 17,
+        "endLine": 162,
+        "endChar": 24
+      },
+      "revId": "851ef595a37fbb94fa97e4f2cf9cd142bf209e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
