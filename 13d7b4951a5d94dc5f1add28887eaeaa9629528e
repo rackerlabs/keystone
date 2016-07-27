@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_1cda0579",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T14:57:21Z",
+      "side": 1,
+      "message": "this isn\u0027t the first time we\u0027ve changed this value: https://review.openstack.org/#/c/327817/\n\nsee docs: http://docs.sqlalchemy.org/en/latest/orm/relationship_api.html#sqlalchemy.orm.relationship.params.lazy",
+      "range": {
+        "startLine": 177,
+        "startChar": 33,
+        "endLine": 177,
+        "endChar": 47
+      },
+      "revId": "13d7b4951a5d94dc5f1add28887eaeaa9629528e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
