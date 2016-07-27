@@ -620,7 +620,7 @@ class SqlIdentity(SqlTests,
                                 counter.query_counter)
 
         self.identity_api.list_users()
-        self.assertThat(counter.calls, matchers.LessThan(10))
+        self.assertEqual(1, counter.calls)
 
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
