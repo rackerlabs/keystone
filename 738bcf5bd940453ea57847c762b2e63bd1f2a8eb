@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_04c1f9e4",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-27T22:42:24Z",
+      "side": 1,
+      "message": "Maybe this should have a more descriptive name, like \u0027_service_properties_type\u0027 or \u0027_string_type\u0027? Other schemas have \u0027type\u0027 parameters that don\u0027t match this",
+      "revId": "738bcf5bd940453ea57847c762b2e63bd1f2a8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
