@@ -34,16 +34,16 @@ class User(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
     local_user = orm.relationship('LocalUser', uselist=False,
-                                  single_parent=True, lazy='subquery',
+                                  single_parent=True, lazy='joined',
                                   cascade='all,delete-orphan', backref='user')
     federated_users = orm.relationship('FederatedUser',
                                        single_parent=True,
-                                       lazy='subquery',
+                                       lazy='joined',
                                        cascade='all,delete-orphan',
                                        backref='user')
     nonlocal_users = orm.relationship('NonLocalUser',
                                       single_parent=True,
-                                      lazy='subquery',
+                                      lazy='joined',
                                       cascade='all,delete-orphan',
                                       backref='user')
     created_at = sql.Column(sql.DateTime, nullable=True)
@@ -174,7 +174,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
     passwords = orm.relationship('Password',
                                  single_parent=True,
                                  cascade='all,delete-orphan',
-                                 lazy='subquery',
+                                 lazy='joined',
                                  backref='local_user',
                                  order_by='Password.created_at')
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
