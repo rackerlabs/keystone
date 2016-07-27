@@ -52,6 +52,24 @@
       "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8465e9e2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-27T22:12:58Z",
+      "side": 1,
+      "message": "Thanks for your help on this.  As a workaround, I log the error and removed the user_id parameter from the exception.",
+      "parentUuid": "bacf61ea_23819a4b",
+      "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
