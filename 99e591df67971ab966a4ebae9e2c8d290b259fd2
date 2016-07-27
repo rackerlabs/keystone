@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_deb25348",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-27T12:28:15Z",
+      "side": 1,
+      "message": "can you add a comment explaining what is the reasoning behind this? Something in the lines of the commit message :)",
+      "revId": "99e591df67971ab966a4ebae9e2c8d290b259fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
