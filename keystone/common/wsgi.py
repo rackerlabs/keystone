@@ -229,7 +229,9 @@ class Application(BaseApplication):
             LOG.warning(
                 _LW("Authorization failed. %(exception)s from "
                     "%(remote_addr)s"),
-                {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
+                {'exception': unicode(e),
+                 'remote_addr': req.environ['REMOTE_ADDR']}
+            )
             return render_exception(e,
                                     context=req.context_dict,
                                     user_locale=best_match_language(req))
