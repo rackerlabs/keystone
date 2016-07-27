@@ -34,6 +34,24 @@
       "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_23819a4b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T19:52:51Z",
+      "side": 1,
+      "message": "Looks like we can actually fix this by doing something like - http://cdn.pasteraw.com/bxtpgziuj7cbq4gqickwu9el2ymiouw\n\nReference our debug session in #openstack-keystone if more context is needed :) \n\nhttp://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2016-07-27.log.html#t2016-07-27T14:49:24",
+      "parentUuid": "bacf61ea_9d3b8f9c",
+      "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
