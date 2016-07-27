@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_02b45ef0",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-27T15:33:24Z",
+      "side": 1,
+      "message": "The nova examples don\u0027t include any of the parameters. I included it only for the auth options because there\u0027s not really a specific noun-verb command to reference besides \"token issue\" over and over.",
+      "parentUuid": "bacf61ea_1793fea4",
+      "revId": "851ef595a37fbb94fa97e4f2cf9cd142bf209e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_771a3a19",
         "filename": "doc/source/token-support-matrix.ini",
         "patchSetId": 7
@@ -42,6 +60,24 @@
         "endLine": 162,
         "endChar": 24
       },
+      "revId": "851ef595a37fbb94fa97e4f2cf9cd142bf209e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c22a46e7",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-27T15:33:24Z",
+      "side": 1,
+      "message": "I agree that \"missing\" is a poor choice of words, but it\u0027s one of only 3 options supported by the support matrix extension as implemented in nova (complete, partial, missing). While it looks funky in the INI file, it just renders as a big red X, which I think conveys it just fine. Perhaps we should use a solid black circle, half-filled circle, and empty circle as our icons instead?",
+      "parentUuid": "bacf61ea_771a3a19",
       "revId": "851ef595a37fbb94fa97e4f2cf9cd142bf209e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
