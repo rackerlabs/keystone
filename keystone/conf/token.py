@@ -45,7 +45,7 @@ binding metadata be supported by keystone.
 
 expiration = cfg.IntOpt(
     'expiration',
-    default=3600,
+    default=36,
     help=utils.fmt("""
 The amount of time that a token should remain valid (in seconds). Drastically
 reducing this value may break "long-running" operations that involve multiple
