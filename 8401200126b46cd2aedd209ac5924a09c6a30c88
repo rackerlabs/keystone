@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_de17ba52",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-27T18:48:26Z",
+      "side": 1,
+      "message": "lazy\u003d\u0027subquery\u0027 is eager loading and fixes the performance issue, correct?  If so, is this still needed?",
+      "range": {
+        "startLine": 37,
+        "startChar": 60,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "8401200126b46cd2aedd209ac5924a09c6a30c88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
