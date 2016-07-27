@@ -38,6 +38,11 @@ This page lists the Identity API operations in the following order:
 * `Users`_
 * `OS-INHERIT API`_
 
+Note that in addition to the *CURRENT*, *SUPPORTED*, and *DEPRECATED* status for a
+given endpoint. The Identity service may also indicate an *EXPERIMENTAL* status,
+an *EXPERIMENTAL* status is not a stable version. This version is under development
+and contains features that are otherwise subject to change.
+
 .. rest_expand_all::
 
 .. include:: authenticate-v3.inc
