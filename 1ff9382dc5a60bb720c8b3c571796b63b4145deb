@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_62ef1ab1",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-27T15:35:16Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "dada55a8_e2d54ce5",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 37
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_6fae7399",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 3
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_c2036675",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-27T15:35:16Z",
+      "side": 1,
+      "message": "keystone.tests.unit.common.test_notifications.V2Notifications.test_service_and_endpoint\n\nkeystone.tests.unit.test_v2.RevokeApiTestCase.test_service_crud_requires_auth\n\nkeystone.tests.unit.test_v2.V2TestCase.test_service_crud_requires_auth\n\nThose fail when description and id is made required.",
+      "parentUuid": "dada55a8_22880471",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_220ac48a",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 3
@@ -83,6 +131,30 @@
       "writtenOn": "2016-07-26T03:40:36Z",
       "side": 1,
       "message": "probably want to remove this one, we generally don\u0027t allow user defined IDs for things",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 35
+      },
+      "revId": "1ff9382dc5a60bb720c8b3c571796b63b4145deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e202ea6e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-07-27T15:35:16Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "dada55a8_220ac48a",
       "range": {
         "startLine": 51,
         "startChar": 4,
