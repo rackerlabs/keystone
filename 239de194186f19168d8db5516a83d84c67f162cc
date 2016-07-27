@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_c4df2267",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T12:59:54Z",
+      "side": 1,
+      "message": "From Henry\u0027s comment on patch set 35 - don\u0027t we mean to change max_cnt to one?",
+      "revId": "239de194186f19168d8db5516a83d84c67f162cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
