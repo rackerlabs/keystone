@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_313f3227",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T14:48:53Z",
+      "side": 1,
+      "message": "Hmm for some reason this seems to log: \n\n  missing exception kwargs (programmer error)\n\nI can recreate what Colleen was seeing. I also tried recreating this with the UserDisabled exception (since that exception is inheriting the Unauthorized exception and using kwargs the same way as AccountLocked), but for some reason UserDisabled doesn\u0027t emit the `missing exception kwargs` message in the logs.\n\nHere is my entire traceback: http://cdn.pasteraw.com/douk85rdz0qw6saznn7n5ma5b3q0wz4\n\nI deployed the change, set my lockout attempts to 3, and then authenticated several times to recreate the issue.",
+      "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
