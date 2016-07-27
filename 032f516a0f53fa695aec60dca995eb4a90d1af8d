@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_a1f8df7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Will be up soon, added here temporarily to check if it fixes my tests.",
+      "parentUuid": "dada55a8_e444e647",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_24a0bef3",
         "filename": "doc/source/index.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-27T13:21:51Z",
       "side": 1,
       "message": "Logically does this go after the totp introduction?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a1029f3c",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Added before because unlike totp this was setup as a default auth method, and likely to be more common than raw totp.",
+      "parentUuid": "dada55a8_24a0bef3",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_619f0704",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_44d5f219",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_84808af8",
         "filename": "doc/source/password-totp.rst",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-27T13:21:51Z",
       "side": 1,
       "message": "s/Following that/Then/",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_41a48356",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_84808af8",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_c41a416e",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "There quite a few changes below, although I am tempted to move those changes to the totp-docs.\n\nBoth auth-totp and this plugin rely on setting up a totp credential, but then use it differently. Might be better to create a new \"setup-totp\" doc, have both plugins reference it, and only have the auth docs talk about setup and use.",
+      "parentUuid": "dada55a8_e4d4e6e9",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_447b32f5",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2016-07-27T13:21:51Z",
       "side": 1,
       "message": "Why is this here? Was the code copied from foundation code?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c431a1ee",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Code was based on the password.py module:\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/plugins/password.py#L1\n\nWill update.",
+      "parentUuid": "dada55a8_447b32f5",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_e46ca59e",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "with the other totp or password modules? Possibly the \"for credential in credentials:\" loop by breaking it into a function, but that just makes the code less clear without saving much on duplication.",
+      "parentUuid": "dada55a8_04801a8a",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_a4866eb6",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 8
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_e455c5c6",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "6 seems to be the accepted default for totp across almost all devices and applications at present. Google Autheticator only does 6 digits:\nhttps://github.com/google/google-authenticator/wiki/Key-Uri-Format#digits\n\nMaybe we can do a follow up patch in future that changes both this an the other totp module to have it configurable?",
+      "parentUuid": "dada55a8_a4866eb6",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_18e19e2a",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 8
@@ -149,6 +293,24 @@
       "writtenOn": "2016-07-27T13:21:51Z",
       "side": 1,
       "message": "If you are going to reuse _generate_totp_passcode then you should rename it. The leading underscore implies it\u0027s private.",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a472ad7a",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-27T22:34:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_18e19e2a",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
