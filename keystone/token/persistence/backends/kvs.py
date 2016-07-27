@@ -163,6 +163,69 @@ class Token(token.persistence.TokenDriverV8):
         # list of token_ids are returned.
         return [t[0] for t in token_list]
 
+    def _bisect(self, token_list, tstamp, before=True):
+        """Locate the insertion point for the token in token_list.
+
+        This function implements a bisection algorithm which finds the index
+        of insertion for a value with the specified timestamp. The value
+        returned by this function is suitable for use in the list.insert()
+        method. The before parameter determines whether the bisection
+        algorithm is a bisect_left (before = True) or a bisect_right (before
+        = False) algorithm.
+
+        :param token_list: the list of token tuples in the form of
+                           (token_id, token_expiry)
+        :param tstamp: the token expiry time to determine where the insertion
+                       should happen
+        :param before: when True finds the insertion point before the specified
+                       timestamp value. When False, finds the insertion point
+                       after the specified timestamp value.
+        :return: index where to insert the token
+        """
+        low = 0
+        high = len(token_list)
+        expires = tstamp
+        if isinstance(expires, six.string_types):
+            expires = timeutils.normalize_time(
+                timeutils.parse_isotime(expires))
+
+        while low < high:
+            mid = (low + high) // 2
+            c_expires = self._get_expire_at(token_list[mid])
+            if before:
+                if c_expires < expires:
+                    low = mid + 1
+                else:
+                    high = mid
+            else:
+                if expires < c_expires:
+                    high = mid
+                else:
+                    low = mid + 1
+        return low
+
+    def _get_expire_at(self, token):
+        """Return the time the token will expire at.
+
+        :param token: the token to check the expiration timestamp of. Formats
+                      include (token_id, token_expiration) tuple and a dict
+                      with an 'expires' key.
+        :return: the normalized form of the expiration time.
+        """
+        if isinstance(token, tuple):
+            _, expire_at = self._format_token_index_item(token)
+        elif 'expires' in token:
+            expire_at = timeutils.normalize_time(
+                timeutils.parse_isotime(token['expires']))
+        else:
+            # This would be an error in which the wrong data types are
+            # passed to this function. It expects only to have either a
+            # list of tuples or a list of dicts. Anything else which
+            # doesn't satisfy this criteria is a programming error.
+            raise ValueError('Expected (token_id, token_expiration) tuple or '
+                             'a dict with the "expires" key.')
+        return expire_at
+
     def _update_user_token_list(self, user_key, token_id, expires_isotime_str):
         current_time = self._get_current_time()
         revoked_token_list = set([t['id'] for t in
@@ -171,30 +234,44 @@ class Token(token.persistence.TokenDriverV8):
         with self._store.get_lock(user_key) as lock:
             filtered_list = []
             token_list = self._get_user_token_list_with_expiry(user_key)
-            for item in token_list:
-                try:
-                    item_id, expires = self._format_token_index_item(item)
-                except (ValueError, TypeError):  # nosec(tkelsey)
-                    # NOTE(morganfainberg): Skip on expected errors
-                    # possibilities from the `_format_token_index_item` method.
-                    continue
+            expired_index = self._bisect(token_list, current_time, before=True)
 
-                if expires < current_time:
-                    LOG.debug(('Token `%(token_id)s` is expired, removing '
-                               'from `%(user_key)s`.'),
-                              {'token_id': item_id, 'user_key': user_key})
-                    continue
+            # Since the list is maintained in sorted order according to the
+            # expiration timestamp with the earliest expiration at the head
+            # of the list and the latest expiration at the tail, the list
+            # should be trimmed to include only those beyond the expired_index.
+            # Any tokens not included in the token list are expired and should
+            # be removed.
+            token_list = token_list[expired_index:]
+            revoked_tokens = []
+
+            for item in token_list:
+                item_id = item[0]
 
                 if item_id in revoked_token_list:
                     # NOTE(morganfainberg): If the token has been revoked, it
                     # can safely be removed from this list.  This helps to keep
                     # the user_token_list as reasonably small as possible.
-                    LOG.debug(('Token `%(token_id)s` is revoked, removing '
-                               'from `%(user_key)s`.'),
-                              {'token_id': item_id, 'user_key': user_key})
+                    revoked_tokens.append(item_id)
                     continue
+
+                # These should already be in sorted order, therefore an append
+                # will be simple enough to maintain order.
                 filtered_list.append(item)
-            filtered_list.append((token_id, expires_isotime_str))
+
+            # If tokens were excluded because they were revoked, include a
+            # debug message in the log. Logging each entry is inefficient for
+            # large loops.
+            if revoked_tokens:
+                LOG.debug(('Tokens `%(token_ids)s` are revoked, removing '
+                           'from `%(user_key)s`.'),
+                          {'token_ids': ', '.join(revoked_tokens),
+                           'user_key': user_key})
+
+            # Insert the new item where it should be in sorted order based
+            # upon the key expiration.
+            idx = self._bisect(token_list, expires_isotime_str, before=False)
+            filtered_list.insert(idx, (token_id, expires_isotime_str))
             self._set_key(user_key, filtered_list, lock)
             return filtered_list
 
@@ -252,18 +329,14 @@ class Token(token.persistence.TokenDriverV8):
 
         # NOTE(morganfainberg): on revocation, cleanup the expired entries, try
         # to keep the list of tokens revoked at the minimum.
-        for token_data in token_list:
-            try:
-                expires_at = timeutils.normalize_time(
-                    timeutils.parse_isotime(token_data['expires']))
-            except ValueError:
-                LOG.warning(_LW('Removing `%s` from revocation list due to '
-                                'invalid expires data in revocation list.'),
-                            token_data.get('id', 'INVALID_TOKEN_DATA'))
-                continue
-            if expires_at > current_time:
-                filtered_list.append(token_data)
-        filtered_list.append(revoked_token_data)
+        expired_index = self._bisect(token_list, current_time, before=True)
+        filtered_list = token_list[expired_index:]
+
+        # Insert the revoked token at the appropriate place in the list to
+        # maintain the sorted order of the revocation list.
+        insertion_index = self._bisect(token_list, expires, before=False)
+        filtered_list.insert(insertion_index, revoked_token_data)
+
         self._set_key(self.revocation_key, filtered_list, lock)
 
     def delete_token(self, token_id):
@@ -335,16 +408,20 @@ class Token(token.persistence.TokenDriverV8):
         user_key = self._prefix_user_id(user_id)
         token_list = self._get_user_token_list_with_expiry(user_key)
         current_time = self._get_current_time()
-        for item in token_list:
-            try:
-                token_id, expires = self._format_token_index_item(item)
-            except (TypeError, ValueError):  # nosec(tkelsey)
-                # NOTE(morganfainberg): Skip on expected error possibilities
-                # from the `_format_token_index_item` method.
-                continue
 
-            if expires < current_time:
-                continue
+        # The token_list returned from _get_user_token_list_with_expiry is a
+        # list of (token_id, expiration_tstamp) tuples. Use the bisect call
+        # to find the index in the list which is where the current timestamp
+        # would be inserted. All items in the list less than the point where
+        # the current time would be inserted can be considered expired, and
+        # can be removed from the list.
+        expired_index = self._bisect(token_list, current_time, before=True)
+        token_list = token_list[expired_index:]
+
+        for item in token_list:
+            # Each item in the token_list is a (token_id, expiration_tstamp)
+            # tuple but only the token_id is needed here.
+            token_id = item[0]
 
             try:
                 token_ref = self.get_token(token_id)
