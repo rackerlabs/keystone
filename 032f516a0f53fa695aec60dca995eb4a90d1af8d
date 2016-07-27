@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_e444e647",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "This should be in a separate review.",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_24a0bef3",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "Logically does this go after the totp introduction?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_44d5f219",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "Starting the sentence with \u0027Before doing this\u0027 doesn\u0027t sound right.",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_84808af8",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "s/Following that/Then/",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_e4d4e6e9",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "Why are we duplicating so much from the totp documentation?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_447b32f5",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "Why is this here? Was the code copied from foundation code?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_04801a8a",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "Is there any possibility of sharing more code?",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a4866eb6",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "The 6 needs to be configurable. Not all totp systems use 6 digits do they? I think the original code got this wrong.",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_18e19e2a",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T13:21:51Z",
+      "side": 1,
+      "message": "If you are going to reuse _generate_totp_passcode then you should rename it. The leading underscore implies it\u0027s private.",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
