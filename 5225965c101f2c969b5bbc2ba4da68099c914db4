@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_db7efce2",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-27T00:57:55Z",
+      "side": 1,
+      "message": "`extra` is what is stored in DB, this could be any parameter, such as \u0027location\u0027, \u0027status\u0027, but yes, it could be just named as `extra`.",
+      "range": {
+        "startLine": 95,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 27
+      },
+      "revId": "5225965c101f2c969b5bbc2ba4da68099c914db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_bbaa286f",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-27T00:57:55Z",
+      "side": 1,
+      "message": "use uuid.uuid4().hex instead, fine as it is.",
+      "range": {
+        "startLine": 111,
+        "startChar": 27,
+        "endLine": 111,
+        "endChar": 40
+      },
+      "revId": "5225965c101f2c969b5bbc2ba4da68099c914db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
