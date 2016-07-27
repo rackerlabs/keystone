@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_23119aad",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T20:00:12Z",
+      "side": 1,
+      "message": "it would be nice to add comments inline \n\n  # create 15 users\n\n  # sqlalchemy allows a class to listen ..\n\n  # ensure we have less than 10 calls to ...",
+      "range": {
+        "startLine": 605,
+        "startChar": 4,
+        "endLine": 623,
+        "endChar": 61
+      },
+      "revId": "f46e9a06e3a6c32974bd056b2d30cd7961c817a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
