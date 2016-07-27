@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_8358848b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-27T12:17:04Z",
+      "side": 1,
+      "message": "would be nice to add \"enabled\" with a valid value in the body too. This way we know that it won\u0027t ignore other fields if enabled is passed.",
+      "revId": "4adf01b03b75af4bb1917f545dc71788fb07d5ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
