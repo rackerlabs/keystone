@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_44333214",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T13:53:40Z",
+      "side": 1,
+      "message": "Are all other PCI-DSS changes v3 only?",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_041f7ab7",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T13:53:40Z",
+      "side": 1,
+      "message": "s/new//\n\nPasswords for users in this list won\u0027t expire regardless if they are new or old.",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0492daf5",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T13:53:40Z",
+      "side": 1,
+      "message": "This could just be a private method of User since it isn\u0027t used anywhere else.",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
