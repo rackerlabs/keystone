@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c11a336e",
+        "filename": "doc/ext/support_matrix.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-27T21:45:05Z",
+      "side": 1,
+      "message": "I know the comments on this patch say that it\u0027s intentional that this be copied unmodified from Nova, but this part ends up getting rendered in the html doc. Are you sure you want that?",
+      "revId": "4c4310625f2b2c37308fcb7c8338852b5c4d7107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_afb9eb30",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-07-27T21:45:05Z",
+      "side": 1,
+      "message": "I am pretty sure this typically requires --os-project-domain-name\u003d\u003cdomain\u003e when using the project name and not id",
+      "revId": "4c4310625f2b2c37308fcb7c8338852b5c4d7107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
