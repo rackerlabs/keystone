@@ -25,7 +25,6 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _LE
 from keystone.tests import unit
-from keystone.tests.unit import utils
 
 
 CONF = keystone.conf.CONF
@@ -323,7 +322,6 @@ class TestSecurityErrorTranslation(unit.BaseTestCase):
     class CustomError(exception.Error):
         message_format = _LE('We had a failure in the %(place)r')
 
-    @utils.wip('this will fail until we fix the deepcopy issue')
     def test_nested_translation_of_SecurityErrors(self):
         e = self.CustomSecurityError(place='code')
         _LE('Admiral found this in the log: %s') % e
