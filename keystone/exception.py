@@ -178,6 +178,9 @@ class SecurityError(Error):
 
     amendment = _('(Disable insecure_debug mode to suppress these details.)')
 
+    def __deepcopy__(self):
+        return self
+
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in insecure_debug mode."""
         if message and CONF.insecure_debug:
