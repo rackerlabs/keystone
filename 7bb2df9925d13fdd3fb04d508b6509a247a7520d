@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_24be14ae",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-27T03:28:57Z",
+      "side": 1,
+      "message": "what does admin_password mean here?",
+      "range": {
+        "startLine": 448,
+        "startChar": 13,
+        "endLine": 448,
+        "endChar": 27
+      },
+      "revId": "7bb2df9925d13fdd3fb04d508b6509a247a7520d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_24d574e4",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-27T03:28:57Z",
+      "side": 1,
+      "message": "Actually, this case will pass with anyone that call update user, why it should be admin password? and where it shows this is admin password?",
+      "range": {
+        "startLine": 449,
+        "startChar": 69,
+        "endLine": 450,
+        "endChar": 24
+      },
+      "revId": "7bb2df9925d13fdd3fb04d508b6509a247a7520d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
