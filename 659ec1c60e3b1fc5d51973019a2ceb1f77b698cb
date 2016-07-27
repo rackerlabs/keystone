@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_54dba9ed",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-27T18:30:20Z",
+      "side": 1,
+      "message": "do we actually return all of these? I think right now it\u0027s either \"experimental\" or nothing, where nothing means either \"support\" or \"current\" (we had called it \"stable\"). At the time, although I wanted to add the \"deprecated\" status, there was not consensus that we should add that.",
+      "range": {
+        "startLine": 41,
+        "startChar": 29,
+        "endLine": 41,
+        "endChar": 69
+      },
+      "revId": "659ec1c60e3b1fc5d51973019a2ceb1f77b698cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
