@@ -626,6 +626,7 @@ class SqlIdentity(SqlTests,
         # users fetched.
         self.assertNotEqual(len(first_call_users), len(second_call_users))
         self.assertEqual(first_call_counter, counter.calls)
+        self.assertEqual(1, counter.calls)
 
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
