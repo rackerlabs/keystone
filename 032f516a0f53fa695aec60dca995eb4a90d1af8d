@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_75c17d80",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T23:53:53Z",
+      "side": 1,
+      "message": "That\u0027s probably a good plan.",
+      "parentUuid": "bacf61ea_c41a416e",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_447b32f5",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 8
@@ -206,6 +224,24 @@
       "side": 1,
       "message": "Code was based on the password.py module:\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/plugins/password.py#L1\n\nWill update.",
       "parentUuid": "dada55a8_447b32f5",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_75485d2e",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T23:53:53Z",
+      "side": 1,
+      "message": "If it\u0027s based on that code we should leave it.",
+      "parentUuid": "bacf61ea_c431a1ee",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -247,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_b569358e",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T23:53:53Z",
+      "side": 1,
+      "message": "It just seems like it would be nice for this to use the original Password plugin and the TOTP plugin instead of copying the code.... not sure if it\u0027s worth it, but wanted to bring it up.",
+      "parentUuid": "bacf61ea_e46ca59e",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_a4866eb6",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 8
@@ -276,6 +330,24 @@
       "side": 1,
       "message": "6 seems to be the accepted default for totp across almost all devices and applications at present. Google Autheticator only does 6 digits:\nhttps://github.com/google/google-authenticator/wiki/Key-Uri-Format#digits\n\nMaybe we can do a follow up patch in future that changes both this an the other totp module to have it configurable?",
       "parentUuid": "dada55a8_a4866eb6",
+      "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_155e41e9",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-27T23:53:53Z",
+      "side": 1,
+      "message": "I\u0027m OK with this being in a follow up.",
+      "parentUuid": "bacf61ea_e455c5c6",
       "revId": "032f516a0f53fa695aec60dca995eb4a90d1af8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
