@@ -50,6 +50,10 @@ class KvsToken(unit.TestCase, token_tests.TokenTests):
             if data[0] == token_id:
                 token_list[i] = new_data
                 break
+        # Since we're modifying the underlying list directly and the kvs
+        # backend now tries to attempt an ordering of keys, this will ensure
+        # that the data is still sorted.
+        token_list = sorted(token_list, key=lambda token: token[1])
         self.token_provider_api._persistence.driver._store.set(user_key,
                                                                token_list)
 
@@ -102,6 +106,19 @@ class KvsToken(unit.TestCase, token_tests.TokenTests):
                                          subsecond=True))]
         user_token_list = token_persistence.driver._store.get(user_key)
         self.assertEqual(expected_user_token_list, user_token_list)
+
+    def test_bisection(self):
+        token_list = [('token-001', '2016-07-27T21:14:35.123450Z'),
+                      ('token-002', '2016-07-27T21:14:40.851622Z'),
+                      ('token-003', '2016-07-27T21:14:45.712231Z'),
+                      ('token-004', '2016-07-27T21:14:50.346591Z')]
+
+        persistence = self.token_provider_api._persistence
+        tstamp = '2016-07-27T21:14:45.712231Z'
+        idx = persistence.driver._bisect(token_list, tstamp, before=True)
+        self.assertEqual(idx, 2)
+        idx = persistence.driver._bisect(token_list, tstamp, before=False)
+        self.assertEqual(idx, 3)
 
 
 class KvsTokenCacheInvalidation(unit.TestCase,
