@@ -16,6 +16,24 @@
       "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_9d3b8f9c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T15:43:12Z",
+      "side": 1,
+      "message": "Looks like this is the product of: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/exception.py#L61-L67",
+      "parentUuid": "bacf61ea_313f3227",
+      "revId": "1c36cd677731ebcce59d284729e975ef1964e168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

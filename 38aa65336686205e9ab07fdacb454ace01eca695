@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_375e0246",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-27T15:43:12Z",
+      "side": 0,
+      "message": "Looks like when a user is disabled this exception isn\u0027t raised. It looks like this is raised instead: \n\nhttps://github.com/openstack/keystone/blob/9d54eb33c1d74ff39c947af6ff984ef2e0bf4be4/keystone/identity/core.py#L902\n\nWhich is an AssertionError instead of a UserDisabled error. This means that exception.UserDisabled could have the same issue as exception.AccountLocked where it displays a `missing exception kwargs` programming error.",
+      "revId": "38aa65336686205e9ab07fdacb454ace01eca695",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
