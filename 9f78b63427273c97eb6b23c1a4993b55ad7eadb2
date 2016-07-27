@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ddd507ba",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-27T15:58:30Z",
+      "side": 1,
+      "message": "Not necessarily, but we didn\u0027t want to change the API for v2 by adding the password_expires_at attribute.",
+      "parentUuid": "dada55a8_44333214",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_041f7ab7",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 39
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ef5bf22c",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-27T15:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_041f7ab7",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_0492daf5",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 39
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-27T13:53:40Z",
       "side": 1,
       "message": "This could just be a private method of User since it isn\u0027t used anywhere else.",
+      "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4f3afece",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-27T15:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_0492daf5",
       "revId": "9f78b63427273c97eb6b23c1a4993b55ad7eadb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
