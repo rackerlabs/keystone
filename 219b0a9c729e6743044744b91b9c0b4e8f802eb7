@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_08b47cf0",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T17:04:28Z",
+      "side": 1,
+      "message": "can you add \"\u0027enabled\u0027: parameter_types.boolean,\" too?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 22
+      },
+      "revId": "219b0a9c729e6743044744b91b9c0b4e8f802eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_080f5ce2",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T17:04:28Z",
+      "side": 1,
+      "message": "this should match the values in line 65-68",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 9
+      },
+      "revId": "219b0a9c729e6743044744b91b9c0b4e8f802eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_28cb4074",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T17:04:28Z",
+      "side": 1,
+      "message": "you probably want to use \"\u0027type\u0027: [\u0027string\u0027, \u0027null\u0027],\" here, check line 18/19",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 44
+      },
+      "revId": "219b0a9c729e6743044744b91b9c0b4e8f802eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c8870411",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T17:04:28Z",
+      "side": 1,
+      "message": "use parameter_types.name",
+      "range": {
+        "startLine": 50,
+        "startChar": 12,
+        "endLine": 50,
+        "endChar": 37
+      },
+      "revId": "219b0a9c729e6743044744b91b9c0b4e8f802eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2848602d",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T17:04:28Z",
+      "side": 1,
+      "message": "so, looking at the model and manager code, i don\u0027t think \u0027name\u0027 is required.\n\nthe model doesn\u0027t specify it as a column: https://github.com/openstack/keystone/blob/d9c6b50a3ae514e640fa13a344e59fe3649ee0ef/keystone/catalog/backends/sql.py#L52-L60\n\nand the manager sets it to an empty string by default: https://github.com/openstack/keystone/blob/7923a4669278c1386bea2520adf097760a3ec4fd/keystone/catalog/core.py#L127-L133",
+      "range": {
+        "startLine": 56,
+        "startChar": 18,
+        "endLine": 56,
+        "endChar": 22
+      },
+      "revId": "219b0a9c729e6743044744b91b9c0b4e8f802eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
