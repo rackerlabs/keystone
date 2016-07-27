@@ -337,6 +337,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_f19b21c7",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-27T03:26:40Z",
+      "side": 1,
+      "message": "I cannot catch it, I think all you need is change the default value to `False` in backend driver, it works for me.\n\nAnd even if ABC signature changed, cannot we give the default value for the parameter in ABC method?\n\ndiff --git a/keystone/identity/backends/sql.py b/keystone/identity/backends/sql.py\nindex 4abc649..2af1816 100644\n--- a/keystone/identity/backends/sql.py\n+++ b/keystone/identity/backends/sql.py\n@@ -108,7 +108,7 @@ class Identity(base.IdentityDriverV8):\n             return base.filter_user(user_ref.to_dict())\n\n     @sql.handle_conflicts(conflict_type\u003d\u0027user\u0027)\n-    def update_user(self, user_id, user, self_service):\n+    def update_user(self, user_id, user, self_service\u003dFalse):",
+      "parentUuid": "dada55a8_5bb06743",
+      "revId": "80a3da136b88159f3ca41ea74809fb262c76d779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_e27e1e69",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 15
