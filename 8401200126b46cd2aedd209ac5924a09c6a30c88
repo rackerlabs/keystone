@@ -46,6 +46,30 @@
       "revId": "8401200126b46cd2aedd209ac5924a09c6a30c88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8354c654",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-27T20:02:19Z",
+      "side": 1,
+      "message": "according to the docs both \u0027joined\u0027 and \u0027subquery\u0027 will eagerly load\n\nhttp://docs.sqlalchemy.org/en/latest/orm/relationship_api.html#sqlalchemy.orm.relationship.params.lazy\n\njoined - items should be loaded “eagerly” in the same query as that of the parent, using a JOIN or LEFT OUTER JOIN. Whether the join is “outer” or not is determined by the innerjoin parameter.\n\nsubquery - items should be loaded “eagerly” as the parents are loaded, using one additional SQL statement, which issues a JOIN to a subquery of the original statement, for each collection requested.",
+      "parentUuid": "bacf61ea_9dbb850e",
+      "range": {
+        "startLine": 37,
+        "startChar": 60,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "8401200126b46cd2aedd209ac5924a09c6a30c88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
