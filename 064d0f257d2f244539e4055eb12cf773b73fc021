@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_a7e72be3",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T13:59:17Z",
+      "side": 1,
+      "message": "nit: We could put insecure_debud in backticks here as well.",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a783abcb",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T13:59:17Z",
+      "side": 1,
+      "message": "s/cause/caught/",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_66e4350d",
         "filename": "keystone/tests/unit/test_exception.py",
         "patchSetId": 1
@@ -31,6 +65,24 @@
       "side": 1,
       "message": "This was intentional. I just wanted to make sure the test couldn\u0027t be broken from outside changes. Unlikely this particular default would change, but meh.",
       "parentUuid": "bacf61ea_66e4350d",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_07743733",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T13:59:17Z",
+      "side": 1,
+      "message": "Ah - makes sense. Thanks!",
+      "parentUuid": "bacf61ea_ca5ec344",
       "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
