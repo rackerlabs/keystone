@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_299ad863",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-28T21:57:42Z",
+      "side": 1,
+      "message": "This isn\u0027t true now with the changes above.",
+      "range": {
+        "startLine": 62,
+        "startChar": 44,
+        "endLine": 62,
+        "endChar": 62
+      },
+      "revId": "dd63b5aeeebd12a39e2497425220d77b9b9f4306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8945c4b4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-07-28T21:57:42Z",
+      "side": 1,
+      "message": "This statement is redundant. Python default return is None",
+      "revId": "dd63b5aeeebd12a39e2497425220d77b9b9f4306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
