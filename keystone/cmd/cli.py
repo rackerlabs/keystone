@@ -403,7 +403,9 @@ class DbSync(BaseApp):
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
-        migration_helpers.sync_database_to_version(extension, version)
+        if extension:
+            raise exception.MigrationMovedFailure(extension=extension)
+        migration_helpers._sync_common_repo(version)
 
 
 class DbVersion(BaseApp):

@@ -32,14 +32,6 @@ from keystone.i18n import _
 
 
 CONF = keystone.conf.CONF
-DEFAULT_EXTENSIONS = []
-
-MIGRATED_EXTENSIONS = ['endpoint_policy',
-                       'federation',
-                       'oauth1',
-                       'revoke',
-                       'endpoint_filter'
-                       ]
 
 
 #  Different RDBMSs use different schemes for naming the Foreign Key
@@ -169,52 +161,6 @@ def _assert_not_schema_downgrade(extension=None, version=None):
             # NOTE(morganfainberg): The database is not controlled, this action
             # cannot be a downgrade.
             pass
-
-
-def _sync_extension_repo(extension, version):
-    if extension in MIGRATED_EXTENSIONS:
-        raise exception.MigrationMovedFailure(extension=extension)
-
-    with sql.session_for_write() as session:
-        engine = session.get_bind()
-
-        try:
-            package_name = '.'.join((contrib.__name__, extension))
-            package = importutils.import_module(package_name)
-        except ImportError:
-            raise ImportError(_("%s extension does not exist.")
-                              % package_name)
-        try:
-            abs_path = find_migrate_repo(package)
-            try:
-                migration.db_version_control(engine, abs_path)
-            # Register the repo with the version control API
-            # If it already knows about the repo, it will throw
-            # an exception that we can safely ignore
-            except exceptions.DatabaseAlreadyControlledError:  # nosec
-                pass
-        except exception.MigrationNotProvided as e:
-            print(e)
-            sys.exit(1)
-
-        _assert_not_schema_downgrade(extension=extension, version=version)
-
-        init_version = get_init_version(abs_path=abs_path)
-
-        migration.db_sync(engine, abs_path, version=version,
-                          init_version=init_version, sanity_check=False)
-
-
-def sync_database_to_version(extension=None, version=None):
-    if not extension:
-        _sync_common_repo(version)
-        # If version is greater than 0, it is for the common
-        # repository only, and only that will be synchronized.
-        if version is None:
-            for default_extension in DEFAULT_EXTENSIONS:
-                _sync_extension_repo(default_extension, version)
-    else:
-        _sync_extension_repo(extension, version)
 
 
 def get_db_version(extension=None):
