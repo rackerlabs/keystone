@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_66e4350d",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T01:49:25Z",
+      "side": 1,
+      "message": "Looks like this is already defaulted to False: \n\nhttps://github.com/openstack/keystone/blob/9d54eb33c1d74ff39c947af6ff984ef2e0bf4be4/keystone/conf/default.py#L185",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_26b99dea",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T01:49:25Z",
+      "side": 1,
+      "message": "Looks like this is False out of the box as well: \n\nhttps://github.com/openstack/keystone/blob/9d54eb33c1d74ff39c947af6ff984ef2e0bf4be4/keystone/exception.py#L27\n\nAlso looks like this line is just a hair too long.",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
