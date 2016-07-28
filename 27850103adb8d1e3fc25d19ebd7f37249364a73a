@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_eb5d5b7a",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:04:53Z",
+      "side": 1,
+      "message": "We moved away from 0 to simplify truncating the extra passwords. One indicates having single password in your password history. So if you want the password to be different than the last password, you would set it to 2.",
+      "parentUuid": "bacf61ea_08b71587",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_28fe5938",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 41
