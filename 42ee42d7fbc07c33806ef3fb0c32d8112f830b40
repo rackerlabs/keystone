@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_2aec9b8e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T15:59:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_f69550e4",
+      "revId": "42ee42d7fbc07c33806ef3fb0c32d8112f830b40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_f6eef089",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 40
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-28T14:59:43Z",
       "side": 1,
       "message": "This message is suppressed if you use the python-keystoneclient to update your password. For example, I did the following:\n\n- created a user with password\u003d\u0027password\u0027\n- used osc to update my password to \u0027password2\u0027\n- used osc to update my password to \u0027password\u0027\n\nThe error that I got back was \n\n Old password and new password must be different.\n\nBecause of:\n\nhttps://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/v3/users.py#L220-L222\n\nIf I do the following:\n\n- created a user with password\u003d\u0027password\u0027\n- used osc to update my password to \u0027password2\u0027\n- used osc to update my password to \u0027password3\u0027\n- used osc to update my password to \u0027password\u0027\n\nI get:\n\n Invalid password: The new password cannot be identical to a previous password. Maximum number of uniqueprevious passwords required: 3 (HTTP 400) (Request-ID: req-e88d0239-72b0-4583-a795-9fb4c55ef7fc)\n\n\nWhich is definitely more informative. I wonder if we should patch the client to give this information in the first case, too?",
+      "revId": "42ee42d7fbc07c33806ef3fb0c32d8112f830b40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8ab14792",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T15:59:07Z",
+      "side": 1,
+      "message": "I think this is a bug; I\u0027ll add it in launchpad and fix this in a separate patch.",
+      "parentUuid": "bacf61ea_f6eef089",
       "revId": "42ee42d7fbc07c33806ef3fb0c32d8112f830b40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
