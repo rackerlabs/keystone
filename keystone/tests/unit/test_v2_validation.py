@@ -16,6 +16,7 @@ import uuid
 from keystone.assignment import schema as assignment_schema
 from keystone.common.validation import validators
 from keystone import exception
+from keystone.identity import schema as identity_schema
 from keystone.resource import schema as resource_schema
 from keystone.tests import unit
 
@@ -156,3 +157,47 @@ class TenantValidationTestCase(unit.BaseTestCase):
             self.assertRaises(exception.SchemaValidationError,
                               self.create_validator.validate,
                               request)
+
+
+class UserValidationTestCase(unit.BaseTestCase):
+    """Test for V2 User API Validation."""
+
+    def setUp(self):
+        super(UserValidationTestCase, self).setUp()
+
+        schema_user_create = identity_schema.user_create_v2
+        self.create_validator = validators.SchemaValidator(schema_user_create)
+
+    def test_validate_user_create_succeeds_with_name(self):
+        request = {
+            'name': uuid.uuid4().hex
+        }
+        self.create_validator.validate(request)
+
+    def test_validate_user_create_succeeds_with_username(self):
+        request = {
+            'username': uuid.uuid4().hex
+        }
+        self.create_validator.validate(request)
+
+    def test_validate_user_create_fails_with_invalid_params(self):
+        request = {
+            'bogus': uuid.uuid4().hex
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
+
+    def test_validate_user_create_fails_with_no_params(self):
+        request = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
+
+    def test_validate_user_create_fails_with_invalid_name(self):
+        request = {
+            'name': 42
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_validator.validate,
+                          request)
