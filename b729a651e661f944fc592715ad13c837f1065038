@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f1354846",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:54:35Z",
+      "side": 1,
+      "message": "This means that the minimum value has to be 1 or greater. A one would indicate that newly created passwords would expire in one day. To turn this off, you would remove this config option. However, any password that have an expires_at value would still be validated.",
+      "parentUuid": "bacf61ea_56a9aa7a",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_d6011a6c",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 43
