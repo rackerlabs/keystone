@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_16ca926e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 43
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T20:31:31Z",
+      "side": 1,
+      "message": "password",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_56a9aa7a",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T20:31:31Z",
+      "side": 1,
+      "message": "Does this mean that password have to expire? Or is there a way to turn it off?",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d6011a6c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T20:31:31Z",
+      "side": 1,
+      "message": "If you are going to use keystone.conf you should remove the oslo_config usage too.",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_96f1626d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T20:31:31Z",
+      "side": 1,
+      "message": "Should we 400 instead since the user is doing something they shouldn\u0027t be doing?",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_026ff4c5",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 43
