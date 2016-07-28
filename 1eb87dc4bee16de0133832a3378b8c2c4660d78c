@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_21d05d53",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-07-28T08:12:20Z",
+      "side": 1,
+      "message": "I think you owe some explanation to the readers. What\u0027s the relation between numbers 10 and 15? I can imagine 15 is some random number, but why there should be less calls than 10?",
+      "revId": "1eb87dc4bee16de0133832a3378b8c2c4660d78c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
