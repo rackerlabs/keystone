@@ -16,6 +16,24 @@
       "revId": "fa3841c05bf6c228a3a9f18b26ce254bc5979250",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a2571901",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T14:04:24Z",
+      "side": 1,
+      "message": "lol - it looks like pep8 agrees! \n\nhttp://logs.openstack.org/86/348086/2/check/gate-keystone-pep8-ubuntu-xenial/8b011a2/console.html#_2016-07-28_04_22_15_811709",
+      "parentUuid": "bacf61ea_42045d14",
+      "revId": "fa3841c05bf6c228a3a9f18b26ce254bc5979250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
