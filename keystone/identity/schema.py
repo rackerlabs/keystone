@@ -22,6 +22,36 @@ _identity_name = {
     'pattern': '[\S]+'
 }
 
+# Schema for Identity v2 API
+
+_user_properties_v2 = {
+    'description': validation.nullable(parameter_types.description),
+    'enabled': parameter_types.boolean,
+    'tenantId': validation.nullable(parameter_types.id_string),
+    'name': _identity_name,
+    'username': _identity_name,
+    'email': validation.nullable(parameter_types.email),
+    'password': {
+        'type': ['string', 'null']
+    }
+}
+
+user_create_v2 = {
+    'type': 'object',
+    'properties': _user_properties_v2,
+    'anyOf': [
+        {
+            'required': ['username']
+        },
+        {
+            'required': ['name']
+        }
+    ],
+    'additionalProperties': True
+}
+
+# Schema for Identity v3 API
+
 _user_properties = {
     'default_project_id': validation.nullable(parameter_types.id_string),
     'description': validation.nullable(parameter_types.description),
