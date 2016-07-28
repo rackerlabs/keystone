@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_026ff4c5",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T18:41:10Z",
+      "side": 1,
+      "message": "We could have a follow on patch to convert all these to use freezegun instead.",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
