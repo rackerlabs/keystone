@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f6f37e08",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:33:29Z",
+      "side": 1,
+      "message": "Where would you suggest?",
+      "parentUuid": "bacf61ea_abca4318",
+      "revId": "7bb2df9925d13fdd3fb04d508b6509a247a7520d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_4bdc67e4",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 21
@@ -141,6 +159,24 @@
       "writtenOn": "2016-07-28T20:14:06Z",
       "side": 1,
       "message": "I think this is doing admin requests to change the password and that\u0027s why it\u0027s working. I would expect this to fail since I don\u0027t see a controller change that sets the new boolean on update_user.",
+      "revId": "7bb2df9925d13fdd3fb04d508b6509a247a7520d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b174709c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:33:29Z",
+      "side": 1,
+      "message": "If you make the following change password API call, the change_password(...) method in the identity manager gets called and sets the self_service boolean to true for update_user:\n* /v3/users/{user_id}/password",
+      "parentUuid": "bacf61ea_8b301f03",
       "revId": "7bb2df9925d13fdd3fb04d508b6509a247a7520d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
