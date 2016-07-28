@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_0c91fef0",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-28T13:47:32Z",
+      "side": 1,
+      "message": "Wouldn\u0027t be linear even with 10, 11, 12, 13 and 14 calls? In this way I think you need to check the query itself and verify that \"list_user query\" and whatever is needed to \"build\" it (like querying its subtables) was triggered only once.",
+      "range": {
+        "startLine": 627,
+        "startChar": 10,
+        "endLine": 628,
+        "endChar": 30
+      },
+      "revId": "d1615827ae5fe3d0581046f43367cba4d748f609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
