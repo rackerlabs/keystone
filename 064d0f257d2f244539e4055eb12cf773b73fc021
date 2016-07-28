@@ -16,6 +16,24 @@
       "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cd41bd3b",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T04:12:08Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "bacf61ea_46b011de",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
