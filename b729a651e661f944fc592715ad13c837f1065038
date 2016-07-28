@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d770f4de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 43
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T21:38:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_16ca926e",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_56a9aa7a",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 43
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d7d474be",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T21:38:30Z",
+      "side": 1,
+      "message": "How the heck did I miss that.",
+      "parentUuid": "bacf61ea_d6011a6c",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_96f1626d",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 43
@@ -117,6 +153,24 @@
       "writtenOn": "2016-07-28T18:41:10Z",
       "side": 1,
       "message": "We could have a follow on patch to convert all these to use freezegun instead.",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_7794a8e1",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T21:38:30Z",
+      "side": 1,
+      "message": "Agree",
+      "parentUuid": "bacf61ea_026ff4c5",
       "revId": "b729a651e661f944fc592715ad13c837f1065038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
