@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ca5ec344",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T04:11:51Z",
+      "side": 1,
+      "message": "This was intentional. I just wanted to make sure the test couldn\u0027t be broken from outside changes. Unlikely this particular default would change, but meh.",
+      "parentUuid": "bacf61ea_66e4350d",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_26b99dea",
         "filename": "keystone/tests/unit/test_exception.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-28T01:49:25Z",
       "side": 1,
       "message": "Looks like this is False out of the box as well: \n\nhttps://github.com/openstack/keystone/blob/9d54eb33c1d74ff39c947af6ff984ef2e0bf4be4/keystone/exception.py#L27\n\nAlso looks like this line is just a hair too long.",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0a30db00",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T04:11:51Z",
+      "side": 1,
+      "message": "keystone.tests.unit.core actually changes this value to True for the test runs. This kind of highlights my reasoning above.",
+      "parentUuid": "bacf61ea_26b99dea",
       "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
