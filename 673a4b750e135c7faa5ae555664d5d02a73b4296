@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_24a076f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T02:13:42Z",
+      "side": 1,
+      "message": "Add Closes-Bug: #1607119",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 51
+      },
+      "revId": "673a4b750e135c7faa5ae555664d5d02a73b4296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_eb64704a",
         "filename": "keystone/auth/plugins/totp.py",
         "patchSetId": 1
