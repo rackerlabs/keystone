@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_46b011de",
+        "filename": "keystone/tests/unit/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T01:50:49Z",
+      "side": 0,
+      "message": "Looks like this isn\u0027t used anymore.",
+      "revId": "064d0f257d2f244539e4055eb12cf773b73fc021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
