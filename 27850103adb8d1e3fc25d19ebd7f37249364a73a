@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_0b454f6f",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:17:05Z",
+      "side": 1,
+      "message": "At that point the password is hashed, which is why just checking not none. To be honest, this test came out of one of our review sessions (weeks ago) and brought to light a edge case that was missed.",
+      "parentUuid": "bacf61ea_2babf3d7",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_4b4c6742",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 41
@@ -99,6 +117,24 @@
       "writtenOn": "2016-07-28T19:55:27Z",
       "side": 1,
       "message": "Why are we doing this check?",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cb185787",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:17:05Z",
+      "side": 1,
+      "message": "I think verifying that the password did actually save and is not the same as the original password. The gist of this test is to test the history when a user is created with None password.",
+      "parentUuid": "bacf61ea_4b4c6742",
       "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_3642363f",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:17:05Z",
+      "side": 1,
+      "message": "Confirming the user that was updated is the actually the same user created.",
+      "parentUuid": "bacf61ea_2b6e5396",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_8b6dbf9a",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 41
@@ -133,6 +187,24 @@
       "writtenOn": "2016-07-28T19:55:27Z",
       "side": 1,
       "message": "... or this check....or the others above",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_969e82b6",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T20:17:05Z",
+      "side": 1,
+      "message": "same as above...",
+      "parentUuid": "bacf61ea_8b6dbf9a",
       "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
