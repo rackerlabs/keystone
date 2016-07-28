@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_b007601b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T14:38:56Z",
+      "side": 1,
+      "message": "We should be sure to add a test for this.",
+      "revId": "51e0b88399458ac510309d357a2c33e688872335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_509f0450",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T14:38:56Z",
+      "side": 1,
+      "message": "Sorry - when I meant \"private method of User\" I meant we could probably include in the in actual User class:\n\n    def _get_password_expires_at(self, user_id, created_at):\n        ....",
+      "revId": "51e0b88399458ac510309d357a2c33e688872335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_734cd242",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T14:38:56Z",
+      "side": 1,
+      "message": "We should add one more test case: \n\n- Create a new user\n- Ensure the v2.0 API doesn\u0027t return the password_expires_at attribute when listing the user\n- Forward the clock to expire the password\n- Verify that the user gets a PasswordExpired exception when authenticating with the v2.0 auth endpoint.\n\nJust want to make sure the code that we are adding to keystone.common.controller is tests as well. It\u0027s also kind of a weird user-experience to have for people using v2.0 when PCI has been enabled but we can\u0027t really change the v2.0 API for this case (this test would also be a good place to document that reasoning incase we ever get asked about it).",
+      "revId": "51e0b88399458ac510309d357a2c33e688872335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
