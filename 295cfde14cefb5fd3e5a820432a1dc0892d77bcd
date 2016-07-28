@@ -70,6 +70,30 @@
       "revId": "295cfde14cefb5fd3e5a820432a1dc0892d77bcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_eb7457d0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-28T12:11:34Z",
+      "side": 1,
+      "message": "+1\n\nThose inconsistencies are bad :(",
+      "parentUuid": "bacf61ea_f02282b8",
+      "range": {
+        "startLine": 199,
+        "startChar": 42,
+        "endLine": 199,
+        "endChar": 49
+      },
+      "revId": "295cfde14cefb5fd3e5a820432a1dc0892d77bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
