@@ -34,6 +34,24 @@
       "revId": "4adf01b03b75af4bb1917f545dc71788fb07d5ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2bf02f90",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-28T12:04:49Z",
+      "side": 1,
+      "message": "Hi Dave, it is just another possibility for the \"other\" attributes case: \"other\" attributes -\u003e fail, \"other\" attributes + \"enabled\" -\u003e fail\n\nThe suggestion is only to cover all the possibilities in the test case",
+      "parentUuid": "bacf61ea_46a5b102",
+      "revId": "4adf01b03b75af4bb1917f545dc71788fb07d5ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
