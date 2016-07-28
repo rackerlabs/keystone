@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_1c50f35d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T21:05:53Z",
+      "side": 1,
+      "message": "Hmm... I don\u0027t think that validation belongs here. However, I do want to prevent read-only attributes from causing an error, even if you are calling from_dict, but not performing a write operation.",
+      "parentUuid": "bacf61ea_96f1626d",
+      "revId": "b729a651e661f944fc592715ad13c837f1065038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_026ff4c5",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 43
