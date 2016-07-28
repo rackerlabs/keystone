@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_df077f7f",
+        "filename": "doc/ext/support_matrix.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-28T17:08:37Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m trying to at least *not* fork it, so that when all this moves into oslo we can easily switch over.",
+      "parentUuid": "bacf61ea_0dae3585",
+      "revId": "4c4310625f2b2c37308fcb7c8338852b5c4d7107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_afb9eb30",
         "filename": "doc/source/token-support-matrix.ini",
         "patchSetId": 8
@@ -48,6 +66,24 @@
       "writtenOn": "2016-07-27T21:45:05Z",
       "side": 1,
       "message": "I am pretty sure this typically requires --os-project-domain-name\u003d\u003cdomain\u003e when using the project name and not id",
+      "revId": "4c4310625f2b2c37308fcb7c8338852b5c4d7107",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ff636318",
+        "filename": "doc/source/token-support-matrix.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-28T17:08:37Z",
+      "side": 1,
+      "message": "++ good catch",
+      "parentUuid": "bacf61ea_afb9eb30",
       "revId": "4c4310625f2b2c37308fcb7c8338852b5c4d7107",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
