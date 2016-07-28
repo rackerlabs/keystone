@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_eb64704a",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T01:45:48Z",
+      "side": 1,
+      "message": "this should now return a string, correct?",
+      "range": {
+        "startLine": 50,
+        "startChar": 14,
+        "endLine": 50,
+        "endChar": 36
+      },
+      "revId": "673a4b750e135c7faa5ae555664d5d02a73b4296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_060579c1",
+        "filename": "keystone/auth/plugins/totp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T01:45:48Z",
+      "side": 1,
+      "message": "When I put it the code from the original return statement, the values match exactly.  Not seeing a difference.",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 79
+      },
+      "revId": "673a4b750e135c7faa5ae555664d5d02a73b4296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
