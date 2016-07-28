@@ -16,6 +16,41 @@
       "revId": "738bcf5bd940453ea57847c762b2e63bd1f2a8eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8e921856",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-28T08:20:46Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bacf61ea_04c1f9e4",
+      "revId": "738bcf5bd940453ea57847c762b2e63bd1f2a8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0ef3c874",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-28T08:20:46Z",
+      "side": 1,
+      "message": "maybe add some testcases for `enabled`? like this one https://review.openstack.org/#/c/348115/",
+      "revId": "738bcf5bd940453ea57847c762b2e63bd1f2a8eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
