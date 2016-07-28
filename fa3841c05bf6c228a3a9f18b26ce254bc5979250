@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_42045d14",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-07-28T14:04:00Z",
+      "side": 1,
+      "message": "We could add a little context here in a comment. The docstring of the tests added for this summarize the problem well. I\u0027m wondering if we should do the same here?",
+      "revId": "fa3841c05bf6c228a3a9f18b26ce254bc5979250",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
