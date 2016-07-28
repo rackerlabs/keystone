@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_08b71587",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "Why did we move away from 0 for disabling this feature? What if the cloud really does want to say it has to be different that the last password?",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_28fe5938",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "(nit) %(...)d",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_eb443b1c",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "(nit) instead of hard coding password values it would be more inline with the other tests if these were uuids",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2babf3d7",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "If we are going to assert anything we should probably be explicit about the value that we expect.",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4b4c6742",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "Why are we doing this check?",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2b6e5396",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "Why are we doing this check?",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8b6dbf9a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-28T19:55:27Z",
+      "side": 1,
+      "message": "... or this check....or the others above",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
