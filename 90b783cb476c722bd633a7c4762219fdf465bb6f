@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_b57e55ac",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-28T00:11:40Z",
+      "side": 1,
+      "message": "For one to many:\n* \"joined eager loading only makes sense when the size of the collections are relatively small.\"\n* where as, \"subquery load makes sense when the collections are larger.\"\nhttp://docs.sqlalchemy.org/en/latest/orm/loading_relationships.html\n\nThe user collections (local_user, password...) would be small; thus joined loading would perform better here. My only reservation is, that when I was researching hybrid properties, I remember reading that subquery loading prevented some errors. I\u0027m not finding those articles now, however this may be why you are failing some tempest tests such as:\ntempest.api.identity.admin.v2.test_users.UsersTestJSON.test_update_user_password\n\nThe hybrid properties may need to be tweaked if we go with joined loading.",
+      "range": {
+        "startLine": 37,
+        "startChar": 60,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "90b783cb476c722bd633a7c4762219fdf465bb6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
