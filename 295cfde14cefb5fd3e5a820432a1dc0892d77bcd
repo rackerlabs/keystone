@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_58c74912",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-28T05:22:37Z",
+      "side": 1,
+      "message": "i wonder what the history is here, don\u0027t we sanitize all data before the controller? if not, we should.",
+      "range": {
+        "startLine": 199,
+        "startChar": 42,
+        "endLine": 199,
+        "endChar": 49
+      },
+      "revId": "295cfde14cefb5fd3e5a820432a1dc0892d77bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
