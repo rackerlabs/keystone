@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_685e9113",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-28T19:28:46Z",
+      "side": 1,
+      "message": "have*",
+      "range": {
+        "startLine": 383,
+        "startChar": 32,
+        "endLine": 383,
+        "endChar": 35
+      },
+      "revId": "d7b7153828560a8449a0e79d0ade7d08c4f2b269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
