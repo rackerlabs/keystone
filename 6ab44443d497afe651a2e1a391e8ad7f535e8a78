@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_4b07631c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-07-28T12:14:08Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "6ab44443d497afe651a2e1a391e8ad7f535e8a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
