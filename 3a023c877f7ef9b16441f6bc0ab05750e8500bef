@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_e44e53c0",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-07-28T08:44:46Z",
+      "side": 1,
+      "message": "How about: \nif context_env.get(\u0027is_admin\u0027, False) is False:\n    [...]\n\notherwise you end up with double not\u0027ing.",
+      "revId": "3a023c877f7ef9b16441f6bc0ab05750e8500bef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
