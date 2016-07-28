@@ -16,6 +16,24 @@
       "revId": "4adf01b03b75af4bb1917f545dc71788fb07d5ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_46a5b102",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-28T01:38:27Z",
+      "side": 1,
+      "message": "@Rodrigo, IMHO, this API is dedicated to enable a user, so I think the only accepted attribute is `enabled`, update other attributes in body should go to update user API instead of enabled user.\n\nAs to your comments, if `enabled` with other attributes is added into body, it will raise Bad request too.\n\nIt will not pass the testcase here, `enabled` added here won\u0027t give us any difference. What do you think?",
+      "parentUuid": "dada55a8_8358848b",
+      "revId": "4adf01b03b75af4bb1917f545dc71788fb07d5ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
