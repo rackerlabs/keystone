@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_08c08e7a",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-29T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_215ad64f",
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_2c6494e2",
         "filename": "keystone/tests/unit/test_v2_validation.py",
         "patchSetId": 1
@@ -71,6 +89,30 @@
       "writtenOn": "2016-07-29T08:32:03Z",
       "side": 1,
       "message": "Does empty allowed for update? Should at least one property is needed for update?",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 47
+      },
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c84cb644",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-29T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_ec143c45",
       "range": {
         "startLine": 190,
         "startChar": 0,
