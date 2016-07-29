@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_7384875d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:43:39Z",
+      "side": 1,
+      "message": "Indentation?",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_33b84f2a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:43:39Z",
+      "side": 1,
+      "message": "Indentation?",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_13b54b30",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:43:39Z",
+      "side": 1,
+      "message": "Indentation?",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b37a7f75",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:43:39Z",
+      "side": 1,
+      "message": "Indentation?",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
