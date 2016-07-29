@@ -22,6 +22,40 @@
       "revId": "659ec1c60e3b1fc5d51973019a2ceb1f77b698cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_38966e3f",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:24:25Z",
+      "side": 1,
+      "message": "The first part of this is an incomplete sentence... the period ahould be a comma.",
+      "revId": "659ec1c60e3b1fc5d51973019a2ceb1f77b698cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b8a25e97",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T19:24:25Z",
+      "side": 1,
+      "message": "The \"or\" should be an \"and\", I think.",
+      "revId": "659ec1c60e3b1fc5d51973019a2ceb1f77b698cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
