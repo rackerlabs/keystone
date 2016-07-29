@@ -105,14 +105,10 @@ class Tenant(controller.V2Controller):
     def update_project(self, request, tenant_id, tenant):
         self.assert_admin(request)
         self._assert_not_is_domain_project(tenant_id)
-        # Remove domain_id and is_domain if specified - a v2 api caller
-        # should not be specifying that
-        clean_tenant = tenant.copy()
-        clean_tenant.pop('domain_id', None)
-        clean_tenant.pop('is_domain', None)
+        validation.lazy_validate(schema.tenant_update, tenant)
         initiator = notifications._get_request_audit_info(request.context_dict)
         tenant_ref = self.resource_api.update_project(
-            tenant_id, clean_tenant, initiator)
+            tenant_id, tenant, initiator)
         return {'tenant': self.v3_to_v2_project(tenant_ref)}
 
     @controller.v2_deprecated
