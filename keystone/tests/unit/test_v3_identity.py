@@ -445,11 +445,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             password=new_password)
         self.v3_create_token(new_password_auth)
 
-    def test_admin_password_reset_with_min_password_age_enabled(self):
-        # enable minimum_password_age, this should have no effect on admin
-        # password reset
+    def test_admin_password_reset_with_password_change_limit_enabled(self):
+        # enable password_change_limit_per_day, this should have no effect
+        # on admin password reset
         self.config_fixture.config(group='security_compliance',
-                                   minimum_password_age=1)
+                                   password_change_limit_per_day=3)
         # create user
         user_ref = unit.create_user(self.identity_api,
                                     domain_id=self.domain['id'])
@@ -786,20 +786,8 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         self.get_request_token(new_password,
                                expected_status=http_client.CREATED)
 
-    def test_changing_password_with_min_password_age(self):
-        new_password = uuid.uuid4().hex
-        # enable minimum_password_age and attempt to change password
-        self.config_fixture.config(group='security_compliance',
-                                   minimum_password_age=1)
-        self.change_password(password=new_password,
-                             original_password=self.user_ref['password'],
-                             expected_status=http_client.BAD_REQUEST)
-        # disable minimum_password_age and attempt to change password
-        self.config_fixture.config(group='security_compliance',
-                                   minimum_password_age=None)
-        self.change_password(password=new_password,
-                             original_password=self.user_ref['password'],
-                             expected_status=http_client.NO_CONTENT)
+    def test_changing_password_with_password_change_limit(self):
+        pass
 
     def test_changing_password_with_missing_original_password_fails(self):
         r = self.change_password(password=uuid.uuid4().hex,
