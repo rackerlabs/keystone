@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_003cfa2d",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-29T06:57:16Z",
+      "side": 1,
+      "message": "An exception is raised at L96, after the loop at L82.\n\nWe need the value as a flag since we can\u0027t throw an exception in the loop as a user can have multiple totp values and just one of those needs to be valid. This functionality is based on the other totp module.",
+      "parentUuid": "bacf61ea_53e891e2",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 30
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_98e6a8b2",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 11
@@ -119,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_e0360651",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-29T06:57:16Z",
+      "side": 1,
+      "message": "I\u0027m not sure what you mean by this. What does moving it to line 61 achieve?\nMaybe to make the following clearer?:\n\n\nif credentials:\n    password \u003d user_info.password[:-6]\n    auth_passcode \u003d user_info.password[-6:]\n    \n    self.identity_api.authenticate(\n        request, user_id\u003duser_info.user_id,\n        password\u003dpassword)\n\n    valid_passcode \u003d False\nelse:\n\n\nI have it below the authenticate as it isn\u0027t worth setting unless the authenticate passes.",
+      "parentUuid": "bacf61ea_13de193f",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 55
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_339fdd51",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 11
@@ -136,6 +184,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_a07a4eef",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-29T06:57:16Z",
+      "side": 1,
+      "message": "I don\u0027t think we lose anything by doing so, and it helps keep things clearer. Better UX, easier to debug.",
+      "parentUuid": "bacf61ea_339fdd51",
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_8ebf82fa",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 11
@@ -147,6 +213,24 @@
       "writtenOn": "2016-07-29T02:21:44Z",
       "side": 1,
       "message": "I\u0027m still not a fan of using TokenAPITests here because it makes it really hard to see if all the cases we care about are tested. I may try to cut this down to a smaller set of more focused tests in a followup review.",
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4146f4bf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5081,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2016-07-29T06:57:16Z",
+      "side": 1,
+      "message": "I fully agree. It\u0027s just we don\u0027t have a dedicated TestAuthPassword module. So it might be worth making one eventually and subclassing that one instead. \n\nAs it stands TokenAPITests has tests which fail because of conflicts caused when those testcases also change the config settings. Hence why those tests are overridden and skipped in this class.",
+      "parentUuid": "bacf61ea_8ebf82fa",
       "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
