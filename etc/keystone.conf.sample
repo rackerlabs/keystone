@@ -203,9 +203,6 @@
 # value)
 #instance_uuid_format = "[instance: %(uuid)s] "
 
-# Enables or disables fatal status of deprecations. (boolean value)
-#fatal_deprecations = false
-
 #
 # From oslo.messaging
 #
