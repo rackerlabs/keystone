@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_1f3394f7",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "\"Maximum number of unique passwords required\" is sort of ambiguous to me as an end user. I\u0027m not sure what you\u0027re saying is a problem here (or not). It sounds like I\u0027m supposed to provide a whole bunch of unique passwords at once, or something, but I didn\u0027t.",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ff5de015",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "max_cnt is not a \"message\" at all -- use a more appropriate string format label.",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ffb4c035",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "Seems unnecessary to have this as an instance attribute.",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_5feb4c13",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "CONF.security_compliance.unique_last_password_count + 1",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bfc36888",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "Assert methods should follow the unittest convention -- there\u0027s no reason for this to be a private method, and it should actuallyBeCamelCased.",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_1f6b9486",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T18:03:15Z",
+      "side": 1,
+      "message": "Call the public .get_user() method, and skip creating your own session here?",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
