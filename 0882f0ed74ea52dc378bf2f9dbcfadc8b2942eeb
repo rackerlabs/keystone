@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c9dca675",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-07-29T20:30:13Z",
+      "side": 1,
+      "message": "this ha always been true for the v3 API, whatever release you are talking about - it was designed this way.",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "0882f0ed74ea52dc378bf2f9dbcfadc8b2942eeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
