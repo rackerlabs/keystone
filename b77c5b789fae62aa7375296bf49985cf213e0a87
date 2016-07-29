@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_be4d3140",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-07-29T15:52:07Z",
+      "side": 1,
+      "message": "IMHO this change looks unrelated to the patch goal.",
+      "revId": "b77c5b789fae62aa7375296bf49985cf213e0a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_fe5329e0",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1410,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-07-29T15:52:07Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "b77c5b789fae62aa7375296bf49985cf213e0a87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
