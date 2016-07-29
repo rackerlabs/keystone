@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_4739c8a3",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "\"setting enable to True\" is a bit misleading. Firstly, it *might* suggest that you can set it directly in the DB, which is not the case. But more to the point, \"True\" is a Python representation of a boolean, as opposed to \"true\", the JSON representation of a boolean, which is what the user would actually set if using the HTTP API manually. More likely though, they\u0027re going to set --enable or --disable through a command line client, so we really shouldn\u0027t be referring to specific API attributes in these docs -- it\u0027s just not user-friendly language.\n\n\n  If this feature is enabled and `[security_compliance]\n  lockout_duration` is not set, then users may be locked out\n  indefinitely until the user is explicitly enabled via the API.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e7ec3cf5",
+        "filename": "keystone/exception.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Error messages that don\u0027t end in a value (like \"... user: %{user_id}s\" above) are complete sentences and end with periods.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a7a24497",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Didn\u0027t Stanek find a fix for this? I don\u0027t understand what you\u0027re having to work around.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_477b88f5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "\"Count\" should be spelled out in the comments if not in the variable name.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a701a43a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "docstring all the things!\n\nI feel like this method is really hard to follow, just because the exit conditions are not easy to follow -- nor are any of them documented up front.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f25078d6",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Yay, Python!\n\n  attempts \u003d user_ref.local_user.failed_auth_cnt or 0",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_926c9cd1",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "This could use an inline comment to explain that if no lockout duration is set, the account is locked out indefinitely, so just always return True.\n\n  return True  # also, i\u0027m personally a fan of short circuiting, but that\u0027s just me",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_92801cf9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Man, this shows how dated PCI is as a standard!",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_52dfc40c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Same as below -- all you\u0027re doing is writing at this point -- you shouldn\u0027t need to do anything transactional :(\n\n  q \u003d session.query(model.User)\n  q \u003d q.filter_by(id\u003duser_id)\n  q \u003d q.update({\u0027count\u0027: model.User.failed_auth_cnt + 1})\n\nOtherwise, I\u0027d be seriously worried about performance under load.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_12ac2c8b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Do you really have to do a SELECT first? This seems really inefficient if it actually emits one.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_32321060",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Can we not spell out \"count\" for some reason?",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d228d4e4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "self.lockout_duration? I didn\u0027t know what this was for until I chased it around. And do you need instance attributes for these, or can you just read back from config in the tests? More instance attributes just makes the tests harder to maintain.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4d39e9a3",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Nowhere else in tests do we \"remember\" garbage data (like an invalid password) -- instead, we just generate a new uuid.uuid4().hex every time we need garbage. It\u0027s cheap enough, clear, and eliminates a variable.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f2535837",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "\"correct\" is easier for non-native speakers",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0d1c1169",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "If max_attempts is 6, why does it fail after just 1 attempt?",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ad3985d9",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "this has a local timezone - bad habit! Do you actually need this though? It seems you only pass it to freeze_time(), but I would have assumed that freeze_time() would default to \"now\" on it\u0027s own.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ed189d77",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "Is this method useful enough to keep? It seems to be saving you one line of code, and it\u0027s not obvious from the method name what it actually does (I did not expect it to loop, for sure).",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ed67fdb4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:36:37Z",
+      "side": 1,
+      "message": "You only call this once -- definitely remove this method.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
