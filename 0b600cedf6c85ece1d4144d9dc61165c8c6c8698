@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_dbb91717",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-07-29T15:36:37Z",
+      "side": 1,
+      "message": "Why haven\u0027t you moved these tests to UUID specific part?",
+      "revId": "0b600cedf6c85ece1d4144d9dc61165c8c6c8698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
