@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_4267f34c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_1f3394f7",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_ff5de015",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 42
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-29T18:03:15Z",
       "side": 1,
       "message": "max_cnt is not a \"message\" at all -- use a more appropriate string format label.",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_825d6b7b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_ff5de015",
       "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_3554b7fd",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "My preference is to use the variable instead of using the long CONF.security_compliance.unique_last_password_count every time. Just easier to read in my opinion.",
+      "parentUuid": "bacf61ea_ffb4c035",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_5feb4c13",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 42
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-29T18:03:15Z",
       "side": 1,
       "message": "CONF.security_compliance.unique_last_password_count + 1",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d5439b40",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "See comment above...",
+      "parentUuid": "bacf61ea_5feb4c13",
       "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_02f85b48",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_bfc36888",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_1f6b9486",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 42
@@ -98,6 +188,24 @@
       "writtenOn": "2016-07-29T18:03:15Z",
       "side": 1,
       "message": "Call the public .get_user() method, and skip creating your own session here?",
+      "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8270cbdd",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:49:22Z",
+      "side": 1,
+      "message": "The public get_user() method returns a dictionary; I need the user model here.",
+      "parentUuid": "bacf61ea_1f6b9486",
       "revId": "baacc717dec8b161d496ae23df8911dc566a6038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
