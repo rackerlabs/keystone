@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_0a706d0a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T23:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_a701a43a",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_f25078d6",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -281,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_2a47314c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T23:40:21Z",
+      "side": 1,
+      "message": "I tried several things, including this code:\nhttp://paste.openstack.org/show/544027/\n\nHowever, there seems to be a delay with that sort of update. Initially, I\u0027d run the unit tests and they would pass. But if I ran the tests repeatedly, eventually they would fail as if the count hadn\u0027t register quick enough. \n\nLeaving this as is for now. I\u0027ll try to optimize this in a subsequent patch.",
+      "parentUuid": "bacf61ea_52dfc40c",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_12ac2c8b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -292,6 +328,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "Do you really have to do a SELECT first? This seems really inefficient if it actually emits one.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_aa7161aa",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T23:40:21Z",
+      "side": 1,
+      "message": "See comment above.",
+      "parentUuid": "bacf61ea_12ac2c8b",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -350,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f3c35087",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T23:40:21Z",
+      "side": 1,
+      "message": "Changed to self.lockout_duration. I use these variable in several of the tests. To me it\u0027s cleaner to use the smaller names.",
+      "parentUuid": "bacf61ea_d228d4e4",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_4d39e9a3",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 36
@@ -361,6 +433,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "Nowhere else in tests do we \"remember\" garbage data (like an invalid password) -- instead, we just generate a new uuid.uuid4().hex every time we need garbage. It\u0027s cheap enough, clear, and eliminates a variable.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_53bdfc00",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T23:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_4d39e9a3",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
