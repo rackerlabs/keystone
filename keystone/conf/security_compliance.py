@@ -76,12 +76,12 @@ the `sql` backend for the `[identity] driver`.
 
 password_change_limit_per_day = cfg.IntOpt(
     'password_change_limit_per_day',
-    default=0,
-    min=0,
+    default=None,
+    min=1,
     help=utils.fmt("""
-The maximum number of times a user can change their password in a single day.
-Setting the value to zero (the default) disables this feature. This feature
-depends on the `sql` backend for the `[identity] driver`.
+The maximum number of times a user can change their password within a 24 hour
+period. This feature is disabled by default and depends on the `sql` backend
+for the `[identity] driver`.
 """))
 
 password_regex = cfg.StrOpt(

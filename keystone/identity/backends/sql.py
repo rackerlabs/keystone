@@ -102,9 +102,11 @@ class Identity(base.IdentityDriverV8):
             return base.filter_user(user_ref.to_dict())
 
     @sql.handle_conflicts(conflict_type='user')
-    def update_user(self, user_id, user):
+    def update_user(self, user_id, user, self_service):
         with sql.session_for_write() as session:
             user_ref = self._get_user(session, user_id)
+            if 'password' in user and self_service:
+                self._validate_change_password_limit(user_ref)
             old_user_dict = user_ref.to_dict()
             user = utils.hash_user_password(user)
             for k in user:
@@ -113,9 +115,14 @@ class Identity(base.IdentityDriverV8):
             for attr in model.User.attributes:
                 if attr != 'id':
                     setattr(user_ref, attr, getattr(new_user, attr))
+                if attr == 'password':
+                    user_ref.password_ref.self_service = self_service
             user_ref.extra = new_user.extra
             return base.filter_user(
                 user_ref.to_dict(include_extra_dict=True))
+
+    def _validate_change_password_limit(self, user_ref):
+        pass
 
     def add_user_to_group(self, user_id, group_id):
         with sql.session_for_write() as session:
