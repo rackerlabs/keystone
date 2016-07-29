@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_cde959e8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Do you really need a dedicated method for a one liner that\u0027s not used anywhere else?",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4da3a9b2",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "I know what you mean by \"newly created passwords\", but an end user might not realize that this also includes updated passwords.\n\nexpiration* date",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cda5d9a2",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "I still don\u0027t really understand this use case for this one. It\u0027s also an anti-pattern to have to drop user IDs into configuration files after keystone has already been deployed. I\u0027d suggest ripping this feature out and proposing it as a discrete patch so that this use case can be discussed in isolation.\n\nRealistically, either people are going to enable this feature because they need to be compliant, or they\u0027re not going to enable it. I can\u0027t imagine anyone will be able to justify a partially PCI compliant deployment as being useful.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2de475df",
+        "filename": "keystone/exception.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "You could also include something helpful for end users to resolve the situation - like suggest that the password needs to be reset by an administrator.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_adf7c589",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "should id just be in the list of readonly attributes too?\n\nBut more importantly, if these readonly attributes are in the request, then I\u0027d expect a 400 response, not for parts of the request to be silently ignored.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0d4891cb",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "id is also readonly -- and so is domain_id, if the configuration is set that way.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2d80f5bf",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "A doctstr explaining why you need to override this would be nice.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cd56795b",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "How about adding password_expires_at to the expected user, instead of ignoring the value?",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_6dd4adbc",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Same as the other patch - not sure why this needs to be an instance attribute.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_adda25e6",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Just read this value from CONF",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8db48182",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Read this from CONF -- \u0027default\u0027 is not a magic value.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cd8b19c2",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Does the return need to be within the context manager? It looks like the function will return None at first glance, which doesn\u0027t seem to be the intent (or the case).",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_6d3e6ddb",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T17:57:05Z",
+      "side": 1,
+      "message": "Is this supposed to be an ISO8601 formatted datetime? It\u0027s missing the timezone.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
