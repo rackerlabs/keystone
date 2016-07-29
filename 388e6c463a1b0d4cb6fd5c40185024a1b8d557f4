@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_4df0c967",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Yeah, that makes sense. Done.",
+      "parentUuid": "bacf61ea_4739c8a3",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_e7ec3cf5",
         "filename": "keystone/exception.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "Error messages that don\u0027t end in a value (like \"... user: %{user_id}s\" above) are complete sentences and end with periods.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cd04b94b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_e7ec3cf5",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ad5d0549",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "The fix has not been merged and I created this workaround prior to there being a fix.\n\nThe error occurs when you pass a parameter in the exception. Thus, I\u0027m logging the message instead as a workaround.",
+      "parentUuid": "bacf61ea_a7a24497",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_477b88f5",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "\"Count\" should be spelled out in the comments if not in the variable name.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_4d33a914",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_477b88f5",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_5f286c86",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_f25078d6",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_926c9cd1",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -115,6 +205,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "This could use an inline comment to explain that if no lockout duration is set, the account is locked out indefinitely, so just always return True.\n\n  return True  # also, i\u0027m personally a fan of short circuiting, but that\u0027s just me",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ff8b2066",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_926c9cd1",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ffa84079",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Hmm... was just easier, but see your point. I\u0027ll need to work on the syntax for this.",
+      "parentUuid": "bacf61ea_52dfc40c",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_12ac2c8b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -183,6 +309,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "Can we not spell out \"count\" for some reason?",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_5fb86cc8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_32321060",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +384,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ffede0b7",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_f2535837",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_0d1c1169",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 36
@@ -251,6 +413,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "If max_attempts is 6, why does it fail after just 1 attempt?",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_3f1938d8",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "The fail_auth method will repeat failing authentication the max times; not 1.",
+      "parentUuid": "bacf61ea_0d1c1169",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +454,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_bf25280a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_ad3985d9",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_ed189d77",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 36
@@ -291,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_ffe04098",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "I doing this in several places, so I think the method has value.  Changed the name to make it more apparent that it is looping.",
+      "parentUuid": "bacf61ea_ed189d77",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_ed67fdb4",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 36
@@ -302,6 +518,24 @@
       "writtenOn": "2016-07-29T17:36:37Z",
       "side": 1,
       "message": "You only call this once -- definitely remove this method.",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bf76c8d4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T18:26:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_ed67fdb4",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
