@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_0cc6fb99",
+        "filename": "api-ref/source/v3/domains-config-v3.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-29T02:32:03Z",
+      "side": 1,
+      "message": "technically these aren\u0027t the only parameters but i get that you are just following the convention",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 23
+      },
+      "revId": "846bb9a817b750adf28c255cb775aca3a76cc5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ec50c760",
+        "filename": "api-ref/source/v3/samples/admin/domain-config-create-request.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-29T02:32:03Z",
+      "side": 1,
+      "message": "we probably want to add the \"identity\" section here too",
+      "revId": "846bb9a817b750adf28c255cb775aca3a76cc5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2c4bffb1",
+        "filename": "api-ref/source/v3/samples/admin/domain-config-create-response.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-29T02:32:03Z",
+      "side": 1,
+      "message": "same",
+      "revId": "846bb9a817b750adf28c255cb775aca3a76cc5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
