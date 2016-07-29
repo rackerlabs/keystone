@@ -16,6 +16,24 @@
       "revId": "0b600cedf6c85ece1d4144d9dc61165c8c6c8698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0176a005",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T16:14:07Z",
+      "side": 1,
+      "message": "revocation list actually works for uuid, even thought it was never useful.",
+      "parentUuid": "bacf61ea_dbb91717",
+      "revId": "0b600cedf6c85ece1d4144d9dc61165c8c6c8698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
