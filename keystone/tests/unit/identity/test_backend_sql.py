@@ -13,17 +13,16 @@
 import datetime
 import uuid
 
-from oslo_config import cfg
-
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
 from keystone.tests.unit import test_backend_sql
 
 
-CONF = cfg.CONF
+CONF = keystone.conf.CONF
 
 
 class DisableInactiveUserTests(test_backend_sql.SqlTests):
@@ -150,3 +149,48 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
             user_ref = session.query(model.User).get(user_id)
             user_ref.last_active_at = last_active_at
             return user_ref
+
+
+class PasswordChangeLimitTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(PasswordChangeLimitTests, self).setUp()
+        self.max_limit = 2
+        self.config_fixture.config(
+            group='security_compliance',
+            password_change_limit_per_day=self.max_limit)
+        self.passwords = [uuid.uuid4().hex,
+                          uuid.uuid4().hex,
+                          uuid.uuid4().hex,
+                          uuid.uuid4().hex]
+
+    def test_password_change_limit(self):
+        user = self._create_user(self.passwords[0])
+        self._assert_valid_change_password(user['id'], self.passwords[0],
+                                           self.passwords[1])
+        self._assert_valid_change_password(user['id'], self.passwords[1],
+                                           self.passwords[2])
+        # Attempt to change password, exceeding limit
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.change_password,
+                          self.make_request(),
+                          user['id'],
+                          self.passwords[2],
+                          self.passwords[3])
+
+    def _create_user(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': 'default',
+            'enabled': True,
+            'password': password
+        }
+        return self.identity_api.create_user(user)
+
+    def _assert_valid_change_password(self, user_id, password, new_password):
+        self.identity_api.change_password(self.make_request(),
+                                          user_id=user_id,
+                                          original_password=password,
+                                          new_password=new_password)
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=new_password)
