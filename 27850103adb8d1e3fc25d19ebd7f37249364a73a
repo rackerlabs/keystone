@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_7372f54a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T01:09:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_eb443b1c",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_2babf3d7",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 41
@@ -100,6 +118,24 @@
       "side": 1,
       "message": "At that point the password is hashed, which is why just checking not none. To be honest, this test came out of one of our review sessions (weeks ago) and brought to light a edge case that was missed.",
       "parentUuid": "bacf61ea_2babf3d7",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f39c255f",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T01:09:41Z",
+      "side": 1,
+      "message": "Haven\u0027t looked at these tests for a while; agree with many of your comments. Therefore, decided to bite the bullet and clean these up.",
+      "parentUuid": "bacf61ea_0b454f6f",
       "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -141,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d3dda115",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T01:09:41Z",
+      "side": 1,
+      "message": "Changed this test, please re-review.",
+      "parentUuid": "bacf61ea_cb185787",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_2b6e5396",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 41
@@ -170,6 +224,24 @@
       "side": 1,
       "message": "Confirming the user that was updated is the actually the same user created.",
       "parentUuid": "bacf61ea_2b6e5396",
+      "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_53cb7153",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-07-29T01:09:41Z",
+      "side": 1,
+      "message": "Changed this test, please re-review.",
+      "parentUuid": "bacf61ea_3642363f",
       "revId": "27850103adb8d1e3fc25d19ebd7f37249364a73a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
