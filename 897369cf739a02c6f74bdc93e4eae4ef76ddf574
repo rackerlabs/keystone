@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_53e891e2",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-29T02:21:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bacf61ea_78f8144a",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 30
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_98e6a8b2",
         "filename": "keystone/auth/plugins/password_totp.py",
         "patchSetId": 11
@@ -65,6 +89,64 @@
         "endLine": 68,
         "endChar": 55
       },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_13de193f",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-29T02:21:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bacf61ea_98e6a8b2",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 55
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_339fdd51",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-29T02:21:44Z",
+      "side": 1,
+      "message": "Do we want to make a distinction between invalid username/password and invalid passcode?",
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8ebf82fa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5081,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-07-29T02:21:44Z",
+      "side": 1,
+      "message": "I\u0027m still not a fan of using TokenAPITests here because it makes it really hard to see if all the cases we care about are tested. I may try to cut this down to a smaller set of more focused tests in a followup review.",
       "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
