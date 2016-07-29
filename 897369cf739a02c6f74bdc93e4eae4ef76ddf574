@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_f80fe485",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-29T00:44:11Z",
+      "side": 1,
+      "message": "I like this requirement!",
+      "range": {
+        "startLine": 61,
+        "startChar": 49,
+        "endLine": 61,
+        "endChar": 73
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_78f8144a",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-29T00:44:11Z",
+      "side": 1,
+      "message": "no need for this, just raise an exception if passcode doesn\u0027t match",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 30
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_98e6a8b2",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2016-07-29T00:44:11Z",
+      "side": 1,
+      "message": "suggest moving this up to line 61 and use auth_passcode throughout",
+      "range": {
+        "startLine": 68,
+        "startChar": 16,
+        "endLine": 68,
+        "endChar": 55
+      },
+      "revId": "897369cf739a02c6f74bdc93e4eae4ef76ddf574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
