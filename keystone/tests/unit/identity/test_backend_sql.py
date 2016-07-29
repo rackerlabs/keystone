@@ -13,17 +13,16 @@
 import datetime
 import uuid
 
-from oslo_config import cfg
-
 from keystone.common import sql
 from keystone.common import utils
+import keystone.conf
 from keystone import exception
 from keystone.identity.backends import base
 from keystone.identity.backends import sql_model as model
 from keystone.tests.unit import test_backend_sql
 
 
-CONF = cfg.CONF
+CONF = keystone.conf.CONF
 
 
 class DisableInactiveUserTests(test_backend_sql.SqlTests):
@@ -150,3 +149,12 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
             user_ref = session.query(model.User).get(user_id)
             user_ref.last_active_at = last_active_at
             return user_ref
+
+
+class PasswordChangeLimitTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(PasswordChangeLimitTests, self).setUp()
+        self.max_limit = 3
+        self.config_fixture.config(
+            group='security_compliance',
+            password_change_limit_per_day=self.max_limit)
