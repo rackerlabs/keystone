@@ -87,3 +87,16 @@ tenant_create = {
     },
     'additionalProperties': True
 }
+
+tenant_update = {
+    'type': 'object',
+    'properties': _tenant_properties,
+    'not': {
+        'anyOf': [
+            {'required': ['is_domain']},
+            {'required': ['domain_id']}
+        ]
+    },
+    'tenantId': validation.nullable(parameter_types.id_string),
+    'additionalProperties': True
+}
