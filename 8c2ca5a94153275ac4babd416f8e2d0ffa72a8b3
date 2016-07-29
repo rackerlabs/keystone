@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_215ad64f",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-07-29T10:55:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bacf61ea_09f9c24d",
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_2c6494e2",
         "filename": "keystone/tests/unit/test_v2_validation.py",
         "patchSetId": 1
