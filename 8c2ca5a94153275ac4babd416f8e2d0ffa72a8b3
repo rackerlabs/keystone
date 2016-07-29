@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_09f9c24d",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-29T08:32:03Z",
+      "side": 1,
+      "message": "\u0027minProperties\u0027: 1, at least one property is needed for update.",
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2c6494e2",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-29T08:32:03Z",
+      "side": 1,
+      "message": "and a testcase for \"is_domain\".",
+      "range": {
+        "startLine": 184,
+        "startChar": 12,
+        "endLine": 184,
+        "endChar": 41
+      },
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ec143c45",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-07-29T08:32:03Z",
+      "side": 1,
+      "message": "Does empty allowed for update? Should at least one property is needed for update?",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 47
+      },
+      "revId": "8c2ca5a94153275ac4babd416f8e2d0ffa72a8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
