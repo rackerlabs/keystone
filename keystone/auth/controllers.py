@@ -365,6 +365,9 @@ class AuthInfo(object):
         if project_id and trust:
             msg = _('Scoping to both project and trust is not allowed')
             raise ValueError(msg)
+        if unscoped and project_id:
+            msg = _('Unscoped being scoped to project is not allowed')
+            raise ValueError(msg)
         self._scope_data = (domain_id, project_id, trust, unscoped)
 
 
@@ -455,7 +458,7 @@ class Auth(controller.V3Controller):
             raise exception.Unauthorized(e)
 
         default_project_id = user_ref.get('default_project_id')
-        if not default_project_id:
+        if not default_project_id or (unscoped and default_project_id):
             # User has no default project. He shall get an unscoped token.
             return
 

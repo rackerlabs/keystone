@@ -181,6 +181,21 @@ class Manager(manager.Manager):
         role_ids = list(set([x['role_id'] for x in assignment_list]))
         return self.role_api.list_roles_from_ids(role_ids)
 
+    def _ensure_project_id_exists_in_user(self, project_id, user_id):
+        # add the default_project_id to the user
+        # reference if it does not exist
+        if project_id and user_id:
+            try:
+                user = self.identity_api.get_user(user_id)
+                if user and 'default_project_id' not in user and user['domain_id'] != 'default':
+                    user['default_project_id'] = project_id
+                    self.identity_api.update_user(user_id, user)
+            except exception.UserNotFound:
+                LOG.debug("Getting user %s failed because it does not exist.",
+                          user_id)
+            except:
+                pass
+
     def add_user_to_project(self, tenant_id, user_id):
         """Add user to a tenant by creating a default role relationship.
 
@@ -213,6 +228,8 @@ class Manager(manager.Manager):
                 user_id,
                 tenant_id,
                 CONF.member_role_id)
+
+        self._ensure_project_id_exists_in_user(tenant_id, user_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     @notifications.role_assignment('created')
@@ -229,6 +246,7 @@ class Manager(manager.Manager):
         self.resource_api.get_project(project_id)
         self.role_api.get_role(role_id)
         self.driver.add_role_to_user_and_project(user_id, project_id, role_id)
+        self._ensure_project_id_exists_in_user(project_id, user_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self._add_role_to_user_and_project_adapter(
@@ -346,6 +364,7 @@ class Manager(manager.Manager):
             self.resource_api.get_project(project_id)
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
+        self._ensure_project_id_exists_in_user(project_id, user_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
 
     def get_grant(self, role_id, user_id=None, group_id=None,
