@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_2c6abbee",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-07-29T16:36:55Z",
+      "side": 1,
+      "message": "When I hear \"anonymous\" function, I think \"lambda\", but regardless of the name, this should definitely achieve the intent. I don\u0027t have a better suggestion for the name.",
+      "revId": "77e6e9239f0e78a993b5fed5b70f97ed26aa09d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
