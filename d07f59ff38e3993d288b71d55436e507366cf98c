@@ -16,6 +16,24 @@
       "revId": "d07f59ff38e3993d288b71d55436e507366cf98c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c32c6c9b",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-31T05:20:39Z",
+      "side": 0,
+      "message": "With the current jsonschema validation, we want to remove redundant check / cleanup calls from clean.py at the manager level - and part of the issue with tox is that some tests with project[\u0027enabled\u0027] setting to a string \u0027false\u0027 is causing failure if the bad values are not cleaned up.\n\nThe invalid enabled boolean value will be tested in https://review.openstack.org/#/c/348738/4/keystone/tests/unit/test_v2_validation.py\n\nSee: https://review.openstack.org/#/c/348116/",
+      "parentUuid": "bacf61ea_a89157f3",
+      "revId": "d07f59ff38e3993d288b71d55436e507366cf98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
