@@ -22,6 +22,30 @@
       "revId": "d2b15851919c86449c4395748f49fb8b42f45081",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8318b476",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-07-31T05:15:13Z",
+      "side": 1,
+      "message": "Was done as part of trying something, but also to be similar to:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L317-L318",
+      "parentUuid": "bacf61ea_688bdfc3",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 62
+      },
+      "revId": "d2b15851919c86449c4395748f49fb8b42f45081",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
