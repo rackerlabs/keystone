@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_a89157f3",
+        "filename": "keystone/tests/unit/resource/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-07-31T04:45:05Z",
+      "side": 0,
+      "message": "why was it removed?",
+      "revId": "d07f59ff38e3993d288b71d55436e507366cf98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
