@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c2a70aa5",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-01T22:00:50Z",
+      "side": 1,
+      "message": "This almost works but webob is changing the environment headers in the tests (https://github.com/Pylons/webob/blob/master/webob/headers.py#L141-L142) and not in the actual app so the test currently fails",
+      "revId": "d9148b33579272913e0e77767fb99abb5d7b13aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
