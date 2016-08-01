@@ -64,6 +64,16 @@ class SqlTests(unit.SQLDriverOverrides, unit.TestCase):
         return config_files
 
 
+class ReadOnlyTests(SqlTests):
+    def setUp(self):
+        super(ReadOnlyTests, self).setUp()
+        self.config_fixture.config(read_only_mode=True)
+
+    def test_non_optional_write_session(self):
+        self.assertRaises(exception.ReadOnlyMode, sql.session_for_write)
+        self.assertIsNotNone(sql.session_for_read)
+
+
 class SqlModels(SqlTests):
 
     def select_table(self, name):
