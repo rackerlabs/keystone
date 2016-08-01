@@ -23,6 +23,7 @@ import keystone.conf
 
 CONF = keystone.conf.CONF
 CACHE_REGION = cache.create_region()
+CACHE_REGION.name = 'shared default'
 
 
 register_model_handler = _context_cache._register_model_handler
