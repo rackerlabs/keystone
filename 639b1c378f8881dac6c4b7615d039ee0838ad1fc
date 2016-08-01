@@ -67,6 +67,40 @@
       "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_60774f02",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-01T14:48:44Z",
+      "side": 1,
+      "message": "test_region_invalidation* \n\nAlso - maybe we could include what the region invalidation is shared across in the test name (processes)?",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2006f751",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-01T14:48:44Z",
+      "side": 1,
+      "message": "Do we know what the expected value of `value` is? We could add an assertion for that, too.",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
