@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_b5f6a08c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-01T15:45:21Z",
+      "side": 1,
+      "message": "Okay, I\u0027ve based my patch on Stanek\u0027s.",
+      "parentUuid": "bacf61ea_559f6e5e",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_477b88f5",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
