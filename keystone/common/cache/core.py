@@ -13,8 +13,12 @@
 # under the License.
 
 """Keystone Caching Layer Implementation."""
+
+import functools
+import uuid
+
 import dogpile.cache
-from dogpile.cache import api
+import dogpile.cache.region
 from oslo_cache import core as cache
 
 from keystone.common.cache import _context_cache
@@ -22,8 +26,100 @@ import keystone.conf
 
 
 CONF = keystone.conf.CONF
-CACHE_REGION = cache.create_region()
 
+
+class CacheRegion(dogpile.cache.CacheRegion):
+
+    REGION_KEY_PREFIX = '<<<region>>>:'
+
+    @property
+    def region_key(self):
+        return self.REGION_KEY_PREFIX + self.name
+
+    @property
+    def region_id(self):
+        value = self.backend.get(self.region_key)
+        if not value:
+            value = uuid.uuid4().hex
+            # TODO(dstanek): this should last forever
+            self.backend.set(self.region_key, value)
+        return value
+
+    @property
+    def function_key_generator(self):
+        return self._function_key_generator
+
+    @function_key_generator.setter
+    def function_key_generator(self, func):
+        @functools.wraps(func)
+        def _function_key_generator(*args, **kwargs):
+            generate_key = func(*args, **kwargs)
+
+            @functools.wraps(generate_key)
+            def _generate_key(*args):
+                key = generate_key(*args)
+                return key + self.region_id
+            return _generate_key
+        self._function_key_generator = _function_key_generator
+
+    def _add_region_key_qualifier(self, key):
+        if key.startswith(self.REGION_KEY_PREFIX):
+            return key
+        return '%s:%s' % (key, self.region_id)
+
+    def invalidate(self):
+        new_region_id = uuid.uuid4().hex
+        # TODO(dstanek): this should last forever
+        self.backend.set(self.region_key, new_region_id)
+
+    def get(self, key):
+        key = self._add_region_key_qualifier(key)
+        return self.backend.get(key)
+
+    def set(self, key, value):
+        key = self._add_region_key_qualifier(key)
+        self.backend.set(key, value)
+
+    def delete(self, key):
+        key = self._add_region_key_qualifier(key)
+        self.backend.delete(key)
+
+    def get_multi(self, keys):
+        keys = (self._add_region_key_qualifier(key) for key in keys)
+        return self.backend.get_multi(keys)
+
+    def set_multi(self, mapping):
+        mapping = {self._add_region_key_qualifier(key): value
+                   for key, value in mapping.items()}
+        self.backend.set_multi(mapping)
+
+    def delete_multi(self, keys):
+        keys = (self._add_region_key_qualifier(key) for key in keys)
+        self.backend.delete_multi(keys)
+
+
+dogpile.cache.CacheRegion = CacheRegion
+dogpile.cache.region.CacheRegion = CacheRegion
+
+
+def create_region(name):
+    """Create a dopile region.
+
+    Wraps oslo_cache.core.create_region. This is used to ensure that the
+    Region is properly patched and allows us to more easily specify a region
+    name.
+
+    :param str name: The region name
+    :returns: The new region.
+    :rtype: :class:`dogpile.cache.region.CacheRegion`
+
+    """
+    region = cache.create_region()
+    region.name = name  # oslo.cache doesn't allow this yet
+    return region
+
+
+CACHE_REGION = create_region(name='shared default')
 
 register_model_handler = _context_cache._register_model_handler
 
@@ -65,63 +161,3 @@ dogpile.cache.register_backend(
     'keystone.cache.memcache_pool',
     'keystone.common.cache.backends.memcache_pool',
     'PooledMemcachedBackend')
-
-
-# TODO(morganfainberg): Move this logic up into oslo.cache directly
-# so we can handle region-wide invalidations or alternatively propose
-# a fix to dogpile.cache to make region-wide invalidates possible to
-# work across distributed processes.
-class _RegionInvalidator(object):
-
-    def __init__(self, region, region_name):
-        self.region = region
-        self.region_name = region_name
-        region_key = '_RegionExpiration.%(type)s.%(region_name)s'
-        self.soft_region_key = region_key % {'type': 'soft',
-                                             'region_name': self.region_name}
-        self.hard_region_key = region_key % {'type': 'hard',
-                                             'region_name': self.region_name}
-
-    @property
-    def hard_invalidated(self):
-        invalidated = self.region.backend.get(self.hard_region_key)
-        if invalidated is not api.NO_VALUE:
-            return invalidated.payload
-        return None
-
-    @hard_invalidated.setter
-    def hard_invalidated(self, value):
-        self.region.set(self.hard_region_key, value)
-
-    @hard_invalidated.deleter
-    def hard_invalidated(self):
-        self.region.delete(self.hard_region_key)
-
-    @property
-    def soft_invalidated(self):
-        invalidated = self.region.backend.get(self.soft_region_key)
-        if invalidated is not api.NO_VALUE:
-            return invalidated.payload
-        return None
-
-    @soft_invalidated.setter
-    def soft_invalidated(self, value):
-        self.region.set(self.soft_region_key, value)
-
-    @soft_invalidated.deleter
-    def soft_invalidated(self):
-        self.region.delete(self.soft_region_key)
-
-
-def apply_invalidation_patch(region, region_name):
-    """Patch the region interfaces to ensure we share the expiration time.
-
-    This method is used to patch region.invalidate, region._hard_invalidated,
-    and region._soft_invalidated.
-    """
-    # Patch the region object. This logic needs to be moved up into dogpile
-    # itself. Patching the internal interfaces, unfortunately, is the only
-    # way to handle this at the moment.
-    invalidator = _RegionInvalidator(region=region, region_name=region_name)
-    setattr(region, '_hard_invalidated', invalidator.hard_invalidated)
-    setattr(region, '_soft_invalidated', invalidator.soft_invalidated)
