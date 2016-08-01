@@ -16,6 +16,24 @@
       "revId": "6d9678f622e5272d946b023ca341938e06fba281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c0b8bb77",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-01T14:19:09Z",
+      "side": 1,
+      "message": "Dam, my bad. I\u0027ll definitely pay closer attention to this.",
+      "parentUuid": "bacf61ea_673489dd",
+      "revId": "6d9678f622e5272d946b023ca341938e06fba281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
