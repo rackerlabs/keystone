@@ -353,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_32e3e6da",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-01T15:33:24Z",
+      "side": 1,
+      "message": "True; tried something different.",
+      "parentUuid": "bacf61ea_d5fd1e6f",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_12ac2c8b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -470,6 +488,24 @@
       "side": 1,
       "message": "I see that, but it\u0027s unnecessary indirection for the reader.",
       "parentUuid": "bacf61ea_f3c35087",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_3295a632",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-01T15:33:24Z",
+      "side": 1,
+      "message": "Okay, see your point; removed the instance variables.",
+      "parentUuid": "bacf61ea_f52302bb",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
