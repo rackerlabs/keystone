@@ -1479,6 +1479,18 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'failed_auth_count',
                                  'failed_auth_at'])
 
+    def test_migration_109_add_migration_phase_table(self):
+        migration_phase_table = 'migrate_phase'
+        self.upgrade(108)
+        self.assertTableDoesNotExist(migration_phase_table)
+        self.upgrade(109)
+        self.assertTableExists(migration_phase_table)
+        self.assertTableColumns(migration_phase_table,
+                                ['status',
+                                 'current_version',
+                                 'migrating_to_version',
+                                 'current_phase'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
