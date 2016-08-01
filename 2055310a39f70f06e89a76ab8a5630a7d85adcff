@@ -22,6 +22,30 @@
       "revId": "2055310a39f70f06e89a76ab8a5630a7d85adcff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_56013105",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-01T14:54:49Z",
+      "side": 1,
+      "message": "Ah ok, will fix",
+      "parentUuid": "bacf61ea_c1f784f3",
+      "range": {
+        "startLine": 187,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 34
+      },
+      "revId": "2055310a39f70f06e89a76ab8a5630a7d85adcff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
