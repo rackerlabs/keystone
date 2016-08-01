@@ -42,6 +42,7 @@ CONF = keystone.conf.CONF
 LOG = log.getLogger(__name__)
 
 TOKENS_REGION = oslo_cache.create_region()
+TOKENS_REGION.name = 'tokens'
 MEMOIZE_TOKENS = cache.get_memoization_decorator(
     group='token',
     region=TOKENS_REGION)
