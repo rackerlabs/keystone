@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_559f6e5e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-01T13:21:57Z",
+      "side": 1,
+      "message": "Base your patch on top of his if you need to leverage it. Leaving this sort of comment in the code is really odd.",
+      "parentUuid": "bacf61ea_ad5d0549",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_477b88f5",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -317,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d5fd1e6f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-01T13:21:57Z",
+      "side": 1,
+      "message": "This is an opportunity for an unauthenticated denial of service attack against keystone if this isn\u0027t optimized before it merges, especially because nothing about this write appears to be optional or fault tolerant.",
+      "parentUuid": "bacf61ea_2a47314c",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_12ac2c8b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -416,6 +452,24 @@
       "side": 1,
       "message": "Changed to self.lockout_duration. I use these variable in several of the tests. To me it\u0027s cleaner to use the smaller names.",
       "parentUuid": "bacf61ea_d228d4e4",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f52302bb",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-01T13:21:57Z",
+      "side": 1,
+      "message": "I see that, but it\u0027s unnecessary indirection for the reader.",
+      "parentUuid": "bacf61ea_f3c35087",
       "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
