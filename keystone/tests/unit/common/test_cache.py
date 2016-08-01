@@ -1,0 +1,165 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import uuid
+
+from dogpile.cache import api as dogpile
+from dogpile.cache.backends import memory
+from oslo_config import fixture as config_fixture
+
+from keystone.common import cache
+import keystone.conf
+from keystone.tests import unit
+
+
+CONF = keystone.conf.CONF
+
+
+class TestCacheRegion(unit.BaseTestCase):
+
+    def setUp(self):
+        super(TestCacheRegion, self).setUp()
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture.config(
+            # TODO(morganfainberg): Make Cache Testing a separate test case
+            # in tempest, and move it out of the base unit tests.
+            group='cache',
+            backend='dogpile.cache.memory')
+
+        self.region_name = uuid.uuid4().hex
+        self.region = cache.create_region('test_region')
+        cache.configure_cache(region=self.region)
+
+        # TODO(dstanek): this should be a mock entrypoint
+        self.cache_dict = {}
+        self.backend = memory.MemoryBackend({'cache_dict': self.cache_dict})
+        self.region.backend = self.backend
+
+    def _assert_has_no_value(self, values):
+        for value in values:
+           self.assertIsInstance(value, dogpile.NoValue)
+
+    def test_singular_methods_when_invalidating_the_region(self):
+        key = uuid.uuid4().hex
+        value = uuid.uuid4().hex
+
+        # key does not exist
+        self.assertIsInstance(self.region.get(key), dogpile.NoValue)
+        # make it exist
+        self.region.set(key, value)
+        # ensure it exists
+        self.assertEqual(value, self.region.get(key))
+
+        # test invalidation
+        self.region.invalidate()
+        self.assertIsInstance(self.region.get(key), dogpile.NoValue)
+
+    def test_region_singular_methods_delete(self):
+        key = uuid.uuid4().hex
+        value = uuid.uuid4().hex
+
+        # key does not exist
+        self.assertIsInstance(self.region.get(key), dogpile.NoValue)
+        # make it exist
+        self.region.set(key, value)
+        # ensure it exists
+        self.assertEqual(value, self.region.get(key))
+        # delete it
+        self.region.delete(key)
+        # ensure it's gone
+        self.assertIsInstance(self.region.get(key), dogpile.NoValue)
+
+    def test_multi_methods_when_invalidating_the_region(self):
+        mapping = {uuid.uuid4().hex: uuid.uuid4().hex for _ in range(4)}
+        keys = list(mapping.keys())
+        values = [mapping[k] for k in keys]
+
+        # keys do not exist
+        self._assert_has_no_value(self.region.get_multi(keys))
+        # make them exist
+        self.region.set_multi(mapping)
+        # ensure they exist
+        self.assertEqual(values, self.region.get_multi(keys))
+        # check using the singular get method for completeness
+        self.assertEqual(mapping[keys[0]], self.region.get(keys[0]))
+
+        # test invalidation
+        self.region.invalidate()
+        # ensure they are gone
+        self._assert_has_no_value(self.region.get_multi(keys))
+
+    def test_region_multi_methods_delete(self):
+        mapping = {uuid.uuid4().hex: uuid.uuid4().hex for _ in range(4)}
+        keys = list(mapping.keys())
+        values = [mapping[k] for k in keys]
+
+        # keys do not exist
+        self._assert_has_no_value(self.region.get_multi(keys))
+        # make them exist
+        self.region.set_multi(mapping)
+        # ensure they exist
+        keys = list(mapping.keys())
+        expected_values = [mapping[k] for k in keys]
+        self.assertEqual(expected_values, self.region.get_multi(keys))
+        # check using the singular get method for completeness
+        self.assertEqual(mapping[keys[0]], self.region.get(keys[0]))
+
+        # delete them
+        self.region.delete_multi(mapping.keys())
+        # ensure they are gone
+        self._assert_has_no_value(self.region.get_multi(keys))
+
+    def test_memoize_decorator_when_invalidating_the_region(self):
+        memoize = cache.get_memoization_decorator('cache', region=self.region)
+
+        @memoize
+        def func(value):
+            return value + uuid.uuid4().hex
+
+        key = uuid.uuid4().hex
+
+        # test get/set
+        return_value = func(key)
+        # the values should be the same since it comes from the cache
+        self.assertEqual(return_value, func(key))
+
+        # test invalidation
+        self.region.invalidate()
+        new_value = func(key)
+        self.assertNotEqual(return_value, new_value)
+
+    def test_combination(self):
+        memoize = cache.get_memoization_decorator('cache', region=self.region)
+
+        @memoize
+        def func(value):
+            return value + uuid.uuid4().hex
+
+        key = uuid.uuid4().hex
+        simple_value = uuid.uuid4().hex
+
+        # test get/set using the decorator
+        return_value = func(key)
+        self.assertEqual(return_value, func(key))
+
+        # test get/set using the singular methods
+        self.region.set(key, simple_value)
+        self.assertEqual(simple_value, self.region.get(key))
+
+        self.region.invalidate()
+
+        # ensure that the decorated function returns a new value
+        new_value = func(key)
+        self.assertNotEqual(return_value, new_value)
+
+        # ensure that a get doesn't have a value
+        self.assertIsInstance(self.region.get(key), dogpile.NoValue)
