@@ -1462,6 +1462,18 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'created_at',
                                  'last_active_at'])
 
+    def test_migration_108_add_migration_phase_table(self):
+        migration_phase_table = 'migration_phase'
+        self.upgrade(107)
+        self.assertTableDoesNotExist(migration_phase_table)
+        self.upgrade(108)
+        self.assertTableExists(migration_phase_table)
+        self.assertTableColumns(migration_phase_table,
+                                ['status',
+                                 'current_version',
+                                 'migrating_to_version',
+                                 'current_phase'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
