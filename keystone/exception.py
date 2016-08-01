@@ -482,6 +482,19 @@ class NotImplemented(Error):
     title = 'Not Implemented'
 
 
+class ServiceUnavailable(Error):
+    message_format = _("The server is currently unable to handle the request "
+                       "due to a temporary overloading or maintenance of the "
+                       "server.")
+    code = 503
+    title = 'Service Unavailable'
+
+
+class ReadOnlyMode(ServiceUnavailable):
+    message_format = _("The server is currently in read-only mode, and is not "
+                       "able to fulfill any write operations.")
+
+
 class Gone(Error):
     message_format = _("The service you have requested is no"
                        " longer available on this server.")

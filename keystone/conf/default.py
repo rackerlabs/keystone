@@ -224,6 +224,16 @@ notification_opt_out=identity.user.create
 notification_opt_out=identity.authenticate.success
 """))
 
+read_only_mode = cfg.BoolOpt(
+    'read_only_mode',
+    default=False,
+    help=utils.fmt("""
+When enabled, keystone will entirely skip any non-critical write operations to
+the database, and will return 503 Service Unavailable for any critical write
+operations. This is useful during upgrades, such as when keystone cannot be
+confident of the database schema to which it is writing.
+"""))
+
 
 GROUP_NAME = 'DEFAULT'
 ALL_OPTS = [
@@ -244,6 +254,7 @@ ALL_OPTS = [
     default_publisher_id,
     notification_format,
     notification_opt_out,
+    read_only_mode,
 ]
 
 

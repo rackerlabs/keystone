@@ -216,6 +216,11 @@ def session_for_read():
 
 
 def session_for_write():
+    if CONF.read_only_mode:
+        # Fail the entire request because we're in read-only mode, and this is
+        # write operation is critical to the application.
+        raise exception.ReadOnlyMode()
+
     if _TESTING_USE_GLOBAL_CONTEXT_MANAGER:
         writer = enginefacade.writer
     else:
