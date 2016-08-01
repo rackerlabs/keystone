@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_1124e3c2",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-01T15:10:20Z",
+      "side": 1,
+      "message": "I think you misunderstood my comment on the previous patchset regarding the comma:\n\n  given endpoint. The Identity service\n\nShould be:\n\n  given endpoint, the Identity service\n\nAnd the comma you added instead should be reverted:\n\n  an *EXPERIMENTAL* status, an *EXPERIMENTAL* status",
+      "revId": "82561633137b83fc725733587789c4621d123ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
