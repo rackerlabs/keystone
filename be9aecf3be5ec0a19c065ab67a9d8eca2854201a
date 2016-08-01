@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_b5006035",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-01T15:47:25Z",
+      "side": 1,
+      "message": "There are existing tests that just use \u0027username\u0027 and I\u0027m currently trying to find where I saw it, but I thought I saw some docs that said v2 supported either \u0027name\u0027 OR \u0027username\u0027",
+      "parentUuid": "bacf61ea_47cb9a1e",
+      "range": {
+        "startLine": 43,
+        "startChar": 25,
+        "endLine": 43,
+        "endChar": 35
+      },
+      "revId": "be9aecf3be5ec0a19c065ab67a9d8eca2854201a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_a7a09644",
         "filename": "keystone/tests/unit/test_v2_validation.py",
         "patchSetId": 3
