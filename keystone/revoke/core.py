@@ -51,14 +51,20 @@ EXTENSION_DATA = {
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
-MEMOIZE = cache.get_memoization_decorator(group='revoke')
-
 
 def revoked_before_cutoff_time():
     expire_delta = datetime.timedelta(
         seconds=CONF.token.expiration + CONF.revoke.expiration_buffer)
     oldest = timeutils.utcnow() - expire_delta
     return oldest
+
+# This builds a discrete cache region dedicated to revoke events. The API can
+# return a filtered list based upon last fetchtime. This is deprecated but
+# must be maintained.
+REVOKE_REGION = cache.create_region(name='revoke')
+MEMOIZE = cache.get_memoization_decorator(
+    group='revoke',
+    region=REVOKE_REGION)
 
 
 @dependency.provider('revoke_api')

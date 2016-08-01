@@ -44,6 +44,10 @@ LOG = log.getLogger(__name__)
 
 MEMOIZE = cache.get_memoization_decorator(group='identity')
 
+ID_MAPPING_REGION = cache.create_region(name='id mapping')
+MEMOIZE_ID_MAPPING = cache.get_memoization_decorator(group='identity',
+                                                     region=ID_MAPPING_REGION)
+
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'
 

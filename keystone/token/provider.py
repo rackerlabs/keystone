@@ -39,7 +39,11 @@ from keystone.token import utils
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-MEMOIZE = cache.get_memoization_decorator(group='token')
+
+TOKENS_REGION = cache.create_region(name='tokens')
+MEMOIZE_TOKENS = cache.get_memoization_decorator(
+    group='token',
+    region=TOKENS_REGION)
 
 # NOTE(morganfainberg): This is for compatibility in case someone was relying
 # on the old location of the UnsupportedTokenVersionException for their code.
@@ -287,11 +291,11 @@ class Manager(manager.Manager):
             LOG.debug('Unable to validate token: %s', e)
             raise exception.TokenNotFound(token_id=token_id)
 
-    @MEMOIZE
+    @MEMOIZE_TOKENS
     def validate_non_persistent_token(self, token_id):
         return self.driver.validate_non_persistent_token(token_id)
 
-    @MEMOIZE
+    @MEMOIZE_TOKENS
     def _validate_token(self, token_id):
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
@@ -312,11 +316,11 @@ class Manager(manager.Manager):
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
 
-    @MEMOIZE
+    @MEMOIZE_TOKENS
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
-    @MEMOIZE
+    @MEMOIZE_TOKENS
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
