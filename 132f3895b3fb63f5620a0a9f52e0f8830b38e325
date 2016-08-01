@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_9c37404c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-01T18:21:40Z",
+      "side": 1,
+      "message": "Add \"Closes-Bug: 1601910\" to the message",
+      "revId": "132f3895b3fb63f5620a0a9f52e0f8830b38e325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
