@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c6a59047",
+        "filename": "doc/source/totp-credentials.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-01T03:37:06Z",
+      "side": 1,
+      "message": "include a hyperlink to: http://www.google.com/2step",
+      "range": {
+        "startLine": 70,
+        "startChar": 20,
+        "endLine": 70,
+        "endChar": 40
+      },
+      "revId": "afdfba5e19b6d4e707198a8afb36f0e9877c96f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
