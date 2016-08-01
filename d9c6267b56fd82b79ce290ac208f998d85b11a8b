@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_230d88e8",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-08-01T15:07:37Z",
+      "side": 1,
+      "message": "Instead of doing a try/catch I would suggest a simple if statement that checks sets `name` if it is anywhere is `args` and then passing the name to the exception if so as such:\n\n    # We traverse in case name is in args[0] .... args[n]\n    name \u003d \u0027 \u0027\n    for item in args:\n         if hasattr(args, \u0027name\u0027):\n              name \u003d getattr(item, \u0027name\u0027)\n\n     raise exception.Conflict(type\u003dconflict_type, name\u003dname,\n                                             details\u003d_(\u0027Duplicate Entry\u0027))\n\nI Rodrigo suggested, using python\u0027s hasattr() is a more readable and maintainable. This may also address Dave\u0027s comment of the value possibly being in different positions.",
+      "revId": "d9c6267b56fd82b79ce290ac208f998d85b11a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e305307a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 16046
+      },
+      "writtenOn": "2016-08-01T15:07:37Z",
+      "side": 1,
+      "message": "For examples on why tests are failing I would take a look at https://github.com/openstack/keystone/blob/master/keystone/tests/unit/identity/backends/test_base.py#L128 where exception.Conflict is called.\n\nShould we have 1 generic Conflict Error and have specific conflict error for each type of conflict? Maybe that can avoid the error of items not having the name field.",
+      "revId": "d9c6267b56fd82b79ce290ac208f998d85b11a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
