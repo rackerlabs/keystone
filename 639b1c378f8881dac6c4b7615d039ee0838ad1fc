@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_51181b75",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-01T15:01:21Z",
+      "side": 1,
+      "message": "Revisiting this on a different machine in Chrome, and all the indentation looks fine - must have been a problem with Safari.",
+      "parentUuid": "bacf61ea_7384875d",
+      "revId": "639b1c378f8881dac6c4b7615d039ee0838ad1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_33b84f2a",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 13
