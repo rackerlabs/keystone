@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_687a6dbe",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-02T09:16:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_ce944938",
+      "range": {
+        "startLine": 226,
+        "startChar": 19,
+        "endLine": 226,
+        "endChar": 20
+      },
+      "revId": "5d7534c1413ddf8699bfae60967f61ec66862ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_7ddfcdd5",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-02T09:06:40Z",
       "side": 1,
       "message": "How does these columns get updated?",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 268,
+        "endChar": 57
+      },
+      "revId": "5d7534c1413ddf8699bfae60967f61ec66862ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_283a35e7",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-02T09:16:39Z",
+      "side": 1,
+      "message": "Haven\u0027t added that bit! Basically at the end of the sequence.",
+      "parentUuid": "bacf61ea_7ddfcdd5",
       "range": {
         "startLine": 267,
         "startChar": 0,
