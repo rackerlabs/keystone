@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_0d2f55a2",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-02T23:29:32Z",
+      "side": 1,
+      "message": "seems like this is failing tempest too:\n\nu\u0027message\u0027: u\"Invalid input for field \u0027email\u0027: u\u0027\u0027 is not a \u0027email\u0027\", u\u0027code\u0027: 400\n\nlet\u0027s remove this line and update the tests",
+      "range": {
+        "startLine": 33,
+        "startChar": 5,
+        "endLine": 33,
+        "endChar": 56
+      },
+      "revId": "d96eb7977eede3e64f4de06c355683ef820b9972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
