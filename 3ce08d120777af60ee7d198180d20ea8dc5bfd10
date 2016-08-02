@@ -95,6 +95,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_14e651e8",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-02T15:37:38Z",
+      "side": 1,
+      "message": "Yes and no. I looked into two ways of solving the \"optional\" part, and have settled on the more verbose approach for the moment.\n\nMy elegant solution was to add an \"optional\" or \"skip_in_read_only_mode\" argument to session_for_write() such that operations like updating a user\u0027s invalid password lockout count could be silently skipped when in read-only mode. The advantage to this approach is that any logic inside the context manager still gets executed, it just won\u0027t have an effect on the database.\n\n\n  def _increment_invalid_password_count(self):\n    with session_for_write(optional\u003dTrue) as session:\n      session.update_things()\n\nHowever, preventing writes from inside a context manager proved to be a little complicated (I was trying to stomp on the session\u0027s flush method with a no-op). I could get back to it, but we don\u0027t have many use cases for optional writes (yet), so it didn\u0027t seem to be worth the effort.\n\nInstead, we can write drivers with a conditional before grabbing a write session:\n\n  def _increment_invalid_password_count(self):\n    if not CONF.read_only_mode:\n      with session_for_write() as session:\n        session.update_things()",
+      "parentUuid": "bacf61ea_52dc6174",
+      "revId": "3ce08d120777af60ee7d198180d20ea8dc5bfd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c2170a43",
         "filename": "keystone/conf/default.py",
         "patchSetId": 1
@@ -112,6 +130,24 @@
         "endLine": 234,
         "endChar": 55
       },
+      "revId": "3ce08d120777af60ee7d198180d20ea8dc5bfd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_543e092a",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-02T15:37:38Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "bacf61ea_c2170a43",
       "revId": "3ce08d120777af60ee7d198180d20ea8dc5bfd10",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
