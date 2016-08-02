@@ -18,6 +18,10 @@
 #
 # - Add a new release name definition below, add it to the release sequence and
 #   mark it as the LATEST_RELEASE
+# - Add a repo with the name of the release in common/sql/migrate_repo_contract
+#   to hold any contract migrations that safe to run in after upgrading to the
+#   new release (e.g. removing columns from which data was migrated in the
+#   previous release)
 #
 
 EARLIER_RELEASE = 'Pre-Newton'

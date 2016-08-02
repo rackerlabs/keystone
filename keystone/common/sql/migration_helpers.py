@@ -127,6 +127,24 @@ def _sync_common_repo(version):
                           init_version=init_version, sanity_check=False)
 
 
+def _sync_contract_repo(release):
+    repo_name = 'migrate_repo_contract' + '/' + release
+    abs_path = find_migrate_repo(repo_name=repo_name)
+    with sql.session_for_write() as session:
+        engine = session.get_bind()
+        # Register the repo with the version control API
+        # If it already knows about the repo, it will throw
+        # an exception that we can safely ignore
+        try:
+            migration.db_version_control(engine, abs_path)
+        except (migration.exception.DbMigrationError,
+                exceptions.DatabaseAlreadyControlledError):  # nosec
+            pass
+        init_version = get_init_version(abs_path=abs_path)
+        migration.db_sync(engine, abs_path,
+                          init_version=init_version, sanity_check=False)
+
+
 def get_init_version(abs_path=None):
     """Get the initial version of a migrate repository.
 
@@ -196,7 +214,7 @@ def offline_sync_database_to_version(version=None):
         # and then stamp the status row at the end.
 
         force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
-        # TODO(henry-nash): add call to contract phase here
+        _sync_contract_repo(migration_control.LATEST_RELEASE)
 
 
 def get_db_version():
@@ -241,5 +259,4 @@ def migration_contract():
     running code that no longer looks at old tables/columns.
 
     """
-    # TODO(henry-nash): Migrate contract repo here.
-    pass
+    _sync_contract_repo(migration_control.LATEST_RELEASE)
