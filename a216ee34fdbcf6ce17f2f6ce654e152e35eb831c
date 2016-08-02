@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_6b7360e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-02T20:49:13Z",
+      "side": 1,
+      "message": "Might want to change to commit Id7c54f98fce0e9775b12f7e78aa7810200f0ced5 or wait till it merges.",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "a216ee34fdbcf6ce17f2f6ce654e152e35eb831c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_2a3a0a35",
         "filename": "keystone/conf/saml.py",
         "patchSetId": 3
