@@ -39,6 +39,30 @@
       "revId": "fc9cfb76c586f9d3465df2902937525a835a43da",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ae761104",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-02T16:53:29Z",
+      "side": 1,
+      "message": "All the above is in one section called \"API Resources\" which gives the resources definitions. If we do that (as it is), we would end up mixing different section levels.\n\nAlso, the above will be moved later to the api-guide docs (when created)",
+      "parentUuid": "bacf61ea_833e8627",
+      "range": {
+        "startLine": 299,
+        "startChar": 0,
+        "endLine": 299,
+        "endChar": 43
+      },
+      "revId": "fc9cfb76c586f9d3465df2902937525a835a43da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
