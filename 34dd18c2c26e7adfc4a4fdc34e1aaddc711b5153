@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_e002d808",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2016-08-02T16:07:10Z",
+      "side": 1,
+      "message": "i just wanted to -1 it for missing include directive and then you uploaded another patch :-)",
+      "revId": "34dd18c2c26e7adfc4a4fdc34e1aaddc711b5153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
