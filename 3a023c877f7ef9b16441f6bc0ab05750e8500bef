@@ -34,6 +34,24 @@
       "revId": "3a023c877f7ef9b16441f6bc0ab05750e8500bef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f43e1dd9",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-02T15:41:46Z",
+      "side": 1,
+      "message": "Could you please identify these cases and report a bug?",
+      "parentUuid": "bacf61ea_f6800c8d",
+      "revId": "3a023c877f7ef9b16441f6bc0ab05750e8500bef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
