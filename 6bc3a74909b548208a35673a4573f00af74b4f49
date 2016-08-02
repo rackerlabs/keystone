@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_fdb28b05",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-02T14:23:03Z",
+      "side": 1,
+      "message": "nit: %(..)d - since unique_cnt is an integer type.\n\nFrom David\u0027s comment on patch set 41.",
+      "revId": "6bc3a74909b548208a35673a4573f00af74b4f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ddb347e8",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-02T14:23:03Z",
+      "side": 1,
+      "message": "I like the assertion.",
+      "revId": "6bc3a74909b548208a35673a4573f00af74b4f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
