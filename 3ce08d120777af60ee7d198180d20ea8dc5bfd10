@@ -48,6 +48,53 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f20c753d",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-02T14:09:47Z",
+      "side": 1,
+      "message": "yep, this doesn\u0027t match the implementation",
+      "parentUuid": "bacf61ea_1f4dfb99",
+      "range": {
+        "startLine": 231,
+        "startChar": 14,
+        "endLine": 231,
+        "endChar": 75
+      },
+      "revId": "3ce08d120777af60ee7d198180d20ea8dc5bfd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_52dc6174",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-02T14:09:47Z",
+      "side": 1,
+      "message": "you say non-critical? but don\u0027t ALL our write requests use session_for_write? this will essentially fail any write operation",
+      "range": {
+        "startLine": 231,
+        "startChar": 46,
+        "endLine": 231,
+        "endChar": 58
+      },
+      "revId": "3ce08d120777af60ee7d198180d20ea8dc5bfd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c2170a43",
         "filename": "keystone/conf/default.py",
         "patchSetId": 1
