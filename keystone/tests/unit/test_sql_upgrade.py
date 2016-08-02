@@ -1500,6 +1500,47 @@ class PostgreSQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
 
 
+class SqlNewtonContractUpgradeTests(SqlMigrateBase):
+    _initial_db_version = migration_helpers.get_init_version()
+
+    def setUp(self):
+        # Make sure the main repo is fully upgraded for this release since the
+        # contract phase is only run after such an upgrade
+        self._initial_db_version = migration_helpers.get_init_version()
+        super(SqlNewtonContractUpgradeTests, self).setUp()
+        self.upgrade(self.max_version)
+
+        # Now re-set for the contract repo
+        self._initial_db_version = 0
+        self.repo_path = migration_helpers.find_migrate_repo(
+            package=self.repo_package(),
+            repo_name='migrate_repo_contract/Newton')
+        self.schema_ = versioning_api.ControlledSchema.create(
+            self.engine,
+            self.repo_path,
+            self._initial_db_version)
+        self.max_version = self.schema_.repository.version().version
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+    def test_created_at_made_non_nullable(self):
+        password_table = sqlalchemy.Table('password', self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+        self.upgrade(1)
+        self.metadata.clear()
+        password_table = sqlalchemy.Table('password', self.metadata,
+                                          autoload=True)
+        self.assertFalse(password_table.c.created_at.nullable)
+
+
 class VersionTests(SqlMigrateBase):
 
     _initial_db_version = migration_helpers.get_init_version()
