@@ -407,6 +407,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_5525595a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-02T19:36:24Z",
+      "side": 1,
+      "message": "I\u0027ve tried several update queries and they all result in the same behavior, the lockout tests run successfully, but eventually fail when executed repeatedly. When the tests fail, the failed_auth_count never gets updated.\n\nThe tests always succeed when querying the object first and then setting the attribute, which is how we are doing updates throughout keystone. And thinking about this some more, I don\u0027t feel that this will be a performance issue, even under heavy loads, as this write will only occur during failed auth attempts.\n\nAs with all of the PCI features, this write is optional. If you don\u0027t set the lockout_failure_attempts property, this method will never be called.\n\nTherefore, I propose that we revert the code back and not do the update query.",
+      "parentUuid": "bacf61ea_d5fd1e6f",
+      "revId": "388e6c463a1b0d4cb6fd5c40185024a1b8d557f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_12ac2c8b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
