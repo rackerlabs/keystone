@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_e315c29b",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-02T16:33:31Z",
+      "side": 1,
+      "message": "... here? v",
+      "revId": "fc9cfb76c586f9d3465df2902937525a835a43da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_833e8627",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-02T16:33:31Z",
+      "side": 1,
+      "message": "what do you think about moving this... ^",
+      "range": {
+        "startLine": 299,
+        "startChar": 0,
+        "endLine": 299,
+        "endChar": 43
+      },
+      "revId": "fc9cfb76c586f9d3465df2902937525a835a43da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
