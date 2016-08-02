@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_ed02c10a",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-02T23:27:55Z",
+      "side": 1,
+      "message": "i guess remove this or set it to 0",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 23
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
