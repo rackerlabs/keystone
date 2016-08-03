@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from dogpile.cache import api
 from oslo_serialization import msgpackutils
 from oslo_utils import timeutils
 from six.moves import map
@@ -344,9 +345,13 @@ class _RevokeEventHandler(object):
         return msgpackutils.dumps(obj.__dict__, registry=self._registry)
 
     def deserialize(self, data):
-        revoke_event_data = msgpackutils.loads(data, registry=self._registry)
-        revoke_event = RevokeEvent(**revoke_event_data)
-        return revoke_event
+        try:
+            revoke_event_data = msgpackutils.loads(
+                data, registry=self._registry)
+            revoke_event = RevokeEvent(**revoke_event_data)
+            return revoke_event
+        except Exception:
+            return api.NO_VALUE
 
 
 cache.register_model_handler(_RevokeEventHandler)
