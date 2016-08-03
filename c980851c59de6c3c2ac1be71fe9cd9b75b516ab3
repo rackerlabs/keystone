@@ -46,6 +46,115 @@
       "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8e92189e",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T03:27:21Z",
+      "side": 1,
+      "message": "pls also add a test for _INVALID_NAMES",
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_0e2aa87e",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T03:27:21Z",
+      "side": 1,
+      "message": "This testcase test `username`, pls update the request body below.",
+      "range": {
+        "startLine": 324,
+        "startChar": 48,
+        "endLine": 324,
+        "endChar": 56
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ae39dcda",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T03:27:21Z",
+      "side": 1,
+      "message": "here.",
+      "range": {
+        "startLine": 326,
+        "startChar": 13,
+        "endLine": 326,
+        "endChar": 37
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_6e088429",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T03:27:21Z",
+      "side": 1,
+      "message": "This will be removed in the next patchset.",
+      "range": {
+        "startLine": 331,
+        "startChar": 0,
+        "endLine": 335,
+        "endChar": 34
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ee4ab454",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T03:27:21Z",
+      "side": 1,
+      "message": "test against _INVALID_ENABLED_FORMATS instead.",
+      "range": {
+        "startLine": 339,
+        "startChar": 8,
+        "endLine": 339,
+        "endChar": 30
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
