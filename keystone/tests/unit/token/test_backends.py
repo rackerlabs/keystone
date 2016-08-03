@@ -292,7 +292,8 @@ class TokenTests(object):
 
     def test_flush_expired_token(self):
         token_id = uuid.uuid4().hex
-        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        window = self.config_fixture.conf.token.grace_window + 5
+        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=window)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
@@ -303,7 +304,7 @@ class TokenTests(object):
         self.assertDictEqual(data, data_ref)
 
         token_id = uuid.uuid4().hex
-        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
+        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=window)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
                 'expires': expire_time,
                 'trust_id': None,
