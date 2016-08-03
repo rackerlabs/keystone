@@ -19,7 +19,6 @@ import types
 
 from oslo_log import log
 from oslo_log import versionutils
-from oslo_utils import importutils
 from oslo_utils import reflection
 import six
 import stevedore
@@ -67,26 +66,11 @@ def response_truncated(f):
 
 
 def load_driver(namespace, driver_name, *args):
-    try:
-        driver_manager = stevedore.DriverManager(namespace,
-                                                 driver_name,
-                                                 invoke_on_load=True,
-                                                 invoke_args=args)
-        return driver_manager.driver
-    except RuntimeError as e:
-        LOG.debug('Failed to load %r using stevedore: %s', driver_name, e)
-        # Ignore failure and continue on.
-
-    driver = importutils.import_object(driver_name, *args)
-
-    msg = (_(
-        'Direct import of driver %(name)r is deprecated as of Liberty in '
-        'favor of its entrypoint from %(namespace)r and may be removed in '
-        'N.') %
-        {'name': driver_name, 'namespace': namespace})
-    versionutils.report_deprecated_feature(LOG, msg)
-
-    return driver
+    driver_manager = stevedore.DriverManager(namespace,
+                                             driver_name,
+                                             invoke_on_load=True,
+                                             invoke_args=args)
+    return driver_manager.driver
 
 
 class _TraceMeta(type):

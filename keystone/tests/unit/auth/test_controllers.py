@@ -18,7 +18,6 @@ import fixtures
 import mock
 from oslo_config import cfg
 from oslo_config import fixture as config_fixture
-from oslo_utils import importutils
 import stevedore
 from stevedore import extension
 
@@ -55,7 +54,7 @@ class TestLoadAuthMethod(unit.BaseTestCase):
             auth_plugin_namespace, plugin_name, invoke_on_load=True)
         self.assertIs(driver, mock.sentinel.driver)
 
-    def test_entrypoint_fails_import_works(self):
+    def test_entrypoint_fails(self):
         method = uuid.uuid4().hex
         plugin_name = self.getUniqueString()
 
@@ -68,31 +67,3 @@ class TestLoadAuthMethod(unit.BaseTestCase):
         # driver.
         self.useFixture(fixtures.MockPatchObject(
             stevedore, 'DriverManager', side_effect=RuntimeError))
-
-        self.useFixture(fixtures.MockPatchObject(
-            importutils, 'import_object', return_value=mock.sentinel.driver))
-
-        driver = controllers.load_auth_method(method)
-        self.assertIs(driver, mock.sentinel.driver)
-
-    def test_entrypoint_fails_import_fails(self):
-        method = uuid.uuid4().hex
-        plugin_name = self.getUniqueString()
-
-        # Register the method using the given plugin
-        cf = self.useFixture(config_fixture.Config())
-        cf.register_opt(cfg.StrOpt(method), group='auth')
-        cf.config(group='auth', **{method: plugin_name})
-
-        # stevedore.DriverManager raises RuntimeError if it can't load the
-        # driver.
-        self.useFixture(fixtures.MockPatchObject(
-            stevedore, 'DriverManager', side_effect=RuntimeError))
-
-        class TestException(Exception):
-            pass
-
-        self.useFixture(fixtures.MockPatchObject(
-            importutils, 'import_object', side_effect=TestException))
-
-        self.assertRaises(TestException, controllers.load_auth_method, method)
