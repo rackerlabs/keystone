@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_9fb97231",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-03T20:00:35Z",
+      "side": 1,
+      "message": "I did some digging on this. The reason why the fernet provider behaves differently than the uuid provider is because the fernet provider letting the v2.0 token controller deal with the exception. \n\nhttps://github.com/openstack/keystone/blob/b79e08b9bce25427e67ad7f74948f93777b9df03/keystone/token/controllers.py#L214-L215\n\nThe uuid provider raises a 404 TokenNotFound error because when a user is disabled a callback in the token provider removes all the tokens for that user.\n\nhttps://github.com/openstack/keystone/blob/b79e08b9bce25427e67ad7f74948f93777b9df03/keystone/token/provider.py#L161\n\nIt seems that the intended behavior for this test is to raise a 403 Forbidden according to the controllers, but with the callbacks + persistent tokens, that is not the case...",
+      "revId": "adfaf30bc1eae726efde729acc2da2aa8e9da6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
