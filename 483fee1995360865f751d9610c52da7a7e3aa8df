@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_506d3903",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-03T15:25:02Z",
+      "side": 1,
+      "message": "Minor nit-pick, but grammar-wise I don\u0027t think this last part looks right but it might be just me.  Could be \". However, end users....\" or \"; however, end users...\" instead?",
+      "range": {
+        "startLine": 27,
+        "startChar": 13,
+        "endLine": 27,
+        "endChar": 23
+      },
+      "revId": "483fee1995360865f751d9610c52da7a7e3aa8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_90db31ed",
         "filename": "doc/source/index.rst",
         "patchSetId": 1
