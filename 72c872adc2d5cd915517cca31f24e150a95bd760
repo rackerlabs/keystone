@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_ab2a5f2a",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T09:34:20Z",
+      "side": 1,
+      "message": "created_at or password?",
+      "range": {
+        "startLine": 18,
+        "startChar": 31,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "72c872adc2d5cd915517cca31f24e150a95bd760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2bc14f2f",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T09:34:20Z",
+      "side": 1,
+      "message": "sql_model for password is nullable I think.",
+      "range": {
+        "startLine": 19,
+        "startChar": 16,
+        "endLine": 19,
+        "endChar": 25
+      },
+      "revId": "72c872adc2d5cd915517cca31f24e150a95bd760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a548ce88",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T09:34:20Z",
+      "side": 1,
+      "message": "Have we decide that password is not nullable? If so, why it\u0027s here instead of Ocata?",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "72c872adc2d5cd915517cca31f24e150a95bd760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
