@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_f8a7e408",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-03T21:22:05Z",
+      "side": 1,
+      "message": "What are examples of non-critical versus critical writes? I can\u0027t think of any POST or PATCH operation where it is acceptable to silently not write anything.",
+      "revId": "aff6d155d43413d9a322747e72fbed7e00defe68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_a13f0924",
         "filename": "keystone/conf/default.py",
         "patchSetId": 2
