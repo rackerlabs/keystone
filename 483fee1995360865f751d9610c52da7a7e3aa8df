@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_8b6306dd",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-03T15:26:28Z",
+      "side": 1,
+      "message": "I assume you\u0027re asking about distributed multi-tenant authz? Yeah, it\u0027s a combination of everything from domains, projects, role assignments, federated mappings, shadow users, policy files, oslo.policy, auth_token middleware, etc, etc.",
+      "parentUuid": "bacf61ea_f04c2d9f",
+      "revId": "483fee1995360865f751d9610c52da7a7e3aa8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_506d3903",
         "filename": "doc/source/index.rst",
         "patchSetId": 1
