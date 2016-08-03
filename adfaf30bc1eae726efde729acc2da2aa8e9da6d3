@@ -16,6 +16,23 @@
       "revId": "adfaf30bc1eae726efde729acc2da2aa8e9da6d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c28af119",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-03T20:51:52Z",
+      "side": 1,
+      "message": "this should use a kwarg",
+      "revId": "adfaf30bc1eae726efde729acc2da2aa8e9da6d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
