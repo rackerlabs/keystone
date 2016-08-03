@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_c1ecbdf5",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-03T15:59:36Z",
+      "side": 1,
+      "message": "I read it a couple times and had the same gut feeling. A semicolon would be much better.",
+      "parentUuid": "bacf61ea_506d3903",
+      "revId": "483fee1995360865f751d9610c52da7a7e3aa8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_90db31ed",
         "filename": "doc/source/index.rst",
         "patchSetId": 1
