@@ -1,0 +1,7 @@
+---
+features:
+  - >
+    [`blueprint allow-expired <https://blueprints.launchpad.net/keystone/+spec/allow-expired>`_]
+    An `allow_expired` flag is added to the token validation call
+    (``GET/HEAD  /v3/auth/tokens``) that allows fetching a token that has
+    expired. This allows for validating tokens in long running operations.
