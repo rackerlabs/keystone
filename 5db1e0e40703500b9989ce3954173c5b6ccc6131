@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_d90e91e4",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T07:50:17Z",
+      "side": 1,
+      "message": "I think those version could be configurable, maybe define a conf for this, and possibly generate them automatically. It\u0027s not likely we come back each release and update those versions manually.",
+      "range": {
+        "startLine": 189,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 23
+      },
+      "revId": "5db1e0e40703500b9989ce3954173c5b6ccc6131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
