@@ -155,6 +155,30 @@
       "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_daf2ea99",
+        "filename": "keystone/tests/unit/test_v2_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-03T14:47:42Z",
+      "side": 1,
+      "message": "I think something wonky happened when I last rebase\u0027d, will fix",
+      "parentUuid": "bacf61ea_ee4ab454",
+      "range": {
+        "startLine": 339,
+        "startChar": 8,
+        "endLine": 339,
+        "endChar": 30
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
