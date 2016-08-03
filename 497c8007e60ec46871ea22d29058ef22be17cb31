@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_d9397bda",
+        "filename": "api-ref/source/v3-ext/federation/assertion/assertion.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-03T01:57:46Z",
+      "side": 1,
+      "message": "probably want to remove this",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 2
+      },
+      "revId": "497c8007e60ec46871ea22d29058ef22be17cb31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
