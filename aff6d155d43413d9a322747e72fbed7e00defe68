@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_b8972cea",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-03T21:40:29Z",
+      "side": 1,
+      "message": "We have several proposed in gerrit as part of the PCI-DSS spec. Essentially, in order to maintain zero downtime during an upgrade process, we\u0027d have to briefly sacrifice some of those security features (such as local user account lockout after X number of failed attempts).",
+      "parentUuid": "bacf61ea_f8a7e408",
+      "revId": "aff6d155d43413d9a322747e72fbed7e00defe68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_a13f0924",
         "filename": "keystone/conf/default.py",
         "patchSetId": 2
