@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_493c6cbf",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-03T19:09:46Z",
+      "side": 1,
+      "message": "There\u0027s nothing \"minimal\" about our current upgrade process. It\u0027s a complete outage for the entire duration. I\u0027m not documenting anything here that\u0027s not implemented, yet.",
+      "parentUuid": "bacf61ea_17f44ccd",
+      "revId": "aae0571b8011bb50ce2c946d838f0955794d1337",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_d192dd9e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
