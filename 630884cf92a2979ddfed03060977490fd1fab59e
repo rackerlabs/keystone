@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_d6cad36d",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-03T12:31:19Z",
+      "side": 1,
+      "message": "nit: deadlocks",
+      "revId": "630884cf92a2979ddfed03060977490fd1fab59e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_16aaab70",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-03T12:31:19Z",
+      "side": 1,
+      "message": "nit: you are not using \"user_id\" anywhere else, it\u0027s cleaner pass \"uuid.uuid4().hex\" directly here.",
+      "range": {
+        "startLine": 199,
+        "startChar": 60,
+        "endLine": 199,
+        "endChar": 75
+      },
+      "revId": "630884cf92a2979ddfed03060977490fd1fab59e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
