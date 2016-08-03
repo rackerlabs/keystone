@@ -1114,6 +1114,13 @@ class AuthWithTrust(object):
             self.make_request(), v3_req_with_trust)
         return token_auth_response
 
+    def test_validate_v3_trust_scoped_token_against_v2_succeeds(self):
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
+        trust_token = auth_response.headers['X-Subject-Token']
+        self.controller.validate_token(self.make_request(is_admin=True),
+                                       trust_token)
+
     def test_create_v3_token_from_trust(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         auth_response = self.fetch_v3_token_from_trust(new_trust, self.trustee)
@@ -1176,27 +1183,38 @@ class AuthWithTrust(object):
         request_body = _build_user_auth(token={'id': trust_token_id},
                                         tenant_id=self.tenant_bar['id'])
         self.assertRaises(
-            exception.Unauthorized,
+            exception.Forbidden,
             self.controller.authenticate, self.make_request(), request_body)
 
     def test_delete_trust_revokes_token(self):
-        # NOTE(lbragstad): This test doens't really make much sense because we
-        # can't validate trust-scoped tokens against the v2.0 API.
-        unscoped_token = self.get_unscoped_token(self.trustor['name'])
-        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        request = self._create_auth_request(
-            unscoped_token['access']['token']['id'])
-        self.fetch_v2_token_from_trust(new_trust)
-        trust_id = new_trust['id']
-        tokens = self.token_provider_api._persistence._list_tokens(
-            self.trustor['id'],
-            trust_id=trust_id)
-        self.assertEqual(1, len(tokens))
-        self.trust_controller.delete_trust(request, trust_id=trust_id)
-        tokens = self.token_provider_api._persistence._list_tokens(
-            self.trustor['id'],
-            trust_id=trust_id)
-        self.assertEqual(0, len(tokens))
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_time:
+            # NOTE(lbragstad): freezegun attempts to patch all things that
+            # issue a time in Python, but it doesn't patch `calendar`. The
+            # `oslo_utils.timeutils` module uses `calendar` which ends up
+            # returning non-patch datetimes. Override oslo's time to use the
+            # frozen_time context we want it to use.
+            timeutils.set_time_override(frozen_time.time_to_freeze)
+            unscoped_token = self.get_unscoped_token(self.trustor['name'])
+            new_trust = self.create_trust(self.sample_data,
+                                          self.trustor['name'])
+            request = self._create_auth_request(
+                unscoped_token['access']['token']['id'])
+            trust_token_resp = self.fetch_v2_token_from_trust(new_trust)
+            trust_scoped_token_id = trust_token_resp['access']['token']['id']
+            self.controller.validate_token(
+                self.make_request(is_admin=True),
+                token_id=trust_scoped_token_id
+            )
+            trust_id = new_trust['id']
+            frozen_time.tick(delta=datetime.timedelta(seconds=1))
+            self.trust_controller.delete_trust(request, trust_id=trust_id)
+            self.assertRaises(
+                exception.TokenNotFound,
+                self.controller.validate_token,
+                self.make_request(is_admin=True),
+                token_id=trust_scoped_token_id
+            )
 
     def test_token_from_trust_with_no_role_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
@@ -1285,6 +1303,13 @@ class AuthWithTrust(object):
             exception.Unauthorized,
             self.controller.authenticate, self.make_request(), request_body)
 
+    def test_validate_trust_scoped_token_against_v2(self):
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        trust_token_resp = self.fetch_v2_token_from_trust(new_trust)
+        trust_scoped_token_id = trust_token_resp['access']['token']['id']
+        self.controller.validate_token(self.make_request(is_admin=True),
+                                       token_id=trust_scoped_token_id)
+
 
 class UUIDAuthWithTrust(AuthWithTrust, AuthTest):
 
@@ -1312,36 +1337,8 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
         msg = 'The Fernet token provider does not support token persistence'
         self.skipTest(msg)
 
-    def test_delete_trust_revokes_token(self):
-        # NOTE(lbragstad): This test doens't really make much sense because we
-        # can't validate trust-scoped tokens against the v2.0 API. This was
-        # originally validating that UUID tokens were removed from the backend
-        # when a trust was deleted. Fernet tokens aren't persisted in the
-        # backend, so I guess the equivalent test through the API is to make
-        # sure a trust-scoped token isn't valid after a trust is deleted.
-        unscoped_token = self.get_unscoped_token(self.trustor['name'])
-        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        request = self._create_auth_request(
-            unscoped_token['access']['token']['id'])
-        trust_token_resp = self.fetch_v2_token_from_trust(new_trust)
-        trust_scoped_token_id = trust_token_resp['access']['token']['id']
-        # TODO(lbragstad): Make this a valid operation in the future?
-        self.assertRaises(
-            exception.Unauthorized,
-            self.controller.validate_token,
-            self.make_request(is_admin=True),
-            token_id=trust_scoped_token_id
-        )
-        trust_id = new_trust['id']
-        self.trust_controller.delete_trust(request, trust_id=trust_id)
-        self.assertRaises(
-            exception.Unauthorized,
-            self.controller.validate_token,
-            self.make_request(is_admin=True),
-            token_id=trust_scoped_token_id
-        )
-
     def test_trust_get_token_fails_if_trustee_disabled(self):
+        # why is this still different than the UUID case?!?!
         time = datetime.datetime.utcnow()
         with freezegun.freeze_time(time) as frozen_time:
             new_trust = self.create_trust(self.sample_data,
