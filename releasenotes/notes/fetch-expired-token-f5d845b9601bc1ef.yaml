@@ -1,0 +1,5 @@
+---
+features:
+  - An 'allow_expired' flag is added to the token validation call that allows
+    fetching a token that has expired. This allows for validating tokens in
+    long running operations.
