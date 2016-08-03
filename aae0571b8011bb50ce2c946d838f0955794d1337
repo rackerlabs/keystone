@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_d192dd9e",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-03T11:24:17Z",
+      "side": 1,
+      "message": "you should start writing promoting texts for OpenStack",
+      "range": {
+        "startLine": 20,
+        "startChar": 29,
+        "endLine": 23,
+        "endChar": 67
+      },
+      "revId": "aae0571b8011bb50ce2c946d838f0955794d1337",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
