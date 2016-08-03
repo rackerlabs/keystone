@@ -22,6 +22,30 @@
       "revId": "d96eb7977eede3e64f4de06c355683ef820b9972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_da202afa",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-03T14:48:54Z",
+      "side": 1,
+      "message": "sure, will do",
+      "parentUuid": "bacf61ea_0d2f55a2",
+      "range": {
+        "startLine": 33,
+        "startChar": 5,
+        "endLine": 33,
+        "endChar": 56
+      },
+      "revId": "d96eb7977eede3e64f4de06c355683ef820b9972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
