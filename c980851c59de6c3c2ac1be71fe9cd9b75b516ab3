@@ -22,6 +22,30 @@
       "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_5ec61117",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-03T01:41:32Z",
+      "side": 1,
+      "message": "so, this place us in dilemmas. I agree to not mention it in the schema.",
+      "parentUuid": "bacf61ea_ed02c10a",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 23
+      },
+      "revId": "c980851c59de6c3c2ac1be71fe9cd9b75b516ab3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
