@@ -22,6 +22,30 @@
       "revId": "26243ed8d1610d4689696fcef7d2a5509568436d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_27817b90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-03T11:58:36Z",
+      "side": 1,
+      "message": "It does. But the problem is with tokens owned by users. A user obtains token, passes it to a service, a service passes it to another service that performs long-running operation and the token expires.",
+      "parentUuid": "dada55a8_1b5b74f7",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 23,
+        "endChar": 61
+      },
+      "revId": "26243ed8d1610d4689696fcef7d2a5509568436d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
