@@ -22,6 +22,144 @@
       "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_17abac1f",
+        "filename": "keystone/common/sql/migrate_repo/versions/108_add_migration_phase_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "How is the status the primary key?  Won\u0027t this have values like rolling-upgrade-complete and won\u0027t their be multiple rows?  Wouldn\u0027t this need to be a composite key in that case?  Or are you only expecting a single row?",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 79
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_898b0468",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "Why not use base to_dict (include_extra_dict\u003dFalse):\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L133",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 16
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e95f2073",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "What about delete?",
+      "range": {
+        "startLine": 48,
+        "startChar": 6,
+        "endLine": 48,
+        "endChar": 20
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_49462c22",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "Why are you setting the status here?",
+      "range": {
+        "startLine": 54,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 41
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a96c089d",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "So it looks like you are always only expecting one row here, why is that?",
+      "range": {
+        "startLine": 59,
+        "startChar": 8,
+        "endLine": 59,
+        "endChar": 70
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_69d170fb",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-03T19:25:24Z",
+      "side": 1,
+      "message": "If only a single row, won\u0027t you only be updating the current_phase column? And if so, couldn\u0027t this be simplified to:\nhttp://paste.openstack.org/show/547836/",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 32
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
