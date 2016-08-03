@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_bf9f2b5e",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-03T13:46:43Z",
+      "side": 1,
+      "message": "what i\u0027m referring to in notifications.py",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 23
+      },
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_7fe77312",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-03T13:46:43Z",
+      "side": 1,
+      "message": "for other reviewers, here is where the logic for audit_initiator is coming from when we add it to the request.",
+      "range": {
+        "startLine": 421,
+        "startChar": 0,
+        "endLine": 458,
+        "endChar": 20
+      },
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
