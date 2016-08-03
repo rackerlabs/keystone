@@ -52,6 +52,24 @@
       "revId": "3a023c877f7ef9b16441f6bc0ab05750e8500bef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_394ed796",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-03T02:45:04Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a bug. It\u0027s happening because this method[1] sets the value to None and None \u003d\u003d None which evaluates to None, not False. I think this conditional should be able to handle any falsey value.\n\n[1] http://git.openstack.org/cgit/openstack/keystone/tree/keystone/middleware/core.py#n72",
+      "parentUuid": "bacf61ea_f43e1dd9",
+      "revId": "3a023c877f7ef9b16441f6bc0ab05750e8500bef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
