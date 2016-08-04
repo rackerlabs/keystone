@@ -94,6 +94,30 @@
       "revId": "c418e825d333a33641bc5e7853893095a2ac250f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e9d24aff",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-04T16:32:47Z",
+      "side": 1,
+      "message": "The row is created by the first keystone node that is upgraded to Newton, when keystone-mange is run on that node. If we are concerned about other nodes being rebooted before this (with upgrade code) - they could just ignore it. Alternatively (and actually this was in the first version I wrote) I create the row when the table is created in the migration script.",
+      "parentUuid": "bacf61ea_32bcd0ba",
+      "range": {
+        "startLine": 80,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 57
+      },
+      "revId": "c418e825d333a33641bc5e7853893095a2ac250f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
