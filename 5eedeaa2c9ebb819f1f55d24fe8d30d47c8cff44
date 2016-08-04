@@ -22,6 +22,30 @@
       "revId": "5eedeaa2c9ebb819f1f55d24fe8d30d47c8cff44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_92c77c97",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-04T14:24:06Z",
+      "side": 1,
+      "message": "I\u0027ll do this in the create user schema while I rebase it",
+      "parentUuid": "bacf61ea_7b8be71e",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 23
+      },
+      "revId": "5eedeaa2c9ebb819f1f55d24fe8d30d47c8cff44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
