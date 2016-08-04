@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_82cc4bbc",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-04T15:05:41Z",
+      "side": 1,
+      "message": "no need to add dates, we can use git blame for that :)",
+      "range": {
+        "startLine": 52,
+        "startChar": 6,
+        "endLine": 52,
+        "endChar": 19
+      },
+      "revId": "918febcfd8449fdac7d7324155e4787685945efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
