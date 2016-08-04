@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_aa14c14c",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-04T17:22:06Z",
+      "side": 1,
+      "message": "You mean, in addition to or instead of what I said? Here\u0027s my attempt at in-addition-to:\n\n  The more modern approach requires zero downtime, but is more\n  complicated resulting in a longer upgrade process and limits the\n  available capabilities the service during a portion of the process.",
+      "parentUuid": "bacf61ea_1fd9d422",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_df973c8e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-04T14:59:20Z",
       "side": 1,
       "message": "Won\u0027t this break for shadow users unless they create a newton specific DB account and is different from the one used in Mitaka?",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_aa468178",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-04T17:22:06Z",
+      "side": 1,
+      "message": "Not sure I follow the question -- how is shadow users specifically related to this paragraph? Shadowing a new user requires a write operation, yes, but there\u0027d be nothing release specific about the operation.",
+      "parentUuid": "bacf61ea_df973c8e",
       "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
