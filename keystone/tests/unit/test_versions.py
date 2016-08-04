@@ -49,7 +49,7 @@ v2_HTML_DESCRIPTION = {
 
 v2_EXPECTED_RESPONSE = {
     "id": "v2.0",
-    "status": "stable",
+    "status": "deprecated",
     "updated": "2014-04-17T00:00:00Z",
     "links": [
         {
