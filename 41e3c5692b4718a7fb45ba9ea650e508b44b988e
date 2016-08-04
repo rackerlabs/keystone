@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c5ce5f82",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-04T10:32:42Z",
+      "side": 1,
+      "message": "Instead of saying it is critical I\u0027d say it just be banned for what\u0027s going on, rolling upgrade for example.",
+      "range": {
+        "startLine": 221,
+        "startChar": 26,
+        "endLine": 221,
+        "endChar": 37
+      },
+      "revId": "41e3c5692b4718a7fb45ba9ea650e508b44b988e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c572df7b",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-04T10:32:42Z",
+      "side": 1,
+      "message": "Is there a list for each release on which write operation are critical, so that ServiceUnavailable will be raised?",
+      "range": {
+        "startLine": 232,
+        "startChar": 62,
+        "endLine": 233,
+        "endChar": 10
+      },
+      "revId": "41e3c5692b4718a7fb45ba9ea650e508b44b988e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
