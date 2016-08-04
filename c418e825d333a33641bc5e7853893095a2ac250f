@@ -22,6 +22,30 @@
       "revId": "c418e825d333a33641bc5e7853893095a2ac250f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_7e3e198c",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-04T13:20:05Z",
+      "side": 1,
+      "message": "have a look in the follow on patch....this is where we use it....:\nhttps://review.openstack.org/#/c/349716/4/keystone/common/sql/migration_helpers.py",
+      "parentUuid": "bacf61ea_73701cdd",
+      "range": {
+        "startLine": 80,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 57
+      },
+      "revId": "c418e825d333a33641bc5e7853893095a2ac250f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
