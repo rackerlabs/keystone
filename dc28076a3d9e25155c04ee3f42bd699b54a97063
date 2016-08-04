@@ -328,6 +328,30 @@
       "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b201046d",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-04T00:29:14Z",
+      "side": 1,
+      "message": "Yeah, but won\u0027t columns like the current_version only get set during create and not be updated. Or, are you suggesting for every migration, we would update these fields?",
+      "parentUuid": "bacf61ea_585ef045",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 32
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
