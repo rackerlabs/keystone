@@ -352,6 +352,30 @@
       "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_221c9bc0",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-04T06:44:19Z",
+      "side": 1,
+      "message": "yes, they\u0027ll be re-writen the next time an upgrade is done....",
+      "parentUuid": "bacf61ea_b201046d",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 32
+      },
+      "revId": "dc28076a3d9e25155c04ee3f42bd699b54a97063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
