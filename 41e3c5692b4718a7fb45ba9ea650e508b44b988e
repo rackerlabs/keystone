@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_84bd6c6a",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:59:04Z",
+      "side": 1,
+      "message": "Can there be other uses for a read-only mode? I imagine there could be, even though rolling upgrades are a significant one. Knowing that I\u0027d be in favor of keeping the comment generic.",
+      "parentUuid": "bacf61ea_c5ce5f82",
+      "revId": "41e3c5692b4718a7fb45ba9ea650e508b44b988e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c572df7b",
         "filename": "keystone/conf/default.py",
         "patchSetId": 3
@@ -42,6 +60,24 @@
         "endLine": 233,
         "endChar": 10
       },
+      "revId": "41e3c5692b4718a7fb45ba9ea650e508b44b988e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_844bac86",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:59:04Z",
+      "side": 1,
+      "message": "++ I thought all writes would have been considered critical during a rolling upgrade.",
+      "parentUuid": "bacf61ea_c572df7b",
       "revId": "41e3c5692b4718a7fb45ba9ea650e508b44b988e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
