@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_1fd9d422",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-04T14:59:20Z",
+      "side": 1,
+      "message": "It might be useful to say that it is more complicated and overall takes more time somewhere.",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_df973c8e",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-04T14:59:20Z",
+      "side": 1,
+      "message": "Won\u0027t this break for shadow users unless they create a newton specific DB account and is different from the one used in Mitaka?",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
