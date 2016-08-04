@@ -269,18 +269,37 @@ class Token(token.persistence.TokenDriverV8):
         return _expiry_range_all
 
     def flush_expired_tokens(self):
+        """Flush all the expired tokens."""
+        total_removed = 0
+        row_count = self._flush_expired_tokens()
+        LOG.info(_LI('Flush expired tokens process started...'))
+        while (row_count):
+            total_removed += row_count
+            row_count = self._flush_expired_tokens()
+            pass
+
+        LOG.info(_LI('Total expired tokens removed: %d'), total_removed)
+
+    def _flush_expired_tokens(self):
+        # Making this as a private method and to be called by another
+        # public method, it's all becasue it tries  to force a explicit
+        # commit after the delete call. It only works in this way by
+        # by exiting out from the method.
+        # Setting auto_commit to False and calling begin_nested() and
+        # commit()(like the commented code) don't make it to work as
+        # expected. So it's open for suggestions here.
+
         with sql.session_for_write() as session:
             dialect = session.bind.dialect.name
             expiry_range_func = self._expiry_range_strategy(dialect)
             query = session.query(TokenModel.expires)
-            total_removed = 0
             upper_bound_func = timeutils.utcnow
             for expiry_time in expiry_range_func(session, upper_bound_func):
+                # session.auto_commit = False
                 delete_query = query.filter(TokenModel.expires <=
                                             expiry_time)
+                # session.begin_nested()
                 row_count = delete_query.delete(synchronize_session=False)
-                total_removed += row_count
-                LOG.debug('Removed %d total expired tokens', total_removed)
+                # session.commit()
 
-            session.flush()
-            LOG.info(_LI('Total expired tokens removed: %d'), total_removed)
+                return row_count
