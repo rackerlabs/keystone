@@ -2745,6 +2745,20 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
             self.assertIn(role, token['roles'])
         self.assertNotIn(self.role_list[0], token['roles'])
 
+    def test_forbidden_role_implication_from_different_domain(self):
+        domain1 = unit.new_domain_ref(domain_id=uuid.uuid4().hex)
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = unit.new_domain_ref(domain_id=uuid.uuid4().hex)
+        self.resource_api.create_domain(domain2['id'], domain2)
+
+        role1 = unit.new_role_ref(domain_id=domain1['id'])
+        prior = self.role_api.create_role(role1['id'], role1)
+        role2 = unit.new_role_ref(domain_id=domain2['id'])
+        implied = self.role_api.create_role(role2['id'], role2)
+
+        self.put('/roles/%s/implies/%s' % (prior['id'], implied['id']),
+                 expected_status=http_client.FORBIDDEN)
+
 
 class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
     def setUp(self):
