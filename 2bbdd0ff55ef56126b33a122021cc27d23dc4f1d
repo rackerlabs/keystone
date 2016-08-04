@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_39c2e934",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:19:34Z",
+      "side": 1,
+      "message": "The more modern approach requires zero downtime? Wouldn\u0027t it be that the more modern approach *results* in zero downtime (but at the expense of being more complicated)?",
+      "parentUuid": "bacf61ea_aa14c14c",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_df973c8e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -66,6 +84,41 @@
       "side": 1,
       "message": "Not sure I follow the question -- how is shadow users specifically related to this paragraph? Shadowing a new user requires a write operation, yes, but there\u0027d be nothing release specific about the operation.",
       "parentUuid": "bacf61ea_df973c8e",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_64e318da",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:19:34Z",
+      "side": 1,
+      "message": "This would mean that authentication for new federated users wouldn\u0027t be supported during an upgrade since it would require a write. This seems reasonable to me since we\u0027ve coupled user creation and user authentication in the shadow user implementation.",
+      "parentUuid": "bacf61ea_aa468178",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c406441b",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:19:34Z",
+      "side": 1,
+      "message": "nit: \n\n  At this point, the previous release may continue to read data from the old\n  schema, but the data is also available to be read by the new schema once\n  the migration is complete.\n\nThe \u0027it\u0027 in:\n\n  and but *it* is \n\nIs throwing me off only because it seems to imply the \u0027previous release\u0027 when I feel like we are talking about the data(?).",
       "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

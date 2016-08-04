@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_79c8e122",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-04T19:19:34Z",
+      "side": 0,
+      "message": "Do we want to elaborate on *why* this would be risky?",
+      "revId": "aae0571b8011bb50ce2c946d838f0955794d1337",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
