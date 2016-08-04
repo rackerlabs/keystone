@@ -126,6 +126,7 @@ request for a scoped token to avoid re-scoping altogether.
 
 # This attribute only exists in Python 2.7.8+ or 3.2+
 hash_algorithm_choices = getattr(hashlib, 'algorithms_guaranteed', None)
+hash_algorithm_choices = sorted(hash_algorithm_choices) if hash_algorithm_choices
 hash_algorithm = cfg.StrOpt(
     'hash_algorithm',
     default='md5',
