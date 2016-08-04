@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_73701cdd",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-04T10:08:24Z",
+      "side": 1,
+      "message": "But doesn\u0027t this mean, that you will always need to check if it is the first ever migration and then decide whether to create or update. So something like: \nhttp://paste.openstack.org/show/548251/\n\nInstead, you could just:\ndelete()\nref \u003d create()",
+      "range": {
+        "startLine": 80,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 57
+      },
+      "revId": "c418e825d333a33641bc5e7853893095a2ac250f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
