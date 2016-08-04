@@ -16,6 +16,24 @@
       "revId": "e7795330c8ea9f38fd437bc3649c6ec226194e4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_67b68cfa",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-04T14:13:08Z",
+      "side": 1,
+      "message": "I did the \u0027try again in X days\u0027 approach.",
+      "parentUuid": "bacf61ea_5e86bcdb",
+      "revId": "e7795330c8ea9f38fd437bc3649c6ec226194e4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
