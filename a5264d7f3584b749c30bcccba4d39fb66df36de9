@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_57031a42",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-05T01:22:16Z",
+      "side": 1,
+      "message": "@Gage, Thanks for adding this Note ;).",
+      "revId": "a5264d7f3584b749c30bcccba4d39fb66df36de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
