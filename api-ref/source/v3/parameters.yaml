@@ -1320,6 +1320,12 @@ policy:
   in: body
   required: true
   type: object
+policy_id_2:
+  description: |
+    The policy ID.
+  in: body
+  required: true
+  type: string
 project:
   description: |
     A ``project`` object, containing:

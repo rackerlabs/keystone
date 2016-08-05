@@ -38,10 +38,10 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - policy: policy
-   - user_id: user_id
-   - project_id: project_id
-   - type: type
-   - blob: blob
+   - user_id: user_id_4
+   - project_id: project_id_response_body
+   - type: type_2
+   - blob: blob_1
 
 Request Example
 ---------------
@@ -54,13 +54,13 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
-   - links: links
-   - blob: blob
+   - user_id: user_id_4
+   - links: links_4
+   - blob: blob_1
    - policy: policy
-   - project_id: project_id
-   - type: type
-   - id: id
+   - project_id: project_id_response_body
+   - type: type_2
+   - id: policy_id_2
 
 
 List policies
@@ -78,20 +78,20 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
+   - type: type_4
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
-   - links: links
-   - blob: blob
+   - user_id: user_id_4
+   - links: links_4
+   - blob: blob_2
    - policies: policies
-   - project_id: project_id
-   - type: type
-   - id: id
+   - project_id: project_id_response_body
+   - type: type_2
+   - id: policy_id_2
 
 Response Example
 ----------------
@@ -122,13 +122,13 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
-   - links: links
-   - blob: blob
+   - user_id: user_id_4
+   - links: links_4
+   - blob: blob_2
    - policy: policy
-   - project_id: project_id
-   - type: type
-   - id: id
+   - project_id: project_id_response_body
+   - type: type_2
+   - id: policy_id_2
 
 Response Example
 ----------------
@@ -153,11 +153,11 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - policy: policy
-   - user_id: user_id
-   - project_id: project_id
-   - type: type
-   - blob: blob
-   - policy_id: policy_id
+   - user_id: user_id_4
+   - project_id: project_id_response_body
+   - type: type_2
+   - blob: blob_2
+   - id: policy_id_2
 
 Request Example
 ---------------
@@ -170,13 +170,13 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - user_id: user_id
-   - links: links
-   - blob: blob
+   - user_id: user_id_4
+   - links: links_4
+   - blob: blob_2
    - policy: policy
-   - project_id: project_id
-   - type: type
-   - id: id
+   - project_id: project_id_response_body
+   - type: type_2
+   - id: policy_id_2
 
 Response Example
 ----------------
