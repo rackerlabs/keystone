@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_e18d1332",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_cde959e8",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_4da3a9b2",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 46
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "I know what you mean by \"newly created passwords\", but an end user might not realize that this also includes updated passwords.\n\nexpiration* date",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2100cb65",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_4da3a9b2",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_613da32a",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Took this out and will create a separate patch for this.",
+      "parentUuid": "bacf61ea_cda5d9a2",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_2de475df",
         "filename": "keystone/exception.py",
         "patchSetId": 46
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "You could also include something helpful for end users to resolve the situation - like suggest that the password needs to be reset by an administrator.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_21ea8b74",
+        "filename": "keystone/exception.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_2de475df",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_fc9bf8c6",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "I added \u0027id\u0027 to the read-only attributes. This doesn\u0027t mean that the read-only attributes are in the request. This for loop is simply iterating through all of the User attributes and setting them.",
+      "parentUuid": "bacf61ea_adf7c589",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_0d4891cb",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -98,6 +188,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "id is also readonly -- and so is domain_id, if the configuration is set that way.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bc8d007e",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Added id to readonly",
+      "parentUuid": "bacf61ea_0d4891cb",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_dceef420",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_2d80f5bf",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_cd56795b",
         "filename": "keystone/tests/unit/identity/backends/test_base.py",
         "patchSetId": 46
@@ -132,6 +258,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "How about adding password_expires_at to the expected user, instead of ignoring the value?",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_3cdab04b",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_cd56795b",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_1c37ec4d",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Removed the instance attribute",
+      "parentUuid": "bacf61ea_6dd4adbc",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_adda25e6",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 46
@@ -166,6 +328,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "Just read this value from CONF",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_7c40a8a5",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_adda25e6",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_5c6b241e",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_8db48182",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_cd8b19c2",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 46
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_7cdc28e4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "No, it doesn\u0027t. Done",
+      "parentUuid": "bacf61ea_cd8b19c2",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_6d3e6ddb",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 46
@@ -217,6 +433,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 1,
       "message": "Is this supposed to be an ISO8601 formatted datetime? It\u0027s missing the timezone.",
+      "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bc55001f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 1,
+      "message": "I actually don\u0027t need a default value here; only validating that the attribute is included.",
+      "parentUuid": "bacf61ea_6d3e6ddb",
       "revId": "4eff51da89b8300c84b85f400e76a7dd2f5d010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_a1995b7b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "bacf61ea_4dbc49dc",
+      "revId": "96af93d36151b04fc82c5c1db3615311bfda544e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_0d80918a",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 46
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-29T17:57:05Z",
       "side": 0,
       "message": "and assertIsNone(user[\u0027password_expires_at\u0027]) ?",
+      "revId": "96af93d36151b04fc82c5c1db3615311bfda544e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bc9060ee",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T13:14:49Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "bacf61ea_0d80918a",
       "revId": "96af93d36151b04fc82c5c1db3615311bfda544e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
