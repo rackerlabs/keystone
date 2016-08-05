@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_fb1cb467",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T05:17:58Z",
+      "side": 1,
+      "message": "may want to expand on this as there are other checks that happen for when the config is not setup",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "0e2cc0562a5a97c836356df0a016ca2b28d97c36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_fb6af4b3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T05:17:58Z",
+      "side": 1,
+      "message": "comments would help with readability",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 52
+      },
+      "revId": "0e2cc0562a5a97c836356df0a016ca2b28d97c36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
