@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_52b81ac8",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T18:54:48Z",
+      "side": 1,
+      "message": "It looks like this will only work for v3 initially? Can we take all the common stuff here and move it into a true base view that can be used by both v2.0 and v3?",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_720a7e21",
+        "filename": "keystone/tests/unit/test_views.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T18:54:48Z",
+      "side": 1,
+      "message": "This could probably be pulled into the setUp() method, since it doesn\u0027t really seem to differ across some of the tests.\n\n\nDIff of applying that change - http://cdn.pasteraw.com/n7nrr1aythn2pnckd3rkjp234psq6fi",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d2dfea66",
+        "filename": "keystone/tests/unit/test_views.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T18:54:48Z",
+      "side": 1,
+      "message": "I think this can all fit on one line (like like 195 below).",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
