@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_69cf617f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T04:41:17Z",
+      "side": 1,
+      "message": "This seems to be checking more than one thing?\n\nI think we want to check:\n  - that DSR1 in domain A can\u0027t imply DSR2 in domain B\n  - a DSR can\u0027t imply a global role\n\nThe checks should raise different error messages",
+      "range": {
+        "startLine": 1203,
+        "startChar": 8,
+        "endLine": 1208,
+        "endChar": 76
+      },
+      "revId": "59057a0c1514a4b56256764d1da88087c8984801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
