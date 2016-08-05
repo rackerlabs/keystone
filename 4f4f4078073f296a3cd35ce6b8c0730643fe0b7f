@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_af213da0",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-05T15:08:30Z",
+      "side": 1,
+      "message": "IMO, using IDs makes it harder for deployers since they have to start keystone once to create and get the IDs, then restart again to set this option. Although I understand that user IDs are the only thing unique across domains, but my 2 cents.",
+      "range": {
+        "startLine": 74,
+        "startChar": 24,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "4f4f4078073f296a3cd35ce6b8c0730643fe0b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
