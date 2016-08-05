@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_35711a0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T15:45:01Z",
+      "side": 1,
+      "message": "Can you add the line:\n\nPartial-Bug: 1602772",
+      "revId": "a76020382c0c7ea05d9173450c8765509f3d9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d5e6beae",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T15:45:01Z",
+      "side": 1,
+      "message": "can you change the variables to be policy specific? I think it\u0027ll be easier to read for future developers. for instance:\n\nuser_id_4 -\u003e policy_user_id\ntype_2 -\u003e policy_type\nblob_1 -\u003e policy_blob\n\nand so forth, we should end up with a bunch of policy related options grouped together nicely in the yaml file.",
+      "revId": "a76020382c0c7ea05d9173450c8765509f3d9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
