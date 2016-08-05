@@ -74,7 +74,7 @@ option:
   in: path
   required: true
   type: string
-policy_id:
+policy_id_path:
   description: |
     The policy ID.
   in: path
@@ -256,6 +256,13 @@ parent_region_id_query:
   in: query
   required: false
   type: string
+policy_type_query:
+  description: |
+    Filters the response by a MIME media type for the
+    serialized policy blob. For example, ``application/json``.
+  in: query
+  required: false
+  type: string
 project_enabled_query:
   description: |
     If set to true, then only enabled projects will be returned. Any value
@@ -312,13 +319,6 @@ service_type_query:
     Filters the response by a service type. A valid
     value is ``compute``, ``ec2``, ``identity``, ``image``,
     ``network``, or ``volume``.
-  in: query
-  required: false
-  type: string
-type_4:
-  description: |
-    Filters the response by a MIME media type for the
-    serialized policy blob. For example, ``application/json``.
   in: query
   required: false
   type: string
@@ -408,18 +408,6 @@ blob:
   in: body
   required: true
   type: string
-blob_1:
-  description: |
-    The policy rule set itself, as a serialized blob.
-  in: body
-  required: true
-  type: string
-blob_2:
-  description: |
-    The policy rule itself, as a serialized blob.
-  in: body
-  required: true
-  type: object
 blob_3:
   description: |
     The credential itself, as a serialized blob.
@@ -1171,12 +1159,6 @@ links_3:
   in: body
   required: true
   type: object
-links_4:
-  description: |
-    The links for the ``policy`` resource.
-  in: body
-  required: true
-  type: object
 links_7:
   description: |
     The links for the ``role`` resource.
@@ -1327,6 +1309,43 @@ policy:
   in: body
   required: true
   type: object
+policy_blob_obj:
+  description: |
+    The policy rule itself, as a serialized blob.
+  in: body
+  required: true
+  type: object
+policy_blob_str:
+  description: |
+    The policy rule set itself, as a serialized blob.
+  in: body
+  required: true
+  type: string
+policy_id:
+  description: |
+    The policy ID.
+  in: body
+  required: true
+  type: string
+policy_links:
+  description: |
+    The links for the ``policy`` resource.
+  in: body
+  required: true
+  type: object
+policy_type:
+  description: |
+    The MIME media type of the serialized policy
+    blob.
+  in: body
+  required: true
+  type: string
+policy_user_id:
+  description: |
+    The ID of the user who owns the policy.
+  in: body
+  required: true
+  type: string
 project:
   description: |
     A ``project`` object, containing:
@@ -1654,13 +1673,6 @@ type_1:
   in: body
   required: true
   type: string
-type_2:
-  description: |
-    The MIME media type of the serialized policy
-    blob.
-  in: body
-  required: true
-  type: string
 type_3:
   description: |
     The service type, which describes the API
@@ -1714,12 +1726,6 @@ user_id_2:
     The ID of the user who owns the policy.
   in: body
   required: false
-  type: string
-user_id_4:
-  description: |
-    The ID of the user who owns the policy.
-  in: body
-  required: true
   type: string
 user_id_5:
   description: |
