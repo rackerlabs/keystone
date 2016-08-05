@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_5442f83e",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-05T00:07:20Z",
+      "side": 1,
+      "message": "@Dolph, Yep I think you are on the right track here. \n\n@Lance, I like your changes too.",
+      "parentUuid": "bacf61ea_39c2e934",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_df973c8e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d474289d",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-05T00:07:20Z",
+      "side": 1,
+      "message": "Yes, auth for federation is what I was thinking, but now that I\u0027m thinking about it the PCI stuff would also have problems if enabled. Specifically recording auth attempts.",
+      "parentUuid": "bacf61ea_64e318da",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c406441b",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -119,6 +155,24 @@
       "writtenOn": "2016-08-04T19:19:34Z",
       "side": 1,
       "message": "nit: \n\n  At this point, the previous release may continue to read data from the old\n  schema, but the data is also available to be read by the new schema once\n  the migration is complete.\n\nThe \u0027it\u0027 in:\n\n  and but *it* is \n\nIs throwing me off only because it seems to imply the \u0027previous release\u0027 when I feel like we are talking about the data(?).",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f46facc1",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-05T00:07:20Z",
+      "side": 1,
+      "message": "Having an \u0027and but\u0027 is never OK :-P",
+      "parentUuid": "bacf61ea_c406441b",
       "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
