@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_293e098b",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-05T04:35:55Z",
+      "side": 1,
+      "message": "This if statement needs an else condition and pep8 flagging line width.",
+      "revId": "440555a4b81d5e7674a9ffc7c7cf9ad979ab5030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
