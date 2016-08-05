@@ -104,6 +104,7 @@ def set_default_for_default_log_levels():
     extra_log_level_defaults = [
         'dogpile=INFO',
         'routes=INFO',
+        'oslo.policy=INFO'
     ]
 
     log.register_options(CONF)
