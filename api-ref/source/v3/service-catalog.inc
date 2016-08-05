@@ -34,20 +34,20 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
+   - type: type_5
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
-   - links: links
-   - enabled: enabled
+   - name: name_7
+   - links: links_8
+   - enabled: enabled_3
    - services: services
-   - type: type
-   - id: id
-   - description: description
+   - type: type_6
+   - id: service_id
+   - description: description_10
 
 Response Example
 ----------------
@@ -71,12 +71,12 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
+   - description: description_10
    - service: service
-   - enabled: enabled
+   - enabled: enabled_3
    - service_id: service_id
-   - type: type
-   - name: name
+   - type: type_6
+   - name: name_7
 
 Request Example
 ---------------
@@ -89,12 +89,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_7
    - service: service
-   - links: links
-   - type: type
-   - id: id
-   - description: description
+   - links: links_8
+   - type: type_6
+   - id: service_id
+   - description: description_10
 
 
 Show endpoint details
@@ -305,12 +305,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_7
    - service: service
-   - links: links
-   - type: type
-   - id: id
-   - description: description
+   - links: links_8
+   - type: type_6
+   - id: service_id
+   - description: description_10
 
 Response Example
 ----------------
@@ -338,11 +338,11 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
-   - enabled: enabled
-   - description: description
+   - type: type_6
+   - enabled: enabled_3
+   - description: description_10
    - service: service
-   - name: name
+   - name: name_7
    - service_id: service_id
 
 Request Example
@@ -356,12 +356,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name_7
    - service: service
-   - links: links
-   - type: type
-   - id: id
-   - description: description
+   - links: links_8
+   - type: type_6
+   - id: service_id
+   - description: description_10
 
 Response Example
 ----------------
