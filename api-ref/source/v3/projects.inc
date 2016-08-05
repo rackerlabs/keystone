@@ -58,7 +58,7 @@ Response Parameters
    - description: project_description_response_body
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
-   - id: project_id_response_body
+   - id: project_id
    - links: link_response_body
    - name: project_name_response_body
    - parent_id: project_parent_id_response_body
@@ -112,7 +112,7 @@ Response Parameters
    - description: project_description_response_body
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
-   - id: project_id_response_body
+   - id: project_id
    - links: link_response_body
    - name: project_name_response_body
    - parent_id: project_parent_id_response_body
@@ -145,7 +145,7 @@ Response Parameters
    - description: project_description_response_body
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
-   - id: project_id_response_body
+   - id: project_id
    - links: link_response_body
    - name: project_name_response_body
    - parent_id: project_parent_id_response_body
@@ -195,7 +195,7 @@ Response Parameters
    - description: project_description_response_body
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
-   - id: project_id_response_body
+   - id: project_id
    - name: project_name_response_body
    - links: link_response_body
    - parent_id: project_parent_id_response_body
@@ -271,7 +271,7 @@ Response Parameters
    - description: project_description_response_body
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
-   - id: project_id_response_body
+   - id: project_id
    - name: project_name_response_body
    - links: link_response_body
    - parent_id: project_parent_id_response_body
