@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_b436b04e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T15:14:48Z",
+      "side": 1,
+      "message": "nit: \n\n  This feature does not prevent administrators from manually resetting\n  passwords for locked accounts.",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_542e54a5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T15:14:48Z",
+      "side": 1,
+      "message": "They can also talk to their administrator, right?",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_6fa0e5f4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T15:14:48Z",
+      "side": 1,
+      "message": "This bit seems new - was this not done before?\n\nhttps://github.com/openstack/keystone/blob/910e6e0a124676f49092b114c00fe8ee8456e3b1/keystone/token/provider.py#L161",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cfdbd14d",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T15:14:48Z",
+      "side": 1,
+      "message": "Do we still want to go the freezegun route?",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_af83fd01",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-05T15:14:48Z",
+      "side": 1,
+      "message": "We could assert that the user can\u0027t actually change their password before the administrative password reset is made.",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
