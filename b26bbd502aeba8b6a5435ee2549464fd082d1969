@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_794c1e9e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-05T22:43:35Z",
+      "side": 1,
+      "message": "I\u0027m curious why the unit is set in days and whether that\u0027s a documented standard? Is there a use case where someone might want to set it in minutes or hours? A 1-day minimum password age is likely to cause frequent support requests for password resets while a 1-hour minimum age would be effective at ratelimiting password changes while being short enough that a user who made a mistake can wait it out to fix it.",
+      "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
