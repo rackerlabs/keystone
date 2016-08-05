@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_95a3a6b1",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T15:53:17Z",
+      "side": 1,
+      "message": "Why for locked accounts?  I mean I just want to say that users may not be able to change their passwords, but the admin still can.",
+      "parentUuid": "bacf61ea_b436b04e",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_542e54a5",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-05T15:14:48Z",
       "side": 1,
       "message": "They can also talk to their administrator, right?",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_950726c9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T15:53:17Z",
+      "side": 1,
+      "message": "Talk to their admin to change their password for them?  I don\u0027t think that would be common, right? I mean I imagine they would just wait.",
+      "parentUuid": "bacf61ea_542e54a5",
       "revId": "d0183aae5192e82843c75dbb532572681dad8001",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_35d59ae4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T15:53:17Z",
+      "side": 1,
+      "message": "This was done before as part of update_user for changing passwords:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L979",
+      "parentUuid": "bacf61ea_6fa0e5f4",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_cfdbd14d",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 36
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f5adc231",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T15:53:17Z",
+      "side": 1,
+      "message": "Thus far, I\u0027ve only been successful using freezegun when moving time ahead in seconds. Strange things happen when I try to move time ahead in days. And while freezegun would be more elegant here, I do believe this is providing good test coverage.",
+      "parentUuid": "bacf61ea_cfdbd14d",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_af83fd01",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 36
@@ -81,6 +153,24 @@
       "writtenOn": "2016-08-05T15:14:48Z",
       "side": 1,
       "message": "We could assert that the user can\u0027t actually change their password before the administrative password reset is made.",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e76cf9d1",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T15:53:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_af83fd01",
       "revId": "d0183aae5192e82843c75dbb532572681dad8001",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
