@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_2aded8dc",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-05T16:18:33Z",
+      "side": 1,
+      "message": "Nevermind, I see your point.  I\u0027ve reworded this.  Done.",
+      "parentUuid": "bacf61ea_950726c9",
+      "revId": "d0183aae5192e82843c75dbb532572681dad8001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_6fa0e5f4",
         "filename": "keystone/identity/core.py",
         "patchSetId": 36
