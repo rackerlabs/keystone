@@ -120,8 +120,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - endpoint: endpoint
-   - name: name
-   - links: links
+   - name: name_3
+   - links: links_2
    - url: url
    - region: region
    - interface: interface
@@ -154,7 +154,6 @@ Request
    - region: region
    - interface: interface
    - service_id: service_id
-   - endpoint_id: endpoint_id
 
 Request Example
 ---------------
@@ -168,7 +167,8 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - endpoint: endpoint
-   - links: links
+   - id: endpoint_id
+   - links: links_2
    - url: url
    - region: region
    - interface: interface
@@ -214,7 +214,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - interface: interface
+   - interface: interface_2
    - service_id: service_id
 
 Response Parameters
@@ -223,14 +223,14 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - region_id: region_id
-   - links: links
+   - links: links_13
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_7
    - interface: interface
    - service_id: service_id
    - endpoints: endpoints
-   - id: id
+   - id: endpoint_id
 
 Response Example
 ----------------
@@ -256,7 +256,7 @@ Request
 
    - endpoint: endpoint
    - url: url
-   - enabled: enabled
+   - enabled: enabled_1
    - interface: interface
    - service_id: service_id
    - region_id: region_id
@@ -273,13 +273,13 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - endpoint: endpoint
-   - links: links
+   - links: links_2
    - url: url
    - region: region
-   - enabled: enabled
+   - enabled: enabled_7
    - interface: interface
    - service_id: service_id
-   - id: id
+   - id: endpoint_id
    - region_id: region_id
 
 
