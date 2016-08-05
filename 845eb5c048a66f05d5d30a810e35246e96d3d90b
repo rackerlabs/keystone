@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_7bbba40f",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-05T05:21:49Z",
+      "side": 1,
+      "message": "setting the choices to md5 seemed like a better thing to do than setting it to None, though it probably should be a list",
+      "range": {
+        "startLine": 129,
+        "startChar": 58,
+        "endLine": 129,
+        "endChar": 61
+      },
+      "revId": "845eb5c048a66f05d5d30a810e35246e96d3d90b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
