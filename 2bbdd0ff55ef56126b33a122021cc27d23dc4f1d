@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_95d5661d",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-05T15:38:00Z",
+      "side": 1,
+      "message": "I can see an argument for both \"results\" or \"requires,\" because while it does not result in any downtime as written, you could optionally do the expand-migrate-contract process with downtime if you chose.",
+      "parentUuid": "bacf61ea_5442f83e",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_df973c8e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -144,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_35459a42",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-05T15:38:00Z",
+      "side": 1,
+      "message": "Yes, so in the case of PCI, I think the best course of action would be to skip PCI-related writes while read-only mode is enabled. So, for example, if you have a maximum number of failed logins configured, and a user fails to authenticate, we simply don\u0027t increment the user\u0027s failed login counter in read-only mode.",
+      "parentUuid": "bacf61ea_d474289d",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c406441b",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -173,6 +209,24 @@
       "side": 1,
       "message": "Having an \u0027and but\u0027 is never OK :-P",
       "parentUuid": "bacf61ea_c406441b",
+      "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_358aba64",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-05T15:38:00Z",
+      "side": 1,
+      "message": "So, I might prefer the and or but, yet, I\u0027ll fix it anyway.",
+      "parentUuid": "bacf61ea_f46facc1",
       "revId": "2bbdd0ff55ef56126b33a122021cc27d23dc4f1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
