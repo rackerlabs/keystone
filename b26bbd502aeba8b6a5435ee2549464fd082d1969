@@ -16,6 +16,24 @@
       "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d23cff30",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-06T00:32:27Z",
+      "side": 1,
+      "message": "I used days as it seemed to be the standard unit for this type of feature. I\u0027m not sure hours would be a big enough deterrent. However, we could always change this later on should operators have a valid use case requiring more flexibility.",
+      "parentUuid": "bacf61ea_794c1e9e",
+      "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
