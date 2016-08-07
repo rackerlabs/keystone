@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_f983dc53",
+        "filename": "keystone/common/sql/migrate_repo/versions/109_add_migration_phase_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T08:03:05Z",
+      "side": 1,
+      "message": "primary key doesn\u0027t imply it\u0027s non-nullable?",
+      "range": {
+        "startLine": 23,
+        "startChar": 63,
+        "endLine": 23,
+        "endChar": 77
+      },
+      "revId": "51e0e3bfd1f7f76f39ca7dbe209cfa88a10b96bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_19f4f0ee",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T08:03:05Z",
+      "side": 1,
+      "message": "Do you mean don\u0027t let the internal `Status` return back?",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 51
+      },
+      "revId": "51e0e3bfd1f7f76f39ca7dbe209cfa88a10b96bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
