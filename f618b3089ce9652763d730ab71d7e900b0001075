@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_2659d3fd",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T07:33:42Z",
+      "side": 1,
+      "message": "I am wondering why it is haven\u0027t set the `created_at` to be non-nullable with a default value as the last step in 105 :)",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "f618b3089ce9652763d730ab71d7e900b0001075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
