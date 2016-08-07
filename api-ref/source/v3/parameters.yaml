@@ -275,6 +275,15 @@ project_enabled_query:
   in: query
   required: false
   type: boolen
+is_domain_query:
+  description: |
+    If this is not specified, then only projects that are not acting as a
+    domain will be included in the collection. If it is specified as true,
+    then only projects acting as a domain are included.
+  in: query
+  required: false
+  type: boolen
+  min_version: 3.6
 project_name_query:
   description: |
     Filters the response by a project name.
