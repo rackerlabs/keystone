@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_3cf1e201",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-07T11:02:21Z",
+      "side": 1,
+      "message": "while correct, starting this with kind of double negative does\\t read well. I\u0027d change round the order, e.g.\n\n\nIf this is specified as true, then only projects acting as a domain are included. Otherwise, only projects that are not acting as a domain are included.",
+      "range": {
+        "startLine": 280,
+        "startChar": 4,
+        "endLine": 282,
+        "endChar": 55
+      },
+      "revId": "1499f101ba765dc6070fd8a7ba7bb1ac163f70fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
