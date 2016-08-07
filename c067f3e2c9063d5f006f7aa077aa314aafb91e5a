@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_39a3b401",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "double space?",
+      "range": {
+        "startLine": 428,
+        "startChar": 61,
+        "endLine": 428,
+        "endChar": 63
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_19a6b00e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "double space?",
+      "range": {
+        "startLine": 429,
+        "startChar": 62,
+        "endLine": 429,
+        "endChar": 64
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b99164f3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "double space?",
+      "range": {
+        "startLine": 430,
+        "startChar": 60,
+        "endLine": 430,
+        "endChar": 62
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_7979acc7",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "Will this be in migration_control.py? consider we are not at the end of the cycle.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 43
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_fc4e2a6d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "driver?",
+      "range": {
+        "startLine": 301,
+        "startChar": 26,
+        "endLine": 301,
+        "endChar": 32
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_dc03660b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "We rely on the operators to maually execute all of these steps on all the nodes and strictly follow the sequence to write the status into DB, or else the final status will be messed up, some nodes may not work as expected. I am gonna say it\u0027s a little fragile.",
+      "range": {
+        "startLine": 372,
+        "startChar": 4,
+        "endLine": 372,
+        "endChar": 28
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_3939f4f2",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "I am curious how to ensure the data has been migrated correctly, how to identify these column/field efficiently. Do we really need this step?",
+      "range": {
+        "startLine": 395,
+        "startChar": 0,
+        "endLine": 397,
+        "endChar": 51
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b97fa4a9",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-07T10:35:34Z",
+      "side": 1,
+      "message": "yep!",
+      "range": {
+        "startLine": 428,
+        "startChar": 0,
+        "endLine": 430,
+        "endChar": 72
+      },
+      "revId": "c067f3e2c9063d5f006f7aa077aa314aafb91e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
