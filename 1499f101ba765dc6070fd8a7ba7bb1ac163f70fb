@@ -22,6 +22,30 @@
       "revId": "1499f101ba765dc6070fd8a7ba7bb1ac163f70fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_77ad3330",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2016-08-07T14:47:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_3cf1e201",
+      "range": {
+        "startLine": 280,
+        "startChar": 4,
+        "endLine": 282,
+        "endChar": 55
+      },
+      "revId": "1499f101ba765dc6070fd8a7ba7bb1ac163f70fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
