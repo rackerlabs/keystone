@@ -1467,25 +1467,6 @@ class V2TestCaseFernet(V2TestCase, RestfulTestCase, CoreApiTests,
         self.skipTest('Revocation lists do not support Fernet')
 
 
-class RevokeApiTestCase(V2TestCase, RestfulTestCase, CoreApiTests,
-                        LegacyV2UsernameTests):
-    def config_overrides(self):
-        super(RevokeApiTestCase, self).config_overrides()
-        self.config_fixture.config(
-            group='token',
-            provider='pki',
-            revoke_by_id=False)
-
-    def test_fetch_revocation_list_admin_200(self):
-        self.skip_test_overrides('Revoke API disables revocation_list.')
-
-    def test_fetch_revocation_list_md5(self):
-        self.skip_test_overrides('Revoke API disables revocation_list.')
-
-    def test_fetch_revocation_list_sha256(self):
-        self.skip_test_overrides('Revoke API disables revocation_list.')
-
-
 class TestFernetTokenProviderV2(RestfulTestCase):
 
     def setUp(self):

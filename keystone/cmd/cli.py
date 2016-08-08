@@ -515,31 +515,6 @@ class BaseCertificateSetup(BasePermissionsSetup):
         return parser
 
 
-class PKISetup(BaseCertificateSetup):
-    """Set up Key pairs and certificates for token signing and verification.
-
-    This is NOT intended for production use, see Keystone Configuration
-    documentation for details. As of the Mitaka release, this command has
-    been DEPRECATED and may be removed in the 'O' release.
-    """
-
-    name = 'pki_setup'
-
-    @classmethod
-    def main(cls):
-        versionutils.report_deprecated_feature(
-            LOG,
-            _LW("keystone-manage pki_setup is deprecated as of Mitaka in "
-                "favor of not using PKI tokens and may be removed in 'O' "
-                "release."))
-        LOG.warning(_LW('keystone-manage pki_setup is not recommended for '
-                        'production use.'))
-        keystone_user_id, keystone_group_id = cls.get_user_group()
-        conf_pki = openssl.ConfigurePKI(keystone_user_id, keystone_group_id,
-                                        rebuild=CONF.command.rebuild)
-        conf_pki.run()
-
-
 class FernetSetup(BasePermissionsSetup):
     """Setup a key repository for Fernet tokens.
 
@@ -1215,7 +1190,6 @@ CMDS = [
     MappingPopulate,
     MappingPurge,
     MappingEngineTester,
-    PKISetup,
     SamlIdentityProviderMetadata,
     TokenFlush,
 ]

@@ -582,9 +582,6 @@ class TestCase(BaseTestCase):
         assert self.__config_overrides_called is False
         self.__config_overrides_called = True
 
-        signing_certfile = 'examples/pki/certs/signing_cert.pem'
-        signing_keyfile = 'examples/pki/private/signing_key.pem'
-
         self.useFixture(self._policy_fixture())
 
         self.config_fixture.config(
@@ -604,12 +601,6 @@ class TestCase(BaseTestCase):
                 ('keystone.tests.unit.test_kvs.'
                  'KVSBackendForcedKeyMangleFixture'),
                 'keystone.tests.unit.test_kvs.KVSBackendFixture'])
-        self.config_fixture.config(
-            group='signing', certfile=signing_certfile,
-            keyfile=signing_keyfile,
-            ca_certs='examples/pki/certs/cacert.pem')
-        self.config_fixture.config(
-            group='saml', certfile=signing_certfile, keyfile=signing_keyfile)
         self.config_fixture.config(
             default_log_levels=[
                 'amqp=WARN',

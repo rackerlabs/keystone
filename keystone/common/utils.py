@@ -86,22 +86,6 @@ def flatten_dict(d, parent_key=''):
     return dict(items)
 
 
-class SmarterEncoder(jsonutils.json.JSONEncoder):
-    """Help for JSON encoding dict-like objects."""
-
-    def default(self, obj):
-        if not isinstance(obj, dict) and hasattr(obj, 'iteritems'):
-            return dict(obj.iteritems())
-        return super(SmarterEncoder, self).default(obj)
-
-
-class PKIEncoder(SmarterEncoder):
-    """Special encoder to make token JSON a bit shorter."""
-
-    item_separator = ','
-    key_separator = ':'
-
-
 def verify_length_and_trunc_password(password):
     """Verify and truncate the provided password to the max_password_length."""
     max_length = CONF.identity.max_password_length

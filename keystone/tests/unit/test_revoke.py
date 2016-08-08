@@ -162,15 +162,6 @@ class RevokeTests(object):
                           token_values)
 
 
-class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
-    def config_overrides(self):
-        super(SqlRevokeTests, self).config_overrides()
-        self.config_fixture.config(
-            group='token',
-            provider='pki',
-            revoke_by_id=False)
-
-
 def add_event(events, event):
     events.append(event)
     return event
