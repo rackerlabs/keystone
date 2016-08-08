@@ -516,7 +516,8 @@ class BaseCertificateSetup(BasePermissionsSetup):
 
 
 class PKISetup(BaseCertificateSetup):
-    """Set up Key pairs and certificates for token signing and verification.
+    """Set up Key pairs and certificates for revocation lists signing and
+    verification.
 
     This is NOT intended for production use, see Keystone Configuration
     documentation for details. As of the Mitaka release, this command has
