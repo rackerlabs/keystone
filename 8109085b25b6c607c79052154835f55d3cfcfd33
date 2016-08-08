@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9ad45d7e_02bbadc5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-08T15:53:01Z",
+      "side": 1,
+      "message": "Does this only apply to CADF notifications?",
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_bf9f2b5e",
         "filename": "keystone/common/request.py",
         "patchSetId": 4
@@ -19,6 +36,24 @@
         "endLine": 98,
         "endChar": 23
       },
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_62354945",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-08T15:53:01Z",
+      "side": 1,
+      "message": "Does this get executed if keystone is deployed without CADF notifications? What about basic notifications?",
+      "parentUuid": "bacf61ea_bf9f2b5e",
       "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
