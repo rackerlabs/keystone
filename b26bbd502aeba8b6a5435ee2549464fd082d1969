@@ -34,6 +34,41 @@
       "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_05cc5734",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-08T16:20:13Z",
+      "side": 1,
+      "message": "I guess one thing we can consider as a benefit here is that we advertise the ability for the user to contact an administrator - which can ultimately override this check. So, in the event a user *really* needs to reset their password, they can always do so through an admin (versus requiring the granularity of hours).",
+      "parentUuid": "bacf61ea_d23cff30",
+      "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_656d5304",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-08T16:20:13Z",
+      "side": 1,
+      "message": "nit: \n\n    or contact your administrator to assist with manual password resets.\n\n?\n\nI\u0027m just trying to think of ways were we can give the user a little more information about what exactly they need to contact the administrator about.",
+      "revId": "b26bbd502aeba8b6a5435ee2549464fd082d1969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
