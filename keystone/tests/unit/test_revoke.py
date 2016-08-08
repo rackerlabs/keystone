@@ -22,7 +22,6 @@ from keystone.common import utils
 from keystone import exception
 from keystone.models import revoke_model
 from keystone.tests import unit
-from keystone.tests.unit import test_backend_sql
 from keystone.token import provider
 
 
@@ -160,15 +159,6 @@ class RevokeTests(object):
         self.assertRaises(exception.TokenNotFound,
                           self.revoke_api.check_token,
                           token_values)
-
-
-class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
-    def config_overrides(self):
-        super(SqlRevokeTests, self).config_overrides()
-        self.config_fixture.config(
-            group='token',
-            provider='pki',
-            revoke_by_id=False)
 
 
 def add_event(events, event):
