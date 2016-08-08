@@ -110,7 +110,7 @@ Request
    - user: user
    - password: password
    - id: id
-   - identity: identity
+   - identity: domain_identity
    - methods: methods
    - nocatalog: nocatalog
 
@@ -163,7 +163,7 @@ Request
    - scope: scope
    - password: password
    - id: id
-   - identity: identity
+   - identity: domain_identity
    - methods: methods
    - nocatalog: nocatalog
 
@@ -225,7 +225,7 @@ Request
    - scope: scope
    - password: password
    - id: id
-   - identity: identity
+   - identity: domain_identity
    - methods: methods
    - nocatalog: nocatalog
 
@@ -271,7 +271,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - identity: identity
+   - identity: domain_identity
    - token: token
    - id: id
    - auth: auth
@@ -317,7 +317,7 @@ Request
    - audit_ids: audit_ids
    - scope: scope
    - id: id
-   - identity: identity
+   - identity: domain_identity
    - nocatalog: nocatalog
 
 Request Example
