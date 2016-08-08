@@ -12,7 +12,6 @@
 
 """Unified in-memory token model."""
 
-from keystoneclient.common import cms
 from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
@@ -55,8 +54,6 @@ class KeystoneToken(dict):
         else:
             raise exception.UnsupportedTokenVersionException()
         self.token_id = token_id
-        self.short_id = cms.cms_hash_token(token_id,
-                                           mode=CONF.token.hash_algorithm)
 
         if self.project_scoped and self.domain_scoped:
             raise exception.UnexpectedError(_('Found invalid token: scoped to '

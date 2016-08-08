@@ -207,19 +207,6 @@ function check_openssl {
     check_error $?
 }
 
-function gen_sample_cms {
-    FILES="${CMS_DIR}/auth_token_revoked.json"
-    FILES+=" ${CMS_DIR}/auth_token_unscoped.json"
-    FILES+=" ${CMS_DIR}/auth_token_scoped.json"
-    FILES+=" ${CMS_DIR}/revocation_list.json"
-    for json_file in $FILES; do
-        openssl cms -sign -in $json_file -nosmimecap \
-            -signer $CERTS_DIR/signing_cert.pem \
-            -inkey $PRIVATE_DIR/signing_key.pem -outform PEM -nodetach \
-            -nocerts -noattr -out ${json_file/.json/.pem}
-    done
-}
-
 check_openssl
 rm_old
 cleanup
@@ -229,5 +216,4 @@ ssl_cert_req
 cms_signing_cert_req
 issue_certs
 create_middleware_cert
-gen_sample_cms
 cleanup
