@@ -54,7 +54,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
    - group: group
    - option: option
 
@@ -63,12 +63,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -96,13 +96,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
-   - domain_id: domain_id
+   - domain_id: domain_id_path
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
    - group: group
    - option: option
 
@@ -117,12 +117,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -150,7 +150,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
    - group: group
    - option: option
 
@@ -172,7 +172,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
    - group: group
 
 Response Parameters
@@ -180,12 +180,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -213,13 +213,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
-   - domain_id: domain_id
+   - domain_id: domain_id_path
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
    - group: group
 
 Request Example
@@ -233,12 +233,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -264,7 +264,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
    - group: group
 
 
@@ -283,13 +283,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
-   - domain_id: domain_id
+   - domain_id: domain_id_path
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Request Example
 ---------------
@@ -302,12 +302,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -331,19 +331,19 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -367,13 +367,13 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
-   - domain_id: domain_id
+   - domain_id: domain_id_path
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Request Example
 ---------------
@@ -386,12 +386,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - url: endpoint_url
-   - driver: driver
-   - ldap: ldap
-   - config: config
-   - user_tree_dn: user_tree_dn
-   - identity: identity
+   - url: domain_url
+   - driver: domain_driver
+   - ldap: domain_ldap
+   - config: domain_config
+   - user_tree_dn: domain_user_tree_dn
+   - identity: domain_identity
 
 Response Example
 ----------------
@@ -415,4 +415,4 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - domain_id: domain_id
+   - domain_id: domain_id_path
