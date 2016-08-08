@@ -196,12 +196,6 @@ class UtilsTestCase(unit.BaseTestCase):
             TZ = 'UTC' + d
             _test_unixtime()
 
-    def test_pki_encoder(self):
-        data = {'field': 'value'}
-        json = jsonutils.dumps(data, cls=common_utils.PKIEncoder)
-        expected_json = '{"field":"value"}'
-        self.assertEqual(expected_json, json)
-
     def test_url_safe_check(self):
         base_str = 'i am safe'
         self.assertFalse(common_utils.is_not_url_safe(base_str))
