@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_5f7c6620",
+        "filename": "keystone/common/sql/migrate_repo/versions/109_add_migration_phase_table.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-08T12:52:43Z",
+      "side": 1,
+      "message": "yep, it does, will remove :-)",
+      "parentUuid": "bacf61ea_f983dc53",
+      "range": {
+        "startLine": 23,
+        "startChar": 63,
+        "endLine": 23,
+        "endChar": 77
+      },
+      "revId": "51e0e3bfd1f7f76f39ca7dbe209cfa88a10b96bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_19f4f0ee",
         "filename": "keystone/common/sql/migration_phase_sql.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-07T08:03:05Z",
       "side": 1,
       "message": "Do you mean don\u0027t let the internal `Status` return back?",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 51
+      },
+      "revId": "51e0e3bfd1f7f76f39ca7dbe209cfa88a10b96bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_bfbac2be",
+        "filename": "keystone/common/sql/migration_phase_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-08T12:52:43Z",
+      "side": 1,
+      "message": "yes, will clarify",
+      "parentUuid": "bacf61ea_19f4f0ee",
       "range": {
         "startLine": 39,
         "startChar": 8,
