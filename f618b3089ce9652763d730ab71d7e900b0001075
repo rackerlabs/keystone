@@ -22,6 +22,30 @@
       "revId": "f618b3089ce9652763d730ab71d7e900b0001075",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_3fcb7274",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-08T12:50:52Z",
+      "side": 1,
+      "message": "Because otherwise during a rolling upgrade if a transaction came in via an old node, it would fail since the old code would not know to set a value.",
+      "parentUuid": "bacf61ea_2659d3fd",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "f618b3089ce9652763d730ab71d7e900b0001075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
