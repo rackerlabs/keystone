@@ -22,6 +22,30 @@
       "revId": "9838e542af9bc69140b9036af7a9c4a09e86365b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_dcf21f6f",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-08-08T13:57:14Z",
+      "side": 1,
+      "message": "I\u0027ve done it this way considering 2 things:\n\n1. It\u0027s better seen what\u0027s actually handled in called func.\n\n2. Called func is more focused on logic than on data extraction.",
+      "parentUuid": "bacf61ea_e9c7d10f",
+      "range": {
+        "startLine": 134,
+        "startChar": 53,
+        "endLine": 134,
+        "endChar": 75
+      },
+      "revId": "9838e542af9bc69140b9036af7a9c4a09e86365b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
