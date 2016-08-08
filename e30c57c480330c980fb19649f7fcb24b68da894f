@@ -16,6 +16,24 @@
       "revId": "e30c57c480330c980fb19649f7fcb24b68da894f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_91afe5e2",
+        "filename": "keystone/tests/unit/common/test_migration_phase_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-08T17:23:31Z",
+      "side": 1,
+      "message": "fair comment, I\u0027ll update.",
+      "parentUuid": "9ad45d7e_e506631f",
+      "revId": "e30c57c480330c980fb19649f7fcb24b68da894f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
