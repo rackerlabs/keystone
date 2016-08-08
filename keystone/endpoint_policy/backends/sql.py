@@ -17,6 +17,7 @@ import uuid
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.endpoint_policy.backends import base
 from keystone import exception
 
 
@@ -47,7 +48,7 @@ class PolicyAssociation(sql.ModelBase, sql.ModelDictMixin):
         return d
 
 
-class EndpointPolicy(object):
+class EndpointPolicy(base.EndpointPolicyDriverV8):
 
     def create_policy_association(self, policy_id, endpoint_id=None,
                                   service_id=None, region_id=None):
@@ -114,6 +115,12 @@ class EndpointPolicy(object):
             query = session.query(PolicyAssociation)
             query = query.filter_by(policy_id=policy_id)
             return [ref.to_dict() for ref in query.all()]
+
+    def list_endpoints_for_policy(self, policy_id):
+        raise exception.NotImplemented()
+
+    def get_policy_for_endpoint(self, endpoint_id):
+        raise exception.NotImplemented()
 
     def delete_association_by_endpoint(self, endpoint_id):
         with sql.session_for_write() as session:
