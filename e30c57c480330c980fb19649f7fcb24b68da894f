@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e506631f",
+        "filename": "keystone/tests/unit/common/test_migration_phase_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-08T17:22:18Z",
+      "side": 1,
+      "message": "I don\u0027t think it matters technically since there isn\u0027t a namespace collision, but there is already a class named SqlTests, might be nice for this class to have a more unique name: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/unit/test_backend_sql.py#n49",
+      "revId": "e30c57c480330c980fb19649f7fcb24b68da894f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
