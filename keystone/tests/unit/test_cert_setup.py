@@ -60,23 +60,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
             ca_certs=ca_certs,
             ca_key=ca_key,
             keyfile=os.path.join(KEYDIR, 'signing_key.pem'))
-        self.config_fixture.config(group='token', provider='pkiz')
-
-    def test_can_handle_missing_certs(self):
-        controller = token.controllers.Auth()
-
-        self.config_fixture.config(group='signing', certfile='invalid')
-        user = unit.create_user(self.identity_api,
-                                domain_id=CONF.identity.default_domain_id)
-        body_dict = {
-            'passwordCredentials': {
-                'userId': user['id'],
-                'password': user['password'],
-            },
-        }
-        self.assertRaises(exception.UnexpectedError,
-                          controller.authenticate,
-                          self.make_request(), body_dict)
+        self.config_fixture.config(group='token', provider='uuid')
 
     def test_create_pki_certs(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
