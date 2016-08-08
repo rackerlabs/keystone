@@ -23,8 +23,3 @@ _DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1']
 
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
-
-_DEPRECATE_PKI_MSG = utils.fmt("""
-PKI token support has been deprecated in the M release and will be removed in
-the O release. Fernet or UUID tokens are recommended.
-""")
