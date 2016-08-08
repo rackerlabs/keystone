@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_ac79eb31",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-08T20:00:56Z",
+      "side": 1,
+      "message": "Why was this changed? This is the request section, so the parameter should probably not be the response body? Same for the other request sections below",
+      "revId": "9819a721b11fd12156421f62dfb93090ee0a92a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
