@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_cfffb6ff",
+        "filename": "doc/source/devref/development.environment.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-09T18:12:59Z",
+      "side": 1,
+      "message": "Fedora,",
+      "range": {
+        "startLine": 33,
+        "startChar": 47,
+        "endLine": 33,
+        "endChar": 53
+      },
+      "revId": "c12c13e266fe309c2111256b5fd4daed0441c9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
