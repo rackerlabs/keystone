@@ -356,7 +356,6 @@ Request
 
    - roleId: roleId
 
-
 Grant roles to user on tenant
 =============================
 
