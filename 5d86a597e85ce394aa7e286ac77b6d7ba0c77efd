@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_cdd3465e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-09T16:23:04Z",
+      "side": 1,
+      "message": "Yes it\u0027s caught by the revocation list. But I think it\u0027s worth it to invalidate for non-persistent tokens too.",
+      "parentUuid": "1aa78d24_1cdd730e",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "5d86a597e85ce394aa7e286ac77b6d7ba0c77efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_34b49280",
         "filename": "keystone/token/provider.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-06T14:43:21Z",
       "side": 1,
       "message": "I thought you are is samueldmq :)",
+      "range": {
+        "startLine": 471,
+        "startChar": 16,
+        "endLine": 471,
+        "endChar": 30
+      },
+      "revId": "5d86a597e85ce394aa7e286ac77b6d7ba0c77efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_edba8ae0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-09T16:23:04Z",
+      "side": 1,
+      "message": "Indeed I am :)\n\nI am keeping morgan\u0027s name as it\u0027s his comment from _invalidate_individual_token_cache in keystone/token/persistence/core.py",
+      "parentUuid": "1aa78d24_34b49280",
       "range": {
         "startLine": 471,
         "startChar": 16,
