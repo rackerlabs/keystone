@@ -46,6 +46,30 @@
       "revId": "f618b3089ce9652763d730ab71d7e900b0001075",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_18730382",
+        "filename": "keystone/common/sql/migrate_repo_contract/Newton/versions/001_add_password_date_columns.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-09T02:46:36Z",
+      "side": 1,
+      "message": "Ah, I mean when the DB is upgraded to the latest, we create `create_at` column in 105, and set it to nullable so that it is okay with those password without the new column, and then set the default value for it, this is what 105 did.\n\nSo, after the default value is being set in the 105, we can make the column non-nullable with a default value, it\u0027s DB level support. If this was done in 105, there is no need for those cleanup afterward.",
+      "parentUuid": "9ad45d7e_3fcb7274",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "f618b3089ce9652763d730ab71d7e900b0001075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
