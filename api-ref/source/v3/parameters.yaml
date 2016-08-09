@@ -1163,6 +1163,12 @@ links_7:
   in: body
   required: true
   type: object
+links_project:
+  description: |
+    The links for the ``project`` resource.
+  in: body
+  required: true
+  type: object
 links_region:
   description: |
     The links for the ``region`` resource.
