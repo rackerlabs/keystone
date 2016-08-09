@@ -135,6 +135,10 @@ Request
 .. rest_parameters:: parameters.yaml
 
    - project_id: project_id_path
+   - parents_as_list: parents_as_list
+   - subtree_as_list: subtree_as_list
+   - parents_as_ids: parents_as_ids
+   - subtree_as_ids: subtree_as_ids
 
 Response Parameters
 -------------------
