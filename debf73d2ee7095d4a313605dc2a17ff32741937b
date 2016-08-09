@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_29603bce",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-09T04:33:35Z",
+      "side": 1,
+      "message": "can you move it under here, closer to where it\u0027s used\n\nwhitelist_externals \u003d\n  rm",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 85
+      },
+      "revId": "debf73d2ee7095d4a313605dc2a17ff32741937b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
