@@ -46,6 +46,30 @@
       "revId": "4f4f4078073f296a3cd35ce6b8c0730643fe0b7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_52042f14",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-09T08:11:15Z",
+      "side": 1,
+      "message": "as you both pointed out, IDs were selected because they are immutable. if we did name@domain_name, the user name (and domain_name) could be updated.\n\non the flip side, specifying garbage values in here should be pretty harmless since it\u0027ll just be used as an ignore list. adding support for names shouldn\u0027t be too hard, do we want to call this option _ids and create another one _names?",
+      "parentUuid": "bacf61ea_085caa17",
+      "range": {
+        "startLine": 74,
+        "startChar": 24,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "4f4f4078073f296a3cd35ce6b8c0730643fe0b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
