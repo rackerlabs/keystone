@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e9c74343",
+        "filename": "keystone/endpoint_policy/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-09T04:51:38Z",
+      "side": 1,
+      "message": "i think you\u0027re not importing base...\n\nfrom keystone.endpoint_policy.backends import base\n\nhttps://github.com/openstack/keystone/blob/master/keystone/endpoint_policy/backends/base.py",
+      "range": {
+        "startLine": 50,
+        "startChar": 21,
+        "endLine": 50,
+        "endChar": 25
+      },
+      "revId": "3b706eaa494e42a955f84aa2e97d10fae9f0cfd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
