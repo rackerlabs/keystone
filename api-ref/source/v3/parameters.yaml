@@ -1021,12 +1021,6 @@ groups:
   in: body
   required: true
   type: array
-id:
-  description: |
-    [WIP]
-  in: body
-  required: false
-  type: string
 id_10:
   description: |
     The role ID.
@@ -1680,12 +1674,6 @@ token:
   in: body
   required: true
   type: object
-type:
-  description: |
-    [WIP]
-  in: body
-  required: true
-  type: string
 type_3:
   description: |
     The service type, which describes the API
