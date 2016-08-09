@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_f7a3959c",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-09T08:04:56Z",
+      "side": 1,
+      "message": "i don\u0027t know if we want to remove this from the v2 representation of a user. from an API point of view, they can still change their password in v2.0, and turning on PCI support doesn\u0027t depend on v3. not going to block this, but something to keep in mind.",
+      "range": {
+        "startLine": 328,
+        "startChar": 12,
+        "endLine": 328,
+        "endChar": 48
+      },
+      "revId": "041f53f2f6bad661ffd9946932005bf19dbccc9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
