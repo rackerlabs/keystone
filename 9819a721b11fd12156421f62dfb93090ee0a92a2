@@ -16,6 +16,24 @@
       "revId": "9819a721b11fd12156421f62dfb93090ee0a92a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_b6a3ed9d",
+        "filename": "api-ref/source/v3/policies.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 19935
+      },
+      "writtenOn": "2016-08-09T01:08:52Z",
+      "side": 1,
+      "message": "Please take a look on current Policies APIs:\nhttp://developer.openstack.org/api-ref/identity/v3/index.html?expanded\u003dcreate-policy-detail#create-policy\n\nDocument describes that user_id and project_id are \u0027in path\u0027. It was wrong. The change in here is just re-using an available variable - used by many other APIs, I think the creation of new variable with all same properties is not necessary.",
+      "parentUuid": "9ad45d7e_ac79eb31",
+      "revId": "9819a721b11fd12156421f62dfb93090ee0a92a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
