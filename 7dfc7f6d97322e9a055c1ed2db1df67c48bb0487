@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_5986e265",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 19935
+      },
+      "writtenOn": "2016-08-10T02:13:19Z",
+      "side": 1,
+      "message": "At this time, I just change the \u0027id\u0027 parameter of Authentication APIs. This parameter still used by other APIs like Policies and Credentials. I don\u0027t want to change all of them in this patch, so I change it to [WIP].\nI already remove it in final patch: https://review.openstack.org/#/c/352690/3 after change all parameters of Policies and Credentials.",
+      "parentUuid": "9ad45d7e_1ee45039",
+      "range": {
+        "startLine": 1009,
+        "startChar": 4,
+        "endLine": 1009,
+        "endChar": 9
+      },
+      "revId": "7dfc7f6d97322e9a055c1ed2db1df67c48bb0487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_5e3b689c",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_f97d161d",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 19935
+      },
+      "writtenOn": "2016-08-10T02:13:19Z",
+      "side": 1,
+      "message": "With update password API, we already have the \u0027user_password_update_body\u0027 in L1771.\nMy mistake in here is the \u0027type\u0027, it should be \u0027object\u0027, not \u0027string\u0027.",
+      "parentUuid": "9ad45d7e_5e3b689c",
+      "range": {
+        "startLine": 1304,
+        "startChar": 0,
+        "endLine": 1304,
+        "endChar": 8
+      },
+      "revId": "7dfc7f6d97322e9a055c1ed2db1df67c48bb0487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_fe4cdc43",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2016-08-10T01:29:36Z",
       "side": 1,
       "message": "WIP?",
+      "range": {
+        "startLine": 1655,
+        "startChar": 3,
+        "endLine": 1655,
+        "endChar": 9
+      },
+      "revId": "7dfc7f6d97322e9a055c1ed2db1df67c48bb0487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d9d93285",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 19935
+      },
+      "writtenOn": "2016-08-10T02:13:19Z",
+      "side": 1,
+      "message": "same with \u0027id\u0027 parameter",
+      "parentUuid": "9ad45d7e_fe4cdc43",
       "range": {
         "startLine": 1655,
         "startChar": 3,
