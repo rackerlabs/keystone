@@ -232,7 +232,7 @@ class HackingLogging(fixtures.Fixture):
                 LOG.warning(_LI('this should cause an error'))
 
                 # debug should not allow any helpers either
-                LOG.debug(_LI('this should cause an error'))
+                LOG.debug('this should cause an error')
             """,
             'expected_errors': [
                 (4, 12, 'K006'),
