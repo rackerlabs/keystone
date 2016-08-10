@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_63395da4",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-10T12:30:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_72f778f5",
+      "range": {
+        "startLine": 164,
+        "startChar": 22,
+        "endLine": 164,
+        "endChar": 37
+      },
+      "revId": "69933872f10a504fe823df02d536077ef994e36d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_92a66c0e",
         "filename": "api-ref/source/v3/samples/admin/project-show-parents-response.json",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-10T06:48:47Z",
       "side": 1,
       "message": "update these to example.com/identity/v3\n\nit\u0027s what we use in the other examples",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "69933872f10a504fe823df02d536077ef994e36d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_23b8052a",
+        "filename": "api-ref/source/v3/samples/admin/project-show-parents-response.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-10T12:30:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_92a66c0e",
       "range": {
         "startLine": 7,
         "startChar": 28,
