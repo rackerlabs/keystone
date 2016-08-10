@@ -31,6 +31,7 @@ WARNING::
     all data will be lost.
 """
 
+import datetime
 import json
 import uuid
 
@@ -285,6 +286,16 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.assertItemsEqual(expected_cols, actual_cols,
                               '%s table' % table_name)
 
+    def insert_dict(self, session, table_name, d, table=None):
+        """Naively inserts key-value pairs into a table, given a dictionary."""
+        if table is None:
+            this_table = sqlalchemy.Table(table_name, self.metadata,
+                                          autoload=True)
+        else:
+            this_table = table
+        insert = this_table.insert().values(**d)
+        session.execute(insert)
+
 
 class SqlUpgradeTests(SqlMigrateBase):
     _initial_db_version = migration_helpers.get_init_version()
@@ -308,16 +319,6 @@ class SqlUpgradeTests(SqlMigrateBase):
     def check_initial_table_structure(self):
         for table in INITIAL_TABLE_STRUCTURE:
             self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
-
-    def insert_dict(self, session, table_name, d, table=None):
-        """Naively inserts key-value pairs into a table, given a dictionary."""
-        if table is None:
-            this_table = sqlalchemy.Table(table_name, self.metadata,
-                                          autoload=True)
-        else:
-            this_table = table
-        insert = this_table.insert().values(**d)
-        session.execute(insert)
 
     def test_kilo_squash(self):
         self.upgrade(67)
@@ -1486,6 +1487,97 @@ class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
 
 class PostgreSQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
+
+
+class DataMigrationTests(SqlMigrateBase):
+    _initial_db_version = migration_helpers.get_init_version()
+
+    # Add tests for data migration here
+
+
+class SqlNewtonContractUpgradeTests(SqlMigrateBase):
+    _initial_db_version = migration_helpers.get_init_version()
+
+    def setUp(self):
+        # Make sure the main repo is fully upgraded for this release since the
+        # contract phase is only run after such an upgrade
+        self._initial_db_version = migration_helpers.get_init_version()
+        super(SqlNewtonContractUpgradeTests, self).setUp()
+        self.upgrade(self.max_version)
+
+        # Now re-set for the contract repo
+        self._initial_db_version = 0
+        self.repo_path = migration_helpers.find_migrate_repo(
+            package=self.repo_package(),
+            repo_name='migrate_repo_contract/Newton')
+        self.schema_ = versioning_api.ControlledSchema.create(
+            self.engine,
+            self.repo_path,
+            self._initial_db_version)
+        self.max_version = self.schema_.repository.version().version
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+    def test_001_created_at_made_non_nullable(self):
+        def add_user_model_record(session, thedate):
+            # add a user
+            user = {'id': uuid.uuid4().hex}
+            self.insert_dict(session, 'user', user)
+            # add a local user
+            local_user = {
+                'user_id': user['id'],
+                'domain_id': 'default',
+                'name': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'local_user', local_user)
+            local_user_table = sqlalchemy.Table('local_user', self.metadata,
+                                                autoload=True)
+            query = session.query(local_user_table)
+            local_user_ref = query.filter_by(user_id=user['id']).one()
+            # add a password
+            password = {
+                'local_user_id': local_user_ref.id,
+                'password': uuid.uuid4().hex,
+                'created_at': thedate
+            }
+            self.insert_dict(session, 'password', password)
+            return local_user_ref.id
+
+        session = self.sessionmaker()
+        password_name = 'password'
+        # Add a password with a None created_at value, as well as a valid one
+        add_user_model_record(session, None)
+        current_date = datetime.datetime.utcnow()
+        local_user_id = add_user_model_record(session, current_date)
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertNotEqual(null_created_at_cnt, 0)
+
+        self.upgrade(1)
+        self.metadata.clear()
+        session = self.sessionmaker()
+
+        password_table = sqlalchemy.Table('password', self.metadata,
+                                          autoload=True)
+        self.assertFalse(password_table.c.created_at.nullable)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertEqual(null_created_at_cnt, 0)
+
+        # Make sure we didn't trample on the row with a valid created_at
+        query = session.query(password_table)
+        row = query.filter_by(local_user_id=local_user_id).one()
+        self.assertEqual(row.created_at, current_date)
 
 
 class VersionTests(SqlMigrateBase):

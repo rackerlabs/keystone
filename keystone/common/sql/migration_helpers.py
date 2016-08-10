@@ -23,6 +23,8 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.common.sql import force_migrations
+from keystone.common.sql import migration_control
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -125,6 +127,24 @@ def _sync_common_repo(version):
                           init_version=init_version, sanity_check=False)
 
 
+def _sync_contract_repo(release):
+    repo_name = 'migrate_repo_contract' + '/' + release
+    abs_path = find_migrate_repo(repo_name=repo_name)
+    with sql.session_for_write() as session:
+        engine = session.get_bind()
+        # Register the repo with the version control API
+        # If it already knows about the repo, it will throw
+        # an exception that we can safely ignore
+        try:
+            migration.db_version_control(engine, abs_path)
+        except (migration.exception.DbMigrationError,
+                exceptions.DatabaseAlreadyControlledError):  # nosec
+            pass
+        init_version = get_init_version(abs_path=abs_path)
+        migration.db_sync(engine, abs_path,
+                          init_version=init_version, sanity_check=False)
+
+
 def get_init_version(abs_path=None):
     """Get the initial version of a migrate repository.
 
@@ -193,8 +213,8 @@ def offline_sync_database_to_version(version=None):
         # with an on-line rolling upgrade. So instead we duplicate the actions
         # and then stamp the status row at the end.
 
-        # TODO(henry-nash): Call the migration helpers here.
-        pass
+        force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
+        _sync_contract_repo(migration_control.LATEST_RELEASE)
 
 
 def get_db_version():
@@ -211,15 +231,11 @@ def print_db_version():
 def migration_expand():
     """Expand the database ahead of code upgrade.
 
-    Since we currently do not support on-the-fly migration at the point of
-    object access, we run all the migration scripts now.
-
     This is run manually by the keystone-manage command before the first
     keystone node is migrated to the latest release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_common_repo(version=None)
 
 
 def force_migration_complete():
@@ -233,8 +249,7 @@ def force_migration_complete():
     created during a rolling upgrade are tidied up.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
 
 
 def migration_contract():
@@ -244,5 +259,4 @@ def migration_contract():
     running code that no longer looks at old tables/columns.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_contract_repo(migration_control.LATEST_RELEASE)
