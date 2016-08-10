@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_4357ec25",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-10T16:04:07Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9ad45d7e_6365d0b3",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_638f902a",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2016-08-10T15:46:31Z",
       "side": 1,
       "message": "I\u0027d rather not use release names at all. Just a repos named expand, migrate and contract.",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_5ec17f53",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-10T16:04:07Z",
+      "side": 1,
+      "message": "What we can do here is have three separate migration repositories. We can keep them all in lock step and write a unit test to make sure all three repositories stay in sync. For example: \n\n  keystone/common/sql/migrate_repo/expand/\n    001_expand_project_foo_column.py\n    002_expand_user_bar_column.py\n    003_expand_new_baz_table.py\n  keystone/common/sql/migrate_repo/migrate/\n    001_populate_project_foo_column.py\n    002_migrate_data_to_new_user_bar_column.py\n    003_populate_baz_table.py\n  keystone/common/sql/migrate_repo/contract/\n    001_contract_old_project_bar_column.py\n    002_contract_old_user_baz_column.py\n    003_contract_noop.py\n\nWith this each migration will consist of three different migration scripts. Even if a migration doesn\u0027t require a contact or a migration, it could consist of something as minimal as:\n\n    def upgrade(migrate_engine):\n        pass",
+      "parentUuid": "9ad45d7e_63bdd0b6",
       "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
