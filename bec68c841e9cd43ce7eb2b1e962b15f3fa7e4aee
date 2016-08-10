@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_3f98f6bf",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T22:49:43Z",
+      "side": 1,
+      "message": "rename to maximum_password_age? (in a different patch)",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 21
+      },
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_bc32340e",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T22:49:43Z",
+      "side": 1,
+      "message": "probably didn\u0027t need this, we don\u0027t want to add to r/w support for LDAP",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 23
+      },
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_1cc3808a",
+        "filename": "releasenotes/notes/identity_driver_new_change_password_method-e8c0e06795bca2d8.yaml",
+        "patchSetId": 46
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T22:49:43Z",
+      "side": 1,
+      "message": "use all 72 or 80 characters per line",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
