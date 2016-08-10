@@ -39,40 +39,18 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
 
 
 class Revoke(base.RevokeDriverV8):
-    def _flush_batch_size(self, dialect):
-        batch_size = 0
-        if dialect == 'ibm_db_sa':
-            # This functionality is limited to DB2, because
-            # it is necessary to prevent the transaction log
-            # from filling up, whereas at least some of the
-            # other supported databases do not support update
-            # queries with LIMIT subqueries nor do they appear
-            # to require the use of such queries when deleting
-            # large numbers of records at once.
-            batch_size = 100
-            # Limit of 100 is known to not fill a transaction log
-            # of default maximum size while not significantly
-            # impacting the performance of large token purges on
-            # systems where the maximum transaction log size has
-            # been increased beyond the default.
-        return batch_size
-
     def _prune_expired_events(self):
         oldest = base.revoked_before_cutoff_time()
 
         with sql.session_for_write() as session:
-            dialect = session.bind.dialect.name
-            batch_size = self._flush_batch_size(dialect)
-            if batch_size > 0:
-                query = session.query(RevocationEvent.id)
-                query = query.filter(RevocationEvent.revoked_at < oldest)
-                query = query.limit(batch_size).subquery()
-                delete_query = (session.query(RevocationEvent).
-                                filter(RevocationEvent.id.in_(query)))
-                while True:
-                    rowcount = delete_query.delete(synchronize_session=False)
-                    if rowcount == 0:
-                        break
+            query = session.query(RevocationEvent.id)
+            query = query.filter(RevocationEvent.revoked_at < oldest)
+            delete_query = (session.query(RevocationEvent).
+                            filter(RevocationEvent.id.in_(query)))
+            while True:
+                rowcount = delete_query.delete(synchronize_session=False)
+                if rowcount == 0:
+                    break
             else:
                 query = session.query(RevocationEvent)
                 query = query.filter(RevocationEvent.revoked_at < oldest)

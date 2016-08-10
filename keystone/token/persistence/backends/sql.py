@@ -249,18 +249,7 @@ class Token(token.persistence.TokenDriverV8):
         Based on the DB dialect, select an expiry range callable that is
         appropriate.
         """
-        # DB2 and MySQL can both benefit from a batched strategy.  On DB2 the
-        # transaction log can fill up and on MySQL w/Galera, large
-        # transactions can exceed the maximum write set size.
-        if dialect == 'ibm_db_sa':
-            # Limit of 100 is known to not fill a transaction log
-            # of default maximum size while not significantly
-            # impacting the performance of large token purges on
-            # systems where the maximum transaction log size has
-            # been increased beyond the default.
-            return functools.partial(_expiry_range_batched,
-                                     batch_size=100)
-        elif dialect == 'mysql':
+        if dialect == 'mysql':
             # We want somewhat more than 100, since Galera replication delay is
             # at least RTT*2.  This can be a significant amount of time if
             # doing replication across a WAN.

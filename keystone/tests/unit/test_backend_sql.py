@@ -718,13 +718,6 @@ class SqlToken(SqlTests, token_tests.TokenTests):
         sqlite_strategy = tok._expiry_range_strategy('sqlite')
         self.assertEqual(token_sql._expiry_range_all, sqlite_strategy)
 
-    def test_expiry_range_strategy_ibm_db_sa(self):
-        tok = token_sql.Token()
-        db2_strategy = tok._expiry_range_strategy('ibm_db_sa')
-        self.assertIsInstance(db2_strategy, functools.partial)
-        self.assertEqual(token_sql._expiry_range_batched, db2_strategy.func)
-        self.assertEqual({'batch_size': 100}, db2_strategy.keywords)
-
     def test_expiry_range_strategy_mysql(self):
         tok = token_sql.Token()
         mysql_strategy = tok._expiry_range_strategy('mysql')
