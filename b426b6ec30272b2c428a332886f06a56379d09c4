@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e38569ad",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T01:18:30Z",
+      "side": 1,
+      "message": "the original text is easier to understand i think:\n\n\"The entire parent hierarchy will be included as nested dictionaries in the response. It will contain all projects ids found by traversing up the hierarchy to the top-level project.\"",
+      "range": {
+        "startLine": 282,
+        "startChar": 4,
+        "endLine": 282,
+        "endChar": 78
+      },
+      "revId": "b426b6ec30272b2c428a332886f06a56379d09c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_439555dc",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T01:18:30Z",
+      "side": 1,
+      "message": "\"The entire child hierarchy will be included as nested dictionaries in the response. It will contain all the projects ids found by traversing down the hierarchy.\"",
+      "range": {
+        "startLine": 349,
+        "startChar": 4,
+        "endLine": 349,
+        "endChar": 77
+      },
+      "revId": "b426b6ec30272b2c428a332886f06a56379d09c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
