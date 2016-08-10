@@ -23,6 +23,8 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.common.sql import force_migrations
+from keystone.common.sql import migration_control
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -193,8 +195,8 @@ def offline_sync_database_to_version(version=None):
         # with an on-line rolling upgrade. So instead we duplicate the actions
         # and then stamp the status row at the end.
 
-        # TODO(henry-nash): Call the migration helpers here.
-        pass
+        force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
+        # TODO(henry-nash): add call to contract phase here
 
 
 def get_db_version():
@@ -211,15 +213,11 @@ def print_db_version():
 def migration_expand():
     """Expand the database ahead of code upgrade.
 
-    Since we currently do not support on-the-fly migration at the point of
-    object access, we run all the migration scripts now.
-
     This is run manually by the keystone-manage command before the first
     keystone node is migrated to the latest release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_common_repo(version=None)
 
 
 def force_migration_complete():
@@ -233,8 +231,7 @@ def force_migration_complete():
     created during a rolling upgrade are tidied up.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
 
 
 def migration_contract():
@@ -244,5 +241,5 @@ def migration_contract():
     running code that no longer looks at old tables/columns.
 
     """
-    # TODO(henry-nash): Add implementation here.
+    # TODO(henry-nash): Migrate contract repo here.
     pass
