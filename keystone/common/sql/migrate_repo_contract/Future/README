@@ -1,0 +1,9 @@
+This is a database migration repository.
+
+More information at
+http://code.google.com/p/sqlalchemy-migrate/
+
+The script in 'Future' repository will be moved to the latest when the code to
+access the old schema have been removed. The migration script in 'Future'
+repository should have the release name as the part of the name if it's clear
+when the script could be executed.

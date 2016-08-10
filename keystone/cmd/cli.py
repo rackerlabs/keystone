@@ -407,14 +407,30 @@ class DbSync(BaseApp):
                                   'now part of the main repository, '
                                   'specifying db_sync without this option '
                                   'will cause all extensions to be migrated.'))
-
+        group = parser.add_mutually_exclusive_group()
+        group.add_argument('--expand', default=False, action='store_true',
+                           help=('Any additive change to database should be '
+                                 'firstly run here.'))
+        group.add_argument('--migrate', default=False, action='store_true',
+                           help=('Migrate the data from legacy tables or '
+                                 'columns'))
+        group.add_argument('--contract', default=False, action='store_true',
+                           help=('Drop any table or column that are no '
+                                 'longer needed.'))
         return parser
 
     @staticmethod
     def main():
         assert_not_extension(CONF.command.extension)
-        version = CONF.command.version
-        migration_helpers.sync_database_to_version(version)
+        if CONF.command.expand:
+            migration_helpers.migration_expand()
+        elif CONF.command.migrate:
+            migration_helpers.migration_data()
+        elif CONF.command.contract:
+            migration_helpers.migration_contract()
+        else:
+            version = CONF.command.version
+            migration_helpers.sync_database_to_version(version)
 
 
 class DbVersion(BaseApp):

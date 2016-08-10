@@ -125,6 +125,22 @@ def _sync_common_repo(version):
                           init_version=init_version, sanity_check=False)
 
 
+def _sync_additive_repo(name):
+    abs_path = find_migrate_repo(repo_name=name)
+    init_version = get_init_version()
+    with sql.session_for_write() as session:
+        engine = session.get_bind()
+        # Register the repo with the version control API
+        # If it already knows about the repo, it will throw
+        # an exception that we can safely ignore
+        try:
+            migration.db_version_control(engine, abs_path)
+        except exceptions.DatabaseAlreadyControlledError:  # nosec
+            pass
+        migration.db_sync(engine, abs_path,
+                          init_version=init_version, sanity_check=False)
+
+
 def get_init_version(abs_path=None):
     """Get the initial version of a migrate repository.
 
@@ -173,3 +189,29 @@ def get_db_version():
 
 def print_db_version():
     print(get_db_version())
+
+
+def migration_expand():
+    """Expand the database with new tables or columns."""
+    _sync_additive_repo('migrate_repo_expand')
+
+
+def migration_data():
+    """Migrate data from the legacy tables or columns."""
+    _sync_additive_repo('migrate_repo_migrate')
+
+
+def migration_contract():
+    """Contract the database.
+
+    Drop any table or column that are no longer needed.
+    Only the migration script in `Latest` repository will be executed, move
+    the script from `Future` into `Latest` when it's safe (no code will
+    access them) to be called in your current release cycle.
+
+    The migration script in 'Future' repository should have a release name as
+    the part of the name if it's clear when the script could be executed.
+
+    """
+    repo_name = 'migrate_repo_contract' + '/Latest'
+    _sync_additive_repo(repo_name)
