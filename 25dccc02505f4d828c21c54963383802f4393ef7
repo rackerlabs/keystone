@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_6365d0b3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-10T15:44:38Z",
+      "side": 1,
+      "message": "Can we do something here to make this mutually exclusive? I think something like this? https://docs.python.org/2/library/argparse.html#mutual-exclusion",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
