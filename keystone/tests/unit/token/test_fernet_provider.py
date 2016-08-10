@@ -507,7 +507,10 @@ class TestFernetKeyRotation(unit.TestCase):
 
         """
         # Load the keys into a list, keys is list of six.text_type.
-        utils = fernet_utils.FernetUtils()
+        utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys
+        )
         keys = utils.load_keys()
 
         # Sort the list of keys by the keys themselves (they were previously
@@ -566,7 +569,10 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate the keys just enough times to fully populate the key
             # repository.
             for rotation in range(max_active_keys - min_active_keys):
-                utils = fernet_utils.FernetUtils()
+                utils = fernet_utils.FernetUtils(
+                    CONF.fernet_tokens.key_repository,
+                    CONF.fernet_tokens.max_active_keys
+                )
                 utils.rotate_keys()
                 self.assertRepositoryState(expected_size=rotation + 3)
 
@@ -580,7 +586,10 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate an additional number of times to ensure that we maintain
             # the desired number of active keys.
             for rotation in range(10):
-                utils = fernet_utils.FernetUtils()
+                utils = fernet_utils.FernetUtils(
+                    CONF.fernet_tokens.key_repository,
+                    CONF.fernet_tokens.max_active_keys
+                )
                 utils.rotate_keys()
                 self.assertRepositoryState(expected_size=max_active_keys)
 
@@ -594,7 +603,10 @@ class TestFernetKeyRotation(unit.TestCase):
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '99.bak')
         with open(evil_file, 'w'):
             pass
-        utils = fernet_utils.FernetUtils()
+        utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys
+        )
         utils.rotate_keys()
         self.assertTrue(os.path.isfile(evil_file))
         keys = 0
@@ -611,7 +623,10 @@ class TestLoadKeys(unit.TestCase):
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
         with open(evil_file, 'w'):
             pass
-        utils = fernet_utils.FernetUtils()
+        utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys
+        )
         keys = utils.load_keys()
         self.assertEqual(2, len(keys))
         self.assertTrue(len(keys[0]))
