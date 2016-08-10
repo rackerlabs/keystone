@@ -507,7 +507,8 @@ class TestFernetKeyRotation(unit.TestCase):
 
         """
         # Load the keys into a list, keys is list of six.text_type.
-        keys = fernet_utils.load_keys()
+        utils = fernet_utils.FernetUtils()
+        keys = utils.load_keys()
 
         # Sort the list of keys by the keys themselves (they were previously
         # sorted by filename).
@@ -565,7 +566,8 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate the keys just enough times to fully populate the key
             # repository.
             for rotation in range(max_active_keys - min_active_keys):
-                fernet_utils.rotate_keys()
+                utils = fernet_utils.FernetUtils()
+                utils.rotate_keys()
                 self.assertRepositoryState(expected_size=rotation + 3)
 
                 exp_keys.append(next_key_number)
@@ -578,7 +580,8 @@ class TestFernetKeyRotation(unit.TestCase):
             # Rotate an additional number of times to ensure that we maintain
             # the desired number of active keys.
             for rotation in range(10):
-                fernet_utils.rotate_keys()
+                utils = fernet_utils.FernetUtils()
+                utils.rotate_keys()
                 self.assertRepositoryState(expected_size=max_active_keys)
 
                 exp_keys.pop(1)
@@ -591,7 +594,8 @@ class TestFernetKeyRotation(unit.TestCase):
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '99.bak')
         with open(evil_file, 'w'):
             pass
-        fernet_utils.rotate_keys()
+        utils = fernet_utils.FernetUtils()
+        utils.rotate_keys()
         self.assertTrue(os.path.isfile(evil_file))
         keys = 0
         for x in os.listdir(CONF.fernet_tokens.key_repository):
@@ -607,6 +611,7 @@ class TestLoadKeys(unit.TestCase):
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
         with open(evil_file, 'w'):
             pass
-        keys = fernet_utils.load_keys()
+        utils = fernet_utils.FernetUtils()
+        keys = utils.load_keys()
         self.assertEqual(2, len(keys))
         self.assertTrue(len(keys[0]))
