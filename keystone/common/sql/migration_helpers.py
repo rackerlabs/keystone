@@ -106,7 +106,7 @@ def rename_tables_with_constraints(renames, constraints, engine):
         add_constraints(constraints)
 
 
-def find_migrate_repo(package=None, repo_name='migrate_repo'):
+def find_migrate_repo(package=None, repo_name='expand_repo'):
     package = package or sql
     path = os.path.abspath(os.path.join(
         os.path.dirname(package.__file__), repo_name))
@@ -122,6 +122,23 @@ def _sync_common_repo(version):
         engine = session.get_bind()
         _assert_not_schema_downgrade(version=version)
         migration.db_sync(engine, abs_path, version=version,
+                          init_version=init_version, sanity_check=False)
+
+
+def _sync_additional_repo(repo_name):
+    abs_path = find_migrate_repo(repo_name=repo_name)
+    with sql.session_for_write() as session:
+        engine = session.get_bind()
+        # Register the repo with the version control API
+        # If it already knows about the repo, it will throw
+        # an exception that we can safely ignore
+        try:
+            migration.db_version_control(engine, abs_path)
+        except (migration.exception.DbMigrationError,
+                exceptions.DatabaseAlreadyControlledError):  # nosec
+            pass
+        init_version = get_init_version(abs_path=abs_path)
+        migration.db_sync(engine, abs_path,
                           init_version=init_version, sanity_check=False)
 
 
@@ -198,8 +215,7 @@ def expand_schema():
     keystone node is migrated to the latest release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_common_repo(version=None)
 
 
 def migrate_data():
@@ -209,8 +225,7 @@ def migrate_data():
     schema has been expanded for the new release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_additional_repo(repo_name='data_migration_repo')
 
 
 def contract_schema():
@@ -223,5 +238,4 @@ def contract_schema():
     then this should be fixed up here.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _sync_additional_repo(repo_name='contract_repo')

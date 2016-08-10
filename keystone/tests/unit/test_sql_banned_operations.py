@@ -22,7 +22,7 @@ from oslo_db.sqlalchemy import test_migrations
 import sqlalchemy
 import testtools
 
-from keystone.common.sql import migrate_repo
+from keystone.common.sql import expand_repo
 from keystone.common.sql import migration_helpers
 
 
@@ -81,7 +81,7 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
     @property
     def REPOSITORY(self):
-        migrate_file = migrate_repo.__file__
+        migrate_file = expand_repo.__file__
         return repository.Repository(
             os.path.abspath(os.path.dirname(migrate_file))
         )
