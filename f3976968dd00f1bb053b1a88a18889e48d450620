@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_9cc2d0e7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-10T22:51:11Z",
+      "side": 1,
+      "message": "I proposed that as a spec to the keystone backlog:\n\nhttps://github.com/openstack/keystone-specs/blob/master/specs/keystone/backlog/fernet-key-store.rst",
+      "parentUuid": "fad55976_1409392d",
+      "revId": "f3976968dd00f1bb053b1a88a18889e48d450620",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_943409df",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 24
