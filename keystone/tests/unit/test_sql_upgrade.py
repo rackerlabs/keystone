@@ -31,6 +31,7 @@ WARNING::
     all data will be lost.
 """
 
+import datetime
 import json
 import uuid
 
@@ -119,6 +120,11 @@ INITIAL_TABLE_STRUCTURE = {
     ],
 }
 
+LEGACY_REPO = 'migrate_repo'
+EXPAND_REPO = 'expand_repo'
+DATA_MIGRATION_REPO = 'data_migration_repo'
+CONTRACT_REPO = 'contract_repo'
+
 
 # Test migration_helpers.get_init_version separately to ensure it works before
 # using in the SqlUpgrade tests.
@@ -142,7 +148,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         # first invocation of repo. Cannot match the full path because it is
         # based on where the test is run.
         param = repo.call_args_list[0][0][0]
-        self.assertTrue(param.endswith('/sql/migrate_repo'))
+        self.assertTrue(param.endswith('/sql/' + LEGACY_REPO))
 
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_with_path_initial_version_0(self, repo):
@@ -155,7 +161,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
-            path = '/keystone/migrate_repo/'
+            path = '/keystone/' + LEGACY_REPO + '/'
 
             # since 0 is the smallest version expect None
             version = migration_helpers.get_init_version(abs_path=path)
@@ -173,7 +179,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
-            path = '/keystone/migrate_repo/'
+            path = '/keystone/' + LEGACY_REPO + '/'
 
             version = migration_helpers.get_init_version(abs_path=path)
             self.assertEqual(initial_version, version)
@@ -191,6 +197,18 @@ class SqlMigrateBase(test_base.DbTestCase):
     def repo_package(self):
         return sql
 
+    def initialize_repo(self, repo_name=LEGACY_REPO):
+        self.repo_path = migration_helpers.find_migrate_repo(
+            package=self.repo_package(),
+            repo_name=repo_name)
+        self._initial_db_version = (
+            migration_helpers.get_init_version(abs_path=self.repo_path))
+        self.schema_ = versioning_api.ControlledSchema.create(
+            self.engine,
+            self.repo_path,
+            self._initial_db_version)
+        self.max_version = self.schema_.repository.version().version
+
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
 
@@ -205,15 +223,7 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.addCleanup(sql.cleanup)
 
         self.initialize_sql()
-        self.repo_path = migration_helpers.find_migrate_repo(
-            self.repo_package())
-        self.schema_ = versioning_api.ControlledSchema.create(
-            self.engine,
-            self.repo_path,
-            self._initial_db_version)
-
-        # auto-detect the highest available schema version in the migrate_repo
-        self.max_version = self.schema_.repository.version().version
+        self.initialize_repo()
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
@@ -285,8 +295,18 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.assertItemsEqual(expected_cols, actual_cols,
                               '%s table' % table_name)
 
+    def insert_dict(self, session, table_name, d, table=None):
+        """Naively inserts key-value pairs into a table, given a dictionary."""
+        if table is None:
+            this_table = sqlalchemy.Table(table_name, self.metadata,
+                                          autoload=True)
+        else:
+            this_table = table
+        insert = this_table.insert().values(**d)
+        session.execute(insert)
 
-class SqlUpgradeTests(SqlMigrateBase):
+
+class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
     _initial_db_version = migration_helpers.get_init_version()
 
     def test_blank_db_to_start(self):
@@ -308,16 +328,6 @@ class SqlUpgradeTests(SqlMigrateBase):
     def check_initial_table_structure(self):
         for table in INITIAL_TABLE_STRUCTURE:
             self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
-
-    def insert_dict(self, session, table_name, d, table=None):
-        """Naively inserts key-value pairs into a table, given a dictionary."""
-        if table is None:
-            this_table = sqlalchemy.Table(table_name, self.metadata,
-                                          autoload=True)
-        else:
-            this_table = table
-        insert = this_table.insert().values(**d)
-        session.execute(insert)
 
     def test_kilo_squash(self):
         self.upgrade(67)
@@ -1480,11 +1490,166 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'failed_auth_at'])
 
 
-class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
+class MySQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
 
 
-class PostgreSQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
+class PostgreSQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
+    FIXTURE = test_base.PostgreSQLOpportunisticFixture
+
+
+class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
+
+    def setUp(self):
+        # Make sure the main repo is fully upgraded for this release since the
+        # expand phase is only run after such an upgrade
+        super(SqlExpandSchemaUpgradeTests, self).setUp()
+        self.upgrade(self.max_version)
+
+        self.initialize_repo(repo_name=EXPAND_REPO)
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+
+class MySQLOpportunisticExpandSchemaUpgradeTestCase(
+        SqlExpandSchemaUpgradeTests):
+    FIXTURE = test_base.MySQLOpportunisticFixture
+
+
+class PostgreSQLOpportunisticExpandSchemaUpgradeTestCase(
+        SqlExpandSchemaUpgradeTests):
+    FIXTURE = test_base.PostgreSQLOpportunisticFixture
+
+
+class SqlDataMigrationUpgradeTests(SqlMigrateBase):
+
+    def setUp(self):
+        # Make sure the legacy and expand repos are fully upgraded, since the
+        # data migration phase is only run after these are upgraded
+        super(SqlDataMigrationUpgradeTests, self).setUp()
+        self.upgrade(self.max_version)
+        # Make sure the expand repo is also upgraded
+        self.initialize_repo(repo_name=EXPAND_REPO)
+        self.upgrade(self.max_version)
+
+        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+
+class MySQLOpportunisticDataMigrationUpgradeTestCase(
+        SqlDataMigrationUpgradeTests):
+    FIXTURE = test_base.MySQLOpportunisticFixture
+
+
+class PostgreSQLOpportunisticDataMigrationUpgradeTestCase(
+        SqlDataMigrationUpgradeTests):
+    FIXTURE = test_base.PostgreSQLOpportunisticFixture
+
+
+class SqlContractSchemaUpgradeTests(SqlMigrateBase):
+
+    def setUp(self):
+        # Make sure the legacy, expand and data migration repos are fully
+        # upgraded, since the contract phase is only run after these are
+        # upgraded.
+        super(SqlContractSchemaUpgradeTests, self).setUp()
+        self.upgrade(self.max_version)
+
+        self.initialize_repo(repo_name=EXPAND_REPO)
+        self.upgrade(self.max_version)
+        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
+        self.upgrade(self.max_version)
+
+        self.initialize_repo(repo_name=CONTRACT_REPO)
+
+    def test_start_version_db_init_version(self):
+        with sql.session_for_write() as session:
+            version = migration.db_version(session.get_bind(), self.repo_path,
+                                           self._initial_db_version)
+        self.assertEqual(
+            self._initial_db_version,
+            version,
+            'DB is not at version %s' % self._initial_db_version)
+
+    def test_001_created_at_made_non_nullable(self):
+        def add_user_model_record(session, thedate):
+            # add a user
+            user = {'id': uuid.uuid4().hex}
+            self.insert_dict(session, 'user', user)
+            # add a local user
+            local_user = {
+                'user_id': user['id'],
+                'domain_id': 'default',
+                'name': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'local_user', local_user)
+            local_user_table = sqlalchemy.Table('local_user', self.metadata,
+                                                autoload=True)
+            query = session.query(local_user_table)
+            local_user_ref = query.filter_by(user_id=user['id']).one()
+            # add a password
+            password = {
+                'local_user_id': local_user_ref.id,
+                'password': uuid.uuid4().hex,
+                'created_at': thedate
+            }
+            self.insert_dict(session, 'password', password)
+            return local_user_ref.id
+
+        session = self.sessionmaker()
+        password_name = 'password'
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+
+        # Add a password with a None created_at value, as well as a valid one
+        add_user_model_record(session, None)
+        a_specific_date = datetime.datetime(1960, 5, 7)
+        local_user_id = add_user_model_record(session, a_specific_date)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertNotEqual(0, null_created_at_cnt)
+
+        self.upgrade(1)
+        self.metadata.clear()
+        session = self.sessionmaker()
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertFalse(password_table.c.created_at.nullable)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertEqual(0, null_created_at_cnt)
+
+        # Make sure we didn't trample on the row with a valid created_at
+        query = session.query(password_table)
+        row = query.filter_by(local_user_id=local_user_id).one()
+        self.assertEqual(a_specific_date, row.created_at)
+
+
+class MySQLOpportunisticContractSchemaUpgradeTestCase(
+        SqlContractSchemaUpgradeTests):
+    FIXTURE = test_base.MySQLOpportunisticFixture
+
+
+class PostgreSQLOpportunisticContractSchemaUpgradeTestCase(
+        SqlContractSchemaUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
 
 
