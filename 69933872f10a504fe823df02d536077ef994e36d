@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_92a66c0e",
+        "filename": "api-ref/source/v3/samples/admin/project-show-parents-response.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-10T06:48:47Z",
+      "side": 1,
+      "message": "update these to example.com/identity/v3\n\nit\u0027s what we use in the other examples",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "69933872f10a504fe823df02d536077ef994e36d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
