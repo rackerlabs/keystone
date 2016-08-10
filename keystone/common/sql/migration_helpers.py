@@ -23,6 +23,9 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.common.sql import force_migrations
+from keystone.common.sql import migration_control
+from keystone.common.sql import migration_phase_sql
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
@@ -160,6 +163,54 @@ def _assert_not_schema_downgrade(version=None):
             pass
 
 
+MIGRATION_STATUS_STARTED = 'Started'
+MIGRATION_STATUS_UPGRADE_COMPLETED = 'Upgrade Completed'
+MIGRATION_STATUS_RESTART_COMPLETED = 'Restart Completed'
+MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED = 'Force Migrate Completed'
+MIGRATION_STATUS_COMPLETED = 'Completed'
+
+VERSION_THAT_CREATES_MIGRATION_STATUS_TABLE = 109
+
+PHASE_STATE_DIAGRAM = {
+    MIGRATION_STATUS_STARTED: {
+        'next': MIGRATION_STATUS_UPGRADE_COMPLETED,
+        'help': _("You are currently in the code upgrading phase. The "
+                  "next command in the sequence should be "
+                  "'keystone-manage db_sync --rolling-upgrade-complete' once "
+                  "the nodes have been upgraded and started.")
+    },
+    MIGRATION_STATUS_UPGRADE_COMPLETED: {
+        'next': MIGRATION_STATUS_RESTART_COMPLETED,
+        'help': _("You are currently in the phase of restarting after "
+                  "upgrading each of your keystone nodes. The next command in "
+                  "the sequence should be "
+                  "'keystone-manage db_sync --rolling-restart-complete' once "
+                  "the nodes have been restarted again.")
+    },
+    MIGRATION_STATUS_RESTART_COMPLETED: {
+        'next': MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED,
+        'help': _("You are currently in the phase of background data "
+                  "migration after upgrading your keystone nodes. The next "
+                  "command in the sequence should be "
+                  "'keystone-manage db_sync --force-migration-complete' to "
+                  "complete this phase.")
+    },
+    MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED: {
+        'next': MIGRATION_STATUS_COMPLETED,
+        'help': _("You have completed all the data migration. The next (and "
+                  "last) command in the sequence should be "
+                  "'keystone-manage db_sync --contract' to remove any "
+                  "database structures that are no longer needed.")
+    },
+    MIGRATION_STATUS_COMPLETED: {
+        'next': MIGRATION_STATUS_STARTED,
+        'help': _("You are not currently undertaking a migration. The first "
+                  "command in the sequence should be "
+                  "'keystone-manage db_sync --expand'")
+    },
+}
+
+
 def offline_sync_database_to_version(version=None):
     """Perform and off-line sync of the database.
 
@@ -193,8 +244,17 @@ def offline_sync_database_to_version(version=None):
         # with an on-line rolling upgrade. So instead we duplicate the actions
         # and then stamp the status row at the end.
 
-        # TODO(henry-nash): Call the migration helpers here.
-        pass
+        force_migrations.tidy_up_migration(migration_control.LATEST_RELEASE)
+        force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
+        # TODO(henry-nash): add call to contract phase here
+        next_status = {'current_phase': MIGRATION_STATUS_COMPLETED,
+                       'current_version': migration_control.LATEST_RELEASE,
+                       'migrating_to_version': migration_control.NO_RELEASE}
+        migration_phase = migration_phase_sql.MigrationPhase()
+        try:
+            migration_phase.update_migration_status(next_status)
+        except exception.NotFound:
+            migration_phase.create_migration_status(next_status)
 
 
 def get_db_version():
@@ -208,6 +268,51 @@ def print_db_version():
     print(get_db_version())
 
 
+def _assert_under_migration_control():
+    if get_db_version() < VERSION_THAT_CREATES_MIGRATION_STATUS_TABLE:
+        print(PHASE_STATE_DIAGRAM[MIGRATION_STATUS_COMPLETED]['help'])
+        raise RuntimeError
+
+
+def _assert_correct_migration_phase(current_status, next_status):
+    if current_status is None:
+        print(_("No upgrade is in progress, you need to start with "
+                "'keystone-manage db_sync --expand'"))
+        raise RuntimeError
+
+    current_phase = current_status['current_phase']
+    if next_status != PHASE_STATE_DIAGRAM[current_phase]['next']:
+        print(_('You are trying to execute an upgrade phase out of order'))
+        print(PHASE_STATE_DIAGRAM[current_phase]['help'])
+        raise RuntimeError
+
+
+def _assert_release_in_range(current_version, allowable_version_steps):
+    new = migration_control.RELEASE_SEQUENCE.index(
+        migration_control.LATEST_RELEASE)
+    current = migration_control.RELEASE_SEQUENCE.index(current_version)
+    if new - current > allowable_version_steps:
+        print(_('You are trying to migrate across too broad a range of '
+                'versions. You will need to migrate in smaller version '
+                'steps.'))
+        raise RuntimeError
+
+
+def _get_migration_status(driver):
+    """Get the migration status.
+
+    Return None if either the table does not exist yet or the row does not yet
+    exist - meaning we have not yet run the first migration that supported
+    rolling upgrades.
+
+    """
+    try:
+        current_status = driver.get_migration_status()
+    except exception.NotFound:
+        pass
+    return current_status
+
+
 def migration_expand():
     """Expand the database ahead of code upgrade.
 
@@ -218,8 +323,31 @@ def migration_expand():
     keystone node is migrated to the latest release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    next_status = {'migrating_to_version': migration_control.LATEST_RELEASE,
+                   'current_phase': MIGRATION_STATUS_STARTED}
+    if get_db_version() < VERSION_THAT_CREATES_MIGRATION_STATUS_TABLE:
+        _assert_release_in_range(migration_control.EARLIER_RELEASE, 1)
+        _sync_common_repo(version=None)
+        next_status['current_version'] = migration_control.EARLIER_RELEASE
+        migration_phase = migration_phase_sql.MigrationPhase()
+        migration_phase.create_migration_status(next_status)
+    else:
+        migration_phase = migration_phase_sql.MigrationPhase()
+        current_status = _get_migration_status(migration_phase)
+        # Technically if the table exists, the status row should also exist,
+        # but just in case this creation somehow failed, we check and if
+        # necessary re-create it here.
+        if current_status is None:
+            next_status['current_version'] = migration_control.EARLIER_RELEASE
+            _assert_release_in_range(migration_control.EARLIER_RELEASE, 1)
+            _sync_common_repo(version=None)
+            migration_phase.create_migration_status(next_status)
+        else:
+            _assert_correct_migration_phase(current_status,
+                                            MIGRATION_STATUS_STARTED)
+            _assert_release_in_range(migration_control.LATEST_RELEASE, 1)
+            _sync_common_repo(version=None)
+            migration_phase.update_migration_status(next_status)
 
 
 def rolling_upgrade_complete():
@@ -231,8 +359,14 @@ def rolling_upgrade_complete():
     no nodes left running the old release.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _assert_under_migration_control()
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_UPGRADE_COMPLETED)
+    force_migrations.tidy_up_migration(migration_control.LATEST_RELEASE)
+    next_status = {'current_phase': MIGRATION_STATUS_UPGRADE_COMPLETED}
+    migration_phase.update_migration_status(next_status)
 
 
 def rolling_restart_complete():
@@ -243,8 +377,13 @@ def rolling_restart_complete():
     rolling_upgrade_complete.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _assert_under_migration_control()
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_RESTART_COMPLETED)
+    next_status = {'current_phase': MIGRATION_STATUS_RESTART_COMPLETED}
+    migration_phase.update_migration_status(next_status)
 
 
 def force_migration_complete():
@@ -258,8 +397,14 @@ def force_migration_complete():
     created during a rolling upgrade are tidied up.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _assert_under_migration_control()
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED)
+    force_migrations.force_data_migration(migration_control.LATEST_RELEASE)
+    next_status = {'current_phase': MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED}
+    migration_phase.update_migration_status(next_status)
 
 
 def migration_contract():
@@ -269,11 +414,26 @@ def migration_contract():
     running code that no longer looks at old tables/columns.
 
     """
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _assert_under_migration_control()
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = _get_migration_status(migration_phase)
+    _assert_correct_migration_phase(current_status,
+                                    MIGRATION_STATUS_COMPLETED)
+    if current_status['current_version'] == migration_control.EARLIER_RELEASE:
+        # Nothing to do, since we didn't support contraction then
+        pass
+    else:
+        # TODO(henry-nash): Migrate contract repo here.
+        pass
+    next_status = {'current_phase': MIGRATION_STATUS_COMPLETED,
+                   'current_version': migration_control.LATEST_RELEASE,
+                   'migrating_to_version': migration_control.NO_RELEASE}
+    migration_phase.update_migration_status(next_status)
 
 
 def migration_status():
     """Print the status of the migration."""
-    # TODO(henry-nash): Add implementation here.
-    pass
+    _assert_under_migration_control()
+    migration_phase = migration_phase_sql.MigrationPhase()
+    current_status = migration_phase.get_migration_status()
+    print(PHASE_STATE_DIAGRAM[current_status['current_phase']]['help'])
