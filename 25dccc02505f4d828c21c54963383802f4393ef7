@@ -16,6 +16,40 @@
       "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_638f902a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-10T15:46:31Z",
+      "side": 1,
+      "message": "What\u0027s this about?",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_63bdd0b6",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-10T15:46:31Z",
+      "side": 1,
+      "message": "I\u0027d rather not use release names at all. Just a repos named expand, migrate and contract.",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
