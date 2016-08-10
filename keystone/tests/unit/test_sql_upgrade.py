@@ -46,6 +46,8 @@ import sqlalchemy.exc
 from testtools import matchers
 
 from keystone.common import sql
+from keystone.common.sql import force_migrations
+from keystone.common.sql import migration_control
 from keystone.common.sql import migration_helpers
 import keystone.conf
 from keystone.tests import unit
@@ -285,6 +287,16 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.assertItemsEqual(expected_cols, actual_cols,
                               '%s table' % table_name)
 
+    def insert_dict(self, session, table_name, d, table=None):
+        """Naively inserts key-value pairs into a table, given a dictionary."""
+        if table is None:
+            this_table = sqlalchemy.Table(table_name, self.metadata,
+                                          autoload=True)
+        else:
+            this_table = table
+        insert = this_table.insert().values(**d)
+        session.execute(insert)
+
 
 class SqlUpgradeTests(SqlMigrateBase):
     _initial_db_version = migration_helpers.get_init_version()
@@ -308,16 +320,6 @@ class SqlUpgradeTests(SqlMigrateBase):
     def check_initial_table_structure(self):
         for table in INITIAL_TABLE_STRUCTURE:
             self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
-
-    def insert_dict(self, session, table_name, d, table=None):
-        """Naively inserts key-value pairs into a table, given a dictionary."""
-        if table is None:
-            this_table = sqlalchemy.Table(table_name, self.metadata,
-                                          autoload=True)
-        else:
-            this_table = table
-        insert = this_table.insert().values(**d)
-        session.execute(insert)
 
     def test_kilo_squash(self):
         self.upgrade(67)
@@ -1486,6 +1488,48 @@ class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
 
 class PostgreSQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
+
+
+class DataMigrationTests(SqlMigrateBase):
+
+    _initial_db_version = migration_helpers.get_init_version()
+
+    def test_105_data_migration(self):
+        def add_user_model_record(session):
+            # add a user
+            user = {'id': uuid.uuid4().hex}
+            self.insert_dict(session, 'user', user)
+            # add a local user
+            local_user = {
+                'id': 1,
+                'user_id': user['id'],
+                'domain_id': 'default',
+                'name': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'local_user', local_user)
+            # add a password
+            password = {
+                'local_user_id': local_user['id'],
+                'password': uuid.uuid4().hex
+            }
+            self.insert_dict(session, 'password', password)
+        # Move to after the regular 105 upgrade script has rune
+        self.upgrade(105)
+        session = self.sessionmaker()
+        password_name = 'password'
+        # Add a password with a None created_at value
+        add_user_model_record(session)
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertNotEqual(null_created_at_cnt, 0)
+        force_migrations.force_data_migration(migration_control.NEWTON_RELEASE)
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertEqual(null_created_at_cnt, 0)
+
+        # Test we don't stamp on anything else
 
 
 class VersionTests(SqlMigrateBase):
