@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e529889c",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-11T15:29:44Z",
+      "side": 1,
+      "message": "+1 but I actually need to revise this further, because the available capabilities are NOT limited by the process described in this patchset (this applied to previous patchsets.",
+      "revId": "93feef2da3a73464b48cbc52c18d0cfc62f788e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_a52310bc",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-11T15:29:44Z",
+      "side": 1,
+      "message": "This was correct before - the columns may be empty, populated by triggers, or defaulted to some other useless value, and thus \"not all populated...\"",
+      "revId": "93feef2da3a73464b48cbc52c18d0cfc62f788e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
