@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_45b7d8f4",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-11T02:44:18Z",
+      "side": 1,
+      "message": "It\u0027s for version control, it will do nothing if the repo id has been tracked in the migration table or else the the new row will be created for the repo.",
+      "parentUuid": "9ad45d7e_638f902a",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_63bdd0b6",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 1
@@ -83,6 +101,42 @@
       "side": 1,
       "message": "What we can do here is have three separate migration repositories. We can keep them all in lock step and write a unit test to make sure all three repositories stay in sync. For example: \n\n  keystone/common/sql/migrate_repo/expand/\n    001_expand_project_foo_column.py\n    002_expand_user_bar_column.py\n    003_expand_new_baz_table.py\n  keystone/common/sql/migrate_repo/migrate/\n    001_populate_project_foo_column.py\n    002_migrate_data_to_new_user_bar_column.py\n    003_populate_baz_table.py\n  keystone/common/sql/migrate_repo/contract/\n    001_contract_old_project_bar_column.py\n    002_contract_old_user_baz_column.py\n    003_contract_noop.py\n\nWith this each migration will consist of three different migration scripts. Even if a migration doesn\u0027t require a contact or a migration, it could consist of something as minimal as:\n\n    def upgrade(migrate_engine):\n        pass",
       "parentUuid": "9ad45d7e_63bdd0b6",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_65a3fc00",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-11T02:44:18Z",
+      "side": 1,
+      "message": "My initial thoughts is no release name at all. How about this case:\n\nWe are going to drop a table or alter table columns, so we will deprecate the code to read the old table/columns, populate the data from the old table/columns in this releases. But we cannot just drop them in this release since the old code can still *read* and consume them.\n\nSupport the old code is deprecated for 2 release cycle, the DB schema can only be changed after 2 release cycle as well.\n\nSo the drop or alter should be done under the X+2/contract repo, right?",
+      "parentUuid": "9ad45d7e_63bdd0b6",
+      "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_e5188c20",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-11T02:44:18Z",
+      "side": 1,
+      "message": "Good idea, this looks more neat! But is there any functional impact without this?",
+      "parentUuid": "9ad45d7e_5ec17f53",
       "revId": "25dccc02505f4d828c21c54963383802f4393ef7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
