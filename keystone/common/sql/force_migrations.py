@@ -26,5 +26,10 @@ def force_data_migration(release):
 
     """
     if release == migration_control.NEWTON_RELEASE:
-        # No data migrations are required for Newton
-        pass
+        _109_migrate_data_to_new_user_table()
+
+
+def _109_migrate_data_to_new_user_table():
+    """Migration of users to new user table."""
+    # POC - copy all rows from user to new_user
+    pass
