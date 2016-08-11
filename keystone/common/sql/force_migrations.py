@@ -70,4 +70,6 @@ def force_data_migration(release):
     if release == migration_control.NEWTON_RELEASE:
         # In the Newton release, we force all the data to be migrated in the
         # expand phase, so there is no migration required here.
+
+        # POC - copy all rows from group to new_group
         pass
