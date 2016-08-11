@@ -36,6 +36,7 @@ def force_data_migration(release):
     """
     if release == migration_control.NEWTON_RELEASE:
         _105_add_password_data_columns_tidy_up()
+        _109_migrate_data_to_new_user_table()
 
 
 def _105_add_password_data_columns_tidy_up():
@@ -53,3 +54,9 @@ def _105_add_password_data_columns_tidy_up():
         stmt = password_table.update().where(
             password_table.c.created_at == null()).values(values)
         stmt.execute()
+
+
+def _109_migrate_data_to_new_user_table():
+    """Migration of users to new user table."""
+    # POC - copy all rows from user to new_user
+    pass
