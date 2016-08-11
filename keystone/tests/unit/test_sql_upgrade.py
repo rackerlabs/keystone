@@ -1479,6 +1479,44 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'failed_auth_count',
                                  'failed_auth_at'])
 
+    def test_migration_109_110_POC_users_table(self):
+        self.upgrade(110)
+        session = self.sessionmaker()
+
+        # Try inserting into the new table, see if it gets written to the old
+        user = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'default_project_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'new_user', user)
+
+        user_table = sqlalchemy.Table(
+            'user', self.metadata, autoload=True)
+        cols = [user_table.c.id, user_table.c.default_project_id]
+        filter = user_table.c.id == user['id']
+        statement = sqlalchemy.select(cols).where(filter)
+        user_entry = session.execute(statement).fetchone()
+        self.assertEqual(user['id'], user_entry[0])
+        self.assertEqual(user['default_project_id'], user_entry[1])
+
+        # Try inserting into the old table, see if it gets written to the new
+        user = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'default_project_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'user', user)
+
+        new_user_table = sqlalchemy.Table(
+            'new_user', self.metadata, autoload=True)
+        cols = [new_user_table.c.id, new_user_table.c.default_project_id]
+        filter = new_user_table.c.id == user['id']
+        statement = sqlalchemy.select(cols).where(filter)
+        new_user_entry = session.execute(statement).fetchone()
+        self.assertEqual(user['id'], new_user_entry[0])
+        self.assertEqual(user['default_project_id'], new_user_entry[1])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
@@ -1527,6 +1565,9 @@ class SqlNewtonContractUpgradeTests(SqlMigrateBase):
         password_table = sqlalchemy.Table('password', self.metadata,
                                           autoload=True)
         self.assertFalse(password_table.c.created_at.nullable)
+
+    def test_drop_POC_triggers(self):
+        self.upgrade(2)
 
 
 class VersionTests(SqlMigrateBase):
