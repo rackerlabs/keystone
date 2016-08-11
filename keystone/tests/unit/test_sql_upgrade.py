@@ -1491,6 +1491,46 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'migrating_to_version',
                                  'current_phase'])
 
+    def test_migration_110_POC_groups_table(self):
+        self.upgrade(110)
+        session = self.sessionmaker()
+
+        # Try inserting into the new table, see if it gets written to the old
+        group = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'new_group', group)
+
+        group_table = sqlalchemy.Table(
+            'group', self.metadata, autoload=True)
+        cols = [group_table.c.id, group_table.c.name]
+        filter = group_table.c.id == group['id']
+        statement = sqlalchemy.select(cols).where(filter)
+        group_entry = session.execute(statement).fetchone()
+        self.assertEqual(group['id'], group_entry[0])
+        self.assertEqual(group['name'], group_entry[1])
+
+        # Try inserting into the old table, see if it gets written to the new
+        group = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'group', group)
+
+        group_table = sqlalchemy.Table(
+            'new_group', self.metadata, autoload=True)
+        cols = [group_table.c.id, group_table.c.name]
+        filter = group_table.c.id == group['id']
+        statement = sqlalchemy.select(cols).where(filter)
+        group_entry = session.execute(statement).fetchone()
+        self.assertEqual(group['id'], group_entry[0])
+        self.assertEqual(group['name'], group_entry[1])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
@@ -1539,6 +1579,9 @@ class SqlNewtonContractUpgradeTests(SqlMigrateBase):
         password_table = sqlalchemy.Table('password', self.metadata,
                                           autoload=True)
         self.assertFalse(password_table.c.created_at.nullable)
+
+    def test_drop_POC_triggers(self):
+        self.upgrade(2)
 
 
 class VersionTests(SqlMigrateBase):
