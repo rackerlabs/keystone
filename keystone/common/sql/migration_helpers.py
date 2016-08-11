@@ -191,10 +191,13 @@ VERSION_THAT_CREATES_MIGRATION_STATUS_TABLE = 109
 
 PHASE_STATE_DIAGRAM = {
     MIGRATION_STATUS_STARTED: {
-        'next': MIGRATION_STATUS_UPGRADE_COMPLETED,
+        # POC - patch this so we go straight to migrate next.
+        # If we go this route we'll remove all this migration status
+        # stuff anyway.
+        'next': MIGRATION_STATUS_FORCE_MIGRATE_COMPLETED,
         'help': _("You are currently in the code upgrading phase. The "
                   "next command in the sequence should be "
-                  "'keystone-manage db_sync --rolling-upgrade-complete' once "
+                  "'keystone-manage db_sync --migrate' once "
                   "the nodes have been upgraded and started.")
     },
     MIGRATION_STATUS_UPGRADE_COMPLETED: {
