@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_509beb17",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-11T16:56:04Z",
+      "side": 1,
+      "message": "nit: why not add this to setUp()",
+      "range": {
+        "startLine": 510,
+        "startChar": 8,
+        "endLine": 513,
+        "endChar": 9
+      },
+      "revId": "434d64b205818a9a32c2c36c59163ffe892f78bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
