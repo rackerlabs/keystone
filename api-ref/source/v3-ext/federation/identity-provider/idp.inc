@@ -3,16 +3,37 @@
 Register an Identity Provider
 =============================
 
-.. rest_method::  PUT /v3/OS-FEDERATION/identity_providers/{idp_id}
+.. rest_method::  PUT /v3/OS-FEDERATION/identity_providers/{id}
 
 Normal response codes: 201
 Error response codes: 409
+
+Request
+-------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - description: description
+    - enabled: enabled
+    - id: id_path
+    - remote_ids: remote_ids
 
 Request Example
 ---------------
 
 .. literalinclude:: federation/identity-provider/samples/register-request.json
    :language: javascript
+
+Response
+--------
+
+.. rest_parameters:: federation/identity-provider/parameters.yaml
+
+    - description: description
+    - enabled: enabled
+    - id: id_body
+    - links: links
+    - remote_ids: remote_ids
 
 Response Example
 ----------------

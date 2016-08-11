@@ -2,6 +2,48 @@
 
 # variables in path
 
+id_path:
+  description: |
+    Its unique ID.
+  in: path
+  required: true
+  type: string
+
 # variables in query
 
 # variables in body
+
+description:
+  description: |
+    Its description.
+  in: body
+  required: false
+  type: string
+
+enabled:
+  description: |
+    Whether it is enabled or not.
+  in: body
+  required: true
+  type: bool
+
+id_body:
+  description: |
+    Its unique ID.
+  in: body
+  required: true
+  type: string
+
+links:
+  description: |
+    Links containing URI to its protocols and itself.
+  in: body
+  required: true
+  type: string
+
+remote_ids:
+  description: |
+    List of its remote IDs.
+  in: body
+  required: true
+  type: array of strings
