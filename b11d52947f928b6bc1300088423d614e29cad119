@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e52ea88a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15993
+      },
+      "writtenOn": "2016-08-11T15:26:36Z",
+      "side": 1,
+      "message": "If it\u0027s a single DB trigger - a database trigger\nIf it\u0027s multiple triggers - database triggers - removing the a",
+      "range": {
+        "startLine": 10,
+        "startChar": 66,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "b11d52947f928b6bc1300088423d614e29cad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
