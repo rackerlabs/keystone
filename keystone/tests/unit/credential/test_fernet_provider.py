@@ -41,21 +41,16 @@ class TestFernetCredentialProvider(unit.TestCase):
         self.assertNotEqual(blob, encrypted_blob)
         self.assertEqual(blob, decrypted_blob)
 
-    def test_encrypt_with_invalid_key_raises_exception_without_allow_plaintext(
-            self):
-        self.config_fixture.config(
-            group='credential',
-            allow_plaintext=False)
-
+    def test_encrypt_with_invalid_key_raises_exception_without_encrypt(self):
         shutil.rmtree(CONF.credential.key_repository)
 
         self.assertRaises(exception.CredentialEncryptionError,
                           self.provider.encrypt, 'blob')
 
-    def test_encrypt_with_invalid_key_returns_data_with_allow_plaintext(self):
+    def test_encrypt_with_invalid_key_returns_data_with_encrypt(self):
         self.config_fixture.config(
             group='credential',
-            allow_plaintext=True)
+            encrypt=True)
 
         shutil.rmtree(CONF.credential.key_repository)
 
@@ -63,20 +58,15 @@ class TestFernetCredentialProvider(unit.TestCase):
         credential = self.provider.encrypt(blob)
         self.assertEqual(blob, credential)
 
-    def test_decrypt_with_invalid_key_raises_exception_without_allow_plaintext(
-            self):
-        self.config_fixture.config(
-            group='credential',
-            allow_plaintext=False)
-
+    def test_decrypt_with_invalid_key_raises_exception_without_encrypt(self):
         self.assertRaises(exception.CredentialEncryptionError,
                           self.provider.decrypt, 'blob')
 
-    def test_decrypt_with_invalid_key_returns_data_with_allow_plaintext(self):
+    def test_decrypt_with_invalid_key_returns_data_with_encrypt(self):
         blob = 'blob'
         self.config_fixture.config(
             group='credential',
-            allow_plaintext=True)
+            encrypt=True)
 
         data = self.provider.decrypt(blob)
         self.assertEqual(blob, data)
