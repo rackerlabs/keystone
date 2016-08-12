@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7ac969e8_293a29ce",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-12T21:18:26Z",
+      "side": 1,
+      "message": "The exceptions are tested here - https://review.openstack.org/#/c/354496/1/keystone/tests/unit/credential/test_fernet_provider.py",
+      "parentUuid": "9ad45d7e_a6cd8c5f",
+      "revId": "1bd7123d78ac206d35baa21f657382525f46937e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_a6d74cbe",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 71,
         "endChar": 41
       },
+      "revId": "1bd7123d78ac206d35baa21f657382525f46937e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_493165ec",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-12T21:18:26Z",
+      "side": 1,
+      "message": "What about logging through? Do we do that in the exception class?",
+      "parentUuid": "9ad45d7e_a6d74cbe",
       "revId": "1bd7123d78ac206d35baa21f657382525f46937e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
