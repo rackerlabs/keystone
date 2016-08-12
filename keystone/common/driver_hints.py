@@ -43,7 +43,8 @@ def truncated(f):
 
         # A limit is set, so ask for one more entry than we need
         list_limit = hints.limit['limit']
-        hints.set_limit(list_limit + 1)
+        list_offset = hints.limit['offset']
+        hints.set_limit(list_limit + 1, offset=list_offset)
         ref_list = f(self, hints, *args, **kwargs)
 
         # If we got more than the original limit then trim back the list and
@@ -110,6 +111,7 @@ class Hints(object):
                     entry['comparator'] == 'equals'):
                 return entry
 
-    def set_limit(self, limit, truncated=False):
+    def set_limit(self, limit, truncated=False, offset=None):
         """Set a limit to indicate the list should be truncated."""
-        self.limit = {'limit': limit, 'type': 'limit', 'truncated': truncated}
+        self.limit = {'limit': limit, 'type': 'limit', 'truncated': truncated,
+                      'offset': offset}
