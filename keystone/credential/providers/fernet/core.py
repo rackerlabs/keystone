@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import hashlib
+
 from cryptography import fernet
 from oslo_log import log
 
@@ -25,6 +27,15 @@ LOG = log.getLogger(__name__)
 
 
 class Provider(core.Provider):
+
+    @property
+    def primary_key_hash(self):
+        """Hash the current primary key and return the first 7 characters."""
+        fernet_obj = self.crypto._fernets[0]
+        key_digest = hashlib.sha1(
+            fernet_obj._signing_key + fernet_obj._encryption_key
+        ).hexdigest()
+        return key_digest[:7]
 
     @property
     def crypto(self):
@@ -47,13 +58,10 @@ class Provider(core.Provider):
         try:
             return self.crypto.encrypt(credential.encode('utf-8'))
         except (TypeError, ValueError):
-            if CONF.credential.allow_plaintext:
-                return credential
-            else:
-                msg = _('Credential could not be encrypted. Please contact the'
-                        ' administrator')
-                LOG.error(msg)
-                raise exception.CredentialEncryptionError(msg)
+            msg = _('Credential could not be encrypted. Please contact the'
+                    ' administrator')
+            LOG.error(msg)
+            raise exception.CredentialEncryptionError(msg)
 
     def decrypt(self, credential):
         """Attempt to decrypt a credential.
@@ -64,10 +72,7 @@ class Provider(core.Provider):
         try:
             return self.crypto.decrypt(bytes(credential)).decode('utf-8')
         except (fernet.InvalidToken, TypeError, ValueError):
-            if CONF.credential.allow_plaintext:
-                return credential
-            else:
-                msg = _('Credential could not be decrypted. Please contact the'
-                        ' administrator')
-                LOG.error(msg)
-                raise exception.CredentialEncryptionError(msg)
+            msg = _('Credential could not be decrypted. Please contact the'
+                    ' administrator')
+            LOG.error(msg)
+            raise exception.CredentialEncryptionError(msg)
