@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_2f25e8ad",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-12T19:44:39Z",
+      "side": 1,
+      "message": "We should clean up the output a little:\n\nInstead of output like:\n  (__class__\u003d\u003cclass \u0027keystone.models.revoke_model.RevokeEvent\u0027\u003e, __delattr__\u003d\u003cmethod-wrapper \u0027__delattr__\u0027 of RevokeEvent object at 0x7f42beacaf50\u003e, __dict__\u003d{\u0027\nrevoked_at\u0027: datetime.datetime(2016, 8, 12, 19, 29, 35, 472293), \u0027access_token_id\u0027: None, \u0027domain_id\u0027: None, \u0027issued_before\u0027: datetime.datetime(2016, 8, 12, 19, 29, 35, 472293),\n \u0027domain_scope_id\u0027: None, \u0027project_id\u0027: None, \u0027audit_id\u0027: None, \u0027audit_chain_id\u0027: None, \u0027user_id\u0027: u\u0027db3f9199ec804fe8a410f182490970d0\u0027, \u0027trust_id\u0027: None, \u0027role_id\u0027: None, \u0027expir\nes_at\u0027: None, \u0027consumer_id\u0027: None}, __format__\u003d\u003cbuilt-in method __format__ of RevokeEvent object at 0x7f42beacaf50\u003e, __getattribute__\u003d\u003cmethod-wrapper \u0027__getattribute__\u0027 of Revok\neEvent object at 0x7f42beacaf50\u003e, __hash__\u003d\u003cmethod-wrapper \u0027__hash__\u0027 of RevokeEvent object at 0x7f42beacaf50\u003e, __init__\u003d\u003cbound method RevokeEvent.__init__ of \u003ckeystone.models.r\nevoke_model.RevokeEvent object at 0x7f42beacaf50\u003e\u003e, __module__\u003dkeystone.models.revoke_model, __new__\u003d\u003cbuilt-in method __new__ of type object at 0x905b80\u003e, __reduce__\u003d\u003cbuilt-in m\nethod __reduce__ of RevokeEvent object at 0x7f42beacaf50\u003e, __reduce_ex__\u003d\u003cbuilt-in method __reduce_ex__ of RevokeEvent object at 0x7f42beacaf50\u003e, __repr__\u003d\u003cmethod-wrapper \u0027__rep\nr__\u0027 of RevokeEvent object at 0x7f42beacaf50\u003e, __setattr__\u003d\u003cmethod-wrapper \u0027__setattr__\u0027 of RevokeEvent object at 0x7f42beacaf50\u003e, __sizeof__\u003d\u003cbuilt-in method __sizeof__ of Revo\nkeEvent object at 0x7f42beacaf50\u003e, __slotnames__\u003d[], __str__\u003d\u003cmethod-wrapper \u0027__str__\u0027 of RevokeEvent object at 0x7f42beacaf50\u003e, __subclasshook__\u003d\u003cbuilt-in method __subclasshook\n__ of type object at 0x1f5c1c0\u003e, issued_before\u003d2016-08-12 19:29:35.472293, key_for_name\u003d\u003cbound method RevokeEvent.key_for_name of \u003ckeystone.models.revoke_model.RevokeEvent objec\nt at 0x7f42beacaf50\u003e\u003e, revoked_at\u003d2016-08-12 19:29:35.472293, to_dict\u003d\u003cbound method RevokeEvent.to_dict of \u003ckeystone.models.revoke_model.RevokeEvent object at 0x7f42beacaf50\u003e\u003e,\nuser_id\u003ddb3f9199ec804fe8a410f182490970d0)\n\nI think something more like:\n\n(revoked_at\u003d2016-08-12T19:29:35.472293Z, user_id\u003ddb3f9199ec804fe8a410f182490970d0, issued_before\u003d2016-08-12T19:29:35.472293Z)\n\nwould be more readable",
+      "revId": "624024d91fe5f89666ea461d63347b4bde951b2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
