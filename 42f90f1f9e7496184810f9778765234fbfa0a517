@@ -46,6 +46,30 @@
       "revId": "42f90f1f9e7496184810f9778765234fbfa0a517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_0fcbc41f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-12T20:02:54Z",
+      "side": 1,
+      "message": "If we run the migrate in batches and it takes a long time, I think that is still okay, right?  It just means that you wouldn\u0027t run the contract scripts until migrate is finished, but everything is up.  \n\nHaving the 3 repos allows you to group your scripts.  So if I\u0027m making a db change, I\u0027ll add a script in each repo, all with the same version number.  Otherwise, I think it will be difficult to keep developer scripts in sequence between patches.",
+      "parentUuid": "9ad45d7e_38cb7120",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 17,
+        "endChar": 32
+      },
+      "revId": "42f90f1f9e7496184810f9778765234fbfa0a517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
