@@ -70,6 +70,30 @@
       "revId": "42f90f1f9e7496184810f9778765234fbfa0a517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_15093e32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-12T23:45:35Z",
+      "side": 1,
+      "message": "Yes, I agree with the separate repos. I think we need at least two: one before the code update and one after. You can\u0027t for instance run the contractions while there is still old code executing.",
+      "parentUuid": "9ad45d7e_0fcbc41f",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 17,
+        "endChar": 32
+      },
+      "revId": "42f90f1f9e7496184810f9778765234fbfa0a517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
