@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_667274af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-12T17:14:54Z",
+      "side": 1,
+      "message": "I don\u0027t think we need the 2 contract repos.  Instead, lets just put in the framework for Newton.  If we do need to fix a migration in this release cycle, we can create a new patch that follows the new strategy.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "b0056e830ec3d1233622b6734476906b931c7edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
