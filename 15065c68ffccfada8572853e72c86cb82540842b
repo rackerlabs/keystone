@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_06be18ff",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "\"Keystone only provides a `fernet` provider, so there\u0027s no reason to\nchange this unless you are providing a custom entry point.\"",
+      "range": {
+        "startLine": 32,
+        "startChar": 48,
+        "endLine": 32,
+        "endChar": 77
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_e65144da",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "nit, only use 1 space since that\u0027s the pattern we\u0027ve established in all other conf options. this applies throughout the change",
+      "range": {
+        "startLine": 39,
+        "startChar": 67,
+        "endLine": 39,
+        "endChar": 69
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_86404809",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "credentials?",
+      "range": {
+        "startLine": 39,
+        "startChar": 6,
+        "endLine": 39,
+        "endChar": 12
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_462bf033",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "\"... keys that will be used to encrypt credentials\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 46
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_26d7dc24",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "I\u0027d either remove this sentence completely or re-write it as:\n\n\"The ``[credential] key_repository`` is unrelated to the ``[fernet] key_repository`` option.\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 49,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_e6edc4f0",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:22:36Z",
+      "side": 1,
+      "message": "``keystone-manage credential-rotate``",
+      "range": {
+        "startLine": 57,
+        "startChar": 52,
+        "endLine": 58,
+        "endChar": 17
+      },
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
