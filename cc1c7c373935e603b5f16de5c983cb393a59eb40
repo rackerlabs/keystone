@@ -22,6 +22,30 @@
       "revId": "cc1c7c373935e603b5f16de5c983cb393a59eb40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_2d94f942",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-12T09:08:43Z",
+      "side": 1,
+      "message": "Hmm, odd...for me, I still get the old error thrown (maybe depends on olso.db version?). For now, I added in both.",
+      "parentUuid": "9ad45d7e_c7e09efd",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 16
+      },
+      "revId": "cc1c7c373935e603b5f16de5c983cb393a59eb40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
