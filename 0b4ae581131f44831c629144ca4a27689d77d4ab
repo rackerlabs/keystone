@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_9743506c",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-12T18:32:36Z",
+      "side": 1,
+      "message": "agree with unique. not sure how I can detail this serves as the \u0027name\u0027, as ID already stands for identifier. what about: \"The Identity Provider unique ID\"",
+      "parentUuid": "9ad45d7e_2367ce26",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "0b4ae581131f44831c629144ca4a27689d77d4ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_e38f76ca",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-12T17:11:41Z",
       "side": 1,
       "message": "want to say that each of these must be unique?",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 46
+      },
+      "revId": "0b4ae581131f44831c629144ca4a27689d77d4ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f77d6cb2",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-12T18:32:36Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "9ad45d7e_e38f76ca",
       "range": {
         "startLine": 94,
         "startChar": 4,
