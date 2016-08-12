@@ -32,14 +32,14 @@ Controls the credential encryption and decryption operations. Entry point in
 the ``keystone.credential.provider`` namespace. Default provider is [fernet].
 """))
 
-allow_plaintext = cfg.BoolOpt(
-    'allow_plaintext',
-    default=True,
+encrypt = cfg.BoolOpt(
+    'encrypt',
+    default=False,
     help=utils.fmt("""
-Allow fields to not be encrypted when retrieving them from backend.  This
-should be disabled once credentials have been encrypted using the
-``keystone-manage credentials_encrypt`` command.  This can also be used to
-allow storing non-encrypted credentials.
+Encrypt credentials before storing them in the backend. Once enabled, newly
+created or updated credentials will be encrypted before being persisted. To
+manually migrate existing credentials, please use the ``keystone-manage
+credential_migrate`` command.
 """))
 
 key_repository = cfg.StrOpt(
@@ -66,7 +66,7 @@ GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     driver,
     provider,
-    allow_plaintext,
+    encrypt,
     key_repository,
     max_active_keys
 ]
