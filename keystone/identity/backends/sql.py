@@ -198,20 +198,12 @@ class Identity(base.IdentityDriverV8):
 
     def _validate_minimum_password_age(self, user_ref):
         min_age_days = CONF.security_compliance.minimum_password_age
-        if min_age_days:
-            min_age = (user_ref.password_created_at +
-                       datetime.timedelta(days=min_age_days)).date()
-            if datetime.datetime.utcnow().date() < min_age:
-                days_left = (min_age - datetime.datetime.utcnow().date()).days
-                detail = _('You cannot change your password at this time due '
-                           'to the minimum password age. Once you change your '
-                           'password, it must be used for %(min_age_days)d '
-                           'day(s) before it can be changed. Please try again '
-                           'in %(days_left)d day(s) or contact your '
-                           'administrator to reset your password.') % (
-                               {'min_age_days': min_age_days,
-                                'days_left': days_left})
-                raise exception.PasswordValidationError(detail=detail)
+        min_age = (user_ref.password_created_at +
+                   datetime.timedelta(days=min_age_days))
+        if datetime.datetime.utcnow() < min_age:
+            days_left = (min_age - datetime.datetime.utcnow().date()).days
+            raise exception.PasswordAgeValidationError(
+                min_age_days=min_age_days, days_left=days_left)
 
     def add_user_to_group(self, user_id, group_id):
         with sql.session_for_write() as session:

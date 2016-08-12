@@ -238,8 +238,6 @@ class IdentityDriverV8Tests(object):
                           user['id'], user_mod)
 
     def test_change_password(self):
-        if not self.allows_name_update:
-            self.skipTest("Backend doesn't allow name update.")
         # create user
         password = uuid.uuid4().hex
         domain_id = uuid.uuid4().hex

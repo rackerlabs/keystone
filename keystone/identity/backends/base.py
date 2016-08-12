@@ -273,7 +273,7 @@ class IdentityDriverV8(object):
 
     @abc.abstractmethod
     def change_password(self, user_id, new_password):
-        """Self service password change.
+        """Self-service password change.
 
         :param str user_id: User ID.
         :param str new_password: New password.
