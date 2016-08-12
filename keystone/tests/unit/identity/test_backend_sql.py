@@ -77,7 +77,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         last_active_at = (
             datetime.datetime.utcnow() -
             datetime.timedelta(self.max_inactive_days + 1)).date()
-        self._update_user(user['id'], last_active_at)
+        self._update_user_last_active_at(user['id'], last_active_at)
         # get user and verify that the user is actually disabled
         user = self.identity_api.get_user(user['id'])
         self.assertFalse(user['enabled'])
@@ -94,7 +94,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
         last_active_at = (
             datetime.datetime.utcnow() -
             datetime.timedelta(self.max_inactive_days - 1)).date()
-        self._update_user(user['id'], last_active_at)
+        self._update_user_last_active_at(user['id'], last_active_at)
         # get user and verify that the user is still enabled
         user = self.identity_api.get_user(user['id'])
         self.assertTrue(user['enabled'])
@@ -147,7 +147,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
-    def _update_user(self, user_id, last_active_at):
+    def _update_user_last_active_at(self, user_id, last_active_at):
         with sql.session_for_write() as session:
             user_ref = session.query(model.User).get(user_id)
             user_ref.last_active_at = last_active_at
@@ -482,7 +482,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
         self.assertValidChangePassword(self.user['id'], self.initial_password,
                                        new_password)
         # user cannot change password before min age
-        self.assertRaises(exception.PasswordValidationError,
+        self.assertRaises(exception.PasswordAgeValidationError,
                           self.identity_api.change_password,
                           self.make_request(),
                           user_id=self.user['id'],
@@ -499,7 +499,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
             datetime.datetime.utcnow() -
             datetime.timedelta(
                 days=CONF.security_compliance.minimum_password_age + 1))
-        self._update_user(self.user['id'], password_created_at)
+        self._update_password_created_at(self.user['id'], password_created_at)
         # user can change their password after min password age has past
         self.assertValidChangePassword(self.user['id'], new_password,
                                        uuid.uuid4().hex)
@@ -510,7 +510,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
         self.assertValidChangePassword(self.user['id'], self.initial_password,
                                        new_password)
         # user cannot change password before min age
-        self.assertRaises(exception.PasswordValidationError,
+        self.assertRaises(exception.PasswordAgeValidationError,
                           self.identity_api.change_password,
                           self.make_request(),
                           user_id=self.user['id'],
@@ -542,7 +542,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
         }
         return self.identity_api.create_user(user)
 
-    def _update_user(self, user_id, password_create_at):
+    def _update_password_created_at(self, user_id, password_create_at):
         with sql.session_for_write() as session:
             user_ref = session.query(model.User).get(user_id)
             for password_ref in user_ref.local_user.passwords:
