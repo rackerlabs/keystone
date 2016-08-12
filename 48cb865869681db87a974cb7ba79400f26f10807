@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_a65aac4e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:38:49Z",
+      "side": 1,
+      "message": "what\u0027s an encryption_key?",
+      "range": {
+        "startLine": 422,
+        "startChar": 54,
+        "endLine": 422,
+        "endChar": 68
+      },
+      "revId": "48cb865869681db87a974cb7ba79400f26f10807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_091d8966",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T17:38:49Z",
+      "side": 1,
+      "message": "IIRC this first line is the help, so it should be sufficient to understand what this does:\n\n  \"Encrypt existing credentials\"",
+      "range": {
+        "startLine": 422,
+        "startChar": 4,
+        "endLine": 422,
+        "endChar": 7
+      },
+      "revId": "48cb865869681db87a974cb7ba79400f26f10807",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
