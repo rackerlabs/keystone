@@ -275,6 +275,24 @@
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_4974c5fc",
+        "filename": "releasenotes/notes/identity_driver_new_change_password_method-e8c0e06795bca2d8.yaml",
+        "patchSetId": 46
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T21:36:24Z",
+      "side": 1,
+      "message": "72 is the initial git commit message, my bad.",
+      "parentUuid": "7ac969e8_c97275ad",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
