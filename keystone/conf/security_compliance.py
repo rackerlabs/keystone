@@ -81,8 +81,8 @@ backend for the `[identity] driver`.
 
 minimum_password_age = cfg.IntOpt(
     'minimum_password_age',
-    default=None,
-    min=1,
+    default=0,
+    min=0,
     help=utils.fmt("""
 The number of days that a password must be used before the user can change it.
 This prevents users from changing their passwords immediately in order to wipe

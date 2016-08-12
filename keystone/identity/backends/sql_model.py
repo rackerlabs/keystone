@@ -237,7 +237,7 @@ class Password(sql.ModelBase, sql.DictBase):
                             default=datetime.datetime.utcnow)
     expires_at = sql.Column(sql.DateTime, nullable=True)
     self_service = sql.Column(sql.Boolean, default=False, nullable=False,
-                              server_default='0')
+                              server_default=False)
 
 
 class FederatedUser(sql.ModelBase, sql.ModelDictMixin):
