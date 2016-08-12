@@ -25,6 +25,58 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_228e9f27",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Rename the configuration option, or rename the variable (which should probably match the config var name)?",
+      "parentUuid": "9ad45d7e_3f98f6bf",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_e91f7159",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "If this was default\u003d0, min\u003d0 like it was before, then you wouldn\u0027t have to conditionally check to see whether the value is non-null before proceeding to do the math, and we\u0027d have one code path to test instead of 2+. Further, default\u003d0 would also be reasonable default for production environments without forcing an opt in to any new behaviors.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_252509ae",
+        "filename": "keystone/identity/backends/base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "nit: Self-service should be hyphenated.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_bc32340e",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 46
@@ -48,6 +100,143 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_6556e107",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "I agree with Steve; R/W support is deprecated, so we should explicitly leave this unimplemented in LDAP and test that the method is unimplemented in unit tests.",
+      "parentUuid": "9ad45d7e_bc32340e",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_093e4db8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "You wouldn\u0027t need this conditional if min_password_days defaulted to 0 instead of a useless null value (which would break the timedelta code below.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_452abd2d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Why do you have to do .date() on both of these? Intentional loss of precision?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_45863d14",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Seems like this help text should really be defined in a dedicated exception class, rather than being defined in the SQl driver and passed up to a generic exception.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_66c44e40",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Why is this a string? Does that actually work?\n\n  server_default\u003dFalse",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_66772e03",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Why is this appropriate for a password change method? Copy pasta?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_86cb4a1e",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "A more specific exception type would be nice for this test - because you could expect this generic exception on this method call for any number of reasons.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_06ad9a31",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "This is a strange method call. I wouldn\u0027t expect \"password_created_at\" to be the first argument after a user ID for a method called _update_user. Manipulating time with timeutils and/or freezegun would illustrate this behavior a lot more clearly -- assuming this isn\u0027t dependent on the time according to sqlite.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_1cc3808a",
         "filename": "releasenotes/notes/identity_driver_new_change_password_method-e8c0e06795bca2d8.yaml",
         "patchSetId": 46
@@ -65,6 +254,24 @@
         "endLine": 8,
         "endChar": 22
       },
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_c97275ad",
+        "filename": "releasenotes/notes/identity_driver_new_change_password_method-e8c0e06795bca2d8.yaml",
+        "patchSetId": 46
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-12T21:19:48Z",
+      "side": 1,
+      "message": "Where does 72 chars come from? Always use 79 plus a line break.",
+      "parentUuid": "9ad45d7e_1cc3808a",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
