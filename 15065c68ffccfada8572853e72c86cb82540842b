@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_82366be5",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-12T20:07:00Z",
+      "side": 1,
+      "message": "Yeah - I\u0027m going to remove this. I posted something closer to what I\u0027m thinking in a separate patch.",
+      "parentUuid": "9ad45d7e_e65144da",
+      "revId": "15065c68ffccfada8572853e72c86cb82540842b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_462bf033",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 1
