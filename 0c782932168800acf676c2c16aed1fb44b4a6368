@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_4c030f77",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-12T18:02:43Z",
+      "side": 0,
+      "message": "this comment was also no longer valid since we use -W below",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 20
+      },
+      "revId": "0c782932168800acf676c2c16aed1fb44b4a6368",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
