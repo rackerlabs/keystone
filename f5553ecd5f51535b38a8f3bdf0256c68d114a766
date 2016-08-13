@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_05c75246",
+        "filename": "releasenotes/notes/removed-as-of-newton-721c06b5dcb1b34a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:43Z",
+      "side": 1,
+      "message": "What does that mean to deployers? It would probably be a good idea to expand on what they have to do with existing deployments.",
+      "revId": "f5553ecd5f51535b38a8f3bdf0256c68d114a766",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
