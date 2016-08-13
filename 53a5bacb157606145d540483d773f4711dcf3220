@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_45c14a2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:44Z",
+      "side": 1,
+      "message": "I think all of this code in a commit message is super excessive.",
+      "revId": "53a5bacb157606145d540483d773f4711dcf3220",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_a5dc7e19",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:44Z",
+      "side": 1,
+      "message": "If the only argument for this patch is that it\u0027s easier to read then I\u0027m not sure I agree. I don\u0027t mind being more expressive here. Pythonistas have a saying about being explicit.",
+      "revId": "53a5bacb157606145d540483d773f4711dcf3220",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
