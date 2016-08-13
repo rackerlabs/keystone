@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_85f2226e",
+        "filename": "keystone/common/sql/force_migrations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T17:05:13Z",
+      "side": 1,
+      "message": "Is this because some of the code was copied from a Foundataion source?",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_e5e796aa",
+        "filename": "keystone/common/sql/force_migrations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T17:05:13Z",
+      "side": 1,
+      "message": "Is there plans to use this beyond upgrading to Newton?",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_c5ec1a92",
+        "filename": "keystone/common/sql/migration_control.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T17:05:13Z",
+      "side": 1,
+      "message": "Same question",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_25024e3f",
+        "filename": "keystone/common/sql/migration_control.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T17:05:13Z",
+      "side": 1,
+      "message": "Is there any reason we even care about the release. I envisioned just executing all migrations that are in the repo. Wouldn\u0027t matter what release you are on.",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
