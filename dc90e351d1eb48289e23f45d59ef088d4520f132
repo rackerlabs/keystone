@@ -22,6 +22,29 @@
       "revId": "dc90e351d1eb48289e23f45d59ef088d4520f132",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_f0b8ede7",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-13T01:59:05Z",
+      "side": 1,
+      "message": "i think this change is causing the gate to mess up",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 240,
+        "endChar": 51
+      },
+      "revId": "dc90e351d1eb48289e23f45d59ef088d4520f132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
