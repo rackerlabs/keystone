@@ -22,6 +22,30 @@
       "revId": "b0056e830ec3d1233622b6734476906b931c7edc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac969e8_d7cfa3b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-13T07:43:32Z",
+      "side": 1,
+      "message": "We need at least two for contact repo since there is DB schema that can safely update in this release cycle and that you can only update when there is no code access the old schema.\n\nThe code maybe deprecated for 2 release cycle, 4 release cycle or has no plan to remove them, so for a change in the DB you can prepare your migration script (drop or alter) and place them in \u0027Future\u0027 repo, so that we can manually copied it into the \u0027Latest\u0027 if no code will access them.",
+      "parentUuid": "9ad45d7e_667274af",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "b0056e830ec3d1233622b6734476906b931c7edc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
