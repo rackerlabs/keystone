@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_85ba22bf",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 0,
+      "message": "I don\u0027t think we\u0027d want to rename the option since (to me) is matches what it is supposed to do.",
+      "revId": "d082fb29ce0dea56c3bc3781d6931b0c68a3d268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

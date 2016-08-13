@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac665da_a5b59ed1",
+        "filename": "keystone/common/sql/migrate_repo/versions/109_add_password_self_service_column.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 1,
+      "message": "Using \u00270\u0027 here doesn\u0027t seem intuitive. Should this actually be False?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_3f98f6bf",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 46
@@ -60,6 +77,23 @@
     },
     {
       "key": {
+        "uuid": "5ac665da_e5af967b",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 1,
+      "message": "++",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_252509ae",
         "filename": "keystone/identity/backends/base.py",
         "patchSetId": 46
@@ -112,6 +146,40 @@
       "side": 1,
       "message": "I agree with Steve; R/W support is deprecated, so we should explicitly leave this unimplemented in LDAP and test that the method is unimplemented in unit tests.",
       "parentUuid": "9ad45d7e_bc32340e",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_45aaea71",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 1,
+      "message": "++ on not needing real logic here. since this is required by the interface we\u0027ll need to define the method and maybe raise a NotImplemented?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_05a0f28f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 1,
+      "message": "Would the intent be more clear if this were named \u0027self_service_change_password\u0027?",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -197,6 +265,23 @@
       "writtenOn": "2016-08-12T21:19:48Z",
       "side": 1,
       "message": "Why is this appropriate for a password change method? Copy pasta?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_65ad6688",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-13T16:39:38Z",
+      "side": 1,
+      "message": "I\u0027m assuming that it\u0027s to block the R/O driver tests from running this, but it would be nice to fix/comment either way.",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
