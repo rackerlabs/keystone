@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_c47893fb",
+        "filename": "keystone/common/sql/force_migrations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-14T19:11:23Z",
+      "side": 1,
+      "message": "yes, oops",
+      "parentUuid": "5ac665da_85f2226e",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac665da_e5e796aa",
         "filename": "keystone/common/sql/force_migrations.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-13T17:05:13Z",
       "side": 1,
       "message": "Is there plans to use this beyond upgrading to Newton?",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_641d5fbd",
+        "filename": "keystone/common/sql/force_migrations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-14T19:11:23Z",
+      "side": 1,
+      "message": "So we always want to be able to allow a naked db_sync to upgrade to release cycles....and hence we want to be able to execute each data migration separately.",
+      "parentUuid": "5ac665da_e5e796aa",
       "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_e4878fd5",
+        "filename": "keystone/common/sql/migration_control.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-14T19:11:23Z",
+      "side": 1,
+      "message": "oops",
+      "parentUuid": "5ac665da_c5ec1a92",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac665da_25024e3f",
         "filename": "keystone/common/sql/migration_control.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-13T17:05:13Z",
       "side": 1,
       "message": "Is there any reason we even care about the release. I envisioned just executing all migrations that are in the repo. Wouldn\u0027t matter what release you are on.",
+      "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0483cbcd",
+        "filename": "keystone/common/sql/migration_control.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-14T19:11:23Z",
+      "side": 1,
+      "message": "So we always want to be able to allow a naked db_sync to upgrade to release cycles....and hence we want to be able to execute each data migration separately - I don\u0027t think we can guarantee that it is safe to run all the main repo upgrades for 2 releases, then run all the migrates, then the contracts. I think we have to run each complete cycle in sequence - hence needing some understanding of a release.",
+      "parentUuid": "5ac665da_25024e3f",
       "revId": "6f2d390cba02c10bd830dd6d3d0935d04e659989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
