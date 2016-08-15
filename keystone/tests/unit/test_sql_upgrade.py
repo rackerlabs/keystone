@@ -1479,6 +1479,26 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'failed_auth_count',
                                  'failed_auth_at'])
 
+    def test_migration_109_add_key_has_to_credential(self):
+        self.upgrade(108)
+        table_name = 'credential'
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'project_id',
+                                 'blob',
+                                 'type',
+                                 'extra'])
+        self.upgrade(109)
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'project_id',
+                                 'blob',
+                                 'type',
+                                 'extra',
+                                 'key_hash'])
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
