@@ -13,13 +13,17 @@
 import sqlalchemy as sql
 
 
-# Set the `create_at` column to be non-nullable to make it consistent with
-# SQL model that is defined.
 def upgrade(migrate_engine):
-    # Upgrade operations go here. Don't create your own engine; bind
-    # migrate_engine to your metadata
     meta = sql.MetaData()
     meta.bind = migrate_engine
+    session = sql.orm.sessionmaker(bind=migrate_engine)()
 
-    password_table = sql.Table('password', meta, autoload=True)
-    password_table.c.created_at.alter(nullable=False)
+    if migrate_engine.name == 'sqlite' or migrate_engine.name == 'mysql':
+        stmt = 'DROP TRIGGER IF EXISTS password_created_at;'
+        stmt += 'CREATE TRIGGER password_created_at AFTER INSERT ON password'
+        stmt += 'FOR EACH ROW'
+        stmt += 'BEGIN'
+        stmt += '    UPDATE password SET created_at = NOW() WHERE id = NEW.id;'
+        stmt += 'END;'
+        session.execute(stmt)
+    # TODO(rderose): add postgresql trigger
