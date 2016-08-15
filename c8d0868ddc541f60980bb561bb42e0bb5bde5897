@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_8052e011",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_a393ada2",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 11
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_0391e199",
         "filename": "api-ref/source/v3/parameters.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-15T15:24:18Z",
       "side": 1,
       "message": "ID",
+      "range": {
+        "startLine": 91,
+        "startChar": 9,
+        "endLine": 91,
+        "endChar": 11
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_20420c3f",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_0391e199",
       "range": {
         "startLine": 91,
         "startChar": 9,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_9d608937",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_08362003",
+      "range": {
+        "startLine": 688,
+        "startChar": 0,
+        "endLine": 688,
+        "endChar": 27
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_c3cea982",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-08-15T15:24:18Z",
       "side": 1,
       "message": "Normal response codes: 201\nError response codes: 401, 404",
+      "range": {
+        "startLine": 723,
+        "startChar": 0,
+        "endLine": 723,
+        "endChar": 26
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a0ff1c00",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_c3cea982",
       "range": {
         "startLine": 723,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_e009142e",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_83ab1189",
+      "range": {
+        "startLine": 760,
+        "startChar": 0,
+        "endLine": 760,
+        "endChar": 23
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a3928d55",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2016-08-15T15:24:18Z",
       "side": 1,
       "message": "Normal response codes: 204\nError response codes: 401, 404",
+      "range": {
+        "startLine": 796,
+        "startChar": 0,
+        "endLine": 796,
+        "endChar": 27
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2014cc42",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_a3928d55",
       "range": {
         "startLine": 796,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_401bc872",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_4388f922",
+      "range": {
+        "startLine": 819,
+        "startChar": 0,
+        "endLine": 819,
+        "endChar": 26
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_c37ce922",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 2
@@ -174,6 +342,30 @@
       "writtenOn": "2016-08-15T15:24:18Z",
       "side": 1,
       "message": "Normal response codes: 200\nError response codes: 401, 404",
+      "range": {
+        "startLine": 839,
+        "startChar": 0,
+        "endLine": 839,
+        "endChar": 29
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a026fcb7",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-08-15T16:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_c37ce922",
       "range": {
         "startLine": 839,
         "startChar": 0,
