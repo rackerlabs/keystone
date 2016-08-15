@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_616363b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-15T18:54:36Z",
+      "side": 1,
+      "message": "Should this have `bp credential-encryption` to help track why this change is being made?",
+      "revId": "b0b81540bd550cb2f53b3ba05939bf6b6cc21226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
