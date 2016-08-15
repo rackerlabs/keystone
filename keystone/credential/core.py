@@ -27,6 +27,7 @@ CONF = keystone.conf.CONF
 
 
 @dependency.provider('credential_api')
+@dependency.requires('credential_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the Credential backend.
 
@@ -46,6 +47,11 @@ class Manager(manager.Manager):
             hints or driver_hints.Hints()
         )
         for credential in credentials:
+            if CONF.credential.encrypt:
+                decrypted_blob = self.credential_provider_api.decrypt(
+                    credential['blob']
+                )
+                credential['blob'] = decrypted_blob
             credential.pop('key_hash', None)
         return credentials
 
@@ -53,17 +59,44 @@ class Manager(manager.Manager):
         """Return a credential reference."""
         credential = self.driver.get_credential(credential_id)
         credential.pop('key_hash', None)
+        if CONF.credential.encrypt:
+            decrypted_blob = self.credential_provider_api.decrypt(
+                credential['blob']
+            )
+            credential['blob'] = decrypted_blob
         return credential
 
     def create_credential(self, credential_id, credential):
         """Create a credential."""
-        credential = self.driver.create_credential(credential_id, credential)
-        credential.pop('key_hash', None)
-        return credential
+        credential_copy = credential.copy()
+        if CONF.credential.encrypt:
+            encrypted_blob = self.credential_provider_api.encrypt(
+                credential['blob']
+            )
+            credential_copy['blob'] = encrypted_blob
+            credential_copy['key_hash'] = (
+                self.credential_provider_api.primary_key_hash
+            )
+        ref = self.driver.create_credential(credential_id, credential_copy)
+        ref.pop('key_hash', None)
+        ref['blob'] = credential['blob']
+        return ref
 
     def update_credential(self, credential_id, credential):
         """Update an existing credential."""
-        return self.driver.update_credential(credential_id, credential)
+        credential_copy = credential.copy()
+        if CONF.credential.encrypt:
+            encrypted_blob = self.credential_provider_api.encrypt(
+                credential['blob']
+            )
+            credential_copy['blob'] = encrypted_blob
+            credential_copy['key_hash'] = (
+                self.credential_provider_api.primary_key_hash
+            )
+        cred = self.driver.update_credential(credential_id, credential_copy)
+        cred.pop('key_hash', None)
+        cred['blob'] = credential['blob']
+        return cred
 
 
 @versionutils.deprecated(

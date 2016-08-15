@@ -20,6 +20,14 @@ class Provider(object):
     """Interface for credential providers that support encryption."""
 
     @abc.abstractmethod
+    def primary_key_hash(self):
+        """The first 7 bits of the primary key's hash."""
+
+    @abc.abstractmethod
+    def secondary_key_hashes(self):
+        """List of the first 7 bits of the hash of each secondary key."""
+
+    @abc.abstractmethod
     def encrypt(self, credential):
         """Encrypt a credential.
 

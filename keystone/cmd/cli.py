@@ -570,6 +570,182 @@ class FernetRotate(BasePermissionsSetup):
             fernet_utils.rotate_keys(keystone_user_id, keystone_group_id)
 
 
+class CredentialSetup(BasePermissionsSetup):
+    """Setup a key repository for encrypted credential.
+
+    This also creates a primary key used for both creating and validating
+    Credential tokens. To improve security, you should rotate your keys (using
+    keystone-manage credential_rotate, for example).
+
+    """
+
+    name = 'credential_setup'
+
+    @classmethod
+    def main(cls):
+        from keystone.common import fernet_utils as utils
+        fernet_utils = utils.FernetUtils(CONF.credential.key_repository, 3)
+
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        fernet_utils.create_key_directory(keystone_user_id, keystone_group_id)
+        if fernet_utils.validate_key_repository(requires_write=True):
+            fernet_utils.initialize_key_repository(
+                keystone_user_id, keystone_group_id)
+
+
+class CredentialRotate(BasePermissionsSetup):
+    """Rotate Credential encryption keys.
+
+    This assumes you have already run keystone-manage credential_setup.
+
+    A new primary key is placed into rotation, which is used for new tokens.
+    The old primary key is demoted to secondary, which can then still be used
+    for validating tokens. Excess secondary keys (beyond [credential_tokens]
+    max_active_keys) are revoked. Revoked keys are permanently deleted. A new
+    staged key will be created and used to validate tokens. The next time key
+    rotation takes place, the staged key will be put into rotation as the
+    primary key.
+
+    """
+
+    name = 'credential_rotate'
+
+    def __init__(self):
+        drivers = backends.load_backends()
+        self.credential_provider_api = drivers['credential_provider_api']
+        self.credential_api = drivers['credential_api']
+
+    def validate_primary_key(self):
+        # Make sure that before we rotate keys, we are positive that all
+        # credentials are encrypted with the primary key. If not, then we need
+        # to bail out and tell the operator to finish migrating all credentials
+        # to be encrypted with the primary key.
+        primary_key_hash = self.credential_provider_api.primary_key_hash
+        credentials = self.credential_api.driver.list_credentials(
+            driver_hints.Hints()
+        )
+        for credential in credentials:
+            if credential['key_hash'] != primary_key_hash:
+                msg = ('Unable to rotate credential keys because not all '
+                       'credentials are encrypted with the primary key. '
+                       'Please make sure all credentials have been encrypted '
+                       'with the primary key using `keystone-manage '
+                       'credential_migrate`.')
+                print (_(msg))
+                raise SystemExit
+
+    @classmethod
+    def main(cls):
+        # Make sure credential encryption is enabled, otherwise bail out.
+        if not CONF.credential.encrypt:
+            msg = ('`[credential] encrypt` is not enabled in your keystone '
+                   'configuration.')
+            print (_(msg))
+            raise SystemExit
+
+        from keystone.common import fernet_utils as utils
+        fernet_utils = utils.FernetUtils(CONF.credential.key_repository, 3)
+
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        if fernet_utils.validate_key_repository(requires_write=True):
+            klass = cls()
+            klass.validate_primary_key()
+            fernet_utils.rotate_keys(keystone_user_id, keystone_group_id)
+
+
+class CredentialMigrate(BasePermissionsSetup):
+    """Provides ability to encrypt credentials using a new encryption_key.
+
+    This assumes that there is already a credential key repository in place.
+    You can use ``keystone-manage credential_setup`` to create one.
+
+    Running ``keystone-manage credential_migrate`` should only be run after
+    `[credential] encrypt` has been set to `True`.
+    """
+
+    name = 'credential_migrate'
+
+    def __init__(self):
+        drivers = backends.load_backends()
+        self.credential_provider_api = drivers['credential_provider_api']
+        self.credential_api = drivers['credential_api']
+
+    def migrate_credentials(self):
+        # Get the hash of the current primary fernet key from the
+        # credential_provider_api.
+        primary_key_hash = self.credential_provider_api.primary_key_hash
+
+        # FIXME(lbragstad): We *should* be able to use Hints() to ask only for
+        # credentials that have a key_hash equal to a secondary key hash or
+        # None, but Hints() doens't seem to honor None values. The following
+        # commented out code should work. See
+        # https://bugs.launchpad.net/keystone/+bug/1614154
+        #
+        # secondary_key_hashes = (
+        #     self.credential_provider_api.secondary_key_hashes
+        # )
+        # secondary_key_hashes.append(None)
+        # hints = driver_hints.Hints()
+        # for key_hash in secondary_key_hashes:
+        #     hints.add_filter('key_hash', key_hash)
+        #
+        # Another solution would be to extend Hints to handle IS NOT query
+        # filters. So we could do something like:
+        #
+        # hints = driver_hints.Hints()
+        # hints.add_filter('key_hash', primary_key_hash, comparator='isnot')
+        #
+        # As a workaround - we have to ask for *all* credentials and filter
+        # them ourselves.
+
+        credentials = self.credential_api.driver.list_credentials(
+            driver_hints.Hints()
+        )
+        for credential in credentials:
+            if not credential['key_hash']:
+                # If key_hash is None, then we know that the credential was not
+                # encrypted. Send it through the update path so that it gets
+                # re-entered in the database encrypted populating key_hash with
+                # the hash of the primary key.
+                cred = {'blob': credential['blob']}
+                self.credential_api.update_credential(
+                    credential['id'],
+                    cred
+                )
+            elif credential['key_hash'] != primary_key_hash:
+                # If the key_hash isn't None but doens't match the
+                # primary_key_hash, then we know the credential was encrypted
+                # with a secondary key. Let's decrypt it, and send it through
+                # the update path to re-encrypt it with the new primary key.
+                # decrypt the blob and re-encrypt it with the primary key.
+                decrypted_blob = self.credential_provider_api.decrypt(
+                    credential['blob']
+                )
+                cred = {'blob': decrypted_blob}
+                self.credential_api.update_credential(
+                    credential['id'],
+                    cred
+                )
+
+    @classmethod
+    def main(cls):
+        # Make sure credential encryption is enabled, otherwise bail out.
+        if not CONF.credential.encrypt:
+            msg = ('`[credential] encrypt` is not enabled in your keystone '
+                   'configuration.')
+            print (_(msg))
+            raise SystemExit
+
+        # Check to make sure we have a repository that works...
+        from keystone.common import fernet_utils as utils
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        fernet_utils = utils.FernetUtils(CONF.credential.key_repository, 3)
+        fernet_utils.validate_key_repository(requires_write=True)
+
+        klass = cls()
+        klass.migrate_credentials()
+
+
 class TokenFlush(BaseApp):
     """Flush expired tokens from the backend."""
 
@@ -979,6 +1155,9 @@ class MappingEngineTester(BaseApp):
 CMDS = [
     BootStrap,
     DbSync,
+    CredentialRotate,
+    CredentialSetup,
+    CredentialMigrate,
     DbVersion,
     Doctor,
     DomainConfigUpload,
