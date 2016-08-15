@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_7a1dd372",
+        "filename": "keystone/common/sql/migrate_repo/versions/109_add_password_self_service_column.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "From my research, for server_default to work across databases, you need to use basic string or integer defaults, which is how we\u0027ve done handled this in the past:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/074_add_is_domain_project.py#L26",
+      "parentUuid": "5ac665da_a5b59ed1",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_3f98f6bf",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 46
@@ -88,6 +106,24 @@
       "writtenOn": "2016-08-13T16:39:38Z",
       "side": 1,
       "message": "++",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c0f858e8",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "It would be more elegant.",
+      "parentUuid": "5ac665da_e5af967b",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -169,6 +205,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_3d18751d",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "Okay, keep in mind though, that this functionality is supported today and the purpose of this patch wasn\u0027t necessarily to remove this from the LDAP implementation.",
+      "parentUuid": "5ac665da_45aaea71",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac665da_05a0f28f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -180,6 +234,24 @@
       "writtenOn": "2016-08-13T16:39:38Z",
       "side": 1,
       "message": "Would the intent be more clear if this were named \u0027self_service_change_password\u0027?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_fd79bd30",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "True, however it is consistent with the other high level classes (manager, controller, API) where the method name is change_password and self-service is implied.",
+      "parentUuid": "5ac665da_05a0f28f",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -203,6 +275,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_3d74f533",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7ac969e8_093e4db8",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_452abd2d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 46
@@ -214,6 +304,24 @@
       "writtenOn": "2016-08-12T21:19:48Z",
       "side": 1,
       "message": "Why do you have to do .date() on both of these? Intentional loss of precision?",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_dde7a1e2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "True, loss of precision, however I\u0027m only concerned about days; not minutes or seconds.",
+      "parentUuid": "9ad45d7e_452abd2d",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -254,6 +362,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_3d4cf5c6",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "From my research, for server_default to work across databases, you need to use basic string or integer defaults, which is how we\u0027ve done handled this in the past:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/074_add_is_domain_project.py#L26",
+      "parentUuid": "7ac969e8_66c44e40",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac969e8_66772e03",
         "filename": "keystone/tests/unit/identity/backends/test_base.py",
         "patchSetId": 46
@@ -288,6 +414,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_bda46557",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "Misunderstood this, I thought it was to check if the driver was read-only and would therefore, skip the test.",
+      "parentUuid": "5ac665da_65ad6688",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac969e8_86cb4a1e",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 46
@@ -305,6 +449,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_606364dd",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "Good point ++",
+      "parentUuid": "7ac969e8_86cb4a1e",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac969e8_06ad9a31",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 46
@@ -316,6 +478,24 @@
       "writtenOn": "2016-08-12T21:19:48Z",
       "side": 1,
       "message": "This is a strange method call. I wouldn\u0027t expect \"password_created_at\" to be the first argument after a user ID for a method called _update_user. Manipulating time with timeutils and/or freezegun would illustrate this behavior a lot more clearly -- assuming this isn\u0027t dependent on the time according to sqlite.",
+      "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_80794096",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-15T16:41:32Z",
+      "side": 1,
+      "message": "Freezegun works great when moving the time in seconds, however strange things happen when moving time in days. I\u0027ll change to freezegun when I figure the root cause. In the meantime, this should provide adequate test coverage.",
+      "parentUuid": "7ac969e8_06ad9a31",
       "revId": "bec68c841e9cd43ce7eb2b1e962b15f3fa7e4aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
