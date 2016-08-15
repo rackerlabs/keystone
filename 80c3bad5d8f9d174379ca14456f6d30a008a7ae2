@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_84882d24",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "I\u0027d like to avoid using the term \"migrate\" in this help text, when --expand contrasts itself from --migrate by explicitly not performing any data migration, and instead only makes additive schema changes, and introduces triggers to assist during the data migration phase.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a49e0954",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "--migrate should never be run before --contract, so making the assertion that this should be run \"at the end\" of something is misleading.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e4c76143",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "I\u0027m fine with this (other than perhaps force_migration_complete() below, which is just terribly verbose), but the API as a whole would make more sense to me as:\n\n  migration_helpers.expand_schema()\n  migration_helpers.migrate_data()\n  migration_helpers.contract_schema()\n\nWhich explicitly uses the expand -\u003e migrate -\u003e contract verbs and clearly communicate what is being affected (schema or data) as the noun.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_444ab5c6",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "\"upto\" is not a word.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_6417f1a3",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "We\u0027ve never supported, recommended, or tested the notion of migrating across two releases as a viable upgrade path.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_24e339a5",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "I\u0027m not sure what you mean when you differentiate between \"tidy-up\" and \"force data migration\". There\u0027s a schema expansion, a data migration, and a schema contraction.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_04039d43",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "status row?",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_44fd9539",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "They don\u0027t do anything, anyway, so just call them now.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a4a44957",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "Expand the database schema*\n\nThe data migration needs to occur before a code upgrade as well, so it might be misleading to mention the code upgrade here.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_844aed81",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "Is this an old comment? It\u0027s neither accurate nor relevant with the trigger-based approach.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d73e55b7",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "\"latest\" is relative, which makes these statements hard to follow (does latest refer to the code branch where you\u0027re reading this, the latest release on openstack.org, or... ?). Using \"previous\" and \"next\" to refer to each release would be more clear.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e4092133",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "This *is* the data migration, so I don\u0027t understand the contrast to \"after migration.\" I also don\u0027t see this as a \"tidy up\" of any sort - it will be doing the manual labor of migrating data, which may be a quick \"clean up\" (if --expand was run long ago) or may be a complete data migration (if the app is inactive or offline).",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f713915a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "This needs to be run before the latest release is brought online, to ensure that both versions of the application are capable of reading and writing to their own schema.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_572b8582",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "I\u0027d remove everything after \"as well as\" because there should not be any possibility for \"inconsistencies.\" If there were, that\u0027d be a critical bug.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d7dad577",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-15T19:35:14Z",
+      "side": 1,
+      "message": "In the base case, all 4 functions should be called.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
