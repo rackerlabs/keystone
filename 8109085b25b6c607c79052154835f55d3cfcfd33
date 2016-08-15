@@ -116,6 +116,30 @@
       "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_eb89eccb",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-15T21:36:31Z",
+      "side": 1,
+      "message": "so perhaps this can now be removed?",
+      "parentUuid": "bacf61ea_7fe77312",
+      "range": {
+        "startLine": 421,
+        "startChar": 0,
+        "endLine": 458,
+        "endChar": 20
+      },
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
