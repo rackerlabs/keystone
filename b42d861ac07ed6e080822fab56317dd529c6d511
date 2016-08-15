@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_1ab7743a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T19:56:39Z",
+      "side": 1,
+      "message": "I think we need:\n\n  if prior_role[\u0027domain_id\u0027] \u003d\u003d None\n    raise exception\n\n  # At this point prior domain_id is guaranteed to be not null\n  prior_role[\u0027domain_id\u0027] !\u003d implied_role[\u0027domain_id\u0027]:\n    raise exception",
+      "range": {
+        "startLine": 1204,
+        "startChar": 8,
+        "endLine": 1204,
+        "endChar": 64
+      },
+      "revId": "b42d861ac07ed6e080822fab56317dd529c6d511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e422c1b8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T19:56:39Z",
+      "side": 1,
+      "message": "we need to flip this around and check to make sure the prior role is not a global role",
+      "range": {
+        "startLine": 1205,
+        "startChar": 12,
+        "endLine": 1208,
+        "endChar": 75
+      },
+      "revId": "b42d861ac07ed6e080822fab56317dd529c6d511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
