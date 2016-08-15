@@ -25,6 +25,7 @@ from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.common import dependency
+from keystone.common import driver_hints
 import keystone.conf
 from keystone.i18n import _
 from keystone.tests import unit
@@ -534,3 +535,51 @@ class TestDomainConfigFinder(unit.BaseTestCase):
         self.assertThat(
             self.logging.output,
             matchers.Contains(expected_msg_template % 'keystone.conf'))
+
+
+class TestCredentialMigration(unit.SQLDriverOverrides, unit.TestCase):
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(TestCredentialMigration, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(TestCredentialMigration, self).setUp()
+
+    def test_credential_migration(self):
+        self.load_backends()
+
+        # set credential encryption = False
+        self.config_fixture.config(group='credential', encrypt='false')
+
+        # create a bunch of credentials
+        unencrypted_credentials = dict()
+        for i in range(3):
+            ref = unit.new_credential_ref(uuid.uuid4().hex)
+            unencrypted_credentials[ref['id']] = (
+                self.credential_api.create_credential(ref['id'], ref)
+            )
+
+        # verify they aren't encrypted
+
+        # set credential encryption = True
+        self.config_fixture.config(group='credential', encrypt='true')
+
+        # run credential migration
+        cli.CredentialMigrate.main()
+
+        # verify credentials are encrypted
+        encrypted_credentials = self.credential_api.driver.list_credentials(
+            driver_hints.Hints()
+        )
+        for credential in encrypted_credentials:
+            self.assertNotEqual(
+                credential['blob'],
+                unencrypted_credentials[credential['id']]['blob']
+            )
+
+        # verify credentials can still be listed
+        # run credential migration again to make sure it's idempotent
