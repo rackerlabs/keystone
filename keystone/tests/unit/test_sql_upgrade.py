@@ -1516,6 +1516,19 @@ class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
             version,
             'DB is not at version %s' % self._initial_db_version)
 
+    def test_credential_keeps_legacy_blob_column(self):
+        # NOTE(lbragstad): During the credential migration, we will have two
+        # blob columns. The migration will encrypt the value in `blob` and
+        # store the result in `encrypted_blob`. The legacy `blob` column will
+        # be removed in the contract phase, leaving only the `encrypted_blob`
+        # in the schema.
+        self.upgrade(self.max_version)
+        self.assertTableColumns(
+            'credential',
+            ['id', 'user_id', 'project_id', 'encrypted_blob', 'type',
+             'key_hash', 'blob', 'extra']
+        )
+
 
 class MySQLOpportunisticExpandSchemaUpgradeTestCase(
         SqlExpandSchemaUpgradeTests):
@@ -1548,6 +1561,36 @@ class SqlDataMigrationUpgradeTests(SqlMigrateBase):
             self._initial_db_version,
             version,
             'DB is not at version %s' % self._initial_db_version)
+
+    def test_credential_data_migration(self):
+        session = self.sessionmaker()
+        credential_table = sqlalchemy.Table(
+            'credential',
+            self.metadata,
+            autoload=True
+        )
+        credential_id = uuid.uuid4().hex
+        unencrypted_blob = uuid.uuid4().hex
+        credential = {'id': credential_id,
+                      'blob': unencrypted_blob,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.insert_dict(session, 'credential', credential)
+
+        self.upgrade(self.max_version)
+        filter = credential_table.c.id == credential_id
+        cols = [credential_table.c.key_hash, credential_table.c.blob,
+                credential_table.c.encrypted_blob]
+        statement = sqlalchemy.select(cols).where(filter)
+        result = session.execute(statement).fetchone()
+
+        # Make sure we've actually updated the credential with the encrypted
+        # blob and the corresponding key hash.
+        self.assertIsNotNone(result.encrypted_blob)
+        self.assertIsNotNone(result.key_hash)
+        # Make sure we've haven't done anything with the original blob because
+        # we still might need to read from it.
+        self.assertEqual(result.blob, unencrypted_blob)
 
 
 class MySQLOpportunisticDataMigrationUpgradeTestCase(
@@ -1585,6 +1628,18 @@ class SqlContractSchemaUpgradeTests(SqlMigrateBase):
             version,
             'DB is not at version %s' % self._initial_db_version)
 
+    def test_credential_has_encrypted_blob_and_key_hash(self):
+        # NOTE(lbragstad): At this point, all credentials should be migrated to
+        # the `encrypted_blob` column, making `blob` safe to remove. Let's make
+        # sure we've done that since keeping `blob` around is a security
+        # concern.
+        self.upgrade(self.max_version)
+        self.assertTableColumns(
+            'credential',
+            ['id', 'user_id', 'project_id', 'encrypted_blob', 'type',
+             'key_hash', 'extra']
+        )
+
 
 class MySQLOpportunisticContractSchemaUpgradeTestCase(
         SqlContractSchemaUpgradeTests):
@@ -1617,3 +1672,100 @@ class VersionTests(SqlMigrateBase):
             db_exception.DbMigrationError,
             migration_helpers._sync_common_repo,
             self.max_version - 1)
+
+
+class FullMigration(SqlMigrateBase):
+    """Test complete orchestration between all database phases."""
+
+    def setUp(self):
+        super(FullMigration, self).setUp()
+        # Upgrade the legacy repository
+        self.upgrade(self.max_version)
+        # Make sure the expand repo is also upgraded
+        # self.initialize_repo(repo_name=EXPAND_REPO)
+        # self.upgrade(self.max_version)
+
+    def test_credential_migration(self):
+        session = self.sessionmaker()
+        credential_table_name = 'credential'
+
+        # upgrade to latest legacy migration so that we have a credential table
+        # populate the credential table with some sample credentials
+        credentials = list()
+        for i in range(5):
+            credential = {'id': uuid.uuid4().hex,
+                          'blob': uuid.uuid4().hex,
+                          'user_id': uuid.uuid4().hex,
+                          'type': 'cert'}
+            credentials.append(credential)
+            self.insert_dict(session, credential_table_name, credential)
+
+        # verify the current schema
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'blob', 'extra']
+        )
+
+        # upgrade expand repo to 002 to add new columns
+        self.initialize_repo(repo_name=EXPAND_REPO)
+        self.upgrade(2)
+
+        # verify encrypted_blob and key_hash columns have been added and verify
+        # the original blob column is still there
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'blob', 'extra',
+             'key_hash', 'encrypted_blob']
+        )
+
+        # verify triggers by making sure we can't write to the credential table
+        credential = {'id': uuid.uuid4().hex,
+                      'blob': uuid.uuid4().hex,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.assertRaises(db_exception.DBError,
+                          self.insert_dict,
+                          session,
+                          credential_table_name,
+                          credential)
+
+        # upgrade migrate repo to 002 to migrate existing credentials
+        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
+        self.upgrade(2)
+
+        # make sure we've actually updated the credential with the
+        # encrypted blob and the corresponding key hash
+        credential_table = sqlalchemy.Table(
+            credential_table_name,
+            self.metadata,
+            autoload=True
+        )
+        for credential in credentials:
+            filter = credential_table.c.id == credential['id']
+            cols = [credential_table.c.key_hash, credential_table.c.blob,
+                    credential_table.c.encrypted_blob]
+            statement = sqlalchemy.select(cols).where(filter)
+            result = session.execute(statement).fetchone()
+
+            self.assertIsNotNone(result.encrypted_blob)
+            self.assertIsNotNone(result.key_hash)
+            # verify the original blob column is still populated
+            self.assertEqual(result.blob, credential['blob'])
+
+        # upgrade contract repo to 002 to remove triggers and blob column
+        self.initialize_repo(repo_name=CONTRACT_REPO)
+        self.upgrade(2)
+
+        # verify the new schema doesn't have a blob column anymore
+        self.assertTableColumns(
+            credential_table_name,
+            ['id', 'user_id', 'project_id', 'type', 'extra', 'key_hash',
+             'encrypted_blob']
+        )
+
+        # verify that the triggers are gone by writing to the database
+        credential = {'id': uuid.uuid4().hex,
+                      'encrypted_blob': uuid.uuid4().hex,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.insert_dict(session, credential_table_name, credential)

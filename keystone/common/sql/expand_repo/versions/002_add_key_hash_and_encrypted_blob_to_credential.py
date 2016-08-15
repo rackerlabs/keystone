@@ -1,0 +1,72 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import sqlalchemy as sql
+
+from keystone.common import sql as ks_sql
+
+
+MYSQL_TRIGGER = """
+CREATE TRIGGER credential_read_only BEFORE INSERT ON credential
+FOR EACH ROW SIGNAL SQLSTATE '%d'
+SET MESSAGE_TEXT = '%s', MYSQL_ERRNO = %d;
+)
+"""
+
+SQLITE_TRIGGER = """
+CREATE TRIGGER credential_read_only BEFORE INSERT ON credential
+FOR EACH ROW
+BEGIN
+  SELECT RAISE (ABORT, '%s');
+END;
+"""
+
+POSTGRESQL_TRIGGER = """
+CREATE OR REPLACE FUNCTION read_only()
+  RETURNS trigger AS
+$BODY$
+BEGIN
+  RAISE EXCEPTION '%s';
+END
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER credential_read_only BEFORE INSERT ON credential
+FOR EACH ROW
+EXECUTE PROCEDURE read_only();
+"""
+
+
+def upgrade(migrate_engine):
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    key_hash = sql.Column('key_hash', sql.String(7), nullable=True)
+    encrypted_blob = sql.Column(
+        'encrypted_blob',
+        ks_sql.JsonBlob,
+        nullable=True
+    )
+    credential_table = sql.Table('credential', meta, autoload=True)
+    credential_table.create_column(key_hash)
+    credential_table.create_column(encrypted_blob)
+
+    error_message = ('Credential migration in progress. Cannon perform '
+                     'writes to credential table.')
+    if migrate_engine.name == 'postgresql':
+        stmt = POSTGRESQL_TRIGGER % error_message
+    elif migrate_engine.name == 'sqlite':
+        stmt = SQLITE_TRIGGER % error_message
+    elif migrate_engine.name == 'mysql':
+        error_state = 45000
+        mysql_errno = 1001
+        stmt = MYSQL_TRIGGER % (error_state, error_message, mysql_errno)
+    migrate_engine.execute(stmt)
