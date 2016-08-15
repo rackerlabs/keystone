@@ -10,8 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import hashlib
+
 from cryptography import fernet
 from oslo_log import log
+import six
 
 from keystone.common import fernet_utils
 import keystone.conf
@@ -39,6 +42,13 @@ MAX_ACTIVE_KEYS = 3
 
 
 class Provider(core.Provider):
+
+    @property
+    def primary_key_hash(self):
+        """The primary key's hash."""
+        primary_key = self._get_encryption_keys()[0]
+        key_digest = hashlib.sha1(primary_key).hexdigest()
+        return key_digest
 
     @property
     def crypto(self):
@@ -72,7 +82,9 @@ class Provider(core.Provider):
         :returns: a decrypted credential
         """
         try:
-            return self.crypto.decrypt(bytes(credential)).decode('utf-8')
+            if isinstance(credential, six.text_type):
+                credential = credential.encode('utf-8')
+            return self.crypto.decrypt(credential).decode('utf-8')
         except (fernet.InvalidToken, TypeError, ValueError):
             msg = _('Credential could not be decrypted. Please contact the'
                     ' administrator')
