@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_5730a556",
+        "filename": "keystone/tests/unit/policy/backends/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-15T19:54:31Z",
+      "side": 1,
+      "message": "Why not just stick this in setUp() (also before calling the parent\u0027s setUp) and avoid having to check hasattr()?",
+      "revId": "e1e7c7ddb728a0bb835d32d6b0632a14e9e79448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
