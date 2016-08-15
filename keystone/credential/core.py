@@ -14,6 +14,8 @@
 
 """Main entry point into the Credential service."""
 
+import json
+
 from oslo_log import versionutils
 
 from keystone.common import dependency
@@ -27,6 +29,7 @@ CONF = keystone.conf.CONF
 
 
 @dependency.provider('credential_api')
+@dependency.requires('credential_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the Credential backend.
 
@@ -40,21 +43,86 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.driver)
 
+    def _decrypt_credential(self, credential):
+        """Return a decrypted credential reference."""
+        if credential['type'] == 'ec2':
+            decrypted_blob = json.loads(
+                self.credential_provider_api.decrypt(
+                    credential['encrypted_blob'],
+                )
+            )
+        else:
+            decrypted_blob = self.credential_provider_api.decrypt(
+                credential['encrypted_blob']
+            )
+        credential['blob'] = decrypted_blob
+        credential.pop('key_hash', None)
+        credential.pop('encrypted_blob', None)
+        return credential
+
+    def _encrypt_credential(self, credential):
+        """Return an encrypted credential reference."""
+        credential_copy = credential.copy()
+        if credential.get('type', None) == 'ec2':
+            # NOTE(lbragstad): When dealing with ec2 credentials, it's possible
+            # for the `blob` to be a dictionary. Let's make sure we are
+            # encrypting a string otherwise encryption will fail.
+            encrypted_blob = self.credential_provider_api.encrypt(
+                json.dumps(credential['blob'])
+            )
+        else:
+            encrypted_blob = self.credential_provider_api.encrypt(
+                credential['blob']
+            )
+        credential_copy['encrypted_blob'] = encrypted_blob
+        credential_copy['key_hash'] = (
+            self.credential_provider_api.primary_key_hash
+        )
+        credential_copy.pop('blob', None)
+        return credential_copy
+
     @manager.response_truncated
     def list_credentials(self, hints=None):
-        return self.driver.list_credentials(hints or driver_hints.Hints())
+        credentials = self.driver.list_credentials(
+            hints or driver_hints.Hints()
+        )
+        for credential in credentials:
+            credential = self._decrypt_credential(credential)
+        return credentials
+
+    def list_credentials_for_user(self, user_id, type=None):
+        """List credentials for a specific user."""
+        credentials = self.driver.list_credentials_for_user(user_id, type=type)
+        for credential in credentials:
+            credential = self._decrypt_credential(credential)
+        return credentials
 
     def get_credential(self, credential_id):
         """Return a credential reference."""
-        return self.driver.get_credential(credential_id)
+        credential = self.driver.get_credential(credential_id)
+        return self._decrypt_credential(credential)
 
     def create_credential(self, credential_id, credential):
         """Create a credential."""
-        return self.driver.create_credential(credential_id, credential)
+        credential_copy = self._encrypt_credential(credential)
+        ref = self.driver.create_credential(credential_id, credential_copy)
+        ref.pop('key_hash', None)
+        ref.pop('encrypted_blob', None)
+        ref['blob'] = credential['blob']
+        return ref
 
     def update_credential(self, credential_id, credential):
         """Update an existing credential."""
-        return self.driver.update_credential(credential_id, credential)
+        if credential['blob']:
+            credential_copy = self._encrypt_credential(credential)
+        else:
+            credential_copy = credential.copy()
+        ref = self.driver.update_credential(credential_id, credential_copy)
+        ref.pop('key_hash', None)
+        ref.pop('encrypted_blob', None)
+        # What about the case where `blob` isn't being updated?
+        ref['blob'] = credential['blob']
+        return ref
 
 
 @versionutils.deprecated(
