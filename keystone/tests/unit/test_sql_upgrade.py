@@ -1516,6 +1516,19 @@ class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
             version,
             'DB is not at version %s' % self._initial_db_version)
 
+    def test_credential_keeps_legacy_blob_column(self):
+        # NOTE(lbragstad): During the credential migration, we will have two
+        # blob columns. The migration will encrypt the value in `blob` and
+        # store the result in `encrypted_blob`. The legacy `blob` column will
+        # be removed in the contract phase, leaving only the `encrypted_blob`
+        # in the schema.
+        self.upgrade(self.max_version)
+        self.assertTableColumns(
+            'credential',
+            ['id', 'user_id', 'project_id', 'encrypted_blob', 'type',
+             'key_hash', 'blob', 'extra']
+        )
+
 
 class MySQLOpportunisticExpandSchemaUpgradeTestCase(
         SqlExpandSchemaUpgradeTests):
@@ -1548,6 +1561,36 @@ class SqlDataMigrationUpgradeTests(SqlMigrateBase):
             self._initial_db_version,
             version,
             'DB is not at version %s' % self._initial_db_version)
+
+    def test_credential_data_migration(self):
+        session = self.sessionmaker()
+        credential_table = sqlalchemy.Table(
+            'credential',
+            self.metadata,
+            autoload=True
+        )
+        credential_id = uuid.uuid4().hex
+        unencrypted_blob = uuid.uuid4().hex
+        credential = {'id': credential_id,
+                      'blob': unencrypted_blob,
+                      'user_id': uuid.uuid4().hex,
+                      'type': 'cert'}
+        self.insert_dict(session, 'credential', credential)
+
+        self.upgrade(self.max_version)
+        filter = credential_table.c.id == credential_id
+        cols = [credential_table.c.key_hash, credential_table.c.blob,
+                credential_table.c.encrypted_blob]
+        statement = sqlalchemy.select(cols).where(filter)
+        result = session.execute(statement).fetchone()
+
+        # Make sure we've actually updated the credential with the encrypted
+        # blob and the corresponding key hash.
+        self.assertIsNotNone(result.encrypted_blob)
+        self.assertIsNotNone(result.key_hash)
+        # Make sure we've haven't done anything with the original blob because
+        # we still might need to read from it.
+        self.assertEqual(result.blob, unencrypted_blob)
 
 
 class MySQLOpportunisticDataMigrationUpgradeTestCase(
@@ -1584,6 +1627,18 @@ class SqlContractSchemaUpgradeTests(SqlMigrateBase):
             self._initial_db_version,
             version,
             'DB is not at version %s' % self._initial_db_version)
+
+    def test_credential_has_encrypted_blob_and_key_hash(self):
+        # NOTE(lbragstad): At this point, all credentials should be migrated to
+        # the `encrypted_blob` column, making `blob` safe to remove. Let's make
+        # sure we've done that since keeping `blob` around is a security
+        # concern.
+        self.upgrade(self.max_version)
+        self.assertTableColumns(
+            'credential',
+            ['id', 'user_id', 'project_id', 'encrypted_blob', 'type',
+             'key_hash', 'extra']
+        )
 
 
 class MySQLOpportunisticContractSchemaUpgradeTestCase(
