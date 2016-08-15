@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_c6a06593",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-15T21:54:54Z",
+      "side": 1,
+      "message": "make defaults with the fernet values, so it works without extra params for its primary purpose",
+      "range": {
+        "startLine": 30,
+        "startChar": 23,
+        "endLine": 30,
+        "endChar": 54
+      },
+      "revId": "48ab7b17f43a0876b94d13ae7b11126af7766558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
