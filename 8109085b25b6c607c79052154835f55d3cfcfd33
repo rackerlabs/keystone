@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_9a771202",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-08-15T00:47:27Z",
+      "side": 1,
+      "message": "This is basically a refactor. It applies to both.",
+      "parentUuid": "9ad45d7e_02bbadc5",
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_bf9f2b5e",
         "filename": "keystone/common/request.py",
         "patchSetId": 4
@@ -54,6 +72,24 @@
       "side": 1,
       "message": "Does this get executed if keystone is deployed without CADF notifications? What about basic notifications?",
       "parentUuid": "bacf61ea_bf9f2b5e",
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_5a6d9a31",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-08-15T00:47:27Z",
+      "side": 1,
+      "message": "It shouldn\u0027t matter as far as i can tell. All I\u0027ve done there is refactor the old code that acts like a context for notifications. The same context is used for both cadf and basic.",
+      "parentUuid": "9ad45d7e_62354945",
       "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
