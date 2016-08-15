@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_37308901",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T19:51:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_444ab5c6",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_6417f1a3",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_5736e503",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T19:51:51Z",
+      "side": 1,
+      "message": "Is that true? I always thought we did support a jump of +2?  If we can confirm that this is not a requirement, I agree we can simplify this nicely.",
+      "parentUuid": "3ac371cc_6417f1a3",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_24e339a5",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -98,6 +134,24 @@
       "writtenOn": "2016-08-15T19:35:14Z",
       "side": 1,
       "message": "I\u0027m not sure what you mean when you differentiate between \"tidy-up\" and \"force data migration\". There\u0027s a schema expansion, a data migration, and a schema contraction.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d722d5b8",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T19:51:51Z",
+      "side": 1,
+      "message": "sorry, old comment. will delete",
+      "parentUuid": "3ac371cc_24e339a5",
       "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
