@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_4ba640c2",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8992
+      },
+      "writtenOn": "2016-08-15T21:46:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_e848ef5d",
+      "revId": "b1c8f120c963d53d35be6d8e336d2443dd46aa2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_88269b66",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 3
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_66d09154",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 8992
+      },
+      "writtenOn": "2016-08-15T21:46:46Z",
+      "side": 1,
+      "message": "Hopefully this is more clear in my updated patchset.",
+      "parentUuid": "3ac371cc_88269b66",
+      "range": {
+        "startLine": 239,
+        "startChar": 46,
+        "endLine": 239,
+        "endChar": 58
+      },
+      "revId": "b1c8f120c963d53d35be6d8e336d2443dd46aa2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_426da103",
         "filename": "keystone/token/persistence/backends/kvs.py",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2016-08-15T12:21:12Z",
       "side": 1,
       "message": "what \"item[0]\" stands for? Would be nice to have a comment explaining it.",
+      "range": {
+        "startLine": 413,
+        "startChar": 23,
+        "endLine": 413,
+        "endChar": 30
+      },
+      "revId": "b1c8f120c963d53d35be6d8e336d2443dd46aa2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a6ca899f",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8992
+      },
+      "writtenOn": "2016-08-15T21:46:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_426da103",
       "range": {
         "startLine": 413,
         "startChar": 23,
