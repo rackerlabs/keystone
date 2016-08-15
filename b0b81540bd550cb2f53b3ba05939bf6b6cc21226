@@ -16,6 +16,24 @@
       "revId": "b0b81540bd550cb2f53b3ba05939bf6b6cc21226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_664d3172",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-15T21:43:21Z",
+      "side": 1,
+      "message": "++ Agree with Colleen as this is the final purpose of this refactoring",
+      "parentUuid": "3ac371cc_616363b2",
+      "revId": "b0b81540bd550cb2f53b3ba05939bf6b6cc21226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
