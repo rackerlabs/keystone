@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_1673fab2",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-15T03:50:50Z",
+      "side": 0,
+      "message": "These comments still valid :)",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 41
+      },
+      "revId": "0c782932168800acf676c2c16aed1fb44b4a6368",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_4c030f77",
         "filename": "tox.ini",
         "patchSetId": 1
