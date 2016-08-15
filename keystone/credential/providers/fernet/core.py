@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import hashlib
+
 from cryptography import fernet
 from oslo_log import log
 
@@ -39,6 +41,15 @@ MAX_ACTIVE_KEYS = 3
 
 
 class Provider(core.Provider):
+
+    @property
+    def primary_key_hash(self):
+        """The first 7 bits of the primary key's hash."""
+        primary_key = self.crypto._fernets[0]
+        key_digest = hashlib.sha1(
+            primary_key._signing_key + primary_key._encryption_key
+        ).hexdigest()
+        return key_digest[:7]
 
     @property
     def crypto(self):
