@@ -203,16 +203,5 @@ def migration_data():
 
 
 def migration_contract():
-    """Contract the database.
-
-    Drop any table or column that are no longer needed.
-    Only the migration script in `Latest` repository will be executed, move
-    the script from `Future` into `Latest` when it's safe (no code will
-    access them) to be called in your current release cycle.
-
-    The migration script in 'Future' repository should have a release name as
-    the part of the name if it's clear when the script could be executed.
-
-    """
-    repo_name = 'migrate_repo_contract' + '/Latest'
-    _sync_additive_repo(repo_name)
+    """Contract the database."""
+    _sync_additive_repo('migrate_repo_contract')
