@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_a393ada2",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "ID",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 11
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0391e199",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "ID",
+      "range": {
+        "startLine": 91,
+        "startChar": 9,
+        "endLine": 91,
+        "endChar": 11
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_08362003",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 200\nError response codes: 401, 404\n\n(i don\u0027t know the rest off hand for this specific API)",
+      "range": {
+        "startLine": 688,
+        "startChar": 0,
+        "endLine": 688,
+        "endChar": 27
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c3cea982",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 201\nError response codes: 401, 404",
+      "range": {
+        "startLine": 723,
+        "startChar": 0,
+        "endLine": 723,
+        "endChar": 26
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_83ab1189",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 200\nError response codes: 401, 404",
+      "range": {
+        "startLine": 760,
+        "startChar": 0,
+        "endLine": 760,
+        "endChar": 23
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a3928d55",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 204\nError response codes: 401, 404",
+      "range": {
+        "startLine": 796,
+        "startChar": 0,
+        "endLine": 796,
+        "endChar": 27
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_4388f922",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 204\nError response codes: 401, 404",
+      "range": {
+        "startLine": 819,
+        "startChar": 0,
+        "endLine": 819,
+        "endChar": 26
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c37ce922",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-15T15:24:18Z",
+      "side": 1,
+      "message": "Normal response codes: 200\nError response codes: 401, 404",
+      "range": {
+        "startLine": 839,
+        "startChar": 0,
+        "endLine": 839,
+        "endChar": 29
+      },
+      "revId": "c8d0868ddc541f60980bb561bb42e0bb5bde5897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
