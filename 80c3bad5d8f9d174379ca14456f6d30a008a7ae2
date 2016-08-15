@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_ace8ab11",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_84882d24",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a49e0954",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 13
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_ecd0e355",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_a49e0954",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_e4c76143",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 13
@@ -47,6 +83,24 @@
       "writtenOn": "2016-08-15T19:35:14Z",
       "side": 1,
       "message": "I\u0027m fine with this (other than perhaps force_migration_complete() below, which is just terribly verbose), but the API as a whole would make more sense to me as:\n\n  migration_helpers.expand_schema()\n  migration_helpers.migrate_data()\n  migration_helpers.contract_schema()\n\nWhich explicitly uses the expand -\u003e migrate -\u003e contract verbs and clearly communicate what is being affected (schema or data) as the noun.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_ccd3675e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_e4c76143",
       "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_ec9583e4",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "3ac371cc_04039d43",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_44fd9539",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -209,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_cf023909",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_a4a44957",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_844aed81",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -220,6 +310,24 @@
       "writtenOn": "2016-08-15T19:35:14Z",
       "side": 1,
       "message": "Is this an old comment? It\u0027s neither accurate nor relevant with the trigger-based approach.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0f0d7137",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_844aed81",
       "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_6f14e543",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_d73e55b7",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_e4092133",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -254,6 +380,24 @@
       "writtenOn": "2016-08-15T19:35:14Z",
       "side": 1,
       "message": "This *is* the data migration, so I don\u0027t understand the contrast to \"after migration.\" I also don\u0027t see this as a \"tidy up\" of any sort - it will be doing the manual labor of migrating data, which may be a quick \"clean up\" (if --expand was run long ago) or may be a complete data migration (if the app is inactive or offline).",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_af1edd60",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_e4092133",
       "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_8f19617c",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_f713915a",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_572b8582",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 13
@@ -294,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_cf29998b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_572b8582",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_d7dad577",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 13
@@ -305,6 +485,24 @@
       "writtenOn": "2016-08-15T19:35:14Z",
       "side": 1,
       "message": "In the base case, all 4 functions should be called.",
+      "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_8f3041ea",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-15T22:52:20Z",
+      "side": 1,
+      "message": "Yes (although maybe not expand depending on how we handle the legacy support for expanding to a specific version)....but in any case, I think I\u0027d rather keep the tests here treating the migration_heleprs as a black box.",
+      "parentUuid": "3ac371cc_d7dad577",
       "revId": "80c3bad5d8f9d174379ca14456f6d30a008a7ae2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
