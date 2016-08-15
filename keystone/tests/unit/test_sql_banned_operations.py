@@ -227,6 +227,10 @@ class TestKeystoneExpandSchemaMigrations(
         # NOTE(xek, henry-nash): Reviewers: DO NOT ALLOW THINGS TO BE ADDED
         # HERE UNLESS JUSTIFICATION CAN BE PROVIDED AS TO WHY THIS WILL NOT
         # CAUSE PROBLEMS FOR ROLLING UPGRADES.
+        # NOTE(lbragstad): The expand 002 migration alters the credential table
+        # to make `blob` nullable. This allows the triggers added in 002 to
+        # catch writes when the `blob` attribute isn't populated.
+        2
     ]
 
     def setUp(self):
