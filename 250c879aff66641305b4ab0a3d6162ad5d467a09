@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_3cedd325",
+        "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-16T18:58:32Z",
+      "side": 1,
+      "message": "Actually - if we chose to use only 3 keys for credential encryption this would break because we wouldn\u0027t have a `[credential] max_active_keys` option.\n\nSo not including max_active_keys here makes sense.",
+      "parentUuid": "3ac371cc_314e9c96",
+      "revId": "250c879aff66641305b4ab0a3d6162ad5d467a09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f68fdac9",
         "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
         "patchSetId": 1
