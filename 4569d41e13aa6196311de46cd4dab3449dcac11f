@@ -22,6 +22,30 @@
       "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_62e86fb5",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-16T07:05:49Z",
+      "side": 1,
+      "message": "well expand_schema() is the equivalent of the _sync_common_repo(version) above....so we could replace that line (although in this patch did\u0027 want to change the logic too much). Also, was going to perhaps leave expand_schema() without taking a version param, rather than pollute it with old capabilities.",
+      "parentUuid": "3ac371cc_536eeb01",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 180,
+        "endChar": 25
+      },
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
