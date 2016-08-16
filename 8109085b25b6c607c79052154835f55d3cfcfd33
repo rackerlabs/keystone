@@ -140,6 +140,30 @@
       "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a94a52aa",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-08-16T05:13:50Z",
+      "side": 1,
+      "message": "it\u0027s still used in places where the context is not the same as the auth context, like when you\u0027re doing saml auth. I\u0027ll remove it ASAP, but for this review i\u0027m just catching the common case.",
+      "parentUuid": "3ac371cc_eb89eccb",
+      "range": {
+        "startLine": 421,
+        "startChar": 0,
+        "endLine": 458,
+        "endChar": 20
+      },
+      "revId": "8109085b25b6c607c79052154835f55d3cfcfd33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
