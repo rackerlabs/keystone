@@ -49,6 +49,40 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_281c7511",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-16T17:34:15Z",
+      "side": 1,
+      "message": "This implies that it\u0027s safe to start a new node after running this step, which is not true (as the help text for --migrate also implies). The upgraded node will not have the data it needs to operate correctly.",
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_68a2edaf",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-16T17:34:15Z",
+      "side": 1,
+      "message": "++",
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_536eeb01",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 14
@@ -114,6 +148,41 @@
         "endLine": 180,
         "endChar": 25
       },
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a89a2561",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-16T17:34:15Z",
+      "side": 1,
+      "message": "I agree with Steve and Ron, because expand_schema() should not have anything to do with the legacy migration repository other than that the first expand step must be run after all legacy migrations have run.",
+      "parentUuid": "3ac371cc_fc4062a7",
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c83b2137",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-16T17:34:15Z",
+      "side": 1,
+      "message": "-1 Absolutely no \"fixing up\" should be required. If we *ever* leave the database in an inconsistent state, we\u0027ve introduced a critical bug in the upgrade process.",
       "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
