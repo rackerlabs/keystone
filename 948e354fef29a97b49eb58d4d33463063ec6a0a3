@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_b4e9d0e8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-16T22:57:19Z",
+      "side": 1,
+      "message": "put this in alphabetical order too",
+      "range": {
+        "startLine": 1324,
+        "startChar": 4,
+        "endLine": 1324,
+        "endChar": 16
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_94e65413",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-16T22:57:19Z",
+      "side": 1,
+      "message": "alpha order",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_143384ac",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
