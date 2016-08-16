@@ -70,6 +70,30 @@
       "revId": "4f4f4078073f296a3cd35ce6b8c0730643fe0b7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_57ba37c1",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-16T14:49:33Z",
+      "side": 1,
+      "message": "the main reason why this is added is service users. Lets just assume (and doc) that names are expected only in the default domain, where the service users almost always are.",
+      "parentUuid": "9ad45d7e_52042f14",
+      "range": {
+        "startLine": 74,
+        "startChar": 24,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "4f4f4078073f296a3cd35ce6b8c0730643fe0b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
