@@ -16,6 +16,16 @@
 from oslo_config import cfg
 
 
+service_available_group = cfg.OptGroup(name="service_available",
+                                       title="Available OpenStack Services")
+
+ServiceAvailableGroup = [
+    cfg.BoolOpt("keystone",
+                default=True,
+                help="Whether or not keystone is expected to be available"),
+]
+
+
 identity_group = cfg.OptGroup(name='identity',
                               title="Keystone Configuration Options")
 

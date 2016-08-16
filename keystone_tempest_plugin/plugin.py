@@ -31,9 +31,15 @@ class KeystoneTempestPlugin(plugins.TempestPlugin):
         return full_test_dir, base_path
 
     def register_opts(self, conf):
+        config.register_opt_group(
+            conf, project_config.service_available_group,
+            project_config.ServiceAvailableGroup)
         config.register_opt_group(conf, project_config.identity_group,
                                   project_config.IdentityGroup)
 
     def get_opt_lists(self):
-        return [(project_config.identity_group.name,
-                 project_config.IdentityGroup)]
+        return [
+            (project_config.identity_group.name,
+             project_config.IdentityGroup),
+            ('service_available', project_config.ServiceAvailableGroup)
+        ]
