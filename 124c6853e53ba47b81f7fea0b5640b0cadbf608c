@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_983b2c38",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 1242,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-16T21:44:24Z",
+      "side": 1,
+      "message": "this should be entity_id. user_id is a public id and might not be understood by the driver.",
+      "range": {
+        "startLine": 1242,
+        "startChar": 31,
+        "endLine": 1242,
+        "endChar": 38
+      },
+      "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d873e413",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-16T21:44:24Z",
+      "side": 1,
+      "message": "this change looks unrelated. I suggest to move it out to another patch.",
+      "range": {
+        "startLine": 150,
+        "startChar": 20,
+        "endLine": 150,
+        "endChar": 35
+      },
+      "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
