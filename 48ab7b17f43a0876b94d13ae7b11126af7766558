@@ -22,6 +22,24 @@
       "revId": "48ab7b17f43a0876b94d13ae7b11126af7766558",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_76badcc1",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-16T13:30:25Z",
+      "side": 1,
+      "message": "I wonder if its more clear to be explicit. When other developers write code that need a FernetUtils objects, I think I\u0027d rather have them explicitly know what key repository and active key count they are using. Instead of just getting an instance of FernetUtils that ends up doing operations on a key repository you didn\u0027t mean to operate on.",
+      "parentUuid": "3ac371cc_c6a06593",
+      "revId": "48ab7b17f43a0876b94d13ae7b11126af7766558",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
