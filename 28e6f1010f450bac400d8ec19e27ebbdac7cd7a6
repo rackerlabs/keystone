@@ -39,6 +39,24 @@
       "revId": "28e6f1010f450bac400d8ec19e27ebbdac7cd7a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_dc691fc0",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-16T18:56:36Z",
+      "side": 1,
+      "message": "Right - do you have an opinion?\n\nI\u0027m inclined to just remove it and see what happens.",
+      "parentUuid": "3ac371cc_56ea2e10",
+      "revId": "28e6f1010f450bac400d8ec19e27ebbdac7cd7a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
