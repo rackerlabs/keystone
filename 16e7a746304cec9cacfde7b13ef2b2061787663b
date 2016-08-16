@@ -158,6 +158,30 @@
       "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_ef44381c",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-16T12:18:16Z",
+      "side": 1,
+      "message": "Not sure about that...unless we want to re-write history of the current repo (which is now effectively the expand repo). We could start at the current version number (e.g. 100 or so) if we wanted, I suppose. And of course many expand changes don\u0027t have any migration or contract work to do",
+      "parentUuid": "3ac371cc_f401ab6b",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 35
+      },
+      "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
