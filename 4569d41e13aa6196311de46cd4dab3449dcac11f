@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_c4820c52",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-16T08:53:18Z",
+      "side": 1,
+      "message": "maybe any testcase for this new addon?",
+      "range": {
+        "startLine": 410,
+        "startChar": 8,
+        "endLine": 410,
+        "endChar": 53
+      },
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_536eeb01",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 14
@@ -42,6 +65,29 @@
         "startChar": 8,
         "endLine": 180,
         "endChar": 25
+      },
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c49b2cc8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-16T08:53:18Z",
+      "side": 1,
+      "message": "Nice! :)",
+      "range": {
+        "startLine": 562,
+        "startChar": 4,
+        "endLine": 562,
+        "endChar": 52
       },
       "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
