@@ -13,9 +13,12 @@
 # under the License.
 
 from tempest.common import credentials_factory as common_creds
+from tempest import config
 from tempest import test
 
 from keystone_tempest_plugin import clients
+
+CONF = config.CONF
 
 
 class BaseIdentityTest(test.BaseTestCase):
@@ -36,3 +39,9 @@ class BaseIdentityTest(test.BaseTestCase):
         cls.idps_client = cls.keystone_manager.identity_providers_client
         cls.mappings_client = cls.keystone_manager.mapping_rules_client
         cls.sps_client = cls.keystone_manager.service_providers_client
+
+    @classmethod
+    def resource_setup(cls):
+        if not CONF.service_available.keystone:
+            raise cls.skipException("Keystone is disabled")
+        super(BaseIdentityTest, cls).resource_setup()
