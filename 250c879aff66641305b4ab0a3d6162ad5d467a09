@@ -39,6 +39,30 @@
       "revId": "250c879aff66641305b4ab0a3d6162ad5d467a09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d678dec6",
+        "filename": "keystone/tests/unit/ksfixtures/key_repository.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-16T18:26:47Z",
+      "side": 1,
+      "message": "Well, key_repository\u003ddirectory anyways. ^\n\nHowever, my question above still stands.",
+      "parentUuid": "3ac371cc_f68fdac9",
+      "range": {
+        "startLine": 35,
+        "startChar": 12,
+        "endLine": 35,
+        "endChar": 21
+      },
+      "revId": "250c879aff66641305b4ab0a3d6162ad5d467a09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
