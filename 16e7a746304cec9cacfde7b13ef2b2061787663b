@@ -134,6 +134,30 @@
       "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f401ab6b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-16T12:10:20Z",
+      "side": 1,
+      "message": "Yeah, I think we will need an expand repo, so that when a developer makes a db change, they will add a new script in each phase with the same number.  So a 001 script in each repo (expand, migrate, contract).",
+      "parentUuid": "3ac371cc_62e98f80",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 35
+      },
+      "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
