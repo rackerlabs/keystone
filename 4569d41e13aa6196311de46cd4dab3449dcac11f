@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_536eeb01",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-16T03:51:13Z",
+      "side": 1,
+      "message": "not a big deal, but shouldn\u0027t \"expand_schema\" be added here?",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 180,
+        "endChar": 25
+      },
+      "revId": "4569d41e13aa6196311de46cd4dab3449dcac11f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
