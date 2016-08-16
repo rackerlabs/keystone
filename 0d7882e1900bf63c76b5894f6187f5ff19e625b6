@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_f669ac26",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-16T13:33:14Z",
+      "side": 1,
+      "message": "This should probably be changed to 3. If I\u0027m thinking about this right, I don\u0027t think 2 keys will be enough to properly rotate. This is because the staged key is always introduced as the 0 key and there would only ever be one primary key (1, 2, 3, 4, etc...). The repository would only ever consist of 0 and 1, or 0 and 2, or 0 and 3. By making 3 the default, we could ensure that we properly rotate all credentials to the new key before pruning the third key.\n\nDoes this sound right?",
+      "revId": "0d7882e1900bf63c76b5894f6187f5ff19e625b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
