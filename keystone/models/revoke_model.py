@@ -298,16 +298,6 @@ def matches(event, token_values):
             event.issued_before)
         return False
 
-    if LOG.logger.getEffectiveLevel() <= log.DEBUG:
-        # The string formatting here needs to be conditional, so that the
-        # extra work can be skipped if DEBUG logs are not actually being
-        # written anywhere.
-        event_dict = event.to_dict()
-        attrs = ', '.join('='.join(item) for item in event_dict.items())
-        LOG.debug(
-            'All attributes (%s) in the revocation event are in the token.',
-            attrs, )
-
     return True
 
 
