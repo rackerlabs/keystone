@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_02641b47",
+        "filename": "keystone/common/sql/migrate_repo_contract/versions/001_fixup_password_date_columns.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-16T07:12:23Z",
+      "side": 1,
+      "message": "So that\u0027s how I had it originally in my previous patch....but since this problem only occurs when we are running a mixture of releases (i.e. Mitaka and Newton), this check has to happen after we have moved all the nodes to Newton.  The data migration happens before we start running the first Newton node, so we can\u0027t do it there. A side benefit is that it feel safer doing this right before we set the column to non nullable.",
+      "parentUuid": "3ac371cc_f33437fc",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 61
+      },
+      "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_5547f61c",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 17
@@ -77,6 +101,30 @@
       "writtenOn": "2016-08-16T00:09:05Z",
       "side": 1,
       "message": "I assume this will change when you add expand, something like:\n_sync_additional_repo(repo_name\u003d\u0027migrate_repo_expand\u0027)",
+      "range": {
+        "startLine": 218,
+        "startChar": 3,
+        "endLine": 218,
+        "endChar": 35
+      },
+      "revId": "16e7a746304cec9cacfde7b13ef2b2061787663b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_62e98f80",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-16T07:12:23Z",
+      "side": 1,
+      "message": "We could...although the expand repo is the current repo, so wasn\u0027t intending to change the name....although happy to if people think that would be better.",
+      "parentUuid": "3ac371cc_5547f61c",
       "range": {
         "startLine": 218,
         "startChar": 3,
