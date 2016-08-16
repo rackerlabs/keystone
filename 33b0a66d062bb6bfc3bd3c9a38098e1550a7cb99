@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_cf185c87",
+        "filename": "keystone/tests/unit/test_backend_kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-16T12:29:06Z",
+      "side": 1,
+      "message": "to proper test the function you should consider some extra cases, for example:\n \n  - an empty list\n  - a list with all the tokens within the same second\n  - the bisect discarding all the values\n  - the bisect discarding none of the values",
+      "revId": "33b0a66d062bb6bfc3bd3c9a38098e1550a7cb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_8f59445d",
+        "filename": "keystone/tests/unit/test_backend_kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-16T12:29:06Z",
+      "side": 1,
+      "message": "what do you think about using some tooling to get the times instead of using manual values?",
+      "revId": "33b0a66d062bb6bfc3bd3c9a38098e1550a7cb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_6f54c820",
+        "filename": "keystone/tests/unit/test_backend_kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-16T12:29:06Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "33b0a66d062bb6bfc3bd3c9a38098e1550a7cb99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
