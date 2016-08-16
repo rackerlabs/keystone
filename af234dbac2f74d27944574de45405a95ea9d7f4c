@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_95d9c8f5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-16T21:45:07Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you do this first, no point in building a map if mapping is not needed.",
+      "range": {
+        "startLine": 625,
+        "startChar": 8,
+        "endLine": 626,
+        "endChar": 27
+      },
+      "revId": "af234dbac2f74d27944574de45405a95ea9d7f4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
