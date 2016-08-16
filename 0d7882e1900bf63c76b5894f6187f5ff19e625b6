@@ -16,6 +16,24 @@
       "revId": "0d7882e1900bf63c76b5894f6187f5ff19e625b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_36a7c450",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-16T13:35:58Z",
+      "side": 1,
+      "message": "That being said - if we only need 3 keys and if we can enforce proper rotation and migration through keystone-manage using the key_hash, does it even make sense to expose this through config?",
+      "parentUuid": "3ac371cc_f669ac26",
+      "revId": "0d7882e1900bf63c76b5894f6187f5ff19e625b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
