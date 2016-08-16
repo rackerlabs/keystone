@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_1636f6e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-16T18:07:42Z",
+      "side": 1,
+      "message": "bp credential-encryption",
+      "revId": "28e6f1010f450bac400d8ec19e27ebbdac7cd7a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_56ea2e10",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-16T18:07:42Z",
+      "side": 1,
+      "message": "We need to decide on this first",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 18
+      },
+      "revId": "28e6f1010f450bac400d8ec19e27ebbdac7cd7a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
