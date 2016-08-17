@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_c59d7f67",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-17T20:31:13Z",
+      "side": 1,
+      "message": "Will fix.",
+      "parentUuid": "3ac371cc_f4666f4f",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_14c98b26",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-17T19:24:12Z",
       "side": 1,
       "message": "But, that\u0027s not an option. Copy pasta!",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_058af71a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-17T20:31:13Z",
+      "side": 1,
+      "message": "Yep - this is left over from the original implementation. I will refactor.",
+      "parentUuid": "3ac371cc_14c98b26",
       "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
