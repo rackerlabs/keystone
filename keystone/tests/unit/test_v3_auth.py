@@ -2426,6 +2426,7 @@ class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
                           TokenDataTests):
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
@@ -4894,6 +4895,7 @@ class TestTrustAuthPKIZTokenProvider(TrustAPIBehavior, TestTrustChain):
 class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
     def config_overrides(self):
         super(TestTrustAuthFernetTokenProvider, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token',
                                    provider='fernet',
                                    revoke_by_id=False)

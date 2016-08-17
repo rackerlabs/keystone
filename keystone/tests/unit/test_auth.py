@@ -624,6 +624,7 @@ class UUIDAuthWithToken(AuthWithToken, AuthTest):
 class FernetAuthWithToken(AuthWithToken, AuthTest):
     def config_overrides(self):
         super(FernetAuthWithToken, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
@@ -828,6 +829,7 @@ class FernetAuthWithRemoteUser(AuthWithRemoteUser, AuthTest):
 
     def config_overrides(self):
         super(FernetAuthWithRemoteUser, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
@@ -1300,6 +1302,7 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
 
     def config_overrides(self):
         super(FernetAuthWithTrust, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 

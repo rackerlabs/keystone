@@ -718,6 +718,7 @@ SAMPLE_MALFORMED_TOKEN = {
 class TestTokenProvider(unit.TestCase):
     def setUp(self):
         super(TestTokenProvider, self).setUp()
+        self.load_backends()
         self.useFixture(database.Database())
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         self.load_backends()

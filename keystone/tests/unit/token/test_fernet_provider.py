@@ -39,6 +39,7 @@ CONF = keystone.conf.CONF
 class TestFernetTokenProvider(unit.TestCase):
     def setUp(self):
         super(TestFernetTokenProvider, self).setUp()
+        self.load_backends()
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         self.provider = fernet.Provider()
 
@@ -72,6 +73,7 @@ class TestFernetTokenProvider(unit.TestCase):
 class TestValidate(unit.TestCase):
     def setUp(self):
         super(TestValidate, self).setUp()
+        self.load_backends()
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         self.useFixture(database.Database())
         self.load_backends()
@@ -217,6 +219,7 @@ class TestValidate(unit.TestCase):
 class TestTokenFormatter(unit.TestCase):
     def setUp(self):
         super(TestTokenFormatter, self).setUp()
+        self.load_backends()
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
     def test_restore_padding(self):
@@ -478,6 +481,7 @@ class TestPayloads(unit.TestCase):
 class TestFernetKeyRotation(unit.TestCase):
     def setUp(self):
         super(TestFernetKeyRotation, self).setUp()
+        self.load_backends()
 
         # A collection of all previously-seen signatures of the key
         # repository's contents.
@@ -619,6 +623,7 @@ class TestFernetKeyRotation(unit.TestCase):
 
 class TestLoadKeys(unit.TestCase):
     def test_non_numeric_files(self):
+        self.load_backends()
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
         evil_file = os.path.join(CONF.fernet_tokens.key_repository, '~1')
         with open(evil_file, 'w'):

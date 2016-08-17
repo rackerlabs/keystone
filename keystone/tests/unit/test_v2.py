@@ -1451,6 +1451,7 @@ class V2TestCaseFernet(V2TestCase, RestfulTestCase, CoreApiTests,
 
     def config_overrides(self):
         super(V2TestCaseFernet, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
@@ -1518,6 +1519,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
 
     def config_overrides(self):
         super(TestFernetTokenProviderV2, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 

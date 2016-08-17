@@ -2529,6 +2529,7 @@ class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
     def config_overrides(self):
         super(FernetFederatedTokenTests, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
