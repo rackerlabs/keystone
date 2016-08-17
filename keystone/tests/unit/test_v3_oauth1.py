@@ -617,9 +617,8 @@ class AuthTokenTests(object):
 
 class FernetAuthTokenTests(AuthTokenTests, OAuthFlowTests):
 
-    def config_overrides(self):
-        super(FernetAuthTokenTests, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
+    def setUp(self):
+        super(FernetAuthTokenTests, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -627,6 +626,10 @@ class FernetAuthTokenTests(AuthTokenTests, OAuthFlowTests):
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+    def config_overrides(self):
+        super(FernetAuthTokenTests, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
 
     def test_delete_keystone_tokens_by_consumer_id(self):
         self.skipTest('Fernet tokens are never persisted in the backend.')
