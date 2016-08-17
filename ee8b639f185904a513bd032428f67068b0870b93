@@ -16,6 +16,24 @@
       "revId": "ee8b639f185904a513bd032428f67068b0870b93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_05bcb7da",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-17T20:29:57Z",
+      "side": 0,
+      "message": "I could - but I use the self.credential_api.driver.list_credentials() call and I rely on the fact that the credential will have the key_hash in it. If I add it to the model or driver, I don\u0027t think I\u0027ll get that information unless I\u0027m in the driver, right?",
+      "parentUuid": "3ac371cc_d447f3b9",
+      "revId": "ee8b639f185904a513bd032428f67068b0870b93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
