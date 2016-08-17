@@ -27,6 +27,7 @@ class TestFernetCredentialProvider(unit.TestCase):
     def setUp(self):
         super(TestFernetCredentialProvider, self).setUp()
         self.provider = fernet.Provider()
+        self.load_backends()
         self.useFixture(database.Database())
         self.useFixture(
             ksfixtures.KeyRepository(
