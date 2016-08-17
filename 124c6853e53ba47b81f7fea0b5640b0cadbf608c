@@ -93,6 +93,24 @@
       "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_bf44d5b6",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:37:24Z",
+      "side": 1,
+      "message": "It is only related in that this patch used to introduce a second _update_user() method -- now called _update_password_created_at() in this patchset -- and the two of them behaved completely differently, despite sharing the exact same name. They\u0027re now both name to reflect what they actually do.\n\nI don\u0027t have a preference on whether it lands together or separately, but it should be be named more accurately.",
+      "parentUuid": "3ac371cc_181c5c76",
+      "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
