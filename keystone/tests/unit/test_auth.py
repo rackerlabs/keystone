@@ -621,9 +621,9 @@ class UUIDAuthWithToken(AuthWithToken, AuthTest):
 
 
 class FernetAuthWithToken(AuthWithToken, AuthTest):
-    def config_overrides(self):
-        super(FernetAuthWithToken, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
+
+    def setUp(self):
+        super(FernetAuthWithToken, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -631,6 +631,10 @@ class FernetAuthWithToken(AuthWithToken, AuthTest):
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+    def config_overrides(self):
+        super(FernetAuthWithToken, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
 
     def test_token_auth_with_binding(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
@@ -831,9 +835,8 @@ class AuthWithRemoteUser(object):
 
 class FernetAuthWithRemoteUser(AuthWithRemoteUser, AuthTest):
 
-    def config_overrides(self):
-        super(FernetAuthWithRemoteUser, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
+    def setUp(self):
+        super(FernetAuthWithRemoteUser, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -841,6 +844,10 @@ class FernetAuthWithRemoteUser(AuthWithRemoteUser, AuthTest):
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+    def config_overrides(self):
+        super(FernetAuthWithRemoteUser, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
 
     def test_bind_with_kerberos(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
@@ -1329,6 +1336,9 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
     def config_overrides(self):
         super(FernetAuthWithTrust, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def setUp(self):
+        super(FernetAuthWithTrust, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -1336,9 +1346,6 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
                 CONF.fernet_tokens.max_active_keys
             )
         )
-
-    def setUp(self):
-        super(FernetAuthWithTrust, self).setUp()
 
     def test_delete_tokens_for_user_invalidates_tokens_from_trust(self):
         # TODO(lbragstad): Rewrite this test to not rely on the persistence
