@@ -111,6 +111,24 @@
       "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_5fb4c180",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-17T18:42:12Z",
+      "side": 1,
+      "message": "++ I was thinking the parameter names would help describe the method\u0027s behavior, but agree with the change and would prefer that it go with this patch.",
+      "parentUuid": "3ac371cc_bf44d5b6",
+      "revId": "124c6853e53ba47b81f7fea0b5640b0cadbf608c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
