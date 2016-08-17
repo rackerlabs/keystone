@@ -1448,10 +1448,15 @@ class V2TestCaseUUID(V2TestCase, RestfulTestCase, CoreApiTests,
 
 class V2TestCaseFernet(V2TestCase, RestfulTestCase, CoreApiTests,
                        LegacyV2UsernameTests):
+    def setUp(self):
+        super(V2TestCaseFernet, self).setUp()
 
     def config_overrides(self):
         super(V2TestCaseFernet, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(V2TestCaseFernet, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -1525,6 +1530,9 @@ class TestFernetTokenProviderV2(RestfulTestCase):
     def config_overrides(self):
         super(TestFernetTokenProviderV2, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(TestFernetTokenProviderV2, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,

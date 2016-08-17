@@ -216,6 +216,7 @@ class FernetUtilsTestCase(unit.BaseTestCase):
     def setUp(self):
         super(FernetUtilsTestCase, self).setUp()
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.useFixture(ksfixtures.BackendLoader(self))
 
     def test_debug_message_logged_when_loading_fernet_token_keys(self):
         self.useFixture(

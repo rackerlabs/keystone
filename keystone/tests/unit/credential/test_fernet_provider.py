@@ -30,6 +30,7 @@ class TestFernetCredentialProvider(unit.TestCase):
     def setUp(self):
         super(TestFernetCredentialProvider, self).setUp()
         self.provider = credential_fernet.Provider()
+        self.load_backends()
         self.useFixture(database.Database())
         self.useFixture(
             ksfixtures.KeyRepository(
@@ -57,6 +58,7 @@ class TestFernetCredentialProviderWithNullKey(unit.TestCase):
         super(TestFernetCredentialProviderWithNullKey, self).setUp()
         self.provider = credential_fernet.Provider()
         self.useFixture(database.Database())
+        self.load_backends()
 
     def test_encryption_with_null_key(self):
         null_key = fernet_utils.NULL_KEY
