@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_f4666f4f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:24:12Z",
+      "side": 1,
+      "message": "There\u0027s that magic number again.",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_14c98b26",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:24:12Z",
+      "side": 1,
+      "message": "But, that\u0027s not an option. Copy pasta!",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_34ebe779",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:24:12Z",
+      "side": 1,
+      "message": "Raise an instance of the exception, not the class itself. You should also be able to pass it the _(msg) instead of manually printing it.",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_d4fa5342",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:24:12Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_54b4a380",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:24:12Z",
+      "side": 1,
+      "message": "As mentioned in a previous review: `true` (`True` is Python\u0027s syntax).",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
