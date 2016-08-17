@@ -1448,10 +1448,8 @@ class V2TestCaseUUID(V2TestCase, RestfulTestCase, CoreApiTests,
 
 class V2TestCaseFernet(V2TestCase, RestfulTestCase, CoreApiTests,
                        LegacyV2UsernameTests):
-
-    def config_overrides(self):
-        super(V2TestCaseFernet, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
+    def setUp(self):
+        super(V2TestCaseFernet, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -1459,6 +1457,10 @@ class V2TestCaseFernet(V2TestCase, RestfulTestCase, CoreApiTests,
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+    def config_overrides(self):
+        super(V2TestCaseFernet, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
 
     def test_fetch_revocation_list_md5(self):
         self.skipTest('Revocation lists do not support Fernet')
@@ -1490,6 +1492,13 @@ class TestFernetTokenProviderV2(RestfulTestCase):
 
     def setUp(self):
         super(TestFernetTokenProviderV2, self).setUp()
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
         # Add catalog data
         self.region = unit.new_region_ref()
         self.region_id = self.region['id']
@@ -1525,13 +1534,6 @@ class TestFernetTokenProviderV2(RestfulTestCase):
     def config_overrides(self):
         super(TestFernetTokenProviderV2, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
-        self.useFixture(
-            ksfixtures.KeyRepository(
-                self.config_fixture,
-                'fernet_tokens',
-                CONF.fernet_tokens.max_active_keys
-            )
-        )
 
     def test_authenticate_unscoped_token(self):
         unscoped_token = self.get_unscoped_token()

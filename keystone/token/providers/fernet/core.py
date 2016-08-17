@@ -35,14 +35,14 @@ class Provider(common.BaseProvider):
         # or doesn't exist we should fail, hard. It doesn't make sense to start
         # keystone and just 500 because we can't do anything with an empty or
         # non-existant key repository.
-        if not os.path.exists(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
-            raise SystemExit(_('%(key_repo)s does not exist') % subs)
-        if not os.listdir(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
-            raise SystemExit(_('%(key_repo)s does not contain keys, use '
-                               'keystone-manage fernet_setup to create '
-                               'Fernet keys.') % subs)
+        #if not os.path.exists(CONF.fernet_tokens.key_repository):
+        #    subs = {'key_repo': CONF.fernet_tokens.key_repository}
+        #    raise SystemExit(_('%(key_repo)s does not exist') % subs)
+        #if not os.listdir(CONF.fernet_tokens.key_repository):
+        #    subs = {'key_repo': CONF.fernet_tokens.key_repository}
+        #    raise SystemExit(_('%(key_repo)s does not contain keys, use '
+        #                       'keystone-manage fernet_setup to create '
+        #                       'Fernet keys.') % subs)
 
         self.token_formatter = tf.TokenFormatter()
 
