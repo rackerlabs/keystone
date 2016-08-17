@@ -621,9 +621,13 @@ class UUIDAuthWithToken(AuthWithToken, AuthTest):
 
 
 class FernetAuthWithToken(AuthWithToken, AuthTest):
+
     def config_overrides(self):
         super(FernetAuthWithToken, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(FernetAuthWithToken, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -834,6 +838,9 @@ class FernetAuthWithRemoteUser(AuthWithRemoteUser, AuthTest):
     def config_overrides(self):
         super(FernetAuthWithRemoteUser, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(FernetAuthWithRemoteUser, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -1328,8 +1335,15 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
 
     def config_overrides(self):
         super(FernetAuthWithTrust, self).config_overrides()
+<<<<<<< HEAD
         self.config_fixture.config(group='token', provider='fernet',
                                    cache_on_issue=True)
+=======
+        self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(FernetAuthWithTrust, self).load_fixtures(fixtures)
+>>>>>>> [WIP] Move fernet utils to backend
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,

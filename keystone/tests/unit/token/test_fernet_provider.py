@@ -39,6 +39,7 @@ CONF = keystone.conf.CONF
 class TestFernetTokenProvider(unit.TestCase):
     def setUp(self):
         super(TestFernetTokenProvider, self).setUp()
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -78,6 +79,7 @@ class TestFernetTokenProvider(unit.TestCase):
 class TestValidate(unit.TestCase):
     def setUp(self):
         super(TestValidate, self).setUp()
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -86,7 +88,6 @@ class TestValidate(unit.TestCase):
             )
         )
         self.useFixture(database.Database())
-        self.load_backends()
 
     def config_overrides(self):
         super(TestValidate, self).config_overrides()
@@ -229,6 +230,7 @@ class TestValidate(unit.TestCase):
 class TestTokenFormatter(unit.TestCase):
     def setUp(self):
         super(TestTokenFormatter, self).setUp()
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -496,6 +498,7 @@ class TestPayloads(unit.TestCase):
 class TestFernetKeyRotation(unit.TestCase):
     def setUp(self):
         super(TestFernetKeyRotation, self).setUp()
+        self.load_backends()
 
         # A collection of all previously-seen signatures of the key
         # repository's contents.
@@ -649,6 +652,7 @@ class TestFernetKeyRotation(unit.TestCase):
 
 class TestLoadKeys(unit.TestCase):
     def test_non_numeric_files(self):
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
