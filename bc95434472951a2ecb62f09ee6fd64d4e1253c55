@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_7e472e77",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-08-17T05:20:52Z",
+      "side": 0,
+      "message": "Seems weird that this was listed in here twice",
+      "revId": "bc95434472951a2ecb62f09ee6fd64d4e1253c55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
