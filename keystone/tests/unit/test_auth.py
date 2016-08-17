@@ -16,6 +16,7 @@ import copy
 import datetime
 import random
 import string
+import time
 import uuid
 
 import mock
@@ -1304,6 +1305,30 @@ class AuthWithTrust(object):
         self.disable_user(self.trustee)
         self.assertRaises(
             exception.Unauthorized,
+            self.controller.authenticate, self.make_request(), request_body)
+
+    def test_trust_get_token_fails_if_trustee_disabled_2(self):
+        """Test disabling trustee and using an unrevoked token.
+
+        This test simulates what happens when a Fernet token is generated
+        *after* the disable event. Technically this should not happen, but
+        it's possible in a multinode deployment with only a slight clock skew.
+        """
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+
+        # NOTE(dstanek): cryptography.fernet gets it's timestamps from
+        # time.time(). We need to control what it gets.
+        epoch = datetime.datetime.utcfromtimestamp(0)
+        future_time = (timeutils.utcnow() - epoch).total_seconds() + 5
+
+        # get a token from the future
+        with mock.patch.object(time, 'time', lambda: future_time):
+            request_body = self.build_v2_token_request(
+                self.trustee['name'], self.trustee['password'], new_trust)
+
+        self.disable_user(self.trustee)
+        self.assertRaises(
+            exception.Forbidden,
             self.controller.authenticate, self.make_request(), request_body)
 
     def test_validate_trust_scoped_token_against_v2(self):
