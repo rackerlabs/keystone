@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_11019d05",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:47:52Z",
+      "side": 1,
+      "message": "The spirit of keystone.conf is supposed to be production-friendly defaults, and defaulting to a complete lack of security is not production friendly.\n\nSo, I\u0027d rather not see this option exist at all, in that I\u0027d rather keystone require credentials to be encrypted in order to use the API. In other words, I\u0027d rather see keystone raise a 500 if you haven\u0027t populated the credential-keys repository and you try to POST to the /v3/credentials API.\n\nThe only use case for supporting this option is if we also had an example of a backend that performed the encryption for us (liiike Barbican). So, I guess keep the option, but you could amend the description with something about this only being useful for `[credential] driver` options that do not automatically encrypt credentials, such as \u0027sql\u0027.\n\n\u003c/rant\u003e",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_71f8d1c3",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:47:52Z",
+      "side": 1,
+      "message": "`True` is a Python representation of a boolean value. keystone.conf is in INI format, so the value would be just be `true` there (although oslo.config is case insensitive on the issue).",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_7139f1d6",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:47:52Z",
+      "side": 1,
+      "message": "Note: if you remove the \u0027encrypt\u0027 option, then this last sentence would be dropped.",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f17a0187",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:47:52Z",
+      "side": 1,
+      "message": "to encrypt credentials stored in the credential backend",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f1532115",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T18:47:52Z",
+      "side": 1,
+      "message": "Note: if you remove the \u0027encrypt\u0027 option, then this last sentence would be dropped.",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
