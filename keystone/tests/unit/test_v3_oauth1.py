@@ -615,6 +615,7 @@ class FernetAuthTokenTests(AuthTokenTests, OAuthFlowTests):
 
     def config_overrides(self):
         super(FernetAuthTokenTests, self).config_overrides()
+        self.load_backends()
         self.config_fixture.config(group='token', provider='fernet')
         self.useFixture(ksfixtures.KeyRepository(self.config_fixture))
 
