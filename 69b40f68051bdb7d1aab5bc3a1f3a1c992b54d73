@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_87d0af20",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-17T19:41:05Z",
+      "side": 1,
+      "message": "I like the idea, however the point of a backend performing the encryption for us is valid. Please amend the description as suggested by Dolph.",
+      "parentUuid": "3ac371cc_11019d05",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_71f8d1c3",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
