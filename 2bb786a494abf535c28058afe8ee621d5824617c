@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_53e040fa",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-17T17:23:25Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t make any sense to me. Doesn\u0027t it last forever? What is left to do?",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "2bb786a494abf535c28058afe8ee621d5824617c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_5385e004",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-17T17:23:25Z",
+      "side": 1,
+      "message": "oh wow.",
+      "range": {
+        "startLine": 532,
+        "startChar": 12,
+        "endLine": 532,
+        "endChar": 38
+      },
+      "revId": "2bb786a494abf535c28058afe8ee621d5824617c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
