@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_89e639ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-17T03:43:05Z",
+      "side": 1,
+      "message": "Closes-Bug: 1596500",
+      "revId": "8bb264df1f0936e9deaf293040d6b1c817702640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e91b6dc8",
+        "filename": "keystone/common/sql/data_migration_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-17T03:43:05Z",
+      "side": 1,
+      "message": "reference migration 105, maybe, meh",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 71
+      },
+      "revId": "8bb264df1f0936e9deaf293040d6b1c817702640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_69865ddc",
+        "filename": "keystone/common/sql/expand_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-17T03:43:05Z",
+      "side": 1,
+      "message": "see, you did it here ;)",
+      "range": {
+        "startLine": 14,
+        "startChar": 15,
+        "endLine": 14,
+        "endChar": 18
+      },
+      "revId": "8bb264df1f0936e9deaf293040d6b1c817702640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_89cf5928",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1653,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-17T03:43:05Z",
+      "side": 1,
+      "message": "looks like this one is failing :\\",
+      "range": {
+        "startLine": 1653,
+        "startChar": 6,
+        "endLine": 1653,
+        "endChar": 58
+      },
+      "revId": "8bb264df1f0936e9deaf293040d6b1c817702640",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
