@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_0dcec481",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-17T10:37:03Z",
+      "side": 1,
+      "message": "need to call sync_common_repo here (and make sure we don\u0027t call it in db_sync case if we are going to call expand_schema)",
+      "range": {
+        "startLine": 219,
+        "startChar": 4,
+        "endLine": 219,
+        "endChar": 39
+      },
+      "revId": "d1c903528feb3377f2463a3f7ce66c053c3d0f26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
