@@ -2523,13 +2523,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     AUTH_METHOD = 'token'
 
-    def load_fixtures(self, fixtures):
-        super(FernetFederatedTokenTests, self).load_fixtures(fixtures)
-        self.load_federation_sample_data()
-
-    def config_overrides(self):
-        super(FernetFederatedTokenTests, self).config_overrides()
-        self.config_fixture.config(group='token', provider='fernet')
+    def setUp(self):
+        super(FernetFederatedTokenTests, self).setUp()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -2537,6 +2532,14 @@ class FernetFederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                 CONF.fernet_tokens.max_active_keys
             )
         )
+
+    def load_fixtures(self, fixtures):
+        super(FernetFederatedTokenTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def config_overrides(self):
+        super(FernetFederatedTokenTests, self).config_overrides()
+        self.config_fixture.config(group='token', provider='fernet')
 
     def auth_plugin_config_override(self):
         methods = ['saml2', 'token', 'password']
