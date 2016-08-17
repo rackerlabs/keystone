@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_d447f3b9",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T19:16:55Z",
+      "side": 0,
+      "message": "Won\u0027t key_hash come back in an update call as well? Can you not add the exclusion to the model\u0027s to_dict() instead, or do you need it at the manager layer for some reason?",
+      "revId": "ee8b639f185904a513bd032428f67068b0870b93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
