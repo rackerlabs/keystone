@@ -134,6 +134,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_e48ec477",
+        "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-17T18:01:37Z",
+      "side": 1,
+      "message": "what do you think of \"mapping_populate\"? We already have mapping_purge.",
+      "parentUuid": "3ac371cc_14da644c",
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_9d215eb7",
         "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
         "patchSetId": 8
