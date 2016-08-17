@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_658e442f",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 0,
+      "message": "Can this call _sync_repo() now?",
+      "revId": "0b4f6ebdcc866388e1c6788f45f270414b45aeef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

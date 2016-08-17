@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_8529c08c",
+        "filename": "keystone/common/sql/contract_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "nit: import modules, not objects\n\n  from sqlalchemy.sql import expression",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2201e206",
+        "filename": "keystone/common/sql/contract_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "But, if you created triggers in the expand, did another attempt to populate the column in the data migration phase, you\u0027ll guarantee that everything is populated by the time this script is run.",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_859ee0b6",
+        "filename": "keystone/common/sql/contract_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "We normally abbreviate this variable as \u0027q\u0027 for \u0027query\u0027",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_657ac489",
+        "filename": "keystone/common/sql/contract_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "This portion is really a data migration, not a contract step.\n\nAlso, based on the above change to imports:\n\n  expression.null()",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c50e18e4",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "-1 This exception should be raised -- it doesn\u0027t have anything to do with the exception below that it\u0027s safe to ignore.",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a6dfcd0b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 22
@@ -19,6 +104,40 @@
         "endLine": 1653,
         "endChar": 54
       },
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_45e7c83f",
+        "filename": "releasenotes/notes/bp-manage-migration-c398963a943a89fe.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "undertaken?",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_65d64450",
+        "filename": "releasenotes/notes/bp-manage-migration-c398963a943a89fe.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-17T22:31:00Z",
+      "side": 1,
+      "message": "Woot!",
       "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
