@@ -14,6 +14,7 @@ from keystone import assignment
 from keystone import auth
 from keystone import catalog
 from keystone.common import cache
+from keystone.common.fernet_key_store import core as fernet_key_core
 from keystone import credential
 from keystone import endpoint_policy
 from keystone import federation
@@ -55,6 +56,7 @@ def load_backends():
         domain_config_api=resource.DomainConfigManager(),
         endpoint_policy_api=endpoint_policy.Manager(),
         federation_api=federation.Manager(),
+        fernet_key_store_api=fernet_key_core.Manager(),
         id_generator_api=identity.generator.Manager(),
         id_mapping_api=identity.MappingManager(),
         identity_api=_IDENTITY_API,

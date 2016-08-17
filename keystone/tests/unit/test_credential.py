@@ -113,6 +113,7 @@ class V2CredentialEc2Controller(unit.TestCase):
     def setUp(self):
         super(V2CredentialEc2Controller, self).setUp()
         self.useFixture(database.Database())
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -120,7 +121,6 @@ class V2CredentialEc2Controller(unit.TestCase):
                 credential_fernet.MAX_ACTIVE_KEYS
             )
         )
-        self.load_backends()
         self.load_fixtures(default_fixtures)
         self.user_id = self.user_foo['id']
         self.project_id = self.tenant_bar['id']
