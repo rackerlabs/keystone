@@ -1569,6 +1569,7 @@ class SqlContractSchemaUpgradeTests(SqlMigrateBase, unit.TestCase):
         # upgraded, since the contract phase is only run after these are
         # upgraded.
         super(SqlContractSchemaUpgradeTests, self).setUp()
+        self.load_backends()
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -1642,6 +1643,7 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
     def setUp(self):
         super(FullMigration, self).setUp()
         # Upgrade the legacy repository
+        self.load_backends()
         self.upgrade()
 
     def test_migration_002_password_created_at_not_nullable(self):

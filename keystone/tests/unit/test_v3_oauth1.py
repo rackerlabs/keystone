@@ -616,10 +616,12 @@ class AuthTokenTests(object):
 
 
 class FernetAuthTokenTests(AuthTokenTests, OAuthFlowTests):
-
     def config_overrides(self):
         super(FernetAuthTokenTests, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet')
+
+    def load_fixtures(self, fixtures):
+        super(FernetAuthTokenTests, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,

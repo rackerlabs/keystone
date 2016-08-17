@@ -14,6 +14,13 @@ from oslo_config import cfg
 
 from keystone.conf import utils
 
+key_store_driver = cfg.StrOpt(
+    'key_store_driver',
+    default='files',
+    help=utils.fmt("""
+Entry point for the fernet key store backend driver in the
+`keystone.fernet_key_store` namespace.
+"""))
 
 key_repository = cfg.StrOpt(
     'key_repository',
@@ -58,6 +65,7 @@ GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
     key_repository,
     max_active_keys,
+    key_store_driver,
 ]
 
 
