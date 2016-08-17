@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_e5d6bb4d",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-17T21:21:50Z",
+      "side": 1,
+      "message": "I completely agree, but I\u0027m having a hard time visualizing a rolling upgrade process without this option.\n\nLet\u0027s say we have a deployment of Mitaka nodes that have credentials persisted as plaintext strings (just like today). As a deployer I\u0027m going to attempt a rolling upgrade. I take one keystone node out of rotation and upgrade it to Newton and I perform a `keystone-manage credential_migrate`. My Newton node should be able to handle all the migrated credentials without issue. But what about the Mitaka nodes? I believe they would be returning ciphertext as the credential blobs. Having this options gets around that by ensuring all nodes are updated to Newton before `[credential] encrypt` is set to true.\n\nEven if we make this feature dependent on rolling upgrades and introduce triggers to copy data back and forth to the new column, we can still run into issues where a credential is created on a Newton node and an update on Mitaka will copy plaintext values to places that expect ciphertext. Making the encryption pieces work in the triggers would be pretty tough.\n\nIf we don\u0027t have a requirement for uptime, then we can remove this option. The upgrade would look like:\n\n - take down all keystone nodes\n - upgrade all nodes to Newton code\n - encrypt all existing plaintext credentials using \u0027keystone-manage credential_migrate\u0027\n - restart all keystone nodes",
+      "parentUuid": "3ac371cc_87d0af20",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a79a0b6c",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
