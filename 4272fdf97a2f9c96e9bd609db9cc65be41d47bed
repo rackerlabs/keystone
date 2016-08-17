@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_a6dfcd0b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1653,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-17T11:31:08Z",
+      "side": 1,
+      "message": "There\u0027s still something screwy happening here - basically the database is not getting reset between each TestCase...meaning that a previous test pollutes the next",
+      "range": {
+        "startLine": 1647,
+        "startChar": 0,
+        "endLine": 1653,
+        "endChar": 54
+      },
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
