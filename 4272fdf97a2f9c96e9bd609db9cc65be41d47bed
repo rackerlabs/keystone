@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_d0fd346f",
+        "filename": "keystone/common/sql/contract_repo/versions/001_make_password_create_at_non_nullable.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-17T22:42:42Z",
+      "side": 1,
+      "message": "++ Lets use triggers and have a working example.",
+      "parentUuid": "3ac371cc_657ac489",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_c50e18e4",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 22
