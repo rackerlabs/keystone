@@ -552,6 +552,8 @@ class FernetSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
+        backends.load_backends()
+
         from keystone.common import fernet_utils as utils
         fernet_utils = utils.FernetUtils(
             CONF.fernet_tokens.key_repository,
@@ -587,6 +589,7 @@ class FernetRotate(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
+        backends.load_backends()
         from keystone.common import fernet_utils as utils
         fernet_utils = utils.FernetUtils(
             CONF.fernet_tokens.key_repository,
@@ -611,6 +614,7 @@ class CredentialSetup(BasePermissionsSetup):
 
     @classmethod
     def main(cls):
+        backends.load_backends()
         from keystone.common import fernet_utils as utils
         fernet_utils = utils.FernetUtils(
             CONF.credential.key_repository,
