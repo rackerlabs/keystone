@@ -2424,10 +2424,14 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
 
 class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
                           TokenDataTests):
+
     def config_overrides(self):
         super(TestFernetTokenAPIs, self).config_overrides()
         self.config_fixture.config(group='token', provider='fernet',
                                    cache_on_issue=True)
+
+    def load_fixtures(self, fixtures):
+        super(TestFernetTokenAPIs, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -4906,6 +4910,9 @@ class TestTrustAuthPKIZTokenProvider(TrustAPIBehavior, TestTrustChain):
 
 
 class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
+    def setUp(self):
+        super(TestTrustAuthFernetTokenProvider, self).setUp()
+
     def config_overrides(self):
         super(TestTrustAuthFernetTokenProvider, self).config_overrides()
         self.config_fixture.config(group='token',
@@ -4913,6 +4920,9 @@ class TestTrustAuthFernetTokenProvider(TrustAPIBehavior, TestTrustChain):
                                    revoke_by_id=False)
         self.config_fixture.config(group='trust',
                                    enabled=True)
+
+    def load_fixtures(self, fixtures):
+        super(TestTrustAuthFernetTokenProvider, self).load_fixtures(fixtures)
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
