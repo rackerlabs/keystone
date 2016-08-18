@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_818d02d5",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_e5d6bb4d",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a79a0b6c",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
@@ -78,6 +96,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_a192bef3",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_a79a0b6c",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_71f8d1c3",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
@@ -89,6 +125,24 @@
       "writtenOn": "2016-08-17T18:47:52Z",
       "side": 1,
       "message": "`True` is a Python representation of a boolean value. keystone.conf is in INI format, so the value would be just be `true` there (although oslo.config is case insensitive on the issue).",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_41002a34",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_71f8d1c3",
       "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -112,6 +166,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_61056644",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_7139f1d6",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f17a0187",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
@@ -129,6 +201,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_a1fbde45",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_f17a0187",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f1532115",
         "filename": "keystone/conf/credential.py",
         "patchSetId": 6
@@ -140,6 +230,24 @@
       "writtenOn": "2016-08-17T18:47:52Z",
       "side": 1,
       "message": "Note: if you remove the \u0027encrypt\u0027 option, then this last sentence would be dropped.",
+      "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_81f6a25a",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T14:54:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_f1532115",
       "revId": "69b40f68051bdb7d1aab5bc3a1f3a1c992b54d73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
