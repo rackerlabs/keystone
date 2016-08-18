@@ -161,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_41949543",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:59:17Z",
+      "side": 1,
+      "message": "Each of the three new repos has it\u0027s own set of banned and whitelisted operations. You shouldn\u0027t be able to drop tables, columns, indexes, or triggers in the expand or data migration repos. You shouldn\u0027t be able to create tables, columns, indexes, or triggers in the data migration or contraction repos. You shouldn\u0027t be able to UPDATE or DELETE data in the expand or contract repos.",
+      "parentUuid": "3ac371cc_92da6b15",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_726b7ab7",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 24
@@ -190,6 +208,24 @@
       "side": 1,
       "message": "style change, meh",
       "parentUuid": "3ac371cc_726b7ab7",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a1e0e9cd",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:59:17Z",
+      "side": 1,
+      "message": "Erm, you\u0027re both wrong? (It\u0027s not a style issue, and the current code is correct.) The pattern Lance is suggesting is only useful for mutable, non-primitive objects (which LEGACY_REPO is not) to avoid storing state on method initialization.",
+      "parentUuid": "3ac371cc_921f0bb6",
       "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
