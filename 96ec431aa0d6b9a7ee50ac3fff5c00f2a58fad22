@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_0b40fe06",
+        "filename": "keystone/common/sql/data_migration_repo/migrate.cfg",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-18T19:10:50Z",
+      "side": 1,
+      "message": "++  ...and I\u0027m trying to make sure there isn\u0027t confusion between the old \"migrate_repo\" and the \"data_migration_repo\"",
+      "parentUuid": "3ac371cc_f242bf0d",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_b89e7360",
         "filename": "keystone/common/sql/data_migration_repo/versions/001_data_initial_null_migration.py",
         "patchSetId": 24
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "i think \"null migration\" makes more sense than placeholder, since we won\u0027t be backporting anything so theres nothing to placehold",
       "parentUuid": "3ac371cc_b89e7360",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2bc05a7c",
+        "filename": "keystone/common/sql/data_migration_repo/versions/001_data_initial_null_migration.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-18T19:10:50Z",
+      "side": 1,
+      "message": "...and as per the comment in the commit message, some of our helper functions don\u0027t handle empty repos well",
+      "parentUuid": "3ac371cc_3211f752",
       "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
