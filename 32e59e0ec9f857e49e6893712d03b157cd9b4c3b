@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_afc104e6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-08-18T15:52:02Z",
+      "side": 1,
+      "message": "This is kind of ugly.  I would prefer that you enforcethe domain_id is set from the conf file prior to calling this function if possible.  Otherwise, use the logic in the function after this.",
+      "revId": "32e59e0ec9f857e49e6893712d03b157cd9b4c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
