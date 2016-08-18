@@ -163,6 +163,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_49186cd3",
+        "filename": "releasenotes/notes/bp-manage-migration-c398963a943a89fe.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-18T09:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_45e7c83f",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_65d64450",
         "filename": "releasenotes/notes/bp-manage-migration-c398963a943a89fe.yaml",
         "patchSetId": 22
