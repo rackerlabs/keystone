@@ -126,6 +126,23 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_81a96d27",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T20:06:19Z",
+      "side": 1,
+      "message": "! This should always run _sync_common_repo() in the else block before running expand, migrate, and contract to ensure we\u0027re on the last version of the legacy repository before switching over to the new migrations.",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_4c43486c",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 24
