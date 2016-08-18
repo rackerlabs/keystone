@@ -40,6 +40,24 @@
       "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_79486bcd",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T18:57:55Z",
+      "side": 1,
+      "message": "I meant to ask about this as well. This one isn\u0027t exposed externally, and never will be, so we don\u0027t have any reason to support keys longer than our specific implementation requires (40 chars for a SHA1 hex digest, or 32 for an MD5 hex digest).",
+      "parentUuid": "3ac371cc_8857de24",
+      "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
