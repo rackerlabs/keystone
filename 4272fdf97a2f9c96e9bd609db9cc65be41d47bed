@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_710ba2d6",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-18T00:26:14Z",
+      "side": 1,
+      "message": "It appears that (some versions of) oslo_db catch DatabaseAlreadyControlledError and raises DbMigrationError...at least that was what people were claiming before I also caught DbMigrationError",
+      "parentUuid": "3ac371cc_c50e18e4",
+      "revId": "4272fdf97a2f9c96e9bd609db9cc65be41d47bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_a6dfcd0b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 22
