@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_f242bf0d",
+        "filename": "keystone/common/sql/data_migration_repo/migrate.cfg",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T15:56:57Z",
+      "side": 1,
+      "message": "i think the pattern henry followed was:\n\n  start with keystone_ + folder name (contract/expand/data_migration) + drop _repo\n\n  keystone_contract\n  keystone_expand\n  keystone_data_migration",
+      "parentUuid": "3ac371cc_38c9e3ac",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_b89e7360",
         "filename": "keystone/common/sql/data_migration_repo/versions/001_data_initial_null_migration.py",
         "patchSetId": 24
@@ -48,6 +66,24 @@
       "writtenOn": "2016-08-18T14:12:23Z",
       "side": 1,
       "message": "Do we need this file?  If so, why not 001_placeholder.py as we\u0027ve done in the past?",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_3211f752",
+        "filename": "keystone/common/sql/data_migration_repo/versions/001_data_initial_null_migration.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T15:56:57Z",
+      "side": 1,
+      "message": "i think \"null migration\" makes more sense than placeholder, since we won\u0027t be backporting anything so theres nothing to placehold",
+      "parentUuid": "3ac371cc_b89e7360",
       "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_92da6b15",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T15:56:57Z",
+      "side": 1,
+      "message": "these are the banned operations, not sure those should ever be banned",
+      "parentUuid": "3ac371cc_4c43486c",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_726b7ab7",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 24
@@ -82,6 +136,24 @@
       "writtenOn": "2016-08-18T13:51:11Z",
       "side": 1,
       "message": "Should we change this to None and set the default in the method if repo_name is None? \n\n  def initialize_repo(self, repo_name\u003dNone):\n      if not repo_name:\n          repo_name \u003d LEGACY_REPO",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_921f0bb6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T15:56:57Z",
+      "side": 1,
+      "message": "style change, meh",
+      "parentUuid": "3ac371cc_726b7ab7",
       "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
