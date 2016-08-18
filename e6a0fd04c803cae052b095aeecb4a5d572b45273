@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_8c453944",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-18T14:58:39Z",
+      "side": 1,
+      "message": "it\u0027d be nice to have another user that is not in the list, and consequently cannot auth",
+      "revId": "e6a0fd04c803cae052b095aeecb4a5d572b45273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
