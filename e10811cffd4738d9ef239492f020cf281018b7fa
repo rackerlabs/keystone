@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_9fc38438",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T20:52:17Z",
+      "side": 1,
+      "message": "++",
+      "revId": "e10811cffd4738d9ef239492f020cf281018b7fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
