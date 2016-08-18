@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_7f9b2873",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T20:41:25Z",
+      "side": 1,
+      "message": "good point! this can be done as a follow up i believe",
+      "parentUuid": "3ac371cc_41949543",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_726b7ab7",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 24
