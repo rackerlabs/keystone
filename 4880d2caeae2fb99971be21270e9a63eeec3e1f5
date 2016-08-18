@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_2bf4da85",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1205,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-18T19:22:15Z",
+      "side": 1,
+      "message": "\"imply global roles\" or \"imply a global role\" ?",
+      "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_6b4532b2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1206,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-18T19:22:15Z",
+      "side": 1,
+      "message": "InvalidImpliedRole only shows this custom message in insecure debug mode, would it be safe to create an exception class where these messages could be displayed to the user?",
+      "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2b221a02",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1210,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-08-18T19:22:15Z",
+      "side": 1,
+      "message": "\u0027imply a domain-specific role\u0027 or \u0027imply domain-specific roles\u0027 ?",
+      "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
