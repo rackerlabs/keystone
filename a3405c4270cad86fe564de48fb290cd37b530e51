@@ -22,6 +22,30 @@
       "revId": "a3405c4270cad86fe564de48fb290cd37b530e51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a1c3de36",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-18T14:51:39Z",
+      "side": 1,
+      "message": "Good suggestion, done.",
+      "parentUuid": "3ac371cc_7b7fd514",
+      "range": {
+        "startLine": 71,
+        "startChar": 5,
+        "endLine": 71,
+        "endChar": 33
+      },
+      "revId": "a3405c4270cad86fe564de48fb290cd37b530e51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
