@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_9fac248e",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T20:42:30Z",
+      "side": 1,
+      "message": "This would be a great doctor check -- make sure the two config values are not equal!",
+      "revId": "bd80bb77e930e0fb2679767ef0d8b59bd209f4d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
