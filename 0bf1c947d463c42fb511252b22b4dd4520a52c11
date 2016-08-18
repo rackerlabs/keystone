@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_88642cb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T05:00:55Z",
+      "side": 1,
+      "message": "beef this up a bit",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f4666f4f",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 33
