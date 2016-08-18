@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_de36ac4f",
+        "filename": "keystone/endpoint_policy/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-18T16:45:18Z",
+      "side": 1,
+      "message": "Looks like this class is not implementing all of the base class methods, e.g. list_endpoints_for_policy(self, policy_id):",
+      "range": {
+        "startLine": 51,
+        "startChar": 6,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "6bff01c70f2c65c5a73209d98ec91d77c0473c10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
