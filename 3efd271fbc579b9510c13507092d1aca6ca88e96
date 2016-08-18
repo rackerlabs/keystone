@@ -25,6 +25,57 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_0b0bde7e",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "++",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_ab660a27",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "Reviewing this is weird, considering I\u0027ve already approved a change to delete this comment. It was a good comment while it lasted, anyway.",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2e64e8e3",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "nit: unnecessary indirection.",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_9b7e58e2",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 2
@@ -42,6 +93,74 @@
         "endLine": 1349,
         "endChar": 33
       },
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_ab344afb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "++",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_4ec3248b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "Seems like this should be a required argument? Do we ever not pass it in?",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0e400c07",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "i.e. why would (or should) this ever be null?",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0e0e4ce5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-18T19:29:13Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be on L85, or just not here at all? Not sure how we\u0027d get to this point with trusts being disabled.",
       "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
