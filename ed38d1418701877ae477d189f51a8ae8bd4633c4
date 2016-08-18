@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_68be1000",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-18T04:59:21Z",
+      "side": 1,
+      "message": "whats the reasoning behind 64? i\u0027m not challenging you, just looking for source material or a reason",
+      "range": {
+        "startLine": 30,
+        "startChar": 37,
+        "endLine": 30,
+        "endChar": 39
+      },
+      "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
