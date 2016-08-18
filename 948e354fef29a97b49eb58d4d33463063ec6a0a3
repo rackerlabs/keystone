@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_d92eb5f9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_b4e9d0e8",
+      "range": {
+        "startLine": 1324,
+        "startChar": 4,
+        "endLine": 1324,
+        "endChar": 16
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_94e65413",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-16T22:57:19Z",
       "side": 1,
       "message": "alpha order",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f929f1f3",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_94e65413",
       "range": {
         "startLine": 55,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_79718177",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_143384ac",
+      "range": {
+        "startLine": 1008,
+        "startChar": 0,
+        "endLine": 1023,
+        "endChar": 30
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_981ccc14",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_59f48586",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_981ccc14",
+      "range": {
+        "startLine": 1051,
+        "startChar": 12,
+        "endLine": 1051,
+        "endChar": 35
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_3d32ea10",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -105,6 +201,30 @@
       "writtenOn": "2016-08-16T22:56:50Z",
       "side": 1,
       "message": "put this on line 1069, they should be in order",
+      "range": {
+        "startLine": 1071,
+        "startChar": 4,
+        "endLine": 1071,
+        "endChar": 15
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_b9f13998",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_3d32ea10",
       "range": {
         "startLine": 1071,
         "startChar": 4,
@@ -152,6 +272,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_59d92583",
+        "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_e48ec477",
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_9d215eb7",
         "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
         "patchSetId": 8
@@ -163,6 +301,30 @@
       "writtenOn": "2016-08-16T22:56:50Z",
       "side": 1,
       "message": "wrap this with ``\n\n  ``keystone-manage ldap_prepare``",
+      "range": {
+        "startLine": 3,
+        "startChar": 8,
+        "endLine": 3,
+        "endChar": 36
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_39f26907",
+        "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_9d215eb7",
       "range": {
         "startLine": 3,
         "startChar": 8,
@@ -198,6 +360,30 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_d9ecf52b",
+        "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_3d194a89",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_98d96c86",
         "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
         "patchSetId": 8
@@ -209,6 +395,30 @@
       "writtenOn": "2016-08-16T22:56:50Z",
       "side": 1,
       "message": "\"Add ``keystone-manage ldap_prepare`` command, which is recommended to use when keystone is configured with a domain-specific LDAP backend. This command will populate a mapping table with all users from LDAP, it should be used when an LDAP is first configured, before LDAP users have authenticated. For more information see ``keystone-manage prepare_ldap --help``",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 10,
+        "endChar": 33
+      },
+      "revId": "948e354fef29a97b49eb58d4d33463063ec6a0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_f9e73144",
+        "filename": "releasenotes/notes/prepare_ldap-521d92445505b8a3.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-18T22:48:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_98d96c86",
       "range": {
         "startLine": 9,
         "startChar": 10,
