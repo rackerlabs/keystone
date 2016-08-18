@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_cc761805",
+        "filename": "keystone/common/sql/data_migration_repo/migrate.cfg",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T13:51:11Z",
+      "side": 1,
+      "message": "nit: keystone_migrate to be consistent with keystone_expand and keystone_contract?",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_4c43486c",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T13:51:11Z",
+      "side": 1,
+      "message": "What about doing this for the keystone_data_migrate and keystone_contract repos?",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_726b7ab7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T13:51:11Z",
+      "side": 1,
+      "message": "Should we change this to None and set the default in the method if repo_name is None? \n\n  def initialize_repo(self, repo_name\u003dNone):\n      if not repo_name:\n          repo_name \u003d LEGACY_REPO",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
