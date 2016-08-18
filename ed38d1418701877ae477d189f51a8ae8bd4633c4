@@ -22,6 +22,24 @@
       "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_8857de24",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T16:23:49Z",
+      "side": 1,
+      "message": "I figured we\u0027d keep it consistent with what we use for the ID column. Even though IDs are 32 bytes long, we allocate 64 characters for them.\n\nFor the key_hash - I believe the implementation only cares about the first 7 characters of the hash, so we could shorten it to 10 (even though other pluggable implementations might use the full hash). \n\nHappy to shorten it either way. Thoughts?",
+      "parentUuid": "3ac371cc_68be1000",
+      "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
