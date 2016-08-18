@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_13d95684",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-18T19:58:32Z",
+      "side": 1,
+      "message": "every?",
+      "range": {
+        "startLine": 73,
+        "startChar": 40,
+        "endLine": 73,
+        "endChar": 43
+      },
+      "revId": "a5e2906dc4134fd0505d5fbf93b3aba879e133d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
