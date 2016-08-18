@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_dc1a3c7c",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T16:12:54Z",
+      "side": 1,
+      "message": "Good catch, thanks!",
+      "parentUuid": "3ac371cc_f11e816e",
+      "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_2dfd4ab4",
         "filename": "keystone/credential/providers/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-18T04:56:01Z",
       "side": 1,
       "message": "same as above, this can also raise CredentialEncryptionError",
+      "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_bc1dc074",
+        "filename": "keystone/credential/providers/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T16:12:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_2dfd4ab4",
       "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_f2847fd3",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T16:12:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_6d6c629c",
+      "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f432efa5",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 7
@@ -82,6 +136,24 @@
       "writtenOn": "2016-08-17T19:09:06Z",
       "side": 1,
       "message": "Should use the same GLOBAL_CONSTANT, I suppose.",
+      "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_9276eb03",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-18T16:12:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_f432efa5",
       "revId": "deeb8081e3063dfc42ba99539d7006587aed4278",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
