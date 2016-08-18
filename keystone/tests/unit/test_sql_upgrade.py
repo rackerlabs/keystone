@@ -31,6 +31,7 @@ WARNING::
     all data will be lost.
 """
 
+import datetime
 import json
 import uuid
 
@@ -303,6 +304,32 @@ class SqlMigrateBase(test_base.DbTestCase):
             this_table = table
         insert = this_table.insert().values(**d)
         session.execute(insert)
+
+    def add_user_model_record(
+            self, session, incl_created_at=False, created_at=None):
+        # add a user
+        user = {'id': uuid.uuid4().hex}
+        self.insert_dict(session, 'user', user)
+        # add a local user
+        local_user = {
+            'user_id': user['id'],
+            'domain_id': 'default',
+            'name': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'local_user', local_user)
+        local_user_table = sqlalchemy.Table('local_user', self.metadata,
+                                            autoload=True)
+        query = session.query(local_user_table)
+        local_user_ref = query.filter_by(user_id=user['id']).one()
+        # add a password
+        password = {
+            'local_user_id': local_user_ref.id,
+            'password': uuid.uuid4().hex
+        }
+        if incl_created_at:
+            password['created_at'] = created_at
+        self.insert_dict(session, 'password', password)
+        return local_user_ref.id
 
 
 class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
@@ -1390,24 +1417,6 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                                         constraint_name))
 
     def test_migration_105_add_password_date_columns(self):
-        def add_user_model_record(session):
-            # add a user
-            user = {'id': uuid.uuid4().hex}
-            self.insert_dict(session, 'user', user)
-            # add a local user
-            local_user = {
-                'id': 1,
-                'user_id': user['id'],
-                'domain_id': 'default',
-                'name': uuid.uuid4().hex
-            }
-            self.insert_dict(session, 'local_user', local_user)
-            # add a password
-            password = {
-                'local_user_id': local_user['id'],
-                'password': uuid.uuid4().hex
-            }
-            self.insert_dict(session, 'password', password)
         self.upgrade(104)
         session = self.sessionmaker()
         password_name = 'password'
@@ -1417,7 +1426,7 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'local_user_id',
                                  'password'])
         # add record and verify table count is greater than zero
-        add_user_model_record(session)
+        self.add_user_model_record(session)
         password_table = sqlalchemy.Table(password_name, self.metadata,
                                           autoload=True)
         cnt = session.query(password_table).count()
@@ -1534,6 +1543,44 @@ class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
             version,
             'DB is not at version %s' % self._initial_db_version)
 
+    def test_002_expand_created_at_made_non_nullable(self):
+        session = self.sessionmaker()
+        password_name = 'password'
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+
+        # Add a password with a None created_at value
+        self.add_user_model_record(session, incl_created_at=True)
+        initial_null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertNotEqual(0, initial_null_created_at_cnt)
+
+        self.upgrade(2)
+        self.metadata.clear()
+        session = self.sessionmaker()
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        # Try and add a password with a None created_at value,
+        # as well as a valid one
+        self.add_user_model_record(session, incl_created_at=True)
+        a_specific_date = datetime.datetime(1960, 5, 7)
+        local_user_id = self.add_user_model_record(
+            session, incl_created_at=True, created_at=a_specific_date)
+        # The number of rows with a null created_at should NOT have increased,
+        # since the trigger should have modified the insert to set the
+        # created_at attribute.
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertEqual(initial_null_created_at_cnt, null_created_at_cnt)
+
+        # Make sure we didn't trample on the row with a valid created_at
+        query = session.query(password_table)
+        row = query.filter_by(local_user_id=local_user_id).one()
+        self.assertEqual(a_specific_date, row.created_at)
+
 
 class MySQLOpportunisticExpandSchemaUpgradeTestCase(
         SqlExpandSchemaUpgradeTests):
@@ -1548,17 +1595,21 @@ class PostgreSQLOpportunisticExpandSchemaUpgradeTestCase(
 class SqlDataMigrationUpgradeTests(SqlMigrateBase):
 
     def setUp(self):
-        # Make sure the legacy and expand repos are fully upgraded, since the
-        # data migration phase is only run after these are upgraded
+        # Make sure the legacy repo is fully upgraded. Since many of the
+        # tests need to insert data before any triggers are installed in the
+        # expand cycle, we don't upgrade that repo here, but leave it to the
+        # tests to call initialize_dependent_repos() at the appropriate time.
         super(SqlDataMigrationUpgradeTests, self).setUp()
         self.upgrade(self.max_version)
-        # Make sure the expand repo is also upgraded
+
+    def initialize_dependent_repos(self):
+        # Make sure the expand repo is also upgraded, and then our own
         self.initialize_repo(repo_name=EXPAND_REPO)
         self.upgrade(self.max_version)
-
         self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
 
     def test_start_version_db_init_version(self):
+        self.initialize_dependent_repos()
         with sql.session_for_write() as session:
             version = migration.db_version(session.get_bind(), self.repo_path,
                                            self._initial_db_version)
@@ -1566,6 +1617,32 @@ class SqlDataMigrationUpgradeTests(SqlMigrateBase):
             self._initial_db_version,
             version,
             'DB is not at version %s' % self._initial_db_version)
+
+    def test_002_data_created_at_made_non_nullable(self):
+        session = self.sessionmaker()
+        password_name = 'password'
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+
+        # Add a password with a None created_at value
+        self.add_user_model_record(session, incl_created_at=True)
+        initial_null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertNotEqual(0, initial_null_created_at_cnt)
+
+        self.initialize_dependent_repos()
+        self.upgrade(2)
+        self.metadata.clear()
+        session = self.sessionmaker()
+
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        # There should no longer be any rows with a null created_at attribute
+        null_created_at_cnt = (
+            session.query(password_table).filter_by(created_at=None).count())
+        self.assertEqual(0, null_created_at_cnt)
 
 
 class MySQLOpportunisticDataMigrationUpgradeTestCase(
@@ -1602,6 +1679,17 @@ class SqlContractSchemaUpgradeTests(SqlMigrateBase):
             self._initial_db_version,
             version,
             'DB is not at version %s' % self._initial_db_version)
+
+    def test_002_expand_created_at_made_non_nullable(self):
+        password_name = 'password'
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertTrue(password_table.c.created_at.nullable)
+        self.upgrade(2)
+        self.metadata.clear()
+        password_table = sqlalchemy.Table(password_name, self.metadata,
+                                          autoload=True)
+        self.assertFalse(password_table.c.created_at.nullable)
 
 
 class MySQLOpportunisticContractSchemaUpgradeTestCase(
