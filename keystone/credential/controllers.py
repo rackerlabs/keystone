@@ -99,7 +99,6 @@ class CredentialV3(controller.V3Controller):
     def update_credential(self, request, credential_id, credential):
         validation.lazy_validate(schema.credential_update, credential)
         self._require_matching_id(credential_id, credential)
-
         ref = self.credential_api.update_credential(credential_id, credential)
         return CredentialV3.wrap_member(request.context_dict, ref)
 
