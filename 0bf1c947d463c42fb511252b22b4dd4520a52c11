@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_de1cd779",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:39:08Z",
+      "side": 1,
+      "message": "I was going to point out that you\u0027re missing \"bp credential-encryption\" on this one.",
+      "parentUuid": "3ac371cc_794d0bc4",
+      "revId": "0bf1c947d463c42fb511252b22b4dd4520a52c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_f4666f4f",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 33
