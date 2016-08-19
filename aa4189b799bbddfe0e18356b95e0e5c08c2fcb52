@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_f0aa926f",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-19T19:36:02Z",
+      "side": 1,
+      "message": "I can see the request check argument, however this still feels more like validation that belongs in the manager class. Especially if it is not part of schema validation. We do similar kinds of checking already in the manager classes:\n* https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L1207\n* https://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L956\n...\n\nI just think we need to be consistent with where this type of validation belongs.",
+      "parentUuid": "1ac06dbe_47d01254",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 68
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_63238306",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "Why? Isn\u0027t the check made in the controller layer? Checking the content of the exception is more like testing if it is converted to the correct HTTP error.",
       "parentUuid": "1ac06dbe_63238306",
+      "range": {
+        "startLine": 209,
+        "startChar": 40,
+        "endLine": 209,
+        "endChar": 51
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_dbafb7e1",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-19T19:36:02Z",
+      "side": 1,
+      "message": "Don\u0027t other exceptions convert into a BAD_REQUEST? How do you know that a ValidationError was raised?",
+      "parentUuid": "1ac06dbe_a748e62e",
       "range": {
         "startLine": 209,
         "startChar": 40,
