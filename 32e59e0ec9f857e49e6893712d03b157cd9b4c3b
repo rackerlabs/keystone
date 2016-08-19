@@ -34,6 +34,24 @@
       "revId": "32e59e0ec9f857e49e6893712d03b157cd9b4c3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_f7c0d1e2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-19T16:26:29Z",
+      "side": 1,
+      "message": "I\u0027ve pushed a new patch that clearly filters out entries from different domains, by building a more unique `refs_map`.\n\nAlso, unit-tests pass.",
+      "parentUuid": "1ac06dbe_9ef9bacb",
+      "revId": "32e59e0ec9f857e49e6893712d03b157cd9b4c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
