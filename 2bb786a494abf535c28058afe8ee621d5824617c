@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_9e525fdc",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-08-19T14:30:52Z",
+      "side": 1,
+      "message": "It\u0027s better to use self.get_or_create here as it is protected against race conditions.",
+      "revId": "2bb786a494abf535c28058afe8ee621d5824617c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_53e040fa",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 6
@@ -19,6 +36,23 @@
         "endLine": 43,
         "endChar": 53
       },
+      "revId": "2bb786a494abf535c28058afe8ee621d5824617c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_9ee41f3c",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-08-19T14:30:52Z",
+      "side": 1,
+      "message": "Race condition is possible",
       "revId": "2bb786a494abf535c28058afe8ee621d5824617c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
