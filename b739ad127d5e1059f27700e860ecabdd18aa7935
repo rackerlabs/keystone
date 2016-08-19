@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_dcca0d4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T20:28:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_aae555a9",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_f6460abe",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-19T19:58:34Z",
       "side": 1,
       "message": "This is pointing to the wrong repository.",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_7cb959e9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T20:28:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_f6460abe",
       "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
