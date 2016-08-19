@@ -99,6 +99,19 @@ class CredentialV3(controller.V3Controller):
     def update_credential(self, request, credential_id, credential):
         validation.lazy_validate(schema.credential_update, credential)
         self._require_matching_id(credential_id, credential)
+        # NOTE(rodrigods): credentials of the ec2 type require a project_id.
+        # We need to check if the new credential provides a project_id or if
+        # the old credential already has a project_id set when updating the
+        # type to ec2
+        update_type = credential.get('type')
+        update_project_id = credential.get('project_id')
+        # There is no need to check the old credential unless the request
+        # contains the ec2 type without providing a project_id
+        if update_type == 'ec2' and not update_project_id:
+            old_cred = self.credential_api.get_credential(credential_id)
+            if not old_cred['project_id']:
+                raise exception.ValidationError(attribute='project_id',
+                                                target='credential')
 
         ref = self.credential_api.update_credential(credential_id, credential)
         return CredentialV3.wrap_member(request.context_dict, ref)
