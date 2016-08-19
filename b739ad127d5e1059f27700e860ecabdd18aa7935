@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_2a5a0584",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T15:25:14Z",
+      "side": 1,
+      "message": "Not even enabled - it\u0027s always on period...\n\nShould we just collapse this into another class?",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
