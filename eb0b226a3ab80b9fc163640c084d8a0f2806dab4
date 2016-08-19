@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_8474d2fd",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-19T14:58:52Z",
+      "side": 1,
+      "message": "haters gonna hate :]\n\ngood point about mapping_purge, lets stick with name only",
+      "parentUuid": "1ac06dbe_1b0e8134",
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_dbd4e948",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 12
