@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_f6460abe",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T19:58:34Z",
+      "side": 1,
+      "message": "This is pointing to the wrong repository.",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_0a073f1d",
         "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
         "patchSetId": 8
@@ -47,6 +64,23 @@
       "writtenOn": "2016-08-19T19:01:22Z",
       "side": 1,
       "message": "Need to figure out how to add triggers here.",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_3630a256",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T19:58:34Z",
+      "side": 1,
+      "message": "One concern that I have with the so far is that I\u0027m unsure how this will work across multiple threads. In some of my testing locally I noticed that a new created credential will not have a different key_hash from the other credentials immediately after a key rotation.\n\nIs there a way to make this calculate the absolute newest key hash from disk every time we ask for it?",
       "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
