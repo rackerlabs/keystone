@@ -16,6 +16,24 @@
       "revId": "bd80bb77e930e0fb2679767ef0d8b59bd209f4d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_10f3ee9f",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T19:28:29Z",
+      "side": 1,
+      "message": "Good call - done. \n\nhttps://review.openstack.org/#/c/358083/",
+      "parentUuid": "3ac371cc_9fac248e",
+      "revId": "bd80bb77e930e0fb2679767ef0d8b59bd209f4d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
