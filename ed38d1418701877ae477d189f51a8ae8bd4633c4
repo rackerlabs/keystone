@@ -58,6 +58,24 @@
       "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_2ab045dd",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T15:22:29Z",
+      "side": 1,
+      "message": "Good point - and you are correct. I can trim this to be 7 characters.",
+      "parentUuid": "3ac371cc_79486bcd",
+      "revId": "ed38d1418701877ae477d189f51a8ae8bd4633c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
