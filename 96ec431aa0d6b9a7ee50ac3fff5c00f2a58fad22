@@ -268,6 +268,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_22487b2d",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-19T12:41:41Z",
+      "side": 1,
+      "message": "Agreed.  I\u0027ll add a follow up patch to provide this (different) restrictions",
+      "parentUuid": "3ac371cc_3aab7ed8",
+      "revId": "96ec431aa0d6b9a7ee50ac3fff5c00f2a58fad22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_726b7ab7",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 24
