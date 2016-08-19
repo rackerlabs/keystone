@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_aae555a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T15:25:45Z",
+      "side": 1,
+      "message": "Reminder for myself to add Werner as a co-author!",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_2a5a0584",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 8
