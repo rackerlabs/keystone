@@ -1668,9 +1668,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.assertEqual(ref_groups, token_groups)
 
     def test_issue_unscoped_tokens_nonexisting_group(self):
-        self.assertRaises(exception.MissingGroups,
-                          self._issue_unscoped_token,
-                          assertion='ANOTHER_TESTER_ASSERTION')
+        r = self._issue_unscoped_token(assertion='ANOTHER_CUSTOMER_ASSERTION')
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
     def test_issue_unscoped_token_with_remote_no_attribute(self):
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
@@ -2314,9 +2313,8 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Create group ``EXISTS``
          - Set mapping rules for existing IdP with an empty whitelist
            that whould discard any values from the assertion
-         - Try issuing unscoped token, expect server to raise
-           ``exception.MissingGroups`` as no groups were matched and ephemeral
-           user does not have any group assigned.
+         - Try issuing unscoped token, no groups were matched and that the
+           federated user does not have any group assigned.
 
         """
         domain_id = self.domainA['id']
@@ -2357,10 +2355,9 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             ]
         }
         self.federation_api.update_mapping(self.mapping['id'], rules)
-
-        self.assertRaises(exception.MissingGroups,
-                          self._issue_unscoped_token,
-                          assertion='UNMATCHED_GROUP_ASSERTION')
+        r = self._issue_unscoped_token(assertion='UNMATCHED_GROUP_ASSERTION')
+        assigned_groups = r.json['token']['user']['OS-FEDERATION']['groups']
+        self.assertEqual(len(assigned_groups), 0)
 
     def test_not_setting_whitelist_accepts_all_values(self):
         """Test that not setting whitelist passes.
