@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_dcd16dfd",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T20:30:25Z",
+      "side": 1,
+      "message": "Need to figure out how to remove triggers here.",
+      "revId": "d0bc6d04ac330f5a8a200c90e3c1c89e0f3d5653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_1cdca511",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T20:30:25Z",
+      "side": 1,
+      "message": "Need to create a read-only trigger here.",
+      "revId": "d0bc6d04ac330f5a8a200c90e3c1c89e0f3d5653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_9cfed569",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T20:30:25Z",
+      "side": 1,
+      "message": "One concern that I have with the so far is that I\u0027m unsure how this will work across multiple threads. In some of my testing locally I noticed that a new created credential will not have a different key_hash from the other credentials immediately after a key rotation.\n\nIs there a way to make this calculate the absolute newest key hash from disk every time we ask for it?",
+      "revId": "d0bc6d04ac330f5a8a200c90e3c1c89e0f3d5653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
