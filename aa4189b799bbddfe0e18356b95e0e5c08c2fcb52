@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_47d01254",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-19T18:17:44Z",
+      "side": 1,
+      "message": "I tend to disagree since this is more a request check than a business logic validation. The only reason to keep it here instead of using a JSON schema e that we need to check the previous stored credential.",
+      "parentUuid": "1ac06dbe_430c8794",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 68
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_63238306",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-19T18:00:43Z",
       "side": 1,
       "message": "You also need a test (maybe in a different module) that test for exception.ValidationError.",
+      "range": {
+        "startLine": 209,
+        "startChar": 40,
+        "endLine": 209,
+        "endChar": 51
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_a748e62e",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-19T18:17:44Z",
+      "side": 1,
+      "message": "Why? Isn\u0027t the check made in the controller layer? Checking the content of the exception is more like testing if it is converted to the correct HTTP error.",
+      "parentUuid": "1ac06dbe_63238306",
       "range": {
         "startLine": 209,
         "startChar": 40,
