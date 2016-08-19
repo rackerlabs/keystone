@@ -16,6 +16,24 @@
       "revId": "32e59e0ec9f857e49e6893712d03b157cd9b4c3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_9ef9bacb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-19T16:15:49Z",
+      "side": 1,
+      "message": "\u003e The logic for defaulting the domain ID looks questionable. If all of the records should have the same domain_id, make it explicit. If not, there is the possibility you are using the wrong value.\n\nIf not all records have the same domain_id, fallback to previous behaviour will happen. So wrong value will result in worse performance. It will still be better than before the patch.",
+      "parentUuid": "3ac371cc_afc104e6",
+      "revId": "32e59e0ec9f857e49e6893712d03b157cd9b4c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
