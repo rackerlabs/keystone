@@ -159,7 +159,6 @@ def handle_unscoped_token(request, auth_payload, auth_context,
                                                       display_name)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
-            utils.validate_groups_cardinality(group_ids, mapping_id)
             build_ephemeral_user_context(auth_context, user,
                                          mapped_properties,
                                          identity_provider, protocol)
@@ -208,9 +207,7 @@ def apply_mapping_filter(identity_provider, protocol, assertion,
     # ``mapping_id`` was used as well as idenity_api and resource_api
     # objects.
     group_ids = mapped_properties['group_ids']
-    utils.validate_groups_in_backend(group_ids,
-                                     mapping_id,
-                                     identity_api)
+    utils.validate_groups(group_ids, mapping_id, identity_api)
     group_ids.extend(
         utils.transform_to_group_ids(
             mapped_properties['group_names'], mapping_id,
