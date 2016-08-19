@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_0a073f1d",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T19:01:22Z",
+      "side": 1,
+      "message": "This will need to be updated to remove the read-only credential trigger.",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_4a181785",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-19T19:01:22Z",
+      "side": 1,
+      "message": "Need to figure out how to add triggers here.",
+      "revId": "b739ad127d5e1059f27700e860ecabdd18aa7935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_2a5a0584",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 8
