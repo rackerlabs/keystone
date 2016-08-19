@@ -19,6 +19,75 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_188847e7",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:23:30Z",
+      "side": 1,
+      "message": "I\u0027d rather not refer to specific implementation details in the docs.",
+      "parentUuid": "1ac06dbe_4cc4ce91",
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_98a7174f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:23:30Z",
+      "side": 1,
+      "message": "Seems weird to set a class attribute with an instance of another class, but I don\u0027t think it\u0027ll actually break anything, as we should only ever have one instance of this class (outside of tests, anyway).",
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_1b0e8134",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:23:30Z",
+      "side": 1,
+      "message": "I\u0027d rather not support ambiguous options like openstackclient does -- they tend to break. mapping_purge supports --domain-name, so this should, too.",
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_dbd4e948",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:23:30Z",
+      "side": 1,
+      "message": "Undo this change - it\u0027s not relevant and it makes such lists easier to maintain.",
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ec9dba5a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 12
@@ -36,6 +105,23 @@
         "endLine": 642,
         "endChar": 67
       },
+      "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_5b92b958",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-19T14:23:30Z",
+      "side": 1,
+      "message": "nit: I sort of prefer the pattern we use else for this case:\n\n  hints \u003d None\n  users \u003d self.identity_api.driver.list_users(hints)\n\nAlthough, passing an arg as a kwarg doesn\u0027t bother me at all, either.",
       "revId": "eb0b226a3ab80b9fc163640c084d8a0f2806dab4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
