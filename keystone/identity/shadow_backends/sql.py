@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import copy
 import datetime
 import uuid
 
@@ -89,10 +88,15 @@ class ShadowUsers(base.ShadowUsersDriverV10):
 
     @sql.handle_conflicts(conflict_type='nonlocal_user')
     def create_nonlocal_user(self, user_dict):
-        new_user_dict = copy.deepcopy(user_dict)
         new_nonlocal_user_dict = {
             'domain_id': user_dict['domain_id'],
             'name': user_dict['name']
+        }
+        new_user_dict = {
+            'id': user_dict['id'],
+            'default_project_id': user_dict.get('default_project_id'),
+            'extra': user_dict.get('extra'),
+            'enabled': True
         }
         with sql.session_for_write() as session:
             new_nonlocal_user_ref = model.NonLocalUser.from_dict(
