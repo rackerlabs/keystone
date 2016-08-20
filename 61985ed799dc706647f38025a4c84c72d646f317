@@ -22,6 +22,30 @@
       "revId": "61985ed799dc706647f38025a4c84c72d646f317",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_2242123f",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-20T02:57:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_1f55ad4f",
+      "range": {
+        "startLine": 94,
+        "startChar": 25,
+        "endLine": 94,
+        "endChar": 56
+      },
+      "revId": "61985ed799dc706647f38025a4c84c72d646f317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
