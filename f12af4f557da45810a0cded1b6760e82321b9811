@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_ed790b31",
+        "filename": "keystone/identity/mapping_backends/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-20T04:46:59Z",
+      "side": 1,
+      "message": "Since you are changing the driver interface, please add release notes. For example: \nhttps://review.openstack.org/#/c/343314/50/releasenotes/notes/identity_driver_new_change_password_method-e8c0e06795bca2d8.yaml",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 49
+      },
+      "revId": "f12af4f557da45810a0cded1b6760e82321b9811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
