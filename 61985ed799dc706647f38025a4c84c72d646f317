@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_1f55ad4f",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-20T02:40:37Z",
+      "side": 1,
+      "message": "this works, but it should probably be an iterable, like a list",
+      "range": {
+        "startLine": 94,
+        "startChar": 25,
+        "endLine": 94,
+        "endChar": 56
+      },
+      "revId": "61985ed799dc706647f38025a4c84c72d646f317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
