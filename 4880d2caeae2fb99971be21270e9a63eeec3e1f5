@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_17c8df21",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 21465
+      },
+      "writtenOn": "2016-08-21T15:55:01Z",
+      "side": 1,
+      "message": "I think there should be:\nimplied_role[\u0027domain_id\u0027] is not None",
+      "range": {
+        "startLine": 1204,
+        "startChar": 47,
+        "endLine": 1204,
+        "endChar": 77
+      },
+      "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_2bf4da85",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -30,6 +53,29 @@
       "writtenOn": "2016-08-18T19:22:15Z",
       "side": 1,
       "message": "InvalidImpliedRole only shows this custom message in insecure debug mode, would it be safe to create an exception class where these messages could be displayed to the user?",
+      "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d79487e3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1208,
+      "author": {
+        "id": 21465
+      },
+      "writtenOn": "2016-08-21T15:55:01Z",
+      "side": 1,
+      "message": "This also catch a case when DSR implies global role. So I think that \"if prior_role[\u0027domain_id\u0027] !\u003d implied_role[\u0027domain_id\u0027]\" is the main criterion.",
+      "range": {
+        "startLine": 1208,
+        "startChar": 8,
+        "endLine": 1208,
+        "endChar": 64
+      },
       "revId": "4880d2caeae2fb99971be21270e9a63eeec3e1f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
