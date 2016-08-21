@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_f7854359",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-21T14:53:56Z",
+      "side": 1,
+      "message": "should",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "736917d30cdba63e45f3d824f0eadac0c63e0f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_37f7dbf6",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-21T14:53:56Z",
+      "side": 1,
+      "message": "indecipherable?",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "736917d30cdba63e45f3d824f0eadac0c63e0f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
