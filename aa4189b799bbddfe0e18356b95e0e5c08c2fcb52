@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_19f0dbfd",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-22T18:21:13Z",
+      "side": 1,
+      "message": "suggested wording change:\n\n\"ec2 credentials require a \"project_id\" to be functional. Before we update, check the case where a non-ec2 credential changes its type to be \"ec2\", but has no associated \"project_id\", either in the request or already set in the database.\"",
+      "range": {
+        "startLine": 102,
+        "startChar": 27,
+        "endLine": 105,
+        "endChar": 21
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_394f976c",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-22T18:21:13Z",
+      "side": 1,
+      "message": "this is only used once, just call it",
+      "range": {
+        "startLine": 106,
+        "startChar": 8,
+        "endLine": 106,
+        "endChar": 44
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_595a532b",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-22T18:21:13Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 25
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_430c8794",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 5
