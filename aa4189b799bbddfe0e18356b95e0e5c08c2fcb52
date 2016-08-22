@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_9ed4cd20",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T12:08:06Z",
+      "side": 1,
+      "message": "Yep, consistency is a good thing but we have examples of such validations in both layers not only in the Manager. Similar checks are even implemented in the common controller: https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L667-L687",
+      "parentUuid": "1ac06dbe_f0aa926f",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 68
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_63238306",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "Don\u0027t other exceptions convert into a BAD_REQUEST? How do you know that a ValidationError was raised?",
       "parentUuid": "1ac06dbe_a748e62e",
+      "range": {
+        "startLine": 209,
+        "startChar": 40,
+        "endLine": 209,
+        "endChar": 51
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_e4e8d4b6",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T12:08:06Z",
+      "side": 1,
+      "message": "Yes, similar Validation...Error ones, but the test is not for the exception type but to guarantee that such calls made to the API will fail.",
+      "parentUuid": "1ac06dbe_dbafb7e1",
       "range": {
         "startLine": 209,
         "startChar": 40,
