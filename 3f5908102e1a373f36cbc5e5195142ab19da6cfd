@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_6f366653",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-22T17:40:30Z",
+      "side": 1,
+      "message": "This may not work like you expect because the proxies (notably self.backend is a proxy if configured) could get in the way. Assuming self.backend is actually the backend isn\u0027t always safe in dogpile or oslo.cache.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 52
+      },
+      "revId": "3f5908102e1a373f36cbc5e5195142ab19da6cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
