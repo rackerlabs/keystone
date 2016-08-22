@@ -57,6 +57,23 @@
       "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_1cc1e954",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T18:43:47Z",
+      "side": 1,
+      "message": "Side note - is it possible to have a trigger created using this file and have a migration named 002_more_stuff executed at the same time?",
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
