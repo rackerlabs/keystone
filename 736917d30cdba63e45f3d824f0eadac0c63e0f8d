@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_cc0dfa91",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T13:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_f7854359",
+      "revId": "736917d30cdba63e45f3d824f0eadac0c63e0f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_37f7dbf6",
         "filename": "keystone/cmd/doctor/credential.py",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 28,
         "endChar": 35
       },
+      "revId": "736917d30cdba63e45f3d824f0eadac0c63e0f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_ac107ea9",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T13:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_37f7dbf6",
       "revId": "736917d30cdba63e45f3d824f0eadac0c63e0f8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
