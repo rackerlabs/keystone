@@ -2,6 +2,159 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_52918546",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "++",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_5265051c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "nit: \"are intended to be done in sequence.\" would be a little more clear to me, if I\u0027m understanding this correctly.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_159ed762",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "And that you\u0027ve have fully upgraded to at least the newton schema -- this should not be done during the upgrade process (before contract has run).",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b5c9c35b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "How do you pronounce doens\u0027t?",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_32e4c9df",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "You shouldn\u0027t need the IF EXISTS in either of these. If the trigger does not exist, something is wrong.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_552deffc",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "*magic wand*",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_159257f6",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "For deployments with LOTS of credentials, it\u0027d be more efficient to select a row (or a small batch) that needs updating, and update them a few at a time until there are none left to update (instead of selecting them all at once).",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_953927f5",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "Hrm, you need to block updates as well! So, it\u0027d be the same 3 triggers, but with BEFORE UPDATE ON.\n\nBut then we won\u0027t be able to migrate stuff! Perhaps the triggers should actually check, for example, if BEFORE UPDATE both NEW.blob and NEW.encrypted_blob are set, and if not, reject the write? (because the data migration step could set both and bypass the trigger, unlike either version of the app?)",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b0db914e",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "This work could/should be refactored into a helper method that decrypts a single credential correctly.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_3567934e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
@@ -72,6 +225,23 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_10d705ee",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "Use a version number here (002) in case we have multiple migrations that could be described as \"credential migrations\"",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ff531a37",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
@@ -101,6 +271,57 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "1ac06dbe_ff531a37",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_50321d60",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1734,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "Not a bad hack, but ideally you\u0027re testing this one step in isolation. In reality, you\u0027re applying both data migration 001 and 002 here. That will only become a problem when we\u0027ve got a lot of migrations in each repo, and we\u0027re still trying to use this pattern.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_707bd9f5",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "++",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b058b18b",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-22T21:56:11Z",
+      "side": 1,
+      "message": "Does it share a setUp with another class?",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
