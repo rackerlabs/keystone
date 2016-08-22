@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_8ff48287",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-22T17:36:49Z",
+      "side": 1,
+      "message": "So I\u0027d welcome ideas on how to do this better. What you can\u0027t do is the following:\n\n        for resource in self._banned_ops:\n            for op in self._banned_ops[resource]:\n                resource_op \u003d \u0027%(resource)s.%(op)s\u0027 % {\n                    \u0027resource\u0027: resource, \u0027op\u0027: op}\n                self.useFixture(fixtures.MonkeyPatch(\n                    \u0027sqlalchemy.%s\u0027 % resource_op,\n                    lambda *a, **k: self._explode(resource_op, self._migration_repo))\n\n...since resource_op changes after you time you set up each monkey patch...",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 49
+      },
+      "revId": "83474bbed017663f7114d5254ced8e3e87de9465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
