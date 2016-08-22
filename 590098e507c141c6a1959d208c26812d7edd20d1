@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_aac0547d",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-22T15:58:26Z",
+      "side": 1,
+      "message": "I\u0027m torn as to whether you should try to drop it first. On one level, there should be not trigger yet...on the other, concerned that any problems in a an grad might leave them in place and hence cause this migrate to fail.  Another black mark against dropping might be that this wold complicate automatic checking for banned operations (since in theory dropping should only happen in the contract phase)",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 43
+      },
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
