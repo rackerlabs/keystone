@@ -16,6 +16,24 @@
       "revId": "e1e7c7ddb728a0bb835d32d6b0632a14e9e79448",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_c9ecd191",
+        "filename": "keystone/tests/unit/policy/backends/test_sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-22T12:02:09Z",
+      "side": 1,
+      "message": "++, the should be more concise. Let\u0027s move this one at first.",
+      "parentUuid": "3ac371cc_5730a556",
+      "revId": "e1e7c7ddb728a0bb835d32d6b0632a14e9e79448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
