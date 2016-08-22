@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_81baa86c",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T14:30:45Z",
+      "side": 1,
+      "message": "thinking clearly about this, I would like to have the controller layer only handling parsing and query parameters, will put this in the manager layer",
+      "parentUuid": "1ac06dbe_9ed4cd20",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 68
+      },
+      "revId": "aa4189b799bbddfe0e18356b95e0e5c08c2fcb52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_63238306",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 5
