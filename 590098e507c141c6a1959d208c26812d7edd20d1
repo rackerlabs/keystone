@@ -39,6 +39,24 @@
       "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b92707c9",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T18:36:16Z",
+      "side": 1,
+      "message": "I would think that we should fail the migration phase if a trigger already exists. In that case - we should probably inform the operator and give them an opportunity to fix whatever the issue is and re-run the phase from a clean state.",
+      "parentUuid": "1ac06dbe_aac0547d",
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
