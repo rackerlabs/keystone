@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_302e81a5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T22:05:38Z",
+      "side": 1,
+      "message": "A lot of practice... beer helps.. ;)",
+      "parentUuid": "1ac06dbe_b5c9c35b",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_32e4c9df",
         "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
         "patchSetId": 11
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_ab1e845c",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T22:05:38Z",
+      "side": 1,
+      "message": "Very much so - this was a Hail Mary as I was falling out of the fail tree. I\u0027ll add a comment",
+      "parentUuid": "1ac06dbe_552deffc",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_159257f6",
         "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
         "patchSetId": 11
@@ -115,6 +151,24 @@
       "writtenOn": "2016-08-22T21:56:11Z",
       "side": 1,
       "message": "For deployments with LOTS of credentials, it\u0027d be more efficient to select a row (or a small batch) that needs updating, and update them a few at a time until there are none left to update (instead of selecting them all at once).",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_eb3cfcc9",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T22:05:38Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ac06dbe_159257f6",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
