@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_3567934e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1578,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T21:35:29Z",
+      "side": 1,
+      "message": "This is going to fail because the read-only trigger is already in place.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_df60de03",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
