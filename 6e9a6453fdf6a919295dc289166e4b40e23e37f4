@@ -34,6 +34,23 @@
       "revId": "6e9a6453fdf6a919295dc289166e4b40e23e37f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_01ffb9aa",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-22T23:13:59Z",
+      "side": 1,
+      "message": "A failure here should probably just go to the backend and try that data first.",
+      "revId": "6e9a6453fdf6a919295dc289166e4b40e23e37f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
