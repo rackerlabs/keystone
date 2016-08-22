@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_bb3d49bd",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-22T15:32:39Z",
+      "side": 1,
+      "message": "CacheRegion shouldn\u0027t have to be subclassed.   At the very least, you can use the key mangler, or the ProxyBackend.  There\u0027s also the invalidationstrategy hook.   Anyway, you should use hooks and if you need a new one, it should be added to dogpile :).",
+      "revId": "f06de6caf468ed56d927aaa787b21a98dfa92427",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_fb19817a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-22T15:32:39Z",
+      "side": 1,
+      "message": "the key_mangler should be able to handle this, or if you want more control use ProxyBackend.",
+      "revId": "f06de6caf468ed56d927aaa787b21a98dfa92427",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_bbab89d5",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-22T15:32:39Z",
+      "side": 1,
+      "message": "Even if you did have to subclass CacheRegion, it shouldn\u0027t be globally monkeypatched it into the dogpile library.",
+      "revId": "f06de6caf468ed56d927aaa787b21a98dfa92427",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
