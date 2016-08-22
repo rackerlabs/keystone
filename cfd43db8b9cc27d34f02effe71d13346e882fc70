@@ -22,6 +22,24 @@
       "revId": "cfd43db8b9cc27d34f02effe71d13346e882fc70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_cc833a03",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-22T13:19:41Z",
+      "side": 1,
+      "message": "Ah - good catch. Will fix.",
+      "parentUuid": "1ac06dbe_0f56f15b",
+      "revId": "cfd43db8b9cc27d34f02effe71d13346e882fc70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
