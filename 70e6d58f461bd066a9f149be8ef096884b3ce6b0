@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_10ba650a",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T21:49:55Z",
+      "side": 1,
+      "message": "are you going to use \"user_dict\" afterwords? If not, a tiny improvement would be to delete the keys below before copying the dict.",
+      "revId": "70e6d58f461bd066a9f149be8ef096884b3ce6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_1019c579",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T21:49:55Z",
+      "side": 1,
+      "message": "nit: just used once\n\nalternative:\n\n  for key in [\u0027domain_id\u0027, \u0027name\u0027, \u0027password\u0027]:\n    new_user_dict.pop(key, None)",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 22
+      },
+      "revId": "70e6d58f461bd066a9f149be8ef096884b3ce6b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
