@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_b80d5c92",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-22T12:20:17Z",
+      "side": 1,
+      "message": "think this kind of tests should be placed in \"tests/unit/credential/test_core.py\" (like what is done for other checks in the Manager layer)",
+      "revId": "92e2c66679258d80bd6c82cde64fdf24bc86dddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
