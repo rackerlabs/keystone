@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_5d7d51b0",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-22T03:32:28Z",
+      "side": 1,
+      "message": "this can fit on one line",
+      "range": {
+        "startLine": 75,
+        "startChar": 20,
+        "endLine": 76,
+        "endChar": 51
+      },
+      "revId": "dd63146cf1cfc7dba3307c2001f6c1471226f34f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_9d4d099c",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-22T03:32:28Z",
+      "side": 1,
+      "message": "this can fit on one line",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 51
+      },
+      "revId": "dd63146cf1cfc7dba3307c2001f6c1471226f34f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
