@@ -13,10 +13,12 @@
 from oslo_log import log
 from oslo_serialization import msgpackutils
 from oslo_utils import timeutils
+import six
 from six.moves import map
 
 from keystone.common import cache
 from keystone.common import utils
+from keystone.i18n import _LE
 
 
 LOG = log.getLogger(__name__)
@@ -367,10 +369,40 @@ class _RevokeEventHandler(object):
 
     def deserialize(self, data):
         revoke_event_data = msgpackutils.loads(data, registry=self._registry)
+        filtered_data = {}
         try:
-            revoke_event = RevokeEvent(**revoke_event_data)
+            for key, value in revoke_event_data.items():
+                # NOTE(notmorgan): This loop is designed to ensure we
+                # do not somehow deserialize the RevokeEvent in a bizzare
+                # way resulting in the wrong kind(s) of data. It explicitly
+                # drops the data that is not a valid keyword-type when
+                # instantiating the RevokeEvent on the floor and logs it.
+                # This absolutely *should* be a bug. This also eliminates
+                # any keys that would not be actually used to instantiate
+                # the RevokeEvent.
+                if isinstance(key, (str, bytes)):
+                    if key not in REVOKE_KEYS:
+                        LOG.debug('Unknown key `%r` found in deserialized data'
+                                  ' `%r`', key, revoke_event_data)
+                        continue
+                    if isinstance(key, six.binary_type):
+                        key = key.decode('utf-8')
+                    filtered_data[key] = value
+                else:
+                    # NOTE(notmorgan): It is possible we should error
+                    # here, however for sanity because the revoke event is
+                    # unlikely to match anyway, we are not erroring out.
+                    LOG.error(_LE('Received non-string key value when '
+                                  'deserializing RevokeEvent. This is a bug '
+                                  'and should be reported relatred to bug '
+                                  '#1609566 with: invalid key `%{key}r` '
+                                  'deserialized data: `%{data}r`'),
+                              key, revoke_event_data)
+                    continue
+
+            revoke_event = RevokeEvent(**filtered_data)
         except Exception:
-            LOG.debug("Failed to deserialize RevokeEvent. Data is %s",
+            LOG.debug("Failed to deserialize RevokeEvent. Data is %r",
                       revoke_event_data)
             raise
         return revoke_event
