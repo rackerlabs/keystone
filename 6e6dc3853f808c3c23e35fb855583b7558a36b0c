@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_27df2dda",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "I would drop this, and let the following sentences better explain what this is for.",
+      "range": {
+        "startLine": 7,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_87954134",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "this looks like it was mistakenly left behind when the previous sentence was added.",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 41
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_478ea9d0",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "s/, i/ in order to improve future query performance. I/",
+      "range": {
+        "startLine": 12,
+        "startChar": 53,
+        "endLine": 12,
+        "endChar": 56
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_87f4215b",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "pre-populate",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 12
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_a715dd9c",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "or after calling ``keystone-manage mapping_purge``",
+      "range": {
+        "startLine": 13,
+        "startChar": 51,
+        "endLine": 13,
+        "endChar": 52
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_67776502",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T16:34:30Z",
+      "side": 1,
+      "message": "s/prepare_ldap/mapping_populate/",
+      "range": {
+        "startLine": 15,
+        "startChar": 43,
+        "endLine": 15,
+        "endChar": 55
+      },
+      "revId": "6e6dc3853f808c3c23e35fb855583b7558a36b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
