@@ -13,7 +13,6 @@
 from oslo_log import log
 from oslo_serialization import msgpackutils
 from oslo_utils import timeutils
-from six.moves import map
 
 from keystone.common import cache
 from keystone.common import utils
@@ -126,22 +125,13 @@ class RevokeEvent(object):
                                                 subsecond=True)
         return event
 
-    def key_for_name(self, name):
-        return "%s=%s" % (name, getattr(self, name) or '*')
-
-
-def attr_keys(event):
-    return list(map(event.key_for_name, _EVENT_NAMES))
-
 
 def is_revoked(events, token_data):
     """Check if a token matches a revocation event.
-
     Compare a token against every revocation event. If the token matches an
     event in the `events` list, the token is revoked. If the token is compared
     against every item in the list without a match, it is not considered
     revoked from the `revoke_api`.
-
     :param events: a list of RevokeEvent instances
     :param token_data: map based on a flattened view of the token. The required
                        fields are `expires_at`,`user_id`, `project_id`,
@@ -158,14 +148,12 @@ def is_revoked(events, token_data):
 
 def matches(event, token_values):
     """See if the token matches the revocation event.
-
     A brute force approach to checking.
     Compare each attribute from the event with the corresponding
     value from the token.  If the event does not have a value for
     the attribute, a match is still possible.  If the event has a
     value for the attribute, and it does not match the token, no match
     is possible, so skip the remaining checks.
-
     :param event: a RevokeEvent instance
     :param token_values: dictionary with set of values taken from the
                          token
