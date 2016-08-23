@@ -15,6 +15,7 @@ from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
 from oslo_db import api as oslo_db_api
+from sqlalchemy import and_, or_
 
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
@@ -79,6 +80,57 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    # As dolphm said, will add well defined keywords in the future. WIP
+    def is_revoked(self, token_data):
+        # Until I can drop some columns to make the token_data less mysterious
+        # the for loop below is used to build dynamic OR/AND statements
+        # depending on what token key/value pairs are in the dictionary
+        R = RevocationEvent
+        # remove empty key/val pairs
+        token = {key: val for (key, val) in token_data.iteritems() if val}
+        # The or statement for mapping user_id or trustor_id or trustee_id
+        or1 = []
+        # The or statement for mapping identity and assignemnt domain_id
+        or2 = []
+        # The and statement for all other one to one conditions
+        and1 = []
+        for key, value in token.iteritems():
+            if key in ['user_id', 'trustor_id', 'trustee_id']:
+                or1.append(or_(R.user_id.is_(None), R.user_id == value))
+
+            elif key in ['identity_domain_id', 'assignment_domain_id']:
+                or2.append(or_(R.domain_id.is_(None), R.domain_id == value))
+
+            elif key == 'roles':
+                # Since this is a list of values we check with 'in' instead
+                and1.append(or_(R.role_id.is_(None), R.role_id in value))
+
+            elif key == 'issued_at':
+                and1.append(R.issued_before > value)
+
+            else:
+                and1.append(or_(getattr(R, key).is_(None),
+                                getattr(R, key) == value))
+
+        with sql.session_for_read() as session:
+            # Make sure there is at least one revocation_event row in the table
+            # otherwise this yields a DBError. So return False if is the case.
+            rows = session.query(R).all()
+            if len(rows) == 0:
+                return False
+
+            q = session.query(RevocationEvent)
+            if or1:
+                q = q.filter(or_(*or1))
+            if or2:
+                q = q.filter(or_(*or2))
+            q = q.filter(and_(*and1))
+
+            if not (session.query(q.exists()).scalar()):
+                return False
+
+        return True
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
