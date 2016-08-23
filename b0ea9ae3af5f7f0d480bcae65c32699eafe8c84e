@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_98a5b3a3",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-08-23T13:17:35Z",
+      "side": 1,
+      "message": "(nit) There is special NO_VALUE constant declared in dogpile.cache to be sure that it\u0027s not the case when None is stored, however here that\u0027s indifferent.",
+      "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_432350a7",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-08-23T13:17:35Z",
+      "side": 1,
+      "message": "(nit) murmur is about 2x faster than sha1",
+      "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
