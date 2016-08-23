@@ -80,6 +80,50 @@ class Revoke(base.RevokeDriverV8):
 
             session.flush()
 
+    # Essentially replaces the is_revokd and matches inside
+    # the models/revoked_models.py file but is by no means
+    # finished or fully working. Just a preliminary method
+    # to get the ball rolling
+    def is_revoked(self, token_data):
+        R = RevocationEvent
+        cond1 = 0
+        cond2 = 0
+        with sql.session_for_read() as session:
+            for column in token_data:
+                if column in ('trustor_id', 'trustee_id', 'user_id'):
+                    if cond1 == 1:
+                        continue
+                    cond1 = 1
+                    q = session.query(R).filter(R.user_id.in_([
+                        token_values['trustor_id'], token_data['user_id'],
+                        token_values['assignment_domain_id']))
+                    if not (session.query(q.exists()).scalar()):
+                        return False
+
+                elif column in ('identity_domain_id', 'assignment_domain_id'):
+                    if cond2 == 1:
+                        continue
+                    cond2 = 1
+                    q = session.query(R).filter(R.domain_id.in_([
+                            token_data['identity_domain_id'],
+                            token_data['assignment_domain_id']))
+                    if not (session.query(q.exists()).scalar()):
+                        return False
+                    if not (session.query(exists().where(R.domain_scope_id ==
+                        token_data['assignment_domain_id'])).scalar()):
+                        return False
+
+                elif column == 'roles':
+                    if not (session.query(exists().where(R.role_id ==
+                        token_data[column])).scalar()):
+                        return False
+
+                else:
+                    if not (session.query(exists().where(getattr(R, column) ==
+                        token_data[column])).scalar()):
+                        return False
+            return True
+
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
             query = session.query(RevocationEvent).order_by(
