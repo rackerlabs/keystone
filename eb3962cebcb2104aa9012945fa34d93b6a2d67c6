@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_793a589a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-23T21:11:26Z",
+      "side": 1,
+      "message": "nit (suggestion): \"Populating the mapping table may perform slowly and could cause timeout errors when fetching the user list.\"",
+      "range": {
+        "startLine": 283,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 60
+      },
+      "revId": "eb3962cebcb2104aa9012945fa34d93b6a2d67c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_560acb8a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 1320,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-23T21:11:26Z",
+      "side": 1,
+      "message": "I think this would be more descriptive: \"Populate the identity mapping table for domain-specific LDAP backend\"",
+      "range": {
+        "startLine": 1320,
+        "startChar": 24,
+        "endLine": 1320,
+        "endChar": 60
+      },
+      "revId": "eb3962cebcb2104aa9012945fa34d93b6a2d67c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_995ab4f0",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-23T21:11:26Z",
+      "side": 1,
+      "message": "same here: \"Populate the identity mapping table for domain-specific LDAP backend\"",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 61
+      },
+      "revId": "eb3962cebcb2104aa9012945fa34d93b6a2d67c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_6cca981c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-23T21:11:26Z",
+      "side": 1,
+      "message": "Should you check if domain-specific LDAP first?  If not, return.",
+      "range": {
+        "startLine": 1039,
+        "startChar": 8,
+        "endLine": 1039,
+        "endChar": 27
+      },
+      "revId": "eb3962cebcb2104aa9012945fa34d93b6a2d67c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_dcfd3fb2",
         "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
         "patchSetId": 14
