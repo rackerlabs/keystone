@@ -92,6 +92,24 @@
       "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_905730c9",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T18:20:33Z",
+      "side": 1,
+      "message": "So that means for migrations that only need to add a trigger you can get by using a .sql file.. otherwise the trigger will have to be created in the migration script by executing sql manually.",
+      "parentUuid": "1ac06dbe_b1bc1c07",
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
