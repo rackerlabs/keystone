@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_3dd768ee",
+        "filename": "releasenotes/notes/bug-1613466-credential-update-ec2-type-8fb51ff3ad3a449c.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-23T06:56:34Z",
+      "side": 1,
+      "message": "project id",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "e0d5302c24a153a7bb9e0ea579af0f03e163669c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_bd01986c",
+        "filename": "releasenotes/notes/bug-1613466-credential-update-ec2-type-8fb51ff3ad3a449c.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-23T06:56:34Z",
+      "side": 1,
+      "message": "project id",
+      "range": {
+        "startLine": 7,
+        "startChar": 55,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "e0d5302c24a153a7bb9e0ea579af0f03e163669c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_7de440e0",
+        "filename": "releasenotes/notes/bug-1613466-credential-update-ec2-type-8fb51ff3ad3a449c.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-23T06:56:34Z",
+      "side": 1,
+      "message": "pls update this to 400, 404 is for \u0027NOT FOUND\u0027.",
+      "range": {
+        "startLine": 8,
+        "startChar": 5,
+        "endLine": 8,
+        "endChar": 8
+      },
+      "revId": "e0d5302c24a153a7bb9e0ea579af0f03e163669c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
