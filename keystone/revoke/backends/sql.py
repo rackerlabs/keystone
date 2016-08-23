@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sqlalchemy
+
 from keystone.common import sql
 from keystone.models import revoke_model
 from keystone.revoke.backends import base
@@ -97,6 +99,48 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    def is_revoked(self, token):
+        # user_id
+        user_id_filters = [RevocationEvent.user_id.is_(None)]
+        # domain_id
+        domain_id_filters = [RevocationEvent.domain_id.is_(None)]
+        # additional columns with one to one corresponding token key values
+        token_filters = []
+
+        for key, val in token.items():
+            if key in ['user_id', 'trustor_id', 'trustee_id'] and val:
+                user_id_filters.append(RevocationEvent.user_id == val)
+            elif key in ['identity_domain_id', 'assignment_domain_id'] and val:
+                domain_id_filters.append(RevocationEvent.domain_id == val)
+            elif key == 'roles':
+                if not val:
+                    token_filters.append(RevocationEvent.role_id.is_(None))
+                else:
+                    token_filters.append(sqlalchemy.or_(
+                        RevocationEvent.role_id.is_(None),
+                        RevocationEvent.role_id.in_(val)))
+            elif key == 'issued_at':
+                token_filters.append(RevocationEvent.issued_before >= val)
+            elif key in ['project_id', 'expires_at', 'trust_id', 'consumer_id',
+                         'access_token_id', 'audit_id', 'audit_chain_id']:
+                if not val:
+                    token_filters.append(getattr(
+                        RevocationEvent, key).is_(None))
+                else:
+                    token_filters.append(sqlalchemy.or_(
+                        getattr(RevocationEvent, key).is_(None),
+                        getattr(RevocationEvent, key) == val))
+
+        with sql.session_for_read() as session:
+            q = session.query(RevocationEvent)
+            q = (q.filter(sqlalchemy.or_(*user_id_filters))
+                  .filter(sqlalchemy.or_(*domain_id_filters))
+                  .filter(sqlalchemy.and_(*token_filters)))
+            if session.query(q.exists()).scalar():
+                return True
+
+        return False
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
