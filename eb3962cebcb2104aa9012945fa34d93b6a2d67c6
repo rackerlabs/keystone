@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_dcfd3fb2",
+        "filename": "releasenotes/notes/mapping_populate-521d92445505b8a3.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2016-08-23T19:33:19Z",
+      "side": 1,
+      "message": "should have a period at the end of this line.",
+      "revId": "eb3962cebcb2104aa9012945fa34d93b6a2d67c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
