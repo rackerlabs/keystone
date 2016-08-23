@@ -110,6 +110,24 @@
       "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d67fe012",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-23T19:10:01Z",
+      "side": 1,
+      "message": "...or you write all your migration in sql....",
+      "parentUuid": "1ac06dbe_905730c9",
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
