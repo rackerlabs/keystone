@@ -15,7 +15,7 @@ from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
 from oslo_db import api as oslo_db_api
-
+from sqlalchemy import and_, or_, exists
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'revocation_event'
@@ -79,6 +79,43 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    def is_revoked(self, token_data):
+        R = RevocationEvent
+        token = dict((k, v) for k, v in token_data.iteritems() if v)
+        or1 = []
+        or2 = []
+        and1 = []
+        for key in token:
+            if key in ['user_id','trustor_id','trustee_id']:
+                or1.append(or_(R.user_id == token[key]))
+
+            elif key in ['identity_domain_id', 'assignment_domain_id']:
+                or2.append(or_(R.domain_id == token[key]))
+
+            elif key == 'roles':
+                and1.append(and_(R.role_id == token[key]))
+
+            elif key == 'issued_at':
+                and1.append(and_(R.issued_before > token[key]))
+
+            else:
+                and1.append(and_(getattr(R, key) == token[key]))
+
+        with sql.session_for_read() as session:
+            if or1 and or2:
+                q = session.query(R).filter(*or1).filter(*or2).filter(*and1)
+            elif or1:
+                q = session.query(R).filter(*or1).filter(*and1)
+            elif or2:
+                q = session.query(R).filter(*or2).filter(*and1)
+            else:
+                q = session.query(R).filter(*and1)
+
+            if not (session.query(q.exists()).scalar()):
+                return False
+
+        return True
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:

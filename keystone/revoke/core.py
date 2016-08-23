@@ -62,10 +62,8 @@ class Manager(manager.Manager):
     """Default pivot point for the Revoke backend.
 
     Performs common logic for recording revocations.
-
     See :mod:`keystone.common.manager.Manager` for more details on
     how this dynamically calls the backend.
-
     """
 
     driver_namespace = 'keystone.revoke'
@@ -81,6 +79,9 @@ class Manager(manager.Manager):
 
     def list_events(self, last_fetch=None):
         return self._list_events(last_fetch)
+
+    def filt_list(self, token_data):
+        return self.driver.filter_list(token_data)
 
     def _user_callback(self, service, resource_type, operation,
                        payload):
@@ -200,11 +201,9 @@ class Manager(manager.Manager):
         :param token_values: dictionary of values from a token, normalized for
                              differences between v2 and v3. The checked values
                              are a subset of the attributes of model.TokenEvent
-
         :raises keystone.exception.TokenNotFound: If the token is invalid.
-
         """
-        if revoke_model.is_revoked(self.list_events(), token_values):
+        if self.driver.is_revoked(token_values):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def revoke(self, event):
