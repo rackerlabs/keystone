@@ -193,6 +193,7 @@ class Manager(manager.Manager):
         self.revoke(revoke_model.RevokeEvent(domain_id=domain_id,
                                              role_id=role_id))
 
+    @MEMOIZE
     def check_token(self, token_values):
         """Check the values from a token against the revocation list.
 
@@ -203,7 +204,7 @@ class Manager(manager.Manager):
         :raises keystone.exception.TokenNotFound: If the token is invalid.
 
         """
-        if revoke_model.is_revoked(self.list_events(), token_values):
+        if self.is_revoked(token_values):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def revoke(self, event):
