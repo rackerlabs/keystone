@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import sqlalchemy
+
 from keystone.common import sql
 from keystone.models import revoke_model
 from keystone.revoke.backends import base
@@ -79,6 +81,48 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    def is_revoked(self, token_data):
+        user_id_filters = []
+        domain_id_filters = []
+        ands = []
+        for key, value in token_data.items():
+            if key in ['user_id', 'trustor_id', 'trustee_id']:
+                user_id_filters.append(sqlalchemy.or_(
+                    RevocationEvent.user_id.is_(None),
+                    RevocationEvent.user_id == value))
+
+            elif key in ['identity_domain_id', 'assignment_domain_id']:
+                domain_id_filters.append(sqlalchemy.or_(
+                    RevocationEvent.domain_id.is_(None),
+                    RevocationEvent.domain_id == value))
+
+            elif key == 'roles':
+                if not token_data['roles']:
+                    ands.append(RevocationEvent.role_id.is_(None))
+                else:
+                    ands.append(sqlalchemy.or_(
+                        RevocationEvent.role_id.is_(None),
+                        RevocationEvent.role_id.in_(value)))
+
+            elif key == 'issued_at':
+                ands.append(RevocationEvent.issued_before >= value)
+
+            else:
+                ands.append(sqlalchemy.or_(
+                    getattr(RevocationEvent, key).is_(None),
+                    getattr(RevocationEvent, key) == value))
+
+        with sql.session_for_read() as session:
+            q = session.query(RevocationEvent)
+            q = (q.filter(sqlalchemy.or_(*user_id_filters))
+                  .filter(sqlalchemy.or_(*domain_id_filters))
+                  .filter(sqlalchemy.and_(*ands)))
+
+            if (session.query(q.exists()).scalar()):
+                return True
+
+        return False
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
