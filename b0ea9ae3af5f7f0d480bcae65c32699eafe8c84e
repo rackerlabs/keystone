@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_68ae24e7",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-23T14:12:37Z",
+      "side": 1,
+      "message": "Most of these properties are duplicated below and I have extracted them to a separate class.",
+      "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_98a5b3a3",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 1
@@ -19,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_e82cd49a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-23T14:12:37Z",
+      "side": 1,
+      "message": "Yeah, I was using this in the tests of another review. Not sure why I\u0027m not doing it here.",
+      "parentUuid": "1ac06dbe_98a5b3a3",
+      "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_432350a7",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 1
@@ -30,6 +65,24 @@
       "writtenOn": "2016-08-23T13:17:35Z",
       "side": 1,
       "message": "(nit) murmur is about 2x faster than sha1",
+      "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_e87a1487",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-23T14:12:37Z",
+      "side": 1,
+      "message": "I\u0027ve actually changed this a little bit. I\u0027m using _sha1_mangle_key only if another mangler isn\u0027t set. I\u0027m using this because it\u0027s the default in oslo.cache.",
+      "parentUuid": "1ac06dbe_432350a7",
       "revId": "b0ea9ae3af5f7f0d480bcae65c32699eafe8c84e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
