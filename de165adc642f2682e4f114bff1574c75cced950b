@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_b546b54c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_5265051c",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_159ed762",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 11
@@ -47,6 +65,24 @@
       "writtenOn": "2016-08-22T21:56:11Z",
       "side": 1,
       "message": "And that you\u0027ve have fully upgraded to at least the newton schema -- this should not be done during the upgrade process (before contract has run).",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b5b99517",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_159ed762",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_754a7d27",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_b5c9c35b",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_32e4c9df",
         "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
         "patchSetId": 11
@@ -99,6 +153,24 @@
       "writtenOn": "2016-08-22T21:56:11Z",
       "side": 1,
       "message": "You shouldn\u0027t need the IF EXISTS in either of these. If the trigger does not exist, something is wrong.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_751f1d08",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_32e4c9df",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_95cc596b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_ab1e845c",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_159257f6",
         "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
         "patchSetId": 11
@@ -175,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_b5a51548",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "That\u0027s an interesting point since we are migrating in two places. The first is the initial database migration (which lives here), and the second is the `keystone-manage credential_migrate` migration, which will forcibly update all credentials to be encrypted with the current primary key.\n\nAdding batch support to `keystone-manage credential_migrate` seems reasonable, but I\u0027m not sure how you\u0027d do that effectively in a database upgrade?",
+      "parentUuid": "1ac06dbe_eb3cfcc9",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_953927f5",
         "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
         "patchSetId": 11
@@ -203,6 +311,24 @@
       "writtenOn": "2016-08-22T21:56:11Z",
       "side": 1,
       "message": "This work could/should be refactored into a helper method that decrypts a single credential correctly.",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_4bfc0272",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_b0db914e",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -296,6 +422,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_cb4752ba",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_10d705ee",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ff531a37",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
@@ -348,6 +492,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_2ba2664b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1734,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "Good catch - I added a couple lines to the beginning of the test to make sure all repositories are at 001.",
+      "parentUuid": "1ac06dbe_50321d60",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_707bd9f5",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 11
@@ -376,6 +538,24 @@
       "writtenOn": "2016-08-22T21:56:11Z",
       "side": 1,
       "message": "Does it share a setUp with another class?",
+      "revId": "de165adc642f2682e4f114bff1574c75cced950b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_2b70a6db",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-23T14:35:00Z",
+      "side": 1,
+      "message": "I don\u0027t think there is anything specific to the setUp here that we won\u0027t have to do in other places that test credentials.",
+      "parentUuid": "1ac06dbe_b058b18b",
       "revId": "de165adc642f2682e4f114bff1574c75cced950b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
