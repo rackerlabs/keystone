@@ -22,6 +22,30 @@
       "revId": "3f5908102e1a373f36cbc5e5195142ab19da6cfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_2917fc48",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-23T17:42:42Z",
+      "side": 1,
+      "message": "The goal here was really to just bypass the key_mangler logic in the case of a region key. Those should not get the same treatment as regular keys. That being said, this has been removed in favor of using get_or_create.",
+      "parentUuid": "1ac06dbe_6f366653",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 52
+      },
+      "revId": "3f5908102e1a373f36cbc5e5195142ab19da6cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
