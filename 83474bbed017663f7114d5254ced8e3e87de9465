@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_f06664b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-08-23T18:21:20Z",
+      "side": 1,
+      "message": "operations",
+      "revId": "83474bbed017663f7114d5254ced8e3e87de9465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_8ff48287",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 1
