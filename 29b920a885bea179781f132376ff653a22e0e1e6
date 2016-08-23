@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_49e07896",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-23T17:59:30Z",
+      "side": 1,
+      "message": "This is an anti-pattern that leads to SQL injection; in this case, we\u0027re not at risk because all the parameters are statically defined in this module. But anyway, use the parameter options of execute() to safely pass in arguments and let sqlalchemy do the hard part.",
+      "revId": "29b920a885bea179781f132376ff653a22e0e1e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
