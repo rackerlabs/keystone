@@ -133,7 +133,6 @@ def is_revoked(events, token_data):
     event in the `events` list, the token is revoked. If the token is compared
     against every item in the list without a match, it is not considered
     revoked from the `revoke_api`.
-
     :param events: a list of RevokeEvent instances
     :param token_data: map based on a flattened view of the token. The required
                        fields are `expires_at`,`user_id`, `project_id`,
@@ -157,7 +156,6 @@ def matches(event, token_values):
     the attribute, a match is still possible.  If the event has a
     value for the attribute, and it does not match the token, no match
     is possible, so skip the remaining checks.
-
     :param event: a RevokeEvent instance
     :param token_values: dictionary with set of values taken from the
                          token
