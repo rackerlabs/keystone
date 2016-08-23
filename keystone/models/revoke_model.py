@@ -228,9 +228,6 @@ def matches(event, token_values):
             token_values['roles']):
         return False
 
-    if token_values['issued_at'] > event.issued_before:
-        return False
-
     return True
 
 

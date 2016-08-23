@@ -15,7 +15,9 @@ from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
 from oslo_db import api as oslo_db_api
-
+from sqlalchemy import exists
+from sqlalchemy import or_
+from sqlalchemy import and_
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'revocation_event'
@@ -79,6 +81,63 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    # This method is for testing and adding queries one at a time to make sure
+    # each added query passes the tox test. Eventually this will be deleted
+    # and hopefully we will get something that looks like is_revoked method
+    # below which wil be in check_token method and replace the revoke_model.py
+    # methods of "is_revoked and matches"
+    def filter_list(self, token):
+        R = RevocationEvent
+        with sql.session_for_read() as session:
+            # Do a query and then grab the results in that query then
+            # turn it into a dict events for the original matches method
+            # to use. We also delete the corresponding if statement that
+            # the query below will replace in the revoke_model.matches method
+            q = session.query(R).filter(R.issued_before >
+                                        token['issued_at'])
+            events = [revoke_model.RevokeEvent(**e.to_dict()) for e in q]
+            return events
+
+    # Here is what I ultimately want to aspire to. A query that does what
+    # the is_revoke and matches method does but in one single query.
+    def is_revoked(self, tk):
+        R = RevocationEvent
+        with sql.session_for_read() as session:
+            # First we have the or_ group which just says "use the three
+            # token dictionary fields and check if either of them match
+            # user_id in the table.
+            # Next or_does the same thing but for domain_id
+            # Last and_ takes each token field, since it is a one to one
+            # map, and says "make sure all these fields match with the
+            # corresponding table column
+            q = (session.query(R).filter(or_(R.user_id == tk['user_id'],
+                                             R.user_id == tk['trustor_id'],
+                                             R.user_id == tk['trustee_id']))
+                                 .filter(or_(R.domain_id ==
+                                             tk['identity_domain_id'],
+                                             R.domain_id ==
+                                             tk['assignment_domain_id']))
+                                 .filter(and_(R.project_id == tk['project_id'],
+                                            R.expires_at == tk['expires_at'],
+                                            R.trust_id == tk['trust_id'],
+                                            R.consumer_id == tk['consumer_id'],
+                                            R.access_token_id ==
+                                                tk['access_token_id'],
+                                            R.audit_id == tk['audit_id'],
+                                            R.audit_chain_id ==
+                                                tk['audit_chain_id'],
+                                            R.role_id == tk['roles'],
+                                            R.issued_before > tk['issued_at']
+                                                                    )))
+            # now we test that query to make sure that it passes the
+            # exists test and return True with scalar() if such a token
+            # doest exist in the table. Then the if statement will
+            # return False if one cannot be found in the table or it
+            # will not execute and we return True.
+            if not (session.query(q.exists()).scalar()):
+                return False
+        return True
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
