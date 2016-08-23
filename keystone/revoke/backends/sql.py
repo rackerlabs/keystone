@@ -15,6 +15,7 @@ from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
 from oslo_db import api as oslo_db_api
+from sqlalchemy import and_, or_
 
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
@@ -79,6 +80,45 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    def is_revoked(self, token_data):
+        # or1 is for the OR query statment to map token fields to user_ids,
+        # or2 is for the OR query statment to map token fields to domain_ids,
+        # and1 is for the AND query statment for all other one to one matching
+        or1 = []
+        or2 = []
+        and1 = []
+        for key, value in token_data.iteritems():
+            if key in ['user_id', 'trustor_id', 'trustee_id']:
+                or1.append(or_(RevocationEvent.user_id.is_(None),
+                               RevocationEvent.user_id == value))
+
+            elif key in ['identity_domain_id', 'assignment_domain_id']:
+                or2.append(or_(RevocationEvent.domain_id.is_(None),
+                               RevocationEvent.domain_id == value))
+
+            elif key == 'roles':
+                if not token_data['roles']:
+                    and1.append(RevocationEvent.role_id.is_(None))
+                else:
+                    and1.append(or_(RevocationEvent.role_id.is_(None),
+                                    RevocationEvent.role_id.in_(value)))
+
+            elif key == 'issued_at':
+                and1.append(RevocationEvent.issued_before >= value)
+
+            else:
+                and1.append(or_(getattr(RevocationEvent, key).is_(None),
+                                getattr(RevocationEvent, key) == value))
+
+        with sql.session_for_read() as session:
+            q = session.query(RevocationEvent)
+            q = q.filter(or_(*or1)).filter(or_(*or2)).filter(and_(*and1))
+
+            if (session.query(q.exists()).scalar()):
+                return True
+
+        return False
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
