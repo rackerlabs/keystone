@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_a7f15d6d",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-23T16:37:30Z",
+      "side": 1,
+      "message": "This trigger should work for the BEFORE UPDATE case",
+      "revId": "8ef2243ecec0a2834d4daf8553d21ca85e6919a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_da56ec04",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-23T16:37:30Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to check both key_hash and encrypted_blob, as they should always be set together, right?",
+      "revId": "8ef2243ecec0a2834d4daf8553d21ca85e6919a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_1a3ec4c0",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-23T16:37:30Z",
+      "side": 1,
+      "message": "If either the old column and the new column are null in either the OLD or NEW rows, then you should raise for the BEFORE UPDATE case; something like:\n\n  ... BEFORE UPDATE ...\n  IF (NEW.encrypted_blob is NULL AND OLD.encrypted_blob IS NULL) OR (NEW.blob is NULL AND OLD.blob IS NULL) THEN\n    SIGNAL ...",
+      "revId": "8ef2243ecec0a2834d4daf8553d21ca85e6919a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
