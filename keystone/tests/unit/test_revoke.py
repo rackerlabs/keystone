@@ -21,7 +21,6 @@ from six.moves import range
 from keystone.common import utils
 from keystone import exception
 from keystone.models import revoke_model
-from keystone.tests import unit
 from keystone.tests.unit import test_backend_sql
 from keystone.token import provider
 
@@ -148,6 +147,7 @@ class RevokeTests(object):
         audit_chain_id = _new_id()
         self.revoke_api.revoke_by_audit_chain_id(audit_chain_id)
         token_values['audit_chain_id'] = audit_chain_id
+        token_values['roles'] = token_values.pop('role_id')
         self.assertRaises(exception.TokenNotFound,
                           self.revoke_api.check_token,
                           token_values)
@@ -182,7 +182,7 @@ def remove_event(events, event):
             events.remove(target)
 
 
-class RevokeListTests(unit.TestCase):
+class RevokeListTests(object):
     def setUp(self):
         super(RevokeListTests, self).setUp()
         self.events = []
@@ -229,16 +229,14 @@ class RevokeListTests(unit.TestCase):
         self.token_to_revoke = token_to_revoke
 
     def _assertTokenRevoked(self, token_data):
-        self.assertTrue(any([_matches(e, token_data) for e in self.events]))
-        return self.assertTrue(
-            revoke_model.is_revoked(self.revoke_events, token_data),
-            'Token should be revoked')
+        self.assertTrue(self.revoke_api.is_revoked(token_data))
+        return self.assertTrue(self.revoke_api.is_revoked(token_data),
+                               'Token should be revoked')
 
     def _assertTokenNotRevoked(self, token_data):
-        self.assertFalse(any([_matches(e, token_data) for e in self.events]))
-        return self.assertFalse(
-            revoke_model.is_revoked(self.revoke_events, token_data),
-            'Token should not be revoked')
+        self.assertFalse(self.revoke_api.is_revoked(token_data))
+        return self.assertFalse(self.revoke_api.is_revoked(token_data),
+                                'Token should not be revoked')
 
     def _revoke_by_user(self, user_id):
         return add_event(
