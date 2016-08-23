@@ -74,6 +74,24 @@
       "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b1bc1c07",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-23T09:28:24Z",
+      "side": 1,
+      "message": "No, from looking at the code I don\u0027t believe so. If there is a db specific file that is used, if not then the general one is used. It does mean that you could just have a db specific file for, say, postgresql - and have the .py file handle the other databases.",
+      "parentUuid": "1ac06dbe_1cc1e954",
+      "revId": "590098e507c141c6a1959d208c26812d7edd20d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
