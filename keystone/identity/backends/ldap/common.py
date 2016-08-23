@@ -495,9 +495,6 @@ class PythonLDAPHandler(LDAPHandler):
 
     """
 
-    def __init__(self, conn=None):
-        super(PythonLDAPHandler, self).__init__(conn=conn)
-
     def connect(self, url, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert=ldap.OPT_X_TLS_DEMAND, chase_referrals=None,
