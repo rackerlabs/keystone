@@ -15,6 +15,7 @@ from keystone.models import revoke_model
 from keystone.revoke.backends import base
 
 from oslo_db import api as oslo_db_api
+from sqlalchemy import exists
 
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
@@ -79,6 +80,61 @@ class Revoke(base.RevokeDriverV8):
                 query.delete(synchronize_session=False)
 
             session.flush()
+
+    def is_revoked(self, token_data):
+        R = RevocationEvent
+        with sql.session_for_read() as session:
+            q = session.query(R).filter(R.user_id.in_([token_data['user_id'],
+                                        token_data['trustor_id'],
+                                        token_data['trustee_id']]))
+            if not (session.query(q.exists()).scalar()):
+                return False
+
+            q = session.query(R).filter(R.domain_id.in_([
+                                        token_data['identity_domain_id'],
+                                        token_data['assignment_domain_id']]))
+            if not (session.query(q.exists()).scalar()):
+                return False
+            # if not (session.query(exists().where(R.domain_scope_id ==
+            #         token_data['assignment_domain_id'])).scalar()):
+            #     return False
+            if not (session.query(exists().where(R.project_id ==
+                    token_data['project_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.expires_at ==
+                    token_data['expires_at'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.trust_id ==
+                    token_data['trust_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.consumer_id ==
+                    token_data['consumer_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.access_token_id ==
+                    token_data['access_token_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.audit_id ==
+                    token_data['audit_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.audit_chain_id ==
+                    token_data['audit_chain_id'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.role_id ==
+                    token_data['roles'])).scalar()):
+                return False
+
+            if not (session.query(exists().where(R.issued_before <
+                    token_data['issued_at'])).scalar()):
+                return False
+
+        return True
 
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
