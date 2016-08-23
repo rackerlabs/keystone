@@ -203,7 +203,7 @@ class Manager(manager.Manager):
         :raises keystone.exception.TokenNotFound: If the token is invalid.
 
         """
-        if revoke_model.is_revoked(self.list_events(), token_values):
+        if self.is_revoked(token_values):
             raise exception.TokenNotFound(_('Failed to validate token'))
 
     def revoke(self, event):
