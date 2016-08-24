@@ -34,6 +34,24 @@
       "revId": "e22f54c8a22569b43549e101b49998de20d56c58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_61ed368e",
+        "filename": "keystone/common/sql/contract_repo/versions/002_contract_created_at_non_nullable.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-24T21:21:32Z",
+      "side": 1,
+      "message": "So when I remove the IF EXISTS conditional locally (with http://cdn.pasteraw.com/rdkduii03944sy4b6pezz5p1glj20ts) I get two test failures: \n\nhttp://cdn.pasteraw.com/42zam2htmobhucnhuhu0gxqf04onywi\n\nhttp://cdn.pasteraw.com/a7hv8t4reqpfmfuy0r7oakqg03worxc",
+      "parentUuid": "1ac06dbe_56b55ece",
+      "revId": "e22f54c8a22569b43549e101b49998de20d56c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
