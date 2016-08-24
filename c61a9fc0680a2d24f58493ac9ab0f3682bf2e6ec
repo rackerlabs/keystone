@@ -183,6 +183,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_4672cbae",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-08-24T22:05:35Z",
+      "side": 1,
+      "message": "I\u0027m fine with logging and throwing out the key.",
+      "parentUuid": "1ac06dbe_733a27e9",
+      "range": {
+        "startLine": 394,
+        "startChar": 22,
+        "endLine": 394,
+        "endChar": 46
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_c9bd43d9",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
