@@ -365,6 +365,115 @@
       "revId": "0465cab4870af749613f04b79d4230882adc0318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_f707317f",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:34:13Z",
+      "side": 1,
+      "message": "same name as region0?",
+      "range": {
+        "startLine": 46,
+        "startChar": 44,
+        "endLine": 46,
+        "endChar": 55
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_97887dc8",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:34:13Z",
+      "side": 1,
+      "message": "nice test!",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 129,
+        "endChar": 59
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_92124b57",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:34:13Z",
+      "side": 1,
+      "message": "why invalidate region1? we\u0027re using region0 here, no?",
+      "range": {
+        "startLine": 166,
+        "startChar": 8,
+        "endLine": 166,
+        "endChar": 33
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_f71bb17e",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:34:13Z",
+      "side": 1,
+      "message": "make sure the new value is simple_value, because you just set that directly in the cache in L163\n\nadd another check:\n\nself.assertEqual(simple_value, new_value)",
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d705d514",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:34:13Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 48
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
