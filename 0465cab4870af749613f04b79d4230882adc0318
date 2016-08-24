@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_34a9c7e0",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:01:18Z",
+      "side": 1,
+      "message": "If it is a region key, it is a call to get the region_id, right?",
+      "parentUuid": "1ac06dbe_af19e724",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ef991fd2",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
