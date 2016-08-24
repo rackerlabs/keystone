@@ -13,6 +13,7 @@
 # under the License.
 
 import copy
+import random as _random
 import uuid
 
 import mock
@@ -701,6 +702,58 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.assertIsNotNone(verifier)
 
         request_token.set_verifier(uuid.uuid4().hex)
+        url, headers = self._create_access_token(consumer, request_token)
+        self.post(url, headers=headers,
+                  expected_status=http_client.UNAUTHORIZED)
+
+    def test_validate_access_token_request_failed(self):
+        consumer = self._create_single_consumer()
+        consumer_id = consumer['id']
+        consumer_secret = consumer['secret']
+        consumer = {'key': consumer_id, 'secret': consumer_secret}
+
+        url, headers = self._create_request_token(consumer, self.project_id)
+        content = self.post(
+            url, headers=headers,
+            response_content_type='application/x-www-form-urlencoded')
+        credentials = _urllib_parse_qs_text_keys(content.result)
+        request_key = credentials['oauth_token'][0]
+        request_secret = credentials['oauth_token_secret'][0]
+        request_token = oauth1.Token(request_key, request_secret)
+
+        url = self._authorize_request_token(request_key)
+        body = {'roles': [{'id': self.role_id}]}
+        resp = self.put(url, body=body, expected_status=http_client.OK)
+        verifier = resp.result['token']['oauth_verifier']
+        request_token.set_verifier(verifier)
+        # 1. Invalid signature.
+        # Update the secret, so it will fail to validate the signature.
+        consumer.update({'secret': uuid.uuid4().hex})
+        url, headers = self._create_access_token(consumer, request_token)
+        self.post(url, headers=headers,
+                  expected_status=http_client.UNAUTHORIZED)
+
+        # 2. Invalid verifier.
+        # Even though the verifier is well formatted, it is not verifier
+        # that is stored in the backend, this is different with the testcase
+        # above `test_bad_verifier` where it test that `verifier` is not
+        # well formatted.
+        random = _random.SystemRandom()
+        verifier = ''.join(random.sample(base.VERIFIER_CHARS, 8))
+        request_token.set_verifier(verifier)
+        url, headers = self._create_access_token(consumer, request_token)
+        self.post(url, headers=headers,
+                  expected_status=http_client.UNAUTHORIZED)
+
+        # 3. The provided consumer does not exist.
+        consumer.update({'key': uuid.uuid4().hex})
+        url, headers = self._create_access_token(consumer, request_token)
+        self.post(url, headers=headers,
+                  expected_status=http_client.UNAUTHORIZED)
+
+        # 4. The consumer key provided does not match stored consumer key.
+        consumer2 = self._create_single_consumer()
+        consumer.update({'key': consumer2['id']})
         url, headers = self._create_access_token(consumer, request_token)
         self.post(url, headers=headers,
                   expected_status=http_client.UNAUTHORIZED)
