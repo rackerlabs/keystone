@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_4703f276",
+        "filename": "keystone/common/sql/contract_repo/versions/002_contract_created_at_non_nullable.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-24T19:48:59Z",
+      "side": 1,
+      "message": "This breaks for me in my review because I am not doing `IF EXISTS`\n\nThis is the traceback I get when I run test_walk_versions:\n\nhttp://cdn.pasteraw.com/d085d2zfwthvky30jgx232tdi2pmi8z",
+      "revId": "e22f54c8a22569b43549e101b49998de20d56c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
