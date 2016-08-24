@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_e11c936c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:42:10Z",
+      "side": 1,
+      "message": "This doesn\u0027t actually represent what this change is about. It\u0027s more about allowing alternate implemenations of the fernet key repository righyt?",
+      "revId": "cb264627dfc5e7aaa350f1917bd8025c06e750af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_c119977b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:42:10Z",
+      "side": 1,
+      "message": "You should add a description of why you are going this below. Do you have a need to create your own repository implementation?",
+      "revId": "cb264627dfc5e7aaa350f1917bd8025c06e750af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_012a8f7e",
+        "filename": "keystone/common/fernet_key_store/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:42:10Z",
+      "side": 1,
+      "message": "Don\u0027t import * here. Just import the things that you want to make available as a part of the API.",
+      "revId": "cb264627dfc5e7aaa350f1917bd8025c06e750af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_21250bae",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:42:10Z",
+      "side": 1,
+      "message": "six is a third party library and should be in it\u0027s own section\nhttp://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "cb264627dfc5e7aaa350f1917bd8025c06e750af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_810f9f2d",
+        "filename": "keystone/common/fernet_key_store/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:42:10Z",
+      "side": 1,
+      "message": "The imports are not in the correct order\nhttp://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "cb264627dfc5e7aaa350f1917bd8025c06e750af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
