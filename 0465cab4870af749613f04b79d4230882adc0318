@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_2f0e97e5",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:00:29Z",
+      "side": 1,
+      "message": "Exactly. It\u0027s a factory function that when called returns a key mangler. Since the key mangler is defined *inside* the factory it has access to the factory\u0027s arguments.",
+      "parentUuid": "1ac06dbe_1bdcc645",
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_af61e7d5",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -30,6 +48,30 @@
       "writtenOn": "2016-08-24T16:55:32Z",
       "side": 1,
       "message": "why this if the provided key is not valid ?",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_af19e724",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:00:29Z",
+      "side": 1,
+      "message": "It\u0027s not check if the key is valid, it\u0027s check if it\u0027s a region key. If it is we want to leave it alone and not add the region id.",
+      "parentUuid": "1ac06dbe_af61e7d5",
       "range": {
         "startLine": 82,
         "startChar": 18,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_4fcaf36f",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:00:29Z",
+      "side": 1,
+      "message": "This \u0027if\u0027 completely unrelated to the previous \u0027if\u0027. It\u0027s checking to see there there was a key mangler previously set and it so uses it. This way our key mangler is nothing more than a wrapper around it.",
+      "parentUuid": "1ac06dbe_ef991fd2",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 27
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_dbc50e0b",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_afc72763",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:00:29Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "1ac06dbe_dbc50e0b",
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_38f8adc4",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -93,6 +177,24 @@
       "writtenOn": "2016-08-24T14:47:29Z",
       "side": 1,
       "message": "We shouldn\u0027t need to pass this as a kwarg - name should just be required according to the method signature. Unless we have it here for the sake of readability?",
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_76199179",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:00:29Z",
+      "side": 1,
+      "message": "Just readability.",
+      "parentUuid": "1ac06dbe_38f8adc4",
       "revId": "0465cab4870af749613f04b79d4230882adc0318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
