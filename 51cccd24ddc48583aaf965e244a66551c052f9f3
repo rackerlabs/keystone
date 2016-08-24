@@ -70,6 +70,30 @@
       "revId": "51cccd24ddc48583aaf965e244a66551c052f9f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_8a0b2f7d",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3012
+      },
+      "writtenOn": "2016-08-24T20:07:54Z",
+      "side": 1,
+      "message": "Steve, the issue is that name is just service name (e.g \"scheduler\" or \"api\" or something else), the issue is that these \"scheduler\"s can be found in Nova, Cinder, Glance, ... so we need project name as well to have 100% identification. Name is usually something like this - https://github.com/openstack/keystone/blob/master/httpd/keystone.py#L24 - and for keystone it\u0027s self-speaking, but not for other services",
+      "parentUuid": "3ac371cc_e5e8d0b6",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "51cccd24ddc48583aaf965e244a66551c052f9f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
