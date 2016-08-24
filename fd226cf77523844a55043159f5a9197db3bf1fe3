@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_ca29b18b",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:09:47Z",
+      "side": 1,
+      "message": "Should this be treated more like password errors? We don\u0027t have that the password is invalid, just that the username/password combination doesn\u0027t work. That way there is no way to know which information is correct and which is not.",
+      "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_2a1fa55c",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:09:47Z",
+      "side": 1,
+      "message": "Same thing here?",
+      "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_0a2469ad",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:09:47Z",
+      "side": 1,
+      "message": "Is this to get around bandit?",
+      "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
