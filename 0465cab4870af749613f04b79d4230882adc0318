@@ -203,6 +203,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_37454917",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:19:18Z",
+      "side": 1,
+      "message": "I think adding comments here in the mangler would help to understand what\u0027s going on. Also, adding docstrings to the class above (region manager and invalidation strategy)",
+      "parentUuid": "1ac06dbe_54344349",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ef991fd2",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -238,6 +262,30 @@
       "side": 1,
       "message": "This \u0027if\u0027 completely unrelated to the previous \u0027if\u0027. It\u0027s checking to see there there was a key mangler previously set and it so uses it. This way our key mangler is nothing more than a wrapper around it.",
       "parentUuid": "1ac06dbe_ef991fd2",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 27
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_377269ae",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:19:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ac06dbe_4fcaf36f",
       "range": {
         "startLine": 83,
         "startChar": 8,
