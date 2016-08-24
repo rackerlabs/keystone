@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_5e5742ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:31:28Z",
+      "side": 1,
+      "message": "Currently",
+      "revId": "93ed9651cedeee136938c5a3fa03338c96a957a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_3e5c06ed",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:31:28Z",
+      "side": 1,
+      "message": "is_revoked",
+      "revId": "93ed9651cedeee136938c5a3fa03338c96a957a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
