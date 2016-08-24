@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_f3761705",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-24T22:02:47Z",
+      "side": 1,
+      "message": "No reason to add more to a try block than is required. My philosophy is keep the try block very narrow so extraneous things aren\u0027t happening in it including binding a name to the empty dict initialization.",
+      "parentUuid": "1ac06dbe_89eeabb2",
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_01d72f24",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-24T17:48:47Z",
       "side": 1,
       "message": "Instead of doing all of this, would it be possible to just only serialize the correct keys to begin with?",
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_33c6ef16",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-24T22:02:47Z",
+      "side": 1,
+      "message": "I\u0027m more interested in squashing the de-serialize being weird than making serialize more sane in this case.\n\nWe can do both, but this is far more important at the moment as even serializing the keys as you describe could result in an error\u0027d case here.",
+      "parentUuid": "1ac06dbe_01d72f24",
       "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -76,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_13cbf31f",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-24T22:02:47Z",
+      "side": 1,
+      "message": "Fixed in next.",
+      "parentUuid": "1ac06dbe_a9e447ac",
+      "range": {
+        "startLine": 385,
+        "startChar": 47,
+        "endLine": 385,
+        "endChar": 51
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_c9bf035f",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
@@ -99,6 +159,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_733a27e9",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-24T22:02:47Z",
+      "side": 1,
+      "message": "So 3 options here:\n\n 1. Throw out the event, it\u0027s a bad revoke event (and log)\n\n 2. Log and throw out the key.\n\n 3. Raise an exception and prevent login.\n\nWhich way should we approach this, I\u0027ll update the comment to mirror the effect and what happens in a more generous match case.\n\nI am inclined to say Log and throw out the key, a more generous match is more secure (it rejects more tokens, but \"new\" tokens after the event\u0027s  issued at time.",
+      "parentUuid": "1ac06dbe_c9bf035f",
+      "range": {
+        "startLine": 394,
+        "startChar": 22,
+        "endLine": 394,
+        "endChar": 46
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_c9bd43d9",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
@@ -110,6 +194,30 @@
       "writtenOn": "2016-08-24T16:31:32Z",
       "side": 1,
       "message": "related",
+      "range": {
+        "startLine": 397,
+        "startChar": 58,
+        "endLine": 397,
+        "endChar": 66
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_b3249fc6",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-24T22:02:47Z",
+      "side": 1,
+      "message": "fixed in next.",
+      "parentUuid": "1ac06dbe_c9bd43d9",
       "range": {
         "startLine": 397,
         "startChar": 58,
