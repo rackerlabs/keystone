@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_ea2aad2e",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-24T17:15:02Z",
+      "side": 0,
+      "message": "If the tests pass then we\u0027re probably all good. I would have thought that the DI would fail. I was intending to fix that at some point so maybe I already did?",
+      "revId": "68e94ff979040370ec9e9310e8cc1de3382037a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
