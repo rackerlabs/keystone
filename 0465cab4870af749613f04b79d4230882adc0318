@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ac06dbe_97407d37",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-24T18:16:28Z",
+      "side": 1,
+      "message": "it is a region manager, not a region",
+      "range": {
+        "startLine": 57,
+        "startChar": 23,
+        "endLine": 57,
+        "endChar": 29
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_1bdcc645",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
