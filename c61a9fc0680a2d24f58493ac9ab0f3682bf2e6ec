@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_89eeabb2",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-08-24T16:31:32Z",
+      "side": 1,
+      "message": "this could be moved into the try since it\u0027s only used there.",
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_a9e447ac",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-08-24T16:31:32Z",
+      "side": 1,
+      "message": "using %r already puts strings and bytes in \u0027, so no need for extra `s.",
+      "range": {
+        "startLine": 385,
+        "startChar": 47,
+        "endLine": 385,
+        "endChar": 51
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_c9bf035f",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-08-24T16:31:32Z",
+      "side": 1,
+      "message": "The comment should say what happens if it does match anyway. We shouldn\u0027t be relying on luck for keystone to work.",
+      "range": {
+        "startLine": 394,
+        "startChar": 22,
+        "endLine": 394,
+        "endChar": 46
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_c9bd43d9",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-08-24T16:31:32Z",
+      "side": 1,
+      "message": "related",
+      "range": {
+        "startLine": 397,
+        "startChar": 58,
+        "endLine": 397,
+        "endChar": 66
+      },
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
