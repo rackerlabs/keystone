@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_160bfd7e",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-24T15:07:04Z",
+      "side": 1,
+      "message": "I don\u0027t think `fernet` exists as a configuration section, this should probably be `fernet_tokens`?",
+      "revId": "3b18c5abe923ce4eb902fe192d7bec54bf1bc04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
