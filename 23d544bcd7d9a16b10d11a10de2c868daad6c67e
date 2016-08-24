@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_c915439c",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-24T16:42:44Z",
+      "side": 1,
+      "message": "update should be banned here as well, as that\u0027s always a data migration.",
+      "revId": "23d544bcd7d9a16b10d11a10de2c868daad6c67e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_84b5f232",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-24T16:42:44Z",
+      "side": 1,
+      "message": "++",
+      "revId": "23d544bcd7d9a16b10d11a10de2c868daad6c67e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_e4e78644",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-24T16:42:44Z",
+      "side": 1,
+      "message": "Table update should be included here",
+      "revId": "23d544bcd7d9a16b10d11a10de2c868daad6c67e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_04ce22b4",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-24T16:42:44Z",
+      "side": 1,
+      "message": "A table alter in sqlite is a dance of Table CREATE TABLE x, INSERT INTO x, DROP TABLE y, ALTER TABLE x RENAME TO y.",
+      "revId": "23d544bcd7d9a16b10d11a10de2c868daad6c67e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
