@@ -15,9 +15,11 @@
 """Main entry point into the Trust service."""
 
 from oslo_log import versionutils
+from oslo_utils import timeutils
 from six.moves import zip
 
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import manager
 import keystone.conf
 from keystone import exception
@@ -29,7 +31,8 @@ from keystone.trust.backends import base
 CONF = keystone.conf.CONF
 
 
-@dependency.requires('identity_api')
+@dependency.requires('identity_api', 'resource_api', 'assignment_api',
+                     'role_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -94,6 +97,60 @@ class Manager(manager.Manager):
                   'does not specify impersonation. Redelegated trust id: %s') %
                 redelegated_trust['id'])
 
+    def _get_trustor_roles(self, trust):
+        original_trust = trust.copy()
+        while original_trust.get('redelegated_trust_id'):
+            original_trust = self.get_trust(
+                original_trust['redelegated_trust_id'])
+
+        if trust.get('project_id'):
+            self.resource_api.get_project(original_trust['project_id'])
+            # Get a list of roles including any domain specific roles
+            assignment_list = self.assignment_api.list_role_assignments(
+                user_id=original_trust['trustor_user_id'],
+                project_id=original_trust['project_id'],
+                effective=True, strip_domain_roles=False)
+            return list(set([x['role_id'] for x in assignment_list]))
+        else:
+            return []
+
+    def _require_trustor_has_role_in_project(self, trust):
+        trustor_roles = self._get_trustor_roles(trust)
+        for trust_role in trust['roles']:
+            matching_roles = [x for x in trustor_roles
+                              if x == trust_role['id']]
+            if not matching_roles:
+                raise exception.RoleNotFound(role_id=trust_role['id'])
+
+    def _parse_expiration_date(self, expiration_date):
+        if expiration_date is None:
+            return None
+        if not expiration_date.endswith('Z'):
+            expiration_date += 'Z'
+        try:
+            expiration_time = timeutils.parse_isotime(expiration_date)
+        except ValueError:
+            raise exception.ValidationTimeStampError()
+        if timeutils.is_older_than(expiration_time, 0):
+            raise exception.ValidationExpirationError()
+        return expiration_time
+
+    def _normalize_role_list(self, trust_roles):
+        roles = [{'id': role['id']} for role in trust_roles if 'id' in role]
+        names = [role['name'] for role in trust_roles if 'id' not in role]
+        if len(names):
+            # Long way
+            for name in names:
+                hints = driver_hints.Hints()
+                hints.add_filter("name", name, case_sensitive=True)
+                found_roles = self.role_api.list_roles(hints)
+                if len(found_roles) == 1:
+                    roles.append({'id': found_roles[0]['id']})
+                else:
+                    raise exception.RoleNotFound(_("role %s is not defined") %
+                                                 name)
+        return roles
+
     def get_trust_pedigree(self, trust_id):
         trust = self.driver.get_trust(trust_id)
         trust_chain = [trust]
@@ -126,6 +183,17 @@ class Manager(manager.Manager):
 
         :returns: a new trust
         """
+        trust['expires_at'] = self._parse_expiration_date(
+            trust.get('expires_at'))
+
+        # ensure trustee exists
+        self.identity_api.get_user(trust['trustee_user_id'])
+        # Normalize roles
+        normalized_roles = self._normalize_role_list(roles)
+        trust['roles'] = normalized_roles
+
+        self._require_trustor_has_role_in_project(trust)
+
         # Default for initial trust in chain is max_redelegation_count
         max_redelegation_count = CONF.trust.max_redelegation_count
         requested_count = trust.get('redelegation_count')
@@ -169,7 +237,7 @@ class Manager(manager.Manager):
                 self._validate_redelegation(t, trust)
 
         trust.setdefault('redelegation_count', max_redelegation_count)
-        ref = self.driver.create_trust(trust_id, trust, roles)
+        ref = self.driver.create_trust(trust_id, trust, normalized_roles)
 
         notifications.Audit.created(self._TRUST, trust_id, initiator=initiator)
 
