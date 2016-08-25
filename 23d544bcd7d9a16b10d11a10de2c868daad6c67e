@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_02ff1635",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-25T02:06:18Z",
+      "side": 1,
+      "message": "So perhaps we should find a way to allow update only of the migration version ? If we want to merge this and fix that later, I\u0027d put a FIXME or TODO note rather than just NOTE.",
+      "parentUuid": "1ac06dbe_109f69b5",
+      "revId": "23d544bcd7d9a16b10d11a10de2c868daad6c67e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_84b5f232",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 3
