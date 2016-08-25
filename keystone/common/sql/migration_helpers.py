@@ -30,6 +30,8 @@ from keystone.i18n import _
 
 CONF = keystone.conf.CONF
 
+USE_TRIGGERS = True
+
 
 #  Different RDBMSs use different schemes for naming the Foreign Key
 #  Constraints.  SQLAlchemy does not yet attempt to determine the name
@@ -125,7 +127,15 @@ def _sync_common_repo(version):
                           init_version=init_version, sanity_check=False)
 
 
-def _sync_repo(repo_name):
+def _sync_repo(repo_name, use_triggers=True):
+    global USE_TRIGGERS
+
+    # Set this as a global variable immediately before handing off to
+    # sqlalchemy-migrate, because we can't pass arguments directly to
+    # migrations that depend on it. We could also register this as a CONF
+    # option, but the idea here is that we aren't exposing a new API.
+    USE_TRIGGERS = use_triggers
+
     abs_path = find_migrate_repo(repo_name=repo_name)
     with sql.session_for_write() as session:
         engine = session.get_bind()
@@ -140,6 +150,8 @@ def _sync_repo(repo_name):
         init_version = get_init_version(abs_path=abs_path)
         migration.db_sync(engine, abs_path,
                           init_version=init_version, sanity_check=False)
+
+    USE_TRIGGERS = True
 
 
 def get_init_version(abs_path=None):
@@ -193,9 +205,9 @@ def offline_sync_database_to_version(version=None):
     if version:
         _sync_common_repo(version)
     else:
-        expand_schema()
+        expand_schema(use_triggers=False)
         migrate_data()
-        contract_schema()
+        contract_schema(use_triggers=False)
 
 
 def get_db_version():
@@ -209,7 +221,7 @@ def print_db_version():
     print(get_db_version())
 
 
-def expand_schema():
+def expand_schema(use_triggers=True):
     """Expand the database schema ahead of data migration.
 
     This is run manually by the keystone-manage command before the first
@@ -219,7 +231,7 @@ def expand_schema():
     # Make sure all the legacy migrations are run before we run any new
     # expand migrations.
     _sync_common_repo(version=None)
-    _sync_repo(repo_name='expand_repo')
+    _sync_repo(repo_name='expand_repo', use_triggers=use_triggers)
 
 
 def migrate_data():
@@ -232,7 +244,7 @@ def migrate_data():
     _sync_repo(repo_name='data_migration_repo')
 
 
-def contract_schema():
+def contract_schema(use_triggers=True):
     """Contract the database.
 
     This is run manually by the keystone-manage command once the keystone
@@ -240,4 +252,4 @@ def contract_schema():
     tables/columns that are no longer required.
 
     """
-    _sync_repo(repo_name='contract_repo')
+    _sync_repo(repo_name='contract_repo', use_triggers=use_triggers)

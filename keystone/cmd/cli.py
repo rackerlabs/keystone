@@ -434,11 +434,11 @@ class DbSync(BaseApp):
         assert_not_extension(CONF.command.extension)
 
         if CONF.command.expand:
-            migration_helpers.expand_schema()
+            migration_helpers.expand_schema(use_triggers=False)
         elif CONF.command.migrate:
             migration_helpers.migrate_data()
         elif CONF.command.contract:
-            migration_helpers.contract_schema()
+            migration_helpers.contract_schema(use_triggers=False)
         else:
             migration_helpers.offline_sync_database_to_version(
                 CONF.command.version)
