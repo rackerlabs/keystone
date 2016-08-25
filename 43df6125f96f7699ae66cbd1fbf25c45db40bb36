@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_c35dd27a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-25T15:58:01Z",
+      "side": 1,
+      "message": "They are not on the same line. The \"Error response codes\" are on the next line below \"Normal response codes\".  Also, why is this needed? You should add the reason/purpose for making this change in the commit message.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "43df6125f96f7699ae66cbd1fbf25c45db40bb36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
