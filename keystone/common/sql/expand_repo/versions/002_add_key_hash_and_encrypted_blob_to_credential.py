@@ -13,6 +13,7 @@
 import sqlalchemy as sql
 
 from keystone.common import sql as ks_sql
+from keystone.common.sql import migration_helpers
 
 
 # NOTE(lbragstad): MySQL error state of 45000 is a generic unhandled exception.
@@ -102,6 +103,10 @@ def upgrade(migrate_engine):
     credential_table = sql.Table('credential', meta, autoload=True)
     credential_table.create_column(key_hash)
     credential_table.create_column(encrypted_blob)
+
+    if not migration_helpers.USE_TRIGGERS:
+        # Skip managing triggers if we're doing an offline upgrade.
+        return
 
     error_message = ('Credential migration in progress. Cannot perform '
                      'writes to credential table.')
