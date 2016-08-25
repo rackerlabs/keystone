@@ -184,30 +184,41 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
             self.assertEqual(initial_version, version)
 
 
-class SqlMigrateBase(test_base.DbTestCase):
-    # override this in subclasses. The default of zero covers tests such
-    # as extensions upgrades.
-    _initial_db_version = 0
+class MigrationRepository(object):
+    def __init__(self, engine, repo_name):
+        self.repo_name = repo_name
 
-    def initialize_sql(self):
-        self.metadata = sqlalchemy.MetaData()
-        self.metadata.bind = self.engine
-
-    def repo_package(self):
-        return sql
-
-    def initialize_repo(self, repo_name=LEGACY_REPO):
         self.repo_path = migration_helpers.find_migrate_repo(
-            package=self.repo_package(),
-            repo_name=repo_name)
+            package=sql, repo_name=self.repo_name)
         self._initial_db_version = (
             migration_helpers.get_init_version(abs_path=self.repo_path))
         self.schema_ = versioning_api.ControlledSchema.create(
-            self.engine,
-            self.repo_path,
-            self._initial_db_version)
+            engine, self.repo_path, self._initial_db_version)
         self.max_version = self.schema_.repository.version().version
 
+        self.metadata = sqlalchemy.MetaData()
+        self.metadata.bind = engine
+
+    def upgrade(self, version=None, current_schema=None):
+        version = version or self.max_version
+        err = ''
+        upgrade = True
+        version = versioning_api._migrate_version(
+            self.schema_, version, upgrade, err)
+        if not current_schema:
+            current_schema = self.schema_
+        changeset = current_schema.changeset(version)
+        for ver, change in changeset:
+            self.schema_.runchange(ver, change, changeset.step)
+
+        if self.schema_.version != version:
+            raise Exception(
+                'Actual version (%s) of %s does not equal expected '
+                'version (%s)' % (
+                    self.schema_.version, self.repo_name, version))
+
+
+class SqlMigrateBase(test_base.DbTestCase):
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
 
@@ -221,8 +232,32 @@ class SqlMigrateBase(test_base.DbTestCase):
                         sql.core, '_TESTING_USE_GLOBAL_CONTEXT_MANAGER', False)
         self.addCleanup(sql.cleanup)
 
-        self.initialize_sql()
-        self.initialize_repo()
+        self.repositories = {
+            'legacy': MigrationRepository(self.engine, 'migrate_repo'),
+            'expand': MigrationRepository(self.engine, 'expand_repo'),
+            'migrate': MigrationRepository(self.engine, 'data_migration_repo'),
+            'contract': MigrationRepository(self.engine, 'contract_repo')}
+
+    def upgrade(self, *args, **kwargs):
+        """Upgrade the legacy migration repository."""
+        self.repositories['legacy'].upgrade(*args, **kwargs)
+
+    def expand(self, *args, **kwargs):
+        """Expand database schema."""
+        self.repositories['expand'].upgrade(*args, **kwargs)
+
+    def migrate(self, *args, **kwargs):
+        """Migrate data."""
+        self.repositories['migrate'].upgrade(*args, **kwargs)
+
+    def contract(self, *args, **kwargs):
+        """Contract database schema."""
+        self.repositories['contract'].upgrade(*args, **kwargs)
+
+    @property
+    def metadata(self):
+        """Pass the legacy metadata reference through for legacy repo tests."""
+        return self.repositories['legacy'].metadata
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
@@ -266,27 +301,8 @@ class SqlMigrateBase(test_base.DbTestCase):
                                  '({3})'.format(table1_name, table1_count,
                                                 table2_name, table2_count))
 
-    def upgrade(self, *args, **kwargs):
-        self._migrate(*args, **kwargs)
-
-    def _migrate(self, version, repository=None, downgrade=False,
-                 current_schema=None):
-        repository = repository or self.repo_path
-        err = ''
-        version = versioning_api._migrate_version(self.schema_,
-                                                  version,
-                                                  not downgrade,
-                                                  err)
-        if not current_schema:
-            current_schema = self.schema_
-        changeset = current_schema.changeset(version)
-        for ver, change in changeset:
-            self.schema_.runchange(ver, change, changeset.step)
-        self.assertEqual(self.schema_.version, version)
-
     def assertTableColumns(self, table_name, expected_cols):
         """Assert that the table contains the expected set of columns."""
-        self.initialize_sql()
         table = self.select_table(table_name)
         actual_cols = [col.name for col in table.columns]
         # Check if the columns are equal, but allow for a different order,
@@ -306,8 +322,6 @@ class SqlMigrateBase(test_base.DbTestCase):
 
 
 class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
-    _initial_db_version = migration_helpers.get_init_version()
-
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
@@ -1643,19 +1657,16 @@ class FullMigration(SqlMigrateBase):
     def setUp(self):
         super(FullMigration, self).setUp()
         # Upgrade the legacy repository
-        self.upgrade(self.max_version)
+        self.upgrade()
 
     def test_credential_migration_002(self):
         session = self.sessionmaker()
         credential_table_name = 'credential'
 
         # upgrade each repository to 001
-        self.initialize_repo(repo_name=EXPAND_REPO)
-        self.upgrade(1)
-        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
-        self.upgrade(1)
-        self.initialize_repo(repo_name=CONTRACT_REPO)
-        self.upgrade(1)
+        self.expand(1)
+        self.migrate(1)
+        self.contract(1)
 
         # populate the credential table with some sample credentials
         credentials = list()
@@ -1674,8 +1685,7 @@ class FullMigration(SqlMigrateBase):
         )
 
         # upgrade expand repo to 002 to add new columns
-        self.initialize_repo(repo_name=EXPAND_REPO)
-        self.upgrade(2)
+        self.expand(2)
 
         # verify encrypted_blob and key_hash columns have been added and verify
         # the original blob column is still there
@@ -1697,8 +1707,7 @@ class FullMigration(SqlMigrateBase):
                           credential)
 
         # upgrade migrate repo to 002 to migrate existing credentials
-        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
-        self.upgrade(2)
+        self.migrate(2)
 
         # make sure we've actually updated the credential with the
         # encrypted blob and the corresponding key hash
@@ -1720,8 +1729,7 @@ class FullMigration(SqlMigrateBase):
             self.assertEqual(result.blob, credential['blob'])
 
         # upgrade contract repo to 002 to remove triggers and blob column
-        self.initialize_repo(repo_name=CONTRACT_REPO)
-        self.upgrade(2)
+        self.contract(2)
 
         # verify the new schema doesn't have a blob column anymore
         self.assertTableColumns(
