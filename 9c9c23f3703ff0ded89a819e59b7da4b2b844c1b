@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_0d6d8732",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-25T03:01:44Z",
+      "side": 1,
+      "message": "I am okay with this, as this separate class is testing specifically the credentials are encrypted in the backend, VS testing credential API behavior.\n\nHowever, these tests should go into test backend, since they are not Restful tests: https://github.com/openstack/keystone/blob/b4ff783/keystone/tests/unit/test_backend_sql.py#L1010",
+      "range": {
+        "startLine": 539,
+        "startChar": 0,
+        "endLine": 540,
+        "endChar": 46
+      },
+      "revId": "9c9c23f3703ff0ded89a819e59b7da4b2b844c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_93feb603",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-25T03:01:44Z",
+      "side": 1,
+      "message": "this will fail if another credential is created somehow (eg parallel test run). Just do assertIn",
+      "range": {
+        "startLine": 643,
+        "startChar": 12,
+        "endLine": 643,
+        "endChar": 33
+      },
+      "revId": "9c9c23f3703ff0ded89a819e59b7da4b2b844c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
