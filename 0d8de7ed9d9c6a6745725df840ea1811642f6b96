@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_d5262867",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "Only here for redundant shorthand of code",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 27
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_35c05c2a",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "Since we know that either the user_id, trustor_id, or trustee_id fields inside token_data could match the revocation_event user_id column, we leverage the filter and in_ methods in sqlalchemy to see if it can find any of the three and match it to any of the revocation_event columns for user_id. Then throw the result in q for later use.\n\nWe will do the same for identity_domain_id and assignment_domain_id since it is essentially the same scenario",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 89,
+        "endChar": 67
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d87c9d74",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "now that we have the result stored in q we can use exists() function to check if any of the fields in the resulting query q \"existed\" as a value inside R(i.e. revocation_event).user_id and use the scalar() to return a simple true or false from this statement. If it does exist and returns True we don\u0027t want any of the if statements to run till we get a False so we can then return False that the token_data passed is not revoked so just set \"if not\" so it only executes if the if statement finds \"False, does not exist\"",
+      "range": {
+        "startLine": 90,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 28
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_381691f1",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "Still looking into what to do with this. An error will be given when trying to execute this line because there is no such thing as domain_scope_id column in the revocation_event table or in the RevokeTable class. That being said, it was still used as a column in the old/current method which was to take the revocation_events in the table and then pull them through a query, turn them into dictionaries, and add the domain_scope_id field. Since we are no longer using dictionaries to represent events I will need to look into how to remedy this.",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 100,
+        "endChar": 30
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_18cbd554",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "The rest of the if statements are essentially the same as this one. Basically the checks if token_data[field] exists as R.field and then returns True or False based on that. If statement, again, only runs if it doesn\u0027t find a match so it may return False",
+      "range": {
+        "startLine": 101,
+        "startChar": 12,
+        "endLine": 103,
+        "endChar": 28
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d558e8fc",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-08-25T15:40:47Z",
+      "side": 1,
+      "message": "driver, in this case, it the Revoke class in revoke/core.py\nAlso no need for \"self.list_events()\" since we will be making a query\nto the database directly instead of using a dictionary representation\nof the revocation_event table in the database",
+      "range": {
+        "startLine": 203,
+        "startChar": 8,
+        "endLine": 203,
+        "endChar": 48
+      },
+      "revId": "0d8de7ed9d9c6a6745725df840ea1811642f6b96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
