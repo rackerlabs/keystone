@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_ed9d74bc",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-25T10:52:19Z",
+      "side": 1,
+      "message": "I think the error messages should start with uppercase letters to match the other error messages we have.",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_a3ca6d4d",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-25T10:52:19Z",
+      "side": 1,
+      "message": "This block isn\u0027t tested. Is it possible to get in here?",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_038b811f",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-25T10:52:19Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this block is tested. Is it possible to get in here?",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
