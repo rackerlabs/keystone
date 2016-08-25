@@ -362,8 +362,13 @@ class NotificationsForEntities(BaseNotificationTest):
         trustee = self.identity_api.create_user(trustee)
         role_ref = unit.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        self.assignment_api.create_grant(role_ref['id'], trustor['id'],
+                                         project_id=project_ref['id'])
         trust_ref = unit.new_trust_ref(trustor['id'],
-                                       trustee['id'])
+                                       trustee['id'],
+                                       project_ref['id'])
         self.trust_api.create_trust(trust_ref['id'],
                                     trust_ref,
                                     [role_ref])
@@ -437,7 +442,13 @@ class NotificationsForEntities(BaseNotificationTest):
         trustee = unit.new_user_ref(domain_id=self.domain_id)
         trustee = self.identity_api.create_user(trustee)
         role_ref = unit.new_role_ref()
-        trust_ref = unit.new_trust_ref(trustor['id'], trustee['id'])
+        self.role_api.create_role(role_ref['id'], role_ref)
+        project_ref = unit.new_project_ref(domain_id=self.domain_id)
+        self.resource_api.create_project(project_ref['id'], project_ref)
+        self.assignment_api.create_grant(role_ref['id'], trustor['id'],
+                                         project_id=project_ref['id'])
+        trust_ref = unit.new_trust_ref(trustor['id'], trustee['id'],
+                                       project_ref['id'])
         self.trust_api.create_trust(trust_ref['id'],
                                     trust_ref,
                                     [role_ref])
