@@ -22,6 +22,29 @@
       "revId": "43df6125f96f7699ae66cbd1fbf25c45db40bb36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_38fdec3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-25T17:08:54Z",
+      "side": 1,
+      "message": "they are absolutely *rendered* on the same line:\n\nhttp://imgur.com/a/mYtI3",
+      "range": {
+        "startLine": 9,
+        "startChar": 62,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "43df6125f96f7699ae66cbd1fbf25c45db40bb36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
