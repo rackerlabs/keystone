@@ -22,6 +22,30 @@
       "revId": "551e6c12a5becf091a6a149dbec4bf1ab4c99e9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_054a6e83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-25T09:13:48Z",
+      "side": 1,
+      "message": "Thank Mr.Chen. I updated this point. Now is it ok? :)",
+      "parentUuid": "1ac06dbe_255b2af8",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 52
+      },
+      "revId": "551e6c12a5becf091a6a149dbec4bf1ab4c99e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
