@@ -184,30 +184,41 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
             self.assertEqual(initial_version, version)
 
 
-class SqlMigrateBase(test_base.DbTestCase):
-    # override this in subclasses. The default of zero covers tests such
-    # as extensions upgrades.
-    _initial_db_version = 0
+class MigrationRepository(object):
+    def __init__(self, engine, repo_name):
+        self.repo_name = repo_name
 
-    def initialize_sql(self):
-        self.metadata = sqlalchemy.MetaData()
-        self.metadata.bind = self.engine
-
-    def repo_package(self):
-        return sql
-
-    def initialize_repo(self, repo_name=LEGACY_REPO):
         self.repo_path = migration_helpers.find_migrate_repo(
-            package=self.repo_package(),
-            repo_name=repo_name)
+            package=sql, repo_name=self.repo_name)
         self._initial_db_version = (
             migration_helpers.get_init_version(abs_path=self.repo_path))
         self.schema_ = versioning_api.ControlledSchema.create(
-            self.engine,
-            self.repo_path,
-            self._initial_db_version)
+            engine, self.repo_path, self._initial_db_version)
         self.max_version = self.schema_.repository.version().version
 
+        self.metadata = sqlalchemy.MetaData()
+        self.metadata.bind = engine
+
+    def upgrade(self, version=None, current_schema=None):
+        version = version or self.max_version
+        err = ''
+        upgrade = True
+        version = versioning_api._migrate_version(
+            self.schema_, version, upgrade, err)
+        if not current_schema:
+            current_schema = self.schema_
+        changeset = current_schema.changeset(version)
+        for ver, change in changeset:
+            self.schema_.runchange(ver, change, changeset.step)
+
+        if self.schema_.version != version:
+            raise Exception(
+                'Actual version (%s) of %s does not equal expected '
+                'version (%s)' % (
+                    self.schema_.version, self.repo_name, version))
+
+
+class SqlMigrateBase(test_base.DbTestCase):
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
 
@@ -221,8 +232,41 @@ class SqlMigrateBase(test_base.DbTestCase):
                         sql.core, '_TESTING_USE_GLOBAL_CONTEXT_MANAGER', False)
         self.addCleanup(sql.cleanup)
 
-        self.initialize_sql()
-        self.initialize_repo()
+        self.repositories = {
+            'legacy': MigrationRepository(self.engine, 'migrate_repo'),
+            'expand': MigrationRepository(self.engine, 'expand_repo'),
+            'migrate': MigrationRepository(self.engine, 'data_migration_repo'),
+            'contract': MigrationRepository(self.engine, 'contract_repo')}
+
+    def upgrade(self, *args, **kwargs):
+        """Upgrade the legacy migration repository."""
+        self.repositories['legacy'].upgrade(*args, **kwargs)
+
+    def get_max_version(self, repository):
+        return self.repositories[repository].max_version
+
+    def get_initial_db_version(self, repository):
+        return self.repositories[repository]._initial_db_version
+
+    def get_repo_path(self, repository):
+        return self.repositories[repository].repo_path
+
+    def expand(self, *args, **kwargs):
+        """Expand database schema."""
+        self.repositories['expand'].upgrade(*args, **kwargs)
+
+    def migrate(self, *args, **kwargs):
+        """Migrate data."""
+        self.repositories['migrate'].upgrade(*args, **kwargs)
+
+    def contract(self, *args, **kwargs):
+        """Contract database schema."""
+        self.repositories['contract'].upgrade(*args, **kwargs)
+
+    @property
+    def metadata(self):
+        """Pass the legacy metadata reference through for legacy repo tests."""
+        return self.repositories['legacy'].metadata
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
@@ -266,27 +310,8 @@ class SqlMigrateBase(test_base.DbTestCase):
                                  '({3})'.format(table1_name, table1_count,
                                                 table2_name, table2_count))
 
-    def upgrade(self, *args, **kwargs):
-        self._migrate(*args, **kwargs)
-
-    def _migrate(self, version, repository=None, downgrade=False,
-                 current_schema=None):
-        repository = repository or self.repo_path
-        err = ''
-        version = versioning_api._migrate_version(self.schema_,
-                                                  version,
-                                                  not downgrade,
-                                                  err)
-        if not current_schema:
-            current_schema = self.schema_
-        changeset = current_schema.changeset(version)
-        for ver, change in changeset:
-            self.schema_.runchange(ver, change, changeset.step)
-        self.assertEqual(self.schema_.version, version)
-
     def assertTableColumns(self, table_name, expected_cols):
         """Assert that the table contains the expected set of columns."""
-        self.initialize_sql()
         table = self.select_table(table_name)
         actual_cols = [col.name for col in table.columns]
         # Check if the columns are equal, but allow for a different order,
@@ -306,22 +331,24 @@ class SqlMigrateBase(test_base.DbTestCase):
 
 
 class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
-    _initial_db_version = migration_helpers.get_init_version()
-
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_db_init_version(self):
         with sql.session_for_write() as session:
-            version = migration.db_version(session.get_bind(), self.repo_path,
-                                           self._initial_db_version)
+            version = migration.db_version(
+                session.get_bind(),
+                self.get_repo_path('legacy'),
+                self.get_initial_db_version('legacy')
+            )
         self.assertEqual(
-            self._initial_db_version,
+            self.get_initial_db_version('legacy'),
             version,
-            'DB is not at version %s' % self._initial_db_version)
+            'DB is not at version %s' % self.get_initial_db_version('legacy')
+        )
 
     def test_upgrade_add_initial_tables(self):
-        self.upgrade(self._initial_db_version + 1)
+        self.upgrade(self.get_initial_db_version('legacy') + 1)
         self.check_initial_table_structure()
 
     def check_initial_table_structure(self):
@@ -1521,18 +1548,19 @@ class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
         # Make sure the main repo is fully upgraded for this release since the
         # expand phase is only run after such an upgrade
         super(SqlExpandSchemaUpgradeTests, self).setUp()
-        self.upgrade(self.max_version)
-
-        self.initialize_repo(repo_name=EXPAND_REPO)
+        self.upgrade()
 
     def test_start_version_db_init_version(self):
         with sql.session_for_write() as session:
-            version = migration.db_version(session.get_bind(), self.repo_path,
-                                           self._initial_db_version)
+            version = migration.db_version(
+                session.get_bind(),
+                self.get_repo_path('expand'),
+                self.get_initial_db_version('expand')
+            )
         self.assertEqual(
-            self._initial_db_version,
+            self.get_initial_db_version('expand'),
             version,
-            'DB is not at version %s' % self._initial_db_version)
+            'DB is not at version %s' % self.get_initial_db_version('expand'))
 
 
 class MySQLOpportunisticExpandSchemaUpgradeTestCase(
@@ -1551,21 +1579,20 @@ class SqlDataMigrationUpgradeTests(SqlMigrateBase):
         # Make sure the legacy and expand repos are fully upgraded, since the
         # data migration phase is only run after these are upgraded
         super(SqlDataMigrationUpgradeTests, self).setUp()
-        self.upgrade(self.max_version)
-        # Make sure the expand repo is also upgraded
-        self.initialize_repo(repo_name=EXPAND_REPO)
-        self.upgrade(self.max_version)
-
-        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
+        self.upgrade()
+        self.expand()
 
     def test_start_version_db_init_version(self):
         with sql.session_for_write() as session:
-            version = migration.db_version(session.get_bind(), self.repo_path,
-                                           self._initial_db_version)
+            version = migration.db_version(
+                session.get_bind(),
+                self.get_repo_path('migrate'),
+                self.get_initial_db_version('migrate')
+            )
         self.assertEqual(
-            self._initial_db_version,
+            self.get_initial_db_version('migrate'),
             version,
-            'DB is not at version %s' % self._initial_db_version)
+            'DB is not at version %s' % self.get_initial_db_version('migrate'))
 
 
 class MySQLOpportunisticDataMigrationUpgradeTestCase(
@@ -1585,23 +1612,22 @@ class SqlContractSchemaUpgradeTests(SqlMigrateBase):
         # upgraded, since the contract phase is only run after these are
         # upgraded.
         super(SqlContractSchemaUpgradeTests, self).setUp()
-        self.upgrade(self.max_version)
-
-        self.initialize_repo(repo_name=EXPAND_REPO)
-        self.upgrade(self.max_version)
-        self.initialize_repo(repo_name=DATA_MIGRATION_REPO)
-        self.upgrade(self.max_version)
-
-        self.initialize_repo(repo_name=CONTRACT_REPO)
+        self.upgrade()
+        self.expand()
+        self.migrate()
 
     def test_start_version_db_init_version(self):
         with sql.session_for_write() as session:
-            version = migration.db_version(session.get_bind(), self.repo_path,
-                                           self._initial_db_version)
+            version = migration.db_version(
+                session.get_bind(),
+                self.get_repo_path('contract'),
+                self.get_initial_db_version('contract')
+            )
         self.assertEqual(
-            self._initial_db_version,
+            self.get_initial_db_version('contract'),
             version,
-            'DB is not at version %s' % self._initial_db_version)
+            'DB is not at version %s' % self.get_initial_db_version('contract')
+        )
 
 
 class MySQLOpportunisticContractSchemaUpgradeTestCase(
@@ -1625,13 +1651,13 @@ class VersionTests(SqlMigrateBase):
 
     def test_core_max(self):
         """When get the version after upgrading, it's the new version."""
-        self.upgrade(self.max_version)
+        self.upgrade()
         version = migration_helpers.get_db_version()
-        self.assertEqual(self.max_version, version)
+        self.assertEqual(self.get_max_version('legacy'), version)
 
     def test_assert_not_schema_downgrade(self):
-        self.upgrade(self.max_version)
+        self.upgrade()
         self.assertRaises(
             db_exception.DbMigrationError,
             migration_helpers._sync_common_repo,
-            self.max_version - 1)
+            self.get_max_version('legacy') - 1)
