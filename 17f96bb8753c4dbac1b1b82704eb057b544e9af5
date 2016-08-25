@@ -22,6 +22,30 @@
       "revId": "17f96bb8753c4dbac1b1b82704eb057b544e9af5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_cc57ba00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-25T18:28:15Z",
+      "side": 1,
+      "message": "Ignore this, I see that it does render on the same line.",
+      "parentUuid": "1ac06dbe_e3128e61",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "17f96bb8753c4dbac1b1b82704eb057b544e9af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
