@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_62c8d675",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-25T19:55:33Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa7ab95a_623456de",
+      "revId": "6a914d46f3184f9982d78b5a59673b54ea871aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_02b0eaf3",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-25T19:55:33Z",
+      "side": 1,
+      "message": "docstr is outdated",
+      "revId": "6a914d46f3184f9982d78b5a59673b54ea871aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_22e7ae13",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
