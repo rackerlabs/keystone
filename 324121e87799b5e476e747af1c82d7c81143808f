@@ -63,6 +63,24 @@
       "revId": "324121e87799b5e476e747af1c82d7c81143808f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_435e0213",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-25T15:49:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ac06dbe_23f318a1",
+      "revId": "324121e87799b5e476e747af1c82d7c81143808f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
