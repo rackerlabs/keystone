@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_8db5f7d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-25T02:25:27Z",
+      "side": 1,
+      "message": "It does not cover updates",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 61
+      },
+      "revId": "a0934dbc87ff88554c9673d4e3240aaa9a8caf6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
