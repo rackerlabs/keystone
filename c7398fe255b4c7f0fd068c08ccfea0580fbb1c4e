@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_66ecfef3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T12:20:43Z",
+      "side": 1,
+      "message": "Is it possible to have an empty ref_list? If not you don\u0027t need the \"and ref_list\" check, if it is, what happens if a domain_id hasn\u0027t been provided?",
+      "range": {
+        "startLine": 634,
+        "startChar": 8,
+        "endLine": 634,
+        "endChar": 37
+      },
+      "revId": "c7398fe255b4c7f0fd068c08ccfea0580fbb1c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_c6cfb2b1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T12:20:43Z",
+      "side": 1,
+      "message": "this is basically [1], right? Suggest to extract to a method and use in both places\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L605-L610",
+      "range": {
+        "startLine": 659,
+        "startChar": 0,
+        "endLine": 663,
+        "endChar": 33
+      },
+      "revId": "c7398fe255b4c7f0fd068c08ccfea0580fbb1c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
