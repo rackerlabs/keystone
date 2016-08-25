@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_9f018b09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-25T08:40:25Z",
+      "side": 1,
+      "message": "Maybe, I misunderstood something when reading this document. However, I think we should do that, it is more beautiful, right :)",
+      "parentUuid": "1ac06dbe_1100f9a9",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 52
+      },
+      "revId": "d2fbede72a8f1e5f9cb2535e1abac45a3a1c3873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_71620d18",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_da4f9168",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-25T08:40:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_71620d18",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 34
+      },
+      "revId": "d2fbede72a8f1e5f9cb2535e1abac45a3a1c3873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_31bed5ff",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-08-25T06:25:03Z",
       "side": 1,
       "message": "why not include the import of \"_\"?\n from keystone.i18n import _, _LI, _LW",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "d2fbede72a8f1e5f9cb2535e1abac45a3a1c3873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_3a20659b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-25T08:40:25Z",
+      "side": 1,
+      "message": "Yes, you are quite right. I will update this point. Thanks for your comment.",
+      "parentUuid": "1ac06dbe_31bed5ff",
       "range": {
         "startLine": 45,
         "startChar": 0,
