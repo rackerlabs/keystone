@@ -94,6 +94,30 @@
       "revId": "51cccd24ddc48583aaf965e244a66551c052f9f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_3fb4d7f0",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-08-25T08:32:59Z",
+      "side": 1,
+      "message": "Yey! thanks for making the change.\n\nI\u0027m happy with this from a keystone perspective as it hasn\u0027t changed our interface. I expect project on the osprofiler can be defaulted to CONF.project. \n\nCan CONF.profiler.enabled be worked into init_from_conf()? Even the LOG.info?",
+      "parentUuid": "1ac06dbe_8a0b2f7d",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "51cccd24ddc48583aaf965e244a66551c052f9f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
