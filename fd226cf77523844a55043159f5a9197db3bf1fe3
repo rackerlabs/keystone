@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_62936afb",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-25T02:58:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_ca29b18b",
+      "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_2a1fa55c",
         "filename": "keystone/oauth1/controllers.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2016-08-24T17:09:47Z",
       "side": 1,
       "message": "Is this to get around bandit?",
+      "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_e8229900",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-25T02:58:12Z",
+      "side": 1,
+      "message": "we need this to generate a well formatted `verifier` but not a the `verifier` stored in the backend. This will be used to differentiate with the existed testcase `test_bad_verifier`.\n\npls see: https://github.com/openstack/keystone/blob/master/keystone/oauth1/backends/sql.py#L191-L192",
+      "parentUuid": "1ac06dbe_0a2469ad",
       "revId": "fd226cf77523844a55043159f5a9197db3bf1fe3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
