@@ -23,7 +23,13 @@ class TrustTests(object):
     def create_sample_trust(self, new_id, remaining_uses=None):
         self.trustor = self.user_foo
         self.trustee = self.user_two
-        expires_at = datetime.datetime.utcnow().replace(year=2032)
+        expires_at = datetime.datetime.utcnow().replace(year=2032).isoformat()
+        # required assignments
+
+        roles = [{"id": "member"}, {"id": "other"}, {"id": "browser"}]
+        for role in roles:
+            self.assignment_api.create_grant(role['id'], self.trustor['id'],
+                                             project_id=self.tenant_bar['id'])
         trust_data = (self.trust_api.create_trust
                       (new_id,
                        {'trustor_user_id': self.trustor['id'],
@@ -32,9 +38,7 @@ class TrustTests(object):
                         'expires_at': expires_at,
                         'impersonation': True,
                         'remaining_uses': remaining_uses},
-                       roles=[{"id": "member"},
-                              {"id": "other"},
-                              {"id": "browser"}]))
+                       roles=roles))
         return trust_data
 
     def test_delete_trust(self):
