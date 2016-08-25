@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_ab81d94f",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 20259
+      },
+      "writtenOn": "2016-08-25T20:46:39Z",
+      "side": 1,
+      "message": "you\u0027re removing the only occurrence of map in this code. need to remove the import too.",
+      "range": {
+        "startLine": 16,
+        "startChar": 22,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "e13a98bac8bf6a489ae67ba223dedac4a6fc2219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
