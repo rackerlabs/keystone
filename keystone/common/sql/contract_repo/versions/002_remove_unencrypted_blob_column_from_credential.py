@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common.sql import migration_helpers
+
 import sqlalchemy as sql
 
 
@@ -19,6 +21,10 @@ def upgrade(migrate_engine):
 
     credential_table = sql.Table('credential', meta, autoload=True)
     credential_table.c.blob.drop()
+
+    if not migration_helpers.USE_TRIGGERS:
+        # Skip managing triggers if we're doing an offline upgrade.
+        return
 
     if migrate_engine.name == 'postgresql':
         drop_credential_update_trigger = (
