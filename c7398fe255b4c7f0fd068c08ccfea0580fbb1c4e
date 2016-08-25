@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_dc8c2538",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T21:50:09Z",
+      "side": 1,
+      "message": "maybe add a stronger validation for the \"not domain_id and not_ref_list\" case? Even if isn\u0027t currently possible, I think it is safer than just see this blowing up in line 639 because the domain_id is None in some case in the future.",
+      "parentUuid": "1ac06dbe_f83a3933",
+      "range": {
+        "startLine": 634,
+        "startChar": 8,
+        "endLine": 634,
+        "endChar": 37
+      },
+      "revId": "c7398fe255b4c7f0fd068c08ccfea0580fbb1c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_c6cfb2b1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
