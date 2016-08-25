@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_00825200",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T11:45:22Z",
+      "side": 1,
+      "message": "++ for kipping the try block slim",
+      "parentUuid": "1ac06dbe_f3761705",
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_01d72f24",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
