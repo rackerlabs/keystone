@@ -126,13 +126,6 @@ class RevokeEvent(object):
                                                 subsecond=True)
         return event
 
-    def key_for_name(self, name):
-        return "%s=%s" % (name, getattr(self, name) or '*')
-
-
-def attr_keys(event):
-    return list(map(event.key_for_name, _EVENT_NAMES))
-
 
 def is_revoked(events, token_data):
     """Check if a token matches a revocation event.
