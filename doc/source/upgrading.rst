@@ -77,6 +77,82 @@ from functioning normally.
 
 #. Start all keystone processes.
 
+Upgrading a Keystone cluster with minimal downtime
+--------------------------------------------------
+
+If you run a multi-node Keystone cluster that uses a replicated database, like
+a Galera cluster, it is possible to upgrade with minimal downtime. This method
+also optimizes recovery time from a failed upgrade. This section assumes
+familiarity with the base case (`Upgrading with downtime`_) outlined above.
+In these steps the nodes will be divided into ``first`` and ``other`` nodes.
+
+#. Backup your database. There is no way to rollback the upgrade of Keystone
+   and this is your worst-case fallback option.
+
+#. Disable Keystone on all nodes but the ``first`` node. This can be done via a
+   variety of mechanisms that will depend on the deployment. If you are unable
+   to disable a service or place a service into maintenance mode in your load
+   balancer, you can stop the Keystone processes.
+
+#. Stop the database service on one of the ``other`` nodes in the cluster. This
+   will isolate the old dataset on a single node in the cluster. In the event
+   of a failed update this data can be used to rebuild the cluster without
+   having to restore from backup.
+
+#. Update the configuration files on the ``first`` node.
+
+#. Upgrade Keystone on the ``first`` node. Keystone is now down for your cloud.
+
+#. Run ``keystone-manage db_sync`` on the ``first`` node. As soon as this
+   finishes, Keystone is now working again on a single node in the cluster.
+
+#. Keystone is now upgraded on a single node. Your load balancers will be
+   sending all traffic to this single node. This is your chance to run
+   tests and ensure Keystone is not broken. If Keystone is broken, see
+   the `Rollback after a failed upgrade`_ section below.
+
+#. Once tests are completed, begin the upgrade on the ``other`` nodes. This
+   entails updating configuration files and upgrading the code. The
+   ``db_sync`` does not need to be run again.
+
+#. On the node where you stopped the database service, be sure to restart
+   it and ensure that it properly rejoins the cluster.
+
+Using this model, the outage window is minimized because the only time
+when your cluster is totally offline is between loading the newer version
+of Keystone and running the ``db_sync`` command. Typically the outage with
+this method can be measured in tens of seconds especially if automation is
+used.
+
+Rollback after a failed upgrade
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the upgrade fails then tests will have caught it while only a single node
+has been upgraded. This makes the recovery simpler and quicker. If issues are
+not discovered until the entire cluster is upgraded, a full shutdown and
+restore from backup will be required. That will take much longer than just
+fixing a single node with an old copy of the database still available. This
+process will be dependent on your architecture and it is highly recommended
+that you've practiced this in a development  environment before trying to use
+it for the first time.
+
+#. Isolate the bad node. Shutdown Keystone and the database services
+   on the upgraded "bad" node.
+
+#. Bootstrap the database cluster from the node holding the old data.
+   This may require wiping the data first on any nodes who are not
+   holding old data.
+
+#. Enable Keystone on the old nodes in your load balancer or if
+   the processes were stopped, restart them.
+
+#. Validate that Keystone is working.
+
+#. Downgrade the code and config files on the bad node.
+
+This process should be doable in a matter of minutes and will minimize cloud
+downtime if it is required.
+
 Upgrading without downtime
 --------------------------
 
