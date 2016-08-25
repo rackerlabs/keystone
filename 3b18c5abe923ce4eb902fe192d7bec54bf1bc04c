@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_c6edf28f",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T12:23:16Z",
+      "side": 1,
+      "message": "it is \"fernet_tokens\" indeed: https://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L830",
+      "parentUuid": "1ac06dbe_9e8fffcb",
+      "revId": "3b18c5abe923ce4eb902fe192d7bec54bf1bc04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_6f888fc7",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 1
@@ -48,6 +66,30 @@
       "writtenOn": "2016-08-24T17:07:23Z",
       "side": 1,
       "message": "give this backticks too",
+      "range": {
+        "startLine": 263,
+        "startChar": 47,
+        "endLine": 263,
+        "endChar": 62
+      },
+      "revId": "3b18c5abe923ce4eb902fe192d7bec54bf1bc04c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_069f0a04",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-25T12:23:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ac06dbe_6f888fc7",
       "range": {
         "startLine": 263,
         "startChar": 47,
