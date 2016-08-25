@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_aded3cb9",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-25T11:26:04Z",
+      "side": 1,
+      "message": "Do we know what is actually causing this? We should probably have a test with an example that would cause the breakage.",
+      "parentUuid": "1ac06dbe_33c6ef16",
+      "revId": "c61a9fc0680a2d24f58493ac9ab0f3682bf2e6ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_a9e447ac",
         "filename": "keystone/models/revoke_model.py",
         "patchSetId": 2
