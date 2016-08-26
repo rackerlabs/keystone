@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_c61b271a",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:29:19Z",
+      "side": 1,
+      "message": "This was an attempt to consolidate logic into one place for the credential API. Should we just have these methods return decrypted strings or encrypted strings?",
+      "parentUuid": "fa7ab95a_7524c7ae",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_f530d7ea",
         "filename": "keystone/credential/core.py",
         "patchSetId": 27
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-26T21:24:44Z",
       "side": 1,
       "message": "This method returns an object intended to be passed into the database.\n\nThat\u0027s super confusing.",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_66e17bfe",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:29:19Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "parentUuid": "fa7ab95a_f530d7ea",
       "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_267db3e7",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:29:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_95422b3d",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_357ddfe7",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 27
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_06efcf87",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:29:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_357ddfe7",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_555b4387",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 27
@@ -81,6 +153,24 @@
       "writtenOn": "2016-08-26T21:24:44Z",
       "side": 1,
       "message": "Love this test now! It\u0027ll be great for other devs to use as an example.",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_66ec1b90",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1714,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:29:19Z",
+      "side": 1,
+      "message": "++ thanks!",
+      "parentUuid": "fa7ab95a_555b4387",
       "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
