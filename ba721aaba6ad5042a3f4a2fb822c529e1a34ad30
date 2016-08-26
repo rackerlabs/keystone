@@ -16,6 +16,24 @@
       "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a9f3619d",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-26T19:01:46Z",
+      "side": 1,
+      "message": "Agree.  But I tried adding the DEFAULT with sqlalchemy migrate to no avail. Tried several options, including:\n* default\u003ddatetime.datetime.utcnow\n* default\u003dsql.func.now()\n* server_default\u003dsql.func.now()\n* ...\n\nBut it wouldn\u0027t work with all of the supported databases. For example, I\u0027d get it working with mysql, but would not work with sqlite. \n\nAnd I believe server_default only works for table creates; not for table alters.",
+      "parentUuid": "fa7ab95a_7a1cc113",
+      "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
