@@ -34,6 +34,108 @@
       "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_9ac6da47",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "As mentioned in a previous review, it\u0027d still be worth selecting things in batches in a loop until the select comes back empty. Can do that in a follow up, though.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_9a697a28",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "-1 So, this is effectively blocking the old release from writing updates, and allows the migration process to write updates, but it\u0027s also *allowing* the new release to write updates that will not be reflected in the old column, leading to a brief inconsistency between the API responses from the two releases.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3ad22ed3",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "Mike suggested we drop SQLite triggers entirely - I\u0027d be fine to do that here.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_1a99ea1f",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "This should have a more specific function name, because read_only_update is quite generic (and could potentially collide with another, equally generic name).",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_9aac1a37",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "Same as L31",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3a3ceee1",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:08:49Z",
+      "side": 1,
+      "message": "It\u0027d be nice to have a couple inline comments to document these values.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
