@@ -166,7 +166,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.oauth1.Oauth1DriverV8',
     in_favor_of='keystone.oauth1.backends.base.Oauth1DriverV8',
     remove_in=+1)

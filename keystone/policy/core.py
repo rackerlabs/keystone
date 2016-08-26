@@ -81,7 +81,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.policy.PolicyDriverV8',
     in_favor_of='keystone.policy.backends.base.PolicyDriverV8',
     remove_in=+1)

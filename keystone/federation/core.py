@@ -116,7 +116,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.federation.FederationDriverBase',
     in_favor_of='keystone.federation.backends.base.FederationDriverBase',
     remove_in=+1)
@@ -125,7 +125,7 @@ class FederationDriverBase(base.FederationDriverBase):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.federation.FederationDriverV8',
     in_favor_of='keystone.federation.backends.base.FederationDriverV8',
     remove_in=+1)
@@ -134,7 +134,7 @@ class FederationDriverV8(base.FederationDriverV8):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.federation.FederationDriverV9',
     in_favor_of='keystone.federation.backends.base.FederationDriverV9',
     remove_in=+1)
@@ -143,7 +143,7 @@ class FederationDriverV9(base.FederationDriverV9):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.federation.V9FederationWrapperForV8Driver',
     in_favor_of=(
         'keystone.federation.backends.base.V9FederationWrapperForV8Driver'),

@@ -1094,7 +1094,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.AssignmentDriverBase',
     in_favor_of='keystone.assignment.backends.base.AssignmentDriverBase',
     remove_in=+1)
@@ -1103,7 +1103,7 @@ class AssignmentDriverBase(base.AssignmentDriverBase):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.AssignmentDriverV8',
     in_favor_of='keystone.assignment.backends.base.AssignmentDriverV8',
     remove_in=+1)
@@ -1112,7 +1112,7 @@ class AssignmentDriverV8(base.AssignmentDriverV8):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.AssignmentDriverV9',
     in_favor_of='keystone.assignment.backends.base.AssignmentDriverV9',
     remove_in=+1)
@@ -1121,7 +1121,7 @@ class AssignmentDriverV9(base.AssignmentDriverV9):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.V9AssignmentWrapperForV8Driver',
     in_favor_of=(
         'keystone.assignment.backends.base.V9AssignmentWrapperForV8Driver'),
@@ -1237,7 +1237,7 @@ class RoleManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.RoleDriverBase',
     in_favor_of='keystone.assignment.role_backends.base.RoleDriverBase',
     remove_in=+1)
@@ -1246,7 +1246,7 @@ class RoleDriverBase(role_base.RoleDriverBase):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.RoleDriverV8',
     in_favor_of='keystone.assignment.role_backends.base.RoleDriverV8',
     remove_in=+1)
@@ -1255,7 +1255,7 @@ class RoleDriverV8(role_base.RoleDriverV8):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.RoleDriverV9',
     in_favor_of='keystone.assignment.role_backends.base.RoleDriverV9',
     remove_in=+1)
@@ -1264,7 +1264,7 @@ class RoleDriverV9(role_base.RoleDriverV9):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.assignment.V9RoleWrapperForV8Driver',
     in_favor_of=(
         'keystone.assignment.role_backends.base.V9RoleWrapperForV8Driver'),

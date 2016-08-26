@@ -99,7 +99,7 @@ class KeyValueStore(object):
     """
 
     @versionutils.deprecated(
-        versionutils.deprecated.NEWTON,
+        as_of=versionutils.deprecated.NEWTON,
         what='keystone key-value-store common code',
         remove_in=+2)
     def __init__(self, kvs_region):

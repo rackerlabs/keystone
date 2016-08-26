@@ -266,7 +266,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.endpoint_policy.EndpointPolicyDriverV8',
     in_favor_of=(
         'keystone.endpoint_policy.backends.base.EndpointPolicyDriverV8'),

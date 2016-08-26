@@ -203,7 +203,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.trust.TrustDriverV8',
     in_favor_of='keystone.trust.backends.base.TrustDriverV8',
     remove_in=+1)

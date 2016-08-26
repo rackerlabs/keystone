@@ -213,7 +213,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.revoke.RevokeDriverV8',
     in_favor_of='keystone.revoke.backends.base.RevokeDriverV8',
     remove_in=+1)
