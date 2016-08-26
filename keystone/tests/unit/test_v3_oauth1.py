@@ -829,6 +829,33 @@ class MaliciousOAuth1Tests(OAuth1Tests):
             self.post(url, headers=headers,
                       expected_status=http_client.UNAUTHORIZED)
 
+    def test_validate_requet_token_request_failed(self):
+        consumer = self._create_single_consumer()
+        consumer_id = consumer['id']
+        consumer_secret = consumer['secret']
+        consumer = {'key': consumer_id, 'secret': consumer_secret}
+
+        url, headers = self._create_request_token(consumer, self.project_id)
+        # The validation could fail for lots of reasons, only pick up
+        # one of them to verify that the error message is shown correctly.
+        # Miss the signature method in the request.
+        header = dict((l.strip().split('=') for l in
+                       headers['Authorization'].split(',')))
+        header.pop('oauth_signature_method')
+        header_list = []
+        for key, value in header.items():
+            header_list.append("%s=%s" % (key, value))
+        auth_header = ', '.join(header_list)
+        # FIXME: It expect unicode header but got str instead.
+        headers.update({'Authorization': unicode(auth_header)})
+        resp = self.post(
+            url, headers=headers,
+            response_content_type='application/x-www-form-urlencoded',
+            expected_status=http_client.UNAUTHORIZED)
+        resp_data = jsonutils.loads(resp.body)
+        self.assertIn('Validation failed with errors',
+                      resp_data.get('error', {}).get('message'))
+
     def test_expired_authorizing_request_token(self):
         self.config_fixture.config(group='oauth1', request_token_duration=-1)
 
