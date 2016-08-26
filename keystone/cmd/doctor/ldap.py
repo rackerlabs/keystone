@@ -11,7 +11,7 @@
 # under the License.
 
 import keystone.conf
-
+import os
 
 CONF = keystone.conf.CONF
 
@@ -50,3 +50,10 @@ def symptom_LDAP_group_members_are_ids_disabled():
     return (
         CONF.ldap.group_objectclass == 'posixGroup'
         and not CONF.ldap.group_members_are_ids)
+
+
+def symptom_LDAP_domain_specific_configs():
+    """[ldap] domain specific configuration files exist."""
+    return (
+        CONF.ldap.domain_specific_drivers_enabled
+        and not os.listdir(CONF.ldap.domain_config_dir))
