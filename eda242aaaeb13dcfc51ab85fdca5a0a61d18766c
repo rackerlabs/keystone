@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_ebc47660",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:11:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_9a697a28",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_3ad22ed3",
         "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
         "patchSetId": 26
@@ -141,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_4b83a204",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:11:47Z",
+      "side": 1,
+      "message": "I added keystone to the name, maybe that will help?",
+      "parentUuid": "fa7ab95a_1a99ea1f",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_9aac1a37",
         "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
         "patchSetId": 26
@@ -158,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_0b90ba42",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:11:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_9aac1a37",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_3a3ceee1",
         "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
         "patchSetId": 26
@@ -169,6 +223,24 @@
       "writtenOn": "2016-08-26T21:08:49Z",
       "side": 1,
       "message": "It\u0027d be nice to have a couple inline comments to document these values.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_ab9fce4e",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:11:47Z",
+      "side": 1,
+      "message": "I can add those to the triggers above.",
+      "parentUuid": "fa7ab95a_3a3ceee1",
       "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
