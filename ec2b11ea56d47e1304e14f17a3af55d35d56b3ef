@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_fd936ea1",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-26T16:40:59Z",
+      "side": 1,
+      "message": "perhaps we are not configuring it the right way. jenkins is not happy:\n\nhttp://logs.openstack.org/04/349704/12/check/gate-tempest-dsvm-neutron-full-ubuntu-xenial/a4fc1da/logs/devstacklog.txt.gz#_2016-08-26_14_07_08_262",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 29
+      },
+      "revId": "ec2b11ea56d47e1304e14f17a3af55d35d56b3ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
