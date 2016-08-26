@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_7524c7ae",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:24:44Z",
+      "side": 1,
+      "message": "This method returns an object intended to be rendered by the API.",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f530d7ea",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:24:44Z",
+      "side": 1,
+      "message": "This method returns an object intended to be passed into the database.\n\nThat\u0027s super confusing.",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_95422b3d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:24:44Z",
+      "side": 1,
+      "message": "taht",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_357ddfe7",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:24:44Z",
+      "side": 1,
+      "message": "we usually call this variable \u0027q\u0027 in our code",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_555b4387",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1714,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-26T21:24:44Z",
+      "side": 1,
+      "message": "Love this test now! It\u0027ll be great for other devs to use as an example.",
+      "revId": "1059deb3d2e5bbf66a3a84def65e80acdf42ea11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
