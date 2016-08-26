@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_86de7f6b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/002_migrate_unencrypted_credentials.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T22:13:01Z",
+      "side": 1,
+      "message": "Ah - I see what you mean.. Piece it all together in small increments versus grabbing the whole set at once..",
+      "parentUuid": "fa7ab95a_5510a301",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_9a697a28",
         "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
         "patchSetId": 26
