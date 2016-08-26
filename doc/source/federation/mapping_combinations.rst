@@ -98,7 +98,8 @@ the argument(s) passed as input and is/are also present in the whitelist.
     be used in direct mapping ({0}, {1}, etc.)
 
 You can combine multiple conditions in a single rule. The schema that needs to be
-followed for the mapping rules can be seen in the :doc:`mapping_schema` page.
+followed for the mapping rules can be seen in the keystone codebase
+<https://github.com/openstack/keystone/blob/master/keystone/federation/utils.py#L40>`_.
 
 Mappings Examples
 -----------------
