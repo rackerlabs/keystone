@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_30e8ca7c",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-26T08:14:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_ed9d74bc",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_a3ca6d4d",
         "filename": "keystone/oauth1/controllers.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_977c2522",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-26T08:14:47Z",
+      "side": 1,
+      "message": "Have updated testcase \u0027test_bad_verifier\u0027 to check the returned error message.\n\nFor the non-oauth parameters, I am not quite sure about it, my gut feeling is we cannot get here according to the code from oauthlib I have gone through (very limited), but it\u0027s the original logic and it\u0027s kept here so that I won\u0027t miss something I haven\u0027t aware of.",
+      "parentUuid": "1ac06dbe_a3ca6d4d",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_038b811f",
         "filename": "keystone/oauth1/controllers.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2016-08-25T10:52:19Z",
       "side": 1,
       "message": "It doesn\u0027t look like this block is tested. Is it possible to get in here?",
+      "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_d7778d00",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-26T08:14:47Z",
+      "side": 1,
+      "message": "Testcase is added! But I don\u0027t think we can get here if this is done with right workflow. But the code is kept here for the exceptional case.",
+      "parentUuid": "1ac06dbe_038b811f",
       "revId": "ba9a647a3ba2048f7d88495cf693961e0d699f4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
