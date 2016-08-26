@@ -18,7 +18,7 @@ from keystone.auth.plugins import base
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.auth.AuthMethodHandler',
     in_favor_of='keystone.auth.plugins.base.AuthMethodHandler',
     remove_in=+1)

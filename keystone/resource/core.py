@@ -904,7 +904,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.resource.ResourceDriverBase',
     in_favor_of='keystone.resource.backends.base.ResourceDriverBase',
     remove_in=+1)
@@ -913,7 +913,7 @@ class ResourceDriverBase(base.ResourceDriverBase):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.resource.ResourceDriverV8',
     in_favor_of='keystone.resource.backends.base.ResourceDriverV8',
     remove_in=+1)
@@ -922,7 +922,7 @@ class ResourceDriverV8(base.ResourceDriverV8):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.resource.ResourceDriverV9',
     in_favor_of='keystone.resource.backends.base.ResourceDriverV9',
     remove_in=+1)
@@ -931,7 +931,7 @@ class ResourceDriverV9(base.ResourceDriverV9):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.resource.V9ResourceWrapperForV8Driver',
     in_favor_of='keystone.resource.backends.base.V9ResourceWrapperForV8Driver',
     remove_in=+1)
@@ -1442,7 +1442,7 @@ class DomainConfigManager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.resource.DomainConfigDriverV8',
     in_favor_of='keystone.resource.config_backends.base.DomainConfigDriverV8',
     remove_in=+1)

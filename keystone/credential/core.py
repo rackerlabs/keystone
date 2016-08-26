@@ -72,7 +72,7 @@ class Manager(manager.Manager):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.credential.CredentialDriverV8',
     in_favor_of='keystone.credential.backends.base.CredentialDriverV8',
     remove_in=+1)

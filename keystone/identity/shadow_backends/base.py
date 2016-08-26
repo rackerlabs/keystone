@@ -62,7 +62,7 @@ class ShadowUsersDriverBase(object):
 
 
 @versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
+    as_of=versionutils.deprecated.NEWTON,
     what='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
     in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV10',
     remove_in=+1)
