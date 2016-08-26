@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_48f48586",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-26T22:53:20Z",
+      "side": 1,
+      "message": "Totally nit picking here but I would go with:\n\n  if isinstance(credential, six.text_type):\n    credential \u003d credential.encode(\u0027utf-8\u0027)\n  return self.crypto.decrypt(credential).decode(\u0027utf-8\u0027)",
+      "range": {
+        "startLine": 87,
+        "startChar": 11,
+        "endLine": 91,
+        "endChar": 66
+      },
+      "revId": "22b7e9cfd82a0cfa28852b75f45208c9be028273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
