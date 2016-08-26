@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_8c05e1c3",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T13:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_97407d37",
+      "range": {
+        "startLine": 57,
+        "startChar": 23,
+        "endLine": 57,
+        "endChar": 29
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_1bdcc645",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -227,6 +251,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_ecb02df7",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T13:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_37454917",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_ef991fd2",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 11
@@ -391,6 +439,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_0ca471a4",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T13:51:10Z",
+      "side": 1,
+      "message": "Yes, this is to mimic two different processes. Invalidating one should invalidate the other.",
+      "parentUuid": "1ac06dbe_f707317f",
+      "range": {
+        "startLine": 46,
+        "startChar": 44,
+        "endLine": 46,
+        "endChar": 55
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_97887dc8",
         "filename": "keystone/tests/unit/common/test_cache.py",
         "patchSetId": 11
@@ -437,6 +509,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_ec3aed35",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T13:51:10Z",
+      "side": 1,
+      "message": "I added a comment here to explain",
+      "parentUuid": "1ac06dbe_92124b57",
+      "range": {
+        "startLine": 166,
+        "startChar": 8,
+        "endLine": 166,
+        "endChar": 33
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_f71bb17e",
         "filename": "keystone/tests/unit/common/test_cache.py",
         "patchSetId": 11
@@ -465,6 +561,30 @@
       "writtenOn": "2016-08-24T18:34:13Z",
       "side": 1,
       "message": "why?",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 48
+      },
+      "revId": "0465cab4870af749613f04b79d4230882adc0318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_2c8775b6",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T13:51:10Z",
+      "side": 1,
+      "message": "On line 166 we invalidated the region. So both the key stored by the decorator (line 170) and the key stored by the simple set (line below) should be invalid.",
+      "parentUuid": "1ac06dbe_d705d514",
       "range": {
         "startLine": 172,
         "startChar": 10,
