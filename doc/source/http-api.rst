@@ -26,8 +26,8 @@ The original source of truth for the v2.0 API is defined by a set of WADL and
 XSD files. The original source of truth for the v3 API is defined by
 documentation.
 
-.. _`Identity API v2.0`: http://specs.openstack.org/openstack/keystone-specs/#v2-0-api
-.. _`Identity API v3`: http://specs.openstack.org/openstack/keystone-specs/#v3-api
+.. _`Identity API v2.0`: https://specs.openstack.org/openstack/keystone-specs/api/v2.0/identity-api-v2.0.html
+.. _`Identity API v3`: https://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html
 
 History
 =======
@@ -126,7 +126,7 @@ With unversioned ``identity`` endpoints in the service catalog, you should be
 able to `authenticate with keystoneclient`_ successfully.
 
 .. _`latest sample configuration`: https://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone-paste.ini
-.. _`authenticate with keystoneclient`: http://docs.openstack.org/developer/python-keystoneclient/using-api-v3.html#authenticating
+.. _`authenticate with keystoneclient`: http://docs.openstack.org/developer/python-keystoneclient/using-api-v3.html#authenticating-using-sessions
 
 I have a Python client
 ----------------------
