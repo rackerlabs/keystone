@@ -45,7 +45,44 @@ The rules supported must use the following schema:
                     "additionalProperties": False,
                     "properties": {
                         "local": {
-                            "type": "array"
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": False,
+                                "properties": {
+                                    "user": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {"type": "string"},
+                                            "name": {"type": "string"},
+                                            "email": {"type": "string"},
+                                            "domain": {
+                                                "$ref": "#/definitions/domain"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "enum": ["local",
+                                                         "remote"]
+                                            }
+                                        },
+                                        "additionalProperties": False
+                                    },
+                                    "group": {
+                                        "type": "object",
+                                        "oneOf": [
+                                            {"$ref": "#/definitions/group_by_id"},
+                                            {"$ref": "#/definitions/group_by_name"}
+                                        ]
+                                    },
+                                    "groups": {
+                                        "type": "string"
+                                    },
+                                    "group_ids": {
+                                        "type": "string"
+                                    },
+                                    "domain": {"$ref": "#/definitions/domain"},
+                                }
+                            }
                         },
                         "remote": {
                             "minItems": 1,
@@ -133,6 +170,31 @@ The rules supported must use the following schema:
                         "type": "array"
                     }
                 }
+            },
+            "domain": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "name": {"type": "string"}
+                },
+                "additionalProperties": False
+            },
+            "group_by_id": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"}
+                },
+                "additionalProperties": False,
+                "required": ["id"]
+            },
+            "group_by_name": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "domain": {"$ref": "#/definitions/domain"}
+                },
+                "additionalProperties": False,
+                "required": ["name", "domain"]
             }
         }
     }
