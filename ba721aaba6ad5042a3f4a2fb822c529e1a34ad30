@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_7a1cc113",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-26T17:21:28Z",
+      "side": 1,
+      "message": "Why not just put a SQL level DEFAULT on the column ?  that\u0027s the more usual way to handle simple INSERT defaults.",
+      "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
