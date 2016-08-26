@@ -16,6 +16,24 @@
       "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cfba650a",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-26T19:30:48Z",
+      "side": 1,
+      "message": "Awesome - thanks for the confirmation Mike!",
+      "parentUuid": "fa7ab95a_788dac30",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
