@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_34424811",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T19:14:06Z",
+      "side": 1,
+      "message": "I don\u0027t like this, but I didn\u0027t want to copy all of that code into this module.",
+      "revId": "db4aafcbf7d3cb158b738e9e41444dba805b3f98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
