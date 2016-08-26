@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_788dac30",
+        "filename": "keystone/common/sql/contract_repo/versions/002_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-26T17:12:43Z",
+      "side": 1,
+      "message": "that\u0027s sqlalchemy-migrate doing that.   Long term Keystone should move onto alembic for migrations and also not use migrations on SQLite at all, IMO.",
+      "revId": "eda242aaaeb13dcfc51ab85fdca5a0a61d18766c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
