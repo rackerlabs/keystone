@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
+
 import keystone.conf
 
 
@@ -50,3 +52,18 @@ def symptom_LDAP_group_members_are_ids_disabled():
     return (
         CONF.ldap.group_objectclass == 'posixGroup'
         and not CONF.ldap.group_members_are_ids)
+
+
+def symptom_LDAP_domain_specific_configs():
+    """[ldap] domain specific configuration files exist.
+
+    If you are wanting to specify identity driver configurations on a domain
+    by domain basis, domain_specific_drivers_enabled must be set to TRUE.
+    Likewise, Keystone will look in the directory provided in
+    ldap_domain_config_dir for any configuration files in the form of
+    keystone.<domain_name>.conf.
+
+    """
+    return (
+        CONF.ldap.domain_specific_drivers_enabled
+        and not os.listdir(CONF.ldap.domain_config_dir))
