@@ -30,9 +30,7 @@ from oslo_utils import reflection
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
-from keystone.i18n import _LI
-from keystone.i18n import _LW
-
+from keystone.i18n import _LI, _LW
 
 __all__ = ('KeyValueStore', 'KeyValueStoreLock', 'LockTimeout',
            'get_key_value_store')
