@@ -34,6 +34,24 @@
       "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_04618f39",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-08-26T20:28:41Z",
+      "side": 1,
+      "message": "defaults work with ALTER.  SQLite does not support ALTER, so sqlalchemy-migrate drops the whole table and recreates it.  should still work in the end.   Has to be server_default, however.\n\nAlso, SQLite isn\u0027t used in production.  There\u0027s no need for the default to work on that backend in any case except for the benefit of tests, which IMO should be against MySQL/Postgresql in any case since that\u0027s where this feature needs to be tested.",
+      "parentUuid": "fa7ab95a_a9f3619d",
+      "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
