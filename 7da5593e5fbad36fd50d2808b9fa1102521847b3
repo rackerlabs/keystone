@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_7b0e9c35",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T12:19:42Z",
+      "side": 1,
+      "message": "Not sure I like the term \u0027versions\u0027 used throughout these definitions. I would prefer something more precises like \u0027keystone instances running old code\u0027, but I think that starts to get too verbose. {{{food for thought}}}",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e893c0f8",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T12:19:42Z",
+      "side": 1,
+      "message": "Might be worth having a sample of a null migration or code to point to...",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_fbe46c3c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-26T12:19:42Z",
+      "side": 1,
+      "message": "I would probably take the indentation out in front of the numbers. Right now it renders with a lot of space.",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
