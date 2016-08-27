@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_e20c9096",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-27T04:05:28Z",
+      "side": 1,
+      "message": "need to beef this up a bit since that is what is returned to the user should they fail the doctor check",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 59
+      },
+      "revId": "571ec77bdc28c2ee560c78542c3c2fb6fc3f638a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
