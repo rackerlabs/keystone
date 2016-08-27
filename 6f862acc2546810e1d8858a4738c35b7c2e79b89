@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_2e274913",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-27T00:05:38Z",
+      "side": 1,
+      "message": "db_sync",
+      "range": {
+        "startLine": 115,
+        "startChar": 68,
+        "endLine": 115,
+        "endChar": 75
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6e2151fb",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-27T00:05:38Z",
+      "side": 1,
+      "message": "available.",
+      "range": {
+        "startLine": 134,
+        "startChar": 60,
+        "endLine": 134,
+        "endChar": 69
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8e4a15ab",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-27T00:05:38Z",
+      "side": 1,
+      "message": "development",
+      "range": {
+        "startLine": 136,
+        "startChar": 32,
+        "endLine": 136,
+        "endChar": 35
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
