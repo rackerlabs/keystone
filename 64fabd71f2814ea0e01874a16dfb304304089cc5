@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_8a066fcc",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-28T04:03:59Z",
+      "side": 1,
+      "message": "What does this mean? the min for minimum_password_age is 0 and the min for password_expires_days is 1, can ever these value be a negative value. If by anyway they are set to a negative value, report warning or not?",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
