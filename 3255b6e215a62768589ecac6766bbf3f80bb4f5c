@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_a9f15303",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "straightforward",
+      "range": {
+        "startLine": 30,
+        "startChar": 55,
+        "endLine": 30,
+        "endChar": 56
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_89800fc2",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "seven",
+      "range": {
+        "startLine": 61,
+        "startChar": 57,
+        "endLine": 61,
+        "endChar": 58
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a9a95392",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "cipher text",
+      "range": {
+        "startLine": 72,
+        "startChar": 26,
+        "endLine": 72,
+        "endChar": 36
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_09a31f9e",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "remove has",
+      "range": {
+        "startLine": 73,
+        "startChar": 63,
+        "endLine": 73,
+        "endChar": 66
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_29c38339",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "plain text",
+      "range": {
+        "startLine": 79,
+        "startChar": 27,
+        "endLine": 79,
+        "endChar": 36
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a958738b",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "the new",
+      "range": {
+        "startLine": 84,
+        "startChar": 47,
+        "endLine": 84,
+        "endChar": 50
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_09db1fed",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "plain text",
+      "range": {
+        "startLine": 91,
+        "startChar": 70,
+        "endLine": 91,
+        "endChar": 79
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_498fe7cb",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "This step should only be done once.",
+      "range": {
+        "startLine": 115,
+        "startChar": 31,
+        "endLine": 115,
+        "endChar": 72
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_497d27b0",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "overrotation",
+      "range": {
+        "startLine": 121,
+        "startChar": 56,
+        "endLine": 121,
+        "endChar": 69
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a9423366",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "indecipherable",
+      "range": {
+        "startLine": 122,
+        "startChar": 29,
+        "endLine": 122,
+        "endChar": 44
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6933cb14",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T14:52:48Z",
+      "side": 1,
+      "message": "cipher text",
+      "range": {
+        "startLine": 130,
+        "startChar": 51,
+        "endLine": 130,
+        "endChar": 61
+      },
+      "revId": "3255b6e215a62768589ecac6766bbf3f80bb4f5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
