@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_b515244a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "It may be worth stating that saving the created keys into a secure key storage system would allow for data recovery if something ever happens to a key on the like systems.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_07230357",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Can we make the faster by selecting a count using the primary_key_hash in the \u0027where\u0027 clause? This way we don\u0027t have to down load all (or any) of the credentials to do the check.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_4ac35238",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Where does this come from?",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a73ed789",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "You\u0027re not checking for None here. Do you need to be? If it is None you wouldn\u0027t need to do the decrypt step right?\n\n\"doesn\u0027t\"",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_47c34b38",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Is this actually needed here?",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_aa0bfe8c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Where does this come from?",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c733db60",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Should this be nullable? I thought we wanted to force encryption.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_677dafb0",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "Can someone actually update without including the blob?",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_4a8fd274",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T16:04:42Z",
+      "side": 1,
+      "message": "To be safe maybe we should use a stronger hash after all.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
