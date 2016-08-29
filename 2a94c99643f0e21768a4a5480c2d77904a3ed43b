@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_5f6060cf",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T21:22:42Z",
+      "side": 0,
+      "message": "I wonder if we should distinguish this one now. \n\n  Setup a Fernet key repository for token encryption",
+      "revId": "2a94c99643f0e21768a4a5480c2d77904a3ed43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
