@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    A mapping_id is a required attribute for create/update federation protocol
+    requests, however this identifier was not being validated. We have added a
+    fix to validate that the mapping exists for these requests; if the mapping
+    does not exists, it will return ``400 - Bad Request``.

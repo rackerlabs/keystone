@@ -182,6 +182,7 @@ Add a protocol and attribute mapping to an identity provider
 Relationship: ``http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/1.0/rel/identity_provider_protocol``
 
 Normal response codes: 201
+Error response codes: 400
 
 Request
 -------
