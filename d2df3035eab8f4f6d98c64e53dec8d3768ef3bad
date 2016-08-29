@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_83c38eec",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T14:26:40Z",
+      "side": 1,
+      "message": "Is this correct? I would guess we actually return a 200.",
+      "revId": "d2df3035eab8f4f6d98c64e53dec8d3768ef3bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_418fcc29",
         "filename": "api-ref/source/v3/groups.inc",
         "patchSetId": 1
@@ -30,6 +47,30 @@
       "writtenOn": "2016-08-29T11:36:50Z",
       "side": 1,
       "message": "how can the same endpoint return two different status for success?\n\nsince it is a PUT, think the correct response code is 201.",
+      "range": {
+        "startLine": 142,
+        "startChar": 23,
+        "endLine": 142,
+        "endChar": 31
+      },
+      "revId": "d2df3035eab8f4f6d98c64e53dec8d3768ef3bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_63620a40",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T14:26:40Z",
+      "side": 1,
+      "message": "It\u0027s actually a 200 as I don\u0027t think we ever give back a 201. We could actually return different codes it we wanted to so that we could indicated if a record was created or just updated. Right now though we only 200.",
+      "parentUuid": "fa7ab95a_418fcc29",
       "range": {
         "startLine": 142,
         "startChar": 23,
