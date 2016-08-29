@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_ffccd4bc",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-29T21:31:51Z",
+      "side": 1,
+      "message": "Nit picking here. Why are you changing the name of the column? you actually didn\u0027t need to do so. Just adding key_hash would have been sufficient and you can know if it\u0027s encrypted by looking at keyhash.\nSmaller changes to the schema are better, also not all blobs are encrypted as evidenced by your comment below.",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3f539c6c",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-29T21:31:51Z",
+      "side": 1,
+      "message": "see earlier comment. recommend using the full has and adding a specific 7 character index here (you should probably index this column anyway).\n\nartificially truncating a cryptographic representation of the key is a terrible idea.\n\nIt is ok to utilize the smaller prefix (aka git or GPG) if there are no collisions. Without a clear comment on why 7 bits are sufficient I am a strong -1 on this.",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 55
+      },
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3f3e3c28",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-08-29T21:31:51Z",
+      "side": 1,
+      "message": "what is the point of truncating this to 7 bits? Remember SQL is really good at indexing specific numbers of preceeding bits. You\u0027re much much much more likely to get collisions with lower bit values here. Please add a comment why 7 bits is considered sufficient. I highly recommend using the full hash and accepting smaller counts if there are no conflicts (aka git). Artificially truncating the hash is a bad bad bad bad idea.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 29
+      },
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
