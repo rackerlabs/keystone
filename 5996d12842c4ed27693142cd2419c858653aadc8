@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c01e615e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-29T16:24:42Z",
+      "side": 1,
+      "message": "why not just pass None ?",
+      "range": {
+        "startLine": 385,
+        "startChar": 26,
+        "endLine": 387,
+        "endChar": 60
+      },
+      "revId": "5996d12842c4ed27693142cd2419c858653aadc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3d573a27",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-29T16:24:42Z",
+      "side": 1,
+      "message": "there is no way to do it ? perhaps a v2.0 token can be convereted into a v3 representation. perhaps it is just not worth it to add confusing code",
+      "range": {
+        "startLine": 390,
+        "startChar": 27,
+        "endLine": 391,
+        "endChar": 44
+      },
+      "revId": "5996d12842c4ed27693142cd2419c858653aadc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a0895d77",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-29T16:24:42Z",
+      "side": 1,
+      "message": "I don\u0027t think it is worth it to add this code just for the case of v3 tokens that will be used against v2.0 api\n\nPart of this is sharing Haneef\u0027s concerns, I am against adding a lot of logic for saving a call for the first validation.",
+      "range": {
+        "startLine": 442,
+        "startChar": 0,
+        "endLine": 449,
+        "endChar": 79
+      },
+      "revId": "5996d12842c4ed27693142cd2419c858653aadc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
