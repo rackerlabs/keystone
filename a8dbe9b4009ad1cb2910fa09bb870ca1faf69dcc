@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_06e15a9a",
+        "filename": "api-ref/source/v3/credentials.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T11:23:17Z",
+      "side": 1,
+      "message": "path looks correct: https://github.com/openstack/keystone/blob/master/api-ref/source/v3/samples/admin/credential-create-response.json",
+      "revId": "a8dbe9b4009ad1cb2910fa09bb870ca1faf69dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
