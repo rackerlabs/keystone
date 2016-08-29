@@ -22,6 +22,30 @@
       "revId": "ac002d9230411f5b011efed157a7dd786e8b0f5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a2ac2fa1",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-29T02:16:57Z",
+      "side": 1,
+      "message": "what about http://git.openstack.org/cgit/openstack/keystone/tree/keystone/federation/utils.py instead?",
+      "parentUuid": "fa7ab95a_471d35bc",
+      "range": {
+        "startLine": 102,
+        "startChar": 1,
+        "endLine": 102,
+        "endChar": 83
+      },
+      "revId": "ac002d9230411f5b011efed157a7dd786e8b0f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
