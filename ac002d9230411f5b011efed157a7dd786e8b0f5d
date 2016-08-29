@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_471d35bc",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-29T01:33:34Z",
+      "side": 1,
+      "message": "I am not sure link to the specific line is sanity at the moment. The link will be an invalid link if there is any update in `utils.py` that make it not the L40. I don\u0027t think change the code need to aware that there is a reference with that.",
+      "range": {
+        "startLine": 102,
+        "startChar": 1,
+        "endLine": 102,
+        "endChar": 83
+      },
+      "revId": "ac002d9230411f5b011efed157a7dd786e8b0f5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
