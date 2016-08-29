@@ -16,6 +16,24 @@
       "revId": "2a94c99643f0e21768a4a5480c2d77904a3ed43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_bfa7acbb",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T21:26:59Z",
+      "side": 0,
+      "message": "Yeah, I thought about that too, think it does need to be clearer.",
+      "parentUuid": "fa7ab95a_5f6060cf",
+      "revId": "2a94c99643f0e21768a4a5480c2d77904a3ed43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
