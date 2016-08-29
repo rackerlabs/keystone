@@ -52,6 +52,24 @@
       "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_88c810aa",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T13:26:20Z",
+      "side": 1,
+      "message": "@Henry based on Michael\u0027s response, you could close this bug by modifying version 105, setting the column default and if sqlite, update the column values like so: \nhttp://paste.openstack.org/show/564574/\n\nWould just need to confirm that the default works for both mysql and postgres.",
+      "parentUuid": "fa7ab95a_04618f39",
+      "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
