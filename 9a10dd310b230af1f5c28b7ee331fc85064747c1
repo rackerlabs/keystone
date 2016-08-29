@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_60e1159a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T16:35:05Z",
+      "side": 1,
+      "message": "suggest adding the token_id to the docstring as well:\n:param token_id...",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 64
+      },
+      "revId": "9a10dd310b230af1f5c28b7ee331fc85064747c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
