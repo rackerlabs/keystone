@@ -118,6 +118,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f2e34da2",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T13:06:17Z",
+      "side": 1,
+      "message": "@Roddrigo Yes, it supposed to be \u003e\u003d because the minimum password age should be less than the password expires. The condition in the middle is simply checking if both settings are enabled.",
+      "parentUuid": "fa7ab95a_a17978ca",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
