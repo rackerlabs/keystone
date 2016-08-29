@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_e5f7de56",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2016-08-29T23:58:16Z",
+      "side": 1,
+      "message": "This is a lot of filter fields. I\u0027d like to see actual EXPLAIN output from MySQL that shows the query plan for this. We want the highest cardinality index possible in use, so that we read the fewest rows. If we only have medium/low cardinality indexes to work with, it will just end up pushing filtering CPU usage from the app servers (which are easy to scale) to the database server (which is definitely _not_ easy to scale).",
+      "revId": "be901258819d61b8b2d8063cc5f6a2eec08a9d7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
