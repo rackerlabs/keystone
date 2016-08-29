@@ -70,6 +70,24 @@
       "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e056105b",
+        "filename": "keystone/common/sql/expand_repo/versions/002_mysql_upgrade.sql",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-29T14:15:04Z",
+      "side": 1,
+      "message": "not just that, but also create a new migration that sets it, in case users have already run migration 105..",
+      "parentUuid": "fa7ab95a_88c810aa",
+      "revId": "ba721aaba6ad5042a3f4a2fb822c529e1a34ad30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
