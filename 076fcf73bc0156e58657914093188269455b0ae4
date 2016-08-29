@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_31e68144",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T17:00:25Z",
+      "side": 1,
+      "message": "Actually - we don\u0027t have this set to False because we rely on the ability to stuff unencrypted credentials in to the backend in keystone.tests.unit.test_backend_sql.SqlCredential.test_update_credential_is_encrypted_when_stored",
+      "parentUuid": "fa7ab95a_bb10b25a",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_677dafb0",
         "filename": "keystone/credential/core.py",
         "patchSetId": 31
