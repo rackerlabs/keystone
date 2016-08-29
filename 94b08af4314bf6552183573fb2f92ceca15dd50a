@@ -22,6 +22,24 @@
       "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e866e34f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T19:15:30Z",
+      "side": 1,
+      "message": "That\u0027s what I thought, too :) \n\ntoken_ref isn\u0027t actually a v2 token reference... it a token reference from the token model. Fixing line 785 can probably be done in a separate patch (which I can post).",
+      "parentUuid": "fa7ab95a_025686cd",
+      "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
