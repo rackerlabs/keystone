@@ -22,6 +22,29 @@
       "revId": "ceec0099b3164dc3f9a50d15f1c56ec54e0d7063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_74e55436",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T17:55:49Z",
+      "side": 1,
+      "message": "think that for fernet \"setup\" and \"rotate\" are clear enough, for credential not so much. Maybe use \"credential_keys_rotate\" and \"credential_keys_setup\"?",
+      "range": {
+        "startLine": 610,
+        "startChar": 12,
+        "endLine": 610,
+        "endChar": 28
+      },
+      "revId": "ceec0099b3164dc3f9a50d15f1c56ec54e0d7063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
