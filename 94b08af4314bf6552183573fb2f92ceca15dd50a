@@ -40,6 +40,24 @@
       "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6312f458",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-29T19:20:55Z",
+      "side": 1,
+      "message": "So, as discussed in IRC, the other way to access it was wrong (cc lbragstad). We need to add a test for the case where ValidationError happens (there is no test for that otherwise it\u0027d have failed!)\n\ncan be done as a follow up",
+      "parentUuid": "fa7ab95a_e866e34f",
+      "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
