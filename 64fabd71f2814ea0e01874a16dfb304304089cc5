@@ -94,6 +94,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_52bdd9b5",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T13:03:55Z",
+      "side": 1,
+      "message": "@Dave this condition, (min_age \u003e 0 and expires \u003e 0), determines if both settings are enabled. And if enabled, then return the check. The default for minimum password age is zero, meaning disabled; thus, I don\u0027t want to perform the check if the setting is not enabled.",
+      "parentUuid": "fa7ab95a_a17978ca",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
