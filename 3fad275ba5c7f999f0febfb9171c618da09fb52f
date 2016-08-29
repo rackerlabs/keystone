@@ -93,6 +93,30 @@
       "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_09207f47",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T14:44:01Z",
+      "side": 1,
+      "message": "although the description of the config says it should be \"readable for humans\", I can simply set \"#*!\u0026@#*(!\u0026@#*(\u0026\" it will be a valid description (not empty), but not \"readable for humans\". I admit, I\u0027m focusing in technicality :)",
+      "parentUuid": "fa7ab95a_cdb14a49",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
