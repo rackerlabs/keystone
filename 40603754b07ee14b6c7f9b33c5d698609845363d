@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_ff14d44d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T21:36:53Z",
+      "side": 1,
+      "message": "We need a second column in order to upgrade and allow both version (Mitaka and Newton) to be able to read versions of the blob they understand.",
+      "parentUuid": "fa7ab95a_ffccd4bc",
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_3f539c6c",
         "filename": "keystone/credential/backends/sql.py",
         "patchSetId": 34
