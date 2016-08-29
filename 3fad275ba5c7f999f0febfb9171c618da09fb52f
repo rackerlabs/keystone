@@ -46,6 +46,29 @@
       "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_ac4def3f",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T11:51:53Z",
+      "side": 1,
+      "message": "the \"not\" check below only verifies that \"password_regex_description\" is not empty, right? How can you be sure it is \"readable for humans\"?\n\nI guess the problem is in the affirmative, so you just may just drop everything after \"`[security_compliance] password_regex_description` is set\"",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
