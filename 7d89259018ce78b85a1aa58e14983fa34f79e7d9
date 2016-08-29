@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_e64c76ca",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T11:24:38Z",
+      "side": 1,
+      "message": "Don\u0027t change to double quotes here. We favor single quotes where possible.",
+      "revId": "7d89259018ce78b85a1aa58e14983fa34f79e7d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_86d48abd",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T11:24:38Z",
+      "side": 1,
+      "message": "same ... also no ending \\. If you need to have a multiline statement it need parans.",
+      "revId": "7d89259018ce78b85a1aa58e14983fa34f79e7d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_86b9ea7b",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-29T11:24:38Z",
+      "side": 1,
+      "message": "I\u0027m not sure what any of this has to do with the indent explained in the commit message.",
+      "revId": "7d89259018ce78b85a1aa58e14983fa34f79e7d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
