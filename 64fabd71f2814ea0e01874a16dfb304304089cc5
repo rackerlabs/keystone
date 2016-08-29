@@ -142,6 +142,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_00f934c7",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T14:08:38Z",
+      "side": 1,
+      "message": "And hope you guys aren\u0027t getting confused by the one line condition.  Essentially, this is doing the following:\n\nif min_age and expires are enabled\n   return check if min_age is less than expires\nelse\n   return False # not a sympton/warning",
+      "parentUuid": "fa7ab95a_f2e34da2",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
