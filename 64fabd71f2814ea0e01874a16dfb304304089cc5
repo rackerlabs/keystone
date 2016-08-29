@@ -166,6 +166,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e628e8e4",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-29T14:36:23Z",
+      "side": 1,
+      "message": "@Ron, maybe I read it wrong but the code tell me it\u0027s acceptable if min_age \u003c\u003d0  or expires \u003c\u003d0 (Both of them couldn\u0027t happen since there is min value for both of them and doesn\u0027t looks like a right configuration too.)\n\nBut as you said, you don\u0027t wanna check it if they are disabled. The question is can we judge this by whether it is negative value or not? If both of them can never be a negative value what\u0027s the check here benefit us? If either of them could be negative value can we let it pass and just say it is a right configuration without any warning message?\n\nJust noticed the message before I shutdown my laptop, pls let me know if there is anything I missed.\n\nThanks!",
+      "parentUuid": "fa7ab95a_00f934c7",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
