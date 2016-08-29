@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_5f75c0f7",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T21:31:01Z",
+      "side": 1,
+      "message": "Use as asterisk, it\u0027s not a numbered list.",
+      "revId": "3fe751c1d16dc56df74f7af6507770855db95387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
