@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_7d9d3765",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T18:57:14Z",
+      "side": 1,
+      "message": "It\u0027s not a comment, it\u0027s the named anchor to the section below that I used in the second paragraph.",
+      "parentUuid": "fa7ab95a_d7ef021c",
+      "revId": "fa056e2e44500251321506a28ace412c828ce190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_775396e2",
         "filename": "doc/source/identity-support-matrix.ini",
         "patchSetId": 3
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_3dd3af05",
+        "filename": "doc/source/identity-support-matrix.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T18:57:14Z",
+      "side": 1,
+      "message": "Hmm, maybe with docs we can mark it as partial or complete?",
+      "parentUuid": "fa7ab95a_775396e2",
+      "revId": "fa056e2e44500251321506a28ace412c828ce190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_37fbcec2",
         "filename": "doc/source/identity-support-matrix.ini",
         "patchSetId": 3
@@ -65,6 +101,24 @@
         "endLine": 119,
         "endChar": 24
       },
+      "revId": "fa056e2e44500251321506a28ace412c828ce190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_bdb7bfd6",
+        "filename": "doc/source/identity-support-matrix.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T18:57:14Z",
+      "side": 1,
+      "message": "Oh cool! Will fix.",
+      "parentUuid": "fa7ab95a_37fbcec2",
       "revId": "fa056e2e44500251321506a28ace412c828ce190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
