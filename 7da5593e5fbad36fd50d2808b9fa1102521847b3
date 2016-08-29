@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_e73646e6",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-29T03:57:42Z",
+      "side": 1,
+      "message": "missing a ` here at the end",
+      "range": {
+        "startLine": 112,
+        "startChar": 39,
+        "endLine": 112,
+        "endChar": 60
+      },
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_e893c0f8",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -47,6 +70,29 @@
       "writtenOn": "2016-08-26T12:19:42Z",
       "side": 1,
       "message": "I would probably take the indentation out in front of the numbers. Right now it renders with a lot of space.",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6703160e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-29T03:57:42Z",
+      "side": 1,
+      "message": "remove \"and\" here, replace with a comma",
+      "range": {
+        "startLine": 132,
+        "startChar": 70,
+        "endLine": 132,
+        "endChar": 73
+      },
       "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
