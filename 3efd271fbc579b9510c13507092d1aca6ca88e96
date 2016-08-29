@@ -133,6 +133,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_2fc0e329",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T15:19:41Z",
+      "side": 1,
+      "message": "It should be - but we call it *without* token_id here. \n\nhttps://github.com/openstack/keystone/blob/ed5df6f26fa41a9500e68177f3e7306d64da8651/keystone/token/providers/common.py#L782-L783\n\nThis should be refactored to *always* require a token_id.",
+      "parentUuid": "3ac371cc_4ec3248b",
+      "revId": "3efd271fbc579b9510c13507092d1aca6ca88e96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_0e400c07",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
