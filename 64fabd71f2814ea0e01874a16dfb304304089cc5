@@ -214,6 +214,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_556058a5",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T15:34:38Z",
+      "side": 1,
+      "message": "@Dave, no, the code is saying, first check if min_age and expires are enabled.  If so, return the check; otherwise, return False (not a symptom). \n\nThus, if min_age \u003c\u003d0  or expires \u003c\u003d0, then no check is performed. The purpose for the condition in the middle, (min_age \u003e 0 and expires \u003e 0), is to first check that both settings are enabled. It has nothing to do with checking for negative numbers. \n\nTry to reach me on IRC if you still have questions.",
+      "parentUuid": "fa7ab95a_e628e8e4",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
