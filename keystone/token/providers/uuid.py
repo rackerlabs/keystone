@@ -14,8 +14,6 @@
 
 """Keystone UUID Token Provider."""
 
-from __future__ import absolute_import
-
 import uuid
 
 from keystone.token.providers import common
