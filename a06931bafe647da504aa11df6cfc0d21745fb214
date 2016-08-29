@@ -22,6 +22,30 @@
       "revId": "a06931bafe647da504aa11df6cfc0d21745fb214",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_07ddea0d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-29T04:23:11Z",
+      "side": 1,
+      "message": "Thanks for your comment. Currently, I am searching an \"LE\" keyword. I will continue with \"LW\" keywork in next patch set. But I will update this point as yours. :) Is it ok?",
+      "parentUuid": "fa7ab95a_47bb72e5",
+      "range": {
+        "startLine": 134,
+        "startChar": 20,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "a06931bafe647da504aa11df6cfc0d21745fb214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
