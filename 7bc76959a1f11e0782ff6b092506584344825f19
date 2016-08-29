@@ -22,6 +22,30 @@
       "revId": "7bc76959a1f11e0782ff6b092506584344825f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cafa29bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-29T04:48:32Z",
+      "side": 1,
+      "message": "Thanks Mr.Martinelli\n\nI will update this point right now. By the way, could I ask you a question: With LOG-waring/error without variable like this link [1]. Should we change to:\n\u0027\u0027\u0027\u0027\nmsg \u003d _LW(....)\nLOG.error \u003d (msg)\n\u0027\u0027\u0027\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/exception.py#L66",
+      "parentUuid": "fa7ab95a_0ae97114",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "7bc76959a1f11e0782ff6b092506584344825f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
