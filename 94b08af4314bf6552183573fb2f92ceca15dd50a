@@ -58,6 +58,24 @@
       "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_63daf4e9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T19:31:39Z",
+      "side": 1,
+      "message": "Actually - it looks like none of the code in this method is actually able to raise a ValidationError. It looks like it no longer applies. I can propose a patch to remove the try/except since it doesn\u0027t appear to be needed.",
+      "parentUuid": "fa7ab95a_6312f458",
+      "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
