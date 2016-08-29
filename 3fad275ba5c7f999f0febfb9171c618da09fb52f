@@ -69,6 +69,30 @@
       "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cdb14a49",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T13:10:22Z",
+      "side": 1,
+      "message": "Yeah, that is the check, that if you\u0027ve set the password regular expression, but not the description (empty), it will display this warning.  Thus, if the description is empty, add a description of your regular expression in a language for humans:\nhttps://github.com/openstack/keystone/blob/master/keystone/conf/security_compliance.py#L121",
+      "parentUuid": "fa7ab95a_ac4def3f",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
