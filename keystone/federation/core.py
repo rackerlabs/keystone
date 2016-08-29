@@ -114,6 +114,16 @@ class Manager(manager.Manager):
         mapped_properties = rule_processor.process(assertion_data)
         return mapped_properties, mapping['id']
 
+    def create_protocol(self, idp_id, protocol_id, protocol):
+        # validate mapping exists
+        self.driver.get_mapping(protocol['mapping_id'])
+        return self.driver.create_protocol(idp_id, protocol_id, protocol)
+
+    def update_protocol(self, idp_id, protocol_id, protocol):
+        # validate mapping exists
+        self.driver.get_mapping(protocol['mapping_id'])
+        return self.driver.update_protocol(idp_id, protocol_id, protocol)
+
 
 @versionutils.deprecated(
     versionutils.deprecated.NEWTON,
