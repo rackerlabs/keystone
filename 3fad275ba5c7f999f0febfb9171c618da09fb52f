@@ -117,6 +117,30 @@
       "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c7075b16",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T15:43:28Z",
+      "side": 1,
+      "message": "Yes, you can set it to garbage. I\u0027m not testing that it is human readable, I\u0027m checking that the description is set (not empty). And if not set, show a warning message that describes the password_regex_description property.\n\nThus, if the description is not set, the intended purpose of this property is to set it with a human readable description. That\u0027s the warning message.  \n\nIf you still disagree, what would you suggest?",
+      "parentUuid": "fa7ab95a_09207f47",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "3fad275ba5c7f999f0febfb9171c618da09fb52f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
