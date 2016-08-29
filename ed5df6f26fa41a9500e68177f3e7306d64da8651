@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_e89b4316",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T19:16:57Z",
+      "side": 0,
+      "message": "Actually - no separate patch is required!",
+      "revId": "ed5df6f26fa41a9500e68177f3e7306d64da8651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
