@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_2072ad7b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_b515244a",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_07230357",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-29T16:04:42Z",
       "side": 1,
       "message": "Can we make the faster by selecting a count using the primary_key_hash in the \u0027where\u0027 clause? This way we don\u0027t have to down load all (or any) of the credentials to do the check.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e0852507",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Yep - we essentially want to ask the credential backend for every credential  that has key_hash !\u003d to primary_key_hash. I originally tried to do this with driver_hints but we need to fix driver hints to be able to support NotEqual checks I think. Otherwise we have to ask for everything that matches the primary key (using hints) then ask for all the credentials anyway to figure out the delta ourselves.",
+      "parentUuid": "fa7ab95a_07230357",
       "revId": "076fcf73bc0156e58657914093188269455b0ae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_3bc74265",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Bad refactor - fixed.",
+      "parentUuid": "fa7ab95a_4ac35238",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_a73ed789",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 31
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-29T16:04:42Z",
       "side": 1,
       "message": "You\u0027re not checking for None here. Do you need to be? If it is None you wouldn\u0027t need to do the decrypt step right?\n\n\"doesn\u0027t\"",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_7bbc6adc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Nope - we shouldn\u0027t have to check for None here because the data_migration will take every credential and encrypt it, which will populate the key_hash column of each row in the credential table.",
+      "parentUuid": "fa7ab95a_a73ed789",
       "revId": "076fcf73bc0156e58657914093188269455b0ae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_00de89dc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Nope - not needed. Good catch.",
+      "parentUuid": "fa7ab95a_47c34b38",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_aa0bfe8c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 31
@@ -98,6 +188,24 @@
       "writtenOn": "2016-08-29T16:04:42Z",
       "side": 1,
       "message": "Where does this come from?",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_00cda965",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Yep this was a bad refactor - fixed.",
+      "parentUuid": "fa7ab95a_aa0bfe8c",
       "revId": "076fcf73bc0156e58657914093188269455b0ae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_bb10b25a",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Done. This should also force people to to a data_migration *before* ever running this code.",
+      "parentUuid": "fa7ab95a_c733db60",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_677dafb0",
         "filename": "keystone/credential/core.py",
         "patchSetId": 31
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_565e9b12",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "I suppose you could. Our jsonschema validation doesn\u0027t require the blob on update.",
+      "parentUuid": "fa7ab95a_677dafb0",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_4a8fd274",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 31
@@ -149,6 +293,24 @@
       "writtenOn": "2016-08-29T16:04:42Z",
       "side": 1,
       "message": "To be safe maybe we should use a stronger hash after all.",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_56b5bb2e",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T16:47:36Z",
+      "side": 1,
+      "message": "Recommendations?",
+      "parentUuid": "fa7ab95a_4a8fd274",
       "revId": "076fcf73bc0156e58657914093188269455b0ae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
