@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_577bf227",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-29T18:18:54Z",
+      "side": 1,
+      "message": "204 is fine, there\u0027s no return https://github.com/openstack/keystone/blob/e755970bfefc3ff6e0fc37cf70b2205d0eff97b5/keystone/identity/controllers.py#L342-L344\n\nso it\u0027s No Content, all deletes in keystone are 204",
+      "parentUuid": "fa7ab95a_96e4a3e1",
+      "revId": "d2df3035eab8f4f6d98c64e53dec8d3768ef3bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_418fcc29",
         "filename": "api-ref/source/v3/groups.inc",
         "patchSetId": 1
