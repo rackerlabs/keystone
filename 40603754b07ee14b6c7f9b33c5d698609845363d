@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_9ce67313",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T22:08:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_3f539c6c",
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_3f3e3c28",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 34
@@ -101,6 +119,24 @@
         "endLine": 53,
         "endChar": 29
       },
+      "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_bcefb7e7",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-29T22:08:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_3f3e3c28",
       "revId": "40603754b07ee14b6c7f9b33c5d698609845363d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
