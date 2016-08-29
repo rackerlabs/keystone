@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_a1a5f8a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T11:36:50Z",
+      "side": 1,
+      "message": "please add details about what is wrong in the response codes",
+      "revId": "d2df3035eab8f4f6d98c64e53dec8d3768ef3bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_418fcc29",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-29T11:36:50Z",
+      "side": 1,
+      "message": "how can the same endpoint return two different status for success?\n\nsince it is a PUT, think the correct response code is 201.",
+      "range": {
+        "startLine": 142,
+        "startChar": 23,
+        "endLine": 142,
+        "endChar": 31
+      },
+      "revId": "d2df3035eab8f4f6d98c64e53dec8d3768ef3bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
