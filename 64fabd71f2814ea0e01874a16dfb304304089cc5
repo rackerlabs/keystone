@@ -46,6 +46,30 @@
       "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_67907944",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-08-29T01:25:29Z",
+      "side": 1,
+      "message": "Yep, the minimum check has already defined. I just cannot understand why it is checked here and suppose min_age or expires is \u003c\u003d0 there should not any warning. Is that intentional or it is redundant (unnecessary)?",
+      "parentUuid": "fa7ab95a_6c5f80e5",
+      "range": {
+        "startLine": 31,
+        "startChar": 36,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "64fabd71f2814ea0e01874a16dfb304304089cc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
