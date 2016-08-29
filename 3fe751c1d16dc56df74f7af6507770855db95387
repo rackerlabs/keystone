@@ -16,6 +16,24 @@
       "revId": "3fe751c1d16dc56df74f7af6507770855db95387",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_5fe300a4",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-29T21:32:10Z",
+      "side": 1,
+      "message": "Oops, good catch",
+      "parentUuid": "fa7ab95a_5f75c0f7",
+      "revId": "3fe751c1d16dc56df74f7af6507770855db95387",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
