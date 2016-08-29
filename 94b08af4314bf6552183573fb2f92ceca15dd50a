@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_025686cd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-08-29T18:29:23Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be  token_ref[\u0027token_data\u0027][\u0027access\u0027][\u0027token\u0027][\u0027id\u0027]?\n\nAs it was before @ L788 ?",
+      "range": {
+        "startLine": 781,
+        "startChar": 23,
+        "endLine": 781,
+        "endChar": 38
+      },
+      "revId": "94b08af4314bf6552183573fb2f92ceca15dd50a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
