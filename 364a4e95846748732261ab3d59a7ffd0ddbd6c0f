@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_31b8412a",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T17:01:01Z",
+      "side": 1,
+      "message": "Change to single quotes to be consistent.",
+      "range": {
+        "startLine": 1701,
+        "startChar": 22,
+        "endLine": 1703,
+        "endChar": 43
+      },
+      "revId": "364a4e95846748732261ab3d59a7ffd0ddbd6c0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_91f02d00",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-08-29T17:01:01Z",
+      "side": 1,
+      "message": "Use either single quotes or double quotes.",
+      "range": {
+        "startLine": 137,
+        "startChar": 26,
+        "endLine": 139,
+        "endChar": 73
+      },
+      "revId": "364a4e95846748732261ab3d59a7ffd0ddbd6c0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
