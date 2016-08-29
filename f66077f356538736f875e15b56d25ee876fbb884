@@ -22,6 +22,24 @@
       "revId": "f66077f356538736f875e15b56d25ee876fbb884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_dd1e436f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:03:01Z",
+      "side": 1,
+      "message": "Yeah, in my head that was all in service of keeping the correct object ownership in place when moving from one repository to four. The engine needs to be shared, the metadata needs to be constantly updated, etc.",
+      "parentUuid": "fa7ab95a_27ee6eec",
+      "revId": "f66077f356538736f875e15b56d25ee876fbb884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
