@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_63dcb473",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "Doc string, please!",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_83e53839",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "Doc string, please!",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_4856ef5c",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "Aww, that\u0027s a cute name!",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_083947f2",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "Any sort of reference (bug / bp / spec / discussion) here would be appreciated, so this code can be more easily updated later.",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c35f40e3",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "Doc string, please! Specifically, it\u0027s not obvious when this should (or should not) be called.",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_83c29832",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "++",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f5223ba2",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-29T19:38:02Z",
+      "side": 1,
+      "message": "++",
+      "revId": "42eda48c78f1153081b4c193dc13c88561409fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
