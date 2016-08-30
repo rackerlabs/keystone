@@ -19,7 +19,9 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    created_at = sql.Column('created_at', sql.DateTime(), nullable=True)
+    created_at = sql.Column('created_at', sql.DateTime(), nullable=False,
+                            default=datetime.datetime.utcnow,
+                            server_default='2016-08-29 00:00:00')
     expires_at = sql.Column('expires_at', sql.DateTime(), nullable=True)
     password_table = sql.Table('password', meta, autoload=True)
     password_table.create_column(created_at)
