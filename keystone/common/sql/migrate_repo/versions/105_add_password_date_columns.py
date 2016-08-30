@@ -19,12 +19,13 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    created_at = sql.Column('created_at', sql.DateTime(), nullable=True)
+    # sqlite doesn't support datetime column defaults
+    if migrate_engine.name == 'sqlite':
+        created_at = sql.Column('created_at', sql.DateTime(), nullable=True)
+    else:
+        created_at = sql.Column('created_at', sql.DateTime(), nullable=False,
+                                default=datetime.datetime.utcnow)
     expires_at = sql.Column('expires_at', sql.DateTime(), nullable=True)
     password_table = sql.Table('password', meta, autoload=True)
     password_table.create_column(created_at)
     password_table.create_column(expires_at)
-
-    now = datetime.datetime.utcnow()
-    stmt = password_table.update().values(created_at=now)
-    stmt.execute()
