@@ -1594,3 +1594,39 @@ class VersionTests(SqlMigrateBase):
         """
         # Note to reviewers: this version number should never change.
         self.assertEqual(109, self.repos[LEGACY_REPO].max_version)
+
+
+class FullMigration(SqlMigrateBase, unit.TestCase):
+    """Test complete orchestration between all database phases."""
+
+    def setUp(self):
+        super(FullMigration, self).setUp()
+        # Upgrade the legacy repository
+        self.upgrade()
+
+    def test_migration_002_password_created_at_not_nullable(self):
+        if self.engine.name != 'sqlite':
+            # upgrade each repository to 001
+            self.expand(1)
+            self.migrate(1)
+            self.contract(1)
+            # set password created_at to be nullable
+            password_table = sqlalchemy.Table('password', self.metadata,
+                                              autoload=True)
+            password_table.c.created_at.alter(nullable=True)
+            # upgrade each repository to 002
+            self.expand(2)
+            self.migrate(2)
+            self.contract(2)
+            # password created_at should be not nullable after upgrade
+            password_table = sqlalchemy.Table('password', self.metadata,
+                                              autoload=True)
+            self.assertFalse(password_table.c.created_at.nullable)
+
+
+class MySQLOpportunisticFullMigration(FullMigration):
+    FIXTURE = test_base.MySQLOpportunisticFixture
+
+
+class PostgreSQLOpportunisticFullMigration(FullMigration):
+    FIXTURE = test_base.PostgreSQLOpportunisticFixture
