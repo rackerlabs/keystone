@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_343d332b",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:37:43Z",
+      "side": 1,
+      "message": "\"old code versions\" makes it sound like there are multiple previous releases running, not just a \"previous release\"",
+      "revId": "4f40cc364bc9671fc8c24d570f07680b9414c5ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f40d8b8f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:37:43Z",
+      "side": 1,
+      "message": "s/null/no-op/",
+      "revId": "4f40cc364bc9671fc8c24d570f07680b9414c5ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e5e5d0dc",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:37:43Z",
+      "side": 1,
+      "message": "We should write a test for this! https://bugs.launchpad.net/keystone/+bug/1618653",
+      "revId": "4f40cc364bc9671fc8c24d570f07680b9414c5ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6548e0cd",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:37:43Z",
+      "side": 1,
+      "message": "This doesn\u0027t render to HTML very well. It tries to make it a definition list, and the whitespace here messes it up.",
+      "revId": "4f40cc364bc9671fc8c24d570f07680b9414c5ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
