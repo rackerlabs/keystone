@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c06c3dd2",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-30T22:16:13Z",
+      "side": 1,
+      "message": "missing space after ..",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 2
+      },
+      "revId": "4f93b33363eefa7295d589d1da662719d5bb48fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
