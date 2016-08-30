@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_85c40460",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:31:40Z",
+      "side": 1,
+      "message": "++ This reads much better now.",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_45783c2c",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:31:40Z",
+      "side": 1,
+      "message": "I don\u0027t really see how this is required for the rest of the patch - other than that one line in the test that currently expects an exception for this. I hope people don\u0027t expect the mapping engine to skip over issues like this, though.",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_85a9647e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:31:40Z",
+      "side": 1,
+      "message": "I\u0027m not sure you need a new mapping for this case - you just need an assertion + mapping pair that won\u0027t result in any group memberships. I\u0027d suggest creating a new assertion like you did, and just ensure it doesn\u0027t match any group rule. If nothing else, this patch would be smaller and illustrate the change better.",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8516c4ef",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:31:40Z",
+      "side": 1,
+      "message": "++",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c5d60c27",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1777,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-30T23:31:40Z",
+      "side": 1,
+      "message": "++",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
