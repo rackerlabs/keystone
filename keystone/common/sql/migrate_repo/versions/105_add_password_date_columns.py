@@ -18,13 +18,15 @@ import sqlalchemy as sql
 def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
-
-    created_at = sql.Column('created_at', sql.DateTime(), nullable=True)
+    # hardcoding in the server_default as mysql 5.5 doesn't support func.now()
+    created_at = sql.Column('created_at', sql.DateTime(), nullable=False,
+                            default=datetime.datetime.utcnow,
+                            server_default='2016-08-29 00:00:00')
     expires_at = sql.Column('expires_at', sql.DateTime(), nullable=True)
     password_table = sql.Table('password', meta, autoload=True)
     password_table.create_column(created_at)
     password_table.create_column(expires_at)
-
+    # overwriting the created_at hardcoded value
     now = datetime.datetime.utcnow()
     stmt = password_table.update().values(created_at=now)
     stmt.execute()
