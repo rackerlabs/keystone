@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_251edb0b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-30T21:58:30Z",
+      "side": 1,
+      "message": "you could just call\n\n  self.assignment_api.get_project(tenant_id)\n  self.identity_api.get_user(user_id)\n\neach will raise a 404 if not found",
+      "range": {
+        "startLine": 162,
+        "startChar": 8,
+        "endLine": 164,
+        "endChar": 57
+      },
+      "revId": "2a952c5fd1e91135b41e38d32f2c68fe084c5df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
