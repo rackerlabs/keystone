@@ -621,27 +621,26 @@ def format_url(url, substitutions, silent_keyerror_failures=None):
     try:
         result = url.replace('$(', '%(') % substitutions
     except AttributeError:
-        LOG.error(_LE('Malformed endpoint - %(url)r is not a string'),
-                  {"url": url})
+        msg = _LE("Malformed endpoint - %(url)r is not a string")
+        LOG.error(msg, {"url": url})
         raise exception.MalformedEndpoint(endpoint=url)
     except KeyError as e:
         if not e.args or e.args[0] not in allow_keyerror:
-            LOG.error(_LE("Malformed endpoint %(url)s - unknown key "
-                          "%(keyerror)s"),
-                      {"url": url,
-                       "keyerror": e})
+            msg = _LE("Malformed endpoint %(url)s - unknown key "
+                      "%(keyerror)s")
+            LOG.error(msg, {"url": url, "keyerror": e})
             raise exception.MalformedEndpoint(endpoint=url)
         else:
             result = None
     except TypeError as e:
-        LOG.error(_LE("Malformed endpoint '%(url)s'. The following type error "
-                      "occurred during string substitution: %(typeerror)s"),
-                  {"url": url,
-                   "typeerror": e})
+        msg = _LE("Malformed endpoint '%(url)s'. The following type error "
+                  "occurred during string substitution: %(typeerror)s")
+        LOG.error(msg, {"url": url, "typeerror": e})
         raise exception.MalformedEndpoint(endpoint=url)
     except ValueError as e:
-        LOG.error(_LE("Malformed endpoint %s - incomplete format "
-                      "(are you missing a type notifier ?)"), url)
+        msg = _LE("Malformed endpoint %s - incomplete format "
+                  "(are you missing a type notifier ?)")
+        LOG.error(msg, url)
         raise exception.MalformedEndpoint(endpoint=url)
     return result
 
