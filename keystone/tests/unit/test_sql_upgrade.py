@@ -1472,6 +1472,19 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
                                  'expires_at',
                                  'self_service'])
 
+    def test_migration_110_password_created_at_not_nullable(self):
+        # test password created_at is not null after upgrade
+        # ignoring sqlite as it does not support datetime default values
+        if self.engine.name != 'sqlite':
+            self.upgrade(109)
+            password_table = sqlalchemy.Table('password', self.metadata,
+                                              autoload=True)
+            password_table.c.created_at.nullable = False
+            self.upgrade(110)
+            password_table = sqlalchemy.Table('password', self.metadata,
+                                              autoload=True)
+            self.assertFalse(password_table.c.created_at.nullable)
+
 
 class MySQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
     FIXTURE = test_base.MySQLOpportunisticFixture
