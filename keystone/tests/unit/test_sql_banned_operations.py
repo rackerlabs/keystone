@@ -296,6 +296,11 @@ class TestKeystoneContractSchemaMigrations(
         # NOTE(xek, henry-nash): Reviewers: DO NOT ALLOW THINGS TO BE ADDED
         # HERE UNLESS JUSTIFICATION CAN BE PROVIDED AS TO WHY THIS WILL NOT
         # CAUSE PROBLEMS FOR ROLLING UPGRADES.
+        
+        # Migration 002 changes the column type, from datetime to timestamp.
+        # To do this, the column is first dropped and recreated. This should
+        # not have any negative impact on a rolling upgrade deployment.
+        2
     ]
 
     def setUp(self):
