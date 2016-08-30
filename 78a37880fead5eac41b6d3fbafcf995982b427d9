@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_a5c10be6",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-30T22:09:43Z",
+      "side": 1,
+      "message": "Add a newline after this line so it displays properly",
+      "revId": "78a37880fead5eac41b6d3fbafcf995982b427d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_85bec762",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-30T22:09:43Z",
+      "side": 1,
+      "message": "nit: can you add spaces after commas",
+      "range": {
+        "startLine": 103,
+        "startChar": 22,
+        "endLine": 103,
+        "endChar": 57
+      },
+      "revId": "78a37880fead5eac41b6d3fbafcf995982b427d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_058c77d8",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-08-30T22:09:43Z",
+      "side": 1,
+      "message": "trailing spaces",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 3
+      },
+      "revId": "78a37880fead5eac41b6d3fbafcf995982b427d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
