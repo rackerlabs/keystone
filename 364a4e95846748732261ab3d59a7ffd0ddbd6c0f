@@ -45,6 +45,30 @@
       "revId": "364a4e95846748732261ab3d59a7ffd0ddbd6c0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_46b32de9",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-08-30T03:07:49Z",
+      "side": 1,
+      "message": "Hi Ron,\n\nThanks for your comment. I agree with you at this point, I will choose double quotes as the link [1] :)\n\n[1] http://docs.openstack.org/developer/hacking/#internationalization-i18n-strings",
+      "parentUuid": "fa7ab95a_91f02d00",
+      "range": {
+        "startLine": 137,
+        "startChar": 26,
+        "endLine": 139,
+        "endChar": 73
+      },
+      "revId": "364a4e95846748732261ab3d59a7ffd0ddbd6c0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
