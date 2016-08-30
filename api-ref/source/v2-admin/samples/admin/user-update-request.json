@@ -1,5 +1,6 @@
 {
     "user": {
-        "email": "updated_email@example.org"
+        "email": "updated_email@example.org",
+        "tenantId": "12345678901234567890123456789012"
     }
 }
