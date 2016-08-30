@@ -4,6 +4,7 @@
         "name": "demo",
         "email": "updated_email@example.org",
         "username": "demo",
-        "enabled": true
+        "enabled": true,
+        "tenant": "12345678901234567890123456789012"
     }
 }
