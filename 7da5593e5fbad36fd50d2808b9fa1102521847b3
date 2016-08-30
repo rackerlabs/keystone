@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_8ccd3d68",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-30T12:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_7b0e9c35",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_e73646e6",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_ec99697a",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-30T12:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_e73646e6",
+      "range": {
+        "startLine": 112,
+        "startChar": 39,
+        "endLine": 112,
+        "endChar": 60
+      },
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_e893c0f8",
         "filename": "doc/source/developing.rst",
         "patchSetId": 3
@@ -53,6 +95,24 @@
       "writtenOn": "2016-08-26T12:19:42Z",
       "side": 1,
       "message": "Might be worth having a sample of a null migration or code to point to...",
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6cad599a",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-30T12:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_e893c0f8",
       "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +147,30 @@
       "writtenOn": "2016-08-29T03:57:42Z",
       "side": 1,
       "message": "remove \"and\" here, replace with a comma",
+      "range": {
+        "startLine": 132,
+        "startChar": 70,
+        "endLine": 132,
+        "endChar": 73
+      },
+      "revId": "7da5593e5fbad36fd50d2808b9fa1102521847b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8c7ffd13",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-30T12:28:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_6703160e",
       "range": {
         "startLine": 132,
         "startChar": 70,
