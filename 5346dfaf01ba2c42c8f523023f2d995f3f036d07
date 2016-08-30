@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_6efd466d",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-30T13:58:15Z",
+      "side": 1,
+      "message": "add a few words about this in the help?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "5346dfaf01ba2c42c8f523023f2d995f3f036d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8e00ca67",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-30T13:58:15Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 20
+      },
+      "revId": "5346dfaf01ba2c42c8f523023f2d995f3f036d07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
