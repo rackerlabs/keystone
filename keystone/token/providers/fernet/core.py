@@ -29,21 +29,6 @@ CONF = keystone.conf.CONF
 class Provider(common.BaseProvider):
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
-
-        # NOTE(lbragstad): We add these checks here because if the fernet
-        # provider is going to be used and either the `key_repository` is empty
-        # or doesn't exist we should fail, hard. It doesn't make sense to start
-        # keystone and just 500 because we can't do anything with an empty or
-        # non-existant key repository.
-        if not os.path.exists(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
-            raise SystemExit(_('%(key_repo)s does not exist') % subs)
-        if not os.listdir(CONF.fernet_tokens.key_repository):
-            subs = {'key_repo': CONF.fernet_tokens.key_repository}
-            raise SystemExit(_('%(key_repo)s does not contain keys, use '
-                               'keystone-manage fernet_setup to create '
-                               'Fernet keys.') % subs)
-
         self.token_formatter = tf.TokenFormatter()
 
     def needs_persistence(self):
