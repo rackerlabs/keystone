@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_bac30537",
+        "filename": "keystone/common/sql/expand_repo/versions/002_add_key_hash_and_encrypted_blob_to_credential.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-30T15:16:50Z",
+      "side": 1,
+      "message": "This should be\n\n  ks_sql.Text()\n\nIf I try to list credentials that have been migrated from Mitaka I get the following error: \n\nhttp://cdn.pasteraw.com/ia1013mmgkoon0uo6llxp0yq4b8o7cm",
+      "revId": "7db1e67ad62eff6a65c2c196175532bc79c93ffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3ae615e8",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-30T15:16:50Z",
+      "side": 1,
+      "message": "This should be\n\n  sql.Text()\n\nSee comment in the migrations.",
+      "revId": "7db1e67ad62eff6a65c2c196175532bc79c93ffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
