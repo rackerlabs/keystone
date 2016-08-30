@@ -52,6 +52,24 @@
       "revId": "eaea57e63665b6185771f2daafe17b9cfe26d7f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_ac1cb36a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-08-30T14:47:53Z",
+      "side": 0,
+      "message": "Actually, symptom_keys_in_Fernet_key_repository already does that!",
+      "parentUuid": "fa7ab95a_0e2f5a88",
+      "revId": "eaea57e63665b6185771f2daafe17b9cfe26d7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
