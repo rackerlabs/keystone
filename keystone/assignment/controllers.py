@@ -122,7 +122,7 @@ class Role(controller.V2Controller):
         return {'roles': self.role_api.list_roles()}
 
 
-@dependency.requires('assignment_api', 'resource_api', 'role_api')
+@dependency.requires('assignment_api', 'resource_api', 'role_api', 'identity_api')
 class RoleAssignmentV2(controller.V2Controller):
     """The V2 Role APIs that are processing assignments."""
 
@@ -158,6 +158,9 @@ class RoleAssignmentV2(controller.V2Controller):
         if tenant_id is None:
             raise exception.NotImplemented(
                 message=_('User roles not supported: tenant_id required'))
+
+        self.resource_api.get_project(tenant_id)
+        self.identity_api.get_user(user_id)
 
         self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
