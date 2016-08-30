@@ -159,6 +159,10 @@ class RoleAssignmentV2(controller.V2Controller):
             raise exception.NotImplemented(
                 message=_('User roles not supported: tenant_id required'))
 
+        user_ids = self.assignment_api.list_user_ids_for_project(tenant_id)
+        if user_id not in user_ids:
+            raise exception.UserNotFound(user_id=user_id)
+
         self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
 
