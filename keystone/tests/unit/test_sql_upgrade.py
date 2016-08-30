@@ -1608,20 +1608,34 @@ class VersionTests(SqlMigrateBase):
             migration_helpers._sync_common_repo,
             self.repos[LEGACY_REPO].max_version - 1)
 
-    def test_these_are_not_the_migrations_you_are_looking_for(self):
-        """Keystone has shifted to rolling upgrades.
 
-        New database migrations should no longer land in the legacy migration
-        repository. Instead, new database migrations should be divided into
-        three discrete steps: schema expansion, data migration, and schema
-        contraction. These migrations live in a new set of database migration
-        repositories, called ``expand_repo``, ``data_migration_repo``, and
-        ``contract_repo``.
+class FullMigration(SqlMigrateBase, unit.TestCase):
+    """Test complete orchestration between all database phases."""
 
-        For more information, see "Database Migrations" here:
+    def setUp(self):
+        super(FullMigration, self).setUp()
+        # Upgrade the legacy repository
+        self.upgrade()
 
-            http://docs.openstack.org/developer/keystone/developing.html
+    def test_migration_002_password_created_at_not_nullable(self):
+        # upgrade each repository to 001
+        self.expand(1)
+        self.migrate(1)
+        self.contract(1)
+        password = sqlalchemy.Table('password', self.metadata, autoload=True)
+        self.assertTrue(password.c.created_at.nullable)
+        # upgrade each repository to 002
+        self.expand(2)
+        self.migrate(2)
+        self.contract(2)
+        password = sqlalchemy.Table('password', self.metadata, autoload=True)
+        if self.engine.name != 'sqlite':
+            self.assertFalse(password.c.created_at.nullable)
 
-        """
-        # Note to reviewers: this version number should never change.
-        self.assertEqual(109, self.repos[LEGACY_REPO].max_version)
+
+class MySQLOpportunisticFullMigration(FullMigration):
+    FIXTURE = test_base.MySQLOpportunisticFixture
+
+
+class PostgreSQLOpportunisticFullMigration(FullMigration):
+    FIXTURE = test_base.PostgreSQLOpportunisticFixture
