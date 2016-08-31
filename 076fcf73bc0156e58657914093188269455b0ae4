@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_435b94f6",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-31T19:38:20Z",
+      "side": 1,
+      "message": "It doesn\u0027t seem like a good trade off to have the schema open to bad data for a test. Maybe we can mock it or something? Or maybe this should happen in the migration tests?",
+      "parentUuid": "fa7ab95a_31e68144",
+      "revId": "076fcf73bc0156e58657914093188269455b0ae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_677dafb0",
         "filename": "keystone/credential/core.py",
         "patchSetId": 31
