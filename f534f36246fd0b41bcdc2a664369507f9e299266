@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa7ab95a_ead10931",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-31T09:29:33Z",
+      "side": 1,
+      "message": "thank you for adding this comment.  I think why people might still find this code difficult to follow is that it is like a double indirect, i.e.:\n\nref -\u003e ref_map -\u003e ref_list\n\nIt\u0027s actually a clever way of doing it...but perhaps still needs some additional explanation.\n\nPS: are my C/C++ credentials showing through :-)",
+      "range": {
+        "startLine": 651,
+        "startChar": 0,
+        "endLine": 653,
+        "endChar": 40
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_b8b31897",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
