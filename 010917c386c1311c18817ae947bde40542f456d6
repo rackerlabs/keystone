@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_eedc8f1a",
+        "filename": "api-ref/source/v2-ext/samples/OS-KSADM/user-show-response.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T20:08:26Z",
+      "side": 1,
+      "message": "the IDs we use in keystone are all the same, they are 32 character UUIDs, but in our examples we use 6 characters for readability.\n\nrather than 0-9 repeated, here\u0027s how you can generate one quickly:\n\n  $ python -c \"import uuid; print uuid.uuid4().hex\"\n  1ca8e01b82a54502b36de5f50660d97a\n\ntake any 6 digits from ^^ and use that instead",
+      "range": {
+        "startLine": 8,
+        "startChar": 21,
+        "endLine": 8,
+        "endChar": 53
+      },
+      "revId": "010917c386c1311c18817ae947bde40542f456d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
