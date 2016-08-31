@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_0366ec28",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-31T19:54:14Z",
+      "side": 1,
+      "message": "Isn\u0027t this tenantId?",
+      "revId": "e16b94eefed11f507f195b0178018061160cddf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_236db004",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-31T19:54:14Z",
+      "side": 1,
+      "message": "Same here...",
+      "revId": "e16b94eefed11f507f195b0178018061160cddf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
