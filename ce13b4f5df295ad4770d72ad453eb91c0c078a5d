@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_af4b6158",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_9491549d",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_d4e2fc2e",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-31T20:49:35Z",
       "side": 1,
       "message": "I\u0027d take out this sentence unless you can suggest why someone would have needs that would require it to be changed.",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_0fd60d27",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_d4e2fc2e",
       "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_cfec25f6",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Cleaning up and made this all more explicit.",
+      "parentUuid": "fa7ab95a_34ca48a2",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_d4b91c17",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-31T20:49:35Z",
       "side": 1,
       "message": "this is implicit based on what you wrote, but they should also not be the same directory path",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8f905d50",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_d4b91c17",
       "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_6fa3199f",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_1408e4d8",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_941b141c",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2016-08-31T20:49:35Z",
       "side": 1,
       "message": "re-encrypted",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_afad218a",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_941b141c",
       "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_4fb3b5e9",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "++ I can omit this.",
+      "parentUuid": "fa7ab95a_74e77012",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_34b408f1",
         "filename": "doc/source/credential-encryption.rst",
         "patchSetId": 15
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_4f01f569",
+        "filename": "doc/source/credential-encryption.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_34b408f1",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_74af70e3",
         "filename": "releasenotes/notes/support_encrypted_credentials_at_rest-93dcb67b3508e91a.yaml",
         "patchSetId": 15
@@ -149,6 +293,24 @@
       "writtenOn": "2016-08-31T20:49:35Z",
       "side": 1,
       "message": "the distinction of having a schema contraction phase only really applies to those opting into rolling upgrades",
+      "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8f685d23",
+        "filename": "releasenotes/notes/support_encrypted_credentials_at_rest-93dcb67b3508e91a.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-08-31T21:17:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_74af70e3",
       "revId": "ce13b4f5df295ad4770d72ad453eb91c0c078a5d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
