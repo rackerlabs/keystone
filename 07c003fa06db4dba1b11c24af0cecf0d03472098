@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c44a6e27",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-31T12:03:31Z",
+      "side": 1,
+      "message": "to follow Steve\u0027s approach you can add \"identity_api\" here. I also prefer doing like he suggested since it reuses a code that does exactly what you are trying to do here.",
+      "revId": "07c003fa06db4dba1b11c24af0cecf0d03472098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_046296d8",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-31T12:03:31Z",
+      "side": 1,
+      "message": "this test name doesn\u0027t make sense anymore, since the test fails prior the \"get_project_users\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 38
+      },
+      "revId": "07c003fa06db4dba1b11c24af0cecf0d03472098",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
