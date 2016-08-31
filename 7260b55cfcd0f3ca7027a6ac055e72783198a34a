@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c77177e2",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-08-31T18:54:45Z",
+      "side": 1,
+      "message": "I\u0027m sorry I missed the weekly meeting, but I really don\u0027t think this needs a dedicated configuration option. Why would anyone ever want to toggle this off? Furthermore, keystone.conf should describe our recommended production defaults, and I would never recommend to a deployer that they handicap our caching implementation.",
+      "revId": "7260b55cfcd0f3ca7027a6ac055e72783198a34a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
