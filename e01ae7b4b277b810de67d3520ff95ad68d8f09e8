@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_1ff2f106",
+        "filename": "keystone/common/sql/migrate_repo/versions/110_password_created_at_not_nullable.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-31T09:25:42Z",
+      "side": 1,
+      "message": "is this safe in terms of existing rows? I\u0027ve always been under the impression server_default, which is just an sql ddl default, is only applied to existing rows. Hence what happens if there are rows in here that have been created while running on a system after 105 was run, but before this script is run...",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "e01ae7b4b277b810de67d3520ff95ad68d8f09e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
