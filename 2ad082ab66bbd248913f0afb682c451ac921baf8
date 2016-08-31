@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_92b50880",
+        "filename": "keystone/common/sql/contract_repo/versions/002_password_created_at_not_nullable.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-08-31T12:40:34Z",
+      "side": 1,
+      "message": "I still remain unconvinced that this does what you think it does.  I do not believe this would affect any existing rows in the database....hence it would not set any rows that were null to \u00272016-06-01 00:00:00\u0027 (delighted if you can prove me wrong). Which would mean that the code below also doesn\u0027t do what you intended.\n\nWe need to test this somehow, although I am not sure how you do this with the new 105 migration in place...",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "2ad082ab66bbd248913f0afb682c451ac921baf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
