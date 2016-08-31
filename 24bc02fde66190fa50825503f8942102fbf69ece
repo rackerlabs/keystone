@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_2f6a071b",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T15:12:48Z",
+      "side": 1,
+      "message": "this should probably be off by default, i believe that is what brant is asking for, for the existing behaviour to remain unchanged",
+      "range": {
+        "startLine": 162,
+        "startChar": 12,
+        "endLine": 162,
+        "endChar": 16
+      },
+      "revId": "24bc02fde66190fa50825503f8942102fbf69ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cf0b5b7c",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T15:12:48Z",
+      "side": 1,
+      "message": "i\u0027m surprised you didn\u0027t have to set the precaching option to true somewhere here",
+      "revId": "24bc02fde66190fa50825503f8942102fbf69ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_af08d792",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T15:12:48Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in the IF block too?",
+      "range": {
+        "startLine": 436,
+        "startChar": 0,
+        "endLine": 439,
+        "endChar": 48
+      },
+      "revId": "24bc02fde66190fa50825503f8942102fbf69ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_0f3f0326",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T15:12:48Z",
+      "side": 1,
+      "message": "shouldn\u0027t these all be dependant on the config setting? to preserve existing behaviour?",
+      "range": {
+        "startLine": 501,
+        "startChar": 8,
+        "endLine": 501,
+        "endChar": 34
+      },
+      "revId": "24bc02fde66190fa50825503f8942102fbf69ece",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
