@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_16ad5731",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-08-31T17:06:25Z",
+      "side": 1,
+      "message": "there is a test, the test was changed in this patch: https://github.com/openstack/keystone/commit/f4708ec55b7ffe252a21414346c1930da19af8b5",
+      "parentUuid": "fa7ab95a_efb49fd2",
+      "revId": "9fd5ec17b5113d067cb58d8f0fec95300f67e9aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_85a9647e",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
