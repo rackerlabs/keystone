@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa7ab95a_9a4fbabd",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-31T23:03:56Z",
+      "side": 1,
+      "message": "stdlib imports should be in the first grouping. http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "571ec77bdc28c2ee560c78542c3c2fb6fc3f638a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_e20c9096",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 1
@@ -19,6 +36,23 @@
         "endLine": 56,
         "endChar": 59
       },
+      "revId": "571ec77bdc28c2ee560c78542c3c2fb6fc3f638a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_ba4e3ebf",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-08-31T23:03:56Z",
+      "side": 1,
+      "message": "++",
       "revId": "571ec77bdc28c2ee560c78542c3c2fb6fc3f638a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
