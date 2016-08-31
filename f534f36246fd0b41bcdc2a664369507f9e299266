@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_6130b49f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-08-31T11:50:14Z",
+      "side": 1,
+      "message": "of course, you would need to add the other values in the loop below. I\u0027m not saying the suggestion is the best option, the idea was to not modify the references inside two collections at the same time.",
+      "parentUuid": "fa7ab95a_7357f1c9",
+      "range": {
+        "startLine": 647,
+        "startChar": 0,
+        "endLine": 656,
+        "endChar": 47
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_82aa6183",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
