@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_325f75e6",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-01T19:45:22Z",
+      "side": 1,
+      "message": "This came up in IRC earlier. Should we make this reentrant so that if it fails it could be run again? I think all that would need to change is selecting only unencrypted credentials and maybe even in chunks of 10 or 20.",
+      "revId": "3e603bca591868812a27a18aa0f2047de68a363e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
