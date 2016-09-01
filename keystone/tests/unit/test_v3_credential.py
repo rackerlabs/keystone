@@ -38,7 +38,7 @@ class CredentialBaseTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(CredentialBaseTestCase, self).setUp()
-        self.useFixture(
+        self.key_repo = self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
                 'credential',
@@ -551,3 +551,28 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           cred_from_credential_api[0]['id'])
+
+
+class TestKeyRotation(CredentialBaseTestCase):
+
+    def test_rotatate(self):
+        """Test that rotating a key will start encrypting with a new key.
+
+        We had a subtle bug that the base Manager was caching the value of
+        the primary_key_hash property. This was due to the fact that
+        keystone.common.manager.Manager.__getattr__ was not designed to be
+        used with properties.
+        """
+        credential = unit.new_credential_ref(user_id=self.user['id'],
+                                             project_id=self.project_id)
+        self.credential_api.create_credential(credential['id'], credential)
+        c = self.credential_api.driver.get_credential(credential['id'])
+        original_key_hash = c['key_hash']
+
+        self.key_repo.fernet_utils.rotate_keys()
+
+        credential = unit.new_credential_ref(user_id=self.user['id'],
+                                             project_id=self.project_id)
+        c = self.credential_api.create_credential(credential['id'], credential)
+        c = self.credential_api.driver.get_credential(credential['id'])
+        self.assertNotEqual(original_key_hash, c['key_hash'])

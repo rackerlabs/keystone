@@ -31,9 +31,9 @@ class KeyRepository(fixtures.Fixture):
         self.config_fixture.config(group=self.key_group,
                                    key_repository=directory)
 
-        fernet_utils = utils.FernetUtils(
+        self.fernet_utils = utils.FernetUtils(
             directory,
             self.max_active_keys
         )
-        fernet_utils.create_key_directory()
-        fernet_utils.initialize_key_repository()
+        self.fernet_utils.create_key_directory()
+        self.fernet_utils.initialize_key_repository()

@@ -25,3 +25,7 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.credential.provider)
+
+    @property
+    def primary_key_hash(self):
+        return self.driver.primary_key_hash

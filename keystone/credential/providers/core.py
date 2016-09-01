@@ -19,7 +19,7 @@ import six
 class Provider(object):
     """Interface for credential providers that support encryption."""
 
-    @abc.abstractmethod
+    @abc.abstractproperty
     def primary_key_hash(self):
         """The primary key's hash."""
 
