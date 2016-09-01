@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_a3009567",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "Why are we adding a new method to the credential API? Seems unrelated to this change ?",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 26
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_234485b5",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "shouldn\u0027t we decrypt ref and return it ?",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 40
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_83571159",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "Isn\u0027t the pattern that we return the whole entity after updating it?",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_23a80577",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "why is this needed ?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 55
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e35c5d4d",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "how is this different from the credential API?",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c373d97e",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "Given --migrate would migrate all the credentials in the db and no credentials can be added during the upgrade process, is this really needed?",
+      "range": {
+        "startLine": 1104,
+        "startChar": 10,
+        "endLine": 1107,
+        "endChar": 22
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_0374e133",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "this is already tested in previous test cases ^",
+      "range": {
+        "startLine": 1143,
+        "startChar": 0,
+        "endLine": 1151,
+        "endChar": 9
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_e3db7d7a",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "which is forbidden because ?",
+      "range": {
+        "startLine": 236,
+        "startChar": 35,
+        "endLine": 237,
+        "endChar": 65
+      },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_637a0d8a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:26:11Z",
+      "side": 1,
+      "message": "verify triggers don\u0027t allow for writting yet",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
