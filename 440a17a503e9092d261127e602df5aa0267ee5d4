@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa7ab95a_7e06261d",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:30:20Z",
+      "side": 1,
+      "message": "test_rotate",
+      "range": {
+        "startLine": 558,
+        "startChar": 8,
+        "endLine": 558,
+        "endChar": 21
+      },
+      "revId": "440a17a503e9092d261127e602df5aa0267ee5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_1e18ba74",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T21:30:20Z",
+      "side": 1,
+      "message": "And what does this mean in terms of the provided functionality (to the end user) ?",
+      "range": {
+        "startLine": 561,
+        "startChar": 8,
+        "endLine": 564,
+        "endChar": 29
+      },
+      "revId": "440a17a503e9092d261127e602df5aa0267ee5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_c38af9be",
         "filename": "keystone/tests/unit/test_v3_credential.py",
         "patchSetId": 1
