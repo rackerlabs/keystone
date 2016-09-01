@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c38af9be",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-01T21:24:20Z",
+      "side": 1,
+      "message": "\"c \u003d\" doesn\u0027t do anything",
+      "revId": "440a17a503e9092d261127e602df5aa0267ee5d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
