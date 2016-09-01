@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_1b7a97f1",
+        "filename": "releasenotes/notes/password-created_at-nullable-b3c284be50d93ef5.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-01T17:08:00Z",
+      "side": 1,
+      "message": "(nit) s/This upgrade fixes/Fixes/",
+      "revId": "d9cac678f70ad76a4f66c621b42c820a9b571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
