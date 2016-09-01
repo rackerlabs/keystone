@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_38376fb1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T13:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_80f4b2cf",
+      "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_60c40e92",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 40
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-31T19:39:55Z",
       "side": 1,
       "message": "s/would be/are/",
+      "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_b84b7f2a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T13:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_60c40e92",
       "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_1868eb86",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T13:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_c015dae5",
+      "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_60cece84",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 40
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-31T19:39:55Z",
       "side": 1,
       "message": "s/to/to at least/ ?",
+      "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_b8f9bfca",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T13:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_60cece84",
       "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2016-08-31T19:39:55Z",
       "side": 1,
       "message": "(nit) if \u0027blob\u0027 in credential - is more idiomatic Python",
+      "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_b8e7ff10",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T13:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_c3188478",
       "revId": "980997e81bd3b24a25acdc4a9ef186db20e056fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
