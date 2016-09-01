@@ -29,7 +29,7 @@ def upgrade(migrate_engine):
     password.c.created_at.drop()
     # sqlite doesn't support server_default=sql.func.now(), so skipping.
     if migrate_engine.name == 'sqlite':
-        created_at = sql.Column('created_at', sql.TIMESTAMP, nullable=True)
+        created_at = sql.Column('created_at', sql.TIMESTAMP, nullable=False)
     else:
         # Changing type to timestamp as mysql 5.5 and older doesn't support
         # datetime defaults.
