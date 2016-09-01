@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_de9e6b53",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-01T14:06:10Z",
+      "side": 1,
+      "message": "Still working this piece out with David.",
+      "revId": "0fbe45b6b3157eff50afb32a87e24f9d5040c052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
