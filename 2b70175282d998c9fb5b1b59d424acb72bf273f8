@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_791d6861",
+        "filename": "keystone/common/sql/contract_repo/versions/002_password_created_at_not_nullable.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T18:32:12Z",
+      "side": 1,
+      "message": "among",
+      "range": {
+        "startLine": 23,
+        "startChar": 71,
+        "endLine": 23,
+        "endChar": 77
+      },
+      "revId": "2b70175282d998c9fb5b1b59d424acb72bf273f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_99222ca2",
+        "filename": "keystone/common/sql/contract_repo/versions/002_password_created_at_not_nullable.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T18:32:12Z",
+      "side": 1,
+      "message": "databases",
+      "range": {
+        "startLine": 24,
+        "startChar": 27,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "2b70175282d998c9fb5b1b59d424acb72bf273f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f93178ee",
+        "filename": "keystone/common/sql/contract_repo/versions/002_password_created_at_not_nullable.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-01T18:32:12Z",
+      "side": 1,
+      "message": "compliance",
+      "range": {
+        "startLine": 27,
+        "startChar": 53,
+        "endLine": 27,
+        "endChar": 64
+      },
+      "revId": "2b70175282d998c9fb5b1b59d424acb72bf273f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
