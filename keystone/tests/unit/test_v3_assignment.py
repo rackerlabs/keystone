@@ -20,6 +20,7 @@ from six.moves import range
 from testtools import matchers
 
 import keystone.conf
+import keystone.exception
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -2819,6 +2820,30 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
         r = self.get('/roles?domain_id=%s' % self.domainA['id'])
         self.assertValidRoleListResponse(r, expected_length=1)
         self.assertRoleInListResponse(r, self.domainA_role2)
+
+    def test_cross_domain_assignment(self):
+        user = unit.create_user(self.identity_api,
+                                domain_id=self.domainB['id'])
+
+        projectA = unit.new_project_ref(domain_id=self.domainA['id'])
+        self.resource_api.create_project(projectA['id'], projectA)
+
+        projectB = unit.new_project_ref(domain_id=self.domainB['id'])
+        self.resource_api.create_project(projectB['id'], projectB)
+
+        # Positive: a role on domainA can be assigned to a user from domainB
+        # but only for use on a project from domainA
+        self.assignment_api.create_grant(self.domainA_role1['id'],
+                                         user_id=user['id'],
+                                         project_id=projectA['id'])
+
+        # Negative: this time the project and the user are from domainB
+        # while the role is from domainA
+        self.assertRaises(keystone.exception.ForbiddenAction,
+                          self.assignment_api.create_grant,
+                          self.domainA_role1['id'],
+                          user_id=user['id'],
+                          project_id=projectB['id'])
 
 
 class ListUserProjectsTestCase(test_v3.RestfulTestCase):
