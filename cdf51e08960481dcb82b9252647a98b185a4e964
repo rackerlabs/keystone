@@ -62,6 +62,29 @@
       "revId": "cdf51e08960481dcb82b9252647a98b185a4e964",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_33262017",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T21:43:33Z",
+      "side": 1,
+      "message": "This note applies to tokens not credentials.",
+      "range": {
+        "startLine": 1030,
+        "startChar": 0,
+        "endLine": 1032,
+        "endChar": 49
+      },
+      "revId": "cdf51e08960481dcb82b9252647a98b185a4e964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
