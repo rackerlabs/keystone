@@ -1818,11 +1818,22 @@ example:
 Credential Encryption
 =====================
 
-As of the Newton release, keystone encrypts all credentials stored in the
-default ``sql`` backend. Credentials are encrypted with the same mechanism used
-to encrypt Fernet tokens, ``fernet``. Keystone provides only one type of
-credential encryption but the encryption provider is pluggable in the event
-you wish to supply a custom implementation.
+As of the Newton release, if configured to do so, keystone will
+encrypt credentials with the   same mechanism used to encrypt
+Fernet tokens. To maintain backwards-compatibility with existing
+deployments, keystone also provides a no-operation provide for
+credential encryption. It is important to note that the `noop`
+provider will continue to store credentials as plaintext in the
+backend, just as it did prior to the Newton release. keystone
+is capable of encrypting all credentials stored in the default
+``sql`` backend. Credentials are encrypted with the same
+mechanism used to encrypt Fernet tokens, ``fernet``.  By
+default, the credential provider uses a No-Operation (noop)
+provider, to avoid breaking existing deployments.
+
+Keystone provides a fernet based provider. In addition, the encryption
+provider is pluggable in the event you wish to supply a custom
+implementation.
 
 This document details how credential encryption works, how to migrate existing
 credentials in a deployment, and how to manage encryption keys for credentials.
@@ -1839,9 +1850,9 @@ two configuration options needed:
     provider = fernet
     key_repository = /etc/keystone/credential-keys/
 
-``[credential] provider`` defaults to the only option supplied by keystone,
-``fernet``. There is no reason to change this option unless you wish to provide
-a custom credential encryption implementation. The ``[credential]
+``[credential] provider`` defaults to the ``noop`` provider. To transition to
+encrypting inside the credentials backend, you should switch
+to using the ``fernet`` provider instead. The ``[credential]
 key_repository`` location is a requirement of using ``fernet`` but will default
 to the ``/etc/keystone/credential-keys/`` directory. Both ``[credential]
 key_repository`` and ``[fernet_tokens] key_repository`` define locations for

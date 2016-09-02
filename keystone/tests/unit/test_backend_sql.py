@@ -1025,6 +1025,10 @@ class SqlCredential(SqlTests):
         for cred in expected_credentials:
             self.assertIn(cred['id'], retrived_ids)
 
+    def config_overrides(self):
+        super(SqlCredential, self).config_overrides()
+        self.config_fixture.config(group='credential', provider='fernet')
+
     def setUp(self):
         self.useFixture(database.Database())
         super(SqlCredential, self).setUp()
