@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_47498b5f",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T02:57:23Z",
+      "side": 1,
+      "message": "this now gets instantiated every loop :(\n\n  if not credentials:\n    return\n\n  for credential in credentials:\n    ...",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 64
+      },
+      "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
