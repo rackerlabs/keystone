@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_0f8ebf78",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "This is something the credential API has always supported - we are just adding it to the manager so that we can control the encryption part.",
+      "parentUuid": "fa7ab95a_a3009567",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_234485b5",
         "filename": "keystone/credential/core.py",
         "patchSetId": 48
@@ -42,6 +60,24 @@
         "endLine": 112,
         "endChar": 40
       },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_0fe5df36",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Either way works, I can refactor this in another patch if that\u0027s the way we want to go.",
+      "parentUuid": "fa7ab95a_234485b5",
       "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_0fbcff04",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Yes - blob will still be returned in this case. This is just making sure we return the updated blob in if was in fact updated.",
+      "parentUuid": "fa7ab95a_83571159",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_23a80577",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 48
@@ -88,6 +142,24 @@
         "endLine": 85,
         "endChar": 55
       },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_4f5fe7e4",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "This is a compatibility fix with Fernet. plaintext must be in bytes before passing it to Fernet or else cryptography will raise a ValueError. This also protects us in the python3 case I believe.",
+      "parentUuid": "fa7ab95a_23a80577",
       "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_cffa17bd",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "This was modeled after the token and token provider API. This could give us the flexibility to swap out different encryption providers in the future (deployers could do this, too).",
+      "parentUuid": "fa7ab95a_e35c5d4d",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_c373d97e",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 48
@@ -134,6 +224,24 @@
         "endLine": 1107,
         "endChar": 22
       },
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6f8e6b2f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_c373d97e",
       "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -163,6 +271,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_0fd95f22",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Where?",
+      "parentUuid": "fa7ab95a_0374e133",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_e3db7d7a",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 48
@@ -186,6 +312,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_6fd90b57",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_e3db7d7a",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_637a0d8a",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 48
@@ -197,6 +341,24 @@
       "writtenOn": "2016-09-01T21:26:11Z",
       "side": 1,
       "message": "verify triggers don\u0027t allow for writting yet",
+      "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cfcf777d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T01:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa7ab95a_637a0d8a",
       "revId": "dee0dec0db571cad0272d0a2f79ac7f900280a4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
