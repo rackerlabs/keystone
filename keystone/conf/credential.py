@@ -26,12 +26,11 @@ change this unless you are providing a custom entry point.
 
 provider = cfg.StrOpt(
     'provider',
-    default='fernet',
+    default='noop',
     help=utils.fmt("""
 Entry point for credential encryption and decryption operations in the
-`keystone.credential.provider` namespace. Keystone only provides a `fernet`
-driver, so there's no reason to change this unless you are providing a custom
-entry point to encrypt and decrypt credentials.
+`keystone.credential.provider` namespace. Keystone provides `no op` and
+`fernet` drivers.
 """))
 
 key_repository = cfg.StrOpt(

@@ -1025,6 +1025,13 @@ class SqlCredential(SqlTests):
         for cred in expected_credentials:
             self.assertIn(cred['id'], retrived_ids)
 
+    def config_overrides(self):
+        super(SqlCredential, self).config_overrides()
+        # NOTE(lbragstad): The TokenCacheInvalidation tests are coded to work
+        # against a persistent token backend. Only run these with token
+        # providers that issue persistent tokens.
+        self.config_fixture.config(group='credential', provider='fernet')
+
     def setUp(self):
         self.useFixture(database.Database())
         super(SqlCredential, self).setUp()
