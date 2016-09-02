@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7fb54a_754b305a",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T16:17:04Z",
+      "side": 1,
+      "message": "We should distinguish this check from the token provider checks..\n\n  \"\"\"Credential key repository is not setup correctly.",
+      "revId": "f4c03581d5ac5a475cdc1935cbaedd36cb7e161d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_15aae4d4",
+        "filename": "keystone/cmd/doctor/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T16:17:04Z",
+      "side": 1,
+      "message": "Same comment here - since we are explicitly checking the credential key repository",
+      "revId": "f4c03581d5ac5a475cdc1935cbaedd36cb7e161d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
