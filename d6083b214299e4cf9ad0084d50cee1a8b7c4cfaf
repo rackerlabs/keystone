@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_7f2cefab",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T19:36:07Z",
+      "side": 1,
+      "message": "`noop`",
+      "range": {
+        "startLine": 32,
+        "startChar": 61,
+        "endLine": 32,
+        "endChar": 66
+      },
+      "revId": "d6083b214299e4cf9ad0084d50cee1a8b7c4cfaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_df117b5f",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T19:36:07Z",
+      "side": 1,
+      "message": "I think you can leave the blurb about providing a custom entry point.",
+      "range": {
+        "startLine": 33,
+        "startChar": 16,
+        "endLine": 33,
+        "endChar": 17
+      },
+      "revId": "d6083b214299e4cf9ad0084d50cee1a8b7c4cfaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_9f9453e9",
         "filename": "keystone/credential/providers/noop.py",
         "patchSetId": 2
