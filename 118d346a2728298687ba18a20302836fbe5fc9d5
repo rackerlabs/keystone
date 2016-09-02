@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_1fce8383",
+        "filename": "keystone/conf/credential.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-02T19:10:55Z",
+      "side": 1,
+      "message": "noop",
+      "range": {
+        "startLine": 32,
+        "startChar": 61,
+        "endLine": 32,
+        "endChar": 66
+      },
+      "revId": "118d346a2728298687ba18a20302836fbe5fc9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_bfd4b747",
         "filename": "keystone/credential/providers/noop.py",
         "patchSetId": 1
@@ -13,6 +36,30 @@
       "writtenOn": "2016-09-02T19:03:07Z",
       "side": 1,
       "message": "not needed",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 29
+      },
+      "revId": "118d346a2728298687ba18a20302836fbe5fc9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_5fc80b75",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-02T19:10:55Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a89bdaa_bfd4b747",
       "range": {
         "startLine": 20,
         "startChar": 0,
