@@ -58,6 +58,24 @@
       "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_47534be2",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T03:05:07Z",
+      "side": 1,
+      "message": "yes, but now you\u0027ll be setting crypto, keys and key_hash at the start of every loop, when they are always the same value ;)",
+      "parentUuid": "fa7ab95a_a7889772",
+      "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
