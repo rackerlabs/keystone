@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_ba2273a1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "unused variable, prefix with _",
+      "range": {
+        "startLine": 669,
+        "startChar": 8,
+        "endLine": 669,
+        "endChar": 14
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3a46634f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 717,
+        "startChar": 8,
+        "endLine": 717,
+        "endChar": 14
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_dab01746",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "so this can be None... okay",
+      "range": {
+        "startLine": 729,
+        "startChar": 15,
+        "endLine": 729,
+        "endChar": 37
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3a9ae36e",
+        "filename": "keystone/common/sql/contract_repo/versions/003_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "the inverse would be easier to read, exit earlier, and save on indenting:\n\n      if not migration_helpers.USE_TRIGGERS:\n        # Skip managing triggers if we\u0027re doing an offline upgrade.\n        return",
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_1aab5f76",
+        "filename": "keystone/common/sql/contract_repo/versions/003_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "nullable is false only after migrating, but true before?\n\nedit: looking at the sql model, shouldn\u0027t this be true?",
+      "range": {
+        "startLine": 57,
+        "startChar": 44,
+        "endLine": 57,
+        "endChar": 58
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_dacbb751",
+        "filename": "keystone/common/sql/contract_repo/versions/003_remove_unencrypted_blob_column_from_credential.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 58,
+        "startChar": 38,
+        "endLine": 58,
+        "endChar": 52
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_bab6f3f6",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "in an offline migration, what will happen if i have not yet setup the fernet keys for encryption?",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 63
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_dac5778e",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "this should be outside the conditional, and use the conditional to determine if you should load json or not, it\u0027ll result in fewer lines of code",
+      "range": {
+        "startLine": 56,
+        "startChar": 12,
+        "endLine": 58,
+        "endChar": 13
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_3ab90316",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "same comment as above, if type \u003d\u003d ec2, then dump credential blob, then do the encrypting",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 49
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_1ae51f37",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "this could have gone into a different patch",
+      "range": {
+        "startLine": 92,
+        "startChar": 8,
+        "endLine": 92,
+        "endChar": 33
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_d440eea7",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-02T01:54:48Z",
+      "side": 1,
+      "message": "probably easier to add this to the RestfulTestCase",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 81,
+        "endChar": 9
+      },
+      "revId": "2262fa61f6411a2f9f4be25a9ec70d3d444f5423",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
