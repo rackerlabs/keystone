@@ -1818,11 +1818,15 @@ example:
 Credential Encryption
 =====================
 
-As of the Newton release, keystone encrypts all credentials stored in the
-default ``sql`` backend. Credentials are encrypted with the same mechanism used
-to encrypt Fernet tokens, ``fernet``. Keystone provides only one type of
-credential encryption but the encryption provider is pluggable in the event
-you wish to supply a custom implementation.
+As of the Newton release, keystone is capable of encrypting all
+credentials stored in the default ``sql`` backend. Credentials are
+encrypted with the same mechanism used to encrypt Fernet tokens,
+``fernet``.  By default, the credential provider uses a No-Operation
+(noop) provider, to avoid breaking existing deployments. 
+
+Keystone provides a fernet based provider. In addition, the encryption
+provider is pluggable in the event you wish to supply a custom
+implementation.
 
 This document details how credential encryption works, how to migrate existing
 credentials in a deployment, and how to manage encryption keys for credentials.
