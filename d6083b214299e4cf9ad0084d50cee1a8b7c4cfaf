@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_9f9453e9",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-02T19:25:49Z",
+      "side": 1,
+      "message": "what is this ?",
+      "range": {
+        "startLine": 31,
+        "startChar": 28,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "d6083b214299e4cf9ad0084d50cee1a8b7c4cfaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
