@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_8e03430f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1847,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T22:49:30Z",
+      "side": 1,
+      "message": "fernet is not the only provider now.  And it now defaults to noop, not fernet.",
+      "range": {
+        "startLine": 1846,
+        "startChar": 0,
+        "endLine": 1847,
+        "endChar": 11
+      },
+      "revId": "8d67e6c93aa1c625d669fcee9573a4fe3239e014",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_190e9b34",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T22:49:30Z",
+      "side": 1,
+      "message": "encrypt",
+      "range": {
+        "startLine": 20,
+        "startChar": 17,
+        "endLine": 20,
+        "endChar": 24
+      },
+      "revId": "8d67e6c93aa1c625d669fcee9573a4fe3239e014",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_f91f3759",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T22:49:30Z",
+      "side": 1,
+      "message": "remove the \u0027a\u0027 or \u0027the\u0027",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "8d67e6c93aa1c625d669fcee9573a4fe3239e014",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
