@@ -40,6 +40,24 @@
       "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a7889772",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T03:02:08Z",
+      "side": 1,
+      "message": "I think we want to instantiate the primary_key_hash every time we execute the loop because it will be per credential. IN the super random event of the primary_key changing during the migration, keystone will make sure the hash matches the actual key that was used to encrypt it.\n\n\nIf we don\u0027t expect that to be a super high probability, I\u0027ll be happy to refactor.",
+      "parentUuid": "fa7ab95a_a7a177fa",
+      "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
