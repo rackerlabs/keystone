@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_d64372ad",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-02T14:39:35Z",
+      "side": 1,
+      "message": "I agree, but I don\u0027t want to do that change here. I think the parent should just allow an instance and not try to do the lookup.",
+      "parentUuid": "fa7ab95a_1664fab6",
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_360c9eeb",
         "filename": "keystone/tests/unit/common/test_manager.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_3154a8fc",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-02T14:39:35Z",
+      "side": 1,
+      "message": "This doesn\u0027t work and I\u0027m not entirely sure why",
+      "parentUuid": "fa7ab95a_360c9eeb",
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_7621c64c",
         "filename": "keystone/tests/unit/common/test_manager.py",
         "patchSetId": 2
@@ -47,6 +83,30 @@
       "writtenOn": "2016-09-02T14:27:11Z",
       "side": 1,
       "message": "this passes even without your change in the __getattr__ behavior",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 48
+      },
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_f604f67e",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-02T14:39:35Z",
+      "side": 1,
+      "message": "That\u0027s because this is just testing the existing behavior where there were no tests.",
+      "parentUuid": "fa7ab95a_7621c64c",
       "range": {
         "startLine": 66,
         "startChar": 0,
