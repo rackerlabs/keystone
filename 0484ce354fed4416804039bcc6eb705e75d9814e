@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_7621c64c",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-02T14:27:11Z",
+      "side": 1,
+      "message": "this passes even without your change in the __getattr__ behavior",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 48
+      },
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
