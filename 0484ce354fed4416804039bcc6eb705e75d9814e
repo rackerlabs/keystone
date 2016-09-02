@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa7ab95a_1664fab6",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-02T14:27:29Z",
+      "side": 1,
+      "message": "This is dangerous. The parent class should provide a function to override just the behavior that you want to override.",
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_360c9eeb",
+        "filename": "keystone/tests/unit/common/test_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-02T14:27:29Z",
+      "side": 1,
+      "message": "Should use assertIs?",
+      "revId": "0484ce354fed4416804039bcc6eb705e75d9814e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_7621c64c",
         "filename": "keystone/tests/unit/common/test_manager.py",
         "patchSetId": 2
