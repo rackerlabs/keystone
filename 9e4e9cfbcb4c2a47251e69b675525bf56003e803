@@ -22,6 +22,24 @@
       "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_a7a177fa",
+        "filename": "keystone/common/sql/data_migration_repo/versions/003_migrate_unencrypted_credentials.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-02T02:59:34Z",
+      "side": 1,
+      "message": "Wont\u0027t that evaluate to the same thing with no values in the list? \n\n  \u003e\u003e\u003e l \u003d [1, 2, 3]\n  \u003e\u003e\u003e for v in l:\n  ...     print v\n  ... \n  1 \n  2\n  3\n  \u003e\u003e\u003e l \u003d []\n  \u003e\u003e\u003e for v in l:\n  ...     print v\n  ... \n  \u003e\u003e\u003e",
+      "parentUuid": "fa7ab95a_47498b5f",
+      "revId": "9e4e9cfbcb4c2a47251e69b675525bf56003e803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
