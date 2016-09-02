@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_3ad663f1",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-02T01:56:45Z",
+      "side": 1,
+      "message": "Crap, only available in dogpile.cache 0.6.2",
+      "range": {
+        "startLine": 56,
+        "startChar": 37,
+        "endLine": 56,
+        "endChar": 71
+      },
+      "revId": "23c2c0ee4599df82fe331528c7d8de90ee037c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
