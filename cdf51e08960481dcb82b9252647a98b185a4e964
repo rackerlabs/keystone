@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_935fec0d",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-02T21:23:43Z",
+      "side": 1,
+      "message": "maybe add a docstring explaining the goal of this provider",
+      "revId": "cdf51e08960481dcb82b9252647a98b185a4e964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_13aafcd4",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-02T21:23:43Z",
+      "side": 1,
+      "message": "this and the docstring of the method below are not accurate, maybe state that it is returning raw data.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 41
+      },
+      "revId": "cdf51e08960481dcb82b9252647a98b185a4e964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
