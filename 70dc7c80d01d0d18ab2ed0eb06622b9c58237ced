@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_94c18883",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-03T17:25:23Z",
+      "side": 1,
+      "message": "The indentation here is off, hence the pep8 error.",
+      "revId": "70dc7c80d01d0d18ab2ed0eb06622b9c58237ced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
