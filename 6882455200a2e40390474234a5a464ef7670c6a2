@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_b41dac68",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1846,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-03T16:48:09Z",
+      "side": 1,
+      "message": "transition",
+      "range": {
+        "startLine": 1846,
+        "startChar": 64,
+        "endLine": 1846,
+        "endChar": 74
+      },
+      "revId": "6882455200a2e40390474234a5a464ef7670c6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_7413245d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1847,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-03T16:48:09Z",
+      "side": 1,
+      "message": "passwords",
+      "range": {
+        "startLine": 1847,
+        "startChar": 11,
+        "endLine": 1847,
+        "endChar": 20
+      },
+      "revId": "6882455200a2e40390474234a5a464ef7670c6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
