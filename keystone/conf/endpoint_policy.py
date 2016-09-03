@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_config import cfg
+from oslo_log import versionutils
 
 from keystone.conf import utils
 
@@ -19,6 +20,7 @@ enabled = cfg.BoolOpt(
     'enabled',
     default=True,
     deprecated_for_removal=True,
+    deprecated_since=versionutils.deprecated.MITAKA,
     deprecated_reason=utils.fmt("""
 The option to enable the OS-ENDPOINT-POLICY API extension has been deprecated
 in the M release and will be removed in the O release. The OS-ENDPOINT-POLICY
