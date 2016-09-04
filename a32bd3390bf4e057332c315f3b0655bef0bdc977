@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_65e7f012",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-04T02:48:45Z",
+      "side": 1,
+      "message": "Use multi-line strings not \\\n\nSuch as:\n\nraise NotImplementedError(\u0027subclasses must provide \u0027\n                          \u0027a real implementation\u0027)",
+      "range": {
+        "startLine": 32,
+        "startChar": 59,
+        "endLine": 32,
+        "endChar": 60
+      },
+      "revId": "a32bd3390bf4e057332c315f3b0655bef0bdc977",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
