@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_13148e42",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:51:05Z",
+      "side": 1,
+      "message": "think it is better to mock the LOG object and just verify if it was called in the given scenario so we won\u0027t be tied to the log content itself.",
+      "range": {
+        "startLine": 220,
+        "startChar": 8,
+        "endLine": 220,
+        "endChar": 64
+      },
+      "revId": "1de72249c26d50ecfdbfc9740aeb99d14723cb3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
