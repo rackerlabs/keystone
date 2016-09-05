@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_2dccd388",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1825,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:19:10Z",
+      "side": 1,
+      "message": "use between ``?",
+      "range": {
+        "startLine": 1825,
+        "startChar": 0,
+        "endLine": 1825,
+        "endChar": 6
+      },
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_edb90beb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1829,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:19:10Z",
+      "side": 1,
+      "message": "think this can continue in the previous paragraph and add the \"noop\" part after it:\n\n  As of the Newton release, keystone encrypts all credentials stored in the default ``sql`` backend. Credentials are encrypted with the same mechanism used to encrypt Fernet tokens, ``fernet``. Keystone provides only one type of\ncredential encryption but the encryption provider is pluggable in the event you wish to supply a custom implementation.\n\n  By default, the credential provider uses a No-Operation\n``noop`` provider, to avoid breaking existing deployments.",
+      "range": {
+        "startLine": 1827,
+        "startChar": 56,
+        "endLine": 1829,
+        "endChar": 15
+      },
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8d887f24",
+        "filename": "keystone/credential/providers/noop.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:19:10Z",
+      "side": 1,
+      "message": "it returns the same credential string, right?\n\n  :returns: a credential string",
+      "range": {
+        "startLine": 36,
+        "startChar": 18,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8d2b1feb",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:19:10Z",
+      "side": 1,
+      "message": "Need to add tests for the \"noop\" provider. Think you can use this class as an abstract one and create two subclasses where the proper methods are overridden.",
+      "range": {
+        "startLine": 1012,
+        "startChar": 6,
+        "endLine": 1012,
+        "endChar": 19
+      },
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
