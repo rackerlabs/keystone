@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_897c0622",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-05T02:56:31Z",
+      "side": 1,
+      "message": "i think we need to make this error message more meaningful, it\u0027ll just come back as:\n\n  You are not authorized to perform the requested action: create_grant\n\nDoesn\u0027t really explain what went wrong in a pretty specific scenario such as this one. I think this may mean creating a new exception, normally I\u0027d be OK with just a LOG.error, but this is a domain admin operation, who may not have access tot he logs.",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 351,
+        "endChar": 70
+      },
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
