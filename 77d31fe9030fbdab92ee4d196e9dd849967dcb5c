@@ -22,6 +22,53 @@
       "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_10e804e2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:41:14Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a89bdaa_897c0622",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 351,
+        "endChar": 70
+      },
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_b0a678bf",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2824,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-05T11:41:14Z",
+      "side": 1,
+      "message": "can you split in two tests? \"test_cross_domain_user_assignment\" and \"test_cross_domain_project_assignment\". This helps if one of them fails in the future.",
+      "range": {
+        "startLine": 2824,
+        "startChar": 8,
+        "endLine": 2824,
+        "endChar": 36
+      },
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
