@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_4af01091",
+        "filename": "keystone/conf/eventlet_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-05T15:05:17Z",
+      "side": 1,
+      "message": "According to the note above, they were kept for URL substitutions.",
+      "parentUuid": "9a89bdaa_504a8cc6",
+      "range": {
+        "startLine": 36,
+        "startChar": 45,
+        "endLine": 36,
+        "endChar": 49
+      },
+      "revId": "c7a5f41132e9d9f0e842e7c72f15175ebfc0fd9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_d00cdc96",
         "filename": "keystone/conf/eventlet_server.py",
         "patchSetId": 3
