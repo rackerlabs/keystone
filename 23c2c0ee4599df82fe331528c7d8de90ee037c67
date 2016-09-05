@@ -22,6 +22,69 @@
       "revId": "23c2c0ee4599df82fe331528c7d8de90ee037c67",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_85a04bf6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-05T15:17:35Z",
+      "side": 1,
+      "message": "we didn\u0027t have caching here in mitaka",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 0
+      },
+      "revId": "23c2c0ee4599df82fe331528c7d8de90ee037c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_c5cfb3ae",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-05T15:17:35Z",
+      "side": 1,
+      "message": "the situation here was a little different in Mitaka. We didn\u0027t cache things per-region, we cached them \"globally\", in a single region.",
+      "revId": "23c2c0ee4599df82fe331528c7d8de90ee037c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a541cf0d",
+        "filename": "keystone/server/backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-05T15:17:35Z",
+      "side": 1,
+      "message": "didn\u0027t have any of those",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 60
+      },
+      "revId": "23c2c0ee4599df82fe331528c7d8de90ee037c67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
