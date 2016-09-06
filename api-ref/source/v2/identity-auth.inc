@@ -20,12 +20,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - description: description
+   - description: description-of-tenant
    - tenants_links: tenants_links
    - enabled: enabled
    - tenants: tenants
-   - id: id
-   - name: name
+   - id: id-of-tenant
+   - name: name-of-tenant
 
 Response Example
 ----------------
@@ -80,7 +80,7 @@ Request
    - token: token
    - tenantName: tenantName
    - password: password
-   - id: id
+   - id: id-of-tenant
 
 Request Example
 ---------------
@@ -96,11 +96,11 @@ Response Parameters
    - impersonation: impersonation
    - endpoints_links: endpoints_links
    - serviceCatalog: serviceCatalog
-   - description: description
+   - description: description-of-tenant
    - type: type
    - expires: expires
    - enabled: enabled
-   - name: name
+   - name: name-of-tenant
    - access: access
    - trustee_user_id: trustee_user_id
    - token: token
@@ -109,7 +109,7 @@ Response Parameters
    - trustor_user_id: trustor_user_id
    - endpoints: endpoints
    - trust: trust
-   - id: id
+   - id: id-of-tenant
    - tenant: tenant
    - metadata: metadata
 

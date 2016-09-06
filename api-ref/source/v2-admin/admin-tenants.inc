@@ -156,7 +156,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: name-request
 
 Response Parameters
 -------------------

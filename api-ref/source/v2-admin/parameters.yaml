@@ -8,12 +8,6 @@ X-Auth-Token:
   type: string
 
 # variables in path
-tenantId_1:
-  description: |
-    The tenant ID.
-  in: path
-  required: false
-  type: string
 tokenId:
   description: |
     The authentication token for which to perform the
@@ -21,7 +15,7 @@ tokenId:
   in: path
   required: true
   type: string
-userId:
+userId-path:
   description: |
     The user ID.
   in: path
@@ -29,7 +23,7 @@ userId:
   type: string
 
 # variables in query
-name_2:
+name-request:
   description: |
     Filters the response by a tenant name.
   in: query
@@ -56,12 +50,6 @@ email:
   in: body
   required: false
   type: string
-email_1:
-  description: |
-    The user email.
-  in: body
-  required: true
-  type: string
 enabled:
   description: |
     Indicates whether the tenant is enabled or
@@ -69,19 +57,12 @@ enabled:
   in: body
   required: true
   type: boolean
-enabled_1:
+enabled-user:
   description: |
     Indicates whether the user is enabled (``true``)
     or disabled (``false``). Default is ``true``.
   in: body
   required: false
-  type: boolean
-enabled_2:
-  description: |
-    Indicates whether the user is enabled (``true``)
-    or disabled(``false``). The default value is ``true``.
-  in: body
-  required: true
   type: boolean
 endpoints:
   description: |
@@ -122,12 +103,6 @@ id:
     The ID of the trust.
   in: body
   required: false
-  type: string
-id_1:
-  description: |
-    The user ID.
-  in: body
-  required: true
   type: string
 impersonation:
   description: |
@@ -170,7 +145,7 @@ name:
   in: body
   required: true
   type: string
-name_1:
+name-of-user:
   description: |
     The user name.
   in: body
@@ -261,15 +236,15 @@ user:
   in: body
   required: true
   type: string
-username:
+userId:
   description: |
-    The user name of the user.
+    The user ID.
   in: body
   required: true
   type: string
-username_1:
+username:
   description: |
-    The username of user.
+    The user name of the user.
   in: body
   required: true
   type: string

@@ -9,13 +9,6 @@ x-openstack-request-id:
   type: string
 
 # variables in path
-alias_1:
-  description: |
-    An alias for the extension name. For example,
-    ``os-server-external- events``.
-  in: path
-  required: false
-  type: string
 
 # variables in query
 
@@ -41,13 +34,13 @@ description:
   in: body
   required: true
   type: string
-description_1:
+description-api-ext:
   description: |
     The extension description.
   in: body
   required: true
   type: string
-description_2:
+description-of-tenant:
   description: |
     Description about the tenant.
   in: body
@@ -101,7 +94,7 @@ id:
   in: body
   required: false
   type: string
-id_1:
+id-of-tenant:
   description: |
     The tenant ID.
   in: body
@@ -143,14 +136,14 @@ name:
   in: body
   required: true
   type: string
-name_1:
+name-api-ext:
   description: |
     The name of the extension. For example, "Fox In
     Socks."
   in: body
   required: true
   type: string
-name_2:
+name-of-tenant:
   description: |
     The tenant name.
   in: body

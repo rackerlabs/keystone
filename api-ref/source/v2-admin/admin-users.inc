@@ -20,7 +20,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId-path
 
 Response Parameters
 -------------------
@@ -30,8 +30,8 @@ Response Parameters
    - roles_links: roles_links
    - roles: roles
    - description: description
-   - name: name
-   - id: id
+   - name: name-of-user
+   - id: userId
 
 Response Example
 ----------------
@@ -57,9 +57,9 @@ Request
 
    - tenantId: tenantId
    - password: password
-   - enabled: enabled
+   - enabled: enabled-user
    - email: email
-   - name: name
+   - name: name-of-user
    - X-Auth-Token: X-Auth-Token
 
 Request Example
@@ -74,10 +74,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - username: username
-   - enabled: enabled
+   - enabled: enabled-user
    - email: email
-   - name: name
-   - id: id
+   - name: name-of-user
+   - id: userId
 
 
 List users (admin endpoint)
@@ -100,10 +100,10 @@ Response Parameters
 
    - username: username
    - users: users
-   - enabled: enabled
-   - id: id
+   - enabled: enabled-user
+   - id: userId
    - email: email
-   - name: name
+   - name: name-of-user
 
 Response Example
 ----------------
@@ -127,11 +127,11 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId-path
    - username: username
-   - enabled: enabled
+   - enabled: enabled-user
    - email: email
-   - name: name
+   - name: name-of-user
    - tenantId: tenantId
 
 Request Example
@@ -146,10 +146,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - users: users
-   - enabled: enabled
+   - enabled: enabled-user
    - email: email
-   - name: name
-   - id: id
+   - name: name-of-user
+   - id: userId
    - tenantId: tenantId
 
 Response Example
@@ -174,7 +174,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId-path
 
 
 Show user details (admin endpoint)
@@ -209,7 +209,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId-path
 
 Response Parameters
 -------------------
@@ -217,10 +217,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - username: username
-   - enabled: enabled
+   - enabled: enabled-user
    - email: email
-   - name: name
-   - id: id
+   - name: name-of-user
+   - id: userId
 
 Response Example
 ----------------
