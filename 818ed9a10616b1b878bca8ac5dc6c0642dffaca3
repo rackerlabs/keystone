@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_45b7f0d7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1822,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-06T15:46:43Z",
+      "side": 1,
+      "message": "nit: \n\n  If configured to do so, keystone will encrypt credentials with the\n  same mechanism used to encrypt Fernet tokens. To maintain\n  backwards-compatibility with existing deployments, keystone also \n  provides a no-operation provider for credential encryption. It is\n  important to note that the `noop` provider will continue to store\n  credentials as plaintext in the backend, just as it did prior to the\n  Newton release.",
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_2dccd388",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 8
@@ -25,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_c1169554",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1825,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-06T15:46:43Z",
+      "side": 1,
+      "message": "Whitespace?\n\nWe should also provide the configuration option needed to change this.",
+      "parentUuid": "9a89bdaa_2dccd388",
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_edb90beb",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 8
@@ -42,6 +77,24 @@
         "endLine": 1829,
         "endChar": 15
       },
+      "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a580bc47",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1829,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-06T15:46:43Z",
+      "side": 1,
+      "message": "We should be sure to explain that using the `noop` driver will leave credentials unencrypted in the backend and is insecure.",
+      "parentUuid": "9a89bdaa_edb90beb",
       "revId": "818ed9a10616b1b878bca8ac5dc6c0642dffaca3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
