@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_25482c5b",
+        "filename": "api-ref/source/v3/samples/admin/auth-password-project-scoped-response.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-06T15:35:06Z",
+      "side": 1,
+      "message": "does this need some structure?",
+      "range": {
+        "startLine": 395,
+        "startChar": 0,
+        "endLine": 400,
+        "endChar": 13
+      },
+      "revId": "6bb46cba79c848b669c52e201e2c0c53e43735b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
