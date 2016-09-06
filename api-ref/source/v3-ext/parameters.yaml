@@ -151,12 +151,6 @@ endpoints:
   in: body
   required: true
   type: array
-endpoints_links:
-  description: |
-    The links for the ``endpoints`` resource.
-  in: body
-  required: true
-  type: object
 id:
   description: |
     [WIP]
@@ -190,18 +184,6 @@ links:
   in: body
   required: true
   type: object
-name_1:
-  description: |
-    The role name.
-  in: body
-  required: true
-  type: string
-name_2:
-  description: |
-    The name of the group.
-  in: body
-  required: true
-  type: string
 next:
   description: |
     The ``next`` relative link for the ``endpoints``
