@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_2b31dbec",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-06T16:02:37Z",
+      "side": 0,
+      "message": "It looks like ``links`` is documented twice in the Response Parameters in http://developer.openstack.org/api-ref/identity/v3/?expanded\u003dlist-users-detail#list-users . \n\nThis one looks to be correct, can we just remove the one on line 1070?",
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
