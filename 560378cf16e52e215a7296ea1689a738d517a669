@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_c377a138",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-06T02:41:37Z",
+      "side": 1,
+      "message": "It\u0027s easy enough to see then from the code diff. It\u0027s more important to say why you are doing this in the commit message.",
+      "revId": "560378cf16e52e215a7296ea1689a738d517a669",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
