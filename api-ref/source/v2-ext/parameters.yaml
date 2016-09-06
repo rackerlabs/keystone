@@ -4,13 +4,6 @@ Location:
   in: header
   required: false
   type: string
-Location_1:
-  description: |
-    The location.
-  format: uri
-  in: header
-  required: false
-  type: string
 
 # variables in path
 roleId:
@@ -31,12 +24,6 @@ tenantId:
   in: path
   required: true
   type: string
-type_1:
-  description: |
-    The credential type.
-  in: path
-  required: false
-  type: string
 userId:
   description: |
     The user ID.
@@ -50,18 +37,6 @@ userId:
 description:
   description: |
     Description about the service.
-  in: body
-  required: true
-  type: string
-description_1:
-  description: |
-    Description about the tenant.
-  in: body
-  required: true
-  type: string
-description_2:
-  description: |
-    The role description.
   in: body
   required: true
   type: string
@@ -91,45 +66,9 @@ id:
   in: body
   required: true
   type: string
-id_1:
-  description: |
-    The tenant ID.
-  in: body
-  required: true
-  type: string
-id_2:
-  description: |
-    The user ID.
-  in: body
-  required: true
-  type: string
-id_3:
-  description: |
-    The role ID.
-  in: body
-  required: true
-  type: integer
 name:
   description: |
     The service name.
-  in: body
-  required: true
-  type: string
-name_1:
-  description: |
-    The tenant name.
-  in: body
-  required: true
-  type: string
-name_2:
-  description: |
-    The user name.
-  in: body
-  required: true
-  type: string
-name_3:
-  description: |
-    The role name.
   in: body
   required: true
   type: string
@@ -184,12 +123,6 @@ username:
 users:
   description: |
     The ``users`` object.
-  in: body
-  required: true
-  type: array
-users_links:
-  description: |
-    The links of ``users`` object.
   in: body
   required: true
   type: array

@@ -13,6 +13,7 @@ Show tenant details, by ID
 Shows details for a tenant, by ID.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -48,6 +49,7 @@ List users on a tenant
 Lists all users for a tenant.
 
 Normal response codes: 200, 203
+
 Error response codes: 413, 405, 404, 403, 401, 400, 503
 
 Request
@@ -84,6 +86,7 @@ List roles for user
 Lists roles for a user on a tenant. Excludes global roles.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -120,6 +123,7 @@ List tenants (admin endpoint)
 Lists all tenants.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Response Parameters
@@ -149,6 +153,7 @@ Show tenant details, by name
 Shows details for a tenant, by name.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -156,7 +161,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - name: name
+   - name: tenant_name_query
 
 Response Parameters
 -------------------
@@ -184,6 +189,7 @@ Delete tenant
 Deletes a tenant.
 
 Normal response codes: 204
+
 Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request
@@ -202,6 +208,7 @@ Update tenant
 Updates a tenant.
 
 Normal response codes: 200
+
 Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request
@@ -248,6 +255,7 @@ Create tenant
 Creates a tenant.
 
 Normal response codes: 201
+
 Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request Example

@@ -30,8 +30,8 @@ Response Parameters
    - x-openstack-request-id: x-openstack-request-id
    - alias: alias
    - updated: updated
-   - description: description
-   - name: name
+   - description: description-api-ext
+   - name: name-api-ext
 
 Response Example
 ----------------
@@ -58,8 +58,8 @@ Response Parameters
    - x-openstack-request-id: x-openstack-request-id
    - alias: alias
    - updated: updated
-   - description: description
-   - name: name
+   - description: description-api-ext
+   - name: name-api-ext
 
 Response Example
 ----------------

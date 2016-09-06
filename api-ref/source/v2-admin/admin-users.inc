@@ -13,6 +13,7 @@ List user global roles
 Lists global roles for a user. Excludes tenant roles.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -20,7 +21,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId_path
 
 Response Parameters
 -------------------
@@ -30,8 +31,8 @@ Response Parameters
    - roles_links: roles_links
    - roles: roles
    - description: description
-   - name: name
-   - id: id
+   - name: username
+   - id: userId
 
 Response Example
 ----------------
@@ -48,6 +49,7 @@ Create user (admin endpoint)
 Creates a user.
 
 Normal response codes: 201
+
 Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request
@@ -57,9 +59,9 @@ Request
 
    - tenantId: tenantId
    - password: password
-   - enabled: enabled
+   - enabled: user_is_enabled
    - email: email
-   - name: name
+   - name: username
    - X-Auth-Token: X-Auth-Token
 
 Request Example
@@ -74,10 +76,16 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - username: username
-   - enabled: enabled
+   - enabled: user_is_enabled
    - email: email
-   - name: name
-   - id: id
+   - name: username
+   - id: userId
+
+Response Example
+----------------
+
+.. literalinclude:: samples/admin/user-create-response.json
+   :language: javascript
 
 
 List users (admin endpoint)
@@ -91,6 +99,7 @@ To show detailed information about a user by name, include the
 ``name`` query parameter in the request.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Response Parameters
@@ -100,10 +109,10 @@ Response Parameters
 
    - username: username
    - users: users
-   - enabled: enabled
-   - id: id
+   - enabled: user_is_enabled
+   - id: userId
    - email: email
-   - name: name
+   - name: username
 
 Response Example
 ----------------
@@ -120,6 +129,7 @@ Update user (admin endpoint)
 Updates a user.
 
 Normal response codes: 201
+
 Error response codes: 413,415,405,404,403,401,400,503,409
 
 Request
@@ -127,11 +137,11 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId_path
    - username: username
-   - enabled: enabled
+   - enabled: user_is_enabled
    - email: email
-   - name: name
+   - name: username
    - tenantId: tenantId
 
 Request Example
@@ -146,10 +156,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - users: users
-   - enabled: enabled
+   - enabled: user_is_enabled
    - email: email
-   - name: name
-   - id: id
+   - name: username
+   - id: userId
    - tenantId: tenantId
 
 Response Example
@@ -167,6 +177,7 @@ Delete user (admin endpoint)
 Deletes a user.
 
 Normal response codes: 204
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -174,7 +185,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId_path
 
 
 Show user details (admin endpoint)
@@ -202,6 +213,7 @@ name:
   identity-admin-v2.html#admin-showUser>`_.
 
 Normal response codes: 200,203
+
 Error response codes: 413,405,404,403,401,400,503
 
 Request
@@ -209,7 +221,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
+   - userId: userId_path
 
 Response Parameters
 -------------------
@@ -217,10 +229,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - username: username
-   - enabled: enabled
+   - enabled: user_is_enabled
    - email: email
-   - name: name
-   - id: id
+   - name: username
+   - id: userId
 
 Response Example
 ----------------
