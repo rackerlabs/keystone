@@ -210,6 +210,7 @@ Response Parameters
    - type: endpoint_type
    - id: user_id
    - name: user_name
+   - limits: limits
 
 
 Password authentication with explicit unscoped authorization

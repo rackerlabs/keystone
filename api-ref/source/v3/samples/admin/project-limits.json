@@ -1,0 +1,7 @@
+{
+    "values": {
+        "gigabytes": 300,
+        "per_volume_gigabytes": 20,
+        "volumes": 30
+    }
+}
