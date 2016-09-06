@@ -1,0 +1,29 @@
+{
+    "values": {
+        "gigabytes": 300,
+        "per_volume_gigabytes": 20,
+        "volumes": 30
+    },
+    "parent_quota": [
+        {
+            "project": {
+                "id": "asdfgh"
+            },
+            "values": {
+                "gigabytes": 3000,
+                "per_volume_gigabytes": 30,
+                "volumes": 50
+            }
+        },
+        {
+            "project": {
+                "id": "asdfgh"
+            },
+            "values": {
+                "gigabytes": 30000,
+                "per_volume_gigabytes": 50,
+                "volumes": 70
+            }
+        }
+    ]
+}
