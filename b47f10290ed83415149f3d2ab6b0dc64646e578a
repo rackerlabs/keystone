@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_0ec0a57a",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-06T16:26:21Z",
+      "side": 0,
+      "message": "this should be renamed and used here: https://github.com/openstack/keystone/blob/master/api-ref/source/v2-admin/admin-tenants.inc#L159",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 14
+      },
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_4e5f0de5",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-06T16:26:21Z",
+      "side": 0,
+      "message": "this should also be renamed and used here: https://github.com/openstack/keystone/blob/master/api-ref/source/v2-admin/admin-users.inc#L60",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 15
+      },
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_6e30519f",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-06T16:26:21Z",
+      "side": 0,
+      "message": "this should be renamed and used in all the user *response* objects: https://github.com/openstack/keystone/blob/master/api-ref/source/v2-admin/admin-users.inc#L80 (and for list, get and update users)",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 14
+      },
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_eee38103",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-06T16:26:21Z",
+      "side": 0,
+      "message": "this should be renamed and used here: https://github.com/openstack/keystone/blob/master/api-ref/source/v2-admin/admin-users.inc#L79 and other user spots",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 18
+      },
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
