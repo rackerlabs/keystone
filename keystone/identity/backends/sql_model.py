@@ -113,6 +113,9 @@ class User(sql.ModelBase, sql.DictBase):
         for ref in self.local_user.passwords:
             if not ref.expires_at or ref.expires_at > now:
                 ref.expires_at = now
+            # TODO(rderose): in case the server is not utc...
+            if ref.created_at >= now:
+                ref.created_at = now - datetime.timedelta(minutes=1)
         new_password_ref = Password()
         new_password_ref.password = value
         new_password_ref.created_at = now
