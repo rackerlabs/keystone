@@ -1767,6 +1767,13 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'type': 'cert'}
         self.insert_dict(session, credential_table_name, credential)
 
+    def test_migration_004_migrate_unencrypted_credentials(self):
+        temp_table = 'temp001'
+        self.expand(3)
+        self.assertTableDoesNotExist(temp_table)
+        self.expand(4)
+        self.assertTableColumns(temp_table, ['id'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
