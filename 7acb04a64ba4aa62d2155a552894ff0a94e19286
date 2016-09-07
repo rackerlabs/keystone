@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_d201bc07",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T17:19:28Z",
+      "side": 1,
+      "message": "to gracefully upgrade",
+      "revId": "7acb04a64ba4aa62d2155a552894ff0a94e19286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a6607dd0",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T17:19:28Z",
+      "side": 1,
+      "message": "I think this belongs in a separate test class. Maybe named TestFernetCredentialProviderWithNullKeys?\n\nThat way you can do your own setup and not have a key repository created for you.",
+      "revId": "7acb04a64ba4aa62d2155a552894ff0a94e19286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
