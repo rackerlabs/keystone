@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_9f4c98c9",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-07T18:38:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_7c53626b",
+      "revId": "1a0593e3f112c9396f6f55a8f3e71a3c19fbf21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_9cd90625",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 5
@@ -48,6 +66,24 @@
       "writtenOn": "2016-09-07T18:14:11Z",
       "side": 1,
       "message": "Since this doesn\u0027t have any logic it can probably be removed.",
+      "revId": "1a0593e3f112c9396f6f55a8f3e71a3c19fbf21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_5f56905c",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-07T18:38:21Z",
+      "side": 1,
+      "message": "Good catch.",
+      "parentUuid": "9a89bdaa_9cd90625",
       "revId": "1a0593e3f112c9396f6f55a8f3e71a3c19fbf21f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
