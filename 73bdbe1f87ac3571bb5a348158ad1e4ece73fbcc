@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_cbc82225",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T20:20:52Z",
+      "side": 1,
+      "message": "(nit) maybe no period to match the other exceptions?",
+      "revId": "73bdbe1f87ac3571bb5a348158ad1e4ece73fbcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
