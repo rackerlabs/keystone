@@ -22,6 +22,30 @@
       "revId": "c89ba35abb714cbe2e4becf2e63fc0055b661b1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_fc505234",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-09-07T18:24:37Z",
+      "side": 1,
+      "message": "Ah. I thought so but I was trying to follow convention in file.",
+      "parentUuid": "9a89bdaa_7c88c2c5",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "c89ba35abb714cbe2e4becf2e63fc0055b661b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
