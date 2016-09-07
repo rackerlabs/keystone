@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_460a567a",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T15:58:35Z",
+      "side": 1,
+      "message": "I think this will return a 404 to the user if the mapping doesn\u0027t exist. I don\u0027t think that is what we want here as it\u0027s really a validation error.",
+      "revId": "890d7f62c01379ba5b8d6fde46da27b1fe6a4a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_660f5a88",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T15:58:35Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "890d7f62c01379ba5b8d6fde46da27b1fe6a4a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
