@@ -90,6 +90,30 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_57867edb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T16:50:12Z",
+      "side": 1,
+      "message": "It\u0027s usually hard to troubleshoot \"Forbidden\" responses thanks to this very approach. It would be really good to see the exact reason of the \"Forbidden\" response without browsing logs (that are usually disabled in production).\n\nAlthough, this patch follows current paradigm so I agree with it.",
+      "parentUuid": "9a89bdaa_04032110",
+      "range": {
+        "startLine": 351,
+        "startChar": 16,
+        "endLine": 351,
+        "endChar": 70
+      },
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_b0a678bf",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
@@ -149,6 +173,30 @@
       "side": 1,
       "message": "to proper test this, you need to cover all the cases. The suggestion I gave earlier was to try to separate them by type, but to summarize:\n\n - DomainA: userA, roleA, projectA\n - DomainB: userB, projectB\n\nYou need to cover the following cases:\n\n - userA / roleA / projectA -\u003e OK\n - userB/ roleA/ projectA -\u003e OK\n - userA / roleA / projectB -\u003e X\n\nUsually, splitting all of the cases in smaller testing units can improve maintainability.",
       "parentUuid": "9a89bdaa_443529f5",
+      "range": {
+        "startLine": 2824,
+        "startChar": 8,
+        "endLine": 2824,
+        "endChar": 36
+      },
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_9753a66a",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2824,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T16:50:12Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a89bdaa_974ac624",
       "range": {
         "startLine": 2824,
         "startChar": 8,
