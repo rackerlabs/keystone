@@ -335,7 +335,8 @@ SAMPLE_V3_TOKEN = {
                 "name": "Default"
             },
             "id": "f19ddbe2c53c46f189fe66d0a7a9c9ce",
-            "name": "nova"
+            "name": "nova",
+            "password_expires_at": None
         },
         "OS-TRUST:trust": {
             "id": "abc123",
