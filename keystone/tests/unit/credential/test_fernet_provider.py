@@ -11,9 +11,12 @@
 # under the License.
 
 import base64
+import fixtures
 import hashlib
 import shutil
 import uuid
+
+from oslo_log import log
 
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
@@ -64,3 +67,18 @@ class TestFernetCredentialProvider(unit.TestCase):
 
         decrypted_blob = self.provider.decrypt(encrypted_blob)
         self.assertEqual(blob, decrypted_blob)
+
+    def test_warning_is_logged_when_encrypting_with_null_key(self):
+        # remove the key repository so that we load the null key
+        shutil.rmtree(CONF.credential.key_repository)
+        blob = uuid.uuid4().hex
+
+        logging_fixture = self.useFixture(fixtures.FakeLogger(level=log.DEBUG))
+        expected_output = (
+            'Encrypting credentials with the null key. Please properly '
+            'migrate credentials using `keystone-manage credential_setup`, '
+            '`keystone-manage credential_migrate`, and `keystone-manage '
+            'credential_rotate`'
+        )
+        encrypted_blob, primary_key_hash = self.provider.encrypt(blob)
+        self.assertIn(expected_output, logging_fixture.output)

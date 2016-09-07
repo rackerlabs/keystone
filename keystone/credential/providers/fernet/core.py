@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import hashlib
 
 from cryptography import fernet
@@ -20,7 +21,7 @@ from keystone.common import fernet_utils
 import keystone.conf
 from keystone.credential.providers import core
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 
 
 CONF = keystone.conf.CONF
@@ -67,6 +68,13 @@ class Provider(core.Provider):
         :returns: an encrypted credential
         """
         crypto, keys = get_multi_fernet_keys()
+
+        if keys[0] == base64.urlsafe_b64encode(chr(0) * 32):
+            LOG.warning(_LW(
+                'Encrypting credentials with the null key. Please properly '
+                'migrate credentials using `keystone-manage credential_setup`,'
+                ' `keystone-manage credential_migrate`, and `keystone-manage '
+                'credential_rotate`'))
 
         try:
             return (
