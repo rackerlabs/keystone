@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_ac8ea176",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-07T16:20:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_e3bfdca7",
+      "revId": "2d3f7c740b72f909b6b3299e78955ccf150d9ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_86dd3ee2",
         "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 72,
         "endChar": 64
       },
+      "revId": "2d3f7c740b72f909b6b3299e78955ccf150d9ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_acbce106",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-07T16:20:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_86dd3ee2",
       "revId": "2d3f7c740b72f909b6b3299e78955ccf150d9ca2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
