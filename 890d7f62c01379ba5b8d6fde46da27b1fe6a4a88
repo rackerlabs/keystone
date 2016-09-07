@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_ad0bf122",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-07T21:10:01Z",
+      "side": 1,
+      "message": "Thanks Stanek, however I haven\u0027t handled the validation yet, still WIP.",
+      "parentUuid": "9a89bdaa_460a567a",
+      "revId": "890d7f62c01379ba5b8d6fde46da27b1fe6a4a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_660f5a88",
         "filename": "keystone/federation/core.py",
         "patchSetId": 2
