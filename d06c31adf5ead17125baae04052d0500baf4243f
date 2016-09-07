@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_6c22d953",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T16:22:43Z",
+      "side": 1,
+      "message": "I\u0027d rather see this be name-query to match the pattern from userId-path.",
+      "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
