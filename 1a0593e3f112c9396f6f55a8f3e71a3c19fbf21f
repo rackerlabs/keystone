@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_fce3f2d6",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T18:14:11Z",
+      "side": 1,
+      "message": "This isn\u0027t used anymore.",
+      "revId": "1a0593e3f112c9396f6f55a8f3e71a3c19fbf21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_9cd90625",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T18:14:11Z",
+      "side": 1,
+      "message": "Since this doesn\u0027t have any logic it can probably be removed.",
+      "revId": "1a0593e3f112c9396f6f55a8f3e71a3c19fbf21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
