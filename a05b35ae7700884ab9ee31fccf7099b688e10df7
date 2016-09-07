@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_2ea392b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T03:51:00Z",
+      "side": 1,
+      "message": "is this test only valid for fernet ? it\u0027s failing for uuid in: keystone.tests.unit.test_auth.UUIDAuthWithTrust.test_trust_get_token_fails_if_trustee_disabled_2",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 45
+      },
+      "revId": "a05b35ae7700884ab9ee31fccf7099b688e10df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_0e16cef0",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T03:51:00Z",
+      "side": 1,
+      "message": "wow",
+      "range": {
+        "startLine": 1312,
+        "startChar": 8,
+        "endLine": 1312,
+        "endChar": 37
+      },
+      "revId": "a05b35ae7700884ab9ee31fccf7099b688e10df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
