@@ -16,6 +16,24 @@
       "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_1e1a817d",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T00:48:52Z",
+      "side": 0,
+      "message": "As that is listing users (collection), I\u0027d say the other is more adequate. But this can be addressed separately",
+      "parentUuid": "9a89bdaa_2b31dbec",
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
