@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_f66b061c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 5623
+      },
+      "writtenOn": "2016-09-07T22:37:09Z",
+      "side": 1,
+      "message": "the docs indicate this should be expires_at\n\nhttp://developer.openstack.org/api-ref/identity/v3/?expanded\u003dshow-user-details-detail,validate-and-show-information-for-token-detail",
+      "revId": "9ad50ed5053c1a7372ad238b2701232dc35e70e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
