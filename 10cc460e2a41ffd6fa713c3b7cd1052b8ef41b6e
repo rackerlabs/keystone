@@ -22,6 +22,29 @@
       "revId": "10cc460e2a41ffd6fa713c3b7cd1052b8ef41b6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_7b3f1a87",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T03:02:32Z",
+      "side": 1,
+      "message": "won\u0027t this run unnecesarily after the while above is break ?",
+      "range": {
+        "startLine": 54,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 55
+      },
+      "revId": "10cc460e2a41ffd6fa713c3b7cd1052b8ef41b6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
