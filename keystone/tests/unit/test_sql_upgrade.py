@@ -1513,129 +1513,6 @@ class PostgreSQLOpportunisticUpgradeTestCase(SqlLegacyRepoUpgradeTests):
     FIXTURE = test_base.PostgreSQLOpportunisticFixture
 
 
-class SqlExpandSchemaUpgradeTests(SqlMigrateBase):
-
-    def setUp(self):
-        # Make sure the main repo is fully upgraded for this release since the
-        # expand phase is only run after such an upgrade
-        super(SqlExpandSchemaUpgradeTests, self).setUp()
-        self.upgrade()
-
-    def test_start_version_db_init_version(self):
-        self.assertEqual(
-            self.repos[EXPAND_REPO].min_version,
-            self.repos[EXPAND_REPO].version)
-
-
-class MySQLOpportunisticExpandSchemaUpgradeTestCase(
-        SqlExpandSchemaUpgradeTests):
-    FIXTURE = test_base.MySQLOpportunisticFixture
-
-
-class PostgreSQLOpportunisticExpandSchemaUpgradeTestCase(
-        SqlExpandSchemaUpgradeTests):
-    FIXTURE = test_base.PostgreSQLOpportunisticFixture
-
-
-class SqlDataMigrationUpgradeTests(SqlMigrateBase):
-
-    def setUp(self):
-        # Make sure the legacy and expand repos are fully upgraded, since the
-        # data migration phase is only run after these are upgraded
-        super(SqlDataMigrationUpgradeTests, self).setUp()
-        self.upgrade()
-        self.expand()
-
-    def test_start_version_db_init_version(self):
-        self.assertEqual(
-            self.repos[DATA_MIGRATION_REPO].min_version,
-            self.repos[DATA_MIGRATION_REPO].version)
-
-
-class MySQLOpportunisticDataMigrationUpgradeTestCase(
-        SqlDataMigrationUpgradeTests):
-    FIXTURE = test_base.MySQLOpportunisticFixture
-
-
-class PostgreSQLOpportunisticDataMigrationUpgradeTestCase(
-        SqlDataMigrationUpgradeTests):
-    FIXTURE = test_base.PostgreSQLOpportunisticFixture
-
-
-class SqlContractSchemaUpgradeTests(SqlMigrateBase, unit.TestCase):
-
-    def setUp(self):
-        # Make sure the legacy, expand and data migration repos are fully
-        # upgraded, since the contract phase is only run after these are
-        # upgraded.
-        super(SqlContractSchemaUpgradeTests, self).setUp()
-        self.useFixture(
-            ksfixtures.KeyRepository(
-                self.config_fixture,
-                'credential',
-                credential_fernet.MAX_ACTIVE_KEYS
-            )
-        )
-        self.upgrade()
-        self.expand()
-        self.migrate()
-
-    def test_start_version_db_init_version(self):
-        self.assertEqual(
-            self.repos[CONTRACT_REPO].min_version,
-            self.repos[CONTRACT_REPO].version)
-
-
-class MySQLOpportunisticContractSchemaUpgradeTestCase(
-        SqlContractSchemaUpgradeTests):
-    FIXTURE = test_base.MySQLOpportunisticFixture
-
-
-class PostgreSQLOpportunisticContractSchemaUpgradeTestCase(
-        SqlContractSchemaUpgradeTests):
-    FIXTURE = test_base.PostgreSQLOpportunisticFixture
-
-
-class VersionTests(SqlMigrateBase):
-    def test_core_initial(self):
-        """Get the version before migrated, it's the initial DB version."""
-        self.assertEqual(
-            self.repos[LEGACY_REPO].min_version,
-            self.repos[LEGACY_REPO].version)
-
-    def test_core_max(self):
-        """When get the version after upgrading, it's the new version."""
-        self.upgrade()
-        self.assertEqual(
-            self.repos[LEGACY_REPO].max_version,
-            self.repos[LEGACY_REPO].version)
-
-    def test_assert_not_schema_downgrade(self):
-        self.upgrade()
-        self.assertRaises(
-            db_exception.DbMigrationError,
-            migration_helpers._sync_common_repo,
-            self.repos[LEGACY_REPO].max_version - 1)
-
-    def test_these_are_not_the_migrations_you_are_looking_for(self):
-        """Keystone has shifted to rolling upgrades.
-
-        New database migrations should no longer land in the legacy migration
-        repository. Instead, new database migrations should be divided into
-        three discrete steps: schema expansion, data migration, and schema
-        contraction. These migrations live in a new set of database migration
-        repositories, called ``expand_repo``, ``data_migration_repo``, and
-        ``contract_repo``.
-
-        For more information, see "Database Migrations" here:
-
-            http://docs.openstack.org/developer/keystone/developing.html
-
-        """
-        # Note to reviewers: this version number should never change.
-        self.assertEqual(109, self.repos[LEGACY_REPO].max_version)
-
-
 class FullMigration(SqlMigrateBase, unit.TestCase):
     """Test complete orchestration between all database phases."""
 
@@ -1766,6 +1643,25 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'user_id': uuid.uuid4().hex,
                       'type': 'cert'}
         self.insert_dict(session, credential_table_name, credential)
+
+    def test_migration_004_reset_password_created_at(self):
+        # upgrade each repository to 003 and test
+        self.expand(3)
+        self.migrate(3)
+        self.contract(3)
+        password = sqlalchemy.Table('password', self.metadata, autoload=True)
+        # postgresql returns 'TIMESTAMP WITHOUT TIME ZONE'
+        self.assertTrue(
+            str(password.c.created_at.type).startswith('TIMESTAMP'))
+        # upgrade each repository to 004 and test
+        self.expand(4)
+        self.migrate(4)
+        self.contract(4)
+        password = sqlalchemy.Table('password', self.metadata, autoload=True)
+        # type would still be TIMESTAMP with postgresql
+        if self.engine.name != 'postgresql':
+            self.assertEqual('DATETIME', str(password.c.created_at.type))
+        self.assertFalse(password.c.created_at.nullable)
 
 
 class MySQLOpportunisticFullMigration(FullMigration):
