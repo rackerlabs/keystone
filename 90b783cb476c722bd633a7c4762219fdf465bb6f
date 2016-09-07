@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_e9e52938",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T00:58:59Z",
+      "side": 1,
+      "message": "Please expand on why this is better",
+      "revId": "90b783cb476c722bd633a7c4762219fdf465bb6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_b57e55ac",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 2
