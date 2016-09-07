@@ -22,6 +22,29 @@
       "revId": "2d3f7c740b72f909b6b3299e78955ccf150d9ca2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_86dd3ee2",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-07T16:12:44Z",
+      "side": 1,
+      "message": "this should probably be rephrased to \"so that the null key is used for encryption\", because the null key gets loaded unconditionally",
+      "range": {
+        "startLine": 72,
+        "startChar": 36,
+        "endLine": 72,
+        "endChar": 64
+      },
+      "revId": "2d3f7c740b72f909b6b3299e78955ccf150d9ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
