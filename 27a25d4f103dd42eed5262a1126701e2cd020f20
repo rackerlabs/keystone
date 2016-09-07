@@ -22,6 +22,24 @@
       "revId": "27a25d4f103dd42eed5262a1126701e2cd020f20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_cce04599",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-07T16:33:18Z",
+      "side": 1,
+      "message": "I would argue that migrate is the right word because the credentials are properly encrypted, they\u0027re just encrypted with an insecure known key.\n\nThis log is telling the operator to migrate *off* the insecure known key to a proper key repository via re-encryption. Migrations can be done whenever... they don\u0027t have to be done only once. I can migrate as much as my deployments security requirements mandate me to do so by doing: \n\n  1.) keystone-manage credential_rotate\n  2.) keystone-manage credential_migrate\n  3.) keystone-manage credential_rotate\n  4.) keystone-manage credential_migrate",
+      "parentUuid": "9a89bdaa_4c38b53d",
+      "revId": "27a25d4f103dd42eed5262a1126701e2cd020f20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
