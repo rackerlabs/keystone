@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_e69605ef",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "Agreed: this better be more flexible.",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_52b81ac8",
         "filename": "keystone/api/views/base.py",
         "patchSetId": 8
@@ -19,6 +36,171 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_29f19e01",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "All this \"part of a list\" thing is quite confusing. IMHO either rename obj to item/list_item or just change the doc not to mention list stuff.",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_4944221a",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "m.b. \u0027the object\u0027 ?",
+      "range": {
+        "startLine": 94,
+        "startChar": 28,
+        "endLine": 94,
+        "endChar": 39
+      },
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a9012eb1",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "independent?",
+      "range": {
+        "startLine": 98,
+        "startChar": 30,
+        "endLine": 98,
+        "endChar": 41
+      },
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_c9ecb2f5",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "Yes, if it\u0027s caught, it should be handled.",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_e9197689",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "Is i18n needed for internal error messages?",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_dc9c6ec2",
+        "filename": "keystone/api/views/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "Naming nit: I\u0027d suggest names like item_list, item_show, item_created, item_deleted.\n\nCurrently naming mimics CRUD, but update is missing and 2 different retrieval operations are present.",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_7cdc4273",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "\u0027list\u0027 is highlighted. I wonder why ;)",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_dc5f0ee3",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "Once again about naming. This \u0027create\u0027 doesn\u0027t actually creates anything, right?",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_3c5b9af7",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_720a7e21",
         "filename": "keystone/tests/unit/test_views.py",
         "patchSetId": 8
@@ -30,6 +212,24 @@
       "writtenOn": "2016-08-05T18:54:48Z",
       "side": 1,
       "message": "This could probably be pulled into the setUp() method, since it doesn\u0027t really seem to differ across some of the tests.\n\n\nDIff of applying that change - http://cdn.pasteraw.com/n7nrr1aythn2pnckd3rkjp234psq6fi",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_fcd93258",
+        "filename": "keystone/tests/unit/test_views.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-07T18:05:17Z",
+      "side": 1,
+      "message": "+1 It repeats several time unchanged.",
+      "parentUuid": "bacf61ea_720a7e21",
       "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
