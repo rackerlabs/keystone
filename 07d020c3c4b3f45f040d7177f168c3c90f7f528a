@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_e9e369a2",
+        "filename": "keystone/conf/validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T01:23:09Z",
+      "side": 1,
+      "message": "nice, default is backwards compatible",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "07d020c3c4b3f45f040d7177f168c3c90f7f528a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
