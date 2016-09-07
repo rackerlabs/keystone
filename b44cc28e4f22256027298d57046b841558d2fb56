@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_431ec85f",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T15:42:54Z",
+      "side": 1,
+      "message": "I\u0027d say in the backend, as it can be anything else than disk ?",
+      "range": {
+        "startLine": 28,
+        "startChar": 56,
+        "endLine": 28,
+        "endChar": 68
+      },
+      "revId": "b44cc28e4f22256027298d57046b841558d2fb56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_23a8e48c",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T15:42:54Z",
+      "side": 1,
+      "message": "does this make sense if there is a key repository set ?",
+      "range": {
+        "startLine": 284,
+        "startChar": 0,
+        "endLine": 287,
+        "endChar": 37
+      },
+      "revId": "b44cc28e4f22256027298d57046b841558d2fb56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
