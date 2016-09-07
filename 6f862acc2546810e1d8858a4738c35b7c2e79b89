@@ -71,6 +71,75 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_e197f845",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasized as in L87",
+      "range": {
+        "startLine": 92,
+        "startChar": 41,
+        "endLine": 92,
+        "endChar": 46
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_219e4063",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasized as in L87",
+      "range": {
+        "startLine": 97,
+        "startChar": 43,
+        "endLine": 97,
+        "endChar": 48
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_818f0c29",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasized as in L87",
+      "range": {
+        "startLine": 102,
+        "startChar": 41,
+        "endLine": 102,
+        "endChar": 46
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_02ba546e",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 1
@@ -87,6 +156,52 @@
         "startChar": 3,
         "endLine": 104,
         "endChar": 37
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_e17e1818",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasized as in L87",
+      "range": {
+        "startLine": 104,
+        "startChar": 27,
+        "endLine": 104,
+        "endChar": 32
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_81a8ec8e",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasided as in L87",
+      "range": {
+        "startLine": 106,
+        "startChar": 42,
+        "endLine": 106,
+        "endChar": 47
       },
       "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -133,6 +248,29 @@
         "startChar": 9,
         "endLine": 112,
         "endChar": 48
+      },
+      "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_41c4245e",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2016-09-07T07:24:34Z",
+      "side": 1,
+      "message": "this should be emphasided as in L87",
+      "range": {
+        "startLine": 114,
+        "startChar": 54,
+        "endLine": 114,
+        "endChar": 62
       },
       "revId": "6f862acc2546810e1d8858a4738c35b7c2e79b89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
