@@ -167,6 +167,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_5fdf7068",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T18:28:19Z",
+      "side": 1,
+      "message": "because it is a builtin type",
+      "parentUuid": "9a89bdaa_7cdc4273",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_dc5f0ee3",
         "filename": "keystone/credential/controllers.py",
         "patchSetId": 8
@@ -229,6 +247,24 @@
       "writtenOn": "2016-09-07T18:05:17Z",
       "side": 1,
       "message": "+1 It repeats several time unchanged.",
+      "parentUuid": "bacf61ea_720a7e21",
+      "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_5f6a10b4",
+        "filename": "keystone/tests/unit/test_views.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T18:28:19Z",
+      "side": 1,
+      "message": "++",
       "parentUuid": "bacf61ea_720a7e21",
       "revId": "6971c7783fa7e03f31bb779b2aeb62afea05f843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
