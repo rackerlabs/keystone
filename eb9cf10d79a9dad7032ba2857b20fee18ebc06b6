@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_ac296a39",
+        "filename": "releasenotes/notes/endpoint_policy_driver_unused_methods_removed-e1348cbec9b1110a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T05:21:52Z",
+      "side": 1,
+      "message": "I\u0027d rephrase as:\n\nThe methods ``list_endpoints_for_policy`` and ``get_policy_for_endpoint`` have been removed from the EndpointPolicy driver interface.\n\n\nI\u0027ve not seen the use of \u0027we\u0027 in release notes",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 14
+      },
+      "revId": "eb9cf10d79a9dad7032ba2857b20fee18ebc06b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
