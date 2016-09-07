@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_4647b176",
+        "filename": "api-ref/source/v2-admin/admin-tenants.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-07T17:42:00Z",
+      "side": 1,
+      "message": "tenant_name_request",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 23
+      },
+      "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_660e753c",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-07T17:42:00Z",
+      "side": 1,
+      "message": "just use `username`",
+      "range": {
+        "startLine": 33,
+        "startChar": 11,
+        "endLine": 33,
+        "endChar": 23
+      },
+      "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_c95d9216",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-07T17:42:00Z",
+      "side": 1,
+      "message": "you can remove this and re-use the userId below",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_6c22d953",
         "filename": "api-ref/source/v2-admin/parameters.yaml",
         "patchSetId": 2
@@ -13,6 +82,29 @@
       "writtenOn": "2016-09-07T16:22:43Z",
       "side": 1,
       "message": "I\u0027d rather see this be name-query to match the pattern from userId-path.",
+      "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_4615f146",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-07T17:42:00Z",
+      "side": 1,
+      "message": "why don\u0027t we just use `username` here?",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 14
+      },
       "revId": "d06c31adf5ead17125baae04052d0500baf4243f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
