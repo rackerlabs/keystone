@@ -22,6 +22,30 @@
       "revId": "eb9cf10d79a9dad7032ba2857b20fee18ebc06b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_cdae9e80",
+        "filename": "releasenotes/notes/endpoint_policy_driver_unused_methods_removed-e1348cbec9b1110a.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18261
+      },
+      "writtenOn": "2016-09-07T09:43:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_ac296a39",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 14
+      },
+      "revId": "eb9cf10d79a9dad7032ba2857b20fee18ebc06b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
