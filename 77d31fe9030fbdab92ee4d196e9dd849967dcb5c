@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_517f6e65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-07T16:06:41Z",
+      "side": 1,
+      "message": "(nit) s/ but/, but/",
+      "revId": "77d31fe9030fbdab92ee4d196e9dd849967dcb5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_897c0622",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
