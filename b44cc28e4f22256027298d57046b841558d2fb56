@@ -67,6 +67,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_ccc3e555",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-07T16:24:05Z",
+      "side": 1,
+      "message": "So we can make it valid for now and for the future. It\u0027s unlikely the person implementing will find and fix this (I think we are already working to support it, am I right?)",
+      "parentUuid": "9a89bdaa_a6f7a289",
+      "revId": "b44cc28e4f22256027298d57046b841558d2fb56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_23a8e48c",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 1
