@@ -271,7 +271,12 @@ class TestKeystoneDataMigrations(
         # Migration 002 changes the column type, from datetime to timestamp in
         # the contract phase. Adding exception here to pass banned data
         # migration tests. Fails otherwise.
-        2
+        2,
+        # Migration 004 changes the password created_at column type, from
+        # timestamp to datetime and updates the initial value in the contract
+        # phase. Adding an exception here to pass data migrations banned tests,
+        # otherwise fails.
+        4
     ]
 
     def setUp(self):
@@ -315,7 +320,16 @@ class TestKeystoneContractSchemaMigrations(
         # Migration 002 changes the column type, from datetime to timestamp.
         # To do this, the column is first dropped and recreated. This should
         # not have any negative impact on a rolling upgrade deployment.
-        2
+        2,
+        # Migration 004 changes the password created_at column type back, from
+        # timestamp to datetime and updates the created_at value. This is
+        # likely not going to impact a rolling upgrade as the contract repo is
+        # executed once the code has been updated; thus the created_at column
+        # would be populated for any password changes. That being said, there
+        # could be a performance issue for existing large password tables, as
+        # the migration is not batched. However, it's a compromise and not
+        # likely going to be a problem for most operators.
+        4
     ]
 
     def setUp(self):
