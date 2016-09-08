@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_5fb3d909",
+        "filename": "api-ref/source/v2-ext/ksec2-admin.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T07:28:41Z",
+      "side": 1,
+      "message": "Does \u0027203\u0027 has ever been a response code in Keystone anywhere?",
+      "range": {
+        "startLine": 35,
+        "startChar": 28,
+        "endLine": 35,
+        "endChar": 31
+      },
+      "revId": "c774c1daa7ca291f5f9c1a659985830e11eb7d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
