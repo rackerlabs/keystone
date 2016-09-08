@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_2ac79196",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-08T16:48:15Z",
+      "side": 1,
+      "message": "i didn\u0027t want to waste infra resources on a trivial change, especially when we\u0027re fixing other stuff in the same file",
+      "range": {
+        "startLine": 37,
+        "startChar": 2,
+        "endLine": 37,
+        "endChar": 54
+      },
+      "revId": "61ae52254c159c66a6b471835f689d24eba453fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
