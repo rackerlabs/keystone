@@ -22,6 +22,57 @@
       "revId": "61ae52254c159c66a6b471835f689d24eba453fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_d2425767",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T19:00:13Z",
+      "side": 1,
+      "message": "s/Keystone/keystone/ to be consistent with the rest of the keystone usage in this document",
+      "revId": "61ae52254c159c66a6b471835f689d24eba453fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_0d3d82c3",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T19:00:13Z",
+      "side": 1,
+      "message": "I wonder if we should break ``first`` and ``other`` into hypothetical ``keystone-1``, ``keystone-2``, and ``keystone-3``? \n\n`````` for the sake of more backticks ```````",
+      "revId": "61ae52254c159c66a6b471835f689d24eba453fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_ed585e33",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T19:00:13Z",
+      "side": 1,
+      "message": "Which tests? Or do we mean to say \"you should run tests here to ensure the upgrade didn\u0027t fail\"?",
+      "revId": "61ae52254c159c66a6b471835f689d24eba453fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
