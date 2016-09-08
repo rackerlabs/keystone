@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_ad79f694",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-08T18:59:24Z",
+      "side": 1,
+      "message": "Just getting a jump on things.",
+      "parentUuid": "9a89bdaa_ad0bf122",
+      "revId": "890d7f62c01379ba5b8d6fde46da27b1fe6a4a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_660f5a88",
         "filename": "keystone/federation/core.py",
         "patchSetId": 2
