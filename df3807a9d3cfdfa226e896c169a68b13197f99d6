@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_08100ba8",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T21:44:19Z",
+      "side": 1,
+      "message": "We typically reference functions from the package namespace, meaning we could just do something like: \n\n  import sqlalchemy\n  ...\n  or1.append(sqlalchemy.or_(...))",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_6880b78c",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 9
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_a85e3f77",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T21:44:19Z",
+      "side": 1,
+      "message": "s/R/event/ only for the sake of a more descriptive name",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_2824efc4",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 9
@@ -47,6 +81,57 @@
       "writtenOn": "2016-09-08T21:32:40Z",
       "side": 1,
       "message": "Vague variable names like these will need inline comments - but don\u0027t bother yet, because I\u0027m not sure you\u0027ll need this.",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_68e437ac",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T21:44:19Z",
+      "side": 1,
+      "message": "I love their basketball shorts! ;)",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_13af5c95",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T21:44:19Z",
+      "side": 1,
+      "message": "We could automatically pull out the token value here, too; \n\n  for key, token_value in token.iteritems():\n\nfor some reason I thought we used six for iterating over dictionaries but I can\u0027t seem to find the example.",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_13a91ce0",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T21:44:19Z",
+      "side": 1,
+      "message": "Do we have an is_() method somewhere?",
       "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
