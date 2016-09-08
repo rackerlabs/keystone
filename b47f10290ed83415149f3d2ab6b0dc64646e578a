@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_c8d62327",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:32:40Z",
+      "side": 0,
+      "message": "undo unrelated changes, obviously. i recommend using `git add -p` to interactively stage changes, so you know what you\u0027re committing :)",
+      "revId": "b47f10290ed83415149f3d2ab6b0dc64646e578a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_6880b78c",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:32:40Z",
+      "side": 1,
+      "message": "I think the API for this method is making it more difficult (this pattern is a problem elsewhere in keystone as well). You don\u0027t know what\u0027s being passed in exactly, so you have to figure out the possibilities, which makes this method way more complicated. It\u0027d be a bit simpler if you had well defined keyword arguments that you could expect, so you wouldn\u0027t have to iterate through token_data. Just think, there won\u0027t be a crazy for-loop on L90!",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_e83927f4",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:32:40Z",
+      "side": 1,
+      "message": "Cheater! This sort of indirection makes the code more difficult to read, because now this class has two variable names. Instead, work on reducing cyclomatic complexity or simply line breaking and indenting more frequently.",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_2824efc4",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:32:40Z",
+      "side": 1,
+      "message": "Vague variable names like these will need inline comments - but don\u0027t bother yet, because I\u0027m not sure you\u0027ll need this.",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_88733b15",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:32:40Z",
+      "side": 1,
+      "message": "the query is only evaluated in L122 when you call .exists(), so you can build the query dynamically, you don\u0027t have to build it all at once. So, this could be simplified to:\n\n  q \u003d session.query(RevocationEvent)                                 \n\n  if or1:\n      q \u003d q.filter(or_(*or1))\n\n  if or2:\n      ...",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
