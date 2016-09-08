@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_72e0c229",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 1,
+      "message": "It could be nice to update the commit message, this patch is correct all the parameters not just remove the unused parameters.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "338424066d77a85d6f14e0c26b16ca8ddc5f8d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_9294668b",
+        "filename": "api-ref/source/v2-admin/admin-tenants.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 1,
+      "message": "Totally unrelated change, but I am fine with it.",
+      "revId": "338424066d77a85d6f14e0c26b16ca8ddc5f8d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_0c9bdf18",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 1,
+      "message": "Is this an optional parameter in the response body? I guess not.",
+      "range": {
+        "startLine": 159,
+        "startChar": 14,
+        "endLine": 159,
+        "endChar": 29
+      },
+      "revId": "338424066d77a85d6f14e0c26b16ca8ddc5f8d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_17e3e8d9",
+        "filename": "api-ref/source/v2/identity-auth.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 1,
+      "message": "I\u0027d like remove 203 from the list as we did here. https://review.openstack.org/#/c/367121/",
+      "range": {
+        "startLine": 15,
+        "startChar": 28,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "338424066d77a85d6f14e0c26b16ca8ddc5f8d1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

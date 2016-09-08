@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_127a1688",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 0,
+      "message": "rather than remove them, it\u0027s better to define some new parameters and update the doc instead.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 25
+      },
+      "revId": "470a8a50c0de72bea11d8582e8ab89ad1f3b4472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_f71a047c",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 0,
+      "message": "These params cannot be just removed, or else every \u0027id\u0027 in the doc will render to \u0027The UUID of the service\u0027, for example, create a user API will say it\u0027s the id of service.",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 15
+      },
+      "revId": "470a8a50c0de72bea11d8582e8ab89ad1f3b4472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_32563a06",
+        "filename": "api-ref/source/v2-ext/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-08T12:41:23Z",
+      "side": 0,
+      "message": "same here, pls differentiate them so that we can use the right parameters.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 18
+      },
+      "revId": "470a8a50c0de72bea11d8582e8ab89ad1f3b4472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
