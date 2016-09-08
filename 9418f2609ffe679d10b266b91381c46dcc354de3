@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_28122f59",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:12:10Z",
+      "side": 1,
+      "message": "nit: \"no way to rollback\" is not totally true in this process, especially since you\u0027ve got a better solution in L97",
+      "revId": "9418f2609ffe679d10b266b91381c46dcc354de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_2576dad8",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-08T21:12:10Z",
+      "side": 1,
+      "message": "nit: I don\u0027t think \"first\" and \"other\" should be literals (they\u0027re not literals in the rest of the doc).",
+      "revId": "9418f2609ffe679d10b266b91381c46dcc354de3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
