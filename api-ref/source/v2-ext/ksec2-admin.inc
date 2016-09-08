@@ -14,7 +14,9 @@ Grant credential to user
 
 Grants a credential to a user.
 
-Error response codes:201,413,415,405,404,403,401,400,503,409,
+Normal response codes: 201
+
+Error response codes: 413,415,405,404,403,401,400,503,409,
 
 Request Example
 ---------------
@@ -30,8 +32,9 @@ List credentials (EC2 extension)
 
 Lists credentials.
 
-Normal response codes: 200
-Error response codes:203,413,405,404,403,401,400,503,
+Normal response codes: 200, 203
+
+Error response codes: 413,405,404,403,401,400,503,
 
 Response Example
 ----------------
@@ -48,7 +51,8 @@ Update user credentials
 Updates credentials for a user.
 
 Normal response codes: 200
-Error response codes:413,415,405,404,403,401,400,503,409,
+
+Error response codes: 415,405,404,403,401,400,503,409,
 
 Request Example
 ---------------
@@ -70,7 +74,9 @@ Delete user credentials
 
 Deletes user credentials.
 
-Error response codes:204,413,415,405,404,403,401,400,503,409,
+Normal response codes: 204
+
+Error response codes: 413,415,405,404,403,401,400,503,409,
 
 
 Get user credentials
@@ -80,8 +86,9 @@ Get user credentials
 
 Gets user credentials.
 
-Normal response codes: 200
-Error response codes:203,413,405,404,403,401,400,503,
+Normal response codes: 200, 203
+
+Error response codes: 413,405,404,403,401,400,503,
 
 Response Example
 ----------------
@@ -97,8 +104,9 @@ List credentials by type
 
 Lists credentials by type.
 
-Normal response codes: 200
-Error response codes:203,413,405,404,403,401,400,503,
+Normal response codes: 200, 203
+
+Error response codes: 413,405,404,403,401,400,503,
 
 Request
 -------
