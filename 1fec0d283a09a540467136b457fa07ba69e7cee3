@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_82e31c33",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T20:35:43Z",
+      "side": 1,
+      "message": "s/a keystone cluster// \n\nSince at this point in the document it\u0027s inferred.",
+      "revId": "1fec0d283a09a540467136b457fa07ba69e7cee3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_e2a308ff",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-08T20:35:43Z",
+      "side": 1,
+      "message": "I assume ``other`` can be multiple?",
+      "revId": "1fec0d283a09a540467136b457fa07ba69e7cee3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
