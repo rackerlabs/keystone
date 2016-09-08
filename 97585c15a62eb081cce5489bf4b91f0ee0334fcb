@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_d3852fcf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-08T01:50:35Z",
+      "side": 1,
+      "message": "the workflow I\u0027ve seen the most is that the release notes come in the same patch that makes the change described there",
+      "parentUuid": "9a89bdaa_d7460e4e",
+      "revId": "97585c15a62eb081cce5489bf4b91f0ee0334fcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_403335f6",
         "filename": "releasenotes/notes/endpoint_policy_driver_unused_methods_removed-e1348cbec9b1110a.yaml",
         "patchSetId": 6
