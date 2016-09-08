@@ -235,7 +235,8 @@ class Password(sql.ModelBase, sql.DictBase):
     password = sql.Column(sql.String(128), nullable=True)
     # created_at default set here to safe guard in case it gets missed
     created_at = sql.Column(sql.TIMESTAMP, nullable=False,
-                            default=datetime.datetime.utcnow)
+                            default=datetime.datetime.utcnow,
+                            server_default=sqlalchemy.func.now())
     expires_at = sql.Column(sql.DateTime, nullable=True)
     self_service = sql.Column(sql.Boolean, default=False, nullable=False,
                               server_default='0')
