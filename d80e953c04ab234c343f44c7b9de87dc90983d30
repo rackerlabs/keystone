@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_50629617",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-09T12:32:29Z",
+      "side": 1,
+      "message": "What is this actually doing? No need to tag [api-ref] it this line was more like \u0027Fixes XXX in api-ref\u0027",
+      "revId": "d80e953c04ab234c343f44c7b9de87dc90983d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_2425d7ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-09T12:32:29Z",
+      "side": 1,
+      "message": "I think this entire paragraph should just expand on the short message above. What is it fixing and why? Leave the other patches to describe what they are doing.",
+      "revId": "d80e953c04ab234c343f44c7b9de87dc90983d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
