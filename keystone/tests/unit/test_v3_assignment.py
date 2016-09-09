@@ -11,6 +11,7 @@
 # under the License.
 
 import random
+import time
 import uuid
 
 from oslo_config import cfg
@@ -155,6 +156,14 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                                          resource_url=collection_url)
 
         self.delete(member_url)
+
+        # NOTE(breton): the sleep below is required because time
+        # in revocations and token was rounded down. In Newton
+        # release freezegun is used for this purpose instead of
+        # sleep. Freezegun cannot be used in Mitaka release, because
+        # it was not in requirements when release happened.
+        time.sleep(1)
+
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, expected_length=0,
                                          resource_url=collection_url)
@@ -329,6 +338,13 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assignment_api.delete_grant(role_id=self.role['id'],
                                          project_id=self.project['id'],
                                          group_id=self.group['id'])
+
+        # NOTE(breton): the sleep below is required because time
+        # in revocations and token was rounded down. In Newton
+        # release freezegun is used for this purpose instead of
+        # sleep. Freezegun cannot be used in Mitaka release, because
+        # it was not in requirements when release happened.
+        time.sleep(1)
 
         # validates the same token again; it should not longer be valid.
         self.head('/auth/tokens',
