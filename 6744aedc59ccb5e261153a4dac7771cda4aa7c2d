@@ -16,6 +16,24 @@
       "revId": "6744aedc59ccb5e261153a4dac7771cda4aa7c2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8b63f5dc",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-09T21:44:07Z",
+      "side": 1,
+      "message": "Oops, I meant to remove these lines, which were only used to check the effect of some of the tests. The line that actually took care of the majority of the tox tests was L107 with roles. Will remove this section",
+      "parentUuid": "9a89bdaa_803bd99b",
+      "revId": "6744aedc59ccb5e261153a4dac7771cda4aa7c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
