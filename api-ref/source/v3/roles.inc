@@ -78,316 +78,6 @@ virtue of group membership will contain a URL that enables access to the
 membership of the group.
 
 
-Assign role to group on project
-===============================
-
-.. rest_method::  PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
-
-Assigns a role to a group on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-
-Check whether group has role assignment on project
-==================================================
-
-.. rest_method::  HEAD /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
-
-Validates that a group has a role assignment on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-
-Unassign role from group on project
-===================================
-
-.. rest_method::  DELETE /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
-
-Unassigns a role from a group on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-
-Assign role to user on project
-==============================
-
-.. rest_method::  PUT /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
-
-Assigns a role to a user on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-
-Check whether user has role assignment on project
-=================================================
-
-.. rest_method::  HEAD /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
-
-Validates that a user has a role on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-
-Unassign role from user on project
-==================================
-
-.. rest_method::  DELETE /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
-
-Unassigns a role from a user on a project.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-
-List role assignments for user on project
-=========================================
-
-.. rest_method::  GET /v3/projects/{project_id}/users/{user_id}/roles
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
-
-Lists role assignments for a user on a project.
-
-Normal response codes: 200
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - user_id: user_id_path
-
-Response Example
-----------------
-
-.. literalinclude:: ./samples/admin/project-user-roles-list-response.json
-   :language: javascript
-
-
-List role assignments for group on project
-==========================================
-
-.. rest_method::  GET /v3/projects/{project_id}/groups/{group_id}/roles
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
-
-Lists role assignments for a group on a project.
-
-Normal response codes: 200
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - project_id: project_id_path
-   - group_id: group_id_path
-
-Response Example
-----------------
-
-.. literalinclude:: ./samples/admin/project-group-roles-list-response.json
-   :language: javascript
-
-The functionality of this request can also be achieved using the generalized
-list assignments API::
-
-  GET /role_assignments?group.id={group_id}&scope.project.id={project_id}
-
-
-Assign role to group on domain
-==============================
-
-.. rest_method::  PUT /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
-
-Assigns a role to a group on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-Check whether group has role assignment on domain
-=================================================
-
-.. rest_method::  HEAD /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
-
-Validates that a group has a role assignment on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-
-Unassign role from group on domain
-==================================
-
-.. rest_method::  DELETE /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
-
-Unassigns a role from a group on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - group_id: group_id_path
-   - role_id: role_id_path
-
-
-List role assignments for user on domain
-========================================
-
-.. rest_method::  GET /v3/domains/{domain_id}/users/{user_id}/roles
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_roles``
-
-Lists role assignments for a user on a domain.
-
-Normal response codes: 200
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - user_id: user_id_path
-
-Response Parameters
--------------------
-
-.. rest_parameters:: parameters.yaml
-
-   - roles: roles
-   - id: role_id_response_body
-   - links: link_response_body
-   - name: role_name_response_body
-
-Response Example
-----------------
-
-.. literalinclude:: ./samples/admin/domain-user-roles-list-response.json
-   :language: javascript
-
-The functionality of this request can also be achieved using the generalized
-list assignments API::
-
-  GET /role_assignments?user.id={user_id}&scope.domain.id={domain_id}
-
-
 List roles
 ==========
 
@@ -397,12 +87,25 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/roles``
 
 Lists roles.
 
-Normal response codes: 200
+Response Codes
+--------------
 
-Error response codes: 413,405,404,403,401,400,503
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -437,12 +140,27 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/roles``
 
 Creates a role.
 
-Normal response codes: 201
+Response Codes
+--------------
 
-Error response codes: 413,415,405,404,403,401,400,503,409
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -474,147 +192,6 @@ Response Parameters
    - name: role_name_response_body
 
 
-Assign role to user on domain
-=============================
-
-.. rest_method::  PUT /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://developer.openstack.org/api-ref/identity/v3/index.html#assign-role-to-user-on-domain``
-
-Assigns a role to a user on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-
-Check whether user has role assignment on domain
-================================================
-
-.. rest_method::  HEAD /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_role``
-
-Validates that a user has a role assignment on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-
-Unassigns role from user on domain
-==================================
-
-.. rest_method::  DELETE /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_role``
-
-Unassigns a role from a user on a domain.
-
-Normal response codes: 204
-
-Error response codes: 413,415,405,404,403,401,400,503,409
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - user_id: user_id_path
-   - role_id: role_id_path
-
-List role assignments for group on domain
-=========================================
-
-.. rest_method::  GET /v3/domains/{domain_id}/groups/{group_id}/roles
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_roles``
-
-Lists role assignments for a group on a domain.
-
-Normal response codes: 200
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - domain_id: domain_id_path
-   - group_id: group_id_path
-
-Response Example
-----------------
-
-.. literalinclude:: ./samples/admin/domain-group-roles-list-response.json
-   :language: javascript
-
-The functionality of this request can also be achieved using the generalized
-list assignments API::
-
-  GET /role_assignments?group.id={group_id}&scope.domain.id={domain_id}
-
-List role assignments
-=====================
-
-.. rest_method::  GET /v3/role_assignments
-
-Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/role_assignments``
-
-Lists role assignments.
-
-Normal response codes: 200
-
-Error response codes: 413,405,404,403,401,400,503
-
-Request
--------
-
-.. rest_parameters:: parameters.yaml
-
-   - effective: effective_query
-   - include_names: include_names_query
-   - include_subtree: include_subtree_query
-   - group.id: group_id_query
-   - role.id: role_id_query
-   - scope.domain.id: scope_domain_id_query
-   - scope.project.id: scope_project_id_query
-   - user.id: user_id_query
-
-Response Parameters
--------------------
-
-.. rest_parameters:: parameters.yaml
-
-   - role_assignments: role_assignments
-
-Response Example
-----------------
-
-.. literalinclude:: ./samples/admin/role-assignments-list-response.json
-   :language: javascript
-
-
 Show role details
 =================
 
@@ -624,12 +201,25 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/role``
 
 Shows details for a role.
 
-Normal response codes: 200
+Response Codes
+--------------
 
-Error response codes: 413,405,404,403,401,400,503
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -662,12 +252,27 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/role``
 
 Updates a role.
 
-Normal response codes: 200
+Response Codes
+--------------
 
-Error response codes: 413,415,405,404,403,401,400,503,409
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -708,33 +313,694 @@ Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/role``
 
 Deletes a role.
 
-Normal response codes: 204
+Response Codes
+--------------
 
-Error response codes: 413,415,405,404,403,401,400,503,409
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
    - role_id: role_id_path
 
-List implied roles for role
-===========================
+
+List role assignments for group on domain
+=========================================
+
+.. rest_method::  GET /v3/domains/{domain_id}/groups/{group_id}/roles
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_roles``
+
+Lists role assignments for a group on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - group_id: group_id_path
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/domain-group-roles-list-response.json
+   :language: javascript
+
+The functionality of this request can also be achieved using the generalized
+list assignments API::
+
+  GET /role_assignments?group.id={group_id}&scope.domain.id={domain_id}
+
+
+Assign role to group on domain
+==============================
+
+.. rest_method::  PUT /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
+
+Assigns a role to a group on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+Check whether group has role assignment on domain
+=================================================
+
+.. rest_method::  HEAD /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
+
+Validates that a group has a role assignment on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+Unassign role from group on domain
+==================================
+
+.. rest_method::  DELETE /v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_group_role``
+
+Unassigns a role from a group on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+List role assignments for user on domain
+========================================
+
+.. rest_method::  GET /v3/domains/{domain_id}/users/{user_id}/roles
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_roles``
+
+Lists role assignments for a user on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - user_id: user_id_path
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - roles: roles
+   - id: role_id_response_body
+   - links: link_response_body
+   - name: role_name_response_body
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/domain-user-roles-list-response.json
+   :language: javascript
+
+The functionality of this request can also be achieved using the generalized
+list assignments API::
+
+  GET /role_assignments?user.id={user_id}&scope.domain.id={domain_id}
+
+
+Assign role to user on domain
+=============================
+
+.. rest_method::  PUT /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://developer.openstack.org/api-ref/identity/v3/index.html#assign-role-to-user-on-domain``
+
+Assigns a role to a user on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+Check whether user has role assignment on domain
+================================================
+
+.. rest_method::  HEAD /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_role``
+
+Validates that a user has a role assignment on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+Unassigns role from user on domain
+==================================
+
+.. rest_method::  DELETE /v3/domains/{domain_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/domain_user_role``
+
+Unassigns a role from a user on a domain.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - domain_id: domain_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+List role assignments for group on project
+==========================================
+
+.. rest_method::  GET /v3/projects/{project_id}/groups/{group_id}/roles
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
+
+Lists role assignments for a group on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - group_id: group_id_path
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/project-group-roles-list-response.json
+   :language: javascript
+
+The functionality of this request can also be achieved using the generalized
+list assignments API::
+
+  GET /role_assignments?group.id={group_id}&scope.project.id={project_id}
+
+
+Assign role to group on project
+===============================
+
+.. rest_method::  PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
+
+Assigns a role to a group on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+Check whether group has role assignment on project
+==================================================
+
+.. rest_method::  HEAD /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
+
+Validates that a group has a role assignment on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+Unassign role from group on project
+===================================
+
+.. rest_method::  DELETE /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_group_role``
+
+Unassigns a role from a group on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - group_id: group_id_path
+   - role_id: role_id_path
+
+
+List role assignments for user on project
+=========================================
+
+.. rest_method::  GET /v3/projects/{project_id}/users/{user_id}/roles
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
+
+Lists role assignments for a user on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - user_id: user_id_path
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/project-user-roles-list-response.json
+   :language: javascript
+
+
+Assign role to user on project
+==============================
+
+.. rest_method::  PUT /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
+
+Assigns a role to a user on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+Check whether user has role assignment on project
+=================================================
+
+.. rest_method::  HEAD /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
+
+Validates that a user has a role on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+Unassign role from user on project
+==================================
+
+.. rest_method::  DELETE /v3/projects/{project_id}/users/{user_id}/roles/{role_id}
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/project_user_role``
+
+Unassigns a role from a user on a project.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 409
+   - 413
+   - 415
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - project_id: project_id_path
+   - user_id: user_id_path
+   - role_id: role_id_path
+
+
+List implied (inference) roles for role
+=======================================
 
 .. rest_method:: GET /v3/roles/{prior_role_id}/implies
 
-Lists implied roles for a role.
+Lists implied (inference) roles for a role.
 
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#list-implied-roles-for-role``
 
-Normal response codes: 200
+Response Codes
+--------------
 
-Error response codes: 401, 404
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -758,6 +1024,7 @@ Response Example
 .. literalinclude:: ./samples/admin/list-implied-roles-for-role-response.json
    :language: javascript
 
+
 Create role inference rule
 ==========================
 
@@ -768,12 +1035,20 @@ Creates a role inference rule.
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#create-role-inference-rule``
 
-Normal response codes: 201
+Response Codes
+--------------
 
-Error response codes: 401, 404
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 201
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -798,6 +1073,7 @@ Response Example
 .. literalinclude:: ./samples/admin/create-role-inferences-response.json
    :language: javascript
 
+
 Get role inference rule
 =======================
 
@@ -808,12 +1084,20 @@ Gets a role inference rule.
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#get-role-inference-rule``
 
-Normal response codes: 200
+Response Codes
+--------------
 
-Error response codes: 401, 404
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+ 
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -838,6 +1122,7 @@ Response Example
 .. literalinclude:: ./samples/admin/get-role-inferences-response.json
    :language: javascript
 
+
 Confirm role inference rule
 ===========================
 
@@ -848,12 +1133,20 @@ Checks a role role inference rule.
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#confirm-role-inference-rule``
 
-Normal response codes: 204
+Response Codes
+--------------
 
-Error response codes: 401, 404
+.. rest_status_code:: success status.yaml
 
-Request
--------
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -864,6 +1157,7 @@ Response Example
 ----------------
 
 Status: 204 No Content
+
 
 Delete role inference rule
 ==========================
@@ -875,9 +1169,20 @@ Deletes a role inference rule.
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#delete-role-inference-rule``
 
-Normal response codes: 204
+Response Codes
+--------------
 
-Error response codes: 401, 404
+.. rest_status_code:: success status.yaml
+
+   - 204
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+ 
+Request Parameters
+------------------
 
 .. rest_parameters:: parameters.yaml
 
@@ -889,6 +1194,61 @@ Response Example
 
 Status: 204 No Content
 
+
+List role assignments
+=====================
+
+.. rest_method::  GET /v3/role_assignments
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/role_assignments``
+
+Lists role assignments.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 405
+   - 413
+   - 503
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - effective: effective_query
+   - include_names: include_names_query
+   - include_subtree: include_subtree_query
+   - group.id: group_id_query
+   - role.id: role_id_query
+   - scope.domain.id: scope_domain_id_query
+   - scope.project.id: scope_project_id_query
+   - user.id: user_id_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - role_assignments: role_assignments
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/role-assignments-list-response.json
+   :language: javascript
+
+
 List all role inference rules
 =============================
 
@@ -896,13 +1256,21 @@ List all role inference rules
 
 Lists all role inference rules.
 
-Normal response codes: 200
-
-Error response codes: 401, 404
-
 Relationship:
 ``http://developer.openstack.org/api-ref/identity/v3/#list-all-role-inference-rules``
 
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 401
+   - 404
+ 
 Response Parameters
 -------------------
 
