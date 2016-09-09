@@ -528,6 +528,7 @@ def isotime(at=None, subsecond=False):
 
     if not at:
         at = timeutils.utcnow()
+    at.replace(microsecond=0)
     st = at.strftime(_ISO8601_TIME_FORMAT
                      if not subsecond
                      else _ISO8601_TIME_FORMAT_SUBSECOND)
