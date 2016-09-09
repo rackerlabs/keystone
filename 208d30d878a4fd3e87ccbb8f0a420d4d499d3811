@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_50b536ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-09T12:25:29Z",
+      "side": 1,
+      "message": "You say testtools here, but link to the unittest docs.",
+      "revId": "208d30d878a4fd3e87ccbb8f0a420d4d499d3811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_90989e6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-09T12:25:29Z",
+      "side": 1,
+      "message": "https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertIs ?",
+      "revId": "208d30d878a4fd3e87ccbb8f0a420d4d499d3811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
