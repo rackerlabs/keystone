@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_3500a4aa",
+        "filename": "api-ref/source/v3/status.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:10:18Z",
+      "side": 1,
+      "message": "have we copied this from nova or other service?",
+      "revId": "9efbe2a418334484e43e521fdb5df8c350e6c97e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_d54a1827",
+        "filename": "api-ref/source/v3/status.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:10:18Z",
+      "side": 1,
+      "message": "put this in a single line as a comment prefixed with #\n\nthat way it will be in the same format we do for parameters.yaml",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 17
+      },
+      "revId": "9efbe2a418334484e43e521fdb5df8c350e6c97e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_552b6833",
+        "filename": "api-ref/source/v3/status.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:10:18Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "9efbe2a418334484e43e521fdb5df8c350e6c97e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
