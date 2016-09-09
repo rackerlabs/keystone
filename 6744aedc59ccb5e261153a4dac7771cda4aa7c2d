@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_803bd99b",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-09T18:59:55Z",
+      "side": 1,
+      "message": "You definitely shouldn\u0027t have to do this .all(), because when you take the length of the result, it actually has to fetch ALL the revocation events from the database, just to see if there are any there. I can\u0027t quite figure out how you might have ended up with a DBError, other than maybe it\u0027s related to using an EXISTS subquery in L130? You could probably get away with first() instead, although I honestly don\u0027t know if that would be more or less performant.\n\n  http://docs.sqlalchemy.org/en/latest/orm/query.html#sqlalchemy.orm.query.Query.first\n\nLastly, if you can\u0027t write a test to illustrate how this DBError would be hit, then this code should definitely be removed.",
+      "revId": "6744aedc59ccb5e261153a4dac7771cda4aa7c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
