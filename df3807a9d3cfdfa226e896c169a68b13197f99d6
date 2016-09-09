@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_0d954f3f",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-09T14:43:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_13af5c95",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_13a91ce0",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 9
@@ -138,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_0dce2f83",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-09T14:43:53Z",
+      "side": 1,
+      "message": "like exists() the method is part of SQL alchemy that checks if a row column has data in it or not.",
+      "parentUuid": "9a89bdaa_13a91ce0",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_88733b15",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 9
@@ -149,6 +185,24 @@
       "writtenOn": "2016-09-08T21:32:40Z",
       "side": 1,
       "message": "the query is only evaluated in L122 when you call .exists(), so you can build the query dynamically, you don\u0027t have to build it all at once. So, this could be simplified to:\n\n  q \u003d session.query(RevocationEvent)                                 \n\n  if or1:\n      q \u003d q.filter(or_(*or1))\n\n  if or2:\n      ...",
+      "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_4dc83775",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-09T14:43:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a89bdaa_88733b15",
       "revId": "df3807a9d3cfdfa226e896c169a68b13197f99d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
