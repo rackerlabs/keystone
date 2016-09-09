@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_70787a90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:19:32Z",
+      "side": 1,
+      "message": "this is correct, see our tests:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_identity.py#L396-L401\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L513-L517\n\nplease remove this from the commit message as it needs to be assertive on what it is doing",
+      "range": {
+        "startLine": 10,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 72
+      },
+      "revId": "d1f9762c4aca37243924ce5222855acebe8cdebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_6f033d0e",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:19:32Z",
+      "side": 1,
+      "message": "this gives a 404",
+      "range": {
+        "startLine": 29,
+        "startChar": 16,
+        "endLine": 29,
+        "endChar": 77
+      },
+      "revId": "d1f9762c4aca37243924ce5222855acebe8cdebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_0f3471dc",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:19:32Z",
+      "side": 1,
+      "message": "not sure this buys anything, the section title (List groups) alreaady appears in the rendered docs. samne for others below where the title is clear\n\nhowever as this is just following the pattern here, I am okay with this as it is",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 13
+      },
+      "revId": "d1f9762c4aca37243924ce5222855acebe8cdebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_6f789d90",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:19:32Z",
+      "side": 1,
+      "message": "this also gives 404",
+      "range": {
+        "startLine": 302,
+        "startChar": 16,
+        "endLine": 302,
+        "endChar": 82
+      },
+      "revId": "d1f9762c4aca37243924ce5222855acebe8cdebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
