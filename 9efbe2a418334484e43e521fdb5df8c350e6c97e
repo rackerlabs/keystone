@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_eee66643",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-09T14:15:43Z",
+      "side": 1,
+      "message": "so if we\u0027re going to completely redo the status codes, then we should probably remove these 3. i\u0027m not sure where they came from, or why the initial API dump had them, but keystone does not emit these error codes.\n\nalso remove 415",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 8
+      },
+      "revId": "9efbe2a418334484e43e521fdb5df8c350e6c97e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_3500a4aa",
         "filename": "api-ref/source/v3/status.yaml",
         "patchSetId": 1
