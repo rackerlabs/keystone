@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_95e7b0ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:15:57Z",
+      "side": 1,
+      "message": "this is correct, the controller method doesn\u0027t return anything, see https://github.com/openstack/keystone/blob/a5264d7/keystone/identity/controllers.py#L271-L286\n\n\nplease remove this from the commit message, as the change should be assertive on what it\u0027s doing",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 44
+      },
+      "revId": "75db440669e220f1e3f35d358aec385792f7599e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
