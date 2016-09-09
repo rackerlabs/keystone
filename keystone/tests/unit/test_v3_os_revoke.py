@@ -73,7 +73,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
     def test_revoked_token_in_list(self):
         user_id = uuid.uuid4().hex
-        expires_at = provider.default_expire_time()
+        expires_at = provider.default_expire_time().replace(microsecond=0)
         sample = self._blank_event()
         sample['user_id'] = six.text_type(user_id)
         sample['expires_at'] = six.text_type(utils.isotime(expires_at))
@@ -88,7 +88,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         project_id = uuid.uuid4().hex
         sample = dict()
         sample['project_id'] = six.text_type(project_id)
-        before_time = timeutils.utcnow()
+        before_time = timeutils.utcnow().replace(microsecond=0)
         self.revoke_api.revoke(
             revoke_model.RevokeEvent(project_id=project_id))
 
@@ -101,7 +101,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         domain_id = uuid.uuid4().hex
         sample = dict()
         sample['domain_id'] = six.text_type(domain_id)
-        before_time = timeutils.utcnow()
+        before_time = timeutils.utcnow().replace(microsecond=0)
         self.revoke_api.revoke(
             revoke_model.RevokeEvent(domain_id=domain_id))
 
