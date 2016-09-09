@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_500456c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:21:19Z",
+      "side": 1,
+      "message": "could you split this change at least in:\n\n1. reorder sections \u0026 subsections\n2. reformat status codes..\n\nthe change is hard to review as it is because so much code is moved around and changed at the same time",
+      "revId": "673ef512bfc3a786b13f1d64f3a1519f54bcac8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
