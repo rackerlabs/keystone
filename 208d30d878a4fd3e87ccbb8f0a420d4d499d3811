@@ -33,6 +33,24 @@
       "revId": "208d30d878a4fd3e87ccbb8f0a420d4d499d3811",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a7d009f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-09T12:57:20Z",
+      "side": 1,
+      "message": "looks like testttools overrides it? http://testtools.readthedocs.io/en/latest/api.html#testtools.TestCase.assertIs",
+      "parentUuid": "9a89bdaa_90989e6c",
+      "revId": "208d30d878a4fd3e87ccbb8f0a420d4d499d3811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
