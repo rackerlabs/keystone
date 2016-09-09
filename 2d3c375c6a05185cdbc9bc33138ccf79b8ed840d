@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_15dba01c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-09-09T12:12:11Z",
+      "side": 1,
+      "message": "can this be done in a separate patch so it will be easier to review ?\n\nwhen you use \u0027also\u0027, \u0027in addition\u0027, it may be a signal that the change can be decoupled",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 35
+      },
+      "revId": "2d3c375c6a05185cdbc9bc33138ccf79b8ed840d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
