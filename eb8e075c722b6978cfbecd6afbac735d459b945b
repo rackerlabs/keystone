@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_faf0cd68",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-09T20:30:03Z",
+      "side": 1,
+      "message": "technically, set to true not TRUE",
+      "range": {
+        "startLine": 61,
+        "startChar": 68,
+        "endLine": 61,
+        "endChar": 72
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_7a72fde4",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-09T20:30:03Z",
+      "side": 1,
+      "message": "`keystone.conf [identity] domain_specific_drivers_enabled`",
+      "range": {
+        "startLine": 61,
+        "startChar": 21,
+        "endLine": 61,
+        "endChar": 52
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
