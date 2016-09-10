@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_e39ae56d",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-10T02:26:10Z",
+      "side": 1,
+      "message": "include a 409 in this list",
+      "range": {
+        "startLine": 106,
+        "startChar": 3,
+        "endLine": 106,
+        "endChar": 8
+      },
+      "revId": "998bd09cd6b683e695c1b85824df827bfab8f470",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_83959941",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-10T02:26:10Z",
+      "side": 1,
+      "message": "a conflict error will not be raised on delete",
+      "range": {
+        "startLine": 304,
+        "startChar": 5,
+        "endLine": 304,
+        "endChar": 8
+      },
+      "revId": "998bd09cd6b683e695c1b85824df827bfab8f470",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_a390dd4f",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-10T02:26:10Z",
+      "side": 1,
+      "message": "a conflict error will not be raised on delete",
+      "range": {
+        "startLine": 412,
+        "startChar": 5,
+        "endLine": 412,
+        "endChar": 8
+      },
+      "revId": "998bd09cd6b683e695c1b85824df827bfab8f470",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
