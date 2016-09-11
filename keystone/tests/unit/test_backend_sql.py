@@ -289,6 +289,7 @@ class SqlIdentity(SqlTests,
 
         # assign a new ID with the same name, but this time in uppercase
         ref['name'] = ref['name'].upper()
+        ref['id'] = uuid.uuid4().hex
         self.identity_api.create_user(ref)
 
     def test_create_project_case_sensitivity(self):
@@ -352,7 +353,6 @@ class SqlIdentity(SqlTests,
         arbitrary_value = uuid.uuid4().hex
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user[arbitrary_key] = arbitrary_value
-        del user["id"]
         ref = self.identity_api.create_user(user)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('password'))

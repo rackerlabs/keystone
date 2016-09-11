@@ -341,13 +341,6 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
         return config_files
 
-    def new_user_ref(self, domain_id, project_id=None, **kwargs):
-        ref = unit.new_user_ref(domain_id=domain_id, project_id=project_id,
-                                **kwargs)
-        if 'id' not in kwargs:
-            del ref['id']
-        return ref
-
     def get_user_enabled_vals(self, user):
         user_dn = (
             self.identity_api.driver.user._id_to_dn_string(user['id']))
@@ -369,7 +362,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.assertEqual("ou=Users,%s" % CONF.ldap.suffix, user_api.tree_dn)
 
     def test_configurable_allowed_user_actions(self):
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.identity_api.get_user(user['id'])
 
@@ -388,7 +381,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         driver.user.allow_update = False
         driver.user.allow_delete = False
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
                           user)
@@ -497,7 +490,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         new_domain = self._get_domain_fixture()
         new_group = unit.new_group_ref(domain_id=new_domain['id'])
         new_group = self.identity_api.create_group(new_group)
-        new_user = self.new_user_ref(domain_id=new_domain['id'])
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
         new_user = self.identity_api.create_user(new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -538,7 +531,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         new_domain = self._get_domain_fixture()
         new_group = unit.new_group_ref(domain_id=new_domain['id'],)
         new_group = self.identity_api.create_group(new_group)
-        new_user = self.new_user_ref(domain_id=new_domain['id'])
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
         new_user = self.identity_api.create_user(new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -572,7 +565,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
     def test_list_projects_for_user(self):
         domain = self._get_domain_fixture()
-        user1 = self.new_user_ref(domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         user1 = self.identity_api.create_user(user1)
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertThat(user_projects, matchers.HasLength(0))
@@ -589,7 +582,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.assertThat(user_projects, matchers.HasLength(2))
 
         # Now, check number of projects through groups
-        user2 = self.new_user_ref(domain_id=domain['id'])
+        user2 = unit.new_user_ref(domain_id=domain['id'])
         user2 = self.identity_api.create_user(user2)
 
         group1 = unit.new_group_ref(domain_id=domain['id'])
@@ -618,7 +611,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
     def test_list_projects_for_user_and_groups(self):
         domain = self._get_domain_fixture()
         # Create user1
-        user1 = self.new_user_ref(domain_id=domain['id'])
+        user1 = unit.new_user_ref(domain_id=domain['id'])
         user1 = self.identity_api.create_user(user1)
 
         # Create new group for user1
@@ -652,7 +645,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
     def test_list_projects_for_user_with_grants(self):
         domain = self._get_domain_fixture()
-        new_user = self.new_user_ref(domain_id=domain['id'])
+        new_user = unit.new_user_ref(domain_id=domain['id'])
         new_user = self.identity_api.create_user(new_user)
 
         group1 = unit.new_group_ref(domain_id=domain['id'])
@@ -686,7 +679,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
     def test_list_role_assignments_unfiltered(self):
         new_domain = self._get_domain_fixture()
-        new_user = self.new_user_ref(domain_id=new_domain['id'])
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
         new_user = self.identity_api.create_user(new_user)
         new_group = unit.new_group_ref(domain_id=new_domain['id'])
         new_group = self.identity_api.create_group(new_group)
@@ -714,7 +707,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.load_fixtures(default_fixtures)
 
         new_domain = self._get_domain_fixture()
-        new_user = self.new_user_ref(domain_id=new_domain['id'])
+        new_user = unit.new_user_ref(domain_id=new_domain['id'])
         new_user = self.identity_api.create_user(new_user)
         new_project = unit.new_project_ref(domain_id=new_domain['id'])
         self.resource_api.create_project(new_project['id'], new_project)
@@ -735,7 +728,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
@@ -760,13 +753,15 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         group_id = self.identity_api.create_group(group)['id']
 
         # Create a couple of users and add them to the group.
-        user = dict(name=uuid.uuid4().hex,
+        user = dict(id=uuid.uuid4().hex,
+                    name=uuid.uuid4().hex,
                     domain_id=CONF.identity.default_domain_id)
         user_1_id = self.identity_api.create_user(user)['id']
 
         self.identity_api.add_user_to_group(user_1_id, group_id)
 
-        user = dict(name=uuid.uuid4().hex,
+        user = dict(id=uuid.uuid4().hex,
+                    name=uuid.uuid4().hex,
                     domain_id=CONF.identity.default_domain_id)
         user_2_id = self.identity_api.create_user(user)['id']
 
@@ -805,7 +800,8 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         group_id = self.identity_api.create_group(group)['id']
 
         # Create a user
-        user = dict(name=uuid.uuid4().hex,
+        user = dict(id=uuid.uuid4().hex,
+                    name=uuid.uuid4().hex,
                     domain_id=CONF.identity.default_domain_id)
         user_id = self.identity_api.create_user(user)['id']
 
@@ -834,7 +830,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.assertIn(domain2['id'], domain_ids)
 
     def test_authenticate_requires_simple_bind(self):
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 user['id'])
@@ -927,7 +923,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
             CONF.identity.default_domain_id)
         driver.user.attribute_ignore = ['enabled', 'email',
                                         'tenants', 'tenantId']
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
                                  project_id='maps_to_none')
 
         # If this doesn't raise, then the test is successful.
@@ -940,7 +936,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         boolean_strings = ['TRUE', 'FALSE', 'true', 'false', 'True', 'False',
                            'TrUe' 'FaLse']
         for name in boolean_strings:
-            user = self.new_user_ref(name=name,
+            user = unit.new_user_ref(name=name,
                                      domain_id=CONF.identity.default_domain_id)
             user_ref = self.identity_api.create_user(user)
             user_info = self.identity_api.get_user(user_ref['id'])
@@ -960,7 +956,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         driver.user.attribute_ignore = ['enabled', 'email',
                                         'tenants', 'tenantId']
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
         user_ref = self.identity_api.create_user(user)
 
@@ -980,7 +976,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         # Since we want to fake up this special ID, we'll squirt this
         # direct into the driver and bypass the manager layer.
         user_id = u'Doe, John'
-        user = self.new_user_ref(id=user_id,
+        user = unit.new_user_ref(id=user_id,
                                  domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.driver.create_user(user_id, user)
 
@@ -1023,7 +1019,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         # Since we want to fake up this special ID, we'll squirt this
         # direct into the driver and bypass the manager layer
         user_id = u'Doe, John'
-        user = self.new_user_ref(id=user_id,
+        user = unit.new_user_ref(id=user_id,
                                  domain_id=CONF.identity.default_domain_id)
         self.identity_api.driver.create_user(user_id, user)
 
@@ -1194,7 +1190,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         role1 = unit.new_role_ref()
         self.role_api.create_role(role1['id'], role1)
 
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user1 = self.identity_api.create_user(user1)
 
         self.assignment_api.add_role_to_user_and_project(
@@ -1231,7 +1227,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
         user_ref = self.identity_api.create_user(user)
 
@@ -1278,12 +1274,12 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
-        user2 = self.new_user_ref(enabled=False,
+        user2 = unit.new_user_ref(enabled=False,
                                   domain_id=CONF.identity.default_domain_id)
 
-        user3 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user3 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
         # Ensure that the LDAP attribute is False for a newly created
         # enabled user.
@@ -1512,7 +1508,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
             group='ldap',
             user_additional_attribute_mapping=['description:name'])
         self.load_backends()
-        user = self.new_user_ref(name='EXTRA_ATTRIBUTES',
+        user = unit.new_user_ref(name='EXTRA_ATTRIBUTES',
                                  password='extra',
                                  domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
@@ -1525,7 +1521,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
             user_description_attribute='displayName')
         self.load_backends()
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
                                  displayName=uuid.uuid4().hex)
         description = user['displayName']
         user = self.identity_api.create_user(user)
@@ -1543,7 +1539,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
             user_additional_attribute_mapping=['description:description'])
         self.load_backends()
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id,
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id,
                                  description=uuid.uuid4().hex)
         description = user['description']
         user = self.identity_api.create_user(user)
@@ -1725,7 +1721,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
             self.role_api.create_role(role['id'], role)
             role_list.append(role)
 
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user1 = self.identity_api.create_user(user1)
         project1 = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
@@ -1822,7 +1818,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
 
     def test_list_groups_for_user_no_dn(self):
         # Create a test user.
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         # Create some test groups and add the test user as a member.
         domain = self._get_domain_fixture()
@@ -1847,7 +1843,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
             CONF.identity.default_domain_id)
         driver.user.id_attr = 'mail'
 
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user)
         user_ref = self.identity_api.get_user(user['id'])
         # 'email' attribute should've created because it is also being used
@@ -2020,7 +2016,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def test_user_crud(self, mock_deprecator):
         # NOTE(stevemar): As of the Mitaka release, we now check for calls that
         # the LDAP write functionality has been deprecated.
-        user_dict = self.new_user_ref(
+        user_dict = unit.new_user_ref(
             domain_id=CONF.identity.default_domain_id)
         user = self.identity_api.create_user(user_dict)
         args, _kwargs = mock_deprecator.call_args
@@ -2051,7 +2047,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def test_delete_user_group_cleanup(self):
         domain = self._get_domain_fixture()
         # setup: create user
-        user_dict = self.new_user_ref(domain_id=domain['id'])
+        user_dict = unit.new_user_ref(domain_id=domain['id'])
         user = self.identity_api.create_user(user_dict)
         # setup: add user to 3 groups
         group_names = []
@@ -2118,12 +2114,12 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
-        user2 = self.new_user_ref(enabled=False,
+        user2 = unit.new_user_ref(enabled=False,
                                   domain_id=CONF.identity.default_domain_id)
 
-        user3 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user3 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
         # Ensure that the enabled LDAP attribute is not set for a
         # newly created enabled user.
@@ -2319,9 +2315,9 @@ class LdapIdentityWithMapping(
 
         """
         initial_mappings = len(mapping_sql.list_id_mappings())
-        user1 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user1 = self.identity_api.create_user(user1)
-        user2 = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user2 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user2 = self.identity_api.create_user(user2)
         mappings = mapping_sql.list_id_mappings()
         self.assertEqual(initial_mappings + 2, len(mappings))

@@ -237,7 +237,8 @@ class BootStrap(BaseApp):
                 LOG.info(_LI('Enabled user %s.'), self.username)
         except exception.UserNotFound:
             user = self.identity_manager.create_user(
-                user_ref={'name': self.username,
+                user_ref={'id': uuid.uuid4().hex,
+                          'name': self.username,
                           'enabled': True,
                           'domain_id': default_domain['id'],
                           'password': self.password

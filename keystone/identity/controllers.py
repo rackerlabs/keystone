@@ -14,6 +14,8 @@
 
 """Workflow Logic the Identity service."""
 
+import uuid
+
 from oslo_log import log
 
 from keystone.common import controller
@@ -75,8 +77,8 @@ class User(controller.V2Controller):
 
         self.resource_api.ensure_default_domain_exists()
 
-        # The manager layer will generate the unique ID for users
         user_ref = self._normalize_domain_id(request, user.copy())
+        user_ref['id'] = uuid.uuid4().hex
         initiator = notifications._get_request_audit_info(request.context_dict)
         new_user_ref = self.v3_to_v2_user(
             self.identity_api.create_user(user_ref, initiator))
@@ -210,8 +212,7 @@ class UserV3(controller.V3Controller):
     @controller.protected()
     def create_user(self, request, user):
         validation.lazy_validate(schema.user_create, user)
-        # The manager layer will generate the unique ID for users
-        ref = self._normalize_dict(user)
+        ref = self._assign_unique_id(self._normalize_dict(user))
         ref = self._normalize_domain_id(request, ref)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_user(ref, initiator)
@@ -303,8 +304,7 @@ class GroupV3(controller.V3Controller):
     @controller.protected()
     def create_group(self, request, group):
         validation.lazy_validate(schema.group_create, group)
-        # The manager layer will generate the unique ID for groups
-        ref = self._normalize_dict(group)
+        ref = self._assign_unique_id(self._normalize_dict(group))
         ref = self._normalize_domain_id(request, ref)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_group(ref, initiator)

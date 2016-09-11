@@ -127,6 +127,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
 
     def _get_user_dict(self, password):
         user = {
+            'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
@@ -245,6 +246,7 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
         self.config_fixture.config(group='security_compliance',
                                    unique_last_password_count=self.max_cnt)
         user = {
+            'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': 'default',
             'enabled': True,
@@ -256,6 +258,7 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
 
     def _create_user(self, password):
         user = {
+            'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': 'default',
             'enabled': True,
@@ -292,6 +295,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         # create user
         self.password = uuid.uuid4().hex
         user_dict = {
+            'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
@@ -552,6 +556,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
 
     def _create_new_user(self, password):
         user = {
+            'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
