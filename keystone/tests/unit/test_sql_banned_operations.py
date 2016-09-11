@@ -241,7 +241,14 @@ class TestKeystoneExpandSchemaMigrations(
         # timestamp to datetime and updates the initial value in the contract
         # phase. Adding an exception here to pass expand banned tests,
         # otherwise fails.
-        4
+        4,
+        # Migration 10 remove the stale data from trust table, in order to
+        # enforce foreign key constraint. Previously, the trust could
+        # reference with a project that has been removed, where the constraint
+        # cannot be enforced with.
+        # Those removed entry will never be valid any longer, there should no
+        # access to those data, and likely won't break rolling upgrade process.
+        10
     ]
 
     def setUp(self):
