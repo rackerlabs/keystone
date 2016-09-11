@@ -1767,6 +1767,90 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                       'type': 'cert'}
         self.insert_dict(session, credential_table_name, credential)
 
+    def test_trust_fks_on_delete_cascade_enforced(self):
+        if self.engine.name == 'sqlite':
+            self.skipTest('sqlite backend does not support foreign keys')
+
+        self.expand(4)
+        self.migrate(4)
+        self.contract(4)
+
+        session = self.sessionmaker()
+
+        trust_table = sqlalchemy.Table('trust', self.metadata, autoload=True)
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        project_table = sqlalchemy.Table('project', self.metadata,
+                                         autoload=True)
+
+        # create a project.
+        NULL_DOMAIN_ID = '<<keystone.domain.root>>'
+        project_ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'enabled': True,
+            'domain_id': NULL_DOMAIN_ID,
+            'is_domain': False
+        }
+        self.insert_dict(session, 'project', project_ref)
+        # create a user as trustor.
+        trustor_ref = {
+            'id': uuid.uuid4().hex,
+            'default_project_id': uuid.uuid4().hex,
+            'enabled': True
+        }
+        self.insert_dict(session, 'user', trustor_ref)
+        # create a user as trustee.
+        trustee_ref = {
+            'id': uuid.uuid4().hex,
+            'default_project_id': uuid.uuid4().hex,
+            'enabled': True
+        }
+        self.insert_dict(session, 'user', trustee_ref)
+        # create a trust
+        trust_ref = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': trustor_ref['id'],
+            'trustee_user_id': trustee_ref['id'],
+            'impersonation': True,
+            'project_id': project_ref['id']
+        }
+        self.insert_dict(session, 'trust', trust_ref)
+
+        # delete the trustor will delete the trust.
+        trust_list = session.query(trust_table).filter_by(
+            trustor_user_id=trustor_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(1))
+        session.execute(
+            user_table.delete().where(user_table.c.id == trustor_ref['id']))
+        trust_list = session.query(trust_table).filter_by(
+            trustor_user_id=trustor_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(0))
+
+        # delete the trustee will delete the trust.
+        self.insert_dict(session, 'user', trustor_ref)
+        self.insert_dict(session, 'trust', trust_ref)
+        trust_list = session.query(trust_table).filter_by(
+            trustee_user_id=trustee_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(1))
+        session.execute(
+            user_table.delete().where(user_table.c.id == trustee_ref['id']))
+        trust_list = session.query(trust_table).filter_by(
+            trustee_user_id=trustee_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(0))
+
+        # delete the project will delete the trust.
+        self.insert_dict(session, 'user', trustee_ref)
+        self.insert_dict(session, 'trust', trust_ref)
+        trust_list = session.query(trust_table).filter_by(
+            project_id=project_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(1))
+        session.execute(
+            project_table.delete().where(
+                project_table.c.id == project_ref['id']))
+        trust_list = session.query(trust_table).filter_by(
+            project_id=project_ref['id']).all()
+        self.assertThat(trust_list, matchers.HasLength(0))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
