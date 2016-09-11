@@ -744,7 +744,11 @@ class TestCase(BaseTestCase):
                 except exception.UserNotFound:
                     pass
 
-                # For users, the manager layer will generate the ID
+                # TODO(davechen): The ID loaded from fixture is str while
+                # the ID of fernet token after disassemble is binary, need
+                # decode the ID along with other attributes if there is in
+                # token validation process.
+                user_copy['id'] = uuid.uuid4().hex
                 user_copy = self.identity_api.create_user(user_copy)
                 # Our tests expect that the password is still in the user
                 # record so that they can reference it, so put it back into

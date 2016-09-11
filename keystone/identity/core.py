@@ -17,7 +17,6 @@
 import functools
 import os
 import threading
-import uuid
 
 from oslo_config import cfg
 from oslo_log import log
@@ -870,10 +869,6 @@ class Manager(manager.Manager):
         domain_id = user_ref['domain_id']
         driver = self._select_identity_driver(domain_id)
         user = self._clear_domain_id_if_domain_unaware(driver, user)
-        # Generate a local ID - in the future this might become a function of
-        # the underlying driver so that it could conform to rules set down by
-        # that particular driver type.
-        user['id'] = uuid.uuid4().hex
         ref = driver.create_user(user['id'], user)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
@@ -1012,10 +1007,6 @@ class Manager(manager.Manager):
         domain_id = group_ref['domain_id']
         driver = self._select_identity_driver(domain_id)
         group = self._clear_domain_id_if_domain_unaware(driver, group)
-        # Generate a local ID - in the future this might become a function of
-        # the underlying driver so that it could conform to rules set down by
-        # that particular driver type.
-        group['id'] = uuid.uuid4().hex
         group['name'] = clean.group_name(group['name'])
         ref = driver.create_group(group['id'], group)
 
