@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_6835c0d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-11T17:16:52Z",
+      "side": 1,
+      "message": "not really. uuid4 is very unique and we always assume that they are unique enough to not care about such things.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 58
+      },
+      "revId": "9f2b6ad841ed5cce2912d77c5507610654c244dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
