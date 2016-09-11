@@ -34,10 +34,18 @@ class TrustModel(sql.ModelBase, sql.DictBase):
                   'remaining_uses', 'deleted_at']
     id = sql.Column(sql.String(64), primary_key=True)
     # user id of owner
-    trustor_user_id = sql.Column(sql.String(64), nullable=False,)
+    trustor_user_id = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('user.id', ondelete="CASCADE"),
+        nullable=False)
     # user_id of user allowed to consume this preauth
-    trustee_user_id = sql.Column(sql.String(64), nullable=False)
-    project_id = sql.Column(sql.String(64))
+    trustee_user_id = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('user.id', ondelete="CASCADE"),
+        nullable=False)
+    project_id = sql.Column(
+        sql.String(64),
+        sql.ForeignKey('project.id', ondelete="CASCADE"))
     impersonation = sql.Column(sql.Boolean, nullable=False)
     deleted_at = sql.Column(sql.DateTime)
     expires_at = sql.Column(sql.DateTime)
