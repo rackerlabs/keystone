@@ -73,10 +73,6 @@ class IdentityTests(object):
     def test_authenticate_and_get_roles_no_metadata(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
 
-        # Remove user id. It is ignored by create_user() and will break the
-        # subset test below.
-        del user['id']
-
         new_user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 new_user['id'])
@@ -89,6 +85,10 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         user.pop('password')
+
+        # Remove user id. It is ignored by create_user() and will break the
+        # subset test below.
+        del user['id']
         self.assertDictContainsSubset(user, user_ref)
         role_list = self.assignment_api.get_roles_for_user_and_project(
             new_user['id'], self.tenant_baz['id'])
@@ -893,10 +893,10 @@ class IdentityTests(object):
     def test_user_crud(self):
         user_dict = unit.new_user_ref(
             domain_id=CONF.identity.default_domain_id)
-        del user_dict['id']
         user = self.identity_api.create_user(user_dict)
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
+        del user_dict['id']
         user_ref_dict = {x: user_ref[x] for x in user_ref}
         self.assertDictContainsSubset(user_dict, user_ref_dict)
 
