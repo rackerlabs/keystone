@@ -210,8 +210,7 @@ class UserV3(controller.V3Controller):
     @controller.protected()
     def create_user(self, request, user):
         validation.lazy_validate(schema.user_create, user)
-        # The manager layer will generate the unique ID for users
-        ref = self._normalize_dict(user)
+        ref = self._assign_unique_id(self._normalize_dict(user))
         ref = self._normalize_domain_id(request, ref)
         initiator = notifications._get_request_audit_info(request.context_dict)
         ref = self.identity_api.create_user(ref, initiator)

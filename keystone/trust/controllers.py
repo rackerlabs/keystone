@@ -12,8 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import uuid
-
 from oslo_utils import timeutils
 
 from keystone import assignment
@@ -136,9 +134,9 @@ class TrustV3(controller.V3Controller):
         self._require_trustor_has_role_in_project(trust)
         trust['expires_at'] = self._parse_expiration_date(
             trust.get('expires_at'))
-        trust_id = uuid.uuid4().hex
         initiator = notifications._get_request_audit_info(request.context_dict)
-        new_trust = self.trust_api.create_trust(trust_id, trust,
+        trust = self._assign_unique_id(self._normalize_dict(trust))
+        new_trust = self.trust_api.create_trust(trust['id'], trust,
                                                 normalized_roles,
                                                 redelegated_trust,
                                                 initiator)
