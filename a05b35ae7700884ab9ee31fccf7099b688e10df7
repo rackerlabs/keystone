@@ -45,6 +45,23 @@
       "revId": "a05b35ae7700884ab9ee31fccf7099b688e10df7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_561300b8",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-12T21:57:45Z",
+      "side": 1,
+      "message": "This is going to fail with the UUID provider because for some reason token_ref.valid is False when you try to retrieve the token from the backend (which obviously doesn\u0027t happen with Fernet): \n\nhttps://github.com/openstack/keystone/blob/e10305da58cc5160c75f259a10eb6fff92e0d1de/keystone/token/persistence/backends/sql.py#L91\n\n\nThis causes a TokenNotFound exception to be raised https://github.com/openstack/keystone/blob/e10305da58cc5160c75f259a10eb6fff92e0d1de/keystone/token/persistence/backends/sql.py#L92  which is then excepted here - https://github.com/openstack/keystone/blob/e10305da58cc5160c75f259a10eb6fff92e0d1de/keystone/token/controllers.py#L182 and raised as an Unauthorized.",
+      "revId": "a05b35ae7700884ab9ee31fccf7099b688e10df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
