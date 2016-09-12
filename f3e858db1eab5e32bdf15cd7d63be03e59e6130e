@@ -22,6 +22,30 @@
       "revId": "f3e858db1eab5e32bdf15cd7d63be03e59e6130e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_3405b8c1",
+        "filename": "keystone/common/fernet_key_store/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 21465
+      },
+      "writtenOn": "2016-09-12T11:51:58Z",
+      "side": 1,
+      "message": "Done. Thank you!",
+      "parentUuid": "9a89bdaa_e460f0d1",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 66
+      },
+      "revId": "f3e858db1eab5e32bdf15cd7d63be03e59e6130e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
