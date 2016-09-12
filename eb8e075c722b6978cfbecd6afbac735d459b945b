@@ -163,6 +163,23 @@
       "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8eae7096",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-12T12:38:17Z",
+      "side": 1,
+      "message": "This comment should really describe what/why they check is being made. After reading it I\u0027m not really sure what the point of the check is, but the code implies \"If you have [setting] on then your [setting] directory must exist and not be empty.\"\n\nAdditionally, should this check the format of the files?",
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
