@@ -45,6 +45,30 @@
       "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8204987e",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 21513
+      },
+      "writtenOn": "2016-09-12T07:41:06Z",
+      "side": 1,
+      "message": "in my opinion，to True better then true，besides, why the author use the capital form of the word. The python programmer is True.",
+      "parentUuid": "9a89bdaa_faf0cd68",
+      "range": {
+        "startLine": 61,
+        "startChar": 68,
+        "endLine": 61,
+        "endChar": 72
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
