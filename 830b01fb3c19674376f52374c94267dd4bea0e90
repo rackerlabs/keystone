@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_1350e05d",
+        "filename": "api-ref/source/v3/projects.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-12T07:45:16Z",
+      "side": 1,
+      "message": "This is not implemented yet, only the code in manager got in, no route defined, the code in manager has not merged yet.",
+      "range": {
+        "startLine": 317,
+        "startChar": 18,
+        "endLine": 317,
+        "endChar": 57
+      },
+      "revId": "830b01fb3c19674376f52374c94267dd4bea0e90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
