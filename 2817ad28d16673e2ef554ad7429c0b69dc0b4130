@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_215af32a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-12T00:36:37Z",
+      "side": 1,
+      "message": "Please wrap lines at 79 width.  See https://wiki.openstack.org/wiki/GitCommitMessages",
+      "range": {
+        "startLine": 9,
+        "startChar": 70,
+        "endLine": 9,
+        "endChar": 74
+      },
+      "revId": "2817ad28d16673e2ef554ad7429c0b69dc0b4130",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_c181474f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-12T00:36:37Z",
+      "side": 1,
+      "message": "Might want to include link: http://bugs.python.org/issue10627",
+      "revId": "2817ad28d16673e2ef554ad7429c0b69dc0b4130",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
