@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_a7a44eb9",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-12T07:02:28Z",
+      "side": 1,
+      "message": "This is relationship, this is not the url that you access directly.\n\nWe keep it as is for backward compatibility.\nsee: https://github.com/openstack/keystone/blob/master/keystone/common/router.py#L67",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 12
+      },
+      "revId": "a75126ea83c70516075b03de00f443f89c7e9f7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
