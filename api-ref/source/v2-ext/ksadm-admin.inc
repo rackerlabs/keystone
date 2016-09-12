@@ -23,8 +23,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
-   - enabled: enabled_user
+   - userId: user_id_path
+   - enabled: user_enabled
 
 Request Example
 ---------------
@@ -37,11 +37,11 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - email: email
-   - enabled: enabled
-   - id: id
-   - name: name
-   - username: username
+   - email: user_email
+   - enabled: user_enabled
+   - id: user_id_response
+   - name: tenant_name
+   - username: user_name
 
 Response Example
 ----------------
@@ -65,8 +65,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
-   - password: new_password
+   - userId: user_id_path
+   - password: user_new_password
 
 Request Example
 ---------------
@@ -79,11 +79,11 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - enabled: enabled
-   - email: email
-   - name: name
-   - id: id
-   - username: username
+   - enabled: user_enabled
+   - email: user_email
+   - name: tenant_name
+   - id: user_id_response
+   - username: user_name
 
 Response Example
 ----------------
@@ -95,7 +95,7 @@ Response Example
 Update user tenant
 ==================
 
-.. rest_method:: PUT /v2.0/users/{userId}/OS-KSADM/tenant
+.. rest_method:: PUT /v2.0/users/{userId}/OS-KSADM/tenantId
 
 Sets a user's tenant
 
@@ -108,8 +108,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
-   - tenantId: tenantId
+   - userId: user_id_path
+   - tenantId: tenant_id_path
 
 Request Example
 ---------------
@@ -122,12 +122,12 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - email: email
-   - enabled: enabled
-   - tenantId: tenantId
-   - id: id
-   - name: name
-   - username: username
+   - email: user_email
+   - enabled: user_enabled
+   - tenantId: tenant_id_response
+   - id: user_id_response
+   - name: tenant_name
+   - username: user_name
 
 Response Example
 ----------------
@@ -158,10 +158,10 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - Location: Location
-   - type: type
-   - description: description
-   - name: name
-   - id: id
+   - type: service_type
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 
 List services (admin extension)
@@ -179,10 +179,10 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
-   - description: description
-   - name: name
-   - id: id
+   - type: service_type
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -206,17 +206,17 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - serviceId: serviceId
+   - serviceId: service_id_path
 
 Response Parameters
 -------------------
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
-   - description: description
-   - name: name
-   - id: id
+   - type: service_type
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -240,10 +240,10 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - type: type
-   - description: description
-   - name: name
-   - id: id
+   - type: service_type
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -267,7 +267,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - serviceId: serviceId
+   - serviceId: service_id_path
 
 
 Create a role
@@ -309,11 +309,11 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - roles_links: roles_links
+   - role_links: role_links
    - roles: roles
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
@@ -337,7 +337,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - roleId: roleId
+   - roleId: role_id_path
 
 Response Parameters
 -------------------
@@ -345,9 +345,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - Location: Location
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
@@ -359,7 +359,7 @@ Response Example
 Show role information by name
 =============================
 
-.. rest_method::  GET /v2.0/OS-KSADM/roles/{role_name}
+.. rest_method::  GET /v2.0/OS-KSADM/roles/{roleName}
 
 Shows information for a role, by name.
 
@@ -372,9 +372,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - Location: Location
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
@@ -398,7 +398,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - roleId: roleId
+   - roleId: role_id_path
 
 
 Grant roles to user on tenant
@@ -416,9 +416,9 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
-   - roleId: roleId
-   - tenantId: tenantId
+   - userId: user_id_path
+   - roleId: role_id_path
+   - tenantId: tenant_id_path
 
 
 Revoke role from user on tenant
@@ -436,6 +436,6 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - userId: userId
-   - roleId: roleId
-   - tenantId: tenantId
+   - userId: user_id_path
+   - roleId: role_id_path
+   - tenantId: tenant_id_path
