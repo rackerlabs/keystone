@@ -69,6 +69,100 @@
       "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_39e9311b",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-12T11:41:12Z",
+      "side": 1,
+      "message": "this is conf a file, any positive value should be fine. Although \"true\" is better for consistency.",
+      "parentUuid": "9a89bdaa_8204987e",
+      "range": {
+        "startLine": 61,
+        "startChar": 68,
+        "endLine": 61,
+        "endChar": 72
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_f9bee9fd",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-12T11:41:12Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a89bdaa_7a72fde4",
+      "range": {
+        "startLine": 61,
+        "startChar": 21,
+        "endLine": 61,
+        "endChar": 52
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_99123d08",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-12T11:41:12Z",
+      "side": 1,
+      "message": "s/Keystone/keystone\n\ntake a look at https://governance.openstack.org/reference/service-project-naming.html#service-name-guidelines",
+      "range": {
+        "startLine": 62,
+        "startChar": 14,
+        "endLine": 62,
+        "endChar": 22
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_7982d901",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-12T11:41:12Z",
+      "side": 1,
+      "message": "`[identity] domain_config_dir`",
+      "range": {
+        "startLine": 63,
+        "startChar": 4,
+        "endLine": 63,
+        "endChar": 26
+      },
+      "revId": "eb8e075c722b6978cfbecd6afbac735d459b945b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
