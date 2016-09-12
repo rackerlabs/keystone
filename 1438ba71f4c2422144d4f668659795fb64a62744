@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_4250b90a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-12T13:46:47Z",
+      "side": 1,
+      "message": "I don\u0027t think you are doing anything with response codes in this patch.",
+      "revId": "1438ba71f4c2422144d4f668659795fb64a62744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_4277d99e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-12T13:46:47Z",
+      "side": 1,
+      "message": "No reason to just repeat the same line here",
+      "revId": "1438ba71f4c2422144d4f668659795fb64a62744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
