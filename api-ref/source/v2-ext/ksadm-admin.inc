@@ -39,8 +39,8 @@ Response Parameters
 
    - email: email
    - enabled: enabled
-   - id: id
-   - name: name
+   - id: user_id
+   - name: tenant_name
    - username: username
 
 Response Example
@@ -81,8 +81,8 @@ Response Parameters
 
    - enabled: enabled
    - email: email
-   - name: name
-   - id: id
+   - name: tenant_name
+   - id: user_id
    - username: username
 
 Response Example
@@ -125,8 +125,8 @@ Response Parameters
    - email: email
    - enabled: enabled
    - tenantId: tenantId
-   - id: id
-   - name: name
+   - id: user_id
+   - name: tenant_name
    - username: username
 
 Response Example
@@ -159,9 +159,9 @@ Response Parameters
 
    - Location: Location
    - type: type
-   - description: description
-   - name: name
-   - id: id
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 
 List services (admin extension)
@@ -180,9 +180,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - type: type
-   - description: description
-   - name: name
-   - id: id
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -214,9 +214,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - type: type
-   - description: description
-   - name: name
-   - id: id
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -241,9 +241,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - type: type
-   - description: description
-   - name: name
-   - id: id
+   - description: service_description
+   - name: service_name
+   - id: service_id
 
 Response Example
 ----------------
@@ -311,9 +311,9 @@ Response Parameters
 
    - roles_links: roles_links
    - roles: roles
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
@@ -345,9 +345,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - Location: Location
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
@@ -372,9 +372,9 @@ Response Parameters
 .. rest_parameters:: parameters.yaml
 
    - Location: Location
-   - description: description
-   - name: name
-   - id: id
+   - description: role_description
+   - name: role_name
+   - id: role_id
 
 Response Example
 ----------------
