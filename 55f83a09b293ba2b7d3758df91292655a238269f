@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_bb84350b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-09-12T21:26:59Z",
+      "side": 1,
+      "message": "user[\u0027id\u0027] does not exist here since you took out the local generator.\nI think you could use \"user \u003d _assign_user_id(self._normalize_dict(user))\" to generate the entity id on the line above.",
+      "range": {
+        "startLine": 873,
+        "startChar": 8,
+        "endLine": 873,
+        "endChar": 50
+      },
+      "revId": "55f83a09b293ba2b7d3758df91292655a238269f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
