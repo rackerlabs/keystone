@@ -82,6 +82,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_8a2c7c03",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-12T22:24:19Z",
+      "side": 1,
+      "message": "The reason why this fails for UUID tokens is because the token_provider_api will run a callback when a user is disabled (which we\u0027re doing on line 1317) [0]. \n\nEven, if we could generate a UUID token in the future, it would probably still be considered invalid according to sql because the callback will look through the token table for all tokens with that user and set valid\u003dFalse. I think this means we\u0027ll always just get a 404 TokenNotFound from keystone/persistence/backends/sql.py.\n\nKnowing that, maybe this test really does only make sense for Fernet?\n\n[0] https://github.com/openstack/keystone/blob/e10305da58cc5160c75f259a10eb6fff92e0d1de/keystone/token/provider.py#L161",
+      "parentUuid": "9a89bdaa_eadfc837",
+      "revId": "a05b35ae7700884ab9ee31fccf7099b688e10df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_561300b8",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 2
