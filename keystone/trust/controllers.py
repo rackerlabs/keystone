@@ -40,6 +40,20 @@ class TrustV3(controller.V3Controller):
     collection_name = "trusts"
     member_name = "trust"
 
+    def __init__(self):
+        super(TrustV3, self).__init__()
+        notifications.register_event_callback(
+            notifications.ACTIONS.deleted, 'user',
+            self._on_user_delete)
+
+    def _on_user_delete(self, service, resource_type, operation,
+                        payload):
+        # NOTE(davechen): Only delete the user that is maintained by
+        # keystone will delete the related trust, since we don't know
+        # when a LDAP user or federation user is deleted.
+        user_id = payload['resource_info']
+        self.trust_api.delete_trust_by_user_id(user_id)
+
     @classmethod
     def base_url(cls, context, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
