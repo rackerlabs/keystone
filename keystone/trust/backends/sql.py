@@ -16,6 +16,7 @@ import time
 
 from oslo_utils import timeutils
 from six.moves import range
+from sqlalchemy import or_
 
 from keystone.common import sql
 from keystone import exception
@@ -181,3 +182,11 @@ class Trust(base.TrustDriverV8):
             if not trust_ref:
                 raise exception.TrustNotFound(trust_id=trust_id)
             trust_ref.deleted_at = timeutils.utcnow()
+
+    def delete_trust_by_user_id(self, user_id):
+        with sql.session_for_write() as session:
+            query = session.query(TrustModel)
+            trusts = query.filter(or_(TrustModel.trustor_user_id == user_id,
+                                      TrustModel.trustee_user_id == user_id))
+            for trust_ref in trusts:
+                trust_ref.deleted_at = timeutils.utcnow()

@@ -45,6 +45,17 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
+        notifications.register_event_callback(
+            notifications.ACTIONS.deleted, 'user',
+            self._on_user_delete)
+
+    def _on_user_delete(self, service, resource_type, operation,
+                        payload):
+        # NOTE(davechen): Only delete the user that is maintained by
+        # keystone will delete the related trust, since we don't know
+        # when a LDAP user or federation user is deleted.
+        user_id = payload['resource_info']
+        self.delete_trust_by_user_id(user_id)
 
     @staticmethod
     def _validate_redelegation(redelegated_trust, trust):
