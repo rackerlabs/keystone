@@ -16,6 +16,24 @@
       "revId": "d1a761293a4adcc30d6d17d1d38e427f6ed02246",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ded41a49",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-13T21:17:14Z",
+      "side": 0,
+      "message": "++\n\nthis also reinforces the need of a test for this behavior.",
+      "parentUuid": "7a8ec9b2_65fff534",
+      "revId": "d1a761293a4adcc30d6d17d1d38e427f6ed02246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
