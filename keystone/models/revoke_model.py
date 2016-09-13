@@ -11,16 +11,12 @@
 # under the License.
 
 from oslo_log import log
-from oslo_serialization import msgpackutils
 from oslo_utils import timeutils
-
-from keystone.common import cache
-from keystone.common import utils
 
 
 LOG = log.getLogger(__name__)
 
-# The set of attributes common between the RevokeEvent
+# The set of attributes common between the Revoke Event
 # and the dictionaries created from the token Data.
 _NAMES = ['trust_id',
           'consumer_id',
@@ -60,9 +56,6 @@ ALTERNATIVES = {
 }
 
 
-REVOKE_KEYS = _NAMES + _EVENT_ARGS
-
-
 def blank_token_data(issued_at):
     token_data = dict()
     for name in _NAMES:
@@ -72,58 +65,6 @@ def blank_token_data(issued_at):
     # required field
     token_data['issued_at'] = issued_at
     return token_data
-
-
-class RevokeEvent(object):
-    def __init__(self, **kwargs):
-        for k in REVOKE_KEYS:
-            v = kwargs.get(k)
-            setattr(self, k, v)
-
-        if self.domain_id and self.expires_at:
-            # This is revoking a domain-scoped token.
-            self.domain_scope_id = self.domain_id
-            self.domain_id = None
-        else:
-            # This is revoking all tokens for a domain.
-            self.domain_scope_id = None
-
-        if self.expires_at is not None:
-            # Trim off the expiration time because MySQL timestamps are only
-            # accurate to the second.
-            self.expires_at = self.expires_at.replace(microsecond=0)
-
-        if self.revoked_at is None:
-            self.revoked_at = timeutils.utcnow()
-        if self.issued_before is None:
-            self.issued_before = self.revoked_at
-
-    def to_dict(self):
-        keys = ['user_id',
-                'role_id',
-                'domain_id',
-                'domain_scope_id',
-                'project_id',
-                'audit_id',
-                'audit_chain_id',
-                ]
-        event = {key: self.__dict__[key] for key in keys
-                 if self.__dict__[key] is not None}
-        if self.trust_id is not None:
-            event['OS-TRUST:trust_id'] = self.trust_id
-        if self.consumer_id is not None:
-            event['OS-OAUTH1:consumer_id'] = self.consumer_id
-        if self.access_token_id is not None:
-            event['OS-OAUTH1:access_token_id'] = self.access_token_id
-        if self.expires_at is not None:
-            event['expires_at'] = utils.isotime(self.expires_at)
-        if self.issued_before is not None:
-            event['issued_before'] = utils.isotime(self.issued_before,
-                                                   subsecond=True)
-        if self.revoked_at is not None:
-            event['revoked_at'] = utils.isotime(self.revoked_at,
-                                                subsecond=True)
-        return event
 
 
 def is_revoked(events, token_data):
@@ -170,57 +111,68 @@ def matches(event, token_values):
     # rest of the logic.
 
     # The token has three attributes that can match the user_id.
-    if event.user_id is not None and event.user_id not in (
+    event_user_id = event.get('user_id')
+    if event_user_id is not None and event_user_id not in (
             token_values['user_id'],
             token_values['trustor_id'],
             token_values['trustee_id'],):
         return False
 
     # The token has two attributes that can match the domain_id.
-    if event.domain_id is not None and event.domain_id not in(
+    event_domain_id = event.get('domain_id')
+    if event_domain_id is not None and event_domain_id not in(
             token_values['identity_domain_id'],
             token_values['assignment_domain_id'],):
         return False
 
-    if event.domain_scope_id is not None and event.domain_scope_id not in (
+    event_domain_scope_id = event.get('domain_scope_id')
+    if event_domain_scope_id is not None and event_domain_scope_id not in (
             token_values['assignment_domain_id'],):
         return False
 
     # If an event specifies an attribute name, but it does not match, the token
     # is not revoked.
-    if event.project_id is not None and event.project_id not in (
+    event_project_id = event.get('project_id')
+    if event_project_id is not None and event_project_id not in (
             token_values['project_id'],):
         return False
 
-    if event.expires_at is not None and event.expires_at not in (
+    event_expires_at = event.get('expires_at')
+    if event_expires_at is not None and event_expires_at not in (
             token_values['expires_at'],):
         return False
 
-    if event.trust_id is not None and event.trust_id not in (
+    event_trust_id = event.get('trust_id')
+    if event_trust_id is not None and event_trust_id not in (
             token_values['trust_id'],):
         return False
 
-    if event.consumer_id is not None and event.consumer_id not in (
+    event_consumer_id = event.get('consumer_id')
+    if event_consumer_id is not None and event_consumer_id not in (
             token_values['consumer_id'],):
         return False
 
-    if event.access_token_id is not None and event.access_token_id not in (
+    event_access_token_id = event.get('access_token_id')
+    if event_access_token_id is not None and event_access_token_id not in (
             token_values['access_token_id'],):
         return False
 
-    if event.audit_id is not None and event.audit_id not in (
+    event_audit_id = event.get('audit_it')
+    if event_audit_id is not None and event_audit_id not in (
             token_values['audit_id'],):
         return False
 
-    if event.audit_chain_id is not None and event.audit_chain_id not in (
+    event_audit_chain_id = event.get('audit_chain_id')
+    if event_audit_chain_id is not None and event_audit_chain_id not in (
             token_values['audit_chain_id'],):
         return False
 
-    if event.role_id is not None and event.role_id not in (
+    event_role_id = event.get('role_id')
+    if event_role_id is not None and event_role_id not in (
             token_values['roles']):
         return False
 
-    if token_values['issued_at'] > event.issued_before:
+    if token_values['issued_at'] > event['issued_before']:
         return False
 
     return True
@@ -342,30 +294,3 @@ def build_token_values(token_data):
         token_values['consumer_id'] = oauth1['consumer_id']
         token_values['access_token_id'] = oauth1['access_token_id']
     return token_values
-
-
-class _RevokeEventHandler(object):
-    # NOTE(morganfainberg): There needs to be reserved "registry" entries set
-    # in oslo_serialization for application-specific handlers. We picked 127
-    # here since it's waaaaaay far out before oslo_serialization will use it.
-    identity = 127
-    handles = (RevokeEvent,)
-
-    def __init__(self, registry):
-        self._registry = registry
-
-    def serialize(self, obj):
-        return msgpackutils.dumps(obj.__dict__, registry=self._registry)
-
-    def deserialize(self, data):
-        revoke_event_data = msgpackutils.loads(data, registry=self._registry)
-        try:
-            revoke_event = RevokeEvent(**revoke_event_data)
-        except Exception:
-            LOG.debug("Failed to deserialize RevokeEvent. Data is %s",
-                      revoke_event_data)
-            raise
-        return revoke_event
-
-
-cache.register_model_handler(_RevokeEventHandler)

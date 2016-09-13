@@ -10,16 +10,32 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.common import sql
-from keystone.models import revoke_model
-from keystone.revoke.backends import base
-
 from oslo_db import api as oslo_db_api
+from oslo_utils import timeutils
+
+from keystone.common import sql
+from keystone.revoke.backends import base
 
 
 class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'revocation_event'
-    attributes = revoke_model.REVOKE_KEYS
+    attributes = ['domain_id', 'project_id', 'user_id', 'role_id',
+                  'trust_id', 'consumer_id', 'access_token_id',
+                  'issued_before', 'expires_at', 'revoked_at', 'audit_id',
+                  'audit_chain_id']
+    readonly_attributes = attributes
+
+    @classmethod
+    def from_dict(cls, d):
+        if d.get('expires_at') is not None:
+            d['expires_at'] = d['expires_at'].replace(microsecond=0)
+
+        if d.get('revoked_at') is None:
+            d['revoked_at'] = timeutils.utcnow()
+        if d.get('issued_before') is None:
+            d['issued_before'] = timeutils.utcnow()
+
+        return super(RevocationEvent, cls).from_dict(d)
 
     # The id field is not going to be exposed to the outside world.
     # It is, however, necessary for SQLAlchemy.
@@ -88,16 +104,12 @@ class Revoke(base.RevokeDriverV8):
             if last_fetch:
                 query = query.filter(RevocationEvent.revoked_at > last_fetch)
 
-            events = [revoke_model.RevokeEvent(**e.to_dict()) for e in query]
-
+            events = [e.to_dict() for e in query]
             return events
 
     @oslo_db_api.wrap_db_retry(retry_on_deadlock=True)
-    def revoke(self, event):
-        kwargs = dict()
-        for attr in revoke_model.REVOKE_KEYS:
-            kwargs[attr] = getattr(event, attr)
-        record = RevocationEvent(**kwargs)
+    def revoke(self, revoke_event):
+        record = RevocationEvent.from_dict(revoke_event)
         with sql.session_for_write() as session:
             session.add(record)
             self._prune_expired_events()

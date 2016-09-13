@@ -22,7 +22,6 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import utils
-from keystone.models import revoke_model
 from keystone.tests.unit import test_v3
 
 
@@ -90,8 +89,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         sample = dict()
         sample['project_id'] = six.text_type(project_id)
         before_time = timeutils.utcnow()
-        self.revoke_api.revoke(
-            revoke_model.RevokeEvent(project_id=project_id))
+        self.revoke_api.revoke({'project_id': project_id})
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
@@ -103,8 +101,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         sample = dict()
         sample['domain_id'] = six.text_type(domain_id)
         before_time = timeutils.utcnow()
-        self.revoke_api.revoke(
-            revoke_model.RevokeEvent(domain_id=domain_id))
+        self.revoke_api.revoke({'domain_id': domain_id})
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
@@ -125,8 +122,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         sample = dict()
         sample['domain_id'] = six.text_type(domain_id)
 
-        self.revoke_api.revoke(
-            revoke_model.RevokeEvent(domain_id=domain_id))
+        self.revoke_api.revoke({'domain_id': domain_id})
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
@@ -141,8 +137,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         with freezegun.freeze_time(time) as frozen_datetime:
             revoked_at = timeutils.utcnow()
             # Given or not, `revoked_at` will always be set in the backend.
-            self.revoke_api.revoke(
-                revoke_model.RevokeEvent(revoked_at=revoked_at))
+            self.revoke_api.revoke({'revoked_at': revoked_at})
 
             frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
 
@@ -163,10 +158,10 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         events = resp.json_body['events']
         self.assertThat(events, matchers.HasLength(1))
         event = events[0]
-        self.assertEqual(consumer_id, event['OS-OAUTH1:consumer_id'])
+        self.assertEqual(consumer_id, event['consumer_id'])
         # `OS-OAUTH1:access_token_id` is None and won't be returned to
         # end user.
-        self.assertNotIn('OS-OAUTH1:access_token_id', event)
+        self.assertNotIn('access_token_id', event)
 
     def test_retries_on_deadlock(self):
         patcher = mock.patch('sqlalchemy.orm.query.Query.delete',
@@ -194,8 +189,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         sql_delete_mock.side_effect = side_effect
 
         try:
-            self.revoke_api.revoke(revoke_model.RevokeEvent(
-                user_id=uuid.uuid4().hex))
+            self.revoke_api.revoke({'user_id': uuid.uuid4().hex})
         finally:
             if side_effect.patched:
                 patcher.stop()

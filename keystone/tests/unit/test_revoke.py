@@ -67,23 +67,26 @@ def _matches(event, token_values):
     token has been revoked
     """
     # The token has three attributes that can match the user_id
-    if event.user_id is not None:
+    event_user_id = event.get('user_id')
+    if event_user_id is not None:
         for attribute_name in ['user_id', 'trustor_id', 'trustee_id']:
-            if event.user_id == token_values[attribute_name]:
+            if event_user_id == token_values[attribute_name]:
                 break
         else:
             return False
 
     # The token has two attributes that can match the domain_id
-    if event.domain_id is not None:
+    event_domain_id = event.get('domain_id')
+    if event_domain_id is not None:
         for attribute_name in ['identity_domain_id', 'assignment_domain_id']:
-            if event.domain_id == token_values[attribute_name]:
+            if event_domain_id == token_values[attribute_name]:
                 break
         else:
             return False
 
-    if event.domain_scope_id is not None:
-        if event.domain_scope_id != token_values['assignment_domain_id']:
+    event_domain_scope_id = event.get('domain_scope_id')
+    if event_domain_scope_id is not None:
+        if event_domain_scope_id != token_values['assignment_domain_id']:
             return False
 
     # If any one check does not match, the while token does
@@ -94,19 +97,20 @@ def _matches(event, token_values):
                        'expires_at', 'trust_id', 'consumer_id',
                        'access_token_id', 'audit_id', 'audit_chain_id']
     for attribute_name in attribute_names:
-        if getattr(event, attribute_name) is not None:
-            if (getattr(event, attribute_name) !=
+        if event.get(attribute_name) is not None:
+            if (event.get(attribute_name) !=
                     token_values[attribute_name]):
                         return False
 
-    if event.role_id is not None:
+    event_role_id = event.get('role_id')
+    if event_role_id is not None:
         roles = token_values['roles']
         for role in roles:
-            if event.role_id == role:
+            if event_role_id == role:
                 break
         else:
             return False
-    if token_values['issued_at'] > event.issued_before:
+    if token_values['issued_at'] > event['issued_before']:
         return False
     return True
 
@@ -172,6 +176,16 @@ class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
 
 
 def add_event(events, event):
+    # NOTE(notmorgan): This is mirrored from the RevocationEvent table model
+    # in the from_dict() classmethod. This is specifically done to ensure
+    # some values that *must* exist are present.
+    if event.get('expires_at') is not None:
+        event['expires_at'] = event['expires_at'].replace(microsecond=0)
+
+    if event.get('revoked_at') is None:
+        event['revoked_at'] = timeutils.utcnow()
+    if event.get('issued_before') is None:
+        event['issued_before'] = timeutils.utcnow()
     events.append(event)
     return event
 
@@ -241,74 +255,73 @@ class RevokeListTests(unit.TestCase):
             'Token should not be revoked')
 
     def _revoke_by_user(self, user_id):
-        return add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id))
+        return add_event(self.revoke_events, {'user_id': user_id})
 
     def _revoke_by_audit_id(self, audit_id):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(audit_id=audit_id))
+        event = add_event(self.revoke_events, {'audit_id': audit_id})
         self.events.append(event)
         return event
 
     def _revoke_by_audit_chain_id(self, audit_chain_id, project_id=None,
                                   domain_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(audit_chain_id=audit_chain_id,
-                                     project_id=project_id,
-                                     domain_id=domain_id)
-        )
+        event = add_event(self.revoke_events, {
+            'audit_chain_id': audit_chain_id,
+            'project_id': project_id,
+            'domain_id': domain_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_expiration(self, user_id, expires_at, project_id=None,
                               domain_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     expires_at=expires_at,
-                                     project_id=project_id,
-                                     domain_id=domain_id))
+        event = add_event(self.revoke_events, {
+            'user_id': user_id,
+            'expires_at': expires_at,
+            'project_id': project_id,
+            'domain_id': domain_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_grant(self, role_id, user_id=None,
                          domain_id=None, project_id=None):
-        event = add_event(
-            self.revoke_events,
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     role_id=role_id,
-                                     domain_id=domain_id,
-                                     project_id=project_id))
+        event = add_event(self.revoke_events, {
+            'user_id': user_id,
+            'role_id': role_id,
+            'domain_id': domain_id,
+            'project_id': project_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_user_and_project(self, user_id, project_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(project_id=project_id,
-                                                   user_id=user_id))
+        event = add_event(self.revoke_events, {
+            'project_id': project_id,
+            'user_id': user_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_project_role_assignment(self, project_id, role_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(project_id=project_id,
-                                                   role_id=role_id))
+        event = add_event(self.revoke_events, {
+            'project_id': project_id,
+            'role_id': role_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_domain_role_assignment(self, domain_id, role_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(domain_id=domain_id,
-                                                   role_id=role_id))
+        event = add_event(self.revoke_events, {
+            'domain_id': domain_id,
+            'role_id': role_id
+        })
         self.events.append(event)
         return event
 
     def _revoke_by_domain(self, domain_id):
-        event = add_event(self.revoke_events,
-                          revoke_model.RevokeEvent(domain_id=domain_id))
+        event = add_event(self.revoke_events, {
+            'domain_id': domain_id
+        })
         self.events.append(event)
 
     def _user_field_test(self, field_name):

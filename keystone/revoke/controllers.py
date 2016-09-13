@@ -33,7 +33,7 @@ class RevokeController(controller.V3Controller):
                     message=_('invalid date format %s') % since)
         events = self.revoke_api.list_events(last_fetch=last_fetch)
         # Build the links by hand as the standard controller calls require ids
-        response = {'events': [event.to_dict() for event in events],
+        response = {'events': events,
                     'links': {
                         'next': None,
                         'self': RevokeController.base_url(

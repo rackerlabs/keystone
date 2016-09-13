@@ -4387,7 +4387,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         revocation_events = revocation_response.json_body['events']
         found = False
         for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
+            if event.get('trust_id') == trust_id:
                 found = True
         self.assertTrue(found, 'event with trust_id %s not found in list' %
                         trust_id)
@@ -4699,7 +4699,7 @@ class TestTrustChain(test_v3.RestfulTestCase):
         revocation_events = revocation_response.json_body['events']
         found = False
         for event in revocation_events:
-            if event.get('OS-TRUST:trust_id') == trust_id:
+            if event.get('trust_id') == trust_id:
                 found = True
         self.assertTrue(found, 'event with trust_id %s not found in list' %
                         trust_id)

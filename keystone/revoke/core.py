@@ -87,33 +87,27 @@ class Manager(manager.Manager):
 
     def _role_callback(self, service, resource_type, operation,
                        payload):
-        self.revoke(
-            revoke_model.RevokeEvent(role_id=payload['resource_info']))
+        self.revoke({'role_id': payload['resource_info']})
 
     def _project_callback(self, service, resource_type, operation,
                           payload):
-        self.revoke(
-            revoke_model.RevokeEvent(project_id=payload['resource_info']))
+        self.revoke({'project_id': payload['resource_info']})
 
     def _domain_callback(self, service, resource_type, operation,
                          payload):
-        self.revoke(
-            revoke_model.RevokeEvent(domain_id=payload['resource_info']))
+        self.revoke({'domain_id': payload['resource_info']})
 
     def _trust_callback(self, service, resource_type, operation,
                         payload):
-        self.revoke(
-            revoke_model.RevokeEvent(trust_id=payload['resource_info']))
+        self.revoke({'trust_id': payload['resource_info']})
 
     def _consumer_callback(self, service, resource_type, operation,
                            payload):
-        self.revoke(
-            revoke_model.RevokeEvent(consumer_id=payload['resource_info']))
+        self.revoke({'consumer_id': payload['resource_info']})
 
     def _access_token_callback(self, service, resource_type, operation,
                                payload):
-        self.revoke(
-            revoke_model.RevokeEvent(access_token_id=payload['resource_info']))
+        self.revoke({'access_token_id': payload['resource_info']})
 
     def _role_assignment_callback(self, service, resource_type, operation,
                                   payload):
@@ -150,7 +144,7 @@ class Manager(manager.Manager):
                                                       callback_fns)
 
     def revoke_by_user(self, user_id):
-        return self.revoke(revoke_model.RevokeEvent(user_id=user_id))
+        return self.revoke({'user_id': user_id})
 
     def _assert_not_domain_and_project_scoped(self, domain_id=None,
                                               project_id=None):
@@ -161,7 +155,7 @@ class Manager(manager.Manager):
             raise exception.UnexpectedError(exception=msg)
 
     def revoke_by_audit_id(self, audit_id):
-        self.revoke(revoke_model.RevokeEvent(audit_id=audit_id))
+        self.revoke({'audit_id': audit_id})
 
     def revoke_by_audit_chain_id(self, audit_chain_id, project_id=None,
                                  domain_id=None):
@@ -169,29 +163,26 @@ class Manager(manager.Manager):
         self._assert_not_domain_and_project_scoped(domain_id=domain_id,
                                                    project_id=project_id)
 
-        self.revoke(revoke_model.RevokeEvent(audit_chain_id=audit_chain_id,
-                                             domain_id=domain_id,
-                                             project_id=project_id))
+        self.revoke({'audit_chain_id': audit_chain_id,
+                     'domain_id': domain_id,
+                     'project_id': project_id})
 
     def revoke_by_grant(self, role_id, user_id=None,
                         domain_id=None, project_id=None):
-        self.revoke(
-            revoke_model.RevokeEvent(user_id=user_id,
-                                     role_id=role_id,
-                                     domain_id=domain_id,
-                                     project_id=project_id))
+        self.revoke({
+            'user_id': user_id,
+            'role_id': role_id,
+            'domain_id': domain_id,
+            'project_id': project_id})
 
     def revoke_by_user_and_project(self, user_id, project_id):
-        self.revoke(
-            revoke_model.RevokeEvent(project_id=project_id, user_id=user_id))
+        self.revoke({'project_id': project_id, 'user_id': user_id})
 
     def revoke_by_project_role_assignment(self, project_id, role_id):
-        self.revoke(revoke_model.RevokeEvent(project_id=project_id,
-                                             role_id=role_id))
+        self.revoke({'project_id': project_id, 'role_id': role_id})
 
     def revoke_by_domain_role_assignment(self, domain_id, role_id):
-        self.revoke(revoke_model.RevokeEvent(domain_id=domain_id,
-                                             role_id=role_id))
+        self.revoke({'domain_id': domain_id, 'role_id': role_id})
 
     def check_token(self, token_values):
         """Check the values from a token against the revocation list.
