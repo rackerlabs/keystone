@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_f90de03e",
+        "filename": "api-ref/source/v2/identity-auth.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-13T01:36:48Z",
+      "side": 1,
+      "message": "This parameter is ambiguous, it could be service name, user name or tenant name.",
+      "range": {
+        "startLine": 105,
+        "startChar": 5,
+        "endLine": 105,
+        "endChar": 30
+      },
+      "revId": "36d7be0e79a4ad6569a108048d2b851e157d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
