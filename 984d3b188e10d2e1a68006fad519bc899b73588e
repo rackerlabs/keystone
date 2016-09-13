@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_a7107201",
+        "filename": "releasenotes/notes/make-fernet-default-6fe3158fa2aa46de.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-13T13:35:57Z",
+      "side": 1,
+      "message": "This also needs to say that `keystone-manage fernet_setup` is required in order to upgrade.",
+      "revId": "984d3b188e10d2e1a68006fad519bc899b73588e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
