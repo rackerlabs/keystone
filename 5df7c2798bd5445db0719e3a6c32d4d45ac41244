@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a5749dfd",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-13T20:23:27Z",
+      "side": 1,
+      "message": "Based on the bits of token_data you\u0027re using so far, this could become http://cdn.pasteraw.com/3nzs1bp55x0wx7incihd5pvz0gu2v5w\n\nAnd then you wouldn\u0027t have a for-loop later on, which would be faster, easier to read, and easier to debug.",
+      "revId": "5df7c2798bd5445db0719e3a6c32d4d45ac41244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
