@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_65fff534",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-09-13T20:27:35Z",
+      "side": 0,
+      "message": "The method signature makes it look like you can get subsecond precision, but if the expected result is always .000000 then it\u0027d be nice to document that in a docstring so that this change isn\u0027t seen as a bug later on.",
+      "revId": "d1a761293a4adcc30d6d17d1d38e427f6ed02246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
