@@ -3475,18 +3475,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.assertValidDeletedProjectResponse(events_response,
                                                self.projectA['id'])
 
-    def test_disable_domain_shows_in_event_list(self):
-        events = self.get('/OS-REVOKE/events').json_body['events']
-        self.assertEqual([], events)
-        disable_body = {'domain': {'enabled': False}}
-        self.patch(
-            '/domains/%(project_id)s' % {'project_id': self.domainA['id']},
-            body=disable_body)
-
-        events = self.get('/OS-REVOKE/events').json_body
-
-        self.assertDomainAndProjectInList(events, self.domainA['id'])
-
     def assertEventDataInList(self, events, **kwargs):
         found = False
         for e in events:
