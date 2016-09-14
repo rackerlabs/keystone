@@ -763,12 +763,15 @@ class TestTokenProvider(unit.TestCase):
     def _load_test_data(self):
         # Create domains of SAMPLE tokens
         domain = unit.new_domain_ref(id='default')
+        domain['name'] = SAMPLE_V3_TOKEN['token']['user']['domain']['name']
         self.resource_api.create_domain('default', domain)
         domain = unit.new_domain_ref(id='41d89f277c834cb8b1bf416d418bd9f6')
+        domain['name'] = create_v3_token()['token']['user']['domain']['name']
         self.resource_api.create_domain('41d89f277c834cb8b1bf416d418bd9f6',
                                         domain)
         # Create projects of SAMPLE tokens
         project = unit.new_project_ref(id='01257', domain_id='default')
+        project['name'] = SAMPLE_V3_TOKEN['token']['project']['name']
         self.resource_api.create_project('01257', project)
 
         # Create users of SAMPLE tokens
