@@ -16,6 +16,24 @@
       "revId": "5df7c2798bd5445db0719e3a6c32d4d45ac41244",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2dbf64fc",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-14T14:48:54Z",
+      "side": 1,
+      "message": "On L108 and L109 I am still using the rest of the token_data key, values. The ones explicitly mentioned in the if statements are just there because these are values that either can have multiple token_data values matched to one revocation_event column, or if key names are different for example revocation_id has role_id and token_data has its key name as roles. Currently, as of now, all token_data key,value pairs have a possibility of being passed through. Some less likely as others but still likely.",
+      "parentUuid": "7a8ec9b2_a5749dfd",
+      "revId": "5df7c2798bd5445db0719e3a6c32d4d45ac41244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
