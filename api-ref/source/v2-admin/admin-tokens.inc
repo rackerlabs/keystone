@@ -20,7 +20,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
 
 Response Example
 ----------------
@@ -76,25 +76,39 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - impersonation: impersonation
-   - endpoints_links: endpoints_links
-   - serviceCatalog: serviceCatalog
-   - description: description
-   - type: type
-   - expires: expires
-   - enabled: enabled
-   - name: name
    - access: access
-   - trustee_user_id: trustee_user_id
    - token: token
-   - user: user
-   - issued_at: issued_at
-   - trustor_user_id: trustor_user_id
-   - endpoints: endpoints
-   - trust: trust
-   - id: id
+   - issued_at: token_issued_at
+   - expires: token_expires
+   - id: token_id
    - tenant: tenant
+   - name: tenant_name
+   - enabled: tenant_enabled
+   - description: tenant_description
+   - id: tenant_id
+   - serviceCatalog: serviceCatalog
+   - endpoints: endpoints
+   - id: endpoint_id
+   - adminURL: endpoint_adminurl_response
+   - internalURL: endpoint_internalurl_response
+   - publicURL: endpoint_publicurl_response
+   - endpoints_links: endpoints_links
+   - type: endpoint_type
+   - name: endpoint_name
+   - user: user
+   - name: user_name
+   - id: user_id
+   - roles: roles
+   - name: role_name
+   - roles_links: roles_links
    - metadata: metadata
+   - is_admin: metadata_is_admin
+   - roles: metadata_roles
+   - trust: trust
+   - id: trust_id
+   - impersonation: trust_impersonation
+   - trustee_user_id: trust_trustee_user_id
+   - trustor_user_id: trust_trustor_user_id
 
 Response Example
 ----------------
@@ -122,7 +136,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
 
 Response Example
 ----------------
@@ -146,7 +160,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
 
 
 Delete token
@@ -164,4 +178,4 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
