@@ -22,6 +22,29 @@
       "revId": "75db440669e220f1e3f35d358aec385792f7599e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_0da1c894",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T14:50:28Z",
+      "side": 1,
+      "message": "lets not list this code. keystone does not return it.",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 8
+      },
+      "revId": "75db440669e220f1e3f35d358aec385792f7599e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
