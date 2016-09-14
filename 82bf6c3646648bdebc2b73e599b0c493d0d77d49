@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e2cbe270",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-14T08:53:37Z",
+      "side": 1,
+      "message": "pls change this to \u0027true\u0027.",
+      "range": {
+        "startLine": 21,
+        "startChar": 12,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "82bf6c3646648bdebc2b73e599b0c493d0d77d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_0277ee3a",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-14T08:53:37Z",
+      "side": 1,
+      "message": "still need this one?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "82bf6c3646648bdebc2b73e599b0c493d0d77d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2275caf8",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-14T08:53:37Z",
+      "side": 1,
+      "message": "possible to use only one of them?",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 397,
+        "endChar": 14
+      },
+      "revId": "82bf6c3646648bdebc2b73e599b0c493d0d77d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
