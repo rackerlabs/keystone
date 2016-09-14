@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8eeddc8d",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T12:31:19Z",
+      "side": 1,
+      "message": "global",
+      "range": {
+        "startLine": 17,
+        "startChar": 39,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "fd78de549e37e53ff399ba9a3d1f811a2254f345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
