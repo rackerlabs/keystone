@@ -39,6 +39,24 @@
       "revId": "301b6a7bc770830485937f0b9927a26e2e5ec8c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8de238d4",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-14T14:52:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_4072dce6",
+      "revId": "301b6a7bc770830485937f0b9927a26e2e5ec8c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
