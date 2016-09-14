@@ -22,6 +22,29 @@
       "revId": "00d7d18743b59f35c2ca763843ae5e660d5170df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_785a1a85",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T12:09:39Z",
+      "side": 1,
+      "message": "sorry for not saying it in the previous comment, but i think there should be a comment describing why we do this and that should be removed in Ocata when newer keystonemiddleware becomes available",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "00d7d18743b59f35c2ca763843ae5e660d5170df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
