@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d3794f31",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T12:17:52Z",
+      "side": 1,
+      "message": "this should probably be false, because we don\u0027t require tenant name in query.",
+      "range": {
+        "startLine": 54,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 16
+      },
+      "revId": "685734636d34e687bc9c2c86c6e00bafc0a77b1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
