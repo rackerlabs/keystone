@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_ab5a7c81",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T15:18:36Z",
+      "side": 1,
+      "message": "\u003e of course, you would need to add the other values in the loop below\n\nthat\u0027s the problem: there is no list to add the values to. The whole thing is written to inject ids into refs and is based on the fact that in Python dicts are passed by reference, not by value.",
+      "parentUuid": "fa7ab95a_6130b49f",
+      "range": {
+        "startLine": 647,
+        "startChar": 0,
+        "endLine": 656,
+        "endChar": 47
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_82aa6183",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "++",
       "parentUuid": "fa7ab95a_82aa6183",
+      "range": {
+        "startLine": 661,
+        "startChar": 0,
+        "endLine": 664,
+        "endChar": 65
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_cb1188ae",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T15:18:36Z",
+      "side": 1,
+      "message": "actually, this is tested. LdapIdentityWithMapping.test_dynamic_mapping_build tests this part.",
+      "parentUuid": "fa7ab95a_15c3ed57",
       "range": {
         "startLine": 661,
         "startChar": 0,
