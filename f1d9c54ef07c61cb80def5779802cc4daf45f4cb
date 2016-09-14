@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2d14ab42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-14T21:18:24Z",
+      "side": 1,
+      "message": "Do we actually need this in here?",
+      "revId": "f1d9c54ef07c61cb80def5779802cc4daf45f4cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ad743b9c",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-14T21:18:24Z",
+      "side": 1,
+      "message": "Very nice.",
+      "revId": "f1d9c54ef07c61cb80def5779802cc4daf45f4cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
