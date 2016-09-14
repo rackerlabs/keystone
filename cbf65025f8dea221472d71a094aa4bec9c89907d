@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e91d8267",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T10:38:30Z",
+      "side": 1,
+      "message": "we don\u0027t import individual names from modules. I suggest to do something like this:\n\n from keystonemiddleware import auth_token\n try:\n     BaseAuthProtocol \u003d auth_token.BaseAuthProtocol\n except AttributeError:\n     BaseAuthProtocol \u003d auth_token._BaseAuthProtocol",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 54
+      },
+      "revId": "cbf65025f8dea221472d71a094aa4bec9c89907d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
