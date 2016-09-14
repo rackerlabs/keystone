@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_fc928c56",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-14T15:48:04Z",
+      "side": 1,
+      "message": "yes, the whole thing uses the fact that Python uses \"assignments\" (a tweak from reference). What I\u0027m trying to alert is to avoid having code that modifies objects presents in two data structures at the same time using exactly the fact that they have the same references for the same objects. The code is correct today, but it turns out to be difficult to maintain/evolve if we keep like that.\n\nMaybe there isn\u0027t a better way to implement that, but the concern is related to maintainability, not correctness/elegance :)",
+      "parentUuid": "7a8ec9b2_ab5a7c81",
+      "range": {
+        "startLine": 647,
+        "startChar": 0,
+        "endLine": 656,
+        "endChar": 47
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_82aa6183",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
