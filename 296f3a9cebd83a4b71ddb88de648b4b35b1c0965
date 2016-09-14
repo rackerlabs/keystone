@@ -57,6 +57,24 @@
       "revId": "296f3a9cebd83a4b71ddb88de648b4b35b1c0965",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6286c314",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T19:53:25Z",
+      "side": 1,
+      "message": "dogpile.cache.region.RegionInvalidationStrategy appeared only in 0.6.2. We have a cap on 0.5.7.\n\nA call to region.invalidate in 0.6.2 is just a wrapper to  RegionInvalidationStrategy.invalidate. In 0.5.7 region.invalidate does other thing, that\u0027s why i replace it on line 157.\n\nBut even in the original patch we don\u0027t use RegionInvalidationStrategy\u0027s features at all, as you can see by methods other than invalidate. Theoretically dogpile.cache checks if the region was invalidated by calling is_invalidated. But our invalidation manager doesn\u0027t mark the region as invalidated, we kinda re-make the region from scratch on invalidation.",
+      "parentUuid": "7a8ec9b2_31c08fe0",
+      "revId": "296f3a9cebd83a4b71ddb88de648b4b35b1c0965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
