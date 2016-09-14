@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ddd784eb",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3478,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-14T17:51:56Z",
+      "side": 0,
+      "message": "think you could keep the test but in the other way around: test_disable_domain_does_not_show_in_event_list (and a similar one for projects)",
+      "range": {
+        "startLine": 3478,
+        "startChar": 8,
+        "endLine": 3478,
+        "endChar": 47
+      },
+      "revId": "8a8f070bc0714d5bd2c3594dcd8b458ac688be61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

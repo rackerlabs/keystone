@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6b730981",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-14T17:51:56Z",
+      "side": 1,
+      "message": "nit: single quotes seem to be the default in this file",
+      "range": {
+        "startLine": 96,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 25
+      },
+      "revId": "f9cbfa74f030ca006bcfd9a1e8e6ec1a86e6cd14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8b6e9594",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-14T17:51:56Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 102,
+        "startChar": 24,
+        "endLine": 102,
+        "endChar": 25
+      },
+      "revId": "f9cbfa74f030ca006bcfd9a1e8e6ec1a86e6cd14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_1de1ecd0",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-14T17:51:56Z",
+      "side": 1,
+      "message": "why not doing that already? Is this still a WIP?",
+      "range": {
+        "startLine": 762,
+        "startChar": 4,
+        "endLine": 762,
+        "endChar": 58
+      },
+      "revId": "f9cbfa74f030ca006bcfd9a1e8e6ec1a86e6cd14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
