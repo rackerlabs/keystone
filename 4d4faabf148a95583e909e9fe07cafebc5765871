@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f0ed5e8c",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T13:06:43Z",
+      "side": 1,
+      "message": "nice! How did you collect these codes?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "4d4faabf148a95583e909e9fe07cafebc5765871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
