@@ -20,7 +20,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
 
 Response Example
 ----------------
@@ -76,25 +76,18 @@ Response Parameters
 
 .. rest_parameters:: parameters.yaml
 
-   - impersonation: impersonation
-   - endpoints_links: endpoints_links
-   - serviceCatalog: serviceCatalog
-   - description: description
-   - type: type
-   - expires: expires
-   - enabled: enabled
-   - name: name
-   - access: access
-   - trustee_user_id: trustee_user_id
    - token: token
-   - user: user
-   - issued_at: issued_at
-   - trustor_user_id: trustor_user_id
-   - endpoints: endpoints
-   - trust: trust
-   - id: id
+   - access: access
+   - issued_at: token_issued_at
+   - expires: token_expires
+   - id: token_id
    - tenant: tenant
+   - serviceCatalog: serviceCatalog
+   - endpoints: endpoints
+   - user: user
+   - roles: roles
    - metadata: metadata
+   - trust: trust
 
 Response Example
 ----------------
@@ -126,7 +119,7 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
    - belongsTo: belongsTo
 
 Response Example
@@ -155,9 +148,8 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
    - belongsTo: belongsTo
-
 
 Delete token
 ============
@@ -174,4 +166,4 @@ Request
 
 .. rest_parameters:: parameters.yaml
 
-   - tokenId: tokenId
+   - tokenId: token_id_path
