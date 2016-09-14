@@ -10,7 +10,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystonemiddleware import auth_token
+try:
+    from keystonemiddleware.auth_token import BaseAuthProtocol
+except ImportError:
+    from keystonemiddleware.auth_token import _BaseAuthProtocol \
+        as BaseAuthProtocol
+from keystonemiddleware.auth_token import InvalidToken
+
 from oslo_log import log
 from oslo_log import versionutils
 
@@ -35,7 +41,7 @@ __all__ = ('AuthContextMiddleware',)
 
 
 @dependency.requires('token_provider_api')
-class AuthContextMiddleware(auth_token.BaseAuthProtocol):
+class AuthContextMiddleware(BaseAuthProtocol):
     """Build the authentication context from the request auth token."""
 
     def __init__(self, app):
@@ -48,7 +54,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         try:
             return self.token_provider_api.validate_token(token)
         except exception.TokenNotFound:
-            raise auth_token.InvalidToken(_('Could not find token'))
+            raise InvalidToken(_('Could not find token'))
 
     def _build_tokenless_auth_context(self, request):
         """Build the authentication context.
