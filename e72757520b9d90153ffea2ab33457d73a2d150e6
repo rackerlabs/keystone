@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_216eb2c9",
+        "filename": "keystone/common/sql/data_migration_repo/versions/004_reset_password_created_at.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-14T04:50:31Z",
+      "side": 1,
+      "message": "not applicable",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "e72757520b9d90153ffea2ab33457d73a2d150e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
