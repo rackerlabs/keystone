@@ -93,13 +93,13 @@ class Manager(manager.Manager):
 
     def _project_callback(self, service, resource_type, operation,
                           payload):
-        if operation != "disabled":
+        if operation != 'disabled':
             self.revoke(
                 revoke_model.RevokeEvent(project_id=payload['resource_info']))
 
     def _domain_callback(self, service, resource_type, operation,
                          payload):
-        if operation != "disabled":
+        if operation != 'disabled':
             self.revoke(
                 revoke_model.RevokeEvent(domain_id=payload['resource_info']))
 

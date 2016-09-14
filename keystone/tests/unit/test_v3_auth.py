@@ -3403,23 +3403,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         expected_response = {'events': [{'project_id': project_id}]}
         self.assertEqual(expected_response, events_response)
 
-    def assertDomainAndProjectInList(self, events_response, domain_id):
-        events = events_response['events']
-        self.assertEqual(2, len(events))
-        self.assertEqual(domain_id, events[0]['project_id'])
-        self.assertEqual(domain_id, events[1]['domain_id'])
-        self.assertIsNotNone(events[0]['issued_before'])
-        self.assertIsNotNone(events[1]['issued_before'])
-        self.assertIsNotNone(events_response['links'])
-        del (events_response['events'][0]['issued_before'])
-        del (events_response['events'][1]['issued_before'])
-        del (events_response['events'][0]['revoked_at'])
-        del (events_response['events'][1]['revoked_at'])
-        del (events_response['links'])
-        expected_response = {'events': [{'project_id': domain_id},
-                                        {'domain_id': domain_id}]}
-        self.assertEqual(expected_response, events_response)
-
     def assertValidRevokedTokenResponse(self, events_response, **kwargs):
         events = events_response['events']
         self.assertEqual(1, len(events))
@@ -3475,7 +3458,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.assertValidDeletedProjectResponse(events_response,
                                                self.projectA['id'])
 
-    def test_disable_domain_shows_in_event_list(self):
+    def test_disable_domain_does_not_shows_in_event_list(self):
         events = self.get('/OS-REVOKE/events').json_body['events']
         self.assertEqual([], events)
         disable_body = {'domain': {'enabled': False}}
@@ -3484,8 +3467,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
             body=disable_body)
 
         events = self.get('/OS-REVOKE/events').json_body
-
-        self.assertDomainAndProjectInList(events, self.domainA['id'])
+        self.assertEqual([], events['events'])
 
     def assertEventDataInList(self, events, **kwargs):
         found = False
