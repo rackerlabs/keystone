@@ -45,6 +45,30 @@
       "revId": "00d7d18743b59f35c2ca763843ae5e660d5170df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_58363e04",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-14T12:11:37Z",
+      "side": 1,
+      "message": "Oh, right, Steve says about 4.2.0 above.",
+      "parentUuid": "7a8ec9b2_785a1a85",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "00d7d18743b59f35c2ca763843ae5e660d5170df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
