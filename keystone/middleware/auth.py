@@ -11,6 +11,11 @@
 # under the License.
 
 from keystonemiddleware import auth_token
+try:
+    BaseAuthProtocol = auth_token.BaseAuthProtocol
+except AttributeError:
+    BaseAuthProtocol = auth_token._BaseAuthProtocol
+
 from oslo_log import log
 from oslo_log import versionutils
 
@@ -35,7 +40,7 @@ __all__ = ('AuthContextMiddleware',)
 
 
 @dependency.requires('token_provider_api')
-class AuthContextMiddleware(auth_token.BaseAuthProtocol):
+class AuthContextMiddleware(BaseAuthProtocol):
     """Build the authentication context from the request auth token."""
 
     def __init__(self, app):
