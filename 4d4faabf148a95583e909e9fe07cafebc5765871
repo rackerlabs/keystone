@@ -22,6 +22,30 @@
       "revId": "4d4faabf148a95583e909e9fe07cafebc5765871",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_70ae7f86",
+        "filename": "api-ref/source/v3/service-catalog.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-15T06:08:09Z",
+      "side": 1,
+      "message": "two sources: \n\n1. the original documentation converted from WADL, which wasn\u0027t accurate. \n\n2. comments collected from other patches in this series:\n\nsee: https://review.openstack.org/#/c/367757/\n\nwe actually only raise a few exceptions: 400, 401, 403, 404, 409, 410\n401 is applicable to all API calls.\n403 and 400 are some, but not all, let\u0027s just say all API calls...\n404 is applicable to PATCH and GET resource calls\n409 is applicable to POST and PATCH calls\nthere\u0027s only one instance of raising a 410 in all of keystone (related to token revocation)",
+      "parentUuid": "7a8ec9b2_f0ed5e8c",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "4d4faabf148a95583e909e9fe07cafebc5765871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
