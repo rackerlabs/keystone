@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_dc475b1b",
+        "filename": "keystone/common/sql/contract_repo/versions/004_reset_password_created_at.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-15T13:09:03Z",
+      "side": 1,
+      "message": "It\u0027s in the contract repo because I\u0027m dropping the column and then setting it to be not nullable (both contract operations). In addition, the contract repo is executed once the code has been updated; thus the created_at column would be populated for any password changes; supporting a rolling upgrade.",
+      "parentUuid": "7a8ec9b2_95edbdf1",
+      "revId": "83dab523c161d705feb3f4c0eb4496ec6540b02c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_35cf8980",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 29
