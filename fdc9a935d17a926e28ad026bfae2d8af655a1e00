@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_a22896e3",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-09-15T17:47:53Z",
+      "side": 1,
+      "message": "thanks Rodgrigo. I added support in the code but forgot to update the policy. Same for the check below.",
+      "parentUuid": "7a8ec9b2_0b797e2f",
+      "revId": "fdc9a935d17a926e28ad026bfae2d8af655a1e00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_2baf1a82",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
