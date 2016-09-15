@@ -10,16 +10,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import time
+import uuid
 
 from oslo_context import context as oslo_context
 from oslo_utils import timeutils
 
 from keystone.assignment.backends import base as assignment_base
 from keystone.common import sql
+from keystone.common import utils
 from keystone.delegation.backends import sql_model as model
 from keystone import exception
 from keystone.i18n import _
+from keystone.oauth1.backends import sql as oauth1_sql
 from keystone.trust.backends import base as trust_base
 
 # The maximum number of iterations that will be attempted for optimistic
@@ -481,3 +485,96 @@ class TrustDriver(trust_base.TrustDriverV8):
             if not ref:
                 raise exception.TrustNotFound(trust_id=trust_id)
             ref.deleted_at = timeutils.utcnow()
+
+
+class OAuth1Driver(oauth1_sql.OAuth1):
+
+    @staticmethod
+    def _format_access_token(delegation):
+        with sql.session_for_read() as session:
+            role_links = session.query(model.RoleDelegation).filter_by(
+                delegation_id=delegation.id)
+            return dict(
+                id=delegation.id,
+                access_secret=delegation.secret,
+                authorizing_user_id=delegation.user_id,
+                project_id=delegation.project_id,
+                role_ids=[r.role_id for r in role_links],
+                consumer_id=delegation.consumer_id,
+                expires_at=delegation.expires_at,
+            )
+
+    def create_access_token(self, request_id, access_token_duration):
+        access_token_id = uuid.uuid4().hex
+        access_token_secret = uuid.uuid4().hex
+        with sql.session_for_write() as session:
+            req_token_ref = self._get_request_token(session, request_id)
+            token_dict = req_token_ref.to_dict()
+
+            expiry_date = None
+            if access_token_duration:
+                now = timeutils.utcnow()
+                future = (now +
+                          datetime.timedelta(seconds=access_token_duration))
+                expiry_date = utils.isotime(future, subsecond=True)
+
+            delegation = {
+                'id': access_token_id,
+                'trustor_id': None,
+                'agent_id': None,
+                'redelegated_id': None,
+                'impersonation': False,
+                'strict_ancestry': True,
+                'sealed': True,
+                'executable': True,
+                'inherited_to_projects': False,
+                'user_id': token_dict['authorizing_user_id'],
+                'group_id': None,
+                'project_id': token_dict['requested_project_id'],
+                'domain_id': None,
+                'expires_at': expiry_date,
+                'consumer_id': token_dict['consumer_id'],
+                'secret': access_token_secret
+            }
+
+            ref = model.Delegation.from_dict(delegation)
+
+            if ref.get('expires_at') and ref['expires_at'].tzinfo is not None:
+                ref['expires_at'] = timeutils.normalize_time(ref['expires_at'])
+            session.add(ref)
+
+        # create role links
+        with sql.session_for_write() as session:
+            for role_id in token_dict['role_ids']:
+                role_link_ref = model.RoleDelegation(delegation_id=ref.id,
+                                                     role_id=role_id)
+                session.add(role_link_ref)
+
+            # remove request token, it's been used
+            session.delete(req_token_ref)
+
+            return self._format_access_token(delegation)
+
+    def get_access_token(self, access_token_id):
+        with sql.session_for_read() as session:
+            delegation = session.query(model.Delegation).get(access_token_id)
+            if delegation is None:
+                raise exception.NotFound(_('Access token not found'))
+            return self._format_access_token(delegation)
+
+    def list_access_tokens(self, user_id):
+        token_list = []
+        with sql.session_for_read() as session:
+            q = session.query(model.Delegation)
+            for delegation in q.filter_by(user_id=user_id):
+                access_token = self._format_access_token(delegation)
+                access_token.pop('access_secret', None)
+                token_list.append(access_token)
+        return token_list
+
+    def delete_access_token(self, user_id, access_token_id):
+        with sql.session_for_write() as session:
+            delegation = session.query(model.Delegation).get(access_token_id)
+            if delegation.user_id != user_id:
+                raise exception.Unauthorized(_('User IDs do not match'))
+            session.delete(delegation)
