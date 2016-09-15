@@ -131,7 +131,7 @@ CONTRACT_REPO = 'contract_repo'
 # using in the SqlUpgrade tests.
 class MigrationHelpersGetInitVersionTests(unit.TestCase):
     @mock.patch.object(repository, 'Repository')
-    def test_get_init_version_no_path(self, repo):
+    def test_get_init_version_legacy_repo(self, repo):
         migrate_versions = mock.MagicMock()
         # make a version list starting with zero. `get_init_version` will
         # return None for this value.
@@ -142,7 +142,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
             # since 0 is the smallest version expect None
-            version = migration_helpers.get_init_version()
+            version = migration_helpers.get_init_version(LEGACY_REPO)
             self.assertIsNone(version)
 
         # check that the default path was used as the first argument to the
@@ -152,24 +152,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         self.assertTrue(param.endswith('/sql/' + LEGACY_REPO))
 
     @mock.patch.object(repository, 'Repository')
-    def test_get_init_version_with_path_initial_version_0(self, repo):
-        migrate_versions = mock.MagicMock()
-        # make a version list starting with zero. `get_init_version` will
-        # return None for this value.
-        migrate_versions.versions.versions = list(range(0, 5))
-        repo.return_value = migrate_versions
-
-        # os.path.isdir() is called by `find_repo()`. Mock it to avoid
-        # an exception.
-        with mock.patch('os.path.isdir', return_value=True):
-            path = '/keystone/' + LEGACY_REPO + '/'
-
-            # since 0 is the smallest version expect None
-            version = migration_helpers.get_init_version(abs_path=path)
-            self.assertIsNone(version)
-
-    @mock.patch.object(repository, 'Repository')
-    def test_get_init_version_with_path(self, repo):
+    def test_get_nonzero_init_version_legacy_repo(self, repo):
         initial_version = 10
 
         migrate_versions = mock.MagicMock()
@@ -180,9 +163,7 @@ class MigrationHelpersGetInitVersionTests(unit.TestCase):
         # os.path.isdir() is called by `find_repo()`. Mock it to avoid
         # an exception.
         with mock.patch('os.path.isdir', return_value=True):
-            path = '/keystone/' + LEGACY_REPO + '/'
-
-            version = migration_helpers.get_init_version(abs_path=path)
+            version = migration_helpers.get_init_version(LEGACY_REPO)
             self.assertEqual(initial_version, version)
 
 
@@ -192,7 +173,7 @@ class MigrationRepository(object):
 
         self.repo_path = migration_helpers.find_repo(self.repo_name)
         self.min_version = (
-            migration_helpers.get_init_version(abs_path=self.repo_path))
+            migration_helpers.get_init_version(self.repo_name))
         self.schema_ = versioning_api.ControlledSchema.create(
             engine, self.repo_path, self.min_version)
         self.max_version = self.schema_.repository.version().version
