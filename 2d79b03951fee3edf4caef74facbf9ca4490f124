@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8ec9b2_833f27d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-15T15:24:06Z",
+      "side": 1,
+      "message": "remove \"to\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 42,
+        "endLine": 25,
+        "endChar": 56
+      },
+      "revId": "2d79b03951fee3edf4caef74facbf9ca4490f124",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_e3dc6b14",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
