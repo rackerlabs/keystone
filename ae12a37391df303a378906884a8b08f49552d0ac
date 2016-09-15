@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_9a7decb3",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-15T04:33:26Z",
+      "side": 1,
+      "message": "\"access\" is the top level object being returned, place this above \"token\"",
+      "range": {
+        "startLine": 80,
+        "startChar": 3,
+        "endLine": 80,
+        "endChar": 19
+      },
+      "revId": "ae12a37391df303a378906884a8b08f49552d0ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_fae8b07e",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-15T04:33:26Z",
+      "side": 1,
+      "message": "move this above tenantId",
+      "range": {
+        "startLine": 59,
+        "startChar": 3,
+        "endLine": 59,
+        "endChar": 15
+      },
+      "revId": "ae12a37391df303a378906884a8b08f49552d0ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
