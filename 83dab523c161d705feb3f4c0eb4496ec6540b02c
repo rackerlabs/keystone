@@ -80,6 +80,30 @@
       "revId": "83dab523c161d705feb3f4c0eb4496ec6540b02c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_77366053",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-15T13:27:30Z",
+      "side": 1,
+      "message": "What do you mean? The migration changes the type from a sqlalchemcy TIMESTAMP to a DateTime, which addresses the MySQL issue. However, with posgresql, the column type will be a \u0027TIMESTAMP WITHOUT TIME ZONE\u0027 either way.",
+      "parentUuid": "7a8ec9b2_35cf8980",
+      "range": {
+        "startLine": 1784,
+        "startChar": 10,
+        "endLine": 1784,
+        "endChar": 55
+      },
+      "revId": "83dab523c161d705feb3f4c0eb4496ec6540b02c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
