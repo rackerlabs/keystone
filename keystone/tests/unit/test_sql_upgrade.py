@@ -199,11 +199,10 @@ class SqlMigrateBase(test_base.DbTestCase):
         self.addCleanup(sql.cleanup)
 
         self.repos = {
-            LEGACY_REPO: upgrades.Repository(self.engine, LEGACY_REPO),
-            EXPAND_REPO: upgrades.Repository(self.engine, EXPAND_REPO),
-            DATA_MIGRATION_REPO: upgrades.Repository(
-                self.engine, DATA_MIGRATION_REPO),
-            CONTRACT_REPO: upgrades.Repository(self.engine, CONTRACT_REPO)}
+            LEGACY_REPO: upgrades.Repository(LEGACY_REPO),
+            EXPAND_REPO: upgrades.Repository(EXPAND_REPO),
+            DATA_MIGRATION_REPO: upgrades.Repository(DATA_MIGRATION_REPO),
+            CONTRACT_REPO: upgrades.Repository(CONTRACT_REPO)}
 
     def upgrade(self, *args, **kwargs):
         """Upgrade the legacy migration repository."""

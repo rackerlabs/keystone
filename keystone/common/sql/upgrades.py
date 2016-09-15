@@ -40,15 +40,16 @@ CONTRACT_REPO = 'contract_repo'
 
 
 class Repository(object):
-    def __init__(self, engine, repo_name):
+    def __init__(self, repo_name):
         self.repo_name = repo_name
 
         self.repo_path = find_repo(self.repo_name)
         self.min_version = (
             get_init_version(abs_path=self.repo_path))
-        self.schema_ = versioning_api.ControlledSchema.create(
-            engine, self.repo_path, self.min_version)
-        self.max_version = self.schema_.repository.version().version
+
+        with sql.session_for_read() as session:
+            self.schema_ = versioning_api.ControlledSchema.create(
+                session.get_bind(), self.repo_path, self.min_version)
 
     def upgrade(self, version=None, current_schema=None):
         version = version or self.max_version
@@ -70,9 +71,15 @@ class Repository(object):
 
     @property
     def version(self):
+        """The current version number of the repository."""
         with sql.session_for_read() as session:
             return migration.db_version(
                 session.get_bind(), self.repo_path, self.min_version)
+
+    @property
+    def max_version(self):
+        """The highest version number in the repository."""
+        return self.schema_.repository.version().version
 
 
 #  Different RDBMSs use different schemes for naming the Foreign Key
