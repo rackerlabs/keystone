@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8603c30c",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T11:56:07Z",
+      "side": 1,
+      "message": "I\u0027d suggest to add a comment explaining why you do not create revoke events for the \"disabled\" operation",
+      "revId": "fe96a10ff675f896cd735510e4edec31e350b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_0610934d",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T11:56:07Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "fe96a10ff675f896cd735510e4edec31e350b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c645cb17",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T11:56:07Z",
+      "side": 1,
+      "message": "where are the tests that you have added on patchset 1?",
+      "revId": "fe96a10ff675f896cd735510e4edec31e350b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e6c5678e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3461,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T11:56:07Z",
+      "side": 1,
+      "message": "add a similar test for project",
+      "range": {
+        "startLine": 3461,
+        "startChar": 8,
+        "endLine": 3461,
+        "endChar": 56
+      },
+      "revId": "fe96a10ff675f896cd735510e4edec31e350b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
