@@ -293,7 +293,6 @@ example:
     certfile=/etc/keystone/ssl/certs/ca.pem
     keyfile=/etc/keystone/ssl/private/cakey.pem
     idp_entity_id=https://keystone.example.com/v3/OS-FEDERATION/saml2/idp
-    idp_sso_endpoint=https://keystone.example.com/v3/OS-FEDERATION/saml2/sso
     idp_metadata_path=/etc/keystone/saml2_idp_metadata.xml
 
 Though not necessary, the follow Organization configuration options should
@@ -316,6 +315,13 @@ it's advisable to set these values too.
     idp_contact_email=jsmith@example.com
     idp_contact_telephone=555-55-5555
     idp_contact_type=technical
+
+The SSO endpoint is required in order to generate valid metadata but is
+otherwise not used at this time.
+
+.. code-block:: ini
+
+    idp_sso_endpoint=https://keystone.example.com/v3/OS-FEDERATION/saml2/sso
 
 Generate Metadata
 -----------------

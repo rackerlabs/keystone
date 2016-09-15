@@ -63,6 +63,7 @@ provider metadata and must be a URI (a URL is recommended). For example:
 
 idp_sso_endpoint = cfg.URIOpt(
     'idp_sso_endpoint',
+    default='https://keystone.example.com/v3/OS-FEDERATION/saml2/sso',
     help=utils.fmt("""
 This is the single sign-on (SSO) service location of the identity provider
 which accepts HTTP POST requests. A value is required to generate identity
