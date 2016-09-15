@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7f061d1e",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T21:25:06Z",
+      "side": 1,
+      "message": "you can put this in the setUp() so you won\u0027t repeat in the beginning of each test.",
+      "range": {
+        "startLine": 1901,
+        "startChar": 8,
+        "endLine": 1901,
+        "endChar": 35
+      },
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_9f55a9fb",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1924,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-15T21:25:06Z",
+      "side": 1,
+      "message": "for this test you can create two new roles and then create the implies (so you will be able to remove the _create_implied_role() of the other test methods and put in the setUp())",
+      "range": {
+        "startLine": 1924,
+        "startChar": 8,
+        "endLine": 1924,
+        "endChar": 16
+      },
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
