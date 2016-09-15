@@ -113,6 +113,7 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
     # NOTE(xek): We start requiring things be additive in Newton, so
     # ignore all migrations before the first version in Newton.
+    repo_name = migration_helpers.LEGACY_REPO
     migrate_file = migrate_repo.__file__
     first_version = 101
     # NOTE(henry-nash): We don't ban data modification in the legacy repo,
@@ -138,8 +139,7 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
     @property
     def INIT_VERSION(self):
-        return migration_helpers.get_init_version(
-            abs_path=os.path.abspath(os.path.dirname(self.migrate_file)))
+        return migration_helpers.get_init_version(self.repo_name)
 
     @property
     def REPOSITORY(self):
@@ -159,7 +159,7 @@ class KeystoneMigrationsCheckers(test_migrations.WalkVersionsMixin):
 
     def migrate_fully(self, repo_name):
         abs_path = os.path.abspath(os.path.dirname(repo_name))
-        init_version = migration_helpers.get_init_version(abs_path=abs_path)
+        init_version = migration_helpers.get_init_version(repo_name)
         schema = versioning_api.ControlledSchema.create(
             self.migrate_engine, abs_path, init_version)
         max_version = schema.repository.version().version
@@ -216,6 +216,7 @@ class TestKeystoneMigrationsSQLite(
 class TestKeystoneExpandSchemaMigrations(
         KeystoneMigrationsCheckers):
 
+    repo_name = migration_helpers.EXPAND_REPO
     migrate_file = expand_repo.__file__
     first_version = 1
     # TODO(henry-nash): we should include Table update here as well, but this
@@ -256,9 +257,8 @@ class TestKeystoneExpandSchemaMigrationsPostgreSQL(
     pass
 
 
-class TestKeystoneDataMigrations(
-        KeystoneMigrationsCheckers):
-
+class TestKeystoneDataMigrations(KeystoneMigrationsCheckers):
+    repo_name = migration_helpers.DATA_MIGRATION_REPO
     migrate_file = data_migration_repo.__file__
     first_version = 1
     banned_ops = {'Table': ['create', 'alter', 'drop'],
@@ -300,6 +300,7 @@ class TestKeystoneDataMigrationsSQLite(
 class TestKeystoneContractSchemaMigrations(
         KeystoneMigrationsCheckers):
 
+    repo_name = migration_helpers.CONTRACT_REPO
     migrate_file = contract_repo.__file__
     first_version = 1
     # TODO(henry-nash): we should include Table update here as well, but this

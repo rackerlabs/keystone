@@ -126,7 +126,7 @@ def find_repo(repo_name):
 
 def _sync_common_repo(version):
     abs_path = find_repo(LEGACY_REPO)
-    init_version = get_init_version()
+    init_version = get_init_version(LEGACY_REPO)
     with sql.session_for_write() as session:
         engine = session.get_bind()
         _assert_not_schema_downgrade(version=version)
@@ -146,19 +146,20 @@ def _sync_repo(repo_name):
         except (migration.exception.DbMigrationError,
                 exceptions.DatabaseAlreadyControlledError):  # nosec
             pass
-        init_version = get_init_version(abs_path=abs_path)
-        migration.db_sync(engine, abs_path,
-                          init_version=init_version, sanity_check=False)
+        migration.db_sync(
+            engine,
+            abs_path,
+            get_init_version(repo_name),
+            sanity_check=False)
 
 
-def get_init_version(abs_path=None):
+def get_init_version(repo_name):
     """Get the initial version of a migrate repository.
 
     :param abs_path: Absolute path to migrate repository.
     :return:         initial version number or None, if DB is empty.
     """
-    if abs_path is None:
-        abs_path = find_repo(LEGACY_REPO)
+    abs_path = find_repo(repo_name)
 
     repo = migrate.versioning.repository.Repository(abs_path)
 
@@ -219,7 +220,9 @@ def offline_sync_database_to_version(version=None):
 def get_db_version():
     with sql.session_for_read() as session:
         return migration.db_version(
-            session.get_bind(), find_repo(LEGACY_REPO), get_init_version())
+            session.get_bind(),
+            find_repo(LEGACY_REPO),
+            get_init_version(LEGACY_REPO))
 
 
 def expand_schema():
