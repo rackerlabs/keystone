@@ -92,13 +92,25 @@ class Manager(manager.Manager):
 
     def _project_callback(self, service, resource_type, operation,
                           payload):
-        self.revoke(
-            revoke_model.RevokeEvent(project_id=payload['resource_info']))
+        # Do not revoke if the operation is just to disable project.
+        # In order to further reduce the size of revocation_event lists
+        # we only revoke if the operation is to delete the project. Otherwise
+        # an enabled check is performed instead to see if the token is still
+        # valid, so we don't revoke everytime the disable operation runs
+        if operation == 'deleted':
+            self.revoke(
+                revoke_model.RevokeEvent(project_id=payload['resource_info']))
 
     def _domain_callback(self, service, resource_type, operation,
                          payload):
-        self.revoke(
-            revoke_model.RevokeEvent(domain_id=payload['resource_info']))
+        # Do not revoke if the operation is just to disable domain.
+        # In order to further reduce the size of revocation_event lists
+        # we only revoke if the operation is to delete the project. Otherwise
+        # an enabled check is performed instead to see if the token is still
+        # valid, so we don't revoke everytime the disable operation runs
+        if operation == 'deleted':
+            self.revoke(
+                revoke_model.RevokeEvent(domain_id=payload['resource_info']))
 
     def _trust_callback(self, service, resource_type, operation,
                         payload):
