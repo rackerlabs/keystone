@@ -17,6 +17,7 @@ from oslo_context import context as oslo_context
 from keystone.tests import unit
 from keystone.tests.unit import test_v3_assignment
 from keystone.tests.unit import test_v3_auth
+from keystone.tests.unit import test_v3_oauth1
 
 
 class DelegationAssignmentTestCase(test_v3_assignment.AssignmentTestCase):
@@ -46,3 +47,21 @@ class DelegationTrustTestCase(test_v3_auth.TrustAPIBehavior,
         self.config_fixture.config(
             group='trust',
             driver='keystone.delegation.backends.sql.TrustDriver')
+
+
+class DelegationOAuth1UUIDTestCase(test_v3_oauth1.UUIDAuthTokenTests):
+
+    def config_overrides(self):
+        super(DelegationOAuth1UUIDTestCase, self).config_overrides()
+        self.config_fixture.config(
+            group='oauth1',
+            driver='keystone.delegation.backends.sql.OAuth1Driver')
+
+
+class DelegationOAuth1FernetTestCase(test_v3_oauth1.FernetAuthTokenTests):
+
+    def config_overrides(self):
+        super(DelegationOAuth1FernetTestCase, self).config_overrides()
+        self.config_fixture.config(
+            group='oauth1',
+            driver='keystone.delegation.backends.sql.OAuth1Driver')
