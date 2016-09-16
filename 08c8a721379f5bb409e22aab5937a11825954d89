@@ -34,6 +34,24 @@
       "revId": "08c8a721379f5bb409e22aab5937a11825954d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_4f297d89",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-09-16T17:58:51Z",
+      "side": 1,
+      "message": "The point of this change is that, as far as I can tell, the value of this option is really inconsequential, at least until k2k websso is really supported. So not changing it shouldn\u0027t really hurt anything. The Location field of the ns0:SingleSignOnService node of the metadata will be wrong, but as far as I can tell there\u0027s nothing that uses that.",
+      "parentUuid": "7a8ec9b2_b6fee3ab",
+      "revId": "08c8a721379f5bb409e22aab5937a11825954d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
