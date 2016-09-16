@@ -22,6 +22,47 @@
       "revId": "b616f9008218444ae6f44b80861c2120b2349d22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8d3d4a91",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-16T20:11:18Z",
+      "side": 1,
+      "message": "I agree. Why are does each repository need a separate instance of an engine?",
+      "parentUuid": "7a8ec9b2_6f53b239",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "b616f9008218444ae6f44b80861c2120b2349d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ede08e2b",
+        "filename": "keystone/common/sql/upgrades.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-16T20:11:18Z",
+      "side": 1,
+      "message": "Might want to explain in the commit message why this is now a read-only engine.",
+      "revId": "b616f9008218444ae6f44b80861c2120b2349d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
