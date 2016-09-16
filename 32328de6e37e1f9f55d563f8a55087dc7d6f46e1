@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_1a06e31c",
+        "filename": "keystone/common/sql/contract_repo/versions/004_reset_password_created_at.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T14:07:36Z",
+      "side": 1,
+      "message": "This is going to have the same problem that was fixed at [1], but I guess the granularity here is not much important.\n\n[1] https://review.openstack.org/#/c/368244/",
+      "range": {
+        "startLine": 28,
+        "startChar": 28,
+        "endLine": 28,
+        "endChar": 60
+      },
+      "revId": "32328de6e37e1f9f55d563f8a55087dc7d6f46e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
