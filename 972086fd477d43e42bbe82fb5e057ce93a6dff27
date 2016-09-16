@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_6950f932",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-16T19:58:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_0c078618",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_ccd11e59",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2016-09-16T17:02:24Z",
       "side": 1,
       "message": "Would it be easier to read if we only revoked based on the operations we *want* to revoke on? For example, what if we did something like:\n\n  if operation \u003d\u003d \u0027deleted\u0027:\n      self.revoke(...)\n\nThat way folks reading the code know exactly what causes the revocation event to be stored.\n\nAnother way to get around this is to make sure that when a token is validated, the role assignments are rebuilt from scratch. This means that we would no longer need to persist revocation events for domains or projects, since the data would be considered correct at validation time because we just calculated it.\n\nThoughts?",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8943856b",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-16T19:58:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_ccd11e59",
       "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_a9468178",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-16T19:58:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_ac185276",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_4c4d0e3d",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2016-09-16T17:02:24Z",
       "side": 1,
       "message": "Same comment here.",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c9610d07",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-16T19:58:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_4c4d0e3d",
       "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
