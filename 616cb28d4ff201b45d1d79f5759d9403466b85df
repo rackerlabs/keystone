@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e6426bad",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T21:59:00Z",
+      "side": 1,
+      "message": "this is doing nothing, check the return of a method that is supposed to raise an exception is not valuable.",
+      "range": {
+        "startLine": 865,
+        "startChar": 0,
+        "endLine": 867,
+        "endChar": 33
+      },
+      "revId": "616cb28d4ff201b45d1d79f5759d9403466b85df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_461b1fca",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T21:59:00Z",
+      "side": 1,
+      "message": "in the previous patchset I meant for you to use the token_id, not the dictionary.",
+      "revId": "616cb28d4ff201b45d1d79f5759d9403466b85df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
