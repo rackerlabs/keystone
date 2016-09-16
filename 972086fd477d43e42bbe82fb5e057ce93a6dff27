@@ -228,6 +228,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_e36b3db5",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-16T21:11:14Z",
+      "side": 1,
+      "message": "SAMPLE tokens cannot be passed into token_provider_api.validate_token method since it does not expect a dictionary and only uses token_id. This would result in a TypeError unhashable value",
+      "parentUuid": "7a8ec9b2_26f7fe59",
+      "range": {
+        "startLine": 873,
+        "startChar": 13,
+        "endLine": 873,
+        "endChar": 49
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_a66f8efa",
         "filename": "keystone/tests/unit/test_token_provider.py",
         "patchSetId": 2
