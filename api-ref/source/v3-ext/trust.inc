@@ -66,7 +66,7 @@ authenticating user (the trustee).
 Request Example
 ----------------
 
-.. literalinclude:: samples/OS-TRUST/trust-auth-request.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-auth-request.json
    :language: javascript
 
 A token created from a trust will have an ``OS-TRUST:trust`` section containing the
@@ -76,7 +76,7 @@ A token created from a trust will have an ``OS-TRUST:trust`` section containing 
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-TRUST/trust-auth-trust-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-auth-trust-response.json
    :language: javascript
 
 A token created from a redelegated trust will have an ``OS-TRUST:trust`` section
@@ -86,7 +86,7 @@ containing the same fields as a regular trust token, only ``redelegated_trust_id
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-TRUST/trust-auth-redelegated-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-auth-redelegated-response.json
    :language: javascript
 
 
@@ -108,7 +108,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust: trust
    - impersonation: impersonation
@@ -127,13 +127,13 @@ Request Example
 
 Status: 201 Created
 
-.. literalinclude:: samples/OS-TRUST/trust-create-request.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust: trust
    - id: trust_id
@@ -155,7 +155,7 @@ Response Example
 
 Status: 201 Created
 
-.. literalinclude:: samples/OS-TRUST/trust-create-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-create-response.json
    :language: javascript
 
 List trusts
@@ -195,7 +195,7 @@ In order to list trusts for a given trustee, filter the collection using a query
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust: trust
    - id: trust_id
@@ -217,7 +217,7 @@ Response Example
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-TRUST/trust-list-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-list-response.json
    :language: javascript
 
 
@@ -237,14 +237,14 @@ Error response codes: 400, 401, 403, 404, 405, 413, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust_id: trust_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust: trust
    - id: trust_id
@@ -266,7 +266,7 @@ Response Example
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-TRUST/trust-get-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-get-response.json
    :language: javascript
 
 
@@ -286,7 +286,7 @@ Error response codes: 400, 401, 403, 404, 405, 409, 413, 415, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust_id: trust_id_path
 
@@ -312,7 +312,7 @@ Error response codes: 400, 401, 403, 404, 405, 413, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust_id: trust_id_path
 
@@ -321,7 +321,7 @@ Response Example
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-TRUST/trust-list-roles-delegated-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-list-roles-delegated-response.json
    :language: javascript
 
 
@@ -341,7 +341,7 @@ Error response codes: 400, 401, 403, 404, 405, 413, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust_id: trust_id_path
    - role_id: role_id_path
@@ -368,7 +368,7 @@ Error response codes: 400, 401, 403, 404, 405, 413, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - trust_id: trust_id_path
    - role_id: role_id_path
@@ -378,5 +378,5 @@ Response Example
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-TRUST/trust-get-role-delegated-response.json
+.. literalinclude:: v3-ext/samples/OS-TRUST/trust-get-role-delegated-response.json
    :language: javascript

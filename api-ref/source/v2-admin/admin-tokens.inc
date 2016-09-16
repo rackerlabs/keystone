@@ -18,14 +18,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tokenId: tokenId
 
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/token-endpoints-list-response.json
+.. literalinclude:: v2-admin/samples/admin/token-endpoints-list-response.json
    :language: javascript
 
 
@@ -68,13 +68,13 @@ Error response codes: 413,405,404,403,401,400,503
 Request Example
 ---------------
 
-.. literalinclude:: ../v2/samples/admin/authenticate-token-request.json
+.. literalinclude:: v2/samples/admin/authenticate-token-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - impersonation: impersonation
    - endpoints_links: endpoints_links
@@ -99,7 +99,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ../v2/samples/admin/authenticate-response.json
+.. literalinclude:: v2/samples/admin/authenticate-response.json
    :language: javascript
 
 
@@ -120,14 +120,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tokenId: tokenId
 
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/token-validate-response.json
+.. literalinclude:: v2-admin/samples/admin/token-validate-response.json
    :language: javascript
 
 
@@ -144,7 +144,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tokenId: tokenId
 
@@ -162,6 +162,6 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tokenId: tokenId

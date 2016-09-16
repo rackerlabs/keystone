@@ -12,7 +12,7 @@ Normal response codes: 201
 Request
 -------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_path
    - rules: rules
@@ -20,13 +20,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/mapping/samples/create-request.json
+.. literalinclude:: v3-ext/federation/mapping/samples/create-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
@@ -35,7 +35,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/mapping/samples/create-response.json
+.. literalinclude:: v3-ext/federation/mapping/samples/create-response.json
    :language: javascript
 
 
@@ -51,14 +51,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_path
 
 Response
 --------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
@@ -67,7 +67,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/mapping/samples/get-response.json
+.. literalinclude:: v3-ext/federation/mapping/samples/get-response.json
    :language: javascript
 
 
@@ -83,7 +83,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_path
    - rules: rules
@@ -91,13 +91,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/mapping/samples/update-request.json
+.. literalinclude:: v3-ext/federation/mapping/samples/update-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_body
    - links: links
@@ -106,7 +106,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/mapping/samples/update-response.json
+.. literalinclude:: v3-ext/federation/mapping/samples/update-response.json
    :language: javascript
 
 
@@ -122,7 +122,7 @@ Normal response codes: 200
 Response
 --------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - links: links_collection
    - mappings: mappings
@@ -130,7 +130,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/mapping/samples/list-response.json
+.. literalinclude:: v3-ext/federation/mapping/samples/list-response.json
    :language: javascript
 
 
@@ -146,6 +146,6 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: federation/mapping/parameters.yaml
+.. rest_parameters:: v3-ext/federation/mapping/parameters.yaml
 
    - id: id_path

@@ -23,7 +23,7 @@ projects will be returned.
 Response
 --------
 
-.. rest_parameters:: federation/projects-domains/parameters.yaml
+.. rest_parameters:: v3-ext/federation/projects-domains/parameters.yaml
 
    - links: links_projects
    - projects: projects
@@ -31,7 +31,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/projects-domains/samples/project-list-response.json
+.. literalinclude:: v3-ext/federation/projects-domains/samples/project-list-response.json
    :language: javascript
 
 
@@ -55,7 +55,7 @@ will be returned.
 Response
 --------
 
-.. rest_parameters:: federation/projects-domains/parameters.yaml
+.. rest_parameters:: v3-ext/federation/projects-domains/parameters.yaml
 
    - domains: domains
    - links: links_domains
@@ -63,5 +63,5 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/projects-domains/samples/domain-list-response.json
+.. literalinclude:: v3-ext/federation/projects-domains/samples/domain-list-response.json
    :language: javascript

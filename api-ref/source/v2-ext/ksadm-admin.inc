@@ -21,7 +21,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - enabled: enabled_user
@@ -29,13 +29,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSADM/user-set-enabled-request.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-set-enabled-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - email: email
    - enabled: enabled
@@ -46,7 +46,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/user-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-show-response.json
    :language: javascript
 
 
@@ -63,7 +63,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - password: new_password
@@ -71,13 +71,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSADM/user-set-password-request.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-set-password-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - enabled: enabled
    - email: email
@@ -88,7 +88,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/user-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-show-response.json
    :language: javascript
 
 
@@ -106,7 +106,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - tenantId: tenantId
@@ -114,13 +114,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSADM/user-update-tenant-request.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-update-tenant-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - email: email
    - enabled: enabled
@@ -132,7 +132,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/user-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/user-show-response.json
    :language: javascript
 
 
@@ -149,13 +149,13 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSADM/service-create-request.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/service-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - Location: Location
    - type: type
@@ -177,7 +177,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - type: type
    - description: description
@@ -187,7 +187,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/services-list-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/services-list-response.json
    :language: javascript
 
 
@@ -204,14 +204,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - serviceId: serviceId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - type: type
    - description: description
@@ -221,7 +221,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/service-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/service-show-response.json
    :language: javascript
 
 
@@ -238,7 +238,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - type: type
    - description: description
@@ -248,7 +248,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/service-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/service-show-response.json
    :language: javascript
 
 
@@ -265,7 +265,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - serviceId: serviceId
 
@@ -283,13 +283,13 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSADM/role-create-request.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/role-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - Location: Location
 
@@ -307,7 +307,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - roles_links: roles_links
    - roles: roles
@@ -318,7 +318,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/roles-list-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/roles-list-response.json
    :language: javascript
 
 
@@ -335,14 +335,14 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - roleId: roleId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - Location: Location
    - description: description
@@ -352,7 +352,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/role-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/role-show-response.json
    :language: javascript
 
 
@@ -369,7 +369,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - Location: Location
    - description: description
@@ -379,7 +379,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/role-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/role-show-response.json
    :language: javascript
 
 
@@ -396,7 +396,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - roleId: roleId
 
@@ -414,7 +414,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - roleId: roleId
@@ -434,7 +434,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - roleId: roleId

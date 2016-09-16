@@ -296,14 +296,14 @@ to ``ss:mem:``.
 APIs
 ====
 
-.. include:: federation/identity-provider/idp.inc
+.. include:: v3-ext/federation/identity-provider/idp.inc
 
-.. include:: federation/mapping/mapping.inc
+.. include:: v3-ext/federation/mapping/mapping.inc
 
-.. include:: federation/service-provider/sp.inc
+.. include:: v3-ext/federation/service-provider/sp.inc
 
-.. include:: federation/projects-domains/projects-domains.inc
+.. include:: v3-ext/federation/projects-domains/projects-domains.inc
 
-.. include:: federation/auth/auth.inc
+.. include:: v3-ext/federation/auth/auth.inc
 
-.. include:: federation/assertion/assertion.inc
+.. include:: v3-ext/federation/assertion/assertion.inc

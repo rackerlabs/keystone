@@ -31,10 +31,8 @@ import openstackdocstheme
 
 html_theme = 'openstackdocs'
 html_theme_path = [openstackdocstheme.get_html_theme_path()]
-html_theme_options = {
-    "sidebar_mode": "toc",
-}
-
+html_theme_options = {"sidebar_dropdown": "api_ref",
+                      "sidebar_mode": "toc"}
 extensions = [
     'os_api_ref',
 ]
@@ -132,7 +130,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'default'
+# html_theme = 'openstackdocs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

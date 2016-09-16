@@ -15,14 +15,14 @@ Normal response codes: 200
 Response Parameters
 -------------------
 
-.. rest_parameters:: admin-endpoints_parameters.yaml
+.. rest_parameters:: v2-admin/admin-endpoints_parameters.yaml
 
    - endpoints: endpoints_list
 
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/endpoint-list-response.json
+.. literalinclude:: v2-admin/samples/admin/endpoint-list-response.json
    :language: javascript
 
 
@@ -36,7 +36,7 @@ Normal response codes: 201
 Request
 -------
 
-.. rest_parameters:: admin-endpoints_parameters.yaml
+.. rest_parameters:: v2-admin/admin-endpoints_parameters.yaml
 
    - endpoint: endpoint_create
    - region: region
@@ -48,13 +48,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/endpoint-create-request.json
+.. literalinclude:: v2-admin/samples/admin/endpoint-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: admin-endpoints_parameters.yaml
+.. rest_parameters:: v2-admin/admin-endpoints_parameters.yaml
 
    - adminurl: adminurl
    - id: id
@@ -73,6 +73,6 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: admin-endpoints_parameters.yaml
+.. rest_parameters:: v2-admin/admin-endpoints_parameters.yaml
 
    - endpointId: id_path

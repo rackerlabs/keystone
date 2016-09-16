@@ -23,7 +23,7 @@ A classic use case is to filter endpoints based on region. For example, suppose
 a user wants to filter service endpoints returned in the service catalog by
 region, the following endpoint group may be used:
 
-.. literalinclude:: samples/OS-EP-FILTER/create-endpoint-group-request.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/create-endpoint-group-request.json
    :language: javascript
 
 This implies an Endpoint Group with filtering criteria of::
@@ -46,7 +46,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - project_id: project_id_path
    - endpoint_id: endpoint_id_path
@@ -72,7 +72,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - project_id: project_id_path
    - endpoint_id: endpoint_id_path
@@ -98,7 +98,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - project_id: project_id_path
    - endpoint_id: endpoint_id_path
@@ -124,7 +124,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - project_id: project_id_path
    - endpoint_id: endpoint_id_path
@@ -134,7 +134,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/list-endpoints-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/list-endpoints-response.json
    :language: javascript
 
 Get projects associated with endpoint
@@ -153,7 +153,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_id: endpoint_id_path
 
@@ -162,7 +162,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/get-projects-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/get-projects-response.json
    :language: javascript
 
 Create Endpoint Group
@@ -182,13 +182,13 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - name: eg_name
    - filters: eg_filters
    - description: eg_description
 
-.. literalinclude:: samples/OS-EP-FILTER/create-endpoint-group-request.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/create-endpoint-group-request.json
    :language: javascript
 
 Response
@@ -196,7 +196,7 @@ Response
 
 Status: 201 Created
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-group-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-group-response.json
    :language: javascript
 
 Get Endpoint Group
@@ -215,7 +215,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
 
@@ -224,7 +224,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-group-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-group-response.json
    :language: javascript
 
 Check Endpoint Group
@@ -243,7 +243,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
 
@@ -268,14 +268,14 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
    - name: eg_name
    - filters: eg_filters
    - description: eg_description
 
-.. literalinclude:: samples/OS-EP-FILTER/create-endpoint-group-request.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/create-endpoint-group-request.json
    :language: javascript
 
 Response
@@ -283,7 +283,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-group-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-group-response.json
    :language: javascript
 
 Delete Endpoint Group
@@ -302,7 +302,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
 
@@ -329,7 +329,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-groups-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-groups-response.json
    :language: javascript
 
 Create Endpoint Group to Project Association
@@ -348,7 +348,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
    - project_id: project_id_path
@@ -374,7 +374,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
    - project_id: project_id_path
@@ -384,7 +384,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-project-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-project-response.json
    :language: javascript
 
 Check Endpoint Group to Project Association
@@ -403,7 +403,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
    - project_id: project_id_path
@@ -429,7 +429,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
    - project_id: project_id_path
@@ -455,7 +455,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
 
@@ -464,7 +464,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/get-projects-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/get-projects-response.json
    :language: javascript
 
 List Endpoints Associated with Endpoint Group
@@ -483,7 +483,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_group_id: endpoint_group_id_path
 
@@ -492,7 +492,7 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/list-service-endpoints.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/list-service-endpoints.json
    :language: javascript
 
 List Endpoint Groups Associated with Project
@@ -511,7 +511,7 @@ Error response codes: 401
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - project_id: project_id_path
 
@@ -520,5 +520,5 @@ Response
 
 Status: 200 OK
 
-.. literalinclude:: samples/OS-EP-FILTER/endpoint-groups-response.json
+.. literalinclude:: v3-ext/samples/OS-EP-FILTER/endpoint-groups-response.json
    :language: javascript

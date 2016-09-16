@@ -47,7 +47,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - endpoint_id: endpoint_id_path
@@ -67,7 +67,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - endpoint_id: endpoint_id_path
@@ -85,7 +85,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - endpoint_id: endpoint_id_path
@@ -106,7 +106,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -126,7 +126,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -144,7 +144,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -168,14 +168,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy: policy
    - type: policy_type
@@ -186,7 +186,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-ENDPOINT-POLICY/policy-show-response.json
+.. literalinclude:: v3-ext/samples/OS-ENDPOINT-POLICY/policy-show-response.json
    :language: javascript
 
 
@@ -202,7 +202,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
 
@@ -222,7 +222,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -243,7 +243,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -262,7 +262,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
    - service_id: service_id_path
@@ -281,14 +281,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy_id: policy_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - links: policy_links
    - url: url
@@ -304,7 +304,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-ENDPOINT-POLICY/policy-endpoint-associations-list-response.json
+.. literalinclude:: v3-ext/samples/OS-ENDPOINT-POLICY/policy-endpoint-associations-list-response.json
    :language: javascript
 
 
@@ -326,14 +326,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - endpoint_id: endpoint_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - policy: policy
    - type: policy_type
@@ -344,5 +344,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-ENDPOINT-POLICY/policy-show-response.json
+.. literalinclude:: v3-ext/samples/OS-ENDPOINT-POLICY/policy-show-response.json
    :language: javascript

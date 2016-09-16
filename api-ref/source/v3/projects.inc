@@ -39,11 +39,11 @@ Lists projects.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -52,7 +52,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_query
    - enabled: project_enabled_query
@@ -63,7 +63,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - links: link_collection
    - projects: projects
@@ -79,7 +79,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/projects-list-response.json
+.. literalinclude:: v3/samples/admin/projects-list-response.json
    :language: javascript
 
 
@@ -95,11 +95,11 @@ Creates a project, where the project may act as a domain.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 201
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -109,7 +109,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project: project
    - is_domain: is_domain_request_body
@@ -124,18 +124,18 @@ Request Examples
 
 Sample for creating a regular project:
 
-.. literalinclude:: ./samples/admin/project-create-request.json
+.. literalinclude:: v3/samples/admin/project-create-request.json
    :language: javascript
 
 Sample for creating a project that also acts as a domain:
 
-.. literalinclude:: ./samples/admin/project-create-domain-request.json
+.. literalinclude:: v3/samples/admin/project-create-domain-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project: project
    - is_domain: is_domain_response_body
@@ -159,11 +159,11 @@ Shows details for a project.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -173,7 +173,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - parents_as_list: parents_as_list
@@ -184,7 +184,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project: project
    - is_domain: is_domain_response_body
@@ -199,19 +199,19 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/project-show-response.json
+.. literalinclude:: v3/samples/admin/project-show-response.json
    :language: javascript
 
 Response Example with ``parents_as_list``
 -----------------------------------------
 
-.. literalinclude:: ./samples/admin/project-show-parents-response.json
+.. literalinclude:: v3/samples/admin/project-show-parents-response.json
    :language: javascript
 
 Response Example with ``subtree_as_list``
 -----------------------------------------
 
-.. literalinclude:: ./samples/admin/project-show-subtree-response.json
+.. literalinclude:: v3/samples/admin/project-show-subtree-response.json
    :language: javascript
 
 
@@ -227,11 +227,11 @@ Updates a project.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -242,7 +242,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - project: project
@@ -255,13 +255,13 @@ Request Parameters
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/project-update-request.json
+.. literalinclude:: v3/samples/admin/project-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project: project
    - is_domain: is_domain_response_body
@@ -276,7 +276,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/project-update-response.json
+.. literalinclude:: v3/samples/admin/project-update-response.json
    :language: javascript
 
 
@@ -292,11 +292,11 @@ Deletes a project.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 204
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -306,6 +306,6 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path

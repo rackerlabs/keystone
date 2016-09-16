@@ -72,14 +72,14 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
     - description: consumer_description
 
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumer-create-request.json
+.. literalinclude:: v3-ext//samples/OS-OAUTH1/consumer-create-request.json
    :language: javascript
 
 Response
@@ -92,7 +92,7 @@ The ``secret`` is only returned once, during consumer creation.
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumer-create-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/consumer-create-response.json
    :language: javascript
 
 
@@ -115,7 +115,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - consumer_id: consumer_id_path
 
@@ -136,7 +136,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumers-list-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/consumers-list-response.json
    :language: javascript
 
 
@@ -156,14 +156,14 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - consumer_id: consumer_id_path
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumer-show-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/consumer-show-response.json
    :language: javascript
 
 
@@ -186,20 +186,20 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - consumer_id: consumer_id_path
 
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumer-update-request.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/consumer-update-request.json
    :language: javascript
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/consumer-update-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/consumer-update-response.json
    :language: javascript
 
 Create request token
@@ -224,20 +224,20 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
     - requested_project_id: requested_project_id
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/request-token-create-response.txt
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/request-token-create-response.txt
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
     - oauth_token: oauth_token
     - oauth_token_secret: oauth_token_secret
@@ -262,13 +262,13 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. literalinclude:: ./samples/OS-OAUTH1/authorize-request-token-request.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/authorize-request-token-request.json
    :language: javascript
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/authorize-request-token-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/authorize-request-token-response.json
    :language: javascript
 
 Create access token
@@ -296,13 +296,13 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/access-token-create-response.txt
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/access-token-create-response.txt
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
     - oauth_token: oauth_token
     - oauth_token_secret: oauth_token_secret
@@ -325,7 +325,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - user_id: user_id_path
    - access_token_id: access_token_id_path
@@ -333,7 +333,7 @@ Request
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/access-token-show-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/access-token-show-response.json
    :language: javascript
 
 
@@ -355,7 +355,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - user_id: user_id_path
    - access_token_id: access_token_id_path
@@ -377,14 +377,14 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - user_id: user_id_path
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/OS-OAUTH1/access-tokens-list-response.json
+.. literalinclude:: v3-ext/samples/OS-OAUTH1/access-tokens-list-response.json
    :language: javascript
 
 
@@ -404,7 +404,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - user_id: user_id_path
    - access_token_id: access_token_id_path
@@ -426,7 +426,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - user_id: user_id_path
    - role_id: role_id_path

@@ -20,14 +20,14 @@ Service Provider ID in the request body.
 Request
 -------
 
-.. rest_parameters:: federation/assertion/parameters.yaml
+.. rest_parameters:: v3-ext/federation/assertion/parameters.yaml
 
    - auth: auth
 
 Request Example
 ---------------
 
-.. literalinclude:: federation/assertion/samples/saml-assertion-request.json
+.. literalinclude:: v3-ext/federation/assertion/samples/saml-assertion-request.json
    :language: javascript
 
 The response will be a full SAML assertion. Note that for readability the
@@ -39,7 +39,7 @@ client is finally authenticated.
 Response
 --------
 
-.. rest_parameters:: federation/assertion/parameters.yaml
+.. rest_parameters:: v3-ext/federation/assertion/parameters.yaml
 
    - Headers: headers
    - xml: saml_xml
@@ -47,7 +47,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/assertion/samples/saml-assertion-response.xml
+.. literalinclude:: v3-ext/federation/assertion/samples/saml-assertion-response.xml
    :language: xml
 
 For more information about how a SAML assertion is structured, refer to the
@@ -72,14 +72,14 @@ ID and Service Provider ID in the request body.
 Request
 -------
 
-.. rest_parameters:: federation/assertion/parameters.yaml
+.. rest_parameters:: v3-ext/federation/assertion/parameters.yaml
 
    - auth: auth
 
 Request Example
 ---------------
 
-.. literalinclude:: federation/assertion/samples/ecp-saml-assertion-request.json
+.. literalinclude:: v3-ext/federation/assertion/samples/ecp-saml-assertion-request.json
    :language: javascript
 
 The response will be an ECP wrapped SAML assertion. Note that for readability
@@ -91,7 +91,7 @@ client is finally authenticated.
 Response
 --------
 
-.. rest_parameters:: federation/assertion/parameters.yaml
+.. rest_parameters:: v3-ext/federation/assertion/parameters.yaml
 
    - Headers: headers
    - xml: saml_xml
@@ -99,7 +99,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/assertion/samples/ecp-saml-assertion-response.xml
+.. literalinclude:: v3-ext/federation/assertion/samples/ecp-saml-assertion-response.xml
    :language: xml
 
 
@@ -119,7 +119,7 @@ readability, this example certificate has been truncated.
 Response
 --------
 
-.. rest_parameters:: federation/assertion/parameters.yaml
+.. rest_parameters:: v3-ext/federation/assertion/parameters.yaml
 
    - Headers: headers
    - xml: metadata_xml
@@ -127,7 +127,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/assertion/samples/metadata-response.xml
+.. literalinclude:: v3-ext/federation/assertion/samples/metadata-response.xml
    :language: xml
 
 For more information about how a SAML assertion is structured, refer to the

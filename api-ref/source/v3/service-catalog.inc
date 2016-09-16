@@ -30,11 +30,11 @@ Lists all services.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -43,14 +43,14 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - type: service_type_query
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: service_name
    - links: service_links
@@ -63,7 +63,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/services-list-response.json
+.. literalinclude:: v3/samples/admin/services-list-response.json
    :language: javascript
 
 
@@ -79,11 +79,11 @@ Creates a service.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 201
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -93,7 +93,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - description: service_description
    - service: service
@@ -104,13 +104,13 @@ Request Parameters
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/service-create-request.json
+.. literalinclude:: v3/samples/admin/service-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: service_name
    - service: service
@@ -132,11 +132,11 @@ Shows details for a service.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -146,14 +146,14 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - service_id: service_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: service_name
    - service: service
@@ -165,7 +165,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/service-show-response.json
+.. literalinclude:: v3/samples/admin/service-show-response.json
    :language: javascript
 
 
@@ -185,11 +185,11 @@ update.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -200,7 +200,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - type: service_type
    - enabled: service_enabled_notRequired
@@ -212,13 +212,13 @@ Request Parameters
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/service-update-request.json
+.. literalinclude:: v3/samples/admin/service-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: service_name
    - service: service
@@ -230,7 +230,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/service-update-response.json
+.. literalinclude:: v3/samples/admin/service-update-response.json
    :language: javascript
 
 
@@ -250,11 +250,11 @@ all endpoints are deleted.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 204
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -264,7 +264,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - service_id: service_id_path
 
@@ -281,11 +281,11 @@ Lists all available endpoints.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -294,7 +294,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - interface: interface_query
    - service_id: service_id_query
@@ -302,7 +302,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region_id: region_id
    - links: endpoints_links
@@ -317,7 +317,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/endpoints-list-response.json
+.. literalinclude:: v3/samples/admin/endpoints-list-response.json
    :language: javascript
 
 
@@ -333,11 +333,11 @@ Creates an endpoint.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 201
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -347,7 +347,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint: endpoint
    - url: endpoint_url
@@ -359,13 +359,13 @@ Request Parameters
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/endpoint-create-request.json
+.. literalinclude:: v3/samples/admin/endpoint-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint: endpoint
    - links: endpoint_links
@@ -390,11 +390,11 @@ Shows details for an endpoint.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -404,14 +404,14 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint_id: endpoint_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint: endpoint
    - name: endpoint_name
@@ -424,7 +424,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/endpoint-show-response.json
+.. literalinclude:: v3/samples/admin/endpoint-show-response.json
    :language: javascript
 
 
@@ -440,11 +440,11 @@ Updates an endpoint.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 200
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -455,7 +455,7 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint: endpoint
    - url: endpoint_url
@@ -467,13 +467,13 @@ Request Parameters
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/endpoint-update-request.json
+.. literalinclude:: v3/samples/admin/endpoint-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint: endpoint
    - id: endpoint_id
@@ -486,7 +486,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/endpoint-update-response.json
+.. literalinclude:: v3/samples/admin/endpoint-update-response.json
    :language: javascript
 
 
@@ -502,11 +502,11 @@ Deletes an endpoint.
 Response Codes
 --------------
 
-.. rest_status_code:: success status.yaml
+.. rest_status_code:: success v3/status.yaml
 
    - 204
 
-.. rest_status_code:: error status.yaml
+.. rest_status_code:: error v3/status.yaml
 
    - 400
    - 401
@@ -516,6 +516,6 @@ Response Codes
 Request Parameters
 ------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoint_id: endpoint_id_path

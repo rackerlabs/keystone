@@ -1,8 +1,8 @@
 .. -*- rst -*-
 
-=====
-Users
-=====
+=============
+Users (Admin)
+=============
 
 
 List user global roles
@@ -18,14 +18,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - userId: userId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - roles_links: roles_links
    - roles: roles
@@ -36,7 +36,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/roles-list-response.json
+.. literalinclude:: v2-admin/samples/admin/roles-list-response.json
    :language: javascript
 
 
@@ -53,7 +53,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenantId: tenantId
    - password: password
@@ -65,13 +65,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/user-create-request.json
+.. literalinclude:: v2-admin/samples/admin/user-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - username: username
    - enabled: enabled
@@ -96,7 +96,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - username: username
    - users: users
@@ -108,7 +108,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/users-list-response.json
+.. literalinclude:: v2-admin/samples/admin/users-list-response.json
    :language: javascript
 
 
@@ -125,7 +125,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - userId: userId
    - username: username
@@ -137,13 +137,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/user-update-request.json
+.. literalinclude:: v2-admin/samples/admin/user-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - users: users
    - enabled: enabled
@@ -155,7 +155,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/user-update-response.json
+.. literalinclude:: v2-admin/samples/admin/user-update-response.json
    :language: javascript
 
 
@@ -172,7 +172,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - userId: userId
 
@@ -207,14 +207,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - userId: userId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - username: username
    - enabled: enabled
@@ -225,5 +225,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/user-show-response.json
+.. literalinclude:: v2-admin/samples/admin/user-show-response.json
    :language: javascript

@@ -33,14 +33,14 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user: user_object
    - default_project_id: default_project_id_response_body
@@ -54,7 +54,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/user-show-response.json
+.. literalinclude:: v3/samples/admin/user-show-response.json
    :language: javascript
 
 
@@ -78,7 +78,7 @@ Error response codes:413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
    - user: user_object
@@ -91,13 +91,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/user-update-request.json
+.. literalinclude:: v3/samples/admin/user-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user: user_object
    - default_project_id: default_project_id_response_body
@@ -111,7 +111,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/user-update-response.json
+.. literalinclude:: v3/samples/admin/user-update-response.json
    :language: javascript
 
 
@@ -129,7 +129,7 @@ Error response codes:204,413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
 
@@ -150,14 +150,14 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/user-groups-list-response.json
+.. literalinclude:: v3/samples/admin/user-groups-list-response.json
    :language: javascript
 
 
@@ -175,7 +175,7 @@ Error response codes:204,413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
    - user: user_object
@@ -185,7 +185,7 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/user-password-update-request.json
+.. literalinclude:: v3/samples/admin/user-password-update-request.json
    :language: javascript
 
 
@@ -203,7 +203,7 @@ Error response codes:201,413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user: user_object
    - default_project_id: default_project_id_request_body
@@ -215,13 +215,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/user-create-request.json
+.. literalinclude:: v3/samples/admin/user-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user: user_object
    - default_project_id: default_project_id_response_body
@@ -249,7 +249,7 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_query
    - enabled: enabled_user_query
@@ -258,7 +258,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - links: link_collection
    - users: users_object
@@ -273,7 +273,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/users-list-response.json
+.. literalinclude:: v3/samples/admin/users-list-response.json
    :language: javascript
 
 
@@ -293,12 +293,12 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/user-projects-list-response.json
+.. literalinclude:: v3/samples/admin/user-projects-list-response.json
    :language: javascript

@@ -38,7 +38,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - policy: policy
    - user_id: policy_user_id
@@ -49,13 +49,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/policy-create-request.json
+.. literalinclude:: v3/samples/admin/policy-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: policy_user_id
    - links: policy_links
@@ -82,14 +82,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - type: policy_type_query
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: policy_user_id
    - links: policy_links
@@ -102,7 +102,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/policies-list-response.json
+.. literalinclude:: v3/samples/admin/policies-list-response.json
    :language: javascript
 
 
@@ -122,14 +122,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - policy_id: policy_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: policy_user_id
    - links: policy_links
@@ -142,7 +142,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/policy-show-response.json
+.. literalinclude:: v3/samples/admin/policy-show-response.json
    :language: javascript
 
 
@@ -162,7 +162,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - policy_id: policy_id_path
    - policy: policy
@@ -174,13 +174,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/policy-update-request.json
+.. literalinclude:: v3/samples/admin/policy-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: policy_user_id
    - links: policy_links
@@ -193,7 +193,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/policy-update-response.json
+.. literalinclude:: v3/samples/admin/policy-update-response.json
    :language: javascript
 
 
@@ -213,6 +213,6 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - policy_id: policy_id_path

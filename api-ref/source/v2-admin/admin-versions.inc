@@ -18,12 +18,12 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - location: location
 
 Response Example
 ----------------
 
-.. literalinclude:: ../v2/samples/admin/version-show-response.json
+.. literalinclude:: v2/samples/admin/version-show-response.json
    :language: javascript

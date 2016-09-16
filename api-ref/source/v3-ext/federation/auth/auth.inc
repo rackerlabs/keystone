@@ -30,7 +30,7 @@ Example Identity API token response: `Various OpenStack token responses
 Request
 -------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - idp_id: idp_id
    - protocol_id: protocol_id
@@ -38,14 +38,14 @@ Request
 Response
 --------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - token: unscoped_token
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/auth/samples/unscoped-token-response.json
+.. literalinclude:: v3-ext/federation/auth/samples/unscoped-token-response.json
    :language: javascript
 
 
@@ -63,14 +63,14 @@ uniquely identify a project or domain.
 Request
 -------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - auth: auth
 
 Request Example
 ---------------
 
-.. literalinclude:: federation/auth/samples/scoped-token-request.json
+.. literalinclude:: v3-ext/federation/auth/samples/scoped-token-request.json
    :language: javascript
 
 Similarly to the returned unscoped token, the returned scoped token will have
@@ -79,14 +79,14 @@ an ``OS-FEDERATION`` section added to the ``user`` portion of the token.
 Response
 --------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - token: scoped_token
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/auth/samples/scoped-token-response.json
+.. literalinclude:: v3-ext/federation/auth/samples/scoped-token-response.json
    :language: javascript
 
 
@@ -98,7 +98,7 @@ Web Single Sign On authentication (New in version 1.2)
 Request
 -------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - protocol_id: protocol_id
 
@@ -116,7 +116,7 @@ Web Single Sign On authentication (New in version 1.3)
 Request
 -------
 
-.. rest_parameters:: federation/auth/parameters.yaml
+.. rest_parameters:: v3-ext/federation/auth/parameters.yaml
 
    - idp_id: idp_id
    - protocol_id: protocol_id

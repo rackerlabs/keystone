@@ -105,7 +105,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - nocatalog: nocatalog
    - domain: domain
@@ -120,13 +120,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/auth-password-unscoped-request-with-domain.json
+.. literalinclude:: v3/samples/admin/auth-password-unscoped-request-with-domain.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - domain: domain
@@ -143,7 +143,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/auth-password-unscoped-response.json
+.. literalinclude:: v3/samples/admin/auth-password-unscoped-response.json
    :language: javascript
 
 
@@ -167,7 +167,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - nocatalog: nocatalog
    - name: user_name
@@ -182,13 +182,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/auth-password-project-scoped-request.json
+.. literalinclude:: v3/samples/admin/auth-password-project-scoped-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - domain: domain
@@ -232,7 +232,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - nocatalog: nocatalog
    - name: user_name
@@ -247,13 +247,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/auth-password-explicit-unscoped-request.json
+.. literalinclude:: v3/samples/admin/auth-password-explicit-unscoped-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - domain: domain
@@ -287,7 +287,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - nocatalog: nocatalog
    - identity: identity
@@ -299,13 +299,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/auth-token-unscoped-request.json
+.. literalinclude:: v3/samples/admin/auth-token-unscoped-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
@@ -330,7 +330,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - nocatalog: nocatalog
    - methods: auth_methods_token
@@ -344,13 +344,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/auth-token-scoped-request.json
+.. literalinclude:: v3/samples/admin/auth-token-scoped-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
@@ -377,7 +377,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -386,7 +386,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Subject-Token: X-Subject-Token
    - X-Auth-Token: X-Auth-Token
@@ -408,7 +408,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/auth-token-unscoped-response.json
+.. literalinclude:: v3/samples/admin/auth-token-unscoped-response.json
    :language: javascript
 
 
@@ -437,7 +437,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -464,7 +464,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -492,7 +492,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -500,7 +500,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - endpoints: endpoints
    - id: service_id
@@ -510,7 +510,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/get-service-catalog-response.json
+.. literalinclude:: v3/samples/admin/get-service-catalog-response.json
    :language: javascript
 
 
@@ -536,7 +536,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -544,7 +544,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: project_domain_id_response_body
    - enabled: project_enabled_response_body
@@ -555,7 +555,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/get-available-project-scopes-response.json
+.. literalinclude:: v3/samples/admin/get-available-project-scopes-response.json
    :language: javascript
 
 
@@ -580,7 +580,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - X-Auth-Token: X-Auth-Token
    - X-Subject-Token: X-Subject-Token
@@ -588,7 +588,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - description: domain_description_response_body
    - enabled: domain_enabled_response_body
@@ -599,5 +599,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/get-available-domain-scopes-response.json
+.. literalinclude:: v3/samples/admin/get-available-domain-scopes-response.json
    :language: javascript

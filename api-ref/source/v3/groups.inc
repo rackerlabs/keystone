@@ -36,14 +36,14 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group_id: group_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group
    - description: group_description_response_body
@@ -55,7 +55,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/group-show-response.json
+.. literalinclude:: v3/samples/admin/group-show-response.json
    :language: javascript
 
 
@@ -78,7 +78,7 @@ Error response codes:413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group_id: group_id_path
    - group: group
@@ -89,13 +89,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/group-update-request.json
+.. literalinclude:: v3/samples/admin/group-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group
    - description: group_description_response_body
@@ -107,7 +107,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/group-update-response.json
+.. literalinclude:: v3/samples/admin/group-update-response.json
    :language: javascript
 
 
@@ -127,7 +127,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group_id: group_id_path
 
@@ -148,7 +148,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
    - group_id: group_id_path
@@ -170,7 +170,7 @@ Error response codes:413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
    - group_id: group_id_path
@@ -192,7 +192,7 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_path
    - group_id: group_id_path
@@ -214,14 +214,14 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group_id: group_id_path
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/group-users-list-response.json
+.. literalinclude:: v3/samples/admin/group-users-list-response.json
    :language: javascript
 
 
@@ -241,7 +241,7 @@ Error response codes:413,415,405,404,403,401,400,503,409,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group
    - description: group_description_request_body
@@ -251,13 +251,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/group-create-request.json
+.. literalinclude:: v3/samples/admin/group-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group
    - description: group_description_response_body
@@ -269,7 +269,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/group-show-response.json
+.. literalinclude:: v3/samples/admin/group-show-response.json
    :language: javascript
 
 List groups
@@ -288,7 +288,7 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: group_name_query
    - domain_id: domain_id_query
@@ -296,7 +296,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - links: link_collection
    - groups: groups
@@ -309,5 +309,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/groups-list-response.json
+.. literalinclude:: v3/samples/admin/groups-list-response.json
    :language: javascript

@@ -14,7 +14,7 @@ invalid URLs for either `auth_url` or `sp_url`.
 Request
 -------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - auth_url: auth_url
    - description: description
@@ -25,13 +25,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/service-provider/samples/register-request.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/register-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - auth_url: auth_url
    - description: description
@@ -44,7 +44,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/service-provider/samples/register-response.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/register-response.json
    :language: javascript
 
 
@@ -60,7 +60,7 @@ Normal response codes: 200
 Response
 --------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - links: links_collection
    - service_providers: service_providers
@@ -68,7 +68,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/service-provider/samples/list-response.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/list-response.json
    :language: javascript
 
 
@@ -84,14 +84,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - id: id_path
 
 Response
 --------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - auth_url: auth_url
    - description: description
@@ -104,7 +104,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/service-provider/samples/get-response.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/get-response.json
    :language: javascript
 
 
@@ -120,7 +120,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - id: id_path
 
@@ -139,7 +139,7 @@ invalid URLs for either `auth_url` or `sp_url`.
 Request
 -------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - id: id_path
    - auth_url: auth_url
@@ -150,13 +150,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/service-provider/samples/update-request.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/update-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/service-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/service-provider/parameters.yaml
 
    - auth_url: auth_url
    - description: description
@@ -169,5 +169,5 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/service-provider/samples/update-response.json
+.. literalinclude:: v3-ext/federation/service-provider/samples/update-response.json
    :language: javascript

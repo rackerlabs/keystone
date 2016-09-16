@@ -21,7 +21,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409,
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSEC2/ec2Credentials-create-request.json
+.. literalinclude:: v2-ext/samples/OS-KSEC2/ec2Credentials-create-request.json
    :language: javascript
 
 
@@ -39,7 +39,7 @@ Error response codes: 413,405,404,403,401,400,503,
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSEC2/credentialswithec2-list-response.json
+.. literalinclude:: v2-ext/samples/OS-KSEC2/credentialswithec2-list-response.json
    :language: javascript
 
 
@@ -57,13 +57,13 @@ Error response codes: 415,405,404,403,401,400,503,409,
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-KSEC2/ec2Credentials-create-request.json
+.. literalinclude:: v2-ext/samples/OS-KSEC2/ec2Credentials-create-request.json
    :language: javascript
 
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSEC2/ec2Credentials-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSEC2/ec2Credentials-show-response.json
    :language: javascript
 
 
@@ -93,7 +93,7 @@ Error response codes: 413,405,404,403,401,400,503,
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSEC2/ec2Credentials-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSEC2/ec2Credentials-show-response.json
    :language: javascript
 
 
@@ -111,12 +111,12 @@ Error response codes: 413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - type: type
 
 Response Example
 ----------------
 
-.. literalinclude:: samples/OS-KSADM/credentials-show-response.json
+.. literalinclude:: v2-ext/samples/OS-KSADM/credentials-show-response.json
    :language: javascript

@@ -19,7 +19,7 @@ Error response codes: 413,405,404,403,401,400,503,
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - description: tenant_description
    - tenants_links: tenants_links
@@ -31,7 +31,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/tenants-list-response.json
+.. literalinclude:: v2/samples/admin/tenants-list-response.json
    :language: javascript
 
 
@@ -74,7 +74,7 @@ Error response codes:413,405,404,403,401,400,503,
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - username: username
    - passwordCredentials: passwordCredentials
@@ -87,13 +87,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/authenticate-token-request.json
+.. literalinclude:: v2/samples/admin/authenticate-token-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - impersonation: impersonation
    - endpoints_links: endpoints_links
@@ -118,5 +118,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/client/authenticate-response.json
+.. literalinclude:: v2/samples/client/authenticate-response.json
    :language: javascript

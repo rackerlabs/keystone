@@ -39,7 +39,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: domain_name_query
    - enabled: domain_enabled_query
@@ -47,7 +47,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domains: domains
    - description: domain_description_response_body
@@ -59,7 +59,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domains-list-response.json
+.. literalinclude:: v3/samples/admin/domains-list-response.json
    :language: javascript
 
 
@@ -79,7 +79,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain: domain
    - enabled: domain_enabled_request_body
@@ -89,13 +89,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-create-request.json
+.. literalinclude:: v3/samples/admin/domain-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain: domain
    - description: domain_description_response_body
@@ -121,14 +121,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain: domain
    - description: domain_description_response_body
@@ -140,7 +140,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-show-response.json
+.. literalinclude:: v3/samples/admin/domain-show-response.json
    :language: javascript
 
 
@@ -160,7 +160,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - domain: domain
@@ -171,13 +171,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-update-request.json
+.. literalinclude:: v3/samples/admin/domain-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain: domain
    - description: domain_description_response_body
@@ -189,7 +189,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-update-response.json
+.. literalinclude:: v3/samples/admin/domain-update-response.json
    :language: javascript
 
 
@@ -219,6 +219,6 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path

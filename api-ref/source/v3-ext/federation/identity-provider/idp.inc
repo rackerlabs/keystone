@@ -13,7 +13,7 @@ Error response codes: 409
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - description: description
     - enabled: enabled
@@ -23,13 +23,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/identity-provider/samples/register-request.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/register-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - description: description
     - enabled: enabled
@@ -40,7 +40,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/register-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/register-response.json
    :language: javascript
 
 
@@ -56,7 +56,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - id: id_query
     - enabled: enabled_query
@@ -64,14 +64,14 @@ Request
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - identity_providers: identity_providers
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/list-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/list-response.json
    :language: javascript
 
 
@@ -87,14 +87,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - id: id_path
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - description: description
     - enabled: enabled
@@ -105,7 +105,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/get-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/get-response.json
    :language: javascript
 
 
@@ -124,7 +124,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - id: id_path
 
@@ -146,20 +146,20 @@ Request
 
 Any attribute of an Identity Provider may be passed in the request body.
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - id: id_path
 
 Request Example
 ---------------
 
-.. literalinclude:: federation/identity-provider/samples/update-request.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/update-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - description: description
     - enabled: enabled
@@ -170,7 +170,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/update-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/update-response.json
    :language: javascript
 
 
@@ -186,7 +186,7 @@ Normal response codes: 201
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - idp_id: id_path
     - protocol_id: protocol_id
@@ -195,20 +195,20 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/identity-provider/samples/add-protocol-request.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/add-protocol-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - protocol: protocol
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/add-protocol-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/add-protocol-response.json
    :language: javascript
 
 
@@ -225,14 +225,14 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - id: id_path
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - protocols: protocols
     - links: protocols_links
@@ -240,7 +240,7 @@ Response
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/list-protocol-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/list-protocol-response.json
    :language: javascript
 
 
@@ -256,7 +256,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - idp_id: id_path
     - protocol_id: protocol_id
@@ -264,14 +264,14 @@ Request
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - protocol: protocol
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/get-protocol-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/get-protocol-response.json
    :language: javascript
 
 
@@ -287,7 +287,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - idp_id: id_path
     - protocol_id: protocol_id
@@ -296,20 +296,20 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: federation/identity-provider/samples/update-protocol-request.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/update-protocol-request.json
    :language: javascript
 
 Response
 --------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - protocol: protocol
 
 Response Example
 ----------------
 
-.. literalinclude:: federation/identity-provider/samples/update-protocol-response.json
+.. literalinclude:: v3-ext/federation/identity-provider/samples/update-protocol-response.json
    :language: javascript
 
 
@@ -325,7 +325,7 @@ Normal response codes: 204
 Request
 -------
 
-.. rest_parameters:: federation/identity-provider/parameters.yaml
+.. rest_parameters:: v3-ext/federation/identity-provider/parameters.yaml
 
     - idp_id: id_path
     - protocol_id: protocol_id

@@ -94,7 +94,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - group_id: group_id_path
@@ -117,7 +117,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - group_id: group_id_path
@@ -140,7 +140,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - group_id: group_id_path
@@ -163,7 +163,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - user_id: user_id_path
@@ -186,7 +186,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - user_id: user_id_path
@@ -209,7 +209,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - user_id: user_id_path
@@ -232,7 +232,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - user_id: user_id_path
@@ -240,7 +240,7 @@ Request
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/project-user-roles-list-response.json
+.. literalinclude:: v3/samples/admin/project-user-roles-list-response.json
    :language: javascript
 
 
@@ -260,7 +260,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - project_id: project_id_path
    - group_id: group_id_path
@@ -268,7 +268,7 @@ Request
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/project-group-roles-list-response.json
+.. literalinclude:: v3/samples/admin/project-group-roles-list-response.json
    :language: javascript
 
 The functionality of this request can also be achieved using the generalized
@@ -293,7 +293,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group_id: group_id_path
@@ -315,7 +315,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group_id: group_id_path
@@ -338,7 +338,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group_id: group_id_path
@@ -361,7 +361,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - user_id: user_id_path
@@ -369,7 +369,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - roles: roles
    - id: role_id_response_body
@@ -379,7 +379,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-user-roles-list-response.json
+.. literalinclude:: v3/samples/admin/domain-user-roles-list-response.json
    :language: javascript
 
 The functionality of this request can also be achieved using the generalized
@@ -404,7 +404,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - name: role_name_query
    - domain_id: domain_id_query
@@ -412,7 +412,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - links: link_collection
    - roles: roles
@@ -424,7 +424,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/roles-list-response.json
+.. literalinclude:: v3/samples/admin/roles-list-response.json
    :language: javascript
 
 
@@ -444,7 +444,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role: role
    - name: role_name_create_body
@@ -453,19 +453,19 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/role-create-request.json
+.. literalinclude:: v3/samples/admin/role-create-request.json
    :language: javascript
 
 Request Example for Domain Specific Role
 ----------------------------------------
 
-.. literalinclude:: ./samples/admin/domain-specific-role-create-request.json
+.. literalinclude:: v3/samples/admin/domain-specific-role-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role: role
    - domain_id: domain_id_response_body
@@ -490,7 +490,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - user_id: user_id_path
@@ -513,7 +513,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - user_id: user_id_path
@@ -536,7 +536,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - user_id: user_id_path
@@ -558,7 +558,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group_id: group_id_path
@@ -566,7 +566,7 @@ Request
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-group-roles-list-response.json
+.. literalinclude:: v3/samples/admin/domain-group-roles-list-response.json
    :language: javascript
 
 The functionality of this request can also be achieved using the generalized
@@ -590,7 +590,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - effective: effective_query
    - include_names: include_names_query
@@ -604,14 +604,14 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_assignments: role_assignments
 
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/role-assignments-list-response.json
+.. literalinclude:: v3/samples/admin/role-assignments-list-response.json
    :language: javascript
 
 
@@ -631,14 +631,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_id: role_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role: role
    - domain_id: domain_id_response_body
@@ -649,7 +649,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/role-show-response.json
+.. literalinclude:: v3/samples/admin/role-show-response.json
    :language: javascript
 
 
@@ -669,7 +669,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_id: role_id_path
    - role: role
@@ -678,13 +678,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/role-update-request.json
+.. literalinclude:: v3/samples/admin/role-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role: role
    - domain_id: domain_id_response_body
@@ -695,7 +695,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/role-update-response.json
+.. literalinclude:: v3/samples/admin/role-update-response.json
    :language: javascript
 
 
@@ -715,7 +715,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_id: role_id_path
 
@@ -736,14 +736,14 @@ Error response codes: 401, 404
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - prior_role_id: prior_role_id
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_inference: role_inference_body
    - prior_role: prior_role_body
@@ -755,7 +755,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/list-implied-roles-for-role-response.json
+.. literalinclude:: v3/samples/admin/list-implied-roles-for-role-response.json
    :language: javascript
 
 Create role inference rule
@@ -775,7 +775,7 @@ Error response codes: 401, 404
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - prior_role_id: prior_role_id
    - implies_role_id: implies_role_id
@@ -783,7 +783,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_inference: role_inference_body
    - prior_role: prior_role_body
@@ -795,7 +795,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/create-role-inferences-response.json
+.. literalinclude:: v3/samples/admin/create-role-inferences-response.json
    :language: javascript
 
 Get role inference rule
@@ -815,7 +815,7 @@ Error response codes: 401, 404
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - prior_role_id: prior_role_id
    - implies_role_id: implies_role_id
@@ -823,7 +823,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_inference: role_inference_body
    - prior_role: prior_role_body
@@ -835,7 +835,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/get-role-inferences-response.json
+.. literalinclude:: v3/samples/admin/get-role-inferences-response.json
    :language: javascript
 
 Confirm role inference rule
@@ -855,7 +855,7 @@ Error response codes: 401, 404
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - prior_role_id: prior_role_id
    - implies_role_id: implies_role_id
@@ -879,7 +879,7 @@ Normal response codes: 204
 
 Error response codes: 401, 404
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - prior_role_id: prior_role_id
    - implies_role_id: implies_role_id
@@ -906,7 +906,7 @@ Relationship:
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - role_inferences: role_inference_array_body
    - prior_role: prior_role_body
@@ -918,5 +918,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/role-inferences-response.json
+.. literalinclude:: v3/samples/admin/role-inferences-response.json
    :language: javascript

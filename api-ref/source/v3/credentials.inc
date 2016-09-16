@@ -36,7 +36,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential: credential
    - project_id: project_id
@@ -47,13 +47,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/credential-create-request.json
+.. literalinclude:: v3/samples/admin/credential-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential: credential
    - user_id: credential_user_id
@@ -66,7 +66,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/credential-create-response.json
+.. literalinclude:: v3/samples/admin/credential-create-response.json
    :language: javascript
 
 
@@ -89,14 +89,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: user_id_query
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - user_id: credential_user_id
    - links: credentials_links
@@ -109,7 +109,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/credentials-list-response.json
+.. literalinclude:: v3/samples/admin/credentials-list-response.json
    :language: javascript
 
 
@@ -129,14 +129,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential_id: credential_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential: credential
    - user_id: credential_user_id
@@ -149,7 +149,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/credential-show-response.json
+.. literalinclude:: v3/samples/admin/credential-show-response.json
    :language: javascript
 
 
@@ -169,7 +169,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential_id: credential_id_path
    - credential: credential
@@ -181,13 +181,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/credential-update-request.json
+.. literalinclude:: v3/samples/admin/credential-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential: credential
    - user_id: credential_user_id
@@ -200,7 +200,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/credential-update-response.json
+.. literalinclude:: v3/samples/admin/credential-update-response.json
    :language: javascript
 
 
@@ -220,6 +220,6 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - credential_id: credential_id_path

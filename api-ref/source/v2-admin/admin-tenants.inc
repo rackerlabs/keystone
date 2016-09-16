@@ -18,14 +18,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenantId: tenantId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant: tenant
    - enabled: enabled
@@ -36,7 +36,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/tenant-show-response.json
+.. literalinclude:: v2-admin/samples/admin/tenant-show-response.json
    :language: javascript
 
 
@@ -53,14 +53,14 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenantId: tenantId
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - users_link: users_link
    - users: users
@@ -72,7 +72,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/users-list-response.json
+.. literalinclude:: v2-admin/samples/admin/users-list-response.json
    :language: javascript
 
 
@@ -89,7 +89,7 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - userId: userId
    - tenantId: tenantId
@@ -97,7 +97,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - roles_links: roles_links
    - roles: roles
@@ -108,7 +108,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/roles-list-response.json
+.. literalinclude:: v2-admin/samples/admin/roles-list-response.json
    :language: javascript
 
 
@@ -125,7 +125,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant_links: tenant_links
    - tenants: tenants
@@ -137,7 +137,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ../v2/samples/admin/tenants-list-response.json
+.. literalinclude:: v2/samples/admin/tenants-list-response.json
    :language: javascript
 
 
@@ -154,14 +154,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - name: name
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant: tenant
    - enabled: enabled
@@ -172,7 +172,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/tenant-show-response.json
+.. literalinclude:: v2-admin/samples/admin/tenant-show-response.json
    :language: javascript
 
 
@@ -189,7 +189,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenantId: tenantId
 
@@ -207,7 +207,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant: tenant
    - enabled: enabled
@@ -219,13 +219,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/tenant-update-request.json
+.. literalinclude:: v2-admin/samples/admin/tenant-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant: tenant
    - enabled: enabled
@@ -236,7 +236,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/tenant-show-response.json
+.. literalinclude:: v2-admin/samples/admin/tenant-show-response.json
    :language: javascript
 
 
@@ -253,13 +253,13 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request Example
 ---------------
 
-.. literalinclude:: samples/admin/tenantwithoutid-create-request.json
+.. literalinclude:: v2-admin/samples/admin/tenantwithoutid-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-admin/parameters.yaml
 
    - tenant: tenant
    - enabled: enabled

@@ -47,20 +47,20 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - since: since_query
 
 Request Example
 ---------------
 
-.. literalinclude:: samples/OS-REVOKE/list-revoke-response.json
+.. literalinclude:: v3-ext/samples/OS-REVOKE/list-revoke-response.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3-ext/parameters.yaml
 
    - events: revoke_events
    - issued_before: revoke_issued_before

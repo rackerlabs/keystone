@@ -31,14 +31,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region_id: region_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region: region_object
    - description: description_region_response_body
@@ -49,7 +49,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/region-show-response.json
+.. literalinclude:: v3/samples/admin/region-show-response.json
    :language: javascript
 
 
@@ -76,7 +76,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region_id: region_id_path
    - region: region_object
@@ -86,13 +86,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/region-update-request.json
+.. literalinclude:: v3/samples/admin/region-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region: region_object
    - description: description_region_response_body
@@ -103,7 +103,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/region-update-response.json
+.. literalinclude:: v3/samples/admin/region-update-response.json
    :language: javascript
 
 
@@ -128,7 +128,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region_id: region_id_path
 
@@ -149,14 +149,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - parent_region_id: parent_region_id_query
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - regions: regions_object
    - description: description_region_response_body
@@ -167,7 +167,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/regions-list-response.json
+.. literalinclude:: v3/samples/admin/regions-list-response.json
    :language: javascript
 
 
@@ -202,7 +202,7 @@ Error response codes: 413,415,405,404,403,401,400,503,409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region: region_object
    - description: description_region_request_body
@@ -212,13 +212,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/region-create-request.json
+.. literalinclude:: v3/samples/admin/region-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - region: region_object
    - description: description_region_response_body

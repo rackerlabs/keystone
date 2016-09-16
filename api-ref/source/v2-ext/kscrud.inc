@@ -18,7 +18,7 @@ Normal response codes: 200
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2-ext/parameters.yaml
 
    - userId: userId
    - user: user

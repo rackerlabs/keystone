@@ -19,14 +19,14 @@ Error response codes: 413,405,404,403,401,400,503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - alias: alias
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - x-openstack-request-id: x-openstack-request-id
    - alias: alias
@@ -37,7 +37,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/extension-show-response.json
+.. literalinclude:: v2/samples/admin/extension-show-response.json
    :language: javascript
 
 
@@ -55,7 +55,7 @@ Error response codes: 413,405,404,403,401,400,503
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v2/parameters.yaml
 
    - x-openstack-request-id: x-openstack-request-id
    - alias: alias
@@ -66,5 +66,5 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: samples/admin/extensions-list-response.json
+.. literalinclude:: v2/samples/admin/extensions-list-response.json
    :language: javascript

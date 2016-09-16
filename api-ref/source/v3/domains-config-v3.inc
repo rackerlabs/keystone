@@ -48,7 +48,7 @@ Relationship::
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - config: domain_config
    - ldap: domain_ldap
@@ -60,7 +60,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-default-response.json
+.. literalinclude:: v3/samples/admin/domain-config-default-response.json
    :language: javascript
 
 Show default configuration for a group
@@ -82,14 +82,14 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - ldap: domain_ldap
    - url: domain_url
@@ -100,7 +100,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-default-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-default-response.json
    :language: javascript
 
 Show default option for a group
@@ -125,7 +125,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - group: group_id_path
    - option: option
@@ -133,7 +133,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -142,7 +142,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-option-default-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-option-default-response.json
    :language: javascript
 
 
@@ -166,7 +166,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -175,7 +175,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -187,7 +187,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-option-show-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-option-show-response.json
    :language: javascript
 
 
@@ -211,7 +211,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -226,13 +226,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-option-update-request.json
+.. literalinclude:: v3/samples/admin/domain-config-group-option-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -244,7 +244,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-option-update-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-option-update-response.json
    :language: javascript
 
 
@@ -268,7 +268,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -293,7 +293,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -301,7 +301,7 @@ Request
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -313,7 +313,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-show-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-show-response.json
    :language: javascript
 
 
@@ -337,7 +337,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -351,13 +351,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-update-request.json
+.. literalinclude:: v3/samples/admin/domain-config-group-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -369,7 +369,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-group-update-response.json
+.. literalinclude:: v3/samples/admin/domain-config-group-update-response.json
    :language: javascript
 
 
@@ -391,7 +391,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - group: group_id_path
@@ -413,7 +413,7 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - url: domain_url
@@ -426,13 +426,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-config-create-request.json
+.. literalinclude:: v3/samples/admin/domain-config-create-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -444,7 +444,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-create-response.json
+.. literalinclude:: v3/samples/admin/domain-config-create-response.json
    :language: javascript
 
 
@@ -464,14 +464,14 @@ Error response codes: 413, 405, 404, 403, 401, 400, 503
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -483,7 +483,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-show-response.json
+.. literalinclude:: v3/samples/admin/domain-config-show-response.json
    :language: javascript
 
 
@@ -503,7 +503,7 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
    - url: domain_url
@@ -516,13 +516,13 @@ Request
 Request Example
 ---------------
 
-.. literalinclude:: ./samples/admin/domain-config-update-request.json
+.. literalinclude:: v3/samples/admin/domain-config-update-request.json
    :language: javascript
 
 Response Parameters
 -------------------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - url: domain_url
    - driver: domain_driver
@@ -534,7 +534,7 @@ Response Parameters
 Response Example
 ----------------
 
-.. literalinclude:: ./samples/admin/domain-config-update-response.json
+.. literalinclude:: v3/samples/admin/domain-config-update-response.json
    :language: javascript
 
 
@@ -554,6 +554,6 @@ Error response codes: 413, 415, 405, 404, 403, 401, 400, 503, 409
 Request
 -------
 
-.. rest_parameters:: parameters.yaml
+.. rest_parameters:: v3/parameters.yaml
 
    - domain_id: domain_id_path
