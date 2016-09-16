@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_166b17f2",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-16T16:19:29Z",
+      "side": 1,
+      "message": "Do you want to return the association dictionary or the created association from the driver?",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_116c01cf",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-16T16:19:29Z",
+      "side": 1,
+      "message": "What exactly is the target? Is it a combination of association attributes?",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_51c6899a",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-16T16:19:29Z",
+      "side": 1,
+      "message": "You could do a:\n\n  self.driver.check_policy_association(association) \n\nhere just to make sure it actually exists before deleting it.",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
