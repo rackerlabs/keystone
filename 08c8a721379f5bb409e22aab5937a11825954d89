@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c0a56547",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-16T15:40:00Z",
+      "side": 1,
+      "message": "I think we should make this a check in `keystone-manage doctor`. If someone wants to use federation and they don\u0027t change this value - the metadata generated will be wrong, right? Are we providing a default only to have it fail something later if it\u0027s not changed?",
+      "revId": "08c8a721379f5bb409e22aab5937a11825954d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
