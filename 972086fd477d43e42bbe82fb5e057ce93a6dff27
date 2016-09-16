@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_06fcc23c",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "extract this to a private method, something like:\n\n  def _assert_token_not_found(self, token):\n        self.assertRaises(\n            exception.TokenNotFound,\n            self.token_provider_api.validate_token,\n            token)",
+      "range": {
+        "startLine": 858,
+        "startChar": 0,
+        "endLine": 861,
+        "endChar": 17
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_4666ca2a",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "use the variable, not the literal directly (like you do on line 790)",
+      "range": {
+        "startLine": 870,
+        "startChar": 42,
+        "endLine": 870,
+        "endChar": 47
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_26f7fe59",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "this isn\u0027t testing anything, since it is passing None as the token. With the suggestion above:\n\n    self._assert_token_not_found(SAMPLE_V2_TOKEN)\n\nAlso, do this after the assertRaises below",
+      "range": {
+        "startLine": 873,
+        "startChar": 13,
+        "endLine": 873,
+        "endChar": 49
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a66f8efa",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "use the variable, not the literal directly (like you do on line 790)",
+      "range": {
+        "startLine": 883,
+        "startChar": 42,
+        "endLine": 883,
+        "endChar": 47
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_46bfaa60",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "the same validation should be done here:\n\n  self._assert_token_not_found(SAMPLE_V3_TOKEN)",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e67516cb",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "use the variable, not the literal directly (like you do on line 790)",
+      "range": {
+        "startLine": 892,
+        "startChar": 41,
+        "endLine": 892,
+        "endChar": 48
+      },
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_06aa0219",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-16T17:02:09Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "972086fd477d43e42bbe82fb5e057ce93a6dff27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
