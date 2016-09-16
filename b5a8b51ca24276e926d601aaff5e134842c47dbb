@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8dfe46ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-16T11:27:52Z",
+      "side": 1,
+      "message": "You might want to add a bit about why this is necessary. We don\u0027t run our tests with -O since Python doesn\u0027t really optimize anything.",
+      "revId": "b5a8b51ca24276e926d601aaff5e134842c47dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
