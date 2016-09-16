@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_83970beb",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": "could use bash: but meh",
+      "range": {
+        "startLine": 166,
+        "startChar": 46,
+        "endLine": 166,
+        "endChar": 48
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a39c0710",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": "``remote-id`` or ``--remote-id``",
+      "range": {
+        "startLine": 170,
+        "startChar": 18,
+        "endLine": 170,
+        "endChar": 27
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e3a28f4a",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": "moar backticks:  ``[federation]/idp_entity_id``",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 28
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_23b0f789",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": "doesn\u0027t this need a domain attribute if you\u0027re going to use the group\u0027s name",
+      "range": {
+        "startLine": 204,
+        "startChar": 20,
+        "endLine": 206,
+        "endChar": 21
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e6cd3db8",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": "these should each be in double backticks",
+      "range": {
+        "startLine": 367,
+        "startChar": 9,
+        "endLine": 367,
+        "endChar": 49
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_06c78996",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-16T02:46:10Z",
+      "side": 1,
+      "message": ":)",
+      "range": {
+        "startLine": 394,
+        "startChar": 32,
+        "endLine": 394,
+        "endChar": 33
+      },
+      "revId": "f231e3c6d1d3cba265cb1d876fad90db22a4aefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
