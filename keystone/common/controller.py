@@ -154,6 +154,10 @@ def protected(callback=None):
                             'domain']['id'] = (
                                 user_domain_id)
 
+                # NOTE(jamielennox): handle is_admin_project correctly until we
+                # can standardize this with oslo.context next release.
+                creds['is_admin_project'] = request.context.is_admin_project
+
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
                 policy_dict.update(kwargs)
