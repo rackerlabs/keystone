@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_9a16574a",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-17T05:50:35Z",
+      "side": 1,
+      "message": "http request below use self.user_id to authenticate, and policy that is defined make the trustor user id must be the self.user_id. The change here won\u0027t impact other testcases I think.",
+      "parentUuid": "7a8ec9b2_9728f09b",
+      "range": {
+        "startLine": 453,
+        "startChar": 28,
+        "endLine": 453,
+        "endChar": 40
+      },
+      "revId": "c04e35c107e08f61d194a056b5c762cbd5d50af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_31f65df9",
         "filename": "keystone/tests/unit/test_v3_trust.py",
         "patchSetId": 2
