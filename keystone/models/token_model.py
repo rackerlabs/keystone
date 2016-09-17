@@ -231,6 +231,14 @@ class KeystoneToken(dict):
         return self.project_scoped or self.domain_scoped
 
     @property
+    def is_admin_project(self):
+        # True gets returned by default for compatibility with older versions
+        if self.version is V3:
+            return self.get('is_admin_project', True)
+
+        return True
+
+    @property
     def trust_id(self):
         if self.version is V3:
             return self.get('OS-TRUST:trust', {}).get('id')
