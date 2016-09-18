@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6afc4bb8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-18T10:12:49Z",
+      "side": 1,
+      "message": "I think we consumer \u0027expires\u0027 to make sure the token is not expired, any other properties that is necessary so that we need reconstruct all? If the \u0027expires\u0027 got updated the cache should be invalidated.\n\nAlso not sure about the impact on the performance.",
+      "range": {
+        "startLine": 20,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 39
+      },
+      "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
