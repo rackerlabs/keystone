@@ -72,7 +72,8 @@ class UserController(identity.controllers.User):
                 # NOTE(dolph): why can't you set a disabled user's password?
                 raise exception.Unauthorized('User is disabled')
         except AssertionError:
-            raise exception.Unauthorized()
+            raise exception.Unauthorized(
+                'Assertion error on v2 password change')
 
         update_dict = {'password': user['password'], 'id': user_id}
 

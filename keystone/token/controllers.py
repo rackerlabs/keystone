@@ -150,7 +150,8 @@ class Auth(controller.V2Controller):
     def _restrict_scope(self, token_model_ref):
         # A trust token cannot be used to get another token
         if token_model_ref.trust_scoped:
-            raise exception.Forbidden()
+            raise exception.ForbiddenAction(
+                action=_('rescope a delegated token'))
         if not CONF.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
             if token_model_ref.project_scoped or token_model_ref.domain_scoped:
@@ -194,25 +195,26 @@ class Auth(controller.V2Controller):
             try:
                 trust_ref = self.trust_api.get_trust(auth['trust_id'])
             except exception.TrustNotFound:
-                raise exception.Forbidden()
+                raise exception.Forbidden(_('Trust not found'))
             if user_id != trust_ref['trustee_user_id']:
-                raise exception.Forbidden()
+                raise exception.Forbidden(_('User is not a trustee'))
             if (trust_ref['project_id'] and
                     tenant_id != trust_ref['project_id']):
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+                    _('Trust is scoped to another project'))
             if ('expires' in trust_ref) and (trust_ref['expires']):
                 expiry = trust_ref['expires']
                 if expiry < timeutils.parse_isotime(utils.isotime()):
-                    raise exception.Forbidden()
+                    raise exception.Forbidden(_('Trust expired'))
             user_id = trust_ref['trustor_user_id']
             trustor_user_ref = self.identity_api.get_user(
                 trust_ref['trustor_user_id'])
             if not trustor_user_ref['enabled']:
-                raise exception.Forbidden()
+                raise exception.Forbidden(_('Trustor is disabled'))
             trustee_user_ref = self.identity_api.get_user(
                 trust_ref['trustee_user_id'])
             if not trustee_user_ref['enabled']:
-                raise exception.Forbidden()
+                raise exception.Forbidden(_('Trustee is disabled'))
 
             if trust_ref['impersonation'] is True:
                 current_user_ref = trustor_user_ref
@@ -232,11 +234,13 @@ class Auth(controller.V2Controller):
             trust_roles = []
             for role in trust_ref['roles']:
                 if 'roles' not in metadata_ref:
-                    raise exception.Forbidden()
+                    raise exception.Forbidden(
+                        _('Auth metadata creation error'))
                 if role['id'] in metadata_ref['roles']:
                     trust_roles.append(role['id'])
                 else:
-                    raise exception.Forbidden()
+                    raise exception.Forbidden(
+                        _('Trustor cannot provide roles for trust'))
             if 'expiry' in trust_ref and trust_ref['expiry']:
                 trust_expiry = timeutils.parse_isotime(trust_ref['expiry'])
                 if trust_expiry < expiry:

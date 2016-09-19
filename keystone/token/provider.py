@@ -362,7 +362,7 @@ class Manager(manager.Manager):
             token_data = token['access']['token']
             if ('tenant' not in token_data or
                     token_data['tenant']['id'] != belongs_to):
-                raise exception.Unauthorized()
+                raise exception.Unauthorized('Token tenant mismatch')
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(
