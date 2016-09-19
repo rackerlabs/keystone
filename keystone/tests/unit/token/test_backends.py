@@ -461,19 +461,18 @@ class TokenTests(object):
 
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
-        self.user = unit.new_user_ref(
-            domain_id=CONF.identity.default_domain_id)
-        self.tenant = unit.new_project_ref(
-            domain_id=CONF.identity.default_domain_id)
-
         # Create an equivalent of a scoped token
-        token_dict = {'user': self.user, 'tenant': self.tenant,
-                      'metadata': {}, 'id': 'placeholder'}
+        token_dict = {
+            'user': self.user_foo,
+            'tenant': self.tenant_bar,
+            'metadata': {},
+            'id': 'placeholder'
+        }
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.scoped_token_id = token_id
 
         # ..and an un-scoped one
-        token_dict = {'user': self.user, 'tenant': None,
+        token_dict = {'user': self.user_foo, 'tenant': None,
                       'metadata': {}, 'id': 'placeholder'}
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.unscoped_token_id = token_id
@@ -502,7 +501,7 @@ class TokenCacheInvalidation(object):
             exception.TokenNotFound,
             self.token_provider_api.validate_token,
             self.scoped_token_id,
-            self.tenant['id'])
+            self.tenant_bar['id'])
         self.assertRaises(
             exception.TokenNotFound,
             self.token_provider_api.validate_v2_token,
@@ -511,15 +510,15 @@ class TokenCacheInvalidation(object):
             exception.TokenNotFound,
             self.token_provider_api.validate_v2_token,
             self.scoped_token_id,
-            self.tenant['id'])
+            self.tenant_bar['id'])
 
     def _check_scoped_tokens_are_valid(self):
         self.token_provider_api.validate_token(self.scoped_token_id)
         self.token_provider_api.validate_token(
-            self.scoped_token_id, belongs_to=self.tenant['id'])
+            self.scoped_token_id, belongs_to=self.tenant_bar['id'])
         self.token_provider_api.validate_v2_token(self.scoped_token_id)
         self.token_provider_api.validate_v2_token(
-            self.scoped_token_id, belongs_to=self.tenant['id'])
+            self.scoped_token_id, belongs_to=self.tenant_bar['id'])
 
     def _check_unscoped_tokens_are_valid(self):
         self.token_provider_api.validate_token(self.unscoped_token_id)
@@ -537,7 +536,7 @@ class TokenCacheInvalidation(object):
         self._check_unscoped_tokens_are_valid()
 
     def test_delete_scoped_token_by_user(self):
-        self.token_provider_api._persistence.delete_tokens(self.user['id'])
+        self.token_provider_api._persistence.delete_tokens(self.user_foo['id'])
         # Since we are deleting all tokens for this user, they should all
         # now be invalid.
         self._check_scoped_tokens_are_invalid()
@@ -545,7 +544,7 @@ class TokenCacheInvalidation(object):
 
     def test_delete_scoped_token_by_user_and_tenant(self):
         self.token_provider_api._persistence.delete_tokens(
-            self.user['id'],
-            tenant_id=self.tenant['id'])
+            self.user_foo['id'],
+            tenant_id=self.tenant_bar['id'])
         self._check_scoped_tokens_are_invalid()
         self._check_unscoped_tokens_are_valid()
