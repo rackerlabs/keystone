@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_5878252c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 82,
+        "startChar": 41,
+        "endLine": 82,
+        "endChar": 44
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_189dbd59",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 321,
+        "startChar": 45,
+        "endLine": 321,
+        "endChar": 59
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_38a2799b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 327,
+        "startChar": 45,
+        "endLine": 327,
+        "endChar": 61
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_18b4ddcf",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 291,
+        "startChar": 16,
+        "endLine": 291,
+        "endChar": 55
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d8e0b5cf",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 207,
+        "startChar": 21,
+        "endLine": 207,
+        "endChar": 59
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_98d70ded",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 246,
+        "startChar": 25,
+        "endLine": 246,
+        "endChar": 67
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_78f16195",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 360,
+        "startChar": 45,
+        "endLine": 360,
+        "endChar": 68
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d82ef5f9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 660,
+        "startChar": 41,
+        "endLine": 660,
+        "endChar": 59
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_583bc538",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "absent?",
+      "range": {
+        "startLine": 660,
+        "startChar": 51,
+        "endLine": 660,
+        "endChar": 57
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f881f1c4",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 239,
+        "startChar": 21,
+        "endLine": 239,
+        "endChar": 60
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_3853596e",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T13:52:36Z",
+      "side": 1,
+      "message": "Where is _() ?",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 55
+      },
+      "revId": "52070ecdaead24b2f677cfc985d316fc3d279539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
