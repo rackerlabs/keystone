@@ -49,6 +49,23 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_b39f794f",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:20:43Z",
+      "side": 1,
+      "message": "I actually like it here. We have fallen into this trap of \"less code\" so we do crazy things in our test setup. Many of my test improvements (for test speed and coverage) over the last year has revolved around removing setup.",
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9f55a9fb",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
@@ -66,6 +83,23 @@
         "endLine": 1924,
         "endChar": 16
       },
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d3ac058f",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1924,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:20:43Z",
+      "side": 1,
+      "message": "Is this change just to consolidate setup or is there other value?",
       "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
