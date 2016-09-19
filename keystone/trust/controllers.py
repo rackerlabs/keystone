@@ -31,7 +31,8 @@ from keystone.trust import schema
 def _trustor_trustee_only(trust, user_id):
     if user_id not in [trust.get('trustee_user_id'),
                        trust.get('trustor_user_id')]:
-        raise exception.Forbidden()
+        raise exception.Forbidden(
+            _('Requested user has no relation to this trust'))
 
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
@@ -196,13 +197,15 @@ class TrustV3(controller.V3Controller):
 
         if trustor_user_id:
             if trustor_user_id != request.context.user_id:
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+                    _('Cannot list trusts for another user'))
 
             trusts += self.trust_api.list_trusts_for_trustor(trustor_user_id)
 
         if trustee_user_id:
             if trustee_user_id != request.context.user_id:
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+                    _('Cannot list trusts for another user'))
 
             trusts += self.trust_api.list_trusts_for_trustee(trustee_user_id)
 
@@ -225,7 +228,8 @@ class TrustV3(controller.V3Controller):
 
         if (request.context.user_id != trust.get('trustor_user_id') and
                 not request.context.is_admin):
-            raise exception.Forbidden()
+            raise exception.Forbidden(
+                _('Only admin or trustor can delete the trust'))
 
         initiator = notifications._get_request_audit_info(request.context_dict)
         self.trust_api.delete_trust(trust_id, initiator)
