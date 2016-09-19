@@ -20,6 +20,7 @@ from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import wsgi
 from keystone import exception
+from keystone.i18n import _
 from keystone import identity
 from keystone.models import token_model
 
@@ -71,8 +72,9 @@ class UserController(identity.controllers.User):
             if not user_ref.get('enabled', True):
                 # NOTE(dolph): why can't you set a disabled user's password?
                 raise exception.Unauthorized('User is disabled')
-        except AssertionError:
-            raise exception.Unauthorized()
+        except AssertionError as e:
+            raise exception.Unauthorized(
+                _('Assertion error on v2 password change: %s') % str(e))
 
         update_dict = {'password': user['password'], 'id': user_id}
 
