@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8ec9b2_b6c68747",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:38:59Z",
+      "side": 1,
+      "message": "This should really use _(). There is no reason for this string to be translated twice.",
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_96c98b5d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:38:59Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_c1ec442c",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
