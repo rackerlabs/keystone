@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c1d3645e",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-19T12:49:50Z",
+      "side": 1,
+      "message": "maybe \"Unknown parameters found. Please provide only oauth parameters.\" is clearer. Maybe also return the correct/expected params.",
+      "range": {
+        "startLine": 258,
+        "startChar": 25,
+        "endLine": 258,
+        "endChar": 70
+      },
+      "revId": "464f50cfa4dd655e44a37ea8ef150cc2a1cb0390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a12ad82d",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-19T12:49:50Z",
+      "side": 1,
+      "message": "wrap inside () instead of using \\",
+      "range": {
+        "startLine": 841,
+        "startChar": 73,
+        "endLine": 841,
+        "endChar": 74
+      },
+      "revId": "464f50cfa4dd655e44a37ea8ef150cc2a1cb0390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_61c7f064",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-19T12:49:50Z",
+      "side": 1,
+      "message": "you should be able to access them directly, right (resp_data[\u0027error\u0027][\u0027message\u0027])? Otherwise it means something is wrong",
+      "range": {
+        "startLine": 851,
+        "startChar": 32,
+        "endLine": 851,
+        "endChar": 63
+      },
+      "revId": "464f50cfa4dd655e44a37ea8ef150cc2a1cb0390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
