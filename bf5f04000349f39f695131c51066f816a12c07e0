@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f68c8f81",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "degrades?",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_16e81b16",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "Is there any reason to revoke at all then? I presume if a domain/project is deleted that this check would fail.",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_36ed1726",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "Do all existing tests actually need this? I think if would be better to create the entities in the test that actually uses them. Since you have more than one test case that needs them I suggest maybe having a separate test class for this setup and those tests.",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_56f2a307",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "What\u0027s this for?",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_76f79ff5",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "Is this something that now has to be done for all existings tests?",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_96dc2b76",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-19T18:31:38Z",
+      "side": 1,
+      "message": "I think the indentation is wrong here.",
+      "revId": "bf5f04000349f39f695131c51066f816a12c07e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
