@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c7946238",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-19T10:00:55Z",
+      "side": 1,
+      "message": "Why did you change this to \u0027false\u0027? based on the code in the upstream I am afraid this is \u0027true\u0027.\n\nsee: https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L138",
+      "range": {
+        "startLine": 133,
+        "startChar": 2,
+        "endLine": 133,
+        "endChar": 17
+      },
+      "revId": "ffaf47c5e9283889a761b5633296f828535a736b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_67762e07",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-19T10:00:55Z",
+      "side": 1,
+      "message": "nice catch!",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 13
+      },
+      "revId": "ffaf47c5e9283889a761b5633296f828535a736b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_92b37a4c",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-19T10:00:55Z",
+      "side": 1,
+      "message": "where does this used in this patch? I\u0027d rather not define this if this is not used anywhere.",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 275,
+        "endChar": 14
+      },
+      "revId": "ffaf47c5e9283889a761b5633296f828535a736b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
