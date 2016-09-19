@@ -62,7 +62,8 @@ def token_authenticate(context, auth_payload, user_context, token_ref):
         # privilege attacks
 
         if token_ref.oauth_scoped or token_ref.trust_scoped:
-            raise exception.Forbidden()
+            raise exception.ForbiddenAction(
+                action=_('rescope a delegated token'))
 
         if not CONF.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
