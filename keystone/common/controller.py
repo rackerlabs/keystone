@@ -99,8 +99,9 @@ def _build_policy_check_credentials(self, action, context, kwargs):
         # backing store.
         wsgi.validate_token_bind(context, token_ref)
     except exception.TokenNotFound:
-        LOG.warning(_LW('RBAC: Invalid token'))
-        raise exception.Unauthorized()
+        msg = _LW('RBAC: Invalid token')
+        LOG.warning(msg)
+        raise exception.Unauthorized(msg)
 
     auth_context = authorization.token_to_auth_context(token_ref)
 
@@ -731,9 +732,9 @@ class V3Controller(wsgi.Application):
         elif token_ref.project_scoped:
             return token_ref.project_domain_id
         else:
-            LOG.warning(
-                _LW('No domain information specified as part of list request'))
-            raise exception.Unauthorized()
+            msg = 'No domain information specified as part of list request'
+            LOG.warning(_LW(msg))
+            raise exception.Unauthorized(_(msg))
 
     def _get_domain_id_from_token(self, context):
         """Get the domain_id for a v3 create call.

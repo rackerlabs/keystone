@@ -31,12 +31,14 @@ from keystone.trust import schema
 def _trustor_trustee_only(trust, user_id):
     if (user_id != trust.get('trustee_user_id') and
             user_id != trust.get('trustor_user_id')):
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+            _('Requested user has no relation to this trust'))
 
 
 def _admin_trustor_only(context, trust, user_id):
     if user_id != trust.get('trustor_user_id') and not context['is_admin']:
-        raise exception.Forbidden()
+        raise exception.Forbidden(
+            _('Trustor must be an admin'))
 
 
 @dependency.requires('assignment_api', 'identity_api', 'resource_api',
@@ -225,14 +227,16 @@ class TrustV3(controller.V3Controller):
             user_id = query['trustor_user_id']
             calling_user_id = self._get_user_id(context)
             if user_id != calling_user_id:
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+                    _('Cannot list trusts for another user'))
             trusts += (self.trust_api.
                        list_trusts_for_trustor(user_id))
         if 'trustee_user_id' in query:
             user_id = query['trustee_user_id']
             calling_user_id = self._get_user_id(context)
             if user_id != calling_user_id:
-                raise exception.Forbidden()
+                raise exception.Forbidden(
+                    _('Cannot list trusts for another user'))
             trusts += self.trust_api.list_trusts_for_trustee(user_id)
         for trust in trusts:
             # get_trust returns roles, list_trusts does not

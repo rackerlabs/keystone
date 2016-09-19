@@ -91,4 +91,5 @@ class AuthMethodHandler(object):
                   authentication.
         :raises keystone.exception.Unauthorized: for authentication failure
         """
-        raise exception.Unauthorized()
+        msg = "Abstract AuthMethodHandler.authenticate() called"
+        raise exception.Unauthorized(msg)

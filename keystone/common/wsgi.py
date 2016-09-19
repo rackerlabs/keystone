@@ -77,27 +77,30 @@ def validate_token_bind(context, token_ref):
             # no bind provided and none required
             return
         else:
-            LOG.info(_LI("No bind information present in token"))
-            raise exception.Unauthorized()
+            msg = "No bind information present in token."
+            LOG.info(_LI(msg))
+            raise exception.Unauthorized(msg)
 
     # get the named mode if bind_mode is not one of the known
     name = None if permissive or bind_mode == 'required' else bind_mode
 
     if name and name not in bind:
         LOG.info(_LI("Named bind mode %s not in bind information"), name)
-        raise exception.Unauthorized()
+        raise exception.Unauthorized(
+            _("Named bind mode not in bind information"))
 
     for bind_type, identifier in bind.items():
         if bind_type == 'kerberos':
             if not (context['environment'].get('AUTH_TYPE', '').lower()
                     == 'negotiate'):
-                LOG.info(_LI("Kerberos credentials required and not present"))
-                raise exception.Unauthorized()
+                msg = _LI("Kerberos credentials required and not present")
+                LOG.info(msg)
+                raise exception.Unauthorized(msg)
 
             if not context['environment'].get('REMOTE_USER') == identifier:
-                LOG.info(_LI("Kerberos credentials do not match "
-                             "those in bind"))
-                raise exception.Unauthorized()
+                msg = _LI("Kerberos credentials do not match those in bind")
+                LOG.info(msg)
+                raise exception.Unauthorized(msg)
 
             LOG.info(_LI("Kerberos bind authentication successful"))
 
@@ -109,7 +112,7 @@ def validate_token_bind(context, token_ref):
             LOG.info(_LI("Couldn't verify unknown bind: "
                          "{%(bind_type)s: %(identifier)s}"),
                      {'bind_type': bind_type, 'identifier': identifier})
-            raise exception.Unauthorized()
+            raise exception.Unauthorized("Couldn't verify unknown bind")
 
 
 def best_match_language(req):
@@ -316,13 +319,13 @@ class Application(BaseApplication):
                 creds['user_id'] = user_token_ref.user_id
             except exception.UnexpectedError:
                 LOG.debug('Invalid user')
-                raise exception.Unauthorized()
+                raise exception.Unauthorized('Invalid user')
 
             if user_token_ref.project_scoped:
                 creds['tenant_id'] = user_token_ref.project_id
             else:
                 LOG.debug('Invalid tenant')
-                raise exception.Unauthorized()
+                raise exception.Unauthorized('Invalid tenant')
 
             creds['roles'] = user_token_ref.role_names
             # Accept either is_admin or the admin role

@@ -99,8 +99,9 @@ class AuthContextMiddleware(wsgi.Middleware):
             wsgi.validate_token_bind(context, token_ref)
             return authorization.token_to_auth_context(token_ref), False
         except exception.TokenNotFound:
-            LOG.warning(_LW('RBAC: Invalid token'))
-            raise exception.Unauthorized()
+            msg = _LW('RBAC: Invalid token')
+            LOG.warning(msg)
+            raise exception.Unauthorized(msg)
 
     def _build_tokenless_auth_context(self, env):
         """Build the authentication context.
