@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_ac0f162d",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-19T19:19:05Z",
+      "side": 1,
+      "message": "it is used in all tests but one, think the \"exception\" is test_put(), so that test should be different one.",
+      "parentUuid": "7a8ec9b2_b39f794f",
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9f55a9fb",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "Zero testing value. I would need to make a new role here to ignore the one created by setUp in order to test.",
       "parentUuid": "7a8ec9b2_d3ac058f",
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_cce62244",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1924,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-19T19:19:05Z",
+      "side": 1,
+      "message": "actually, this is exactly what \"_create_implied_role()\" does, the difference is that it calls the manager layer directly. Usually, tests that \"replicate\" the setUp() are done not using the setUp().\n\nI would be ok removing this test and using the controller layer in \"_create_implied_role()\".",
+      "parentUuid": "7a8ec9b2_735ed177",
       "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
