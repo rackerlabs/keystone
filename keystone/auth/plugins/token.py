@@ -62,12 +62,16 @@ def token_authenticate(request, auth_payload, user_context, token_ref):
         # privilege attacks
 
         if token_ref.oauth_scoped or token_ref.trust_scoped:
-            raise exception.Forbidden()
+            value = _('Using a trust or OAuth token to create another token is'
+                      ' not allowed. Create a new trust or OAuth token instead'
+                      )
+            raise exception.ForbiddenAction(action=value)
 
         if not CONF.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
             if token_ref.project_scoped or token_ref.domain_scoped:
-                raise exception.Forbidden(action=_("rescope a scoped token"))
+                raise exception.ForbiddenAction(
+                    action=_("rescope a scoped token"))
 
         wsgi.validate_token_bind(request.context_dict, token_ref)
 
