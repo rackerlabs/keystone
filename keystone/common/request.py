@@ -19,7 +19,7 @@ from keystone.common import authorization
 from keystone.common import context
 import keystone.conf
 from keystone import exception
-from keystone.i18n import _, _LW
+from keystone.i18n import _
 
 
 # Environment variable used to pass the request context
@@ -79,16 +79,18 @@ class Request(webob.Request):
     def assert_authenticated(self):
         """Ensure that the current request has been authenticated."""
         if not self.context:
-            LOG.warning(_LW('An authenticated call was made and there is '
-                            'no request.context. This means the '
-                            'auth_context middleware is not in place. You '
-                            'must have this middleware in your pipeline '
-                            'to perform authenticated calls'))
-            raise exception.Unauthorized()
+            msg = _('An authenticated call was made and there is '
+                    'no request.context. This means the '
+                    'auth_context middleware is not in place. You '
+                    'must have this middleware in your pipeline '
+                    'to perform authenticated calls')
+            LOG.warning(msg)
+            raise exception.Unauthorized(msg)
 
         if not self.context.authenticated:
             # auth_context didn't decode anything we can use
-            raise exception.Unauthorized()
+            raise exception.Unauthorized(
+                _('auth_context did not decode anything useful'))
 
     auth_type = environ_getter('AUTH_TYPE', None)
     remote_domain = environ_getter('REMOTE_DOMAIN', None)

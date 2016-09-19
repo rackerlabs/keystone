@@ -61,13 +61,22 @@ def token_authenticate(request, auth_payload, user_context, token_ref):
         # state in Keystone. To do so is to invite elevation of
         # privilege attacks
 
-        if token_ref.oauth_scoped or token_ref.trust_scoped:
-            raise exception.Forbidden()
+        if token_ref.oauth_scoped:
+            raise exception.ForbiddenAction(
+                action=_(
+                    'Using OAuth-scoped token to create another token is '
+                    'not allowed. Create a new OAuth-scoped token instead'))
+        elif token_ref.trust_scoped:
+            raise exception.ForbiddenAction(
+                action=_(
+                    'Using trust-scoped token to create another token is '
+                    'not allowed. Create a new trust-scoped token instead'))
 
         if not CONF.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
             if token_ref.project_scoped or token_ref.domain_scoped:
-                raise exception.Forbidden(action=_("rescope a scoped token"))
+                raise exception.ForbiddenAction(
+                    action=_('rescope a scoped token'))
 
         wsgi.validate_token_bind(request.context_dict, token_ref)
 
