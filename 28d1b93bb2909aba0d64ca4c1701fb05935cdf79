@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8ec9b2_e773f713",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "\"Using a trust or OAuth token to create another token is not allowed. Create a new trust or OAuth token instead.\"",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 51
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_b6c68747",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -19,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_0749c38e",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "why not re-use the message above?",
+      "range": {
+        "startLine": 88,
+        "startChar": 19,
+        "endLine": 88,
+        "endChar": 58
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_96c98b5d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 1
@@ -30,6 +76,29 @@
       "writtenOn": "2016-09-19T18:38:59Z",
       "side": 1,
       "message": "Same as above",
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e754d722",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "same this in a msg variable and re-use it, it\u0027ll only be translated once that way",
+      "range": {
+        "startLine": 89,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 64
+      },
       "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +151,75 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_67160757",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "i think we can remove the \"v3\" part of this, where the request lands should be obvious in the logs.\n\n  \"Error when changing user password\"",
+      "range": {
+        "startLine": 287,
+        "startChar": 17,
+        "endLine": 287,
+        "endChar": 54
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a20f1d2d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "you could say:\n\n  trust $trust_id cannot be found",
+      "range": {
+        "startLine": 198,
+        "startChar": 45,
+        "endLine": 198,
+        "endChar": 60
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_421f395b",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "suggestion:\n\n  User $user_id is not a trustee of trust $trust_id",
+      "range": {
+        "startLine": 200,
+        "startChar": 45,
+        "endLine": 200,
+        "endChar": 66
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_610290b6",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -93,6 +231,30 @@
       "writtenOn": "2016-09-19T12:50:30Z",
       "side": 1,
       "message": "where is _()?",
+      "range": {
+        "startLine": 204,
+        "startChar": 21,
+        "endLine": 204,
+        "endChar": 59
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_82406137",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T20:49:01Z",
+      "side": 1,
+      "message": "Trust $trust_id is scoped to a different project\n\nsame for the rest of these",
+      "parentUuid": "7a8ec9b2_610290b6",
       "range": {
         "startLine": 204,
         "startChar": 21,
