@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_e75137da",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-09-19T19:47:16Z",
+      "side": 1,
+      "message": "I named it \u0027implies\u0027 on purpose to match the REST call. In reality it is the prior_role that is most often checked....",
+      "parentUuid": "7a8ec9b2_e193eafe",
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_7f061d1e",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
