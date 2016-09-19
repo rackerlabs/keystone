@@ -463,8 +463,15 @@ class TokenCacheInvalidation(object):
     def _create_test_data(self):
         self.user = unit.new_user_ref(
             domain_id=CONF.identity.default_domain_id)
+        self.user = self.identity_api.create_user(self.user)
         self.tenant = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(self.tenant['id'], self.tenant)
+        self.assignment_api.create_grant(
+            user_id=self.user['id'],
+            project_id=self.tenant['id'],
+            role_id='member'
+        )
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
