@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_c04a6cac",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 17026
+      },
+      "writtenOn": "2016-09-19T17:16:02Z",
+      "side": 1,
+      "message": "Bah. I like the clarity the tests have now. Why is this a bikeshed?",
+      "parentUuid": "7a8ec9b2_7f061d1e",
+      "range": {
+        "startLine": 1901,
+        "startChar": 8,
+        "endLine": 1901,
+        "endChar": 35
+      },
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9f55a9fb",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
