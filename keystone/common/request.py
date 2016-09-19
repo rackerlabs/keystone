@@ -84,11 +84,13 @@ class Request(webob.Request):
                             'auth_context middleware is not in place. You '
                             'must have this middleware in your pipeline '
                             'to perform authenticated calls'))
-            raise exception.Unauthorized()
+            raise exception.Unauthorized(
+                _('auth_context middleware is not in place'))
 
         if not self.context.authenticated:
             # auth_context didn't decode anything we can use
-            raise exception.Unauthorized()
+            raise exception.Unauthorized(
+                _("auth_context didn't decode anything useful"))
 
     auth_type = environ_getter('AUTH_TYPE', None)
     remote_domain = environ_getter('REMOTE_DOMAIN', None)
