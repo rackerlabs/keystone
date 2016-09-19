@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_51fbbf78",
+        "filename": "api-ref/source/v2-admin/admin-endpoints.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 20079
+      },
+      "writtenOn": "2016-09-19T02:27:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_bd5ced4b",
+      "range": {
+        "startLine": 43,
+        "startChar": 17,
+        "endLine": 43,
+        "endChar": 35
+      },
+      "revId": "976a89788fc518e09f07e71a881f78555d3f3823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_fd52f533",
         "filename": "api-ref/source/v2-admin/parameters.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-09-17T09:50:30Z",
       "side": 1,
       "message": "as far as I can see, this is not required.",
+      "range": {
+        "startLine": 121,
+        "startChar": 2,
+        "endLine": 121,
+        "endChar": 16
+      },
+      "revId": "976a89788fc518e09f07e71a881f78555d3f3823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_71f6fb8f",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 20079
+      },
+      "writtenOn": "2016-09-19T02:27:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_fd52f533",
       "range": {
         "startLine": 121,
         "startChar": 2,
