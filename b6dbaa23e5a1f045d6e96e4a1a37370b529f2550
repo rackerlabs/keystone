@@ -22,6 +22,75 @@
       "revId": "b6dbaa23e5a1f045d6e96e4a1a37370b529f2550",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_077bb57b",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T04:30:12Z",
+      "side": 1,
+      "message": "this was correct before, it\u0027s just \"tenant\" here:\n\nhttps://github.com/openstack/keystone/blob/8a56c161ee29e34e70c6334b048881e8fbbd7514/keystone/v2_crud/admin_crud.py#L123",
+      "range": {
+        "startLine": 98,
+        "startChar": 57,
+        "endLine": 98,
+        "endChar": 59
+      },
+      "revId": "b6dbaa23e5a1f045d6e96e4a1a37370b529f2550",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_27b6f1f8",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T04:30:12Z",
+      "side": 1,
+      "message": "this is part of the request body, look at the example: https://github.com/openstack/keystone/blob/master/api-ref/source/v2-ext/samples/OS-KSADM/user-update-tenant-request.json",
+      "range": {
+        "startLine": 112,
+        "startChar": 5,
+        "endLine": 112,
+        "endChar": 13
+      },
+      "revId": "b6dbaa23e5a1f045d6e96e4a1a37370b529f2550",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_67cc7989",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-19T04:30:12Z",
+      "side": 1,
+      "message": "no real reason to change this",
+      "range": {
+        "startLine": 362,
+        "startChar": 44,
+        "endLine": 362,
+        "endChar": 52
+      },
+      "revId": "b6dbaa23e5a1f045d6e96e4a1a37370b529f2550",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
