@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c7051b15",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-09-19T20:18:08Z",
+      "side": 1,
+      "message": "Is this correct? I would think name refers to the user\u0027s IRL name, not the name of the tenant/project? Same with the set user password and I think the update user tenant APIs below",
+      "revId": "676e498c140f60a18f803e3b4f0a727937dad5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_22514d0f",
+        "filename": "api-ref/source/v2-ext/ksadm-admin.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-09-19T20:18:08Z",
+      "side": 1,
+      "message": "These response parameters aren\u0027t consistent with the example included here\n\n    \"user\": {\n        \"id\": \"3c9530e\",\n        \"name\": \"admin\",\n        \"email\": \"admin@example.org\",\n        \"username\": \"admin\",\n        \"enabled\": true,\n        \"tenantId\": \"1ca8e0\"\n    }",
+      "revId": "676e498c140f60a18f803e3b4f0a727937dad5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
