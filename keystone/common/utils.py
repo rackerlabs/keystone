@@ -545,7 +545,7 @@ def get_token_ref(context):
         return auth_context['token']
     except KeyError:
         LOG.warning(_LW("Couldn't find the auth context."))
-        raise exception.Unauthorized()
+        raise exception.Unauthorized(_("Couldn't find the auth context."))
 
 
 URL_RESERVED_CHARS = ":/?#[]@!$&'()*+,;="

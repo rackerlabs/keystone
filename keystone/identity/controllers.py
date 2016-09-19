@@ -283,7 +283,8 @@ class UserV3(controller.V3Controller):
             self.identity_api.change_password(
                 request, user_id, original_password, password)
         except AssertionError:
-            raise exception.Unauthorized()
+            raise exception.Unauthorized(
+                "Error when changing user password")
 
 
 @dependency.requires('identity_api')
