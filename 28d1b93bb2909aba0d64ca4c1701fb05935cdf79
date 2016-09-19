@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c1ec442c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "Why don\u0027t you use _(\u0027Invalid user\u0027) as in l.91?",
+      "range": {
+        "startLine": 304,
+        "startChar": 45,
+        "endLine": 304,
+        "endChar": 59
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_41d91483",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "Why don\u0027t you use _(\u0027Invalid tenant\u0027) as in l.91?",
+      "range": {
+        "startLine": 310,
+        "startChar": 45,
+        "endLine": 310,
+        "endChar": 61
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_610290b6",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "where is _()?",
+      "range": {
+        "startLine": 204,
+        "startChar": 21,
+        "endLine": 204,
+        "endChar": 59
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_211fa80a",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "where is _()?",
+      "range": {
+        "startLine": 243,
+        "startChar": 25,
+        "endLine": 243,
+        "endChar": 67
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_21cde886",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "where is _()?",
+      "range": {
+        "startLine": 365,
+        "startChar": 45,
+        "endLine": 365,
+        "endChar": 68
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e1a94092",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "absent?",
+      "range": {
+        "startLine": 722,
+        "startChar": 51,
+        "endLine": 722,
+        "endChar": 57
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e18060fa",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2016-09-19T12:50:30Z",
+      "side": 1,
+      "message": "where is _()?",
+      "range": {
+        "startLine": 232,
+        "startChar": 16,
+        "endLine": 232,
+        "endChar": 64
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
