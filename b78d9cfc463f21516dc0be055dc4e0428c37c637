@@ -33,6 +33,24 @@
       "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7354df53",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-09-20T13:49:04Z",
+      "side": 1,
+      "message": "AFAIK, any project used to act like an admin project. So it didn\u0027t matter which project you had the admin role on, as long as you had it. This does the same thing by returning True by default.",
+      "parentUuid": "7a8ec9b2_b3b90731",
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
