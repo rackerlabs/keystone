@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_71ba3ec2",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-20T01:49:21Z",
+      "side": 1,
+      "message": "Not quite follow you, do you mean the following call make it inconsistent?\n    self.trust_api.get_trust(...)\n\nwe didn\u0027t mock anything in this testcase and I think there is no need to mock anything in this testcase in the future.\n\npls take a look at these lines:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L430-L431\n\nIt is using self.user to get the scoped token for authentication, and the policy requires the trustor must be self.user. We cannot change to another user or else the trust won\u0027t be created sucessfully. This is all the reason about it.",
+      "parentUuid": "7a8ec9b2_5ef1f594",
+      "range": {
+        "startLine": 453,
+        "startChar": 28,
+        "endLine": 453,
+        "endChar": 40
+      },
+      "revId": "c04e35c107e08f61d194a056b5c762cbd5d50af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_31f65df9",
         "filename": "keystone/tests/unit/test_v3_trust.py",
         "patchSetId": 2
