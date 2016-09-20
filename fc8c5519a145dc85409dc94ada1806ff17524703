@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_bde7ffe2",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-20T21:00:28Z",
+      "side": 1,
+      "message": "nit, call this variable \"msg\"",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 17
+      },
+      "revId": "fc8c5519a145dc85409dc94ada1806ff17524703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7d601736",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-20T21:00:28Z",
+      "side": 1,
+      "message": "put this in a msg variable\n\nand then call msg in the log and the exception",
+      "range": {
+        "startLine": 82,
+        "startChar": 29,
+        "endLine": 86,
+        "endChar": 59
+      },
+      "revId": "fc8c5519a145dc85409dc94ada1806ff17524703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7dc73712",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-20T21:00:28Z",
+      "side": 1,
+      "message": "set this in a variable, and call the variable in the log and exception",
+      "range": {
+        "startLine": 547,
+        "startChar": 25,
+        "endLine": 547,
+        "endChar": 55
+      },
+      "revId": "fc8c5519a145dc85409dc94ada1806ff17524703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
