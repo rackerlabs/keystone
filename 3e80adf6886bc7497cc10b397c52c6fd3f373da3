@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d0bf6ca8",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-20T12:58:42Z",
+      "side": 0,
+      "message": "By removing these two checks aren\u0027t we changing some behavior? Do we have tests already that check the behavior of this?",
+      "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
