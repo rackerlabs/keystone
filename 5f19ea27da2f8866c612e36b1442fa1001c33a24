@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_119b93ca",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-20T14:03:14Z",
+      "side": 0,
+      "message": "Why is some of this stuff being removed instead of renamed? The commit messages implies that renames are the only change.",
+      "revId": "5f19ea27da2f8866c612e36b1442fa1001c33a24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
