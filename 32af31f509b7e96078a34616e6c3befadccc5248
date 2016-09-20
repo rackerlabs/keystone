@@ -16,6 +16,24 @@
       "revId": "32af31f509b7e96078a34616e6c3befadccc5248",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7cc055e1",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-20T02:35:50Z",
+      "side": 0,
+      "message": "_normalize_dict is still here, I don\u0027t what\u0027s should be escaped here.",
+      "parentUuid": "7a8ec9b2_b33699e5",
+      "revId": "32af31f509b7e96078a34616e6c3befadccc5248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

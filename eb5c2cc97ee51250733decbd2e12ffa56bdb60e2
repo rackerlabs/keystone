@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_dc0b292a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-20T02:35:50Z",
+      "side": 1,
+      "message": "The reason for me to make the refactor is that we are not generating ID in the same place, and many testcases did some *workaround* for the inconsistency. I think the debt will with us in the future.\n\nOnly user and group did it in the manager while all other entities in the controller layer.\n\nI cannot see why we handle it in a *different* way, maybe the legacy from the ancient version or maybe used to related with ldap... But now, I think this can be managed it consistently.",
+      "parentUuid": "7a8ec9b2_93399ddb",
+      "revId": "eb5c2cc97ee51250733decbd2e12ffa56bdb60e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_0ff2ca06",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 4
