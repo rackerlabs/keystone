@@ -101,8 +101,7 @@ def default_expire_time():
 
     """
     expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
-    expires_at = timeutils.utcnow() + expire_delta
-    return expires_at.replace(microsecond=0)
+    return timeutils.utcnow() + expire_delta
 
 
 def audit_info(parent_audit_id):
