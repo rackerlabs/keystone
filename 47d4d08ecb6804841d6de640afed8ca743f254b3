@@ -137,6 +137,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_e11f4307",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-20T11:02:20Z",
+      "side": 1,
+      "message": "example:\n\n  def _assert_create_implied_role(self):\n     ref \u003d self.put(\u0027/roles/%s/implies/%s\u0027,\n                    % (self.appadmin_role[\u0027id\u0027], self.appdev_role[\u0027id\u0027]),\n                    token\u003dself.admin_token,\n                    expected_status\u003dhttp_client.CREATED)\n\n     implied_role \u003d self.assertValidImpliedRoleResponse(resp) # you would need to implement it in test_v3.py\n     return implied_role\n\nhaving this method, you avoid the need of having \"test_put()\" below and, at the same time, you can add it to setUp() to not repeat in each test.",
+      "parentUuid": "7a8ec9b2_45cf40b3",
+      "revId": "47d4d08ecb6804841d6de640afed8ca743f254b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9f55a9fb",
         "filename": "keystone/tests/unit/test_v3_protection.py",
         "patchSetId": 3
