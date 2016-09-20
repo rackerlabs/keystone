@@ -46,6 +46,23 @@
       "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_caa5fb47",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-20T12:33:02Z",
+      "side": 1,
+      "message": "Am I right in thinking that the only thing not stale is the trust information? Everything else seems to be pulled from the existing token data verbatim.",
+      "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
