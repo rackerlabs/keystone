@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_eb4c7978",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-20T13:04:25Z",
+      "side": 1,
+      "message": "We reorder? Also please split this into 2 patches. One to reorder and one to reformat/change content.",
+      "revId": "5d7122ad1ce7b8b5c865b9256c50b2f199354f1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
