@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_21b90f7a",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_e773f713",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 51
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_b6c68747",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_846cb19d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_b6c68747",
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_0749c38e",
         "filename": "keystone/common/request.py",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2016-09-19T20:49:01Z",
       "side": 1,
       "message": "why not re-use the message above?",
+      "range": {
+        "startLine": 88,
+        "startChar": 19,
+        "endLine": 88,
+        "endChar": 58
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_9a188c77",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "It\u0027s too long and extract a variable breaks K007 pep8 test",
+      "parentUuid": "7a8ec9b2_0749c38e",
       "range": {
         "startLine": 88,
         "startChar": 19,
@@ -105,6 +171,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_c4623916",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_e754d722",
+      "range": {
+        "startLine": 89,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 64
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_c1ec442c",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
@@ -116,6 +206,30 @@
       "writtenOn": "2016-09-19T12:50:30Z",
       "side": 1,
       "message": "Why don\u0027t you use _(\u0027Invalid user\u0027) as in l.91?",
+      "range": {
+        "startLine": 304,
+        "startChar": 45,
+        "endLine": 304,
+        "endChar": 59
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_046d0104",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_c1ec442c",
       "range": {
         "startLine": 304,
         "startChar": 45,
@@ -151,6 +265,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_24703ddc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_41d91483",
+      "range": {
+        "startLine": 310,
+        "startChar": 45,
+        "endLine": 310,
+        "endChar": 61
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_67160757",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -162,6 +300,30 @@
       "writtenOn": "2016-09-19T20:49:01Z",
       "side": 1,
       "message": "i think we can remove the \"v3\" part of this, where the request lands should be obvious in the logs.\n\n  \"Error when changing user password\"",
+      "range": {
+        "startLine": 287,
+        "startChar": 17,
+        "endLine": 287,
+        "endChar": 54
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a4a52d48",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_67160757",
       "range": {
         "startLine": 287,
         "startChar": 17,
@@ -197,6 +359,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_5f9ef654",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_a20f1d2d",
+      "range": {
+        "startLine": 198,
+        "startChar": 45,
+        "endLine": 198,
+        "endChar": 60
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_421f395b",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -208,6 +394,30 @@
       "writtenOn": "2016-09-19T20:49:01Z",
       "side": 1,
       "message": "suggestion:\n\n  User $user_id is not a trustee of trust $trust_id",
+      "range": {
+        "startLine": 200,
+        "startChar": 45,
+        "endLine": 200,
+        "endChar": 66
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_7fad7287",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_421f395b",
       "range": {
         "startLine": 200,
         "startChar": 45,
@@ -267,6 +477,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_9fa87e79",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_82406137",
+      "range": {
+        "startLine": 204,
+        "startChar": 21,
+        "endLine": 204,
+        "endChar": 59
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_211fa80a",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -313,6 +547,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_1fb38eea",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_21cde886",
+      "range": {
+        "startLine": 365,
+        "startChar": 45,
+        "endLine": 365,
+        "endChar": 68
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_e1a94092",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -324,6 +582,30 @@
       "writtenOn": "2016-09-19T12:50:30Z",
       "side": 1,
       "message": "absent?",
+      "range": {
+        "startLine": 722,
+        "startChar": 51,
+        "endLine": 722,
+        "endChar": 57
+      },
+      "revId": "28d1b93bb2909aba0d64ca4c1701fb05935cdf79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_9fbf9ea9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-20T18:49:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_e1a94092",
       "range": {
         "startLine": 722,
         "startChar": 51,
