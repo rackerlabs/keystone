@@ -16,6 +16,24 @@
       "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_56b99178",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-20T14:00:24Z",
+      "side": 0,
+      "message": "Good question - but we actually make these assertions in the v3_to_v2_token() method.",
+      "parentUuid": "7a8ec9b2_d0bf6ca8",
+      "revId": "3e80adf6886bc7497cc10b397c52c6fd3f373da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
