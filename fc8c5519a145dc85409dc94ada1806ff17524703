@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_1406eccd",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-21T10:40:03Z",
+      "side": 1,
+      "message": "The hack (https://github.com/openstack/keystone/blob/master/keystone/tests/hacking/checks.py#L369-L376) will prevent this to pass pep8 gate",
+      "parentUuid": "7a8ec9b2_7d601736",
+      "range": {
+        "startLine": 82,
+        "startChar": 29,
+        "endLine": 86,
+        "endChar": 59
+      },
+      "revId": "fc8c5519a145dc85409dc94ada1806ff17524703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_7dc73712",
         "filename": "keystone/common/utils.py",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2016-09-20T21:00:28Z",
       "side": 1,
       "message": "set this in a variable, and call the variable in the log and exception",
+      "range": {
+        "startLine": 547,
+        "startChar": 25,
+        "endLine": 547,
+        "endChar": 55
+      },
+      "revId": "fc8c5519a145dc85409dc94ada1806ff17524703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f4fd00b2",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-21T10:40:03Z",
+      "side": 1,
+      "message": "same here",
+      "parentUuid": "7a8ec9b2_7dc73712",
       "range": {
         "startLine": 547,
         "startChar": 25,
