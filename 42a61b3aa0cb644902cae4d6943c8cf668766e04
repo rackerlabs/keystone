@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a6b88a12",
+        "filename": "keystone/oauth1/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-21T18:07:12Z",
+      "side": 1,
+      "message": "Can the parameters be validated with schema validation?",
+      "range": {
+        "startLine": 106,
+        "startChar": 4,
+        "endLine": 106,
+        "endChar": 25
+      },
+      "revId": "42a61b3aa0cb644902cae4d6943c8cf668766e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
