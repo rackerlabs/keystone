@@ -15,8 +15,11 @@ import uuid
 
 from six.moves import http_client
 
+import keystone.conf
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
+
+CONF = keystone.conf.CONF
 
 
 class TestTrustOperations(test_v3.RestfulTestCase):
@@ -241,10 +244,20 @@ class TestTrustOperations(test_v3.RestfulTestCase):
                   expected_status=http_client.NOT_FOUND)
 
     def test_validate_trust_scoped_token_against_v2(self):
+        self.config_fixture.config(
+            group='identity',
+            default_domain_id=self.user['domain_id']
+        )
+        # This test requires that the trustor be in the default domain since v2
+        # isn't domain aware.
+        trustee = unit.create_user(
+            self.identity_api,
+            domain_id=CONF.identity.default_domain_id
+        )
         # create a new trust
         ref = unit.new_trust_ref(
             trustor_user_id=self.user_id,
-            trustee_user_id=self.default_domain_user_id,
+            trustee_user_id=trustee['id'],
             project_id=self.project_id,
             impersonation=False,
             expires=dict(minutes=1),
@@ -254,12 +267,11 @@ class TestTrustOperations(test_v3.RestfulTestCase):
 
         # get a v3 trust-scoped token as the trustee
         auth_data = self.build_authentication_request(
-            user_id=self.default_domain_user['id'],
-            password=self.default_domain_user['password'],
+            user_id=trustee['id'],
+            password=trustee['password'],
             trust_id=trust['id'])
         r = self.v3_create_token(auth_data)
-        self.assertValidProjectScopedTokenResponse(
-            r, self.default_domain_user)
+        self.assertValidProjectScopedTokenResponse(r, trustee)
         token = r.headers.get('X-Subject-Token')
 
         # now validate the v3 token with v2 API
