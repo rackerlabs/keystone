@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_b1a7f409",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T14:55:54Z",
+      "side": 1,
+      "message": "Can you add something saying why we\u0027d want to do this?",
+      "revId": "49d4ee7a42cdc7e1db9255fdbbbe46d3b9617862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
