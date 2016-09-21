@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_72fd59b0",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-09-21T20:49:37Z",
+      "side": 1,
+      "message": "sure thing!",
+      "parentUuid": "7a8ec9b2_cd5a1cf2",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_2849ae60",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_32f751d4",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-09-21T20:49:37Z",
+      "side": 1,
+      "message": "good catch. I was having issues with it not throwing an exception without trying to get an option but I ran it through again and it seems to work fine without this part.",
+      "parentUuid": "7a8ec9b2_2849ae60",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_8dcd7433",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2016-09-21T16:33:08Z",
       "side": 1,
       "message": "It\u0027s probably worth adding a __future__ import for the print function. See keystone.cmd.cli for an example.",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_52005dab",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-09-21T20:49:37Z",
+      "side": 1,
+      "message": "sure, thanks!",
+      "parentUuid": "7a8ec9b2_8dcd7433",
       "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
