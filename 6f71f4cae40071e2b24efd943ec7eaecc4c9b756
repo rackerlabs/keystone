@@ -155,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_7b4b7fb1",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-21T17:54:32Z",
+      "side": 1,
+      "message": "This code should be clarified to make it obvious that all the keys (such as user_id, trustor_id, trustee_id) are always present, not optional.\n\nSo for example:\n\n or1 \u003d [\n   or_(RevocationEvent.user_id.is_(None),\n       RevocationEvent.user_id \u003d\u003d token_data[\u0027user_id\u0027]),\n   or_(RevocationEvent.user_id.is_(None),\n       RevocationEvent.user_id \u003d\u003d token_data[\u0027trustor_id\u0027]),\n   ...\n ]\n\nand so forth.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9c64ccb9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 16
