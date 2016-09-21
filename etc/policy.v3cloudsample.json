@@ -97,7 +97,7 @@
 
     "identity:get_implied_role": "rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id",
     "identity:list_implied_roles": "rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id",
-    "identity:create_implied_role": "rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id",
+    "identity:create_implied_role": "(rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id) and (domain_id:%(target.implied_role.domain_id)s or None:%(target.implied_role.domain_id)s)",
     "identity:delete_implied_role": "rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id",
     "identity:list_role_inference_rules": "rule:cloud_admin",
     "identity:check_implied_role": "rule:cloud_admin or rule:admin_and_matching_prior_role_domain_id",
