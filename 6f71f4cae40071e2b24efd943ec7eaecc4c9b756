@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8ec9b2_dcdf3438",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-21T15:46:11Z",
+      "side": 1,
+      "message": "There should be a bug opened for this.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9c64ccb9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 16
