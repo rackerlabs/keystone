@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_9c64ccb9",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-21T15:44:29Z",
+      "side": 1,
+      "message": "should be able to\n\n self.is_revoked(token_values)\n\n(remove \".driver\")\n\nThis will make it easier for us to override is_revoked in the manager if we ever feel like doing that.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
