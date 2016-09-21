@@ -131,7 +131,7 @@ CONTRACT_REPO = 'contract_repo'
 class SqlUpgradeGetInitVersionTests(unit.TestCase):
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_no_path(self, repo):
-        migrate_versions = mock.MagicMock()
+        migrate_versions = mock.Mock()
         # make a version list starting with zero. `get_init_version` will
         # return None for this value.
         migrate_versions.versions.versions = list(range(0, 5))
@@ -152,7 +152,7 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
 
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_with_path_initial_version_0(self, repo):
-        migrate_versions = mock.MagicMock()
+        migrate_versions = mock.Mock()
         # make a version list starting with zero. `get_init_version` will
         # return None for this value.
         migrate_versions.versions.versions = list(range(0, 5))
@@ -171,7 +171,7 @@ class SqlUpgradeGetInitVersionTests(unit.TestCase):
     def test_get_init_version_with_path(self, repo):
         initial_version = 10
 
-        migrate_versions = mock.MagicMock()
+        migrate_versions = mock.Mock()
         migrate_versions.versions.versions = list(range(initial_version + 1,
                                                         initial_version + 5))
         repo.return_value = migrate_versions
