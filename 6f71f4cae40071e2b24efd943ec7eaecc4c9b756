@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_32a83f20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:22:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a8ec9b2_dcdf3438",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2d49c060",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:22:30Z",
+      "side": 1,
+      "message": "i\u0027m not sure now this passes pep8 since we should only be importing modules.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_7c89c025",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 16
