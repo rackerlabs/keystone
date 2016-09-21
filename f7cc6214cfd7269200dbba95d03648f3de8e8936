@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_cd5a1cf2",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:33:08Z",
+      "side": 1,
+      "message": "There should be 3 separate import groupings here, each separated by a single newline. See http://docs.openstack.org/developer/hacking/#import-order-template for more info.",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2849ae60",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:33:08Z",
+      "side": 1,
+      "message": "Do you need this? Won\u0027t the read() actually catch parse errors?",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8dcd7433",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:33:08Z",
+      "side": 1,
+      "message": "It\u0027s probably worth adding a __future__ import for the print function. See keystone.cmd.cli for an example.",
+      "revId": "f7cc6214cfd7269200dbba95d03648f3de8e8936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
