@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e8225853",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-21T21:32:06Z",
+      "side": 1,
+      "message": "I\u0027d much rather you used os.path.join()",
+      "range": {
+        "startLine": 114,
+        "startChar": 34,
+        "endLine": 114,
+        "endChar": 37
+      },
+      "revId": "52118bdf052701bad629716348f9542d82e689c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6869e88b",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-21T21:32:06Z",
+      "side": 1,
+      "message": "I think ConfigParser.Error would be better here.",
+      "range": {
+        "startLine": 115,
+        "startChar": 15,
+        "endLine": 115,
+        "endChar": 24
+      },
+      "revId": "52118bdf052701bad629716348f9542d82e689c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
