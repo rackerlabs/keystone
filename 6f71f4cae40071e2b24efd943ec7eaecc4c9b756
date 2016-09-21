@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_f8087582",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-21T17:31:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_dcdf3438",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_180e018c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-21T17:31:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_32a83f20",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_2d49c060",
         "filename": "keystone/revoke/backends/sql.py",
         "patchSetId": 16
@@ -48,6 +84,24 @@
       "writtenOn": "2016-09-21T16:22:30Z",
       "side": 1,
       "message": "i\u0027m not sure now this passes pep8 since we should only be importing modules.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f87f95dc",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-21T17:31:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_2d49c060",
       "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -77,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_586b291e",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-21T17:31:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_7c89c025",
+      "range": {
+        "startLine": 85,
+        "startChar": 34,
+        "endLine": 85,
+        "endChar": 42
+      },
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9c64ccb9",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 16
@@ -88,6 +166,24 @@
       "writtenOn": "2016-09-21T15:44:29Z",
       "side": 1,
       "message": "should be able to\n\n self.is_revoked(token_values)\n\n(remove \".driver\")\n\nThis will make it easier for us to override is_revoked in the manager if we ever feel like doing that.",
+      "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d81739a1",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-09-21T17:31:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_9c64ccb9",
       "revId": "6f71f4cae40071e2b24efd943ec7eaecc4c9b756",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
