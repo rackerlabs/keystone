@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d2e46da9",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T20:57:54Z",
+      "side": 0,
+      "message": "remove this function from the model in a subsequent patch",
+      "range": {
+        "startLine": 206,
+        "startChar": 11,
+        "endLine": 206,
+        "endChar": 34
+      },
+      "revId": "9bf2a752065f74ab9fad31fe9c1b42d2c28d71df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

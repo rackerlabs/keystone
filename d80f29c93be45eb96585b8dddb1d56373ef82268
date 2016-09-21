@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f236c94f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T20:57:54Z",
+      "side": 1,
+      "message": "update the commit message or actually remove the python methods (probably want to do the former, and save the removal for another patch)",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 39
+      },
+      "revId": "d80f29c93be45eb96585b8dddb1d56373ef82268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f25b2984",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T20:57:54Z",
+      "side": 1,
+      "message": "call this issued_before_filter? or token_filters?",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 12
+      },
+      "revId": "d80f29c93be45eb96585b8dddb1d56373ef82268",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
