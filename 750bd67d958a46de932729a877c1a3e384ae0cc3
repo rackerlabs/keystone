@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6bd04254",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T05:00:51Z",
+      "side": 1,
+      "message": "this is now the same code as above",
+      "range": {
+        "startLine": 353,
+        "startChar": 8,
+        "endLine": 368,
+        "endChar": 53
+      },
+      "revId": "750bd67d958a46de932729a877c1a3e384ae0cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
