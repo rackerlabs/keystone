@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_eb41b23a",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T04:57:53Z",
+      "side": 1,
+      "message": "i think we do not want to show the stored consumer key, this should be considered private information, like a user id",
+      "range": {
+        "startLine": 324,
+        "startChar": 45,
+        "endLine": 324,
+        "endChar": 55
+      },
+      "revId": "fd7ee224f7f853104ca04764ccb20148971d77e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ab6ecac6",
+        "filename": "keystone/oauth1/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-21T04:57:53Z",
+      "side": 1,
+      "message": "this one you definitely don\u0027t want to show and should be considered private",
+      "range": {
+        "startLine": 333,
+        "startChar": 41,
+        "endLine": 333,
+        "endChar": 51
+      },
+      "revId": "fd7ee224f7f853104ca04764ccb20148971d77e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
