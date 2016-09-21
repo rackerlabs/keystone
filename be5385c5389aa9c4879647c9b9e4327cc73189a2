@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a8e4dedf",
+        "filename": "releasenotes/notes/bug-1616424-c46ba773f7ac40ae.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:40:23Z",
+      "side": 1,
+      "message": "(nit) built-in",
+      "revId": "be5385c5389aa9c4879647c9b9e4327cc73189a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_68057678",
+        "filename": "releasenotes/notes/bug-1616424-c46ba773f7ac40ae.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:40:23Z",
+      "side": 1,
+      "message": "(nit) s/showing/raising/",
+      "revId": "be5385c5389aa9c4879647c9b9e4327cc73189a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8831e25c",
+        "filename": "releasenotes/notes/bug-1616424-c46ba773f7ac40ae.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-21T16:40:23Z",
+      "side": 1,
+      "message": "(nit) s/and.*/and error messaging where possible./",
+      "revId": "be5385c5389aa9c4879647c9b9e4327cc73189a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
