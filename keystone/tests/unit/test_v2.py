@@ -214,7 +214,7 @@ class CoreApiTests(object):
     def test_validate_token_belongs_to(self):
         token = self.get_scoped_token()
         path = ('/v2.0/tokens/%s?belongsTo=%s' % (token,
-                                                  self.tenant_bar['id']))
+                                                  self.tenant_bar['name']))
         r = self.admin_request(path=path, token=token)
         self.assertValidAuthenticationResponse(r, require_service_catalog=True)
 
@@ -1577,7 +1577,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
         admin_token = self.get_scoped_token(tenant_id=project_ref['id'])
         member_token = self.get_scoped_token(tenant_id=project2_ref['id'])
         path = ('/v2.0/tokens/%s?belongsTo=%s' % (member_token,
-                project2_ref['id']))
+                project2_ref['name']))
         # Validate token belongs to project
         resp = self.admin_request(
             method='GET',
@@ -1615,7 +1615,9 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             expected_status=http_client.OK)
 
         token_id = self._get_token_id(r)
-        path = ('/v2.0/tokens/%s?belongsTo=%s' % (token_id, project_ref['id']))
+        path = (
+            '/v2.0/tokens/%s?belongsTo=%s' % (token_id, project_ref['name'])
+        )
         # Validate token belongs to project
         resp = self.admin_request(
             method='GET',

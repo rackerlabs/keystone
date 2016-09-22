@@ -416,6 +416,12 @@ class AuthWithToken(object):
             self.make_request(is_admin=True, query_string='belongsTo=BAR'),
             token_id=unscoped_token_id)
 
+        self.assertRaises(
+            exception.Unauthorized,
+            self.controller.validate_token_head,
+            self.make_request(is_admin=True, query_string='belongsTo=BAR'),
+            token_id=unscoped_token_id)
+
     def test_belongs_to(self):
         body_dict = _build_user_auth(
             username='FOO',
@@ -434,9 +440,19 @@ class AuthWithToken(object):
 
         self.assertRaises(
             exception.Unauthorized,
-            self.controller.validate_token,
-            self.make_request(is_admin=True, query_string='belongsTo=BAR'),
+            self.controller.validate_token_head,
+            self.make_request(is_admin=True, query_string='belongsTo=me'),
             token_id=scoped_token_id)
+
+        self.controller.validate_token(
+            self.make_request(is_admin=True, query_string='belongsTo=BAR'),
+            token_id=scoped_token_id
+        )
+
+        self.controller.validate_token_head(
+            self.make_request(is_admin=True, query_string='belongsTo=BAR'),
+            token_id=scoped_token_id
+        )
 
     def test_token_auth_with_binding(self):
         self.config_fixture.config(group='token', bind=['kerberos'])
