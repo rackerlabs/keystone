@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c7173f43",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-22T03:24:56Z",
+      "side": 1,
+      "message": "i vaguely remember a bug where mappings had hyphens in the name, i can\u0027t remember the outcome, but how about we remove the hyphen for safety, or use an underscore",
+      "range": {
+        "startLine": 230,
+        "startChar": 50,
+        "endLine": 230,
+        "endChar": 63
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_072cc797",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-22T03:24:56Z",
+      "side": 1,
+      "message": "here too",
+      "range": {
+        "startLine": 246,
+        "startChar": 60,
+        "endLine": 246,
+        "endChar": 73
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_271d4362",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-22T03:24:56Z",
+      "side": 1,
+      "message": "bump this over so it matches the previous indentation",
+      "range": {
+        "startLine": 481,
+        "startChar": 23,
+        "endLine": 481,
+        "endChar": 54
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_275463fc",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-22T03:24:56Z",
+      "side": 1,
+      "message": "maybe mention that the scoped token is coming from the SP, and print the entire token body?",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 484,
+        "endChar": 50
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_67b02b44",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-22T03:24:56Z",
+      "side": 1,
+      "message": "nice addition",
+      "range": {
+        "startLine": 261,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 78
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
