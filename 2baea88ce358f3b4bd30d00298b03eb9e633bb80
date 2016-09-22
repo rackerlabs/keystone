@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_f141d93a",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-22T23:30:17Z",
+      "side": 1,
+      "message": "Nit: Should be a : after the )",
+      "revId": "2baea88ce358f3b4bd30d00298b03eb9e633bb80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
