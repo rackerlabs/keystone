@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a3d1d5fd",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-22T17:41:46Z",
+      "side": 1,
+      "message": "nit: no need for the outer ()",
+      "revId": "72091d5a6db28da8a2e41e122517559561360744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
