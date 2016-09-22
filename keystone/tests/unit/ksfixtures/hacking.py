@@ -108,7 +108,7 @@ class HackingCode(fixtures.Fixture):
                 def test(self):
                     self.assertEqual('', '')
                     self.assertEqual('', None)
-                    self.assertEqual(None, '')
+                    self.assertIsNone('')
                     self.assertNotEqual('', None)
                     self.assertNotEqual(None, '')
                     self.assertNotEqual('', None) # noqa
