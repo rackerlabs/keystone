@@ -416,6 +416,22 @@ class Auth(controller.V2Controller):
                     _('Token does not belong to specified tenant.'))
         return token_ref
 
+    def _token_belongs_to(self, token, belongs_to):
+        """Check if the token belongs to the right tenant.
+
+        This is only used on v2 tokens.  The structural validity of the token
+        will have already been checked before this method is called.
+
+        :param token: token reference
+        :param belongs_to: project ID that the token belongs to
+
+        """
+        if belongs_to:
+            token_data = token['access']['token']
+            if ('tenant' not in token_data or
+                    token_data['tenant']['id'] != belongs_to):
+                raise exception.Unauthorized()
+
     @controller.v2_deprecated
     @controller.protected()
     def validate_token_head(self, request, token_id):
@@ -430,7 +446,10 @@ class Auth(controller.V2Controller):
 
         """
         belongs_to = request.params.get('belongsTo')
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        token = self.token_provider_api.validate_v2_token(token_id)
+        if belongs_to:
+            self._token_belongs_to(token, belongs_to)
+        return token
 
     @controller.v2_deprecated
     @controller.protected()
@@ -444,7 +463,10 @@ class Auth(controller.V2Controller):
         """
         belongs_to = request.params.get('belongsTo')
         # TODO(ayoung) validate against revocation API
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        token = self.token_provider_api.validate_v2_token(token_id)
+        if belongs_to:
+            self._token_belongs_to(token, belongs_to)
+        return token
 
     @controller.v2_deprecated
     def delete_token(self, request, token_id):
