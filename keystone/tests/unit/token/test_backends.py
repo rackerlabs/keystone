@@ -14,7 +14,6 @@ import copy
 import datetime
 import uuid
 
-from keystoneclient.common import cms
 from oslo_utils import timeutils
 import six
 from six.moves import range
@@ -32,13 +31,7 @@ NULL_OBJECT = object()
 
 class TokenTests(object):
     def _create_token_id(self):
-        # Use a token signed by the cms module
-        token_id = ""
-        for i in range(1, 20):
-            token_id += uuid.uuid4().hex
-        return cms.cms_sign_token(token_id,
-                                  CONF.signing.certfile,
-                                  CONF.signing.keyfile)
+        return uuid.uuid4().hex
 
     def _assert_revoked_token_list_matches_token_persistence(
             self, revoked_token_id_list):
