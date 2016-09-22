@@ -2351,7 +2351,6 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
         token_data = resp.result
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
-        self.assertFalse(cms.is_asn1_token(token_id))
 
 
 class TestFernetTokenAPIs(test_v3.RestfulTestCase, TokenAPITests,
