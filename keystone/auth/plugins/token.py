@@ -22,7 +22,6 @@ from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
-from keystone.models import token_model
 
 
 LOG = log.getLogger(__name__)
@@ -35,25 +34,25 @@ class Token(base.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):
         token_id = auth_payload['id']
-        response = self.token_provider_api.validate_token(token_id)
-        return token_model.KeystoneToken(token_id=token_id,
-                                         token_data=response)
+        return self.token_provider_api.validate_token(token_id)
 
     def authenticate(self, request, auth_payload, user_context):
         if 'id' not in auth_payload:
             raise exception.ValidationError(attribute='id',
                                             target='token')
-        token_ref = self._get_token_ref(auth_payload)
-        if token_ref.is_federated_user and self.federation_api:
+        token_model = self._get_token_ref(auth_payload)
+        if token_model.is_federated_user and self.federation_api:
             mapped.handle_scoped_token(
-                request, auth_payload, user_context, token_ref,
+                request, auth_payload, user_context, token_model,
                 self.federation_api, self.identity_api,
                 self.token_provider_api)
         else:
-            token_authenticate(request, auth_payload, user_context, token_ref)
+            token_authenticate(
+                request, auth_payload, user_context, token_model
+            )
 
 
-def token_authenticate(request, auth_payload, user_context, token_ref):
+def token_authenticate(request, auth_payload, user_context, token_model):
     try:
 
         # Do not allow tokens used for delegation to
@@ -61,15 +60,15 @@ def token_authenticate(request, auth_payload, user_context, token_ref):
         # state in Keystone. To do so is to invite elevation of
         # privilege attacks
 
-        if token_ref.oauth_scoped or token_ref.trust_scoped:
+        if token_model.oauth_scoped or token_model.trust_scoped:
             raise exception.Forbidden()
 
         if not CONF.token.allow_rescope_scoped_token:
             # Do not allow conversion from scoped tokens.
-            if token_ref.project_scoped or token_ref.domain_scoped:
+            if token_model.project_scoped or token_model.domain_scoped:
                 raise exception.Forbidden(action=_("rescope a scoped token"))
 
-        wsgi.validate_token_bind(request.context_dict, token_ref)
+        wsgi.validate_token_bind(request.context_dict, token_model)
 
         # New tokens maintain the audit_id of the original token in the
         # chain (if possible) as the second element in the audit data
@@ -78,19 +77,19 @@ def token_authenticate(request, auth_payload, user_context, token_ref):
         # a token that has not been rescoped) or the audit_chain id (in
         # the case of a token that has been rescoped).
         try:
-            token_audit_id = token_ref.get('audit_ids', [])[-1]
+            token_audit_id = token_model.audit_chain_id
         except IndexError:
             # NOTE(morganfainberg): In the case this is a token that was
             # issued prior to audit id existing, the chain is not tracked.
             token_audit_id = None
 
-        user_context.setdefault('expires_at', token_ref.expires)
+        user_context.setdefault('expires_at', token_model.expires)
         user_context['audit_id'] = token_audit_id
-        user_context.setdefault('user_id', token_ref.user_id)
+        user_context.setdefault('user_id', token_model.user_id)
         # TODO(morganfainberg: determine if token 'extras' can be removed
         # from the user_context
-        user_context['extras'].update(token_ref.get('extras', {}))
-        user_context['method_names'].extend(token_ref.methods)
+        # user_context['extras'].update(token_model.get('extras', {}))
+        user_context['method_names'].extend(token_model.methods)
 
     except AssertionError as e:
         LOG.error(six.text_type(e))

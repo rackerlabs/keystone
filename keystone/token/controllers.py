@@ -175,10 +175,7 @@ class Auth(controller.V2Controller):
                                                 size=CONF.max_token_size)
 
         try:
-            token_model_ref = token_model.KeystoneToken(
-                token_id=old_token,
-                token_data=self.token_provider_api.validate_v2_token(old_token)
-            )
+            token_model_ref = self.token_provider_api.validate_token(old_token)
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
 
@@ -416,6 +413,12 @@ class Auth(controller.V2Controller):
                     _('Token does not belong to specified tenant.'))
         return token_ref
 
+    def _token_belongs_to(self, model, belongs_to):
+        """Check if the token belongs to the right tenant."""
+        if belongs_to:
+            if not model.project_id or model.project_id != belongs_to:
+                raise exception.Unauthorized()
+
     @controller.v2_deprecated
     @controller.protected()
     def validate_token_head(self, request, token_id):
@@ -430,7 +433,10 @@ class Auth(controller.V2Controller):
 
         """
         belongs_to = request.params.get('belongsTo')
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        model = self.token_provider_api.validate_token(token_id)
+        self._token_belongs_to(model, belongs_to)
+        view = TokenView()
+        return view.represent_as_v2_token(model)
 
     @controller.v2_deprecated
     @controller.protected()
@@ -444,7 +450,10 @@ class Auth(controller.V2Controller):
         """
         belongs_to = request.params.get('belongsTo')
         # TODO(ayoung) validate against revocation API
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        model = self.token_provider_api.validate_token(token_id)
+        self._token_belongs_to(model, belongs_to)
+        view = TokenView()
+        return view.represent_as_v2_token(model)
 
     @controller.v2_deprecated
     def delete_token(self, request, token_id):
@@ -524,3 +533,120 @@ class Auth(controller.V2Controller):
                 })
 
         return {'endpoints': endpoints, 'endpoints_links': []}
+
+
+@dependency.requires('catalog_api', 'resource_api', 'assignment_api',
+                     'trust_api', 'identity_api', 'role_api')
+class TokenView(object):
+    """Create V2 token response."""
+
+    def represent_as_v2_token(self, model):
+        """Represent a token model as a v2.0 token response.
+
+        :param model: keystone.models.token.KeystoneToken object
+        :returns: a dictionary in the form of a v2.0 token
+        """
+        token = {}
+        role_ids = []
+        roles = []
+        # NOTE(lbragstad): Perform some validation on the context of the token
+        # model. If the model tells anything about things that can only be done
+        # on v3, we need to let the user know.
+        if (model.domain_id and
+                model.domain_id != CONF.identity.default_domain_id):
+            msg = ('Unable to validate domain-scoped tokens outside of the '
+                   'default domain')
+            raise exception.Unauthorized(msg)
+        if model.is_federated:
+            msg = _('Unable to validate Federation tokens using the version '
+                    'v2.0 API.')
+            raise exception.Unauthorized(msg)
+        if model.access_token:
+            msg = ('Unable to validate Oauth tokens using the version v2.0 '
+                   'API.')
+            raise exception.Unauthorized(msg)
+        if model.project_scoped:
+            role_ids = self.assignment_api.get_roles_for_user_and_project(
+                model.user_id, model.project_id
+            )
+            if not role_ids:
+                msg = _('User %(user_id)s has no access '
+                        'to project %(project_id)s') % {
+                            'user_id': model.user_id,
+                            'project_id': model.project_id}
+                LOG.debug(msg)
+                raise exception.Unauthorized(msg)
+            token['tenant'] = controller.V2Controller.v3_to_v2_project(
+                self.resource_api.get_project(model.project_id)
+            )
+        if model.trust_scoped:
+            # if token is scoped to trust, both trustor and trustee must
+            # be in the default domain. Furthermore, the delegated project
+            # must also be in the default domain
+            msg = _('Non-default domain is not supported')
+            for user_id in [model.trustee_user_id, model.trustor_user_id]:
+                user_ref = self.identity_api.get_user(user_id)
+                if (user_ref['domain_id'] != CONF.identity.default_domain_id):
+                    raise exception.Unauthorized(msg)
+            trust = self.trust_api.get_trust(model.trust_id)
+            project_ref = self.resource_api.get_project(trust['project_id'])
+            if project_ref['domain_id'] != CONF.identity.default_domain_id:
+                raise exception.Unauthorized(msg)
+
+        # NOTE(lbragstad): Version 2.0 tokens don't know about any domain other
+        # than the default domain specified in the configuration.
+        token['expires'] = utils.isotime(at=model.expires)
+        token['issued_at'] = utils.isotime(at=model.issued)
+        token['audit_ids'] = model.audit_ids
+        if model.bind:
+            token['bind'] = model.bind
+        token['id'] = model.token_id
+
+        token_data = {}
+        token_data['token'] = token
+
+        if model.trust_scoped:
+            token_data['trust'] = {
+                'impersonation': model.trust_impersonation,
+                'id': model.trust_id,
+                'trustee_user_id': model.trustee_user_id,
+                'trustor_user_id': model.trustor_user_id
+            }
+
+        user = controller.V2Controller.v3_to_v2_user(
+            self.identity_api.get_user(model.user_id)
+        )
+        for role_id in role_ids:
+            role = self.role_api.get_role(role_id)
+            roles.append({'id': role['id'], 'name': role['name']})
+            token['roles'] = roles
+        user['roles'] = roles
+        user['roles_links'] = []
+
+        token_data['serviceCatalog'] = []
+        catalog = self.catalog_api.get_catalog(model.user_id, model.project_id)
+        if catalog:
+            services = {}
+            for region, region_ref in catalog.items():
+                for service, service_ref in region_ref.items():
+                    new_service_ref = services.get(service, {})
+                    new_service_ref['name'] = service_ref.pop('name')
+                    new_service_ref['type'] = service
+                    new_service_ref['endpoints_links'] = []
+                    service_ref['region'] = region
+
+                    endpoints_ref = new_service_ref.get('endpoints', [])
+                    endpoints_ref.append(service_ref)
+
+                    new_service_ref['endpoints'] = endpoints_ref
+                    services[service] = new_service_ref
+            token_data['serviceCatalog'] = list(services.values())
+
+        # Build v2 metadata
+        token_data['metadata'] = {
+            'roles': model.role_ids,
+            # Setting is_admin to keep consistency in v2 response
+            'is_admin': 0
+        }
+
+        return {'access': token_data}

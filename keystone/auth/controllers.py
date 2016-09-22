@@ -421,6 +421,9 @@ class Auth(controller.V3Controller):
                 is_domain, domain_id, auth_context, trust, metadata_ref,
                 include_catalog, parent_audit_id=token_audit_id)
 
+            print 'issuing token: %r' % token_id
+            print 'token_data: %r' % token_data
+
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
             if trust:
@@ -541,12 +544,13 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def check_token(self, request):
         token_id = request.context_dict.get('subject_token_id')
-        token_data = self.token_provider_api.validate_v3_token(
-            token_id)
+        model = self.token_provider_api.validate_token(token_id)
+        view = TokenView()
+        v3_token_response = view.render_response(model)
         # NOTE(morganfainberg): The code in
         # ``keystone.common.wsgi.render_response`` will remove the content
         # body.
-        return render_token_data_response(token_id, token_data)
+        return render_token_data_response(token_id, v3_token_response)
 
     @controller.protected()
     def revoke_token(self, request):
@@ -556,12 +560,15 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def validate_token(self, request):
         token_id = request.context_dict.get('subject_token_id')
+        print 'validating token: %r' % token_id
         include_catalog = 'nocatalog' not in request.params
-        token_data = self.token_provider_api.validate_v3_token(
-            token_id)
-        if not include_catalog and 'catalog' in token_data['token']:
-            del token_data['token']['catalog']
-        return render_token_data_response(token_id, token_data)
+        model = self.token_provider_api.validate_token(token_id)
+        view = TokenView()
+        v3_token_response = view.render_response(
+            model,
+            include_catalog=include_catalog
+        )
+        return render_token_data_response(token_id, v3_token_response)
 
     @controller.protected()
     def revocation_list(self, request, auth=None):
@@ -662,6 +669,157 @@ class Auth(controller.V3Controller):
             'links': {'self': self.base_url(request.context_dict,
                                             path='auth/catalog')}
         }
+
+
+@dependency.requires('catalog_api', 'resource_api', 'assignment_api',
+                     'trust_api', 'identity_api', 'oauth_api', 'role_api',
+                     'federation_api')
+class TokenView(object):
+    """Create V3 token response."""
+
+    def render_response(self, model, include_catalog=True):
+        """Represent a token model as a v3 token response.
+
+        :param model: keystone.models.token.KeystoneToken object
+        :param include_catalog: If True the service catalog is returned in the
+                                returned token format
+        :returns: a dictionary in the form of a v3 token
+        """
+        token = {}
+        token['methods'] = token.methods
+        if model.bind:
+            token['bind'] = model.bind
+
+        user = self.identity_api.get_user(model.user_id)
+        roles = []
+
+        print 'unscoped: %r' % model.unscoped
+        print 'domain_scoped: %r' % model.domain_scoped
+        print 'project_scoped: %r' % model.project_scoped
+        print 'oauth_scoped: %r' % model.oauth_scoped
+        print 'trust_scoped: %r' % model.trust_scoped
+        if model.domain_scoped:
+            domain = self.resource_api.get_domain(model.domain_id)
+            token['domain'] = {'id': domain['id'], 'name': domain['name']}
+            role_ids = self.assignment_api.get_roles_for_user_and_domain(
+                model.user_id, model.domain_id
+            )
+            if not role_ids:
+                msg = _('User %(user_id)s has no access '
+                        'to domain %(domain_id)s') % {
+                            'user_id': model.user_id,
+                            'domain_id': model.domain_id}
+                LOG.debug(msg)
+                raise exception.Unauthorized(msg)
+        elif model.project_scoped:
+            project = self.resource_api.get_project(model.project_id)
+            token['project'] = {'id': project['id'], 'name': project['name']}
+            if 'domain' in project:
+                domain = self.resource_api.get_domain(project['domain']['id'])
+                token['project']['domain'] = {
+                    'id': domain['id'],
+                    'name': domain['name']
+                }
+            else:
+                token['project']['domain'] = None
+            token['is_domain'] = project['is_domain']
+            admin_project_name = CONF.resource.admin_project_name
+            admin_project_domain_name = CONF.resource.admin_project_domain_name
+            token['is_admin_project'] = (
+                token['project']['name'] == admin_project_name and
+                token['project']['domain']['name'] == admin_project_domain_name
+            )
+            role_ids = self.assignment_api.get_roles_for_user_and_project(
+                model.user_id, model.project_id
+            )
+            print 'role_ids: %r' % role_ids
+            if not role_ids:
+                msg = _('User %(user_id)s has no access '
+                        'to project %(project_id)s') % {
+                            'user_id': model.user_id,
+                            'project_id': model.project_id}
+                LOG.debug(msg)
+                raise exception.Unauthorized(msg)
+        elif model.trust_scoped:
+            if not CONF.trust.enabled:
+                raise exception.Forbidden('Trusts are disabled.')
+            trustee = self.identity_api.get_user(model.trustee_user_id)
+            trustor = self.identity_api.get_user(model.trustor_user_id)
+            trust = self.trust_api.get_trust(model.trust_id)
+            try:
+                self.resource_api.assert_domain_enabled(trustee['domain_id'])
+            except AssertionError:
+                raise exception.TokenNotFound(_('Trustee domain is disabled.'))
+            try:
+                self.resource_api.assert_domain_enabled(trustor['domain_id'])
+            except AssertionError:
+                raise exception.TokenNotFound(_('Trustor domain is disabled.'))
+            try:
+                self.identity_api.assert_user_enabled(trust['trustor_user_id'])
+            except AssertionError:
+                raise exception.Forbidden(_('Trustor is disabled.'))
+
+            if model.trust_impersonation:
+                user = trustor
+
+            trust = self.trust_api.get_trust(model.trust_id)
+            token['OS-TRUST:trust'] = {
+                'id': trust['id'],
+                'trustor_user': {'id', trust['trustor_user_id']},
+                'trustee_user': {'id', trust['trustee_user_id']},
+                'impersonation': trust['impersonation']
+            }
+            # Make sure the trustor still has the role assignments that were
+            # granted at trust creation.
+            trustor_roles = self.assignment_api.get_roles_for_user_and_project(
+                trustor['id'], trust['project_id']
+            )
+            for role in trust['roles']:
+                if role['id'] not in trustor_roles:
+                    raise exception.Forbidden(
+                        _('Trustee has no delegated roles.')
+                    )
+            role_ids = [role['id'] for role in trust['roles']]
+        elif model.oauth_scoped:
+            access_token = self.oauth_api.get_access_token(
+                model.oauth_access_token_id
+            )
+            token['OS-OAUTH1'] = {
+                'access_token_id': access_token['id'],
+                'consumer_id': access_token['consumer_id']
+            }
+            role_ids = jsonutils.loads(access_token['role_ids'])
+
+        for role_id in role_ids:
+            role = self.role_api.get_role(role_id)
+            roles.append({'id': role['id'], 'name': role['name']})
+            token['roles'] = roles
+        user_domain = self.resource_api.get_domain(user['domain_id'])
+        token['user'] = {
+            'id': user['id'],
+            'name': user['name'],
+            'domain': {'id': user_domain['id'], 'name': user_domain['name']}
+        }
+        token['audit_ids'] = model.audit_ids
+
+        if include_catalog:
+            if CONF.trust.enabled and model.trust_scoped:
+                service_catalog = self.catalog_api.get_v3_catalog(
+                    model.trustor_user_id, model.project_id
+                )
+            else:
+                service_catalog = self.catalog_api.get_v3_catalog(
+                    model.user_id, model.project_id
+                )
+            token['catalog'] = service_catalog
+
+        service_providers = self.federation_api.get_enabled_service_providers()
+        if service_providers:
+            token['service_providers'] = service_providers
+
+        token['expires_at'] = utils.isotime(at=model.expires, subsecond=True)
+        token['issued_at'] = utils.isotime(at=model.issued, subsecond=True)
+        return {'token': token}
 
 
 # FIXME(gyee): not sure if it belongs here or keystone.common. Park it here

@@ -17,9 +17,9 @@ from oslo_utils import reflection
 from oslo_utils import timeutils
 import six
 
+from keystone.common import dependency
 import keystone.conf
 from keystone import exception
-from keystone.federation import constants
 from keystone.i18n import _
 
 CONF = keystone.conf.CONF
@@ -35,25 +35,30 @@ def _parse_and_normalize_time(time_data):
     return timeutils.normalize_time(time_data)
 
 
-class KeystoneToken(dict):
+@dependency.requires('assignment_api', 'identity_api', 'resource_api',
+                     'trust_api')
+class KeystoneToken(object):
     """An in-memory representation that unifies v2 and v3 tokens."""
 
-    # TODO(morganfainberg): Align this in-memory representation with the
-    # objects in keystoneclient. This object should be eventually updated
-    # to be the source of token data with the ability to emit any version
-    # of the token instead of only consuming the token dict and providing
-    # property accessors for the underlying data.
-
-    def __init__(self, token_id, token_data):
-        self.token_data = token_data
-        if 'access' in token_data:
-            super(KeystoneToken, self).__init__(**token_data['access'])
-            self.version = V2
-        elif 'token' in token_data and 'methods' in token_data['token']:
-            super(KeystoneToken, self).__init__(**token_data['token'])
-            self.version = V3
-        else:
-            raise exception.UnsupportedTokenVersionException()
+    def __init__(self, token_id, user_id, methods, issued_at, expires_at,
+                 audit_ids, domain_id=None, project_id=None, trust_id=None,
+                 bind=None, access_token=None, is_federated=False,
+                 federated_group_ids=None, federated_identity_provider=None,
+                 federated_protocol_id=None):
+        self.user_id = user_id
+        self.methods = methods
+        self.issued_at = issued_at
+        self.expires_at = expires_at
+        self.audit_ids = audit_ids
+        self.domain_id = domain_id
+        self.project_id = project_id
+        self.trust_id = trust_id
+        self.bind = bind
+        self.access_token = access_token
+        self.is_federated = is_federated
+        self.federated_group_ids = federated_group_ids
+        self.federated_identity_provider = federated_identity_provider
+        self.federated_protocol_id = federated_protocol_id
         self.token_id = token_id
         self.short_id = cms.cms_hash_token(token_id,
                                            mode=CONF.token.hash_algorithm)
@@ -75,272 +80,150 @@ class KeystoneToken(dict):
 
     @property
     def expires(self):
-        if self.version is V3:
-            expires_at = self['expires_at']
-        else:
-            expires_at = self['token']['expires']
-        return _parse_and_normalize_time(expires_at)
+        return _parse_and_normalize_time(self.expires_at)
 
     @property
     def issued(self):
-        if self.version is V3:
-            issued_at = self['issued_at']
-        else:
-            issued_at = self['token']['issued_at']
-        return _parse_and_normalize_time(issued_at)
+        return _parse_and_normalize_time(self.issued_at)
 
     @property
     def audit_id(self):
-        if self.version is V3:
-            return self.get('audit_ids', [None])[0]
-        return self['token'].get('audit_ids', [None])[0]
+        return self.audit_ids[0]
 
     @property
     def audit_chain_id(self):
-        if self.version is V3:
-            return self.get('audit_ids', [None])[-1]
-        return self['token'].get('audit_ids', [None])[-1]
+        return self.audit_ids[-1]
 
     @property
     def auth_token(self):
         return self.token_id
 
     @property
-    def user_id(self):
-        return self['user']['id']
-
-    @property
     def user_name(self):
-        return self['user']['name']
+        user = self.identity_api.get_user(self.user_id)
+        return user['name']
 
     @property
     def user_domain_name(self):
-        try:
-            if self.version == V3:
-                return self['user']['domain']['name']
-            elif 'user' in self:
-                return "Default"
-        except KeyError:  # nosec
-            # Do not raise KeyError, raise UnexpectedError
-            pass
-        raise exception.UnexpectedError()
+        user = self.identity_api.get_user(self.user_id)
+        return user['domain']['name']
 
     @property
     def user_domain_id(self):
-        try:
-            if self.version == V3:
-                return self['user']['domain']['id']
-            elif 'user' in self:
-                return CONF.identity.default_domain_id
-        except KeyError:  # nosec
-            # Do not raise KeyError, raise UnexpectedError
-            pass
-        raise exception.UnexpectedError()
-
-    @property
-    def domain_id(self):
-        if self.version is V3:
-            try:
-                return self['domain']['id']
-            except KeyError:
-                # Do not raise KeyError, raise UnexpectedError
-                raise exception.UnexpectedError()
-        # No domain scoped tokens in V2.
-        raise NotImplementedError()
+        user = self.identity_api.get_user(self.user_id)
+        return user.get('domain', {}).get('id')
 
     @property
     def domain_name(self):
-        if self.version is V3:
-            try:
-                return self['domain']['name']
-            except KeyError:
-                # Do not raise KeyError, raise UnexpectedError
-                raise exception.UnexpectedError()
-        # No domain scoped tokens in V2.
-        raise NotImplementedError()
-
-    @property
-    def project_id(self):
-        try:
-            if self.version is V3:
-                return self['project']['id']
-            else:
-                return self['token']['tenant']['id']
-        except KeyError:
-            # Do not raise KeyError, raise UnexpectedError
-            raise exception.UnexpectedError()
+        domain = self.resource_api.get_domain(self.domain_id)
+        return domain['name']
 
     @property
     def project_name(self):
-        try:
-            if self.version is V3:
-                return self['project']['name']
-            else:
-                return self['token']['tenant']['name']
-        except KeyError:
-            # Do not raise KeyError, raise UnexpectedError
-            raise exception.UnexpectedError()
+        project = self.resource_api.get_project(self.project_id)
+        return project['name']
 
     @property
     def project_domain_id(self):
-        try:
-            if self.version is V3:
-                return self['project']['domain']['id']
-            elif 'tenant' in self['token']:
-                return CONF.identity.default_domain_id
-        except KeyError:  # nosec
-            # Do not raise KeyError, raise UnexpectedError
-            pass
-
-        raise exception.UnexpectedError()
+        project = self.resource_api.get_project(self.project_id)
+        return project['domain']['id']
 
     @property
     def project_domain_name(self):
-        try:
-            if self.version is V3:
-                return self['project']['domain']['name']
-            if 'tenant' in self['token']:
-                return 'Default'
-        except KeyError:  # nosec
-            # Do not raise KeyError, raise UnexpectedError
-            pass
-
-        raise exception.UnexpectedError()
+        project = self.resource_api.get_project(self.project_id)
+        return project['domain']['name']
 
     @property
-    def is_domain(self):
-        if self.version is V3:
-            return self['is_domain']
-        return False
+    def unscoped(self):
+        return (
+            not self.domain_scoped and not self.project_scoped and not
+            self.oauth_scoped and not self.trust_scoped)
 
     @property
     def project_scoped(self):
-        if self.version is V3:
-            return 'project' in self
-        else:
-            return 'tenant' in self['token']
+        return self.project_id is not None
 
     @property
     def domain_scoped(self):
-        if self.version is V3:
-            return 'domain' in self
-        return False
-
-    @property
-    def scoped(self):
-        return self.project_scoped or self.domain_scoped
-
-    @property
-    def trust_id(self):
-        if self.version is V3:
-            return self.get('OS-TRUST:trust', {}).get('id')
-        else:
-            return self.get('trust', {}).get('id')
+        return self.domain_id is not None
 
     @property
     def trust_scoped(self):
-        if self.version is V3:
-            return 'OS-TRUST:trust' in self
-        else:
-            return 'trust' in self
+        return self.trust_id is not None
+
+    @property
+    def scoped(self):
+        return self.project_scoped or self.domain_scoped or self.trust_scoped
 
     @property
     def trustee_user_id(self):
-        if self.version is V3:
-            return self.get(
-                'OS-TRUST:trust', {}).get('trustee_user_id')
-        else:
-            return self.get('trust', {}).get('trustee_user_id')
+        if self.trust_id:
+            trust = self.trust_api.get_trust(self.trust_id)
+            return trust['trustee_user_id']
 
     @property
     def trustor_user_id(self):
-        if self.version is V3:
-            return self.get(
-                'OS-TRUST:trust', {}).get('trustor_user_id')
-        else:
-            return self.get('trust', {}).get('trustor_user_id')
+        if self.trust_id:
+            trust = self.trust_api.get_trust(self.trust_id)
+            return trust['trustor_user_id']
 
     @property
     def trust_impersonation(self):
-        if self.version is V3:
-            return self.get('OS-TRUST:trust', {}).get('impersonation')
-        else:
-            return self.get('trust', {}).get('impersonation')
+        if self.trust_id:
+            trust = self.trust_api.get_trust(self.trust_id)
+            return trust['impersonation']
 
     @property
     def oauth_scoped(self):
-        return 'OS-OAUTH1' in self
+        return self.access_token is not None
 
     @property
     def oauth_access_token_id(self):
-        if self.version is V3 and self.oauth_scoped:
-            return self['OS-OAUTH1']['access_token_id']
-        return None
+        if self.access_token:
+            return self.access_token.get('access_token_id')
 
     @property
     def oauth_consumer_id(self):
-        if self.version is V3 and self.oauth_scoped:
-            return self['OS-OAUTH1']['consumer_id']
-        return None
+        if self.access_token:
+            return self.access_token.get('consumer_id')
 
     @property
     def role_ids(self):
-        if self.version is V3:
-            return [r['id'] for r in self.get('roles', [])]
-        else:
-            return self.get('metadata', {}).get('roles', [])
+        if self.project_id:
+            return list(set(
+                self.assignment_api.get_roles_for_user_and_project(
+                    self.user_id, self.project_id
+                )
+            ))
+        elif self.domain_id:
+            return list(set(
+                self.assignment_api.get_roles_for_user_and_domain(
+                    self.user_id, self.domain_id
+                )
+            ))
+        return []
 
     @property
     def role_names(self):
-        if self.version is V3:
-            return [r['name'] for r in self.get('roles', [])]
-        else:
-            return [r['name'] for r in self['user'].get('roles', [])]
-
-    @property
-    def bind(self):
-        if self.version is V3:
-            return self.get('bind')
-        return self.get('token', {}).get('bind')
+        role_names = []
+        for role_id in self.role_ids:
+            role_names.append(self.assignment_api.get_role(role_id)['name'])
+        return role_names
 
     @property
     def is_federated_user(self):
-        try:
-            return (self.version is V3 and
-                    constants.FEDERATION in self['user'])
-        except KeyError:
-            raise exception.UnexpectedError()
+        return self.is_federated
 
     @property
     def federation_group_ids(self):
-        if self.is_federated_user:
-            if self.version is V3:
-                try:
-                    groups = self['user'][constants.FEDERATION].get(
-                        'groups', [])
-                    return [g['id'] for g in groups]
-                except KeyError:
-                    raise exception.UnexpectedError()
-        return []
+        if self.federation_group_ids:
+            return self.federated_group_ids
+        return list()
 
     @property
     def federation_idp_id(self):
-        if self.version is not V3 or not self.is_federated_user:
-            return None
-        return self['user'][constants.FEDERATION]['identity_provider']['id']
+        return self.federated_identity_provider
 
     @property
     def federation_protocol_id(self):
-        if self.version is V3 and self.is_federated_user:
-            return self['user'][constants.FEDERATION]['protocol']['id']
-        return None
-
-    @property
-    def metadata(self):
-        return self.get('metadata', {})
-
-    @property
-    def methods(self):
-        if self.version is V3:
-            return self.get('methods', [])
-        return []
+        return self.federated_protocol_id

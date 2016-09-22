@@ -28,7 +28,6 @@ from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _, _LW
-from keystone.models import token_model
 
 
 LOG = log.getLogger(__name__)
@@ -133,16 +132,15 @@ def protected(callback=None):
                 # TODO(henry-nash): Move this entire code to a member
                 # method inside v3 Auth
                 if request.context_dict.get('subject_token_id') is not None:
-                    token_ref = token_model.KeystoneToken(
-                        token_id=request.context_dict['subject_token_id'],
-                        token_data=self.token_provider_api.validate_token(
-                            request.context_dict['subject_token_id']))
+                    token_model = self.token_provider_api.validate_token(
+                        request.context_dict['subject_token_id']
+                    )
                     policy_dict.setdefault('target', {})
                     policy_dict['target'].setdefault(self.member_name, {})
                     policy_dict['target'][self.member_name]['user_id'] = (
-                        token_ref.user_id)
+                        token_model.user_id)
                     try:
-                        user_domain_id = token_ref.user_domain_id
+                        user_domain_id = token_model.user_domain_id
                     except exception.UnexpectedError:
                         user_domain_id = None
                     if user_domain_id:

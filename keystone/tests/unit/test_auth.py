@@ -31,7 +31,6 @@ from keystone import auth
 from keystone.common import authorization
 import keystone.conf
 from keystone import exception
-from keystone.models import token_model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
@@ -575,11 +574,11 @@ class AuthWithToken(object):
         self.token_provider_api.revoke_token(token_id, revoke_chain=True)
 
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_id)
+                          self.token_provider_api.validate_token,
+                          token_id)
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_2_id)
+                          self.token_provider_api.validate_token,
+                          token_2_id)
 
     def test_revoke_by_audit_chain_id_chained_token(self):
         self.config_fixture.config(group='token', revoke_by_id=False)
@@ -601,11 +600,11 @@ class AuthWithToken(object):
         self.token_provider_api.revoke_token(token_2_id, revoke_chain=True)
 
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_id)
+                          self.token_provider_api.validate_token,
+                          token_id)
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_2_id)
+                          self.token_provider_api.validate_token,
+                          token_2_id)
 
     def _mock_audit_info(self, parent_audit_id):
         # NOTE(morgainfainberg): The token model and other cases that are
@@ -901,10 +900,8 @@ class AuthWithTrust(object):
         self.config_fixture.config(group='trust', enabled=True)
 
     def _create_auth_request(self, token_id):
-        token_ref = token_model.KeystoneToken(
-            token_id=token_id,
-            token_data=self.token_provider_api.validate_token(token_id))
-        auth_context = authorization.token_to_auth_context(token_ref)
+        token_model = self.token_provider_api.validate_token(token_id)
+        auth_context = authorization.token_to_auth_context(token_model)
         # NOTE(gyee): if public_endpoint and admin_endpoint are not set, which
         # is the default, the base url will be constructed from the environment
         # variables wsgi.url_scheme, SERVER_NAME, SERVER_PORT, and SCRIPT_NAME.

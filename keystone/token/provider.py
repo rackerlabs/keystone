@@ -30,12 +30,11 @@ from keystone.common import dependency
 from keystone.common import manager
 import keystone.conf
 from keystone import exception
-from keystone.i18n import _, _LE
+from keystone.i18n import _
 from keystone.models import token_model
 from keystone import notifications
 from keystone.token import persistence
 from keystone.token import providers
-from keystone.token import utils
 
 
 CONF = keystone.conf.CONF
@@ -207,162 +206,58 @@ class Manager(manager.Manager):
             except exception.TokenNotFound:
                 six.reraise(*exc_info)
 
-    def validate_token(self, token_id, belongs_to=None):
-        unique_id = utils.generate_unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token = self._validate_token(unique_id)
-        self._token_belongs_to(token, belongs_to)
-        self._is_valid_token(token)
-        return token
+    def validate_token(self, token_id):
+        """Validate a token by token ID.
 
-    def check_revocation_v2(self, token):
-        try:
-            token_data = token['access']
-        except KeyError:
-            raise exception.TokenNotFound(_('Failed to validate token'))
-
-        token_values = self.revoke_api.model.build_token_values_v2(
-            token_data, CONF.identity.default_domain_id)
-        self.revoke_api.check_token(token_values)
-
-    def validate_v2_token(self, token_id, belongs_to=None):
-        # NOTE(lbragstad): Only go to the persistence backend if the token
-        # provider requires it.
-        if self._needs_persistence:
-            # NOTE(morganfainberg): Ensure we never use the long-form token_id
-            # (PKI) as part of the cache_key.
-            unique_id = utils.generate_unique_id(token_id)
-            token_ref = self._persistence.get_token(unique_id)
-            token = self._validate_v2_token(token_ref)
-        else:
-            # NOTE(lbragstad): If the token doesn't require persistence, then
-            # it is a fernet token. The fernet token provider doesn't care if
-            # it's creating version 2.0 tokens or v3 tokens, so we use the same
-            # validate_non_persistent_token() method to validate both. Then we
-            # can leverage a separate method to make version 3 token data look
-            # like version 2.0 token data. The pattern we want to move towards
-            # is one where the token providers just handle data and the
-            # controller layers handle interpreting the token data in a format
-            # that makes sense for the request.
-            v3_token_ref = self.validate_non_persistent_token(token_id)
-            v2_token_data_helper = providers.common.V2TokenDataHelper()
-            token = v2_token_data_helper.v3_to_v2_token(v3_token_ref, token_id)
-
-        # these are common things that happen regardless of token provider
-        self._token_belongs_to(token, belongs_to)
-        self._is_valid_token(token)
-        return token
-
-    def check_revocation_v3(self, token):
-        try:
-            token_data = token['token']
-        except KeyError:
-            raise exception.TokenNotFound(_('Failed to validate token'))
-        token_values = self.revoke_api.model.build_token_values(token_data)
-        self.revoke_api.check_token(token_values)
-
-    def check_revocation(self, token):
-        version = self.get_token_version(token)
-        if version == V2:
-            return self.check_revocation_v2(token)
-        else:
-            return self.check_revocation_v3(token)
-
-    def validate_v3_token(self, token_id):
+        :param token_id: Unique identifier of token to validate
+        :returns: keystone.models.token.KeystoneToken object
+        """
         if not token_id:
             raise exception.TokenNotFound(_('No token in the request'))
-
-        try:
-            # NOTE(lbragstad): Only go to persistent storage if we have a token
-            # to fetch from the backend (the driver persists the token).
-            # Otherwise the information about the token must be in the token
-            # id.
-            if not self._needs_persistence:
-                token_ref = self.validate_non_persistent_token(token_id)
-            else:
-                unique_id = utils.generate_unique_id(token_id)
-                # NOTE(morganfainberg): Ensure we never use the long-form
-                # token_id (PKI) as part of the cache_key.
-                token_ref = self._persistence.get_token(unique_id)
-                token_ref = self._validate_v3_token(token_ref)
-            self._is_valid_token(token_ref)
-            return token_ref
-        except exception.Unauthorized as e:
-            LOG.debug('Unable to validate token: %s', e)
-            raise exception.TokenNotFound(token_id=token_id)
-
-    @MEMOIZE_TOKENS
-    def validate_non_persistent_token(self, token_id):
-        return self.driver.validate_non_persistent_token(token_id)
+        (user_id, methods, bind, issued_at, expires_at, audit_ids, domain_id,
+         project_id, trust_id, access_token, token_dict, is_federated,
+         federated_group_ids, federated_identity_provider,
+         federated_protocol_id) = self._validate_token(token_id)
+        token = token_model.KeystoneToken(
+            token_id, user_id, methods, issued_at, expires_at, audit_ids,
+            domain_id=domain_id, project_id=project_id, trust_id=trust_id,
+            bind=bind, access_token=access_token, is_federated=is_federated,
+            federated_group_ids=federated_group_ids,
+            federated_identity_provider=federated_identity_provider,
+            federated_protocol_id=federated_protocol_id
+        )
+        self.identity_api.assert_user_enabled(token.user_id)
+        current_time = timeutils.normalize_time(timeutils.utcnow())
+        if current_time < token.expires:
+            # NOTE(lbragstad): The revoke model expects a dictionary of token
+            # values to check revocation events against. We should make it more
+            # explicit instead of passing around a dictionary of mysterious
+            # values. For now populate a dictionary of token values and pass it
+            # to the revoke_api.
+            token_values = {
+                'user_id': token.user_id,
+                'trustor_id': token.trustor_user_id,
+                'trustee_id': token.trustee_user_id,
+                'identity_domain_id': token.domain_id,
+                'assignment_domain_id': token.domain_id,
+                'project_id': token.project_id,
+                'expires_at': token.expires,
+                'trust_id': token.trust_id,
+                'consumer_id': token.oauth_consumer_id,
+                'access_token_id': token.oauth_access_token_id,
+                'audit_id': token.audit_id,
+                'audit_chain_id': token.audit_chain_id,
+                'roles': token.role_ids,
+                'issued_at': token.issued
+            }
+            self.revoke_api.check_token(token_values)
+        else:
+            raise exception.TokenNotFound(_('Failed to validate token'))
+        return token
 
     @MEMOIZE_TOKENS
     def _validate_token(self, token_id):
-        if not token_id:
-            raise exception.TokenNotFound(_('No token in the request'))
-
-        try:
-            if not self._needs_persistence:
-                # NOTE(lbragstad): This will validate v2 and v3 non-persistent
-                # tokens.
-                return self.driver.validate_non_persistent_token(token_id)
-            token_ref = self._persistence.get_token(token_id)
-            version = self.get_token_version(token_ref)
-            if version == self.V3:
-                return self.driver.validate_v3_token(token_ref)
-        except exception.Unauthorized as e:
-            LOG.debug('Unable to validate token: %s', e)
-            raise exception.TokenNotFound(token_id=token_id)
-        if version == self.V2:
-            return self.driver.validate_v2_token(token_ref)
-        raise exception.UnsupportedTokenVersionException()
-
-    @MEMOIZE_TOKENS
-    def _validate_v2_token(self, token_id):
-        return self.driver.validate_v2_token(token_id)
-
-    @MEMOIZE_TOKENS
-    def _validate_v3_token(self, token_id):
-        return self.driver.validate_v3_token(token_id)
-
-    def _is_valid_token(self, token):
-        """Verify the token is valid format and has not expired."""
-        current_time = timeutils.normalize_time(timeutils.utcnow())
-
-        try:
-            # Get the data we need from the correct location (V2 and V3 tokens
-            # differ in structure, Try V3 first, fall back to V2 second)
-            token_data = token.get('token', token.get('access'))
-            expires_at = token_data.get('expires_at',
-                                        token_data.get('expires'))
-            if not expires_at:
-                expires_at = token_data['token']['expires']
-            expiry = timeutils.normalize_time(
-                timeutils.parse_isotime(expires_at))
-        except Exception:
-            LOG.exception(_LE('Unexpected error or malformed token '
-                              'determining token expiry: %s'), token)
-            raise exception.TokenNotFound(_('Failed to validate token'))
-
-        if current_time < expiry:
-            self.check_revocation(token)
-            # Token has not expired and has not been revoked.
-            return None
-        else:
-            raise exception.TokenNotFound(_('Failed to validate token'))
-
-    def _token_belongs_to(self, token, belongs_to):
-        """Check if the token belongs to the right tenant.
-
-        This is only used on v2 tokens.  The structural validity of the token
-        will have already been checked before this method is called.
-
-        """
-        if belongs_to:
-            token_data = token['access']['token']
-            if ('tenant' not in token_data or
-                    token_data['tenant']['id'] != belongs_to):
-                raise exception.Unauthorized()
+        return self.driver.validate_token(token_id)
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(
@@ -389,7 +284,7 @@ class Manager(manager.Manager):
         # isn't reflexive: there is no way to populate v3 validation cache
         # on issuing a token using v2.0 API.
         if CONF.token.cache_on_issue:
-            self._validate_v2_token.set(token_data, TOKENS_REGION, token_id)
+            self._validate_token.set(token_data, TOKENS_REGION, token_id)
 
         return token_id, token_data
 
@@ -436,11 +331,7 @@ class Manager(manager.Manager):
             # NOTE(amakarov): here and above TOKENS_REGION is to be passed
             # to serve as required positional "self" argument. It's ignored,
             # so I've put it here for convenience - any placeholder is fine.
-            self._validate_v3_token.set(token_data, TOKENS_REGION, token_id)
             self._validate_token.set(token_data, TOKENS_REGION, token_id)
-            self.validate_non_persistent_token.set(
-                token_data, TOKENS_REGION, token_id)
-
             try:
                 v2_helper = providers.common.V2TokenDataHelper()
                 v2_token_data = v2_helper.v3_to_v2_token(
@@ -449,7 +340,7 @@ class Manager(manager.Manager):
                 # Ignore trust and oauth tokens
                 pass
             else:
-                self._validate_v2_token.set(
+                self._validate_token.set(
                     v2_token_data, TOKENS_REGION, token_id)
 
         return token_id, token_data
@@ -465,27 +356,18 @@ class Manager(manager.Manager):
         # do the explicit individual token invalidation.
 
         self._validate_token.invalidate(self, token_id)
-        self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v3_token.invalidate(self, token_id)
-        # This method isn't actually called in the case of non-persistent
-        # tokens, but we include the invalidation in case this ever changes
-        # in the future.
-        self.validate_non_persistent_token.invalidate(self, token_id)
 
     def revoke_token(self, token_id, revoke_chain=False):
-        token_ref = token_model.KeystoneToken(
-            token_id=token_id,
-            token_data=self.validate_token(token_id))
-
-        project_id = token_ref.project_id if token_ref.project_scoped else None
-        domain_id = token_ref.domain_id if token_ref.domain_scoped else None
+        token = self.validate_token(token_id)
+        project_id = token.project_id if token.project_scoped else None
+        domain_id = token.domain_id if token.domain_scoped else None
 
         if revoke_chain:
-            self.revoke_api.revoke_by_audit_chain_id(token_ref.audit_chain_id,
+            self.revoke_api.revoke_by_audit_chain_id(token.audit_chain_id,
                                                      project_id=project_id,
                                                      domain_id=domain_id)
         else:
-            self.revoke_api.revoke_by_audit_id(token_ref.audit_id)
+            self.revoke_api.revoke_by_audit_id(token.audit_id)
 
         if CONF.token.revoke_by_id and self._needs_persistence:
             self._persistence.delete_token(token_id=token_id)
@@ -632,37 +514,12 @@ class Provider(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def validate_v2_token(self, token_ref):
-        """Validate the given V2 token and return the token data.
+    def validate_token(self, token_id):
+        """Validate a token and return a KeystoneToken model.
 
-        Must raise Unauthorized exception if unable to validate token.
-
-        :param token_ref: the token reference
-        :type token_ref: dict
-        :returns: token data
-        :raises keystone.exception.TokenNotFound: If the token doesn't exist.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def validate_non_persistent_token(self, token_id):
-        """Validate a given non-persistent token id and return the token_data.
-
-        :param token_id: the token id
-        :type token_id: string
-        :returns: token data
-        :raises keystone.exception.TokenNotFound: When the token is invalid
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def validate_v3_token(self, token_ref):
-        """Validate the given V3 token and return the token_data.
-
-        :param token_ref: the token reference
-        :type token_ref: dict
-        :returns: token data
+        :param token_id: ID of the token to validate
+        :type token_ref: str
+        :returns: keystone.models.token.KeystoneToken object
         :raises keystone.exception.TokenNotFound: If the token doesn't exist.
         """
         raise exception.NotImplemented()  # pragma: no cover

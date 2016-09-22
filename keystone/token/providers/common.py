@@ -17,7 +17,6 @@ from oslo_serialization import jsonutils
 import six
 from six.moves.urllib import parse
 
-from keystone.common import controller as common_controller
 from keystone.common import dependency
 from keystone.common import utils
 import keystone.conf
@@ -25,7 +24,9 @@ from keystone import exception
 from keystone.federation import constants as federation_constants
 from keystone.i18n import _
 from keystone import token
+from keystone.token import persistence
 from keystone.token import provider
+from keystone.token import utils as token_utils
 
 
 LOG = log.getLogger(__name__)
@@ -36,125 +37,6 @@ CONF = keystone.conf.CONF
                      'trust_api', 'identity_api')
 class V2TokenDataHelper(object):
     """Create V2 token data."""
-
-    def v3_to_v2_token(self, v3_token_data, token_id):
-        """Convert v3 token data into v2.0 token data.
-
-        This method expects a dictionary generated from
-        V3TokenDataHelper.get_token_data() and converts it to look like a v2.0
-        token dictionary.
-
-        :param v3_token_data: dictionary formatted for v3 tokens
-        :param token_id: ID of the token being converted
-        :returns: dictionary formatted for v2 tokens
-        :raises keystone.exception.Unauthorized: If a specific token type is
-            not supported in v2.
-
-        """
-        token_data = {}
-        # Build v2 token
-        v3_token = v3_token_data['token']
-
-        # NOTE(lbragstad): Version 2.0 tokens don't know about any domain other
-        # than the default domain specified in the configuration.
-        domain_id = v3_token.get('domain', {}).get('id')
-        if domain_id and CONF.identity.default_domain_id != domain_id:
-            msg = ('Unable to validate domain-scoped tokens outside of the '
-                   'default domain')
-            raise exception.Unauthorized(msg)
-
-        token = {}
-        token['expires'] = v3_token.get('expires_at')
-        token['issued_at'] = v3_token.get('issued_at')
-        token['audit_ids'] = v3_token.get('audit_ids')
-        if v3_token.get('bind'):
-            token['bind'] = v3_token['bind']
-        token['id'] = token_id
-
-        if 'project' in v3_token:
-            # v3 token_data does not contain all tenant attributes
-            tenant = self.resource_api.get_project(
-                v3_token['project']['id'])
-            # Drop domain specific fields since v2 calls are not domain-aware.
-            token['tenant'] = common_controller.V2Controller.v3_to_v2_project(
-                tenant)
-        token_data['token'] = token
-
-        # Build v2 user
-        v3_user = v3_token['user']
-
-        user = common_controller.V2Controller.v3_to_v2_user(v3_user)
-
-        if 'OS-TRUST:trust' in v3_token:
-            v3_trust = v3_token['OS-TRUST:trust']
-            # if token is scoped to trust, both trustor and trustee must
-            # be in the default domain. Furthermore, the delegated project
-            # must also be in the default domain
-            msg = _('Non-default domain is not supported')
-            if CONF.trust.enabled:
-                try:
-                    trust_ref = self.trust_api.get_trust(v3_trust['id'])
-                except exception.TrustNotFound:
-                    raise exception.TokenNotFound(token_id=token_id)
-                trustee_user_ref = self.identity_api.get_user(
-                    trust_ref['trustee_user_id'])
-                if (trustee_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
-                    raise exception.Unauthorized(msg)
-                trustor_user_ref = self.identity_api.get_user(
-                    trust_ref['trustor_user_id'])
-                if (trustor_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
-                    raise exception.Unauthorized(msg)
-                project_ref = self.resource_api.get_project(
-                    trust_ref['project_id'])
-                if (project_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
-                    raise exception.Unauthorized(msg)
-
-            token_data['trust'] = {
-                'impersonation': v3_trust['impersonation'],
-                'id': v3_trust['id'],
-                'trustee_user_id': v3_trust['trustee_user']['id'],
-                'trustor_user_id': v3_trust['trustor_user']['id']
-            }
-
-        if 'OS-OAUTH1' in v3_token:
-            msg = ('Unable to validate Oauth tokens using the version v2.0 '
-                   'API.')
-            raise exception.Unauthorized(msg)
-
-        if 'OS-FEDERATION' in v3_token['user']:
-            msg = _('Unable to validate Federation tokens using the version '
-                    'v2.0 API.')
-            raise exception.Unauthorized(msg)
-
-        # Set user roles
-        user['roles'] = []
-        role_ids = []
-        for role in v3_token.get('roles', []):
-            role_ids.append(role.pop('id'))
-            user['roles'].append(role)
-        user['roles_links'] = []
-
-        token_data['user'] = user
-
-        # Get and build v2 service catalog
-        token_data['serviceCatalog'] = []
-        if 'tenant' in token:
-            catalog_ref = self.catalog_api.get_catalog(
-                user['id'], token['tenant']['id'])
-            if catalog_ref:
-                token_data['serviceCatalog'] = self.format_catalog(catalog_ref)
-
-        # Build v2 metadata
-        metadata = {}
-        metadata['roles'] = role_ids
-        # Setting is_admin to keep consistency in v2 response
-        metadata['is_admin'] = 0
-        token_data['metadata'] = metadata
-
-        return {'access': token_data}
 
     @classmethod
     def format_token(cls, token_ref, roles_ref=None, catalog_ref=None,
@@ -602,10 +484,23 @@ class V3TokenDataHelper(object):
 @dependency.requires('catalog_api', 'identity_api', 'oauth_api',
                      'resource_api', 'role_api', 'trust_api')
 class BaseProvider(provider.Provider):
+
+    _persistence_manager = None
+
     def __init__(self, *args, **kwargs):
         super(BaseProvider, self).__init__(*args, **kwargs)
         self.v3_token_data_helper = V3TokenDataHelper()
         self.v2_token_data_helper = V2TokenDataHelper()
+
+    @property
+    def _persistence(self):
+        # NOTE(morganfainberg): This should not be handled via __init__ to
+        # avoid dependency injection oddities circular dependencies (where
+        # the provider manager requires the token persistence manager, which
+        # requires the token provider manager).
+        if self._persistence_manager is None:
+            self._persistence_manager = persistence.PersistenceManager()
+        return self._persistence_manager
 
     def get_token_version(self, token_data):
         if token_data and isinstance(token_data, dict):
@@ -722,24 +617,15 @@ class BaseProvider(provider.Provider):
 
         return token_data
 
-    def _verify_token_ref(self, token_ref):
-        """Verify and return the given token_ref."""
-        if not token_ref:
-            raise exception.Unauthorized()
-        return token_ref
-
-    def _validate_token(self, token_ref, returned_version):
+    def validate_token(self, token_id):
         """Validate a persistent token reference regardless of version.
 
-        :param token_ref: The token reference as it was retrieved from
+        :param token_id: The token reference as it was retrieved from
                           persistent storage.
-        :param returned_version: The version format to return. This makes it so
-                                 we can validate a v2.0 token against v3 and
-                                 return a v3 formatted token.
-        :returns: A token reference formatted according to the proper version.
+        :returns: keystone.models.token_model.KeystoneToken object
 
         """
-        user_id = token_ref['user_id']
+        user_id = None  # user of the token
         methods = None  # list of methods used to obtain a token
         bind = None  # dictionary of bind methods
         issued_at = None  # time at which the token was issued
@@ -749,116 +635,93 @@ class BaseProvider(provider.Provider):
         project_id = None  # project scope of the token
         access_token = None  # dictionary containing OAUTH1 information
         token_dict = None  # existing token information
-        trust_ref = None  # dictionary containing trust scope
-        trust_id = token_ref.get('trust_id')
-        if trust_id:
-            trust_ref = self.trust_api.get_trust(trust_id)
+        trust_id = None  # trust scope of the token
+        is_federated = False  # whether or not the token is federated
+        federated_group_ids = None  # list of federated group ids
+        federated_identity_provider = None  # id of federated identity provider
+        federated_protocol_id = None  # id of federated protocol
 
-        token_data = token_ref.get('token_data')
-        token_version = self.get_token_version(token_data)
-        if token_version == token.provider.V2:
-            methods = ['password', 'token']
-            bind = token_ref.get('bind')
-            # I have no idea why issued_at and expires_at come from two
-            # different places...
-            issued_at = token_ref['token_data']['access']['token']['issued_at']
-            expires_at = token_ref['expires']
-            audit_ids = token_ref['token_data']['access']['token'].get(
-                'audit_ids'
-            )
-            project_id = None
-            project_ref = token_ref.get('tenant')
-            if project_ref:
-                project_id = project_ref['id']
-        elif token_version == token.provider.V3:
-            methods = token_data['token']['methods']
-            bind = token_data['token'].get('bind')
-            issued_at = token_data['token']['issued_at']
-            expires_at = token_data['token']['expires_at']
-            audit_ids = token_data['token'].get('audit_ids')
-            domain_id = token_data['token'].get('domain', {}).get('id')
-            project_id = token_data['token'].get('project', {}).get('id')
-            access_token = None
-            if token_data['token'].get('OS-OAUTH1'):
-                access_token = {
-                    'id': token_data['token'].get('OS-OAUTH1', {}).get(
-                        'access_token_id'
-                    ),
-                    'consumer_id': token_data['token'].get(
-                        'OS-OAUTH1', {}
-                    ).get('consumer_id')
-                }
-            trust_ref = None
+        if self.needs_persistence():
+            unique_id = token_utils.generate_unique_id(token_id)
+            token_ref = self._persistence.get_token(unique_id)
+            user_id = token_ref['user_id']
             trust_id = token_ref.get('trust_id')
-            if trust_id:
-                trust_ref = self.trust_api.get_trust(trust_id)
-            token_dict = None
-            if token_data['token']['user'].get(
-                    federation_constants.FEDERATION):
-                token_dict = {'user': token_ref['user']}
+            token_data = token_ref.get('token_data')
+            token_version = self.get_token_version(token_data)
+            if token_version == token.provider.V2:
+                methods = ['password', 'token']
+                bind = token_ref.get('bind')
+                issued_at = (
+                    token_ref['token_data']['access']['token']['issued_at']
+                )
+                expires_at = (
+                    token_ref['token_data']['access']['token']['expires']
+                )
+                audit_ids = token_ref['token_data']['access']['token'].get(
+                    'audit_ids'
+                )
+                project_id = None
+                project_ref = token_ref.get('tenant')
+                if project_ref:
+                    project_id = project_ref['id']
+            elif token_version == token.provider.V3:
+                methods = token_data['token']['methods']
+                bind = token_data['token'].get('bind')
+                issued_at = token_data['token']['issued_at']
+                expires_at = token_data['token']['expires_at']
+                audit_ids = token_data['token'].get('audit_ids')
+                domain_id = token_data['token'].get('domain', {}).get('id')
+                project_id = token_data['token'].get('project', {}).get('id')
+                access_token = None
+                if token_data['token'].get('OS-OAUTH1'):
+                    access_token = {
+                        'id': token_data['token'].get('OS-OAUTH1', {}).get(
+                            'access_token_id'
+                        ),
+                        'consumer_id': token_data['token'].get(
+                            'OS-OAUTH1', {}
+                        ).get('consumer_id')
+                    }
+                token_dict = None
+                if token_data['token']['user'].get(
+                        federation_constants.FEDERATION):
+                    token_dict = {'user': token_ref['user']}
+        else:
+            try:
+                (user_id, methods, audit_ids, domain_id, project_id, trust_id,
+                    federated_info, access_token_id, issued_at, expires_at) = (
+                        self.token_formatter.validate_token(token_id))
+            except exception.ValidationError as e:
+                raise exception.TokenNotFound(e)
 
-        v3_token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names=methods,
-            domain_id=domain_id,
-            project_id=project_id,
-            issued_at=issued_at,
-            expires=expires_at,
-            trust=trust_ref,
-            token=token_dict,
-            bind=bind,
-            access_token=access_token,
-            audit_info=audit_ids)
-        if returned_version == token.provider.V2:
-            return self.v2_token_data_helper.v3_to_v2_token(
-                v3_token_data, token_ref['id']
-            )
-        return v3_token_data
+            if federated_info:
+                # NOTE(lbragstad): We need to rebuild information about the
+                # federated token as well as the federated token roles. This is
+                # because when we validate a non-persistent token, we don't
+                # have a token reference to pull the federated token
+                # information out of.  As a result, we have to extract it from
+                # the token itself and rebuild the federated context. These
+                # private methods currently live in the
+                # keystone.token.providers.fernet.Provider() class.
+                token_dict = self._rebuild_federated_info(
+                    federated_info, user_id
+                )
+                if project_id or domain_id:
+                    self._rebuild_federated_token_roles(
+                        token_dict,
+                        federated_info,
+                        user_id,
+                        project_id,
+                        domain_id
+                    )
 
-    def validate_v2_token(self, token_ref):
-        return self._validate_token(token_ref, token.provider.V2)
+            access_token = None
+            if access_token_id:
+                access_token = self.oauth_api.get_access_token(access_token_id)
 
-    def validate_non_persistent_token(self, token_id):
-        try:
-            (user_id, methods, audit_ids, domain_id, project_id, trust_id,
-                federated_info, access_token_id, issued_at, expires_at) = (
-                    self.token_formatter.validate_token(token_id))
-        except exception.ValidationError as e:
-            raise exception.TokenNotFound(e)
-
-        token_dict = None
-        trust_ref = None
-        if federated_info:
-            # NOTE(lbragstad): We need to rebuild information about the
-            # federated token as well as the federated token roles. This is
-            # because when we validate a non-persistent token, we don't have a
-            # token reference to pull the federated token information out of.
-            # As a result, we have to extract it from the token itself and
-            # rebuild the federated context. These private methods currently
-            # live in the keystone.token.providers.fernet.Provider() class.
-            token_dict = self._rebuild_federated_info(federated_info, user_id)
-            if project_id or domain_id:
-                self._rebuild_federated_token_roles(token_dict, federated_info,
-                                                    user_id, project_id,
-                                                    domain_id)
-        if trust_id:
-            trust_ref = self.trust_api.get_trust(trust_id)
-
-        access_token = None
-        if access_token_id:
-            access_token = self.oauth_api.get_access_token(access_token_id)
-
-        return self.v3_token_data_helper.get_token_data(
-            user_id,
-            method_names=methods,
-            domain_id=domain_id,
-            project_id=project_id,
-            issued_at=issued_at,
-            expires=expires_at,
-            trust=trust_ref,
-            token=token_dict,
-            access_token=access_token,
-            audit_info=audit_ids)
-
-    def validate_v3_token(self, token_ref):
-        return self._validate_token(token_ref, token.provider.V3)
+        return (
+            user_id, methods, bind, issued_at, expires_at, audit_ids,
+            domain_id, project_id, trust_id, access_token, token_dict,
+            is_federated, federated_group_ids, federated_identity_provider,
+            federated_protocol_id
+        )
