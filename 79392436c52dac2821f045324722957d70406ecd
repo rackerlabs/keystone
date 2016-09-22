@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_9da0e3a7",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-22T04:12:43Z",
+      "side": 1,
+      "message": "This line should be above the import of keystone.conf",
+      "revId": "79392436c52dac2821f045324722957d70406ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_3df6efd7",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-22T04:12:43Z",
+      "side": 1,
+      "message": "replace with NOTE(gagehugo):",
+      "range": {
+        "startLine": 105,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 16
+      },
+      "revId": "79392436c52dac2821f045324722957d70406ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_ddb34b09",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-22T04:12:43Z",
+      "side": 1,
+      "message": "Because this function returns on exception, you might as well include the for statement instead the try-except block. Then you can do:\n\ntry:\n    for filename in os.listdir(filedir):\n        parser \u003d configparser.ConfigParser()\n        parser.read(os.path.join(filedir, filename))\nexcept configparser.Error as e:\n    print(e)\n    return True\nelse:\n    return False",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 23
+      },
+      "revId": "79392436c52dac2821f045324722957d70406ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
