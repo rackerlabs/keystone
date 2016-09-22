@@ -16,6 +16,23 @@
       "revId": "72091d5a6db28da8a2e41e122517559561360744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_95d32a38",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-22T19:41:26Z",
+      "side": 1,
+      "message": "Why was this added? There\u0027s no mention of it in the commit message.\n\nThis should be done in a separate commit if at all so that we can check the performance change separately from the sql change.",
+      "revId": "72091d5a6db28da8a2e41e122517559561360744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
