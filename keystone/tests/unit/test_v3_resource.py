@@ -1208,16 +1208,10 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         project = unit.new_project_ref(domain_id=self.domain['id'])
         project = self.resource_api.create_project(project['id'], project)
         project['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/projects/%(project_id)s' % {
+        self.patch('/projects/%(project_id)s' % {
             'project_id': project['id']},
             body={'project': project},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        project['domain_id'] = self.domain['id']
-        r = self.patch('/projects/%(project_id)s' % {
-            'project_id': project['id']},
-            body={'project': project})
-        self.assertValidProjectResponse(r, project)
 
     def test_update_project_parent_id(self):
         """Call ``PATCH /projects/{project_id}``."""

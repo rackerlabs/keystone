@@ -490,16 +490,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user = unit.new_user_ref(domain_id=self.domain['id'])
         user = self.identity_api.create_user(user)
         user['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/users/%(user_id)s' % {
+        self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        user['domain_id'] = self.domain['id']
-        r = self.patch('/users/%(user_id)s' % {
-            'user_id': user['id']},
-            body={'user': user})
-        self.assertValidUserResponse(r, user)
 
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
@@ -595,16 +589,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_update_group_domain_id(self):
         """Call ``PATCH /groups/{group_id}`` with domain_id."""
         self.group['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/groups/%(group_id)s' % {
+        self.patch('/groups/%(group_id)s' % {
             'group_id': self.group['id']},
             body={'group': self.group},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        self.group['domain_id'] = self.domain['id']
-        r = self.patch('/groups/%(group_id)s' % {
-            'group_id': self.group['id']},
-            body={'group': self.group})
-        self.assertValidGroupResponse(r, self.group)
 
     def test_delete_group(self):
         """Call ``DELETE /groups/{group_id}``."""

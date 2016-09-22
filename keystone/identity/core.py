@@ -927,14 +927,6 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
 
-    def _check_update_of_domain_id(self, new_domain, old_domain):
-        if new_domain != old_domain:
-            versionutils.report_deprecated_feature(
-                LOG,
-                _('update of domain_id is deprecated as of Mitaka '
-                    'and will be removed in O.')
-            )
-
     @domains_configured
     @exception_translated('user')
     def update_user(self, user_id, user_ref, initiator=None):
