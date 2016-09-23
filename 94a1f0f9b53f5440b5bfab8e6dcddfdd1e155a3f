@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4d00f701",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T20:26:41Z",
+      "side": 1,
+      "message": "we should create a domain specific role otherwise line 2260 will never branch off",
+      "range": {
+        "startLine": 2176,
+        "startChar": 8,
+        "endLine": 2176,
+        "endChar": 38
+      },
+      "revId": "94a1f0f9b53f5440b5bfab8e6dcddfdd1e155a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_0d1fcf5f",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2262,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T20:26:41Z",
+      "side": 1,
+      "message": "we\u0027ll never enter this check unless we create a domain specific role",
+      "range": {
+        "startLine": 2261,
+        "startChar": 12,
+        "endLine": 2262,
+        "endChar": 63
+      },
+      "revId": "94a1f0f9b53f5440b5bfab8e6dcddfdd1e155a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
