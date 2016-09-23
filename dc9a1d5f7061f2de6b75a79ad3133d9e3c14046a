@@ -16,6 +16,24 @@
       "revId": "dc9a1d5f7061f2de6b75a79ad3133d9e3c14046a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_534d086b",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T16:00:58Z",
+      "side": 0,
+      "message": "The context must not switch between threads. It\u0027s stored in thread-local memory so the instance of the context is different for each thread.",
+      "parentUuid": "5a8bc5a2_a84ed793",
+      "revId": "dc9a1d5f7061f2de6b75a79ad3133d9e3c14046a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
