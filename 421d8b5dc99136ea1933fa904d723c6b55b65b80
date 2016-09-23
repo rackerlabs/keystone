@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_3ea30551",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T04:53:40Z",
+      "side": 1,
+      "message": "this is definitely a bit of a mouthful... but on the plus side much easier to change (rather than changing the code)",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 197
+      },
+      "revId": "421d8b5dc99136ea1933fa904d723c6b55b65b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
