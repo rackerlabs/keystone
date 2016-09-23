@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_e7f9e581",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2016-09-23T19:13:59Z",
+      "side": 1,
+      "message": "Wow, someone obviously read https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612\n\nGood catch!",
+      "revId": "36be7e5d1456c74d53dc0d56e0369fca372f90bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
