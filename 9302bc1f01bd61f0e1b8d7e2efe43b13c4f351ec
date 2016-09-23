@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_31b07d43",
+        "filename": "keystone/tests/unit/credential/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T14:16:28Z",
+      "side": 1,
+      "message": "How about just create an empty directory? Doing a bunch of extra work just makes the tests more complicated and more likely to fail.",
+      "revId": "9302bc1f01bd61f0e1b8d7e2efe43b13c4f351ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
