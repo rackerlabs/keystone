@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a84ed793",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 20089
+      },
+      "writtenOn": "2016-09-23T15:56:45Z",
+      "side": 0,
+      "message": "Wouldn\u0027t this still be required in order to make sure the context can still switch between threads?",
+      "revId": "dc9a1d5f7061f2de6b75a79ad3133d9e3c14046a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
