@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_f196074b",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_fbfee636",
+      "range": {
+        "startLine": 36,
+        "startChar": 34,
+        "endLine": 36,
+        "endChar": 35
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_7b99f61e",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-09-23T17:56:51Z",
       "side": 1,
       "message": "extra space",
+      "range": {
+        "startLine": 37,
+        "startChar": 55,
+        "endLine": 37,
+        "endChar": 56
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_11929357",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_7b99f61e",
       "range": {
         "startLine": 37,
         "startChar": 55,
@@ -94,6 +142,54 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_31a14fa4",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_5b643a21",
+      "range": {
+        "startLine": 72,
+        "startChar": 9,
+        "endLine": 72,
+        "endChar": 11
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_71891726",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_db784ac7",
+      "range": {
+        "startLine": 72,
+        "startChar": 49,
+        "endLine": 72,
+        "endChar": 50
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_3b7e8eae",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 3
@@ -140,6 +236,54 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_1179b32f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_7b4e5697",
+      "range": {
+        "startLine": 87,
+        "startChar": 58,
+        "endLine": 87,
+        "endChar": 59
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_d1866b12",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_3b7e8eae",
+      "range": {
+        "startLine": 87,
+        "startChar": 16,
+        "endLine": 87,
+        "endChar": 17
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_db268acd",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 3
@@ -151,6 +295,30 @@
       "writtenOn": "2016-09-23T17:56:51Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 118,
+        "startChar": 47,
+        "endLine": 118,
+        "endChar": 48
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_31786f2a",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_db268acd",
       "range": {
         "startLine": 118,
         "startChar": 47,
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_51733b4d",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_7b1c9677",
+      "range": {
+        "startLine": 135,
+        "startChar": 61,
+        "endLine": 135,
+        "endChar": 62
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_d60d8138",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 3
@@ -197,6 +389,30 @@
       "writtenOn": "2016-09-23T17:56:51Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 155,
+        "startChar": 35,
+        "endLine": 155,
+        "endChar": 36
+      },
+      "revId": "77f70759984aee590a0a369b601462237df6f1d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_9193034f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T18:22:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_d60d8138",
       "range": {
         "startLine": 155,
         "startChar": 35,
