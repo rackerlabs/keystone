@@ -22,6 +22,76 @@
       "revId": "421d8b5dc99136ea1933fa904d723c6b55b65b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_bde0e9cd",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:58:51Z",
+      "side": 1,
+      "message": "would be nice to extract the condition to another rule. At least, the right portion of it (after the \"and\" inside the parentheses)",
+      "parentUuid": "5a8bc5a2_3ea30551",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 197
+      },
+      "revId": "421d8b5dc99136ea1933fa904d723c6b55b65b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_5de605b5",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1950,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:58:51Z",
+      "side": 1,
+      "message": "not related: confusing name (due the test bellow) :(",
+      "range": {
+        "startLine": 1950,
+        "startChar": 28,
+        "endLine": 1950,
+        "endChar": 39
+      },
+      "revId": "421d8b5dc99136ea1933fa904d723c6b55b65b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_7d73c115",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1953,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:58:51Z",
+      "side": 1,
+      "message": "nit: s/as_admin/as_cloud_admin",
+      "range": {
+        "startLine": 1953,
+        "startChar": 56,
+        "endLine": 1953,
+        "endChar": 64
+      },
+      "revId": "421d8b5dc99136ea1933fa904d723c6b55b65b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
