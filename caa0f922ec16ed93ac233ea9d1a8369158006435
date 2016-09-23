@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_bb729eab",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T17:36:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_3eba256f",
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_9eab391d",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2016-09-23T05:03:39Z",
       "side": 1,
       "message": "use the rendered doc, it\u0027s purdier: http://specs.openstack.org/openstack/keystone-specs/specs/keystone/newton/pci-dss.html",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 38
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_05f6d1d6",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T17:36:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_9eab391d",
       "range": {
         "startLine": 22,
         "startChar": 1,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_251cad11",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T17:36:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_de4a2183",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 11
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_e9ff25ff",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 2
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_a536fd4f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T17:36:52Z",
+      "side": 1,
+      "message": "Perfect, thanks :)\n\nDone.",
+      "parentUuid": "5a8bc5a2_e9ff25ff",
+      "range": {
+        "startLine": 53,
+        "startChar": 35,
+        "endLine": 54,
+        "endChar": 75
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_1e13a967",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 2
@@ -99,6 +189,30 @@
       "writtenOn": "2016-09-23T05:03:39Z",
       "side": 1,
       "message": "mention what unit of time this is measured in",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_85e101d3",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T17:36:52Z",
+      "side": 1,
+      "message": "This is a code block; the seconds is mentioned right above that.",
+      "parentUuid": "5a8bc5a2_1e13a967",
       "range": {
         "startLine": 67,
         "startChar": 4,
