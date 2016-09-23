@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_eeaf0792",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T16:22:34Z",
+      "side": 1,
+      "message": "is_revoked",
+      "range": {
+        "startLine": 231,
+        "startChar": 40,
+        "endLine": 231,
+        "endChar": 49
+      },
+      "revId": "a9b82d4bae3a96f36220f30f7488b27c93401275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_0e97d348",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T16:22:34Z",
+      "side": 1,
+      "message": "is_revoked",
+      "range": {
+        "startLine": 236,
+        "startChar": 41,
+        "endLine": 236,
+        "endChar": 50
+      },
+      "revId": "a9b82d4bae3a96f36220f30f7488b27c93401275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
