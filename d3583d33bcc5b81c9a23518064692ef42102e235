@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4c4cb0c7",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T00:51:27Z",
+      "side": 1,
+      "message": "wuttt? damn do i love undocumented APIs.\n\nI opened a bug for this: https://bugs.launchpad.net/keystone/+bug/1626794",
+      "range": {
+        "startLine": 448,
+        "startChar": 21,
+        "endLine": 448,
+        "endChar": 52
+      },
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
