@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_b23498fb",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:50:25Z",
+      "side": 1,
+      "message": "`keystone.conf [identity] domain_specific_drivers_enabled`",
+      "range": {
+        "startLine": 65,
+        "startChar": 20,
+        "endLine": 65,
+        "endChar": 51
+      },
+      "revId": "eb1daf217c4d5586a8dd02aeb372e1751c2f120d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_52827495",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:50:25Z",
+      "side": 1,
+      "message": "s/True/true",
+      "range": {
+        "startLine": 65,
+        "startChar": 55,
+        "endLine": 65,
+        "endChar": 59
+      },
+      "revId": "eb1daf217c4d5586a8dd02aeb372e1751c2f120d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_3dabf9d7",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:50:25Z",
+      "side": 1,
+      "message": "`keystone.conf [identity] domain_config_dir`",
+      "range": {
+        "startLine": 67,
+        "startChar": 27,
+        "endLine": 67,
+        "endChar": 70
+      },
+      "revId": "eb1daf217c4d5586a8dd02aeb372e1751c2f120d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_7db5812f",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-23T11:50:25Z",
+      "side": 1,
+      "message": "`keystone.conf [identity] domain_config_dir`",
+      "range": {
+        "startLine": 91,
+        "startChar": 17,
+        "endLine": 91,
+        "endChar": 60
+      },
+      "revId": "eb1daf217c4d5586a8dd02aeb372e1751c2f120d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
