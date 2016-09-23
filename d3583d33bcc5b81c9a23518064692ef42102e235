@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a8bc5a2_4097f58f",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T13:38:04Z",
+      "side": 1,
+      "message": "This should be removed since it\u0027s in the v2 controller already.",
+      "range": {
+        "startLine": 422,
+        "startChar": 8,
+        "endLine": 422,
+        "endChar": 39
+      },
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_4c4cb0c7",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -19,6 +42,81 @@
         "endLine": 448,
         "endChar": 52
       },
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_606eb197",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T13:38:04Z",
+      "side": 1,
+      "message": "the belongs_to line should be moved down to right before it\u0027s used.",
+      "parentUuid": "5a8bc5a2_4c4cb0c7",
+      "range": {
+        "startLine": 448,
+        "startChar": 21,
+        "endLine": 448,
+        "endChar": 52
+      },
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_20a909e0",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T13:38:04Z",
+      "side": 1,
+      "message": "This line of code is untested, see http://logs.openstack.org/97/375097/2/check/keystone-coverage-db-ubuntu-xenial/dcae2a7/cover/keystone_token_controllers_py.html",
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_e00801dc",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T13:38:04Z",
+      "side": 1,
+      "message": "the belongs_to line should be moved down to right before it\u0027s used.",
+      "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a016f9ee",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T13:38:04Z",
+      "side": 1,
+      "message": "this comment should be changed from plural \"these\" to singular \"this\". Or just remove the comment since it\u0027s obvious.",
       "revId": "d3583d33bcc5b81c9a23518064692ef42102e235",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
