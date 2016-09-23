@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_aa13210c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T20:15:42Z",
+      "side": 1,
+      "message": "project",
+      "range": {
+        "startLine": 10,
+        "startChar": 51,
+        "endLine": 10,
+        "endChar": 57
+      },
+      "revId": "07ef69cd683bf51691959a9aecd3aa93203af78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_eaf529cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T20:15:42Z",
+      "side": 1,
+      "message": "project",
+      "range": {
+        "startLine": 11,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "07ef69cd683bf51691959a9aecd3aa93203af78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_8ade653d",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T20:15:42Z",
+      "side": 1,
+      "message": "parameter\n\nSame applies below.",
+      "range": {
+        "startLine": 116,
+        "startChar": 39,
+        "endLine": 116,
+        "endChar": 45
+      },
+      "revId": "07ef69cd683bf51691959a9aecd3aa93203af78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4abb7de5",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T20:15:42Z",
+      "side": 1,
+      "message": "parameter",
+      "range": {
+        "startLine": 118,
+        "startChar": 49,
+        "endLine": 118,
+        "endChar": 55
+      },
+      "revId": "07ef69cd683bf51691959a9aecd3aa93203af78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_ca214d4f",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-23T20:15:42Z",
+      "side": 1,
+      "message": "Suggest use ``401 Unauthorized`` since this is the HTTP status string.\n\nSame applies below.",
+      "range": {
+        "startLine": 119,
+        "startChar": 2,
+        "endLine": 119,
+        "endChar": 20
+      },
+      "revId": "07ef69cd683bf51691959a9aecd3aa93203af78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
