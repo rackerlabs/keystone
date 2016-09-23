@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_62acf935",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 1,
+      "message": "Please add a comment that 255 is the size of the database columns used for ID fields.  This size is picked so that the tokens can be indexed in-place as opposed to be being entries in a string table.  THus, this is a performance decision.",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_255bdb2f",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 1,
+      "message": "fernet",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_420d3d3d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2590,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 1,
+      "message": "Fernet",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_8207451b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3346,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 1,
+      "message": "fernet",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_e5857359",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 1,
+      "message": "probably should be something that will work as a Fernet token, and I don\u0027t think uuid will work.",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

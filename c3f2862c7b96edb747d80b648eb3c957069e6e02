@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4fcf267f",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-23T13:18:39Z",
+      "side": 0,
+      "message": "Are all non-supported options flagged when doctor runs? Will doctor now raise an error when there is a PKI related config option?",
+      "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
