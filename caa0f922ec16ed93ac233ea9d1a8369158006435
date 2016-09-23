@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_3eba256f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T05:03:39Z",
+      "side": 1,
+      "message": "add this to the \"Advanced Topics\" section I suppose -- http://docs.openstack.org/developer/keystone/#advanced-topics",
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_9eab391d",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T05:03:39Z",
+      "side": 1,
+      "message": "use the rendered doc, it\u0027s purdier: http://specs.openstack.org/openstack/keystone-specs/specs/keystone/newton/pci-dss.html",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 38
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_de4a2183",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T05:03:39Z",
+      "side": 1,
+      "message": "another NOTE saying that most of these are off by default and the settings need to be updated for the feature to be enabled ?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 11
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_e9ff25ff",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T05:03:39Z",
+      "side": 1,
+      "message": "round off the sentence with: \"if a user fails to authenticate after the maximum number of attempts, the user will be disabled. Users can be re-enabled by explicitly setting the enable user attribute via the API.\"",
+      "range": {
+        "startLine": 53,
+        "startChar": 35,
+        "endLine": 54,
+        "endChar": 75
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_1e13a967",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-23T05:03:39Z",
+      "side": 1,
+      "message": "mention what unit of time this is measured in",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "caa0f922ec16ed93ac233ea9d1a8369158006435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
