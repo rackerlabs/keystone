@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a7b51def",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-23T19:10:47Z",
+      "side": 0,
+      "message": "++",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 14
+      },
+      "revId": "dc9a1d5f7061f2de6b75a79ad3133d9e3c14046a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
