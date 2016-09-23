@@ -16,6 +16,41 @@
       "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_ac7d0270",
+        "filename": "keystone/cmd/doctor/tokens.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-23T18:41:52Z",
+      "side": 0,
+      "message": "The check only ran if pki or pkiz matched the actual token provider.",
+      "parentUuid": "5a8bc5a2_4fcf267f",
+      "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_8c6206ac",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-23T18:41:52Z",
+      "side": 0,
+      "message": "Do we need this anymore?",
+      "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

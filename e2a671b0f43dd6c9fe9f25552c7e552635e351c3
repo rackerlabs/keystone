@@ -84,6 +84,24 @@
       "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_2c0572bb",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-23T18:41:52Z",
+      "side": 1,
+      "message": "These are backend specific tests - which won\u0027t work with fernet anyway since fernet doesn\u0027t use the persistence backend at all.",
+      "parentUuid": "5a8bc5a2_e5857359",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
