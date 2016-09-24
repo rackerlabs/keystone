@@ -51,6 +51,24 @@
       "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_d3749c37",
+        "filename": "keystone/tests/unit/test_cert_setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-24T21:33:59Z",
+      "side": 0,
+      "message": "yes. We need certificates to sign revocation lists API responses.",
+      "parentUuid": "5a8bc5a2_8c6206ac",
+      "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
