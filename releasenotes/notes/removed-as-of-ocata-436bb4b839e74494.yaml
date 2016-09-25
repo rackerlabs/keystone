@@ -1,0 +1,44 @@
+---
+prelude:
+  - >
+    The PKI token format has been removed. See ``other`` for more details.
+  - >
+    Support for writing to LDAP has been removed. See ``other`` for more details.
+other:
+  - >
+    Routes and SQL backends for the contrib extensions have been removed, they
+    have been incorporated into keystone and are no longer optional. This
+    affects ``keystone/contrib/admin_crud``, ``keystone/contrib/endpoint_filter``,
+    ``keystone/contrib/federation``, ``keystone/contrib/oauth1``,
+    ``keystone/contrib/revoke``, ``keystone/contrib/simple_cert``, and
+    ``keystone/contrib/user_crud``.
+  - >
+    The ``[DEFAULT] domain_id_immutable`` configuration option has been removed
+    in favor of strictly immutable domain IDs.
+  - >
+    The ``[endpoint_policy] enabled`` configuration option has been removed in
+    favor of always enabling the endpoint policy extension.
+  - >
+    The auth plugin `keystone.auth.plugins.saml2.Saml2` has been removed in
+    favor of the auth plugin `keystone.auth.plugins.mapped.Mapped`.
+  - >
+    PKI and PKIz token formats have been removed in favor of Fernet tokens.
+  - >
+    Write support for the LDAP has been removed in favor of read-only support.
+    The ``create user``, ``create group``, ``delete user``, ``delete group``,
+    ``update user``, ``update group``, ``add user to group``, and
+    ``remove user from group`` operations have been removed.
+  - >
+    The ``memcache`` and ``memcache_pool`` token persistence backends have been
+    removed in favor of using Fernet tokens (which require no persistence).
+  - >
+    The ``httpd/keystone.py`` file has been removed in favor of the
+    ``keystone-wsgi-admin`` and ``keystone-wsgi-public`` scripts.
+  - >
+    Keystone cache backends have been removed in favor of their `oslo.cache`
+    counter-part. This affects ``keystone/common/cache/backends/mongol``,
+    ``keystone/common/cache/backends/memcache_pool``,
+    and ``keystone/common/cache/backends/noop``.
+  - >
+    The ``keystone/service.py`` file has been removed, the logic has been
+    moved to the ``keystone/version/service.py``.
