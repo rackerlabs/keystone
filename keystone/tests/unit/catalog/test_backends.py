@@ -560,8 +560,8 @@ class CatalogTests(object):
         enabled_endpoint_ref = self._create_endpoints()[1]
 
         user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        catalog = self.catalog_api.get_v3_catalog(user_id, project_id)
+        catalog = self.catalog_api.get_v3_catalog(user_id,
+                                                  self.tenant_bar['id'])
 
         endpoint_ids = [x['id'] for x in catalog[0]['endpoints']]
         self.assertEqual([enabled_endpoint_ref['id']], endpoint_ids)

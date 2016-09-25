@@ -19,6 +19,7 @@ import sqlalchemy
 from sqlalchemy.sql import true
 
 from keystone.catalog.backends import base
+from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import sql
 from keystone.common import utils
@@ -81,6 +82,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('catalog_api')
 class Catalog(base.CatalogDriverV8):
     # Regions
     def list_regions(self, hints):
@@ -373,7 +375,36 @@ class Catalog(base.CatalogDriverV8):
                 service['name'] = svc.extra.get('name', '')
                 return service
 
-            return [make_v3_service(svc) for svc in services]
+            catalog_ref = [make_v3_service(svc) for svc in services]
+            endpoint_ref = {}
+            if tenant_id:
+                endpoint_ref = self.catalog_api.list_endpoints_for_project(
+                    tenant_id)
+            # endpoint filter is enabled, only return the filtered endpoints.
+            if endpoint_ref:
+                endpoint_ids = list(endpoint_ref.keys())
+                for service in catalog_ref[:]:
+                    endpoints = service['endpoints']
+                    for endpoint in endpoints[:]:
+                        endpoint_id = endpoint['id']
+                        # remove the endpoint that is not associated with
+                        # the project.
+                        if endpoint_id not in endpoint_ids:
+                            service['endpoints'].remove(endpoint)
+                            continue
+                        # remove the disabled endpoint from the list.
+                        if not endpoint_ref[endpoint_id]['enabled']:
+                            service['endpoints'].remove(endpoint)
+                    # TODO(davechen) The service will not be included in the
+                    # catalog if the service doesn't has any endpoint when
+                    # endpoint filter is enabled, this is inconsistent with
+                    # full catalog that is returned when endpoint filter is
+                    # disabled.
+                    if not service.get('endpoints'):
+                        catalog_ref.remove(service)
+            elif not CONF.endpoint_filter.return_all_endpoints_if_no_filter:
+                return []
+            return catalog_ref
 
     @sql.handle_conflicts(conflict_type='project_endpoint')
     def add_endpoint_to_project(self, endpoint_id, project_id):
