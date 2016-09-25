@@ -263,16 +263,3 @@ class Manager(manager.Manager):
         msg = _('No policy is associated with endpoint '
                 '%(endpoint_id)s.') % {'endpoint_id': endpoint_id}
         raise exception.NotFound(msg)
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.endpoint_policy.EndpointPolicyDriverV8',
-    in_favor_of=(
-        'keystone.endpoint_policy.backends.base.EndpointPolicyDriverV8'),
-    remove_in=+1)
-class EndpointPolicyDriverV8(base.EndpointPolicyDriverV8):
-    pass
-
-
-Driver = manager.create_legacy_driver(base.EndpointPolicyDriverV8)
