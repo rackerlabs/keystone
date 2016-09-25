@@ -69,6 +69,29 @@
       "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_56587a8a",
+        "filename": "keystone/token/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-25T01:12:33Z",
+      "side": 0,
+      "message": "it now looks like most of keystoneclient.common.cms can be removed. unfortunately it hasn\u0027t been deprecated :(",
+      "range": {
+        "startLine": 13,
+        "startChar": 5,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "c3f2862c7b96edb747d80b648eb3c957069e6e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a8bc5a2_36804ec0",
+        "filename": "examples/pki/cms/revocation_list.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-25T01:12:33Z",
+      "side": 1,
+      "message": "not sure if these are used anywhere, but we\u0027re not removing the PKI support for revocation list",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_56815ac2",
+        "filename": "examples/pki/cms/revocation_list.pem",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-25T01:12:33Z",
+      "side": 1,
+      "message": "same",
+      "revId": "e2a671b0f43dd6c9fe9f25552c7e552635e351c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_62acf935",
         "filename": "keystone/conf/default.py",
         "patchSetId": 10
