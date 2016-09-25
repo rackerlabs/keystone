@@ -227,7 +227,27 @@ class Manager(manager.Manager):
 
     @MEMOIZE_COMPUTED_CATALOG
     def get_v3_catalog(self, user_id, tenant_id):
-        return self.driver.get_v3_catalog(user_id, tenant_id)
+        catalog_ref = self.driver.get_v3_catalog(user_id, tenant_id)
+        endpoint_ref = {}
+        if tenant_id:
+            endpoint_ref = self.list_endpoints_for_project(tenant_id)
+        # endpoint filter is enabled, so only return the filtered endpoints.
+        if endpoint_ref:
+            endpoint_ids = endpoint_ref.keys()
+            for service in catalog_ref[:]:
+                endpoints = service['endpoints']
+                for endpoint in endpoints:
+                    if endpoint['id'] not in endpoint_ids[:]:
+                        service['endpoints'].remove(endpoint)
+                # TODO(davechen) The service will not be included in catalog
+                # if the service doesn't has any endpoint when endpoint
+                # filter is enabled, this is inconsistent with full catalog
+                # that is returned when endpoint filter is not enabled.
+                if not service.get('endpoints'):
+                    catalog_ref.remove(service)
+        elif not CONF.endpoint_filter.return_all_endpoints_if_no_filter:
+            return []
+        return catalog_ref
 
     def add_endpoint_to_project(self, endpoint_id, project_id):
         self.driver.add_endpoint_to_project(endpoint_id, project_id)
