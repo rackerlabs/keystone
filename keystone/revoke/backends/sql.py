@@ -36,6 +36,10 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     revoked_at = sql.Column(sql.DateTime(), nullable=False, index=True)
     audit_id = sql.Column(sql.String(32))
     audit_chain_id = sql.Column(sql.String(32))
+    __table_args__ = (
+        sql.Index('ix_revocation_issued_before', 'issued_before'),
+        sql.Index('ix_revocation_revoked_at', 'revoked_at'),
+    )
 
 
 class Revoke(base.RevokeDriverV8):
