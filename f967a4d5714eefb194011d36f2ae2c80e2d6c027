@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_69ef2ce9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-26T14:07:52Z",
+      "side": 1,
+      "message": "but only the DateTime column.  Update if another revision.",
+      "revId": "f967a4d5714eefb194011d36f2ae2c80e2d6c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
