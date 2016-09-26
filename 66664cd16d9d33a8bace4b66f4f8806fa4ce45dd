@@ -69,6 +69,24 @@
       "revId": "66664cd16d9d33a8bace4b66f4f8806fa4ce45dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_f2ef971b",
+        "filename": "keystone/common/sql/expand_repo/versions/010_add_revocation_event_indexes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-26T18:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_7c019e37",
+      "revId": "66664cd16d9d33a8bace4b66f4f8806fa4ce45dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
