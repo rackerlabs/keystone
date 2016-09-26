@@ -39,6 +39,24 @@
       "revId": "e0899638dc8b537bab43109f998070f752659aec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_67f1f96a",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-26T22:20:38Z",
+      "side": 1,
+      "message": "Unscoped tokens won\u0027t have a project_id, correct?  And why not generalize the rest of the keys if they all result in:\n\"token_filters.append(sqlalchemy.or_(\n    getattr(RevocationEvent, key).is_(None),\n    getattr(RevocationEvent, key) \u003d\u003d value))\"\n\nI don\u0027t think we want to create a block of code for each key, right?",
+      "parentUuid": "5a8bc5a2_59022b0b",
+      "revId": "e0899638dc8b537bab43109f998070f752659aec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
