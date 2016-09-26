@@ -1,0 +1,22 @@
+---
+upgrade:
+  - The default token provider has switched from UUID
+    to Fernet. If you do not wish to switch token
+    formats, please explicitly set UUID as the token
+    provider for each node in the deployment using
+    `CONF.token.provider = uuid`. When switching to
+    Fernet, please note that it is required to have a
+    key repository in place prior to running Ocata. This
+    can be done using `keystone-manage fernet_setup`. In
+    multi-node deployments, it is imperative that a key
+    distribution policy be in use before upgrading. Once
+    a key repository has been created, it should be archived
+    in a secure backup location, and copied to all other
+    keystone nodes in the deployment. This ensures that each
+    keystone node will be able to validate tokens issued
+    across the deployment.
+critical:
+  - If upgrading to Fernet tokens, you must have a key
+    repository and key distribution mechanism in place.
+    Otherwise token validation may not work. Please see
+    the upgrade section for more details.
