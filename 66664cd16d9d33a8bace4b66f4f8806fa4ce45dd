@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_bcfec6ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2016-09-26T17:54:26Z",
+      "side": 1,
+      "message": "I feel like I\u0027m arguing both sides of an argument here, but adding indexes without knowing _exactly_ the queries that will use them is a recipe for creating a write constrainted database server, and an unmaintainable set of indexes in a hurry. I\u0027d suggest running something like pt-query-digest during a tempest and rally run to get a sense of what queries are running and then make sure they\u0027re covered by sensible indexes.",
+      "revId": "66664cd16d9d33a8bace4b66f4f8806fa4ce45dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_7c019e37",
+        "filename": "keystone/common/sql/expand_repo/versions/010_add_revocation_event_indexes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2016-09-26T17:54:26Z",
+      "side": 1,
+      "message": "oops, this is backwards. please read this page:\n\nhttp://dev.mysql.com/doc/refman/5.7/en/range-optimization.html\n\nYou want user_id first so that the b-tree range algorithm can skip to the first record with user_id, and then apply b-tree ranges to the rest fo the records.",
+      "revId": "66664cd16d9d33a8bace4b66f4f8806fa4ce45dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
