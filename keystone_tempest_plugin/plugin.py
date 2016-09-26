@@ -19,6 +19,7 @@ import os
 from tempest import config
 from tempest.test_discover import plugins
 
+import keystone.conf
 from keystone_tempest_plugin import config as project_config
 
 
@@ -28,6 +29,7 @@ class KeystoneTempestPlugin(plugins.TempestPlugin):
             os.path.abspath(__file__)))[0]
         test_dir = "keystone_tempest_plugin/tests"
         full_test_dir = os.path.join(base_path, test_dir)
+        keystone.conf.configure()
         return full_test_dir, base_path
 
     def register_opts(self, conf):
