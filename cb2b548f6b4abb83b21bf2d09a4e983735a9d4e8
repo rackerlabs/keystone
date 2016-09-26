@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_1b728e49",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-26T04:25:45Z",
+      "side": 0,
+      "message": "i couldn\u0027t find any value in keeping these around, thoughts?",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 59
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_5bbdf6b5",
+        "filename": "keystone/federation/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-26T04:25:45Z",
+      "side": 0,
+      "message": "this and list_sps should go into the base class",
+      "range": {
+        "startLine": 393,
+        "startChar": 8,
+        "endLine": 393,
+        "endChar": 17
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_bbfa7a73",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-26T04:25:45Z",
+      "side": 0,
+      "message": "i think this was unintentionally deprecated",
+      "range": {
+        "startLine": 123,
+        "startChar": 6,
+        "endLine": 123,
+        "endChar": 52
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
