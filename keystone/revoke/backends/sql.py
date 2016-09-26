@@ -33,7 +33,7 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     trust_id = sql.Column(sql.String(64))
     consumer_id = sql.Column(sql.String(64))
     access_token_id = sql.Column(sql.String(64))
-    issued_before = sql.Column(sql.DateTime(), nullable=False)
+    issued_before = sql.Column(sql.DateTime(), nullable=False, index=True)
     expires_at = sql.Column(sql.DateTime())
     revoked_at = sql.Column(sql.DateTime(), nullable=False, index=True)
     audit_id = sql.Column(sql.String(32))
