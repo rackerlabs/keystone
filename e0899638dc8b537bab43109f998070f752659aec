@@ -57,6 +57,24 @@
       "revId": "e0899638dc8b537bab43109f998070f752659aec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_47531d39",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-26T22:33:11Z",
+      "side": 1,
+      "message": "The token data always has project_id. It\u0027ll be None if the token is unscoped. No need to speculate on this, run the experiment. Here\u0027s the result I got: http://paste.openstack.org/show/583005/\n\nThis is an example where the existing code is confusing to readers and leads to incorrect assumptions.",
+      "parentUuid": "5a8bc5a2_67f1f96a",
+      "revId": "e0899638dc8b537bab43109f998070f752659aec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
