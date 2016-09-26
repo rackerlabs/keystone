@@ -33,6 +33,11 @@ class BaseIdentityTest(test.BaseTestCase):
         credentials = common_creds.get_configured_admin_credentials(
             cls.credential_type, identity_version=cls.identity_version)
         cls.keystone_manager = clients.Manager(credentials=credentials)
+        cls.domains_client = cls.keystone_manager.domains_client
         cls.idps_client = cls.keystone_manager.identity_providers_client
         cls.mappings_client = cls.keystone_manager.mapping_rules_client
+        cls.projects_client = cls.keystone_manager.projects_client
+        cls.roles_client = cls.keystone_manager.roles_client
         cls.sps_client = cls.keystone_manager.service_providers_client
+        cls.tokens_client = cls.keystone_manager.token_v3_client
+        cls.users_client = cls.keystone_manager.users_client

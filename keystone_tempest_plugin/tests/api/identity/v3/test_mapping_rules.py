@@ -12,13 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from tempest.lib.common.utils import data_utils
+from tempest import test
 from tempest.lib import decorators
 from tempest.lib import exceptions as lib_exc
-from tempest import test
+from tempest.lib.common.utils import data_utils
 
-from keystone_tempest_plugin.tests.api.identity import base
 from keystone_tempest_plugin.tests.api.identity.v3 import fixtures
+from keystone_tempest_plugin.tests import base
 
 
 class MappingRulesTest(base.BaseIdentityTest):
