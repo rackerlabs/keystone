@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a1e3ffa2",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-26T17:47:44Z",
+      "side": 1,
+      "message": "Why not \"if not value\"?",
+      "revId": "0eeb6e6bd1707e1d6e24396fd2093026425dbee1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
