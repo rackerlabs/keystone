@@ -537,8 +537,8 @@ def get_token_ref(context):
                         [authorization.AUTH_CONTEXT_ENV])
         return auth_context['token']
     except KeyError:
-        msg = _("Couldn't find the auth context.")
-        LOG.warning(msg)
+        msg = _LW("Couldn't find the auth context.")
+        LOG.warning(msg)  # noqa
         raise exception.Unauthorized(msg)
 
 

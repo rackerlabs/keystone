@@ -78,8 +78,8 @@ def validate_token_bind(context, token_ref):
             # no bind provided and none required
             return
         else:
-            msg = _('No bind information present in token.')
-            LOG.info(msg)
+            msg = _LI('No bind information present in token.')
+            LOG.info(msg)  # noqa
             raise exception.Unauthorized(msg)
 
     # get the named mode if bind_mode is not one of the known
