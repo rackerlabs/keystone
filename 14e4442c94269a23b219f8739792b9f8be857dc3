@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_b7522f33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T13:31:40Z",
+      "side": 1,
+      "message": "Can we deprecate these?",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_d71a5b7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T13:31:40Z",
+      "side": 1,
+      "message": "Can we just make it so that these don\u0027t do anything?",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_b7014e07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T13:31:40Z",
+      "side": 1,
+      "message": "I assume we can deprecate these.",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_170be224",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T13:31:40Z",
+      "side": 1,
+      "message": "Why do we need to keep the examples/pki/ directory around?",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
