@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_7a47901d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-27T21:55:05Z",
+      "side": 1,
+      "message": "is this going to be the final patch or the other one? (so you can properly use Related-Bug and Closes-Bug)",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "623e3a57d3ac16e24d6ca8a6b7fe3e683a4aea36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_7ac0707d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-27T21:55:05Z",
+      "side": 1,
+      "message": "maybe a rebase error? think this would go in the other patch",
+      "range": {
+        "startLine": 548,
+        "startChar": 39,
+        "endLine": 548,
+        "endChar": 71
+      },
+      "revId": "623e3a57d3ac16e24d6ca8a6b7fe3e683a4aea36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
