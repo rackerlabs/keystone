@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_40575e57",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T14:26:13Z",
+      "side": 1,
+      "message": "you still need to remove this.\n\nbtw, where is the check that forbids changing domain id? And why is it not with the check of id below?",
+      "range": {
+        "startLine": 941,
+        "startChar": 0,
+        "endLine": 944,
+        "endChar": 59
+      },
+      "revId": "eaf588ca8b0a1f71c6f24966a959152f5aaef1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_00e636e7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T14:26:13Z",
+      "side": 1,
+      "message": "you still need to delete this",
+      "range": {
+        "startLine": 1040,
+        "startChar": 0,
+        "endLine": 1044,
+        "endChar": 60
+      },
+      "revId": "eaf588ca8b0a1f71c6f24966a959152f5aaef1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
