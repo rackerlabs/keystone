@@ -23,6 +23,7 @@ from six.moves import range
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import utils as test_utils
 from keystone.token import provider
 
@@ -461,10 +462,18 @@ class TokenTests(object):
 
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
+        try:
+            self.resource_api.create_domain(
+                default_fixtures.DOMAINS[0]['id'], default_fixtures.DOMAINS[0])
+        except exception.Conflict:
+            # Default domain already exists.
+            pass
+
         self.user = unit.new_user_ref(
             domain_id=CONF.identity.default_domain_id)
         self.tenant = unit.new_project_ref(
             domain_id=CONF.identity.default_domain_id)
+        self.resource_api.create_project(self.tenant['id'], self.tenant)
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
