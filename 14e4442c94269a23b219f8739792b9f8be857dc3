@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_6f66febb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-27T16:51:24Z",
+      "side": 1,
+      "message": "we can, but we can never remove APIs :(",
+      "parentUuid": "5a8bc5a2_b7522f33",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_d71a5b7c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2016-09-27T13:31:40Z",
       "side": 1,
       "message": "Can we just make it so that these don\u0027t do anything?",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_2f93165c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-27T16:51:24Z",
+      "side": 1,
+      "message": "the generated PKI bits are still useful for viewing revocation events / revoked tokens",
+      "parentUuid": "5a8bc5a2_d71a5b7c",
       "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_af8d6632",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-27T16:51:24Z",
+      "side": 1,
+      "message": "these options are used by the keystone-manage command above",
+      "parentUuid": "5a8bc5a2_b7014e07",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_170be224",
         "filename": "/COMMIT_MSG",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2016-09-27T13:31:40Z",
       "side": 1,
       "message": "Why do we need to keep the examples/pki/ directory around?",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_af948636",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-27T16:51:24Z",
+      "side": 1,
+      "message": "this should be updated, we removed the token examples from examples/pki",
+      "parentUuid": "5a8bc5a2_170be224",
       "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
