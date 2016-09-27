@@ -22,6 +22,30 @@
       "revId": "ea3e7adf2e89a757d36d1c172ff56f40c41eedbf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_0be660e7",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 13438
+      },
+      "writtenOn": "2016-09-27T12:18:22Z",
+      "side": 1,
+      "message": "OK. Dunno if I should redo the line breaks as this will generate a glut of diffs. If you think so, hit -1 :)",
+      "parentUuid": "5a8bc5a2_0b6d80cb",
+      "range": {
+        "startLine": 310,
+        "startChar": 25,
+        "endLine": 310,
+        "endChar": 77
+      },
+      "revId": "ea3e7adf2e89a757d36d1c172ff56f40c41eedbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
