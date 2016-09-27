@@ -104,6 +104,24 @@
       "revId": "08c8a721379f5bb409e22aab5937a11825954d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_ac01f906",
+        "filename": "keystone/conf/saml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2016-09-27T16:12:21Z",
+      "side": 1,
+      "message": "I agree with David, broken defaults are a bad thing.\n\nIf I understand Colleen\u0027s argument correctly she wants a default value so that keystone-manage saml_idp_metadata can be run without generating an exception which requires some non-empty bogus value from a default, but that\u0027s OK because the bogus value isn\u0027t currently used.\n\nI don\u0027t buy that argument because the bogus value will get embedded in a file that few understand and will be forgotten. Worse folks will think they did something correct and will be miffed later when things fail in some cryptic way once the value starts being referenced.\n\nI\u0027ve done a lot of work with SAML in the last few years and I\u0027m regularly called upon to debug failed SAML deployments. My observation has been 95% of the problems are due to bad metadata and most folks are not SAML savvy enough to know what a SAML metadata file is and locate the file never mind actually being able to read it\u0027s contents and comprehend it. Or more importantly to correlate an obtuse failure to the contents of a metadata file.\n\nMy suggestion would be it\u0027s best to force people to be aware of what they are doing. You shouldn\u0027t be generating a metadata file unless you know it\u0027s needed and what it\u0027s for and what it\u0027s contents should be. Raising an exception for an undefined but mandatory value is a great way to force awareness and stop the process while the admin figures out what the value should be (as opposed to blinding accepting a non-working default that will have to be debugged later anyway).\n\nAlso, don\u0027t forget there is an excellent chance the metadata file will have been generated in the distant past, possibly by someone else. At the point the problem is detected that process may have been forgotten/lost. But there is another facet which is more pernicious, the metadata file by definition is meant to be distributed, it\u0027s not used locally. Then you have to track down where the file was distributed and make sure it gets updated. Best to avoid these headaches in the first place :-)",
+      "parentUuid": "7a8ec9b2_d4dd8043",
+      "revId": "08c8a721379f5bb409e22aab5937a11825954d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
