@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_4af13094",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T17:08:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_34244f0b",
+      "revId": "ee18bb0e239cf75e2c559fbeb078d8f067d3a2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_346b6f1f",
         "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 10,
         "endChar": 51
       },
+      "revId": "ee18bb0e239cf75e2c559fbeb078d8f067d3a2b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_6aec2cbb",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-27T17:08:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_346b6f1f",
       "revId": "ee18bb0e239cf75e2c559fbeb078d8f067d3a2b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
