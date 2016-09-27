@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_0b6d80cb",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T12:06:31Z",
+      "side": 1,
+      "message": "i think it should be:\n\"we will authenticate in this domain\"",
+      "range": {
+        "startLine": 310,
+        "startChar": 25,
+        "endLine": 310,
+        "endChar": 77
+      },
+      "revId": "ea3e7adf2e89a757d36d1c172ff56f40c41eedbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
