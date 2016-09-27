@@ -127,7 +127,7 @@ def audit_info(parent_audit_id):
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'resource_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -341,12 +341,32 @@ class Manager(manager.Manager):
                               'determining token expiry: %s'), token)
             raise exception.TokenNotFound(_('Failed to validate token'))
 
-        if current_time < expiry:
-            self.check_revocation(token)
-            # Token has not expired and has not been revoked.
-            return None
-        else:
+        if current_time >= expiry:
+            # The token is expired so is invalid.
             raise exception.TokenNotFound(_('Failed to validate token'))
+
+        # Check the project is enabled if the token is project-scoped.
+        project_id = None
+        if 'token' in token_data:
+            project_id = token_data['token'].get('tenant', {}).get('id')
+        else:
+            project_id = token_data.get('project', {}).get('id')
+
+        if project_id:
+            # The token is project-scoped.
+            try:
+                proj_ref = self.resource_api.get_project(project_id)
+                if not proj_ref['enabled']:
+                    # Project is disabled, token is invalid.
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+            except exception.ProjectNotFound:
+                # Project doesn't exist, token is invalid.
+                raise exception.TokenNotFound(_('Failed to validate token'))
+
+        self.check_revocation(token)
+        # Token has not expired and has not been revoked.
+        return None
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(

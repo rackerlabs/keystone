@@ -14,6 +14,7 @@
 
 import datetime
 
+import fixtures
 from oslo_utils import timeutils
 from six.moves import reload_module
 
@@ -777,6 +778,9 @@ class TestTokenProvider(unit.TestCase):
                           token.provider.Manager)
 
     def test_provider_token_expiration_validation(self):
+        self.useFixture(fixtures.MockPatchObject(
+            self.resource_api, 'get_project', return_value={'enabled': True}))
+
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._is_valid_token,
                           SAMPLE_V2_TOKEN_EXPIRED)
