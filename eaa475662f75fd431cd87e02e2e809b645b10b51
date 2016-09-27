@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_bd14cd9f",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T14:13:53Z",
+      "side": 1,
+      "message": "the change seems unrelated. Is it really needed?",
+      "revId": "eaa475662f75fd431cd87e02e2e809b645b10b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_dd099996",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T14:13:53Z",
+      "side": 1,
+      "message": "why was it added?",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 411,
+        "endChar": 0
+      },
+      "revId": "eaa475662f75fd431cd87e02e2e809b645b10b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
