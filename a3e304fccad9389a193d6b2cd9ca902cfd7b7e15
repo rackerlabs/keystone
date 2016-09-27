@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_929e2961",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-27T11:27:24Z",
+      "side": 1,
+      "message": "could you please fix this too?",
+      "range": {
+        "startLine": 310,
+        "startChar": 58,
+        "endLine": 310,
+        "endChar": 59
+      },
+      "revId": "a3e304fccad9389a193d6b2cd9ca902cfd7b7e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
