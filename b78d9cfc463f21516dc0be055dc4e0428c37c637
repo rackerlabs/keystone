@@ -87,6 +87,24 @@
       "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_71beda00",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-09-28T14:13:31Z",
+      "side": 1,
+      "message": "So I\u0027m a little worried that this will cause future security issues. If someone is developing a new feature (that doesn\u0027t need backward compat) and uses this because the see an `is_admin_project` property, they may not be getting what they think they are getting. Is that possible and if it is can we stop it?",
+      "parentUuid": "7a8ec9b2_494c7970",
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
