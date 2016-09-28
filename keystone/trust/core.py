@@ -14,7 +14,6 @@
 
 """Main entry point into the Trust service."""
 
-from oslo_log import versionutils
 from six.moves import zip
 
 from keystone.common import dependency
@@ -200,15 +199,6 @@ class Manager(manager.Manager):
         self.driver.delete_trust(trust_id)
 
         notifications.Audit.deleted(self._TRUST, trust_id, initiator)
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.trust.TrustDriverV8',
-    in_favor_of='keystone.trust.backends.base.TrustDriverV8',
-    remove_in=+1)
-class TrustDriverV8(base.TrustDriverV8):
-    pass
 
 
 Driver = manager.create_legacy_driver(base.TrustDriverV8)

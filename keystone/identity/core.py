@@ -1280,14 +1280,6 @@ class Manager(manager.Manager):
         return user_dict
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.identity.IdentityDriverV8',
-    in_favor_of='keystone.identity.backends.base.IdentityDriverV8',
-    remove_in=+1)
-class IdentityDriverV8(identity_interface.IdentityDriverV8):
-    pass
-
 Driver = manager.create_legacy_driver(identity_interface.IdentityDriverV8)
 
 
@@ -1343,15 +1335,6 @@ class MappingManager(manager.Manager):
         ID_MAPPING_REGION.invalidate()
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.identity.MappingDriverV8',
-    in_favor_of='keystone.identity.mapping_backends.base.MappingDriverV8',
-    remove_in=+1)
-class MappingDriverV8(mapping_interface.MappingDriverV8):
-    pass
-
-
 MappingDriver = manager.create_legacy_driver(mapping_interface.MappingDriverV8)
 
 
@@ -1372,12 +1355,3 @@ class ShadowUsersManager(manager.Manager):
         elif not isinstance(self.driver,
                             shadow_interface.ShadowUsersDriverV10):
             raise exception.UnsupportedDriverVersion(driver=shadow_driver)
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.identity.ShadowUsersDriverV9',
-    in_favor_of='keystone.identity.shadow_backends.base.ShadowUsersDriverV9',
-    remove_in=+1)
-class ShadowUsersDriverV9(shadow_interface.ShadowUsersDriverV9):
-    pass

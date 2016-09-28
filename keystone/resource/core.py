@@ -903,42 +903,6 @@ class Manager(manager.Manager):
             raise
 
 
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.resource.ResourceDriverBase',
-    in_favor_of='keystone.resource.backends.base.ResourceDriverBase',
-    remove_in=+1)
-class ResourceDriverBase(base.ResourceDriverBase):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.resource.ResourceDriverV8',
-    in_favor_of='keystone.resource.backends.base.ResourceDriverV8',
-    remove_in=+1)
-class ResourceDriverV8(base.ResourceDriverV8):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.resource.ResourceDriverV9',
-    in_favor_of='keystone.resource.backends.base.ResourceDriverV9',
-    remove_in=+1)
-class ResourceDriverV9(base.ResourceDriverV9):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.resource.V9ResourceWrapperForV8Driver',
-    in_favor_of='keystone.resource.backends.base.V9ResourceWrapperForV8Driver',
-    remove_in=+1)
-class V9ResourceWrapperForV8Driver(base.V9ResourceWrapperForV8Driver):
-    pass
-
-
 Driver = manager.create_legacy_driver(base.ResourceDriverV8)
 
 
@@ -1439,15 +1403,6 @@ class DomainConfigManager(manager.Manager):
                     config_list.append(_option_dict(each_group, each_option))
 
         return self._list_to_config(config_list, req_option=option)
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.resource.DomainConfigDriverV8',
-    in_favor_of='keystone.resource.config_backends.base.DomainConfigDriverV8',
-    remove_in=+1)
-class DomainConfigDriverV8(config_base.DomainConfigDriverV8):
-    pass
 
 
 DomainConfigDriver = manager.create_legacy_driver(
