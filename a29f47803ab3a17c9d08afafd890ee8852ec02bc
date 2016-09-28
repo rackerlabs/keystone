@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_6501a839",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:10:29Z",
+      "side": 1,
+      "message": "it\u0027s weird to see this v2 vs v3 logic in a function called \"validate_v3_token\", but looking at the other patches in your chain, i understand what you\u0027re doing.",
+      "range": {
+        "startLine": 848,
+        "startChar": 0,
+        "endLine": 850,
+        "endChar": 69
+      },
+      "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_256c0008",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:10:29Z",
+      "side": 1,
+      "message": "shouldn\u0027t this look into the FEDERATION bit here?",
+      "range": {
+        "startLine": 891,
+        "startChar": 38,
+        "endLine": 891,
+        "endChar": 56
+      },
+      "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
