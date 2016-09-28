@@ -22,6 +22,29 @@
       "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_d7c6bb15",
+        "filename": "keystone/assignment/role_backends/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T15:30:26Z",
+      "side": 0,
+      "message": "You need to add these methods to the base class",
+      "range": {
+        "startLine": 128,
+        "startChar": 8,
+        "endLine": 128,
+        "endChar": 24
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
