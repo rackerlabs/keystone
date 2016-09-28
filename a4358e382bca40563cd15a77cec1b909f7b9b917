@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_c5c0bc2d",
+        "filename": "keystone/common/sql/contract_repo/versions/010_contract_add_revocation_event_indexes.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:03:58Z",
+      "side": 1,
+      "message": "not accurate",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "a4358e382bca40563cd15a77cec1b909f7b9b917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_05e1c4d0",
+        "filename": "keystone/common/sql/data_migration_repo/versions/010_migrate_add_revocation_event_indexes.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:03:58Z",
+      "side": 1,
+      "message": "not accurate",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "a4358e382bca40563cd15a77cec1b909f7b9b917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
