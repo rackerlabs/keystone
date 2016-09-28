@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_8dc42641",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T15:51:48Z",
+      "side": 0,
+      "message": "But if you feel uneasy about it, you could always remove these later.",
+      "parentUuid": "3a98d1f4_fc98fe6c",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 59
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_5bbdf6b5",
         "filename": "keystone/federation/backends/base.py",
         "patchSetId": 2
