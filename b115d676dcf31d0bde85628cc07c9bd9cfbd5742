@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a98d1f4_a55d84ee",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T13:18:05Z",
+      "side": 1,
+      "message": "You can turn this into a comment, it doesn\u0027t need to be a docstringa",
+      "range": {
+        "startLine": 484,
+        "startChar": 12,
+        "endLine": 484,
+        "endChar": 45
+      },
+      "revId": "b115d676dcf31d0bde85628cc07c9bd9cfbd5742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_2a6208ae",
         "filename": "tox.ini",
         "patchSetId": 2
@@ -37,6 +60,30 @@
       "side": 1,
       "message": "since we not ignore by intention, let\u0027s not bring regressions.",
       "parentUuid": "5a8bc5a2_2a6208ae",
+      "range": {
+        "startLine": 125,
+        "startChar": 39,
+        "endLine": 125,
+        "endChar": 43
+      },
+      "revId": "b115d676dcf31d0bde85628cc07c9bd9cfbd5742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_c530d0a1",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T13:18:05Z",
+      "side": 1,
+      "message": "i agree with davechen, these are docstring checks, let\u0027s just change the bad line to a comment, there\u0027s no reason for it to be a docstring",
+      "parentUuid": "5a8bc5a2_be057a15",
       "range": {
         "startLine": 125,
         "startChar": 39,
