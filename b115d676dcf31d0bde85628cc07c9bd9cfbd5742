@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_2a6208ae",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-09-28T06:30:30Z",
+      "side": 1,
+      "message": "@Steve Martinelli\n\nIt\u0027s really interesting, I need to update this word (D401) as link [1] How do you think about this, is it ok?\n\n[1] https://bugs.launchpad.net/keystone/+bug/1570049/+activity",
+      "range": {
+        "startLine": 125,
+        "startChar": 39,
+        "endLine": 125,
+        "endChar": 43
+      },
+      "revId": "b115d676dcf31d0bde85628cc07c9bd9cfbd5742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
