@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_c209a6df",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-28T13:03:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_5bcf1fb3",
+      "range": {
+        "startLine": 190,
+        "startChar": 5,
+        "endLine": 190,
+        "endChar": 8
+      },
+      "revId": "bdbb4db1472745f958ea4d9ac7beaa3e0b2a6c6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_9025065e",
         "filename": "api-ref/source/v3/groups.inc",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-09-28T10:15:54Z",
       "side": 1,
       "message": "pls remove this, conflicts decorator is not added there.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/sql.py#L233",
+      "range": {
+        "startLine": 223,
+        "startChar": 3,
+        "endLine": 223,
+        "endChar": 8
+      },
+      "revId": "bdbb4db1472745f958ea4d9ac7beaa3e0b2a6c6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e20ea2e4",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-28T13:03:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_9025065e",
       "range": {
         "startLine": 223,
         "startChar": 3,
