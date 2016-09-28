@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_45af4c94",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T03:57:35Z",
+      "side": 1,
+      "message": "so it is*",
+      "range": {
+        "startLine": 345,
+        "startChar": 35,
+        "endLine": 345,
+        "endChar": 40
+      },
+      "revId": "f0148c72704cee0f42774691cfd5cc9d1ebc1263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_459d8c58",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T03:57:35Z",
+      "side": 1,
+      "message": "nit: at this point we can pull out this message and store it in a variable, and reference it when needed, it\u0027ll save on translating the same string three times",
+      "range": {
+        "startLine": 346,
+        "startChar": 45,
+        "endLine": 346,
+        "endChar": 69
+      },
+      "revId": "f0148c72704cee0f42774691cfd5cc9d1ebc1263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_05baa4c0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T03:57:35Z",
+      "side": 1,
+      "message": "do we have to check the case where a project is enabled, but the domain is disabled?",
+      "range": {
+        "startLine": 348,
+        "startChar": 8,
+        "endLine": 348,
+        "endChar": 70
+      },
+      "revId": "f0148c72704cee0f42774691cfd5cc9d1ebc1263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_a5757033",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T03:57:35Z",
+      "side": 1,
+      "message": "OK, and future patches will change check_revocation to not check the project ID, i get ya",
+      "range": {
+        "startLine": 367,
+        "startChar": 8,
+        "endLine": 367,
+        "endChar": 36
+      },
+      "revId": "f0148c72704cee0f42774691cfd5cc9d1ebc1263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
