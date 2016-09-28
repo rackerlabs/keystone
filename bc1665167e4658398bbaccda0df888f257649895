@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_6965f943",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-28T22:54:13Z",
+      "side": 1,
+      "message": "this is using the admin reset method, not the change_password",
+      "range": {
+        "startLine": 180,
+        "startChar": 13,
+        "endLine": 180,
+        "endChar": 38
+      },
+      "revId": "bc1665167e4658398bbaccda0df888f257649895",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
