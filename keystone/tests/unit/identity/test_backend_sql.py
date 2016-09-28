@@ -165,6 +165,15 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
         self.config_fixture.config(group='security_compliance',
                                    unique_last_password_count=self.max_cnt)
 
+    def test_validate_password_history_with_same_password(self):
+        user = self._create_user(self.passwords[0])
+        # Attempt to update with the initial password
+        user['password'] = self.passwords[0]
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
+
     def test_validate_password_history_with_invalid_password(self):
         user = self._create_user(self.passwords[0])
         self.assertValidPasswordUpdate(user, self.passwords[1])
