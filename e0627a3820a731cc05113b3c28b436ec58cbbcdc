@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a8bc5a2_45482c88",
+        "filename": "keystone/tests/unit/test_v3_trust.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:13:41Z",
+      "side": 1,
+      "message": "you should state this change in the commit message - that as a side effect of this change, that this operation now works",
+      "range": {
+        "startLine": 265,
+        "startChar": 8,
+        "endLine": 271,
+        "endChar": 9
+      },
+      "revId": "e0627a3820a731cc05113b3c28b436ec58cbbcdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_f79d800b",
         "filename": "keystone/tests/unit/token/test_backends.py",
         "patchSetId": 4
@@ -13,6 +36,30 @@
       "writtenOn": "2016-09-27T20:29:33Z",
       "side": 1,
       "message": "Couldn\u0027t this just be token_dict[\u0027tenant\u0027] \u003d None? Also format similar to lines 465-470 (or vice versa)?",
+      "range": {
+        "startLine": 475,
+        "startChar": 8,
+        "endLine": 476,
+        "endChar": 58
+      },
+      "revId": "e0627a3820a731cc05113b3c28b436ec58cbbcdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_855a344f",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T04:13:41Z",
+      "side": 1,
+      "message": "this looks fine for an unscoped token, but i agree on keeping the formatting consistent",
+      "parentUuid": "5a8bc5a2_f79d800b",
       "range": {
         "startLine": 475,
         "startChar": 8,
