@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_e6cbf670",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-28T22:07:16Z",
+      "side": 1,
+      "message": "maybe add a similar test to [1]? \n\n[1] https://review.openstack.org/#/c/378933/2/keystone/tests/unit/identity/test_backend_sql.py",
+      "revId": "37b33264696c3c6e65195d2a27a98221053f33b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
