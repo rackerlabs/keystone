@@ -45,6 +45,24 @@
       "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_763410de",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-28T13:57:03Z",
+      "side": 1,
+      "message": "Isn\u0027t that what we\u0027re doing by checking for the FEDERATION constant in the user reference?",
+      "parentUuid": "5a8bc5a2_256c0008",
+      "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
