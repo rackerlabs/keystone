@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_5ad640c6",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T20:53:46Z",
+      "side": 0,
+      "message": "The AssignmentDriverV8 class is only used in V9AssignmentWrapperForV8Driver to support driver versioning. AssignmentDriverV9 inherited from the base class; not AssignmentDriverV8.",
+      "parentUuid": "3a98d1f4_04b621dc",
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_d7c6bb15",
         "filename": "keystone/assignment/role_backends/base.py",
         "patchSetId": 3
