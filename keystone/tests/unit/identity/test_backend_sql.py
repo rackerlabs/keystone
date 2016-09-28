@@ -168,12 +168,21 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
     def test_validate_password_history_with_invalid_password(self):
         user = self._create_user(self.passwords[0])
         self.assertValidPasswordUpdate(user, self.passwords[1])
-        # Attempt to update with the initial password
+        # Attempt to change password with the same password
+        user['password'] = self.passwords[1]
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
+        # Attempt to change password with the initial password
         user['password'] = self.passwords[0]
         self.assertRaises(exception.PasswordValidationError,
                           self.identity_api.update_user,
                           user['id'],
                           user)
+        # Attempt to change password with unique password
+        unique_password = uuid.uuid4().hex
+        self.assertValidPasswordUpdate(user, unique_password)
 
     def test_validate_password_history_via_self_service_change_password(self):
         user = self._create_user(self.passwords[0])
