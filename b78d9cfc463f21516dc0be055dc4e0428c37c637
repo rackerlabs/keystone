@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_c02b4a93",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T05:00:11Z",
+      "side": 1,
+      "message": "this of it as erring on the side of backwards compatibility",
+      "parentUuid": "7a8ec9b2_d3b4d336",
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_b3b90731",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 3
