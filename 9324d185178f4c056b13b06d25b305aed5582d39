@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_9ff6fad5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-28T20:14:47Z",
+      "side": 1,
+      "message": "This will need to be a single line - likely summarizing the PKISetup functionality. PEP8 fails when the title line of a doc string spans multiple lines.",
+      "revId": "9324d185178f4c056b13b06d25b305aed5582d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
