@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_fc98fe6c",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T15:14:29Z",
+      "side": 0,
+      "message": "This came up when we moved the abstract base class out of core. We should no longer need Driver \u003d ...  Custom driver implementations should refer to the interface.",
+      "parentUuid": "5a8bc5a2_1b728e49",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 59
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_5bbdf6b5",
         "filename": "keystone/federation/backends/base.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_7cdb0e1c",
+        "filename": "keystone/federation/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T15:14:29Z",
+      "side": 0,
+      "message": "Yep, should go in the base class.",
+      "parentUuid": "5a8bc5a2_5bbdf6b5",
+      "range": {
+        "startLine": 393,
+        "startChar": 8,
+        "endLine": 393,
+        "endChar": 17
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_bbfa7a73",
         "filename": "keystone/federation/core.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2016-09-26T04:25:45Z",
       "side": 0,
       "message": "i think this was unintentionally deprecated",
+      "range": {
+        "startLine": 123,
+        "startChar": 6,
+        "endLine": 123,
+        "endChar": 52
+      },
+      "revId": "cb2b548f6b4abb83b21bf2d09a4e983735a9d4e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_fc82bec7",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-28T15:14:29Z",
+      "side": 0,
+      "message": "Why?  It doesn\u0027t belong in core.",
+      "parentUuid": "5a8bc5a2_bbfa7a73",
       "range": {
         "startLine": 123,
         "startChar": 6,
