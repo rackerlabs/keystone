@@ -22,6 +22,30 @@
       "revId": "e249922114f1230f845f62bfa3638b268a1bc0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_bf4581b4",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-28T02:54:38Z",
+      "side": 1,
+      "message": "okay, will do that in next rebase.",
+      "parentUuid": "5a8bc5a2_7f0f792e",
+      "range": {
+        "startLine": 1114,
+        "startChar": 0,
+        "endLine": 1117,
+        "endChar": 42
+      },
+      "revId": "e249922114f1230f845f62bfa3638b268a1bc0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
