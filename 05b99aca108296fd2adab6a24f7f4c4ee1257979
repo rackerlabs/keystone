@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_112bcc83",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T16:45:46Z",
+      "side": 1,
+      "message": "nit pick, but it\u0027s bugging me...\n\neither put this string on line 219 directly, or create a \"path\" variable on line 207",
+      "range": {
+        "startLine": 217,
+        "startChar": 15,
+        "endLine": 217,
+        "endChar": 40
+      },
+      "revId": "05b99aca108296fd2adab6a24f7f4c4ee1257979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
