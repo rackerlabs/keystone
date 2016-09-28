@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_4854cc53",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-09-28T16:04:07Z",
+      "side": 1,
+      "message": "Is this an okay way to determine if the driver is V8 or not? Or perhaps there is a better way",
+      "range": {
+        "startLine": 2176,
+        "startChar": 8,
+        "endLine": 2176,
+        "endChar": 63
+      },
+      "revId": "5af02578a8a0ca194aec313aac088a3d5d2734aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
