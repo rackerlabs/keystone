@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_50cb9c72",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-28T13:35:37Z",
+      "side": 1,
+      "message": "Several error response codes were removed -- 405, 503, etc.\n\nThe commit message didn\u0027t say anything about the intent of this change being to change the documented response codes.",
+      "revId": "4bc039e463cfea6a59ad3a8c648dbf1cb7a7b124",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
