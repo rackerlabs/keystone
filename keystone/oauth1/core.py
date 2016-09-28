@@ -21,7 +21,6 @@ import uuid
 import oauthlib.common
 from oauthlib import oauth1
 from oslo_log import log
-from oslo_log import versionutils
 
 from keystone.common import dependency
 from keystone.common import extension
@@ -180,15 +179,6 @@ class Manager(manager.Manager):
         notifications.Audit.created(self._REQUEST_TOKEN, ret['id'],
                                     initiator)
         return ret
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.oauth1.Oauth1DriverV8',
-    in_favor_of='keystone.oauth1.backends.base.Oauth1DriverV8',
-    remove_in=+1)
-class Oauth1DriverV8(base.Oauth1DriverV8):
-    pass
 
 
 Driver = manager.create_legacy_driver(base.Oauth1DriverV8)

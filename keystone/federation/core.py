@@ -12,8 +12,6 @@
 
 """Main entry point into the Federation service."""
 
-from oslo_log import versionutils
-
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
@@ -113,43 +111,6 @@ class Manager(manager.Manager):
         rule_processor = utils.RuleProcessor(mapping['id'], rules)
         mapped_properties = rule_processor.process(assertion_data)
         return mapped_properties, mapping['id']
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.federation.FederationDriverBase',
-    in_favor_of='keystone.federation.backends.base.FederationDriverBase',
-    remove_in=+1)
-class FederationDriverBase(base.FederationDriverBase):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.federation.FederationDriverV8',
-    in_favor_of='keystone.federation.backends.base.FederationDriverV8',
-    remove_in=+1)
-class FederationDriverV8(base.FederationDriverV8):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.federation.FederationDriverV9',
-    in_favor_of='keystone.federation.backends.base.FederationDriverV9',
-    remove_in=+1)
-class FederationDriverV9(base.FederationDriverV9):
-    pass
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.NEWTON,
-    what='keystone.federation.V9FederationWrapperForV8Driver',
-    in_favor_of=(
-        'keystone.federation.backends.base.V9FederationWrapperForV8Driver'),
-    remove_in=+1)
-class V9FederationWrapperForV8Driver(base.V9FederationWrapperForV8Driver):
-    pass
 
 
 Driver = manager.create_legacy_driver(base.FederationDriverV8)
