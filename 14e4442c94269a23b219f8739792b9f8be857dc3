@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_90b3460a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-28T10:06:56Z",
+      "side": 1,
+      "message": "things under examples/pki are still used in unit tests of revocation lists",
+      "parentUuid": "5a8bc5a2_af948636",
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_43cd9a5c",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 14
@@ -153,6 +171,30 @@
       "writtenOn": "2016-09-27T18:24:22Z",
       "side": 1,
       "message": "Please make this same change in the doc/source/man/keystone-manage.rst",
+      "range": {
+        "startLine": 1329,
+        "startChar": 17,
+        "endLine": 1329,
+        "endChar": 75
+      },
+      "revId": "14e4442c94269a23b219f8739792b9f8be857dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_90aa6684",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-28T10:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_43cd9a5c",
       "range": {
         "startLine": 1329,
         "startChar": 17,
