@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_b8ff5433",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T18:32:00Z",
+      "side": 0,
+      "message": "don\u0027t a bunch of these need to be brought into the base class?",
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_d7c6bb15",
         "filename": "keystone/assignment/role_backends/base.py",
         "patchSetId": 3
@@ -42,6 +59,23 @@
         "endLine": 128,
         "endChar": 24
       },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_0be9d41a",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T18:32:00Z",
+      "side": 0,
+      "message": "looks like we need to add some of the methods to the base class",
       "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
