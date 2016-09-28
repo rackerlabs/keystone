@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_0562a4ad",
+        "filename": "keystone_tempest_plugin/tests/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-28T03:47:38Z",
+      "side": 1,
+      "message": "split this change up (the rename and the additional clients)",
+      "revId": "885d4122889b8b4cd79733a392d3ee1fdc176aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
