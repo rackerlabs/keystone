@@ -16,6 +16,24 @@
       "revId": "9324d185178f4c056b13b06d25b305aed5582d39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_bfc49640",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-28T20:18:46Z",
+      "side": 1,
+      "message": "What about - http://cdn.pasteraw.com/qu7d3fuwrswu16pu03zb7z1fhluakwa ?",
+      "parentUuid": "3a98d1f4_9ff6fad5",
+      "revId": "9324d185178f4c056b13b06d25b305aed5582d39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
