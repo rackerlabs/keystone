@@ -22,6 +22,30 @@
       "revId": "4be9164e53403b863f8c717b58227c9fcbd13f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_ae30c302",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-29T13:26:02Z",
+      "side": 1,
+      "message": "I\u0027d say a different bug or even a new requirement.",
+      "parentUuid": "3a98d1f4_d7d3e636",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "4be9164e53403b863f8c717b58227c9fcbd13f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
