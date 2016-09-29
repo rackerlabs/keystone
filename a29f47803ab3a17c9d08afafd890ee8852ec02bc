@@ -63,6 +63,24 @@
       "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_2c05b4c1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-29T06:10:28Z",
+      "side": 1,
+      "message": "my point here is that why even both looking at federation_constants.FEDERATION if we\u0027re not going to use it?\n\nshouldn\u0027t \"token_dict \u003d {\u0027user\u0027: token_ref[\u0027user\u0027]}\" happen regardless of whether or not the user is federated?",
+      "parentUuid": "3a98d1f4_763410de",
+      "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
