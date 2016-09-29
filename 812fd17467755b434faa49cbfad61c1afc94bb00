@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_cf40b859",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-29T10:11:14Z",
+      "side": 1,
+      "message": "need a new line here to separate the title and close-bug tag.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 21
+      },
+      "revId": "812fd17467755b434faa49cbfad61c1afc94bb00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_cf7278e5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-09-29T10:11:14Z",
+      "side": 1,
+      "message": "remove these trailing space.",
+      "range": {
+        "startLine": 1698,
+        "startChar": 74,
+        "endLine": 1698,
+        "endChar": 75
+      },
+      "revId": "812fd17467755b434faa49cbfad61c1afc94bb00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
