@@ -22,6 +22,30 @@
       "revId": "331b673f925d7412f99d6e400286e0d0363c23c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_492499ae",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-29T13:29:42Z",
+      "side": 1,
+      "message": "Yeah, I just threw this patch up so I wouldn\u0027t forget it. Still need to think through the requirements here.",
+      "parentUuid": "3a98d1f4_8ccfa8af",
+      "range": {
+        "startLine": 160,
+        "startChar": 12,
+        "endLine": 160,
+        "endChar": 71
+      },
+      "revId": "331b673f925d7412f99d6e400286e0d0363c23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
