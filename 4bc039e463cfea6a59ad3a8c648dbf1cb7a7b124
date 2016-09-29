@@ -34,6 +34,24 @@
       "revId": "4bc039e463cfea6a59ad3a8c648dbf1cb7a7b124",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_1e7d62e7",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-09-29T14:02:45Z",
+      "side": 1,
+      "message": "Update the commit message so that reviewers know that the change was intentional.\n\nMy preference is that the error response code cleanup should be in a different commit so that it\u0027s easier to review.",
+      "parentUuid": "3a98d1f4_4eebbfb0",
+      "revId": "4bc039e463cfea6a59ad3a8c648dbf1cb7a7b124",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
