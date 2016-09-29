@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_d7d3e636",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-29T12:02:10Z",
+      "side": 1,
+      "message": "should be related bug? or we need a different one for https://review.openstack.org/#/c/379030/",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "4be9164e53403b863f8c717b58227c9fcbd13f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
