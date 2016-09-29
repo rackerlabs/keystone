@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_3188ab22",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-29T05:39:31Z",
+      "side": 1,
+      "message": "re-write this line to:\n\n  # Always send a notification",
+      "parentUuid": "3a98d1f4_a55d84ee",
+      "range": {
+        "startLine": 484,
+        "startChar": 12,
+        "endLine": 484,
+        "endChar": 45
+      },
+      "revId": "b115d676dcf31d0bde85628cc07c9bd9cfbd5742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_2a6208ae",
         "filename": "tox.ini",
         "patchSetId": 2
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "I don\u0027t really understand what you mean. Would you mind telling me for more detail.",
       "parentUuid": "3a98d1f4_c530d0a1",
+      "range": {
+        "startLine": 125,
+        "startChar": 39,
+        "endLine": 125,
+        "endChar": 43
+      },
+      "revId": "b115d676dcf31d0bde85628cc07c9bd9cfbd5742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_11abaf75",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-29T05:39:31Z",
+      "side": 1,
+      "message": "Sure, the reason this fails earlier is because D401 enforces certain words in a docstring (Alway vs Always).\n\nAnyway, we don\u0027t need a docstring for line 484 of notifications.py, it\u0027s a decorator. I recommend using a comment instead, and undo\u0027ing this change to tox.ini.",
+      "parentUuid": "3a98d1f4_562b6d82",
       "range": {
         "startLine": 125,
         "startChar": 39,
