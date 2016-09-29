@@ -48,13 +48,13 @@ class ExternalAuthNotApplicable(Exception):
 class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
-    def ca_cert(self, request, auth=None):
+    def ca_cert(self):
         with open(CONF.signing.ca_certs, 'r') as ca_file:
             data = ca_file.read()
         return data
 
     @controller.v2_deprecated
-    def signing_cert(self, request, auth=None):
+    def signing_cert(self):
         with open(CONF.signing.certfile, 'r') as cert_file:
             data = cert_file.read()
         return data
