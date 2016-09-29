@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_8ccfa8af",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-29T06:07:46Z",
+      "side": 1,
+      "message": "we probably want to remove this entirely as this is the admin request",
+      "range": {
+        "startLine": 160,
+        "startChar": 12,
+        "endLine": 160,
+        "endChar": 71
+      },
+      "revId": "331b673f925d7412f99d6e400286e0d0363c23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
