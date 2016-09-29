@@ -16,6 +16,24 @@
       "revId": "4bc039e463cfea6a59ad3a8c648dbf1cb7a7b124",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_4eebbfb0",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-29T13:20:13Z",
+      "side": 1,
+      "message": "in previous reviews (about projects?), I had left all the status codes untouched so that this series of changes will only about status code formatting and API reordering. There had been some comments that the 405, 503 etc status code were never returned from keystone, so we\u0027d better remove them. No one knows where those error codes come from. Maybe from the initial rst file converted from WADL.",
+      "parentUuid": "3a98d1f4_50cb9c72",
+      "revId": "4bc039e463cfea6a59ad3a8c648dbf1cb7a7b124",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
