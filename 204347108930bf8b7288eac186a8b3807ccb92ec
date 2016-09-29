@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_9be28002",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-09-29T04:14:16Z",
+      "side": 1,
+      "message": "It\u0027s not used in this method - but i\u0027m pretty sure that it\u0027s passed to this method because most things are passed request as a first arg.",
+      "range": {
+        "startLine": 829,
+        "startChar": 36,
+        "endLine": 829,
+        "endChar": 44
+      },
+      "revId": "204347108930bf8b7288eac186a8b3807ccb92ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
