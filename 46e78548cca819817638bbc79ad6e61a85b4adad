@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_97e6beb2",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1165,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-09-29T12:09:27Z",
+      "side": 1,
+      "message": "why adding this kind of extra line throughout the file? Looks like an unrelated change",
+      "revId": "46e78548cca819817638bbc79ad6e61a85b4adad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
