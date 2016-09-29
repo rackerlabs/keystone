@@ -16,6 +16,24 @@
       "revId": "46e78548cca819817638bbc79ad6e61a85b4adad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_0e03770e",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1165,
+      "author": {
+        "id": 8246
+      },
+      "writtenOn": "2016-09-29T13:12:46Z",
+      "side": 1,
+      "message": "it is obviously a symptom of obsessive-compulsive disorder ... I was trying to leave two empty lines between docs for different APIs as we already do at most places. Can do another rebase if it is annoying.",
+      "parentUuid": "3a98d1f4_97e6beb2",
+      "revId": "46e78548cca819817638bbc79ad6e61a85b4adad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
