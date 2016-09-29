@@ -15,6 +15,7 @@
 from oslo_log import log
 from oslo_utils import encodeutils
 import six
+from six.moves import http_client
 
 import keystone.conf
 from keystone.i18n import _, _LW
@@ -84,8 +85,8 @@ class ValidationError(Error):
                        " the server could not comply with the request"
                        " since it is either malformed or otherwise"
                        " incorrect. The client is assumed to be in error.")
-    code = 400
-    title = 'Bad Request'
+    code = http_client.BAD_REQUEST
+    title = http_client.responses[http_client.BAD_REQUEST]
 
 
 class URLValidationError(ValidationError):
@@ -117,8 +118,8 @@ class ValidationTimeStampError(Error):
                        " The server could not comply with the request"
                        " since it is either malformed or otherwise"
                        " incorrect. The client is assumed to be in error.")
-    code = 400
-    title = 'Bad Request'
+    code = http_client.BAD_REQUEST
+    title = http_client.responses[http_client.BAD_REQUEST]
 
 
 class ValidationExpirationError(Error):
@@ -126,8 +127,8 @@ class ValidationExpirationError(Error):
                        " The server could not comply with the request"
                        " since it is either malformed or otherwise"
                        " incorrect. The client is assumed to be in error.")
-    code = 400
-    title = 'Bad Request'
+    code = http_client.BAD_REQUEST
+    title = http_client.responses[http_client.BAD_REQUEST]
 
 
 class StringLengthExceeded(ValidationError):
@@ -142,15 +143,15 @@ class ValidationSizeError(Error):
                        " could not comply with the request because"
                        " the attribute size is invalid (too large)."
                        " The client is assumed to be in error.")
-    code = 400
-    title = 'Bad Request'
+    code = http_client.BAD_REQUEST
+    title = http_client.responses[http_client.BAD_REQUEST]
 
 
 class CircularRegionHierarchyError(Error):
     message_format = _("The specified parent region %(parent_region_id)s "
                        "would create a circular region hierarchy.")
-    code = 400
-    title = 'Bad Request'
+    code = http_client.BAD_REQUEST
+    title = http_client.responses[http_client.BAD_REQUEST]
 
 
 class ForbiddenNotSecurity(Error):
@@ -161,8 +162,8 @@ class ForbiddenNotSecurity(Error):
 
     """
 
-    code = 403
-    title = 'Forbidden'
+    code = http_client.FORBIDDEN
+    title = http_client.responses[http_client.FORBIDDEN]
 
 
 class PasswordVerificationError(ForbiddenNotSecurity):
@@ -237,8 +238,8 @@ class SecurityError(Error):
 
 class Unauthorized(SecurityError):
     message_format = _("The request you have made requires authentication.")
-    code = 401
-    title = 'Unauthorized'
+    code = http_client.UNAUTHORIZED
+    title = http_client.responses[http_client.UNAUTHORIZED]
 
 
 class PasswordExpired(Unauthorized):
@@ -281,8 +282,8 @@ class AdditionalAuthRequired(AuthPluginException):
 class Forbidden(SecurityError):
     message_format = _("You are not authorized to perform the"
                        " requested action.")
-    code = 403
-    title = 'Forbidden'
+    code = http_client.FORBIDDEN
+    title = http_client.responses[http_client.FORBIDDEN]
 
 
 class ForbiddenAction(Forbidden):
@@ -314,8 +315,8 @@ class InvalidDomainConfig(Forbidden):
 
 class NotFound(Error):
     message_format = _("Could not find: %(target)s")
-    code = 404
-    title = 'Not Found'
+    code = http_client.NOT_FOUND
+    title = http_client.responses[http_client.NOT_FOUND]
 
 
 class EndpointNotFound(NotFound):
@@ -457,8 +458,8 @@ class KeystoneConfigurationError(Exception):
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s")
-    code = 409
-    title = 'Conflict'
+    code = http_client.CONFLICT
+    title = http_client.responses[http_client.CONFLICT]
 
 
 class UnexpectedError(SecurityError):
@@ -480,8 +481,8 @@ class UnexpectedError(SecurityError):
         return super(UnexpectedError, self)._build_message(
             message or self.debug_message_format, **kwargs)
 
-    code = 500
-    title = 'Internal Server Error'
+    code = http_client.INTERNAL_SERVER_ERROR
+    title = http_client.responses[http_client.INTERNAL_SERVER_ERROR]
 
 
 class TrustConsumeMaximumAttempt(UnexpectedError):
@@ -525,15 +526,15 @@ class AssignmentTypeCalculationError(UnexpectedError):
 class NotImplemented(Error):
     message_format = _("The action you have requested has not"
                        " been implemented.")
-    code = 501
-    title = 'Not Implemented'
+    code = http_client.NOT_IMPLEMENTED
+    title = http_client.responses[http_client.NOT_IMPLEMENTED]
 
 
 class Gone(Error):
     message_format = _("The service you have requested is no"
                        " longer available on this server.")
-    code = 410
-    title = 'Gone'
+    code = http_client.GONE
+    title = http_client.responses[http_client.GONE]
 
 
 class ConfigFileNotFound(UnexpectedError):
