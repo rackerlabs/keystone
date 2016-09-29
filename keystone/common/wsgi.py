@@ -249,7 +249,7 @@ class Application(BaseApplication):
 
         if result is None:
             return render_response(
-                status=(http_client.NO_CONTENT,
+                status=(int(http_client.NO_CONTENT),
                         http_client.responses[http_client.NO_CONTENT]))
         elif isinstance(result, six.string_types):
             return result
@@ -268,7 +268,7 @@ class Application(BaseApplication):
         controller = importutils.import_class('keystone.common.controller')
         code = None
         if isinstance(self, controller.V3Controller) and req_method == 'POST':
-            code = (http_client.CREATED,
+            code = (int(http_client.CREATED),
                     http_client.responses[http_client.CREATED])
         return code
 
@@ -688,7 +688,7 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
 
         response = request.get_response(self.application)
 
-        if response.status_code != http_client.OK:
+        if response.status_code != int(http_client.OK):
             # The request failed, so don't update the response.
             return response
 
@@ -714,7 +714,7 @@ def render_response(body=None, status=None, headers=None, method=None):
 
     if body is None:
         body = b''
-        status = status or (http_client.NO_CONTENT,
+        status = status or (int(http_client.NO_CONTENT),
                             http_client.responses[http_client.NO_CONTENT])
     else:
         content_types = [v for h, v in headers if h == 'Content-Type']
@@ -727,7 +727,7 @@ def render_response(body=None, status=None, headers=None, method=None):
             body = jsonutils.dump_as_bytes(body, cls=utils.SmarterEncoder)
             if content_type is None:
                 headers.append(('Content-Type', 'application/json'))
-        status = status or (http_client.OK,
+        status = status or (int(http_client.OK),
                             http_client.responses[http_client.OK])
 
     # NOTE(davechen): `mod_wsgi` follows the standards from pep-3333 and

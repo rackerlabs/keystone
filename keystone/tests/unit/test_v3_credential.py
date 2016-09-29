@@ -17,7 +17,6 @@ import json
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
-from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import utils
@@ -219,7 +218,7 @@ class CredentialTestCase(CredentialBaseTestCase):
             '/credentials/%(credential_id)s' % {
                 'credential_id': credential_id},
             body={'credential': update_ref},
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
 
     def test_update_credential_to_ec2_with_previously_set_project_id(self):
         """Call ``PATCH /credentials/{credential_id}``."""
@@ -261,7 +260,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # for conflict.
         self.post(
             '/credentials',
-            body={'credential': ref}, expected_status=http_client.CONFLICT)
+            body={'credential': ref}, expected_status=409)
 
     def test_get_ec2_dict_blob(self):
         """Ensure non-JSON blob data is correctly converted."""
@@ -316,7 +315,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # Assert bad request status when missing project_id
         self.post(
             '/credentials',
-            body={'credential': ref}, expected_status=http_client.BAD_REQUEST)
+            body={'credential': ref}, expected_status=400)
 
     def test_create_ec2_credential_with_invalid_blob(self):
         """Test creating ec2 credential with invalid blob.
@@ -330,7 +329,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         # Assert bad request status when request contains invalid blob
         response = self.post(
             '/credentials',
-            body={'credential': ref}, expected_status=http_client.BAD_REQUEST)
+            body={'credential': ref}, expected_status=400)
         self.assertValidErrorResponse(response)
 
     def test_create_credential_with_admin_token(self):
@@ -417,7 +416,7 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
             '/credentials',
             body={'credential': ref},
             token=token_id,
-            expected_status=http_client.CONFLICT)
+            expected_status=409)
 
 
 class TestCredentialEc2(CredentialBaseTestCase):
@@ -449,7 +448,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         r = self.post(
             '/ec2tokens',
             body={'ec2Credentials': sig_ref},
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidTokenResponse(r)
 
     def test_ec2_credential_signature_validate(self):
@@ -514,7 +513,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         uri = '/'.join([self._get_ec2_cred_uri(), access_key])
         # if access_key is not found, ec2 controller raises Unauthorized
         # exception
-        self.get(uri, expected_status=http_client.UNAUTHORIZED)
+        self.get(uri, expected_status=401)
 
     def test_ec2_list_credentials(self):
         """Test ec2 credential listing."""

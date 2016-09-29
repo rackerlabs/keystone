@@ -13,7 +13,6 @@
 # under the License.
 
 from oslo_serialization import jsonutils
-from six.moves import http_client
 import webtest
 
 from keystone.tests import unit
@@ -116,7 +115,7 @@ class RestfulTestCase(unit.TestCase):
 
         example::
 
-            self.assertResponseStatus(response, http_client.NO_CONTENT)
+            self.assertResponseStatus(response, 204)
         """
         self.assertEqual(
             expected_status, response.status_code,
@@ -128,7 +127,7 @@ class RestfulTestCase(unit.TestCase):
         self.assertIn('X-Auth-Token', response.headers.get('Vary'))
 
     def assertValidErrorResponse(self, response,
-                                 expected_status=http_client.BAD_REQUEST):
+                                 expected_status=400):
         """Verify that the error response is valid.
 
         Subclasses can override this function based on the expected response.
@@ -192,7 +191,7 @@ class RestfulTestCase(unit.TestCase):
 
         # we can save some code & improve coverage by always doing this
         if (method != 'HEAD' and
-                response.status_code >= http_client.BAD_REQUEST):
+                response.status_code >= 400):
             self.assertValidErrorResponse(response)
 
         # Contains the decoded response.body

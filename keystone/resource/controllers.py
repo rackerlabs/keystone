@@ -180,7 +180,7 @@ class DomainConfigV3(controller.V3Controller):
         else:
             return wsgi.render_response(
                 body={self.member_name: ref},
-                status=(http_client.CREATED,
+                status=(int(http_client.CREATED),
                         http_client.responses[http_client.CREATED]))
 
     @controller.protected()

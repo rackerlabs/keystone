@@ -232,7 +232,7 @@ class RegionV3(controller.V3Controller):
         ref = self.catalog_api.create_region(ref, initiator)
         return wsgi.render_response(
             RegionV3.wrap_member(request.context_dict, ref),
-            status=(http_client.CREATED,
+            status=(int(http_client.CREATED),
                     http_client.responses[http_client.CREATED]))
 
     @controller.filterprotected('parent_region_id')

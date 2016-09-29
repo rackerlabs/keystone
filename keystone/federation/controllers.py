@@ -98,7 +98,7 @@ class IdentityProvider(_ControllerBase):
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(request.context_dict, idp_ref)
         return wsgi.render_response(
-            body=response, status=(http_client.CREATED,
+            body=response, status=(int(http_client.CREATED),
                                    http_client.responses[http_client.CREATED]))
 
     @controller.filterprotected('id', 'enabled')
@@ -189,7 +189,7 @@ class FederationProtocol(_ControllerBase):
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = FederationProtocol.wrap_member(request.context_dict, ref)
         return wsgi.render_response(
-            body=response, status=(http_client.CREATED,
+            body=response, status=(int(http_client.CREATED),
                                    http_client.responses[http_client.CREATED]))
 
     @controller.protected()
@@ -230,7 +230,7 @@ class MappingController(_ControllerBase):
         response = MappingController.wrap_member(request.context_dict,
                                                  mapping_ref)
         return wsgi.render_response(
-            body=response, status=(http_client.CREATED,
+            body=response, status=(int(http_client.CREATED),
                                    http_client.responses[http_client.CREATED]))
 
     @controller.protected()
@@ -405,7 +405,8 @@ class Auth(auth_controllers.Auth):
         headers = self._build_response_headers(service_provider)
         return wsgi.render_response(
             body=response.to_string(),
-            status=(http_client.OK, http_client.responses[http_client.OK]),
+            status=(int(http_client.OK),
+                    http_client.responses[http_client.OK]),
             headers=headers)
 
     def create_ecp_assertion(self, context, auth):
@@ -426,7 +427,8 @@ class Auth(auth_controllers.Auth):
         headers = self._build_response_headers(service_provider)
         return wsgi.render_response(
             body=ecp_assertion.to_string(),
-            status=(http_client.OK, http_client.responses[http_client.OK]),
+            status=(int(http_client.OK),
+                    http_client.responses[http_client.OK]),
             headers=headers)
 
 
@@ -504,7 +506,7 @@ class ServiceProvider(_ControllerBase):
         sp_ref = self.federation_api.create_sp(sp_id, service_provider)
         response = ServiceProvider.wrap_member(request.context_dict, sp_ref)
         return wsgi.render_response(
-            body=response, status=(http_client.CREATED,
+            body=response, status=(int(http_client.CREATED),
                                    http_client.responses[http_client.CREATED]))
 
     @controller.filterprotected('id', 'enabled')
@@ -545,6 +547,6 @@ class SAMLMetadataV3(_ControllerBase):
             # Raise HTTP 500 in case Metadata file cannot be read.
             raise exception.MetadataFileError(reason=e)
         return wsgi.render_response(
-            body=metadata, status=(http_client.OK,
+            body=metadata, status=(int(http_client.OK),
                                    http_client.responses[http_client.OK]),
             headers=[('Content-Type', 'text/xml')])

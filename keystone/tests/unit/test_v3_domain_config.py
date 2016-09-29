@@ -13,8 +13,6 @@
 import copy
 import uuid
 
-from six.moves import http_client
-
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
@@ -40,8 +38,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         """Call ``PUT /domains/{domain_id}/config``."""
         url = '/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']}
-        r = self.put(url, body={'config': self.config},
-                     expected_status=http_client.CREATED)
+        r = self.put(url, body={'config': self.config}, expected_status=201)
         res = self.domain_config_api.get_config(self.domain['id'])
         self.assertEqual(self.config, r.result['config'])
         self.assertEqual(self.config, res)
@@ -64,11 +61,11 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.put('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
             body={'config': self.config},
-            expected_status=http_client.CREATED)
+            expected_status=201)
         self.put('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
             body={'config': self.config},
-            expected_status=http_client.OK)
+            expected_status=200)
 
     def test_delete_config(self):
         """Call ``DELETE /domains{domain_id}/config``."""
@@ -120,7 +117,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain['id']}
         r = self.get(url)
         self.assertEqual(self.config, r.result['config'])
-        self.head(url, expected_status=http_client.OK)
+        self.head(url, expected_status=200)
 
     def test_get_config_by_group(self):
         """Call ``GET & HEAD /domains{domain_id}/config/{group}``."""
@@ -129,7 +126,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain['id']}
         r = self.get(url)
         self.assertEqual({'ldap': self.config['ldap']}, r.result['config'])
-        self.head(url, expected_status=http_client.OK)
+        self.head(url, expected_status=200)
 
     def test_get_config_by_group_invalid_domain(self):
         """Call ``GET & HEAD /domains{domain_id}/config/{group}``.
@@ -152,7 +149,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         r = self.get(url)
         self.assertEqual({'url': self.config['ldap']['url']},
                          r.result['config'])
-        self.head(url, expected_status=http_client.OK)
+        self.head(url, expected_status=200)
 
     def test_get_config_by_option_invalid_domain(self):
         """Call ``GET & HEAD /domains{domain_id}/config/{group}/{option}``.
@@ -171,7 +168,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         """Call ``GET /domains{domain_id}/config when no config defined``."""
         self.get('/domains/%(domain_id)s/config' % {
             'domain_id': self.domain['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_get_non_existant_config_invalid_domain(self):
         """Call ``GET /domains{domain_id}/config when no config defined``.
@@ -191,7 +188,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.domain_config_api.create_config(self.domain['id'], config)
         self.get('/domains/%(domain_id)s/config/identity' % {
             'domain_id': self.domain['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_get_non_existant_config_group_invalid_domain(self):
         """Call ``GET /domains{domain_id}/config/{group_not_exist}``.
@@ -213,7 +210,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.domain_config_api.create_config(self.domain['id'], config)
         self.get('/domains/%(domain_id)s/config/ldap/user_tree_dn' % {
             'domain_id': self.domain['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_get_non_existant_config_option_invalid_domain(self):
         """Call ``GET /domains{domain_id}/config/group/{option_not_exist}``.
@@ -305,7 +302,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.patch('/domains/%(domain_id)s/config/%(invalid_group)s' % {
             'domain_id': self.domain['id'], 'invalid_group': invalid_group},
             body={'config': new_config},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
         # Trying to update a valid group, but one that is not in the current
         # config should result in NotFound
         config = {'ldap': {'suffix': uuid.uuid4().hex}}
@@ -314,7 +311,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         self.patch('/domains/%(domain_id)s/config/identity' % {
             'domain_id': self.domain['id']},
             body={'config': new_config},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_update_config_invalid_group_invalid_domain(self):
         """Call ``PATCH /domains/{domain_id}/config/{invalid_group}``.
@@ -374,7 +371,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
                 'domain_id': self.domain['id'],
                 'invalid_option': invalid_option},
             body={'config': new_config},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
         # Trying to update a valid option, but one that is not in the current
         # config should result in NotFound
         new_config = {'suffix': uuid.uuid4().hex}
@@ -382,7 +379,7 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
             '/domains/%(domain_id)s/config/ldap/suffix' % {
                 'domain_id': self.domain['id']},
             body={'config': new_config},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_update_config_invalid_option_invalid_domain(self):
         """Call ``PATCH /domains/{domain_id}/config/{group}/{invalid}``.
@@ -440,20 +437,18 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
     def test_get_config_default_by_invalid_group(self):
         """Call ``GET for /domains/config/{bad-group}/default``."""
         # First try a valid group, but one we don't support for domain config
-        self.get('/domains/config/resouce/default',
-                 expected_status=http_client.FORBIDDEN)
+        self.get('/domains/config/resouce/default', expected_status=403)
 
         # Now try a totally invalid group
         url = '/domains/config/%s/default' % uuid.uuid4().hex
-        self.get(url, expected_status=http_client.FORBIDDEN)
+        self.get(url, expected_status=403)
 
     def test_get_config_default_by_invalid_option(self):
         """Call ``GET for /domains/config/{group}/{bad-option}/default``."""
         # First try a valid option, but one we don't support for domain config,
         # i.e. one that is in the sensitive options list
-        self.get('/domains/config/ldap/password/default',
-                 expected_status=http_client.FORBIDDEN)
+        self.get('/domains/config/ldap/password/default', expected_status=403)
 
         # Now try a totally invalid option
         url = '/domains/config/ldap/%s/default' % uuid.uuid4().hex
-        self.get(url, expected_status=http_client.FORBIDDEN)
+        self.get(url, expected_status=403)

@@ -17,7 +17,6 @@ import hashlib
 import uuid
 
 import fixtures
-from six.moves import http_client
 import webtest
 
 from keystone.common import authorization
@@ -83,7 +82,7 @@ class MiddlewareRequestTestBase(unit.TestCase):
 
         # by default the returned status when an uncaught exception is raised
         # for validation or caught errors this will likely be 400
-        kwargs.setdefault('status', http_client.INTERNAL_SERVER_ERROR)  # 500
+        kwargs.setdefault('status', 500)
 
         app = _Failing(self._application())
         resp = self._generate_app_response(app, *args, **kwargs)
@@ -149,14 +148,14 @@ class JsonBodyMiddlewareTest(MiddlewareRequestTestBase):
         self._do_middleware_response(params='{"arg1": "on',
                                      headers=headers,
                                      method='post',
-                                     status=http_client.BAD_REQUEST)
+                                     status=400)
 
     def test_not_dict_body(self):
         headers = {'Content-Type': 'application/json'}
         resp = self._do_middleware_response(params='42',
                                             headers=headers,
                                             method='post',
-                                            status=http_client.BAD_REQUEST)
+                                            status=400)
 
         self.assertIn('valid JSON object', resp.json['error']['message'])
 
@@ -174,7 +173,7 @@ class JsonBodyMiddlewareTest(MiddlewareRequestTestBase):
         self._do_middleware_response(params='{"arg1": "one", "arg2": ["a"]}',
                                      headers=headers,
                                      method='post',
-                                     status=http_client.BAD_REQUEST)
+                                     status=400)
 
     def test_unrecognized_content_type_without_body(self):
         headers = {'Content-Type': 'text/plain'}

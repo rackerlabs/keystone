@@ -12,7 +12,6 @@
 
 import uuid
 
-from six.moves import http_client
 from six.moves import range
 from testtools import matchers
 
@@ -73,8 +72,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_create_domain_bad_request(self):
         """Call ``POST /domains``."""
-        self.post('/domains', body={'domain': {}},
-                  expected_status=http_client.BAD_REQUEST)
+        self.post('/domains', body={'domain': {}}, expected_status=400)
 
     def test_create_domain_unsafe(self):
         """Call ``POST /domains with unsafe names``."""
@@ -94,7 +92,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             self.post(
                 '/domains',
                 body={'domain': ref},
-                expected_status=http_client.BAD_REQUEST)
+                expected_status=400)
 
     def test_create_domain_unsafe_default(self):
         """Check default for unsafe names for ``POST /domains``."""
@@ -147,7 +145,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.get(resource_url)
         self.assertValidDomainListResponse(r, ref=self.domain,
                                            resource_url=resource_url)
-        self.head(resource_url, expected_status=http_client.OK)
+        self.head(resource_url, expected_status=200)
 
     def test_get_head_domain(self):
         """Call ``GET /domains/{domain_id}``."""
@@ -155,7 +153,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'domain_id': self.domain_id}
         r = self.get(resource_url)
         self.assertValidDomainResponse(r, self.domain)
-        self.head(resource_url, expected_status=http_client.OK)
+        self.head(resource_url, expected_status=200)
 
     def test_update_domain(self):
         """Call ``PATCH /domains/{domain_id}``."""
@@ -187,7 +185,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             self.patch('/domains/%(domain_id)s' % {
                 'domain_id': self.domain_id},
                 body={'domain': ref},
-                expected_status=http_client.BAD_REQUEST)
+                expected_status=400)
 
     def test_update_domain_unsafe_default(self):
         """Check default for unsafe names for ``POST /domains``."""
@@ -277,23 +275,21 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         }
         self.admin_request(
             path='/v2.0/tokens', method='POST', body=body,
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
 
         # Try looking up in v3 by name and id
         auth_data = self.build_authentication_request(
             user_id=user2['id'],
             password=user2['password'],
             project_id=project2['id'])
-        self.v3_create_token(auth_data,
-                             expected_status=http_client.UNAUTHORIZED)
+        self.v3_create_token(auth_data, expected_status=401)
 
         auth_data = self.build_authentication_request(
             username=user2['name'],
             user_domain_id=domain2['id'],
             password=user2['password'],
             project_id=project2['id'])
-        self.v3_create_token(auth_data,
-                             expected_status=http_client.UNAUTHORIZED)
+        self.v3_create_token(auth_data, expected_status=401)
 
     def test_delete_enabled_domain_fails(self):
         """Call ``DELETE /domains/{domain_id}`` (when domain enabled)."""
@@ -446,7 +442,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # validates the returned token and it should be valid.
         self.head('/auth/tokens',
                   headers={'x-subject-token': subject_token},
-                  expected_status=http_client.OK)
+                  expected_status=200)
 
         # now disable the domain
         domain['enabled'] = False
@@ -458,7 +454,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         # as the domain has already been disabled.
         self.head('/auth/tokens',
                   headers={'x-subject-token': subject_token},
-                  expected_status=http_client.NOT_FOUND)
+                  expected_status=404)
 
     def test_delete_domain_hierarchy(self):
         """Call ``DELETE /domains/{domain_id}``."""
@@ -562,7 +558,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         r = self.get(resource_url)
         self.assertValidProjectListResponse(r, ref=self.project,
                                             resource_url=resource_url)
-        self.head(resource_url, expected_status=http_client.OK)
+        self.head(resource_url, expected_status=200)
 
     def test_create_project(self):
         """Call ``POST /projects``."""
@@ -574,14 +570,13 @@ class ResourceTestCase(test_v3.RestfulTestCase,
 
     def test_create_project_bad_request(self):
         """Call ``POST /projects``."""
-        self.post('/projects', body={'project': {}},
-                  expected_status=http_client.BAD_REQUEST)
+        self.post('/projects', body={'project': {}}, expected_status=400)
 
     def test_create_project_invalid_domain_id(self):
         """Call ``POST /projects``."""
         ref = unit.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref},
-                  expected_status=http_client.BAD_REQUEST)
+                  expected_status=400)
 
     def test_create_project_unsafe(self):
         """Call ``POST /projects with unsafe names``."""
@@ -601,7 +596,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             self.post(
                 '/projects',
                 body={'project': ref},
-                expected_status=http_client.BAD_REQUEST)
+                expected_status=400)
 
     def test_create_project_unsafe_default(self):
         """Check default for unsafe names for ``POST /projects``."""
@@ -774,25 +769,25 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             'project_id': self.project_id}
         r = self.get(resource_url)
         self.assertValidProjectResponse(r, self.project)
-        self.head(resource_url, expected_status=http_client.OK)
+        self.head(resource_url, expected_status=200)
 
     def test_get_project_with_parents_as_list_with_invalid_id(self):
         """Call ``GET /projects/{project_id}?parents_as_list``."""
         self.get('/projects/%(project_id)s?parents_as_list' % {
-                 'project_id': None}, expected_status=http_client.NOT_FOUND)
+                 'project_id': None}, expected_status=404)
 
         self.get('/projects/%(project_id)s?parents_as_list' % {
                  'project_id': uuid.uuid4().hex},
-                 expected_status=http_client.NOT_FOUND)
+                 expected_status=404)
 
     def test_get_project_with_subtree_as_list_with_invalid_id(self):
         """Call ``GET /projects/{project_id}?subtree_as_list``."""
         self.get('/projects/%(project_id)s?subtree_as_list' % {
-                 'project_id': None}, expected_status=http_client.NOT_FOUND)
+                 'project_id': None}, expected_status=404)
 
         self.get('/projects/%(project_id)s?subtree_as_list' % {
                  'project_id': uuid.uuid4().hex},
-                 expected_status=http_client.NOT_FOUND)
+                 expected_status=404)
 
     def test_get_project_with_parents_as_ids(self):
         """Call ``GET /projects/{project_id}?parents_as_ids``."""
@@ -923,7 +918,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.get(
             '/projects/%(project_id)s?parents_as_list&parents_as_ids' % {
                 'project_id': projects[1]['project']['id']},
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
 
     def test_list_project_is_domain_filter(self):
         """Call ``GET /projects?is_domain=True/False``."""
@@ -1147,7 +1142,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.get(
             '/projects/%(project_id)s?subtree_as_list&subtree_as_ids' % {
                 'project_id': projects[1]['project']['id']},
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
 
     def test_update_project(self):
         """Call ``PATCH /projects/{project_id}``."""
@@ -1187,7 +1182,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 '/projects/%(project_id)s' % {
                     'project_id': self.project_id},
                 body={'project': ref},
-                expected_status=http_client.BAD_REQUEST)
+                expected_status=400)
 
     def test_update_project_unsafe_default(self):
         """Check default for unsafe names for ``POST /projects``."""
@@ -1228,7 +1223,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': leaf_project['id']},
             body={'project': leaf_project},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
 
     def test_update_project_is_domain_not_allowed(self):
         """Call ``PATCH /projects/{project_id}`` with is_domain.
@@ -1245,7 +1240,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.patch('/projects/%(project_id)s' % {
             'project_id': resp.result['project']['id']},
             body={'project': project},
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
 
     def test_disable_leaf_project(self):
         """Call ``PATCH /projects/{project_id}``."""
@@ -1268,7 +1263,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
             '/projects/%(project_id)s' % {
                 'project_id': root_project['id']},
             body={'project': root_project},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
 
     def test_delete_project(self):
         """Call ``DELETE /projects/{project_id}``.
@@ -1312,7 +1307,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.delete(
             '/projects/%(project_id)s' % {
                 'project_id': projects[0]['project']['id']},
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
 
 
 class ResourceV3toV2MethodsTestCase(unit.TestCase):
