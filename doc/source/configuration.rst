@@ -1691,6 +1691,13 @@ tls_cacertdir is ignored. Furthermore, valid options for tls_req_cert are
 demand, never, and allow. These correspond to the standard options permitted by
 the TLS_REQCERT TLS option.
 
+.. NOTE::
+
+The /etc/ldap/ldap.conf file is read if it exists and then keystone.conf is read
+as a back up. But that could confuse admins. If the value of 'tls_cacertfile' is 
+set to 'system', then the /etc/ldap/ldap.conf is parsed otherwise the file
+specifed by tls_cacertfile is used.
+
 Read Only LDAP
 --------------
 
