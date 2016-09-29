@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_496e4f97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-29T15:35:50Z",
+      "side": 1,
+      "message": "Closes-Bug:",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "a2f42ee59b90134d1d4f6076053ddee115745dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_89ff77a9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-29T15:35:50Z",
+      "side": 1,
+      "message": "Keep width at 79 characters.",
+      "range": {
+        "startLine": 1696,
+        "startChar": 76,
+        "endLine": 1696,
+        "endChar": 80
+      },
+      "revId": "a2f42ee59b90134d1d4f6076053ddee115745dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_c9089fdc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-29T15:35:50Z",
+      "side": 1,
+      "message": "remove trailing whitespace",
+      "range": {
+        "startLine": 1697,
+        "startChar": 80,
+        "endLine": 1697,
+        "endChar": 81
+      },
+      "revId": "a2f42ee59b90134d1d4f6076053ddee115745dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e9ab9b87",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-29T15:35:50Z",
+      "side": 1,
+      "message": "I\u0027m actually more confused by this paragraph.  Could you please reword it.  Remove the part about ...conld confuse admins...",
+      "range": {
+        "startLine": 1696,
+        "startChar": 0,
+        "endLine": 1699,
+        "endChar": 35
+      },
+      "revId": "a2f42ee59b90134d1d4f6076053ddee115745dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
