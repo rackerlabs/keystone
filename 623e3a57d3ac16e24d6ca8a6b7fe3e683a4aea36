@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_d7dda615",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-29T12:06:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a8bc5a2_7a47901d",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "623e3a57d3ac16e24d6ca8a6b7fe3e683a4aea36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_7ac0707d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 7
@@ -41,6 +65,29 @@
         "startChar": 39,
         "endLine": 548,
         "endChar": 71
+      },
+      "revId": "623e3a57d3ac16e24d6ca8a6b7fe3e683a4aea36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_b7c01a2c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-09-29T12:06:38Z",
+      "side": 1,
+      "message": "I\u0027m leaving it here as it will be changed in the next patch and I don\u0027t want # noqa here.",
+      "range": {
+        "startLine": 548,
+        "startChar": 36,
+        "endLine": 548,
+        "endChar": 73
       },
       "revId": "623e3a57d3ac16e24d6ca8a6b7fe3e683a4aea36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
