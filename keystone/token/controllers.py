@@ -455,7 +455,7 @@ class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
     @controller.protected()
-    def revocation_list(self, request, auth=None):
+    def revocation_list(self, request):
         if not CONF.token.revoke_by_id:
             raise exception.Gone()
         tokens = self.token_provider_api.list_revoked_tokens()
