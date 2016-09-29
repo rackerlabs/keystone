@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_adc0a9e1",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-09-29T22:55:54Z",
+      "side": 1,
+      "message": "So I\u0027m confused by this. The default token is uuid, so I would expect 32 according to the option help below. But this note implies 255 should be used for performance reasons. So which is it? If 255 should be chosen even for UUID, then the option help should change also IMO.",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
