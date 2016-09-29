@@ -18,7 +18,6 @@ import shutil
 import subprocess
 
 import mock
-from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import openssl
@@ -94,12 +93,12 @@ class CertSetupTestCase(rest.RestfulTestCase):
         signing_resp = self.request(self.public_app,
                                     '/v2.0/certificates/signing',
                                     method='GET',
-                                    expected_status=http_client.OK)
+                                    expected_status=200)
 
         cacert_resp = self.request(self.public_app,
                                    '/v2.0/certificates/ca',
                                    method='GET',
-                                   expected_status=http_client.OK)
+                                   expected_status=200)
 
         with open(CONF.signing.certfile) as f:
             self.assertEqual(f.read(), signing_resp.text)
@@ -115,7 +114,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
             for accept in [None, 'text/html', 'application/json', 'text/xml']:
                 headers = {'Accept': accept} if accept else {}
                 resp = self.request(self.public_app, path, method='GET',
-                                    expected_status=http_client.OK,
+                                    expected_status=200,
                                     headers=headers)
 
                 self.assertEqual('text/html', resp.content_type)
@@ -128,7 +127,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
     def test_failure(self):
         for path in ['/v2.0/certificates/signing', '/v2.0/certificates/ca']:
             self.request(self.public_app, path, method='GET',
-                         expected_status=http_client.INTERNAL_SERVER_ERROR)
+                         expected_status=500)
 
     def test_pki_certs_rebuild(self):
         self.test_create_pki_certs()

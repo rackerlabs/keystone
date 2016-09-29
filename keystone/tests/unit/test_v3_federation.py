@@ -26,7 +26,6 @@ from oslo_utils import importutils
 import saml2
 from saml2 import saml
 from saml2 import sigver
-from six.moves import http_client
 from six.moves import range, urllib, zip
 xmldsig = importutils.try_import("saml2.xmldsig")
 if not xmldsig:
@@ -840,7 +839,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         if body is None:
             body = self._http_idp_input()
         resp = self.put(url, body={'identity_provider': body},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         return resp
 
     def _http_idp_input(self, **kwargs):
@@ -924,7 +923,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         body['remote_ids'] = [uuid.uuid4().hex,
                               repeated_remote_id]
         resp = self.put(url, body={'identity_provider': body},
-                        expected_status=http_client.CONFLICT)
+                        expected_status=409)
 
         resp_data = jsonutils.loads(resp.body)
         self.assertIn('Duplicate remote ID',
@@ -1036,7 +1035,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         body['remote_ids'] = [repeated_remote_id]
         resp = self.patch(url, body={'identity_provider': body},
-                          expected_status=http_client.CONFLICT)
+                          expected_status=409)
         resp_data = jsonutils.loads(resp.body)
         self.assertIn('Duplicate remote ID',
                       resp_data['error']['message'])
@@ -1133,9 +1132,9 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         url = self.base_url(suffix=uuid.uuid4().hex)
         body = self._http_idp_input()
         self.put(url, body={'identity_provider': body},
-                 expected_status=http_client.CREATED)
+                 expected_status=201)
         resp = self.put(url, body={'identity_provider': body},
-                        expected_status=http_client.CONFLICT)
+                        expected_status=409)
 
         resp_data = jsonutils.loads(resp.body)
         self.assertIn('Duplicate entry',
@@ -1167,7 +1166,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertIsNotNone(idp_id)
 
         url = self.base_url(suffix=idp_id)
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.get(url, expected_status=404)
 
     def test_delete_existing_idp(self):
         """Create and later delete IdP.
@@ -1181,7 +1180,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertIsNotNone(idp_id)
         url = self.base_url(suffix=idp_id)
         self.delete(url)
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.get(url, expected_status=404)
 
     def test_delete_idp_also_deletes_assigned_protocols(self):
         """Deleting an IdP will delete its assigned protocol."""
@@ -1196,7 +1195,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         idp_url = self.base_url(suffix=idp_id)
 
         # assign protocol to IdP
-        kwargs = {'expected_status': http_client.CREATED}
+        kwargs = {'expected_status': 201}
         resp, idp_id, proto = self._assign_protocol_to_idp(
             url=url,
             idp_id=idp_id,
@@ -1206,7 +1205,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         # removing IdP will remove the assigned protocol as well
         self.assertEqual(1, len(self.federation_api.list_protocols(idp_id)))
         self.delete(idp_url)
-        self.get(idp_url, expected_status=http_client.NOT_FOUND)
+        self.get(idp_url, expected_status=404)
         self.assertEqual(0, len(self.federation_api.list_protocols(idp_id)))
 
     def test_delete_nonexisting_idp(self):
@@ -1216,7 +1215,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """
         idp_id = uuid.uuid4().hex
         url = self.base_url(suffix=idp_id)
-        self.delete(url, expected_status=http_client.NOT_FOUND)
+        self.delete(url, expected_status=404)
 
     def test_update_idp_mutable_attributes(self):
         """Update IdP's mutable parameters."""
@@ -1271,8 +1270,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         body['protocols'] = [uuid.uuid4().hex, uuid.uuid4().hex]
 
         url = self.base_url(suffix=idp_id)
-        self.patch(url, body={'identity_provider': body},
-                   expected_status=http_client.BAD_REQUEST)
+        self.patch(url, body={'identity_provider': body}, expected_status=400)
 
     def test_update_nonexistent_idp(self):
         """Update nonexistent IdP.
@@ -1286,11 +1284,11 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         body['enabled'] = False
         body = {'identity_provider': body}
 
-        self.patch(url, body=body, expected_status=http_client.NOT_FOUND)
+        self.patch(url, body=body, expected_status=404)
 
     def test_assign_protocol_to_idp(self):
         """Assign a protocol to existing IdP."""
-        self._assign_protocol_to_idp(expected_status=http_client.CREATED)
+        self._assign_protocol_to_idp(expected_status=201)
 
     def test_protocol_composite_pk(self):
         """Test that Keystone can add two entities.
@@ -1306,7 +1304,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """
         url = self.base_url(suffix='%(idp_id)s/protocols/%(protocol_id)s')
 
-        kwargs = {'expected_status': http_client.CREATED}
+        kwargs = {'expected_status': 201}
         self._assign_protocol_to_idp(proto='saml2',
                                      url=url, **kwargs)
 
@@ -1322,10 +1320,10 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """
         url = self.base_url(suffix='%(idp_id)s/protocols/%(protocol_id)s')
 
-        kwargs = {'expected_status': http_client.CREATED}
+        kwargs = {'expected_status': 201}
         resp, idp_id, proto = self._assign_protocol_to_idp(proto='saml2',
                                                            url=url, **kwargs)
-        kwargs = {'expected_status': http_client.CONFLICT}
+        kwargs = {'expected_status': 409}
         resp, idp_id, proto = self._assign_protocol_to_idp(idp_id=idp_id,
                                                            proto='saml2',
                                                            validate=False,
@@ -1338,7 +1336,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
         """
         idp_id = uuid.uuid4().hex
-        kwargs = {'expected_status': http_client.NOT_FOUND}
+        kwargs = {'expected_status': 404}
         self._assign_protocol_to_idp(proto='saml2',
                                      idp_id=idp_id,
                                      validate=False,
@@ -1346,8 +1344,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
     def test_get_protocol(self):
         """Create and later fetch protocol tied to IdP."""
-        resp, idp_id, proto = self._assign_protocol_to_idp(
-            expected_status=http_client.CREATED)
+        resp, idp_id, proto = self._assign_protocol_to_idp(expected_status=201)
         proto_id = self._fetch_attribute_from_response(resp, 'protocol')['id']
         url = "%s/protocols/%s" % (idp_id, proto_id)
         url = self.base_url(suffix=url)
@@ -1369,14 +1366,13 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         Compare input and output id sets.
 
         """
-        resp, idp_id, proto = self._assign_protocol_to_idp(
-            expected_status=http_client.CREATED)
+        resp, idp_id, proto = self._assign_protocol_to_idp(expected_status=201)
         iterations = random.randint(0, 16)
         protocol_ids = []
         for _ in range(iterations):
             resp, _, proto = self._assign_protocol_to_idp(
                 idp_id=idp_id,
-                expected_status=http_client.CREATED)
+                expected_status=201)
             proto_id = self._fetch_attribute_from_response(resp, 'protocol')
             proto_id = proto_id['id']
             protocol_ids.append(proto_id)
@@ -1394,8 +1390,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
 
     def test_update_protocols_attribute(self):
         """Update protocol's attribute."""
-        resp, idp_id, proto = self._assign_protocol_to_idp(
-            expected_status=http_client.CREATED)
+        resp, idp_id, proto = self._assign_protocol_to_idp(expected_status=201)
         new_mapping_id = uuid.uuid4().hex
 
         url = "%s/protocols/%s" % (idp_id, proto)
@@ -1417,12 +1412,11 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         """
         url = self.base_url(suffix='/%(idp_id)s/'
                                    'protocols/%(protocol_id)s')
-        resp, idp_id, proto = self._assign_protocol_to_idp(
-            expected_status=http_client.CREATED)
+        resp, idp_id, proto = self._assign_protocol_to_idp(expected_status=201)
         url = url % {'idp_id': idp_id,
                      'protocol_id': proto}
         self.delete(url)
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.get(url, expected_status=404)
 
 
 class MappingCRUDTests(test_v3.RestfulTestCase):
@@ -1459,7 +1453,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         url = self.MAPPING_URL + uuid.uuid4().hex
         resp = self.put(url,
                         body={'mapping': mapping_fixtures.MAPPING_LARGE},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         return resp
 
     def _get_id_from_response(self, resp):
@@ -1476,7 +1470,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         resp = self.get(url)
         entities = resp.result.get('mappings')
         self.assertIsNotNone(entities)
-        self.assertResponseStatus(resp, http_client.OK)
+        self.assertResponseStatus(resp, 200)
         self.assertValidListLinks(resp.result.get('links'))
         self.assertEqual(1, len(entities))
 
@@ -1486,8 +1480,8 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         mapping_id = self._get_id_from_response(resp)
         url = url % {'mapping_id': str(mapping_id)}
         resp = self.delete(url)
-        self.assertResponseStatus(resp, http_client.NO_CONTENT)
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.assertResponseStatus(resp, 204)
+        self.get(url, expected_status=404)
 
     def test_mapping_get(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -1510,73 +1504,69 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
 
     def test_delete_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.delete(url, expected_status=http_client.NOT_FOUND)
+        self.delete(url, expected_status=404)
 
     def test_get_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.get(url, expected_status=404)
 
     def test_create_mapping_bad_requirements(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_REQ})
 
     def test_create_mapping_no_rules(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_NO_RULES})
 
     def test_create_mapping_no_remote_objects(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_NO_REMOTE})
 
     def test_create_mapping_bad_value(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_BAD_VALUE})
 
     def test_create_mapping_missing_local(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
 
     def test_create_mapping_missing_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_TYPE})
 
     def test_create_mapping_wrong_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_WRONG_TYPE})
 
     def test_create_mapping_extra_remote_properties_not_any_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': mapping})
+        self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_any_one_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': mapping})
+        self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_just_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': mapping})
+        self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_empty_map(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': {}})
+        self.put(url, expected_status=400, body={'mapping': {}})
 
     def test_create_mapping_extra_rules_properties(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
+        self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
 
     def test_create_mapping_with_blacklist_and_whitelist(self):
@@ -1588,8 +1578,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         """
         url = self.MAPPING_URL + uuid.uuid4().hex
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_AND_BLACKLIST
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': mapping})
+        self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_with_local_user_and_local_domain(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
@@ -1598,7 +1587,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
             body={
                 'mapping': mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN
             },
-            expected_status=http_client.CREATED)
+            expected_status=201)
         self.assertValidMappingResponse(
             resp, mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN)
 
@@ -1607,7 +1596,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         resp = self.put(
             url,
             body={'mapping': mapping_fixtures.MAPPING_EPHEMERAL_USER},
-            expected_status=http_client.CREATED)
+            expected_status=201)
         self.assertValidMappingResponse(
             resp, mapping_fixtures.MAPPING_EPHEMERAL_USER)
 
@@ -1617,8 +1606,7 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         bad_mapping = copy.deepcopy(mapping_fixtures.MAPPING_EPHEMERAL_USER)
         # now sabotage the user type
         bad_mapping['rules'][0]['local'][0]['user']['type'] = uuid.uuid4().hex
-        self.put(url, expected_status=http_client.BAD_REQUEST,
-                 body={'mapping': bad_mapping})
+        self.put(url, expected_status=400, body={'mapping': bad_mapping})
 
 
 class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
@@ -1835,13 +1823,13 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         self.federation_api.update_idp(self.IDP, enabled_false)
         self.v3_create_token(
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
-            expected_status=http_client.FORBIDDEN)
+            expected_status=403)
 
     def test_scope_to_bad_project(self):
         """Scope unscoped token with a project we don't have access to."""
         self.v3_create_token(
             self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
 
     def test_scope_to_project_multiple_times(self):
         """Try to scope the unscoped token multiple times.
@@ -1879,7 +1867,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         """Try to scope token from non-existent unscoped token."""
         self.v3_create_token(
             self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_issue_token_from_rules_without_user(self):
         api = auth_controllers.Auth()
@@ -1933,7 +1921,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         """Try to scope to a domain that has no direct roles."""
         self.v3_create_token(
             self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER,
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
 
     def test_list_projects(self):
         urls = ('/OS-FEDERATION/projects', '/auth/projects')
@@ -2124,8 +2112,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
             token_id, 'project',
             self.project_all['id'])
 
-        self.v3_create_token(
-            scoped_token, expected_status=http_client.INTERNAL_SERVER_ERROR)
+        self.v3_create_token(scoped_token, expected_status=500)
 
     def test_lists_with_missing_group_in_backend(self):
         """Test a mapping that points to a group that does not exist.
@@ -2698,22 +2685,20 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # unauthorized because the user doesn't have any role assignments
         v3_scope_request = self._scope_request(unscoped_token, 'project',
                                                project_ref['id'])
-        r = self.v3_create_token(v3_scope_request,
-                                 expected_status=http_client.UNAUTHORIZED)
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
 
         # assign project role to federated user
         self.assignment_api.add_role_to_user_and_project(
             user_id, project_ref['id'], role_ref['id'])
 
         # exchange an unscoped token for a scoped token
-        r = self.v3_create_token(v3_scope_request,
-                                 expected_status=http_client.CREATED)
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
         scoped_token = r.headers['X-Subject-Token']
 
         # ensure user can access resource based on role assignment
         path = '/projects/%(project_id)s' % {'project_id': project_ref['id']}
         r = self.v3_request(path=path, method='GET',
-                            expected_status=http_client.OK,
+                            expected_status=200,
                             token=scoped_token)
         self.assertValidProjectResponse(r, project_ref)
 
@@ -2725,7 +2710,7 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # ensure the user cannot access the 2nd resource (forbidden)
         path = '/projects/%(project_id)s' % {'project_id': project_ref2['id']}
         r = self.v3_request(path=path, method='GET',
-                            expected_status=http_client.FORBIDDEN,
+                            expected_status=403,
                             token=scoped_token)
 
     def test_domain_scoped_user_role_assignment(self):
@@ -2742,8 +2727,7 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # unauthorized because the user doesn't have any role assignments
         v3_scope_request = self._scope_request(unscoped_token, 'domain',
                                                domain_ref['id'])
-        r = self.v3_create_token(v3_scope_request,
-                                 expected_status=http_client.UNAUTHORIZED)
+        r = self.v3_create_token(v3_scope_request, expected_status=401)
 
         # assign domain role to user
         self.assignment_api.create_grant(role_ref['id'],
@@ -2751,8 +2735,7 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
                                          domain_id=domain_ref['id'])
 
         # exchange an unscoped token for domain scoped token and test
-        r = self.v3_create_token(v3_scope_request,
-                                 expected_status=http_client.CREATED)
+        r = self.v3_create_token(v3_scope_request, expected_status=201)
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
         token_resp = r.result['token']
         self.assertIn('domain', token_resp)
@@ -3002,8 +2985,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
             saml.Assertion, _load_xml(self.ASSERTION_FILE))
         self.sp = self.sp_ref()
         url = '/OS-FEDERATION/service_providers/' + self.SERVICE_PROVDIER_ID
-        self.put(url, body={'service_provider': self.sp},
-                 expected_status=http_client.CREATED)
+        self.put(url, body={'service_provider': self.sp}, expected_status=201)
 
     def test_samlize_token_values(self):
         """Test the SAML generator produces a SAML object.
@@ -3251,7 +3233,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         with mock.patch.object(keystone_idp, '_sign_assertion',
                                return_value=self.signed_assertion):
             self.post(self.SAML_GENERATION_ROUTE, body=body,
-                      expected_status=http_client.FORBIDDEN)
+                      expected_status=403)
 
     def test_generate_saml_route(self):
         """Test that the SAML generation endpoint produces XML.
@@ -3273,7 +3255,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                return_value=self.signed_assertion):
             http_response = self.post(self.SAML_GENERATION_ROUTE, body=body,
                                       response_content_type='text/xml',
-                                      expected_status=http_client.OK)
+                                      expected_status=200)
 
         response = etree.fromstring(http_response.result)
         issuer = response[0]
@@ -3313,8 +3295,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['scope']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body,
-                  expected_status=http_client.BAD_REQUEST)
+        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
 
     def test_invalid_token_body(self):
         """Test that missing the token in request body raises an exception.
@@ -3327,8 +3308,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                                   self.SERVICE_PROVDIER_ID)
         del body['auth']['identity']['token']
 
-        self.post(self.SAML_GENERATION_ROUTE, body=body,
-                  expected_status=http_client.BAD_REQUEST)
+        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
 
     def test_sp_not_found(self):
         """Test SAML generation with an invalid service provider ID.
@@ -3340,7 +3320,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         token_id = self._fetch_valid_token()
         body = self._create_generate_saml_request(token_id, sp_id)
         self.post(self.SAML_GENERATION_ROUTE, body=body,
-                  expected_status=http_client.NOT_FOUND)
+                  expected_status=404)
 
     def test_sp_disabled(self):
         """Try generating assertion for disabled Service Provider."""
@@ -3351,8 +3331,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         token_id = self._fetch_valid_token()
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
-        self.post(self.SAML_GENERATION_ROUTE, body=body,
-                  expected_status=http_client.FORBIDDEN)
+        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=403)
 
     def test_token_not_found(self):
         """Test that an invalid token in the request body raises an exception.
@@ -3363,8 +3342,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
         token_id = uuid.uuid4().hex
         body = self._create_generate_saml_request(token_id,
                                                   self.SERVICE_PROVDIER_ID)
-        self.post(self.SAML_GENERATION_ROUTE, body=body,
-                  expected_status=http_client.NOT_FOUND)
+        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=404)
 
     def test_generate_ecp_route(self):
         """Test that the ECP generation endpoint produces XML.
@@ -3384,7 +3362,7 @@ class SAMLGenerationTests(test_v3.RestfulTestCase):
                                return_value=self.signed_assertion):
             http_response = self.post(self.ECP_GENERATION_ROUTE, body=body,
                                       response_content_type='text/xml',
-                                      expected_status=http_client.OK)
+                                      expected_status=200)
 
         env_response = etree.fromstring(http_response.result)
         header = env_response[0]
@@ -3584,8 +3562,7 @@ class IdPMetadataGenerationTests(test_v3.RestfulTestCase):
                           self.generator.generate_metadata)
 
     def test_get_metadata_with_no_metadata_file_configured(self):
-        self.get(self.METADATA_URL,
-                 expected_status=http_client.INTERNAL_SERVER_ERROR)
+        self.get(self.METADATA_URL, expected_status=500)
 
     def test_get_metadata(self):
         self.config_fixture.config(
@@ -3617,7 +3594,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         self.SP_REF = self.sp_ref()
         self.SERVICE_PROVIDER = self.put(
             url, body={'service_provider': self.SP_REF},
-            expected_status=http_client.CREATED).result
+            expected_status=201).result
 
     def sp_ref(self):
         ref = {
@@ -3640,7 +3617,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         if body is None:
             body = self.sp_ref()
         resp = self.put(url, body={'service_provider': body},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         return resp
 
     def test_get_service_provider(self):
@@ -3651,13 +3628,13 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def test_get_service_provider_fail(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
-        self.get(url, expected_status=http_client.NOT_FOUND)
+        self.get(url, expected_status=404)
 
     def test_create_service_provider(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
         sp = self.sp_ref()
         resp = self.put(url, body={'service_provider': sp},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         self.assertValidEntity(resp.result['service_provider'],
                                keys_to_check=self.SP_KEYS)
 
@@ -3665,7 +3642,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
     def test_create_service_provider_invalidates_cache(self):
         # List all service providers and make sure we only have one in the
         # list. This service provider is from testing setup.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(1)
@@ -3674,12 +3651,11 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         # Create a new service provider.
         url = self.base_url(suffix=uuid.uuid4().hex)
         sp = self.sp_ref()
-        self.put(url, body={'service_provider': sp},
-                 expected_status=http_client.CREATED)
+        self.put(url, body={'service_provider': sp}, expected_status=201)
 
         # List all service providers again and make sure we have two in the
         # returned list.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(2)
@@ -3689,7 +3665,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
     def test_delete_service_provider_invalidates_cache(self):
         # List all service providers and make sure we only have one in the
         # list. This service provider is from testing setup.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(1)
@@ -3698,12 +3674,11 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         # Create a new service provider.
         url = self.base_url(suffix=uuid.uuid4().hex)
         sp = self.sp_ref()
-        self.put(url, body={'service_provider': sp},
-                 expected_status=http_client.CREATED)
+        self.put(url, body={'service_provider': sp}, expected_status=201)
 
         # List all service providers again and make sure we have two in the
         # returned list.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(2)
@@ -3713,8 +3688,8 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         # service provider cache. Get the list of service providers again and
         # if the cache invalidated properly then we should only have one
         # service provider in the list.
-        self.delete(url, expected_status=http_client.NO_CONTENT)
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        self.delete(url, expected_status=204)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(1)
@@ -3724,7 +3699,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
     def test_update_service_provider_invalidates_cache(self):
         # List all service providers and make sure we only have one in the
         # list. This service provider is from testing setup.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(1)
@@ -3734,12 +3709,11 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         service_provider_id = uuid.uuid4().hex
         url = self.base_url(suffix=service_provider_id)
         sp = self.sp_ref()
-        self.put(url, body={'service_provider': sp},
-                 expected_status=http_client.CREATED)
+        self.put(url, body={'service_provider': sp}, expected_status=201)
 
         # List all service providers again and make sure we have two in the
         # returned list.
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(2)
@@ -3750,8 +3724,8 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         # if the cache invalidated properly then we see the value we updated.
         updated_description = uuid.uuid4().hex
         body = {'service_provider': {'description': updated_description}}
-        self.patch(url, body=body, expected_status=http_client.OK)
-        resp = self.get(self.base_url(), expected_status=http_client.OK)
+        self.patch(url, body=body, expected_status=200)
+        resp = self.get(self.base_url(), expected_status=200)
         self.assertThat(
             resp.json_body['service_providers'],
             matchers.HasLength(2)
@@ -3766,7 +3740,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         sp = self.sp_ref()
         del sp['relay_state_prefix']
         resp = self.put(url, body={'service_provider': sp},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         sp_result = resp.result['service_provider']
         self.assertEqual(CONF.saml.relay_state_prefix,
                          sp_result['relay_state_prefix'])
@@ -3778,7 +3752,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         non_default_prefix = uuid.uuid4().hex
         sp['relay_state_prefix'] = non_default_prefix
         resp = self.put(url, body={'service_provider': sp},
-                        expected_status=http_client.CREATED)
+                        expected_status=201)
         sp_result = resp.result['service_provider']
         self.assertEqual(non_default_prefix,
                          sp_result['relay_state_prefix'])
@@ -3788,8 +3762,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         url = self.base_url(suffix=uuid.uuid4().hex)
         sp = self.sp_ref()
         sp[uuid.uuid4().hex] = uuid.uuid4().hex
-        self.put(url, body={'service_provider': sp},
-                 expected_status=http_client.BAD_REQUEST)
+        self.put(url, body={'service_provider': sp}, expected_status=400)
 
     def test_list_service_providers(self):
         """Test listing of service provider objects.
@@ -3805,8 +3778,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         }
         for id, sp in ref_service_providers.items():
             url = self.base_url(suffix=id)
-            self.put(url, body={'service_provider': sp},
-                     expected_status=http_client.CREATED)
+            self.put(url, body={'service_provider': sp}, expected_status=201)
 
         # Insert ids into service provider object, we will compare it with
         # responses from server and those include 'id' attribute.
@@ -3856,21 +3828,21 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
         new_sp_ref = {'id': uuid.uuid4().hex}
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=http_client.BAD_REQUEST)
+                   expected_status=400)
 
     def test_update_service_provider_unknown_parameter(self):
         new_sp_ref = self.sp_ref()
         new_sp_ref[uuid.uuid4().hex] = uuid.uuid4().hex
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=http_client.BAD_REQUEST)
+                   expected_status=400)
 
     def test_update_service_provider_returns_not_found(self):
         new_sp_ref = self.sp_ref()
         new_sp_ref['description'] = uuid.uuid4().hex
         url = self.base_url(suffix=uuid.uuid4().hex)
         self.patch(url, body={'service_provider': new_sp_ref},
-                   expected_status=http_client.NOT_FOUND)
+                   expected_status=404)
 
     def test_update_sp_relay_state(self):
         """Update an SP with custom relay state."""
@@ -3889,7 +3861,7 @@ class ServiceProviderTests(test_v3.RestfulTestCase):
 
     def test_delete_service_provider_returns_not_found(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
-        self.delete(url, expected_status=http_client.NOT_FOUND)
+        self.delete(url, expected_status=404)
 
     def test_filter_list_sp_by_id(self):
         def get_id(resp):

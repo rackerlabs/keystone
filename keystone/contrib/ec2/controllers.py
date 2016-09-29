@@ -432,6 +432,6 @@ def render_token_data_response(token_id, token_data):
     headers = [('X-Subject-Token', token_id)]
 
     return wsgi.render_response(body=token_data,
-                                status=(http_client.OK,
+                                status=(int(http_client.OK),
                                         http_client.responses[http_client.OK]),
                                 headers=headers)

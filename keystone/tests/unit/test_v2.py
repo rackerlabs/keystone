@@ -18,7 +18,6 @@ import uuid
 from keystoneclient.common import cms
 from oslo_serialization import jsonutils
 import six
-from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import extension as keystone_extension
@@ -73,13 +72,13 @@ class CoreApiTests(object):
     def test_public_not_found(self):
         r = self.public_request(
             path='/%s' % uuid.uuid4().hex,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
         self.assertValidErrorResponse(r)
 
     def test_admin_not_found(self):
         r = self.admin_request(
             path='/%s' % uuid.uuid4().hex,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
         self.assertValidErrorResponse(r)
 
     def test_public_multiple_choice(self):
@@ -110,11 +109,11 @@ class CoreApiTests(object):
 
     def test_admin_extensions_returns_not_found(self):
         self.admin_request(path='/v2.0/extensions/invalid-extension',
-                           expected_status=http_client.NOT_FOUND)
+                           expected_status=404)
 
     def test_public_osksadm_extension_returns_not_found(self):
         self.public_request(path='/v2.0/extensions/OS-KSADM',
-                            expected_status=http_client.NOT_FOUND)
+                            expected_status=404)
 
     def test_admin_osksadm_extension(self):
         r = self.admin_request(path='/v2.0/extensions/OS-KSADM')
@@ -134,7 +133,7 @@ class CoreApiTests(object):
                     'tenantId': self.tenant_bar['id'],
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidAuthenticationResponse(r, require_service_catalog=True)
 
     def test_authenticate_unscoped(self):
@@ -149,7 +148,7 @@ class CoreApiTests(object):
                     },
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidAuthenticationResponse(r)
 
     def test_get_tenants_for_token(self):
@@ -173,7 +172,7 @@ class CoreApiTests(object):
                 'token_id': 'invalid',
             },
             token=token,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_validate_token_service_role(self):
         self.md_foobar = self.assignment_api.add_role_to_user_and_project(
@@ -209,7 +208,7 @@ class CoreApiTests(object):
         r = self.admin_request(
             path='/v2.0/tokens/%s' % token,
             token=token,
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
 
     def test_validate_token_belongs_to(self):
         token = self.get_scoped_token()
@@ -238,7 +237,7 @@ class CoreApiTests(object):
                 'token_id': token,
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
     def test_endpoints(self):
         token = self.get_scoped_token()
@@ -283,7 +282,7 @@ class CoreApiTests(object):
             path='/v2.0/users/%(user_id)s/roles' % {
                 'user_id': self.user_foo['id'],
             },
-            token=token, expected_status=http_client.NOT_IMPLEMENTED)
+            token=token, expected_status=501)
 
     def test_get_user(self):
         token = self.get_scoped_token()
@@ -319,7 +318,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
         r = self.admin_request(
@@ -334,7 +333,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
         # Test UPDATE request
@@ -351,7 +350,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
         r = self.admin_request(
@@ -364,7 +363,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
     def test_create_update_user_valid_enabled_type(self):
@@ -382,12 +381,12 @@ class CoreApiTests(object):
                                },
                            },
                            token=token,
-                           expected_status=http_client.OK)
+                           expected_status=200)
 
     def test_error_response(self):
         """Trigger assertValidErrorResponse by convention."""
         self.public_request(path='/v2.0/tenants',
-                            expected_status=http_client.UNAUTHORIZED)
+                            expected_status=401)
 
     def test_invalid_parameter_error_response(self):
         token = self.get_scoped_token()
@@ -401,13 +400,13 @@ class CoreApiTests(object):
                                  path='/v2.0/OS-KSADM/services',
                                  body=bad_body,
                                  token=token,
-                                 expected_status=http_client.BAD_REQUEST)
+                                 expected_status=400)
         self.assertValidErrorResponse(res)
         res = self.admin_request(method='POST',
                                  path='/v2.0/users',
                                  body=bad_body,
                                  token=token,
-                                 expected_status=http_client.BAD_REQUEST)
+                                 expected_status=400)
         self.assertValidErrorResponse(res)
 
     def _get_user_id(self, r):
@@ -471,7 +470,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         user_id = self._get_user_id(r.result)
 
@@ -482,7 +481,7 @@ class CoreApiTests(object):
                 'user_id': user_id
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertEqual(CONF.member_role_name, self._get_role_name(r.result))
 
         # Create a new tenant
@@ -497,7 +496,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         project_id = self._get_project_id(r.result)
 
@@ -513,7 +512,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         # 'member_role' should be in new_tenant
         r = self.admin_request(
@@ -522,7 +521,7 @@ class CoreApiTests(object):
                 'user_id': user_id
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertEqual('_member_', self._get_role_name(r.result))
 
         # 'member_role' should not be in tenant_bar any more
@@ -532,7 +531,7 @@ class CoreApiTests(object):
                 'user_id': user_id
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertNoRoles(r.result)
 
     def test_update_user_with_invalid_tenant(self):
@@ -551,7 +550,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         user_id = self._get_user_id(r.result)
 
         # Update user with an invalid tenant
@@ -566,7 +565,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_update_user_with_invalid_tenant_no_prev_tenant(self):
         token = self.get_scoped_token()
@@ -583,7 +582,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         user_id = self._get_user_id(r.result)
 
         # Update user with an invalid tenant
@@ -598,7 +597,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_update_user_with_old_tenant(self):
         token = self.get_scoped_token()
@@ -616,7 +615,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         user_id = self._get_user_id(r.result)
 
@@ -627,7 +626,7 @@ class CoreApiTests(object):
                 'user_id': user_id
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertEqual(CONF.member_role_name, self._get_role_name(r.result))
 
         # Update user's tenant with old tenant id
@@ -642,7 +641,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         # 'member_role' should still be in tenant_bar
         r = self.admin_request(
@@ -651,7 +650,7 @@ class CoreApiTests(object):
                 'user_id': user_id
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertEqual('_member_', self._get_role_name(r.result))
 
     def test_authenticating_a_user_with_no_password(self):
@@ -683,13 +682,13 @@ class CoreApiTests(object):
                     },
                 },
             },
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
         self.assertValidErrorResponse(r)
 
     def test_www_authenticate_header(self):
         r = self.public_request(
             path='/v2.0/tenants',
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
         self.assertEqual('Keystone uri="http://localhost"',
                          r.headers.get('WWW-Authenticate'))
 
@@ -698,7 +697,7 @@ class CoreApiTests(object):
         self.config_fixture.config(public_endpoint=test_url)
         r = self.public_request(
             path='/v2.0/tenants',
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
         self.assertEqual('Keystone uri="%s"' % test_url,
                          r.headers.get('WWW-Authenticate'))
 
@@ -733,7 +732,7 @@ class LegacyV2UsernameTests(object):
             path='/v2.0/users',
             token=token,
             body=body,
-            expected_status=http_client.OK)
+            expected_status=200)
 
     def test_create_with_extra_username(self):
         """The response for creating a user will contain the extra fields."""
@@ -784,7 +783,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': enabled,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -814,7 +813,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': enabled,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -893,7 +892,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': enabled,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -923,7 +922,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': enabled,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -943,7 +942,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': True,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -968,7 +967,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': enabled,
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         self.assertValidUserResponse(r)
 
@@ -1176,23 +1175,23 @@ class V2TestCase(object):
 
         r = self.admin_request(method='GET',
                                path='/v2.0/OS-KSADM/services',
-                               expected_status=http_client.UNAUTHORIZED)
+                               expected_status=401)
         self.assertValidErrorResponse(r)
 
         r = self.admin_request(method='POST',
                                path='/v2.0/OS-KSADM/services',
                                body=service_body,
-                               expected_status=http_client.UNAUTHORIZED)
+                               expected_status=401)
         self.assertValidErrorResponse(r)
 
         r = self.admin_request(method='GET',
                                path=service_path,
-                               expected_status=http_client.UNAUTHORIZED)
+                               expected_status=401)
         self.assertValidErrorResponse(r)
 
         r = self.admin_request(method='DELETE',
                                path=service_path,
-                               expected_status=http_client.UNAUTHORIZED)
+                               expected_status=401)
         self.assertValidErrorResponse(r)
 
     def test_user_role_list_requires_auth(self):
@@ -1205,14 +1204,14 @@ class V2TestCase(object):
         }
 
         r = self.admin_request(path=path,
-                               expected_status=http_client.UNAUTHORIZED)
+                               expected_status=401)
         self.assertValidErrorResponse(r)
 
     def test_fetch_revocation_list_nonadmin_fails(self):
         self.admin_request(
             method='GET',
             path='/v2.0/tokens/revoked',
-            expected_status=http_client.UNAUTHORIZED)
+            expected_status=401)
 
     def test_fetch_revocation_list_admin_200(self):
         token = self.get_scoped_token()
@@ -1220,7 +1219,7 @@ class V2TestCase(object):
             method='GET',
             path='/v2.0/tokens/revoked',
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidRevocationListResponse(r)
 
     def assertValidRevocationListResponse(self, response):
@@ -1251,7 +1250,7 @@ class V2TestCase(object):
             method='GET',
             path='/v2.0/tokens/revoked',
             token=token1,
-            expected_status=http_client.OK)
+            expected_status=200)
         signed_text = r.result['signed']
 
         data_json = cms.cms_verify(signed_text, CONF.signing.certfile,
@@ -1305,7 +1304,7 @@ class V2TestCase(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
         # Test UPDATE request
@@ -1321,7 +1320,7 @@ class V2TestCase(object):
                 },
             },
             token=token,
-            expected_status=http_client.BAD_REQUEST)
+            expected_status=400)
         self.assertValidErrorResponse(r)
 
     def test_authenticating_a_user_with_an_OSKSADM_password(self):
@@ -1355,7 +1354,7 @@ class V2TestCase(object):
                     },
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         # ensure password doesn't leak
         user_id = r.result['user']['id']
@@ -1363,7 +1362,7 @@ class V2TestCase(object):
             method='GET',
             path='/v2.0/users/%s' % user_id,
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertNotIn('OS-KSADM:password', r.result['user'])
 
     def test_updating_a_user_with_an_OSKSADM_password(self):
@@ -1382,7 +1381,7 @@ class V2TestCase(object):
                 },
             },
             token=token,
-            expected_status=http_client.OK)
+            expected_status=200)
 
         # successfully authenticate
         self.public_request(
@@ -1396,7 +1395,7 @@ class V2TestCase(object):
                     },
                 },
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
     def test_enable_or_disable_user(self):
         token = self.get_scoped_token()
@@ -1415,12 +1414,12 @@ class V2TestCase(object):
 
         # Enable the user.
         body = {'user': {'enabled': True}}
-        resp = _admin_request(body, http_client.OK)
+        resp = _admin_request(body, 200)
         self.assertTrue(resp.json['user']['enabled'])
 
         # Disable the user.
         body = {'user': {'enabled': False}}
-        resp = _admin_request(body, http_client.OK)
+        resp = _admin_request(body, 200)
         self.assertFalse(resp.json['user']['enabled'])
 
         # Attributes other than `enabled` should still work due to bug 1607751
@@ -1431,11 +1430,11 @@ class V2TestCase(object):
                 'enabled': True
             }
         }
-        _admin_request(body, http_client.OK)
+        _admin_request(body, 200)
 
         #  `enabled` is boolean, type other than boolean is not allowed.
         body = {'user': {'enabled': uuid.uuid4().hex}}
-        _admin_request(body, http_client.BAD_REQUEST)
+        _admin_request(body, 400)
 
 
 class V2TestCaseUUID(V2TestCase, RestfulTestCase, CoreApiTests,
@@ -1552,7 +1551,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             method='GET',
             path=path,
             token=admin_token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidUnscopedTokenResponse(resp)
 
     def test_authenticate_scoped_token(self):
@@ -1583,7 +1582,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             method='GET',
             path=path,
             token=admin_token,
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidScopedTokenResponse(resp)
 
     def test_token_authentication_and_validation(self):
@@ -1612,7 +1611,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
                     }
                 }
             },
-            expected_status=http_client.OK)
+            expected_status=200)
 
         token_id = self._get_token_id(r)
         path = ('/v2.0/tokens/%s?belongsTo=%s' % (token_id, project_ref['id']))
@@ -1621,7 +1620,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             method='GET',
             path=path,
             token=self.get_admin_token(),
-            expected_status=http_client.OK)
+            expected_status=200)
         self.assertValidScopedTokenResponse(resp)
 
     def test_rescoped_tokens_maintain_original_expiration(self):
@@ -1644,7 +1643,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
             },
             # NOTE(lbragstad): This test may need to be refactored if Keystone
             # decides to disallow rescoping using a scoped token.
-            expected_status=http_client.OK)
+            expected_status=200)
         original_token = resp.result['access']['token']['id']
         original_expiration = resp.result['access']['token']['expires']
 
@@ -1659,7 +1658,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
                     }
                 }
             },
-            expected_status=http_client.OK)
+            expected_status=200)
         rescoped_token = resp.result['access']['token']['id']
         rescoped_expiration = resp.result['access']['token']['expires']
         self.assertNotEqual(original_token, rescoped_token)

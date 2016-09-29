@@ -14,7 +14,6 @@
 
 import os
 
-from six.moves import http_client
 import webtest
 
 from keystone.tests import unit
@@ -59,4 +58,4 @@ class TestNoAdminTokenAuth(unit.TestCase):
 
         # If the following does not raise, then the test is successful.
         self.admin_app.get(REQ_PATH, headers={'X-Auth-Token': 'NotAdminToken'},
-                           status=http_client.UNAUTHORIZED)
+                           status=401)

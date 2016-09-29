@@ -62,7 +62,7 @@ class FederatedIdentityProviderTestsV8(
         body['remote_ids'] = [uuid.uuid4().hex,
                               repeated_remote_id]
         self.put(url, body={'identity_provider': body},
-                 expected_status=http_client.CONFLICT)
+                 expected_status=int(http_client.CONFLICT))
 
     def test_check_idp_uniqueness(self):
         """Add same IdP twice.
@@ -77,9 +77,9 @@ class FederatedIdentityProviderTestsV8(
         url = self.base_url(suffix=uuid.uuid4().hex)
         body = self._http_idp_input()
         self.put(url, body={'identity_provider': body},
-                 expected_status=http_client.CREATED)
+                 expected_status=int(http_client.CREATED))
         self.put(url, body={'identity_provider': body},
-                 expected_status=http_client.CONFLICT)
+                 expected_status=int(http_client.CONFLICT))
 
 
 class MappingCRUDTestsV8(

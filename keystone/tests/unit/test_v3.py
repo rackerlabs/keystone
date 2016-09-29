@@ -18,7 +18,6 @@ import mock
 import oslo_context.context
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
-from six.moves import http_client
 from testtools import matchers
 import webtest
 
@@ -477,7 +476,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         r = self.v3_create_token(auth)
         return r.headers.get('X-Subject-Token')
 
-    def v3_create_token(self, auth, expected_status=http_client.CREATED):
+    def v3_create_token(self, auth, expected_status=201):
         return self.admin_request(method='POST',
                                   path='/v3/auth/tokens',
                                   body=auth,
@@ -506,29 +505,29 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         return self.admin_request(path=path, token=token, **kwargs)
 
-    def get(self, path, expected_status=http_client.OK, **kwargs):
+    def get(self, path, expected_status=200, **kwargs):
         return self.v3_request(path, method='GET',
                                expected_status=expected_status, **kwargs)
 
-    def head(self, path, expected_status=http_client.NO_CONTENT, **kwargs):
+    def head(self, path, expected_status=204, **kwargs):
         r = self.v3_request(path, method='HEAD',
                             expected_status=expected_status, **kwargs)
         self.assertEqual(b'', r.body)
         return r
 
-    def post(self, path, expected_status=http_client.CREATED, **kwargs):
+    def post(self, path, expected_status=201, **kwargs):
         return self.v3_request(path, method='POST',
                                expected_status=expected_status, **kwargs)
 
-    def put(self, path, expected_status=http_client.NO_CONTENT, **kwargs):
+    def put(self, path, expected_status=204, **kwargs):
         return self.v3_request(path, method='PUT',
                                expected_status=expected_status, **kwargs)
 
-    def patch(self, path, expected_status=http_client.OK, **kwargs):
+    def patch(self, path, expected_status=200, **kwargs):
         return self.v3_request(path, method='PATCH',
                                expected_status=expected_status, **kwargs)
 
-    def delete(self, path, expected_status=http_client.NO_CONTENT, **kwargs):
+    def delete(self, path, expected_status=204, **kwargs):
         return self.v3_request(path, method='DELETE',
                                expected_status=expected_status, **kwargs)
 

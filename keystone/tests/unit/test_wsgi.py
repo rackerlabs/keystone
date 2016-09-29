@@ -100,17 +100,17 @@ class ApplicationTest(BaseWSGITest):
 
         resp = wsgi.render_response(body=data)
         self.assertEqual('200 OK', resp.status)
-        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertEqual(200, resp.status_int)
         self.assertEqual(body, resp.body)
         self.assertEqual('X-Auth-Token', resp.headers.get('Vary'))
         self.assertEqual(str(len(body)), resp.headers.get('Content-Length'))
 
     def test_render_response_custom_status(self):
         resp = wsgi.render_response(
-            status=(http_client.NOT_IMPLEMENTED,
+            status=(int(http_client.NOT_IMPLEMENTED),
                     http_client.responses[http_client.NOT_IMPLEMENTED]))
         self.assertEqual('501 Not Implemented', resp.status)
-        self.assertEqual(http_client.NOT_IMPLEMENTED, resp.status_int)
+        self.assertEqual(501, resp.status_int)
 
     def test_successful_require_attribute(self):
         app = FakeAttributeCheckerApp()
@@ -174,14 +174,14 @@ class ApplicationTest(BaseWSGITest):
     def test_render_response_no_body(self):
         resp = wsgi.render_response()
         self.assertEqual('204 No Content', resp.status)
-        self.assertEqual(http_client.NO_CONTENT, resp.status_int)
+        self.assertEqual(204, resp.status_int)
         self.assertEqual(b'', resp.body)
         self.assertEqual('0', resp.headers.get('Content-Length'))
         self.assertIsNone(resp.headers.get('Content-Type'))
 
     def test_render_response_head_with_body(self):
         resp = wsgi.render_response({'id': uuid.uuid4().hex}, method='HEAD')
-        self.assertEqual(http_client.OK, resp.status_int)
+        self.assertEqual(200, resp.status_int)
         self.assertEqual(b'', resp.body)
         self.assertNotEqual('0', resp.headers.get('Content-Length'))
         self.assertEqual('application/json', resp.headers.get('Content-Type'))
@@ -198,7 +198,7 @@ class ApplicationTest(BaseWSGITest):
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
         resp = wsgi.render_exception(e)
-        self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
+        self.assertEqual(401, resp.status_int)
 
     def test_render_exception_host(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
@@ -207,7 +207,7 @@ class ApplicationTest(BaseWSGITest):
                    'environment': req.environ}
         resp = wsgi.render_exception(e, context=context)
 
-        self.assertEqual(http_client.UNAUTHORIZED, resp.status_int)
+        self.assertEqual(401, resp.status_int)
 
     def test_improperly_encoded_params(self):
         class FakeApp(wsgi.Application):

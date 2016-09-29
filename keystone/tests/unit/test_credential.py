@@ -15,7 +15,6 @@
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
-from six.moves import http_client
 
 from keystone.common import context
 from keystone.common import request
@@ -71,7 +70,7 @@ class V2CredentialEc2TestCase(rest.RestfulTestCase):
         path = '/'.join([self._get_ec2_cred_uri(), access_key])
         self.public_request(method='GET', token=self.get_scoped_token(),
                             path=path,
-                            expected_status=http_client.UNAUTHORIZED)
+                            expected_status=401)
 
     def assertValidErrorResponse(self, r):
         # FIXME(wwwjfy): it's copied from test_v3.py. The logic of this method

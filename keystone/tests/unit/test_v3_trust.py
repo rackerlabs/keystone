@@ -13,8 +13,6 @@
 import datetime
 import uuid
 
-from six.moves import http_client
-
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
 
@@ -38,8 +36,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
     def test_create_trust_bad_request(self):
         # The server returns a 403 Forbidden rather than a 400 Bad Request, see
         # bug 1133435
-        self.post('/OS-TRUST/trusts', body={'trust': {}},
-                  expected_status=http_client.FORBIDDEN)
+        self.post('/OS-TRUST/trusts', body={'trust': {}}, expected_status=403)
 
     def test_trust_crud(self):
         # create a new trust
@@ -66,7 +63,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             '/OS-TRUST/trusts/%(trust_id)s/roles/%(role_id)s' % {
                 'trust_id': trust['id'],
                 'role_id': self.role['id']},
-            expected_status=http_client.OK)
+            expected_status=200)
         r = self.get(
             '/OS-TRUST/trusts/%(trust_id)s/roles/%(role_id)s' % {
                 'trust_id': trust['id'],
@@ -81,7 +78,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         self.patch(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
             body={'trust': ref},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
         # delete the trust
         self.delete(
@@ -90,7 +87,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         # ensure the trust is not found
         self.get(
             '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_list_trusts(self):
         # create three trusts with the same trustor and trustee
@@ -129,7 +126,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         # list all trusts as the trustee is forbidden
         r = self.get('/OS-TRUST/trusts?trustee_user_id=%s' %
                      self.trustee_user_id,
-                     expected_status=http_client.FORBIDDEN)
+                     expected_status=403)
 
     def test_delete_trust(self):
         # create a trust
@@ -150,7 +147,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         # ensure the trust isn't found
         self.get('/OS-TRUST/trusts/%(trust_id)s' % {
             'trust_id': trust['id']},
-            expected_status=http_client.NOT_FOUND)
+            expected_status=404)
 
     def test_create_trust_without_trustee_returns_bad_request(self):
         ref = unit.new_trust_ref(
@@ -164,7 +161,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
 
         self.post('/OS-TRUST/trusts',
                   body={'trust': ref},
-                  expected_status=http_client.BAD_REQUEST)
+                  expected_status=400)
 
     def test_create_trust_without_impersonation_returns_bad_request(self):
         ref = unit.new_trust_ref(
@@ -178,7 +175,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
 
         self.post('/OS-TRUST/trusts',
                   body={'trust': ref},
-                  expected_status=http_client.BAD_REQUEST)
+                  expected_status=400)
 
     def test_create_trust_with_bad_remaining_uses_returns_bad_request(self):
         # negative numbers, strings, non-integers, and 0 are not value values
@@ -191,7 +188,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
                 role_ids=[self.role_id])
             self.post('/OS-TRUST/trusts',
                       body={'trust': ref},
-                      expected_status=http_client.BAD_REQUEST)
+                      expected_status=400)
 
     def test_create_trust_with_non_existant_trustee_returns_not_found(self):
         ref = unit.new_trust_ref(
@@ -199,8 +196,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustee_user_id=uuid.uuid4().hex,
             project_id=self.project_id,
             role_ids=[self.role_id])
-        self.post('/OS-TRUST/trusts', body={'trust': ref},
-                  expected_status=http_client.NOT_FOUND)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_with_trustee_as_trustor_returns_forbidden(self):
         ref = unit.new_trust_ref(
@@ -210,8 +206,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             role_ids=[self.role_id])
         # NOTE(lbragstad): This fails because the user making the request isn't
         # the trustor defined in the request.
-        self.post('/OS-TRUST/trusts', body={'trust': ref},
-                  expected_status=http_client.FORBIDDEN)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
     def test_create_trust_with_non_existant_project_returns_not_found(self):
         ref = unit.new_trust_ref(
@@ -219,8 +214,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustee_user_id=self.trustee_user_id,
             project_id=uuid.uuid4().hex,
             role_ids=[self.role_id])
-        self.post('/OS-TRUST/trusts', body={'trust': ref},
-                  expected_status=http_client.NOT_FOUND)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_with_non_existant_role_id_returns_not_found(self):
         ref = unit.new_trust_ref(
@@ -228,8 +222,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
             role_ids=[uuid.uuid4().hex])
-        self.post('/OS-TRUST/trusts', body={'trust': ref},
-                  expected_status=http_client.NOT_FOUND)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_with_non_existant_role_name_returns_not_found(self):
         ref = unit.new_trust_ref(
@@ -237,8 +230,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
             trustee_user_id=self.trustee_user_id,
             project_id=self.project_id,
             role_names=[uuid.uuid4().hex])
-        self.post('/OS-TRUST/trusts', body={'trust': ref},
-                  expected_status=http_client.NOT_FOUND)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_validate_trust_scoped_token_against_v2_returns_unauthorized(self):
         # create a new trust
@@ -266,7 +258,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=401)
 
     def test_v3_v2_intermix_trustor_not_in_default_domain_failed(self):
         # get a project-scoped token
@@ -301,7 +293,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=401)
 
     def test_v3_v2_intermix_project_not_in_default_domain_failed(self):
         # create a trustee in default domain to delegate stuff to
@@ -341,7 +333,7 @@ class TestTrustOperations(test_v3.RestfulTestCase):
         path = '/v2.0/tokens/%s' % (token)
         self.admin_request(
             path=path, token=self.get_admin_token(),
-            method='GET', expected_status=http_client.UNAUTHORIZED)
+            method='GET', expected_status=401)
 
     def test_exercise_trust_scoped_token_without_impersonation(self):
         # create a new trust
@@ -444,4 +436,4 @@ class TestTrustOperations(test_v3.RestfulTestCase):
                            body={'trust': ref},
                            token=resp.headers.get('X-Subject-Token'),
                            method='POST',
-                           expected_status=http_client.FORBIDDEN)
+                           expected_status=403)
