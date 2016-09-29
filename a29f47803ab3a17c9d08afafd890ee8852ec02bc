@@ -81,6 +81,24 @@
       "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e9571b00",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-09-29T15:31:54Z",
+      "side": 1,
+      "message": "Nope - in that case we should be rebuilding the user context like we do with all other resources in the token. If the user reference already exists in the token before we get into get_token_data(), the _populate_user() method will short-circuit, which can possibly lead to returning stale data.\n\nBy not populating the user reference we are forcing the V3 token data helper to rebuild the user reference from the identity API.\n\nhttps://github.com/openstack/keystone/blob/93c19263b01ac53e80b2baa88164152ef3678cb8/keystone/token/providers/common.py#L384",
+      "parentUuid": "3a98d1f4_2c05b4c1",
+      "revId": "a29f47803ab3a17c9d08afafd890ee8852ec02bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
