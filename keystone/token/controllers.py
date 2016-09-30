@@ -180,10 +180,10 @@ class Auth(controller.V2Controller):
                 old_token
             )
             v2_helper = providers.common.V2TokenDataHelper()
-            v2_token = v2_helper.v3_to_v2_token(v3_token_data, old_token)
+            v2_helper.v3_to_v2_token(v3_token_data, old_token)
             token_model_ref = token_model.KeystoneToken(
                 token_id=old_token,
-                token_data=v2_token
+                token_data=v3_token_data
             )
         except exception.NotFound as e:
             raise exception.Unauthorized(e)
