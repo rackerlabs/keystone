@@ -105,6 +105,24 @@
       "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_0a4df96b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-09-30T04:07:00Z",
+      "side": 1,
+      "message": "No, just the opposite: there might be cases where they think they are supposed to get access, and do when nothing is set up, that they stop getting access to once this is in.  However, this is a necessary transition, and needs to happen this way, or we make no progress.",
+      "parentUuid": "3a98d1f4_71beda00",
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
