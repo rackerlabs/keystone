@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_c424e7b0",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T03:10:03Z",
+      "side": 1,
+      "message": "this should just be:\n\n  test_list_users",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 28
+      },
+      "revId": "61cad0e31ab6267bb31f02bc0d559ee778459eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_0437afe3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T03:10:03Z",
+      "side": 1,
+      "message": "this should just be:\n\n  \"\"\"Call ``GET /users``.\"\"\"",
+      "range": {
+        "startLine": 232,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 41
+      },
+      "revId": "61cad0e31ab6267bb31f02bc0d559ee778459eee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
