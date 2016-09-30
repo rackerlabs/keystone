@@ -163,6 +163,7 @@ def configure_invalidation_region():
 
     CACHE_INVALIDATION_REGION.configure_from_config(
         config_dict, '%s.' % CONF.cache.config_prefix)
+    CACHE_INVALIDATION_REGION.wrap(_context_cache._ResponseCacheProxy)
 
     # NOTE(morganfainberg): if the backend requests the use of a
     # key_mangler, we should respect that key_mangler function.  If a
