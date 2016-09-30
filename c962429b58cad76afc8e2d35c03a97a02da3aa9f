@@ -22,6 +22,30 @@
       "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_98832604",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T01:13:56Z",
+      "side": 1,
+      "message": "I would prefer this comment just go away. The ID field for tokens is size 64: https://github.com/openstack/keystone/blob/master/keystone/token/persistence/backends/sql.py#L36\n\nSo i\u0027m not sure what Adam was referring to.\n\nI do think the help is sufficient -- if you\u0027re using UUID set it to 32, otherwise set it to 255. Since that\u0027s the max size for Fernet tokens.",
+      "parentUuid": "3a98d1f4_adc0a9e1",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
