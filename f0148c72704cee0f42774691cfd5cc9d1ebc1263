@@ -71,6 +71,29 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_7d0aa87a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-09-30T13:56:08Z",
+      "side": 1,
+      "message": "Actually, couldn\u0027t you call get_grant(..) instead. This would check role assignment and if the project is enabled.",
+      "range": {
+        "startLine": 358,
+        "startChar": 16,
+        "endLine": 358,
+        "endChar": 68
+      },
+      "revId": "f0148c72704cee0f42774691cfd5cc9d1ebc1263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a8bc5a2_a5757033",
         "filename": "keystone/token/provider.py",
         "patchSetId": 2
