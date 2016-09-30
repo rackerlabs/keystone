@@ -35,18 +35,24 @@ class RegionInvalidationManager(object):
     def __init__(self, invalidation_region, region_name):
         self._invalidation_region = invalidation_region
         self._region_key = self.REGION_KEY_PREFIX + region_name
+        self._cached_id = None
 
     def _generate_new_id(self):
         return os.urandom(10)
 
     @property
     def region_id(self):
-        return self._invalidation_region.get_or_create(
+        if self._cached_id is not None:
+            return self._cached_id
+        value = self._invalidation_region.get_or_create(
             self._region_key, self._generate_new_id, expiration_time=-1)
+        self._cached_id = value
+        return value
 
     def invalidate_region(self):
         new_region_id = self._generate_new_id()
         self._invalidation_region.set(self._region_key, new_region_id)
+        self._cached_id = new_region_id
         return new_region_id
 
     def is_region_key(self, key):
