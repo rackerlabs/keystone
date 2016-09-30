@@ -78,6 +78,52 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_249c765c",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "the methods here were removed in Mitaka, see https://github.com/openstack/keystone/blob/8a56c161ee29e34e70c6334b048881e8fbbd7514/releasenotes/notes/Assignment_V9_driver-c22be069f7baccb0.yaml for more details",
+      "range": {
+        "startLine": 156,
+        "startChar": 6,
+        "endLine": 156,
+        "endChar": 24
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_04a93a90",
+        "filename": "keystone/assignment/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "the methods here are in the base class and can safely be removed",
+      "range": {
+        "startLine": 297,
+        "startChar": 6,
+        "endLine": 297,
+        "endChar": 36
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_d7c6bb15",
         "filename": "keystone/assignment/role_backends/base.py",
         "patchSetId": 3
@@ -94,6 +140,75 @@
         "startChar": 8,
         "endLine": 128,
         "endChar": 24
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_24eab6ac",
+        "filename": "keystone/assignment/role_backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "all of these methods in the base calss",
+      "range": {
+        "startLine": 167,
+        "startChar": 6,
+        "endLine": 167,
+        "endChar": 30
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_040a1a79",
+        "filename": "keystone/federation/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "we re-added list_idps and list_sps to the base class",
+      "range": {
+        "startLine": 350,
+        "startChar": 6,
+        "endLine": 350,
+        "endChar": 24
+      },
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_64259e07",
+        "filename": "keystone/federation/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "these are all in the base class",
+      "range": {
+        "startLine": 423,
+        "startChar": 6,
+        "endLine": 423,
+        "endChar": 36
       },
       "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -130,6 +245,29 @@
       "side": 0,
       "message": "Same for this one, no ResourceDriverV8 methods need to come over.",
       "parentUuid": "3a98d1f4_0be9d41a",
+      "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_5f122b58",
+        "filename": "keystone/resource/backends/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-09-30T21:16:35Z",
+      "side": 0,
+      "message": "all the domain related operations are no longer in our backend, we removed them in the great domain -\u003e project migration",
+      "range": {
+        "startLine": 205,
+        "startChar": 6,
+        "endLine": 205,
+        "endChar": 22
+      },
       "revId": "fb6ff3000921bace5b7c7c0e08d701c17fef2677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
