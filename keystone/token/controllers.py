@@ -176,7 +176,7 @@ class Auth(controller.V2Controller):
                                                 size=CONF.max_token_size)
 
         try:
-            v3_token_data = self.token_provider_api.validate_v3_token(
+            v3_token_data = self.token_provider_api.validate_token(
                 old_token
             )
             v2_helper = providers.common.V2TokenDataHelper()
@@ -429,7 +429,7 @@ class Auth(controller.V2Controller):
         the content body.
 
         """
-        v3_token_response = self.token_provider_api.validate_v3_token(token_id)
+        v3_token_response = self.token_provider_api.validate_token(token_id)
         v2_helper = providers.common.V2TokenDataHelper()
         token = v2_helper.v3_to_v2_token(v3_token_response, token_id)
         belongs_to = request.params.get('belongsTo')
@@ -448,7 +448,7 @@ class Auth(controller.V2Controller):
 
         """
         # TODO(ayoung) validate against revocation API
-        v3_token_response = self.token_provider_api.validate_v3_token(token_id)
+        v3_token_response = self.token_provider_api.validate_token(token_id)
         v2_helper = providers.common.V2TokenDataHelper()
         token = v2_helper.v3_to_v2_token(v3_token_response, token_id)
         belongs_to = request.params.get('belongsTo')
@@ -487,7 +487,7 @@ class Auth(controller.V2Controller):
         """Return a list of endpoints available to the token."""
         self.assert_admin(request)
 
-        token_data = self.token_provider_api.validate_v3_token(token_id)
+        token_data = self.token_provider_api.validate_token(token_id)
         token_ref = token_model.KeystoneToken(token_id, token_data)
 
         catalog_ref = None
