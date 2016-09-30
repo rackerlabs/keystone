@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_58dfb30c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-30T15:56:58Z",
+      "side": 1,
+      "message": "bugreport needs to be linked",
+      "revId": "a87658822e75ef506be0683dac476cbece8d6cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_9833fb61",
+        "filename": "keystone/tests/unit/common/test_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-09-30T15:56:58Z",
+      "side": 1,
+      "message": "unit tests need to be added to reflect the changed behaviour",
+      "revId": "a87658822e75ef506be0683dac476cbece8d6cd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
