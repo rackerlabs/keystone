@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_15393bd7",
+        "filename": "keystone/common/cache/_context_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-10-03T12:15:54Z",
+      "side": 1,
+      "message": "also, shouldn\u0027t this be removed too?",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 30
+      },
+      "revId": "a9912b2392b1e81efcbf69e906b2a789bf2a50ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
