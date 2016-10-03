@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_2bf24906",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1695,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-03T17:47:05Z",
+      "side": 1,
+      "message": "Don\u0027t think you need two empty lines here",
+      "revId": "c991b8e72eeb9ba2e31de7e2798912a3faeee38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_4bf5d5ea",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-03T17:47:05Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "range": {
+        "startLine": 1697,
+        "startChar": 61,
+        "endLine": 1697,
+        "endChar": 62
+      },
+      "revId": "c991b8e72eeb9ba2e31de7e2798912a3faeee38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_6be0d129",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-03T17:47:05Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1698,
+        "startChar": 76,
+        "endLine": 1698,
+        "endChar": 77
+      },
+      "revId": "c991b8e72eeb9ba2e31de7e2798912a3faeee38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
