@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_d67a6f23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "*deactivation",
+      "range": {
+        "startLine": 11,
+        "startChar": 32,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_b6a6c3ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "*possible?",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_16a85776",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "*token",
+      "range": {
+        "startLine": 18,
+        "startChar": 42,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_b6fb2378",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "*password",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_b670830c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "Why are you making changes here?",
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_d6234fbb",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "Doesn\u0027t removing these columns change the API, in that we still need to return a list of revocation events (list_events)?",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_51a109f7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:15:25Z",
+      "side": 1,
+      "message": "Missing check for role assignment",
+      "range": {
+        "startLine": 273,
+        "startChar": 12,
+        "endLine": 273,
+        "endChar": 16
+      },
+      "revId": "8f4b2aec386fcdaf709c56fa2202e25682324965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
