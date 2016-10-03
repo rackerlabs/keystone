@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_87b273e3",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T16:51:44Z",
+      "side": 1,
+      "message": "nit: use single quotes only to keep consistency with other keyword arguments in this module.",
+      "revId": "16b4ba592afcafa0a9fd3c2290f2a19c515939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
