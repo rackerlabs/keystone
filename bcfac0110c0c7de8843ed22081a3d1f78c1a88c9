@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_673ac7e8",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T16:59:24Z",
+      "side": 1,
+      "message": "Aren\u0027t notification callbacks typically registered in the Manager layer?\n\nhttps://github.com/openstack/keystone/blob/cd23e776b7631d2f7b9465ef29789fd354f7d66a/keystone/token/provider.py#L152  for example.\n\nI think the controller layer should only handle web things and this seems like keystone logic.",
+      "revId": "bcfac0110c0c7de8843ed22081a3d1f78c1a88c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
