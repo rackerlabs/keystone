@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a98d1f4_67348749",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T16:53:04Z",
+      "side": 1,
+      "message": "I would consider changing this to a partial bug, only because this patch is addressing project/trust foreign keys. The bug reports the same behavior when a user (trustee or trustor) is deleted.",
+      "revId": "16b4ba592afcafa0a9fd3c2290f2a19c515939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_87b273e3",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 8
