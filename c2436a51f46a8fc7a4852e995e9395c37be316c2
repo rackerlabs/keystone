@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_916f11fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 36
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T16:26:34Z",
+      "side": 1,
+      "message": "This seems wordy to me. Perhaps, put the performance issues in the bug description itself. I\u0027d suggest something like the following: \"This patch moves the revocation validation logic (is_revoked) to SQL. The previous logic matched all column combinations, however the SQL logic only matches the possible column combinations based on the table writes.\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "c2436a51f46a8fc7a4852e995e9395c37be316c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
