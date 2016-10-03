@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_a2f6768c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-03T20:26:11Z",
+      "side": 1,
+      "message": "Removing the validation from update_user, but we still want to truncate any extra passwords.",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 34
+      },
+      "revId": "3957261232aef54f80746c1ba1894abe24bc67a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
