@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_c8e1eb2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:28:15Z",
+      "side": 1,
+      "message": "I\u0027m having a hard time following this commit message. I understand what we\u0027re fixing but the how is a little hard to understand given the wording.",
+      "revId": "ff1ba979cf175887e62b7575283d135ff0a8ca69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e86067a7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:28:15Z",
+      "side": 1,
+      "message": "Can we enforce this through tests? If other people rely on specific information presented through the logs (testing or otherwise), then we need to make sure we\u0027re not regressing on accident. That would be easier to do with some form of test.",
+      "revId": "ff1ba979cf175887e62b7575283d135ff0a8ca69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
