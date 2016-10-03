@@ -1029,6 +1029,8 @@ class Manager(manager.Manager):
                     _role = self.role_api.get_role(id_)
                     new_assign['role_id'] = _role['id']
                     new_assign['role_name'] = _role['name']
+                elif id_type == 'inherited_to_projects':
+                    new_assign['inherited_to_projects'] = id_
             role_assign_list.append(new_assign)
         return role_assign_list
 
