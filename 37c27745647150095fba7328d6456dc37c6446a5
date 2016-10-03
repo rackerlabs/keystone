@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_55f74358",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "remove the space before the colon:\n\n  Closes-Bug: #1274581\n\n(this actually matters since the patch isn\u0027t automatically hyperlinking to the bug)",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_559ae36e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "the original bug concerns a case where the user could not connect to the LDAP.\n\nthe first sentence, which i\u0027m assuming you added based on the bug report, was a suggestion on how to handle the bug. It was never implemented however, so setting \"tls_cacertfile\" to \"system\" will result in an error.\n\nI suggest you remove this entire first sentence. The second sentence is a work-around for the bug -- change a single setting in \"/etc/ldap/ldap.conf\".",
+      "range": {
+        "startLine": 1696,
+        "startChar": 0,
+        "endLine": 1699,
+        "endChar": 9
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_f5704f0d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "remove this trailing space",
+      "range": {
+        "startLine": 1699,
+        "startChar": 74,
+        "endLine": 1699,
+        "endChar": 75
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_75635f42",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "add a space between keystone and the brace \"(\"",
+      "range": {
+        "startLine": 1699,
+        "startChar": 42,
+        "endLine": 1699,
+        "endChar": 55
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_1553fb6b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1700,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "add a space between the backticks and \"in\"",
+      "range": {
+        "startLine": 1700,
+        "startChar": 38,
+        "endLine": 1700,
+        "endChar": 54
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_156cdb33",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T12:29:36Z",
+      "side": 1,
+      "message": "remove this trailing space",
+      "range": {
+        "startLine": 1701,
+        "startChar": 72,
+        "endLine": 1701,
+        "endChar": 73
+      },
+      "revId": "37c27745647150095fba7328d6456dc37c6446a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
