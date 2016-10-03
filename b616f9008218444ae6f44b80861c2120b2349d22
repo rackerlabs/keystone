@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_2cf1866b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T16:41:42Z",
+      "side": 1,
+      "message": "++ I feel like this is related to the bug we were seeing with migrations being run out of order in the tests?",
+      "parentUuid": "7a8ec9b2_8d3d4a91",
+      "revId": "b616f9008218444ae6f44b80861c2120b2349d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_ede08e2b",
         "filename": "keystone/common/sql/upgrades.py",
         "patchSetId": 1
