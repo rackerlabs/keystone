@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_f1d5ae1b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-03T18:51:31Z",
+      "side": 1,
+      "message": "**remove this sentence.**\n\nthere is no support for setting \"tls_cacertfile\" to \"system\", it\u0027ll make keystone fail to load and unusable.",
+      "range": {
+        "startLine": 1696,
+        "startChar": 0,
+        "endLine": 1698,
+        "endChar": 9
+      },
+      "revId": "b17f95b8425a62b1dca4dda26da5b36f2c200dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
