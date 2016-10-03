@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_e88a271a",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "We could take an opportunity here to use either single or double quotes consistently. That way lines 65-66 and line 74 follow the same convention for the message string.",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_88c8c356",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "Why not reuse the message declared on line 82 instead of emitting a truncated version of the same message?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_a8481fcd",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "We should use single quotes or double quotes consistently. Also, what is a user suppose to do when they get this message? This feels more like a developer\u0027s inline comment than a user-friendly message.\n\nFrom a user perspective, I\u0027m not quite sure what I should do after I read this.",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_087f53e0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "How come we aren\u0027t using string injection here like we are on line 91?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_a8765f03",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "This feels similar to the above change - but they are being made differently. What\u0027s the reason for the difference?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_48d31bd5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "Can\u0027t we reuse the \u0027Invalid user\u0027 string from line 303?\n\nHow come we don\u0027t localize this message when calling LOG.debug, but we seem to do that for other instances in this change.",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_88d9a3f5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_08f4b358",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "no logging?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_882363bc",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-03T17:41:00Z",
+      "side": 1,
+      "message": "I can see where this would be confusing for an end user to read? Why was my password rejected? Did it not meet the requirements? Did I use an old password too soon?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
