@@ -21,6 +21,7 @@ from six.moves import range
 from keystone.common import utils
 from keystone import exception
 from keystone.models import revoke_model
+from keystone.revoke.backends import sql
 from keystone.tests import unit
 from keystone.tests.unit import test_backend_sql
 from keystone.token import provider
@@ -113,6 +114,16 @@ def _matches(event, token_values):
 
 class RevokeTests(object):
 
+    def _assertTokenRevoked(self, events, token_data):
+        return self.assertTrue(
+            revoke_model.is_revoked(events, token_data),
+            'Token should be revoked')
+
+    def _assertTokenNotRevoked(self, events, token_data):
+        return self.assertFalse(
+            revoke_model.is_revoked(events, token_data),
+            'Token should not be revoked')
+
     def test_list(self):
         self.revoke_api.revoke_by_user(user_id=1)
         self.assertEqual(1, len(self.revoke_api.list_events()))
@@ -128,6 +139,121 @@ class RevokeTests(object):
         future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
         self.assertEqual(0,
                          len(self.revoke_api.list_events(last_fetch=future)))
+
+    def test_list_revoked_user(self):
+        revocation_backend = sql.Revoke()
+        events = []
+        token = _sample_blank_token()
+
+        token['user_id'] = uuid.uuid4().hex
+        add_event(events, revoke_model.RevokeEvent(user_id=token['user_id']))
+        self.revoke_api.revoke_by_user(user_id=token['user_id'])
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+
+        token['user_id'] = uuid.uuid4().hex
+        add_event(events, revoke_model.RevokeEvent(user_id=token['user_id']))
+        self.revoke_api.revoke_by_user(user_id=token['user_id'])
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+
+        token['user_id'] = None
+        self._assertTokenNotRevoked(events, token)
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+
+    def test_list_revoked_project(self):
+        revocation_backend = sql.Revoke()
+        events = []
+        token = _sample_blank_token()
+
+        token['project_id'] = uuid.uuid4().hex
+        add_event(events,
+                  revoke_model.RevokeEvent(project_id=token['project_id']))
+        revocation_backend.revoke(
+            revoke_model.RevokeEvent(project_id=token['project_id']))
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        token['project_id'] = uuid.uuid4().hex
+        add_event(events,
+                  revoke_model.RevokeEvent(project_id=token['project_id']))
+        revocation_backend.revoke(
+            revoke_model.RevokeEvent(project_id=token['project_id']))
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        token['project_id'] = None
+        self._assertTokenNotRevoked(events, token)
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+
+    def test_list_revoked_audit(self):
+        revocation_backend = sql.Revoke()
+        events = []
+        token = _sample_blank_token()
+
+        token['audit_id'] = provider.random_urlsafe_str()
+        add_event(events, revoke_model.RevokeEvent(audit_id=token['audit_id']))
+        self.revoke_api.revoke_by_audit_id(audit_id=token['audit_id'])
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        token['audit_id'] = provider.random_urlsafe_str()
+        add_event(events, revoke_model.RevokeEvent(audit_id=token['audit_id']))
+        self.revoke_api.revoke_by_audit_id(audit_id=token['audit_id'])
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        token['audit_id'] = None
+        self._assertTokenNotRevoked(events, token)
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+
+    def test_list_revoked_since(self):
+        revocation_backend = sql.Revoke()
+        token = _sample_blank_token()
+        self.revoke_api.revoke_by_user(user_id=None)
+        self.revoke_api.revoke_by_user(user_id=None)
+        self.assertEqual(2, len(revocation_backend.list_events(token=token)))
+        future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
+        token['issued_at'] = future
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+
+    def test_list_revoked_multiple_filters(self):
+        revocation_backend = sql.Revoke()
+        events = []
+        token = _sample_blank_token()
+        # create token that sets key/value filters in list_revoked
+        token['user_id'] = uuid.uuid4().hex
+        token['project_id'] = uuid.uuid4().hex
+        token['audit_id'] = provider.random_urlsafe_str()
+        # revoke event and then verify that that there is only one revocation
+        # and verify the only revoked event is the token
+        add_event(events, revoke_model.RevokeEvent(
+            user_id=token['user_id'], project_id=token['project_id'],
+            audit_id=token['audit_id']))
+        self.revoke_api.revoke(revoke_model.RevokeEvent(
+            user_id=token['user_id'], project_id=token['project_id'],
+            audit_id=token['audit_id']))
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        # If a token has None values which the event contains it shouldnt match
+        # and not be revoked
+        token['user_id'] = None
+        token['project_id'] = None
+        self._assertTokenNotRevoked(events, token)
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+        # If an event column and corresponding dict value don't match, Then
+        # it should not add the event in the list. Demonstrate for project
+        token['project_id'] = uuid.uuid4().hex
+        self._assertTokenNotRevoked(events, token)
+        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+        # A revoked event with user_id as null and token user_id non null
+        # should still be return an event and be revoked if other non null
+        # event fields match non null token fields
+        token['user_id'] = uuid.uuid4().hex
+        token['project_id'] = uuid.uuid4().hex
+        token['audit_id'] = provider.random_urlsafe_str()
+        add_event(events, revoke_model.RevokeEvent(
+            project_id=token['project_id'], audit_id=token['audit_id']))
+        self.revoke_api.revoke(revoke_model.RevokeEvent(
+            project_id=token['project_id'], audit_id=token['audit_id']))
+        self._assertTokenRevoked(events, token)
+        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
 
     @mock.patch.object(timeutils, 'utcnow')
     def test_expired_events_are_removed(self, mock_utcnow):
