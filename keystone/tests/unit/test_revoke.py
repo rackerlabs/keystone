@@ -129,6 +129,27 @@ class RevokeTests(object):
         self.assertEqual(0,
                          len(self.revoke_api.list_events(last_fetch=future)))
 
+    def test_list_revoked(self):
+        token = _sample_blank_token()
+        token['user_id'] = 1
+        self.revoke_api.revoke_by_user(user_id=1)
+        self.assertEqual(1, len(self.revoke_api.list_revoked(token)))
+        token['user_id'] = 2
+        self.revoke_api.revoke_by_user(user_id=2)
+        self.assertEqual(1, len(self.revoke_api.list_revoked(token)))
+        token['user_id'] = None
+        self.assertEqual(0, len(self.revoke_api.list_revoked(token)))
+
+    def test_list_revoked_since(self):
+        token = _sample_blank_token()
+        self.revoke_api.revoke_by_user(user_id=None)
+        self.revoke_api.revoke_by_user(user_id=None)
+        self.assertEqual(2, len(self.revoke_api.list_revoked(token)))
+        future = timeutils.utcnow() + datetime.timedelta(seconds=1000)
+        token['issued_at'] = future
+        self.assertEqual(0,
+                         len(self.revoke_api.list_revoked(token)))
+
     @mock.patch.object(timeutils, 'utcnow')
     def test_expired_events_are_removed(self, mock_utcnow):
         def _sample_token_values():
