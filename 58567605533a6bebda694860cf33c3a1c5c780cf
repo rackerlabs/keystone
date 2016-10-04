@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_3dfc3db7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-04T03:57:30Z",
+      "side": 1,
+      "message": "the commit messages go:\n\n  \u003cquick one line description\u003e\n  \u003cnew line\u003e\n  \u003csummary\u003e\n  \u003cnew line\u003e\n  \u003cbug reference\u003e\n\nsee more detail here: https://wiki.openstack.org/wiki/GitCommitMessages#Example_2_4",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 64
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_3d751d63",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-04T03:57:30Z",
+      "side": 1,
+      "message": "inherited_to_projects is a true/false value, which i don\u0027t think is in the _id variable",
+      "range": {
+        "startLine": 1033,
+        "startChar": 58,
+        "endLine": 1033,
+        "endChar": 61
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
