@@ -398,13 +398,13 @@ Request
    - role_id: role_id_path
 
 
-List effective role assignments
-===============================
+List role assignments
+=====================
 
 .. rest_method::  GET /v3/role_assignments
 
 Relationship:
-``http://developer.openstack.org/api-ref/identity/v3/?expanded=#list-effective-role-assignments``
+``http://developer.openstack.org/api-ref/identity/v3/?expanded=#list-role-assignments``
 
 Optional query parameters:
 
