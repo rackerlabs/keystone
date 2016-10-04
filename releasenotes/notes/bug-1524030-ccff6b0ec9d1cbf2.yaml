@@ -1,0 +1,10 @@
+---
+fixes:
+  - Partially addresses bug #1524030 by reducing the number of events that are
+    evaluated during token validation. This greatly improves the token
+    validation performance, which is the main reason for wanting to reduce the
+    number of revocation events.
+other:
+  - The revoke backend driver interface has changed. We've added a token
+    parameter to the ``list_events`` method in order to improve performance by
+    reducing the number of revocation events returned during token validation.
