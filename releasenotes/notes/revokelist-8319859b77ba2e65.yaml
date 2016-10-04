@@ -1,0 +1,7 @@
+---
+other:
+- Token validation has changed to use ``list_revoked()`` instead of
+  ``list_events()`` in the revoke backend in order to reduce the revocation
+  event list and improve performance. Therefore, ``list_revoked()`` has been
+  added to the revoke backend driver. If you have a custom implementation for
+  the revoke driver, you will need to implement this new method.
