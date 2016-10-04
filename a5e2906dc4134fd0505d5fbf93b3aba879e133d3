@@ -46,6 +46,29 @@
       "revId": "a5e2906dc4134fd0505d5fbf93b3aba879e133d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_81523edc",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 19554
+      },
+      "writtenOn": "2016-10-04T14:26:58Z",
+      "side": 1,
+      "message": "Hi everyone in this patch.\n\nCould I discuss this topic again. I think we will have downtime if we do at this step. I think we should say that \"start service on first node. Then we upgrade all remain keystone nodes\" to ensure that we will not downtime during upgrading. Actually, I tried modify this step as above, it seems success but it had a bug as my colleague reported. [1]. How do you think about this?\n\n[1] https://bugs.launchpad.net/keystone/+bug/1630259",
+      "range": {
+        "startLine": 133,
+        "startChar": 51,
+        "endLine": 133,
+        "endChar": 76
+      },
+      "revId": "a5e2906dc4134fd0505d5fbf93b3aba879e133d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
