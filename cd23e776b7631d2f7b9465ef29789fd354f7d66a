@@ -45,6 +45,30 @@
       "revId": "cd23e776b7631d2f7b9465ef29789fd354f7d66a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_fa9d7b0a",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-04T03:23:09Z",
+      "side": 0,
+      "message": "Good point, added changing to the same password to test_validate_password_history_with_invalid_password test.",
+      "parentUuid": "3a98d1f4_9ef1ce97",
+      "range": {
+        "startLine": 178,
+        "startChar": 8,
+        "endLine": 178,
+        "endChar": 71
+      },
+      "revId": "cd23e776b7631d2f7b9465ef29789fd354f7d66a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
