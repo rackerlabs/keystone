@@ -45,6 +45,30 @@
       "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_200b3425",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 21376
+      },
+      "writtenOn": "2016-10-04T04:43:17Z",
+      "side": 1,
+      "message": "Thanks for your comment. \nPlease find my understanding below and correct me if I am wrong:\n\ninherited_to_projects have \"projects\" as its value which is in the id_ variable. \n\nThe display result shows formatted inherited value as True/False based on this value of inherited_to_projects\n\nPlease check the value of the variable \"formatted_refs\" in keystone/assignment/controller.py-\u003e def _list_role_assignments",
+      "parentUuid": "3a98d1f4_3d751d63",
+      "range": {
+        "startLine": 1033,
+        "startChar": 58,
+        "endLine": 1033,
+        "endChar": 61
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
