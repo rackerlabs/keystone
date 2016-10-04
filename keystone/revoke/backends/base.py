@@ -37,6 +37,20 @@ class RevokeDriverV8(object):
     """Interface for recording and reporting revocation events."""
 
     @abc.abstractmethod
+    def list_revoked(self, token):
+        """return the revocation events, as a list of objects.
+
+        :param token: dictionary of values from a token, normalized for
+                            differences between v2 and v3. The checked values
+                            are a subset of the attributes of model.TokenEvent
+        :returns: A list of keystone.revoke.model.RevokeEvent that were issued
+                  before token['issued_at'] and also meet requirements for
+                  project, user, and audit_id. This will return only a subset
+                  of all revoked events
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def list_events(self, last_fetch=None):
         """return the revocation events, as a list of objects.
 
