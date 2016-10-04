@@ -99,6 +99,13 @@ class Revoke(base.RevokeDriverV8):
 
             session.flush()
 
+    def list_rev(self, token):
+        with sql.session_for_read() as session:
+            query = session.query(RevocationEvent).filter(
+                RevocationEvent.issued_before >= token['issued_at'])
+            events = [revoke_model.RevokeEvent(**e.to_dict()) for e in query]
+            return events
+
     def list_events(self, last_fetch=None):
         with sql.session_for_read() as session:
             query = session.query(RevocationEvent).order_by(
