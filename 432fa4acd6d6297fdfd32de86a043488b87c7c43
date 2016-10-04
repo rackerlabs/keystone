@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_03e70dad",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-04T14:03:05Z",
+      "side": 1,
+      "message": "not related: this test would be better if started checking the failure in changing the password and after disabling the setting, doing the same actions",
+      "range": {
+        "startLine": 216,
+        "startChar": 8,
+        "endLine": 216,
+        "endChar": 62
+      },
+      "revId": "432fa4acd6d6297fdfd32de86a043488b87c7c43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
