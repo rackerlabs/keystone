@@ -1,0 +1,6 @@
+---
+other:
+- the check_token method has been changed to use list_revoked instead of
+  list_events and list_revoked method has been added to the backend driver in
+  order to reduce the revocation event list that gets returned to is_revoked
+  and matches and improve performance.
