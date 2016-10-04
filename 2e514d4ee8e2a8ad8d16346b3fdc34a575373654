@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_e4f22b6f",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-04T16:04:47Z",
+      "side": 1,
+      "message": "I think you mean to say symptom_LDAP_domain_specific_configs would report the other issue, but this gets confusing by just saying \"other\" since there are multiple other symptom checks in this module.",
+      "range": {
+        "startLine": 108,
+        "startChar": 71,
+        "endLine": 109,
+        "endChar": 66
+      },
+      "revId": "2e514d4ee8e2a8ad8d16346b3fdc34a575373654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
