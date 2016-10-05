@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_e102d50a",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-05T21:23:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_410aa922",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 20
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c107991a",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-05T21:23:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_e15e5511",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c14cf972",
         "filename": "keystone/revoke/core.py",
         "patchSetId": 9
@@ -59,6 +107,30 @@
       "writtenOn": "2016-10-05T20:49:51Z",
       "side": 1,
       "message": "nit: prefer this calls the driver explicitly, e.g. self.driver.list_revoked(token)",
+      "range": {
+        "startLine": 206,
+        "startChar": 35,
+        "endLine": 206,
+        "endChar": 59
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_810d9140",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-05T21:23:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c14cf972",
       "range": {
         "startLine": 206,
         "startChar": 35,
