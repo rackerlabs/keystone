@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_c8f1796c",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T22:19:24Z",
+      "side": 1,
+      "message": "still missing tests that combine filters",
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_4869e924",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T22:19:24Z",
+      "side": 1,
+      "message": "asserting the size is not enough, you need to check if the listed revoke events are from the token. This comment also applies for the other asserts in this file.",
+      "range": {
+        "startLine": 136,
+        "startChar": 13,
+        "endLine": 136,
+        "endChar": 24
+      },
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c8ca591a",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T22:19:24Z",
+      "side": 1,
+      "message": "still think mocking the time is the correct approach as commented in a previous patchset",
+      "range": {
+        "startLine": 171,
+        "startChar": 17,
+        "endLine": 171,
+        "endChar": 35
+      },
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
