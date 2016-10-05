@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a95cdbc_c83419fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T22:27:04Z",
+      "side": 1,
+      "message": "when including such affirmatives in the commit message would be nice to provide data (performance tests for this case) that proves what the affirmatives claim.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c8f1796c",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 13
