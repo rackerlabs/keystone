@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_30ba49c1",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T19:33:52Z",
+      "side": 1,
+      "message": "we need tests to cover all types of possible filters (user_id, domain_id, project_id, ...) at the list_revoked method, some combinations are also valuable (user_id combined with project_id, for example).",
+      "range": {
+        "startLine": 132,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 25
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_907ddd1e",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T19:33:52Z",
+      "side": 1,
+      "message": "for this ones, the content of the list should also be verified.",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 69
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_70ebf1b0",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-05T19:33:52Z",
+      "side": 1,
+      "message": "you need to mock the time here, although we do things like that in our tests. Look for \"freezegun\" usages in our code :)",
+      "range": {
+        "startLine": 148,
+        "startChar": 17,
+        "endLine": 148,
+        "endChar": 35
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
