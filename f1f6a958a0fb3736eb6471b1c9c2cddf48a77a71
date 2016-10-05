@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a95cdbc_e15e5511",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-05T20:49:51Z",
+      "side": 1,
+      "message": "Need to add this new method to the base class:\nhttps://github.com/openstack/keystone/blob/master/keystone/revoke/backends/base.py\n\nAlso, you\u0027ll want to add release notes for this driver change.",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_410aa922",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-05T20:49:51Z",
+      "side": 1,
+      "message": "nit: better method name, e.g. list_token_events or something",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 20
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c14cf972",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-05T20:49:51Z",
+      "side": 1,
+      "message": "nit: prefer this calls the driver explicitly, e.g. self.driver.list_revoked(token)",
+      "range": {
+        "startLine": 206,
+        "startChar": 35,
+        "endLine": 206,
+        "endChar": 59
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_30ba49c1",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 9
@@ -83,6 +152,30 @@
       "writtenOn": "2016-10-05T19:33:52Z",
       "side": 1,
       "message": "you need to mock the time here, although we do things like that in our tests. Look for \"freezegun\" usages in our code :)",
+      "range": {
+        "startLine": 148,
+        "startChar": 17,
+        "endLine": 148,
+        "endChar": 35
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_81de716b",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-05T20:49:51Z",
+      "side": 1,
+      "message": "I think freezegun would be overkill here. I like just mocking the issued_at time.",
+      "parentUuid": "1a95cdbc_70ebf1b0",
       "range": {
         "startLine": 148,
         "startChar": 17,
