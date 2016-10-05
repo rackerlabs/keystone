@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_e2c76443",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-05T04:46:55Z",
+      "side": 1,
+      "message": "this needs updating",
+      "range": {
+        "startLine": 199,
+        "startChar": 15,
+        "endLine": 199,
+        "endChar": 27
+      },
+      "revId": "a7dd963250ac3723a83fa743fdf6c2836e9763d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
