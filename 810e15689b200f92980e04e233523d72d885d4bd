@@ -33,6 +33,24 @@
       "revId": "810e15689b200f92980e04e233523d72d885d4bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_ce7358b0",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-05T14:50:58Z",
+      "side": 1,
+      "message": "no, but i can whip something up",
+      "parentUuid": "1a95cdbc_d0b5b7cd",
+      "revId": "810e15689b200f92980e04e233523d72d885d4bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
