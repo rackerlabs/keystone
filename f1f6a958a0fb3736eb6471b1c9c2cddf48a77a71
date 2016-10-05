@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_4b0ac822",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-05T19:41:14Z",
+      "side": 1,
+      "message": "domain_id? These things were not covered with list_events which this technically does the same thing. Only a few constraints difference between that method and this one",
+      "parentUuid": "1a95cdbc_30ba49c1",
+      "range": {
+        "startLine": 132,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 25
+      },
+      "revId": "f1f6a958a0fb3736eb6471b1c9c2cddf48a77a71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_907ddd1e",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 9
