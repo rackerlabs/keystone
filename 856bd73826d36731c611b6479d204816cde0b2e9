@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_a4e8ed7d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-05T15:26:42Z",
+      "side": 0,
+      "message": "we\u0027re still maintaining the logic here, with the next patch (when assignment is defaulted to SQL too).\n\nthe logic is just through reasonable defaults instead of peeking at the various drivers used",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 74
+      },
+      "revId": "856bd73826d36731c611b6479d204816cde0b2e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
