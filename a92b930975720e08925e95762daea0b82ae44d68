@@ -254,6 +254,24 @@
       "revId": "a92b930975720e08925e95762daea0b82ae44d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_830ad01f",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-06T15:30:38Z",
+      "side": 1,
+      "message": "(nit) you don\u0027t need to wrap e with str(). the %s already does that for you.",
+      "parentUuid": "1a95cdbc_297483fb",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
