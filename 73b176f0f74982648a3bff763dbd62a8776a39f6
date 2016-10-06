@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_b1f8e8c4",
+        "filename": "releasenotes/notes/cache_on_issue_default_on-8b39f3f73359c778.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-06T19:06:51Z",
+      "side": 1,
+      "message": "suggestion:\n\nThe ``[token] cache_on_issue`` option is now enabled by default. This option has no effect unless global caching and token caching are enabled.",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 41
+      },
+      "revId": "73b176f0f74982648a3bff763dbd62a8776a39f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
