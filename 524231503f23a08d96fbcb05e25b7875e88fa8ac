@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_321a286f",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:49:12Z",
+      "side": 1,
+      "message": "nit: PKI and PKIZ but that\u0027s in the other notes section.",
+      "revId": "524231503f23a08d96fbcb05e25b7875e88fa8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_529c14c0",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:49:12Z",
+      "side": 1,
+      "message": "Should we provide the *new* path for each API?",
+      "revId": "524231503f23a08d96fbcb05e25b7875e88fa8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
