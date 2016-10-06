@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_5900c201",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a98d1f4_e88a271a",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_88c8c356",
         "filename": "keystone/common/request.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-03T17:41:00Z",
       "side": 1,
       "message": "Why not reuse the message declared on line 82 instead of emitting a truncated version of the same message?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_f90fce2b",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a98d1f4_88c8c356",
       "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_990a4a20",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a98d1f4_a8481fcd",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_087f53e0",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2016-10-03T17:41:00Z",
       "side": 1,
       "message": "How come we aren\u0027t using string injection here like we are on line 91?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_792ade7f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a98d1f4_087f53e0",
       "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_3948565b",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "yes, it may be needed, but not in this change - this one is about responses.",
+      "parentUuid": "3a98d1f4_08f4b358",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_882363bc",
         "filename": "keystone/v2_crud/user_crud.py",
         "patchSetId": 8
@@ -149,6 +239,24 @@
       "writtenOn": "2016-10-03T17:41:00Z",
       "side": 1,
       "message": "I can see where this would be confusing for an end user to read? Why was my password rejected? Did it not meet the requirements? Did I use an old password too soon?",
+      "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_799f3eb4",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-06T12:58:57Z",
+      "side": 1,
+      "message": "Added error message",
+      "parentUuid": "3a98d1f4_882363bc",
       "revId": "c69bb3c5e14f8747d0b471b74543a414afddb986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
