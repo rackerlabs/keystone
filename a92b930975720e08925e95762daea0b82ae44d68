@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_65d4f11f",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "We could add to this even further to clarify things for the end user: \n\n  if token_ref.oauth_scoped or token_ref.trust_scoped:\n      if token_ref.oauth_scoped:\n          scope \u003d \u0027OAuth-scoped token\u0027\n      else:\n          scope \u003d \u0027trust-scoped token\u0027\n      msg \u003d _(\u0027Using a %{scope}s to create another token is\u0027\n              \u0027 not allowed. Create a new %{scope}s instead\u0027 % {scope\u003dscope})",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_6505d178",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "This should be: \n\n  LOG.warning(_LW(msg))\n\nto be consistent with how it was logged in the past.",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c58785d5",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "You could move the _LW call to the LOG.warning line since it was only used there previously:\n\n  LOG.warning(_LW(msg))",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_45e295a0",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "nit: did not* would avoid having to escape the single quote.",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_4590d5ec",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "This message string could be shared:\n\n  msg \u003d \u0027Could not find the auth context.\u0027\n  LOG.warning(_LW(msg))\n  raise exception.Unauthorized(msg)",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_85357df8",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "This could be:\n\n  LOG.info(_LI(msg))",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_89a6770e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "String injection could be done on this like:\n\n  msg_pattern \u003d \u0027Named bind mode %{name}s not in bind information\u0027 % {\u0027name\u0027: name}",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_e50d613f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_090507bb",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "This could be shared with line 303:\n\n  msg \u003d \u0027Invalid user\u0027\n  LOG.debug(msg)\n  raise exception.Unauthorized(_(msg))",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_492d4f45",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_a9afb392",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "s/delegated/trust-scoped/",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_49de2f12",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "Does this need to be a ForbiddenAction() exception since we are passing an action to it?",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c9d23f00",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "This message could be shared with the one on line 201",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_492c6f02",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "Same question here about using exception.Forbidden versus exception.ForbiddenAction.",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_297483fb",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-06T14:12:43Z",
+      "side": 1,
+      "message": "Taking a second look at this code and this all happens before we\u0027ve even done anything with the new password. The error would be from using the existing password. It might be worth it to rework this according to that case.",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
