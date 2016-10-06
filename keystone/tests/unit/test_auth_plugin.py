@@ -43,7 +43,7 @@ class SimpleChallengeResponse(base.AuthMethodHandler):
             return {"challenge": "What's the name of your high school?"}
 
 
-class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
+class TestAuthPlugin(unit.TestCase):
     def setUp(self):
         super(TestAuthPlugin, self).setUp()
         self.api = auth.controllers.Auth()

@@ -1946,7 +1946,7 @@ class LDAPLimitTests(unit.TestCase, identity_tests.LimitTests):
         super(LDAPLimitTests, self).setUp()
 
         self.useFixture(ldapdb.LDAPDatabase())
-        self.useFixture(database.Database(self.sql_driver_version_overrides))
+        self.useFixture(database.Database())
         self.load_backends()
         self.load_fixtures(default_fixtures)
         identity_tests.LimitTests.setUp(self)
@@ -2279,8 +2279,7 @@ class LDAPPosixGroupsTest(LDAPTestSetup):
         self.assertIn(new_group['id'], (x['id'] for x in group_refs))
 
 
-class LdapIdentityWithMapping(
-        BaseLDAPIdentity, unit.SQLDriverOverrides, unit.TestCase):
+class LdapIdentityWithMapping(BaseLDAPIdentity, unit.TestCase):
     """Class to test mapping of default LDAP backend.
 
     The default configuration is not to enable mapping when using a single
@@ -2442,8 +2441,8 @@ class BaseMultiLDAPandSQLIdentity(object):
                 password=self.users[user]['password'])
 
 
-class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
-                              unit.TestCase, BaseMultiLDAPandSQLIdentity):
+class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.TestCase,
+                              BaseMultiLDAPandSQLIdentity):
     """Class to test common SQL plus individual LDAP backends.
 
     We define a set of domains and domain-specific backends:
@@ -2990,9 +2989,8 @@ class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
             self.domains['domain1']['id'])
 
 
-class DomainSpecificLDAPandSQLIdentity(
-    BaseLDAPIdentity, unit.SQLDriverOverrides, unit.TestCase,
-        BaseMultiLDAPandSQLIdentity):
+class DomainSpecificLDAPandSQLIdentity(BaseLDAPIdentity, unit.TestCase,
+                                       BaseMultiLDAPandSQLIdentity):
     """Class to test when all domains use specific configs, including SQL.
 
     We define a set of domains and domain-specific backends:

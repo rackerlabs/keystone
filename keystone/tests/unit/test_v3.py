@@ -123,8 +123,7 @@ class AuthTestMixin(object):
         return {'auth': auth_data}
 
 
-class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
-                      common_auth.AuthTestMixin):
+class RestfulTestCase(rest.RestfulTestCase, common_auth.AuthTestMixin):
 
     def generate_token_schema(self, domain_scoped=False, project_scoped=False):
         """Return a dictionary of token properties to validate against."""

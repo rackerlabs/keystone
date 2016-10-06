@@ -91,7 +91,7 @@ class BaseBackendLdap(object):
         super(BaseBackendLdap, self).load_fixtures(fixtures)
 
 
-class BaseBackendLdapIdentitySqlEverythingElse(unit.SQLDriverOverrides):
+class BaseBackendLdapIdentitySqlEverythingElse(object):
     """Mixin base for Identity LDAP, everything else SQL backend tests."""
 
     def config_files(self):

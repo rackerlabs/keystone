@@ -1493,7 +1493,7 @@ class TokenExpirationTest(AuthTest):
         self._maintain_token_expiration()
 
 
-class AuthCatalog(unit.SQLDriverOverrides, AuthTest):
+class AuthCatalog(AuthTest):
     """Test for the catalog provided in the auth response."""
 
     def config_files(self):

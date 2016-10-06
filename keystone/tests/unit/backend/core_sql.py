@@ -18,7 +18,7 @@ from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 
 
-class BaseBackendSqlTests(unit.SQLDriverOverrides, unit.TestCase):
+class BaseBackendSqlTests(unit.TestCase):
 
     def setUp(self):
         super(BaseBackendSqlTests, self).setUp()

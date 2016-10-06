@@ -38,7 +38,7 @@ from keystone.tests.unit.ksfixtures import ldapdb
 CONF = keystone.conf.CONF
 
 
-class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class CliTestCase(unit.TestCase):
     def config_files(self):
         config_files = super(CliTestCase, self).config_files()
         config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
@@ -87,7 +87,7 @@ class CliNoConfigTestCase(unit.BaseTestCase):
         self.assertThat(self.logging.output, matchers.Contains(expected_msg))
 
 
-class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class CliBootStrapTestCase(unit.TestCase):
 
     def setUp(self):
         self.useFixture(database.Database())
@@ -302,7 +302,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
 
-class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class CliDomainConfigAllTestCase(unit.TestCase):
 
     def setUp(self):
         self.useFixture(database.Database())
@@ -601,7 +601,7 @@ class CliDBSyncTestCase(unit.BaseTestCase):
         self._assert_correct_call(upgrades.contract_schema)
 
 
-class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
+class TestMappingPopulate(unit.TestCase):
 
     def setUp(self):
         sqldb = self.useFixture(database.Database())
