@@ -1,0 +1,5 @@
+---
+features:
+  - Default cache_on_issue to True. If caching globally,
+    and within the token section are enabled, then
+    cache_on_issue will be on by default.
