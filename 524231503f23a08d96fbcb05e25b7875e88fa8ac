@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_5906de1d",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:30:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_321a286f",
+      "revId": "524231503f23a08d96fbcb05e25b7875e88fa8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_529c14c0",
         "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-06T14:49:12Z",
       "side": 1,
       "message": "Should we provide the *new* path for each API?",
+      "revId": "524231503f23a08d96fbcb05e25b7875e88fa8ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_79071a18",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:30:54Z",
+      "side": 1,
+      "message": "eh -- i feel like that\u0027ll clutter things, and they are part of the core now, so the end user doesn\u0027t need to know where they live",
+      "parentUuid": "1a95cdbc_529c14c0",
       "revId": "524231503f23a08d96fbcb05e25b7875e88fa8ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
