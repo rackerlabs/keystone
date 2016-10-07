@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_a00a4677",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-07T03:41:09Z",
+      "side": 1,
+      "message": "nit: Might want to wrap the line at 80 chars",
+      "range": {
+        "startLine": 3,
+        "startChar": 76,
+        "endLine": 3,
+        "endChar": 89
+      },
+      "revId": "be05453ed4269ac55eae5fb89f36236909bdd545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c00f5286",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-07T03:41:09Z",
+      "side": 1,
+      "message": "nit: Might want to wrap the line at 80 chars",
+      "range": {
+        "startLine": 5,
+        "startChar": 79,
+        "endLine": 5,
+        "endChar": 87
+      },
+      "revId": "be05453ed4269ac55eae5fb89f36236909bdd545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_602d9efd",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-07T03:41:09Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 67,
+        "startChar": 63,
+        "endLine": 67,
+        "endChar": 65
+      },
+      "revId": "be05453ed4269ac55eae5fb89f36236909bdd545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_8032aa5d",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-07T03:41:09Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 73,
+        "startChar": 63,
+        "endLine": 73,
+        "endChar": 65
+      },
+      "revId": "be05453ed4269ac55eae5fb89f36236909bdd545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
