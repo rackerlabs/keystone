@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_44db364f",
+        "filename": "releasenotes/notes/revokelist-8319859b77ba2e65.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-07T17:49:28Z",
+      "side": 1,
+      "message": "You haven\u0027t added a new method, only an additional parameter. So you just need to say something like: \"Token validation has changed to only validate events relevant to the token. Therefore, the method signature for the ``list_events`` method in the revoke backend has changed to...",
+      "range": {
+        "startLine": 3,
+        "startChar": 46,
+        "endLine": 3,
+        "endChar": 69
+      },
+      "revId": "cc95d910399629adf16b6fb285db4ed689fc1676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_4456d6ce",
+        "filename": "releasenotes/notes/revokelist-8319859b77ba2e65.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-07T17:49:28Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 7,
+        "startChar": 77,
+        "endLine": 7,
+        "endChar": 78
+      },
+      "revId": "cc95d910399629adf16b6fb285db4ed689fc1676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
