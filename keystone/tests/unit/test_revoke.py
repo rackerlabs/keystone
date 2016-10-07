@@ -143,23 +143,60 @@ class RevokeTests(object):
     def test_list_revoked_user(self):
         revocation_backend = sql.Revoke()
         events = []
-        token = _sample_blank_token()
 
-        token['user_id'] = uuid.uuid4().hex
-        add_event(events, revoke_model.RevokeEvent(user_id=token['user_id']))
-        self.revoke_api.revoke_by_user(user_id=token['user_id'])
-        self._assertTokenRevoked(events, token)
-        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        # This simulates creating a token for a specific user. When we revoke
+        # the token we should have a single revocation event in the list. We
+        # are going to assert that the token values match the only revocation
+        # event in the backend.
+        first_token = _sample_blank_token()
+        first_token['user_id'] = uuid.uuid4().hex
+        add_event(
+            events, revoke_model.RevokeEvent(user_id=first_token['user_id'])
+        )
+        self.revoke_api.revoke_by_user(user_id=first_token['user_id'])
+        self._assertTokenRevoked(events, first_token)
+        self.assertEqual(
+            1, len(revocation_backend.list_events(token=first_token))
+        )
 
-        token['user_id'] = uuid.uuid4().hex
-        add_event(events, revoke_model.RevokeEvent(user_id=token['user_id']))
-        self.revoke_api.revoke_by_user(user_id=token['user_id'])
-        self._assertTokenRevoked(events, token)
-        self.assertEqual(1, len(revocation_backend.list_events(token=token)))
+        # This simulates creating a separate token for a separate user. We are
+        # going to revoke the token just like we did for the previous token.
+        # We should have two revocation events stored in the backend but only
+        # one should match the values of the second token.
+        second_token = _sample_blank_token()
+        second_token['user_id'] = uuid.uuid4().hex
+        add_event(
+            events, revoke_model.RevokeEvent(user_id=second_token['user_id'])
+        )
+        self.revoke_api.revoke_by_user(user_id=second_token['user_id'])
+        self._assertTokenRevoked(events, second_token)
+        self.assertEqual(
+            1, len(revocation_backend.list_events(token=second_token))
+        )
 
-        token['user_id'] = None
-        self._assertTokenNotRevoked(events, token)
-        self.assertEqual(0, len(revocation_backend.list_events(token=token)))
+        # This simulates creating another separate token for a separate user,
+        # but we're not going to issue a revocation event. Even though we have
+        # two revocation events persisted in the backend, neither of them
+        # should match the values of the third token. If they did - our
+        # revocation event matching would be too heavy handed, which would
+        # result in over-generalized revocation patterns.
+        third_token = _sample_blank_token()
+        third_token['user_id'] = uuid.uuid4().hex
+        self._assertTokenNotRevoked(events, third_token)
+        self.assertEqual(
+            0, len(revocation_backend.list_events(token=third_token))
+        )
+
+        # This gets a token but overrides the user_id of the token to be None.
+        # Technically this should never happen because tokens must belong to
+        # a user. What we're testing here is that the two revocation events
+        # we've created won't match None values for the user_id.
+        fourth_token = _sample_blank_token()
+        fourth_token['user_id'] = None
+        self._assertTokenNotRevoked(events, fourth_token)
+        self.assertEqual(
+            0, len(revocation_backend.list_events(token=fourth_token))
+        )
 
     def test_list_revoked_project(self):
         revocation_backend = sql.Revoke()
