@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_469b5a72",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T05:20:01Z",
+      "side": 1,
+      "message": "call it grace_window?",
+      "range": {
+        "startLine": 551,
+        "startChar": 8,
+        "endLine": 551,
+        "endChar": 22
+      },
+      "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_86a8028f",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T05:20:01Z",
+      "side": 1,
+      "message": "\"when expired.\"",
+      "range": {
+        "startLine": 174,
+        "startChar": 66,
+        "endLine": 175,
+        "endChar": 13
+      },
+      "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_a6a97e92",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T05:20:01Z",
+      "side": 1,
+      "message": "\"Defaults to two days.\" \u003c\u003c not sure if we want to add that",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 176,
+        "endChar": 3
+      },
+      "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
