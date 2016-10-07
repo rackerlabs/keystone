@@ -46,6 +46,30 @@
       "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_b1319f5c",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-10-07T15:40:05Z",
+      "side": 1,
+      "message": "can we just drop the option? the fernet provider can check length as can the uuid provider if we need faster lookups.",
+      "parentUuid": "3a98d1f4_98832604",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
