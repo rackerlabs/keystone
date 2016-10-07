@@ -16,6 +16,24 @@
       "revId": "9117e45d6e7c65f6623c02fd13a599c1b01ed09f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_db32ca5d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T15:03:30Z",
+      "side": 1,
+      "message": "I\u0027m working on a patch locally to do this since I don\u0027t think it\u0027s worth holding this up. I\u0027ll base it on this patch, steal it if you want!",
+      "parentUuid": "1a95cdbc_a9f77d57",
+      "revId": "9117e45d6e7c65f6623c02fd13a599c1b01ed09f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
