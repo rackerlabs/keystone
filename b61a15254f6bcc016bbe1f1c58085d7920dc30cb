@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_63bcc8dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T04:25:26Z",
+      "side": 1,
+      "message": "the commit message in patch set 2 was much more detailed, can we get it back? and a bug :)",
+      "revId": "b61a15254f6bcc016bbe1f1c58085d7920dc30cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_0395c43d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T04:25:26Z",
+      "side": 1,
+      "message": "add a comment before this for the rest of us who aren\u0027t cache experts (myself included)",
+      "range": {
+        "startLine": 166,
+        "startChar": 4,
+        "endLine": 166,
+        "endChar": 70
+      },
+      "revId": "b61a15254f6bcc016bbe1f1c58085d7920dc30cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
