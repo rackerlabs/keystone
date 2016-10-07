@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_0326a414",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T04:56:12Z",
+      "side": 0,
+      "message": "does it make sense to move this option to [catalog] and deprecate it in [endpoint_filter]? in terms of the code, i think oslo.config is smart enough for you to just reference the new one.\n\nalso, we should probably deprecate the `enabled` option in [endpoint_filter] for sure, it\u0027s not longer needed, right?",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 70
+      },
+      "revId": "be78383b807da1705fb9966abb8d6d34f32317a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
