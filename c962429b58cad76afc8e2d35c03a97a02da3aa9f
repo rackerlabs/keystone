@@ -94,6 +94,30 @@
       "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_82fe13ac",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-10-07T16:36:17Z",
+      "side": 1,
+      "message": "Mark it as deprecated for removal (totally unused) and just set the validator to be 64 or less directly at the line you highlighted.\n\nEasiest change and eliminates a weird option (and note) that was highly pki specific.",
+      "parentUuid": "1a95cdbc_877c65b6",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
