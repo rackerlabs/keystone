@@ -43,6 +43,48 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_21f0dcfd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_87e0e597",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_01ebe013",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_9ea20c4a",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 67
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_3ebe5865",
         "filename": "keystone/revoke/backends/base.py",
         "patchSetId": 16
@@ -54,6 +96,30 @@
       "writtenOn": "2016-10-07T00:28:31Z",
       "side": 1,
       "message": "this needs a rebase, we removed the stable interfaces",
+      "range": {
+        "startLine": 36,
+        "startChar": 6,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_41f16800",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_3ebe5865",
       "range": {
         "startLine": 36,
         "startChar": 6,
@@ -113,6 +179,54 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_81dff067",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_1919b679",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_61f664fa",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_3e65781d",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c2057b11",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 16
@@ -124,6 +238,24 @@
       "writtenOn": "2016-10-07T16:35:08Z",
       "side": 1,
       "message": "nit: what if we named this according to existing convention? \n\n  revocation_backend \u003d sql.Revoke()",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_41c888a8",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c2057b11",
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -147,6 +279,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_61cd84b6",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_0223e3a7",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c2a1fbf9",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 16
@@ -158,6 +308,24 @@
       "writtenOn": "2016-10-07T16:35:08Z",
       "side": 1,
       "message": "Why not ask for a random_urlsafe_str() from the token provider - since that\u0027s pretty much an audit_id (and we already have the token provider available to us)\n\n  token[\u0027audit_id\u0027] \u003d provider.random_urlsafe_str()",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_81c61098",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c2a1fbf9",
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -181,6 +349,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_a1c30c88",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_62b7473a",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_e2f0b7ff",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 16
@@ -192,6 +378,24 @@
       "writtenOn": "2016-10-07T16:35:08Z",
       "side": 1,
       "message": "shouldn\u0027t*",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_228b7fc4",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "punctuation nazi ;)",
+      "parentUuid": "1a95cdbc_e2f0b7ff",
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -226,6 +430,24 @@
       "writtenOn": "2016-10-07T16:35:08Z",
       "side": 1,
       "message": "What about people who have custom implementations that use the revoke_api? Is there a recommended method they should use? What are the benefits or drawbacks of each?",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_013920a4",
+        "filename": "releasenotes/notes/revokelist-8319859b77ba2e65.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_8250d3d5",
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
