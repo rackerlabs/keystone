@@ -68,6 +68,30 @@
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_1919b679",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-07T00:36:17Z",
+      "side": 1,
+      "message": "++ or list_token_events",
+      "parentUuid": "1a95cdbc_3e65781d",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
