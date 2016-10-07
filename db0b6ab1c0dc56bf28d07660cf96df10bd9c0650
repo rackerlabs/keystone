@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_87e0e597",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a95cdbc_9ea20c4a",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_3ebe5865",
         "filename": "keystone/revoke/backends/base.py",
         "patchSetId": 16
@@ -89,6 +107,125 @@
         "endLine": 41,
         "endChar": 62
       },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c2057b11",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "nit: what if we named this according to existing convention? \n\n  revocation_backend \u003d sql.Revoke()",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_0223e3a7",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "Any reason to use number instead of random uuids? \n\n  token[\u0027project_id\u0027] \u003d uuid.uuid4().hex",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_c2a1fbf9",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "Why not ask for a random_urlsafe_str() from the token provider - since that\u0027s pretty much an audit_id (and we already have the token provider available to us)\n\n  token[\u0027audit_id\u0027] \u003d provider.random_urlsafe_str()",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_62b7473a",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_e2f0b7ff",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "shouldn\u0027t*",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_82b9b317",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "nit: s/non None/populated/ ?",
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_8250d3d5",
+        "filename": "releasenotes/notes/revokelist-8319859b77ba2e65.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T16:35:08Z",
+      "side": 1,
+      "message": "What about people who have custom implementations that use the revoke_api? Is there a recommended method they should use? What are the benefits or drawbacks of each?",
       "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
