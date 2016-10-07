@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_6144a41a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:16:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c83419fd",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c8f1796c",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 13
