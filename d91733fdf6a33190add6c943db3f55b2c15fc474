@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_a14a2c24",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:16:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c8f1796c",
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_4869e924",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 13
@@ -77,6 +95,30 @@
       "writtenOn": "2016-10-05T22:19:24Z",
       "side": 1,
       "message": "asserting the size is not enough, you need to check if the listed revoke events are from the token. This comment also applies for the other asserts in this file.",
+      "range": {
+        "startLine": 136,
+        "startChar": 13,
+        "endLine": 136,
+        "endChar": 24
+      },
+      "revId": "d91733fdf6a33190add6c943db3f55b2c15fc474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_e150b4d6",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-07T17:16:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_4869e924",
       "range": {
         "startLine": 136,
         "startChar": 13,
