@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_7e39c0f1",
+        "filename": "keystone/revoke/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:28:31Z",
+      "side": 0,
+      "message": "is list_events ever used now? why keep it around? if you\u0027re worried about breaking people with a custom driver then issue a deprecation warning in the method itself, it can be removed in 1 cycle",
+      "range": {
+        "startLine": 206,
+        "startChar": 40,
+        "endLine": 206,
+        "endChar": 51
+      },
+      "revId": "de81ad5b055b3e2bfe4a821e9aa940180ff4a7aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

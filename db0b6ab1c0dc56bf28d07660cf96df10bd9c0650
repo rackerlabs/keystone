@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_9ea20c4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:28:31Z",
+      "side": 1,
+      "message": "keep the link, but post the old results in the commit message too ;)\n\n10 Revokes: 7.908 ms\n\n100 Revokes: 18.224 ms\n\n1,000 Revokes: 110.155 ms\n\n10,000 Revokes: 1998.220 ms",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 67
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_3ebe5865",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:28:31Z",
+      "side": 1,
+      "message": "this needs a rebase, we removed the stable interfaces",
+      "range": {
+        "startLine": 36,
+        "startChar": 6,
+        "endLine": 36,
+        "endChar": 20
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_3e65781d",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T00:28:31Z",
+      "side": 1,
+      "message": "this is exactly what \"list_events\" does according to line 55.\n\nwhy don\u0027t we just pass in \"token\" into list_events instead? and default token to None.\n\nalternatively, rename this method to something like... list_events_by_token_issue instead, to make things a bit more clear",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 62
+      },
+      "revId": "db0b6ab1c0dc56bf28d07660cf96df10bd9c0650",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
