@@ -70,6 +70,30 @@
       "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_877c65b6",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T16:25:45Z",
+      "side": 1,
+      "message": "this is the only spot it\u0027s used in: https://github.com/openstack/keystone/blob/106bc4559b4ab9351b8a9c8caaf26527d1a337cc/keystone/token/controllers.py#L173-L175\n\nWould need a release note saying we removed it, it was never deprecated. Could also deprecate and just not use it.",
+      "parentUuid": "1a95cdbc_b1319f5c",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "c962429b58cad76afc8e2d35c03a97a02da3aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
