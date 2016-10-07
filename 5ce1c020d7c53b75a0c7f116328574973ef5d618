@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_c7566829",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T18:45:00Z",
+      "side": 1,
+      "message": "nit: Dictionary",
+      "revId": "5ce1c020d7c53b75a0c7f116328574973ef5d618",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_6acd59b6",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T18:45:00Z",
+      "side": 1,
+      "message": "Curious what the benefit of overriding the user_id is here. Would it make sense to just get a new blank token? This is pretty much the same test illustrated in lines 148 - 152 (I could totally be missing something though!).",
+      "revId": "5ce1c020d7c53b75a0c7f116328574973ef5d618",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_ea67a9b4",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T18:45:00Z",
+      "side": 1,
+      "message": "This is the same pattern noted in the comment above.",
+      "revId": "5ce1c020d7c53b75a0c7f116328574973ef5d618",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
