@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_a9f77d57",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-07T15:02:38Z",
+      "side": 1,
+      "message": "One minor suggestion that we could probably do in a separate patch would be to pass request.audit_initiator as a kwarg since initiator is defined as a kwarg in the manager method signatures.",
+      "revId": "9117e45d6e7c65f6623c02fd13a599c1b01ed09f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
