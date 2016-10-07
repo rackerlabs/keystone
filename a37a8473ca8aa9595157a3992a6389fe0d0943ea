@@ -203,6 +203,29 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_5ba86ddb",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-07T19:58:30Z",
+      "side": 1,
+      "message": "also, i\u0027m OK with a 1 cycle deprecation for this, since contrib it basically removed",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 56
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_06415238",
         "filename": "keystone/tests/unit/catalog/test_backends.py",
         "patchSetId": 6
