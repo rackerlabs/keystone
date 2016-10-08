@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_94f0ff92",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "Here you have \"True\", but above you have \"true\". Inconsistent at least, but when referring to conf files, I would expect \"true\" not \"True\" (which is for Python).",
+      "range": {
+        "startLine": 66,
+        "startChar": 64,
+        "endLine": 66,
+        "endChar": 68
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_544117a8",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "rather say, \"keystone expects...\" and not use \"we\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_743e1329",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 9
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_f41863d5",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "I think you need to state something like, this leads to an error.",
+      "range": {
+        "startLine": 72,
+        "startChar": 33,
+        "endLine": 73,
+        "endChar": 55
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_d4de0710",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "formatted",
+      "range": {
+        "startLine": 90,
+        "startChar": 56,
+        "endLine": 90,
+        "endChar": 64
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_340f2b89",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 93,
+        "startChar": 64,
+        "endLine": 93,
+        "endChar": 68
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_140a2f79",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 24
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_f47f83dd",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "`keystone.conf [identity] domain_specific_drivers_enabled \u003d false`",
+      "range": {
+        "startLine": 111,
+        "startChar": 25,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_74253307",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "check",
+      "range": {
+        "startLine": 113,
+        "startChar": 48,
+        "endLine": 113,
+        "endChar": 52
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_f4e303d7",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-08T03:41:57Z",
+      "side": 1,
+      "message": "Avoid using \\. Simply use ( ) in this case.",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 116,
+        "endChar": 34
+      },
+      "revId": "400394611f30894178d28851f33e5d279dd61af7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
