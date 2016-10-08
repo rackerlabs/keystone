@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_03f2f699",
+        "filename": "keystone/tests/unit/catalog/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T07:02:24Z",
+      "side": 1,
+      "message": "should reword this, will update this in the next push.",
+      "range": {
+        "startLine": 563,
+        "startChar": 58,
+        "endLine": 564,
+        "endChar": 16
+      },
+      "revId": "15d5ee3e78aebfae51096aa5dc3c3c5dda4ea1b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
