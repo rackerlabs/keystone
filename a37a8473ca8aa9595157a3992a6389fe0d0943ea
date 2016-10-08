@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_83560604",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "will follow up!",
+      "parentUuid": "1a95cdbc_03db04ed",
+      "range": {
+        "startLine": 318,
+        "startChar": 38,
+        "endLine": 318,
+        "endChar": 47
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_839c7410",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2016-10-07T04:56:12Z",
       "side": 1,
       "message": "add a comment above here saying that this is the catalog returned if no endpoint filtering is performed",
+      "range": {
+        "startLine": 378,
+        "startChar": 12,
+        "endLine": 378,
+        "endChar": 68
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_99a83822",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_839c7410",
       "range": {
         "startLine": 378,
         "startChar": 12,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_340c8b3a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_a39df00b",
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c3475c75",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2016-10-07T04:56:12Z",
       "side": 1,
       "message": "why not do a quick:\n\n  if not tenant_id:\n    return catalog_ref\n\nit\u0027ll shortcut the usual case and you can remove the empty endpoint_ref variable",
+      "range": {
+        "startLine": 380,
+        "startChar": 12,
+        "endLine": 380,
+        "endChar": 25
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_9432bff0",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "if not tenant_id, this should be a domain scoped token, we cannot return the full unfiltered catalog since  CONF.endpoint_filter.return_all_endpoints_if_no_filter maybe set to false.\n\n\nI think the logic here is, tenant id is None so that endpoint filter is not enabled, then let\u0027s see what option of return_all_endpoints_if_no_filter tell us to do.",
+      "parentUuid": "1a95cdbc_c3475c75",
       "range": {
         "startLine": 380,
         "startChar": 12,
@@ -134,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_b415fbe5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_4630bae8",
+      "range": {
+        "startLine": 385,
+        "startChar": 16,
+        "endLine": 385,
+        "endChar": 28
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_865482ff",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -145,6 +259,30 @@
       "writtenOn": "2016-10-07T04:56:12Z",
       "side": 1,
       "message": "same comment as below",
+      "range": {
+        "startLine": 386,
+        "startChar": 42,
+        "endLine": 386,
+        "endChar": 45
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_d4d44721",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "will add a comment to explain why do it like this.",
+      "parentUuid": "1a95cdbc_865482ff",
       "range": {
         "startLine": 386,
         "startChar": 42,
@@ -180,6 +318,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_54e917e5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "1a95cdbc_c623eaa5",
+      "range": {
+        "startLine": 388,
+        "startChar": 45,
+        "endLine": 388,
+        "endChar": 48
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_43a6ec53",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 6
@@ -191,6 +353,30 @@
       "writtenOn": "2016-10-07T04:56:12Z",
       "side": 1,
       "message": "we return [] here? add a comment",
+      "range": {
+        "startLine": 406,
+        "startChar": 16,
+        "endLine": 406,
+        "endChar": 25
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_a30b0223",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "so, this is what will be return if the endpoint filter is not enabled (tenant id is not set or endpoint-project association is defined). Return an empty list just because the original logic from endpoint filter backend return empty list in this case. I\u0027d like not to change the existing behavior. \n\n\nBut this impacts the behavior of SQL backend somehow,\nw/o the change, for example, it won\u0027t return empty list if it\u0027s a domain scoped token regardless what\u0027s `return_all_endpoints_if_no_filter` hold but now it\u0027s the option for SQL backend as well.\n\n\nWhat do you think?",
+      "parentUuid": "1a95cdbc_43a6ec53",
       "range": {
         "startLine": 406,
         "startChar": 16,
@@ -226,6 +412,30 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_b48edbcd",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_5ba86ddb",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 56
+      },
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_06415238",
         "filename": "keystone/tests/unit/catalog/test_backends.py",
         "patchSetId": 6
@@ -243,6 +453,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_745d3346",
+        "filename": "keystone/tests/unit/catalog/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Because regardless of the substitution of the endpoint template with project id or the filtering by the project id requires the project exists.",
+      "parentUuid": "1a95cdbc_06415238",
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_669db6bb",
         "filename": "releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
         "patchSetId": 6
@@ -254,6 +482,24 @@
       "writtenOn": "2016-10-07T04:56:12Z",
       "side": 1,
       "message": "wrap the lines where possible to 80 characters",
+      "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_43507e0b",
+        "filename": "releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-08T06:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_669db6bb",
       "revId": "a37a8473ca8aa9595157a3992a6389fe0d0943ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
