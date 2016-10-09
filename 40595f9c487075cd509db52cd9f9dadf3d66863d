@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_c2439f11",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-09T02:57:30Z",
+      "side": 1,
+      "message": "pls note the comment here, I think you have two choices here.\n\n- ping henry-nash to make sure this is no longer a plan in the pipline and remove the comment here as well, or:\n- implment the filtering here by yourself and remove the TODO comment too.",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 240,
+        "endChar": 26
+      },
+      "revId": "40595f9c487075cd509db52cd9f9dadf3d66863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
