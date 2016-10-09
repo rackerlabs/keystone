@@ -63,27 +63,27 @@ class FormatUrlTests(unit.BaseTestCase):
         # list then MalformedEndpoint is raised.
         # For example, admin_token isn't allowed.
         url_template = ('http://$(public_bind_host)s:$(public_port)d/'
-                        '$(tenant_id)s/$(user_id)s/$(admin_token)s')
+                        '$(project_id)s/$(user_id)s/$(admin_token)s')
         values = {'public_bind_host': 'server', 'public_port': 9090,
-                  'tenant_id': 'A', 'user_id': 'B', 'admin_token': 'C'}
+                  'project_id': 'A', 'user_id': 'B', 'admin_token': 'C'}
         self.assertRaises(exception.MalformedEndpoint,
                           utils.format_url,
                           url_template,
                           values)
 
     def test_substitution_with_allowed_tenant_keyerror(self):
-        # No value of 'tenant_id' is passed into url_template.
+        # No value of 'project_id' is passed into url_template.
         # mod: format_url will return None instead of raising
         # "MalformedEndpoint" exception.
         # This is intentional behavior since we don't want to skip
         # all the later endpoints once there is an URL of endpoint
-        # trying to replace 'tenant_id' with None.
+        # trying to replace 'project_id' with None.
         url_template = ('http://$(public_bind_host)s:$(admin_port)d/'
-                        '$(tenant_id)s/$(user_id)s')
+                        '$(project_id)s/$(user_id)s')
         values = {'public_bind_host': 'server', 'admin_port': 9090,
                   'user_id': 'B'}
         self.assertIsNone(utils.format_url(url_template, values,
-                          silent_keyerror_failures=['tenant_id']))
+                          silent_keyerror_failures=['project_id']))
 
     def test_substitution_with_allowed_project_keyerror(self):
         # No value of 'project_id' is passed into url_template.
