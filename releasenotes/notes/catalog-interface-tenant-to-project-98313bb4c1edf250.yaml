@@ -1,0 +1,4 @@
+---
+other:
+  - Keystone catalog driver interfaces``get_catalog`` and ``get_v3_catalog``
+    have been changed in favour of using `project` intsead of `tenant`.
