@@ -13,6 +13,7 @@
 #  under the License.
 
 from migrate.versioning.shell import main
+import sys
 
 if __name__ == '__main__':
-    main(debug='False')
+    sys.exit(main(debug='False'))
