@@ -16,6 +16,24 @@
       "revId": "bcfac0110c0c7de8843ed22081a3d1f78c1a88c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_2f06ec1f",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-09T02:40:36Z",
+      "side": 1,
+      "message": "@lance, Good call! I think you show us another inconsistencies keystone has. `endpoint_policy` and `catalog` register the call back in the controller layer while others in manager layer.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L400-L405\n\nI agree with your point, will update soon!",
+      "parentUuid": "3a98d1f4_673ac7e8",
+      "revId": "bcfac0110c0c7de8843ed22081a3d1f78c1a88c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
