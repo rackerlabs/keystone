@@ -52,6 +52,24 @@
       "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_a6ecc7bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-10-10T14:01:55Z",
+      "side": 1,
+      "message": "then the reason for the change is different than what\u0027s in the commit message and the commit message should be fixed.",
+      "parentUuid": "1a95cdbc_f3d84f55",
+      "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
