@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1622310 <https://bugs.launchpad.net/keystone/+bug/1622310>`_]
+    Keystone trust will be invalidated if the project that trust scoped to
+    or the user (trustor or trustee) the delegation is assigned for as long
+    as the user is maintained by keystone server have been deleted.
