@@ -190,3 +190,10 @@ class Trust(base.TrustDriverV8):
                                       TrustModel.trustee_user_id == user_id))
             for trust_ref in trusts:
                 trust_ref.deleted_at = timeutils.utcnow()
+
+    def delete_trust_for_project(self, project_id):
+        with sql.session_for_write() as session:
+            query = session.query(TrustModel)
+            trusts = query.filter_by(project_id=project_id)
+            for trust_ref in trusts:
+                trust_ref.deleted_at = timeutils.utcnow()

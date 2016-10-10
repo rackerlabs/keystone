@@ -70,3 +70,7 @@ class TrustDriverV8(object):
         :raises keystone.exception.TrustNotFound: If the trust doesn't exist.
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_trust_for_project(self, project_id):
+        raise exception.NotImplemented()  # pragma: no cover
