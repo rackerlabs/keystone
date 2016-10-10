@@ -16,6 +16,24 @@
       "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_90e461ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-10T13:28:56Z",
+      "side": 1,
+      "message": "then the custom backend should implement \"delete_credentials_for_project\" and \"delete_credentials_for_user\".\n\ndeleting these functions would mean fewer functions to implement",
+      "parentUuid": "1a95cdbc_fc3901a5",
+      "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
