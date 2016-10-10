@@ -16,6 +16,24 @@
       "revId": "9791025d46a9e84c86a4e3a066651016ca70c817",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_5e7afa88",
+        "filename": "keystone/middleware/auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-10-10T07:48:50Z",
+      "side": 1,
+      "message": "required for https://review.openstack.org/#/c/379034/ which we need for the expired token fetching.",
+      "parentUuid": "1a95cdbc_f1116705",
+      "revId": "9791025d46a9e84c86a4e3a066651016ca70c817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
