@@ -34,6 +34,24 @@
       "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_f3d84f55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-10T13:41:02Z",
+      "side": 1,
+      "message": "okay, as long as we agree these functions are special ones, and we need the default implementation for them while all others needn\u0027t.",
+      "parentUuid": "1a95cdbc_90e461ac",
+      "revId": "15b5db643296ec92114f261b51ac31abb3f200f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
