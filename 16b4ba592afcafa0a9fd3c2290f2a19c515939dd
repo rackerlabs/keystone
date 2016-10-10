@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "3a98d1f4_299566dd",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-10T11:48:01Z",
+      "side": 1,
+      "message": "maybe read them, but not really consume the trust IMO.",
+      "range": {
+        "startLine": 250,
+        "startChar": 10,
+        "endLine": 250,
+        "endChar": 30
+      },
+      "revId": "16b4ba592afcafa0a9fd3c2290f2a19c515939dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_87b273e3",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 8
