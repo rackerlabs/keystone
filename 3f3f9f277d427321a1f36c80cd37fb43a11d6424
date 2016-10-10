@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a95cdbc_fff1e901",
+        "filename": "keystone/trust/backends/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-10T16:22:06Z",
+      "side": 1,
+      "message": "add a docstring, or perhaps add one for all the functions in a separate patch :)",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 75,
+        "endChar": 32
+      },
+      "revId": "3f3f9f277d427321a1f36c80cd37fb43a11d6424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
