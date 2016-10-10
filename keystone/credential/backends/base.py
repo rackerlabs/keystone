@@ -96,24 +96,9 @@ class CredentialDriverBase(object):
     @abc.abstractmethod
     def delete_credentials_for_project(self, project_id):
         """Delete all credentials for a project."""
-        self._delete_credentials(lambda cr: cr['project_id'] == project_id)
+        raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
     def delete_credentials_for_user(self, user_id):
         """Delete all credentials for a user."""
-        self._delete_credentials(lambda cr: cr['user_id'] == user_id)
-
-    def _delete_credentials(self, match_fn):
-        """Do the actual credential deletion work (default implementation).
-
-        :param match_fn: function that takes a credential dict as the
-                         parameter and returns true or false if the
-                         identifier matches the credential dict.
-        """
-        for cr in self.list_credentials():
-            if match_fn(cr):
-                try:
-                    self.credential_api.delete_credential(cr['id'])
-                except exception.CredentialNotFound:
-                    LOG.debug('Deletion of credential is not required: %s',
-                              cr['id'])
+        raise exception.NotImplemented()  # pragma: no cover
