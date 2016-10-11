@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_e4883cea",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T17:53:34Z",
+      "side": 1,
+      "message": "I suppose the policy for re-enabling a user can change per deployment. Is that why we don\u0027t explicitly say this can be done by an administrator?",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_84c78011",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T17:53:34Z",
+      "side": 1,
+      "message": "We don\u0027t provide this script do we? I feel like there is a check here we can build into `keystone-manage doctor`.",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_04037043",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T17:53:34Z",
+      "side": 1,
+      "message": "nit: use lowercase on configuration variables. \n\n  password_expires_ignore_user_ids \u003d ...",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_e4175c4f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T17:53:34Z",
+      "side": 1,
+      "message": "We could add a NOTE or WARNING here to double check that the help text  completely describes the regular expression for the sake of user-experience.\n\n  .. NOTE::\n\n    It is imperative to ensure the ``password_regex_description`` fully and \n    completely describes the ``password_regex``. If the two options are out\n    of sync, the help text may inaccurately describe the password \n    requirements being applied to the password. This leads to very poor\n    user experience.",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_471e4a64",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T17:53:34Z",
+      "side": 1,
+      "message": "nit: won\u0027t or will not",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
