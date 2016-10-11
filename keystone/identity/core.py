@@ -1255,7 +1255,6 @@ class Manager(manager.Manager):
 
         :returns: dictionary of the mapped User entity
         """
-        user_dict = {}
         try:
             self.shadow_users_api.update_federated_user_display_name(
                 idp_id, protocol_id, unique_id, display_name)
