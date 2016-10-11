@@ -16,6 +16,24 @@
       "revId": "efbd134945cc675a7a8b2776f08f8b8cf9357974",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_62ab3f8a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 1787,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-11T17:08:56Z",
+      "side": 1,
+      "message": "Yes, SQLite does support indexes.",
+      "parentUuid": "fa6399be_22e9471b",
+      "revId": "efbd134945cc675a7a8b2776f08f8b8cf9357974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
