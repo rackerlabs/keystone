@@ -109,6 +109,24 @@
       "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_19f755d4",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T20:38:30Z",
+      "side": 1,
+      "message": "Ah ha - makes sense. Thanks for digging into this Richard.",
+      "parentUuid": "fa6399be_47ae4a86",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
