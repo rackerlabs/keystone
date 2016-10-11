@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa6399be_a16e2bc7",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "Being nothing but keystone.conf configuration stuff, this could also slot into configuration.rst",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_2135bbd9",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "nit: ``keystone.conf``",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c125dfab",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "I\u0027d suggest adding something along the lines of \"Other identity backends, such as LDAP servers, should implement their own security controls.\" I also think this note could be a paragraph on it\u0027s own, prior to the note about configuration.",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_e4883cea",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -13,6 +64,41 @@
       "writtenOn": "2016-10-11T17:53:34Z",
       "side": 1,
       "message": "I suppose the policy for re-enabling a user can change per deployment. Is that why we don\u0027t explicitly say this can be done by an administrator?",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_619b33ca",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa6399be_e4883cea",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_a1a54b05",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "\"an expiration date based on the number of days\" feels like an incomplete thought.",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +122,23 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_61825354",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "``expires_at``\n\n++ That\u0027s be a good doctor check -- \"you have this config option set, but there are X users in the database that don\u0027t have a password expiration set. This implies Y. Run sql command Z directly to resolve.\"",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_04037043",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -47,6 +150,41 @@
       "writtenOn": "2016-10-11T17:53:34Z",
       "side": 1,
       "message": "nit: use lowercase on configuration variables. \n\n  password_expires_ignore_user_ids \u003d ...",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_21e85b10",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa6399be_04037043",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_6137b3b0",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:07:38Z",
+      "side": 1,
+      "message": "nit: ``password_regex``",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
