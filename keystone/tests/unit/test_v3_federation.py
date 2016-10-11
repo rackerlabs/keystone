@@ -727,6 +727,12 @@ class FederatedSetupMixin(object):
         self.federation_api.create_protocol(self.idp['id'],
                                             self.proto_saml['id'],
                                             self.proto_saml)
+        # Update protocols
+        self.proto_saml = self.proto_ref(mapping_id=self.mapping['id'])
+        self.proto_saml['id'] = self.PROTOCOL
+        self.federation_api.update_protocol(self.idp['id'],
+                                            self.proto_saml['id'],
+                                            self.proto_saml)
         # Add protocols IDP with remote
         self.federation_api.create_protocol(self.idp_with_remote['id'],
                                             self.proto_saml['id'],
