@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_04f7e5d3",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:52:24Z",
+      "side": 1,
+      "message": "I\u0027d suggest putting the \"if you do not wish...\" to the very end, so that the \"Fernet requires you to have a key repository...\" sentences appears right after the notice about the switch over.",
+      "revId": "1cdd7e0e002db8dd364df13a6ce383956c277604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_840a15d1",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:52:24Z",
+      "side": 1,
+      "message": "This syntax isn\u0027t going to make sense to deployers. Instead, use \"keystone.conf [token] provider \u003d uuid\".",
+      "revId": "1cdd7e0e002db8dd364df13a6ce383956c277604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_2404e9be",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:52:24Z",
+      "side": 1,
+      "message": "policy or process?",
+      "revId": "1cdd7e0e002db8dd364df13a6ce383956c277604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_241b091d",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T22:52:24Z",
+      "side": 1,
+      "message": "I\u0027d cut \"it should be archived in a secure backup location\" because that\u0027s only an implementation detail of one approach.\n\nSimilarly, instead of \"copied,\" I\u0027d just say \"distributed\".",
+      "revId": "1cdd7e0e002db8dd364df13a6ce383956c277604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
