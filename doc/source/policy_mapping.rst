@@ -202,6 +202,8 @@ identity:delete_domain_config                              - DELETE /v3/domains/
 identity:get_domain_config_default                         - GET /v3/domains/config/default
                                                            - GET /v3/domains/config/{group}/default
                                                            - GET /v3/domains/config/{group}/{option}/default
+identity:get_ca_certificate                                GET /v3/OS-SIMPLE-CERT/ca
+identity:list_certificates                                 GET /v3/OS-SIMPLE-CERT/certificates
 =========================================================  ===
 
 .. _grant_resources:

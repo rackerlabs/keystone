@@ -194,5 +194,8 @@
     "identity:get_domain_config": "rule:admin_required",
     "identity:update_domain_config": "rule:admin_required",
     "identity:delete_domain_config": "rule:admin_required",
-    "identity:get_domain_config_default": "rule:admin_required"
+    "identity:get_domain_config_default": "rule:admin_required",
+
+    "identity:get_ca_certificate": "rule:admin_required",
+    "identity:list_certificates": "rule:admin_required"
 }
