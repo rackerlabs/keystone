@@ -22,6 +22,30 @@
       "revId": "3079ce0b189a9426a4d81ae8ea361fc925de62ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_90e521aa",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 23681
+      },
+      "writtenOn": "2016-10-11T04:02:15Z",
+      "side": 0,
+      "message": "Does not have any effect，just everyone habit in the first line",
+      "parentUuid": "fa6399be_703ecdb9",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 28
+      },
+      "revId": "3079ce0b189a9426a4d81ae8ea361fc925de62ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
