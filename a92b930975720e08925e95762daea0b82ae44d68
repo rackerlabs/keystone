@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_32f9484e",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_65d4f11f",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_6505d178",
         "filename": "keystone/common/controller.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-06T14:12:43Z",
       "side": 1,
       "message": "This should be: \n\n  LOG.warning(_LW(msg))\n\nto be consistent with how it was logged in the past.",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_12ac4c33",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_6505d178",
       "revId": "a92b930975720e08925e95762daea0b82ae44d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_dd3675e6",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c58785d5",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_45e295a0",
         "filename": "keystone/common/request.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_bd42893c",
+        "filename": "keystone/common/request.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_45e295a0",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_4590d5ec",
         "filename": "keystone/common/utils.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2016-10-06T14:12:43Z",
       "side": 1,
       "message": "This message string could be shared:\n\n  msg \u003d \u0027Could not find the auth context.\u0027\n  LOG.warning(_LW(msg))\n  raise exception.Unauthorized(msg)",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_dd92f59e",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_4590d5ec",
       "revId": "a92b930975720e08925e95762daea0b82ae44d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +296,24 @@
     },
     {
       "key": {
+        "uuid": "1a95cdbc_dd691527",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_49de2f12",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_c9d23f00",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 9
@@ -217,6 +325,24 @@
       "writtenOn": "2016-10-06T14:12:43Z",
       "side": 1,
       "message": "This message could be shared with the one on line 201",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_fd7891f4",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a95cdbc_c9d23f00",
       "revId": "a92b930975720e08925e95762daea0b82ae44d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -268,6 +394,24 @@
       "writtenOn": "2016-10-06T15:30:38Z",
       "side": 1,
       "message": "(nit) you don\u0027t need to wrap e with str(). the %s already does that for you.",
+      "parentUuid": "1a95cdbc_297483fb",
+      "revId": "a92b930975720e08925e95762daea0b82ae44d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a95cdbc_03a160a3",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2016-10-11T11:51:10Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a95cdbc_297483fb",
       "revId": "a92b930975720e08925e95762daea0b82ae44d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
