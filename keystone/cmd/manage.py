@@ -14,6 +14,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from keystone.cmd import cli
 import os
 import sys
 
@@ -28,8 +29,6 @@ if os.path.exists(os.path.join(possible_topdir,
                                'keystone',
                                '__init__.py')):
     sys.path.insert(0, possible_topdir)
-
-from keystone.cmd import cli
 
 
 # entry point.
