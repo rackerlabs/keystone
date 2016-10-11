@@ -91,6 +91,24 @@
       "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_47ae4a86",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-10-11T17:59:45Z",
+      "side": 1,
+      "message": "You have some cases which have all three set where the revocation event can use either of the three for their user_id field. In some cases, the token can have all three set where user_id and trustee are the same but trustor is different and vice versa. For this reason, there is no token field that will always take precedence as the revocation event user_id; it can be either user_id, trustor_id, or trustee_id",
+      "parentUuid": "fa6399be_6ca5f802",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
