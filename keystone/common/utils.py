@@ -579,7 +579,6 @@ def lower_case_hostname(url):
 def remove_standard_port(url):
     # remove the default ports specified in RFC2616 and 2818
     o = moves.urllib.parse.urlparse(url)
-    separator = ':'
     (host, separator, port) = o.netloc.partition(':')
     if o.scheme.lower() == 'http' and port == '80':
         # NOTE(gyee): _replace() is not a private method. It has
@@ -626,7 +625,7 @@ def format_url(url, substitutions, silent_keyerror_failures=None):
                   "occurred during string substitution: %(typeerror)s")
         LOG.error(msg, {"url": url, "typeerror": e})
         raise exception.MalformedEndpoint(endpoint=url)
-    except ValueError as e:
+    except ValueError:
         msg = _LE("Malformed endpoint %s - incomplete format "
                   "(are you missing a type notifier ?)")
         LOG.error(msg, url)
