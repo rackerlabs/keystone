@@ -14,9 +14,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from keystone.cmd import cli
 import os
 import sys
-
 # If ../../keystone/__init__.py exists, add ../../ to Python search path, so
 # that it will override what happens to be installed in
 # /usr/(local/)lib/python...
@@ -28,8 +28,6 @@ if os.path.exists(os.path.join(possible_topdir,
                                'keystone',
                                '__init__.py')):
     sys.path.insert(0, possible_topdir)
-
-from keystone.cmd import cli
 
 
 # entry point.
