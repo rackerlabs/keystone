@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1f91f299",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T23:39:12Z",
+      "side": 1,
+      "message": "nit++",
+      "parentUuid": "1a95cdbc_86a8028f",
+      "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_a6a97e92",
         "filename": "keystone/conf/token.py",
         "patchSetId": 1
@@ -65,6 +83,24 @@
         "endLine": 176,
         "endChar": 3
       },
+      "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_bff806e7",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-10-11T23:39:12Z",
+      "side": 1,
+      "message": "nit++ I don\u0027t expect people to know how long 172,800 seconds is.\n\nI\u0027d also suggest noting that operators may want to increase this value if they have long running operations that may exceed this value, and that if they\u0027re using Fernet tokens, they need to keep Fernet keys around longer than this many seconds.",
+      "parentUuid": "1a95cdbc_a6a97e92",
       "revId": "f02d2bd36528e01083194f61b6c5fe833135eb1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
