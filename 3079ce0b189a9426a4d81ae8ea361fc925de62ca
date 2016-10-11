@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_703ecdb9",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-11T02:46:54Z",
+      "side": 0,
+      "message": "what\u0027s the rationale for this one in the first place? not quite sure about this, let\u0027s see what\u0027s other thinking about it.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 28
+      },
+      "revId": "3079ce0b189a9426a4d81ae8ea361fc925de62ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
