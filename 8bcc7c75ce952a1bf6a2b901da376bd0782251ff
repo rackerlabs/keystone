@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_0b9469e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-11T14:31:33Z",
+      "side": 1,
+      "message": "s/Optimize code ,/Optimize code, /\n\ncomma should be placed before the space",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "8bcc7c75ce952a1bf6a2b901da376bd0782251ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_8bb6b988",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-11T14:31:33Z",
+      "side": 1,
+      "message": "add more details about the \"redundant code\"",
+      "revId": "8bcc7c75ce952a1bf6a2b901da376bd0782251ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
