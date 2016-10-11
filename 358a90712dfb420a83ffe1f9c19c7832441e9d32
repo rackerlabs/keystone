@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_d1513f64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T16:12:58Z",
+      "side": 1,
+      "message": "I wouldn\u0027t mind keep thing around since it links to more context as to why we need the change.",
+      "parentUuid": "1a95cdbc_14e6afaf",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_34d48bbb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -36,6 +54,40 @@
       "writtenOn": "2016-10-08T03:49:10Z",
       "side": 1,
       "message": "good stuff!",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_11565729",
+        "filename": "keystone/revoke/backends/base.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T16:12:58Z",
+      "side": 1,
+      "message": "In a future patch we can elaborate on this a little more to define exactly what should be in the token dictionary. But that\u0027s totally something that can be done in a follow up.",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_6ca5f802",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-11T16:12:58Z",
+      "side": 1,
+      "message": "Should this section be an else/if statement? Can a token have a user/trustee/trustor all populated at once? \n\n  # populate user for query\n  if \u0027user\u0027 in token:\n      user.append(RevocationEvent.user_id \u003d\u003d token[\u0027user_id\u0027])\n  elif \u0027trustor_id\u0027 in token:\n      user.append(RevocationEvent.user_id \u003d\u003d token[\u0027trustor_id\u0027])\n  elif \u0027trustee_id\u0027 in token:\n      user.append(RevocationEvent.user_id \u003d\u003d token[\u0027trustor_id\u0027])\n\n  # populate project for query if present\n  if \u0027project_id\u0027 in token:\n      proj.append(RevocationEvent.project_id \u003d\u003d token[\u0027project_id\u0027])\n \n  # populate audit information for query if present\n  if \u0027audit_id\u0027 in token:\n      audit.append(RevocationEvent.audit_id \u003d\u003d token[\u0027audit_id\u0027])",
       "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
