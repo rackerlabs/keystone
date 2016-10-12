@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_ac1c5414",
+        "filename": "keystone/common/sql/expand_repo/versions/010_expand_add_revocation_event_index.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2016-10-12T08:35:37Z",
+      "side": 1,
+      "message": "I don\u0027t understand this last one. It won\u0027t be used most of the time, since a WHERE audit_id\u003d\u0027xxx\u0027 AND issued_before \u003e\u003d \u0027datething\u0027 will have to do the range query on issued_before, and won\u0027t be able to apply the audit_id at all. It\u0027s possible EXISTS queries will be able to do some magic there, so I could be wrong, but I\u0027d be interested to see EXPLAIN\u0027s, becuase I think the optimizer will favor range scanning the much smaller issued_before index in most cases.",
+      "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
