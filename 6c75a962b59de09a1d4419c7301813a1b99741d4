@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_b05f5371",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T02:19:34Z",
+      "side": 0,
+      "message": "we should get amakarov to look at this",
+      "range": {
+        "startLine": 372,
+        "startChar": 12,
+        "endLine": 374,
+        "endChar": 52
+      },
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d0268715",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T02:19:34Z",
+      "side": 0,
+      "message": "renaming a base method needs a release note",
+      "range": {
+        "startLine": 554,
+        "startChar": 0,
+        "endLine": 573,
+        "endChar": 60
+      },
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
