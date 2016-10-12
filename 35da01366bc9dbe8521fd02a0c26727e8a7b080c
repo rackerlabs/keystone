@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_8a9be571",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-12T13:24:26Z",
+      "side": 1,
+      "message": "It looks to me like this may be fixing a bug. If that\u0027s the case we should at least have a test or two showing the problem and likely a launchpad bug as well. (The bug is that protocol was not normalized before.)",
+      "revId": "35da01366bc9dbe8521fd02a0c26727e8a7b080c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
