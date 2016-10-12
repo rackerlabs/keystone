@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_28a67710",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:29:28Z",
+      "side": 1,
+      "message": "include an \"other\" section that indicates a custom implementation will now have to create the \"delete_trusts_for_project\" method",
+      "revId": "f07f852222cdf4bce200985939f609eeeedfa65b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
