@@ -2171,15 +2171,14 @@ class AssignmentTests(AssignmentTestHelperMixin):
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
 
-    def test_list_role_assignment_containing_names(self):
+    def _test_list_role_assignment_containing_names(self, role):
         # Create Refs
-        new_role = unit.new_role_ref()
         new_domain = self._get_domain_fixture()
         new_user = unit.new_user_ref(domain_id=new_domain['id'])
         new_project = unit.new_project_ref(domain_id=new_domain['id'])
         new_group = unit.new_group_ref(domain_id=new_domain['id'])
         # Create entities
-        new_role = self.role_api.create_role(new_role['id'], new_role)
+        new_role = self.role_api.create_role(role['id'], role)
         new_user = self.identity_api.create_user(new_user)
         new_group = self.identity_api.create_group(new_group)
         self.resource_api.create_project(new_project['id'], new_project)
@@ -2245,6 +2244,25 @@ class AssignmentTests(AssignmentTestHelperMixin):
         self.assertEqual(new_role['name'],
                          first_asgmt_dmn['role_name'])
 
+        if 'domain_id' in new_role:
+            # Assert the names are correct in the role with domain response
+            self.assertEqual(new_role['name'],
+                             first_asgmt_rol['role_name'])
+            self.assertEqual(new_user['name'],
+                             first_asgmt_rol['user_name'])
+            self.assertEqual(new_user['domain_id'],
+                             first_asgmt_rol['user_domain_id'])
+            self.assertEqual(new_role['domain_id'],
+                             first_asgmt_rol['role_domain_id'])
+
+    def test_list_role_assignment_containing_names_global_role(self):
+        role = unit.new_role_ref()
+        self._test_list_role_assignment_containing_names(role)
+
+    def test_list_role_assignment_containing_names_domain_role(self):
+        role = unit.new_role_ref(domain_id=self.domain_default['id'])
+        self._test_list_role_assignment_containing_names(role)
+
     def test_list_role_assignment_does_not_contain_names(self):
         """Test names are not included with list role assignments.
 
@@ -2260,6 +2278,7 @@ class AssignmentTests(AssignmentTestHelperMixin):
             self.assertNotIn('user_name', first_asgmt_prj)
             self.assertNotIn('user_domain_id', first_asgmt_prj)
             self.assertNotIn('role_name', first_asgmt_prj)
+            self.assertNotIn('role_domain_id', first_asgmt_prj)
 
         # Create Refs
         new_role = unit.new_role_ref()
