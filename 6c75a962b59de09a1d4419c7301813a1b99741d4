@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_30c6e367",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T02:12:50Z",
+      "side": 1,
+      "message": "remove these as they are no longer necessary",
+      "range": {
+        "startLine": 182,
+        "startChar": 12,
+        "endLine": 183,
+        "endChar": 62
+      },
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
