@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_56f7ccf4",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-12T06:01:12Z",
+      "side": 1,
+      "message": "I like this approach!",
+      "parentUuid": "fa6399be_e84d5f73",
+      "range": {
+        "startLine": 186,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 31
+      },
+      "revId": "7a6ac8aed8597e1d074a090982092437350e83d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_c8197b7b",
         "filename": "keystone/trust/core.py",
         "patchSetId": 4
