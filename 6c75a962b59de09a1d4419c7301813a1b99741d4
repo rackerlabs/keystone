@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_0b835405",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-12T15:04:02Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "fa6399be_b05f5371",
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_d0268715",
         "filename": "keystone/token/provider.py",
         "patchSetId": 4
@@ -42,6 +60,24 @@
         "endLine": 573,
         "endChar": 60
       },
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_6bd770bf",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-12T15:04:02Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "fa6399be_d0268715",
       "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
