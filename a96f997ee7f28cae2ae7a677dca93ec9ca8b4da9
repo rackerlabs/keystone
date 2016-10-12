@@ -16,6 +16,24 @@
       "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_b9b1d4e3",
+        "filename": "keystone/common/sql/expand_repo/versions/010_expand_add_revocation_event_index.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:22:34Z",
+      "side": 1,
+      "message": "I\u0027m not sure how this composite index is different than the other indexes and it matches the query conditions. But as you say, it won\u0027t hurt anything by adding it.",
+      "parentUuid": "fa6399be_ac1c5414",
+      "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
