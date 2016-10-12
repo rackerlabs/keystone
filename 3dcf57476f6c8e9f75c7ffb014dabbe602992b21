@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_e52ca84c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-12T03:50:01Z",
+      "side": 1,
+      "message": "commit message should cover all your change if possible, you are not just remove redundant code here.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "3dcf57476f6c8e9f75c7ffb014dabbe602992b21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_a51b901a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-12T03:50:01Z",
+      "side": 1,
+      "message": "I don\u0027t think anyone know which function from this claim.",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "3dcf57476f6c8e9f75c7ffb014dabbe602992b21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c5ede4f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-12T03:50:01Z",
+      "side": 1,
+      "message": "Just a brief here to say what\u0027s your change is about is enough, nothing I can get from your commit message.",
+      "revId": "3dcf57476f6c8e9f75c7ffb014dabbe602992b21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
