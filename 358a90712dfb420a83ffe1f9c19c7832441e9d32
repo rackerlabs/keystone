@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa6399be_c54a44ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:15:52Z",
+      "side": 1,
+      "message": "don\u0027t be afraid to use line breaks to space things out for readability",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_25a06043",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:15:52Z",
+      "side": 1,
+      "message": "add a new line after here",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_14e6afaf",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -60,6 +94,29 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_65b1788f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:15:52Z",
+      "side": 1,
+      "message": "space things out:\n\nThis patch improves check_token validation performance by only pulling revocation events based on the token `issued_at` value, taking advantage of the table index. In this way, only a subset of relevant events will be returned for validation.\n\n\nBenchmarks can be seen at [1] but included here as well:\n\n\nTime per Request for Old Method\n---------------------------------\n10 revokes at 7.908ms\n100 revokes at 18.224ms\n1,000 revokes at 110.155ms\n10,000 revokes at 1998.220ms\n\n\nTime per Request for New Method\n----------------------------------\n10 revokes at 17.636ms\n100 revokes at 17.279ms\n1,000 revokes at 17.370ms\n10,000 revokes w/all revokes issued before token at 17.263ms (best case)\n10,000 revokes w/all revokes after token creation 44.934ms (worst case)\n\n[1] https://gist.github.com/csrichard1/4b7b8527ee5a6565a84956cff33cf29b",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 71
+      },
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_11565729",
         "filename": "keystone/revoke/backends/base.py",
         "patchSetId": 19
@@ -71,6 +128,29 @@
       "writtenOn": "2016-10-11T16:12:58Z",
       "side": 1,
       "message": "In a future patch we can elaborate on this a little more to define exactly what should be in the token dictionary. But that\u0027s totally something that can be done in a follow up.",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_65033843",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:15:52Z",
+      "side": 1,
+      "message": "these can now become private by prefixing them with an underscore",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 25
+      },
       "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +204,29 @@
       "side": 1,
       "message": "Ah ha - makes sense. Thanks for digging into this Richard.",
       "parentUuid": "fa6399be_47ae4a86",
+      "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_85fe8c36",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:15:52Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 30
+      },
       "revId": "358a90712dfb420a83ffe1f9c19c7832441e9d32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
