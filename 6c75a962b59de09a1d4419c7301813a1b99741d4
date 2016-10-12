@@ -58,6 +58,24 @@
       "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_4b3b8cd1",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-12T14:57:33Z",
+      "side": 1,
+      "message": "Ah - I see what you mean. The KeystoneToken model is now version agnostic and part of this change was to make it so that the KeystoneToken model only ever sees a v3 type token (until we refactor is later on). The reason why we still need the call to v2_helper is to make sure we are using certain v3 type tokens against v2.0 to get new tokens. The v3_to_v2_token() method has checks built into it to make sure things like federated tokens, or domain-scoped tokens can\u0027t be used.",
+      "parentUuid": "fa6399be_30ec078f",
+      "revId": "6c75a962b59de09a1d4419c7301813a1b99741d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
