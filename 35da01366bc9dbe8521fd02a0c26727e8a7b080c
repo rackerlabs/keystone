@@ -16,6 +16,24 @@
       "revId": "35da01366bc9dbe8521fd02a0c26727e8a7b080c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_50789bc4",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-10-12T14:49:44Z",
+      "side": 1,
+      "message": "+1. This is not only a cosmetic fix.",
+      "parentUuid": "fa6399be_8a9be571",
+      "revId": "35da01366bc9dbe8521fd02a0c26727e8a7b080c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
