@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_e84d5f73",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:26:20Z",
+      "side": 1,
+      "message": "rather than create a new method, can\u0027t we just call\n\n  trusts \u003d list_trusts_for_trustee(user_id)\n  trusts \u003d trusts + list_trusts_for_trustor(user_id)\n  for trust in trusts:\n    delete_trust(trust)",
+      "range": {
+        "startLine": 186,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 31
+      },
+      "revId": "7a6ac8aed8597e1d074a090982092437350e83d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c8197b7b",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:26:20Z",
+      "side": 1,
+      "message": "great comment",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 57
+      },
+      "revId": "7a6ac8aed8597e1d074a090982092437350e83d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_6814ef43",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-12T04:26:20Z",
+      "side": 1,
+      "message": "shouldn\u0027t this call the driver?\n\n  self.driver.delete_trust_by_user_id",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 36
+      },
+      "revId": "7a6ac8aed8597e1d074a090982092437350e83d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
