@@ -827,6 +827,10 @@ class RoleAssignmentV3(controller.V3Controller):
         if 'role_name' in entity:
             formatted_entity['role'] = {'id': entity['role_id'],
                                         'name': entity['role_name']}
+            if 'role_domain_name' in entity:
+                formatted_entity['role'].update(
+                    {'domain': {'id': entity['role_domain_id'],
+                                'name': entity['role_domain_name']}})
         else:
             formatted_entity['role'] = {'id': entity['role_id']}
         prior_role_link = ''
