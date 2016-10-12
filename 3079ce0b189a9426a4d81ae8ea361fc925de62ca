@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_10e63fb4",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-12T02:21:19Z",
+      "side": 0,
+      "message": "If you looking into the method of `_normalize_dict` and how table `federation_protocol` defined you will find this method is actually needed.\n\nIf you pass the protocol contains the keys like `mapping-id`, it\u0027s should be normalized to `mapping_id` to match with DB schema.\n\nSo, pls do it like this:\n\n    normalized_protocol \u003d self._normalize_dict(protocol)\n    ref \u003d self.federation_api.update_protocol(idp_id, protocol_id, normalized_protocol)\n\nYou can fix all other occurances if you have an interest :)",
+      "range": {
+        "startLine": 198,
+        "startChar": 8,
+        "endLine": 198,
+        "endChar": 44
+      },
+      "revId": "3079ce0b189a9426a4d81ae8ea361fc925de62ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
