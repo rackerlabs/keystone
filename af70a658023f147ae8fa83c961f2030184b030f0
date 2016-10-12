@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_ada9a07d",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-12T14:38:37Z",
+      "side": 1,
+      "message": "Move this below \"import sys\".\nSee: http://docs.openstack.org/developer/hacking/#imports",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 28
+      },
+      "revId": "af70a658023f147ae8fa83c961f2030184b030f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
