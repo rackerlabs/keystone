@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_dee82ee5",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Agree",
+      "parentUuid": "fa6399be_a16e2bc7",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_2135bbd9",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_9eb5d6ef",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_2135bbd9",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_c125dfab",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2016-10-11T22:07:38Z",
       "side": 1,
       "message": "I\u0027d suggest adding something along the lines of \"Other identity backends, such as LDAP servers, should implement their own security controls.\" I also think this note could be a paragraph on it\u0027s own, prior to the note about configuration.",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1eaf0682",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_c125dfab",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_fe7332e5",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Reworded this to \"based on the\ndate/time of the password change plus the number of days defined here\"",
+      "parentUuid": "fa6399be_a1a54b05",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_84c78011",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -133,6 +205,24 @@
       "writtenOn": "2016-10-11T22:07:38Z",
       "side": 1,
       "message": "``expires_at``\n\n++ That\u0027s be a good doctor check -- \"you have this config option set, but there are X users in the database that don\u0027t have a password expiration set. This implies Y. Run sql command Z directly to resolve.\"",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_de266ecd",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Yeah, we don\u0027t provide a script. ++ on adding a doctor check",
+      "parentUuid": "fa6399be_61825354",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_9e131666",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_04037043",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_6137b3b0",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -185,6 +293,24 @@
       "writtenOn": "2016-10-11T22:07:38Z",
       "side": 1,
       "message": "nit: ``password_regex``",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_79001c02",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_6137b3b0",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_d97208ad",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Nice, thanks for writing this up. Done.",
+      "parentUuid": "fa6399be_e4175c4f",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_471e4a64",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 7
@@ -219,6 +363,24 @@
       "writtenOn": "2016-10-11T17:53:34Z",
       "side": 1,
       "message": "nit: won\u0027t or will not",
+      "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_3964e4e2",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-12T21:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_471e4a64",
       "revId": "d993439385dd6b2440deba667e923bbd4d4825f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
