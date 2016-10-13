@@ -69,6 +69,42 @@
       "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_72daca4d",
+        "filename": "keystone/common/sql/expand_repo/versions/010_expand_add_revocation_event_index.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-13T15:39:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_81100a03",
+      "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_92dbde4e",
+        "filename": "keystone/common/sql/expand_repo/versions/010_expand_add_revocation_event_index.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-13T15:39:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_a1ec2e90",
+      "revId": "a96f997ee7f28cae2ae7a677dca93ec9ca8b4da9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
