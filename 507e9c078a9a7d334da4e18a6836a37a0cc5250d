@@ -22,6 +22,30 @@
       "revId": "507e9c078a9a7d334da4e18a6836a37a0cc5250d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_93c3ddec",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-13T17:58:42Z",
+      "side": 1,
+      "message": "actually, since we don\u0027t support driver versioning (you\u0027re welcome!), we don\u0027t need a deprecation warning :)",
+      "parentUuid": "fa6399be_739d69bb",
+      "range": {
+        "startLine": 471,
+        "startChar": 10,
+        "endLine": 471,
+        "endChar": 33
+      },
+      "revId": "507e9c078a9a7d334da4e18a6836a37a0cc5250d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
