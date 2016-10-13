@@ -45,6 +45,30 @@
       "revId": "d81b6b3425638df43f2aada511bad67f7620d2bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9233de61",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-13T16:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_566237ae",
+      "range": {
+        "startLine": 339,
+        "startChar": 12,
+        "endLine": 339,
+        "endChar": 39
+      },
+      "revId": "d81b6b3425638df43f2aada511bad67f7620d2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
