@@ -29,7 +29,6 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
-from keystone.token import provider
 from keystone.token import providers
 
 
@@ -321,7 +320,7 @@ class Auth(controller.V2Controller):
         tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
             user_id, tenant_id)
 
-        expiry = provider.default_expire_time()
+        expiry = providers.common.default_expire_time()
         bind = None
         audit_id = None
         return (user_ref, tenant_ref, metadata_ref, expiry, bind, audit_id)
@@ -348,7 +347,7 @@ class Auth(controller.V2Controller):
         tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
             user_id, tenant_id)
 
-        expiry = provider.default_expire_time()
+        expiry = providers.common.default_expire_time()
         bind = None
         if ('kerberos' in CONF.token.bind and
                 request.environ.get('AUTH_TYPE', '').lower() == 'negotiate'):
