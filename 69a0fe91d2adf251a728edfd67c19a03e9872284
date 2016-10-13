@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_a9c5f48e",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-13T06:43:52Z",
+      "side": 1,
+      "message": "Add one blank line here, although this is not breaking pep8 but for the sake of consistency.",
+      "revId": "69a0fe91d2adf251a728edfd67c19a03e9872284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
