@@ -22,6 +22,75 @@
       "revId": "1cfaf84441fb3bee38157fce4c9f83cf2ba3552a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d391f953",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-13T05:51:38Z",
+      "side": 1,
+      "message": "since this is a loop, it would actually be more user friendly to have a running list of invalid filenames, when you are done iterating, print all of them out to the user, and then return True.\n\nBy returning true on the first match, the user will have to re-run doctor for N invalid files.",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 27
+      },
+      "revId": "1cfaf84441fb3bee38157fce4c9f83cf2ba3552a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1369b18b",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-13T05:51:38Z",
+      "side": 1,
+      "message": "if you\u0027re going to print stuff, maybe add here:\n\n  print(\u0027Could not find directory %s\u0027 % filedir)",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 84,
+        "endChar": 19
+      },
+      "revId": "1cfaf84441fb3bee38157fce4c9f83cf2ba3552a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_f3219dfc",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-13T05:51:38Z",
+      "side": 1,
+      "message": "combining the two suggestions would look like:\n\n    if not CONF.identity.domain_specific_drivers_enabled:\n        return False\n\n    invalid_files \u003d []\n    filedir \u003d CONF.identity.domain_config_dir\n    if os.path.isdir(filedir):\n        for filename in os.listdir(filedir):\n            if not re.match(\u0027^keystone\\..*?\\.conf$\u0027, filename):\n                invalid_files.append(filename)\n            if invalid_files:\n                invalid_str \u003d \u0027, \u0027.join(invalid_files)\n                print(\u0027the following files are named incorrectly: %s they \u0027\n                      \u0027should be follow the pattern of \u0027\n                      \u0027keystone.\u003cdomain_name\u003e.conf\u0027 % invalid_str)\n                return True\n    else:\n        print(\u0027Could not find directory %s\u0027 % filedir)\n        return True\n\n    return False",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 16
+      },
+      "revId": "1cfaf84441fb3bee38157fce4c9f83cf2ba3552a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
