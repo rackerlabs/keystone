@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_e621dcb5",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-13T04:18:33Z",
+      "side": 1,
+      "message": "this is a repeat of lines 24-26",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 67
+      },
+      "revId": "493750f3294335b7b048f228b04476d95f01696b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_2603d410",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-13T04:18:33Z",
+      "side": 1,
+      "message": "you may want to indicate that this is handy for service accounts that are configured for service to service communication",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 19
+      },
+      "revId": "493750f3294335b7b048f228b04476d95f01696b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
