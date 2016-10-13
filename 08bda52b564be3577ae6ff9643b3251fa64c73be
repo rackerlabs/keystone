@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_1b30d4e7",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-13T13:15:28Z",
+      "side": 1,
+      "message": "PEP8 doesn\u0027t like this here, I guess it does go above both os and sys. I was wrong, sorry about that :(",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "08bda52b564be3577ae6ff9643b3251fa64c73be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
