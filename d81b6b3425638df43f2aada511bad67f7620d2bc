@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_760d7b8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-13T06:25:16Z",
+      "side": 1,
+      "message": "would be nice to add the tag of \u0027DocImpact\u0027 here.",
+      "range": {
+        "startLine": 10,
+        "startChar": 58,
+        "endLine": 10,
+        "endChar": 68
+      },
+      "revId": "d81b6b3425638df43f2aada511bad67f7620d2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_566237ae",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-13T06:25:16Z",
+      "side": 1,
+      "message": "a value other than None will cover more real use case IMO.",
+      "range": {
+        "startLine": 339,
+        "startChar": 12,
+        "endLine": 339,
+        "endChar": 39
+      },
+      "revId": "d81b6b3425638df43f2aada511bad67f7620d2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
