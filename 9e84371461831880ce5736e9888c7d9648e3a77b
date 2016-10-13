@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_6953b5e2",
+        "filename": "keystone/revoke/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-13T19:50:34Z",
+      "side": 1,
+      "message": "(nit) no reason for a temp variable here - just return it",
+      "revId": "9e84371461831880ce5736e9888c7d9648e3a77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
