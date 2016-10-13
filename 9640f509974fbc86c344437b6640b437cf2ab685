@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_cea20a4b",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 0,
+      "message": "It not needed if there is only one IdP, and if it\u0027s included it requires extra configuration in shibboleth2.xml. If we included it here but don\u0027t fix shibboleth2.xml we get this error from shibboleth:\n\n Unable to map non-default applicationId to an ApplicationOverride, check configuration.\n\nwhen trying to authenticate.\n\nI don\u0027t think it\u0027s needed for a basic setup, so better to leave it out. Advanced users can read the shibboleth documentation and configure it if they need it.",
+      "parentUuid": "7a8ec9b2_876617eb",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 46
+      },
+      "revId": "9640f509974fbc86c344437b6640b437cf2ab685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_276b83ba",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-09-22T03:24:56Z",
       "side": 0,
       "message": "wow, we did this before we moved entirely to apache, i forgot that!",
+      "range": {
+        "startLine": 74,
+        "startChar": 6,
+        "endLine": 74,
+        "endChar": 33
+      },
+      "revId": "9640f509974fbc86c344437b6640b437cf2ab685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_2e92a6f6",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 0,
+      "message": ":)",
+      "parentUuid": "7a8ec9b2_276b83ba",
       "range": {
         "startLine": 74,
         "startChar": 6,

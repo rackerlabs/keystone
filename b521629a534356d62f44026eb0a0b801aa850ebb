@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_2e762606",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_c7173f43",
+      "range": {
+        "startLine": 230,
+        "startChar": 50,
+        "endLine": 230,
+        "endChar": 63
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_072cc797",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-09-22T03:24:56Z",
       "side": 1,
       "message": "here too",
+      "range": {
+        "startLine": 246,
+        "startChar": 60,
+        "endLine": 246,
+        "endChar": 73
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_0e6de230",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_072cc797",
       "range": {
         "startLine": 246,
         "startChar": 60,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_8e8012c2",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ec9b2_271d4362",
+      "range": {
+        "startLine": 481,
+        "startChar": 23,
+        "endLine": 481,
+        "endChar": 54
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_275463fc",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 2
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_ae0a3677",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 1,
+      "message": "\u003e maybe mention that the scoped token is coming from the SP\n\nThis is already mentioned on line 459.\n\n\u003e print the entire token body\n\nThe auth_token/_auth_token properties of AccessInfo are just the string ID, are you wanting to do a lookup with that ID to get the entire token body?",
+      "parentUuid": "7a8ec9b2_275463fc",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 484,
+        "endChar": 50
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_67b02b44",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 2
@@ -105,6 +201,30 @@
       "writtenOn": "2016-09-22T03:24:56Z",
       "side": 1,
       "message": "nice addition",
+      "range": {
+        "startLine": 261,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 78
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_4ea6fa53",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-13T19:25:33Z",
+      "side": 1,
+      "message": "It\u0027s actually only valid for k2k, making a note in the next patch.",
+      "parentUuid": "7a8ec9b2_67b02b44",
       "range": {
         "startLine": 261,
         "startChar": 0,
