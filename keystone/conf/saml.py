@@ -53,7 +53,6 @@ contain a comma (`,`).
 
 idp_entity_id = cfg.URIOpt(
     'idp_entity_id',
-    max_length=1024,
     help=utils.fmt("""
 This is the unique entity identifier of the identity provider (keystone) to use
 when generating SAML assertions. This value is required to generate identity
