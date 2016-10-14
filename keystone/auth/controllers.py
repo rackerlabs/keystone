@@ -22,6 +22,7 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
@@ -540,7 +541,7 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def check_token(self, request):
         token_id = request.context_dict.get('subject_token_id')
-        window_seconds = self._token_validation_window(request)
+        window_seconds = authorization.token_validation_window(request)
         token_data = self.token_provider_api.validate_token(
             token_id, window_seconds=window_seconds)
         # NOTE(morganfainberg): The code in
@@ -556,7 +557,7 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def validate_token(self, request):
         token_id = request.context_dict.get('subject_token_id')
-        window_seconds = self._token_validation_window(request)
+        window_seconds = authorization.token_validation_window(request)
         include_catalog = 'nocatalog' not in request.params
         token_data = self.token_provider_api.validate_token(
             token_id, window_seconds=window_seconds)
