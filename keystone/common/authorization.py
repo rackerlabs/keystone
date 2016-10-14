@@ -111,3 +111,37 @@ def token_to_auth_context(token):
 
     auth_context['is_admin_project'] = token.is_admin_project
     return auth_context
+
+
+def assert_admin(app, request):
+    """Ensure the user is an admin.
+
+    :raises keystone.exception.Unauthorized: if a token could not be
+        found/authorized, a user is invalid, or a tenant is
+        invalid/not scoped.
+    :raises keystone.exception.Forbidden: if the user is not an admin and
+        does not have the admin role
+
+    """
+    request.assert_authenticated()
+
+    if not request.context.is_admin:
+        user_token_ref = utils.get_token_ref(request.context_dict)
+
+        creds = copy.deepcopy(user_token_ref.metadata)
+
+        try:
+            creds['user_id'] = user_token_ref.user_id
+        except exception.UnexpectedError:
+            LOG.debug('Invalid user')
+            raise exception.Unauthorized()
+
+        if user_token_ref.project_scoped:
+            creds['tenant_id'] = user_token_ref.project_id
+        else:
+            LOG.debug('Invalid tenant')
+            raise exception.Unauthorized()
+
+        creds['roles'] = user_token_ref.role_names
+        # Accept either is_admin or the admin role
+        app.policy_api.enforce(creds, 'admin_required', {})
