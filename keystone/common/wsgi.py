@@ -18,7 +18,6 @@
 
 """Utility methods for working with WSGI servers."""
 
-import copy
 import functools
 import itertools
 import re

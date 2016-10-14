@@ -87,69 +87,7 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
-            request.assert_authenticated()
-
-            if request.context.is_admin:
-                LOG.warning(_LW('RBAC: Bypassing authorization'))
-            elif callback is not None:
-                prep_info = {'f_name': f.__name__,
-                             'input_attr': kwargs}
-                callback(self,
-                         request,
-                         prep_info,
-                         *args,
-                         **kwargs)
-            else:
-                action = 'identity:%s' % f.__name__
-                creds = authorization._build_policy_check_credentials(
-                    action,
-                    request.context_dict,
-                    kwargs)
-
-                policy_dict = {}
-
-                # Check to see if we need to include the target entity in our
-                # policy checks.  We deduce this by seeing if the class has
-                # specified a get_member() method and that kwargs contains the
-                # appropriate entity id.
-                if (hasattr(self, 'get_member_from_driver') and
-                        self.get_member_from_driver is not None):
-                    key = '%s_id' % self.member_name
-                    if key in kwargs:
-                        ref = self.get_member_from_driver(kwargs[key])
-                        policy_dict['target'] = {self.member_name: ref}
-
-                # TODO(henry-nash): Move this entire code to a member
-                # method inside v3 Auth
-                if request.context_dict.get('subject_token_id') is not None:
-                    token_ref = token_model.KeystoneToken(
-                        token_id=request.context_dict['subject_token_id'],
-                        token_data=self.token_provider_api.validate_token(
-                            request.context_dict['subject_token_id']))
-                    policy_dict.setdefault('target', {})
-                    policy_dict['target'].setdefault(self.member_name, {})
-                    policy_dict['target'][self.member_name]['user_id'] = (
-                        token_ref.user_id)
-                    try:
-                        user_domain_id = token_ref.user_domain_id
-                    except exception.UnexpectedError:
-                        user_domain_id = None
-                    if user_domain_id:
-                        policy_dict['target'][self.member_name].setdefault(
-                            'user', {})
-                        policy_dict['target'][self.member_name][
-                            'user'].setdefault('domain', {})
-                        policy_dict['target'][self.member_name]['user'][
-                            'domain']['id'] = (
-                                user_domain_id)
-
-                # Add in the kwargs, which means that any entity provided as a
-                # parameter for calls like create and update will be included.
-                policy_dict.update(kwargs)
-                self.policy_api.enforce(creds,
-                                        action,
-                                        utils.flatten_dict(policy_dict))
-                LOG.debug('RBAC: Authorization granted')
+            authorization.inner_check(self, f, callback, request, *args, **kwargs)
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper

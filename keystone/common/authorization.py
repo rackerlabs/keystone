@@ -15,8 +15,11 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+import collections
+import copy
 
 from oslo_log import log
+from oslo_utils import strutils
 
 from keystone import exception
 from keystone.i18n import _, _LW
@@ -126,7 +129,7 @@ def assert_admin(app, request):
     request.assert_authenticated()
 
     if not request.context.is_admin:
-        user_token_ref = utils.get_token_ref(request.context_dict)
+        user_token_ref = get_token_ref(request.context_dict)
 
         creds = copy.deepcopy(user_token_ref.metadata)
 
@@ -153,4 +156,105 @@ def _build_policy_check_credentials(action, context, kwargs):
     msg = 'RBAC: Authorizing %(action)s(%(kwargs)s)'
     LOG.debug(msg, {'action': action, 'kwargs': kwargs_str})
 
-    return context['environment'].get(authorization.AUTH_CONTEXT_ENV, {})
+    return context['environment'].get(AUTH_CONTEXT_ENV, {})
+
+
+def inner_check(self, f, callback, request, *args, **kwargs):
+    request.assert_authenticated()
+
+    if request.context.is_admin:
+        LOG.warning(_LW('RBAC: Bypassing authorization'))
+    elif callback is not None:
+        prep_info = {'f_name': f.__name__,
+                     'input_attr': kwargs}
+        callback(self,
+                 request,
+                 prep_info,
+                 *args,
+                 **kwargs)
+    else:
+        action = 'identity:%s' % f.__name__
+        creds = _build_policy_check_credentials(
+            action,
+            request.context_dict,
+            kwargs)
+
+        policy_dict = {}
+
+        # Check to see if we need to include the target entity in our
+        # policy checks.  We deduce this by seeing if the class has
+        # specified a get_member() method and that kwargs contains the
+        # appropriate entity id.
+        if (hasattr(self, 'get_member_from_driver') and
+                self.get_member_from_driver is not None):
+            key = '%s_id' % self.member_name
+            if key in kwargs:
+                ref = self.get_member_from_driver(kwargs[key])
+                policy_dict['target'] = {self.member_name: ref}
+
+        # TODO(henry-nash): Move this entire code to a member
+        # method inside v3 Auth
+        if request.context_dict.get('subject_token_id') is not None:
+            token_ref = token_model.KeystoneToken(
+                token_id=request.context_dict['subject_token_id'],
+                token_data=self.token_provider_api.validate_token(
+                    request.context_dict['subject_token_id']))
+            policy_dict.setdefault('target', {})
+            policy_dict['target'].setdefault(self.member_name, {})
+            policy_dict['target'][self.member_name]['user_id'] = (
+                token_ref.user_id)
+            try:
+                user_domain_id = token_ref.user_domain_id
+            except exception.UnexpectedError:
+                user_domain_id = None
+            if user_domain_id:
+                policy_dict['target'][self.member_name].setdefault(
+                    'user', {})
+                policy_dict['target'][self.member_name][
+                    'user'].setdefault('domain', {})
+                policy_dict['target'][self.member_name]['user'][
+                    'domain']['id'] = (
+                        user_domain_id)
+
+        # Add in the kwargs, which means that any entity provided as a
+        # parameter for calls like create and update will be included.
+        policy_dict.update(kwargs)
+        self.policy_api.enforce(creds,
+                                action,
+                                flatten_dict(policy_dict))
+        LOG.debug('RBAC: Authorization granted')
+
+# TODO(ayoung): These have been copied from utils.
+# flatten_dict should be removed and other references to get_token_ref
+# should point here.
+        
+def flatten_dict(d, parent_key=''):
+    """Flatten a nested dictionary.
+
+    Converts a dictionary with nested values to a single level flat
+    dictionary, with dotted notation for each key.
+
+    """
+    items = []
+    for k, v in d.items():
+        new_key = parent_key + '.' + k if parent_key else k
+        if isinstance(v, collections.MutableMapping):
+            items.extend(list(flatten_dict(v, new_key).items()))
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+def get_token_ref(context):
+    """Retrieve KeystoneToken object from the auth context and returns it.
+
+    :param dict context: The request context.
+    :raises keystone.exception.Unauthorized: If auth context cannot be found.
+    :returns: The KeystoneToken object.
+    """
+    try:
+        # Retrieve the auth context that was prepared by AuthContextMiddleware.
+        auth_context = (context['environment'][AUTH_CONTEXT_ENV])
+        return auth_context['token']
+    except KeyError:
+        LOG.warning(_LW("Couldn't find the auth context."))
+        raise exception.Unauthorized()
