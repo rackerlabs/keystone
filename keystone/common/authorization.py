@@ -224,6 +224,61 @@ def inner_check(self, f, callback, request, *args, **kwargs):
                                 flatten_dict(policy_dict))
         LOG.debug('RBAC: Authorization granted')
 
+
+
+def filterprotected_wrapper(self, request, filters, callback, f, **kwargs):
+    request.assert_authenticated()
+
+    if not request.context.is_admin:
+        # The target dict for the policy check will include:
+        #
+        # - Any query filter parameters
+        # - Data from the main url (which will be in the kwargs
+        #   parameter), which although most of our APIs do not utilize,
+        #   in theory you could have.
+        #
+
+        # First build the dict of filter parameters
+        target = dict()
+        if filters:
+            for item in filters:
+                if item in request.params:
+                    target[item] = request.params[item]
+
+            LOG.debug('RBAC: Adding query filter params (%s)', (
+                ', '.join(['%s=%s' % (item, target[item])
+                          for item in target])))
+
+        if 'callback' in callback and callback['callback'] is not None:
+            # A callback has been specified to load additional target
+            # data, so pass it the formal url params as well as the
+            # list of filters, so it can augment these and then call
+            # the check_protection() method.
+            prep_info = {'f_name': f.__name__,
+                         'input_attr': kwargs,
+                         'filter_attr': target}
+            callback['callback'](self,
+                                 request,
+                                 prep_info,
+                                 **kwargs)
+        else:
+            # No callback, so we are going to check the protection here
+            action = 'identity:%s' % f.__name__
+            creds = _build_policy_check_credentials(
+                action, request.context_dict, kwargs)
+            # Add in any formal url parameters
+            for key in kwargs:
+                target[key] = kwargs[key]
+
+            self.policy_api.enforce(creds,
+                                    action,
+                                    flatten_dict(target))
+
+            LOG.debug('RBAC: Authorization granted')
+    else:
+        LOG.warning(_LW('RBAC: Bypassing authorization'))
+
+
 # TODO(ayoung): These have been copied from utils.
 # flatten_dict should be removed and other references to get_token_ref
 # should point here.
