@@ -157,11 +157,12 @@ class V2TokenDataHelper(object):
                 if (trustor_user_ref['domain_id'] !=
                         CONF.identity.default_domain_id):
                     raise exception.Unauthorized(msg)
-                project_ref = self.resource_api.get_project(
-                    trust_ref['project_id'])
-                if (project_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
-                    raise exception.Unauthorized(msg)
+                if trust_ref.get('project_id'):
+                    project_ref = self.resource_api.get_project(
+                        trust_ref['project_id'])
+                    if (project_ref['domain_id'] !=
+                            CONF.identity.default_domain_id):
+                        raise exception.Unauthorized(msg)
 
             token_data['trust'] = {
                 'impersonation': v3_trust['impersonation'],
@@ -525,7 +526,7 @@ class V3TokenDataHelper(object):
 
         if token_domain_id or token_project_id:
             filtered_roles = []
-            if CONF.trust.enabled and trust:
+            if CONF.trust.enabled and trust and len(trust['roles']) != 0:
                 # First expand out any roles that were in the trust to include
                 # any implied roles, whether global or domain specific
                 refs = [{'role_id': role['id']} for role in trust['roles']]
