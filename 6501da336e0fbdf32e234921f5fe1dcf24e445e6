@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_1b3fca87",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-14T09:22:33Z",
+      "side": 1,
+      "message": "this sounds confusing to me....sounds like you are say this change deletes a trust when a user is deleted? (which I am sure is true, but I don\u0027t that\u0027s this fix).",
+      "range": {
+        "startLine": 6,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 48
+      },
+      "revId": "6501da336e0fbdf32e234921f5fe1dcf24e445e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9b53dae1",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-14T09:22:33Z",
+      "side": 1,
+      "message": "nit: drivers ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "6501da336e0fbdf32e234921f5fe1dcf24e445e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
