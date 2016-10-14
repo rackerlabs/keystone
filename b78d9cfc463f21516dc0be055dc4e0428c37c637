@@ -55,6 +55,29 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_469df364",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-14T01:45:57Z",
+      "side": 1,
+      "message": "You should add a test for this new property here:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/token/test_token_model.py#L38",
+      "range": {
+        "startLine": 234,
+        "startChar": 8,
+        "endLine": 234,
+        "endChar": 24
+      },
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_b3b90731",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 3
@@ -156,6 +179,29 @@
       "side": 1,
       "message": "I\u0027m not entirely sure what you\u0027re asking there.\n\nHistorically prior to having is_admin_project whenever you had \"admin\" role you had admin everywhere. \n\nIf is_admin_project is enabled then it will set true or false in the token. \n\nIf it\u0027s not set then we have to do the historical thing and keep working the way we used to which is to respect admin everywhere. In essence every project was the admin project. Similarly for V2 every project was the admin project. \n\nThis is something that will be enabled/disabled by a deployment, not something a developer has to see.",
       "parentUuid": "3a98d1f4_71beda00",
+      "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_267b9f29",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-14T01:45:57Z",
+      "side": 1,
+      "message": "This needs a rebase; we\u0027re not longer checking for v3 in the token_model:\nhttps://github.com/openstack/keystone/blob/master/keystone/models/token_model.py",
+      "range": {
+        "startLine": 236,
+        "startChar": 8,
+        "endLine": 236,
+        "endChar": 30
+      },
       "revId": "b78d9cfc463f21516dc0be055dc4e0428c37c637",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
