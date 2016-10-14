@@ -145,3 +145,12 @@ def assert_admin(app, request):
         creds['roles'] = user_token_ref.role_names
         # Accept either is_admin or the admin role
         app.policy_api.enforce(creds, 'admin_required', {})
+
+
+def _build_policy_check_credentials(action, context, kwargs):
+    kwargs_str = ', '.join(['%s=%s' % (k, kwargs[k]) for k in kwargs])
+    kwargs_str = strutils.mask_password(kwargs_str)
+    msg = 'RBAC: Authorizing %(action)s(%(kwargs)s)'
+    LOG.debug(msg, {'action': action, 'kwargs': kwargs_str})
+
+    return context['environment'].get(authorization.AUTH_CONTEXT_ENV, {})

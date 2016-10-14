@@ -71,15 +71,6 @@ def v2_auth_deprecated(f):
     return wrapper()
 
 
-def _build_policy_check_credentials(self, action, context, kwargs):
-    kwargs_str = ', '.join(['%s=%s' % (k, kwargs[k]) for k in kwargs])
-    kwargs_str = strutils.mask_password(kwargs_str)
-    msg = 'RBAC: Authorizing %(action)s(%(kwargs)s)'
-    LOG.debug(msg, {'action': action, 'kwargs': kwargs_str})
-
-    return context['environment'].get(authorization.AUTH_CONTEXT_ENV, {})
-
-
 def protected(callback=None):
     """Wrap API calls with role based access controls (RBAC).
 
@@ -110,10 +101,10 @@ def protected(callback=None):
                          **kwargs)
             else:
                 action = 'identity:%s' % f.__name__
-                creds = _build_policy_check_credentials(self,
-                                                        action,
-                                                        request.context_dict,
-                                                        kwargs)
+                creds = authorization._build_policy_check_credentials(
+                    action,
+                    request.context_dict,
+                    kwargs)
 
                 policy_dict = {}
 
@@ -217,8 +208,8 @@ def filterprotected(*filters, **callback):
                 else:
                     # No callback, so we are going to check the protection here
                     action = 'identity:%s' % f.__name__
-                    creds = _build_policy_check_credentials(
-                        self, action, request.context_dict, kwargs)
+                    creds = authorization._build_policy_check_credentials(
+                        action, request.context_dict, kwargs)
                     # Add in any formal url parameters
                     for key in kwargs:
                         target[key] = kwargs[key]
@@ -779,9 +770,10 @@ class V3Controller(wsgi.Application):
         else:
             action = 'identity:%s' % prep_info['f_name']
             # TODO(henry-nash) need to log the target attributes as well
-            creds = _build_policy_check_credentials(self, action,
-                                                    request.context_dict,
-                                                    prep_info['input_attr'])
+            creds = authorization._build_policy_check_credentials(
+                action,
+                request.context_dict,
+                prep_info['input_attr'])
             # Build the dict the policy engine will check against from both the
             # parameters passed into the call we are protecting (which was
             # stored in the prep_info by protected()), plus the target
