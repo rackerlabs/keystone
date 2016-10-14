@@ -420,23 +420,15 @@ class TokenTests(object):
 class TokenCacheInvalidation(object):
     def _create_test_data(self):
         # Create an equivalent of a scoped token
-        token_dict = {
-            'user': self.user_foo,
-            'tenant': self.tenant_bar,
-            'metadata': {},
-            'id': 'placeholder'
-        }
-        token_id, data = self.token_provider_api.issue_v2_token(token_dict)
+        token_id, data = self.token_provider_api.issue_v3_token(
+            self.user_foo['id'], ['password'], project_id=self.tenant_bar['id']
+        )
         self.scoped_token_id = token_id
 
         # ..and an un-scoped one
-        token_dict = {
-            'user': self.user_foo,
-            'tenant': None,
-            'metadata': {},
-            'id': 'placeholder'
-        }
-        token_id, data = self.token_provider_api.issue_v2_token(token_dict)
+        token_id, data = self.token_provider_api.issue_v3_token(
+            self.user_foo['id'], ['password']
+        )
         self.unscoped_token_id = token_id
 
         # Validate them, in the various ways possible - this will load the

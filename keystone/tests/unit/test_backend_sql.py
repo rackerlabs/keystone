@@ -858,6 +858,7 @@ class SqlTokenCacheInvalidationWithPKI(SqlTests,
                                        token_tests.TokenCacheInvalidation):
     def setUp(self):
         super(SqlTokenCacheInvalidationWithPKI, self).setUp()
+        self.load_fixtures(default_fixtures)
         self._create_test_data()
 
     def config_overrides(self):

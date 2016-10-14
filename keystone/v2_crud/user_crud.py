@@ -93,8 +93,8 @@ class UserController(identity.controllers.User):
         # not the norm as most cases do not need to yank apart a token to
         # issue a new one.
         new_token_ref = {}
-        metadata_ref = {}
-        roles_ref = None
+        # metadata_ref = {}
+        # roles_ref = None
 
         new_token_ref['user'] = user_ref
         if token_ref.bind:
@@ -102,24 +102,28 @@ class UserController(identity.controllers.User):
         if token_ref.project_id:
             new_token_ref['tenant'] = self.resource_api.get_project(
                 token_ref.project_id)
-        if token_ref.role_names:
-            roles_ref = [dict(name=value)
-                         for value in token_ref.role_names]
-        if token_ref.role_ids:
-            metadata_ref['roles'] = token_ref.role_ids
-        if token_ref.trust_id:
-            metadata_ref['trust'] = {
-                'id': token_ref.trust_id,
-                'trustee_user_id': token_ref.trustee_user_id}
-        new_token_ref['metadata'] = metadata_ref
-        new_token_ref['id'] = uuid.uuid4().hex
+        # if token_ref.role_names:
+        #     roles_ref = [dict(name=value)
+        #                  for value in token_ref.role_names]
+        # if token_ref.role_ids:
+        #     metadata_ref['roles'] = token_ref.role_ids
+        # if token_ref.trust_id:
+        #     metadata_ref['trust'] = {
+        #         'id': token_ref.trust_id,
+        #         'trustee_user_id': token_ref.trustee_user_id}
+        # new_token_ref['metadata'] = metadata_ref
+        # new_token_ref['id'] = uuid.uuid4().hex
 
-        catalog_ref = self.catalog_api.get_catalog(user_id,
-                                                   token_ref.project_id)
+        # catalog_ref = self.catalog_api.get_catalog(user_id,
+        #                                            token_ref.project_id)
 
-        new_token_id, new_token_data = self.token_provider_api.issue_v2_token(
-            token_ref=new_token_ref, roles_ref=roles_ref,
-            catalog_ref=catalog_ref)
+        new_token_id, new_token_data = self.token_provider_api.issue_v3_token(
+            token_ref.user_id, token_ref.methods,
+            project_id=token_ref.project_id,
+            parent_audit_id=token_ref.audit_chain_id)
+        # new_token_id, new_token_data = self.token_provider_api.issue_v2_token(
+        #     token_ref=new_token_ref, roles_ref=roles_ref,
+        #     catalog_ref=catalog_ref)
         LOG.debug('TOKEN_REF %s', new_token_data)
         return new_token_data
 
