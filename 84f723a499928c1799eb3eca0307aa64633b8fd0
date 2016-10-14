@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_3cf7328c",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-14T03:44:30Z",
+      "side": 1,
+      "message": "surprised this didn\u0027t fail the doc, a new line here would be good",
+      "range": {
+        "startLine": 207,
+        "startChar": 4,
+        "endLine": 208,
+        "endChar": 35
+      },
+      "revId": "84f723a499928c1799eb3eca0307aa64633b8fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_bc66e24e",
+        "filename": "doc/source/federation/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-14T03:44:30Z",
+      "side": 1,
+      "message": "replace oidc with mapped as well?",
+      "range": {
+        "startLine": 76,
+        "startChar": 100,
+        "endLine": 76,
+        "endChar": 104
+      },
+      "revId": "84f723a499928c1799eb3eca0307aa64633b8fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
