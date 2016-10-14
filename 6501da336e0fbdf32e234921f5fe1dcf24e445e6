@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_47a87477",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-14T15:24:53Z",
+      "side": 1,
+      "message": "i asked Dave to make a single release note for 2 changes. This one (handle project deletes) and the one it depends on (handle user deletes) -- https://review.openstack.org/#/c/369354/6",
+      "parentUuid": "fa6399be_1b3fca87",
+      "range": {
+        "startLine": 6,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 48
+      },
+      "revId": "6501da336e0fbdf32e234921f5fe1dcf24e445e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_9b53dae1",
         "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
         "patchSetId": 4
