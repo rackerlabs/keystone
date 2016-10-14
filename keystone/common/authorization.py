@@ -15,12 +15,12 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
-import collections
 import copy
 
 from oslo_log import log
 from oslo_utils import strutils
 
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.models import token_model
@@ -221,9 +221,8 @@ def inner_check(self, f, callback, request, *args, **kwargs):
         policy_dict.update(kwargs)
         self.policy_api.enforce(creds,
                                 action,
-                                flatten_dict(policy_dict))
+                                utils.flatten_dict(policy_dict))
         LOG.debug('RBAC: Authorization granted')
-
 
 
 def filterprotected_wrapper(self, request, filters, callback, f, **kwargs):
@@ -272,32 +271,46 @@ def filterprotected_wrapper(self, request, filters, callback, f, **kwargs):
 
             self.policy_api.enforce(creds,
                                     action,
-                                    flatten_dict(target))
+                                    utils.flatten_dict(target))
 
             LOG.debug('RBAC: Authorization granted')
     else:
         LOG.warning(_LW('RBAC: Bypassing authorization'))
 
 
-# TODO(ayoung): These have been copied from utils.
-# flatten_dict should be removed and other references to get_token_ref
-# should point here.
-        
-def flatten_dict(d, parent_key=''):
-    """Flatten a nested dictionary.
+def check_protection(self, request, prep_info, target_attr=None):
+    """Provide call protection for complex target attributes.
 
-    Converts a dictionary with nested values to a single level flat
-    dictionary, with dotted notation for each key.
+    As well as including the standard parameters from the original API
+    call (which is passed in prep_info), this call will add in any
+    additional entities or attributes (passed in target_attr), so that
+    they can be referenced by policy rules.
 
     """
-    items = []
-    for k, v in d.items():
-        new_key = parent_key + '.' + k if parent_key else k
-        if isinstance(v, collections.MutableMapping):
-            items.extend(list(flatten_dict(v, new_key).items()))
-        else:
-            items.append((new_key, v))
-    return dict(items)
+    if request.context.is_admin:
+        LOG.warning(_LW('RBAC: Bypassing authorization'))
+    else:
+        action = 'identity:%s' % prep_info['f_name']
+        # TODO(henry-nash) need to log the target attributes as well
+        creds = _build_policy_check_credentials(
+            action,
+            request.context_dict,
+            prep_info['input_attr'])
+        # Build the dict the policy engine will check against from both the
+        # parameters passed into the call we are protecting (which was
+        # stored in the prep_info by protected()), plus the target
+        # attributes provided.
+        policy_dict = {}
+        if target_attr:
+            policy_dict = {'target': target_attr}
+        policy_dict.update(prep_info['input_attr'])
+        if 'filter_attr' in prep_info:
+            policy_dict.update(prep_info['filter_attr'])
+        self.policy_api.enforce(creds,
+                                action,
+                                utils.flatten_dict(policy_dict))
+        LOG.debug('RBAC: Authorization granted')
+
 
 def get_token_ref(context):
     """Retrieve KeystoneToken object from the auth context and returns it.

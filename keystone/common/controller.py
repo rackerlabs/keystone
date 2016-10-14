@@ -17,7 +17,6 @@ import uuid
 
 from oslo_log import log
 from oslo_log import versionutils
-from oslo_utils import strutils
 import six
 
 from keystone.common import authorization
@@ -28,7 +27,6 @@ from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _, _LW
-from keystone.models import token_model
 
 
 LOG = log.getLogger(__name__)
@@ -87,7 +85,8 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
-            authorization.inner_check(self, f, callback, request, *args, **kwargs)
+            authorization.inner_check(
+                self, f, callback, request, *args, **kwargs)
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper
@@ -110,7 +109,7 @@ def filterprotected(*filters, **callback):
         @functools.wraps(f)
         def wrapper(self, request, **kwargs):
             authorization.filterprotected_wrapper(
-                self, request, filters, callback, f,  **kwargs)
+                self, request, filters, callback, f, **kwargs)
             return f(self, request, filters, **kwargs)
         return wrapper
     return _filterprotected
@@ -586,7 +585,7 @@ class V3Controller(wsgi.Application):
         if domain_id:
             return domain_id
 
-        token_ref = utils.get_token_ref(request.context_dict)
+        token_ref = authorization.get_token_ref(request.context_dict)
 
         if token_ref.domain_scoped:
             return token_ref.domain_id
@@ -655,29 +654,7 @@ class V3Controller(wsgi.Application):
         they can be referenced by policy rules.
 
         """
-        if request.context.is_admin:
-            LOG.warning(_LW('RBAC: Bypassing authorization'))
-        else:
-            action = 'identity:%s' % prep_info['f_name']
-            # TODO(henry-nash) need to log the target attributes as well
-            creds = authorization._build_policy_check_credentials(
-                action,
-                request.context_dict,
-                prep_info['input_attr'])
-            # Build the dict the policy engine will check against from both the
-            # parameters passed into the call we are protecting (which was
-            # stored in the prep_info by protected()), plus the target
-            # attributes provided.
-            policy_dict = {}
-            if target_attr:
-                policy_dict = {'target': target_attr}
-            policy_dict.update(prep_info['input_attr'])
-            if 'filter_attr' in prep_info:
-                policy_dict.update(prep_info['filter_attr'])
-            self.policy_api.enforce(creds,
-                                    action,
-                                    utils.flatten_dict(policy_dict))
-            LOG.debug('RBAC: Authorization granted')
+        authorization.check_protection(self, request, prep_info, target_attr)
 
     @classmethod
     def filter_params(cls, ref):
