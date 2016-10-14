@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_35b49233",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-14T13:02:26Z",
+      "side": 1,
+      "message": "Why are you changing this? And it\u0027s also incorrect even if we did want to move it up here: http://docs.openstack.org/developer/hacking/#import-order-template",
+      "revId": "852f3ad8325906e21286509d4ba269452be7dace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
