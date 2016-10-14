@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_b7efdb1c",
+        "filename": "releasenotes/notes/move-token-provider-base-class-out-of-core-134df5b99ea48f00.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-14T04:09:00Z",
+      "side": 1,
+      "message": "keystone.token.provider.Provider",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 29
+      },
+      "revId": "91f56afe19cc57a6a574d96fb404d03a0f94054d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
