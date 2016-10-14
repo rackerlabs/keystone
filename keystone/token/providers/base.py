@@ -49,7 +49,7 @@ class Provider(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def issue_v3_token(self, user_id, method_names, expires_at=None,
+    def issue_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
                        parent_audit_id=None):

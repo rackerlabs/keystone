@@ -102,7 +102,7 @@ class UserController(identity.controllers.User):
             new_token_ref['tenant'] = self.resource_api.get_project(
                 token_ref.project_id)
 
-        new_token_id, new_token_data = self.token_provider_api.issue_v3_token(
+        new_token_id, new_token_data = self.token_provider_api.issue_token(
             token_ref.user_id, token_ref.methods,
             project_id=token_ref.project_id,
             parent_audit_id=token_ref.audit_chain_id)

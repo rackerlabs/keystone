@@ -100,7 +100,7 @@ class TestValidate(unit.TestCase):
         user_ref = self.identity_api.create_user(user_ref)
 
         method_names = ['password']
-        token_id, token_data_ = self.token_provider_api.issue_v3_token(
+        token_id, token_data_ = self.token_provider_api.issue_token(
             user_ref['id'], method_names)
 
         token_data = self.token_provider_api.validate_token(token_id)
@@ -143,7 +143,7 @@ class TestValidate(unit.TestCase):
             federation_constants.IDENTITY_PROVIDER: identity_provider,
             federation_constants.PROTOCOL: protocol,
         }
-        token_id, token_data_ = self.token_provider_api.issue_v3_token(
+        token_id, token_data_ = self.token_provider_api.issue_token(
             user_ref['id'], method_names, auth_context=auth_context)
 
         token_data = self.token_provider_api.validate_token(token_id)
@@ -200,7 +200,7 @@ class TestValidate(unit.TestCase):
 
         method_names = ['password']
 
-        token_id, token_data_ = self.token_provider_api.issue_v3_token(
+        token_id, token_data_ = self.token_provider_api.issue_token(
             user_ref['id'], method_names, project_id=project_ref['id'],
             trust=trust_ref)
 
