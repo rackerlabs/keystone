@@ -1366,7 +1366,7 @@ class AuthWithTrust(object):
         user = {'enabled': False}
         self.identity_api.driver.update_user(self.trustee['id'], user)
         self.assertRaises(
-            exception.Forbidden,
+            exception.Unauthorized,
             self.controller.authenticate, self.make_request(), request_body)
 
 
@@ -1432,7 +1432,7 @@ class FernetAuthWithTrust(AuthWithTrust, AuthTest):
 
         self.disable_user(self.trustee)
         self.assertRaises(
-            exception.Forbidden,
+            exception.Unauthorized,
             self.controller.authenticate, self.make_request(), request_body)
 
 
