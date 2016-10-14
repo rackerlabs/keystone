@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_d95c6c7f",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-14T15:51:13Z",
+      "side": 1,
+      "message": "Ah, ok, got it. Perhaps in that case, just a change of wording would make this clearer, e.g.:\n\nKeystone trust will be invalidated if the project to which the  trust is scoped, or the user (trustor or trustee) for which the delegation is assigned, have been deleted.",
+      "parentUuid": "fa6399be_47a87477",
+      "range": {
+        "startLine": 6,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 48
+      },
+      "revId": "6501da336e0fbdf32e234921f5fe1dcf24e445e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_9b53dae1",
         "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
         "patchSetId": 4
