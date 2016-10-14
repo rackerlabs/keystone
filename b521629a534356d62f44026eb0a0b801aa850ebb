@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1c28aee1",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-14T03:46:00Z",
+      "side": 1,
+      "message": "no, i suppose not. i was just thinking that showing the whole token would make it easier to understand that it\u0027s coming from another keystone. not a big deal",
+      "parentUuid": "fa6399be_ae0a3677",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 484,
+        "endChar": 50
+      },
+      "revId": "b521629a534356d62f44026eb0a0b801aa850ebb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_67b02b44",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 2
