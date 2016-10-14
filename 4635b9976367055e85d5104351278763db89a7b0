@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_fec74e93",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_ed432611",
+      "range": {
+        "startLine": 83,
+        "startChar": 32,
+        "endLine": 83,
+        "endChar": 34
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_8dd62a26",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "Not sure we should be plugging google.",
+      "range": {
+        "startLine": 198,
+        "startChar": 4,
+        "endLine": 202,
+        "endChar": 54
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_83b999ce",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "This is a copy and paste from websso.rst, not original material",
+      "parentUuid": "fa6399be_8dd62a26",
       "range": {
         "startLine": 198,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_3ebe26ff",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_4d2092f7",
+      "range": {
+        "startLine": 225,
+        "startChar": 24,
+        "endLine": 225,
+        "endChar": 32
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_4dc4123f",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "keystone-to-keystone or Keystone-to-Keystone",
+      "range": {
+        "startLine": 318,
+        "startChar": 24,
+        "endLine": 318,
+        "endChar": 44
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_5eb91a14",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_4dc4123f",
       "range": {
         "startLine": 318,
         "startChar": 24,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_7e3a5e9a",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_cdfd826f",
+      "range": {
+        "startLine": 319,
+        "startChar": 51,
+        "endLine": 319,
+        "endChar": 71
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_2d251e08",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 4
@@ -128,6 +248,30 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "Should this be \"federated_domain\"?",
+      "range": {
+        "startLine": 403,
+        "startChar": 161,
+        "endLine": 403,
+        "endChar": 188
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_be407608",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "yes, and federated_project too",
+      "parentUuid": "fa6399be_2d251e08",
       "range": {
         "startLine": 403,
         "startChar": 161,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_439301fa",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "any particular reason? \"not important\" reads better to me",
+      "parentUuid": "fa6399be_2dcd1e85",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 13
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_8d92aa4a",
         "filename": "doc/source/federation/configure_federation.rst",
         "patchSetId": 4
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_c3b5517e",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "good point",
+      "parentUuid": "fa6399be_8d92aa4a",
+      "range": {
+        "startLine": 543,
+        "startChar": 50,
+        "endLine": 543,
+        "endChar": 62
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_0d8dbad5",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 4
@@ -197,6 +389,30 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "line wrap",
+      "range": {
+        "startLine": 147,
+        "startChar": 73,
+        "endLine": 147,
+        "endChar": 88
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_de228aa2",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "This is a preformatted code block copied from the configuration produced by the shibboleth package. Linewrapping here would result in the html output being linewrapped as well, which would make it hard to compare to the non-linewrapped version on the user\u0027s system.",
+      "parentUuid": "fa6399be_0d8dbad5",
       "range": {
         "startLine": 147,
         "startChar": 73,
@@ -508,6 +724,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_7eec1e2a",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_8df1ca6d",
+      "range": {
+        "startLine": 256,
+        "startChar": 3,
+        "endLine": 256,
+        "endChar": 11
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_6df71659",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 4
@@ -519,6 +759,30 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "line wrap",
+      "range": {
+        "startLine": 279,
+        "startChar": 79,
+        "endLine": 279,
+        "endChar": 92
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9eef321d",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_6df71659",
       "range": {
         "startLine": 279,
         "startChar": 79,
@@ -577,6 +841,54 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1edc0272",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_8d98ea1d",
+      "range": {
+        "startLine": 281,
+        "startChar": 79,
+        "endLine": 281,
+        "endChar": 94
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_fee02e2b",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_2d019e38",
+      "range": {
+        "startLine": 281,
+        "startChar": 31,
+        "endLine": 281,
+        "endChar": 39
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_0d621a0a",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 4
@@ -600,6 +912,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_3ee70641",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_0d621a0a",
+      "range": {
+        "startLine": 288,
+        "startChar": 3,
+        "endLine": 288,
+        "endChar": 11
+      },
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_8d4d4a9c",
         "filename": "doc/source/federation/shibboleth.rst",
         "patchSetId": 4
@@ -611,6 +947,24 @@
       "writtenOn": "2016-10-14T17:39:51Z",
       "side": 1,
       "message": "Extra line",
+      "revId": "4635b9976367055e85d5104351278763db89a7b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_7ed33e60",
+        "filename": "doc/source/federation/shibboleth.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-10-14T18:38:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_8d4d4a9c",
       "revId": "4635b9976367055e85d5104351278763db89a7b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
