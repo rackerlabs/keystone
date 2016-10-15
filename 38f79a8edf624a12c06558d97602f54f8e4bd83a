@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_56c01350",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-15T11:52:14Z",
+      "side": 1,
+      "message": "nit: Add a role to the group in the domain and project",
+      "revId": "38f79a8edf624a12c06558d97602f54f8e4bd83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_76b3570a",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-15T11:52:14Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "38f79a8edf624a12c06558d97602f54f8e4bd83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d6cc238b",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-15T11:52:14Z",
+      "side": 1,
+      "message": "nit: can not",
+      "range": {
+        "startLine": 192,
+        "startChar": 59,
+        "endLine": 192,
+        "endChar": 65
+      },
+      "revId": "38f79a8edf624a12c06558d97602f54f8e4bd83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_b6988f79",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-15T11:52:14Z",
+      "side": 1,
+      "message": "\"should\" is a bit mandatory, think you should say again that is for mapping the user name.",
+      "range": {
+        "startLine": 260,
+        "startChar": 66,
+        "endLine": 260,
+        "endChar": 107
+      },
+      "revId": "38f79a8edf624a12c06558d97602f54f8e4bd83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_56a733bc",
+        "filename": "doc/source/federation/configure_federation.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-15T11:52:14Z",
+      "side": 1,
+      "message": "that\u0027s true! and ppl usually forget to detail this in tutorials (myself included)",
+      "range": {
+        "startLine": 306,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 47
+      },
+      "revId": "38f79a8edf624a12c06558d97602f54f8e4bd83a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
