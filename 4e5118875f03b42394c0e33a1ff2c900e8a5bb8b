@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_96eaab72",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-15T12:43:27Z",
+      "side": 1,
+      "message": "nope",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 26
+      },
+      "revId": "4e5118875f03b42394c0e33a1ff2c900e8a5bb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
