@@ -85,8 +85,9 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
+            filters = []
             authorization.inner_check(
-                self, f, callback, request, *args, **kwargs)
+                self, f, callback, request, filters, *args, **kwargs)
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper
@@ -109,7 +110,7 @@ def filterprotected(*filters, **callback):
         @functools.wraps(f)
         def wrapper(self, request, **kwargs):
             authorization.filterprotected_wrapper(
-                self, request, filters, callback, f, **kwargs)
+                self, f, callback, request, filters, **kwargs)
             return f(self, request, filters, **kwargs)
         return wrapper
     return _filterprotected
