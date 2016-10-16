@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_c3da9816",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-16T23:08:32Z",
+      "side": 1,
+      "message": "Might want to make this a list like:\n\n* remove the redundant e variable\n* use already defined constant\n* move import to top of file",
+      "revId": "9127b0599ca32a2e8fa552ef02705084379c486b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_83d420ec",
+        "filename": "keystone/cmd/manage.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-16T23:08:32Z",
+      "side": 1,
+      "message": "Please add two blank lines after the added import.",
+      "revId": "9127b0599ca32a2e8fa552ef02705084379c486b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
