@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_38846209",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-17T02:16:13Z",
+      "side": 0,
+      "message": "After looking into how the OS-INHERIT routes are defined, I think this is actually duplicated with http://developer.openstack.org/api-ref/identity/v3/?expanded\u003dlist-role-assignments-detail\n\nlist role assignments is not belong to OS-INHERIT API, pls refer to all the OS-INHERIT API after the switch of \"CONF.os_inherit.enabled\".\n\nsee:\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/routers.py#L203\n\nLet remove this one and combine the contents with the one above.",
+      "range": {
+        "startLine": 401,
+        "startChar": 0,
+        "endLine": 404,
+        "endChar": 42
+      },
+      "revId": "2b53c547cbe5bd78c6d85c6fc293429fdc59dfa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_18987e69",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-17T02:16:13Z",
+      "side": 0,
+      "message": "All these relationship is not defined correctly, relationship is not the link to this doc but is the url defined in the route.",
+      "range": {
+        "startLine": 407,
+        "startChar": 0,
+        "endLine": 407,
+        "endChar": 97
+      },
+      "revId": "2b53c547cbe5bd78c6d85c6fc293429fdc59dfa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
