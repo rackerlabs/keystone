@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_cb48ca8d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-17T18:49:18Z",
+      "side": 1,
+      "message": "It\u0027s a little strange to move these tests here. They are not fernet specific at all",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
