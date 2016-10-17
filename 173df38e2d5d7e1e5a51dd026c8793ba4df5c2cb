@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_6800b202",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T13:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_9600eb67",
+      "revId": "173df38e2d5d7e1e5a51dd026c8793ba4df5c2cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_560ad38a",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1a121d59",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T13:58:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_560ad38a",
+      "revId": "173df38e2d5d7e1e5a51dd026c8793ba4df5c2cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_36071f83",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -65,6 +101,24 @@
         "endLine": 293,
         "endChar": 40
       },
+      "revId": "173df38e2d5d7e1e5a51dd026c8793ba4df5c2cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9a246db3",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T13:58:27Z",
+      "side": 1,
+      "message": "Good catch - done.",
+      "parentUuid": "fa6399be_36071f83",
       "revId": "173df38e2d5d7e1e5a51dd026c8793ba4df5c2cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

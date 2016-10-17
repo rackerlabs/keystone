@@ -16,6 +16,24 @@
       "revId": "d59973e6281d07daa0378069966b6bfeabbb66c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c8429e67",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T13:58:27Z",
+      "side": 0,
+      "message": "Because it was apparently only used to relay the roles a user had on the project and the trust id - which we can acknowledge and pass directly - https://github.com/openstack/keystone/blob/696a10ceae9d0d82f69e739d5533e98ce9e213b9/keystone/token/providers/common.py#L661-L664\n\nhttps://github.com/openstack/keystone/blob/696a10ceae9d0d82f69e739d5533e98ce9e213b9/keystone/token/controllers.py#L240-L242\n\nNow we can remove `metadata` since it was ambiguous and unclear. The new validation and creation paths build this in the token provider.",
+      "parentUuid": "fa6399be_36155f9b",
+      "revId": "d59973e6281d07daa0378069966b6bfeabbb66c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
