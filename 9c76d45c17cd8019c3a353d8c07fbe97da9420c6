@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_97b8b02c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T21:40:58Z",
+      "side": 1,
+      "message": "This was bothering me - so I decided to change it here even though it\u0027s not relevant to the change (didn\u0027t feel like it justified dedicated gate resources when it could be rolled into this change.)",
+      "revId": "9c76d45c17cd8019c3a353d8c07fbe97da9420c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
