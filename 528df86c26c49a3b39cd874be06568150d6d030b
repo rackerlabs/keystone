@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_e98a1a1a",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-10-17T05:10:07Z",
+      "side": 1,
+      "message": "Note that this logic still needs to be unified with the check_policy code below, but that is a fix and not a straight refactoring, and will happen in an additional commit.",
+      "revId": "528df86c26c49a3b39cd874be06568150d6d030b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_098e6e2d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-10-17T05:10:07Z",
+      "side": 1,
+      "message": "This can be inlined now.",
+      "revId": "528df86c26c49a3b39cd874be06568150d6d030b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_a9758232",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-10-17T05:10:07Z",
+      "side": 1,
+      "message": "This is the *good* function, and is what everything else should call to check policy.  Any additional logic to our policy check should work with this function.",
+      "revId": "528df86c26c49a3b39cd874be06568150d6d030b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_49adc699",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-10-17T05:10:07Z",
+      "side": 1,
+      "message": "This needs to be removed",
+      "revId": "528df86c26c49a3b39cd874be06568150d6d030b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
