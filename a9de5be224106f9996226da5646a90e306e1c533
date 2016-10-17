@@ -16,6 +16,29 @@
       "revId": "a9de5be224106f9996226da5646a90e306e1c533",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_ce4a95ac",
+        "filename": "api-ref/source/v3/samples/admin/auth-password-unscoped-request-with-domain.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-17T20:37:13Z",
+      "side": 1,
+      "message": "change the name from \"default\" to \"Default\", since that\u0027s what we use when creating it: https://github.com/openstack/keystone/blob/master/keystone/cmd/cli.py#L183",
+      "range": {
+        "startLine": 11,
+        "startChar": 33,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "a9de5be224106f9996226da5646a90e306e1c533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
