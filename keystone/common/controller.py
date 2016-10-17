@@ -85,9 +85,12 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
-            filters = []
-            authorization.inner_check(
-                self, f, callback, request, filters, *args, **kwargs)
+            check_function = authorization.check_protection
+            if callback is not None:
+                check_function = callback            
+
+            protected_wrapper(
+                self, f, check_function, request, None, *args, **kwargs)
             return f(self, request, *args, **kwargs)
         return inner
     return wrapper
@@ -106,14 +109,51 @@ def filterprotected(*filters, **callback):
     entities needed and then call check_protection() in the V3Controller class.
 
     """
+
+    def _handle_filters(filters, request):
+        target = dict()
+        if filters:
+            for item in filters:
+                if item in request.params:
+                    target[item] = request.params[item]
+
+        LOG.debug('RBAC: Adding query filter params (%s)', (
+            ', '.join(['%s=%s' % (item, target[item])
+                       for item in target])))
+        return target
+
     def _filterprotected(f):
         @functools.wraps(f)
         def wrapper(self, request, **kwargs):
-            authorization.filterprotected_wrapper(
-                self, f, callback, request, filters, **kwargs)
+            filter_attr = _handle_filters(filters, request)
+            check_function = authorization.check_protection
+            if 'callback' in callback and callback['callback'] is not None:
+                # A callback has been specified to load additional target
+                # data, so pass it the formal url params as well as the
+                # list of filters, so it can augment these and then call
+                # the check_protection() method.
+                check_function = callback['callback']
+
+            protected_wrapper(
+                self, f, check_function, request, filter_attr, **kwargs)
             return f(self, request, filters, **kwargs)
         return wrapper
     return _filterprotected
+
+# Unified calls for the decorators above.
+# TODO(ayoung):  Continue the refactoring.  Always call check_protection explicitly,
+# by removing the calls to check protection from the callbacks. Instead,  have
+# a call to the callbacks inserted prior to the call to `check_protection`.
+def protected_wrapper(self, f, check_function, request, filter_attr, *args, **kwargs):
+    request.assert_authenticated()
+    if request.context.is_admin:
+        LOG.warning(_LW('RBAC: Bypassing authorization'))
+        return
+    prep_info = {'f_name': f.__name__,
+                 'input_attr': kwargs}
+    if (filter_attr):
+        prep_info['filter_attr'] = filter_attr
+    check_function(self, request, prep_info, *args, **kwargs)        
 
 
 class V2Controller(wsgi.Application):

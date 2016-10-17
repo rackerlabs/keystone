@@ -195,81 +195,7 @@ def _handle_subject_token_id(self, request, policy_dict):
                 'domain']['id'] = (
                     user_domain_id)
 
-def decorator_check_protection(
-        self, f, callback, request, filters, *args, **kwargs):
-    inner_check(self, f, callback, request, filters, *args, **kwargs)
-    
-    
-def inner_check(self, f, callback, request, filters, *args, **kwargs):
-    request.assert_authenticated()
-
-    if request.context.is_admin:
-        LOG.warning(_LW('RBAC: Bypassing authorization'))
-        return
-
-        
-    if callback is not None:
-        prep_info = {'f_name': f.__name__,
-                     'input_attr': kwargs}
-        callback(self,
-                 request,
-                 prep_info,
-                 *args,
-                 **kwargs)
-    else:
-        policy_dict = {}
-        # Add in the kwargs, which means that any entity provided as a
-        # parameter for calls like create and update will be included.
-        policy_dict.update(kwargs)
-        prep_info = {'f_name': f.__name__,
-                     'input_attr': kwargs}
-        check_protection(self, request, prep_info, None, **policy_dict)        
-        LOG.debug('RBAC: Authorization granted')
-
-
-def filterprotected_wrapper(self, f, callback, request, filters,  **kwargs):
-    request.assert_authenticated()
-    if request.context.is_admin:
-        LOG.warning(_LW('RBAC: Bypassing authorization'))
-        return
-
-   
-    # The target dict for the policy check will include:
-    #
-    # - Any query filter parameters
-    # - Data from the main url (which will be in the kwargs
-    #   parameter), which although most of our APIs do not utilize,
-    #   in theory you could have.
-    #
-
-    # First build the dict of filter parameters
-    target = dict()
-    if filters:
-        for item in filters:
-            if item in request.params:
-                target[item] = request.params[item]
-
-        LOG.debug('RBAC: Adding query filter params (%s)', (
-            ', '.join(['%s=%s' % (item, target[item])
-                      for item in target])))
-
-    prep_info = {'f_name': f.__name__,
-                 'input_attr': kwargs,
-                 'filter_attr': target}
-
-        
-    if 'callback' in callback and callback['callback'] is not None:
-        # A callback has been specified to load additional target
-        # data, so pass it the formal url params as well as the
-        # list of filters, so it can augment these and then call
-        # the check_protection() method.
-        callback['callback'](self,request, prep_info, **kwargs)
-    else:
-        # No callback, so we are going to check the protection here
-        check_protection(self, request, prep_info, kwargs)
-
-
-def check_protection(self, request, prep_info, target_attr=None, **kwargs):
+def check_protection(controller, request, prep_info, target_attr=None, *args,  **kwargs):
     """Provide call protection for complex target attributes.
 
     As well as including the standard parameters from the original API
@@ -290,8 +216,8 @@ def check_protection(self, request, prep_info, target_attr=None, **kwargs):
         # stored in the prep_info by protected()), plus the target
         # attributes provided.
         policy_dict = {}
-        _handle_member_from_driver(self, policy_dict, **kwargs)
-        _handle_subject_token_id(self, request, policy_dict)
+        _handle_member_from_driver(controller, policy_dict, **kwargs)
+        _handle_subject_token_id(controller, request, policy_dict)
 
         if target_attr:
             policy_dict = {'target': target_attr}
@@ -303,7 +229,7 @@ def check_protection(self, request, prep_info, target_attr=None, **kwargs):
             policy_dict[key] = kwargs[key]
 
             
-        self.policy_api.enforce(creds,
+        controller.policy_api.enforce(creds,
                                 action,
                                 utils.flatten_dict(policy_dict))
 
