@@ -16,6 +16,24 @@
       "revId": "83d54a0402a394068bf68242d00a84ccdefda6bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d5294bf4",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-17T18:01:07Z",
+      "side": 1,
+      "message": "pep8 fails if it\u0027s reduced, the if can be like this or the previous version",
+      "parentUuid": "fa6399be_bab846ea",
+      "revId": "83d54a0402a394068bf68242d00a84ccdefda6bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
