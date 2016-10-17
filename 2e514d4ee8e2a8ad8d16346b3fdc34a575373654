@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_7c7303e8",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T21:32:40Z",
+      "side": 1,
+      "message": "Ah ha - makes sense. Thanks!",
+      "parentUuid": "1a95cdbc_63bdadb6",
+      "revId": "2e514d4ee8e2a8ad8d16346b3fdc34a575373654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_58f27370",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 11
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Technically, in the conf file it would be \"true\" and in python would be \"True\". I assume this is referring to the conf file, no?",
       "parentUuid": "1a95cdbc_3813e7b9",
+      "revId": "2e514d4ee8e2a8ad8d16346b3fdc34a575373654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1c3a07e8",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T21:32:40Z",
+      "side": 1,
+      "message": "Correct - it should be `true`. Thanks, Eric.",
+      "parentUuid": "1a95cdbc_b4bfbba8",
       "revId": "2e514d4ee8e2a8ad8d16346b3fdc34a575373654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
