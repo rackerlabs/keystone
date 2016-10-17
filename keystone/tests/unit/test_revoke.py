@@ -23,6 +23,7 @@ from keystone import exception
 from keystone.models import revoke_model
 from keystone.revoke.backends import sql
 from keystone.tests import unit
+from keystone.tests.unit import test_backend_sql
 from keystone.token.providers import common
 
 
@@ -365,6 +366,49 @@ class RevokeTests(object):
                           self.revoke_api.check_token,
                           token_values)
 
+class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
+    def setUp(self):
+        super(SqlRevokeTests, self).setUp()
+        self._sample_data()
+
+    def _sample_data(self):
+        user_ids = []
+        project_ids = []
+        role_ids = []
+        for i in range(0, 3):
+            user_ids.append(uuid.uuid4().hex)
+            project_ids.append(uuid.uuid4().hex)
+            role_ids.append(uuid.uuid4().hex)
+
+        project_tokens = []
+        i = len(project_tokens)
+        project_tokens.append(_sample_blank_token())
+        project_tokens[i]['user_id'] = user_ids[0]
+        project_tokens[i]['project_id'] = project_ids[0]
+        project_tokens[i]['roles'] = [role_ids[1]]
+
+        i = len(project_tokens)
+        project_tokens.append(_sample_blank_token())
+        project_tokens[i]['user_id'] = user_ids[1]
+        project_tokens[i]['project_id'] = project_ids[0]
+        project_tokens[i]['roles'] = [role_ids[0]]
+
+        i = len(project_tokens)
+        project_tokens.append(_sample_blank_token())
+        project_tokens[i]['user_id'] = user_ids[0]
+        project_tokens[i]['project_id'] = project_ids[1]
+        project_tokens[i]['roles'] = [role_ids[0]]
+
+        token_to_revoke = _sample_blank_token()
+        token_to_revoke['user_id'] = user_ids[0]
+        token_to_revoke['project_id'] = project_ids[0]
+        token_to_revoke['roles'] = [role_ids[0]]
+
+        self.project_tokens = project_tokens
+        self.user_ids = user_ids
+        self.project_ids = project_ids
+        self.role_ids = role_ids
+        self.token_to_revoke = token_to_revoke
 
 def add_event(events, event):
     events.append(event)
