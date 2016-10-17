@@ -115,14 +115,16 @@ def _matches(event, token_values):
 class RevokeTests(object):
 
     def _assertTokenRevoked(self, events, token_data):
+        backend = sql.Revoke()
         return self.assertTrue(
-            revoke_model.is_revoked(events, token_data),
-            'Token should be revoked')
+            revoke_model.is_revoked(backend.list_events(token=token_data),
+            token_data), 'Token should be revoked')
 
     def _assertTokenNotRevoked(self, events, token_data):
+        backend = sql.Revoke()
         return self.assertFalse(
-            revoke_model.is_revoked(events, token_data),
-            'Token should not be revoked')
+            revoke_model.is_revoked(backend.list_events(token=token_data),
+            token_data), 'Token should not be revoked')
 
     def test_list(self):
         self.revoke_api.revoke_by_user(user_id=1)
@@ -391,7 +393,7 @@ def remove_event(events, event):
             events.remove(target)
 
 
-class RevokeListTests(unit.TestCase):
+class RevokeListTests(object):
     def setUp(self):
         super(RevokeListTests, self).setUp()
         self.events = []
@@ -438,16 +440,20 @@ class RevokeListTests(unit.TestCase):
         self.token_to_revoke = token_to_revoke
 
     def _assertTokenRevoked(self, token_data):
-        self.assertTrue(any([_matches(e, token_data) for e in self.events]))
+        backend = sql.Revoke()
+        self.assertTrue(any([_matches(e, token_data) for e in
+                        backend.list_events(token=token_data)]))
         return self.assertTrue(
-            revoke_model.is_revoked(self.revoke_events, token_data),
-            'Token should be revoked')
+            revoke_model.is_revoked(backend.list_events(token=token_data),
+            token_data), 'Token should be revoked')
 
     def _assertTokenNotRevoked(self, token_data):
-        self.assertFalse(any([_matches(e, token_data) for e in self.events]))
+        backend = sql.Revoke()
+        self.assertFalse(any([_matches(e, token_data) for e in
+                         backend.list_events(token=token_data)]))
         return self.assertFalse(
-            revoke_model.is_revoked(self.revoke_events, token_data),
-            'Token should not be revoked')
+            revoke_model.is_revoked(backend.list_events(token=token_data),
+            token_data), 'Token should not be revoked')
 
     def _revoke_by_user(self, user_id):
         return add_event(
@@ -522,16 +528,13 @@ class RevokeListTests(unit.TestCase):
 
     def _user_field_test(self, field_name):
         user_id = _new_id()
-        event = self._revoke_by_user(user_id)
-        self.events.append(event)
+        self.revoke_api.revoke_by_user(user_id=user_id)
         token_data_u1 = _sample_blank_token()
         token_data_u1[field_name] = user_id
         self._assertTokenRevoked(token_data_u1)
         token_data_u2 = _sample_blank_token()
         token_data_u2[field_name] = _new_id()
         self._assertTokenNotRevoked(token_data_u2)
-        remove_event(self.revoke_events, event)
-        self.events.remove(event)
         self._assertTokenNotRevoked(token_data_u1)
 
     def test_revoke_by_user(self):
