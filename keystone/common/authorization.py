@@ -15,8 +15,6 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
-import copy
-
 from oslo_log import log
 from oslo_utils import strutils
 
@@ -126,28 +124,10 @@ def assert_admin(app, request):
         does not have the admin role
 
     """
-    request.assert_authenticated()
+    prep_info = {'f_name': 'admin_required',
+                 'input_attr': {}}
 
-    if not request.context.is_admin:
-        user_token_ref = get_token_ref(request.context_dict)
-
-        creds = copy.deepcopy(user_token_ref.metadata)
-
-        try:
-            creds['user_id'] = user_token_ref.user_id
-        except exception.UnexpectedError:
-            LOG.debug('Invalid user')
-            raise exception.Unauthorized()
-
-        if user_token_ref.project_scoped:
-            creds['tenant_id'] = user_token_ref.project_id
-        else:
-            LOG.debug('Invalid tenant')
-            raise exception.Unauthorized()
-
-        creds['roles'] = user_token_ref.role_names
-        # Accept either is_admin or the admin role
-        app.policy_api.enforce(creds, 'admin_required', {})
+    check_protection(app, request, prep_info)
 
 
 def _build_policy_check_credentials(action, context, kwargs):
@@ -206,33 +186,34 @@ def check_protection(controller, request, prep_info, target_attr=None,
     they can be referenced by policy rules.
 
     """
+    request.assert_authenticated()
     if request.context.is_admin:
         LOG.warning(_LW('RBAC: Bypassing authorization'))
         return
-    else:
-        action = 'identity:%s' % prep_info['f_name']
-        # TODO(henry-nash) need to log the target attributes as well
-        creds = _build_policy_check_credentials(
-            action, request.context_dict, prep_info['input_attr'])
-        # Build the dict the policy engine will check against from both the
-        # parameters passed into the call we are protecting (which was
-        # stored in the prep_info by protected()), plus the target
-        # attributes provided.
-        policy_dict = {}
-        _handle_member_from_driver(controller, policy_dict, **kwargs)
-        _handle_subject_token_id(controller, request, policy_dict)
 
-        if target_attr:
-            policy_dict = {'target': target_attr}
-        policy_dict.update(prep_info['input_attr'])
-        if 'filter_attr' in prep_info:
-            policy_dict.update(prep_info['filter_attr'])
+    action = 'identity:%s' % prep_info['f_name']
+    # TODO(henry-nash) need to log the target attributes as well
+    creds = _build_policy_check_credentials(
+        action, request.context_dict, prep_info['input_attr'])
+    # Build the dict the policy engine will check against from both the
+    # parameters passed into the call we are protecting (which was
+    # stored in the prep_info by protected()), plus the target
+    # attributes provided.
+    policy_dict = {}
+    _handle_member_from_driver(controller, policy_dict, **kwargs)
+    _handle_subject_token_id(controller, request, policy_dict)
 
-        for key in kwargs:
-            policy_dict[key] = kwargs[key]
-        controller.policy_api.enforce(creds,
-                                      action,
-                                      utils.flatten_dict(policy_dict))
+    if target_attr:
+        policy_dict = {'target': target_attr}
+    policy_dict.update(prep_info['input_attr'])
+    if 'filter_attr' in prep_info:
+        policy_dict.update(prep_info['filter_attr'])
+
+    for key in kwargs:
+        policy_dict[key] = kwargs[key]
+    controller.policy_api.enforce(creds,
+                                  action,
+                                  utils.flatten_dict(policy_dict))
     LOG.debug('RBAC: Authorization granted')
 
 
