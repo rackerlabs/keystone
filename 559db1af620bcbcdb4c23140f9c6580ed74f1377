@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_145bcc2f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T16:02:07Z",
+      "side": 1,
+      "message": "nit: \n\n  ``CONF [token] expiration``",
+      "revId": "559db1af620bcbcdb4c23140f9c6580ed74f1377",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
