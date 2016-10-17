@@ -22,6 +22,24 @@
       "revId": "4e5118875f03b42394c0e33a1ff2c900e8a5bb8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_80e31a33",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T14:38:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_96eaab72",
+      "revId": "4e5118875f03b42394c0e33a1ff2c900e8a5bb8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
