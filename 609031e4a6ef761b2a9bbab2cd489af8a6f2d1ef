@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_eb2e6ef9",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-17T18:44:30Z",
+      "side": 1,
+      "message": "(nit) you don\u0027t need to do the % operation here. print() will print all *args passed to it separated by a space.",
+      "revId": "609031e4a6ef761b2a9bbab2cd489af8a6f2d1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_0b0ba27e",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-17T18:44:30Z",
+      "side": 1,
+      "message": "Is there any reason you don\u0027t check all the files if you do for the filename?",
+      "revId": "609031e4a6ef761b2a9bbab2cd489af8a6f2d1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_6b225e03",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-17T18:44:30Z",
+      "side": 1,
+      "message": "This probably deserves a better user facing error message.",
+      "revId": "609031e4a6ef761b2a9bbab2cd489af8a6f2d1ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
