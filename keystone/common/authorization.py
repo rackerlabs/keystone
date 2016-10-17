@@ -159,18 +159,18 @@ def _build_policy_check_credentials(action, context, kwargs):
     return context['environment'].get(AUTH_CONTEXT_ENV, {})
 
 
-
 def _handle_member_from_driver(self, policy_dict, **kwargs):
     # Check to see if we need to include the target entity in our
     # policy checks.  We deduce this by seeing if the class has
     # specified a get_member() method and that kwargs contains the
     # appropriate entity id.
     if (hasattr(self, 'get_member_from_driver') and
-        self.get_member_from_driver is not None):
+            self.get_member_from_driver is not None):
         key = '%s_id' % self.member_name
         if key in kwargs:
             ref = self.get_member_from_driver(kwargs[key])
             policy_dict['target'] = {self.member_name: ref}
+
 
 def _handle_subject_token_id(self, request, policy_dict):
     if request.context_dict.get('subject_token_id') is not None:
@@ -195,7 +195,9 @@ def _handle_subject_token_id(self, request, policy_dict):
                 'domain']['id'] = (
                     user_domain_id)
 
-def check_protection(controller, request, prep_info, target_attr=None, *args,  **kwargs):
+
+def check_protection(controller, request, prep_info, target_attr=None,
+                     *args, **kwargs):
     """Provide call protection for complex target attributes.
 
     As well as including the standard parameters from the original API
@@ -210,7 +212,8 @@ def check_protection(controller, request, prep_info, target_attr=None, *args,  *
     else:
         action = 'identity:%s' % prep_info['f_name']
         # TODO(henry-nash) need to log the target attributes as well
-        creds = _build_policy_check_credentials(action, request.context_dict, prep_info['input_attr'])
+        creds = _build_policy_check_credentials(
+            action, request.context_dict, prep_info['input_attr'])
         # Build the dict the policy engine will check against from both the
         # parameters passed into the call we are protecting (which was
         # stored in the prep_info by protected()), plus the target
@@ -227,19 +230,16 @@ def check_protection(controller, request, prep_info, target_attr=None, *args,  *
 
         for key in kwargs:
             policy_dict[key] = kwargs[key]
-
-            
         controller.policy_api.enforce(creds,
-                                action,
-                                utils.flatten_dict(policy_dict))
-
+                                      action,
+                                      utils.flatten_dict(policy_dict))
     LOG.debug('RBAC: Authorization granted')
 
 
 def common_policy_check():
     LOG.debug('RBAC: Authorization granted')
 
-    
+
 def get_token_ref(context):
     """Retrieve KeystoneToken object from the auth context and returns it.
 
