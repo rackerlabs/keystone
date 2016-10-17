@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_b73054ea",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T21:36:54Z",
+      "side": 1,
+      "message": "nonexistent*",
+      "revId": "c4b07f3976e4adce7b86379f672b4fb0dcd20ee4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
