@@ -34,6 +34,75 @@
       "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_08c005e0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T19:48:29Z",
+      "side": 1,
+      "message": "These could be moved into a keystone/tests/unit/token/test_common.py module.",
+      "parentUuid": "fa6399be_46402f36",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_48167d56",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T19:48:29Z",
+      "side": 1,
+      "message": "This should be a kwarg defaulting to None according to the code below. \n\n\n  def build_audit_info(parent_audit_id\u003dNone):\n\nOtherwise we would be calling this like:\n\n  common.build_audit_info(None)\n\nWhich doesn\u0027t seem like a pattern we want to establish(?).",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_4b72f7ae",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T19:48:29Z",
+      "side": 1,
+      "message": "We could take this one step further and just make these class methods of BasePayload, like we do for attempt_convert_uuid_hex_to_bytes.",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_ab61d3d5",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T19:48:29Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
