@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_c3e0bccf",
+        "filename": "api-ref/source/v3/inherit.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-17T15:06:14Z",
+      "side": 0,
+      "message": "This link works - why remove it?\n\nhttp://developer.openstack.org/api-ref/identity/v3/index.html#assign-role-to-user-owned-by-domain-projects",
+      "revId": "ab02ec038c365012fcf9083b69ff42a78dfbfe7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
