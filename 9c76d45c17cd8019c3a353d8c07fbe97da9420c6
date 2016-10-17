@@ -16,6 +16,29 @@
       "revId": "9c76d45c17cd8019c3a353d8c07fbe97da9420c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_7d3bfd38",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-17T23:34:21Z",
+      "side": 1,
+      "message": "This may be somewhat unrelated, but there\u0027s no mention of Fernet here.",
+      "range": {
+        "startLine": 441,
+        "startChar": 47,
+        "endLine": 442,
+        "endChar": 20
+      },
+      "revId": "9c76d45c17cd8019c3a353d8c07fbe97da9420c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
