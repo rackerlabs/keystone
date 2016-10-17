@@ -149,7 +149,7 @@ def protected_wrapper(self, f, check_function, request, filter_attr,
                       *args, **kwargs):
     request.assert_authenticated()
     if request.context.is_admin:
-        LOG.warning(_('RBAC: Bypassing authorization'))
+        LOG.warning('RBAC: Bypassing authorization')
         return
     prep_info = {'f_name': f.__name__,
                  'input_attr': kwargs}
