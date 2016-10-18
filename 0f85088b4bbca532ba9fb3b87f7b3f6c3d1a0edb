@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_c8da8217",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:41:43Z",
+      "side": 1,
+      "message": "how does this relate to trusts? it\u0027s changing common code.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 6
+      },
+      "revId": "0f85088b4bbca532ba9fb3b87f7b3f6c3d1a0edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_28085e91",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:41:43Z",
+      "side": 1,
+      "message": "Partial-Bug: 968696 ?\n\nRelated-Bug: 968696 ?",
+      "revId": "0f85088b4bbca532ba9fb3b87f7b3f6c3d1a0edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
