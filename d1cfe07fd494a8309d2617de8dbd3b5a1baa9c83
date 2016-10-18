@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_082abae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T03:01:32Z",
+      "side": 1,
+      "message": "please don\u0027t end this with a colon",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_e8ee66b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T03:01:32Z",
+      "side": 1,
+      "message": "this is an incomplete sentence, what oslo.context fixes are you referring to?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_28cbfe1f",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T03:01:32Z",
+      "side": 1,
+      "message": "this should be in the else block according to the original impl.",
+      "range": {
+        "startLine": 236,
+        "startChar": 4,
+        "endLine": 236,
+        "endChar": 44
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c82e02a5",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T03:01:32Z",
+      "side": 1,
+      "message": "is this used anywhere?",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 44
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
