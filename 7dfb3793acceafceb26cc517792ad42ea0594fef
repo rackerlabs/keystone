@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_841cd578",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-18T17:47:33Z",
+      "side": 1,
+      "message": "Link to documentation?",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_ff36fee5",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-18T17:47:33Z",
+      "side": 1,
+      "message": "Suggestion: \"In addition, for multi-node deployments, it is...",
+      "range": {
+        "startLine": 6,
+        "startChar": 61,
+        "endLine": 8,
+        "endChar": 52
+      },
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_7f9f4eb4",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-18T17:47:33Z",
+      "side": 1,
+      "message": "Suggestion: \"you will need to explicitly...\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
