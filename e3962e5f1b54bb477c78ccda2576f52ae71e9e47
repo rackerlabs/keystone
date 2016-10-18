@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_c8f0c2cc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:37:27Z",
+      "side": 1,
+      "message": "i\u0027d be OK with removing this entirely, i think folks have mostly moved to OSC for keystone commands -- i haven\u0027t had to field a question about \"wheres the keystone CLI\" on IRC in a while.",
+      "range": {
+        "startLine": 1363,
+        "startChar": 0,
+        "endLine": 1387,
+        "endChar": 87
+      },
+      "revId": "e3962e5f1b54bb477c78ccda2576f52ae71e9e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_88940a45",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:37:27Z",
+      "side": 1,
+      "message": "i\u0027d also be OK with removing all of this, but feel free to propose this, and my other comment in a separate patch. IMO there\u0027s no need to keep OSC stuff in the keystone docs (though i probably added it there a long time ago)",
+      "range": {
+        "startLine": 1389,
+        "startChar": 0,
+        "endLine": 1485,
+        "endChar": 143
+      },
+      "revId": "e3962e5f1b54bb477c78ccda2576f52ae71e9e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
