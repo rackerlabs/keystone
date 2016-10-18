@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_12258bad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:03:36Z",
+      "side": 1,
+      "message": "keystone* or just remove this sentence",
+      "range": {
+        "startLine": 14,
+        "startChar": 46,
+        "endLine": 14,
+        "endChar": 50
+      },
+      "revId": "baca7b5453a79e846a1df55f6d66191ec275396b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_b2369fe5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:03:36Z",
+      "side": 1,
+      "message": "add a release note too please, instructions here:\nhttp://docs.openstack.org/developer/keystone/developing.html#release-notes\nexamples in the directory the note is generated in",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "baca7b5453a79e846a1df55f6d66191ec275396b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1273cbb5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:03:36Z",
+      "side": 1,
+      "message": "s/setting/health check middleware",
+      "range": {
+        "startLine": 1149,
+        "startChar": 5,
+        "endLine": 1149,
+        "endChar": 12
+      },
+      "revId": "baca7b5453a79e846a1df55f6d66191ec275396b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9240bb37",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:03:36Z",
+      "side": 1,
+      "message": "to a* load balancer",
+      "range": {
+        "startLine": 1150,
+        "startChar": 20,
+        "endLine": 1150,
+        "endChar": 36
+      },
+      "revId": "baca7b5453a79e846a1df55f6d66191ec275396b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_526d43cb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:03:36Z",
+      "side": 1,
+      "message": "if a* given",
+      "range": {
+        "startLine": 1150,
+        "startChar": 37,
+        "endLine": 1150,
+        "endChar": 45
+      },
+      "revId": "baca7b5453a79e846a1df55f6d66191ec275396b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
