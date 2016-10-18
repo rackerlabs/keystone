@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_48dcb246",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-18T02:34:14Z",
+      "side": 1,
+      "message": "common*",
+      "range": {
+        "startLine": 9,
+        "startChar": 32,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "de1a85deee9509332191af4ca15d8565dc7a31ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
