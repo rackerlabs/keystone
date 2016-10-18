@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_729de758",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-18T01:02:39Z",
+      "side": 1,
+      "message": "healthcheck",
+      "range": {
+        "startLine": 9,
+        "startChar": 25,
+        "endLine": 9,
+        "endChar": 36
+      },
+      "revId": "79d17262510342d7fe00e511422c0574a6eae293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_32a52fb5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-18T01:02:39Z",
+      "side": 1,
+      "message": "nit:... to {a/the} load balancer ...",
+      "range": {
+        "startLine": 1150,
+        "startChar": 22,
+        "endLine": 1150,
+        "endChar": 23
+      },
+      "revId": "79d17262510342d7fe00e511422c0574a6eae293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_92943b45",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-18T01:02:39Z",
+      "side": 1,
+      "message": "nit: ...if the given API...",
+      "range": {
+        "startLine": 1150,
+        "startChar": 39,
+        "endLine": 1150,
+        "endChar": 40
+      },
+      "revId": "79d17262510342d7fe00e511422c0574a6eae293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
