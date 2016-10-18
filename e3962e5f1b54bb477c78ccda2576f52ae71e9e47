@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_8876cad6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-18T03:08:01Z",
+      "side": 1,
+      "message": "++ maybe briefly introduce of OSC, so that we know how to create those resource.",
+      "parentUuid": "fa6399be_c8f0c2cc",
+      "range": {
+        "startLine": 1363,
+        "startChar": 0,
+        "endLine": 1387,
+        "endChar": 87
+      },
+      "revId": "e3962e5f1b54bb477c78ccda2576f52ae71e9e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_88940a45",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
