@@ -1,0 +1,7 @@
+---
+features:
+  - >
+    The healthcheck middleware from Oslo has been added
+    to the Keystone application piplines. This middleware
+    provides a common method to check the health  of a particular
+    application provided by Keystone.
