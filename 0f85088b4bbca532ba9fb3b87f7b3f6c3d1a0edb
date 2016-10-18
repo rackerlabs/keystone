@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa6399be_e3476749",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T03:03:50Z",
+      "side": 1,
+      "message": "add more detail here, also is this really a refactor?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0f85088b4bbca532ba9fb3b87f7b3f6c3d1a0edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_c8da8217",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
