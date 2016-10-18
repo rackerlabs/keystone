@@ -68,6 +68,29 @@
       "revId": "79d17262510342d7fe00e511422c0574a6eae293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c580ab8e",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-18T02:05:54Z",
+      "side": 1,
+      "message": "you should be able to use the \"use\" directive for healthcheck too\n\nhttps://github.com/openstack/oslo.middleware/blob/master/setup.cfg#L42\n\n  use \u003d egg:oslo.middleware#healthcheck\n\nthis future-proofs it in the case that oslo.middleware moves the class around",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 58
+      },
+      "revId": "79d17262510342d7fe00e511422c0574a6eae293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
