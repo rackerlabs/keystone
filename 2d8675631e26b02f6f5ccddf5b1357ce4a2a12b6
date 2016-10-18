@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1abe60ff",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-18T18:11:20Z",
+      "side": 1,
+      "message": "Possibly, but this is definitely the wrong place.",
+      "parentUuid": "fa6399be_08c005e0",
+      "revId": "2d8675631e26b02f6f5ccddf5b1357ce4a2a12b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_48167d56",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 5
