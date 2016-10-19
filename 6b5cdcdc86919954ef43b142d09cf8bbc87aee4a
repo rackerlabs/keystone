@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_8925c2c3",
+        "filename": "keystone/tests/unit/ksfixtures/hacking.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-19T02:09:34Z",
+      "side": 1,
+      "message": "pls note what this file for and read the context of these code.",
+      "range": {
+        "startLine": 383,
+        "startChar": 4,
+        "endLine": 383,
+        "endChar": 36
+      },
+      "revId": "6b5cdcdc86919954ef43b142d09cf8bbc87aee4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
