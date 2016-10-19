@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_9dd17cfe",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-19T04:39:37Z",
+      "side": 1,
+      "message": "This check on it\u0027s own isn\u0027t enough, since if domain_configurations_from_database is set as well, then we aren\u0027t using files",
+      "range": {
+        "startLine": 75,
+        "startChar": 11,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_5d0fe4e0",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-19T04:39:37Z",
+      "side": 1,
+      "message": "So, the real keystone code that reads these configs correctly ignores files not in the correct format - it\u0027s fine to have other files in there (e.g. a README or something). However, I think what you are trying to warn people about is that maybe they meant for a file to be a config, but names it wrong? So maybe the error should be a warning to say something like did you mean these files to be config files, if so you should rename them to be keystone.\u003cdomain_name\u003e.conf",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1d048c7c",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-19T04:39:37Z",
+      "side": 1,
+      "message": "This check on it\u0027s own isn\u0027t enough, since if domain_configurations_from_database is set as well, then we aren\u0027t using files",
+      "range": {
+        "startLine": 123,
+        "startChar": 18,
+        "endLine": 123,
+        "endChar": 57
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
