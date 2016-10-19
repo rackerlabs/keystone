@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_934a3282",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T14:32:12Z",
+      "side": 1,
+      "message": "This is a little weird for me. Usually code/commands/etc are run in double backticks. In this case it\u0027s the filename, section and the code that should be in the config file.",
+      "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
