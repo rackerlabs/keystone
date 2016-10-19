@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_949e95b6",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-19T16:10:40Z",
+      "side": 1,
+      "message": "Why not only import the controllers, so:\nfrom keystone.token import controllers",
+      "range": {
+        "startLine": 137,
+        "startChar": 26,
+        "endLine": 137,
+        "endChar": 60
+      },
+      "revId": "336978f8bb691e8d31c45bca9f4a96761823de36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_b958f4fb",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 5
