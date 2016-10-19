@@ -70,6 +70,24 @@
       "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_72caee1b",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T18:29:24Z",
+      "side": 1,
+      "message": "Good suggestion - done.",
+      "parentUuid": "fa6399be_d23adacc",
+      "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
