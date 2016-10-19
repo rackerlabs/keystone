@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa6399be_e03c64c1",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T19:20:47Z",
+      "side": 1,
+      "message": "Is this saying that if the config is not coming from the database that we should bail? Isn\u0027t that the case where we actually want to do the check?",
+      "revId": "38d38e7fc3e550f7093c82053c160dd651b7a5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_3572204a",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 23
