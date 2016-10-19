@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_655eb1ea",
+        "filename": "releasenotes/notes/make-fernet-default-6fe3158fa2aa46de.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T14:41:07Z",
+      "side": 1,
+      "message": "What is this in relation to this https://review.openstack.org/#/c/376526/ ?",
+      "revId": "e83140a54552e24224d2f0a06d93da74e39a1e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
