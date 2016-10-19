@@ -51,7 +51,7 @@ VERSIONS = token_model.VERSIONS
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'oauth_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -131,6 +131,15 @@ class Manager(manager.Manager):
             except exception.TokenNotFound:
                 six.reraise(*exc_info)
 
+    def _validate_consumer(self, token):
+        # Check consumer_id is valid if it is in the token
+        if token['consumer_id']:
+            try:
+                self.oauth_api.get_consumer(token['consumer_id'])
+            except exception.NotFound:
+                # Consumer doesn't exist, token is invalid
+                raise exception.TokenNotFound(_('Failed to validate token'))
+
     def check_revocation_v2(self, token):
         try:
             token_data = token['access']
@@ -139,6 +148,7 @@ class Manager(manager.Manager):
 
         token_values = self.revoke_api.model.build_token_values_v2(
             token_data, CONF.identity.default_domain_id)
+        self._validate_consumer(token_values)
         self.revoke_api.check_token(token_values)
 
     def check_revocation_v3(self, token):
@@ -147,6 +157,7 @@ class Manager(manager.Manager):
         except KeyError:
             raise exception.TokenNotFound(_('Failed to validate token'))
         token_values = self.revoke_api.model.build_token_values(token_data)
+        self._validate_consumer(token_values)
         self.revoke_api.check_token(token_values)
 
     def check_revocation(self, token):
@@ -205,7 +216,6 @@ class Manager(manager.Manager):
 
         if current_time < expiry:
             self.check_revocation(token)
-            # Token has not expired and has not been revoked.
             return None
         else:
             raise exception.TokenNotFound(_('Failed to validate token'))
