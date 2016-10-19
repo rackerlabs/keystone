@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_fe7252e2",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:45:36Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "fa6399be_f7c61a15",
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_fe1b321a",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -42,6 +60,24 @@
         "endLine": 301,
         "endChar": 16
       },
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_1e82a694",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:45:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_fe1b321a",
       "revId": "e500892796cb00cf5325349821a6da2444880cd4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_5e4a5e84",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:45:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_3e720a4a",
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_be9c5a5e",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -94,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_be47fa75",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:45:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa6399be_be9c5a5e",
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_decaee4e",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -111,6 +183,24 @@
         "endLine": 487,
         "endChar": 20
       },
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_fe59725c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:45:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_decaee4e",
       "revId": "e500892796cb00cf5325349821a6da2444880cd4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
