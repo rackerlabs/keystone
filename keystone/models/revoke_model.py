@@ -200,10 +200,6 @@ def matches(event, token_values):
             token_values['trust_id'],):
         return False
 
-    if event.consumer_id is not None and event.consumer_id not in (
-            token_values['consumer_id'],):
-        return False
-
     if event.access_token_id is not None and event.access_token_id not in (
             token_values['access_token_id'],):
         return False

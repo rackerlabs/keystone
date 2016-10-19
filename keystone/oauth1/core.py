@@ -155,7 +155,6 @@ class Manager(manager.Manager):
 
     def delete_consumer(self, consumer_id, initiator=None):
         ret = self.driver.delete_consumer(consumer_id)
-        notifications.Audit.deleted(self._CONSUMER, consumer_id, initiator)
         return ret
 
     def create_access_token(self, request_id, access_token_duration,

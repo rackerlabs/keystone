@@ -153,6 +153,8 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
             self.assertTimestampEqual(utils.isotime(revoked_at),
                                       events[0]['revoked_at'])
 
+    # deleting consumer should no longer cause a revocation event to occur
+    # therefore there should be no events returned from delete_consumer
     def test_access_token_id_not_in_event(self):
         ref = {'description': uuid.uuid4().hex}
         resp = self.post('/OS-OAUTH1/consumers', body={'consumer': ref})
@@ -161,12 +163,7 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
-        self.assertThat(events, matchers.HasLength(1))
-        event = events[0]
-        self.assertEqual(consumer_id, event['OS-OAUTH1:consumer_id'])
-        # `OS-OAUTH1:access_token_id` is None and won't be returned to
-        # end user.
-        self.assertNotIn('OS-OAUTH1:access_token_id', event)
+        self.assertThat(events, matchers.HasLength(0))
 
     def test_retries_on_deadlock(self):
         patcher = mock.patch('sqlalchemy.orm.query.Query.delete',

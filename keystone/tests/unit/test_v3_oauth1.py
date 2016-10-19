@@ -949,13 +949,16 @@ class OAuthNotificationTests(OAuth1Tests,
     def test_delete_consumer(self):
         consumer_ref = self._create_single_consumer()
         self.oauth_api.delete_consumer(consumer_ref['id'])
-        self._assert_notify_sent(consumer_ref['id'],
-                                 test_notifications.DELETED_OPERATION,
-                                 'OS-OAUTH1:consumer')
-        self._assert_last_audit(consumer_ref['id'],
-                                test_notifications.DELETED_OPERATION,
-                                'OS-OAUTH1:consumer',
-                                cadftaxonomy.SECURITY_ACCOUNT)
+
+        # We do not want to create a notif/revocation when deleting consumer
+        # make sure notification is not sent but the consumer is still
+        # deleted.
+        self._assert_notify_not_sent(consumer_ref['id'],
+                                     test_notifications.DELETED_OPERATION,
+                                     'OS-OAUTH1:consumer')
+        self.assertRaises(exception.NotFound,
+                          self.oauth_api.get_consumer,
+                          consumer_ref['id'])
 
     def test_oauth_flow_notifications(self):
         """Test to ensure notifications are sent for oauth tokens.
