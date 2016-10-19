@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_c5e05dfd",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T14:45:12Z",
+      "side": 1,
+      "message": "Good catch Henry",
+      "parentUuid": "fa6399be_9dd17cfe",
+      "range": {
+        "startLine": 75,
+        "startChar": 11,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_5d0fe4e0",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 21
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "ah, makes sense, I\u0027ll fix this then",
       "parentUuid": "fa6399be_130c783a",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_45a9ad7a",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T14:45:12Z",
+      "side": 1,
+      "message": "Wouldn\u0027t you also want to make sure the configs are the correct ini format too? So you would scan all files and if they fail validation and use k.\u003cd\u003e.conf as the name it\u0027s an error....or if it is valid ini and does not have that name it\u0027s also an error?",
+      "parentUuid": "fa6399be_5d0fe4e0",
       "range": {
         "startLine": 84,
         "startChar": 0,
