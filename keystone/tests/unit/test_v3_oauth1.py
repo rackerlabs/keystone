@@ -949,9 +949,9 @@ class OAuthNotificationTests(OAuth1Tests,
     def test_delete_consumer(self):
         consumer_ref = self._create_single_consumer()
         self.oauth_api.delete_consumer(consumer_ref['id'])
-        self._assert_notify_sent(consumer_ref['id'],
-                                 test_notifications.DELETED_OPERATION,
-                                 'OS-OAUTH1:consumer')
+        self._assert_notify_not_sent(consumer_ref['id'],
+                                     test_notifications.DELETED_OPERATION,
+                                     'OS-OAUTH1:consumer')
         self._assert_last_audit(consumer_ref['id'],
                                 test_notifications.DELETED_OPERATION,
                                 'OS-OAUTH1:consumer',
