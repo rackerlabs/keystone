@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_f88b6666",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-19T04:52:26Z",
+      "side": 1,
+      "message": "so add:\n\n  if not CONF.identity. domain_configurations_from_database:\n        return False\n\nbelow?",
+      "parentUuid": "fa6399be_9dd17cfe",
+      "range": {
+        "startLine": 75,
+        "startChar": 11,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_5d0fe4e0",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 21
@@ -36,6 +60,30 @@
       "writtenOn": "2016-10-19T04:39:37Z",
       "side": 1,
       "message": "So, the real keystone code that reads these configs correctly ignores files not in the correct format - it\u0027s fine to have other files in there (e.g. a README or something). However, I think what you are trying to warn people about is that maybe they meant for a file to be a config, but names it wrong? So maybe the error should be a warning to say something like did you mean these files to be config files, if so you should rename them to be keystone.\u003cdomain_name\u003e.conf",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_3885de58",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-19T04:52:26Z",
+      "side": 1,
+      "message": "That sounds reasonable, something like:\n\n\"Warning: The following non-config files were found. If they are intended to be config files then rename them to the form of `keystone.\u003cdomain_name\u003e.conf`. Otherwise, ignore this warning\"",
+      "parentUuid": "fa6399be_5d0fe4e0",
       "range": {
         "startLine": 84,
         "startChar": 0,
