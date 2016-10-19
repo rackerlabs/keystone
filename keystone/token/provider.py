@@ -51,7 +51,7 @@ VERSIONS = token_model.VERSIONS
 
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'oauth_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -203,12 +203,21 @@ class Manager(manager.Manager):
                               'determining token expiry: %s'), token)
             raise exception.TokenNotFound(_('Failed to validate token'))
 
-        if current_time < expiry:
-            self.check_revocation(token)
-            # Token has not expired and has not been revoked.
-            return None
-        else:
+        if current_time >= expiry:
+            # The token is expired and therefore invalid
             raise exception.TokenNotFound(_('Failed to validate token'))
+
+        # Check consumer_id is valid if it is in the token
+        if 'consumer_id' in token:
+            try:
+                self.oauth_api.get_consumer(token['consumer_id'])
+            except exception.NotFound:
+                # Consumer doesn't exist, token is invalid
+                raise exception.TokenNotFound(_('Failed to validate token'))
+
+        self.check_revocation(token)
+        # Token has not expired and has not been revoked.
+        return None
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(
