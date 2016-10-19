@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_69411c0b",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-19T23:29:52Z",
+      "side": 1,
+      "message": "Probably should break up this line so it\u0027s not over 80 chars. You can just put the \"Requires v3.0+...\" on the next line and it\u0027ll render on the same line when you build it.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 117
+      },
+      "revId": "4cc4c9fd82cbc99a10ca9ebb439094e446dcddda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
