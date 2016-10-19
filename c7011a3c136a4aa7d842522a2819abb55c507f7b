@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa6399be_0878ac2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T15:03:14Z",
+      "side": 1,
+      "message": "Here we should try and define why we should merge the patch and why it is beneficial to the project. We can also add:\n\n  Partial-Bug: 1614154\n\nto the footer of the commit message so that our launchpad/openstack tooling will pick it up and automatically comment on the bug report.\n\nWe have some good documentation around commit messages here - https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_67c07c2b",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
