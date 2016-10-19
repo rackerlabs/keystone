@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_67c07c2b",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T13:40:03Z",
+      "side": 1,
+      "message": "Is this the correct copyright? Was this code copied from old foundation code?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_e7864cda",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T13:40:03Z",
+      "side": 1,
+      "message": "Having that be the default means that every call to _create_credential_with_user_id() will have the exact same default. It\u0027s probably better to use None and in the method so something like \u0027user_id \u003d user_id or uuid.uuid4().hex\u0027.",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_5235f8d7",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T13:40:03Z",
+      "side": 1,
+      "message": "Why is this setting up the database fixture when the parent already does it?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_8763d019",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T13:40:03Z",
+      "side": 1,
+      "message": "Why make a Hints instance if you don\u0027t use it?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_678f9ccc",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T13:40:03Z",
+      "side": 1,
+      "message": "Why make a Hints instance if you don\u0027t use it?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
