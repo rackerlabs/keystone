@@ -49,9 +49,11 @@ V2 = token_model.V2
 V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
+# exception Message for TokenNotFound
+token_invalid_message = "Failed to validate token"
 
 @dependency.provider('token_provider_api')
-@dependency.requires('assignment_api', 'revoke_api')
+@dependency.requires('assignment_api', 'oauth_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -135,7 +137,7 @@ class Manager(manager.Manager):
         try:
             token_data = token['access']
         except KeyError:
-            raise exception.TokenNotFound(_('Failed to validate token'))
+            raise exception.TokenNotFound(_(token_invalid_message))
 
         token_values = self.revoke_api.model.build_token_values_v2(
             token_data, CONF.identity.default_domain_id)
@@ -145,7 +147,7 @@ class Manager(manager.Manager):
         try:
             token_data = token['token']
         except KeyError:
-            raise exception.TokenNotFound(_('Failed to validate token'))
+            raise exception.TokenNotFound(_(token_invalid_message))
         token_values = self.revoke_api.model.build_token_values(token_data)
         self.revoke_api.check_token(token_values)
 
@@ -201,14 +203,23 @@ class Manager(manager.Manager):
         except Exception:
             LOG.exception(_LE('Unexpected error or malformed token '
                               'determining token expiry: %s'), token)
-            raise exception.TokenNotFound(_('Failed to validate token'))
+            raise exception.TokenNotFound(_(token_invalid_message))
 
-        if current_time < expiry:
-            self.check_revocation(token)
-            # Token has not expired and has not been revoked.
-            return None
-        else:
-            raise exception.TokenNotFound(_('Failed to validate token'))
+        if current_time >= expiry:
+            # The token is expired and therefore invalid
+            raise exception.TokenNotFound(_(token_invalid_message))
+
+        # Check consumer_id is valid if it is in the token
+        if 'consumer_id' in token:
+            try:
+                consumer_ref = self.oauth_api.get_consumer(consumer_id)
+            except exception.NotFound:
+                # Consumer doesn't exist, token is invalid
+                raise exception.TokenNotFound(_(token_invalid_message))
+
+        self.check_revocation(token)
+        # Token has not expired and has not been revoked.
+        return None
 
     def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
         token_id, token_data = self.driver.issue_v2_token(
