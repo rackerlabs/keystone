@@ -264,6 +264,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_d2681abd",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T18:15:10Z",
+      "side": 1,
+      "message": "Yeah, I re-read this in context. I was thinking that the negative testing would replace the other test. We definitely need both.",
+      "parentUuid": "fa6399be_ef8457b2",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_1d048c7c",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 21
