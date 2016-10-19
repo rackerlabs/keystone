@@ -34,6 +34,24 @@
       "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_4fff06aa",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T16:43:38Z",
+      "side": 1,
+      "message": "I was thinking something similar to what Steve suggested: ``[token]/provider \u003d \u0027uuid\u0027``. This is similar to what we have in the docs. I think that just taking out the filename will make this consistent with other release notes.\n\n   using ``[token] provider \u003d uuid`` in your keystone.conf.\n\nWe don\u0027t really have a standard here to use for judgement. Some things use ``[section] name`` and others use ``[section]/name``",
+      "parentUuid": "fa6399be_651231b6",
+      "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
