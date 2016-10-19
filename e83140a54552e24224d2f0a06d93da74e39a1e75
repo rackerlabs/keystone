@@ -16,6 +16,24 @@
       "revId": "e83140a54552e24224d2f0a06d93da74e39a1e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_05d7b5bf",
+        "filename": "releasenotes/notes/make-fernet-default-6fe3158fa2aa46de.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T14:49:24Z",
+      "side": 1,
+      "message": "Ah ha - good point. This can be removed. I originally wrote this when proposing this patch but later learned that we need to land the release note *before* the change (because of the other dependencies we have to resolve in grenade, tempest, and devstack). As a result, I pulled the releasenote out into it\u0027s own commit. This can be reverted.",
+      "parentUuid": "fa6399be_655eb1ea",
+      "revId": "e83140a54552e24224d2f0a06d93da74e39a1e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
