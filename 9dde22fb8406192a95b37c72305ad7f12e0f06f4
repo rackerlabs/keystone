@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_ddc4d441",
+        "filename": "releasenotes/notes/fetch-expired-token-f5d845b9601bc1ef.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-19T04:32:41Z",
+      "side": 1,
+      "message": "use `` instead, this is rendered as rst",
+      "range": {
+        "startLine": 3,
+        "startChar": 7,
+        "endLine": 3,
+        "endChar": 22
+      },
+      "revId": "9dde22fb8406192a95b37c72305ad7f12e0f06f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
