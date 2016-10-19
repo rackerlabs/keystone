@@ -156,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_7bd1e9cc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-19T20:16:55Z",
+      "side": 1,
+      "message": "Looking at this again, I see your point. I\u0027m okay with this part as is.",
+      "parentUuid": "fa6399be_40ba70e2",
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_839ea261",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 9
