@@ -16,6 +16,24 @@
       "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_651231b6",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T14:48:02Z",
+      "side": 1,
+      "message": "So should this just be in single backticks? This seemed to be the convention we formed as dolph was making configuration isn\u0027t own package in keystone.",
+      "parentUuid": "fa6399be_934a3282",
+      "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
