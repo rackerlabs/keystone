@@ -43,6 +43,29 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1e59c65a",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-19T15:47:19Z",
+      "side": 1,
+      "message": "This is no longer used? Can we remove this method?",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 28
+      },
+      "revId": "e500892796cb00cf5325349821a6da2444880cd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_fe1b321a",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
