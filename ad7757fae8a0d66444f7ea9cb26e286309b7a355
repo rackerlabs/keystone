@@ -138,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_40ba70e2",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-19T19:29:52Z",
+      "side": 1,
+      "message": "Even if I do the suggested output I still need the warning below. That was we are explicitly saying that nothing happened. Sure you could say the lack of output already says that, but that\u0027s not currently true. Also failures are already logged above so there is no reason to do that here too.",
+      "parentUuid": "7aa08908_0b292e8a",
+      "revId": "ad7757fae8a0d66444f7ea9cb26e286309b7a355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_839ea261",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 9
