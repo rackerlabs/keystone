@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_53a09a9f",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T14:24:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_841cd578",
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_ff36fee5",
         "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
         "patchSetId": 4
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_739bde72",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T14:24:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_ff36fee5",
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_7f9f4eb4",
         "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
         "patchSetId": 4
@@ -65,6 +101,24 @@
         "endLine": 13,
         "endChar": 19
       },
+      "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_339fa651",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T14:24:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa6399be_7f9f4eb4",
       "revId": "7dfb3793acceafceb26cc517792ad42ea0594fef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
