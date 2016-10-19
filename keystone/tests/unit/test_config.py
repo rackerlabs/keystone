@@ -50,7 +50,7 @@ class ConfigTestCase(unit.TestCase):
 
     def test_profiler_config_default(self):
         """Check config.set_config_defaults() has set [profiler]enabled."""
-        self.assertEqual(False, CONF.profiler.enabled)
+        self.assertFalse(CONF.profiler.enabled)
 
 
 class DeprecatedTestCase(unit.TestCase):
