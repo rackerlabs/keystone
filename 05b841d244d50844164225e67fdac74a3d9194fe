@@ -52,6 +52,24 @@
       "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d23adacc",
+        "filename": "releasenotes/notes/make-fernet-the-default-token-provider-dbe88b552a936a05.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-19T18:14:14Z",
+      "side": 1,
+      "message": "right, the convention is:\n\n  using ``[token] provider \u003d uuid`` in your ``keystone.conf``.\n\nor\n\n  set ``[token] provider`` to ``uuid`` in your ``keystone.conf``.\n\nsingle backticks turn into italics, use this for emphasis\n\ndouble backticks into monospace font, use this for code, filenames, or syntax.",
+      "parentUuid": "fa6399be_4fff06aa",
+      "revId": "05b841d244d50844164225e67fdac74a3d9194fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
