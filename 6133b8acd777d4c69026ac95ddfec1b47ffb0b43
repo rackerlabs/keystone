@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_99d3305f",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-10-19T15:54:19Z",
+      "side": 0,
+      "message": "Why remove this test?",
+      "range": {
+        "startLine": 149,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 35
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
