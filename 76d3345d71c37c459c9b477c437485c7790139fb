@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_582199fa",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-19T14:12:35Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "fa6399be_b3fe6c03",
+      "range": {
+        "startLine": 75,
+        "startChar": 11,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_5d0fe4e0",
         "filename": "keystone/cmd/doctor/ldap.py",
         "patchSetId": 21
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "perfect",
       "parentUuid": "fa6399be_3885de58",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "76d3345d71c37c459c9b477c437485c7790139fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d883e9ca",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-19T14:12:35Z",
+      "side": 1,
+      "message": "ah, makes sense, I\u0027ll fix this then",
+      "parentUuid": "fa6399be_130c783a",
       "range": {
         "startLine": 84,
         "startChar": 0,
