@@ -102,11 +102,6 @@ class Manager(manager.Manager):
         self.revoke(
             revoke_model.RevokeEvent(trust_id=payload['resource_info']))
 
-    def _consumer_callback(self, service, resource_type, operation,
-                           payload):
-        self.revoke(
-            revoke_model.RevokeEvent(consumer_id=payload['resource_info']))
-
     def _access_token_callback(self, service, resource_type, operation,
                                payload):
         self.revoke(
@@ -123,7 +118,6 @@ class Manager(manager.Manager):
         callbacks = {
             notifications.ACTIONS.deleted: [
                 ['OS-TRUST:trust', self._trust_callback],
-                ['OS-OAUTH1:consumer', self._consumer_callback],
                 ['OS-OAUTH1:access_token', self._access_token_callback],
                 ['role', self._role_callback],
                 ['user', self._user_callback],
