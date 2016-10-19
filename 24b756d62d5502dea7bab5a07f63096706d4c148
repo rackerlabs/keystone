@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_5857f201",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2177,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-19T04:49:25Z",
+      "side": 1,
+      "message": "maybe add a TODO to remove this, since we will soon remove the V8 drivers...",
+      "range": {
+        "startLine": 2177,
+        "startChar": 8,
+        "endLine": 2177,
+        "endChar": 63
+      },
+      "revId": "24b756d62d5502dea7bab5a07f63096706d4c148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
