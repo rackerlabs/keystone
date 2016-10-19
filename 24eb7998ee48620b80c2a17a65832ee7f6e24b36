@@ -277,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_37d172ce",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-19T00:47:00Z",
+      "side": 1,
+      "message": "gotcha, thanks",
+      "parentUuid": "fa6399be_7a687988",
+      "revId": "24eb7998ee48620b80c2a17a65832ee7f6e24b36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_16e05b95",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
