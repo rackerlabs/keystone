@@ -22,6 +22,24 @@
       "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_792bbceb",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-19T16:12:09Z",
+      "side": 0,
+      "message": "I actually removed this since the _authenticate_local method no longer contains validation logic - as that\u0027s done by the generator. I could refactor this to test the generator instead.",
+      "parentUuid": "fa6399be_99d3305f",
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
