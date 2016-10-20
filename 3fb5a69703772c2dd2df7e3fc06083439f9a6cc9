@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_b8f45ccf",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T04:31:18Z",
+      "side": 1,
+      "message": "why not do the substituion here?",
+      "range": {
+        "startLine": 119,
+        "startChar": 12,
+        "endLine": 119,
+        "endChar": 45
+      },
+      "revId": "3fb5a69703772c2dd2df7e3fc06083439f9a6cc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
