@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_926afeeb",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 0,
+      "message": "This logic is duplicated here - https://github.com/openstack/keystone/blob/d45d82f6edae4bb3f38eb1abe321b802b638dd56/keystone/token/providers/common.py#L443\n\nOne of the benefits of consolidating the token creation and validation paths is that we can remove duplicate logic (like in this case).",
+      "parentUuid": "fa6399be_c2683d24",
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_dfedacb8",
         "filename": "keystone/token/provider.py",
         "patchSetId": 4
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_0dc6cf67",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 0,
+      "message": "Previously, the v2.0 token controller would actually populate the roles for the user and the project before asking the token provider to create the token [0]. Since we are leaving all the token construction logic in the V3TokenDataHelper class, we can leverage that code instead of duplicating it here. \n\nThe metadata dictionary was only a place to store roles before passing them to the token provider. If we rebuild the roles in the token data helpers, we don\u0027t need to do it here.\n\n\n[0] https://github.com/openstack/keystone/blob/d45d82f6edae4bb3f38eb1abe321b802b638dd56/keystone/token/controllers.py#L394",
+      "parentUuid": "fa6399be_dfedacb8",
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_3d291e8a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 4
@@ -65,6 +101,24 @@
         "endLine": 282,
         "endChar": 42
       },
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_ad9b2365",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 0,
+      "message": "Yep - I would like to propose a separate patch to remove all this stuff before persisting the token.",
+      "parentUuid": "fa6399be_3d291e8a",
       "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

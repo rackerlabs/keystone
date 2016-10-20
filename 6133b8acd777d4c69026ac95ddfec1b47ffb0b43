@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_8da2dffa",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 1,
+      "message": "I completely agree. I have a subsequent patch that does exactly that - https://review.openstack.org/#/c/386726/8/keystone/token/controllers.py\n\nI thought about doing the rename here but I left it for a subsequent patch because I had a feeling I was going to do a major refactor anyway. I wanted to keep the patch sizes minimal.",
+      "parentUuid": "fa6399be_a2b0a98c",
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_02a6b552",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -42,6 +60,24 @@
         "endLine": 314,
         "endChar": 35
       },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_4d836756",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 1,
+      "message": "++ same comment as above.",
+      "parentUuid": "fa6399be_02a6b552",
       "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_cdde976c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 1,
+      "message": "Yep - I more or less wanted to officially document this for developer benefit regardless of it getting published publicly anywhere.",
+      "parentUuid": "fa6399be_c2591d5d",
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_2cf1246b",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
@@ -94,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_6d310b5a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 1,
+      "message": "I believe so - I\u0027ll have to dig for it.",
+      "parentUuid": "fa6399be_2cf1246b",
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_cc77c800",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
@@ -111,6 +183,24 @@
         "endLine": 529,
         "endChar": 72
       },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_dfa71e09",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T16:19:11Z",
+      "side": 1,
+      "message": "Huh - apparently this snuck in somehow. I removed it and all the tests passed. Done.",
+      "parentUuid": "fa6399be_cc77c800",
       "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
