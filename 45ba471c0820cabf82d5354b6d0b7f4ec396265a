@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_9854f854",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T05:09:02Z",
+      "side": 1,
+      "message": "reference the changes please (either the change id or commit id) -- i\u0027m assuming you are referring to https://github.com/openstack/keystone/commit/9e84371461831880ce5736e9888c7d9648e3a77b",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "45ba471c0820cabf82d5354b6d0b7f4ec396265a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_58442073",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T05:09:02Z",
+      "side": 1,
+      "message": "rather than flip everything around, why not just pass in events\u003dNone if you only want to check if the token is revoked. you already check if events is not null on line 118\n\nand it\u0027ll save you the hassle of changing 100+ lines",
+      "range": {
+        "startLine": 116,
+        "startChar": 28,
+        "endLine": 116,
+        "endChar": 59
+      },
+      "revId": "45ba471c0820cabf82d5354b6d0b7f4ec396265a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_38ca0c1b",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T05:09:02Z",
+      "side": 1,
+      "message": "undo this change, it\u0027s unrelated and does the exact same thing (goes for all the other changes of uuid -\u003e new_id)\n\nas a review its much easier to review small focused changes one at a time. \n\n(for the record, i\u0027d be totally OK with a separate patch to get rid of new_id() and just use uuid.uuid4().hex instead)",
+      "range": {
+        "startLine": 159,
+        "startChar": 33,
+        "endLine": 159,
+        "endChar": 42
+      },
+      "revId": "45ba471c0820cabf82d5354b6d0b7f4ec396265a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_987798d3",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T05:09:02Z",
+      "side": 1,
+      "message": "pass in (events\u003dNone, token) instead?",
+      "range": {
+        "startLine": 372,
+        "startChar": 13,
+        "endLine": 372,
+        "endChar": 39
+      },
+      "revId": "45ba471c0820cabf82d5354b6d0b7f4ec396265a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
