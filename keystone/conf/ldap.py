@@ -443,6 +443,15 @@ object and `group_attr` is the attribute which should appear in the identity
 API.
 """))
 
+group_ad_nesting = cfg.BoolOpt(
+    'group_ad_nesting',
+    default=False,
+    deprecated_for_removal=False,
+    help=utils.fmt("""
+If enabled, groups queries will use Active Directory specific filters for
+nested groups.
+"""))
+
 tls_cacertfile = cfg.StrOpt(
     'tls_cacertfile',
     help=utils.fmt("""

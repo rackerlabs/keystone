@@ -386,15 +386,25 @@ class GroupApi(common_ldap.BaseLdap):
     def list_user_groups(self, user_dn):
         """Return a list of groups for which the user is a member."""
         user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(%s=%s)' % (self.member_attribute,
-                             user_dn_esc)
+        if self.conf.group_ad_nesting:
+            query = '(%s:1.2.840.113556.1.4.1941:=%s)%s' % (
+                self.member_attribute,
+                user_dn_esc)
+        else:
+            query = '(%s=%s)' % (self.member_attribute,
+                                 user_dn_esc)
         return self.get_all(query)
 
     def list_user_groups_filtered(self, user_dn, hints):
         """Return a filtered list of groups for which the user is a member."""
         user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(%s=%s)' % (self.member_attribute,
-                             user_dn_esc)
+        if self.conf.group_ad_nesting:
+            query = '(%s:1.2.840.113556.1.4.1941:=%s)' % (
+                self.member_attribute,
+                user_dn_esc)
+        else:
+            query = '(%s=%s)' % (self.member_attribute,
+                                 user_dn_esc)
         return self.get_all_filtered(hints, query)
 
     def list_group_users(self, group_id):
@@ -403,8 +413,16 @@ class GroupApi(common_ldap.BaseLdap):
         group_dn = group_ref['dn']
 
         try:
-            attrs = self._ldap_get_list(group_dn, ldap.SCOPE_BASE,
-                                        attrlist=[self.member_attribute])
+            if self.conf.group_ad_nesting:
+                attrs = self._ldap_get_list(
+                    self.tree_dn, ldap.SCOPE_SUBTREE,
+                    query_params={
+                        "memberof:1.2.840.113556.1.4.1941:": group_dn},
+                    attrlist=[self.member_attribute])
+            else:
+                attrs = self._ldap_get_list(group_dn, ldap.SCOPE_BASE,
+                                            attrlist=[self.member_attribute])
+                    
         except ldap.NO_SUCH_OBJECT:
             raise self.NotFound(group_id=group_id)
 
