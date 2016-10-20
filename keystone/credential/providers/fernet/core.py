@@ -80,7 +80,7 @@ class Provider(core.Provider):
                 crypto.encrypt(credential.encode('utf-8')),
                 primary_key_hash(keys))
         except (TypeError, ValueError) as e:
-            msg = 'Credential could not be encrypted: %s' % str(e)
+            msg = _LE('Credential could not be encrypted: %s' % str(e))
             LOG.error(msg)
             raise exception.CredentialEncryptionError(msg)
 
@@ -101,7 +101,7 @@ class Provider(core.Provider):
                 credential = credential.encode('utf-8')
             return crypto.decrypt(credential).decode('utf-8')
         except (fernet.InvalidToken, TypeError, ValueError):
-            msg = _('Credential could not be decrypted. Please contact the'
+            msg = _LE('Credential could not be decrypted. Please contact the'
                     ' administrator')
             LOG.error(msg)
             raise exception.CredentialEncryptionError(msg)
