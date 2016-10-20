@@ -3279,3 +3279,45 @@ class LdapFilterTests(identity_tests.FilterTests, LDAPTestSetup):
         # The LDAP identity driver currently does not support filtering on the
         # listing users for a given group, so will fail this test.
         super(LdapFilterTests, self).test_list_users_in_group_exact_filtered()
+
+
+class LDAPMatchingRuleInChainTests(LDAPTestSetup):
+
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(LDAPMatchingRuleInChainTests, self).setUp()
+        _assert_backends(self, identity='ldap')
+
+    def config_overrides(self):
+        super(LDAPMatchingRuleInChainTests, self).config_overrides()
+        self.config_fixture.config(group='identity', driver='ldap')
+        self.config_fixture.config(group='ldap',
+                                   group_ad_nesting=True,
+                                   url='fake://memory',
+                                   chase_referrals=False)
+
+        self.config_fixture.config(
+            group='ldap',
+            group_tree_dn='cn=UserGroups,cn=example,cn=com')
+        self.config_fixture.config(group='ldap', query_scope='one')
+
+    def config_files(self):
+        config_files = super(LDAPMatchingRuleInChainTests, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_ldap.conf'))
+        return config_files
+
+    def test_nested_group_operations(self):
+
+        group = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
+        group = self.identity_api.create_group(group)
+
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertDictEqual(group, group_ref)
+
+        group_ref = self.identity_api.get_group(group['id'])
+        self.assertDictEqual(group, group_ref)
+
+        self.identity_api.delete_group(group['id'])
+        self.assertRaises(exception.GroupNotFound,
+                          self.identity_api.get_group,
+                          group['id'])
