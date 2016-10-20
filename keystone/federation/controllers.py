@@ -30,7 +30,7 @@ from keystone import exception
 from keystone.federation import idp as keystone_idp
 from keystone.federation import schema
 from keystone.federation import utils
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.models import token_model
 
 
@@ -286,7 +286,7 @@ class Auth(auth_controllers.Auth):
                               for trusted in CONF.federation.trusted_dashboard]
 
         if host not in trusted_dashboards:
-            msg = _('%(host)s is not a trusted dashboard host')
+            msg = _LE('%(host)s is not a trusted dashboard host')
             msg = msg % {'host': host}
             LOG.error(msg)
             raise exception.Unauthorized(msg)

@@ -489,8 +489,8 @@ class MetadataGenerator(object):
             try:
                 return sigver.read_cert_from_file(CONF.saml.certfile, 'pem')
             except (IOError, sigver.CertificateError) as e:
-                msg = _('Cannot open certificate %(cert_file)s. '
-                        'Reason: %(reason)s')
+                msg = _LE('Cannot open certificate %(cert_file)s. '
+                          'Reason: %(reason)s')
                 msg = msg % {'cert_file': CONF.saml.certfile, 'reason': e}
                 LOG.error(msg)
                 raise IOError(msg)
