@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_10b7dcd8",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T07:17:01Z",
+      "side": 0,
+      "message": "there\u0027s no reason you can\u0027t test a regular \"global\" role like this one, and a \"domain scoped role\" like you create.\n\nboth should be applicable.\n\nif it makes more sense to create a new test, rather than remove coverage",
+      "range": {
+        "startLine": 2176,
+        "startChar": 8,
+        "endLine": 2176,
+        "endChar": 38
+      },
+      "revId": "8a32c44657f1f4cc1e1e424f6162be3394030ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_90cf6c7e",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2178,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T07:17:01Z",
+      "side": 1,
+      "message": "the v8 driver has been removed, so let\u0027s get rid of the if block",
+      "range": {
+        "startLine": 2178,
+        "startChar": 10,
+        "endLine": 2178,
+        "endChar": 39
+      },
+      "revId": "c003624b074ec3202a8be34e72bce91d236022ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_b07ab022",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2267,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T07:17:01Z",
+      "side": 1,
+      "message": "id really prefer if asserts were not conditional",
+      "range": {
+        "startLine": 2259,
+        "startChar": 8,
+        "endLine": 2267,
+        "endChar": 63
+      },
+      "revId": "c003624b074ec3202a8be34e72bce91d236022ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
