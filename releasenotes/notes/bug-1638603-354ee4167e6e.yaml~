@@ -1,0 +1,15 @@
+---
+features:
+  - >
+    [`bug 1638603 <https://bugs.launchpad.net/keystone/+bug/1638603>`_]
+
+    handle nested groups.  LDAP queries need to look like this:
+    "(&(objectClass=group)
+       (member=member:1.2.840.113556.1.4.1941:=CN=nwalnut,OU=Users,DC=EXAMPLE,DC=COM))"
+    
+    If a deployment is using nested groups, three queries need to be
+    modified to support it:  list users in a group, list groups for a
+    user, check if a user is in a group
+    
+    
+    Since all three are necessary, a single configuration value ensures
