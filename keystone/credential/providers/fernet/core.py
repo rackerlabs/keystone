@@ -20,7 +20,7 @@ from keystone.common import fernet_utils
 import keystone.conf
 from keystone.credential.providers import core
 from keystone import exception
-from keystone.i18n import _, _LW
+from keystone.i18n import _LE, _LW
 
 
 CONF = keystone.conf.CONF
@@ -80,7 +80,7 @@ class Provider(core.Provider):
                 crypto.encrypt(credential.encode('utf-8')),
                 primary_key_hash(keys))
         except (TypeError, ValueError) as e:
-            msg = 'Credential could not be encrypted: %s' % str(e)
+            msg = _LE('Credential could not be encrypted: %s') % str(e)
             LOG.error(msg)
             raise exception.CredentialEncryptionError(msg)
 
@@ -101,7 +101,7 @@ class Provider(core.Provider):
                 credential = credential.encode('utf-8')
             return crypto.decrypt(credential).decode('utf-8')
         except (fernet.InvalidToken, TypeError, ValueError):
-            msg = _('Credential could not be decrypted. Please contact the'
-                    ' administrator')
+            msg = _LE('Credential could not be decrypted. Please contact the '
+                      'administrator')
             LOG.error(msg)
             raise exception.CredentialEncryptionError(msg)
