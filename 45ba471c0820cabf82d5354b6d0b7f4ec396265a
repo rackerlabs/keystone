@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_1831c80b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-20T05:09:55Z",
+      "side": 1,
+      "message": "since this cleans up a previous fix, let\u0027s add:\n\n  Related-Bug: 1524030\n\nto the commit message",
+      "revId": "45ba471c0820cabf82d5354b6d0b7f4ec396265a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_58442073",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 4
