@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_4d6a191c",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2016-10-20T20:36:20Z",
+      "side": 1,
+      "message": "It would be nice to define the OID globally (like we do for CONTROL_TREEDELETE) instead of pasting it in 3 places.  The MSDN docs call this LDAP_MATCHING_RULE_IN_CHAIN.",
+      "range": {
+        "startLine": 390,
+        "startChar": 44,
+        "endLine": 390,
+        "endChar": 48
+      },
+      "revId": "4242d7b0696341880f4bafe02bc676d04ad16d92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
