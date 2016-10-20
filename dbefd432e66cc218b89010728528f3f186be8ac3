@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_795fa70e",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T18:14:27Z",
+      "side": 0,
+      "message": "I removed these methods because over the course of cleaning up the token provider, it didn\u0027t make sense to have a single method to validate a single token. Instead, I opted to just have the assertion about the token\u0027s validity in the test because it results in less running around finding method definitions.",
+      "revId": "dbefd432e66cc218b89010728528f3f186be8ac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_59b9032e",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T18:14:27Z",
+      "side": 1,
+      "message": "This stuff here could probably be removed.",
+      "revId": "864224bc11e1a71b8ee22fe6922ade7cb5d97ca8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
