@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_2ddde570",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-20T20:22:11Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 26,
+        "startChar": 18,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "18ce7e71f94f21efd7b21323b2b0dd9aa6da814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
