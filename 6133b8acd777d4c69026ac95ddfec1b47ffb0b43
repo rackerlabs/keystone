@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_a2b0a98c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 1,
+      "message": "maybe a good chance to use \"project_id\" instead, keystone is trying to eliminate the appearance of \"tenant\".",
+      "range": {
+        "startLine": 284,
+        "startChar": 26,
+        "endLine": 284,
+        "endChar": 35
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_02a6b552",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 314,
+        "startChar": 26,
+        "endLine": 314,
+        "endChar": 35
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_c2591d5d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 1,
+      "message": "docstring for private method won\u0027t be rendered by Sphinx.",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 329,
+        "endChar": 30
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_2cf1246b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 1,
+      "message": "Good catch, this looks like a bug, is there any testcase for this?",
+      "range": {
+        "startLine": 160,
+        "startChar": 16,
+        "endLine": 160,
+        "endChar": 47
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_cc77c800",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 1,
+      "message": "why do this change? shouldn\u0027t the loop below will exit if the length is 0? fine as it is.",
+      "range": {
+        "startLine": 529,
+        "startChar": 44,
+        "endLine": 529,
+        "endChar": 72
+      },
+      "revId": "6133b8acd777d4c69026ac95ddfec1b47ffb0b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

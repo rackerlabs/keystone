@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_c2683d24",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 0,
+      "message": "This patch doesn\u0027t intend to change trust behavior, why change the logic of how \"user_ref\" is fetched? This looks like still valid, at least in this patch.",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 234,
+        "endChar": 51
+      },
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_dfedacb8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 0,
+      "message": "why this is removed entirely?",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 269,
+        "endChar": 56
+      },
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_3d291e8a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-20T03:14:07Z",
+      "side": 0,
+      "message": "Isn\u0027t still used here?",
+      "range": {
+        "startLine": 281,
+        "startChar": 0,
+        "endLine": 282,
+        "endChar": 42
+      },
+      "revId": "4ac5cb927486a3461255f30c86c1cd9df4d46f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
