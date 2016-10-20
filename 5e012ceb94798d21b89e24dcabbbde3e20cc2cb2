@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_0e2bb731",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-20T21:53:31Z",
+      "side": 1,
+      "message": "Remove this Exception once this is ready to merge.",
+      "revId": "5e012ceb94798d21b89e24dcabbbde3e20cc2cb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
