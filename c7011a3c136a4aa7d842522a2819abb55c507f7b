@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da6895a0_e3ad9589",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-21T21:46:54Z",
+      "side": 1,
+      "message": "Just remove the copyright then. If you don\u0027t work for the Foundation then they shouldn\u0027t get a copyright to this work.",
+      "parentUuid": "fa6399be_f56ec12d",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_e7864cda",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "since \"uuid.uuid4().hex\" is generating new value every time the _create_credential_with_user_id() function is called, so i can\u0027t see any issue in using this as default value.\nPlease correct me if there is any gap.\nAlso, using None, it is breaking the code.",
       "parentUuid": "fa6399be_e7864cda",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_23b6addc",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-10-21T21:46:54Z",
+      "side": 1,
+      "message": "Are you sure that this is actually getting a new value each time? Have you tested it?",
+      "parentUuid": "fa6399be_b59c490f",
       "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
