@@ -93,8 +93,11 @@ class V3TokenDataHelper(object):
         super(V3TokenDataHelper, self).__init__()
 
     def _get_filtered_domain(self, domain_id):
-        domain_ref = self.resource_api.get_domain(domain_id)
-        return {'id': domain_ref['id'], 'name': domain_ref['name']}
+        domain = {}
+        if domain_id:
+            domain_ref = self.resource_api.get_domain(domain_id)
+            domain = {'id': domain_ref['id'], 'name': domain_ref['name']}
+        return domain
 
     def _get_filtered_project(self, project_id):
         project_ref = self.resource_api.get_project(project_id)
@@ -110,10 +113,6 @@ class V3TokenDataHelper(object):
         return filtered_project
 
     def _populate_scope(self, token_data, domain_id, project_id):
-        if 'domain' in token_data or 'project' in token_data:
-            # scope already exist, no need to populate it again
-            return
-
         if domain_id:
             token_data['domain'] = self._get_filtered_domain(domain_id)
         if project_id:
@@ -343,10 +342,6 @@ class V3TokenDataHelper(object):
 
     def _populate_service_catalog(self, token_data, user_id,
                                   domain_id, project_id, trust):
-        if 'catalog' in token_data:
-            # no need to repopulate service catalog
-            return
-
         if CONF.trust.enabled and trust:
             user_id = trust['trustor_user_id']
         if project_id or domain_id:
@@ -355,9 +350,6 @@ class V3TokenDataHelper(object):
             token_data['catalog'] = service_catalog
 
     def _populate_service_providers(self, token_data):
-        if 'service_providers' in token_data:
-            return
-
         service_providers = self.federation_api.get_enabled_service_providers()
         if service_providers:
             token_data['service_providers'] = service_providers
@@ -388,9 +380,14 @@ class V3TokenDataHelper(object):
                        issued_at=None, audit_info=None):
         token_data = {'methods': method_names}
 
-        # We've probably already written these to the token
+        # TODO(lbragstad): We directly copy the 'roles' and 'user' keys into
+        # the token_data if they exist because individual token providers
+        # might have already populated these values. If they have we should
+        # pass them through in the token_data instead of reconstructing them.
+        # In the future we should make *this* class do all that work instead of
+        # relying on whatever individual token providers do... baby steps.
         if token:
-            for x in ('roles', 'user', 'catalog', 'project', 'domain'):
+            for x in ('roles', 'user'):
                 if x in token:
                     token_data[x] = token[x]
 
