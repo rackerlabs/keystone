@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_b8236057",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "Added Partial-Bug: 1614154\nAlso reason for adding test case is mentioned.",
+      "parentUuid": "fa6399be_0878ac2a",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_67c07c2b",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-19T13:40:03Z",
       "side": 1,
       "message": "Is this the correct copyright? Was this code copied from old foundation code?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_f56ec12d",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "No, this is not the copied code.\nI just used the same file header as used in other files.\nPlease let me know if these is any predefined/default template for adding new files.",
+      "parentUuid": "fa6399be_67c07c2b",
       "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_b59c490f",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "since \"uuid.uuid4().hex\" is generating new value every time the _create_credential_with_user_id() function is called, so i can\u0027t see any issue in using this as default value.\nPlease correct me if there is any gap.\nAlso, using None, it is breaking the code.",
+      "parentUuid": "fa6399be_e7864cda",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_5235f8d7",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2016-10-19T13:40:03Z",
       "side": 1,
       "message": "Why is this setting up the database fixture when the parent already does it?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_b806001a",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "That was by mistake. Removed",
+      "parentUuid": "fa6399be_5235f8d7",
       "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa6399be_782708b6",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "Agreed, Removed.",
+      "parentUuid": "fa6399be_8763d019",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_678f9ccc",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2016-10-19T13:40:03Z",
       "side": 1,
       "message": "Why make a Hints instance if you don\u0027t use it?",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_982cdc9a",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-21T17:03:36Z",
+      "side": 1,
+      "message": "Agreed, Removed.",
+      "parentUuid": "fa6399be_678f9ccc",
       "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
