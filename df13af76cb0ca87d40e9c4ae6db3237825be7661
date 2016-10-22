@@ -102,6 +102,29 @@
       "revId": "df13af76cb0ca87d40e9c4ae6db3237825be7661",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_98043f16",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-22T09:09:41Z",
+      "side": 1,
+      "message": "does this exist yet? If not, then that\u0027s OK, but you should turn this into a TODO to say that we plan to write that in the future to cover that scenario.",
+      "range": {
+        "startLine": 134,
+        "startChar": 6,
+        "endLine": 134,
+        "endChar": 42
+      },
+      "revId": "df13af76cb0ca87d40e9c4ae6db3237825be7661",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
