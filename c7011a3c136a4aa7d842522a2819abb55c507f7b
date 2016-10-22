@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "da6895a0_bdf3b509",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-22T07:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6895a0_e3ad9589",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_e7864cda",
         "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
         "patchSetId": 5
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "Are you sure that this is actually getting a new value each time? Have you tested it?",
       "parentUuid": "fa6399be_b59c490f",
+      "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_9dd51145",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-10-22T07:39:07Z",
+      "side": 1,
+      "message": "I have rechecked it, it is producing the same value every time.\nSo, as suggested by you, i have used \"user_id\" value as \"None\" as default value and assigned uuid.uuid4().hex to user_id in case of \"None\" value.",
+      "parentUuid": "da6895a0_23b6addc",
       "revId": "c7011a3c136a4aa7d842522a2819abb55c507f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
