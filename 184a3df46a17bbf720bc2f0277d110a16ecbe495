@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_78268bbb",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-10-22T09:12:49Z",
+      "side": 1,
+      "message": "is this part of this change?",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 21
+      },
+      "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
