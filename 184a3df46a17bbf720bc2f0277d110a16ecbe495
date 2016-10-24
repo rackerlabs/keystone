@@ -22,6 +22,29 @@
       "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_1e056479",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-24T11:02:50Z",
+      "side": 1,
+      "message": "the check for if domain_id is already done here, no need to repeat it on line 97, you get there via line 117",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 21
+      },
+      "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
