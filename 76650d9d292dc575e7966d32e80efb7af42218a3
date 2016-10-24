@@ -22,6 +22,24 @@
       "revId": "76650d9d292dc575e7966d32e80efb7af42218a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_523d0cba",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-24T13:32:08Z",
+      "side": 0,
+      "message": "Nope - this was the only thing that the metadata ref returned. Since we no longer return it we don\u0027t need the code that set it.",
+      "parentUuid": "da6895a0_be78f82c",
+      "revId": "76650d9d292dc575e7966d32e80efb7af42218a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
