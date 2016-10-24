@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_0aa527b4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-24T03:11:58Z",
+      "side": 1,
+      "message": "would love to see those piece of code is tested as well.",
+      "range": {
+        "startLine": 998,
+        "startChar": 0,
+        "endLine": 1000,
+        "endChar": 34
+      },
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_8af5b7cc",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-24T03:11:58Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of this change?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_2ade6b3f",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-24T03:11:58Z",
+      "side": 1,
+      "message": "Take out the change here the testcase can still pass, any reason to add it here?",
+      "range": {
+        "startLine": 317,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 52
+      },
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_aac99b7a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-24T03:11:58Z",
+      "side": 1,
+      "message": "possible to inspect the message \"Successfully uploaded domain config...\" here like you did in CliDomainConfigUploadNothing? Ideally, all logic that is being changed should be tested.",
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
