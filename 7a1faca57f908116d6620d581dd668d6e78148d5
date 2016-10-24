@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_2ae82bb4",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-24T03:21:19Z",
+      "side": 1,
+      "message": "pls see the i18n guideline on how to use them,\n\n    # Log and Raise\n    msg \u003d _(\u0027Unexpected error message\u0027)\n    LOG.exception(msg)\n    raise RuntimeError(msg)\n\nsee: http://docs.openstack.org/developer/oslo.i18n/usage.html\n\nI bet these code was wrote as this intentionally.",
+      "range": {
+        "startLine": 104,
+        "startChar": 12,
+        "endLine": 106,
+        "endChar": 26
+      },
+      "revId": "7a1faca57f908116d6620d581dd668d6e78148d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
