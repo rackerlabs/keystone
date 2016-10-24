@@ -22,6 +22,30 @@
       "revId": "7a1faca57f908116d6620d581dd668d6e78148d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_36b7b687",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-24T08:34:09Z",
+      "side": 1,
+      "message": "Thanks for review. May be that\u0027s why I failed pep8 test TAT",
+      "parentUuid": "da6895a0_2ae82bb4",
+      "range": {
+        "startLine": 104,
+        "startChar": 12,
+        "endLine": 106,
+        "endChar": 26
+      },
+      "revId": "7a1faca57f908116d6620d581dd668d6e78148d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
