@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_b8a64251",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-24T18:42:53Z",
+      "side": 1,
+      "message": "Just curious why the error msg is done this way, compared to how it is done in the other two files with using _ vs _LE:\n\nmsg \u003d _LE(\u0027%(host)s is not a trusted dashboard host\u0027)\nmsg \u003d msg % {\u0027host\u0027: host}\nLOG.error(msg)",
+      "range": {
+        "startLine": 83,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
