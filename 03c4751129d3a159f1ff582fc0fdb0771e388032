@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6895a0_8cdcdc13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-25T01:29:11Z",
+      "side": 1,
+      "message": "commit message should be updated.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_acd7e0eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-25T01:29:11Z",
+      "side": 1,
+      "message": "Closes-Bug: #1635162",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_b8a64251",
         "filename": "keystone/credential/providers/fernet/core.py",
         "patchSetId": 3
