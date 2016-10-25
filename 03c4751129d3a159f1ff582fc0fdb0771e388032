@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da6895a0_871bd71a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-25T02:43:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6895a0_8cdcdc13",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_acd7e0eb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-10-25T01:29:11Z",
       "side": 1,
       "message": "Closes-Bug: #1635162",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_a7161bef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-25T02:43:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6895a0_acd7e0eb",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "da6895a0_67f5e3c9",
+        "filename": "keystone/credential/providers/fernet/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-25T02:43:45Z",
+      "side": 1,
+      "message": "# Log and Raise\n    msg \u003d _(\u0027Unexpected error message\u0027)\n    LOG.exception(msg)\n    raise RuntimeError(msg)\n\nWhen log and raise the msg, should use _",
+      "parentUuid": "da6895a0_b8a64251",
+      "range": {
+        "startLine": 83,
+        "startChar": 12,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_ece0f8ce",
         "filename": "keystone/federation/controllers.py",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "da6895a0_c7d30f37",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-25T02:43:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6895a0_ece0f8ce",
+      "range": {
+        "startLine": 289,
+        "startChar": 12,
+        "endLine": 291,
+        "endChar": 26
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_2cebd0b1",
         "filename": "keystone/federation/idp.py",
         "patchSetId": 3
@@ -105,6 +201,30 @@
       "writtenOn": "2016-10-25T01:27:24Z",
       "side": 1,
       "message": "revert the change here to follow the i18n guideline.",
+      "range": {
+        "startLine": 492,
+        "startChar": 16,
+        "endLine": 495,
+        "endChar": 30
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_e7d65326",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 17645
+      },
+      "writtenOn": "2016-10-25T02:43:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6895a0_2cebd0b1",
       "range": {
         "startLine": 492,
         "startChar": 16,
