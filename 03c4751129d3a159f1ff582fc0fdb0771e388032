@@ -22,6 +22,52 @@
       "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_ece0f8ce",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-25T01:27:24Z",
+      "side": 1,
+      "message": "same comment here, pls revert the change here.",
+      "range": {
+        "startLine": 289,
+        "startChar": 12,
+        "endLine": 291,
+        "endChar": 26
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_2cebd0b1",
+        "filename": "keystone/federation/idp.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-25T01:27:24Z",
+      "side": 1,
+      "message": "revert the change here to follow the i18n guideline.",
+      "range": {
+        "startLine": 492,
+        "startChar": 16,
+        "endLine": 495,
+        "endChar": 30
+      },
+      "revId": "03c4751129d3a159f1ff582fc0fdb0771e388032",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
