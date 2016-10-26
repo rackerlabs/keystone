@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_13367403",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_d3179ceb",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_33dd3843",
         "filename": "api-ref/source/v2-admin/admin-certificates.inc",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-26T18:10:26Z",
       "side": 1,
       "message": "ditto",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_333b78ed",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_33dd3843",
       "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_5340ec56",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_53b9cce8",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_93cb6472",
         "filename": "api-ref/source/v3-ext/simple-cert.inc",
         "patchSetId": 8
@@ -70,6 +130,24 @@
       "writtenOn": "2016-10-26T18:10:26Z",
       "side": 1,
       "message": "extra line",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b32f88a0",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_93cb6472",
       "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_d32cfcad",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_b3c86876",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_d3c5dc5b",
         "filename": "api-ref/source/v3-ext/simple-cert.inc",
         "patchSetId": 8
@@ -104,6 +200,24 @@
       "writtenOn": "2016-10-26T18:10:26Z",
       "side": 1,
       "message": "ditto",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_f3174052",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-10-26T18:43:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_d3c5dc5b",
       "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
