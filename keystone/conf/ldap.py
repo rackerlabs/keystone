@@ -524,8 +524,8 @@ pool_connection_timeout = cfg.IntOpt(
     min=-1,
     help=utils.fmt("""
 The connection timeout to use with the LDAP server. A value of `-1` means that
-connections will never timeout. This option has no effect unless `[ldap]
-use_pool` is also enabled.
+connections will never timeout. This option will affect both pooled and
+unpooled LDAP connections, i.e. independant of `[ldap] use_pool` being enabled.
 """))
 
 pool_connection_lifetime = cfg.IntOpt(
