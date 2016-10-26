@@ -1,0 +1,15 @@
+---
+fixes:
+  - >
+    [`bug 1636950 <https://bugs.launchpad.net/keystone/+bug/1636950>`_]
+    Use the previously unused ``pool_connection_timeout``
+    configuration option, avaiable within the ``[ldap]`` stanza,
+    to set a new OPT_NETWORK_TIMEOUT option on the LDAP backend.
+    This allows the LDAP server to return a SERVER_DOWN exception,
+    if a) the LDAP URL is incorrect, or b) there is a connection
+    failure/link loss.
+other:
+  - The default value of ``pool_connection_timeout`` is -1
+    in ``keystone.conf``, implying that option is disabled.
+    Set a non-zero timeout value (in seconds) to enable
+    this option.
