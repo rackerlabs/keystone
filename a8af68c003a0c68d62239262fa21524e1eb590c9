@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_b30308b8",
+        "filename": "api-ref/source/v2/revocations.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:08:12Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "a8af68c003a0c68d62239262fa21524e1eb590c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_d3007cad",
+        "filename": "api-ref/source/v2/revocations.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:08:12Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a8af68c003a0c68d62239262fa21524e1eb590c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
