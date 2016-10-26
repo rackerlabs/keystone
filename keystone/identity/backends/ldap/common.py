@@ -505,7 +505,8 @@ class PythonLDAPHandler(LDAPHandler):
                                     tls_cacertfile=tls_cacertfile,
                                     tls_cacertdir=tls_cacertdir,
                                     tls_req_cert=tls_req_cert,
-                                    debug_level=debug_level)
+                                    debug_level=debug_level,
+                                    timeout=pool_conn_timeout)
 
         self.conn = ldap.initialize(url)
         self.conn.protocol_version = ldap.VERSION3
@@ -569,7 +570,7 @@ class PythonLDAPHandler(LDAPHandler):
 
 def _common_ldap_initialization(url, use_tls=False, tls_cacertfile=None,
                                 tls_cacertdir=None, tls_req_cert=None,
-                                debug_level=None):
+                                debug_level=None, timeout=None):
     """LDAP initialization for PythonLDAPHandler and PooledLDAPHandler."""
     LOG.debug('LDAP init: url=%s', url)
     LOG.debug('LDAP init: use_tls=%s tls_cacertfile=%s tls_cacertdir=%s '
@@ -579,6 +580,10 @@ def _common_ldap_initialization(url, use_tls=False, tls_cacertfile=None,
 
     if debug_level is not None:
         ldap.set_option(ldap.OPT_DEBUG_LEVEL, debug_level)
+
+    if timeout > 0:
+        # set Network connection timeout
+        ldap.set_option(ldap.OPT_NETWORK_TIMEOUT, timeout)
 
     using_ldaps = url.lower().startswith("ldaps")
 
@@ -692,7 +697,8 @@ class PooledLDAPHandler(LDAPHandler):
                                     tls_cacertfile=tls_cacertfile,
                                     tls_cacertdir=tls_cacertdir,
                                     tls_req_cert=tls_req_cert,
-                                    debug_level=debug_level)
+                                    debug_level=debug_level,
+				    timeout=pool_conn_timeout)
 
         self.page_size = page_size
 
@@ -1259,34 +1265,46 @@ class BaseLdap(object):
 
         conn = KeystoneLDAPHandler(conn=conn)
 
-        conn.connect(self.LDAP_URL,
-                     page_size=self.page_size,
-                     alias_dereferencing=self.alias_dereferencing,
-                     use_tls=self.use_tls,
-                     tls_cacertfile=self.tls_cacertfile,
-                     tls_cacertdir=self.tls_cacertdir,
-                     tls_req_cert=self.tls_req_cert,
-                     chase_referrals=self.chase_referrals,
-                     debug_level=self.debug_level,
-                     use_pool=use_pool,
-                     pool_size=pool_size,
-                     pool_retry_max=self.pool_retry_max,
-                     pool_retry_delay=self.pool_retry_delay,
-                     pool_conn_timeout=self.pool_conn_timeout,
-                     pool_conn_lifetime=pool_conn_lifetime)
+        # the LDAP server may be down or connection may not
+        # exist. If that is the case, the bind attempt will
+        # fail with a server down exception.
+        try:
+            conn.connect(self.LDAP_URL,
+                         page_size=self.page_size,
+                         alias_dereferencing=self.alias_dereferencing,
+                         use_tls=self.use_tls,
+                         tls_cacertfile=self.tls_cacertfile,
+                         tls_cacertdir=self.tls_cacertdir,
+                         tls_req_cert=self.tls_req_cert,
+                         chase_referrals=self.chase_referrals,
+                         debug_level=self.debug_level,
+                         use_pool=use_pool,
+                         pool_size=pool_size,
+                         pool_retry_max=self.pool_retry_max,
+                         pool_retry_delay=self.pool_retry_delay,
+                         pool_conn_timeout=self.pool_conn_timeout,
+                         pool_conn_lifetime=pool_conn_lifetime)
 
-        if user is None:
-            user = self.LDAP_USER
+            if user is None:
+                user = self.LDAP_USER
 
-        if password is None:
-            password = self.LDAP_PASSWORD
+            if password is None:
+                password = self.LDAP_PASSWORD
 
-        # not all LDAP servers require authentication, so we don't bind
-        # if we don't have any user/pass
-        if user and password:
-            conn.simple_bind_s(user, password)
+            # not all LDAP servers require authentication, so we don't bind
+            # if we don't have any user/pass
+            if user and password:
+                conn.simple_bind_s(user, password)
 
-        return conn
+            return conn
+        except ldap.SERVER_DOWN:
+            LOG.warning(_LW(
+                'Timed out (%(timeout)s seconds) waiting to connect'
+                ' to the LDAP Server(%(url)s).') %
+                {'timeout': self.pool_conn_timeout, 'url': self.LDAP_URL})
+            raise exception.LDAPServerConnectionError(
+                timeout=self.pool_conn_timeout,
+                url=self.LDAP_URL)
 
     def _id_to_dn_string(self, object_id):
         return u'%s=%s,%s' % (self.id_attr,

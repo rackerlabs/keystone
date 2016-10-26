@@ -17,6 +17,7 @@ import uuid
 
 import fixtures
 import ldap.dn
+import ldappool
 import mock
 from testtools import matchers
 
@@ -295,6 +296,53 @@ class MultiURLTests(unit.TestCase):
         base_ldap = common_ldap.BaseLdap(CONF)
         ldap_connection = base_ldap.get_connection()
         self.assertEqual(urls, ldap_connection.conn.conn_pool.uri)
+
+
+class LDAPConnectionTimeoutTest(unit.TestCase):
+    """Test for Network Connection timeout on LDAP URL connection."""
+
+    def test_connectivity_timeout_no_conn_pool(self):
+        url = 'ldap://localhost'
+        conn_timeout = 1  # 1 second
+        self.config_fixture.config(group='ldap',
+                                   url=url,
+                                   pool_connection_timeout=conn_timeout,
+                                   use_pool=False)
+        base_ldap = common_ldap.BaseLdap(CONF)
+        ldap_connection = base_ldap.get_connection()
+        
+        # Ensure that the Network Timeout option is set.
+        # Also ensure that the URL is set.
+        self.assertEqual(conn_timeout,
+                         ldap.get_option(ldap.OPT_NETWORK_TIMEOUT))
+        self.assertEqual(url, ldap_connection.conn.conn._uri)
+
+        # verify that simple bind times out
+        self.assertRaises(ldap.SERVER_DOWN,
+                          ldap_connection.simple_bind_s, 
+                          '', '')
+
+    def test_connectivity_timeout_with_conn_pool(self):
+        url = 'ldap://localhost'
+        conn_timeout = 1  # 1 second
+        self.config_fixture.config(group='ldap',
+                                   url=url,
+                                   pool_connection_timeout=conn_timeout,
+                                   use_pool=True,
+                                   pool_retry_max=1)
+        base_ldap = common_ldap.BaseLdap(CONF)
+        ldap_connection = base_ldap.get_connection()
+
+        # Ensure that the Network Timeout option is set.
+        # Also ensure that the URL is set.
+        self.assertEqual(conn_timeout,
+                         ldap.get_option(ldap.OPT_NETWORK_TIMEOUT))
+        self.assertEqual(url, ldap_connection.conn.conn_pool.uri)
+
+        # verify that simple bind times out
+        self.assertRaises(ldappool.BackendError,
+                          ldap_connection.simple_bind_s, 
+                          '', '')
 
 
 class SslTlsTest(unit.TestCase):
