@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_d3179ceb",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "extra line",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_33dd3843",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_53b9cce8",
+        "filename": "api-ref/source/v2-admin/admin-certificates.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "two here",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_93cb6472",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "extra line",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b3c86876",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_d3c5dc5b",
+        "filename": "api-ref/source/v3-ext/simple-cert.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-26T18:10:26Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "794a11918147ca5451cc149b348bbffe184e0ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
