@@ -16,6 +16,24 @@
       "revId": "2405d9962c7dac92b1839b5a6e05a44faf2ca100",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_8affad33",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-10-26T15:55:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_2a8301ce",
+      "revId": "2405d9962c7dac92b1839b5a6e05a44faf2ca100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
