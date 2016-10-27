@@ -16,6 +16,24 @@
       "revId": "784fcd998be0881d5410ef21fcb8f06cd5e58ddf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_d193fff8",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-10-27T15:21:25Z",
+      "side": 1,
+      "message": "Nevermind, forgot 0 evaluates to false so it won\u0027t do anything.",
+      "parentUuid": "ba5da102_11c73713",
+      "revId": "784fcd998be0881d5410ef21fcb8f06cd5e58ddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
