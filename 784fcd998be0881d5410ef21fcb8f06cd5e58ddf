@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_11c73713",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-10-27T15:19:14Z",
+      "side": 1,
+      "message": "I\u0027m not too familiar with the library, but what happens when timeout is zero.?",
+      "revId": "784fcd998be0881d5410ef21fcb8f06cd5e58ddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
