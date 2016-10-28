@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_4f07431c",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-10-28T02:08:11Z",
+      "side": 1,
+      "message": "@Gage, This is not a correct way of rebase, try to use \"git rebase\" command.",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 5
+      },
+      "revId": "ed82eb2b78fc6582a9988ead7bee927bd70f815f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
