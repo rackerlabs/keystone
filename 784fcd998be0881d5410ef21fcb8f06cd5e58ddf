@@ -52,6 +52,24 @@
       "revId": "784fcd998be0881d5410ef21fcb8f06cd5e58ddf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_a94fedbb",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-10-28T14:38:04Z",
+      "side": 1,
+      "message": "the config parser does validate for non-negative input, the check for timeout \u003d -1 is a special case to handle tox where the sample keystone.conf passes in -1.\n\nBut yes I suppose adding a timeout \u003e 0 check would be the right way to go",
+      "parentUuid": "ba5da102_ade704e3",
+      "revId": "784fcd998be0881d5410ef21fcb8f06cd5e58ddf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
