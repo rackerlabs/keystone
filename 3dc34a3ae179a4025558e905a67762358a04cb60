@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_e60f40df",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-10-30T10:24:23Z",
+      "side": 1,
+      "message": "in keystone, we are pretty new in this - maybe add examples of what should be cleaned up both at \"unstack\" and \"clean\" commands?",
+      "revId": "3dc34a3ae179a4025558e905a67762358a04cb60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
