@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5da102_4d1d52bc",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-31T19:37:48Z",
+      "side": 1,
+      "message": "maybe move ldap statement up here?",
+      "range": {
+        "startLine": 45,
+        "startChar": 50,
+        "endLine": 46,
+        "endChar": 13
+      },
+      "revId": "045b7574969a6f587a25ef29f756c20f4e35346c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_37f30bd8",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 1
@@ -13,6 +36,24 @@
       "writtenOn": "2016-10-31T18:21:32Z",
       "side": 1,
       "message": "nit: Everything on the page is developer-oriented, except for this section. Probably better off removing it completely.",
+      "revId": "045b7574969a6f587a25ef29f756c20f4e35346c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_2d22de00",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-31T19:37:48Z",
+      "side": 1,
+      "message": "Could also move this line up to where it mentions see this section?",
+      "parentUuid": "ba5da102_37f30bd8",
       "revId": "045b7574969a6f587a25ef29f756c20f4e35346c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
