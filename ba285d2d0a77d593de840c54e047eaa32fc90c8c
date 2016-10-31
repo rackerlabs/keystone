@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5da102_0dffda34",
+        "filename": "releasenotes/notes/healthcheck-middleware-8630ce7bcde43a7e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-31T19:43:21Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "range": {
+        "startLine": 4,
+        "startChar": 71,
+        "endLine": 4,
+        "endChar": 72
+      },
+      "revId": "ba285d2d0a77d593de840c54e047eaa32fc90c8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_ed554650",
         "filename": "releasenotes/notes/healthcheck-middleware-8630ce7bcde43a7e.yaml",
         "patchSetId": 8
@@ -13,6 +36,30 @@
       "writtenOn": "2016-10-31T19:41:30Z",
       "side": 1,
       "message": "add backticks here ``keystone-paste.ini`` to give it a syntax look",
+      "range": {
+        "startLine": 5,
+        "startChar": 40,
+        "endLine": 5,
+        "endChar": 58
+      },
+      "revId": "ba285d2d0a77d593de840c54e047eaa32fc90c8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_ed038640",
+        "filename": "releasenotes/notes/healthcheck-middleware-8630ce7bcde43a7e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-31T19:43:21Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5da102_ed554650",
       "range": {
         "startLine": 5,
         "startChar": 40,
