@@ -22,6 +22,30 @@
       "revId": "fd6445ee0555cd26afd2f18adffda3c3c0379a42",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_7493ba4f",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-10-31T22:57:41Z",
+      "side": 1,
+      "message": "yeah that\u0027s a good point. I can submit a change for this once it\u0027s merged.",
+      "parentUuid": "ba5da102_71082c92",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 132,
+        "endChar": 40
+      },
+      "revId": "fd6445ee0555cd26afd2f18adffda3c3c0379a42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
