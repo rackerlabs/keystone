@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_2892cc9e",
+        "filename": "api-ref/source/v2/parameters.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T20:03:18Z",
+      "side": 1,
+      "message": "this is not used anywhere right now, see comment in revocations.inc",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 6
+      },
+      "revId": "82fab0129f05dd0d0312e6683997794d76cd719b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_08ac28ec",
+        "filename": "api-ref/source/v2/revocations.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T20:03:18Z",
+      "side": 1,
+      "message": "Use \"List\" since many are returned",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 4
+      },
+      "revId": "82fab0129f05dd0d0312e6683997794d76cd719b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c8a950e1",
+        "filename": "api-ref/source/v2/revocations.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T20:03:18Z",
+      "side": 1,
+      "message": "remove the (v2)",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "82fab0129f05dd0d0312e6683997794d76cd719b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c8807049",
+        "filename": "api-ref/source/v2/revocations.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T20:03:18Z",
+      "side": 1,
+      "message": "need a section here that describes what is actually returned:\n\nResponse Parameters\n-------------------\n\n.. rest_parameters:: parameters.yaml\n\n   - signed: signed",
+      "revId": "82fab0129f05dd0d0312e6683997794d76cd719b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
