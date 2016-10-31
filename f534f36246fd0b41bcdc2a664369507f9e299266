@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5da102_74673a25",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T23:25:02Z",
+      "side": 1,
+      "message": "this could use a bit more detail",
+      "range": {
+        "startLine": 618,
+        "startChar": 0,
+        "endLine": 620,
+        "endChar": 42
+      },
+      "revId": "f534f36246fd0b41bcdc2a664369507f9e299266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_ead10931",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
