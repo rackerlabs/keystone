@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_ed554650",
+        "filename": "releasenotes/notes/healthcheck-middleware-8630ce7bcde43a7e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T19:41:30Z",
+      "side": 1,
+      "message": "add backticks here ``keystone-paste.ini`` to give it a syntax look",
+      "range": {
+        "startLine": 5,
+        "startChar": 40,
+        "endLine": 5,
+        "endChar": 58
+      },
+      "revId": "ba285d2d0a77d593de840c54e047eaa32fc90c8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
