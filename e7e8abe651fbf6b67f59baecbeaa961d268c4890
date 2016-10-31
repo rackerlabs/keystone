@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_88d4b847",
+        "filename": "api-ref/source/v3/os-pki.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T20:04:47Z",
+      "side": 1,
+      "message": "eh, remove this, all APIs need this, and we don\u0027t mention it in any other APIs, thus making this one inconsistent",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "e7e8abe651fbf6b67f59baecbeaa961d268c4890",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
