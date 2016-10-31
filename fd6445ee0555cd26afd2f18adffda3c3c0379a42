@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_71082c92",
+        "filename": "keystone/cmd/doctor/ldap.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-10-31T22:09:03Z",
+      "side": 1,
+      "message": "just one comment here, we end up looping through all the files, which so even if theres a readme file we expect it to me in an ini format.\n\nwe should filter these by: ^keystone\\..*?\\.conf$\u0027 like we do above",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 132,
+        "endChar": 40
+      },
+      "revId": "fd6445ee0555cd26afd2f18adffda3c3c0379a42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
