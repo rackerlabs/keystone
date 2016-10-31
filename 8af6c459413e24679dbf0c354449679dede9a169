@@ -22,6 +22,24 @@
       "revId": "8af6c459413e24679dbf0c354449679dede9a169",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_32315906",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-10-31T19:05:41Z",
+      "side": 1,
+      "message": "We do have an entire section dedicated to explaining this below.",
+      "parentUuid": "ba5da102_52488d5b",
+      "revId": "8af6c459413e24679dbf0c354449679dede9a169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
