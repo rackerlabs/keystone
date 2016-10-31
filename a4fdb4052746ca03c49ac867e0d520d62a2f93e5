@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_8e6f61c4",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-10-31T20:47:13Z",
+      "side": 1,
+      "message": "nit: I think this exclamation point is unnecessary",
+      "range": {
+        "startLine": 135,
+        "startChar": 26,
+        "endLine": 135,
+        "endChar": 27
+      },
+      "revId": "a4fdb4052746ca03c49ac867e0d520d62a2f93e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
