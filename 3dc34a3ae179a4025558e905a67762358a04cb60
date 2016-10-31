@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_d0cbc0a3",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-10-31T13:55:10Z",
+      "side": 1,
+      "message": "No, the plugin is only about setting up the environment. Tests will run after Devstack has finished successfully.  The gate scripts will automatically call tempest [1] with the environment variables telling it to run the keystone plugin [2]. \n\n1. http://docs.openstack.org/infra/system-config/devstack-gate.html#how-it-works\n2. https://github.com/openstack-infra/project-config/blob/master/jenkins/jobs/keystone.yaml#L23-L24",
+      "parentUuid": "ba5da102_dfecb391",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 64
+      },
+      "revId": "3dc34a3ae179a4025558e905a67762358a04cb60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_e60f40df",
         "filename": "devstack/plugin.sh",
         "patchSetId": 2
@@ -77,6 +101,24 @@
       "side": 1,
       "message": "i\u0027m assuming this is uninstalling here and deleting any artifacts in clean",
       "parentUuid": "ba5da102_e60f40df",
+      "revId": "3dc34a3ae179a4025558e905a67762358a04cb60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b0300ca0",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-10-31T13:55:10Z",
+      "side": 1,
+      "message": "Yes, \"unstack\" is executed when you run unstack.sh and both \"unstack\" and \"clean\" are executed when you run \"clean.sh\".  \n\nWhat goes in which depends on what the plugin does, but generally: clean undoes install, and unstack undoes post-config and extra.",
+      "parentUuid": "ba5da102_bfa0df44",
       "revId": "3dc34a3ae179a4025558e905a67762358a04cb60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
