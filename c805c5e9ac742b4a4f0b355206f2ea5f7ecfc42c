@@ -33,6 +33,24 @@
       "revId": "c805c5e9ac742b4a4f0b355206f2ea5f7ecfc42c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_03af86e2",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-01T19:30:34Z",
+      "side": 1,
+      "message": "Oops, you are right, my bad. I wanted to move them to the bottom of the Identity class.",
+      "parentUuid": "ba5da102_08a6cc52",
+      "revId": "c805c5e9ac742b4a4f0b355206f2ea5f7ecfc42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
