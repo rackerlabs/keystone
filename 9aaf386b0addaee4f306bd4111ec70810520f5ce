@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_6838333e",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2271,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:51:30Z",
+      "side": 1,
+      "message": "this just seems a weird way of doing it...why are role names any more important than other entity names...passing them as a param seems odd. Either do it as a good single test, or break into multiple tests.",
+      "range": {
+        "startLine": 2269,
+        "startChar": 0,
+        "endLine": 2271,
+        "endChar": 68
+      },
+      "revId": "9aaf386b0addaee4f306bd4111ec70810520f5ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
