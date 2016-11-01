@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_08edecee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:44:36Z",
+      "side": 1,
+      "message": "I agree. I would help reviewers to know why this change is being made and what bug it fixes.",
+      "parentUuid": "1a95cdbc_63bcc8dc",
+      "revId": "b61a15254f6bcc016bbe1f1c58085d7920dc30cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_0395c43d",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 4
