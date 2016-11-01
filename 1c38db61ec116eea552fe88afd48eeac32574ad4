@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_df5656d1",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T10:50:37Z",
+      "side": 1,
+      "message": "\u0027return not failure_cnt\u0027 could do the magic too :)",
+      "range": {
+        "startLine": 1007,
+        "startChar": 8,
+        "endLine": 1009,
+        "endChar": 19
+      },
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_8af5b7cc",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 10
@@ -71,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_ffeddaef",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T10:50:37Z",
+      "side": 1,
+      "message": "It just to make sure the info messages (when a config was successfully upload) get logged",
+      "parentUuid": "da6895a0_2ade6b3f",
+      "range": {
+        "startLine": 317,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 52
+      },
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_aac99b7a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 10
@@ -82,6 +129,24 @@
       "writtenOn": "2016-10-24T03:11:58Z",
       "side": 1,
       "message": "possible to inspect the message \"Successfully uploaded domain config...\" here like you did in CliDomainConfigUploadNothing? Ideally, all logic that is being changed should be tested.",
+      "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_1fa28eae",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T10:50:37Z",
+      "side": 1,
+      "message": "++ could be done using self.logging object. I am actually fine with this being addressed in a follow up",
+      "parentUuid": "da6895a0_aac99b7a",
       "revId": "1c38db61ec116eea552fe88afd48eeac32574ad4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
