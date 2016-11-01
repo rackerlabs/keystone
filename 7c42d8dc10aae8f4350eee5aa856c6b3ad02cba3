@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_cf284fe5",
+        "filename": "releasenotes/notes/cache_on_issue_default_on-8b39f3f73359c778.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6589
+      },
+      "writtenOn": "2016-11-01T21:55:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t cause a respin, but if you need to for some other reason, you might want to add here the motivation, which was to match the other cache settings. Stating change without motivation can be frustrating to read :D",
+      "revId": "7c42d8dc10aae8f4350eee5aa856c6b3ad02cba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
