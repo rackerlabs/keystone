@@ -16,6 +16,24 @@
       "revId": "339d6a619766d5593bf75153f25a16fd7fab79f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_6edae94d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 1207,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-01T20:13:35Z",
+      "side": 0,
+      "message": "This was copied over from:\nhttps://review.openstack.org/#/c/391077/",
+      "parentUuid": "ba5da102_6833c862",
+      "revId": "339d6a619766d5593bf75153f25a16fd7fab79f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
