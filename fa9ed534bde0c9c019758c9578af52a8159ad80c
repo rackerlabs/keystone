@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_0e4dedc3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-01T20:28:02Z",
+      "side": 1,
+      "message": "all-\u003eboth",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_aed401bd",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-01T20:28:02Z",
+      "side": 1,
+      "message": "leave the **deprecated** in there",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_aeeb2177",
+        "filename": "examples/pki/gen_pki.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-01T20:28:02Z",
+      "side": 1,
+      "message": "this whole file can go",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
