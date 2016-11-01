@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_817afe23",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T13:23:01Z",
+      "side": 1,
+      "message": "Submitted a patch to fix the issue: https://review.openstack.org/336708\n\nThis has been merged already.",
+      "parentUuid": "3aaa91ec_1eb94b7a",
+      "range": {
+        "startLine": 185,
+        "startChar": 26,
+        "endLine": 185,
+        "endChar": 30
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e78cb930",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -83,6 +107,30 @@
       "writtenOn": "2016-11-01T11:19:08Z",
       "side": 1,
       "message": "I can\u0027t see any benefit from this to operators. There is no ID logged, nothing else than \u0027User not found\u0027 (from where ??). They won\u0027t be able to identify what\u0027s wrong at all here.",
+      "range": {
+        "startLine": 547,
+        "startChar": 12,
+        "endLine": 547,
+        "endChar": 28
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_1c91b547",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T13:23:01Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5da102_fa9b2870",
       "range": {
         "startLine": 547,
         "startChar": 12,
