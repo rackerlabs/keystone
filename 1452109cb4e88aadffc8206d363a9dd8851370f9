@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_fa2b2892",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:32:37Z",
+      "side": 1,
+      "message": "I know Steve suggested this text, but the change you are making doesn\u0027t seem to follow this text.  As far as I can tell\"\n\na) we already have lots of hints testing\nb) the specific  test you want to do is the one when  passing in None, since this was not tested\nc) since you have to test this with *something* , you chose credentials\n\nSo let\u0027s say something like that!",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_9a55cc51",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:32:37Z",
+      "side": 1,
+      "message": "nit: we don\u0027t normally give the file name here...",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 43
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_5aa09443",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:32:37Z",
+      "side": 1,
+      "message": "maybe I\u0027m being dumb, but what\u0027s the point of these 2 lines?",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 64
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_9a6eac2d",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:32:37Z",
+      "side": 1,
+      "message": "is this a comparator we support?",
+      "range": {
+        "startLine": 95,
+        "startChar": 55,
+        "endLine": 95,
+        "endChar": 62
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_5ab7b485",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-01T11:32:37Z",
+      "side": 1,
+      "message": "same here, what\u0027s the point of these?",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 64
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
