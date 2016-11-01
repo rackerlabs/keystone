@@ -22,6 +22,24 @@
       "revId": "748eb419040642696ac43538ba419b332f2a49ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_61b5972f",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T22:09:13Z",
+      "side": 0,
+      "message": "I think this should be removed. This was only testing PKI functionality and the tests added here at lines 1479, 1482, and 1485 don\u0027t override tests anywhere else, which is strange because that not usually a pattern we do.\n\nThese are the only definitions I\u0027m seeing for these tests...\n\nhttp://cdn.pasteraw.com/moett1fry8hlpsr5wbnxvdss95mqj65",
+      "parentUuid": "ba5da102_8f7ad775",
+      "revId": "748eb419040642696ac43538ba419b332f2a49ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

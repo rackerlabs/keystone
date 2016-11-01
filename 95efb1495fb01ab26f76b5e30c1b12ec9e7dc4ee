@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_cf604f04",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T22:09:13Z",
+      "side": 1,
+      "message": "Yeah - documentation can be added but I\u0027d be fine doing that in a separate patch (since this one is already getting big).",
+      "parentUuid": "ba5da102_efc35387",
+      "revId": "95efb1495fb01ab26f76b5e30c1b12ec9e7dc4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_cf43ef40",
         "filename": "keystone/token/provider.py",
         "patchSetId": 19
@@ -42,6 +60,24 @@
         "endLine": 169,
         "endChar": 74
       },
+      "revId": "95efb1495fb01ab26f76b5e30c1b12ec9e7dc4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_0f05e712",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T22:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_cf43ef40",
       "revId": "95efb1495fb01ab26f76b5e30c1b12ec9e7dc4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
