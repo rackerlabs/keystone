@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_e8d99823",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:56:17Z",
+      "side": 1,
+      "message": "I think this should be up a line.",
+      "revId": "c805c5e9ac742b4a4f0b355206f2ea5f7ecfc42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_08a6cc52",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:56:17Z",
+      "side": 1,
+      "message": "I\u0027m a little confused as to why these methods are here instead of in the Identity class and why the methods from this class were removed instead of stubbed out to raise Forbidden.",
+      "revId": "c805c5e9ac742b4a4f0b355206f2ea5f7ecfc42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
