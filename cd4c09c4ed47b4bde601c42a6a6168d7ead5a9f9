@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_c2c5a88e",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "nit: this can be done in a separate review",
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_02dde00d",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "in general, just double backticks instead of single quotes:  `` vs \u0027",
+      "range": {
+        "startLine": 23,
+        "startChar": 37,
+        "endLine": 23,
+        "endChar": 52
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_42051878",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "wrap this in `` too",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 13
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c2f92882",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "``[auth]``",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_02f40084",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "remove this and get to the point faster :)",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_4290b843",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "remove this since you dont work for the foundation",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_a2b434d1",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:57:29Z",
+      "side": 1,
+      "message": "nit: (TOTP) Algorithm",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 61
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
