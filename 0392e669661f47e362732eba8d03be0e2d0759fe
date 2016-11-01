@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_dff3b69c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5da102_f7ab4cd4",
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_176440e2",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 5
@@ -58,6 +76,29 @@
         "startChar": 4,
         "endLine": 449,
         "endChar": 33
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_7fd54ab7",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "Can\u0027t this be used for LDAP queries as well ? Or is it very specific to AD ?",
+      "range": {
+        "startLine": 451,
+        "startChar": 36,
+        "endLine": 451,
+        "endChar": 52
       },
       "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -88,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_dffd763b",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "Is this a constant for any AD deployment ?",
+      "parentUuid": "ba5da102_37ef84b1",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 27
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5705d877",
         "filename": "keystone/identity/backends/ldap/core.py",
         "patchSetId": 5
@@ -104,6 +169,29 @@
         "startChar": 22,
         "endLine": 406,
         "endChar": 28
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_df9496e3",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "We should probably fix our unit tests then ?",
+      "range": {
+        "startLine": 422,
+        "startChar": 42,
+        "endLine": 422,
+        "endChar": 72
       },
       "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -214,6 +302,52 @@
       "writtenOn": "2016-11-01T00:30:12Z",
       "side": 1,
       "message": "you\u0027re not testing the other operations: list_groups, and check_user_in_group.\n\nalso, i question how much these tests are exercising the specific behaviour you\u0027re adding, is there anyway to check the query string for \"1.2.840.113556.1.4.1941\"",
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_9f0dbe40",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3309,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "I can\u0027t see how groups are nested in LDAP in this test",
+      "range": {
+        "startLine": 3309,
+        "startChar": 13,
+        "endLine": 3309,
+        "endChar": 25
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_7f3f0ad6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3318,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T11:03:01Z",
+      "side": 1,
+      "message": "Why doing the same twice?",
+      "range": {
+        "startLine": 3314,
+        "startChar": 0,
+        "endLine": 3318,
+        "endChar": 46
+      },
       "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
