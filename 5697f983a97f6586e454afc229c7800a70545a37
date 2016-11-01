@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_b7f8e2c4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:04:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_817afe23",
+      "range": {
+        "startLine": 185,
+        "startChar": 26,
+        "endLine": 185,
+        "endChar": 30
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e78cb930",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -84,6 +108,30 @@
       "writtenOn": "2016-07-01T16:52:48Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 213,
+        "startChar": 26,
+        "endLine": 213,
+        "endChar": 30
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_f7fedaac",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:04:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_e78cb930",
       "range": {
         "startLine": 213,
         "startChar": 26,
@@ -131,6 +179,30 @@
       "side": 1,
       "message": "++",
       "parentUuid": "ba5da102_fa9b2870",
+      "range": {
+        "startLine": 547,
+        "startChar": 12,
+        "endLine": 547,
+        "endChar": 28
+      },
+      "revId": "5697f983a97f6586e454afc229c7800a70545a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_62b20a08",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:04:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_1c91b547",
       "range": {
         "startLine": 547,
         "startChar": 12,
