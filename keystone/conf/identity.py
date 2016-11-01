@@ -108,6 +108,14 @@ list_limit = cfg.IntOpt(
 Maximum number of entities that will be returned in an identity collection.
 """))
 
+list_users = cfg.BoolOpt(
+    'list_users',
+    default=True,
+    help=utils.fmt("""
+    If enabled, allow the listing of users from the backend.  If disabled,
+return an empty list.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -120,6 +128,7 @@ ALL_OPTS = [
     cache_time,
     max_password_length,
     list_limit,
+    list_users,
 ]
 
 

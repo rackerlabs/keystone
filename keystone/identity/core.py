@@ -906,7 +906,7 @@ class Manager(manager.Manager):
     @domains_configured
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
-        driver = self._select_identity_driver(domain_scope)
+        driver = self._select_identity_driver(domain_scope)               
         self._set_list_limit_in_hints(hints, driver)
         hints = hints or driver_hints.Hints()
         if driver.is_domain_aware():
@@ -917,7 +917,12 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_users(hints)
+
+        if driver._get_conf().identity.list_users:
+            ref_list = driver.list_users(hints)
+        else:
+            ref_list = []
+        
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
 
