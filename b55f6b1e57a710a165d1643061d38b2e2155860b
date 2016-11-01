@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_c242083e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:12:11Z",
+      "side": 1,
+      "message": "i recommend reading the examples here: https://wiki.openstack.org/wiki/GitCommitMessages#Examples_of_good_practice_2",
+      "revId": "b55f6b1e57a710a165d1643061d38b2e2155860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c26928c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:12:11Z",
+      "side": 1,
+      "message": "rewrite this to the standard described in the wiki, something like:\n\nAdd test cases for hints\n\n\nseveral resources in keystone make use of hints for querying when a list request is performed. currently, there are no tests for when hints are set to None, causing inconsistent results in various APIs\n\n\nPartial-Bug: 1614154\n\n\nor something like that...",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "b55f6b1e57a710a165d1643061d38b2e2155860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_a20d1439",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:12:11Z",
+      "side": 1,
+      "message": "please don\u0027t call this \"test_sqlalchemy_bug\", add it to https://github.com/openstack/keystone/blob/master/keystone/tests/unit/common/test_sql_core.py instead or call it test_backend_credential_sql.py",
+      "revId": "b55f6b1e57a710a165d1643061d38b2e2155860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_57195887",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:12:11Z",
+      "side": 1,
+      "message": "remove this line",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 35
+      },
+      "revId": "b55f6b1e57a710a165d1643061d38b2e2155860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_9713f065",
+        "filename": "keystone/tests/unit/test_sqlalchemy_bug.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T01:12:11Z",
+      "side": 1,
+      "message": "imports are grouped in a specific way:\n\n1. standard lib\n\n2. third party lib\n\n3. keystone libs\n\nso this should be:\n\n  import uuid\n\n\n  from six.moves import range\n\n\n  from keystone.common import driver_hints\n  import keystone.conf\n  from keystone.credential.providers import fernet as credential_provider\n  from keystone.tests import unit\n  from keystone.tests.unit import default_fixtures\n  from keystone.tests.unit import ksfixtures\n  from keystone.tests.unit.ksfixtures import database",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 11
+      },
+      "revId": "b55f6b1e57a710a165d1643061d38b2e2155860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
