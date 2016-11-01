@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_238c917e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T16:03:11Z",
+      "side": 1,
+      "message": "This is only true for a short period of time. PKI* will soon be only a memory.",
+      "revId": "20e828e8f1a18128732c44260c5fd94bb0c43452",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
