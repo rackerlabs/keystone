@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_0fd7b6ed",
+        "filename": "doc/source/auth-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5da102_c2c5a88e",
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_02dde00d",
         "filename": "doc/source/password-totp.rst",
         "patchSetId": 13
@@ -88,6 +106,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_0f733616",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "This seems so overly verbose compared to how the rest of the docs explain configuration changes.",
+      "parentUuid": "ba5da102_c2f92882",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_02f40084",
         "filename": "doc/source/password-totp.rst",
         "patchSetId": 13
@@ -105,6 +147,23 @@
         "endLine": 46,
         "endChar": 22
       },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_af796aca",
+        "filename": "doc/source/password-totp.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "Why is 6 hardcoded? It\u0027s entirely possible that a token legth is different, should we account for that? How common is it to have different values? YubiKey for example can use 6 or 8.",
       "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -151,6 +210,74 @@
         "endLine": 15,
         "endChar": 61
       },
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_d26721e7",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "@dependency.requires(\u0027credential_api\u0027, \u0027identity_api\u0027)",
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_929cc95e",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "If we were to take out the hard coded 6 you could do somthing like this before the authenticate call:\n\npossible_passwords \u003d []\nfor c in credentials:\n    generated_passcode \u003d ...\n    if user_info.password[:-len(generate_passcode)] \u003d\u003d generated_passcode:\n        possible_passwords.append(...)\n\nAnd then later to to auth for each possible password to see if any match.",
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b2cc6d6b",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "The code can be factored more so the .authenticate() call only appears once in code.",
+      "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_528071c0",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 5389,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T15:07:31Z",
+      "side": 1,
+      "message": "What is a \u0027config update mismatch\u0027?",
       "revId": "cd4c09c4ed47b4bde601c42a6a6168d7ead5a9f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
