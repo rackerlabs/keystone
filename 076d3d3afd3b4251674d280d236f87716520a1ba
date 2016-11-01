@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_17fe0037",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T00:39:46Z",
+      "side": 1,
+      "message": "nit, but for future patches, make this a footnote:\n\n\n  With recent changes [1], in list_events..\n\n\n  [1] 9e84371461831880ce5736e9888c7d9648e3a77b",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "076d3d3afd3b4251674d280d236f87716520a1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_915b0087",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T00:39:46Z",
+      "side": 1,
+      "message": "this is not related",
+      "range": {
+        "startLine": 267,
+        "startChar": 8,
+        "endLine": 267,
+        "endChar": 77
+      },
+      "revId": "076d3d3afd3b4251674d280d236f87716520a1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_d703a840",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T00:39:46Z",
+      "side": 1,
+      "message": "missing the last 2 steps here:\n\n  self.remove_event(event)\n  self._assertTokenNotRevoked(token_data_1)",
+      "range": {
+        "startLine": 361,
+        "startChar": 8,
+        "endLine": 361,
+        "endChar": 31
+      },
+      "revId": "076d3d3afd3b4251674d280d236f87716520a1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_17e7e0b0",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T00:39:46Z",
+      "side": 1,
+      "message": "this is not usually an audit id, maybe a uuid instead?",
+      "range": {
+        "startLine": 365,
+        "startChar": 28,
+        "endLine": 365,
+        "endChar": 55
+      },
+      "revId": "076d3d3afd3b4251674d280d236f87716520a1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_57ef9886",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-01T00:39:46Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 371,
+        "startChar": 36,
+        "endLine": 371,
+        "endChar": 54
+      },
+      "revId": "076d3d3afd3b4251674d280d236f87716520a1ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
