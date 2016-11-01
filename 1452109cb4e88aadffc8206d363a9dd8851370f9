@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_3dc11355",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:19:11Z",
+      "side": 1,
+      "message": "I asked in prior revisions why we are setting this up twice and also why we don\u0027t just mock it out. Seems like a waste.",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5aa09443",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -95,6 +112,47 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_9d985fc2",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:19:11Z",
+      "side": 1,
+      "message": "You\u0027re not. I\u0027ve been asking for this for a while: https://review.openstack.org/#/c/388541/5/keystone/tests/unit/test_sqlalchemy_bug.py@84",
+      "parentUuid": "ba5da102_5aa09443",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 64
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_3de4b3df",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:19:11Z",
+      "side": 1,
+      "message": "What exactly is the bug we are checking for?",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_9a6eac2d",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -112,6 +170,23 @@
         "endLine": 95,
         "endChar": 62
       },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_5de5e7d9",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-01T14:19:11Z",
+      "side": 1,
+      "message": "What exactly is the bug we are checking for?",
       "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
