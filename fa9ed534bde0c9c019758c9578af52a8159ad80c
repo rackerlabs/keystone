@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_a9a87bdc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T20:36:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_0e4dedc3",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_aed401bd",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 18
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_49eb5f13",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T20:36:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_aed401bd",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_aeeb2177",
         "filename": "examples/pki/gen_pki.sh",
         "patchSetId": 18
@@ -47,6 +83,24 @@
       "writtenOn": "2016-11-01T20:28:02Z",
       "side": 1,
       "message": "this whole file can go",
+      "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c9c68f99",
+        "filename": "examples/pki/gen_pki.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-01T20:36:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_aeeb2177",
       "revId": "fa9ed534bde0c9c019758c9578af52a8159ad80c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
