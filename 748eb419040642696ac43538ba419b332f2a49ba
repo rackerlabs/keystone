@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_8f7ad775",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-01T21:45:27Z",
+      "side": 0,
+      "message": "isn\u0027t this test class valid yet ? perhaps we just need to update the provider in the config_overrides ?",
+      "range": {
+        "startLine": 1470,
+        "startChar": 6,
+        "endLine": 1470,
+        "endChar": 23
+      },
+      "revId": "748eb419040642696ac43538ba419b332f2a49ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
