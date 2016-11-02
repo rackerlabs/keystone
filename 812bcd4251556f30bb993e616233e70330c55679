@@ -22,6 +22,30 @@
       "revId": "812bcd4251556f30bb993e616233e70330c55679",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_f56f9d28",
+        "filename": "keystone/auth/plugins/password_totp.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T03:08:08Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a bikeshed. I think we have to ask ourselves what we want to support, draw a line in the sand and go. So far I\u0027ve asked that question a few times and so far just crickets. AWS calls out what they support for MFA and I think we should do the same.",
+      "parentUuid": "ba5da102_575e9112",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 19
+      },
+      "revId": "812bcd4251556f30bb993e616233e70330c55679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
