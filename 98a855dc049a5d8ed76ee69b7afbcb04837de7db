@@ -52,6 +52,24 @@
       "revId": "98a855dc049a5d8ed76ee69b7afbcb04837de7db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c08b9d66",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T16:26:44Z",
+      "side": 1,
+      "message": "Ok, but i am not getting any issue in pep8 checker here.\n\nAny specific reason for adding a newline here?",
+      "parentUuid": "ba5da102_f03872a2",
+      "revId": "98a855dc049a5d8ed76ee69b7afbcb04837de7db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
