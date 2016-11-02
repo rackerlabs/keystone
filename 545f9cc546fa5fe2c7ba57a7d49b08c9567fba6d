@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_d327f5b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-02T16:42:36Z",
+      "side": 1,
+      "message": "Sorry, but i dislike it. The way it looks now is that only credentials are tested, while other things are not. Why can i be sure that users (the most obvious use case) are tested? Projects?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 72
+      },
+      "revId": "545f9cc546fa5fe2c7ba57a7d49b08c9567fba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
