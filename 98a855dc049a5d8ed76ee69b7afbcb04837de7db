@@ -34,6 +34,24 @@
       "revId": "98a855dc049a5d8ed76ee69b7afbcb04837de7db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_f03872a2",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T15:47:28Z",
+      "side": 1,
+      "message": "No, I\u0027m saying that you need a newline here.",
+      "parentUuid": "ba5da102_168086bf",
+      "revId": "98a855dc049a5d8ed76ee69b7afbcb04837de7db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
