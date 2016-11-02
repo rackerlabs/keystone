@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_ea7fb714",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T09:15:29Z",
+      "side": 1,
+      "message": "Sounds better, i will add this in next patch.",
+      "parentUuid": "ba5da102_cad6734e",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_aa4e9f6c",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 12
@@ -36,6 +60,30 @@
       "writtenOn": "2016-11-02T08:11:00Z",
       "side": 1,
       "message": "could this be an internal function inside setUp() ?",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 25
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_ad64f921",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T09:15:29Z",
+      "side": 1,
+      "message": "I think its fine enough to be a separate protected function so as to increase the modularity and readability.",
+      "parentUuid": "ba5da102_aa4e9f6c",
       "range": {
         "startLine": 49,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_aa969fed",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T09:15:29Z",
+      "side": 1,
+      "message": "Agreed. \nI will add the doc string as suggested.",
+      "parentUuid": "ba5da102_2a3c4fc7",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 20
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_aa277fb4",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 12
@@ -82,6 +154,30 @@
       "writtenOn": "2016-11-02T08:11:00Z",
       "side": 1,
       "message": "so if you want this check to show that filtering credentials actually works, then I\u0027d suggest you pass in a valid comparator and make sure the list you get back is the correct sublist (e.g. filter on  user_id). Using a non-supported comparator just confuses the issue.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 72
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_2d56295c",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T09:15:29Z",
+      "side": 1,
+      "message": "Agreed.\ni will use \"equals\", a valid comparator supported currently and use \"credentials[user_id]\" for filtering out of the following options: type, id, user_id, blob and project_id.",
+      "parentUuid": "ba5da102_aa277fb4",
       "range": {
         "startLine": 91,
         "startChar": 0,
