@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_95900f45",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T13:19:53Z",
+      "side": 1,
+      "message": "Missing a newline here. See http://docs.openstack.org/developer/hacking/#import-order-template for more info",
+      "revId": "98a855dc049a5d8ed76ee69b7afbcb04837de7db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
