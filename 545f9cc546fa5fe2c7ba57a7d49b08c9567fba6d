@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_13b24d06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T16:51:17Z",
+      "side": 1,
+      "message": "This is really testing that credentials is filtering properly. If we want to explicitly test other APIs then we can do that. I have a patch to test the behavior of filter_limit_query() that I\u0027m working on in response to this one.",
+      "parentUuid": "ba5da102_d327f5b3",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 72
+      },
+      "revId": "545f9cc546fa5fe2c7ba57a7d49b08c9567fba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_2010d958",
         "filename": "keystone/tests/unit/credential/test_sql_backend.py",
         "patchSetId": 17
@@ -36,6 +60,30 @@
       "writtenOn": "2016-11-02T16:43:48Z",
       "side": 1,
       "message": "why not:\n\nif not user_id:",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 23
+      },
+      "revId": "545f9cc546fa5fe2c7ba57a7d49b08c9567fba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_73cd4984",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T16:51:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_2010d958",
       "range": {
         "startLine": 49,
         "startChar": 11,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_73946942",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T16:51:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_802445c5",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "545f9cc546fa5fe2c7ba57a7d49b08c9567fba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_7339c9d6",
         "filename": "keystone/tests/unit/credential/test_sql_backend.py",
         "patchSetId": 17
@@ -82,6 +154,30 @@
       "writtenOn": "2016-11-02T16:43:48Z",
       "side": 1,
       "message": "retrieved",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 60,
+        "endChar": 16
+      },
+      "revId": "545f9cc546fa5fe2c7ba57a7d49b08c9567fba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b371a146",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-02T16:51:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_7339c9d6",
       "range": {
         "startLine": 60,
         "startChar": 8,
