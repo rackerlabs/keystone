@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_cad6734e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-02T08:11:00Z",
+      "side": 1,
+      "message": "how about:\n\n-----\nAdd test cases for passing \"None\" as a hint\n\nAlthough various components test their respective use of hints, we don\u0027t test what happens if you pass in \"None\". These new tests validate the expected behaviour that all entities should be returned in this case. The tests use the credentials API as an example to show this validation.\n-----",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_aa4e9f6c",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-02T08:11:00Z",
+      "side": 1,
+      "message": "could this be an internal function inside setUp() ?",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 25
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_2a3c4fc7",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-02T08:11:00Z",
+      "side": 1,
+      "message": "nit: It might be nice just to add a doc string saying that the test data that will be setup will be 6 credentials, 3 with a given user_id, three with random user_ids",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 20
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_aa277fb4",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-02T08:11:00Z",
+      "side": 1,
+      "message": "so if you want this check to show that filtering credentials actually works, then I\u0027d suggest you pass in a valid comparator and make sure the list you get back is the correct sublist (e.g. filter on  user_id). Using a non-supported comparator just confuses the issue.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 72
+      },
+      "revId": "963dff9c721cbe4095631e968939eb15789aac74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
