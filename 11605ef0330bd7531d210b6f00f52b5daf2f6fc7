@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_877537fb",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-02T18:21:12Z",
+      "side": 1,
+      "message": "use backticks `` instead of quotes \"",
+      "range": {
+        "startLine": 5,
+        "startChar": 31,
+        "endLine": 5,
+        "endChar": 54
+      },
+      "revId": "11605ef0330bd7531d210b6f00f52b5daf2f6fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_e766f34f",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-02T18:21:12Z",
+      "side": 1,
+      "message": "``[ldap]``",
+      "range": {
+        "startLine": 6,
+        "startChar": 46,
+        "endLine": 6,
+        "endChar": 50
+      },
+      "revId": "11605ef0330bd7531d210b6f00f52b5daf2f6fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_6753c36b",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-02T18:21:12Z",
+      "side": 1,
+      "message": "use backticks `` instead of quotes \"",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 49
+      },
+      "revId": "11605ef0330bd7531d210b6f00f52b5daf2f6fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_c7c80f25",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-02T18:21:12Z",
+      "side": 1,
+      "message": "wrap this in backticks\n\n  ``keystone.conf``",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "11605ef0330bd7531d210b6f00f52b5daf2f6fc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
