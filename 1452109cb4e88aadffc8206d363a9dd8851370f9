@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_eb98a0c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "Here, purpose of adding test cases is to test that functionality is not breaking if \"None\" or no value of hints is provided, which was causing inconsistent results.\nAlso at the same time i tried to test whether normal functionality i.e with some value of hints provided is also working fine.\nSo, in my opinion, following text would be sufficient enough:\n\"Test cases are added to verify the APIs with \"None\" and no value of hints, which was causing inconsistent results in various APIs.\"\n\nPlease suggest if there could be better text.",
+      "parentUuid": "ba5da102_4b07e917",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_9a55cc51",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_30768306",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "Ok, I will remove this.",
+      "parentUuid": "ba5da102_9a55cc51",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 43
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_3dc11355",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -83,6 +131,47 @@
       "writtenOn": "2016-11-01T14:19:11Z",
       "side": 1,
       "message": "I asked in prior revisions why we are setting this up twice and also why we don\u0027t just mock it out. Seems like a waste.",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_10541f51",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "I had removed this, but due to some revision mistakes it got introduced again. Sorry for this.",
+      "parentUuid": "ba5da102_3dc11355",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_269e4d63",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "changing this function name to test_backend_credential_sql_hints_none",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 38
+      },
       "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -136,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_90ce6f2c",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "I had removed this, but due to some revision mistakes it got introduced again. Sorry for this.",
+      "parentUuid": "ba5da102_9d985fc2",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 64
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_3de4b3df",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -147,6 +260,47 @@
       "writtenOn": "2016-11-01T14:19:11Z",
       "side": 1,
       "message": "What exactly is the bug we are checking for?",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_0b95d43d",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "Exactly the bug is regarding the \"None\" or no value of hints, which was causing inconsistent results.\nWhile in this particular test case, i tried to test whether normal functionality i.e with some value of hints provided is working fine or not.",
+      "parentUuid": "ba5da102_3de4b3df",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_668a051d",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "changing this function name to test_backend_credential_sql_hints",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 33
+      },
       "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -176,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_66a3e5b2",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "Currently, this comparator (notlike) is not supported. I just tried to use a random/dummy filter, which is not making any difference as here we are just checking on hints having atleast some value, not \"None\" or no value.",
+      "parentUuid": "ba5da102_9a6eac2d",
+      "range": {
+        "startLine": 95,
+        "startChar": 55,
+        "endLine": 95,
+        "endChar": 62
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5de5e7d9",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -193,6 +371,47 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_26756d31",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "changing this function name to test_backend_credential_sql_no_hints",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 36
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_cb859c07",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "Exactly the bug is regarding the \"None\" or no value of hints, which was causing inconsistent results.\nWhile in this particular test case, i tried to test with no value of hints provided, which in turn will use the default value (None).",
+      "parentUuid": "ba5da102_5de5e7d9",
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5ab7b485",
         "filename": "keystone/tests/unit/test_backend_credential_sql.py",
         "patchSetId": 11
@@ -204,6 +423,30 @@
       "writtenOn": "2016-11-01T11:32:37Z",
       "side": 1,
       "message": "same here, what\u0027s the point of these?",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 64
+      },
+      "revId": "1452109cb4e88aadffc8206d363a9dd8851370f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_f0ddebe0",
+        "filename": "keystone/tests/unit/test_backend_credential_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-02T06:18:16Z",
+      "side": 1,
+      "message": "I had removed this, but due to some revision mistakes it got introduced again. Sorry for this.",
+      "parentUuid": "ba5da102_5ab7b485",
       "range": {
         "startLine": 100,
         "startChar": 8,
