@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_73af092a",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-02T17:04:33Z",
+      "side": 1,
+      "message": "Not sure why only this function uses camel case",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 31
+      },
+      "revId": "71cd20706b3600211e5bb02c70da545d95d4de30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
