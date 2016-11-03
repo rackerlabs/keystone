@@ -46,6 +46,30 @@
       "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_2f8181fb",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-03T13:19:35Z",
+      "side": 1,
+      "message": "I have just tested it with the following script and it returned 401: http://paste.openstack.org/show/587759/",
+      "parentUuid": "ba5da102_2cfd0f6e",
+      "range": {
+        "startLine": 54,
+        "startChar": 30,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
