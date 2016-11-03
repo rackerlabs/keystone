@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_8aa2a997",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_97a6900e",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 28
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_f7ab4cd4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -60,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_aaabed73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_dff3b69c",
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_176440e2",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 5
@@ -83,6 +125,30 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_6aa555a0",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_176440e2",
+      "range": {
+        "startLine": 449,
+        "startChar": 4,
+        "endLine": 449,
+        "endChar": 33
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_7fd54ab7",
         "filename": "keystone/conf/ldap.py",
         "patchSetId": 5
@@ -94,6 +160,30 @@
       "writtenOn": "2016-11-01T11:03:01Z",
       "side": 1,
       "message": "Can\u0027t this be used for LDAP queries as well ? Or is it very specific to AD ?",
+      "range": {
+        "startLine": 451,
+        "startChar": 36,
+        "endLine": 451,
+        "endChar": 52
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_aa74cd35",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Specific (very) to AD",
+      "parentUuid": "ba5da102_7fd54ab7",
       "range": {
         "startLine": 451,
         "startChar": 36,
@@ -140,6 +230,54 @@
       "writtenOn": "2016-11-01T11:03:01Z",
       "side": 1,
       "message": "Is this a constant for any AD deployment ?",
+      "parentUuid": "ba5da102_37ef84b1",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 27
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_4a017169",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "ba5da102_dffd763b",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 27
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_8ad0e9f7",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "This is what the Microsoft control is called, which means it will show up in Google searches.",
       "parentUuid": "ba5da102_37ef84b1",
       "range": {
         "startLine": 38,
@@ -331,6 +469,48 @@
     },
     {
       "key": {
+        "uuid": "ba5da102_8aaf0929",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3309,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "They are merely running through the code, to make sure it does not explode.",
+      "parentUuid": "ba5da102_b78714d6",
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_0a6a19ee",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3309,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "they are not, as all that logic is in the AD server.  This is merely making sure the code continues to execute without syntax error.",
+      "parentUuid": "ba5da102_9f0dbe40",
+      "range": {
+        "startLine": 3309,
+        "startChar": 13,
+        "endLine": 3309,
+        "endChar": 25
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_7f3f0ad6",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -342,6 +522,30 @@
       "writtenOn": "2016-11-01T11:03:01Z",
       "side": 1,
       "message": "Why doing the same twice?",
+      "range": {
+        "startLine": 3314,
+        "startChar": 0,
+        "endLine": 3318,
+        "endChar": 46
+      },
+      "revId": "0392e669661f47e362732eba8d03be0e2d0759fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_6a79d5c7",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3318,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-03T02:31:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_7f3f0ad6",
       "range": {
         "startLine": 3314,
         "startChar": 0,
