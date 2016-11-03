@@ -46,6 +46,30 @@
       "revId": "de7f02bc9a2501830bbe6fbb6865b8c890d0d2c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_9128fc9b",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-03T09:20:59Z",
+      "side": 1,
+      "message": "So the problem is:\n1) The commit message (and bug) are related to None\n2) This isn\u0027t related to that\n\nSo either you need to describe this patch as testing more than when hints is None, or remove this, and submit it in a different patch if you think it is a valid test case (which I question). I am not sure we warrant what happens if you pass in a filter to an attribute that is not valid.\n\nNow I would agree that a passing a valid filter in to show that filtering is working at all with credentials would be a valid comparison test to have here to show that the result is different than passing in None....but that\u0027s not what this test is.",
+      "parentUuid": "ba5da102_51aae485",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 73
+      },
+      "revId": "de7f02bc9a2501830bbe6fbb6865b8c890d0d2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
