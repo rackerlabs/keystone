@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_3ee0c328",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:12:58Z",
+      "side": 1,
+      "message": "throughout the code, we use \"test_backend_sql\" or \"backends/test_sql\" instead of \"test_sql_backend\"",
+      "revId": "874ff5fc52fddf1eb66101a85bf4297d8598204c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
