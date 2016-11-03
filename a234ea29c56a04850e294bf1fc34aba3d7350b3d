@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_474e8a3b",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6589
+      },
+      "writtenOn": "2016-11-03T19:29:23Z",
+      "side": 1,
+      "message": "pep8 says you have some whitespace on this line",
+      "revId": "a234ea29c56a04850e294bf1fc34aba3d7350b3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
