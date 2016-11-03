@@ -22,6 +22,30 @@
       "revId": "de7f02bc9a2501830bbe6fbb6865b8c890d0d2c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_51aae485",
+        "filename": "keystone/tests/unit/credential/test_sql_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2016-11-03T09:05:56Z",
+      "side": 1,
+      "message": "This has nothing to do with testing for None.\nThis test case was added just to check if there is any inconsistent behavior for any \"not None\" value of hints.\n\nI think its nice to have this simple test as well here.\nPlease suggest if it need to be removed!",
+      "parentUuid": "ba5da102_b6117654",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 73
+      },
+      "revId": "de7f02bc9a2501830bbe6fbb6865b8c890d0d2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
