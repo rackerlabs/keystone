@@ -34,6 +34,46 @@
       "revId": "3fdc5d646854a4db1dceed90293eb59cb2d4e3d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_583200a8",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-03T12:06:11Z",
+      "side": 1,
+      "message": "this is indeed untested. I inserted \"assert False\" and it didn\u0027t fail.",
+      "revId": "3fdc5d646854a4db1dceed90293eb59cb2d4e3d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_18e2482f",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3284,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-03T12:06:11Z",
+      "side": 1,
+      "message": "i suggest to rename this to something like NestedGroupTests",
+      "range": {
+        "startLine": 3284,
+        "startChar": 6,
+        "endLine": 3284,
+        "endChar": 34
+      },
+      "revId": "3fdc5d646854a4db1dceed90293eb59cb2d4e3d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
