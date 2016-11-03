@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_464b1359",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-03T03:19:26Z",
+      "side": 1,
+      "message": "Extra %s, this should throw a runtime error.",
+      "revId": "3fdc5d646854a4db1dceed90293eb59cb2d4e3d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
