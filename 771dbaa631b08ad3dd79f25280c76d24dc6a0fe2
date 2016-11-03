@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_ec8a371a",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-03T13:02:30Z",
+      "side": 1,
+      "message": "i am not sure about this. Why is it +? Won\u0027t it flush all tokens in range (now - expiration, now + expired_window)?",
+      "range": {
+        "startLine": 54,
+        "startChar": 30,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
