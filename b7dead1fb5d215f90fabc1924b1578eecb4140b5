@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_5e1e570c",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:24:48Z",
+      "side": 1,
+      "message": "you are just copying the message of the exception. Why not create the exception before, log its message and then raise it?",
+      "range": {
+        "startLine": 1302,
+        "startChar": 16,
+        "endLine": 1303,
+        "endChar": 47
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_7e4ddbc2",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:24:48Z",
+      "side": 1,
+      "message": "this test (and the one below) tries to connect to ldap://localhost, right? Is there a reason why you are not mocking the response of the method instead of trying to create a real connection?",
+      "range": {
+        "startLine": 304,
+        "startChar": 8,
+        "endLine": 304,
+        "endChar": 46
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_5e3d7729",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:24:48Z",
+      "side": 1,
+      "message": "you don\u0027t need to pass this: https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/common.py#L445",
+      "range": {
+        "startLine": 323,
+        "startChar": 26,
+        "endLine": 323,
+        "endChar": 32
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_fe0acb77",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:24:48Z",
+      "side": 1,
+      "message": "you don\u0027t need to pass this: https://github.com/openstack/keystone/blob/master/keystone/identity/backends/ldap/common.py#L445",
+      "range": {
+        "startLine": 345,
+        "startChar": 26,
+        "endLine": 345,
+        "endChar": 32
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_1eadbf9a",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-03T18:24:48Z",
+      "side": 1,
+      "message": "non-zero also implies negative values, think you need to be clearer about the restrictions here",
+      "range": {
+        "startLine": 14,
+        "startChar": 10,
+        "endLine": 14,
+        "endChar": 18
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
