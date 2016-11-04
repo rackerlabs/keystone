@@ -175,6 +175,21 @@ Where the following are defined:
 * ``<action>``: The action being performed, typically:
   ``<operation>``. ``<resource_type>``
 
+There is also a specific ``<reason>`` key that is present for the following
+various PCI-DSS related events:
+
+* ``PCI-DSS 8.1.6``: Limit repeated access attempts by locking out the user
+  after more than X attempts.
+* ``PCI-DSS 8.2.3``: Passwords must meet the established criteria.
+* ``PCI-DSS 8.2.4``: Password must be changed every X days.
+* ``PCI-DSS 8.2.5``: Do not let users reuse the last X passwords.
+* ``Other``: Prevent passwords from being changed for a minimum of X days.
+
+The reason object will contain the following keys:
+
+* ``<reasonType>``: Description of the PCI-DSS event
+* ``<reasonCode>``: HTTP response code for the event
+
 Additionally there may be extra keys present depending on the operation being
 performed, these will be discussed below.
 
@@ -398,6 +413,51 @@ the unique identifier of the resource type.
         "priority": "INFO",
         "publisher_id": "identity.host1234",
         "timestamp": "2014-08-20T01:20:47.932842"
+    }
+
+Example Notification - Expired Password
+---------------------------------------
+
+The following is an example of a notification that is sent when a user's
+password has expired and needs to be reset. This example contains the reason
+object that is emitted for various PCI-DSS related events.
+
+.. code-block:: javascript
+
+   {
+	"priority": "INFO",
+	"_unique_id": "222441bdc958423d8af6f28f9c558614",
+	"event_type": "identity.authenticate",
+	"timestamp": "2016-11-11 18:31:11.290821",
+	"publisher_id": "identity.host1234",
+	"payload": {
+		"typeURI": "http://schemas.dmtf.org/cloud/audit/1.0/event",
+		"initiator": {
+			"typeURI": "service/security/account/user",
+			"host": {
+				"address": "127.0.0.1"
+			},
+			"id": "73a19db6-e26b-5313-a6df-58d297fa652e"
+		},
+		"target": {
+			"typeURI": "service/security/account/user",
+			"id": "c23e6cb7-abe0-5e42-b7f7-4c4104ea77b0"
+		},
+		"observer": {
+			"typeURI": "service/security",
+			"id": "9bdddeda6a0b451e9e0439646e532afd"
+		},
+		"eventType": "activity",
+		"eventTime": "2016-11-11T18:31:11.156356+0000",
+		"reason": {
+			"reasonCode": 401,
+			"reasonType": "The password is expired and needs to be reset for user: ed1ab0b40f284fb48fea9e25d0d157fc"
+		},
+		"action": "authenticate",
+		"outcome": "failure",
+		"id": "78cd795f-5850-532f-9ab1-5adb04e30c0f"
+	},
+	"message_id": "9a97e9d0-fef1-4852-8e82-bb693358bc46"
     }
 
 Recommendations for consumers
