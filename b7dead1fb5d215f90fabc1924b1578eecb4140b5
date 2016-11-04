@@ -210,6 +210,30 @@
       "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_b3f068cb",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-11-04T14:58:10Z",
+      "side": 1,
+      "message": "we are explicitly mentioning that timeout is in seconds. A negative time value doesn\u0027t make a lot of sense in that context.",
+      "parentUuid": "ba5da102_1eadbf9a",
+      "range": {
+        "startLine": 14,
+        "startChar": 10,
+        "endLine": 14,
+        "endChar": 18
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
