@@ -29,6 +29,7 @@ from pycadf import credential
 from pycadf import eventfactory
 from pycadf import resource
 
+from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.common import dependency
 from keystone.common import utils
@@ -87,7 +88,7 @@ class Audit(object):
 
     @classmethod
     def _emit(cls, operation, resource_type, resource_id, initiator, public,
-              actor_dict=None):
+              actor_dict=None, reason=None):
         """Directly send an event notification.
 
         :param operation: one of the values from ACTIONS
@@ -116,52 +117,52 @@ class Audit(object):
         if CONF.notification_format == 'cadf' and public:
             outcome = taxonomy.OUTCOME_SUCCESS
             _create_cadf_payload(operation, resource_type, resource_id,
-                                 outcome, initiator)
+                                 outcome, initiator, reason)
 
     @classmethod
     def created(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.created, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
     @classmethod
     def updated(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.updated, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
     @classmethod
     def disabled(cls, resource_type, resource_id, initiator=None,
-                 public=True):
+                 public=True, reason=None):
         cls._emit(ACTIONS.disabled, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
     @classmethod
     def deleted(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.deleted, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
     @classmethod
     def added_to(cls, target_type, target_id, actor_type, actor_id,
-                 initiator=None, public=True):
+                 initiator=None, public=True, reason=None):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
                       'actor_operation': 'added'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
-                  actor_dict=actor_dict)
+                  actor_dict=actor_dict, reason=reason)
 
     @classmethod
     def removed_from(cls, target_type, target_id, actor_type, actor_id,
-                     initiator=None, public=True):
+                     initiator=None, public=True, reason=None):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
                       'actor_operation': 'removed'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
-                  actor_dict=actor_dict)
+                  actor_dict=actor_dict, reason=reason)
 
     @classmethod
-    def internal(cls, resource_type, resource_id):
+    def internal(cls, resource_type, resource_id, reason=None):
         # NOTE(lbragstad): Internal notifications are never public and have
         # never used the initiator variable, but the _emit() method expects
         # them. Let's set them here but not expose them through the method
@@ -170,7 +171,7 @@ class Audit(object):
         initiator = None
         public = False
         cls._emit(ACTIONS.internal, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
 
 def _get_callback_info(callback):
@@ -336,7 +337,7 @@ def reset_notifier():
 
 
 def _create_cadf_payload(operation, resource_type, resource_id,
-                         outcome, initiator):
+                         outcome, initiator, reason=None):
     """Prepare data for CADF audit notifier.
 
     Transform the arguments into content to be consumed by the function that
@@ -368,6 +369,9 @@ def _create_cadf_payload(operation, resource_type, resource_id,
     audit_kwargs = {'resource_info': resource_id}
     cadf_action = '%s.%s' % (operation, resource_type)
     event_type = '%s.%s.%s' % (SERVICE, resource_type, operation)
+
+    if reason:
+        audit_kwargs['reason'] = reason
 
     _send_audit_notification(cadf_action, initiator, outcome,
                              target, event_type, **audit_kwargs)
@@ -481,10 +485,21 @@ class CadfNotificationWrapper(object):
     def __call__(self, f):
         @functools.wraps(f)
         def wrapper(wrapped_self, request, user_id, *args, **kwargs):
-            """Alway send a notification."""
+            """Will always send a notification."""
             target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             try:
                 result = f(wrapped_self, request, user_id, *args, **kwargs)
+            except (exception.AccountLocked,
+                    exception.PasswordExpired,
+                    exception.PasswordRequirementsValidationError,
+                    exception.PasswordHistoryValidationError,
+                    exception.PasswordAgeValidationError) as ex:
+                payload = {'reasonCode': ex.code, 'reasonType': str(ex)}
+                _send_audit_notification(self.action, request.audit_initiator,
+                                         taxonomy.OUTCOME_FAILURE,
+                                         target, self.event_type,
+                                         reason=payload)
+                raise
             except Exception:
                 # For authentication failure send a cadf event as well
                 _send_audit_notification(self.action, request.audit_initiator,
@@ -685,12 +700,17 @@ def _send_audit_notification(action, initiator, outcome, target,
     if service_id is not None:
         event.observer.id = service_id
 
+    reason = kwargs.pop('reason', None)
+
     for key, value in kwargs.items():
         setattr(event, key, value)
 
     context = {}
     payload = event.as_dict()
     notifier = _get_notifier()
+
+    if reason:
+        payload['reason'] = reason
 
     if notifier:
         try:
@@ -731,6 +751,5 @@ def _check_notification_opt_out(event_type, outcome):
 
 
 emit_event = CadfNotificationWrapper
-
 
 role_assignment = CadfRoleAssignmentNotificationWrapper
