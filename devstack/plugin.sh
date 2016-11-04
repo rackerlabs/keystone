@@ -13,6 +13,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+KEYSTONE_PLUGIN=$DEST/keystone/devstack
+source $KEYSTONE_PLUGIN/lib/federation.sh
+
 # For more information on Devstack plugins, including a more detailed
 # explanation on when the different steps are executed please see:
 # http://docs.openstack.org/developer/devstack/plugins.html
@@ -20,15 +23,24 @@
 if [[ "$1" == "stack" && "$2" == "install" ]]; then
     # This phase is executed after the projects have been installed
     echo "Keystone plugin - Install phase"
+    if is_service_enabled keystone-federation; then
+        install_federation
+    fi
 
 elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
     # This phase is executed after the projects have been configured and
     # before they are started
     echo "Keystone plugin - Post-config phase"
+    if is_service_enabled keystone-federation; then
+        configure_federation
+    fi
 
 elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
     # This phase is executed after the projects have been started
     echo "Keystone plugin - Extra phase"
+    if is_service_enabled keystone-federation; then
+        register_federation
+    fi
 fi
 
 if [[ "$1" == "unstack" ]]; then
