@@ -997,3 +997,95 @@ class RoleAssignmentV3(controller.V3Controller):
             return self.list_role_assignments_for_tree(request)
         else:
             return self.list_role_assignments(request)
+
+
+@dependency.requires('role_api')
+class AccessV3(controller.V3Controller):
+    collection_name = 'routes'
+    member_name = 'route'
+
+    @controller.protected()
+    def put_access_rules(self, request, service_name, routes):
+        # TODO(ayoung) Move this logic to the manager
+        self.role_api.delete_routes_for_service(service_name)
+        role_name_to_id = {role['name']: role['id']
+                           for role in self.role_api.list_roles()}
+        for route in routes:
+            for verb in route['verbs']:
+                new_route = self._assign_unique_id({
+                    'path': route['path'],
+                    'verb': verb,
+                    'role_id': role_name_to_id[route['role']],
+                    'service': service_name
+                })
+                self.role_api.create_route(
+                    new_route['id'], new_route)
+
+    # TODO(ayoung): add API for listing all access rules.
+
+    def _add_route_to_access_list(self, access_list, route):
+        key = (route['path'], route['role_id'])
+        existing_route = access_list.get(key)
+        if existing_route:
+            verbs = existing_route['verbs']
+            verbs.append(route['verb'])
+            verbs.sort()
+            existing_route['verbs'] = verbs
+        else:
+            new_route = {
+                'id': route['id'],
+                'path': route['path'],
+                'verbs': [route['verb']],
+                'role': self.role_api.get_role(route['role_id'])['name'],
+                # TODO(ayoung): If the Configuration file value is
+                # set, expand out the implied roles that lead to this role
+                'roles': [self.role_api.get_role(route['role_id'])['name']]
+            }
+            access_list[key] = new_route
+
+        return access_list
+
+    @controller.protected()
+    def list_access_rules(self, request, service_name):
+        access_list = dict()
+
+        for route in self.role_api.list_routes():
+            if route['service'] == service_name:
+                access_list = self._add_route_to_access_list(
+                    access_list, route)
+
+        ref = access_list.values()
+
+        return AccessV3.wrap_collection(
+            request.context_dict,
+            ref
+        )
+
+    @controller.protected()
+    def delete_access_rules(self, request, service_name):
+        self.role_api.delete_routes_for_service(service_name)
+
+    @controller.protected()
+    def create_route(self, request, route):
+        route = self._assign_unique_id(route)
+        ref = self.role_api.create_route(route['id'], route)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def list_routes(self, request):
+        ref = self.role_api.list_routes()
+        return AccessV3.wrap_collection(request.context_dict, ref)
+
+    @controller.protected()
+    def get_route(self, request, route_id):
+        ref = self.role_api.get_route(route_id)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def update_route(self, request, route_id, route):
+        ref = self.role_api.update_route(route_id, route)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_route(self, request, route_id):
+        self.role_api.delete_route(route_id)
