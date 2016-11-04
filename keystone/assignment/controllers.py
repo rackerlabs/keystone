@@ -997,3 +997,35 @@ class RoleAssignmentV3(controller.V3Controller):
             return self.list_role_assignments_for_tree(request)
         else:
             return self.list_role_assignments(request)
+
+
+@dependency.requires('role_api')
+class AccessV3(controller.V3Controller):
+    collection_name = 'routes'
+    member_name = 'route'
+
+    @controller.protected()
+    def create_route(self, request, route):
+        route = self._assign_unique_id(route)
+        ref = self.role_api.create_route(route['id'], route)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.filterprotected('service')
+    def list_routes(self, request, filters):
+        hints = AccessV3.build_driver_hints(request, filters)
+        ref = self.role_api.list_routes(hints=hints)
+        return AccessV3.wrap_collection(request.context_dict, ref, hints=hints)
+
+    @controller.protected()
+    def get_route(self, request, route_id):
+        ref = self.role_api.get_route(route_id)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def update_route(self, request, route_id, route):
+        ref = self.role_api.update_route(route_id, route)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_route(self, request, route_id):
+        self.role_api.delete_route(route_id)

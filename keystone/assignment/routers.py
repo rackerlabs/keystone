@@ -278,3 +278,9 @@ class Routers(wsgi.RoutersBase):
                 'group_id': json_home.Parameters.GROUP_ID,
                 'role_id': json_home.Parameters.ROLE_ID,
             })
+
+        routers.append(
+            router.Router(controllers.AccessV3(),
+                          'routes',
+                          'route',
+                          resource_descriptions=self.v3_resources))
