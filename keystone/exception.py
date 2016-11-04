@@ -516,6 +516,10 @@ class ApplicationCredentialNotFound(NotFound):
                        "%(application_credential_id)s.")
 
 
+class RouteNotFound(NotFound):
+    message_format = _("Could not find Route: %(route_id)s")
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s.")
