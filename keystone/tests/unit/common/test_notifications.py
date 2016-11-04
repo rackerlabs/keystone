@@ -68,13 +68,14 @@ class AuditNotificationsTestCase(unit.BaseTestCase):
                 'keystone.notifications._create_cadf_payload') as cadf_notify:
             notify_function(EXP_RESOURCE_TYPE, exp_resource_id)
             initiator = None
+            reason = None
             cadf_notify.assert_called_once_with(
                 operation, EXP_RESOURCE_TYPE, exp_resource_id,
-                notifications.taxonomy.OUTCOME_SUCCESS, initiator)
+                notifications.taxonomy.OUTCOME_SUCCESS, initiator, reason)
             notify_function(EXP_RESOURCE_TYPE, exp_resource_id, public=False)
             cadf_notify.assert_called_once_with(
                 operation, EXP_RESOURCE_TYPE, exp_resource_id,
-                notifications.taxonomy.OUTCOME_SUCCESS, initiator)
+                notifications.taxonomy.OUTCOME_SUCCESS, initiator, reason)
 
     def test_resource_created_notification(self):
         self._test_notification_operation(notifications.Audit.created,
