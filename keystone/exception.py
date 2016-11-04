@@ -458,6 +458,16 @@ class ConfigRegistrationNotFound(Exception):
     pass
 
 
+class UrlPatternNotFound(NotFound):
+    message_format = _("Could not find UrlPattern: %(url_pattern_id)s")
+
+
+class KeystoneConfigurationError(Exception):
+    # This is an exception to be used in the case that Keystone config is
+    # invalid and Keystone should not start.
+    pass
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s.")

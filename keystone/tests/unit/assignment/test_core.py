@@ -15,6 +15,7 @@
 import copy
 import uuid
 
+from keystone.common import driver_hints
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
@@ -125,3 +126,80 @@ class RoleTests(object):
         self.assertRaises(exception.RoleNotFound,
                           self.role_api.get_role,
                           role_id)
+
+    def test_url_pattern_crud(self):
+        # Create
+        service1 = uuid.uuid4().hex
+        url_pattern_ref = unit.new_url_pattern_ref()
+        url_pattern_ref['service'] = service1
+        url_pattern_1_created = self.role_api.create_url_pattern(
+            url_pattern_ref['id'], url_pattern_ref)
+        self.assertEqual(url_pattern_1_created, url_pattern_ref)
+
+        # Read: Get
+        url_pattern_1 = self.role_api.get_url_pattern(url_pattern_ref['id'])
+        self.assertEqual(url_pattern_1, url_pattern_ref)
+
+        url_pattern_ref = unit.new_url_pattern_ref()
+        url_pattern_ref['service'] = service1
+        url_pattern_2_created = self.role_api.create_url_pattern(
+            url_pattern_ref['id'], url_pattern_ref)
+
+        service2 = uuid.uuid4().hex
+        url_pattern_ref = unit.new_url_pattern_ref()
+        url_pattern_ref['service'] = service2
+        url_pattern_3_created = self.role_api.create_url_pattern(
+            url_pattern_ref['id'], url_pattern_ref)
+
+        # Read:  List all
+        all_url_patterns = self.role_api.list_url_patterns()
+        self.assertEqual(3, len(all_url_patterns))
+
+        hints = driver_hints.Hints()
+        all_url_patterns = self.role_api.list_url_patterns(hints)
+        self.assertEqual(3, len(all_url_patterns))
+
+        hints.add_filter('service', service1)
+        service_1_url_patterns = self.role_api.list_url_patterns(hints)
+        self.assertEqual(2, len(service_1_url_patterns))
+        self.assertIn(url_pattern_1_created, service_1_url_patterns)
+        self.assertIn(url_pattern_2_created, service_1_url_patterns)
+        self.assertNotIn(url_pattern_3_created, service_1_url_patterns)
+
+        hints = driver_hints.Hints()
+        hints.add_filter('service', service2)
+        service_2_url_patterns = self.role_api.list_url_patterns(hints)
+        self.assertEqual(1, len(service_2_url_patterns))
+        self.assertNotIn(url_pattern_1_created, service_2_url_patterns)
+        self.assertNotIn(url_pattern_2_created, service_2_url_patterns)
+        self.assertIn(url_pattern_3_created, service_2_url_patterns)
+
+        # Update
+        url_pattern_1_id = url_pattern_1['id']
+
+        url_pattern_ref = unit.new_url_pattern_ref()
+        url_pattern_ref['id'] = url_pattern_1_created['id']
+        url_pattern_1_updated = self.role_api.update_url_pattern(
+            url_pattern_1_id,
+            url_pattern_ref)
+
+        url_pattern_1_gotten = self.role_api.get_url_pattern(
+            url_pattern_1_id)
+
+        self.assertEqual(url_pattern_ref, url_pattern_1_updated)
+        self.assertEqual(url_pattern_1_gotten, url_pattern_1_updated)
+
+        # Delete
+        all_url_patterns = self.role_api.list_url_patterns()
+        self.assertEqual(3, len(all_url_patterns))
+        self.assertIn(url_pattern_1_gotten, all_url_patterns)
+        self.assertIn(url_pattern_2_created, all_url_patterns)
+        self.assertIn(url_pattern_3_created, all_url_patterns)
+
+        self.role_api.delete_url_pattern(url_pattern_1_id)
+        all_url_patterns = self.role_api.list_url_patterns()
+        self.assertEqual(2, len(all_url_patterns))
+
+        self.assertNotIn(url_pattern_1_gotten, all_url_patterns)
+        self.assertIn(url_pattern_2_created, all_url_patterns)
+        self.assertIn(url_pattern_3_created, all_url_patterns)

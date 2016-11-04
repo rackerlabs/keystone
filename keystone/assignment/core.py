@@ -1135,3 +1135,20 @@ class RoleManager(manager.Manager):
     def delete_implied_role(self, prior_role_id, implied_role_id):
         self.driver.delete_implied_role(prior_role_id, implied_role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+    @manager.response_truncated
+    def list_url_patterns(self, hints=None):
+        return self.driver.list_url_patterns(hints or driver_hints.Hints())
+
+    @manager.response_truncated
+    def delete_url_pattern(self, url_pattern_id):
+        return self.driver.delete_url_pattern(url_pattern_id)
+
+    def list_role_to_url_patterns(self, hints=None):
+        return self.driver.list_role_to_url_patterns(
+            hints or driver_hints.Hints())
+
+    def delete_url_patterns_for_service(self, service):
+        for pattern in self.list_url_patterns():
+            if pattern['service'] == service:
+                self.delete_url_pattern(pattern['id'])
