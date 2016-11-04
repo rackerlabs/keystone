@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_45f2db07",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 17973
+      },
+      "writtenOn": "2016-11-04T18:25:55Z",
+      "side": 1,
+      "message": "nit: s/set Network/Set network/",
+      "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5da102_e5e3ef31",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 17973
+      },
+      "writtenOn": "2016-11-04T18:25:55Z",
+      "side": 1,
+      "message": "nit: s/the/The/",
+      "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
