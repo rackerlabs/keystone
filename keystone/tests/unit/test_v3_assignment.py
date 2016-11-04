@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import datetime
 import random
 import uuid
@@ -2466,25 +2467,12 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
 
 class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
                         unit.TestCase):
-    def _create_role(self):
-        """Call ``POST /roles``."""
-        ref = unit.new_role_ref()
-        r = self.post('/roles', body={'role': ref})
-        return self.assertValidRoleResponse(r, ref)
-
     def test_list_implied_roles_none(self):
         self.prior = self._create_role()
         url = '/roles/%s/implies' % (self.prior['id'])
         response = self.get(url).json["role_inference"]
         self.assertEqual(self.prior['id'], response['prior_role']['id'])
         self.assertEqual(0, len(response['implies']))
-
-    def _create_implied_role(self, prior, implied):
-        self.put('/roles/%s/implies/%s' % (prior['id'], implied['id']),
-                 expected_status=http_client.CREATED)
-
-    def _delete_implied_role(self, prior, implied):
-        self.delete('/roles/%s/implies/%s' % (prior['id'], implied['id']))
 
     def _setup_prior_two_implied(self):
         self.prior = self._create_role()
@@ -2581,10 +2569,6 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
         self.assignment_api.add_role_to_user_and_project(
             user['id'], project['id'], self.role_list[0]['id'])
 
-    def _build_effective_role_assignments_url(self, user):
-        return '/role_assignments?effective&user.id=%(user_id)s' % {
-            'user_id': user['id']}
-
     def _assert_all_roles_in_assignment(self, response, user):
         # Now use the list role assignments api to check that all three roles
         # appear in the collection
@@ -2647,12 +2631,6 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
             response, user, project, 0, 1)
         self._assert_effective_role_for_implied_has_prior_in_links(
             response, user, project, 1, 2)
-
-    def _create_named_role(self, name):
-        role = unit.new_role_ref()
-        role['name'] = name
-        self.role_api.create_role(role['id'], role)
-        return role
 
     def test_root_role_as_implied_role_forbidden(self):
         """Test root role is forbidden to be set as an implied role.
@@ -3038,3 +3016,212 @@ class ListUserProjectsTestCase(test_v3.RestfulTestCase):
             projects_result = result.json['projects']
             self.assertEqual(1, len(projects_result))
             self.assertEqual(self.projects[i]['id'], projects_result[0]['id'])
+
+
+def route_validator(*args, **kwargs):
+    pass
+
+
+def bulk_routes_validator(*args, **kwargs):
+    pass
+
+
+class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
+                 unit.TestCase):
+
+    service_1_rules = {
+        'routes': [
+            {
+                'path': '/v2/images',
+                'verbs': [u'post'],
+                'role': 'member'
+            },
+            {
+                'path': '/v2/images/{image_id}',
+                'verbs': [u'delete', u'get', u'patch'],
+                'role': 'member'
+            },
+            {
+                'path': '/v2/images/{image_id}/deactivate',
+                'verbs': [u'post'],
+                'role': 'member'
+            },
+            {
+                'path': '/v2/images/{image_id}/reactivate',
+                'verbs': [u'post'],
+                'role': 'member'
+            },
+        ]
+    }
+
+    bulk_keys_to_check = ['path', 'verbs', 'role']
+    route_keys_to_check = ['path', 'verb', 'role_id', 'id', 'service']
+
+    def assertValidRouteResponse(self, response, expected):
+        self.assertValidResponse(
+            response, 'route', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(expected['path'],
+                         response.json_body['route']['path'])
+        self.assertEqual(expected['verb'],
+                         response.json_body['route']['verb'])
+        self.assertEqual(expected['role_id'],
+                         response.json_body['route']['role_id'])
+        self.assertEqual(expected['service'],
+                         response.json_body['route']['service'])
+
+    def test_route_crud(self):
+        member_role = unit.new_role_ref(name='member')
+        member_role_id = member_role['id']
+        self.role_api.create_role(member_role_id, member_role)
+
+        reader_role = unit.new_role_ref(name='reader')
+        reader_role_id = reader_role['id']
+        self.role_api.create_role(reader_role_id, reader_role)
+
+        route_1 = {
+            'path': '/v2/images',
+            'verb': 'post',
+            'role_id': member_role_id,
+            'service': 'image'
+        }
+
+        post_response = self.post('/routes', body={'route': route_1})
+        route_1_id = post_response.json_body['route']['id']
+
+        self.assertValidRouteResponse(post_response, route_1)
+
+        get_response = self.get('/routes/%s' % route_1_id)
+        self.assertValidRouteResponse(get_response, route_1)
+
+        route_1_updated = {
+            'route': {
+                'path': '/v2/image',
+                'verb': 'put',
+                'role_id': reader_role_id,
+                'service': 'glance',
+                'id': route_1_id
+            }
+        }
+        patch_response = self.patch('/routes/%s' % route_1_id,
+                                    body=route_1_updated)
+
+        get_response = self.get('/routes/%s' % route_1_id)
+        self.assertValidRouteResponse(get_response,
+                                      route_1_updated['route'])
+
+        bad_route_1_updated = {
+            'route': {
+                'p': '/v2/image',
+                'ver': 'put',
+                'role': reader_role_id,
+                'serv': 'glance',
+                'id': route_1_id
+            }
+        }
+        patch_response = self.patch('/routes/%s' % route_1_id,
+                                    body=bad_route_1_updated,
+                                    expected_status=http_client.BAD_REQUEST)
+        route_1_subset = {
+            'route': {
+                'path': '/v2/pictures',
+                'id': route_1_id
+            }
+        }
+        patch_response = self.patch('/routes/%s' % route_1_id,
+                                    body=route_1_subset)
+        route_1_subset_expected = {
+            'path': '/v2/pictures',
+            'verb': 'put',
+            'role_id': reader_role_id,
+            'service': 'glance',
+            'id': route_1_id
+        }
+        self.assertValidRouteResponse(patch_response,
+                                      route_1_subset_expected)
+
+        get_response = self.get('/routes/%s' % route_1_id)
+        self.assertValidRouteResponse(get_response,
+                                      route_1_subset_expected)
+
+        self.delete('/routes/%s' % route_1_id)
+        get_response = self.get('/routes/%s' % route_1_id,
+                                expected_status=http_client.NOT_FOUND)
+
+        for rule in self.service_1_rules['routes']:
+            for verb in rule['verbs']:
+                new_route = {
+                    'path': rule['path'],
+                    'verb': verb,
+                    'role_id': member_role_id,
+                    'service': 'image'
+                }
+                post_response = self.post('/routes',
+                                          body={'route': new_route})
+                self.assertValidRouteResponse(post_response,
+                                              new_route)
+        list_response = self.get('/routes')
+        self.assertValidListResponse(
+            list_response, 'routes', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(6, len(list_response.json_body['routes']))
+
+    def _assert_bulk_rules_response(self, response, expected):
+        self.assertValidListResponse(
+            response, 'routes', route_validator,
+            keys_to_check=self.bulk_keys_to_check)
+
+        self.assertEqual(len(expected['routes']),
+                         len(response.json_body['routes']))
+        matches = dict()
+        for route in expected['routes']:
+            key = (route['path'], route['role'])
+            matches[key] = route
+
+        for response_route in response.json_body['routes']:
+            key = (response_route['path'],
+                   response_route['role'])
+            try:
+                expected_route = matches[key]
+            except KeyError:
+                self.fail(
+                    'access list has value not in expected set (%s , %s).'
+                    % key)
+            self.assertEqual(expected_route['verbs'],
+                             response_route['verbs'])
+
+    def test_upload_bulk_rules(self):
+
+        member_role = unit.new_role_ref(name='member')
+        member_role_id = member_role['id']
+        self.role_api.create_role(member_role_id, member_role)
+        get_response = self.get('/access/service/image')
+        expected_empty = {
+            'routes': []
+        }
+
+        self._assert_bulk_rules_response(get_response, expected_empty)
+
+        self.put('/access/service/image', body=self.service_1_rules)
+
+        expected = copy.copy(self.service_1_rules)
+
+        get_response = self.get('/access/service/image')
+        self._assert_bulk_rules_response(get_response, expected)
+
+        list_response = self.get('/routes')
+        self.assertValidListResponse(
+            list_response, 'routes', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(6, len(list_response.json_body['routes']))
+
+        self.delete('/access/service/image')
+
+        get_response = self.get('/access/service/image')
+        self._assert_bulk_rules_response(get_response, expected_empty)
+
+        list_response = self.get('/routes')
+        self.assertValidListResponse(
+            list_response, 'routes', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(0, len(list_response.json_body['routes']))

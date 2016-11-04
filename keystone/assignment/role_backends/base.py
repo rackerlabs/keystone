@@ -131,3 +131,56 @@ class RoleDriverBase(object):
     def list_implied_roles(self, prior_role_id):
         """List roles implied from the prior role ID."""
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_route(self, route_id, route):
+        """Create a new route.
+
+        :raises keystone.exception.Conflict: If a duplicate route exists.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_routes(self, hints):
+        """List routes in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of route_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_route(self, route_id):
+        """Get a route by ID.
+
+        :returns: route_ref
+        :raises keystone.exception.RouteNotFound: If the
+            route doesn't exist.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_route(self, route_id, route):
+        """Update an existing route.
+
+        :raises keystone.exception.RouteNotFound: If the
+            route doesn't exist.
+        :raises keystone.exception.Conflict: If a duplicate
+            route exists.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_route(self, route_id):
+        """Create a new route.
+
+        :raises keystone.exception.Conflict: If a duplicate route exists.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
