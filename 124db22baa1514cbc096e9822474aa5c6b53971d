@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_be63e8af",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-04T00:36:11Z",
+      "side": 0,
+      "message": "Looks like its token refactoring in O is the reason according to this, this might be in the removed-as-of-ocata BP",
+      "range": {
+        "startLine": 715,
+        "startChar": 18,
+        "endLine": 728,
+        "endChar": 48
+      },
+      "revId": "124db22baa1514cbc096e9822474aa5c6b53971d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
