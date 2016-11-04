@@ -27,8 +27,10 @@ from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
 from pycadf import credential
 from pycadf import eventfactory
+from pycadf import reason
 from pycadf import resource
 
+from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.common import dependency
 from keystone.common import utils
@@ -87,7 +89,7 @@ class Audit(object):
 
     @classmethod
     def _emit(cls, operation, resource_type, resource_id, initiator, public,
-              actor_dict=None):
+              actor_dict=None, reason=None):
         """Directly send an event notification.
 
         :param operation: one of the values from ACTIONS
@@ -116,52 +118,52 @@ class Audit(object):
         if CONF.notification_format == 'cadf' and public:
             outcome = taxonomy.OUTCOME_SUCCESS
             _create_cadf_payload(operation, resource_type, resource_id,
-                                 outcome, initiator)
+                                 outcome, initiator, reason)
 
     @classmethod
     def created(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.created, resource_type, resource_id, initiator,
-                  public)
+                  public, actor_dict=None, reason=reason)
 
     @classmethod
     def updated(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.updated, resource_type, resource_id, initiator,
-                  public)
+                  public, actor_dict=None, reason=reason)
 
     @classmethod
     def disabled(cls, resource_type, resource_id, initiator=None,
-                 public=True):
+                 public=True, reason=None):
         cls._emit(ACTIONS.disabled, resource_type, resource_id, initiator,
-                  public)
+                  public, actor_dict=None, reason=reason)
 
     @classmethod
     def deleted(cls, resource_type, resource_id, initiator=None,
-                public=True):
+                public=True, reason=None):
         cls._emit(ACTIONS.deleted, resource_type, resource_id, initiator,
-                  public)
+                  public, actor_dict=None, reason=reason)
 
     @classmethod
     def added_to(cls, target_type, target_id, actor_type, actor_id,
-                 initiator=None, public=True):
+                 initiator=None, public=True, reason=None):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
                       'actor_operation': 'added'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
-                  actor_dict=actor_dict)
+                  actor_dict=actor_dict, reason=reason)
 
     @classmethod
     def removed_from(cls, target_type, target_id, actor_type, actor_id,
-                     initiator=None, public=True):
+                     initiator=None, public=True, reason=None):
         actor_dict = {'id': actor_id,
                       'type': actor_type,
                       'actor_operation': 'removed'}
         cls._emit(ACTIONS.updated, target_type, target_id, initiator, public,
-                  actor_dict=actor_dict)
+                  actor_dict=actor_dict, reason=reason)
 
     @classmethod
-    def internal(cls, resource_type, resource_id):
+    def internal(cls, resource_type, resource_id, reason=None):
         # NOTE(lbragstad): Internal notifications are never public and have
         # never used the initiator variable, but the _emit() method expects
         # them. Let's set them here but not expose them through the method
@@ -170,7 +172,7 @@ class Audit(object):
         initiator = None
         public = False
         cls._emit(ACTIONS.internal, resource_type, resource_id, initiator,
-                  public)
+                  public, reason)
 
 
 def _get_callback_info(callback):
@@ -336,7 +338,7 @@ def reset_notifier():
 
 
 def _create_cadf_payload(operation, resource_type, resource_id,
-                         outcome, initiator):
+                         outcome, initiator, reason=None):
     """Prepare data for CADF audit notifier.
 
     Transform the arguments into content to be consumed by the function that
@@ -370,7 +372,7 @@ def _create_cadf_payload(operation, resource_type, resource_id,
     event_type = '%s.%s.%s' % (SERVICE, resource_type, operation)
 
     _send_audit_notification(cadf_action, initiator, outcome,
-                             target, event_type, **audit_kwargs)
+                             target, event_type, reason=reason, **audit_kwargs)
 
 
 def _send_notification(operation, resource_type, resource_id, actor_dict=None,
@@ -481,10 +483,22 @@ class CadfNotificationWrapper(object):
     def __call__(self, f):
         @functools.wraps(f)
         def wrapper(wrapped_self, request, user_id, *args, **kwargs):
-            """Alway send a notification."""
+            """Will always send a notification."""
             target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             try:
                 result = f(wrapped_self, request, user_id, *args, **kwargs)
+            except (exception.AccountLocked,
+                    exception.PasswordExpired,
+                    exception.PasswordRequirementsValidationError,
+                    exception.PasswordHistoryValidationError,
+                    exception.PasswordAgeValidationError) as ex:
+                # Send a cadf event for PCI-DSS related events on failure
+                audit_reason = reason.Reason(str(ex), str(ex.code))
+                _send_audit_notification(self.action, request.audit_initiator,
+                                         taxonomy.OUTCOME_FAILURE,
+                                         target, self.event_type,
+                                         reason=audit_reason)
+                raise
             except Exception:
                 # For authentication failure send a cadf event as well
                 _send_audit_notification(self.action, request.audit_initiator,
@@ -644,7 +658,7 @@ class _CatalogHelperObj(object):
 
 
 def _send_audit_notification(action, initiator, outcome, target,
-                             event_type, **kwargs):
+                             event_type, reason=None, **kwargs):
     """Send CADF notification to inform observers about the affected resource.
 
     This method logs an exception when sending the notification fails.
@@ -680,6 +694,7 @@ def _send_audit_notification(action, initiator, outcome, target,
         action=action,
         initiator=initiator,
         target=target,
+        reason=reason,
         observer=resource.Resource(typeURI=taxonomy.SERVICE_SECURITY))
 
     if service_id is not None:
@@ -731,6 +746,5 @@ def _check_notification_opt_out(event_type, outcome):
 
 
 emit_event = CadfNotificationWrapper
-
 
 role_assignment = CadfRoleAssignmentNotificationWrapper
