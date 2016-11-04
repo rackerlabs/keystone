@@ -144,6 +144,74 @@ class Role(base.RoleDriverBase):
                                          implied_role_id)
             return ref.to_dict()
 
+    def create_url_pattern(self, url_pattern_id, url_pattern):
+        """Create a new url_pattern.
+
+        :raises keystone.exception.Conflict: If a duplicate url_pattern exists.
+
+        """
+        # TODO(ayoung): Either remove the id, or use it for the create
+        with sql.session_for_write() as session:
+            ref = UrlPatternTable.from_dict(url_pattern)
+            session.add(ref)
+            return ref.to_dict()
+
+    def list_url_patterns(self, hints):
+        """List url_patterns in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of url_pattern_refs or an empty list.
+
+        """
+        with sql.session_for_read() as session:
+            query = session.query(UrlPatternTable)
+            refs = sql.filter_limit_query(UrlPatternTable, query, hints)
+            return [ref.to_dict() for ref in refs]
+
+    def _get_url_pattern(self, session, url_pattern_id):
+        ref = session.query(UrlPatternTable).get(url_pattern_id)
+        if ref is None:
+            raise exception.UrlPatternNotFound(url_pattern_id=url_pattern_id)
+        return ref
+
+    def get_url_pattern(self, url_pattern_id):
+        """Get a url_pattern by ID.
+
+        :returns: url_pattern_ref
+        :raises keystone.exception.UrlPatternNotFound: If the
+            url_pattern doesn't exist.
+
+        """
+        with sql.session_for_read() as session:
+            return self._get_url_pattern(session, url_pattern_id).to_dict()
+
+    def update_url_pattern(self, url_pattern_id, url_pattern):
+        """Update an existing url_pattern.
+
+        :raises keystone.exception.UrlPatternNotFound: If the
+            url_pattern doesn't exist.
+        :raises keystone.exception.Conflict: If a duplicate
+            url_pattern exists.
+
+        """
+        with sql.session_for_write() as session:
+            ref = self._get_url_pattern(session, url_pattern_id)
+            old_dict = ref.to_dict()
+            for k in url_pattern:
+                old_dict[k] = url_pattern[k]
+            new_url_pattern = UrlPatternTable.from_dict(old_dict)
+            for attr in UrlPatternTable.attributes:
+                if attr != 'id':
+                    setattr(ref, attr, getattr(new_url_pattern, attr))
+            return ref.to_dict()
+
+    def delete_url_pattern(self, url_pattern_id):
+        with sql.session_for_write() as session:
+            ref = self._get_url_pattern(session, url_pattern_id)
+            session.delete(ref)
+
 
 class ImpliedRoleTable(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'implied_role'
@@ -200,3 +268,32 @@ class RoleTable(sql.ModelBase, sql.ModelDictMixinWithExtras):
                            server_default=NULL_DOMAIN_ID)
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (sql.UniqueConstraint('name', 'domain_id'),)
+
+
+class UrlPatternTable(sql.ModelBase, sql.ModelDictMixin):
+
+    __tablename__ = 'url_pattern'
+    attributes = ['id', 'service', 'verb', 'pattern', 'role_id']
+    id = sql.Column(sql.String(64), primary_key=True)
+
+    id = sql.Column(sql.String(length=64), primary_key=True)
+    service = sql.Column(sql.String(length=64), nullable=False)
+    verb = sql.Column(sql.String(length=64))
+    pattern = sql.Column(sql.Text, nullable=False)
+    role_id = sql.Column(sql.String(length=64))
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes.
+
+        overrides the `to_dict` function from the base class
+        to avoid having an `extra` field.
+        """
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
