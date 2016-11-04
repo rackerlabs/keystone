@@ -24,6 +24,7 @@ from pycadf import eventfactory
 from pycadf import resource as cadfresource
 
 import keystone.conf
+from keystone import exception
 from keystone import notifications
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
@@ -36,6 +37,9 @@ CREATED_OPERATION = notifications.ACTIONS.created
 UPDATED_OPERATION = notifications.ACTIONS.updated
 DELETED_OPERATION = notifications.ACTIONS.deleted
 DISABLED_OPERATION = notifications.ACTIONS.disabled
+
+PASSWORD_REGEX = '^(?=.*\d)(?=.*[a-zA-Z]).{7,}$'
+REGEX_DESC = '1 letter, 1 digit, 7 chars'
 
 
 class ArbitraryException(Exception):
@@ -68,13 +72,14 @@ class AuditNotificationsTestCase(unit.BaseTestCase):
                 'keystone.notifications._create_cadf_payload') as cadf_notify:
             notify_function(EXP_RESOURCE_TYPE, exp_resource_id)
             initiator = None
+            reason = None
             cadf_notify.assert_called_once_with(
                 operation, EXP_RESOURCE_TYPE, exp_resource_id,
-                notifications.taxonomy.OUTCOME_SUCCESS, initiator)
+                notifications.taxonomy.OUTCOME_SUCCESS, initiator, reason)
             notify_function(EXP_RESOURCE_TYPE, exp_resource_id, public=False)
             cadf_notify.assert_called_once_with(
                 operation, EXP_RESOURCE_TYPE, exp_resource_id,
-                notifications.taxonomy.OUTCOME_SUCCESS, initiator)
+                notifications.taxonomy.OUTCOME_SUCCESS, initiator, reason)
 
     def test_resource_created_notification(self):
         self._test_notification_operation(notifications.Audit.created,
@@ -271,7 +276,7 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
             self.assertEqual(actor_operation, note['actor_operation'])
 
     def _assert_last_audit(self, resource_id, operation, resource_type,
-                           target_uri):
+                           target_uri, reason=None):
         # NOTE(stevemar): If 'cadf' format is not used, then simply
         # return since this assertion is not valid.
         if CONF.notification_format != 'cadf':
@@ -286,6 +291,10 @@ class BaseNotificationTest(test_v3.RestfulTestCase):
         self.assertEqual(resource_id, payload['target']['id'])
         event_type = '%s.%s.%s' % ('identity', resource_type, operation)
         self.assertEqual(event_type, audit['event_type'])
+        if reason:
+            self.assertEqual(reason.reasonCode,
+                             payload['reason']['reasonCode'])
+            self.assertTrue(payload['reason']['reasonType'])
         self.assertTrue(audit['send_notification_called'])
 
     def _assert_initiator_data_is_set(self, operation, resource_type, typeURI):
@@ -665,6 +674,49 @@ class NotificationsForEntities(BaseNotificationTest):
         self._assert_last_note(group_ref['id'], UPDATED_OPERATION, 'group',
                                actor_id=user_ref['id'], actor_type='user',
                                actor_operation='removed')
+
+
+class CADFNotificationsForPCIDSSEvents(BaseNotificationTest):
+
+    def setUp(self):
+        super(CADFNotificationsForPCIDSSEvents, self).setUp()
+        conf = self.useFixture(config_fixture.Config(CONF))
+        conf.config(notification_format='cadf')
+        conf.config(group='security_compliance',
+                    unique_last_password_count=2)
+        conf.config(group='security_compliance',
+                    minimum_password_age=1)
+        conf.config(group='security_compliance',
+                    password_regex=PASSWORD_REGEX)
+        conf.config(group='security_compliance',
+                    password_regex_description=REGEX_DESC)
+
+    # def test_password_expired_sends_notification(self):
+
+    # def test_locked_out_user_sends_notification(self):
+
+    # def test_repeated_password_sends_notification(self):
+
+    def test_invalid_password_sends_notification(self):
+        password = uuid.uuid4().hex
+        invalid_password = '1'
+        reason = {'reasonCode': 400,
+                  'reasonType': 'blah'}
+        user_ref = unit.new_user_ref(domain_id=self.domain_id,
+                                     password=password)
+        user_ref = self.identity_api.create_user(user_ref)
+        self.assertRaises(exception.PasswordValidationError,
+                          self.identity_api.change_password,
+                          self.make_request(),
+                          user_id=user_ref['id'],
+                          original_password=password,
+                          new_password=invalid_password)
+
+        self._assert_last_audit(user_ref['id'], UPDATED_OPERATION, 'user',
+                                cadftaxonomy.SECURITY_ACCOUNT_USER,
+                                reason=reason)
+
+    # def test_changing_password_too_early_sends_notification(self):
 
 
 class CADFNotificationsForEntities(NotificationsForEntities):
