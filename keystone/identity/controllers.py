@@ -290,6 +290,10 @@ class UserV3(controller.V3Controller):
         try:
             self.identity_api.change_password(
                 request, user_id, original_password, password)
+        except (exception.PasswordRequirementsValidationError,
+                exception.PasswordHistoryValidationError,
+                exception.PasswordAgeValidationError) as ex:
+            raise ex
         except AssertionError:
             raise exception.Unauthorized()
 
