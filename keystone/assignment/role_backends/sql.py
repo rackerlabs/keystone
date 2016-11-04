@@ -144,6 +144,74 @@ class Role(base.RoleDriverBase):
                                          implied_role_id)
             return ref.to_dict()
 
+    def create_route(self, route_id, route):
+        """Create a new route.
+
+        :raises keystone.exception.Conflict: If a duplicate route exists.
+
+        """
+        # TODO(ayoung): Either remove the id, or use it for the create
+        with sql.session_for_write() as session:
+            ref = RouteTable.from_dict(route)
+            session.add(ref)
+            return ref.to_dict()
+
+    def list_routes(self, hints):
+        """List routes in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of route_refs or an empty list.
+
+        """
+        with sql.session_for_read() as session:
+            query = session.query(RouteTable)
+            refs = sql.filter_limit_query(RouteTable, query, hints)
+            return [ref.to_dict() for ref in refs]
+
+    def _get_route(self, session, route_id):
+        ref = session.query(RouteTable).get(route_id)
+        if ref is None:
+            raise exception.RouteNotFound(route_id=route_id)
+        return ref
+
+    def get_route(self, route_id):
+        """Get a route by ID.
+
+        :returns: route_ref
+        :raises keystone.exception.RouteNotFound: If the
+            route doesn't exist.
+
+        """
+        with sql.session_for_read() as session:
+            return self._get_route(session, route_id).to_dict()
+
+    def update_route(self, route_id, route):
+        """Update an existing route.
+
+        :raises keystone.exception.RouteNotFound: If the
+            route doesn't exist.
+        :raises keystone.exception.Conflict: If a duplicate
+            route exists.
+
+        """
+        with sql.session_for_write() as session:
+            ref = self._get_route(session, route_id)
+            old_dict = ref.to_dict()
+            for k in route:
+                old_dict[k] = route[k]
+            new_route = RouteTable.from_dict(old_dict)
+            for attr in RouteTable.attributes:
+                if attr != 'id':
+                    setattr(ref, attr, getattr(new_route, attr))
+            return ref.to_dict()
+
+    def delete_route(self, route_id):
+        with sql.session_for_write() as session:
+            ref = self._get_route(session, route_id)
+            session.delete(ref)
+
 
 class ImpliedRoleTable(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'implied_role'
@@ -200,3 +268,32 @@ class RoleTable(sql.ModelBase, sql.ModelDictMixinWithExtras):
                            server_default=NULL_DOMAIN_ID)
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (sql.UniqueConstraint('name', 'domain_id'),)
+
+
+class RouteTable(sql.ModelBase, sql.ModelDictMixin):
+
+    __tablename__ = 'route'
+    attributes = ['id', 'service', 'verb', 'pattern', 'role_id']
+    id = sql.Column(sql.String(64), primary_key=True)
+
+    id = sql.Column(sql.String(length=64), primary_key=True)
+    service = sql.Column(sql.String(length=64), nullable=False)
+    verb = sql.Column(sql.String(length=64))
+    pattern = sql.Column(sql.Text, nullable=False)
+    role_id = sql.Column(sql.String(length=64))
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes.
+
+        overrides the `to_dict` function from the base class
+        to avoid having an `extra` field.
+        """
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
