@@ -404,6 +404,19 @@ def new_role_ref(**kwargs):
     return ref
 
 
+def new_route_ref(**kwargs):
+    ref = {
+        'id': uuid.uuid4().hex,
+        'service': uuid.uuid4().hex,
+        'verb': uuid.uuid4().hex,
+        'path': uuid.uuid4().hex,
+        'role_id': uuid.uuid4().hex,
+
+    }
+    ref.update(kwargs)
+    return ref
+
+
 def new_policy_ref(**kwargs):
     ref = {
         'id': uuid.uuid4().hex,
