@@ -221,6 +221,12 @@ V3_JSON_HOME_RESOURCES = {
         'href-vars': {
             'domain_id': json_home.Parameters.DOMAIN_ID,
             'user_id': json_home.Parameters.USER_ID, }},
+    json_home.build_v3_resource_relation('url_pattern'): {
+        'href-template': '/url_patterns/{url_pattern_id}',
+        'href-vars': {
+            'url_pattern_id': json_home.Parameters.URL_PATTERN_ID}},
+    json_home.build_v3_resource_relation('url_patterns'): {
+        'href': '/url_patterns'},
     json_home.build_v3_resource_relation('domains'): {'href': '/domains'},
     json_home.build_v3_resource_relation('endpoint'): {
         'href-template': '/endpoints/{endpoint_id}',
