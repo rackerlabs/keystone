@@ -1,0 +1,14 @@
+---
+features: >
+  - CADF notifications now extend to PCI-DSS events. A ``reason`` object
+    is added to the following authentication related notifications:
+
+    * Change user passwords/passphrases at least once every X days
+    * Limit repeated access attempts by locking out the user ID after not
+      more than X attempts
+    * Do not allow an individual to submit a new password/passphrase that is
+      the same as any of the last X passwords/passphrases used
+    * Passwords/passphrases must meet the specificed regex
+    * User attempting to change password too often
+
+    See - http://docs.openstack.org/developer/pycadf/specification/reasons.html
