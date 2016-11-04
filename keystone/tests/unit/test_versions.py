@@ -221,6 +221,12 @@ V3_JSON_HOME_RESOURCES = {
         'href-vars': {
             'domain_id': json_home.Parameters.DOMAIN_ID,
             'user_id': json_home.Parameters.USER_ID, }},
+    json_home.build_v3_resource_relation('api_role'): {
+        'href-template': '/api_roles/{api_role_id}',
+        'href-vars': {
+            'api_role_id': json_home.Parameters.API_ROLE_ID}},
+    json_home.build_v3_resource_relation('api_roles'): {
+        'href': '/api_roles'},
     json_home.build_v3_resource_relation('domains'): {'href': '/domains'},
     json_home.build_v3_resource_relation('endpoint'): {
         'href-template': '/endpoints/{endpoint_id}',

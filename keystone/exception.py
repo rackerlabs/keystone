@@ -425,6 +425,10 @@ class ConfigRegistrationNotFound(Exception):
     pass
 
 
+class ApiNotFound(NotFound):
+    message_format = _("Could not find api_role: %(api_role_id)s")
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s -"
                        " %(details)s")

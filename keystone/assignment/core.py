@@ -1149,3 +1149,15 @@ class RoleManager(manager.Manager):
     def delete_implied_role(self, prior_role_id, implied_role_id):
         self.driver.delete_implied_role(prior_role_id, implied_role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
+
+    @manager.response_truncated
+    def list_apis(self, hints=None):
+        return self.driver.list_api_roles(hints or driver_hints.Hints())
+
+    def delete_apis(self, api_role_id):
+        return self.driver.delete_apis(api_id)
+
+    def delete_api_roles_for_service(self, service):
+        for pattern in self.list_api_roles():
+            if pattern['service'] == service:
+                self.delete_api_role(pattern['id'])

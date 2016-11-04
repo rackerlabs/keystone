@@ -131,3 +131,55 @@ class RoleDriverBase(object):
     def list_implied_roles(self, prior_role_id):
         """List roles implied from the prior role ID."""
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_api(self, api_id, api):
+        """Create a new api.
+
+        :raises keystone.exception.Conflict: If a duplicate api exists.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_apis(self, hints):
+        """List apis in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of api_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_api(self, api_id):
+        """Get a api by ID.
+
+        :returns: api_ref
+        :raises keystone.exception.UrlPatternNotFound: If the
+        api doesn't exist.
+
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_api(self, api_id, api):
+        """Update an existing api.
+
+        :raises keystone.exception.ApiNotFound: If the
+        api doesn't exist.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_api(self, api_id):
+        """Create a new api.
+
+        :raises keystone.exception.ApiNotFoundConflict: If api does not exists.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover

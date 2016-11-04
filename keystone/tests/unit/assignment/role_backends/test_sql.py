@@ -27,6 +27,23 @@ class SqlRoleModels(core_sql.BaseBackendSqlModels):
                 ('domain_id', sql.String, 64))
         self.assertExpectedSchema('role', cols)
 
+    def test_implied_role_model(self):
+        cols = (('prior_role_id', sql.String, 64),
+                ('implied_role_id', sql.String, 64))
+        self.assertExpectedSchema('implied_role', cols)
+
+    def test_api_model(self):
+        cols = (('id', sql.String, 64),
+                ('service', sql.String, 64),
+                ('verb', sql.String, 64),
+                ('pattern', sql.Text, 0))
+        self.assertExpectedSchema('api', cols)
+
+    def test_api_role_model(self):
+        cols = (('role_id', sql.String, 64),
+                ('api_id', sql.String, 64))
+        self.assertExpectedSchema('api_role', cols)
+
 
 class SqlRole(core_sql.BaseBackendSqlTests, test_core.RoleTests):
 

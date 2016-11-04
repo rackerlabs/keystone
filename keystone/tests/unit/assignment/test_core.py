@@ -15,9 +15,11 @@
 import copy
 import uuid
 
+from keystone.common import driver_hints
 from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
+from keystone.tests.unit.utils import wip
 
 
 class RoleTests(object):
@@ -121,3 +123,153 @@ class RoleTests(object):
         self.assertRaises(exception.RoleNotFound,
                           self.role_api.get_role,
                           role_id)
+
+    def test_implied_role_crd(self):
+        role1 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role1['id'], role1)
+        role2 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role2['id'], role2)
+        # Create
+        implied_role_created = self.role_api.create_implied_role(
+            role1['id'], role2['id'])
+        self.assertEqual(role1['id'], implied_role_created['prior_role_id'])
+        self.assertEqual(role2['id'], implied_role_created['implied_role_id'])
+
+        # Read
+        implied_role1 = self.role_api.get_implied_role(
+            role1['id'], role2['id'])
+        self.assertEqual(implied_role_created, implied_role1)
+        self.assertEqual(role1['id'], implied_role1['prior_role_id'])
+        self.assertEqual(role2['id'], implied_role1['implied_role_id'])
+
+        role3 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role3['id'], role3)
+
+        self.assertRaises(exception.ImpliedRoleNotFound,
+                          self.role_api.get_implied_role,
+                          role1['id'], role3['id'])
+
+        self.role_api.create_implied_role(role1['id'], role3['id'])
+
+        implied_role2 = self.role_api.get_implied_role(
+            role1['id'], role3['id'])
+        self.assertEqual(role1['id'], implied_role2['prior_role_id'])
+        self.assertEqual(role3['id'], implied_role2['implied_role_id'])
+
+        # Delete
+        implied_list = self.role_api.list_implied_roles(role1['id'])
+        self.assertEqual(2, len(implied_list))
+        self.assertIn(implied_role1, implied_list)
+        self.assertIn(implied_role2, implied_list)
+
+        self.role_api.delete_implied_role(role1['id'], role3['id'])
+        implied_list = self.role_api.list_implied_roles(role1['id'])
+        self.assertEqual(1, len(implied_list))
+        self.assertIn(implied_role1, implied_list)
+
+    @wip('This test does not pass yet.')
+    def test_deleting_role_removes_inference_rule(self):
+
+        role1 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role1['id'], role1)
+        role2 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role2['id'], role2)
+        self.role_api.create_implied_role(role1['id'], role2['id'])
+
+        implied_role1 = self.role_api.get_implied_role(
+            role1['id'], role2['id'])
+
+        role3 = unit.new_role_ref(name=uuid.uuid4().hex)
+        self.role_api.create_role(role3['id'], role3)
+        self.role_api.create_implied_role(role1['id'], role3['id'])
+
+        implied_role2 = self.role_api.get_implied_role(
+            role1['id'], role3['id'])
+
+        implied_list = self.role_api.list_implied_roles(role1['id'])
+        self.assertEqual(2, len(implied_list))
+        self.assertIn(implied_role1, implied_list)
+        self.assertIn(implied_role2, implied_list)
+
+        self.role_api.delete_role(role3['id'])
+        implied_list = self.role_api.list_implied_roles(role1['id'])
+        self.assertEqual(1, len(implied_list))
+        self.assertIn(implied_role1, implied_list)
+        self.assertIn(implied_role2, implied_list)
+
+    def test_api_crud(self):
+        # Create
+        service1 = uuid.uuid4().hex
+        api_ref = unit.new_api_ref()
+        api_ref['service'] = service1
+        api_1_created = self.role_api.create_api(
+            api_ref['id'], api_ref)
+        self.assertEqual(api_1_created, api_ref)
+
+        # Read: Get
+        api_1 = self.role_api.get_api(api_ref['id'])
+        self.assertEqual(api_1, api_ref)
+
+        api_ref = unit.new_api_ref()
+        api_ref['service'] = service1
+        api_2_created = self.role_api.create_api(
+            api_ref['id'], api_ref)
+
+        service2 = uuid.uuid4().hex
+        api_ref = unit.new_api_ref()
+        api_ref['service'] = service2
+        api_3_created = self.role_api.create_api(
+            api_ref['id'], api_ref)
+
+        # Read:  List all
+        hints = driver_hints.Hints()
+        all_apis = self.role_api.list_apis(hints)
+        self.assertEqual(3, len(all_apis))
+
+        all_apis = self.role_api.list_apis(hints)
+        self.assertEqual(3, len(all_apis))
+
+        hints.add_filter('service', service1)
+        service_1_apis = self.role_api.list_apis(hints)
+        self.assertEqual(2, len(service_1_apis))
+        self.assertIn(api_1_created, service_1_apis)
+        self.assertIn(api_2_created, service_1_apis)
+        self.assertNotIn(api_3_created, service_1_apis)
+
+        hints = driver_hints.Hints()
+        hints.add_filter('service', service2)
+        service_2_apis = self.role_api.list_apis(hints)
+        self.assertEqual(1, len(service_2_apis))
+        self.assertNotIn(api_1_created, service_2_apis)
+        self.assertNotIn(api_2_created, service_2_apis)
+        self.assertIn(api_3_created, service_2_apis)
+
+        # Update
+        api_1_id = api_1['id']
+
+        api_ref = unit.new_api_ref()
+        api_ref['id'] = api_1_created['id']
+        api_1_updated = self.role_api.update_api(
+            api_1_id,
+            api_ref)
+
+        api_1_gotten = self.role_api.get_api(
+            api_1_id)
+
+        self.assertEqual(api_ref, api_1_updated)
+        self.assertEqual(api_1_gotten, api_1_updated)
+
+        # Delete
+        all_apis = self.role_api.list_apis()
+        self.assertEqual(3, len(all_apis))
+        self.assertIn(api_1_gotten, all_apis)
+        self.assertIn(api_2_created, all_apis)
+        self.assertIn(api_3_created, all_apis)
+
+        self.role_api.delete_api(api_1_id)
+        all_apis = self.role_api.list_apis()
+        self.assertEqual(2, len(all_apis))
+
+        self.assertNotIn(api_1_gotten, all_apis)
+        self.assertIn(api_2_created, all_apis)
+        self.assertIn(api_3_created, all_apis)

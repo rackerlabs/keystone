@@ -997,3 +997,96 @@ class RoleAssignmentV3(controller.V3Controller):
             return self.list_role_assignments_for_tree(request)
         else:
             return self.list_role_assignments(request)
+
+
+@dependency.requires('role_api')
+class AccessV3(controller.V3Controller):
+    collection_name = 'api_roles'
+    member_name = 'api_role'
+
+    @controller.protected()
+    def put_access_rules(self, request, service_name, api_roles):
+        # TODO(ayoung) Move this logic to the manager
+        self.role_api.delete_api_roles_for_service(service_name)
+        role_name_to_id = {role['name']: role['id']
+                           for role in self.role_api.list_roles()}
+        for api_role in api_roles:
+            for verb in api_role['verbs']:
+                new_api_role = self._assign_unique_id({
+                    'pattern': api_role['pattern'],
+                    'verb': verb,
+                    'role_id': role_name_to_id[api_role['role']],
+                    'service': service_name
+                })
+                self.role_api.create_api_role(
+                    new_api_role['id'], new_api_role)
+
+    # TODO(ayoung): add API for listing all access rules.
+
+    def _add_api_role_to_access_list(self, access_list, api_role):
+        key = (api_role['pattern'], api_role['role_id'])
+        existing_api_role = access_list.get(key)
+        if existing_api_role:
+            verbs = existing_api_role['verbs']
+            verbs.append(api_role['verb'])
+            verbs.sort()
+            existing_api_role['verbs'] = verbs
+        else:
+            new_api_role = {
+                'id': api_role['id'],
+                'api_role': api_role['pattern'],
+                'verbs': [api_role['verb']],
+                'admin_project_only': api_role['admin_project_only'],
+                'role': self.role_api.get_role(api_role['role_id'])['name'],
+                # TODO(ayoung): If the Configuration file value is
+                # set, expand out the implied roles that lead to this role
+                'roles': [self.role_api.get_role(api_role['role_id'])['name']]
+            }
+            access_list[key] = new_api_role
+
+        return access_list
+
+    @controller.protected()
+    def list_access_rules(self, request, service_name):
+        access_list = dict()
+
+        for api_role in self.role_api.list_api_roles():
+            if api_role['service'] == service_name:
+                access_list = self._add_api_role_to_access_list(
+                    access_list, api_role)
+
+        ref = access_list.values()
+
+        return AccessV3.wrap_collection(
+            request.context_dict,
+            ref
+        )
+
+    @controller.protected()
+    def delete_access_rules(self, request, service_name):
+        self.role_api.delete_api_roles_for_service(service_name)
+
+    @controller.protected()
+    def create_api_role(self, request, api_role):
+        api_role = self._assign_unique_id(api_role)
+        ref = self.role_api.create_api_role(api_role['id'], api_role)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def list_api_roles(self, request):
+        ref = self.role_api.list_api_roles()
+        return AccessV3.wrap_collection(request.context_dict, ref)
+
+    @controller.protected()
+    def get_api_role(self, request, api_role_id):
+        ref = self.role_api.get_api_role(api_role_id)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def update_api_role(self, request, api_role_id, api_role):
+        ref = self.role_api.update_api_role(api_role_id, api_role)
+        return AccessV3.wrap_member(request.context_dict, ref)
+
+    @controller.protected()
+    def delete_api_role(self, request, api_role_id):
+        self.role_api.delete_api_role(api_role_id)

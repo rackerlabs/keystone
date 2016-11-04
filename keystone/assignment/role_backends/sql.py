@@ -144,6 +144,79 @@ class Role(base.RoleDriverBase):
                                          implied_role_id)
             return ref.to_dict()
 
+    def create_api(self, api_id, api):
+        """Create a new api.
+
+        :raises keystone.exception.Conflict: If a duplicate api exists.
+
+        """
+        api['id'] = api_id
+        with sql.session_for_write() as session:
+            ref = ApiTable.from_dict(api)
+            session.add(ref)
+            return ref.to_dict()
+
+        role_ref = {'api_id': api_id}
+        for role in api['roles']:
+            role_ref['role_id']
+            
+
+    def list_apis(self, hints):
+        """List apis in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of api_refs or an empty list.
+
+        """
+        with sql.session_for_read() as session:
+            query = session.query(ApiTable)
+            refs = sql.filter_limit_query(ApiTable, query, hints)
+            return [ref.to_dict() for ref in refs]
+
+    def _get_api(self, session, api_id):
+        ref = session.query(ApiTable).get(api_id)
+        if ref is None:
+            raise exception.ApiNotFound(api_id=api_id)
+        return ref
+
+    def get_api(self, api_id):
+        """Get a api by ID.
+
+        :returns: api_ref
+        :raises keystone.exception.ApiRoleNotFound: If the
+        api doesn't exist.
+
+        """
+        with sql.session_for_read() as session:
+            return self._get_api(session, api_id).to_dict()
+
+    def update_api(self, api_id, api):
+        """Update an existing api.
+
+        :raises keystone.exception.ApiRoleNotFound: If the
+        api doesn't exist.
+        :raises keystone.exception.Conflict: If a duplicate
+        api exists.
+
+        """
+        with sql.session_for_write() as session:
+            ref = self._get_api(session, api_id)
+            old_dict = ref.to_dict()
+            for k in api:
+                old_dict[k] = api[k]
+            new_api = ApiTable.from_dict(old_dict)
+            for attr in ApiTable.attributes:
+                if attr != 'id':
+                    setattr(ref, attr, getattr(new_api, attr))
+            return ref.to_dict()
+
+    def delete_api(self, api_id):
+        with sql.session_for_write() as session:
+            ref = self._get_api(session, api_id)
+            session.delete(ref)
+
 
 class ImpliedRoleTable(sql.ModelBase, sql.DictBase):
     __tablename__ = 'implied_role'
@@ -200,3 +273,53 @@ class RoleTable(sql.ModelBase, sql.DictBase):
                            server_default=NULL_DOMAIN_ID)
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (sql.UniqueConstraint('name', 'domain_id'),)
+
+
+class ApiTable(sql.ModelBase, sql.DictBase):
+
+    __tablename__ = 'api'
+    attributes = ['id', 'service', 'verb', 'pattern']
+    id = sql.Column(sql.String(64), primary_key=True)
+    service = sql.Column(sql.String(length=64), nullable=False)
+    verb = sql.Column(sql.String(length=64), nullable=False)
+    pattern = sql.Column(sql.Text, nullable=False)
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes.
+
+        overrides the `to_dict` function from the base class
+        to avoid having an `extra` field.
+        """
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
+
+
+class ApiRoleTable(sql.ModelBase, sql.DictBase):
+
+    __tablename__ = 'api_role'
+    attributes = ['api_id', 'role_id']
+    api_id = sql.Column(sql.String(64), primary_key=True)
+    role_id = sql.Column(sql.String(length=64), primary_key=True)
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes.
+
+        overrides the `to_dict` function from the base class
+        to avoid having an `extra` field.
+        """
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
