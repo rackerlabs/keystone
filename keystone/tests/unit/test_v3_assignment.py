@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import datetime
 import random
 import uuid
@@ -3021,6 +3022,10 @@ def route_validator(*args, **kwargs):
     pass
 
 
+def bulk_routes_validator(*args, **kwargs):
+    pass
+
+
 class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
                  unit.TestCase):
 
@@ -3049,6 +3054,7 @@ class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
         ]
     }
 
+    bulk_keys_to_check = ['path', 'verbs', 'role']
     route_keys_to_check = ['path', 'verb', 'role_id', 'id', 'service']
 
     def assertValidRouteResponse(self, response, expected):
@@ -3159,3 +3165,63 @@ class RouteTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
             list_response, 'routes', route_validator,
             keys_to_check=self.route_keys_to_check)
         self.assertEqual(6, len(list_response.json_body['routes']))
+
+    def _assert_bulk_rules_response(self, response, expected):
+        self.assertValidListResponse(
+            response, 'routes', route_validator,
+            keys_to_check=self.bulk_keys_to_check)
+
+        self.assertEqual(len(expected['routes']),
+                         len(response.json_body['routes']))
+        matches = dict()
+        for route in expected['routes']:
+            key = (route['path'], route['role'])
+            matches[key] = route
+
+        for response_route in response.json_body['routes']:
+            key = (response_route['path'],
+                   response_route['role'])
+            try:
+                expected_route = matches[key]
+            except KeyError:
+                self.fail(
+                    'access list has value not in expected set (%s , %s).'
+                    % key)
+            self.assertEqual(expected_route['verbs'],
+                             response_route['verbs'])
+
+    def test_upload_bulk_rules(self):
+
+        member_role = unit.new_role_ref(name='member')
+        member_role_id = member_role['id']
+        self.role_api.create_role(member_role_id, member_role)
+        get_response = self.get('/service-routes/image')
+        expected_empty = {
+            'routes': []
+        }
+
+        self._assert_bulk_rules_response(get_response, expected_empty)
+
+        self.put('/service-routes/image', body=self.service_1_rules)
+
+        expected = copy.copy(self.service_1_rules)
+
+        get_response = self.get('/service-routes/image')
+        self._assert_bulk_rules_response(get_response, expected)
+
+        list_response = self.get('/routes')
+        self.assertValidListResponse(
+            list_response, 'routes', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(6, len(list_response.json_body['routes']))
+
+        self.delete('/service-routes/image')
+
+        get_response = self.get('/service-routes/image')
+        self._assert_bulk_rules_response(get_response, expected_empty)
+
+        list_response = self.get('/routes')
+        self.assertValidListResponse(
+            list_response, 'routes', route_validator,
+            keys_to_check=self.route_keys_to_check)
+        self.assertEqual(0, len(list_response.json_body['routes']))
