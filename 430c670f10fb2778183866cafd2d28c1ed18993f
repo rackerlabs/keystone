@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5da102_081ab317",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-05T01:59:05Z",
+      "side": 1,
+      "message": "Edit conf/default.py instead and undo changes to this file.",
+      "revId": "430c670f10fb2778183866cafd2d28c1ed18993f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
