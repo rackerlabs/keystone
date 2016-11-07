@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_fe93834d",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-07T16:29:55Z",
+      "side": 1,
+      "message": "Agree with Rodrigo. On principle, in unit tests every attempt at outside communication is to be mocked.\n\nThis unit test should test only 2 things:\n1. setting the configuration option results in the setting of the ldap option\n2. *If* we handle the server_down exception, ensure we handle it correctly.\n\nBut aside from seeing it thrown, it doesn\u0027t look like we do anything with the exception, so I would even say there is no need to mock anything and it is fine to leave the assertRaises part out.\n\nTesting the correct operation of keystone + python-ldap + ldap server, really is the purpose of integration tests.",
+      "parentUuid": "9a629dbe_dd8ec926",
+      "range": {
+        "startLine": 304,
+        "startChar": 8,
+        "endLine": 304,
+        "endChar": 46
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5e3d7729",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 4
