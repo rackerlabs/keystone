@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_984e1fc0",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-07T17:35:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_485f4b75",
+      "revId": "430c670f10fb2778183866cafd2d28c1ed18993f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_a85e2774",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 6
@@ -83,6 +101,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_385fd373",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-07T17:35:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_c8535b6b",
+      "range": {
+        "startLine": 228,
+        "startChar": 21,
+        "endLine": 228,
+        "endChar": 54
+      },
+      "revId": "430c670f10fb2778183866cafd2d28c1ed18993f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_284bf7b1",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 6
@@ -117,6 +159,30 @@
       "writtenOn": "2016-11-05T02:55:23Z",
       "side": 1,
       "message": "we don\u0027t call HEAD here",
+      "range": {
+        "startLine": 243,
+        "startChar": 24,
+        "endLine": 243,
+        "endChar": 28
+      },
+      "revId": "430c670f10fb2778183866cafd2d28c1ed18993f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d8edf78f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-07T17:35:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5da102_084e33c1",
       "range": {
         "startLine": 243,
         "startChar": 24,
