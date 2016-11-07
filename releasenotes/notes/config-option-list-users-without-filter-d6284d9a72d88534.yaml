@@ -1,0 +1,6 @@
+---
+fixes:
+  - Listing all users is not practical for large organizations,
+    so we decided to creates a config option `list_users_without_filter`
+    to enabled/disable list users without a filter. The default value
+    will be `True`.

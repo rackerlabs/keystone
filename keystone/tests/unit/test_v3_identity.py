@@ -239,6 +239,23 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                         "DEFaUlT"}},
                   expected_status=http_client.NOT_FOUND)
 
+    def test_list_user_without_filter(self):
+        """Call ``GET /users`` without filter."""
+        resource_url = '/users'
+        self.config_fixture.config(group='identity',
+                                   list_users_without_filter=True)
+        self.get(resource_url, expected_status=http_client.OK)
+        self.config_fixture.config(group='identity',
+                                   list_users_without_filter=False)
+        self.get(resource_url, expected_status=http_client.BAD_REQUEST)
+
+    def test_list_user_filter_sucess(self):
+        """Call ``GET /users`` without filter."""
+        resource_url = '/users?domain_id=%s' % self.domain_id
+        self.config_fixture.config(group='identity',
+                                   list_users_without_filter=True)
+        self.get(resource_url, expected_status=http_client.OK)
+
     def test_list_head_users(self):
         """Call ``GET & HEAD /users``."""
         resource_url = '/users'
