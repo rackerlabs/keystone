@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_3d5d05ea",
+        "filename": "\tkeystone/tests/unit/credential/test_backend_sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-07T15:50:03Z",
+      "side": 1,
+      "message": "Another test case we could add here would be: \n\n  - create several credentials\n    - create two with `project_id` set to a random uuid\n    - create two with `project_id` set to None\n  - assert that listing credentials without hints returns four credentials\n  - build a hints object asking for all credentials with None for a `project_id` value: \n    - hints.add_filter(\u0027project_id\u0027, None)\n  - assert two credentials are returned in the list and they both have a `project_id` value of None.\n\nWhat I should have clarified earlier was using hints from the  keystone.common.driver_hints module. That way we can build hints objects to ask for specific data from the backend. The tests here are just asserting all credentials are returned when we don\u0027t pass any hints at all.\n\nHere is an attempt at what I was trying to do originally: \n\nhttp://cdn.pasteraw.com/pp626dyueny2aiprvo15uankbus97nf",
+      "revId": "c5bcc34c945729469fdc848152964bb2de241899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
