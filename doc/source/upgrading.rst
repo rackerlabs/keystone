@@ -192,6 +192,12 @@ authenticate requests normally.
    triggers will live migrate the data to the new schema so it can be read by
    the next release.
 
+   .. warning::
+
+     Using the ``keystone-manage db_sync --expand`` command requires that you
+     either set your keystone user to have ``SUPER`` privileges, or run
+     ``set global log_bin_trust_function_creators=1;`` in mysql beforehand.
+
 #. Run ``keystone-manage db_sync --migrate`` on the first node to forcefully
    perform data migrations. This process will migrate all data from the old
    schema to the new schema while the previous release continues to operate
