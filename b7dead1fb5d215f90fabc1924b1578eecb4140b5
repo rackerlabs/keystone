@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_dd8ec926",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T15:36:15Z",
+      "side": 1,
+      "message": "adding a mock is not extra work, is the correct way to test this. The handling of OPT_NETWORK_TIMEOUT is task of the underlying library, not ours. Additionally, if you really want to check the integration, unit tests *are not* the place to do it.",
+      "parentUuid": "ba5da102_b0577e25",
+      "range": {
+        "startLine": 304,
+        "startChar": 8,
+        "endLine": 304,
+        "endChar": 46
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_5e3d7729",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 4
@@ -225,6 +249,30 @@
       "side": 1,
       "message": "we are explicitly mentioning that timeout is in seconds. A negative time value doesn\u0027t make a lot of sense in that context.",
       "parentUuid": "ba5da102_1eadbf9a",
+      "range": {
+        "startLine": 14,
+        "startChar": 10,
+        "endLine": 14,
+        "endChar": 18
+      },
+      "revId": "b7dead1fb5d215f90fabc1924b1578eecb4140b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_3db505cd",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T15:36:15Z",
+      "side": 1,
+      "message": "it doesn\u0027t, but I still believe a rewording is necessary.",
+      "parentUuid": "ba5da102_b3f068cb",
       "range": {
         "startLine": 14,
         "startChar": 10,
