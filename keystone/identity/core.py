@@ -909,6 +909,7 @@ class Manager(manager.Manager):
         driver = self._select_identity_driver(domain_scope)
         self._set_list_limit_in_hints(hints, driver)
         hints = hints or driver_hints.Hints()
+        ref_list = []
         if driver.is_domain_aware():
             # Force the domain_scope into the hint to ensure that we only get
             # back domains for that scope.
@@ -917,7 +918,14 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_users(hints)
+        if not CONF.identity.list_users_without_filter and not hints.filters:
+            msg = _("Can't list users without a filter, You should disable the "
+                    "config option to filter users without filter or use some "
+                    "filter like domain_id, enabled or name")
+            raise exception.ValidationError(message=msg)
+        elif CONF.identity.list_users_without_filter or hints:
+            ref_list = driver.list_users(hints)
+
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
 
