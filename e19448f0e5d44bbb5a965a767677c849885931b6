@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_c61d1568",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 921,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "we want hints to exist when list_users_without_filter is enabled, right? So I guess it is:\n  \n  if CONF.identity.list_users_without_filter and not hints.filters:",
+      "range": {
+        "startLine": 921,
+        "startChar": 11,
+        "endLine": 921,
+        "endChar": 76
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_eb7e62ad",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "maybe: test_list_users_without_filter_fails",
+      "range": {
+        "startLine": 242,
+        "startChar": 8,
+        "endLine": 242,
+        "endChar": 37
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_cb58be59",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "users",
+      "range": {
+        "startLine": 252,
+        "startChar": 18,
+        "endLine": 252,
+        "endChar": 22
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_4be82e7d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "using a filter?",
+      "range": {
+        "startLine": 253,
+        "startChar": 31,
+        "endLine": 253,
+        "endChar": 38
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_ebf9024f",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "create",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 28
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_6ba41257",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-07T17:51:02Z",
+      "side": 1,
+      "message": "this is not backward compatible. The default value should be false.",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 18
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
