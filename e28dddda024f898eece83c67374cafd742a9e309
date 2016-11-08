@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_22b77887",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:10:39Z",
+      "side": 0,
+      "message": "unrelated",
+      "revId": "e28dddda024f898eece83c67374cafd742a9e309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_c2a6bc52",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:10:39Z",
+      "side": 1,
+      "message": "consumer",
+      "range": {
+        "startLine": 952,
+        "startChar": 68,
+        "endLine": 952,
+        "endChar": 76
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_e263c018",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:10:39Z",
+      "side": 1,
+      "message": "consumer",
+      "range": {
+        "startLine": 953,
+        "startChar": 53,
+        "endLine": 953,
+        "endChar": 61
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_c254fc22",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:10:39Z",
+      "side": 1,
+      "message": "at this point, this key is always set, right?",
+      "range": {
+        "startLine": 135,
+        "startChar": 11,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
