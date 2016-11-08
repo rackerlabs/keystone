@@ -50,6 +50,29 @@
       "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_13f2c46f",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-08T14:50:54Z",
+      "side": 1,
+      "message": "I tested this out and it didn\u0027t work quite right for me. connect() is not what raises SERVER_DOWN, simple_bind_s() raises it. If there is no user and password set (which is a valid configuration if anonymous binds are allowed), then this method skips attempting to bind and successfully returns a connection object. It fails later the first time it does try to bind, and the server returns a 500 instead of a 504. This could be fixed by just adding an anonymous bind if user and password aren\u0027t set.\n\nI saw another issue when use_pool is turned on, which is that ldappool eats the SERVER_DOWN error and raises its own, so again the server returns a 500 instead of a 504. I can just throw up a patch to make ldappool expose the error and then this will work, but I\u0027m curious if you saw that as well?",
+      "range": {
+        "startLine": 1296,
+        "startChar": 12,
+        "endLine": 1303,
+        "endChar": 34
+      },
+      "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
