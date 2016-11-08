@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a629dbe_a5d38037",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-08T18:40:18Z",
+      "side": 1,
+      "message": "I\u0027m not sure reusing the pool_connection_timeout is correct.  If I set use_pool\u003dfalse, then I would assume this timeout would have no effect, but in reality, the OPT_NETWORK_TIMEOUT has nothing to do with a pool.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5da102_e5512fda",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 5
