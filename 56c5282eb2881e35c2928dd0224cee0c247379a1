@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_192f43f7",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-11-08T15:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_c2a6bc52",
+      "range": {
+        "startLine": 952,
+        "startChar": 68,
+        "endLine": 952,
+        "endChar": 76
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_e263c018",
         "filename": "keystone/tests/unit/test_v3_oauth1.py",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_5939bb40",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-11-08T15:12:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_e263c018",
+      "range": {
+        "startLine": 953,
+        "startChar": 53,
+        "endLine": 953,
+        "endChar": 61
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_c254fc22",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -59,6 +107,30 @@
       "writtenOn": "2016-11-08T13:10:39Z",
       "side": 1,
       "message": "at this point, this key is always set, right?",
+      "range": {
+        "startLine": 135,
+        "startChar": 11,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "56c5282eb2881e35c2928dd0224cee0c247379a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_54b8a2e5",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-11-08T15:12:25Z",
+      "side": 1,
+      "message": "consumer_id in token will always be set, but this checks if it is set to None, or set to an actual consumer_id since it can usually be None as is the case with other token fields. Unfortunately, my comment is pretty vague by saying \"if it is in the token\" ill reword this :)",
+      "parentUuid": "9a629dbe_c254fc22",
       "range": {
         "startLine": 135,
         "startChar": 11,
