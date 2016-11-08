@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_e2a100ab",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 921,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:01:27Z",
+      "side": 1,
+      "message": "hmmm actually the config is phrased in the other way around I had imagined :)\n\nguess the condition is correct.",
+      "parentUuid": "9a629dbe_c61d1568",
+      "range": {
+        "startLine": 921,
+        "startChar": 11,
+        "endLine": 921,
+        "endChar": 76
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_6609972c",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
