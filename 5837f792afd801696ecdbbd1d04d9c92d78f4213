@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a629dbe_de2bec92",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-08T15:39:45Z",
+      "side": 1,
+      "message": "nit: *requires\nnit: line too long",
+      "range": {
+        "startLine": 9,
+        "startChar": 69,
+        "endLine": 9,
+        "endChar": 76
+      },
+      "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_c11eb162",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-08T15:39:45Z",
+      "side": 1,
+      "message": "You should specify that this is for MySQL deployments.",
+      "range": {
+        "startLine": 10,
+        "startChar": 30,
+        "endLine": 10,
+        "endChar": 72
+      },
+      "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_b63f6a24",
         "filename": "doc/source/upgrading.rst",
         "patchSetId": 2
@@ -31,6 +77,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "9a629dbe_b63f6a24",
+      "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_7e5f4041",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-08T15:39:45Z",
+      "side": 1,
+      "message": "I think this warning or note should be documented before (or close to it) running ``keystone-manage db_sync --expand``.  Maybe a note on line 187.",
+      "parentUuid": "9a629dbe_627df01b",
       "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
