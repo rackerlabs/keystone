@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_6609972c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-08T05:41:21Z",
+      "side": 1,
+      "message": "I think you mean \"enable\" here....",
+      "range": {
+        "startLine": 922,
+        "startChar": 67,
+        "endLine": 922,
+        "endChar": 74
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_a613af5b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-08T05:41:21Z",
+      "side": 1,
+      "message": "I think you mean \"list\" here",
+      "range": {
+        "startLine": 923,
+        "startChar": 38,
+        "endLine": 923,
+        "endChar": 44
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_eb7e62ad",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 8
@@ -110,6 +156,29 @@
         "startChar": 21,
         "endLine": 4,
         "endChar": 28
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_a641ef3b",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-08T05:41:21Z",
+      "side": 1,
+      "message": "this isn\u0027t the normal style we wrote release notes in....just state that a new option is now supported..",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 17
       },
       "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
