@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_0910be00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:22:47Z",
+      "side": 1,
+      "message": "nit: move this to the bottom",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "3e0d74dccc9fa1e7e16095b83b10b0c3eb3ebccf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_e92f0a3c",
+        "filename": "releasenotes/notes/bug-1638603-354ee4167e6e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:22:47Z",
+      "side": 1,
+      "message": "Support nested groups in Active Directory. A new boolean option ``[ldap] group_ad_nesting`` has been added, it defaults to ``False``. Enable the option is using Active Directory with nested groups. This option will impact the ``list_users_in_group``, ``list_groups_for_user``, and ``check_user_in_group`` operations.",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 24
+      },
+      "revId": "3e0d74dccc9fa1e7e16095b83b10b0c3eb3ebccf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_a9ffd2a8",
+        "filename": "releasenotes/notes/bug-1638603-354ee4167e6e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:22:47Z",
+      "side": 1,
+      "message": "this is redundant to a deployer",
+      "range": {
+        "startLine": 6,
+        "startChar": 27,
+        "endLine": 8,
+        "endChar": 87
+      },
+      "revId": "3e0d74dccc9fa1e7e16095b83b10b0c3eb3ebccf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_a916f2ee",
+        "filename": "releasenotes/notes/bug-1638603-354ee4167e6e.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:22:47Z",
+      "side": 1,
+      "message": "whats the config option?",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "3e0d74dccc9fa1e7e16095b83b10b0c3eb3ebccf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_e908eadb",
+        "filename": "releasenotes/notes/bug-1638603-354ee4167e6e.yaml~",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:22:47Z",
+      "side": 1,
+      "message": "delete this file, its a dupe of the other",
+      "revId": "3e0d74dccc9fa1e7e16095b83b10b0c3eb3ebccf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
