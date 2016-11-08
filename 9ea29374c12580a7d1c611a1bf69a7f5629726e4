@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_09f43ef0",
+        "filename": "keystone/models/revoke_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:16:25Z",
+      "side": 1,
+      "message": "will we do the same for access_token_id?",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 20
+      },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_89ba0e22",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:16:25Z",
+      "side": 1,
+      "message": "nit pick: these should be in the test case\n\nalso, explain why we are no long creating revocations events upon deletion, and what we are doing instead (checking the token)",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 71
+      },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_6e08602e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:16:25Z",
+      "side": 1,
+      "message": "should this be:\n\n  if \u0027consumer_id\u0027 in token and token[\u0027consumer_id\u0027]:\n\n?",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 32
+      },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_295bc22f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-08T22:16:25Z",
+      "side": 1,
+      "message": "a random observation, maybe we should create a method called \n\n  _check_revocation_common(token)\n\nwhere we do common things, cause 150-151 and 159-160 are the same",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 49
+      },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
