@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a629dbe_79b03f44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "what other version would be tested?",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_166b17f2",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 32
@@ -13,6 +36,46 @@
       "writtenOn": "2016-09-16T16:19:29Z",
       "side": 1,
       "message": "Do you want to return the association dictionary or the created association from the driver?",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_941cfa14",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "remove the ,",
+      "range": {
+        "startLine": 47,
+        "startChar": 26,
+        "endLine": 47,
+        "endChar": 27
+      },
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d4ed92f0",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "the more obvious version of this is override_association[\u0027policy_id\u0027] \u003d uuid.uuid4().hex",
       "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +110,98 @@
       "writtenOn": "2016-09-16T16:19:29Z",
       "side": 1,
       "message": "You could do a:\n\n  self.driver.check_policy_association(association) \n\nhere just to make sure it actually exists before deleting it.",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_345b2e89",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "There are already tests that show that when create_association is called the check_policy_associtaion works.",
+      "parentUuid": "7a8ec9b2_51c6899a",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d44592b3",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "what\u0027s _ref for?",
+      "range": {
+        "startLine": 97,
+        "startChar": 20,
+        "endLine": 97,
+        "endChar": 24
+      },
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_f42b76e9",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "this test should also assert that there are only 2 in the list.\n\nThis could be done using assertItemsEqual rather than separate assertIn.",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_1499ca1f",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "there\u0027s more imports than lines of code!",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_f95e0fe8",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-08T14:53:21Z",
+      "side": 1,
+      "message": "This is a lot of complication for what should be simple. Keep tests simple. Just do self.driver \u003d sql_driver.EndpointPolicy() in __init__.",
       "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
