@@ -16,6 +16,24 @@
       "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_627df01b",
+        "filename": "doc/source/upgrading.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-08T13:02:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a629dbe_b63f6a24",
+      "revId": "5837f792afd801696ecdbbd1d04d9c92d78f4213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
