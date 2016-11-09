@@ -34,6 +34,24 @@
       "revId": "5f19ea27da2f8866c612e36b1442fa1001c33a24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_a75d1a49",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-09T15:36:19Z",
+      "side": 0,
+      "message": "Steve suggested to place them in specific order, not to remove them.\n\n\u003e Actually, I keep it in my last patch.\n\nI don\u0027t think you do. For example, where did impersonation go?",
+      "parentUuid": "7a8ec9b2_7abd72d6",
+      "revId": "5f19ea27da2f8866c612e36b1442fa1001c33a24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
