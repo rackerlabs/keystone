@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_ec6d3c99",
+        "filename": "keystone/tests/unit/token/test_backends.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-09T13:42:30Z",
+      "side": 1,
+      "message": "why was this necessary and why it worked before?",
+      "range": {
+        "startLine": 392,
+        "startChar": 8,
+        "endLine": 392,
+        "endChar": 60
+      },
+      "revId": "2ccdd327d68f327aa3e928f70f6aac26e53cb20a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_0c9c3068",
+        "filename": "keystone/v2_crud/user_crud.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-09T13:42:30Z",
+      "side": 1,
+      "message": "This patch depends on Ia51f28a70ae099f1ec93851d271db8556aced836. Do we still need this sleep? I think this sleep should be mentioned somewhere.",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "2ccdd327d68f327aa3e928f70f6aac26e53cb20a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
