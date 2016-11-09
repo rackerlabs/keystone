@@ -15,6 +15,7 @@
 
 KEYSTONE_PLUGIN=$DEST/keystone/devstack
 source $KEYSTONE_PLUGIN/lib/federation.sh
+source $KEYSTONE_PLUGIN/lib/rolling_upgrades.sh
 
 # For more information on Devstack plugins, including a more detailed
 # explanation on when the different steps are executed please see:
@@ -41,6 +42,10 @@ elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
     if is_service_enabled keystone-saml2-federation; then
         register_federation
     fi
+    if [[ "$MULTI_KEYSTONE" -eq "1" ]]; then
+        configure_haproxy
+    fi
+
 fi
 
 if [[ "$1" == "unstack" ]]; then
@@ -54,5 +59,8 @@ if [[ "$1" == "clean" ]]; then
     # Undo what was performed during the "install" phase
     if is_service_enabled keystone-saml2-federation; then
         uninstall_federation
+    fi
+    if [[ "$MULTI_KEYSTONE" -eq "1" ]]; then
+        remove_haproxy
     fi
 fi
