@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_491fe86b",
+        "filename": "releasenotes/notes/healthcheck-middleware-8630ce7bcde43a7e.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-09T19:39:17Z",
+      "side": 1,
+      "message": "pipelines",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 24
+      },
+      "revId": "fd3559e7afca51a12c1004adaeab356948ee9fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
