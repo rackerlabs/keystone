@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_22f1e695",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-09T23:30:52Z",
+      "side": 1,
+      "message": "No, groups...ones for listing groups",
+      "parentUuid": "9a629dbe_8612cf07",
+      "range": {
+        "startLine": 450,
+        "startChar": 12,
+        "endLine": 450,
+        "endChar": 18
+      },
+      "revId": "c6a6e2adb5d8f4281bf73bebec24fe771be4544f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_266023a5",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 10
