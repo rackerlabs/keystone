@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_a542773c",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-09T14:25:29Z",
+      "side": 1,
+      "message": "driver returns None",
+      "parentUuid": "7a8ec9b2_166b17f2",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_941cfa14",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 32
