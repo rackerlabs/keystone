@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a629dbe_35068386",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-09T21:23:46Z",
+      "side": 1,
+      "message": "why were these short-circuits added ? It\u0027d be nice to do some profiling to make sure we aren\u0027t rebuilding the info a lot of times",
+      "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_78268bbb",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -25,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_75ae3b82",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-09T21:23:46Z",
+      "side": 1,
+      "message": "not needed, see Steve\u0027s comment below",
+      "parentUuid": "da6895a0_78268bbb",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 21
+      },
+      "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6895a0_1e056479",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
@@ -36,6 +77,30 @@
       "writtenOn": "2016-10-24T11:02:50Z",
       "side": 1,
       "message": "the check for if domain_id is already done here, no need to repeat it on line 97, you get there via line 117",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 21
+      },
+      "revId": "184a3df46a17bbf720bc2f0277d110a16ecbe495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_b57e1317",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-09T21:23:46Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da6895a0_1e056479",
       "range": {
         "startLine": 116,
         "startChar": 8,
