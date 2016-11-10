@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_e350a734",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-10T18:29:30Z",
+      "side": 1,
+      "message": "nit: /create/creating",
+      "revId": "173cc5906e6ef2169038a54e7636326bfc1d06b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_4f297589",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-10T18:29:30Z",
+      "side": 1,
+      "message": "These changes should go in a separate review.",
+      "revId": "173cc5906e6ef2169038a54e7636326bfc1d06b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
