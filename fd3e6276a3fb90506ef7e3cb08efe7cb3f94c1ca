@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_a47fa2a9",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-10T14:55:00Z",
+      "side": 1,
+      "message": "I have a question. Why does deprecation of a backend changes the existing backend? Does it mean that without this patch i am going to get one catalog, and with this patch another?",
+      "revId": "fd3e6276a3fb90506ef7e3cb08efe7cb3f94c1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
