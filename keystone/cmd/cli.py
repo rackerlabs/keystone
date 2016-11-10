@@ -123,6 +123,10 @@ class BootStrap(BaseApp):
                             help=('The initial region_id endpoints will be '
                                   'placed in during the keystone bootstrap '
                                   'process.'))
+        parser.add_argument('--bootstrap-ldap',
+                            default=False, action="store_true",
+                            help=('Determine if it is bootstrapping keystone '
+                                  'with ldap as the backend.'))
         return parser
 
     def load_backends(self):
@@ -172,11 +176,6 @@ class BootStrap(BaseApp):
         """
         self._get_config()
 
-        if self.password is None:
-            print(_('Either --bootstrap-password argument or '
-                    'OS_BOOTSTRAP_PASSWORD must be set.'))
-            raise ValueError
-
         # NOTE(morganfainberg): Ensure the default domain is in-fact created
         default_domain = {
             'id': CONF.identity.default_domain_id,
@@ -212,53 +211,88 @@ class BootStrap(BaseApp):
                 self.project_name, default_domain['id'])
             self.project_id = project['id']
 
-        # NOTE(morganfainberg): Do not create the user if it already exists.
-        try:
-            user = self.identity_manager.get_user_by_name(self.username,
-                                                          default_domain['id'])
-            LOG.info(_LI('User %s already exists, skipping creation.'),
-                     self.username)
+        if not CONF.command.bootstrap_ldap:
+            if self.password is None:
+                print(_('Either --bootstrap-password argument or '
+                        'OS_BOOTSTRAP_PASSWORD must be set.'))
+                raise ValueError
 
-            # If the user is not enabled, re-enable them. This also helps
-            # provide some useful logging output later.
-            update = {}
-            enabled = user['enabled']
-            if not enabled:
-                update['enabled'] = True
-
+            # NOTE(morganfainberg): Do not create the user if it already
+            # exists.
             try:
-                self.identity_manager.driver.authenticate(
-                    user['id'], self.password
-                )
-            except AssertionError:
-                # This means that authentication failed and that we need to
-                # update the user's password. This is going to persist a
-                # revocation event that will make all previous tokens for the
-                # user invalid, which is OK because it falls within the scope
-                # of revocation. If a password changes, we shouldn't be able to
-                # use tokens obtained with an old password.
-                update['password'] = self.password
+                user = self.identity_manager.get_user_by_name(
+                    self.username,
+                    default_domain['id'])
+                LOG.info(_LI('User %s already exists, skipping creation.'),
+                         self.username)
 
-            # Only make a call to update the user if the password has changed
-            # or the user was previously disabled. This allows bootstrap to act
-            # as a recovery tool, without having to create a new user.
-            if update:
-                user = self.identity_manager.update_user(user['id'], update)
-                LOG.info(_LI('Reset password for user %s.'), self.username)
-                if not enabled and user['enabled']:
-                    # Although we always try to enable the user, this log
-                    # message only makes sense if we know that the user was
-                    # previously disabled.
-                    LOG.info(_LI('Enabled user %s.'), self.username)
-        except exception.UserNotFound:
-            user = self.identity_manager.create_user(
-                user_ref={'name': self.username,
-                          'enabled': True,
-                          'domain_id': default_domain['id'],
-                          'password': self.password
-                          }
-            )
-            LOG.info(_LI('Created user %s'), self.username)
+                # If the user is not enabled, re-enable them. This also helps
+                # provide some useful logging output later.
+                update = {}
+                enabled = user['enabled']
+                if not enabled:
+                    update['enabled'] = True
+
+                try:
+                    self.identity_manager.driver.authenticate(
+                        user['id'], self.password
+                    )
+                except AssertionError:
+                    # This means that authentication failed and that we need to
+                    # update the user's password. This is going to persist a
+                    # revocation event that will make all previous tokens for
+                    # the user invalid, which is OK because it falls within
+                    # the scope of revocation. If a password changes, we
+                    # shouldn't be able to use tokens obtained with an old
+                    # password.
+                    update['password'] = self.password
+
+                # Only make a call to update the user if the password has
+                # changed or the user was previously disabled. This allows
+                # bootstrap to act as a recovery tool, without having to
+                # create a new user.
+                if update:
+                    user = self.identity_manager.update_user(user['id'],
+                                                             update)
+                    LOG.info(_LI('Reset password for user %s.'),
+                             self.username)
+                    if not enabled and user['enabled']:
+                        # Although we always try to enable the user, this log
+                        # message only makes sense if we know that the user
+                        # was previously disabled.
+                        LOG.info(_LI('Enabled user %s.'), self.username)
+            except exception.UserNotFound:
+                user = self.identity_manager.create_user(
+                    user_ref={'name': self.username,
+                              'enabled': True,
+                              'domain_id': default_domain['id'],
+                              'password': self.password
+                              }
+                )
+                LOG.info(_LI('Created user %s'), self.username)
+
+        # For the user that is maintained on the LDAP server, please make
+        # sure the user is enabled and the password is correct since
+        # keystone doesn't support updating the user's properties from LDAP
+        # server. This also means the password will be ignored if the LDAP
+        # backend is in use.
+        else:
+            if self.password:
+                LOG.warning(
+                    _LW("Keystone doesn't support updating a LDAP user's "
+                        "password, the password will be ignored, please "
+                        "make sure it's correctly configured on the LDAP "
+                        "server side."))
+                print(_("password is ignored."), file=sys.stderr)
+            try:
+                user = self.identity_manager.get_user_by_name(
+                    self.username,
+                    default_domain['id'])
+            except exception.UserNotFound:
+                msg = _LE("Keystone doesn't support creating a LDAP user, "
+                          "please make sure the user already exists.")
+                LOG.error(msg)
+                raise exception.UserNotFound(user_id=self.username)
 
         # NOTE(morganfainberg): Do not create the role if it already exists.
         try:
@@ -269,7 +303,8 @@ class BootStrap(BaseApp):
             )
             LOG.info(_LI('Created role %s'), self.role_name)
         except exception.Conflict:
-            LOG.info(_LI('Role %s exists, skipping creation.'), self.role_name)
+            LOG.info(_LI('Role %s exists, skipping creation.'),
+                     self.role_name)
             # NOTE(davechen): There is no backend method to get the role
             # by name, so build the hints to list the roles and filter by
             # name instead.
