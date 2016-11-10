@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_6aa551a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-10T15:19:17Z",
+      "side": 1,
+      "message": "There should be a bug or blueprint for this since it\u0027s changing user-visible behavior.",
+      "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
