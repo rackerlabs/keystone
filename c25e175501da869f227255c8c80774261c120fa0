@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_e4cd0867",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-10T22:07:35Z",
+      "side": 1,
+      "message": "s/a/A/ :)",
+      "range": {
+        "startLine": 63,
+        "startChar": 58,
+        "endLine": 63,
+        "endChar": 59
+      },
+      "revId": "c25e175501da869f227255c8c80774261c120fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
