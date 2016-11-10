@@ -16,6 +16,24 @@
       "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_4ab96d78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-10T15:25:36Z",
+      "side": 1,
+      "message": "yes, i will attach it to fernet keys backends very soon.",
+      "parentUuid": "9a629dbe_6aa551a0",
+      "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
