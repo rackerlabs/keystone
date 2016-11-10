@@ -28,6 +28,8 @@ from keystone.common import dependency
 from keystone.common.sql import upgrades
 import keystone.conf
 from keystone.i18n import _
+from keystone import identity
+from keystone.identity.backends import ldap as ldap_backend
 from keystone.identity.mapping_backends import mapping as identity_mapping
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
@@ -87,7 +89,7 @@ class CliNoConfigTestCase(unit.BaseTestCase):
         self.assertThat(self.logging.output, matchers.Contains(expected_msg))
 
 
-class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class CliBootStrapTestCase(unit.TestCase):
 
     def setUp(self):
         self.useFixture(database.Database())
@@ -96,7 +98,6 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
         config_files = super(CliBootStrapTestCase, self).config_files()
-        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
     def config(self, config_files):
@@ -161,6 +162,15 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self._do_test_bootstrap(bootstrap)
         self._do_test_bootstrap(bootstrap)
 
+
+class CliBootStrapSQLTestCase(unit.SQLDriverOverrides, CliBootStrapTestCase):
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(CliBootStrapTestCase, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
     def test_bootstrap_recovers_user(self):
         bootstrap = cli.BootStrap()
         self._do_test_bootstrap(bootstrap)
@@ -184,6 +194,73 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
             bootstrap.password)
 
 
+class CliBootStrapLDAPTestCase(CliBootStrapTestCase):
+
+    # TODO(davechen): Need figure out a way to remove the redundant code.
+    def config_overrides(self):
+        super(CliBootStrapLDAPTestCase, self).config_overrides()
+        self.config_fixture.config(group='identity', driver='ldap')
+
+    @mock.patch.object(ldap_backend.Identity, 'authenticate')
+    @mock.patch.object(ldap_backend.Identity, '_get_user')
+    @mock.patch.object(identity.Manager, 'get_user_by_name')
+    def test_bootstrap(self,
+                       mock_get_user_by_name,
+                       mock_get_user,
+                       mock_authenticate):
+        user_id = uuid.uuid4().hex
+        user_password = uuid.uuid4().hex
+        mock_get_user_by_name.return_value = {
+            'id': user_id,
+            'name': 'admin',
+            'enabled': True,
+            'domain_id': CONF.identity.default_domain_id,
+            'password': user_password
+        }
+        mock_get_user.return_value = {
+            'dn': 'uid=admin,ou=Users,dc=example,dc=com',
+            'password': user_password,
+            'enabled': True,
+            'id': user_id,
+            'name': 'admin'}
+        mock_authenticate.return_value = {
+            'enabled': True,
+            'id': user_id,
+            'name': 'admin',
+            'password_expires_at': None}
+        super(CliBootStrapLDAPTestCase, self).test_bootstrap()
+
+    @mock.patch.object(ldap_backend.Identity, 'authenticate')
+    @mock.patch.object(ldap_backend.Identity, '_get_user')
+    @mock.patch.object(identity.Manager, 'get_user_by_name')
+    def test_bootstrap_is_idempotent(self,
+                                     mock_get_user_by_name,
+                                     mock_get_user,
+                                     mock_authenticate):
+        user_id = uuid.uuid4().hex
+        user_password = uuid.uuid4().hex
+        mock_get_user_by_name.return_value = {
+            'id': user_id,
+            'name': 'admin',
+            'enabled': True,
+            'domain_id': CONF.identity.default_domain_id,
+            'password': user_password
+        }
+        mock_get_user.return_value = {
+            'dn': 'uid=admin,ou=Users,dc=example,dc=com',
+            'password': user_password,
+            'enabled': True,
+            'id': user_id,
+            'name': 'admin'}
+        mock_authenticate.return_value = {
+            'enabled': True,
+            'id': user_id,
+            'name': 'admin',
+            'password_expires_at': None}
+        super(CliBootStrapLDAPTestCase, self).test_bootstrap_is_idempotent()
+
+
+# TODO(davechen): Override this class for ldap backend.
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
 
     def config(self, config_files):
@@ -265,7 +342,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_assignment_created_with_region_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if region already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
@@ -274,7 +351,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_endpoints_created_with_service_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if service already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
@@ -283,7 +360,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_endpoints_created_with_endpoint_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if endpoint already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
