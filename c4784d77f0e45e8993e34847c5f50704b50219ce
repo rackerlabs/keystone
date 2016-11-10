@@ -100,6 +100,24 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_a0895728",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-10T12:57:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a629dbe_d4ed92f0",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_116c01cf",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
         "patchSetId": 32
@@ -192,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_8072930f",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_base.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-10T12:57:16Z",
+      "side": 1,
+      "message": "++\n\nasserting the size might not work sometimes (if we have things added in a setUp step, for example), but that\u0027s not the case.",
+      "parentUuid": "9a629dbe_f42b76e9",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_1499ca1f",
         "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
         "patchSetId": 32
@@ -220,6 +256,24 @@
       "writtenOn": "2016-11-08T14:53:21Z",
       "side": 1,
       "message": "This is a lot of complication for what should be simple. Keep tests simple. Just do self.driver \u003d sql_driver.EndpointPolicy() in __init__.",
+      "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_5b75caf7",
+        "filename": "keystone/tests/unit/endpoint_policy/backends/test_sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-10T12:57:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a629dbe_f95e0fe8",
       "revId": "c4784d77f0e45e8993e34847c5f50704b50219ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
