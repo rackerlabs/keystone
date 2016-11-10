@@ -18,6 +18,7 @@ import uuid
 
 import fixtures
 import mock
+from mock import DEFAULT
 import oslo_config.fixture
 from oslo_log import log
 from oslotest import mockpatch
@@ -30,6 +31,7 @@ from keystone.common.sql import upgrades
 import keystone.conf
 from keystone import exception
 from keystone.i18n import _
+from keystone.identity.backends import ldap as ldap_backend
 from keystone.identity.mapping_backends import mapping as identity_mapping
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
@@ -89,7 +91,7 @@ class CliNoConfigTestCase(unit.BaseTestCase):
         self.assertThat(self.logging.output, matchers.Contains(expected_msg))
 
 
-class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
+class CliBootStrapTestCase(unit.TestCase):
 
     def setUp(self):
         self.useFixture(database.Database())
@@ -98,7 +100,6 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
     def config_files(self):
         self.config_fixture.register_cli_opt(cli.command_opt)
         config_files = super(CliBootStrapTestCase, self).config_files()
-        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
     def config(self, config_files):
@@ -163,6 +164,15 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         self._do_test_bootstrap(bootstrap)
         self._do_test_bootstrap(bootstrap)
 
+
+class CliBootStrapSQLTestCase(unit.SQLDriverOverrides, CliBootStrapTestCase):
+
+    def config_files(self):
+        self.config_fixture.register_cli_opt(cli.command_opt)
+        config_files = super(CliBootStrapTestCase, self).config_files()
+        config_files.append(unit.dirs.tests_conf('backend_sql.conf'))
+        return config_files
+
     def test_bootstrap_recovers_user(self):
         bootstrap = cli.BootStrap()
         self._do_test_bootstrap(bootstrap)
@@ -197,6 +207,38 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         role = bootstrap.role_manager.get_role(CONF.member_role_id)
         self.assertEqual(role['name'], CONF.member_role_name)
         self.assertEqual(role['id'], CONF.member_role_id)
+
+
+class CliBootStrapLDAPTestCase(CliBootStrapTestCase):
+
+    def setUp(self):
+        super(CliBootStrapLDAPTestCase, self).setUp()
+        # user id and name should be pre-defined since valid idempotent test
+        # need the same value per different call.
+        self.user_id = uuid.uuid4().hex
+        self.user_name = uuid.uuid4().hex
+
+    def config_overrides(self):
+        super(CliBootStrapLDAPTestCase, self).config_overrides()
+        self.config_fixture.config(group='identity', driver='ldap')
+
+    def _fake_ldap_user(self):
+        return {
+            'enabled': True,
+            'id': self.user_id,
+            'name': self.user_name,
+            'password_expires_at': None}
+
+    def _do_test_bootstrap(self, bootstrap):
+        with mock.patch.multiple(ldap_backend.Identity,
+                                 get_user_by_name=DEFAULT,
+                                 list_groups_for_user=DEFAULT,
+                                 authenticate=DEFAULT) as mocks:
+            mocks["get_user_by_name"].return_value = self._fake_ldap_user()
+            mocks["authenticate"].return_value = self._fake_ldap_user()
+            mocks["list_groups_for_user"].return_value = []
+
+            super(CliBootStrapLDAPTestCase, self)._do_test_bootstrap(bootstrap)
 
 
 class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
@@ -280,7 +322,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_assignment_created_with_region_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if region already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
@@ -289,7 +331,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_endpoints_created_with_service_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if service already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
@@ -298,7 +340,7 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         self._do_test_bootstrap(bootstrap)
 
     def test_endpoints_created_with_endpoint_exists(self):
-        # test assignment can be created if role already exists.
+        # test assignment can be created if endpoint already exists.
         bootstrap = cli.BootStrap()
         bootstrap.resource_manager.create_domain(self.default_domain['id'],
                                                  self.default_domain)
@@ -315,6 +357,19 @@ class CliBootStrapTestCaseWithEnvironment(CliBootStrapTestCase):
         bootstrap.catalog_manager.create_endpoint(endpoint['id'], endpoint)
 
         self._do_test_bootstrap(bootstrap)
+
+
+class CliBootStrapLDAPTestCaseWithEnvironment(
+        CliBootStrapLDAPTestCase,
+        CliBootStrapTestCaseWithEnvironment):
+
+    def config_overrides(self):
+        (super(CliBootStrapLDAPTestCaseWithEnvironment, self).
+         config_overrides())
+        self.config_fixture.config(group='identity', driver='ldap')
+
+    def test_assignment_created_with_user_exists(self):
+        self.skip_test_overrides('N/A: Keystone does not support create user')
 
 
 class CliDomainConfigAllTestCase(unit.SQLDriverOverrides, unit.TestCase):
