@@ -1,0 +1,7 @@
+---
+fixes:
+  - >
+    [`bug 1643301 <https://bugs.launchpad.net/keystone/+bug/1643301>`_]
+    It is now possible to bootstrap keystone using the LDAP backend, and
+    the user ``password`` will be ignored if the identity's backend is
+    ``LDAP``.

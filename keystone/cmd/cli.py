@@ -171,11 +171,7 @@ class BootStrap(BaseApp):
         deployment.
         """
         self._get_config()
-
-        if self.password is None:
-            print(_('Either --bootstrap-password argument or '
-                    'OS_BOOTSTRAP_PASSWORD must be set.'))
-            raise ValueError
+        backend = CONF.identity.driver
 
         # NOTE(morganfainberg): Ensure the default domain is in-fact created
         default_domain = {
@@ -226,26 +222,48 @@ class BootStrap(BaseApp):
             # To keep bootstrap idempotent, try to reset the user's password
             # and ensure that they are enabled. This allows bootstrap to act as
             # a recovery tool, without having to create a new user.
-            user = self.identity_manager.update_user(
-                user['id'],
-                {'enabled': True,
-                 'password': self.password})
-            LOG.info(_LI('Reset password for user %s.'), self.username)
-            if not was_enabled and user['enabled']:
-                # Although we always try to enable the user, this log message
-                # only makes sense if we know that the user was previously
-                # disabled.
-                LOG.info(_LI('Enabled user %s.'), self.username)
+            # for the user that is maintained in LDAP server, please make sure
+            # the user is enabled and the password is correct since keystone
+            # doesn't support update the user's properties that is from LDAP
+            # server, this also means the password is not a mandatory argument
+            # if LDAP backend is in use.
+            if backend != 'ldap':
+                if self.password is None:
+                    print(_('Either --bootstrap-password argument or '
+                            'OS_BOOTSTRAP_PASSWORD must be set.'))
+                    raise ValueError
+                user = self.identity_manager.update_user(
+                    user['id'],
+                    {'enabled': True,
+                     'password': self.password})
+                LOG.info(_LI('Reset password for user %s.'), self.username)
+                if not was_enabled and user['enabled']:
+                    # Although we always try to enable the user, this log
+                    # message only makes sense if we know that the user was
+                    # previously disabled.
+                    LOG.info(_LI('Enabled user %s.'), self.username)
+            elif self.password:
+                    LOG.warning(
+                        _LW("Keystone doesn't support updating LDAP user's "
+                            "password, the password will be ignored, please "
+                            "make sure it's correctly configured in LDAP "
+                            "server side."))
+                    print (_("password is ignored."))
         except exception.UserNotFound:
-            user = self.identity_manager.create_user(
-                user_ref={'name': self.username,
-                          'enabled': True,
-                          'domain_id': default_domain['id'],
-                          'password': self.password
-                          }
-            )
-            LOG.info(_LI('Created user %s'), self.username)
-
+            if backend != 'ldap':
+                user = self.identity_manager.create_user(
+                    user_ref={'name': self.username,
+                              'enabled': True,
+                              'domain_id': default_domain['id'],
+                              'password': self.password
+                              }
+                )
+                LOG.info(_LI('Created user %s'), self.username)
+            else:
+                msg = _LE("Keystone doesn't support creating a LDAP user, "
+                          "please make sure the user exists.")
+                LOG.error(msg)
+                raise exception.UserNotFound(user_id=self.username)
         # NOTE(morganfainberg): Do not create the role if it already exists.
         try:
             self.role_manager.create_role(
