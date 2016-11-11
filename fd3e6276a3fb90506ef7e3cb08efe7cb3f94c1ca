@@ -16,6 +16,24 @@
       "revId": "fd3e6276a3fb90506ef7e3cb08efe7cb3f94c1ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_47fcf13d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-11T03:07:18Z",
+      "side": 1,
+      "message": "@Boris, \u0027endpoint_filter.sql\u0027 backend is the only piece that still exist in legacy extension directory, and we don\u0027t need a separate backend other that \"SQL\" which just patched some new features. This is motivation of deprecating \u0027endpoint_filter.sql\u0027 backend and combining it with \u0027SQL\u0027.\n\nOkay, back to your another question, you won\u0027t get a another catalog with this patch, all of the change here is logic combination, it\u0027s controlled by whether endpoint filter is enabled (project-endpoint association) and how CONF.endpoint_filter.return_all_endpoints_if_no_filter is defined, all the logic is the same as before.",
+      "parentUuid": "9a629dbe_a47fa2a9",
+      "revId": "fd3e6276a3fb90506ef7e3cb08efe7cb3f94c1ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
