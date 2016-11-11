@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_b77b1fbd",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1339,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-11T17:41:28Z",
+      "side": 1,
+      "message": "The reason this changes is because we are leaving it up to the controller logic to determine if the user is enabled or not, if the user isn\u0027t enabled an Unauthorized is thrown. This is the same behavior we use if a regular user is disabled and they try to authenticate with a token. We\u0027re just making it consistent for the trust use case, too.",
+      "revId": "03119996ba7838a8b98c5c43db5ddaa18f3d5ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_d7333312",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-11T17:41:28Z",
+      "side": 0,
+      "message": "This call will raise an Assertion error if the trustee is disabled - https://github.com/openstack/keystone/blob/a74be79b0580f8510e254c47e0814f41826901f1/keystone/identity/core.py#L948-L949",
+      "revId": "142e9e760a03e3d95dfa7885ae47b7788156e4a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_173a0be7",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-11T17:41:28Z",
+      "side": 0,
+      "message": "The Assertion error is caught here and an Unauthorized exception is raised.",
+      "revId": "142e9e760a03e3d95dfa7885ae47b7788156e4a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
