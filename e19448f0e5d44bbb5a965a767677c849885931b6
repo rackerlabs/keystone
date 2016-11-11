@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a629dbe_ac8e922b",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "So its only v3? I think its probably better to add this as a separate sentence after the description.",
+      "range": {
+        "startLine": 115,
+        "startChar": 10,
+        "endLine": 115,
+        "endChar": 19
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_ec288a35",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "listing of",
+      "range": {
+        "startLine": 115,
+        "startChar": 28,
+        "endLine": 115,
+        "endChar": 32
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_c61d1568",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -88,6 +134,52 @@
         "startChar": 38,
         "endLine": 923,
         "endChar": 44
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_acd93259",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "a filter",
+      "range": {
+        "startLine": 923,
+        "startChar": 59,
+        "endLine": 923,
+        "endChar": 65
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_ecdfaa37",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "enabled,",
+      "range": {
+        "startLine": 924,
+        "startChar": 44,
+        "endLine": 924,
+        "endChar": 51
       },
       "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -250,6 +342,53 @@
         "startChar": 12,
         "endLine": 6,
         "endChar": 18
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_2c944241",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "Hmm, I think this is correct, no?  We already allow calling getUsers with no filter.",
+      "parentUuid": "9a629dbe_6ba41257",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 18
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_8ca46eba",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-11T01:55:14Z",
+      "side": 1,
+      "message": "Default value in a conf file is true not True. In Python it would be True.",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 17
       },
       "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
