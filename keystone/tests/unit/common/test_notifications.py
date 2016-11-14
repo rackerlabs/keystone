@@ -57,6 +57,7 @@ class AuditNotificationsTestCase(unit.BaseTestCase):
         self.addCleanup(notifications.clear_subscribers)
 
     def _test_notification_operation(self, notify_function, operation):
+        self.config_fixture.config(notification_format='basic')
         exp_resource_id = uuid.uuid4().hex
         callback = register_callback(operation)
         notify_function(EXP_RESOURCE_TYPE, exp_resource_id)
@@ -105,6 +106,9 @@ class NotificationsTestCase(unit.BaseTestCase):
         resource = uuid.uuid4().hex
         resource_type = EXP_RESOURCE_TYPE
         operation = CREATED_OPERATION
+
+        conf = self.useFixture(config_fixture.Config(CONF))
+        conf.config(notification_format='basic')
 
         # NOTE(ldbragst): Even though notifications._send_notification doesn't
         # contain logic that creates cases, this is supposed to test that
