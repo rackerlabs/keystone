@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "9a629dbe_c788aac9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-14T15:49:26Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a98d1f4_3dfc3db7",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 64
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_47bbba75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-14T15:49:26Z",
+      "side": 1,
+      "message": "nit: remove extra space",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 52
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98d1f4_3d751d63",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
