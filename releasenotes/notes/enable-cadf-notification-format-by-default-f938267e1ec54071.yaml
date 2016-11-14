@@ -1,0 +1,7 @@
+---
+fixes:
+  - Changed the default notification from ``basic`` to ``cadf``.
+    Also, by default, opt-out the following authentication events
+    from emitting notification due to their chattiness.
+    ``identity.authenticate.success``, ``identity.authenticate.pending``,
+    and ``identity.authenticate.failed``.
