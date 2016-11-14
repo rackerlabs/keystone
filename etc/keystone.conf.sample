@@ -131,7 +131,7 @@
 # compatible with the `basic` option, but is fully CADF-compliant, and is
 # recommended for auditing use cases. (string value)
 # Allowed values: basic, cadf
-#notification_format = basic
+#notification_format = cadf
 
 # If left undefined, keystone will emit notifications for all types of events.
 # You can reduce the number of notifications keystone emits by using this
@@ -140,7 +140,9 @@
 # can be set multiple times in order to opt-out of multiple notification
 # topics. For example: notification_opt_out=identity.user.create
 # notification_opt_out=identity.authenticate.success (multi valued)
-#notification_opt_out =
+#notification_opt_out = identity.authenticate.success
+#notification_opt_out = identity.authenticate.pending
+#notification_opt_out = identity.authenticate.failed
 
 #
 # From oslo.log

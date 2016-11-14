@@ -436,4 +436,8 @@ This will opt-out notifications for user creation, role assignment creation and
 successful authentications. For a list of event types that can be used, refer
 to: `Telemetry Measurements`_.
 
+By default, messages for the following authentication events are squelched
+since it is too noisy: ``identity.authenticate.success``,
+``identity.authenticate.pending`` and ``identity.authenticate.failed``.
+
 .. _Telemetry Measurements: http://docs.openstack.org/admin-guide/telemetry-measurements.html#openstack-identity
