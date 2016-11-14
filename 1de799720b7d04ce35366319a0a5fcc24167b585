@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a77a97e_1d877410",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-14T21:56:11Z",
+      "side": 1,
+      "message": "this bug is released, mark this as \"Related-Bug\" or open a new one",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_b2bb42c3",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
