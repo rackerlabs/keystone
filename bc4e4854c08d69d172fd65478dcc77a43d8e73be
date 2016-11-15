@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_e7f21d6f",
+        "filename": "keystone/common/sql/contract_repo/versions/002_password_created_at_not_nullable.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-15T01:25:12Z",
+      "side": 1,
+      "message": "Not supported by sqlite, which is why the column was nullable. See comment on line 30.",
+      "range": {
+        "startLine": 38,
+        "startChar": 32,
+        "endLine": 38,
+        "endChar": 61
+      },
+      "revId": "bc4e4854c08d69d172fd65478dcc77a43d8e73be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
