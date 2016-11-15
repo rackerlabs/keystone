@@ -22,6 +22,30 @@
       "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4ebcb76c",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-15T12:00:56Z",
+      "side": 1,
+      "message": "To make keeping the tests around easier. I dynamically add the middleware back into the pipeline so that we can still test it.",
+      "parentUuid": "7a77a97e_cac5255c",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
