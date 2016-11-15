@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_cac5255c",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-15T03:15:36Z",
+      "side": 1,
+      "message": "If this is pulled off from the pipeline why we need this hang around?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
