@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_28f6858f",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-11-15T16:06:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_9f17ff53",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 23
+      },
+      "revId": "1e506fe59e171ebc6208b62c6a9c999df73b34ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_ca03730c",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2016-11-14T19:35:01Z",
       "side": 1,
       "message": "no need to change this one, we\u0027ll propose a separate patch to update the whole file",
+      "revId": "1e506fe59e171ebc6208b62c6a9c999df73b34ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_48f3c19e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-11-15T16:06:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_ca03730c",
       "revId": "1e506fe59e171ebc6208b62c6a9c999df73b34ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
