@@ -94,6 +94,30 @@
       "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_7e65b3df",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-11-15T05:31:10Z",
+      "side": 1,
+      "message": "No you\u0027re right, and i\u0027ve looked at this code a number of times and it still seems like it should be the other way around. Oh well - thanks!",
+      "parentUuid": "7a77a97e_337294e6",
+      "range": {
+        "startLine": 54,
+        "startChar": 30,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
