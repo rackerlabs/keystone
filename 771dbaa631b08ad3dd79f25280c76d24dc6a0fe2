@@ -118,6 +118,30 @@
       "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0bc71c13",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-15T07:31:41Z",
+      "side": 1,
+      "message": "Why did it pass the tests then?",
+      "parentUuid": "7a77a97e_7e65b3df",
+      "range": {
+        "startLine": 54,
+        "startChar": 30,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
