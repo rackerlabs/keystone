@@ -39,6 +39,30 @@
       "revId": "25a30e83709c882bd54237878ceb42948790f8c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e5266b15",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-11-15T19:52:59Z",
+      "side": 1,
+      "message": "I was wondering about it.  It appears if L61-66 are executed with notification_format\u003d\u0027cadf\u0027, it pops up an error:\n\n   AttributeError: \u0027_CatalogHelperObj\u0027 object has no attribute \u0027catalog_api\u0027\n\nfrom https://github.com/openstack/keystone/blob/master/keystone/notifications.py#L669",
+      "parentUuid": "7a77a97e_b282fbfe",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 62
+      },
+      "revId": "25a30e83709c882bd54237878ceb42948790f8c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
