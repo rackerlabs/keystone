@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_32f26bd3",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-15T19:21:11Z",
+      "side": 1,
+      "message": "thanks for swapping these around, the default should come first",
+      "revId": "25a30e83709c882bd54237878ceb42948790f8c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b282fbfe",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-15T19:21:11Z",
+      "side": 1,
+      "message": "hmm, it\u0027s reset here, whats up with that? these tests should be cadf specific",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 62
+      },
+      "revId": "25a30e83709c882bd54237878ceb42948790f8c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
