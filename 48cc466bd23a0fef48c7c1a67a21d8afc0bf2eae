@@ -88,6 +88,29 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_247e6cae",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T19:35:32Z",
+      "side": 1,
+      "message": "uninstall federation?",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 27
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_33acfb33",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 2
@@ -105,6 +128,23 @@
         "endLine": 71,
         "endChar": 36
       },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e45ab44f",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T19:35:32Z",
+      "side": 1,
+      "message": "uninstall shibboleth?",
       "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
