@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_887860c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "I\u0027m still not a fan of reusing this since it has nothing to do with ldap pooling.",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_a8919c54",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "network",
+      "range": {
+        "startLine": 585,
+        "startChar": 14,
+        "endLine": 585,
+        "endChar": 21
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_288cac34",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "a connection",
+      "range": {
+        "startLine": 1268,
+        "startChar": 41,
+        "endLine": 1268,
+        "endChar": 51
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0889b026",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 1268,
+        "startChar": 10,
+        "endLine": 1268,
+        "endChar": 13
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_a89fdc4e",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "available",
+      "range": {
+        "startLine": 6,
+        "startChar": 26,
+        "endLine": 6,
+        "endChar": 34
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_68ba2470",
+        "filename": "releasenotes/notes/bug-1636950-8fa1a47fce440977.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:49:56Z",
+      "side": 1,
+      "message": "Technically, its not necessarily disabled since if not set, the python-ldap client uses the value of NETWORK_TIMEOUT from /etc/ldap/ldap.conf",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 2
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
