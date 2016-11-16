@@ -88,6 +88,23 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_a1550351",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T23:56:15Z",
+      "side": 1,
+      "message": "missing ECP\u003d\"true\" here, so it properly handles ECP [1]\n\n[1] https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+RedHat+based+Linux#InstallingShibboleth2.xSPonRedHatbasedLinux-ECP",
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_247e6cae",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 2
