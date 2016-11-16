@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_f378c3c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T17:24:07Z",
+      "side": 1,
+      "message": "currently is \"keystone-federation\"",
+      "range": {
+        "startLine": 34,
+        "startChar": 15,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_13229fb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T17:24:07Z",
+      "side": 1,
+      "message": "what do you think about calling \"keystone-saml2-federation\", since we might have other protocols supported for different protocols.",
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_33acfb33",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-16T17:24:07Z",
+      "side": 1,
+      "message": "this is not necessary, see [1] for an example of how this is handled.\n\ncreating the mapping/idp/protocol on the setup might limit the scenarios we can test. For example, we might want to test removing the mapping or updating it - what we need to provide is what you are already doing above: domain, user, project ...",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 36
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
