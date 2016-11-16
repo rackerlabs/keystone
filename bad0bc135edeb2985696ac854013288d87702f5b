@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_080610ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:27:16Z",
+      "side": 1,
+      "message": "py35 is already supported and tested. So this is misleading.\n\nThe only thing this patch really does is add a default venv when running just \"tox\". You can always use \"tox -e py35\" locally. Developers are unlikely to have more than one version of py3x installed. So I\u0027d rather see py34 replaced with py35, but don\u0027t think adding it makes sense.",
+      "revId": "bad0bc135edeb2985696ac854013288d87702f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_a8ab5cd5",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-16T04:27:16Z",
+      "side": 1,
+      "message": "This only changes the default list of environments on a local setup that are run when using just \"tox\". A dev can always run \"tox -e py35\" today.",
+      "range": {
+        "startLine": 4,
+        "startChar": 10,
+        "endLine": 4,
+        "endChar": 14
+      },
+      "revId": "bad0bc135edeb2985696ac854013288d87702f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
