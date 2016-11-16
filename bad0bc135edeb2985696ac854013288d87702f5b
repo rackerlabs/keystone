@@ -39,6 +39,30 @@
       "revId": "bad0bc135edeb2985696ac854013288d87702f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_773106ec",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-16T15:23:09Z",
+      "side": 1,
+      "message": "Yeah, it\u0027s probably not a good idea to assume that 2 versions of 3.X will be installed.",
+      "parentUuid": "7a77a97e_a8ab5cd5",
+      "range": {
+        "startLine": 4,
+        "startChar": 10,
+        "endLine": 4,
+        "endChar": 14
+      },
+      "revId": "bad0bc135edeb2985696ac854013288d87702f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
