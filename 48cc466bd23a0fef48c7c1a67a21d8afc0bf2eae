@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_659109f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_f378c3c6",
+      "range": {
+        "startLine": 34,
+        "startChar": 15,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_13229fb9",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2016-11-16T17:24:07Z",
       "side": 1,
       "message": "what do you think about calling \"keystone-saml2-federation\", since we might have other protocols supported for different protocols.",
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_a5bde169",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_13229fb9",
       "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +131,54 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_25cc7169",
+        "filename": "devstack/files/federation/shib_apache_handler.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_aab21e04",
+      "range": {
+        "startLine": 6,
+        "startChar": 47,
+        "endLine": 6,
+        "endChar": 55
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_05b3f5e9",
+        "filename": "devstack/files/federation/shib_apache_handler.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_b0a39e4e",
+      "range": {
+        "startLine": 6,
+        "startChar": 47,
+        "endLine": 6,
+        "endChar": 55
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_33bb1810",
         "filename": "devstack/files/federation/shibboleth2.xml",
         "patchSetId": 2
@@ -100,6 +190,30 @@
       "writtenOn": "2016-11-16T18:12:45Z",
       "side": 1,
       "message": "this should not be hardcoded",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 54
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0a0ea43a",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_33bb1810",
       "range": {
         "startLine": 16,
         "startChar": 35,
@@ -129,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_4a2dfca6",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_a1550351",
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_247e6cae",
         "filename": "devstack/lib/federation.sh",
         "patchSetId": 2
@@ -140,6 +272,30 @@
       "writtenOn": "2016-11-16T19:35:32Z",
       "side": 1,
       "message": "uninstall federation?",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 27
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e5ad1985",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_247e6cae",
       "range": {
         "startLine": 15,
         "startChar": 9,
@@ -175,6 +331,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_45f88dc3",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_33acfb33",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 36
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_e45ab44f",
         "filename": "devstack/plugin.sh",
         "patchSetId": 2
@@ -186,6 +366,24 @@
       "writtenOn": "2016-11-16T19:35:32Z",
       "side": 1,
       "message": "uninstall shibboleth?",
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_65abc975",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-17T18:48:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_e45ab44f",
       "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
