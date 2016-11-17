@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_eaf5e8ec",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "Could get rid of the \u0027a\u0027",
+      "range": {
+        "startLine": 98,
+        "startChar": 25,
+        "endLine": 98,
+        "endChar": 27
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8ad1d459",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "s/dedicating/dedicated",
+      "range": {
+        "startLine": 100,
+        "startChar": 28,
+        "endLine": 100,
+        "endChar": 38
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4a6a5c82",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "s/options/option",
+      "range": {
+        "startLine": 109,
+        "startChar": 60,
+        "endLine": 109,
+        "endChar": 61
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0afb04c2",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "s/whatever/which",
+      "range": {
+        "startLine": 110,
+        "startChar": 15,
+        "endLine": 110,
+        "endChar": 23
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0ae944e6",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "s/./?",
+      "range": {
+        "startLine": 119,
+        "startChar": 58,
+        "endLine": 119,
+        "endChar": 59
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_2a944041",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "might just need to move this down so it renders properly",
+      "range": {
+        "startLine": 121,
+        "startChar": 70,
+        "endLine": 121,
+        "endChar": 75
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4ac25c35",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "I like the analogy",
+      "range": {
+        "startLine": 138,
+        "startChar": 19,
+        "endLine": 141,
+        "endChar": 45
+      },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0afa2475",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T18:22:27Z",
+      "side": 1,
+      "message": "might need to add \u0027to\u0027 here? \"according to the most\"",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
