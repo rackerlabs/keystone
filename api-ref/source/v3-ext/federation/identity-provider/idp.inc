@@ -15,6 +15,7 @@ Request
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
+    - domain_id: domain_id
     - description: description
     - enabled: enabled
     - id: id_path
@@ -31,6 +32,7 @@ Response
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
+    - domain_id: domain_id
     - description: description
     - enabled: enabled
     - id: id_body
@@ -96,6 +98,7 @@ Response
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
+    - domain_id: domain_id
     - description: description
     - enabled: enabled
     - id: id_body
@@ -161,6 +164,7 @@ Response
 
 .. rest_parameters:: federation/identity-provider/parameters.yaml
 
+    - domain_id: domain_id
     - description: description
     - enabled: enabled
     - id: id_body
