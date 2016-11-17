@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_c9494562",
+        "filename": "keystone/exception.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-17T01:29:00Z",
+      "side": 1,
+      "message": "Typically sentences structure with a \":\" then a variable do not translate well. Not every language can end with an \"is\"",
+      "range": {
+        "startLine": 108,
+        "startChar": 55,
+        "endLine": 109,
+        "endChar": 42
+      },
+      "revId": "3e7a42dfdd5f1254e2a4f8e655618b8b26fd56b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_09eb3d14",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-17T01:29:00Z",
+      "side": 1,
+      "message": "catch only the specific exceptions raised",
+      "range": {
+        "startLine": 1290,
+        "startChar": 15,
+        "endLine": 1290,
+        "endChar": 24
+      },
+      "revId": "3e7a42dfdd5f1254e2a4f8e655618b8b26fd56b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
