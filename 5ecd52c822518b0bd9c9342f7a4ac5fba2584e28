@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_c5373dfd",
+        "filename": "devstack/files/federation/shibboleth2.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-17T18:51:55Z",
+      "side": 1,
+      "message": "think the port here is not needed",
+      "range": {
+        "startLine": 16,
+        "startChar": 51,
+        "endLine": 16,
+        "endChar": 56
+      },
+      "revId": "5ecd52c822518b0bd9c9342f7a4ac5fba2584e28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
