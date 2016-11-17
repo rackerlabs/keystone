@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_f8b77fd5",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-17T20:24:09Z",
+      "side": 1,
+      "message": "I was wrong about this.  It works better as either how it was before \"whatever\", or changed to \"configured for the set ``keystone.conf [token] provider``, ...\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 15,
+        "endLine": 110,
+        "endChar": 62
+      },
+      "revId": "ade510052bbdb626a040d33c248c994f06d6e3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
