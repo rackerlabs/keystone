@@ -1322,10 +1322,33 @@ class Manager(manager.Manager):
                 'unique_id': unique_id,
                 'display_name': display_name
             }
+            domain_id = self._get_federated_domain_id(idp_id)
             user_dict = self.shadow_users_api.create_federated_user(
-                federated_dict)
+                domain_id, federated_dict)
         self.shadow_users_api.set_last_active_at(user_dict['id'])
         return user_dict
+
+    def _get_federated_domain_id(self, idp_id):
+        """Get the domain_id for a federated user.
+        
+        By default the domain_id for a federated user is the idp_id. If the
+        domain does not exists, this method will create it. 
+
+        :param idp_id: identity provider id
+
+        :returns: domain id
+        """
+        try:
+            domain = self.resource_api.get_domain(idp_id)
+        except exception.DomainNotFound:
+            domain = {
+                'id': idp_id,
+                'name': 'idp_id_' + idp_id,
+                'description': None,
+                'enabled': True
+            }
+            domain = self.resource_api.create_domain(domain['id'], domain)
+        return domain['id']
 
 
 @dependency.provider('id_mapping_api')
