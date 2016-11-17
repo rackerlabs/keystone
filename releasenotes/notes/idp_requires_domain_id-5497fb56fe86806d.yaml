@@ -1,0 +1,16 @@
+---
+fixes:
+ - >
+    [`bug 1642687 <https://bugs.launchpad.net/keystone/+bug/1642687>`_]
+    When registering an Identity Provider (IdP) via the OS-FEDERATION API, it's
+    now recommended to include a domain ID to associate with an IdP in the
+    request. Federated users that authenticate with the IdP will now be
+    associated with the domain ID specified. If no domain ID is specified, then
+    a domain will be automatically created.
+upgrade:
+  - ``domain_id`` is now required when registering an Identity Provider (IdP)
+    via the OS-FEDERATION API. For existing Identity Providers (IdPs), a new
+    domain will be automatically created that associated the IdP and the new
+    domain. Each IdP will now have a ``domain_id`` field. The new domain's
+    ``id`` will be a random UUID, its ``name`` will match its ``id``. All
+    automatically generated domains will be ``enabled`` by default.
