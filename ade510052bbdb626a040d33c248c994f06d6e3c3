@@ -22,6 +22,24 @@
       "revId": "ade510052bbdb626a040d33c248c994f06d6e3c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_cc53e137",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T22:16:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_f8b77fd5",
+      "revId": "ade510052bbdb626a040d33c248c994f06d6e3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
