@@ -70,6 +70,12 @@ Identity Providers
 An Identity Provider (IdP) is a third party service that is trusted by the
 Identity API to authenticate identities.
 
+Required attributes:
+
+- ``domain_id`` (string)
+
+  The ID of the domain that is associated with the IdP.
+
 Optional attributes:
 
 - ``description`` (string)

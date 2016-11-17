@@ -33,6 +33,13 @@ id_query:
 
 # variables in body
 
+domain_id
+  description: |
+    The Identity Provider domain ID
+  in: body
+  required: true
+  type: string
+
 description:
   description: |
     The Identity Provider description
