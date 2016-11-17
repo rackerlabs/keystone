@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_0c2d0bfe",
+        "filename": "keystone_tempest_plugin/services/identity/v3/saml2_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "This is failing pep8",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4c3f0387",
+        "filename": "keystone_tempest_plugin/services/identity/v3/saml2_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "Move this down with lxml since it\u0027s a third party lib.",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_6c12ff0a",
+        "filename": "keystone_tempest_plugin/services/identity/v3/saml2_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "Does something use this besides the __init__?",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_2c8007c0",
+        "filename": "keystone_tempest_plugin/services/identity/v3/saml2_client.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "This is also failing pep8",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4cdb834f",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "Remove this newline",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4cfc6372",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-17T02:23:09Z",
+      "side": 1,
+      "message": "I can\u0027t quite see the pattern as to why some of the shortcut declarations are here vs. the other _setup* methods.",
+      "revId": "4f14fc23146450fe906fbcd01cafa0b65fc6947d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
