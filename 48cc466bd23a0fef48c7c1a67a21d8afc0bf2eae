@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_aab21e04",
+        "filename": "devstack/files/federation/shib_apache_handler.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-17T14:07:47Z",
+      "side": 1,
+      "message": "need to include /identity:\n\n  /identity/v3/OS-FEDERATION/identity_providers/testshib/protocols/mapped/auth\n\nsee https://github.com/dstanek/ansible-role-keystone-sp/blob/master/tasks/_configure_apache.yml",
+      "parentUuid": "7a77a97e_b0a39e4e",
+      "range": {
+        "startLine": 6,
+        "startChar": 47,
+        "endLine": 6,
+        "endChar": 55
+      },
+      "revId": "48cc466bd23a0fef48c7c1a67a21d8afc0bf2eae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_33bb1810",
         "filename": "devstack/files/federation/shibboleth2.xml",
         "patchSetId": 2
