@@ -1,0 +1,13 @@
+---
+fixes:
+ - >
+    [`bug 1642687 <https://bugs.launchpad.net/keystone/+bug/1642687>`_]
+    When registering an Identity Provider (IdP) via the OS-FEDERATION API, its
+    now required to include the domain ID associated with the IdP in the
+    request. Thus, domain_id is a required parameter for this API method.
+upgrade:
+  - domain_id is now required when registering an Identity Provider (IdP) via
+    the OS-FEDERATION API. For existing IdPs, the domain_id will be based on
+    the group(s) associated with the IdP mapping. If there are no groups
+    defined, a new domain will automatically be created and used as the
+    domain_id.
