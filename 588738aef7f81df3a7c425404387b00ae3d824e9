@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_0f13245c",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-17T13:47:31Z",
+      "side": 1,
+      "message": "s/following various/following",
+      "range": {
+        "startLine": 178,
+        "startChar": 66,
+        "endLine": 179,
+        "endChar": 7
+      },
+      "revId": "588738aef7f81df3a7c425404387b00ae3d824e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_efb18848",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-17T13:47:31Z",
+      "side": 1,
+      "message": "failed attempts.",
+      "range": {
+        "startLine": 182,
+        "startChar": 20,
+        "endLine": 182,
+        "endChar": 28
+      },
+      "revId": "588738aef7f81df3a7c425404387b00ae3d824e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8f33b4aa",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-17T13:47:31Z",
+      "side": 1,
+      "message": "needs a test where the PCI rules are enforced and the notification is properly handled.",
+      "revId": "588738aef7f81df3a7c425404387b00ae3d824e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
