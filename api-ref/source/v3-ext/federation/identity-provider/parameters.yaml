@@ -40,6 +40,13 @@ description:
   required: false
   type: string
 
+domain_id:
+  description: |
+    The Identity Provider domain ID
+  in: body
+  required: true
+  type: string
+
 enabled:
   description: |
     Whether the Identity Provider is enabled or not
