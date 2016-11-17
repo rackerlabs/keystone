@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_767c61b5",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_eaf5e8ec",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_8ad1d459",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 100,
         "endChar": 38
       },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d638d5f0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_8ad1d459",
       "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_762aa191",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_4a6a5c82",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_0afb04c2",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -88,6 +142,24 @@
         "endLine": 110,
         "endChar": 23
       },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_f614f14d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_0afb04c2",
       "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_7601c105",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_0ae944e6",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_2a944041",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -134,6 +224,24 @@
         "endLine": 121,
         "endChar": 75
       },
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_78152f3e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_2a944041",
       "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -163,6 +271,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_f8277fb3",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Me, too :)",
+      "parentUuid": "7a77a97e_4ac25c35",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_0afa2475",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -174,6 +300,24 @@
       "writtenOn": "2016-11-17T18:22:27Z",
       "side": 1,
       "message": "might need to add \u0027to\u0027 here? \"according to the most\"",
+      "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_182d1b95",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-17T20:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_0afa2475",
       "revId": "8ccd6da16f42906560d5fa3fd06134ecbea7cb32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
