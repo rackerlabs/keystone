@@ -877,6 +877,11 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
                  body={'mapping': mapping},
                  expected_status=http_client.CREATED)
 
+    def assertFederatedDomain(self, domain_id):
+        federated_domain = self.resource_api.get_domain_by_name(
+            CONF.federation.federated_domain_name)
+        self.assertEqual(domain_id, federated_domain['id'])
+
     def test_create_idp(self):
         """Create the IdentityProvider entity associated to remote_ids."""
         keys_to_check = list(self.idp_keys)
@@ -886,6 +891,33 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+        attr = self._fetch_attribute_from_response(resp, 'identity_provider')
+        self.assertFederatedDomain(attr['domain_id'])
+
+    def test_create_idp_domain_id(self):
+        keys_to_check = list(self.idp_keys)
+        keys_to_check.append('domain_id')
+        body = self.default_body.copy()
+        body['description'] = uuid.uuid4().hex
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        body['domain_id'] = domain['id']
+        resp = self._create_default_idp(body=body)
+        self.assertValidResponse(resp, 'identity_provider', dummy_validator,
+                                 keys_to_check=keys_to_check,
+                                 ref=body)
+
+    def test_create_idp_domain_id_none(self):
+        keys_to_check = list(self.idp_keys)
+        body = self.default_body.copy()
+        body['description'] = uuid.uuid4().hex
+        body['domain_id'] = None
+        resp = self._create_default_idp(body=body)
+        self.assertValidResponse(resp, 'identity_provider', dummy_validator,
+                                 keys_to_check=keys_to_check,
+                                 ref=body)
+        attr = self._fetch_attribute_from_response(resp, 'identity_provider')
+        self.assertFederatedDomain(attr['domain_id'])
 
     def test_create_idp_remote(self):
         """Create the IdentityProvider entity associated to remote_ids."""
@@ -900,6 +932,8 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+        attr = self._fetch_attribute_from_response(resp, 'identity_provider')
+        self.assertFederatedDomain(attr['domain_id'])
 
     def test_create_idp_remote_repeated(self):
         """Create two IdentityProvider entities with some remote_ids.
@@ -1060,6 +1094,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         ids = set(ids)
 
         keys_to_check = self.idp_keys
+        keys_to_check.append('domain_id')
         url = self.base_url()
         resp = self.get(url)
         self.assertValidListResponse(resp, 'identity_providers',
@@ -1142,6 +1177,9 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
     def test_get_idp(self):
         """Create and later fetch IdP."""
         body = self._http_idp_input()
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        body['domain_id'] = domain['id']
         default_resp = self._create_default_idp(body=body)
         default_idp = self._fetch_attribute_from_response(default_resp,
                                                           'identity_provider')
