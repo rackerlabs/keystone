@@ -220,6 +220,13 @@ class SqlModels(SqlTests):
                 ('audit_chain_id', sql.String, 32))
         self.assertExpectedSchema('revocation_event', cols)
 
+    def test_identity_provider_model(self):
+        cols = (('id', sql.String, 64),
+                ('domain_id', sql.String, 64),
+                ('enabled', sql.Boolean, False),
+                ('description', sql.Text, None))
+        self.assertExpectedSchema('identity_provider', cols)
+
 
 class SqlIdentity(SqlTests,
                   identity_tests.IdentityTests,
