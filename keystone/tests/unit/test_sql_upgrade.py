@@ -1816,6 +1816,27 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'revocation_event',
             'ix_revocation_event_audit_id_issued_before'))
 
+    def test_migration_011_add_domain_id_to_idp(self):
+        idp = 'identity_provider'
+        self.expand(10)
+        self.migrate(10)
+        self.contract(10)
+        self.assertTableColumns(idp,
+                                ['id',
+                                 'enabled',
+                                 'description'])
+
+        self.expand(11)
+        self.migrate(11)
+        self.contract(11)
+        self.assertTableColumns(idp,
+                                ['id',
+                                 'domain_id',
+                                 'enabled',
+                                 'description'])
+        idp_table = sqlalchemy.Table(idp, self.metadata, autoload=True)
+        self.assertFalse(idp_table.c.domain_id.nullable)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
