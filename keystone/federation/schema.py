@@ -81,6 +81,7 @@ service_provider_update = {
 _identity_provider_properties = {
     'enabled': parameter_types.boolean,
     'description': validation.nullable(parameter_types.description),
+    'domain_id': validation.nullable(parameter_types.id_string),
     'remote_ids': {
         'type': ['array', 'null'],
         'items': {
