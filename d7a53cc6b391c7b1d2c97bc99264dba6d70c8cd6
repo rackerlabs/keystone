@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_6c0b7b24",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T22:19:05Z",
+      "side": 0,
+      "message": "i\u0027ll let dolph weigh in",
+      "parentUuid": "7a77a97e_e1b3144b",
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_c1bd3803",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -83,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_0c29278a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T22:19:05Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7a77a97e_c1bd3803",
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_213d0c8f",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -94,6 +130,24 @@
       "writtenOn": "2016-11-18T21:42:18Z",
       "side": 0,
       "message": "s/payloads/IDs/",
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_2c2c2398",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T22:19:05Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7a77a97e_213d0c8f",
       "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

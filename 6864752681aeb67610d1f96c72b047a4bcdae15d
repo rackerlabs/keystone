@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_ec178b42",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T22:19:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_e1e1542b",
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_d5b33a4b",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -122,6 +140,24 @@
       "writtenOn": "2016-11-18T21:42:18Z",
       "side": 1,
       "message": "Are these sections even needed anymore?",
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4c087f28",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T22:19:05Z",
+      "side": 1,
+      "message": "yes, until we get rid of the revocation list, they are needed to encrypt the returned content",
+      "parentUuid": "7a77a97e_415768c9",
       "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
