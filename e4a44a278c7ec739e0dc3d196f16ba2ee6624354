@@ -16,6 +16,24 @@
       "revId": "e4a44a278c7ec739e0dc3d196f16ba2ee6624354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_32af247e",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2016-11-18T19:06:15Z",
+      "side": 1,
+      "message": "Yes, I need to update it with the changes. The idea was send a draft first to get early feedback",
+      "parentUuid": "7a77a97e_11e070cc",
+      "revId": "e4a44a278c7ec739e0dc3d196f16ba2ee6624354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
