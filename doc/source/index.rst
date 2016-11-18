@@ -88,18 +88,21 @@ Man Pages
 Developers Documentation
 ========================
 .. toctree::
+   :maxdepth: 2
+
+   devref/development.best_practice
+
+.. toctree::
    :maxdepth: 1
 
    devref/development.environment
-   developing
-   developing_drivers
+   devref/development.drivers
+   devref/api_curl_examples
+   devref/api_change_tutorial
+   devref/http-api
+   devref/services
    architecture
-   api_change_tutorial
    middlewarearchitecture
-   http-api
-   api_curl_examples
-   services
-   online_schema_migration_examples
 
 
 Sample Configuration File
