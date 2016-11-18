@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_756b46b7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 1,
+      "message": "this is a move of line 1154 (old version), so it\u0027s closer to the config file section",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 36
+      },
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_15a132f8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 1,
+      "message": "i added this title",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 26
+      },
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d5b33a4b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 1,
+      "message": "general clean up",
+      "range": {
+        "startLine": 428,
+        "startChar": 0,
+        "endLine": 432,
+        "endChar": 49
+      },
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d58a5a63",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 1,
+      "message": "this is a move of line 747, so it\u0027s close to the token section",
+      "range": {
+        "startLine": 461,
+        "startChar": 0,
+        "endLine": 507,
+        "endChar": 71
+      },
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_75d426eb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 1,
+      "message": "this was moved up from line 1497",
+      "range": {
+        "startLine": 1293,
+        "startChar": 0,
+        "endLine": 1304,
+        "endChar": 67
+      },
+      "revId": "6864752681aeb67610d1f96c72b047a4bcdae15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

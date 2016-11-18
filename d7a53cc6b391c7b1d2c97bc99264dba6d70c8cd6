@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_953f02b3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "this was removed since it marked the 3rd time we referenced the manage command",
+      "range": {
+        "startLine": 24,
+        "startChar": 3,
+        "endLine": 24,
+        "endChar": 22
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_f54f5668",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "this section was removed since i asked the room at the summit and no one knew what it was about",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 59
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_754ee63b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "these were moved to line 890 (since the filtering portion was moved up near catalog)",
+      "range": {
+        "startLine": 885,
+        "startChar": 0,
+        "endLine": 905,
+        "endChar": 43
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_35570ecb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "this was removed, it\u0027s not config related, and there are plenty of API examples, like in our API docs",
+      "range": {
+        "startLine": 907,
+        "startChar": 0,
+        "endLine": 922,
+        "endChar": 0
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b56b1e84",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "just moved down a section, so endpoint policy can be near the catalog",
+      "range": {
+        "startLine": 924,
+        "startChar": 0,
+        "endLine": 936,
+        "endChar": 19
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_5511ea02",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "moved up near config files",
+      "range": {
+        "startLine": 1154,
+        "startChar": 0,
+        "endLine": 1164,
+        "endChar": 36
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_75ea66dc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1371,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "this entire section did not talk about \"initialize\u0027, it just referenced the various keystone-manage commands. I created a new file so we don\u0027t have to update it in two spots.",
+      "range": {
+        "startLine": 1341,
+        "startChar": 0,
+        "endLine": 1371,
+        "endChar": 37
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_f5bcb6dd",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "I renamed this to \"supported clients\" as I don\u0027t want to go into deep examples about creating and deleteing resources.",
+      "range": {
+        "startLine": 1373,
+        "startChar": 0,
+        "endLine": 1394,
+        "endChar": 51
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b5c79e62",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1430,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "removed this as we should be discouraging this type of auth",
+      "range": {
+        "startLine": 1399,
+        "startChar": 0,
+        "endLine": 1430,
+        "endChar": 25
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d5997a7a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1458,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "this just doesn\u0027t work",
+      "range": {
+        "startLine": 1455,
+        "startChar": 0,
+        "endLine": 1458,
+        "endChar": 39
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_559baa65",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1483,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "avoid showing examples that use the token in favor of password, if a reader wants to know how it works, they can read the OSC docs.",
+      "range": {
+        "startLine": 1475,
+        "startChar": 4,
+        "endLine": 1483,
+        "endChar": 92
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b575de32",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:29:37Z",
+      "side": 0,
+      "message": "moved near the keystone-manage section",
+      "range": {
+        "startLine": 1497,
+        "startChar": 0,
+        "endLine": 1508,
+        "endChar": 67
+      },
+      "revId": "d7a53cc6b391c7b1d2c97bc99264dba6d70c8cd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
