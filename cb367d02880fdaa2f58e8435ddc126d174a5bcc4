@@ -16,6 +16,24 @@
       "revId": "cb367d02880fdaa2f58e8435ddc126d174a5bcc4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_f5011606",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T19:19:08Z",
+      "side": 1,
+      "message": "no, but it allows the topics to appear on the landing page",
+      "parentUuid": "7a77a97e_88144a4d",
+      "revId": "cb367d02880fdaa2f58e8435ddc126d174a5bcc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
