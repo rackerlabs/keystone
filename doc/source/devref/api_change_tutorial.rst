@@ -11,6 +11,7 @@
       License for the specific language governing permissions and limitations
       under the License.
 
+===================
 API Change Tutorial
 ===================
 
@@ -21,10 +22,7 @@ Prerequisites
 -------------
 
 In order to follow this tutorial, it is assumed that you have read our
-`developer guide`_ and `architecture`_ documents.
-
-.. _`developer guide`: http://docs.openstack.org/developer/keystone/developing.html
-.. _`architecture`: http://docs.openstack.org/developer/keystone/architecture.html
+:doc:`devref/development.best_practice` and :doc:`architecture`_ documents.
 
 Proposing a change
 ------------------
