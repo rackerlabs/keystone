@@ -495,64 +495,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                           self.resource_api.get_project,
                           leaf_project['id'])
 
-    def test_forbid_operations_on_federated_domain(self):
-        """Make sure one cannot operate on federated domain.
-
-        This includes operations like create, update, delete
-        on domain identified by id and name where difference variations of
-        id 'Federated' are used.
-
-        """
-        def create_domains():
-            for variation in ('Federated', 'FEDERATED',
-                              'federated', 'fEderated'):
-                domain = unit.new_domain_ref()
-                domain['id'] = variation
-                yield domain
-
-        for domain in create_domains():
-            self.assertRaises(
-                AssertionError, self.resource_api.create_domain,
-                domain['id'], domain)
-            self.assertRaises(
-                AssertionError, self.resource_api.update_domain,
-                domain['id'], domain)
-            self.assertRaises(
-                exception.DomainNotFound, self.resource_api.delete_domain,
-                domain['id'])
-
-            # swap 'name' with 'id' and try again, expecting the request to
-            # gracefully fail
-            domain['id'], domain['name'] = domain['name'], domain['id']
-            self.assertRaises(
-                AssertionError, self.resource_api.create_domain,
-                domain['id'], domain)
-            self.assertRaises(
-                AssertionError, self.resource_api.update_domain,
-                domain['id'], domain)
-            self.assertRaises(
-                exception.DomainNotFound, self.resource_api.delete_domain,
-                domain['id'])
-
-    def test_forbid_operations_on_defined_federated_domain(self):
-        """Make sure one cannot operate on a user-defined federated domain.
-
-        This includes operations like create, update, delete.
-
-        """
-        non_default_name = 'beta_federated_domain'
-        self.config_fixture.config(group='federation',
-                                   federated_domain_name=non_default_name)
-        domain = unit.new_domain_ref(name=non_default_name)
-        self.assertRaises(AssertionError,
-                          self.resource_api.create_domain,
-                          domain['id'], domain)
-        self.assertRaises(exception.DomainNotFound,
-                          self.resource_api.delete_domain,
-                          domain['id'])
-        self.assertRaises(AssertionError,
-                          self.resource_api.update_domain,
-                          domain['id'], domain)
+    # TODO(rderose): Add tests back with new condition, if exists...
 
     # Project CRUD tests
 
