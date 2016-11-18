@@ -88,7 +88,8 @@ class Manager(manager.Manager):
             raise exception.ValidationError(
                 message=_('Multiple domains are not supported'))
 
-        self.assert_domain_not_federated(project_ref['id'], project_ref)
+        self.assert_domain_not_federated_if_exists(project_ref['id'],
+                                                   project_ref)
 
         if project_ref['parent_id']:
             raise exception.ValidationError(
@@ -227,26 +228,38 @@ class Manager(manager.Manager):
         if not domain.get('enabled', True):
             raise AssertionError(_('Domain is disabled: %s') % domain_id)
 
-    def assert_domain_not_federated(self, domain_id, domain):
+    def assert_domain_not_federated_if_exists(self, domain_id, domain):
         """Assert the Domain's name and id do not match the reserved keyword.
 
         Note that the reserved keyword is defined in the configuration file,
         by default, it is 'Federated', it is also case insensitive.
         If config's option is empty the default hardcoded value 'Federated'
-        will be used.
+        will be used. Only do this check if the federated domain already
+        exists.
 
-        :raise AssertionError: if domain named match the value in the config.
+        :raise AssertionError: if domain named match the value in the config
+                               and the federated domain has been created
 
         """
-        # NOTE(marek-denis): We cannot create this attribute in the __init__ as
-        # config values are always initialized to default value.
-        federated_domain = CONF.federation.federated_domain_name.lower()
-        if (domain.get('name') and domain['name'].lower() == federated_domain):
-            raise AssertionError(_('Domain cannot be named %s')
-                                 % domain['name'])
-        if (domain_id.lower() == federated_domain):
-            raise AssertionError(_('Domain cannot have ID %s')
-                                 % domain_id)
+        if self.federated_domain_exists():
+            # NOTE(marek-denis): We cannot create this attribute in the
+            # __init__ as config values are always initialized to default
+            # value.
+            federated_domain = CONF.federation.federated_domain_name.lower()
+            if (domain.get('name') and
+                    domain['name'].lower() == federated_domain):
+                raise AssertionError(_('Domain cannot be named %s')
+                                     % domain['name'])
+            if (domain_id.lower() == federated_domain):
+                raise AssertionError(_('Domain cannot have ID %s')
+                                     % domain_id)
+
+    def federated_domain_exists(self):
+        try:
+            self.get_domain_by_name(CONF.federation.federated_domain_name)
+            return True
+        except exception.DomainNotFound:
+            return False
 
     def assert_project_enabled(self, project_id, project=None):
         """Assert the project is enabled and its associated domain is enabled.
@@ -284,7 +297,7 @@ class Manager(manager.Manager):
 
         if original_project['is_domain']:
             domain = self._get_domain_from_project(original_project)
-            self.assert_domain_not_federated(project_id, domain)
+            self.assert_domain_not_federated_if_exists(project_id, domain)
             if 'enabled' in domain:
                 domain['enabled'] = clean.domain_enabled(domain['enabled'])
             url_safe_option = CONF.resource.domain_name_url_safe
@@ -757,7 +770,7 @@ class Manager(manager.Manager):
         # TODO(henry-nash): We shouldn't have to check for the federated domain
         # here as well as _update_project, but currently our tests assume the
         # checks are done in a specific order. The tests should be refactored.
-        self.assert_domain_not_federated(domain_id, domain)
+        self.assert_domain_not_federated_if_exists(domain_id, domain)
         project = base.get_project_from_domain(domain)
         try:
             original_domain = self.driver.get_project(domain_id)

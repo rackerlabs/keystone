@@ -495,7 +495,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                           self.resource_api.get_project,
                           leaf_project['id'])
 
-    def test_forbid_operations_on_federated_domain(self):
+    def test_forbid_operations_on_federated_domain_if_exists(self):
         """Make sure one cannot operate on federated domain.
 
         This includes operations like create, update, delete
@@ -503,6 +503,11 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         id 'Federated' are used.
 
         """
+        # create the federated domain, so that it exists
+        federated_domain = unit.new_domain_ref(name='Federated')
+        self.resource_api.create_domain(federated_domain['id'],
+                                        federated_domain)
+
         def create_domains():
             for variation in ('Federated', 'FEDERATED',
                               'federated', 'fEderated'):
@@ -534,7 +539,7 @@ class ResourceTestCase(test_v3.RestfulTestCase,
                 exception.DomainNotFound, self.resource_api.delete_domain,
                 domain['id'])
 
-    def test_forbid_operations_on_defined_federated_domain(self):
+    def test_forbid_operations_on_defined_federated_domain_if_exists(self):
         """Make sure one cannot operate on a user-defined federated domain.
 
         This includes operations like create, update, delete.
@@ -543,6 +548,12 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         non_default_name = 'beta_federated_domain'
         self.config_fixture.config(group='federation',
                                    federated_domain_name=non_default_name)
+
+        # create the federated domain, so that it exists
+        federated_domain = unit.new_domain_ref(name=non_default_name)
+        self.resource_api.create_domain(federated_domain['id'],
+                                        federated_domain)
+
         domain = unit.new_domain_ref(name=non_default_name)
         self.assertRaises(AssertionError,
                           self.resource_api.create_domain,
