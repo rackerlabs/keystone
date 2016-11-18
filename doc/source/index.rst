@@ -56,7 +56,6 @@ Getting Started
     apache-httpd
     policy_mapping
     configuringservices
-    extensions
     key_terms
     community
 
@@ -95,7 +94,6 @@ Developers Documentation
    developing_drivers
    architecture
    api_change_tutorial
-   middlewarearchitecture
    http-api
    api_curl_examples
    services
