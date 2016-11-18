@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_90163e4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T14:17:49Z",
+      "side": 1,
+      "message": "probably will, and this needs to be documented, look at keystone/api-ref to update the docs at minimum",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "abe8dbf07832b460db754b3ca0ae23008bc5fb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_50082628",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T14:17:49Z",
+      "side": 1,
+      "message": "create a bug instead, blueprints should only be used for large feature-work",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 42
+      },
+      "revId": "abe8dbf07832b460db754b3ca0ae23008bc5fb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e505f213",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T14:17:49Z",
+      "side": 1,
+      "message": "add comments around this logic for future maintainers",
+      "range": {
+        "startLine": 276,
+        "startChar": 15,
+        "endLine": 280,
+        "endChar": 25
+      },
+      "revId": "abe8dbf07832b460db754b3ca0ae23008bc5fb5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
