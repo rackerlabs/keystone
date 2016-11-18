@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_a123dcbb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-18T23:15:18Z",
+      "side": 1,
+      "message": "Is this only true for uuid tokens?",
+      "revId": "47bf143ac8d154d46826918a878eab5bf28c0f83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
