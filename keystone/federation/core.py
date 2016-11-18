@@ -12,6 +12,8 @@
 
 """Main entry point into the Federation service."""
 
+import uuid
+
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
@@ -43,6 +45,7 @@ extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
 @dependency.provider('federation_api')
+@dependency.requires('resource_api')
 class Manager(manager.Manager):
     """Default pivot point for the Federation backend.
 
@@ -55,6 +58,33 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.federation.driver)
+
+    def create_idp(self, idp_id, identity_provider):
+        if not identity_provider.get('domain_id'):
+            identity_provider['domain_id'] = self._get_federated_domain_id()
+        return self.driver.create_idp(idp_id, identity_provider)
+
+    @MEMOIZE
+    def _get_federated_domain_id(self):
+        """Get the default federated domain ID.
+
+        This method will return the default federated domain ID. If the domain
+        does not exists, this method will create it.
+
+        :returns: domain id
+        """
+        try:
+            domain = self.resource_api.get_domain_by_name(
+                CONF.federation.federated_domain_name)
+        except exception.DomainNotFound:
+            domain = {
+                'id': uuid.uuid4().hex,
+                'name': CONF.federation.federated_domain_name,
+                'description': 'The default domain for federated users.',
+                'enabled': True
+            }
+            domain = self.resource_api.create_domain(domain['id'], domain)
+        return domain['id']
 
     @MEMOIZE
     def get_enabled_service_providers(self):
