@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_07d7724b",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "i wouldnt be against calling this ``Doctor``",
+      "range": {
+        "startLine": 92,
+        "startChar": 11,
+        "endLine": 92,
+        "endChar": 24
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_47124a0a",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "detect a*",
+      "range": {
+        "startLine": 104,
+        "startChar": 59,
+        "endLine": 104,
+        "endChar": 65
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_95e56939",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": ":py:mod:`keystone/cmd/doctor`",
+      "range": {
+        "startLine": 105,
+        "startChar": 54,
+        "endLine": 105,
+        "endChar": 78
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d5836154",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "is set to*",
+      "range": {
+        "startLine": 110,
+        "startChar": 59,
+        "endLine": 110,
+        "endChar": 65
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_35f655f9",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": ":py:mod:`keystone/cmd/doctor/tokens.py",
+      "range": {
+        "startLine": 111,
+        "startChar": 32,
+        "endLine": 111,
+        "endChar": 65
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d5d1a158",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "hmm, i\u0027m not sure you can do it, but try: \n\n  :py:mod:`keystone/cmd/doctor/__init__.py`\n\nand see if it renders a link",
+      "range": {
+        "startLine": 115,
+        "startChar": 28,
+        "endLine": 115,
+        "endChar": 63
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_75c36d89",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "SYMPTOM_MODULES*",
+      "range": {
+        "startLine": 121,
+        "startChar": 15,
+        "endLine": 121,
+        "endChar": 29
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_35449519",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "SYMPTOM_MODULES*",
+      "range": {
+        "startLine": 149,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 22
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_554d913c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 149,
+        "startChar": 35,
+        "endLine": 149,
+        "endChar": 66
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d55fe1e2",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "one word",
+      "range": {
+        "startLine": 153,
+        "startChar": 60,
+        "endLine": 153,
+        "endChar": 69
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_956ac97f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-18T01:16:33Z",
+      "side": 1,
+      "message": "meh",
+      "range": {
+        "startLine": 159,
+        "startChar": 31,
+        "endLine": 160,
+        "endChar": 53
+      },
+      "revId": "4180eb72bc30376417cc8daa30737b3a7a487f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
