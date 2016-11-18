@@ -1837,6 +1837,57 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.contract(11)
         self.assertTrue(self.does_unique_constraint_exist(table_name, column))
 
+    def test_migration_012_add_domain_id_to_idp(self):
+        session = self.sessionmaker()
+        idp_name = 'identity_provider'
+        self.expand(11)
+        self.migrate(11)
+        self.contract(11)
+        self.assertTableColumns(idp_name,
+                                ['id',
+                                 'enabled',
+                                 'description'])
+        # add some data
+        for i in range(5):
+            idp = {'id': uuid.uuid4().hex,
+                   'enabled': True,
+                   'description': uuid.uuid4().hex}
+            self.insert_dict(session, idp_name, idp)
+        # upgrade
+        self.expand(12)
+        self.assertTableColumns(idp_name,
+                                ['id',
+                                 'domain_id',
+                                 'enabled',
+                                 'description'])
+        self.migrate(12)
+        # confirm we cannot insert an idp during migrate
+        idp_domain = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'domain_id': '<<null>>',
+            'is_domain': True,
+            'parent_id': None,
+            'extra': '{}'
+        }
+        self.insert_dict(session, 'project', idp_domain)
+        new_idp = {'id': uuid.uuid4().hex,
+                   'domain_id': idp_domain['id'],
+                   'enabled': True,
+                   'description': uuid.uuid4().hex}
+        self.assertRaises(db_exception.DBError,
+                          self.insert_dict,
+                          session,
+                          idp_name,
+                          new_idp)
+        self.contract(12)
+        # confirm we can now insert a new idp
+        self.insert_dict(session, idp_name, new_idp)
+        idp_table = sqlalchemy.Table(idp_name, self.metadata, autoload=True)
+        self.assertFalse(idp_table.c.domain_id.nullable)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
