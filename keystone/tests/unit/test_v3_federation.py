@@ -877,6 +877,12 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
                  body={'mapping': mapping},
                  expected_status=http_client.CREATED)
 
+    def assertFederatedDomainReturnedFromIdpResponse(self, resp):
+        attr = self._fetch_attribute_from_response(resp, 'identity_provider')
+        federated_domain = self.resource_api.get_domain_by_name(
+            CONF.federation.federated_domain_name)
+        self.assertEqual(attr['domain_id'], federated_domain['id'])
+
     def test_create_idp(self):
         """Create the IdentityProvider entity associated to remote_ids."""
         keys_to_check = list(self.idp_keys)
@@ -886,6 +892,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+        self.assertFederatedDomainReturnedFromIdpResponse(resp)
 
     def test_create_idp_remote(self):
         """Create the IdentityProvider entity associated to remote_ids."""
@@ -900,6 +907,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+        self.assertFederatedDomainReturnedFromIdpResponse(resp)
 
     def test_create_idp_remote_repeated(self):
         """Create two IdentityProvider entities with some remote_ids.
@@ -939,6 +947,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+        self.assertFederatedDomainReturnedFromIdpResponse(resp)
 
     def test_create_idp_remote_none(self):
         """Create an IdP with a None remote_ids."""
@@ -953,6 +962,7 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=expected)
+        self.assertFederatedDomainReturnedFromIdpResponse(resp)
 
     def test_update_idp_remote_ids(self):
         """Update IdP's remote_ids parameter."""
@@ -1067,6 +1077,8 @@ class FederatedIdentityProviderTests(test_v3.RestfulTestCase):
                                      keys_to_check=keys_to_check)
         entities = self._fetch_attribute_from_response(resp,
                                                        'identity_providers')
+        print('*************************************************')
+        print(entities)
         entities_ids = set([e['id'] for e in entities])
         ids_intersection = entities_ids.intersection(ids)
         self.assertEqual(ids_intersection, ids)

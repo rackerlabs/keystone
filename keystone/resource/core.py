@@ -238,15 +238,25 @@ class Manager(manager.Manager):
         :raise AssertionError: if domain named match the value in the config.
 
         """
-        # NOTE(marek-denis): We cannot create this attribute in the __init__ as
-        # config values are always initialized to default value.
-        federated_domain = CONF.federation.federated_domain_name.lower()
-        if (domain.get('name') and domain['name'].lower() == federated_domain):
-            raise AssertionError(_('Domain cannot be named %s')
-                                 % domain['name'])
-        if (domain_id.lower() == federated_domain):
-            raise AssertionError(_('Domain cannot have ID %s')
-                                 % domain_id)
+        if self.federated_domain_exists():
+            # NOTE(marek-denis): We cannot create this attribute in the
+            # __init__ as config values are always initialized to default
+            # value.
+            federated_domain = CONF.federation.federated_domain_name.lower()
+            if (domain.get('name') and
+                    domain['name'].lower() == federated_domain):
+                raise AssertionError(_('Domain cannot be named %s')
+                                     % domain['name'])
+            if (domain_id.lower() == federated_domain):
+                raise AssertionError(_('Domain cannot have ID %s')
+                                     % domain_id)
+
+    def federated_domain_exists(self):
+        try:
+            self.get_domain_by_name(CONF.federation.federated_domain_name)
+            return True
+        except exception.DomainNotFound:
+            return False
 
     def assert_project_enabled(self, project_id, project=None):
         """Assert the project is enabled and its associated domain is enabled.
