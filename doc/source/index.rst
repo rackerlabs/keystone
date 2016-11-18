@@ -54,10 +54,10 @@ Getting Started
     upgrading
     performance
     apache-httpd
+    architecture
     policy_mapping
     configuringservices
     extensions
-    key_terms
     community
 
 Advanced Topics
@@ -93,7 +93,6 @@ Developers Documentation
    devref/development.environment
    developing
    developing_drivers
-   architecture
    api_change_tutorial
    middlewarearchitecture
    http-api
