@@ -142,6 +142,30 @@
       "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4e2edbfb",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2016-11-18T06:01:51Z",
+      "side": 1,
+      "message": "It works because i\u0027m an idiot and i\u0027m wanting to remove things that have expired in the past, not check for inclusion. \n\nThe tests pass because the test for this is going to be checking for the right number, there\u0027s not a good way to check the sql is going to be correct.",
+      "parentUuid": "7a77a97e_0bc71c13",
+      "range": {
+        "startLine": 54,
+        "startChar": 30,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "771dbaa631b08ad3dd79f25280c76d24dc6a0fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
