@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_aed3efd3",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-18T06:10:51Z",
+      "side": 1,
+      "message": "There\u0027s a mix of punctuation where some bulleted items end with a period and some don\u0027t.\n\nAnd some versions have a statement of a date of stability and some don\u0027t",
+      "revId": "a67d7e3b56c77900934d56c4dbb83c2244d8d6b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0e4943d0",
+        "filename": "api-ref/source/v3/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-18T06:10:51Z",
+      "side": 1,
+      "message": "role",
+      "range": {
+        "startLine": 44,
+        "startChar": 6,
+        "endLine": 44,
+        "endChar": 10
+      },
+      "revId": "a67d7e3b56c77900934d56c4dbb83c2244d8d6b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
