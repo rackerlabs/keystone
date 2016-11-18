@@ -22,6 +22,30 @@
       "revId": "8df52cde2ede8dc15994659da06b032774098c83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4b8157fa",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2016-11-18T14:54:49Z",
+      "side": 1,
+      "message": "Long story, the identifiers for the projects came from LDAP identity days. In those identifiers we used the uuid representation with dashes. When we changed to SQL we\u0027ve just imported them. So the conversion succeeds but removes the dashes so on dissassemble it just fails",
+      "parentUuid": "7a77a97e_30880a71",
+      "range": {
+        "startLine": 332,
+        "startChar": 8,
+        "endLine": 332,
+        "endChar": 26
+      },
+      "revId": "8df52cde2ede8dc15994659da06b032774098c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
