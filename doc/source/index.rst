@@ -56,7 +56,6 @@ Getting Started
     apache-httpd
     policy_mapping
     configuringservices
-    extensions
     key_terms
     community
 
