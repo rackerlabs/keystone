@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_2c6983f9",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-18T22:48:35Z",
+      "side": 0,
+      "message": "We have\n\n  :mod:`keystone.auth.controllers.Auth` \n\nWhich is the v3 authentication controller. The controller listed here is explicitly for v2.0.",
+      "revId": "b9423919a305c559b8fd969df6f36f9b3f8becea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
