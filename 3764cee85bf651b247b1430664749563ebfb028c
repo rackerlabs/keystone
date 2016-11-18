@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_08e2fa2e",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-18T18:29:36Z",
+      "side": 1,
+      "message": "The [] should not be here, as they will be interpreted as part of the string and cause the user ID not to match.",
+      "revId": "3764cee85bf651b247b1430664749563ebfb028c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
