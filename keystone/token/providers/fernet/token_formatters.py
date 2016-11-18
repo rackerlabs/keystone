@@ -317,7 +317,7 @@ class BasePayload(object):
         return ks_utils.isotime(time_object, subsecond=True)
 
     @classmethod
-    def attempt_convert_uuid_hex_to_bytes(cls, value):
+    def attempt_convert_uuid_hex_to_bytes(cls, value, ignore=False):
         """Attempt to convert value to bytes or return value.
 
         :param value: value to attempt to convert to bytes
@@ -325,6 +325,8 @@ class BasePayload(object):
                   stored as bytes and uuid value as bytes or the original value
 
         """
+        if ignore:
+            return (False, value)
         try:
             return (True, cls.convert_uuid_hex_to_bytes(value))
         except ValueError:
@@ -454,7 +456,9 @@ class ProjectScopedPayload(BasePayload):
                  audit_ids, trust_id, federated_info, access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
+        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(
+            project_id,
+            CONF.fernet_tokens.ignore_project_id)
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(cls.random_urlsafe_str_to_bytes,
                            audit_ids))
@@ -491,7 +495,9 @@ class TrustScopedPayload(BasePayload):
                  audit_ids, trust_id, federated_info, access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
+        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(
+            project_id,
+            CONF.fernet_tokens.ignore_project_id)
         b_trust_id = cls.convert_uuid_hex_to_bytes(trust_id)
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(cls.random_urlsafe_str_to_bytes,
@@ -590,7 +596,8 @@ class FederatedScopedPayload(FederatedUnscopedPayload):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
         b_scope_id = cls.attempt_convert_uuid_hex_to_bytes(
-            project_id or domain_id)
+            project_id or domain_id,
+            CONF.fernet_tokens.ignore_project_id if project_id else False)
         b_group_ids = list(map(cls.pack_group_id,
                                federated_info['group_ids']))
         b_idp_id = cls.attempt_convert_uuid_hex_to_bytes(
@@ -661,7 +668,9 @@ class OauthScopedPayload(BasePayload):
                  audit_ids, trust_id, federated_info, access_token_id):
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
         methods = auth_plugins.convert_method_list_to_integer(methods)
-        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(project_id)
+        b_project_id = cls.attempt_convert_uuid_hex_to_bytes(
+             project_id,
+             CONF.fernet_tokens.ignore_project_id)
         expires_at_int = cls._convert_time_string_to_float(expires_at)
         b_audit_ids = list(map(cls.random_urlsafe_str_to_bytes,
                            audit_ids))

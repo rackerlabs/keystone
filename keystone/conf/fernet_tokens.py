@@ -53,6 +53,10 @@ highest numerical index), and one secondary key (every other index). Increasing
 this value means that additional secondary keys will be kept in the rotation.
 """))
 
+ignore_project_id = cfg.BoolOpt(
+    'ignore_project_id',
+    default=False,
+    help=utils.fmt('enables/disables the uuid conversion for project_ids')),
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
