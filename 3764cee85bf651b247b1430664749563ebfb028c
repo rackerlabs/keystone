@@ -16,6 +16,24 @@
       "revId": "3764cee85bf651b247b1430664749563ebfb028c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4111285c",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-18T22:16:44Z",
+      "side": 1,
+      "message": "oh right, very nice catch",
+      "parentUuid": "7a77a97e_08e2fa2e",
+      "revId": "3764cee85bf651b247b1430664749563ebfb028c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
