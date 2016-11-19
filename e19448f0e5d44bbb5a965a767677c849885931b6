@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_9ef0f6ca",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_6609972c",
+      "range": {
+        "startLine": 922,
+        "startChar": 67,
+        "endLine": 922,
+        "endChar": 74
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_a613af5b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -164,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_bec21251",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_acd93259",
+      "range": {
+        "startLine": 923,
+        "startChar": 59,
+        "endLine": 923,
+        "endChar": 65
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_ecdfaa37",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
@@ -175,6 +223,30 @@
       "writtenOn": "2016-11-11T01:55:14Z",
       "side": 1,
       "message": "enabled,",
+      "range": {
+        "startLine": 924,
+        "startChar": 44,
+        "endLine": 924,
+        "endChar": 51
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_1e986669",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "I\u0027m not sure, if it\u0027s correct to use a common before a \u0027or\u0027",
+      "parentUuid": "9a629dbe_ecdfaa37",
       "range": {
         "startLine": 924,
         "startChar": 44,
@@ -210,6 +282,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_5e981e78",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_eb7e62ad",
+      "range": {
+        "startLine": 242,
+        "startChar": 8,
+        "endLine": 242,
+        "endChar": 37
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_cb58be59",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 8
@@ -233,6 +329,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_be705241",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_cb58be59",
+      "range": {
+        "startLine": 252,
+        "startChar": 18,
+        "endLine": 252,
+        "endChar": 22
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_4be82e7d",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 8
@@ -244,6 +364,30 @@
       "writtenOn": "2016-11-07T17:51:02Z",
       "side": 1,
       "message": "using a filter?",
+      "range": {
+        "startLine": 253,
+        "startChar": 31,
+        "endLine": 253,
+        "endChar": 38
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_de918e48",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_4be82e7d",
       "range": {
         "startLine": 253,
         "startChar": 31,
@@ -290,6 +434,30 @@
       "writtenOn": "2016-11-08T05:41:21Z",
       "side": 1,
       "message": "this isn\u0027t the normal style we wrote release notes in....just state that a new option is now supported..",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_7e7a3a25",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "OK, I\u0027ll improve this state",
+      "parentUuid": "9a629dbe_a641ef3b",
       "range": {
         "startLine": 4,
         "startChar": 4,
@@ -384,6 +552,30 @@
       "writtenOn": "2016-11-11T01:55:14Z",
       "side": 1,
       "message": "Default value in a conf file is true not True. In Python it would be True.",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "e19448f0e5d44bbb5a965a767677c849885931b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_5e7f3e14",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2016-11-19T16:47:34Z",
+      "side": 1,
+      "message": "Actually, as Eric said, we already filter users without filter. \n\nI\u0027ll change it do \u0027true\u0027",
+      "parentUuid": "9a629dbe_8ca46eba",
       "range": {
         "startLine": 6,
         "startChar": 13,
