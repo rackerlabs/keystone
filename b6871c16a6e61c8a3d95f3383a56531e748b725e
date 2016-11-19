@@ -16,6 +16,24 @@
       "revId": "b6871c16a6e61c8a3d95f3383a56531e748b725e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_efee9a20",
+        "filename": "doc/source/devref/development.best_practice.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-19T01:54:54Z",
+      "side": 0,
+      "message": "I can switch it around.\n\nwe had development.environment, i figured we could use another with the naming scheme :)",
+      "parentUuid": "7a77a97e_4c56bf06",
+      "revId": "b6871c16a6e61c8a3d95f3383a56531e748b725e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
