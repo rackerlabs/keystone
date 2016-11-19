@@ -1,0 +1,11 @@
+---
+other:
+  - >
+    The signature on the authenticate method of AuthMethodHandler has been
+    updated to be consistent with subclasses defined in the keystone code base.
+
+    Third-party extensions that extend this abstract class AuthMethodHandler
+    should update their code according to the new parameter names.
+
+    The new method signature is:
+        authenticate(self, request, auth_payload, auth_context)
