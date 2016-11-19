@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_4023d855",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "users",
+      "range": {
+        "startLine": 11,
+        "startChar": 26,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0025605a",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "Its better to put as an after-note.  \"Note, this config option applies to the v3 API only.\"",
+      "range": {
+        "startLine": 115,
+        "startChar": 10,
+        "endLine": 115,
+        "endChar": 21
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_60f7f4d2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "enable",
+      "range": {
+        "startLine": 976,
+        "startChar": 67,
+        "endLine": 976,
+        "endChar": 74
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_a0fd8cb2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "Unable to",
+      "range": {
+        "startLine": 976,
+        "startChar": 21,
+        "endLine": 976,
+        "endChar": 26
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_800250b2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "enabled,",
+      "range": {
+        "startLine": 978,
+        "startChar": 49,
+        "endLine": 978,
+        "endChar": 56
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e03144a3",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "Created",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 10
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_c02e0842",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-19T19:59:19Z",
+      "side": 1,
+      "message": "listing",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 8
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
