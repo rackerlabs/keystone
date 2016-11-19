@@ -25,9 +25,9 @@ from keystone.oauth1 import validator
 
 @dependency.requires('oauth_api')
 class OAuth(base.AuthMethodHandler):
-    def authenticate(self, request, auth_info, auth_context):
+    def authenticate(self, context, auth_payload, auth_context):
         """Turn a signed request with an access key into a keystone token."""
-        oauth_headers = oauth.get_oauth_headers(request.headers)
+        oauth_headers = oauth.get_oauth_headers(context.headers)
         access_token_id = oauth_headers.get('oauth_token')
 
         if not access_token_id:
@@ -44,16 +44,16 @@ class OAuth(base.AuthMethodHandler):
             if now > expires:
                 raise exception.Unauthorized(_('Access token is expired'))
 
-        url = controller.V3Controller.base_url(request.context_dict,
-                                               request.path_info)
+        url = controller.V3Controller.base_url(context.context_dict,
+                                               context.path_info)
         access_verifier = oauth.ResourceEndpoint(
             request_validator=validator.OAuthValidator(),
             token_generator=oauth.token_generator)
         result, request = access_verifier.validate_protected_resource_request(
             url,
             http_method='POST',
-            body=request.params,
-            headers=request.headers,
+            body=context.params,
+            headers=context.headers,
             realms=None
         )
         if not result:

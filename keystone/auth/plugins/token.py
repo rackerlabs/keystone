@@ -39,17 +39,17 @@ class Token(base.AuthMethodHandler):
         return token_model.KeystoneToken(token_id=token_id,
                                          token_data=response)
 
-    def authenticate(self, request, auth_payload, user_context):
+    def authenticate(self, context, auth_payload, user_context):
         if 'id' not in auth_payload:
             raise exception.ValidationError(attribute='id',
                                             target='token')
         token_ref = self._get_token_ref(auth_payload)
         if token_ref.is_federated_user and self.federation_api:
             mapped.handle_scoped_token(
-                request, user_context, token_ref,
+                context, user_context, token_ref,
                 self.federation_api, self.identity_api)
         else:
-            token_authenticate(request, user_context, token_ref)
+            token_authenticate(context, user_context, token_ref)
 
 
 def token_authenticate(request, user_context, token_ref):
