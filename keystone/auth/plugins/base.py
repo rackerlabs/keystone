@@ -27,10 +27,10 @@ class AuthMethodHandler(object):
         pass
 
     @abc.abstractmethod
-    def authenticate(self, context, auth_payload, auth_context):
+    def authenticate(self, request, auth_payload, auth_context):
         """Authenticate user and return an authentication context.
 
-        :param context: keystone's request context
+        :param request: keystone's request context
         :param auth_payload: the content of the authentication for a given
                              method
         :param auth_context: user authentication context, a dictionary shared
