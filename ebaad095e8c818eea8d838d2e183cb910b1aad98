@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_d67a4776",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T22:53:20Z",
+      "side": 1,
+      "message": "I\u0027ll add a NOTE section between the titles",
+      "parentUuid": "7a77a97e_5be66244",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_5bbd8200",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_96844f5e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T22:53:20Z",
+      "side": 1,
+      "message": "i\u0027ll just remove this line as it no longer makes sense",
+      "parentUuid": "7a77a97e_5bbd8200",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9b60faa6",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2016-11-20T21:00:39Z",
       "side": 1,
       "message": "This links to the top of the current page. I\u0027m not really sure what it\u0027s referring to, maybe the roles and settings created during the bootstrap?",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b6878b5f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T22:53:20Z",
+      "side": 1,
+      "message": "i\u0027ll remove the last sentence as it no longer makes sense",
+      "parentUuid": "7a77a97e_9b60faa6",
       "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
