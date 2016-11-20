@@ -85,20 +85,28 @@ class AuditNotificationsTestCase(unit.BaseTestCase):
                 notifications.taxonomy.OUTCOME_SUCCESS, initiator)
 
     def test_resource_created_notification(self):
-        self._test_notification_operation(notifications.Audit.created,
-                                          CREATED_OPERATION)
+        self._test_notification_operation_with_basic_format(
+            notifications.Audit.created, CREATED_OPERATION)
+        self._test_notification_operation_with_cadf_format(
+            notifications.Audit.created, CREATED_OPERATION)
 
     def test_resource_updated_notification(self):
-        self._test_notification_operation(notifications.Audit.updated,
-                                          UPDATED_OPERATION)
+        self._test_notification_operation_with_basic_format(
+            notifications.Audit.updated, UPDATED_OPERATION)
+        self._test_notification_operation_with_cadf_format(
+            notifications.Audit.updated, UPDATED_OPERATION)
 
     def test_resource_deleted_notification(self):
-        self._test_notification_operation(notifications.Audit.deleted,
-                                          DELETED_OPERATION)
+        self._test_notification_operation_with_basic_format(
+            notifications.Audit.deleted, DELETED_OPERATION)
+        self._test_notification_operation_with_cadf_format(
+            notifications.Audit.deleted, DELETED_OPERATION)
 
     def test_resource_disabled_notification(self):
-        self._test_notification_operation(notifications.Audit.disabled,
-                                          DISABLED_OPERATION)
+        self._test_notification_operation_with_basic_format(
+            notifications.Audit.disabled, DISABLED_OPERATION)
+        self._test_notification_operation_with_cadf_format(
+            notifications.Audit.disabled, DISABLED_OPERATION)
 
 
 class NotificationsTestCase(unit.BaseTestCase):
@@ -113,6 +121,9 @@ class NotificationsTestCase(unit.BaseTestCase):
         resource = uuid.uuid4().hex
         resource_type = EXP_RESOURCE_TYPE
         operation = CREATED_OPERATION
+
+        conf = self.useFixture(config_fixture.Config(CONF))
+        conf.config(notification_format='basic')
 
         # NOTE(ldbragst): Even though notifications._send_notification doesn't
         # contain logic that creates cases, this is supposed to test that
