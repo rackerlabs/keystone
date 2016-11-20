@@ -16,6 +16,24 @@
       "revId": "b9423919a305c559b8fd969df6f36f9b3f8becea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8fb8c62b",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T23:57:59Z",
+      "side": 0,
+      "message": "correct, but i think the point of this is to list all the controllers... so, not sure what your point was :)",
+      "parentUuid": "7a77a97e_2c6983f9",
+      "revId": "b9423919a305c559b8fd969df6f36f9b3f8becea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
