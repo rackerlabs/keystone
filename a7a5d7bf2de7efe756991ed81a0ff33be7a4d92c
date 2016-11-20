@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_15b83c74",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T13:23:59Z",
+      "side": 1,
+      "message": "add a new \"What\u0027s new in 3.8\" section to https://github.com/openstack/keystone/blob/master/api-ref/source/v3/index.rst",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 16
+      },
+      "revId": "a7a5d7bf2de7efe756991ed81a0ff33be7a4d92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_957b6cbd",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T13:23:59Z",
+      "side": 1,
+      "message": "super nit: This is so UK/british spelling, as someone who straddles both UK/US spelling, I normally would use built-in.",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 11
+      },
+      "revId": "a7a5d7bf2de7efe756991ed81a0ff33be7a4d92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d536c401",
+        "filename": "releasenotes/notes/fetch-expired-token-f5d845b9601bc1ef.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T13:23:59Z",
+      "side": 1,
+      "message": "Add:\n\n  [`blueprint allow-expired \u003chttps://blueprints.launchpad.net/keystone/+spec/allow-expired\u003e`_]\n\nas the first actual line",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "a7a5d7bf2de7efe756991ed81a0ff33be7a4d92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_3561b805",
+        "filename": "releasenotes/notes/fetch-expired-token-f5d845b9601bc1ef.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T13:23:59Z",
+      "side": 1,
+      "message": "token validation calls (``GET/HEAD /v3/auth/tokens``)",
+      "range": {
+        "startLine": 3,
+        "startChar": 44,
+        "endLine": 3,
+        "endChar": 65
+      },
+      "revId": "a7a5d7bf2de7efe756991ed81a0ff33be7a4d92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_15467c7a",
+        "filename": "releasenotes/notes/fetch-expired-token-f5d845b9601bc1ef.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T13:23:59Z",
+      "side": 1,
+      "message": "double backticks (``) here",
+      "range": {
+        "startLine": 3,
+        "startChar": 7,
+        "endLine": 3,
+        "endChar": 22
+      },
+      "revId": "a7a5d7bf2de7efe756991ed81a0ff33be7a4d92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
