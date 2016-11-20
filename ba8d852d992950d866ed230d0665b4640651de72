@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_060bb87d",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:47:25Z",
+      "side": 1,
+      "message": "suggested wording:\n\n\u0027If set to \"True\", attempt to list all users when no filter (\"domain_id\", \"enabled\", \"name\") is used. If set to \"False\", a \"ValidationError\" will be raised if no filter is used. Note, this option will only affect the v3 API for listing users.\u0027",
+      "range": {
+        "startLine": 115,
+        "startChar": 10,
+        "endLine": 115,
+        "endChar": 55
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_60f7f4d2",
         "filename": "keystone/identity/core.py",
         "patchSetId": 9
@@ -110,6 +133,92 @@
         "startChar": 49,
         "endLine": 978,
         "endChar": 56
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_861fc8b5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:47:25Z",
+      "side": 1,
+      "message": "suggested wording:\n\n\"Unable to list users without a filter. Either enable `[identity] list_users_without_filter` or use a filter (domain_id, enabled, name).\"",
+      "range": {
+        "startLine": 976,
+        "startChar": 21,
+        "endLine": 978,
+        "endChar": 64
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_268514ce",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:47:25Z",
+      "side": 1,
+      "message": "include the test where this is set to False and listing with a filter still works, you\u0027re right there!",
+      "range": {
+        "startLine": 255,
+        "startChar": 8,
+        "endLine": 256,
+        "endChar": 66
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_2637d44d",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:47:25Z",
+      "side": 1,
+      "message": "suggested wording:\n\nfeatures:\n  - \u003e\n    [`bug 1211586 \u003chttps://bugs.launchpad.net/keystone/+bug/1211586\u003e`_]\n    New configuration option ``[identity] list_users_without_filter``\n    defaults to ``True``) has been created. When set to ``False``,\n    a `ValidationError` is raised if no filter (``domain_id``,\n    ``enabled``, ``name``)is used when attempting to list all\n    users via the `GET /v3/users` API.",
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_c62d40ff",
+        "filename": "releasenotes/notes/config-option-list-users-without-filter-d6284d9a72d88534.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:47:25Z",
+      "side": 1,
+      "message": "there is a new config option, so call it a feature",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
       },
       "revId": "ba8d852d992950d866ed230d0665b4640651de72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
