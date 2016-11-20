@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_277a6bbd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T14:34:05Z",
+      "side": 1,
+      "message": "this is a bit frustrating, but i\u0027m OK with it. we have a common initialization for the ldap connection and ldappool connection, so if they share a config option, so be it. i don\u0027t think a lot of folks will be leveraging this option, especially since a timeout can be specified in /etc/ldap/ldap.conf",
+      "parentUuid": "7a77a97e_887860c6",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "4649f444fe826344c20824b70329aeec291d5286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_a8919c54",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 6
