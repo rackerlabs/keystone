@@ -138,6 +138,46 @@
       "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_e6095c96",
+        "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:32:44Z",
+      "side": 1,
+      "message": "add this note to the existing deprecated-as-of-ocata one?\n\nhttps://github.com/openstack/keystone/blob/master/releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_c6062085",
+        "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:32:44Z",
+      "side": 1,
+      "message": "we should add something about this in the prelude section:\n\n---\nprelude: \u003e\n  - Using the ``admin token auth`` middleware is now deprecated. See ``deprecations`` for more details.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 13
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
