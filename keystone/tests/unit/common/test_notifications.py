@@ -56,14 +56,22 @@ class AuditNotificationsTestCase(unit.BaseTestCase):
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.addCleanup(notifications.clear_subscribers)
 
-    def _test_notification_operation(self, notify_function, operation):
+    def _test_notification_operation_with_basic_format(self,
+                                                       notify_function,
+                                                       operation):
+        self.config_fixture.config(notification_format='basic')
         exp_resource_id = uuid.uuid4().hex
         callback = register_callback(operation)
         notify_function(EXP_RESOURCE_TYPE, exp_resource_id)
         callback.assert_called_once_with('identity', EXP_RESOURCE_TYPE,
                                          operation,
                                          {'resource_info': exp_resource_id})
+
+    def _test_notification_operation_with_cadf_format(self,
+                                                      notify_function,
+                                                      operation):
         self.config_fixture.config(notification_format='cadf')
+        exp_resource_id = uuid.uuid4().hex
         with mock.patch(
                 'keystone.notifications._create_cadf_payload') as cadf_notify:
             notify_function(EXP_RESOURCE_TYPE, exp_resource_id)
