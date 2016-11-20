@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_ea975a37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "this is unnecessary :)",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 16
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0a9bb666",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "so is this",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 17,
+        "endChar": 66
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_4aa12e93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "keystone-saml2-federation*",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 10
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_2a05d244",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "it took me a while to figure out how to get this up and running, i realize it\u0027s supposed to go:\n\n  enable_plugin \u003cNAME\u003e \u003cGITURL\u003e [GITREF]\n\nbut it\u0027s maybe not as obvious for how to test something another dev is developing, and not already in tree? I did this\n\n  enable_plugin keystone /opt/stack/keystone fbafc06ac6c5ae5d4453ea3addc69772bc0c8634\n\nmaybe add dev docs? [1] a new section called \"Testing with DevStack plugins\" that explains how to develop a plugin and test it at the same time.\n\n[1] http://docs.openstack.org/developer/keystone/developing.html#testing\n\nnot major, but can be done as a follow-on patch",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 40
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8a70a641",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "NOTE*",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_aa8ac218",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "we should do this by default at this point",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 71
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_ea803af9",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "nit: group* maybe",
+      "range": {
+        "startLine": 60,
+        "startChar": 20,
+        "endLine": 60,
+        "endChar": 25
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d4a08af6",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T15:56:31Z",
+      "side": 1,
+      "message": "love how you broke this up",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 41
+      },
+      "revId": "fbafc06ac6c5ae5d4453ea3addc69772bc0c8634",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
