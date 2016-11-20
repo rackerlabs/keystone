@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_5be66244",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-20T21:00:39Z",
+      "side": 1,
+      "message": "Could also take this opportunity to note that using keystone-manage bootstrap is preferred over this method of bootstrapping.",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_5bbd8200",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-20T21:00:39Z",
+      "side": 1,
+      "message": "This links to the top of the current page. Maybe link it to the next section instead.",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_9b60faa6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-20T21:00:39Z",
+      "side": 1,
+      "message": "This links to the top of the current page. I\u0027m not really sure what it\u0027s referring to, maybe the roles and settings created during the bootstrap?",
+      "revId": "ebaad095e8c818eea8d838d2e183cb910b1aad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
