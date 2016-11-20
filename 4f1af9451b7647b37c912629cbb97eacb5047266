@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_c6b8e0ca",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-20T04:23:41Z",
+      "side": 1,
+      "message": "this one is also wrong and should be fixed in a subsequent patch",
+      "range": {
+        "startLine": 105,
+        "startChar": 39,
+        "endLine": 105,
+        "endChar": 73
+      },
+      "revId": "4f1af9451b7647b37c912629cbb97eacb5047266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
