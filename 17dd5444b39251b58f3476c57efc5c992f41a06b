@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_71297d9a",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_2b03cc0e",
+      "range": {
+        "startLine": 68,
+        "startChar": 21,
+        "endLine": 68,
+        "endChar": 32
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b11dd574",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "removed it here too",
+      "range": {
+        "startLine": 73,
+        "startChar": 21,
+        "endLine": 73,
+        "endChar": 32
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_ab927c9d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 10
@@ -36,6 +83,30 @@
       "writtenOn": "2016-11-08T15:15:08Z",
       "side": 1,
       "message": "we shouldn\u0027t change a message that was correct before it just makes work for the translators and any deployers that were scraping the message logs.",
+      "range": {
+        "startLine": 547,
+        "startChar": 17,
+        "endLine": 547,
+        "endChar": 26
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_ec0a121f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_ab927c9d",
       "range": {
         "startLine": 547,
         "startChar": 17,
@@ -71,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_4c1ce669",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "the existing log message said tenant, so i will keep this as-is",
+      "parentUuid": "9a629dbe_6bcea4b5",
+      "range": {
+        "startLine": 311,
+        "startChar": 56,
+        "endLine": 311,
+        "endChar": 62
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_abc0bc7d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 10
@@ -82,6 +177,30 @@
       "writtenOn": "2016-11-08T15:15:08Z",
       "side": 1,
       "message": "str isn\u0027t necessary since %s is used.",
+      "range": {
+        "startLine": 287,
+        "startChar": 58,
+        "endLine": 287,
+        "endChar": 64
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_6c17e244",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a629dbe_abc0bc7d",
       "range": {
         "startLine": 287,
         "startChar": 58,
@@ -117,6 +236,76 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_8c4fde69",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "this message went away in the token controller refactoring",
+      "parentUuid": "9a629dbe_8be858e4",
+      "range": {
+        "startLine": 244,
+        "startChar": 27,
+        "endLine": 244,
+        "endChar": 55
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_aca01af5",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "reverted to Forbidden",
+      "range": {
+        "startLine": 201,
+        "startChar": 32,
+        "endLine": 201,
+        "endChar": 47
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_cca396fe",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "reverted to Forbidden",
+      "range": {
+        "startLine": 207,
+        "startChar": 32,
+        "endLine": 207,
+        "endChar": 47
+      },
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_ebd714eb",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 10
@@ -128,6 +317,24 @@
       "writtenOn": "2016-11-08T15:15:08Z",
       "side": 1,
       "message": "why sometimes use ForbiddenAction and sometimes use Forbidden? This one could use ForbiddenAction, too.",
+      "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_6c452241",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T02:13:17Z",
+      "side": 1,
+      "message": "for backwards compatibility i will keep this as-is and revert the others to Forbidden",
+      "parentUuid": "9a629dbe_ebd714eb",
       "revId": "17dd5444b39251b58f3476c57efc5c992f41a06b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
