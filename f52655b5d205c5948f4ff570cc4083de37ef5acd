@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_3ecedbb4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T16:19:37Z",
+      "side": 1,
+      "message": "i think it\u0027s fine. Bootstraping is done for a single super-user who should be able to set up other domains.",
+      "parentUuid": "7a77a97e_ed803b4c",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_6a017139",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2016-11-21T14:05:22Z",
       "side": 1,
       "message": "We generally don\u0027t import objects directly, just modules. Suggest using mock.DEFAULT in the code below.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_de0327bd",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T16:19:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_6a017139",
       "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
