@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_7d25af5a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-21T18:58:59Z",
+      "side": 0,
+      "message": "Yep - looks like this doesn\u0027t need to be done on line 171. I assume everything passes if you remove line 171.",
+      "revId": "a93d03e04ffa6bb8edd00761f4566fd8a7a1fff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
