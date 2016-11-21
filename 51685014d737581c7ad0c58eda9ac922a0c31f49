@@ -45,6 +45,29 @@
       "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_58956f86",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-21T14:22:15Z",
+      "side": 1,
+      "message": "maybe is worth cite something about the auth methods",
+      "range": {
+        "startLine": 382,
+        "startChar": 0,
+        "endLine": 382,
+        "endChar": 26
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
