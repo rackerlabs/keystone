@@ -22,6 +22,24 @@
       "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_5f5c6eed",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-21T17:07:28Z",
+      "side": 1,
+      "message": "Do you mean to say that needs to be reworded?",
+      "parentUuid": "7a77a97e_841f9908",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
