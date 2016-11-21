@@ -16,6 +16,47 @@
       "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_3387f4d8",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-21T14:48:25Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_ada9e326",
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_1359188f",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-21T14:48:25Z",
+      "side": 1,
+      "message": "this should be more generic: \n\n  Only admin or trustor can delete a trust.\n\nHaving \"the trust\" looks like it is the case for only the trust being deleted.",
+      "range": {
+        "startLine": 231,
+        "startChar": 52,
+        "endLine": 231,
+        "endChar": 61
+      },
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
