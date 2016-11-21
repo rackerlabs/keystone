@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_24bec5d4",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-21T16:54:48Z",
+      "side": 1,
+      "message": "passwords",
+      "range": {
+        "startLine": 107,
+        "startChar": 21,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "49ec1d2482ebb0ab650644fefbe3afdf324f4563",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
