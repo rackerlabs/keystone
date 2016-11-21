@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_7a7698d9",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T17:38:08Z",
+      "side": 1,
+      "message": "yes. If left undefined, keystone will emit notifications for all types of events except authn success, pending and failed.",
+      "parentUuid": "7a77a97e_5f5c6eed",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9ff526cd",
         "filename": "releasenotes/notes/enable-cadf-notification-format-by-default-f938267e1ec54071.yaml",
         "patchSetId": 7
