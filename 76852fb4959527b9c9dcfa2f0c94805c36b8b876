@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_1f991620",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-21T17:18:23Z",
+      "side": 1,
+      "message": "Since CADF is the default, we should elaborate on why is it a superior option to `basic`. Inversely - if there is anything about the `basic` format that would prove advantageous, we need to make sure we note that in this section.",
+      "revId": "76852fb4959527b9c9dcfa2f0c94805c36b8b876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
