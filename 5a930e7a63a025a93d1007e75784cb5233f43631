@@ -16,6 +16,24 @@
       "revId": "5a930e7a63a025a93d1007e75784cb5233f43631",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_3a08a028",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T17:59:18Z",
+      "side": 0,
+      "message": "we probably could deprecate the basic format.",
+      "parentUuid": "7a77a97e_3f0b327f",
+      "revId": "5a930e7a63a025a93d1007e75784cb5233f43631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

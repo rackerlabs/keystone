@@ -61,6 +61,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_f5163957",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T17:59:18Z",
+      "side": 1,
+      "message": "Oh theres some ambiguity for \"not defined\"\n\nI guess \"If left empty, keystone will emit notifications ....\"\nand at the end \"By default, keystone will not emit notifications for authentication attempts (success, pending, failures)\"",
+      "parentUuid": "7a77a97e_7a7698d9",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9ff526cd",
         "filename": "releasenotes/notes/enable-cadf-notification-format-by-default-f938267e1ec54071.yaml",
         "patchSetId": 7
@@ -72,6 +90,24 @@
       "writtenOn": "2016-11-21T17:08:57Z",
       "side": 1,
       "message": "If a deployment relies on the ability to receive those types of notifications, they will have to specifically omit them on upgrade. That would be a good thing to add to the upgrade section.",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_900fd32d",
+        "filename": "releasenotes/notes/enable-cadf-notification-format-by-default-f938267e1ec54071.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T17:59:18Z",
+      "side": 1,
+      "message": "++ great catch!",
+      "parentUuid": "7a77a97e_9ff526cd",
       "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
