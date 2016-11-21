@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_0dbe57d4",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:07:40Z",
+      "side": 1,
+      "message": "You are using _, but that\u0027s never imported.",
+      "revId": "35c6551aaab90cb06c6e21b96f1eb77c6003df23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
