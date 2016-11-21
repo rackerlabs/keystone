@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_d9a99792",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-21T06:03:06Z",
+      "side": 1,
+      "message": "extra space?",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 6
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_d997d738",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-21T06:03:06Z",
+      "side": 1,
+      "message": "I nearly forgot this piece. :)",
+      "range": {
+        "startLine": 189,
+        "startChar": 8,
+        "endLine": 189,
+        "endChar": 58
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
