@@ -94,7 +94,7 @@ adding their user ID to ``password_expires_ignore_user_ids`` list:
 .. code-block:: ini
 
     [security_compliance]
-    password_expires_ignore_user_ids = [3a54353c9dcc44f690975ea768512f6a]
+    password_expires_ignore_user_ids = 3a54353c9dcc44f690975ea768512f6a
 
 In this example, the password for user ID ``3a54353c9dcc44f690975ea768512f6a``
 would never expire.
