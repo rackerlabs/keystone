@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_7d76a807",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-11-21T10:22:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_0643b86c",
+      "revId": "4284e22dd2317c277dbcae8c847f038b7585704f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_e64f9c8f",
         "filename": "devstack/plugin.sh",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-20T05:39:17Z",
       "side": 1,
       "message": "add a new line to separate things here",
+      "revId": "4284e22dd2317c277dbcae8c847f038b7585704f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_9d738415",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-11-21T10:22:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_e64f9c8f",
       "revId": "4284e22dd2317c277dbcae8c847f038b7585704f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_ddca5c1a",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-11-21T10:22:11Z",
+      "side": 1,
+      "message": "I removed this section in new patch-set.",
+      "parentUuid": "7a77a97e_9698f679",
+      "range": {
+        "startLine": 25,
+        "startChar": 29,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "4284e22dd2317c277dbcae8c847f038b7585704f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_263d14dd",
         "filename": "devstack/plugin.sh",
         "patchSetId": 2
@@ -70,6 +130,30 @@
       "writtenOn": "2016-11-20T05:39:17Z",
       "side": 1,
       "message": "this applies to most of the proposed code -- please add inline comments about *why* you are doing things.\n\ni can tell that a sed does a string replace, i don\u0027t know why most of the code was executed though :)",
+      "range": {
+        "startLine": 71,
+        "startChar": 12,
+        "endLine": 71,
+        "endChar": 47
+      },
+      "revId": "4284e22dd2317c277dbcae8c847f038b7585704f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_9de1c49d",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-11-21T10:22:11Z",
+      "side": 1,
+      "message": "Yes, thank you, I\u0027ve added more comments to the new patch set.",
+      "parentUuid": "7a77a97e_263d14dd",
       "range": {
         "startLine": 71,
         "startChar": 12,
