@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_3d309707",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-21T19:20:38Z",
+      "side": 1,
+      "message": "Now I\u0027m just starting to be nit picky :) \n\nThe description is jumping right into how to bypass a specific behavior. I might consider starting this off with the second sentence instead (\"You can reduce...\"). That way the description naturally describes the reason behind the option, how it can be useful, then goes into the details and describes the defaults.\n\n  You can reduce the number of notifications keystone emits by explicitly\n  opting out. Keystone will not emit notifications that match the patterns\n  expressed in this list. Values are expected to be in the form of\n  `identity.\u003cresource_type\u003e.\u003coperation\u003e`. By default, all notifications\n  related to authentication are automatically suppressed. This field can be\n  set multiple times in order to opt-out of multiple notification topics. For\n  example, the following suppresses notifications describing user creation or \n  successful authentication events:\n  notification_opt_out\u003didentity.user.create\n  notification_opt_out\u003didentity.authenticate.success",
+      "revId": "1062f0561b26d77edc2ec413ee8748e9f9c63fb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
