@@ -79,6 +79,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_1d52fbdd",
+        "filename": "keystone/conf/default.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-11-21T18:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_f5163957",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9ff526cd",
         "filename": "releasenotes/notes/enable-cadf-notification-format-by-default-f938267e1ec54071.yaml",
         "patchSetId": 7
@@ -107,6 +125,24 @@
       "writtenOn": "2016-11-21T17:59:18Z",
       "side": 1,
       "message": "++ great catch!",
+      "parentUuid": "7a77a97e_9ff526cd",
+      "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_bd4ae725",
+        "filename": "releasenotes/notes/enable-cadf-notification-format-by-default-f938267e1ec54071.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-11-21T18:57:26Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7a77a97e_9ff526cd",
       "revId": "addfd92249a1d3d9ccec58ff2ea1e27853404a9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
