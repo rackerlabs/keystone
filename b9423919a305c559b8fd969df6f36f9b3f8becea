@@ -52,6 +52,24 @@
       "revId": "b9423919a305c559b8fd969df6f36f9b3f8becea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0b5f1c76",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T15:49:41Z",
+      "side": 0,
+      "message": "OK i will remove this controller and the `Token` group entirely. It\u0027ll be super confusing if I group it with keysotne.auth.* above (since it\u0027s lives in token)\n\nWe also have v2 controllers listed ...\n\n * :mod:`keystone.assignment.controllers.TenantAssignment`\n * :mod:`keystone.assignment.controllers.Role`\n * :mod:`keystone.assignment.controllers.RoleAssignmentV2`",
+      "parentUuid": "7a77a97e_f95d737a",
+      "revId": "b9423919a305c559b8fd969df6f36f9b3f8becea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
