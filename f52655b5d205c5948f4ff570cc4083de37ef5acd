@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_219f97b5",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T16:24:43Z",
+      "side": 1,
+      "message": "What this means is that once we remove the admin token we are effectively removing bootstrap support for any identity backend that isn\u0027t sql or ldap. If as a group we decide that\u0027s fine, then that should be documented.",
+      "parentUuid": "7a77a97e_3ecedbb4",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_6a017139",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
