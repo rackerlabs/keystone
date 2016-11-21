@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_4a3da3ba",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-11-21T08:01:46Z",
+      "side": 1,
+      "message": "maybe we should specify that these are UUID tokens (and maybe even that fernet tokens need no flushing)",
+      "range": {
+        "startLine": 1296,
+        "startChar": 27,
+        "endLine": 1296,
+        "endChar": 33
+      },
+      "revId": "03c09f646ab9c2df9001a616ff5546f0beaf04f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
