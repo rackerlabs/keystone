@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_ada9e326",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-21T14:16:54Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be action\u003dforbidden_msg\n\nIf not, the message could be reworded for something like: \"Listing trusts for another user is not allowed\"",
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
