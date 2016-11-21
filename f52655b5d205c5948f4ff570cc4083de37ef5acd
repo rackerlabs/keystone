@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_0d62d7ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "This is misleading because the password is being required for the user. It just happens that LDAP doesn\u0027t need this.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_ed803b4c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "A bad side effect of this is that it\u0027s no longer possible to bootstrap other backends.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_6a017139",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "We generally don\u0027t import objects directly, just modules. Suggest using mock.DEFAULT in the code below.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8a508d60",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "Does this need to be done again? It\u0027s already being done in the parent class.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_8d0fc72d",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "The word \u0027enabled\u0027 doesn\u0027t make sense here. Maybe just something like: \"It is now possible to bootstrap keystone using the LDAP backend.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_6dc34b8b",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:05:22Z",
+      "side": 1,
+      "message": "I wouldn\u0027t talk about role assignment at all here.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
