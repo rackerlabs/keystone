@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_be7d8bb3",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T15:14:08Z",
+      "side": 1,
+      "message": "won\u0027t that be backwards incompatible?",
+      "parentUuid": "7a77a97e_9e4a8f54",
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_1359188f",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 15
