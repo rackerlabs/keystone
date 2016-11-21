@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_9e4a8f54",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T14:56:27Z",
+      "side": 1,
+      "message": "Only if you want to change this to a ForbiddenAction... Should we roll another patch using that? Also we may want to do that with all of the Forbidden exceptions..",
+      "parentUuid": "7a77a97e_3387f4d8",
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_1359188f",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 15
