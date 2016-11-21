@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_2b35b8f6",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T16:03:37Z",
+      "side": 1,
+      "message": "actually, it seems most put this on one line, so i\u0027ll do that",
+      "parentUuid": "7a77a97e_d9a99792",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 6
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_d997d738",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_8b240cc7",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T16:03:37Z",
+      "side": 1,
+      "message": ":)",
+      "parentUuid": "7a77a97e_d997d738",
+      "range": {
+        "startLine": 189,
+        "startChar": 8,
+        "endLine": 189,
+        "endChar": 58
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_58956f86",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 7
@@ -59,6 +107,30 @@
       "writtenOn": "2016-11-21T14:22:15Z",
       "side": 1,
       "message": "maybe is worth cite something about the auth methods",
+      "range": {
+        "startLine": 382,
+        "startChar": 0,
+        "endLine": 382,
+        "endChar": 26
+      },
+      "revId": "51685014d737581c7ad0c58eda9ac922a0c31f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_ae3636e5",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-21T16:03:37Z",
+      "side": 1,
+      "message": "this patch is strictly for moving content between the two files. I\u0027m actually not a fan of hardcoding all the various drivers/backends/plugins for each system, as you can see -- they bit rotted a lot.\n\nI added it anyway",
+      "parentUuid": "7a77a97e_58956f86",
       "range": {
         "startLine": 382,
         "startChar": 0,
