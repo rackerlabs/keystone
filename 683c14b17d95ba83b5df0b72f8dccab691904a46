@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a77a97e_6480bd47",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T16:49:54Z",
+      "side": 1,
+      "message": "i understand that this is copied from the class, but it is very hard to review this. Have you figured out what is going on here and why the second role in the list is used? If yes, please post a follow-up or add comments in this patch",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 46
+      },
+      "revId": "683c14b17d95ba83b5df0b72f8dccab691904a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_98c70764",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 3
@@ -25,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_645b5d2f",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T16:49:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_98c70764",
+      "range": {
+        "startLine": 428,
+        "startChar": 8,
+        "endLine": 428,
+        "endChar": 31
+      },
+      "revId": "683c14b17d95ba83b5df0b72f8dccab691904a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_789f8b50",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 3
@@ -36,6 +83,24 @@
       "writtenOn": "2016-11-21T14:28:24Z",
       "side": 1,
       "message": "a comment explaining that you are revoking the grant used in token1 and token3 would be nice, since it is hard for the \"reader\" to keep track of everything.",
+      "revId": "683c14b17d95ba83b5df0b72f8dccab691904a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_047389b5",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T16:49:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_789f8b50",
       "revId": "683c14b17d95ba83b5df0b72f8dccab691904a46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
