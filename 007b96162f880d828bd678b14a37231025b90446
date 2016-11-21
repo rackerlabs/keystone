@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_6e51730e",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T20:18:33Z",
+      "side": 1,
+      "message": "I think squelched isn\u0027t a great word to use for an international audience. Why not just be more direct and use suppressed?",
+      "revId": "007b96162f880d828bd678b14a37231025b90446",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
