@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_eb02e00a",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T15:58:49Z",
+      "side": 1,
+      "message": "yey!",
+      "range": {
+        "startLine": 740,
+        "startChar": 8,
+        "endLine": 740,
+        "endChar": 44
+      },
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_5971f176",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2282,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-11-21T15:58:49Z",
+      "side": 1,
+      "message": "is it possible to call token_flush here? It would be a good test ensuring that flushing works as expected.",
+      "range": {
+        "startLine": 2282,
+        "startChar": 12,
+        "endLine": 2282,
+        "endChar": 55
+      },
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
