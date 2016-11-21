@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_e49bed70",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-21T16:55:28Z",
+      "side": 0,
+      "message": "Yeah - we should figure out a way to explain this. I\u0027d be willing to merge this though and accomplish that in a separate patch. The weird thing is that the token/auth system is the *only* system in keystone that uses two separate controllers for v2.0 and v3. All other subsystems use the same controller for both v2.0 and v3 operations.",
+      "revId": "0a9051bcc1d8c1d3d1815ba8d87e16e82b929e1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
