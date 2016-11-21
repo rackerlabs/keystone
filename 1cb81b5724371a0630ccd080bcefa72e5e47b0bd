@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_36f538cb",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-21T03:52:43Z",
+      "side": 1,
+      "message": "Translate the message as you did here: https://review.openstack.org/#/c/372433/12/keystone/token/providers/common.py",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 60
+      },
+      "revId": "1cb81b5724371a0630ccd080bcefa72e5e47b0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
