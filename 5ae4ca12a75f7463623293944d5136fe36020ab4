@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_d9fd010a",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-21T15:16:55Z",
+      "side": 1,
+      "message": "No. ForbiddenAction is a subclass of Forbidden that has a different message. I believe the way this code is written we\u0027ll be using \u0027list trusts for another user\u0027 as the message for the 403 response and not the normal \u0027You are not authorized...\u0027.",
+      "parentUuid": "7a77a97e_be7d8bb3",
+      "revId": "5ae4ca12a75f7463623293944d5136fe36020ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_1359188f",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 15
