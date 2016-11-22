@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_34a7b350",
+        "filename": "doc/source/devref/api_change_tutorial.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-11-22T10:32:35Z",
+      "side": 1,
+      "message": "You changed the name of the file to development_best_practice but kept the old link",
+      "revId": "316eca1ffee80784e7430cb9d2d3da0a65746e73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
