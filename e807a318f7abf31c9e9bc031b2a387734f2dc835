@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_787ebdaf",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 18462
+      },
+      "writtenOn": "2016-11-22T22:30:26Z",
+      "side": 1,
+      "message": "nit: passphrases",
+      "range": {
+        "startLine": 8,
+        "startChar": 68,
+        "endLine": 8,
+        "endChar": 75
+      },
+      "revId": "e807a318f7abf31c9e9bc031b2a387734f2dc835",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_78907ded",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 18462
+      },
+      "writtenOn": "2016-11-22T22:30:26Z",
+      "side": 1,
+      "message": "nit: passphrase",
+      "range": {
+        "startLine": 8,
+        "startChar": 13,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "e807a318f7abf31c9e9bc031b2a387734f2dc835",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_f8480d8a",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18462
+      },
+      "writtenOn": "2016-11-22T22:30:26Z",
+      "side": 1,
+      "message": "nit: passphrases",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "e807a318f7abf31c9e9bc031b2a387734f2dc835",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
