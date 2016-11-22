@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "7a77a97e_7a9daa58",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-22T02:33:59Z",
+      "side": 1,
+      "message": "Yes, but having it outside the block actually performs the required logging for both.  This was deliberate.",
+      "parentUuid": "fa6399be_28cbfe1f",
+      "range": {
+        "startLine": 236,
+        "startChar": 4,
+        "endLine": 236,
+        "endChar": 44
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_c82e02a5",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 3
@@ -82,6 +106,30 @@
       "writtenOn": "2016-10-18T03:01:32Z",
       "side": 1,
       "message": "is this used anywhere?",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 44
+      },
+      "revId": "d1cfe07fd494a8309d2617de8dbd3b5a1baa9c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_eb61ead4",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-22T02:33:59Z",
+      "side": 1,
+      "message": "No...vestige of a cleanup.,  Will remove it.",
+      "parentUuid": "fa6399be_c82e02a5",
       "range": {
         "startLine": 239,
         "startChar": 0,
