@@ -22,6 +22,30 @@
       "revId": "a1b6d3dfd6760b803d9f29847539a442371c7fb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_25ca151b",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-11-22T13:11:42Z",
+      "side": 1,
+      "message": "Hi Rodrigo, this is a mistake, thank you! I\u0027ve fixed it in the next patch set.",
+      "parentUuid": "7a77a97e_4d3e5ddb",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 32
+      },
+      "revId": "a1b6d3dfd6760b803d9f29847539a442371c7fb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
