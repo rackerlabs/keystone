@@ -16,6 +16,24 @@
       "revId": "316eca1ffee80784e7430cb9d2d3da0a65746e73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_0abc406b",
+        "filename": "doc/source/devref/api_change_tutorial.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-22T14:59:30Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "7a77a97e_34a7b350",
+      "revId": "316eca1ffee80784e7430cb9d2d3da0a65746e73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
