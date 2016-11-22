@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_c5a5c804",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-22T20:59:27Z",
+      "side": 1,
+      "message": "This can be placed in devstack/settings [1]\n\n1. http://docs.openstack.org/developer/devstack/plugins.html",
+      "revId": "89627986cfea9840f97f175779368a4353e48524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
