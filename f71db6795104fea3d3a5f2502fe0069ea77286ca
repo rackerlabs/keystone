@@ -96,6 +96,30 @@
       "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_328972cb",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-11-22T15:54:44Z",
+      "side": 1,
+      "message": "Hi Colleen,\nAs you correctly surmised, the default Keystone behavior is to NOT attempt a bind on connect() if no username/password has been provided. It simply returns the connection uri without attempting an actual connection, therefore there is no way to validate the url, i.e. determine SERVER DOWN.\n\nYour suggestion is to attempt an anonymous bind on connect() if username/password is NOT set however that is a change in behavior to the Keystone LDAP driver, which is beyond the scope of this bug. I will defer this to Steve Martinelli. If the Keystone cores feel that this should be rolled in via this bug then I will make the change.\n\nThanks,\nKam",
+      "parentUuid": "9a629dbe_13f2c46f",
+      "range": {
+        "startLine": 1296,
+        "startChar": 12,
+        "endLine": 1303,
+        "endChar": 34
+      },
+      "revId": "f71db6795104fea3d3a5f2502fe0069ea77286ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
