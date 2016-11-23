@@ -22,6 +22,24 @@
       "revId": "77ba845e7a8b183ed177c4a76a4226c9fa70de6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_d11dc310",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T18:05:59Z",
+      "side": 1,
+      "message": "I tried doing that but I ended up getting the following issues: \n\nhttp://cdn.pasteraw.com/sgub1owivwivycdbvu4925d6qwkzbr9\n\nInstead, I updated it to follow the API docs from passlib - http://pythonhosted.org/passlib/lib/passlib.hash.sha256_crypt.html",
+      "parentUuid": "5a74a57a_fbaa9e6f",
+      "revId": "77ba845e7a8b183ed177c4a76a4226c9fa70de6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
