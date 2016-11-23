@@ -72,3 +72,40 @@ function uninstall_federation {
         echo "Skipping uninstallation of shibboleth for non ubuntu host"
     fi
 }
+
+function install_shibboleth_idp {
+    if is_ubuntu; then
+        install_package opendjk-8-jdk jetty9
+        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+        # Download and extract Shibboleth
+        wget http://shibboleth.net/downloads/identity-provider/3.3.0/shibboleth-identity-provider-3.3.0.tar.gz \
+            -O /tmp/shibboleth.tar.gz
+        tar -xvf /tmp/shibboleth.tar.gz -C /tmp/
+
+        # Install Shibboleth
+        cd shibboleth-identity-provider-3.3.0/bin
+        # NOTE(knikolla): For whatever reason, entityID must be loaded from a
+        # properties file, while everything else can be loaded from arguments.
+        echo "idp.entityID=https://$HOST_IP" > /tmp/install.properties
+        ./bin/install.sh \
+            -Didp.src.dir="/tmp/shibboleth-identity-provider-3.3.0" \
+            -Didp.target.dir="/opt/stack/shibboleth-idp" \
+            -Didp.host.name="$HOST_IP" \
+            -Didp.scope="localdomain" \
+            -Didp.keystore.password="$ADMIN_PASSWORD" \
+            -Didp.sealer.password="$ADMIN_PASSWORD" \
+            -Didp.merge.properties="/tmp/install.properties"
+    else
+        echo "Skipping installation of shibboleth for non ubuntu host"
+    fi
+}
+
+function configure_shibboleth_idp {
+    # TODO - Configure Jetty
+
+    # TODO - Configure Apache2
+
+    # TODO - Configure Shibboleth
+    :
+}
