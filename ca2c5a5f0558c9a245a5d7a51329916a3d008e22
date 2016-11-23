@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_b6fe7469",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T22:24:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_6670ec72",
+      "revId": "ca2c5a5f0558c9a245a5d7a51329916a3d008e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_c62e2042",
         "filename": "keystone/auth/plugins/base.py",
         "patchSetId": 2

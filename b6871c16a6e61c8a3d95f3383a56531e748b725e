@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_b6359447",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T22:24:28Z",
+      "side": 0,
+      "message": "Does anyone know what we mean by in-out here?",
+      "revId": "b6871c16a6e61c8a3d95f3383a56531e748b725e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
