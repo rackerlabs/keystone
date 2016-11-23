@@ -132,8 +132,8 @@ def hash_user_password(user):
 def hash_password(password):
     """Hash a password. Hard."""
     password_utf8 = verify_length_and_trunc_password(password).encode('utf-8')
-    return passlib.hash.sha512_crypt.encrypt(
-        password_utf8, rounds=CONF.crypt_strength)
+    return passlib.hash.sha512_crypt.hash(password_utf8,
+                                          rounds=CONF.crypt_strength)
 
 
 def check_password(password, hashed):
