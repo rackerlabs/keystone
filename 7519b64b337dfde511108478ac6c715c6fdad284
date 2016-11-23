@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_d1cea359",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-11-23T18:12:42Z",
+      "side": 1,
+      "message": "there should be a test to make sure it is getting the same result. otherwise existing encrypted passwords could never been validated again",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 25
+      },
+      "revId": "7519b64b337dfde511108478ac6c715c6fdad284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
