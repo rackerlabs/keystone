@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_cda51f05",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T20:26:15Z",
+      "side": 1,
+      "message": "nit: when a user authenticates but their password has expired and needs to be reset.\n\nOnly suggesting this so that we clarify *when* the notification is sent (when the user authenticates and not the moment the password expires).",
+      "revId": "766478139389ee5a122be322fe4e15add8972a5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
