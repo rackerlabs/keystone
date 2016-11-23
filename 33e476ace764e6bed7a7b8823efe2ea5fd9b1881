@@ -97,6 +97,23 @@
       "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_70d94421",
+        "filename": "releasenotes/notes/fetch-expired-token-f5d845b9601bc1ef.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T21:11:07Z",
+      "side": 1,
+      "message": "This should also amend the upgrades section since it is going to affect how operator rotate their fernet key repositories.",
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
