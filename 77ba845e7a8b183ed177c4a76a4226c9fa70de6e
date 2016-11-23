@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_fbaa9e6f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 16687
+      },
+      "writtenOn": "2016-11-23T17:25:28Z",
+      "side": 1,
+      "message": "Simply replacing encrypt() with hash() should do the trick:\n\n    return passlib.hash.sha512_crypt.hash(\n        password_utf8, rounds\u003dCONF.crypt_strength)",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 25
+      },
+      "revId": "77ba845e7a8b183ed177c4a76a4226c9fa70de6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
