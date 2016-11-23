@@ -22,6 +22,30 @@
       "revId": "7519b64b337dfde511108478ac6c715c6fdad284",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ac02aa3c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 16687
+      },
+      "writtenOn": "2016-11-23T18:48:32Z",
+      "side": 1,
+      "message": "Presumably passlib shall be doing its job to ensure there is no regression to this regard, which would apply to each and every release of passlib and not only when there is an API deprecation.\n\nBut I guess it does no harm for keystone to carry out independent checks of its own.",
+      "parentUuid": "5a74a57a_d1cea359",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 25
+      },
+      "revId": "7519b64b337dfde511108478ac6c715c6fdad284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
