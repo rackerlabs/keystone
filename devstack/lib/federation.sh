@@ -125,3 +125,48 @@ function uninstall_federation {
         echo "Skipping uninstallation of shibboleth for non ubuntu host"
     fi
 }
+
+function install_shibboleth_idp {
+    if is_ubuntu; then
+        install_package openjdk-8-jdk docker.io
+        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+        mkdir /opt/stack/shibboleth-idp
+
+        # Download and extract Shibboleth
+        wget http://shibboleth.net/downloads/identity-provider/3.3.0/shibboleth-identity-provider-3.3.0.tar.gz \
+            -O /tmp/shibboleth.tar.gz
+        mkdir /opt/stack/shibboleth-idp/source
+        tar -xvf /tmp/shibboleth.tar.gz -C /opt/stack/shibboleth-idp/source
+
+        # Install Shibboleth
+        mkdir /opt/stack/shibboleth-idp/config
+        # NOTE(knikolla): For whatever reason, entityID must be loaded from a
+        # properties file, while everything else can be loaded from arguments.
+        echo "idp.entityID=https://$HOST_IP" > /tmp/install.properties
+        sh /tmp/shibboleth-identity-provider-3.3.0/bin/install.sh \
+            -Didp.src.dir="/tmp/shibboleth-identity-provider-3.3.0" \
+            -Didp.target.dir="/opt/stack/shibboleth-idp/config" \
+            -Didp.host.name="$HOST_IP" \
+            -Didp.scope="localdomain" \
+            -Didp.keystore.password="$ADMIN_PASSWORD" \
+            -Didp.sealer.password="$ADMIN_PASSWORD" \
+            -Didp.merge.properties="/tmp/install.properties"
+
+        # Create the Docker image with above generated configuration
+        cp $KEYSTONE_PLUGIN/files/federation/Dockerfile \
+            /opt/stack/shibboleth-idp/Dockerfile
+        cd /opt/stack/shibboleth-idp
+        sudo docker build . -t openstack/shibboleth-idp
+
+    else
+        echo "Skipping installation of shibboleth for non ubuntu host"
+    fi
+}
+
+function run_shibboleth_id {
+    sudo docker run -d -p 443:4443 \
+        -e JETTY_BROWSER_SSL_KEYSTORE_PASSWORD="$ADMIN_PASSWORD" \
+        -e JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD="$ADMIN_PASSWORD" \
+        --name="shib" openstack/shibboleth-idp
+}
