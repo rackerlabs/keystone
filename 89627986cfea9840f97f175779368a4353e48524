@@ -16,6 +16,24 @@
       "revId": "89627986cfea9840f97f175779368a4353e48524",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_76c77c12",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T22:27:08Z",
+      "side": 1,
+      "message": "This would need a patch to devstack, right?",
+      "parentUuid": "7a77a97e_c5a5c804",
+      "revId": "89627986cfea9840f97f175779368a4353e48524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
