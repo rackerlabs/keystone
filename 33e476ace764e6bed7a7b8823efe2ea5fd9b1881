@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a74a57a_cdab5f88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T20:42:35Z",
+      "side": 1,
+      "message": "Do we restrict this to only being called by the service user?",
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_edb57bcd",
+        "filename": "keystone/conf/token.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T20:42:35Z",
+      "side": 1,
+      "message": "We need to add some documentation around this and the rotation of fernet keys. Regardless of what this value is, if a fernet key is removed based on `[token] expiration` time, then keystone will not be able to validate it.\n\nWe\u0027ve always suggested that operators take into consideration their `[token] expiration` time when doing rotation to avoid returning an Unauthorized exception even though the token is still valid. We\u0027re going to need to amend those statements with this configuration option instead for the same reasons.",
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_eb02e00a",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 12
@@ -42,6 +76,24 @@
         "endLine": 2282,
         "endChar": 55
       },
+      "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_cddd1f44",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-23T20:42:35Z",
+      "side": 1,
+      "message": "The probably make a good sql specific test since this is going to be tested against fernet, which won\u0027t have any affect on token flush.",
+      "parentUuid": "7a77a97e_5971f176",
       "revId": "33e476ace764e6bed7a7b8823efe2ea5fd9b1881",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
