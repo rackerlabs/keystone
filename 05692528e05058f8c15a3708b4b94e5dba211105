@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_68221003",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-24T15:18:24Z",
+      "side": 1,
+      "message": "although everything in this file is used for rolling_upgrades, I\u0027d rename it to \"haproxy.sh\".",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
