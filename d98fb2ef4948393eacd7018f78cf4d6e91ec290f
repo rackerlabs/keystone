@@ -1,0 +1,464 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_acdc5313",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "on the",
+      "range": {
+        "startLine": 225,
+        "startChar": 46,
+        "endLine": 225,
+        "endChar": 48
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6cd23b02",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "For",
+      "range": {
+        "startLine": 225,
+        "startChar": 14,
+        "endLine": 225,
+        "endChar": 17
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_2cff6368",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "remove these words",
+      "range": {
+        "startLine": 227,
+        "startChar": 59,
+        "endLine": 227,
+        "endChar": 66
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ec048b7f",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "updating",
+      "range": {
+        "startLine": 227,
+        "startChar": 30,
+        "endLine": 227,
+        "endChar": 36
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6cf95b80",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": ". This",
+      "range": {
+        "startLine": 228,
+        "startChar": 20,
+        "endLine": 228,
+        "endChar": 26
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_cceeefb3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "the LDAP",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 21
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6c407ba6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "an LDAP",
+      "range": {
+        "startLine": 247,
+        "startChar": 63,
+        "endLine": 247,
+        "endChar": 67
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ac4a93c3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": ". The",
+      "range": {
+        "startLine": 248,
+        "startChar": 37,
+        "endLine": 248,
+        "endChar": 42
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ec12cbb3",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": ". Please",
+      "range": {
+        "startLine": 248,
+        "startChar": 67,
+        "endLine": 248,
+        "endChar": 75
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0ce1c7d0",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "on the",
+      "range": {
+        "startLine": 249,
+        "startChar": 65,
+        "endLine": 249,
+        "endChar": 67
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6c279b12",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "an",
+      "range": {
+        "startLine": 263,
+        "startChar": 61,
+        "endLine": 263,
+        "endChar": 62
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_8c223700",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 263,
+        "startChar": 72,
+        "endLine": 263,
+        "endChar": 73
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ac21b3fd",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "Please",
+      "range": {
+        "startLine": 264,
+        "startChar": 27,
+        "endLine": 264,
+        "endChar": 28
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_cc1c2fc4",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "already exists.",
+      "range": {
+        "startLine": 264,
+        "startChar": 53,
+        "endLine": 264,
+        "endChar": 59
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6c6ebb30",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "Huge run-on sentence. Please break up into multiple sentences.",
+      "range": {
+        "startLine": 230,
+        "startChar": 6,
+        "endLine": 233,
+        "endChar": 33
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_2c5be388",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "Remove \"and\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 69,
+        "endLine": 5,
+        "endChar": 72
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0c646747",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 5,
+        "startChar": 67,
+        "endLine": 5,
+        "endChar": 68
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4c5e5f77",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 7
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_8c507760",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "is set to",
+      "range": {
+        "startLine": 6,
+        "startChar": 68,
+        "endLine": 6,
+        "endChar": 70
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ac4ff3bb",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-11-24T06:31:29Z",
+      "side": 1,
+      "message": "``ldap``",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
