@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_262f7ff7",
+        "filename": "api-ref/source/v2-admin/admin-tokens.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T08:35:06Z",
+      "side": 1,
+      "message": "pls remove the trailing space.",
+      "revId": "2bb0eacbd85ed5654decbbb9eb91aad572a09f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_69a948df",
+        "filename": "api-ref/source/v2-admin/admin-users.inc",
+        "patchSetId": 8
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T08:35:06Z",
+      "side": 1,
+      "message": "where is username? this should be included here to consistent with the example from the file listed below.\n- \"samples/admin/user-show-response.json\"",
+      "revId": "2bb0eacbd85ed5654decbbb9eb91aad572a09f49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
