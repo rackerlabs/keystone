@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_d14a0cac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "I assume this comment is for the releasenote instead. Done.",
+      "parentUuid": "7a77a97e_0d62d7ad",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_ed803b4c",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 6
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "What this means is that once we remove the admin token we are effectively removing bootstrap support for any identity backend that isn\u0027t sql or ldap. If as a group we decide that\u0027s fine, then that should be documented.",
       "parentUuid": "7a77a97e_3ecedbb4",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_71977890",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "Good idea, let\u0027s document this for other customized driver after the removal of admin token, and I think the code could be updated to make it more flexible.",
+      "parentUuid": "7a77a97e_219f97b5",
       "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -125,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_51a99cde",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_6a017139",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_8a508d60",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
@@ -136,6 +190,24 @@
       "writtenOn": "2016-11-21T14:05:22Z",
       "side": 1,
       "message": "Does this need to be done again? It\u0027s already being done in the parent class.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_43bab26f",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "Good catch, done!",
+      "parentUuid": "7a77a97e_8a508d60",
       "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -159,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_913b3438",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_8d0fc72d",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_6dc34b8b",
         "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
         "patchSetId": 6
@@ -170,6 +260,24 @@
       "writtenOn": "2016-11-21T14:05:22Z",
       "side": 1,
       "message": "I wouldn\u0027t talk about role assignment at all here.",
+      "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_91225400",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T05:44:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_6dc34b8b",
       "revId": "f52655b5d205c5948f4ff570cc4083de37ef5acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
