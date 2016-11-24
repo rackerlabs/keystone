@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_003510f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 12898
+      },
+      "writtenOn": "2016-11-24T03:17:47Z",
+      "side": 1,
+      "message": "pico-nit: You didn\u0027t use cherry-pick -x or if you did it\u0027s from a strange git ;P",
+      "revId": "08ff2a4dba06d2e53b67282a228eec390af16811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
