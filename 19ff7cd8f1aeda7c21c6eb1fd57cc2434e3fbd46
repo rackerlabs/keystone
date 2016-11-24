@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_1fd48645",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T09:32:12Z",
+      "side": 1,
+      "message": "How about the user[\u0027enabled\u0027] is defined as the value other that \"True\", \u00272\u0027 for example? I will check if there is convertion between int and bool before I giving any score on this change.",
+      "range": {
+        "startLine": 201,
+        "startChar": 24,
+        "endLine": 201,
+        "endChar": 39
+      },
+      "revId": "19ff7cd8f1aeda7c21c6eb1fd57cc2434e3fbd46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

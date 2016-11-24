@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_dfb5ae31",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T09:32:12Z",
+      "side": 0,
+      "message": "I think it\u0027s better to explicitly assert the value is \"True\".",
+      "range": {
+        "startLine": 201,
+        "startChar": 31,
+        "endLine": 201,
+        "endChar": 45
+      },
+      "revId": "54d683889401571aab0e116cec61ce693f81dcae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
