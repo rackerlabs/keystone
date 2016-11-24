@@ -116,10 +116,6 @@ class Trust(base.TrustDriverBase):
                         break
                 else:
                     raise exception.TrustUseLimitReached(trust_id=trust_id)
-            # NOTE(morganfainberg): Ensure we have a yield point for eventlet
-            # here. This should cost us nothing otherwise. This can be removed
-            # if/when oslo_db cleanly handles yields on db calls.
-            time.sleep(0)
         else:
             # NOTE(morganfainberg): In the case the for loop is not prematurely
             # broken out of, this else block is executed. This means the trust
