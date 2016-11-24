@@ -94,6 +94,54 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_375b3089",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_2cff6368",
+      "range": {
+        "startLine": 227,
+        "startChar": 59,
+        "endLine": 227,
+        "endChar": 66
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_575eec76",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_ec048b7f",
+      "range": {
+        "startLine": 227,
+        "startChar": 30,
+        "endLine": 227,
+        "endChar": 36
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_6cf95b80",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -105,6 +153,30 @@
       "writtenOn": "2016-11-24T06:31:29Z",
       "side": 1,
       "message": ". This",
+      "range": {
+        "startLine": 228,
+        "startChar": 20,
+        "endLine": 228,
+        "endChar": 26
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_97508460",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_6cf95b80",
       "range": {
         "startLine": 228,
         "startChar": 20,
@@ -140,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_b74f40bc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_cceeefb3",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 21
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_6c407ba6",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -151,6 +247,30 @@
       "writtenOn": "2016-11-24T06:31:29Z",
       "side": 1,
       "message": "an LDAP",
+      "range": {
+        "startLine": 247,
+        "startChar": 63,
+        "endLine": 247,
+        "endChar": 67
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_57d50cb7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_6c407ba6",
       "range": {
         "startLine": 247,
         "startChar": 63,
@@ -209,6 +329,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_d7f83c4c",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "I think it\u0027s okay to use lower case that is not a leading word of sentence.",
+      "parentUuid": "5a74a57a_ec12cbb3",
+      "range": {
+        "startLine": 248,
+        "startChar": 67,
+        "endLine": 248,
+        "endChar": 75
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_0ce1c7d0",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -220,6 +364,30 @@
       "writtenOn": "2016-11-24T06:31:29Z",
       "side": 1,
       "message": "on the",
+      "range": {
+        "startLine": 249,
+        "startChar": 65,
+        "endLine": 249,
+        "endChar": 67
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_37b7b087",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_0ce1c7d0",
       "range": {
         "startLine": 249,
         "startChar": 65,
@@ -278,6 +446,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_d7a67c52",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "I think a user is okay.",
+      "parentUuid": "5a74a57a_6c279b12",
+      "range": {
+        "startLine": 263,
+        "startChar": 61,
+        "endLine": 263,
+        "endChar": 62
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_ac21b3fd",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 7
@@ -324,6 +516,53 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_977324e7",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_cc1c2fc4",
+      "range": {
+        "startLine": 264,
+        "startChar": 53,
+        "endLine": 264,
+        "endChar": 59
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_b71bc01a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "remove \"name\"",
+      "range": {
+        "startLine": 214,
+        "startChar": 61,
+        "endLine": 214,
+        "endChar": 65
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_6c6ebb30",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 7
@@ -335,6 +574,30 @@
       "writtenOn": "2016-11-24T06:31:29Z",
       "side": 1,
       "message": "Huge run-on sentence. Please break up into multiple sentences.",
+      "range": {
+        "startLine": 230,
+        "startChar": 6,
+        "endLine": 233,
+        "endChar": 33
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_9708842f",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_6c6ebb30",
       "range": {
         "startLine": 230,
         "startChar": 6,
@@ -393,6 +656,54 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_f2ff06ff",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_0c646747",
+      "range": {
+        "startLine": 5,
+        "startChar": 67,
+        "endLine": 5,
+        "endChar": 68
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_1203a20e",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_2c5be388",
+      "range": {
+        "startLine": 5,
+        "startChar": 69,
+        "endLine": 5,
+        "endChar": 72
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_4c5e5f77",
         "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
         "patchSetId": 7
@@ -439,6 +750,54 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_d2192a7b",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_4c5e5f77",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 7
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_920fb22d",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_8c507760",
+      "range": {
+        "startLine": 6,
+        "startChar": 68,
+        "endLine": 6,
+        "endChar": 70
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_ac4ff3bb",
         "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
         "patchSetId": 7
@@ -450,6 +809,30 @@
       "writtenOn": "2016-11-24T06:31:29Z",
       "side": 1,
       "message": "``ldap``",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "d98fb2ef4948393eacd7018f78cf4d6e91ec290f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_f22626b9",
+        "filename": "releasenotes/notes/bug-1643301-2e74e1d676eebb83.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-11-24T07:25:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_ac4ff3bb",
       "range": {
         "startLine": 7,
         "startChar": 6,
