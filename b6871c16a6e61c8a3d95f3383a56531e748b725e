@@ -16,6 +16,24 @@
       "revId": "b6871c16a6e61c8a3d95f3383a56531e748b725e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_107c271e",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-27T03:50:37Z",
+      "side": 0,
+      "message": "you\u0027ll have to ask ayoung: https://github.com/openstack/keystone/commit/88c319e6bce98082f9a90b8b27726793d5366326\n\nbut i assume it\u0027s because the variable is updated in place (and re-used from where it came in from)",
+      "parentUuid": "5a74a57a_b6359447",
+      "revId": "b6871c16a6e61c8a3d95f3383a56531e748b725e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
