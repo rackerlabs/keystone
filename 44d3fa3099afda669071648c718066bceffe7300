@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_9096773d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-27T03:57:30Z",
+      "side": 1,
+      "message": "does hash() work the same as encrypt() as of 1.6.5?\n\notherwise, we could detect the version used and use one or the other",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 136,
+        "endChar": 69
+      },
+      "revId": "44d3fa3099afda669071648c718066bceffe7300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
