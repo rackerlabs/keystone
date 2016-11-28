@@ -22,6 +22,30 @@
       "revId": "54d683889401571aab0e116cec61ce693f81dcae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_9c08292a",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-28T15:34:23Z",
+      "side": 0,
+      "message": "I\u0027m okay with this as it\u0027s testing the group assignment.",
+      "parentUuid": "5a74a57a_758b7f68",
+      "range": {
+        "startLine": 1137,
+        "startChar": 35,
+        "endLine": 1137,
+        "endChar": 53
+      },
+      "revId": "54d683889401571aab0e116cec61ce693f81dcae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
