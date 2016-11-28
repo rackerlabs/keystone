@@ -1816,6 +1816,30 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             'revocation_event',
             'ix_revocation_event_audit_id_issued_before'))
 
+    def test_migration_011_add_password_last_auth_at(self):
+        table_name = 'local_user'
+        self.expand(10)
+        self.migrate(10)
+        self.contract(10)
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'domain_id',
+                                 'name',
+                                 'failed_auth_count',
+                                 'failed_auth_at'])
+        self.expand(11)
+        self.migrate(11)
+        self.contract(11)
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'domain_id',
+                                 'name',
+                                 'failed_auth_count',
+                                 'failed_auth_at',
+                                 'last_auth_at'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
