@@ -16,6 +16,40 @@
       "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_247c4eeb",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-28T20:51:56Z",
+      "side": 1,
+      "message": "please use ``start_service haproxy``",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_44314a59",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-11-28T20:51:56Z",
+      "side": 1,
+      "message": "please use ``install_package \u003cpackage_name\u003e``",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
