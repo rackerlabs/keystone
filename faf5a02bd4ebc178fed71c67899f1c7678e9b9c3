@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_aa490533",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "We should add this to the method documentation strings",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_aa702573",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_aac82556",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "We typically don\u0027t import functions for the sake of namespacing the module. To maintain consistency, we could leave this as:\n\n  import freezegun\n\nand reference each utilities within freezegun from that namespace:\n\n  with freezegun.freeze_time(...)...",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4a0b117d",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "nit: password_creation_time",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_eaebfdd9",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "Interesting - I\u0027ve never used freezegun this way. I\u0027ve always used it within it\u0027s context manager and incremented the clock manually using `tick` [0].\n\nAre there specific advantages to doing it this way? After reading the docs it doesn\u0027t look like `start` actually advances the clock, is just \"starts\" the time specified at `freeze_time`, right? \n\nThis might be a heavy handed test - but we could add the context manager here and start the clock when the password is still valid, authenticate, and assert a notification wasn\u0027t sent. Then we could advance the clock until the password has expired and then assert a notification was sent for the related PCI-DSS reason.\n\n[0] https://github.com/spulec/freezegun#manual-ticks",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0a667929",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "This reason looks the same as the other test. I would expect it to give me a message about my account being locked.",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ca80018e",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0a4d9999",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_55081628",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T21:40:34Z",
+      "side": 1,
+      "message": "I think we have some documentation about what the reason looks like in a previous patch, but would we be able to link to it here?\n\nIf I were a deployer who was interested in these types of notifications, I\u0027d want to find some more documentation on how to consume them.",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
