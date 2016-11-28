@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a74a57a_c20e388b",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-28T16:20:20Z",
+      "side": 1,
+      "message": "These variables only appear to be used in the CADFNotificationsForPCIDSSEvents setup(). Why not set the config values directly?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 41
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_d2ad4985",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 17
@@ -82,6 +105,30 @@
       "writtenOn": "2016-11-28T05:53:26Z",
       "side": 1,
       "message": "nit: i\u0027d prefer a uuid hex be used, or something like \u0027foo\u0027 or \u0027bar\u0027",
+      "range": {
+        "startLine": 730,
+        "startChar": 42,
+        "endLine": 730,
+        "endChar": 46
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_a2c93cae",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-11-28T16:20:20Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a74a57a_32a2fd99",
       "range": {
         "startLine": 730,
         "startChar": 42,
