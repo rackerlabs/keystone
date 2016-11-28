@@ -226,6 +226,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
                                  order_by='Password.created_at')
     failed_auth_count = sql.Column(sql.Integer, nullable=True)
     failed_auth_at = sql.Column(sql.DateTime, nullable=True)
+    last_auth_at = sql.Column(sql.DateTime, nullable=True)
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 

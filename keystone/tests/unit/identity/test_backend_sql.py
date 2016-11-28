@@ -630,3 +630,63 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
             for password_ref in user_ref.local_user.passwords:
                 password_ref.created_at = password_create_at - slightly_less
             latest_password.created_at = password_create_at
+
+
+class ChangePasswordRequiredAfterResetTests(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(ChangePasswordRequiredAfterResetTests, self).setUp()
+        self.initial_password = uuid.uuid4().hex
+        self.user_dict = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': self.initial_password
+        }
+        self.user = self.identity_api.create_user(self.user_dict)
+        self.config_fixture.config(
+            group='security_compliance',
+            change_password_required_after_reset=True)
+
+    def assertPasswordExpiresAfterFirstAuth(self, user_id, password):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+        self.assertRaises(exception.PasswordExpired,
+                          self.identity_api.authenticate,
+                          self.make_request(),
+                          user_id=user_id,
+                          password=password)
+
+    def assertPasswordDoesNotExpiresAfterFirstAuth(self, user_id, password):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+
+    def test_user_required_to_change_password_after_create(self):
+        self.assertPasswordExpiresAfterFirstAuth(self.user['id'],
+                                                 self.initial_password)
+
+    def test_user_required_to_change_password_after_admin_reset(self):
+        new_password = uuid.uuid4().hex
+        self.user['password'] = new_password
+        self.identity_api.update_user(self.user['id'], self.user)
+        self.assertPasswordExpiresAfterFirstAuth(self.user['id'], new_password)
+
+    def test_user_not_required_to_change_password_when_feature_disabled(self):
+        self.config_fixture.config(
+            group='security_compliance',
+            change_password_required_after_reset=False)
+        self.assertPasswordDoesNotExpiresAfterFirstAuth(self.user['id'],
+                                                        self.initial_password)
+
+    def test_user_not_required_to_change_password_after_self_service(self):
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          self.user['id'],
+                                          self.initial_password,
+                                          new_password)
+        self.assertPasswordDoesNotExpiresAfterFirstAuth(self.user['id'],
+                                                        new_password)
