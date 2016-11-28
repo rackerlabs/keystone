@@ -528,6 +528,12 @@ class V3TokenDataHelper(object):
                 user_id, project_id)
             token_data['catalog'] = service_catalog
 
+    def _populate_limits(self, token_data, user_id,
+                         domain_id, project_id, trust):
+        token_data['limits'] = {"region_id": "RegionOne", "service": "nova",
+                                "resource": "instances", "limit": 10}
+
+
     def _populate_service_providers(self, token_data):
         if 'service_providers' in token_data:
             return
@@ -558,8 +564,9 @@ class V3TokenDataHelper(object):
 
     def get_token_data(self, user_id, method_names, domain_id=None,
                        project_id=None, expires=None, trust=None, token=None,
-                       include_catalog=True, bind=None, access_token=None,
-                       issued_at=None, audit_info=None):
+                       include_catalog=True, include_limits=True,
+                       bind=None, access_token=None, issued_at=None,
+                       audit_info=None):
         token_data = {'methods': method_names}
 
         # We've probably already written these to the token
@@ -582,6 +589,9 @@ class V3TokenDataHelper(object):
         if include_catalog:
             self._populate_service_catalog(token_data, user_id, domain_id,
                                            project_id, trust)
+        if include_limits:
+            self._populate_limits(token_data, user_id, domain_id,
+                                  project_id, trust)
         self._populate_service_providers(token_data)
         self._populate_token_dates(token_data, expires=expires,
                                    issued_at=issued_at)
@@ -618,7 +628,7 @@ class BaseProvider(base.Provider):
 
     def issue_token(self, user_id, method_names, expires_at=None,
                     project_id=None, domain_id=None, auth_context=None,
-                    trust=None, include_catalog=True,
+                    trust=None, include_catalog=True, include_limits=True,
                     parent_audit_id=None):
         if auth_context and auth_context.get('bind'):
             # NOTE(lbragstad): Check if the token provider being used actually
@@ -652,6 +662,7 @@ class BaseProvider(base.Provider):
             bind=auth_context.get('bind') if auth_context else None,
             token=token_ref,
             include_catalog=include_catalog,
+            include_limits=include_limits,
             access_token=access_token,
             audit_info=parent_audit_id)
 

@@ -51,7 +51,8 @@ class Provider(object):
     @abc.abstractmethod
     def issue_token(self, user_id, method_names, expires_at=None,
                     project_id=None, domain_id=None, auth_context=None,
-                    trust=None, include_catalog=True, parent_audit_id=None):
+                    trust=None, include_catalog=True,
+                    include_limits=True, parent_audit_id=None):
         """Issue a V3 Token.
 
         :param user_id: identity of the user
@@ -70,6 +71,8 @@ class Provider(object):
         :type trust: dict
         :param include_catalog: optional, include the catalog in token data
         :type include_catalog: boolean
+        :param include_limits: optional, include limits in token data
+        :type include_limits: boolean
         :param parent_audit_id: optional, the audit id of the parent token
         :type parent_audit_id: string
         :returns: (token_id, token_data)

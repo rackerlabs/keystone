@@ -393,6 +393,7 @@ class Auth(controller.V3Controller):
     def authenticate_for_token(self, request, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in request.params
+        include_limits = 'nolimits' not in request.params
 
         try:
             auth_info = AuthInfo.create(auth=auth)
@@ -416,7 +417,7 @@ class Auth(controller.V3Controller):
             (token_id, token_data) = self.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
                 is_domain, domain_id, auth_context, trust, include_catalog,
-                parent_audit_id=token_audit_id)
+                include_limits, parent_audit_id=token_audit_id)
 
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
@@ -556,10 +557,15 @@ class Auth(controller.V3Controller):
     def validate_token(self, request):
         token_id = request.context_dict.get('subject_token_id')
         include_catalog = 'nocatalog' not in request.params
+        include_limits = 'nolimits' not in request.params
+
         token_data = self.token_provider_api.validate_token(
             token_id)
         if not include_catalog and 'catalog' in token_data['token']:
             del token_data['token']['catalog']
+        if not include_limits and 'limits' in token_data['token']:
+            del token_data['token']['limits']
+
         return render_token_data_response(token_id, token_data)
 
     @controller.protected()
