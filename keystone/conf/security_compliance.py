@@ -130,6 +130,18 @@ configuration variable will be returned to users to explain why their
 requested password was insufficient.
 """))
 
+change_password_required_after_reset = cfg.BoolOpt(
+    'change_password_required_after_reset',
+    default=False,
+    help=utils.fmt("""
+If a password was created via an administrative password reset, this feature
+will require users to change their password after the first use. Therefore,
+after the first use, the password created by the administrative password reset
+will become expired and no longer be valid for authentication. This feature is
+disabled by default. This feature depends on the `sql` backend for the
+`[identity] driver`.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -143,6 +155,7 @@ ALL_OPTS = [
     minimum_password_age,
     password_regex,
     password_regex_description,
+    change_password_required_after_reset
 ]
 
 
