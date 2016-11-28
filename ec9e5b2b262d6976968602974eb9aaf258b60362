@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_95065bcc",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T06:32:39Z",
+      "side": 0,
+      "message": "isn\u0027t this still needed?",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 71
+      },
+      "revId": "ec9e5b2b262d6976968602974eb9aaf258b60362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
