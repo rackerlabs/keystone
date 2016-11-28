@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_a4a13948",
+        "filename": "releasenotes/notes/cache_on_issue_default_on-8b39f3f73359c778.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-28T23:00:40Z",
+      "side": 1,
+      "message": "nittiest-of-nit-picks: this could be closed with a period for punctuation.\n\nWe could also elaborate on this for the upgrade scenario saying if caching is enabled, then the only side-effect should be improved performance.",
+      "revId": "7765130bd6d18480f1207dd853601bc4adc8a957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
