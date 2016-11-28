@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_b9089229",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-28T17:26:07Z",
+      "side": 0,
+      "message": "will do, I don\u0027t think I meant to delete it",
+      "parentUuid": "5a74a57a_52d93921",
+      "range": {
+        "startLine": 489,
+        "startChar": 16,
+        "endLine": 489,
+        "endChar": 70
+      },
+      "revId": "613c048b6f4bda91de1c0e9618abd0bda78ccc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_12d34105",
         "filename": "keystone/notifications.py",
         "patchSetId": 17
@@ -36,6 +60,30 @@
       "writtenOn": "2016-11-28T05:53:26Z",
       "side": 0,
       "message": "why change this?",
+      "range": {
+        "startLine": 685,
+        "startChar": 4,
+        "endLine": 685,
+        "endChar": 30
+      },
+      "revId": "613c048b6f4bda91de1c0e9618abd0bda78ccc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ccb2eae4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-28T17:26:07Z",
+      "side": 0,
+      "message": "I thought the `is not none` was redundant.",
+      "parentUuid": "5a74a57a_12d34105",
       "range": {
         "startLine": 685,
         "startChar": 4,
