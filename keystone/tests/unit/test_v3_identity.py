@@ -891,6 +891,59 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         self.assertNotIn(self.user_ref['password'], log_fix.output)
         self.assertNotIn(new_password, log_fix.output)
 
+    def test_change_password_required_after_first_use(self):
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            self.config_fixture.config(
+                group='security_compliance',
+                change_password_after_first_use=True)
+
+            # admin reset
+            reset_password = uuid.uuid4().hex
+            user_password = {'password': reset_password}
+            self.identity_api.update_user(self.user_ref['id'], user_password)
+
+            # wait one second to avoid race conditions with fernet and
+            # revocation events
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+
+            # authenticate with admin reset password
+            self.token = self.get_request_token(reset_password,
+                                                http_client.CREATED)
+
+            # authenticate again without self-service password change
+            self.get_request_token(reset_password,
+                                   expected_status=http_client.UNAUTHORIZED)
+
+    def test_change_password_allowed_after_first_use(self):
+        time = datetime.datetime.utcnow()
+        with freezegun.freeze_time(time) as frozen_datetime:
+            self.config_fixture.config(
+                group='security_compliance',
+                change_password_after_first_use=True)
+
+            # admin reset
+            reset_password = uuid.uuid4().hex
+            user_password = {'password': reset_password}
+            self.identity_api.update_user(self.user_ref['id'], user_password)
+
+            # wait one second to avoid race conditions with fernet
+            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
+
+            # authenticate with admin reset password
+            self.token = self.get_request_token(reset_password,
+                                                http_client.CREATED)
+
+            # self-service change password
+            new_password = uuid.uuid4().hex
+            self.change_password(password=new_password,
+                                 original_password=reset_password,
+                                 expected_status=http_client.NO_CONTENT)
+
+            # authenticate with the new password
+            self.token = self.get_request_token(new_password,
+                                                http_client.CREATED)
+
 
 class PasswordValidationTestCase(UserSelfServiceChangingPasswordsTestCase):
     """Test password validation."""
