@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_4ae6b1e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-28T21:59:10Z",
+      "side": 1,
+      "message": "Done. For now I just made this a related bug.",
+      "parentUuid": "7a77a97e_1d877410",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_b2bb42c3",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-01T15:10:25Z",
       "side": 1,
       "message": "nit: you are only using this once, so you don\u0027t need a global name",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6ae9adb6",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-28T21:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_b2bb42c3",
       "range": {
         "startLine": 17,
         "startChar": 0,
@@ -83,6 +131,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_aacf4554",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-28T21:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_83242360",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_4d6b2bb7",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
@@ -106,6 +172,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_2a0a558a",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-28T21:59:10Z",
+      "side": 1,
+      "message": "We could add one, but we currently don\u0027t have that. We could in theory break people....but it\u0027s probably very unlikely.",
+      "parentUuid": "ba0121b8_4d6b2bb7",
+      "range": {
+        "startLine": 26,
+        "startChar": 58,
+        "endLine": 26,
+        "endChar": 60
+      },
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a57f1b5_63f9e7c6",
         "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
         "patchSetId": 4
@@ -117,6 +207,24 @@
       "writtenOn": "2016-02-12T03:38:18Z",
       "side": 1,
       "message": "extras",
+      "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_6a00cd66",
+        "filename": "keystone/common/sql/migrate_repo/versions/088_move_redelegated_trust_id.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-28T21:59:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a57f1b5_63f9e7c6",
       "revId": "1de799720b7d04ce35366319a0a5fcc24167b585",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
