@@ -81,7 +81,8 @@ password_expires_ignore_user_ids = cfg.ListOpt(
     help=utils.fmt("""
 Comma separated list of user IDs to be ignored when checking if a password
 is expired. Passwords for users in this list will not expire. This feature
-will only be enabled if `[security_compliance] password_expires_days` is set.
+will only be enabled if `[security_compliance] password_expires_days` or
+`[security_compliance] change_password_after_first_use` is set.
 """))
 
 unique_last_password_count = cfg.IntOpt(
@@ -130,6 +131,17 @@ configuration variable will be returned to users to explain why their
 requested password was insufficient.
 """))
 
+change_password_after_first_use = cfg.BoolOpt(
+    'change_password_after_first_use',
+    default=False,
+    help=utils.fmt("""
+Enabling this option requires users to change their password upon first use.
+All users, unless specified in the
+`[security_compliance] password_expires_ignore_user_ids` option, will expire
+upon a successful authentication. This feature is disabled by default. This
+feature is only applicable with the `sql` backend for the `[identity] driver`.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -141,6 +153,7 @@ ALL_OPTS = [
     password_expires_ignore_user_ids,
     unique_last_password_count,
     minimum_password_age,
+    change_password_after_first_use,
     password_regex,
     password_regex_description,
 ]
