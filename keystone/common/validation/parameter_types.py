@@ -44,6 +44,14 @@ id_string = {
     'pattern': '^[a-zA-Z0-9-]+$'
 }
 
+uuid_string = {
+    'type': 'string',
+    'minLength': 1,
+    'maxLength': 64,
+    # TODO(lbragstad): Find a way to make this configurable such that the end
+    # user chooses how much control they want over id_strings with a regex
+    'pattern': '^[a-z0-9]+$'
+}
 mapping_id_string = {
     'type': 'string',
     'minLength': 1,

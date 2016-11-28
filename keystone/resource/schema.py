@@ -27,9 +27,9 @@ _project_properties = {
     'enabled': parameter_types.boolean,
     'is_domain': parameter_types.boolean,
     'parent_id': validation.nullable(parameter_types.id_string),
-    'name': _name_properties
+    'name': _name_properties,
+    'id': validation.nullable(parameter_types.uuid_string)
 }
-
 project_create = {
     'type': 'object',
     'properties': _project_properties,

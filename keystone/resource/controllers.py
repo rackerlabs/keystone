@@ -233,7 +233,11 @@ class ProjectV3(controller.V3Controller):
     @controller.protected()
     def create_project(self, request, project):
         validation.lazy_validate(schema.project_create, project)
-        ref = self._assign_unique_id(self._normalize_dict(project))
+
+        if project.get('id'):
+            ref = project
+        else:
+            ref = self._assign_unique_id(self._normalize_dict(project))
 
         if not ref.get('is_domain'):
             ref = self._normalize_domain_id(request, ref)
