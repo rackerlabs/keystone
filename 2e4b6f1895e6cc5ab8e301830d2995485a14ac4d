@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_d2ad4985",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "is this, and line 314 unrelated?",
+      "range": {
+        "startLine": 319,
+        "startChar": 8,
+        "endLine": 321,
+        "endChar": 56
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_92de710f",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "cool tests!",
+      "range": {
+        "startLine": 708,
+        "startChar": 6,
+        "endLine": 708,
+        "endChar": 38
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_d296293d",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "this is the default now :D",
+      "range": {
+        "startLine": 713,
+        "startChar": 8,
+        "endLine": 713,
+        "endChar": 47
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_32a2fd99",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "nit: i\u0027d prefer a uuid hex be used, or something like \u0027foo\u0027 or \u0027bar\u0027",
+      "range": {
+        "startLine": 730,
+        "startChar": 42,
+        "endLine": 730,
+        "endChar": 46
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_92891129",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "Remember that these notes are compiled with all others in the same release (http://docs.openstack.org/releasenotes/keystone/unreleased.html) so writing \"This\" in this context makes sense, it won\u0027t mean much when rendered with 10 others. Make the opening statement a  declarative one.\n\nFor example, a simple change:\n\nfeatures:\n  - \u003e\nCADF notifications now extend to PCI-DSS events. A ``reason`` object is added to the following authentication related notifications:\n    * Change user passwords/passphrases at least once every X days\n    * and so forth",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 8
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_327bdd29",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T05:53:26Z",
+      "side": 1,
+      "message": "you can list these out in bullets!",
+      "range": {
+        "startLine": 4,
+        "startChar": 50,
+        "endLine": 5,
+        "endChar": 53
+      },
+      "revId": "2e4b6f1895e6cc5ab8e301830d2995485a14ac4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
