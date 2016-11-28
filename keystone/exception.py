@@ -240,6 +240,12 @@ class PasswordExpired(Unauthorized):
                        "administrator for user: %(user_id)s")
 
 
+class ChangePasswordRequired(Unauthorized):
+    message_format = _("The password must be changed for user: %(user_id)s. "
+                       "Thus, the new_password attribute must be included in "
+                       "the request for password authentication.")
+
+
 class AuthPluginException(Unauthorized):
     message_format = _("Authentication plugin error.")
 
