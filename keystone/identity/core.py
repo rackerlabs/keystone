@@ -1284,8 +1284,13 @@ class Manager(manager.Manager):
     def change_password(self, request, user_id, original_password,
                         new_password):
 
-        # authenticate() will raise an AssertionError if authentication fails
-        self.authenticate(request, user_id, original_password)
+        # Authenticate() will raise an AssertionError if authentication fails.
+        # And we are only authenticating to validate the old password, so we
+        # can ignore if the password is expired for the next authentication.
+        try:
+            self.authenticate(request, user_id, original_password)
+        except exception.PasswordExpired:
+            pass
 
         validators.validate_password(new_password)
 

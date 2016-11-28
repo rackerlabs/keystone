@@ -67,9 +67,8 @@ class Identity(base.IdentityDriverBase):
             raise exception.UserDisabled(user_id=user_id)
         elif user_ref.password_is_expired:
             raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
-        if user_ref.local_user.failed_auth_count:
-            self._reset_failed_auth(user_id)
+        self._record_successful_auth(
+            user_id, user_ref.local_user.failed_auth_count)
         return base.filter_user(user_ref.to_dict())
 
     def _is_account_locked(self, user_id, user_ref):
@@ -113,6 +112,32 @@ class Identity(base.IdentityDriverBase):
             user_ref = session.query(model.User).get(user_id)
             user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_at = None
+
+    def _record_successful_auth(self, user_id, failed_auth_count):
+        # skip db write if security compliance features are not enabled
+        if not(CONF.security_compliance.change_password_required_after_reset or
+                failed_auth_count):
+            return
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            if failed_auth_count:
+                user_ref.local_user.failed_auth_count = 0
+                user_ref.local_user.failed_auth_at = None
+            if CONF.security_compliance.change_password_required_after_reset:
+                now = datetime.datetime.utcnow()
+                user_ref.local_user.last_auth_at = now
+                if self._change_password_required(user_ref):
+                    user_ref.password_ref.expires_at = now
+
+    def _change_password_required(self, user):
+        # return true if admin reset (not self-service) and past first-use
+        ignore_list = (
+            CONF.security_compliance.change_password_required_ignored_user_ids)
+        return ((user['id'] not in ignore_list) and
+                user.password_ref and
+                not user.password_ref.self_service and
+                user.local_user.last_auth_at and
+                user.local_user.last_auth_at > user.password_ref.created_at)
 
     # user crud
 
