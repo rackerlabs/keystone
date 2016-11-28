@@ -81,7 +81,8 @@ password_expires_ignore_user_ids = cfg.ListOpt(
     help=utils.fmt("""
 Comma separated list of user IDs to be ignored when checking if a password
 is expired. Passwords for users in this list will not expire. This feature
-will only be enabled if `[security_compliance] password_expires_days` is set.
+will only be enabled if `[security_compliance] password_expires_days` or
+`[security_compliance] change_password_after_first_use` is set.
 """))
 
 unique_last_password_count = cfg.IntOpt(
@@ -130,6 +131,23 @@ configuration variable will be returned to users to explain why their
 requested password was insufficient.
 """))
 
+change_password_after_first_use = cfg.BoolOpt(
+    'change_password_after_first_use',
+    default=False,
+    help=utils.fmt("""
+This feature would require users to change their password for first time use
+and upon an admnistrative password reset. Therefore, passwords for new and
+existing users that were not created via the change password API
+(self-service), will expire after the first authentication and no longer be
+valid. This feature is disabled by default. This feature depends on the `sql`
+backend for the `[identity] driver`. Note: prior to enabling this feature,
+service users should be added to the `password_expires_ignore_user_ids` list
+in order to disable this security requirement for service accounts. In addtion,
+enabling this feature should be carefully considered and planned for. Please
+review the following documentation before enabling this feature:
+http://docs.openstack.org/developer/keystone/security_compliance.html
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -143,6 +161,7 @@ ALL_OPTS = [
     minimum_password_age,
     password_regex,
     password_regex_description,
+    change_password_after_first_use
 ]
 
 

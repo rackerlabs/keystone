@@ -79,6 +79,55 @@ This above example means that users that have not authenticated (inactive) for
 the past 90 days will be automatically disabled. Users can be re-enabled by
 explicitly setting the enable user attribute via the API.
 
+Force users to immediately change their password upon first use
+---------------------------------------------------------------
+
+PCI-DSS 8.2.6 requires users to change their password for first time use and
+upon an administrative password reset. Within the identity `user API`_,
+``create user`` and ``update user`` are considered administrative password
+changes. Whereas, ``change password for user`` is a self-service password
+change. Once this feature is enabled, all users, new and existing, that have
+not performed a self-service password change for their current password, will
+be required to change their password at the next authentication (first use).
+After which, their password will become expired and invalid for authentication.
+
+.. NOTE::
+
+    It's critical to understand the consequences of this change and to plan
+    accordingly. Potentially, once this feature is enabled, all of your users
+    at once could be required to change their password. And if they fail to
+    change their password at the first authentication, their password will
+    become expired; thus, would require an administrator to reset their
+    password. Therefore, operators should plan and coordinate this change with
+    their stakeholders in order to minimize the impact.
+
+Prior to enabling this feature, you'll want to add any service users to the
+``password_expires_ignore_user_ids`` list, so that service accounts are not
+required to change their password and inadvertently become locked out.
+Likewise, you can add other users to this list in order to bypass this
+security requirement.
+
+.. code-block:: ini
+
+    [security_compliance]
+    password_expires_ignore_user_ids = 3a54353c9dcc44f690975ea768512f6a,ed84c3b95b814ff2827967e531f09247
+
+.. NOTE::
+
+    Failure to add service users to the ``password_expires_ignore_user_ids``
+    will result in your service account passwords becoming expired after the
+    first authentication.
+
+When ready, you can configure it so that users are forced to change their
+password upon first use by setting ``change_password_after_first_use``:
+
+.. code-block:: ini
+
+    [security_compliance]
+    change_password_after_first_use = True
+
+.. _`user API`: http://developer.openstack.org/api-ref/identity/v3/index.html
+
 Password Expiration
 -------------------
 
