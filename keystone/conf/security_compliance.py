@@ -130,6 +130,30 @@ configuration variable will be returned to users to explain why their
 requested password was insufficient.
 """))
 
+change_password_required_after_reset = cfg.BoolOpt(
+    'change_password_required_after_reset',
+    default=False,
+    help=utils.fmt("""
+This feature would require users to change their password for first time use
+and upon an admnistrative password reset. Therefore, passwords for new users,
+and reset passwords for existings users, will expire after the first use and no
+longer be valid for authentication. This feature is disabled by default. This
+feature depends on the `sql` backend for the `[identity] driver`. Note: this
+feature would require all existing users to meet the new standard. Therefore,
+enabling this feature should be carefully considered and planned.
+"""))
+
+change_password_required_ignored_user_ids = cfg.ListOpt(
+    'change_password_required_ignored_user_ids',
+    default=[],
+    help=utils.fmt("""
+Comma separated list of user IDs to be ignored when checking if a user should
+be required to change their password after an administrative password reset.
+Thus, users in this list will never be required to change their password due to
+a an administrative password reset. This feature will only be enabled if
+`[security_compliance] change_password_required_after_reset` is enabled.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -143,6 +167,8 @@ ALL_OPTS = [
     minimum_password_age,
     password_regex,
     password_regex_description,
+    change_password_required_after_reset,
+    change_password_required_ignored_user_ids
 ]
 
 
