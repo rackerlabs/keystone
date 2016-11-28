@@ -67,9 +67,10 @@ class Identity(base.IdentityDriverBase):
             raise exception.UserDisabled(user_id=user_id)
         elif user_ref.password_is_expired:
             raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
-        if user_ref.local_user.failed_auth_count:
-            self._reset_failed_auth(user_id)
+        # record successful auth if security compliance features are enabled
+        if (CONF.security_compliance.change_password_required_after_reset or
+                user_ref.local_user.failed_auth_count):
+            self._record_successful_auth(user_id)
         return base.filter_user(user_ref.to_dict())
 
     def _is_account_locked(self, user_id, user_ref):
@@ -113,6 +114,24 @@ class Identity(base.IdentityDriverBase):
             user_ref = session.query(model.User).get(user_id)
             user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_at = None
+
+    def _record_successful_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.local_user.failed_auth_count = 0
+            user_ref.local_user.failed_auth_at = None
+            user_ref.local_user.last_auth_at = datetime.datetime.utcnow()
+            if self._change_password_required(user_ref):
+                user_ref.password_ref.expires_at = datetime.datetime.utcnow()
+
+    def _change_password_required(self, user):
+        # return true if admin reset (not self-service) and past first-use
+        if (CONF.security_compliance.change_password_required_after_reset and
+                user.password_ref and not user.password_ref.self_service and
+                user.local_user.last_auth_at and
+                user.local_user.last_auth_at > user.password_ref.created_at):
+            return True
+        return False
 
     # user crud
 
