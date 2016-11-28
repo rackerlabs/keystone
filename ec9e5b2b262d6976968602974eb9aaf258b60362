@@ -46,6 +46,30 @@
       "revId": "ec9e5b2b262d6976968602974eb9aaf258b60362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_79c36889",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-28T13:13:20Z",
+      "side": 0,
+      "message": "it is? https://github.com/openstack/keystone/blob/master/keystone/conf/constants.py#L20 :)",
+      "parentUuid": "5a74a57a_23db7f50",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 71
+      },
+      "revId": "ec9e5b2b262d6976968602974eb9aaf258b60362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
