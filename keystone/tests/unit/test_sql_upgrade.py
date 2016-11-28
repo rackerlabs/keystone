@@ -1837,6 +1837,30 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.contract(11)
         self.assertTrue(self.does_unique_constraint_exist(table_name, column))
 
+    def test_migration_012_add_password_last_auth_at(self):
+        table_name = 'local_user'
+        self.expand(11)
+        self.migrate(11)
+        self.contract(11)
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'domain_id',
+                                 'name',
+                                 'failed_auth_count',
+                                 'failed_auth_at'])
+        self.expand(12)
+        self.migrate(12)
+        self.contract(12)
+        self.assertTableColumns(table_name,
+                                ['id',
+                                 'user_id',
+                                 'domain_id',
+                                 'name',
+                                 'failed_auth_count',
+                                 'failed_auth_at',
+                                 'last_auth_at'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
