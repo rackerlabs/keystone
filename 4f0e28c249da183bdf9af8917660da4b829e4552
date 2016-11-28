@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_914ae224",
+        "filename": "api-ref/source/v3-ext/federation/auth/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-28T12:06:07Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 5,
+        "startChar": 29,
+        "endLine": 5,
+        "endChar": 30
+      },
+      "revId": "4f0e28c249da183bdf9af8917660da4b829e4552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
