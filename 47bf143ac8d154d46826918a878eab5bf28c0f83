@@ -62,6 +62,24 @@
       "revId": "47bf143ac8d154d46826918a878eab5bf28c0f83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0a8da2d5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-11-28T18:00:09Z",
+      "side": 1,
+      "message": "For both uuid and fernet tokens, deleting a group, with no role assignment and users in the group, will result in a revocation entry of each user\u0027s user_id. This fix changes that for both token providers so that revocation entries aren\u0027t filled from deleting a group if the group was never given a role for anything.",
+      "parentUuid": "7a77a97e_a123dcbb",
+      "revId": "47bf143ac8d154d46826918a878eab5bf28c0f83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
