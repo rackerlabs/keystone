@@ -33,7 +33,8 @@ class Password(base.AuthMethodHandler):
             self.identity_api.authenticate(
                 request,
                 user_id=user_info.user_id,
-                password=user_info.password)
+                password=user_info.password,
+                new_password=user_info.get('new_password'))
         except AssertionError:
             # authentication failed because of invalid username or password
             msg = _('Invalid username or password')
