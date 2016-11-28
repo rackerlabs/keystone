@@ -67,9 +67,9 @@ class Identity(base.IdentityDriverBase):
             raise exception.UserDisabled(user_id=user_id)
         elif user_ref.password_is_expired:
             raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
-        if user_ref.local_user.failed_auth_count:
-            self._reset_failed_auth(user_id)
+        elif user_ref.change_password_required:
+            raise exception.ChangePasswordRequired(user_id=user_id)
+        self._record_successful_auth(user_id)
         return base.filter_user(user_ref.to_dict())
 
     def _is_account_locked(self, user_id, user_ref):
@@ -113,6 +113,13 @@ class Identity(base.IdentityDriverBase):
             user_ref = session.query(model.User).get(user_id)
             user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_at = None
+
+    def _record_successful_auth(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.local_user.failed_auth_count = 0
+            user_ref.local_user.failed_auth_at = None
+            user_ref.local_user.last_auth_at = datetime.datetime.utcnow()
 
     # user crud
 
