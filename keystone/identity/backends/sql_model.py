@@ -205,6 +205,7 @@ class User(sql.ModelBase, sql.DictBase):
         """
         new_dict = user_dict.copy()
         password_expires_at_key = 'password_expires_at'
+
         if password_expires_at_key in user_dict:
             del new_dict[password_expires_at_key]
         return super(User, cls).from_dict(new_dict)

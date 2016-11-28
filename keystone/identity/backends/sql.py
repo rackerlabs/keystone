@@ -125,10 +125,43 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _password_expires_at(self, session, query, filter_):
+        query = query.join(model.Password)
+        query = query.filter(sqlalchemy.and_(
+            model.LocalUser.id == model.Password.local_user_id,
+            model.Password.expires_at == filter_['value']))
+        return query
+
+    def _password_expires_before(self, session, query, filter_):
+        query = query.join(model.Password)
+        query = query.filter(sqlalchemy.and_(
+            model.LocalUser.id == model.Password.local_user_id,
+            model.Password.expires_at <= filter_['value']))
+        return query
+
+    def _password_expires_after(self, session, query, filter_):
+        query = query.join(model.Password)
+        query = query.filter(sqlalchemy.and_(
+            model.LocalUser.id == model.Password.local_user_id,
+            model.Password.expires_at >= filter_['value']))
+        return query
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            for filter_ in hints.filters:
+                if filter_['name'] == 'password_expires_at':
+                    query = self._password_expires_at(session, query, filter_)
+                    hints.filters.remove(filter_)
+                elif filter_['name'] == 'password_expires_before':
+                    query = self._password_expires_before(session, query,
+                                                          filter_)
+                    hints.filters.remove(filter_)
+                elif filter_['name'] == 'password_expires_after':
+                    query = self._password_expires_after(session, query,
+                                                         filter_)
+                    hints.filters.remove(filter_)
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
