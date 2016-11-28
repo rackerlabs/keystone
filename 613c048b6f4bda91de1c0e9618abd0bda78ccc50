@@ -93,6 +93,30 @@
       "revId": "613c048b6f4bda91de1c0e9618abd0bda78ccc50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4a9f9a5e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-28T17:50:42Z",
+      "side": 0,
+      "message": "I can add it back and remove it in a later patch as well if that works better.",
+      "parentUuid": "5a74a57a_ccb2eae4",
+      "range": {
+        "startLine": 685,
+        "startChar": 4,
+        "endLine": 685,
+        "endChar": 30
+      },
+      "revId": "613c048b6f4bda91de1c0e9618abd0bda78ccc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
