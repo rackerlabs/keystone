@@ -28,8 +28,10 @@ CONF = keystone.conf.CONF
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id', 'password_expires_at']
-    readonly_attributes = ['id', 'password_expires_at']
+                  'default_project_id', 'password_expires_at',
+                  'change_password_required']
+    readonly_attributes = ['id', 'password_expires_at',
+                           'change_password_required']
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -102,6 +104,16 @@ class User(sql.ModelBase, sql.DictBase):
     def password_is_expired(self):
         if self.password_expires_at:
             return datetime.datetime.utcnow() >= self.password_expires_at
+        return False
+
+    @hybrid_property
+    def change_password_required(self):
+        # return true if admin reset (not self-service) and past first-use
+        if (CONF.security_compliance.change_password_required_after_reset and
+                self.password_ref and not self.password_ref.self_service and
+                self.local_user.last_auth_at and
+                self.local_user.last_auth_at > self.password_ref.created_at):
+            return True
         return False
 
     @password.setter
@@ -193,20 +205,20 @@ class User(sql.ModelBase, sql.DictBase):
 
     @classmethod
     def from_dict(cls, user_dict):
-        """Override from_dict to remove password_expires_at attribute.
+        """Override from_dict to remove read-only attributes.
 
-        Overriding this method to remove password_expires_at attribute to
-        support update_user and unit tests where password_expires_at
-        inadvertently gets added by calling to_dict followed by from_dict.
+        Overriding this method to remove read-only attributes in order to
+        support update_user and unit tests where read-only attributes
+        inadvertently get added by calling to_dict followed by from_dict.
 
         :param user_dict: User entity dictionary
         :returns User: User object
 
         """
         new_dict = user_dict.copy()
-        password_expires_at_key = 'password_expires_at'
-        if password_expires_at_key in user_dict:
-            del new_dict[password_expires_at_key]
+        for attribute in cls.readonly_attributes:
+            if attribute != 'id' and attribute in user_dict:
+                del new_dict[attribute]
         return super(User, cls).from_dict(new_dict)
 
 
@@ -226,6 +238,7 @@ class LocalUser(sql.ModelBase, sql.DictBase):
                                  order_by='Password.created_at')
     failed_auth_count = sql.Column(sql.Integer, nullable=True)
     failed_auth_at = sql.Column(sql.DateTime, nullable=True)
+    last_auth_at = sql.Column(sql.DateTime, nullable=True)
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
 
 
