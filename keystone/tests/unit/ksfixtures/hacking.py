@@ -229,7 +229,7 @@ class HackingLogging(fixtures.Fixture):
                 LOG = logging.getLogger()
 
                 # ensure the correct helper is being used
-                LOG.warning(_LI('this should cause an error'))
+                LOG.warning(_LW('this should cause an warning'))
 
                 # debug should not allow any helpers either
                 LOG.debug(_LI('this should cause an error'))
