@@ -22,6 +22,40 @@
       "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_09d72b24",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-29T22:46:21Z",
+      "side": 1,
+      "message": "Well - we could mock the .connect() method to wait a certain amount of time longer than the timeout. Which wouldn\u0027t require integration of any other systems.",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_09be4bd4",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-29T22:46:21Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
