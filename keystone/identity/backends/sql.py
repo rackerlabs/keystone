@@ -65,9 +65,10 @@ class Identity(base.IdentityDriverBase):
             raise AssertionError(_('Invalid user / password'))
         elif not user_ref.enabled:
             raise exception.UserDisabled(user_id=user_id)
-        elif user_ref.password_is_expired:
+        # Successful Auth (Password may be expired):
+        # Check expired password, reset failed count if present
+        if user_ref.password_is_expired:
             raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
         if user_ref.local_user.failed_auth_count:
             self._reset_failed_auth(user_id)
         return base.filter_user(user_ref.to_dict())
