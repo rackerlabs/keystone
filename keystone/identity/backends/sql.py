@@ -65,11 +65,12 @@ class Identity(base.IdentityDriverBase):
             raise AssertionError(_('Invalid user / password'))
         elif not user_ref.enabled:
             raise exception.UserDisabled(user_id=user_id)
-        elif user_ref.password_is_expired:
-            raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
+        # Successful Auth:
+        # reset failed count if present, check expired password
         if user_ref.local_user.failed_auth_count:
             self._reset_failed_auth(user_id)
+        if self._is_password_expired_self_change(user_id, user_ref):
+            user_ref['expired'] = True
         return base.filter_user(user_ref.to_dict())
 
     def _is_account_locked(self, user_id, user_ref):
@@ -99,6 +100,13 @@ class Identity(base.IdentityDriverBase):
                 else:
                     self._reset_failed_auth(user_id)
         return False
+
+    def _is_password_expired_self_change(self, user_id, user_ref):
+        expired = user_ref.password_is_expired
+        if (expired and not
+           CONF.security_compliance.password_expires_allow_user_change):
+            raise exception.PasswordExpiredNoURL(user_id=user_id)
+        return expired
 
     def _record_failed_auth(self, user_id):
         with sql.session_for_write() as session:
