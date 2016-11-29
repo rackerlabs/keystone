@@ -84,6 +84,17 @@ is expired. Passwords for users in this list will not expire. This feature
 will only be enabled if `[security_compliance] password_expires_days` is set.
 """))
 
+password_expires_allow_user_change = cfg.BoolOpt(
+    'password_expires_allow_user_change',
+    default=False,
+    help=utils.fmt("""
+If True, when a user tries to authenticate with an expired password, they will
+be given a URL they can use to change their password. This allows users to
+change their passwords without needing admin assistance. Otherwise a user
+will need an admin to reset their password if it expires. This feature
+will only be enabled if  `[security_compliance] password_expires_days` is set.
+"""))
+
 unique_last_password_count = cfg.IntOpt(
     'unique_last_password_count',
     default=1,

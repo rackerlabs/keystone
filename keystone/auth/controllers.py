@@ -402,6 +402,10 @@ class Auth(controller.V3Controller):
             self.authenticate(request, auth_info, auth_context)
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
+            # If the user's password has expired, only unscoped
+            (expired, password_url) = self._is_password_expired(auth_context)
+            if expired:
+                auth_info.set_scope(None, None, None, 'unscoped')
             self._check_and_set_default_scoping(auth_info, auth_context)
             (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
 
@@ -422,6 +426,9 @@ class Auth(controller.V3Controller):
             # trusts and have successfully issued a token.
             if trust:
                 self.trust_api.consume_use(trust['id'])
+
+            if password_url is not None:
+                token_data['password_url'] = password_url
 
             return render_token_data_response(token_id, token_data,
                                               created=True)
@@ -491,6 +498,14 @@ class Auth(controller.V3Controller):
                       " scoped to the project.")
             LOG.warning(msg, {'user_id': user_ref['id'],
                               'project_id': default_project_id})
+
+    def _is_password_expired(self, auth_info, auth_context):
+        try:
+            return (auth_context['expired'],
+                    'identity.org/v3/users/' +
+                    auth_info['user_id'] + '/password')
+        except KeyError:
+            return (False, None)
 
     def authenticate(self, request, auth_info, auth_context):
         """Authenticate user."""
