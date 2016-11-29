@@ -28,9 +28,9 @@ class Password(base.AuthMethodHandler):
     def authenticate(self, request, auth_payload, auth_context):
         """Try to authenticate against the identity backend."""
         user_info = auth_plugins.UserAuthInfo.create(auth_payload, METHOD_NAME)
-
+        user_ref = None
         try:
-            self.identity_api.authenticate(
+            user_ref = self.identity_api.authenticate(
                 request,
                 user_id=user_info.user_id,
                 password=user_info.password)
@@ -40,3 +40,5 @@ class Password(base.AuthMethodHandler):
             raise exception.Unauthorized(msg)
 
         auth_context['user_id'] = user_info.user_id
+        if 'extras' in user_ref:
+            auth_context['expired'] = user_ref['extras'].pop('expired', None)
