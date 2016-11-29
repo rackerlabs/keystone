@@ -678,6 +678,14 @@ class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
             self.assertIsNotNone(
                 self.id_mapping_api.get_public_id(local_entity))
 
+    def test_bad_domain_name(self):
+        CONF(args=['mapping_populate', '--domain-name', uuid.uuid4().hex],
+             project='keystone')
+        dependency.reset()  # backends are loaded again in the command handler
+        cli.MappingPopulate.main()
+
+
+
 
 class CliDomainConfigUploadNothing(unit.BaseTestCase):
 
