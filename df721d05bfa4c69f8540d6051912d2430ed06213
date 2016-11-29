@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_e1fcdf73",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-29T14:45:32Z",
+      "side": 1,
+      "message": "nit: role_assignments",
+      "range": {
+        "startLine": 1117,
+        "startChar": 8,
+        "endLine": 1117,
+        "endChar": 13
+      },
+      "revId": "df721d05bfa4c69f8540d6051912d2430ed06213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
