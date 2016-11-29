@@ -773,8 +773,6 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         super(UserSelfServiceChangingPasswordsTestCase, self).setUp()
         self.user_ref = unit.create_user(self.identity_api,
                                          domain_id=self.domain['id'])
-        self.token = self.get_request_token(self.user_ref['password'],
-                                            http_client.CREATED)
 
     def get_request_token(self, password, expected_status):
         auth_data = self.build_authentication_request(
@@ -788,7 +786,6 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         """Return a test response for a change password request."""
         return self.post('/users/%s/password' % self.user_ref['id'],
                          body={'user': kwargs},
-                         token=self.token,
                          expected_status=expected_status)
 
     def test_changing_password(self):
@@ -798,52 +795,84 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         # original token works
         old_token_auth = self.build_authentication_request(token=token_id)
         self.v3_create_token(old_token_auth)
-
         # change password
         new_password = uuid.uuid4().hex
         self.change_password(password=new_password,
                              original_password=self.user_ref['password'],
                              expected_status=http_client.NO_CONTENT)
-
         # old password fails
         self.get_request_token(self.user_ref['password'],
                                expected_status=http_client.UNAUTHORIZED)
-
         # old token fails
         self.v3_create_token(old_token_auth,
                              expected_status=http_client.NOT_FOUND)
-
         # new password works
         self.get_request_token(new_password,
                                expected_status=http_client.CREATED)
 
     def test_changing_password_with_min_password_age(self):
-        time = datetime.datetime.utcnow()
-        with freezegun.freeze_time(time) as frozen_datetime:
-            # enable minimum_password_age and attempt to change password
-            new_password = uuid.uuid4().hex
-            self.config_fixture.config(group='security_compliance',
-                                       minimum_password_age=1)
-            # able to change password after create user
-            self.change_password(password=new_password,
-                                 original_password=self.user_ref['password'],
-                                 expected_status=http_client.NO_CONTENT)
-            # 2nd change password should fail due to minimum password age and
-            # make sure we wait one second to avoid race conditions with Fernet
-            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
-            self.token = self.get_request_token(
-                new_password,
-                http_client.CREATED
-            )
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.BAD_REQUEST)
-            # disable minimum_password_age and attempt to change password
-            self.config_fixture.config(group='security_compliance',
-                                       minimum_password_age=0)
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.NO_CONTENT)
+        # enable minimum_password_age and attempt to change password
+        new_password = uuid.uuid4().hex
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=1)
+        # able to change password after create user
+        self.change_password(password=new_password,
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+        # 2nd change password should fail due to minimum password age
+        self.change_password(password=uuid.uuid4().hex,
+                             original_password=new_password,
+                             expected_status=http_client.BAD_REQUEST)
+        # disable minimum_password_age and attempt to change password
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=0)
+        self.change_password(password=uuid.uuid4().hex,
+                             original_password=new_password,
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_expired_password_with_self_change_disabled_fails(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_allow_user_change=False)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=2)
+        password = uuid.uuid4().hex
+        # Create a datetime 3 days in the past that will expire in 2 days
+        time = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(
+                days=CONF.security_compliance.password_expires_days + 1)
+        )
+        with freezegun.freeze_time(time):
+            user_ref = unit.new_user_ref(domain_id=self.domain_id,
+                                         password=password)
+            self.user_ref = self.identity_api.create_user(user_ref)
+
+        new_password = uuid.uuid4().hex
+        self.change_password(password=new_password,
+                             original_password=password,
+                             expected_status=http_client.UNAUTHORIZED)
+
+    def test_changing_expired_password_with_self_change_enabled_succeeds(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_allow_user_change=True)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=2)
+        password = uuid.uuid4().hex
+        # Create a datetime 3 days in the past that will expire in 2 days
+        time = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(
+                days=CONF.security_compliance.password_expires_days + 1)
+        )
+        with freezegun.freeze_time(time):
+            user_ref = unit.new_user_ref(domain_id=self.domain_id,
+                                         password=password)
+            self.user_ref = self.identity_api.create_user(user_ref)
+
+        new_password = uuid.uuid4().hex
+        self.change_password(password=new_password,
+                             original_password=password,
+                             expected_status=http_client.NO_CONTENT)
 
     def test_changing_password_with_missing_original_password_fails(self):
         r = self.change_password(password=uuid.uuid4().hex,
