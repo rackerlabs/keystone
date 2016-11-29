@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_8deb5a12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_46cdb064",
+      "range": {
+        "startLine": 13,
+        "startChar": 20,
+        "endLine": 13,
+        "endChar": 26
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_cac5255c",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 5
@@ -118,6 +142,54 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_4dbdc200",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_c6df000b",
+      "range": {
+        "startLine": 16,
+        "startChar": 65,
+        "endLine": 16,
+        "endChar": 66
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_0dc74a96",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_86c34837",
+      "range": {
+        "startLine": 16,
+        "startChar": 28,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_e6e23cd4",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 5
@@ -141,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_cd5632cd",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_e6e23cd4",
+      "range": {
+        "startLine": 64,
+        "startChar": 38,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_17759d62",
         "filename": "keystone/tests/unit/test_no_admin_token_auth.py",
         "patchSetId": 5
@@ -152,6 +248,24 @@
       "writtenOn": "2016-11-29T15:17:19Z",
       "side": 1,
       "message": "We don\u0027t need this test anymore since all the tests will run with no admin token in the pipeline. There\u0027s already a test that verifies that admin token still works when added to the pipeline, so this file can just be removed.",
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_8d4c3a9f",
+        "filename": "keystone/tests/unit/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_17759d62",
       "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -215,6 +329,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_2d93265c",
+        "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_e6095c96",
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_c6062085",
         "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
         "patchSetId": 5
@@ -226,6 +358,30 @@
       "writtenOn": "2016-11-20T04:32:44Z",
       "side": 1,
       "message": "we should add something about this in the prelude section:\n\n---\nprelude: \u003e\n  - Using the ``admin token auth`` middleware is now deprecated. See ``deprecations`` for more details.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 13
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ada656be",
+        "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T16:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_c6062085",
       "range": {
         "startLine": 1,
         "startChar": 0,
