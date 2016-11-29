@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_c4a448bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T17:16:53Z",
+      "side": 1,
+      "message": "Add redelegation_count to this review as demonstrated in https://review.openstack.org/#/c/172090",
+      "revId": "24d1adb324dd8dec9c194dbacd4b7572b98b9aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_e43f8485",
+        "filename": "keystone/common/sql/contract_repo/versions/011_move_redelegated_trust_id.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T17:16:53Z",
+      "side": 1,
+      "message": "grrrrr.... remove this.",
+      "revId": "24d1adb324dd8dec9c194dbacd4b7572b98b9aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4447581d",
+        "filename": "keystone/common/sql/data_migration_repo/versions/011_move_redelegated_trust_id.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T17:16:53Z",
+      "side": 1,
+      "message": "We probably want to paginate this",
+      "revId": "24d1adb324dd8dec9c194dbacd4b7572b98b9aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
