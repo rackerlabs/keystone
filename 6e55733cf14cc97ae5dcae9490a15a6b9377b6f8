@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_89225b00",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-11-29T22:53:07Z",
+      "side": 1,
+      "message": "we assume that the underlying PythonLDAP/LDAPPool libraries correctly use the OPT_NETWORK_TIMEOUT option, infact earlier patch sets of this commit were attempting a bind (but that is more akin to an integration test) and validating just that.\n\nI digress, what good would mocking connect do? Would we just read the value of OPT_NETWORK_TIMEOUT and set it as a manual timeout? What good would that serve us, we already know that OPT_NETWORK_TIMEOUT is set properly (the assertEqual below)",
+      "parentUuid": "5a74a57a_09d72b24",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_09be4bd4",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 7
