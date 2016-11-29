@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_c179a394",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-29T14:32:25Z",
+      "side": 1,
+      "message": "unrelated: this message is not very helpful, maybe: \"Can not find a domain with name: %(domain)s\"",
+      "range": {
+        "startLine": 1214,
+        "startChar": 21,
+        "endLine": 1214,
+        "endChar": 40
+      },
+      "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4194b389",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-29T14:32:25Z",
+      "side": 1,
+      "message": "what this test is doing? Don\u0027t we need a assertFalse() here?",
+      "range": {
+        "startLine": 685,
+        "startChar": 8,
+        "endLine": 685,
+        "endChar": 34
+      },
+      "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
