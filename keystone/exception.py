@@ -235,9 +235,15 @@ class Unauthorized(SecurityError):
     title = 'Unauthorized'
 
 
+class PasswordExpiredNoURL(Unauthorized):
+    message_format = _("The password is expired and needs to be reset by an "
+                       "administrator for user: %(user_id)s.")
+
+
 class PasswordExpired(Unauthorized):
     message_format = _("The password is expired and needs to be reset by an "
-                       "administrator for user: %(user_id)s")
+                       "administrator for user: %(user_id)s. Please go to "
+                       "%(detail)s to reset your password")
 
 
 class AuthPluginException(Unauthorized):

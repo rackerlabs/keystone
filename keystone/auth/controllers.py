@@ -402,9 +402,12 @@ class Auth(controller.V3Controller):
             self.authenticate(request, auth_info, auth_context)
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
+            # If the user's password has expired, only unscoped
+            expired = self._is_password_expired(auth_context)
+            if expired:
+                auth_info.set_scope(unscoped='unscoped')
             self._check_and_set_default_scoping(auth_info, auth_context)
             (domain_id, project_id, trust, unscoped) = auth_info.get_scope()
-
             method_names = auth_info.get_method_names()
             method_names += auth_context.get('method_names', [])
             # make sure the list is unique
@@ -412,12 +415,21 @@ class Auth(controller.V3Controller):
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
 
+            user_id = auth_context['user_id']
             is_domain = auth_context.get('is_domain')
             (token_id, token_data) = self.token_provider_api.issue_token(
-                auth_context['user_id'], method_names, expires_at, project_id,
+                user_id, method_names, expires_at, project_id,
                 is_domain, domain_id, auth_context, trust, include_catalog,
                 parent_audit_id=token_audit_id)
 
+            if expired:
+                details = self.base_url(request.context_dict,
+                                        path='/users/' +
+                                        user_id +
+                                        '/password/' +
+                                        token_id)
+                raise exception.PasswordExpired(user_id=user_id,
+                                                detail=details)
             # NOTE(wanghong): We consume a trust use only when we are using
             # trusts and have successfully issued a token.
             if trust:
@@ -491,6 +503,12 @@ class Auth(controller.V3Controller):
                       " scoped to the project.")
             LOG.warning(msg, {'user_id': user_ref['id'],
                               'project_id': default_project_id})
+
+    def _is_password_expired(self, auth_context):
+        try:
+            return auth_context['expired']
+        except KeyError:
+            return False
 
     def authenticate(self, request, auth_info, auth_context):
         """Authenticate user."""
