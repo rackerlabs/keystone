@@ -1286,7 +1286,14 @@ class Manager(manager.Manager):
                         new_password, initiator=None):
 
         # authenticate() will raise an AssertionError if authentication fails
-        self.authenticate(request, user_id, original_password)
+        try:
+            self.authenticate(request, user_id, original_password)
+        except exception.PasswordExpired:
+            # Allow a user to change their own password if it has expired
+            # and the config is set to allow this
+            # Otherwise, an admin will need to change it for the user
+            if not CONF.security_compliance.user_can_change_expired_password:
+                raise
 
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
