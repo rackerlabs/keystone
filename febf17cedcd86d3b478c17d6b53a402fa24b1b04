@@ -312,6 +312,30 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_84e33033",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-29T17:10:31Z",
+      "side": 1,
+      "message": "We actually don\u0027t have that anymore. I\u0027ve done a little cleanup for that: https://review.openstack.org/404350",
+      "parentUuid": "5a74a57a_77a7b1a6",
+      "range": {
+        "startLine": 67,
+        "startChar": 52,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_e6095c96",
         "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
         "patchSetId": 5
