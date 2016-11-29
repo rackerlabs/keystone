@@ -16,6 +16,24 @@
       "revId": "2d61c9ab3e33ce0696e05cb958225f3117e306ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_b4b4d9d4",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-29T18:59:39Z",
+      "side": 1,
+      "message": "good point!",
+      "parentUuid": "5a74a57a_55f2d606",
+      "revId": "2d61c9ab3e33ce0696e05cb958225f3117e306ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
