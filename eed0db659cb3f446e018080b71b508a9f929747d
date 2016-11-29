@@ -81,6 +81,24 @@
       "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_972d2d00",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-11-29T15:14:01Z",
+      "side": 1,
+      "message": "think we still need to check the method return, if it blows up, the test will fail anyway",
+      "parentUuid": "5a74a57a_1cd4e2e9",
+      "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
