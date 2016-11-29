@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_b704e914",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-29T15:05:15Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a74a57a_c179a394",
+      "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_4194b389",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 685,
         "endChar": 34
       },
+      "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_1cd4e2e9",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-29T15:05:15Z",
+      "side": 1,
+      "message": "All this is doing is making sure we don\u0027t raise an unhandled exception when  we specify a domain name that doesn\u0027t exist. Prior to this patch, I would expect the call the `cli.MappingPopulate.main()` to blow up with the unhandled exception.\n\nWe could make this test a little more robust by ensuring a useful message is logged.",
+      "parentUuid": "5a74a57a_4194b389",
       "revId": "eed0db659cb3f446e018080b71b508a9f929747d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
