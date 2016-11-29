@@ -84,6 +84,17 @@ is expired. Passwords for users in this list will not expire. This feature
 will only be enabled if `[security_compliance] password_expires_days` is set.
 """))
 
+password_expires_allow_user_change = cfg.BoolOpt(
+    'password_expires_allow_user_change',
+    default=False,
+    help=utils.fmt("""
+If set to True, a user will be allowed to change their own password after it
+expires. This allows a user to change their own password without needing an
+administrator to reset it for them if it has expired. By default, this is
+disabled. This feature will only be enabled if
+`[security_compliance] password_expires_days` is set.
+"""))
+
 unique_last_password_count = cfg.IntOpt(
     'unique_last_password_count',
     default=1,
@@ -139,6 +150,7 @@ ALL_OPTS = [
     lockout_ignored_user_ids,
     password_expires_days,
     password_expires_ignore_user_ids,
+    password_expires_allow_user_change,
     unique_last_password_count,
     minimum_password_age,
     password_regex,

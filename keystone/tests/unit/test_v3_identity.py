@@ -485,20 +485,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.v3_create_token(new_password_auth)
 
     def test_update_user_domain_id(self):
-        """Call ``PATCH /users/{user_id}`` with domain_id."""
+        """Call ``PATCH /users/{user_id}`` with domain_id.
+
+        A user's `domain_id` is immutable. Ensure that any attempts to update
+        the `domain_id` of a user fails.
+        """
         user = unit.new_user_ref(domain_id=self.domain['id'])
         user = self.identity_api.create_user(user)
         user['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/users/%(user_id)s' % {
+        self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        user['domain_id'] = self.domain['id']
-        r = self.patch('/users/%(user_id)s' % {
-            'user_id': user['id']},
-            body={'user': user})
-        self.assertValidUserResponse(r, user)
 
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
@@ -592,18 +590,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidGroupResponse(r, group)
 
     def test_update_group_domain_id(self):
-        """Call ``PATCH /groups/{group_id}`` with domain_id."""
+        """Call ``PATCH /groups/{group_id}`` with domain_id.
+
+        A group's `domain_id` is immutable. Ensure that any attempts to update
+        the `domain_id` of a group fails.
+        """
         self.group['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/groups/%(group_id)s' % {
+        self.patch('/groups/%(group_id)s' % {
             'group_id': self.group['id']},
             body={'group': self.group},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        self.group['domain_id'] = self.domain['id']
-        r = self.patch('/groups/%(group_id)s' % {
-            'group_id': self.group['id']},
-            body={'group': self.group})
-        self.assertValidGroupResponse(r, self.group)
 
     def test_delete_group(self):
         """Call ``DELETE /groups/{group_id}``."""
@@ -777,8 +773,6 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         super(UserSelfServiceChangingPasswordsTestCase, self).setUp()
         self.user_ref = unit.create_user(self.identity_api,
                                          domain_id=self.domain['id'])
-        self.token = self.get_request_token(self.user_ref['password'],
-                                            http_client.CREATED)
 
     def get_request_token(self, password, expected_status):
         auth_data = self.build_authentication_request(
@@ -792,7 +786,6 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         """Return a test response for a change password request."""
         return self.post('/users/%s/password' % self.user_ref['id'],
                          body={'user': kwargs},
-                         token=self.token,
                          expected_status=expected_status)
 
     def test_changing_password(self):
@@ -802,52 +795,84 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         # original token works
         old_token_auth = self.build_authentication_request(token=token_id)
         self.v3_create_token(old_token_auth)
-
         # change password
         new_password = uuid.uuid4().hex
         self.change_password(password=new_password,
                              original_password=self.user_ref['password'],
                              expected_status=http_client.NO_CONTENT)
-
         # old password fails
         self.get_request_token(self.user_ref['password'],
                                expected_status=http_client.UNAUTHORIZED)
-
         # old token fails
         self.v3_create_token(old_token_auth,
                              expected_status=http_client.NOT_FOUND)
-
         # new password works
         self.get_request_token(new_password,
                                expected_status=http_client.CREATED)
 
     def test_changing_password_with_min_password_age(self):
-        time = datetime.datetime.utcnow()
-        with freezegun.freeze_time(time) as frozen_datetime:
-            # enable minimum_password_age and attempt to change password
-            new_password = uuid.uuid4().hex
-            self.config_fixture.config(group='security_compliance',
-                                       minimum_password_age=1)
-            # able to change password after create user
-            self.change_password(password=new_password,
-                                 original_password=self.user_ref['password'],
-                                 expected_status=http_client.NO_CONTENT)
-            # 2nd change password should fail due to minimum password age and
-            # make sure we wait one second to avoid race conditions with Fernet
-            frozen_datetime.tick(delta=datetime.timedelta(seconds=1))
-            self.token = self.get_request_token(
-                new_password,
-                http_client.CREATED
-            )
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.BAD_REQUEST)
-            # disable minimum_password_age and attempt to change password
-            self.config_fixture.config(group='security_compliance',
-                                       minimum_password_age=0)
-            self.change_password(password=uuid.uuid4().hex,
-                                 original_password=new_password,
-                                 expected_status=http_client.NO_CONTENT)
+        # enable minimum_password_age and attempt to change password
+        new_password = uuid.uuid4().hex
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=1)
+        # able to change password after create user
+        self.change_password(password=new_password,
+                             original_password=self.user_ref['password'],
+                             expected_status=http_client.NO_CONTENT)
+        # 2nd change password should fail due to minimum password age
+        self.change_password(password=uuid.uuid4().hex,
+                             original_password=new_password,
+                             expected_status=http_client.BAD_REQUEST)
+        # disable minimum_password_age and attempt to change password
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=0)
+        self.change_password(password=uuid.uuid4().hex,
+                             original_password=new_password,
+                             expected_status=http_client.NO_CONTENT)
+
+    def test_changing_expired_password_with_self_change_disabled_fails(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_allow_user_change=False)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=2)
+        password = uuid.uuid4().hex
+        # Create a datetime forward 3 days when the password is now expired
+        time = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(
+                days=CONF.security_compliance.password_expires_days + 1)
+        )
+        with freezegun.freeze_time(time):
+            user_ref = unit.new_user_ref(domain_id=self.domain_id,
+                                         password=password)
+            self.user_ref = self.identity_api.create_user(user_ref)
+
+        new_password = uuid.uuid4().hex
+        self.change_password(password=new_password,
+                             original_password=password,
+                             expected_status=http_client.UNAUTHORIZED)
+
+    def test_changing_expired_password_with_self_change_enabled_succeeds(self):
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_allow_user_change=True)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=2)
+        password = uuid.uuid4().hex
+        # Create a datetime forward 3 days when the password is now expired
+        time = (
+            datetime.datetime.utcnow() -
+            datetime.timedelta(
+                days=CONF.security_compliance.password_expires_days + 1)
+        )
+        with freezegun.freeze_time(time):
+            user_ref = unit.new_user_ref(domain_id=self.domain_id,
+                                         password=password)
+            self.user_ref = self.identity_api.create_user(user_ref)
+
+        new_password = uuid.uuid4().hex
+        self.change_password(password=new_password,
+                             original_password=password,
+                             expected_status=http_client.NO_CONTENT)
 
     def test_changing_password_with_missing_original_password_fails(self):
         r = self.change_password(password=uuid.uuid4().hex,
