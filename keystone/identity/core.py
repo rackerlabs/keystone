@@ -1280,7 +1280,10 @@ class Manager(manager.Manager):
                         new_password):
 
         # authenticate() will raise an AssertionError if authentication fails
-        self.authenticate(request, user_id, original_password)
+        try:
+            self.authenticate(request, user_id, original_password)
+        except exception.PasswordExpired:
+            pass
 
         validators.validate_password(new_password)
 
