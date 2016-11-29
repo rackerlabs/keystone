@@ -80,6 +80,42 @@ def _build_policy_check_credentials(self, action, context, kwargs):
     return context['environment'].get(authorization.AUTH_CONTEXT_ENV, {})
 
 
+def _check_if_no_auth():
+    """Check to see if protected auth should be bypassed.
+
+    One example is if users are configured to be able to change their own
+    password when it has expired, we want them to be able to authenticate
+    without needing a token. If other reasons arise in the future they
+    can be added here to be checked using 'protected_optional' wrapper.
+
+    """
+    if (CONF.security_compliance.password_expires_days and
+       CONF.security_compliance.user_can_change_expired_password):
+        return True
+
+    return False
+
+
+def protected_optional(callback=None):
+    """Wrap API calls with (optional) role based access controls (RBAC).
+
+    This checks a list of conditions where we do not want to apply RBAC.
+    If the list of conditions is not met, we will call into protected()
+    below and continue RBAC checking as normal. Otherwise we will skip
+    any authentication checking here.
+
+    """
+    def wrapper(f):
+        @functools.wraps(f)
+        def inner(self, request, *args, **kwargs):
+            no_auth = _check_if_no_auth()
+            if not no_auth:
+                return protected(callback)(f)(self, request, *args, **kwargs)
+            return f(self, request, *args, **kwargs)
+        return inner
+    return wrapper
+
+
 def protected(callback=None):
     """Wrap API calls with role based access controls (RBAC).
 
@@ -96,6 +132,7 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, request, *args, **kwargs):
+
             request.assert_authenticated()
 
             if request.context.is_admin:

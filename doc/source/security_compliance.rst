@@ -107,6 +107,15 @@ adding their user ID to ``password_expires_ignore_user_ids`` list:
 In this example, the password for user IDs ``3a54353c9dcc44f690975ea768512f6a``
 and ``ed84c3b95b814ff2827967e531f09247`` would never expire.
 
+If a user's password has expired, by default, an administrator would need to
+reset it. However, this can be changed to allow a user with an expired password
+to change it by setting ``user_can_change_expired_password``:
+
+.. code-block:: ini
+
+    [security_compliance]
+    user_can_change_expired_password = True
+
 Password Strength Requirements
 ------------------------------
 
