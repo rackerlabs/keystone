@@ -141,6 +141,63 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_17759d62",
+        "filename": "keystone/tests/unit/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-29T15:17:19Z",
+      "side": 1,
+      "message": "We don\u0027t need this test anymore since all the tests will run with no admin token in the pipeline. There\u0027s already a test that verifies that admin token still works when added to the pipeline, so this file can just be removed.",
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_97eb6d12",
+        "filename": "keystone/tests/unit/test_no_admin_token_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-29T15:17:19Z",
+      "side": 1,
+      "message": "revert this unrelated change.",
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_77a7b1a6",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-29T15:17:19Z",
+      "side": 1,
+      "message": "this is EXTENSION_TO_ADD, so use that, or remove EXTENSION_TO_ADD since it\u0027s apparently not working correctly in this case anyways.\n\nIf there\u0027s nothing using EXTENSION_TO_ADD anymore then support for it should be removed.",
+      "range": {
+        "startLine": 67,
+        "startChar": 52,
+        "endLine": 67,
+        "endChar": 68
+      },
+      "revId": "febf17cedcd86d3b478c17d6b53a402fa24b1b04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_e6095c96",
         "filename": "releasenotes/notes/deprecate-admin-token-auth-middleware-7fcaf48266ef1235.yaml",
         "patchSetId": 5
