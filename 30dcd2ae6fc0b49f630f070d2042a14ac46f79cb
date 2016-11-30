@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_172f143f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1006,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-30T19:03:11Z",
+      "side": 1,
+      "message": "Yep.  THis can be moved to the driver.",
+      "parentUuid": "5a74a57a_a2b5bc7e",
+      "revId": "30dcd2ae6fc0b49f630f070d2042a14ac46f79cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_c23d58de",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
@@ -30,6 +48,41 @@
       "writtenOn": "2016-11-28T16:24:58Z",
       "side": 1,
       "message": "Is this complete?",
+      "revId": "30dcd2ae6fc0b49f630f070d2042a14ac46f79cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_97f404d0",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1028,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-30T19:03:11Z",
+      "side": 1,
+      "message": "Ah, no.  Was going to drop this.  The PUT above performs the same behavior.",
+      "parentUuid": "5a74a57a_c23d58de",
+      "revId": "30dcd2ae6fc0b49f630f070d2042a14ac46f79cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_57126c0a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1037,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-11-30T19:03:11Z",
+      "side": 1,
+      "message": "THis one needs to be implemented as well.  It is a helper function, though, and does not need to be there to start off the middleware work",
       "revId": "30dcd2ae6fc0b49f630f070d2042a14ac46f79cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
