@@ -46,6 +46,30 @@
       "revId": "d16ec35378494f06a983a4c7f8566719bcf6ac3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_eb1548e5",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-30T22:58:12Z",
+      "side": 1,
+      "message": "thanks for the explanation, this still looks fine to me.",
+      "parentUuid": "5a74a57a_f0b9b916",
+      "range": {
+        "startLine": 369,
+        "startChar": 45,
+        "endLine": 369,
+        "endChar": 74
+      },
+      "revId": "d16ec35378494f06a983a4c7f8566719bcf6ac3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
