@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_e1af4492",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 19814
+      },
+      "writtenOn": "2016-11-30T14:47:33Z",
+      "side": 1,
+      "message": "Can the validation framework be used for this? It appears that the id_string parameter type in parameter_types.py would be appropriate.",
+      "revId": "ed66d3dbd43ca5182c9d6aa20f23129b4f2cb5d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
