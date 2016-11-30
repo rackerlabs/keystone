@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a74a57a_70177f54",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-30T15:50:28Z",
+      "side": 1,
+      "message": "same as below, this was an attempt at validating input before, which can probably be removed (it landed in https://review.openstack.org/#/c/315894/3)",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 60
+      },
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_f05d4f49",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-30T15:50:28Z",
+      "side": 1,
+      "message": "you can remove this now, i think",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 61
+      },
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_3377d103",
         "filename": "keystone/auth/schema.py",
         "patchSetId": 2
@@ -30,6 +76,23 @@
       "writtenOn": "2016-11-30T15:48:43Z",
       "side": 1,
       "message": "Should we require that a domain must have either an id or name?",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_093e22b8",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-30T15:50:28Z",
+      "side": 1,
+      "message": "you can add token auth pretty easily:\n\n\u0027token\u0027: {\n    \u0027type\u0027: \u0027object\u0027,\n    \u0027properties\u0027: {\n        \u0027id\u0027: {\n            \u0027type\u0027: \u0027string\u0027\n        }\n    },\n    \u0027required\u0027: [\u0027id\u0027]\n  }\n}",
       "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
