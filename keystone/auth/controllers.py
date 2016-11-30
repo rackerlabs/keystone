@@ -22,9 +22,11 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.auth import schema
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import validation
 from keystone.common import wsgi
 import keystone.conf
 from keystone import exception
@@ -393,6 +395,9 @@ class Auth(controller.V3Controller):
     def authenticate_for_token(self, request, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in request.params
+
+        if auth is not None:
+            validation.lazy_validate(schema.token_issue, auth)
 
         try:
             auth_info = AuthInfo.create(auth=auth)
