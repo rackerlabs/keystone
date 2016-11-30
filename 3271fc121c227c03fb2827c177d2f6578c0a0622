@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_9c3b579c",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "This is already removed from the pipelines.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_1cad8731",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "isn\u0027t loading the app going to load the backends?",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_5c1d3fbc",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "this is only used in 1 place, so suggest just hard-code it there, or use CONF.default_domain_id there.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_1c510763",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "it would probably be safer to use public_app rather than admin_app, since admin_app will go away with v2.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_fcd0cbf9",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "This could cause a problem if tests are run in parallel, since one process could remove the file that another test is about to use. The files should be named uniquely.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_b008372a",
+        "filename": "releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "suggest keep the lines shorter so that it\u0027s easier to review.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_d05bf32c",
+        "filename": "releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "might also want to mention the egg: keystone#admin_token_auth\n\nsince this is what\u0027s in some paste configs.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_909fbbb3",
+        "filename": "releasenotes/notes/deprecated-as-of-ocata-a5b2f1e3e39f818e.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T15:14:21Z",
+      "side": 1,
+      "message": "To be clear that \"It\" is referring to the admin token auth middleware and not keystone-manage bootstrap, change this to \"The admin token auth middleware\".",
+      "range": {
+        "startLine": 17,
+        "startChar": 43,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
