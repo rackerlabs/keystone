@@ -14,10 +14,14 @@
 # under the License.
 
 import datetime
+import json
 
 import freezegun
 from oslo_serialization import jsonutils
 from six.moves import range
+
+from keystone.common import sql
+from keystone.identity.backends import sql_model as model
 
 import keystone.conf
 from keystone.tests import unit
@@ -231,6 +235,163 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
             self.assertEqual(1, len(r.result.get('users')))
             self.assertEqual(user['id'], r.result.get('users')[0]['id'])
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
+
+    def test_list_users_by_password_expires_at_pass(self):
+        """GET /users?password_expires_at={timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter on it successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_at=%s' % expired_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertTrue(json.loads(r.body)['users'])
+
+    def test_list_users_by_password_expires_at_fail(self):
+        """GET /users?password_expires_at={timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter it out successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        wrong_time = created_time + datetime.timedelta(days=2)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_at=%s' % wrong_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertFalse(json.loads(r.body)['users'])
+
+    def test_list_users_by_password_expires_before_pass(self):
+        """GET /users?password_expires_before{timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter on it successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        post_time = created_time + datetime.timedelta(days=2)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_before=%s' % post_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertTrue(json.loads(r.body)['users'])
+
+    def test_list_users_by_password_expires_before_fail(self):
+        """GET /users?password_expires_before={timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter it out successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_at=%s' % created_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertFalse(json.loads(r.body)['users'])
+
+    def test_list_users_by_password_expires_after_pass(self):
+        """GET /users?password_expires_after{timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter on it successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_after=%s' % created_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertTrue(json.loads(r.body)['users'])
+
+    def test_list_users_by_password_expires_after_fail(self):
+        """GET /users?password_expires_after={timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter it out successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        wrong_time = created_time + datetime.timedelta(days=2)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            url_by_name = '/users?password_expires_at=%s' % wrong_time
+            r = self.get(url_by_name, auth=self.auth)
+
+            self.assertFalse(json.loads(r.body)['users'])
 
     def test_inexact_filters(self):
         # Create 20 users
