@@ -22,6 +22,30 @@
       "revId": "d16ec35378494f06a983a4c7f8566719bcf6ac3e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_f0b9b916",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2016-11-30T22:26:38Z",
+      "side": 1,
+      "message": "No... the jsonschema output is pretty useless. Here\u0027s the output when I set the user domain name to a number:\n\n \"message\": \"Invalid input for field \u0027name\u0027: 123 is not of type \u0027string\u0027\",\n\nThe exception message is built using the path from the exception: https://github.com/openstack/keystone/blob/master/keystone/common/validation/validators.py#L86\n\nBut as you can see it does a pop so I guess this is expected.",
+      "parentUuid": "5a74a57a_d22a0a90",
+      "range": {
+        "startLine": 369,
+        "startChar": 45,
+        "endLine": 369,
+        "endChar": 74
+      },
+      "revId": "d16ec35378494f06a983a4c7f8566719bcf6ac3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
