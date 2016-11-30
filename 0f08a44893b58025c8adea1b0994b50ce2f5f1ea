@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_dc486f8a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-30T15:11:46Z",
+      "side": 1,
+      "message": "Could this be changed a bit to mention the \"first time\" use of the password?",
+      "range": {
+        "startLine": 244,
+        "startChar": 23,
+        "endLine": 246,
+        "endChar": 65
+      },
+      "revId": "0f08a44893b58025c8adea1b0994b50ce2f5f1ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
