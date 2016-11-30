@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_d22a0a90",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-11-30T20:01:28Z",
+      "side": 1,
+      "message": "interesting way to show this, is that the way jsonschema does it?",
+      "range": {
+        "startLine": 369,
+        "startChar": 45,
+        "endLine": 369,
+        "endChar": 74
+      },
+      "revId": "d16ec35378494f06a983a4c7f8566719bcf6ac3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
