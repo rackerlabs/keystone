@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_86ce9381",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-11-30T20:00:34Z",
+      "side": 1,
+      "message": "Well - this also assumes that the unique constraint is built on a name attribute, which might not always be the case. For example, mappings have unique constraints on other things, not just the name: \n\nhttps://github.com/openstack/keystone/blob/fe830ffe61912bd6e3d06c1b1eb82ca23f9314eb/keystone/common/sql/migrate_repo/versions/067_kilo.py#L265-L268",
+      "parentUuid": "bacf61ea_230d88e8",
+      "revId": "d9c6267b56fd82b79ce290ac208f998d85b11a8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_e305307a",
         "filename": "keystone/exception.py",
         "patchSetId": 2
