@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_3377d103",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-30T15:48:43Z",
+      "side": 1,
+      "message": "Should we add support for other methods here in the future?",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_c62a592c",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-30T15:48:43Z",
+      "side": 1,
+      "message": "Should we require that a domain must have either an id or name?",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_c6e17900",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-30T15:48:43Z",
+      "side": 1,
+      "message": "Same requires question",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_26f14dce",
+        "filename": "keystone/auth/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-30T15:48:43Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_13ce555a",
+        "filename": "keystone/tests/unit/auth/test_schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-11-30T15:48:43Z",
+      "side": 1,
+      "message": "Why is this not using our base test case so that logging and other things happen automatically for it?",
+      "revId": "38ffdd52bffb98289b401f29cc88b96f9dbc8202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
