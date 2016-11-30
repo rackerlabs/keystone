@@ -34,6 +34,24 @@
       "revId": "ed66d3dbd43ca5182c9d6aa20f23129b4f2cb5d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_b2202ef9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-11-30T19:42:56Z",
+      "side": 1,
+      "message": "Correct the validation schema must also be updated as well to ensure the ID is properly formatted/optional.\n\nThe below check at line 239 looks correct to me and should ensure the value is in-fact a UUID-form",
+      "parentUuid": "5a74a57a_9aafd27c",
+      "revId": "ed66d3dbd43ca5182c9d6aa20f23129b4f2cb5d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
