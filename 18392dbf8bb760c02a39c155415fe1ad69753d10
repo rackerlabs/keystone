@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_0bbc446b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-30T23:45:27Z",
+      "side": 1,
+      "message": "can get rid of the s",
+      "range": {
+        "startLine": 9,
+        "startChar": 60,
+        "endLine": 9,
+        "endChar": 61
+      },
+      "revId": "18392dbf8bb760c02a39c155415fe1ad69753d10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_4baabbd3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-30T23:45:27Z",
+      "side": 1,
+      "message": "I would specifically check for \u0027password_expires_after\u0027 here and let the else handle something unexpected since that\u0027s what we will expect if it even reaches it.",
+      "range": {
+        "startLine": 144,
+        "startChar": 8,
+        "endLine": 144,
+        "endChar": 12
+      },
+      "revId": "18392dbf8bb760c02a39c155415fe1ad69753d10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
