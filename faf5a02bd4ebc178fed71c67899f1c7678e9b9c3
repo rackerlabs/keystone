@@ -152,6 +152,24 @@
       "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_ae36fdb1",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-11-30T23:54:58Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "5a74a57a_55081628",
+      "revId": "faf5a02bd4ebc178fed71c67899f1c7678e9b9c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
