@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_49174aa3",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-01T21:50:10Z",
+      "side": 1,
+      "message": "a password",
+      "range": {
+        "startLine": 177,
+        "startChar": 16,
+        "endLine": 177,
+        "endChar": 25
+      },
+      "revId": "14fecfc7627ce211fa119b87b6435f18e226f8fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
