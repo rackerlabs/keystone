@@ -1,4 +1,4 @@
-# variables in header
+# variabley in header
 X-Auth-Token:
   description: |
     A valid authentication token for an
@@ -369,6 +369,13 @@ subtree_as_list:
   required: false
   type: key-only, no value expected
   min_version: 3.4
+timestamp_query:
+  description: |
+    Filters the response by when a users password expires.
+    A valid timestamp is formatted as ``YYYY-MM-DDTHH:mm:ssZ``.
+  in: query
+  required: false
+  type: string
 user_id_query:
   description: |
     Filters the response by a user ID.
