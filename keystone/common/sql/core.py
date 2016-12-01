@@ -433,8 +433,20 @@ def handle_conflicts(conflict_type='object'):
                 # as it can contain raw SQL.
                 LOG.debug(_conflict_msg, {'conflict_type': conflict_type,
                                           'details': six.text_type(e)})
-                raise exception.Conflict(type=conflict_type,
-                                         details=_('Duplicate Entry'))
+                name = None
+                domain_id = None
+                args = args[1:]
+                for arg in args:
+                    if 'name' in arg:
+                        name = arg['name']
+                    if 'domain_id' in arg:
+                        domain_id = arg['domain_id']
+                msg = 'Duplicate entry'
+                if name:
+                    msg = msg + ' found with name %s' % name
+                if domain_id:
+                    msg = msg + ' at domain ID %s' % domain_id
+                raise exception.Conflict(type=conflict_type, details=msg)
             except db_exception.DBError as e:
                 # TODO(blk-u): inspecting inner_exception breaks encapsulation;
                 # oslo_db should provide exception we need.
