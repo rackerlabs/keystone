@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_1aa3fd9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2016-12-01T08:31:20Z",
+      "side": 1,
+      "message": "this link doesn\u0027t seem to work",
+      "range": {
+        "startLine": 22,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 33
+      },
+      "revId": "0ebadce21e9ca7f89dfc495202a4851736785b63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
