@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_64998b6e",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2016-12-01T22:16:18Z",
+      "side": 1,
+      "message": "UUID hex is always 32 bytes. please make min/max 32",
+      "revId": "290713e51ec0b8051256f5f7b102927dff3627ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
