@@ -70,6 +70,162 @@ Response Example
    :language: javascript
 
 
+List users with passwords that expire at
+========================================
+
+.. rest_method:: GET /v3/users?password_expires_at={timestamp}
+
+List users with a password expiring at given timestamp.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 409
+   - 501
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - timestamp: timestamp_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - links: link_collection
+   - users: users_object
+   - default_project_id: default_project_id_response_body
+   - domain_id: domain_id_response_body
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: user_name_response_body
+   - password_expires_at: password_expires_at
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/users-list-password-expired.json
+   :language: javascript
+
+
+List users with a password expiring before
+==========================================
+
+.. rest_method:: GET /v3/users?password_expires_before={timestamp}
+
+List users with a password expiring before given timestamp.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 409
+   - 501
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - timestamp: timestamp_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - links: link_collection
+   - users: users_object
+   - default_project_id: default_project_id_response_body
+   - domain_id: domain_id_response_body
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: user_name_response_body
+   - password_expires_at: password_expires_at
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/users-list-password-expired.json
+   :language: javascript
+
+
+List users with apassword expiring after
+========================================
+
+.. rest_method:: GET /v3/users?password_expires_after={timestamp}
+
+List users with a password expiring after given timestamp.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 409
+   - 501
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - timestamp: timestamp_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - links: link_collection
+   - users: users_object
+   - default_project_id: default_project_id_response_body
+   - domain_id: domain_id_response_body
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: user_name_response_body
+   - password_expires_at: password_expires_at
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/users-list-password-expired.json
+   :language: javascript
+
+
 Create user
 ===========
 
