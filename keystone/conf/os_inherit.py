@@ -11,28 +11,6 @@
 # under the License.
 
 from oslo_config import cfg
-from oslo_log import versionutils
-
-from keystone.conf import utils
-
-
-_DEPRECATE_INHERIT_MSG = utils.fmt("""
-The option to disable the OS-INHERIT functionality has been deprecated in the
-Mitaka release and will be removed in the Ocata release. Starting in the Ocata
-release, OS-INHERIT functionality will always be enabled.
-""")
-
-
-enabled = cfg.BoolOpt(
-    'enabled',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATE_INHERIT_MSG,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-This allows domain-based role assignments to be inherited to projects owned by
-that domain, or from parent projects to child projects.
-"""))
 
 
 GROUP_NAME = __name__.split('.')[-1]
