@@ -47,6 +47,7 @@ Request Parameters
    - domain_id: domain_id_query
    - enabled: enabled_user_query
    - name: name_user_query
+   - password_expires_at: password_expires_at_query
 
 Response Parameters
 -------------------
@@ -67,6 +68,64 @@ Response Example
 ----------------
 
 .. literalinclude:: ./samples/admin/users-list-response.json
+   :language: javascript
+
+
+List users with passwords that expire at
+========================================
+
+.. rest_method:: GET /v3/users?password_expires_at={timestamp}
+
+List users with a password expiring at given timestamp. This can
+be used with the comparators lt, lte, gt, gte, and eq, neq for example:
+
+- GET /v3/users?password_expires_at=lt:{timestamp}
+
+The example would return and user whose password expires before
+the given timestamp.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 409
+   - 501
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - timestamp: timestamp_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - links: link_collection
+   - users: users_object
+   - default_project_id: default_project_id_response_body
+   - domain_id: domain_id_response_body
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: user_name_response_body
+   - password_expires_at: password_expires_at
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/users-list-password-expired.json
    :language: javascript
 
 

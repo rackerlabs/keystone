@@ -285,6 +285,24 @@ parents_as_list:
   required: false
   type: key-only, no value expected
   min_version: 3.4
+password_expires_after_query:
+  description: |
+    Filters users if their password expires after a given timestamp.
+  in: query
+  required: false
+  type: string
+password_expires_at_query:
+  description: |
+    Filters users if their password expires at a given timestamp.
+  in: query
+  required: false
+  type: string
+password_expires_before_query:
+  description: |
+    Filters users if their password expires before a given timestamp.
+  in: query
+  required: false
+  type: string
 policy_type_query:
   description: |
     Filters the response by a MIME media type for the
@@ -369,6 +387,13 @@ subtree_as_list:
   required: false
   type: key-only, no value expected
   min_version: 3.4
+timestamp_query:
+  description: |
+    Filters the response for when a user's password expires.
+    A valid timestamp is formatted as ``YYYY-MM-DDTHH:mm:ssZ``.
+  in: query
+  required: false
+  type: string
 user_id_query:
   description: |
     Filters the response by a user ID.
