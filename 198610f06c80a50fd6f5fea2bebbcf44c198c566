@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_9f732db4",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24248
+      },
+      "writtenOn": "2016-12-01T01:43:55Z",
+      "side": 1,
+      "message": "data structure to add a parameter, should be no problem",
+      "range": {
+        "startLine": 31,
+        "startChar": 3,
+        "endLine": 31,
+        "endChar": 58
+      },
+      "revId": "198610f06c80a50fd6f5fea2bebbcf44c198c566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
