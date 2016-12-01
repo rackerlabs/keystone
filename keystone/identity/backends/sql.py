@@ -34,6 +34,9 @@ class Identity(base.IdentityDriverBase):
     # config parameter to enable sql to be used as a domain-specific driver.
     def __init__(self, conf=None):
         self.conf = conf
+        self.password_expire = ['password_expires_at',
+                                'password_expires_before',
+                                'password_expires_after']
         super(Identity, self).__init__()
 
     @property
@@ -125,10 +128,35 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _user_password_expires(self, session, query, filter_):
+        query = query.join(model.Password)
+        # using 'password_expires_at'
+        if filter_['name'] == self.password_expire[0]:
+            query = query.filter(sqlalchemy.and_(
+                model.LocalUser.id == model.Password.local_user_id,
+                model.Password.expires_at == filter_['value']))
+        # using 'password_expires_before'
+        elif filter_['name'] == self.password_expire[1]:
+            query = query.filter(sqlalchemy.and_(
+                model.LocalUser.id == model.Password.local_user_id,
+                model.Password.expires_at <= filter_['value']))
+        # using 'password_expires_after'
+        else:
+            query = query.filter(sqlalchemy.and_(
+                model.LocalUser.id == model.Password.local_user_id,
+                model.Password.expires_at >= filter_['value']))
+        return query
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            for filter_ in hints.filters:
+                if filter_['name'] in self.password_expire:
+                    query = self._user_password_expires(session, query,
+                                                        filter_)
+                    hints.filters.remove(filter_)
+                    continue
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
