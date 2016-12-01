@@ -22,6 +22,30 @@
       "revId": "198610f06c80a50fd6f5fea2bebbcf44c198c566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_1a5a0b84",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11782
+      },
+      "writtenOn": "2016-12-01T16:16:52Z",
+      "side": 1,
+      "message": "id_string already exists, and it is not that strict. It allows [a-zA-Z0-0-] regex",
+      "parentUuid": "5a74a57a_9f732db4",
+      "range": {
+        "startLine": 31,
+        "startChar": 3,
+        "endLine": 31,
+        "endChar": 58
+      },
+      "revId": "198610f06c80a50fd6f5fea2bebbcf44c198c566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
