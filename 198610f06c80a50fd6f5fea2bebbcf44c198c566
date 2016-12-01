@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_81ceab81",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2016-12-01T16:19:48Z",
+      "side": 1,
+      "message": "Please add here a link to the bugreport or to a spec. I have no idea why this is being done.",
+      "revId": "198610f06c80a50fd6f5fea2bebbcf44c198c566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_9f732db4",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 7
