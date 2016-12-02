@@ -22,6 +22,53 @@
       "revId": "0a16e34d3b97f6dd42c16be18fe72be05d874323",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_518e0579",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-02T03:13:59Z",
+      "side": 1,
+      "message": "looks like it is not, which is indicative of insufficient testing.\n\ni highly recommend breaking this up for easier reviews, it\u0027ll be easier to catch mistakes like this (and appropriate test coverage)",
+      "parentUuid": "3a71b18c_64b0abde",
+      "range": {
+        "startLine": 199,
+        "startChar": 32,
+        "endLine": 199,
+        "endChar": 54
+      },
+      "revId": "0a16e34d3b97f6dd42c16be18fe72be05d874323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b15839fc",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-02T03:13:59Z",
+      "side": 1,
+      "message": "python isn\u0027t java",
+      "range": {
+        "startLine": 212,
+        "startChar": 4,
+        "endLine": 212,
+        "endChar": 22
+      },
+      "revId": "0a16e34d3b97f6dd42c16be18fe72be05d874323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
