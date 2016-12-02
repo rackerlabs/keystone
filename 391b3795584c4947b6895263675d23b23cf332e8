@@ -39,6 +39,29 @@
       "revId": "391b3795584c4947b6895263675d23b23cf332e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7d4ad9ad",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-12-02T14:06:16Z",
+      "side": 1,
+      "message": "Not sure if we need to add 3 new sections for the parameters. Perhaps we can just add the new query parameters here as in-path-query?  In any case, we should update this section with the new parameters as well.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 36
+      },
+      "revId": "391b3795584c4947b6895263675d23b23cf332e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
