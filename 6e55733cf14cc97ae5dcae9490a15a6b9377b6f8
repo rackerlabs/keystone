@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_ced33d5e",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-02T12:32:51Z",
+      "side": 1,
+      "message": "I\u0027d prefer to add a new option (connection_timeout) and deprecate this one rather than changing the semantics.\n\nFor me it just looks weird to have a config option called \"pool_connection_timeout\" that \"affect both pooled and\nunpooled LDAP connections\",",
+      "range": {
+        "startLine": 527,
+        "startChar": 32,
+        "endLine": 528,
+        "endChar": 79
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_6e822996",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-02T12:32:51Z",
+      "side": 1,
+      "message": "Why not simply wrap this with a try/except if it is the part effectivelly throwing the exception?",
+      "range": {
+        "startLine": 1297,
+        "startChar": 16,
+        "endLine": 1297,
+        "endChar": 50
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9e6265d7",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 7
@@ -13,6 +59,30 @@
       "writtenOn": "2016-11-22T10:30:55Z",
       "side": 1,
       "message": "This is still not going to work for anonymous binds, see my comment on ps5",
+      "range": {
+        "startLine": 1296,
+        "startChar": 12,
+        "endLine": 1303,
+        "endChar": 34
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_4e22cd02",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-02T12:32:51Z",
+      "side": 1,
+      "message": "I\u0027d be fine with opening another bug(s) and fixing what you\u0027ve seen. It seems to be beyond the scope of this patch, do you agree?",
+      "parentUuid": "7a77a97e_9e6265d7",
       "range": {
         "startLine": 1296,
         "startChar": 12,
