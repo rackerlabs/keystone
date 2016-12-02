@@ -77,6 +77,13 @@ in the response, the ``links`` entity section for each assignment gained by
 virtue of group membership will contain a URL that enables access to the
 membership of the group.
 
+Entities can also have names in addition to their IDs. In order to list the
+entities from the role assignments, you can do the following:
+
+-List role assignments including names:
+
+    GET /role_assignments?include_names
+
 
 List roles
 ==========
