@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_631dd0bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-02T17:42:49Z",
+      "side": 1,
+      "message": "Just saw your comment in the W-1 status ... Looking forward to seeing a new version",
+      "parentUuid": "3a71b18c_a32fe8f4",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "b61a15254f6bcc016bbe1f1c58085d7920dc30cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a95cdbc_0395c43d",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 4
