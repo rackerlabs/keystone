@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_e26e48c8",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-02T13:38:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_68221003",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_247c4eeb",
         "filename": "devstack/lib/rolling_upgrades.sh",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_027264ad",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-02T13:38:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_247c4eeb",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_44314a59",
         "filename": "devstack/lib/rolling_upgrades.sh",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2016-11-28T20:51:56Z",
       "side": 1,
       "message": "please use ``install_package \u003cpackage_name\u003e``",
+      "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_226920bf",
+        "filename": "devstack/lib/rolling_upgrades.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-02T13:38:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a74a57a_44314a59",
       "revId": "05692528e05058f8c15a3708b4b94e5dba211105",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
