@@ -25,6 +25,7 @@ from six.moves import range
 from testtools import matchers
 
 from keystone.cmd import cli
+from keystone.cmd.doctor import caching
 from keystone.common import dependency
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -710,3 +711,41 @@ class CliDomainConfigUploadNothing(unit.BaseTestCase):
                         CONF.identity.domain_config_dir)
         self.assertThat(self.logging.output,
                         matchers.Contains(expected_msg))
+
+
+class DoctorTestCase(unit.TestCase):
+
+    def test_symptom_caching_disabled(self):
+        # Set configurations and test each fail case for symptoms
+        self.config_fixture.config(group='cache', enabled=False)
+        self.config_fixture.config(debug=False)
+        self.assertTrue(caching.symptom_caching_disabled())
+
+        # Set configurations and test each pass case for symptoms
+        # For symptom_caching_disabled() we give it all pass cases by testing
+        # False and True, True and True, and True and False
+        self.config_fixture.config(group='cache', enabled=False)
+        self.config_fixture.config(debug=True)
+        self.assertFalse(caching.symptom_caching_disabled())
+        self.config_fixture.config(group='cache', enabled=True)
+        self.assertFalse(caching.symptom_caching_disabled())
+        self.config_fixture.config(debug=False)
+        self.assertFalse(caching.symptom_caching_disabled())
+
+    def test_caching_symptom_caching_enabled_without_a_backend(self):
+        # Set configurations and test each fail case for symptoms
+        self.config_fixture.config(group='cache', enabled=True)
+        self.config_fixture.config(group='cache', backend='dogpile.cache.null')
+        self.assertTrue(caching.symptom_caching_enabled_without_a_backend())
+
+        # Set configurations and test each pass case for symptoms
+        # For symptom_caching_disabled() we give it all pass cases by testing
+        # False and True, True and True, and True and False
+        self.config_fixture.config(group='cache', enabled=False)
+        self.config_fixture.config(group='cache', backend='dogpile.cache.null')
+        self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+        self.config_fixture.config(group='cache',
+                                   backend='dogpile.cache.memory')
+        self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+        self.config_fixture.config(group='cache', enabled=True)
+        self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
