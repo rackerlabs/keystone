@@ -22,6 +22,30 @@
       "revId": "2d1eed0bdaabe835885f1f2f6eac9e40cc76e12b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_8019028b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-02T17:27:56Z",
+      "side": 1,
+      "message": "Ahh, nice catch. Thank you :)",
+      "parentUuid": "3a71b18c_e071d6e1",
+      "range": {
+        "startLine": 743,
+        "startChar": 10,
+        "endLine": 743,
+        "endChar": 59
+      },
+      "revId": "2d1eed0bdaabe835885f1f2f6eac9e40cc76e12b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
