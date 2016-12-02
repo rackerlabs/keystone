@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_60608936",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-02T05:33:32Z",
+      "side": 1,
+      "message": "Need to add \"bp\" here so it\u0027ll link to the blueprint: \"bp pci-dss-query-password-expired-users\"",
+      "range": {
+        "startLine": 21,
+        "startChar": 21,
+        "endLine": 21,
+        "endChar": 22
+      },
+      "revId": "16413169c1427cf19638522d4c6782aabf25147d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
