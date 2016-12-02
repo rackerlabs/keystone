@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_d403e371",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-02T03:52:58Z",
+      "side": 1,
+      "message": "Its actually legal python. Surprised Pep8 didn\u0027t catch it.",
+      "parentUuid": "3a71b18c_518e0579",
+      "range": {
+        "startLine": 199,
+        "startChar": 32,
+        "endLine": 199,
+        "endChar": 54
+      },
+      "revId": "0a16e34d3b97f6dd42c16be18fe72be05d874323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_b15839fc",
         "filename": "keystone/models/builder.py",
         "patchSetId": 11
@@ -60,6 +84,30 @@
       "writtenOn": "2016-12-02T03:13:59Z",
       "side": 1,
       "message": "python isn\u0027t java",
+      "range": {
+        "startLine": 212,
+        "startChar": 4,
+        "endLine": 212,
+        "endChar": 22
+      },
+      "revId": "0a16e34d3b97f6dd42c16be18fe72be05d874323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_748f6f23",
+        "filename": "keystone/models/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-02T03:52:58Z",
+      "side": 1,
+      "message": "The @ signs?  I didn\u0027t even realize I had done that.",
+      "parentUuid": "3a71b18c_b15839fc",
       "range": {
         "startLine": 212,
         "startChar": 4,
