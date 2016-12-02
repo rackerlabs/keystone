@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_49af1581",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-02T18:32:24Z",
+      "side": 1,
+      "message": "(nit) The name could be better IMO because it is not a domain assignment we are talking about here, but a domain role which is used in an assignment. What about test_list_assignment_with_names_and_domain_role ?",
+      "range": {
+        "startLine": 2248,
+        "startChar": 8,
+        "endLine": 2248,
+        "endChar": 62
+      },
+      "revId": "7aba9559e181e3938dfdf35993215da83fc73470",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
