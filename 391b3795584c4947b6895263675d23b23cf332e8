@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_8e1e9a61",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-02T15:50:04Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be:\n/v3/users?password_expires_at\u003dlt:{timestamp}\n/v3/users?password_expires_at\u003dgt:{timestamp}\n\nhttps://review.openstack.org/#/c/383832/15/specs/keystone/ocata/pci-dss-expired-password.rst",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "391b3795584c4947b6895263675d23b23cf332e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_6005e9c0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
