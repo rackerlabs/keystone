@@ -1,0 +1,137 @@
+#!/bin/bash
+#
+# Copyright 2016: Mirantis Inc.
+# All Rights Reserved.
+#
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+KEYSTONE_FRONTEND_PORT=${KEYSTONE_FRONTEND_PORT:-5001}
+HAPROXY_HOST=${HAPROXY_HOST:-$SERVICE_HOST}
+HAPROXY_FRONTEND="http://$HAPROXY_HOST:$KEYSTONE_FRONTEND_PORT"
+
+function configure_haproxy {
+
+    haproxy_conf="/etc/haproxy/haproxy.cfg"
+    admin_endpoint="$KEYSTONE_AUTH_PROTOCOL://$KEYSTONE_AUTH_HOST/identity_admin"
+    public_endpoint="$KEYSTONE_SERVICE_PROTOCOL://$KEYSTONE_SERVICE_HOST/identity"
+
+    haproxy_default_settings="/etc/default/haproxy"
+
+    auth_uri="${HAPROXY_FRONTEND}/identity"
+    auth_url="${HAPROXY_FRONTEND}/identity_admin"
+
+    sql_update_admin_endpoint="update endpoint set url='${auth_url}' where url='${admin_endpoint}'"
+    sql_update_public_endpoint="update endpoint set url='${auth_uri}' where url='${public_endpoint}'"
+
+    fernet_keys=$KEYSTONE_CONF_DIR/fernet-keys
+
+    if [[ "$HAPROXY_HOST" == "$HOST_IP" ]]; then
+        # On Controller node:
+        # At first we need to install and enable HAProxy.
+        install_package haproxy
+
+        sudo chmod 777 $haproxy_default_settings
+        echo "ENABLED=1" > $haproxy_default_settings
+
+        # Configure single HAProxy forntend for multiple Keystone services on
+        # different machines. HAProxy frontend host and port should be used in
+        # OS_AUTH_URL in order to spread queries between multiple backend keystone
+        # services.
+        sudo chmod 777 $haproxy_conf
+        cat <<EOF >> $haproxy_conf
+frontend keystone-service-front
+    bind ${HAPROXY_HOST}:${KEYSTONE_FRONTEND_PORT}
+    default_backend keystone-service-back
+backend keystone-service-back
+    balance roundrobin
+    server controller ${SERVICE_HOST}:5000 check
+EOF
+        start_service haproxy
+    else
+        # After controller was successfully deployed, on Keystone node we need to add
+        # information about running Keystone backend to HAProxy config which is stored
+        # on the HAProxy server.
+        install_package sshpass
+        conf_line="server keystone ${HOST_IP}:5000 check"
+        echo $conf_line | sshpass -p "stack" \
+            ssh -o StrictHostKeyChecking=no stack@$HAPROXY_HOST "cat >> ${haproxy_conf}"
+
+        # For HA Keystone we need to share Fernet keys between Keystone nodes.
+        for i in {0..1}; do
+            sshpass -p "stack" \
+                scp stack@$SERVICE_HOST:$fernet_keys/$i $fernet_keys/$i
+        done
+
+        safe_iniset /etc/keystone/keystone.conf DEFAULT admin_endpoint $KEYSTONE_AUTH_PROTOCOL://$HOST_IP/identity_admin
+        safe_iniset /etc/keystone/keystone.conf DEFAULT public_endpoint $KEYSTONE_SERVICE_PROTOCOL://$HOST_IP/identity
+
+        # Restart HAProxy on the server.
+        sshpass -p "stack" ssh stack@$HAPROXY_HOST \
+            "sudo /bin/systemctl restart haproxy || sudo service haproxy restart"
+    fi
+
+        if [[ "$DATABASE_HOST" == "$HOST_IP" ]] || [[ "$DATABASE_HOST" == "127.0.0.1" ]]; then
+
+            # Update Keystone endpoint to use HAProxy fronted.
+
+            if [[ "$DATABASE_TYPE" == "mysql" ]]; then
+                mysql -u root -psupersecret keystone -e "${sql_update_admin_endpoint}";
+                mysql -u root -psupersecret keystone -e "${sql_update_public_endpoint}";
+            elif [[ "$DATABASE_TYPE" == "postgresql" ]]; then
+                psql -U root -Wsupersecret -d keystone -c "${sql_update_admin_endpoint}";
+                psql -U root -Wsupersecret -d keystone -c "${sql_update_public_endpoint}";
+            fi
+        fi
+
+        # Configure openStack services to authenticate via HAProxy fronted.
+
+        for service in nova cinder neutron; do
+            safe_iniset "/etc/${service}/${service}.conf" keystone_authtoken auth_uri $auth_uri
+            safe_iniset "/etc/${service}/${service}.conf" keystone_authtoken auth_url $auth_url
+        done
+        safe_iniset "/etc/nova/nova.conf" neutron auth_url $auth_url/v3.0
+        safe_iniset "/etc/neutron/neutron.conf" nova auth_url $auth_url
+        safe_iniset "/etc/neutron/neutron.conf" nova auth_uri $auth_uri
+        for conf in glance-api glance-registry; do
+            safe_iniset "/etc/glance/${conf}.conf" keystone_authtoken auth_url $auth_url
+            safe_iniset "/etc/glance/${conf}.conf" keystone_authtoken auth_uri $auth_uri
+        done
+        safe_iniset "/etc/glance/glance-cache.conf" DEFAULT auth_url $auth_url/v2.0
+        safe_iniset "/etc/swift/proxy-server.conf" "filter:authtoken" auth_uri $auth_uri
+        safe_iniset "/etc/swift/proxy-server.conf" "filter:authtoken" auth_url "${HAPROXY_FRONTEND}/identity_v2_admin"
+
+        restart_service apache2
+}
+
+function configure_tempest_for_multi_keystone {
+    safe_iniset $TEMPEST_CONFIG identity uri $HAPROXY_FRONTEND/v2.0
+    safe_iniset $TEMPEST_CONFIG identity uri_v3 $HAPROXY_FRONTEND/v3
+}
+
+function safe_iniset {
+    if [[ -e $1 ]]; then
+        iniset $1 $2 $3 $4
+    fi
+}
+
+function stop_haproxy {
+    if [[ "$HOST_IP" == "$HAPROXY_HOST" ]]; then
+        stop_service haproxy
+    fi
+}
+
+function remove_haproxy {
+    if [[ "$HOST_IP" == "$HAPROXY_HOST" ]]; then
+        uninstall_package haproxy
+    fi
+}
