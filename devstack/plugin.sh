@@ -15,6 +15,9 @@
 
 KEYSTONE_PLUGIN=$DEST/keystone/devstack
 source $KEYSTONE_PLUGIN/lib/federation.sh
+source $KEYSTONE_PLUGIN/lib/haproxy.sh
+
+MULTI_KEYSTONE=$(trueorfalse False MULTI_KEYSTONE)
 
 # For more information on Devstack plugins, including a more detailed
 # explanation on when the different steps are executed please see:
@@ -34,6 +37,12 @@ elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
     if is_service_enabled keystone-saml2-federation; then
         configure_federation
     fi
+    if [[ "$MULTI_KEYSTONE" == "True" ]]; then
+        configure_haproxy
+        update_keystone_endpoints
+        configure_services
+        configure_keystone_for_haproxy
+    fi
 
 elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
     # This phase is executed after the projects have been started
@@ -41,12 +50,22 @@ elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
     if is_service_enabled keystone-saml2-federation; then
         register_federation
     fi
+
+elif [[ "$1" == "stack" && "$2" == "test-config" ]]; then
+    # This phase is executed after Tempest was configured
+    echo "Keystone plugin - Test-config phase"
+    if [[ "$MULTI_KEYSTONE" == "True" ]]; then
+        configure_tempest_for_multi_keystone
+    fi
 fi
 
 if [[ "$1" == "unstack" ]]; then
     # Called by unstack.sh and clean.sh
     # Undo what was performed during the "post-config" and "extra" phases
-    :
+    if [[ "$MULTI_KEYSTONE" == "True" ]]; then
+        stop_haproxy
+    fi
+
 fi
 
 if [[ "$1" == "clean" ]]; then
@@ -54,5 +73,8 @@ if [[ "$1" == "clean" ]]; then
     # Undo what was performed during the "install" phase
     if is_service_enabled keystone-saml2-federation; then
         uninstall_federation
+    fi
+    if [[ "$MULTI_KEYSTONE" == "True" ]]; then
+        remove_haproxy
     fi
 fi
