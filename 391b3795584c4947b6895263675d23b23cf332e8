@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_6005e9c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-02T05:32:38Z",
+      "side": 1,
+      "message": "Need to add \"bp\" here before the name so it\u0027ll link to the blueprint. \"bp pci-dss-query-password-expired-users\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 21,
+        "endLine": 15,
+        "endChar": 22
+      },
+      "revId": "391b3795584c4947b6895263675d23b23cf332e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_20f3f19f",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-02T05:32:38Z",
+      "side": 1,
+      "message": "I feel like we are unnecessarily repeating the same thing 3 times here with just a slight variance in \u003e\u003d, \u003d\u003d, \u003c\u003d. I wonder if instead of adding 3 entire sections, the new parameters (password_expires_at, password_expires_before, password_expires_after) could just be put under \"List Users\", but we can also add a short description of how to use them and an example of one.",
+      "revId": "391b3795584c4947b6895263675d23b23cf332e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
