@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_2b457816",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-02T15:32:57Z",
+      "side": 1,
+      "message": "yes, this issue has been discussed a number of times within this patch. Please see comments from Steve Martinelli, and some of the other reviewers",
+      "parentUuid": "3a71b18c_ced33d5e",
+      "range": {
+        "startLine": 527,
+        "startChar": 32,
+        "endLine": 528,
+        "endChar": 79
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_6e822996",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-02T12:32:51Z",
       "side": 1,
       "message": "Why not simply wrap this with a try/except if it is the part effectivelly throwing the exception?",
+      "range": {
+        "startLine": 1297,
+        "startChar": 16,
+        "endLine": 1297,
+        "endChar": 50
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_abe34832",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-02T15:32:57Z",
+      "side": 1,
+      "message": "yes, simple_bind_s() is the one that throws the exception but it really does not make a difference if we encapsulate the overall subsection as conn.connect() simply initializes the connection object",
+      "parentUuid": "3a71b18c_6e822996",
       "range": {
         "startLine": 1297,
         "startChar": 16,
