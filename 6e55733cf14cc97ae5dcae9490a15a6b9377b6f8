@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_ec361de6",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-12-03T16:35:18Z",
+      "side": 1,
+      "message": "I don\u0027t really agree. The try/except is wrapping around the creation of a connection object, which sometimes makes a network connection and sometimes doesn\u0027t. Therefore the exception handling only sometimes handles the thing it was meant to handle, and the rest of the time drops it on the floor for it to crash somewhere else. I think it\u0027s within the scope of this patch to fix it correctly for all cases.\n\nOn the other hand I don\u0027t want to be the one holding up this patch so I\u0027m fine with fixing it in a subsequent patch.",
+      "parentUuid": "3a71b18c_4e22cd02",
+      "range": {
+        "startLine": 1296,
+        "startChar": 12,
+        "endLine": 1303,
+        "endChar": 34
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_09d72b24",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 7
