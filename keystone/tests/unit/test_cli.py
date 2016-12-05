@@ -26,7 +26,11 @@ from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.cmd.doctor import caching
+<<<<<<< HEAD
 from keystone.cmd.doctor import federation
+=======
+from keystone.cmd.doctor import database as doc_database
+>>>>>>> Add unit tests for doctor's database symptoms
 from keystone.common import dependency
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -759,6 +763,31 @@ class DoctorTestCase(unit.TestCase):
         self.config_fixture.config(group='cache',
                                    backend='dogpile.cache.memory')
         self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+
+    def test_symptom_database_connection_is_not_SQLite(self):
+        # Symptom Detected: Database connection is sqlite and debug is disabled
+        self.config_fixture.config(group='database', connection='sqlite')
+        self.config_fixture.config(debug=False)
+        self.assertTrue(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is sqlite and debug enabled
+        self.config_fixture.config(group='database', connection='sqlite')
+        self.config_fixture.config(debug=True)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is MySQL and debug disabled
+        self.config_fixture.config(group='database', connection='MySQL')
+        self.config_fixture.config(debug=False)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is MySQL and debug enabled
+        self.config_fixture.config(group='database', connection='MySQL')
+        self.config_fixture.config(debug=True)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
 
 
 class FederationDoctorTests(unit.TestCase):
