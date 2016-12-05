@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_5ec885a8",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-05T05:17:00Z",
+      "side": 1,
+      "message": "Need a space after this \u0027-\u0027\nAlso at the end, put another colon for it to render like the ones above.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 1
+      },
+      "revId": "8fdb74760bc042033162d76107414095217b80eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
