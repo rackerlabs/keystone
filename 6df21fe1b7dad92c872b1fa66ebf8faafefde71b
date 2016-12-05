@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_a8377cfd",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T20:27:40Z",
+      "side": 1,
+      "message": "eh? the comment in the code says:\n\nkeystone cannot include a comma in the path to the public certificate file.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/cmd/doctor/federation.py#L23-L24\n\nshouldn\u0027t this fail?",
+      "range": {
+        "startLine": 764,
+        "startChar": 10,
+        "endLine": 764,
+        "endChar": 77
+      },
+      "revId": "6df21fe1b7dad92c872b1fa66ebf8faafefde71b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
