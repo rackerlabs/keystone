@@ -16,7 +16,7 @@ import keystone.conf
 CONF = keystone.conf.CONF
 
 
-def symptom_database_connection_is_not_SQLite():
+def symptom_database_connection_is_SQLite():
     """SQLite is not recommended for production deployments.
 
     SQLite does not enforce type checking and has limited support for
