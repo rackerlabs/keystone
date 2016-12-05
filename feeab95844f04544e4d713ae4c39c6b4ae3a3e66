@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_0a9ebd62",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-05T12:13:35Z",
+      "side": 0,
+      "message": "this message was intended for when we had LDAP as assignment backend iirc (besides the details about the flag), think you can remove the complete paragraph.",
+      "range": {
+        "startLine": 926,
+        "startChar": 8,
+        "endLine": 927,
+        "endChar": 78
+      },
+      "revId": "feeab95844f04544e4d713ae4c39c6b4ae3a3e66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
