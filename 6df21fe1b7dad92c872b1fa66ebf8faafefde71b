@@ -45,6 +45,30 @@
       "revId": "6df21fe1b7dad92c872b1fa66ebf8faafefde71b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_035bf1f6",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-05T20:34:04Z",
+      "side": 1,
+      "message": "The Success Cases are a little misleading for all tests it seems. Success really means that it passed true and that the symptom was raised which really means failed. I can change this, but the caching comments that get merged would need to be changed to since this also applies to them",
+      "parentUuid": "3a71b18c_a8377cfd",
+      "range": {
+        "startLine": 764,
+        "startChar": 10,
+        "endLine": 764,
+        "endChar": 77
+      },
+      "revId": "6df21fe1b7dad92c872b1fa66ebf8faafefde71b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
