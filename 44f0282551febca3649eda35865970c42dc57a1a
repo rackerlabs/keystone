@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_d3e56e38",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:22:21Z",
+      "side": 1,
+      "message": "why not make this more generic? plenty of things have duplicate entries",
+      "range": {
+        "startLine": 438,
+        "startChar": 16,
+        "endLine": 438,
+        "endChar": 43
+      },
+      "revId": "44f0282551febca3649eda35865970c42dc57a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_13d2865c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:22:21Z",
+      "side": 1,
+      "message": "why are we looking at the 3rd index?",
+      "range": {
+        "startLine": 439,
+        "startChar": 31,
+        "endLine": 439,
+        "endChar": 34
+      },
+      "revId": "44f0282551febca3649eda35865970c42dc57a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_93c69698",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:22:21Z",
+      "side": 1,
+      "message": "reference msg?",
+      "range": {
+        "startLine": 440,
+        "startChar": 37,
+        "endLine": 440,
+        "endChar": 52
+      },
+      "revId": "44f0282551febca3649eda35865970c42dc57a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f350aad6",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:22:21Z",
+      "side": 1,
+      "message": "just spitballin\u0027 here:\n\n  name \u003d None\n  domain_id \u003d None\n\n  if \u0027name\u0027 in args[2]\n    name \u003d args[2][\u0027name\u0027]\n  if \u0027domain_id\u0027 in args[2]\n    domain_id \u003d args[2][\u0027domain_id\u0027]\n\n  msg \u003d \u0027Duplicate entry\u0027\n  if name:\n    msg \u003d msg + \u0027 found with name %s\u0027 % name\n  if domain_id\n     msg \u003d msg + \u0027 at domain ID %s\u0027 % domain_id\n\n  raise exception.Conflict(type\u003dconflict_type, details\u003dmsg)\n\nThis way, you fall back to the existing message if args[2] has nothing helpful. If if has name and domain ID (which you\u0027ll need for groups, users and projects) you have a more helpful message. And it\u0027ll work for domains, endpoints, regions and roles (maybe?), too.",
+      "range": {
+        "startLine": 436,
+        "startChar": 16,
+        "endLine": 441,
+        "endChar": 73
+      },
+      "revId": "44f0282551febca3649eda35865970c42dc57a1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
