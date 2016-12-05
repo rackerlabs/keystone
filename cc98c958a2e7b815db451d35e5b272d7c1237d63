@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_6fb48e34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6167
+      },
+      "writtenOn": "2016-12-05T18:53:17Z",
+      "side": 1,
+      "message": "Got it, thanks",
+      "parentUuid": "3a71b18c_f3718a45",
+      "revId": "cc98c958a2e7b815db451d35e5b272d7c1237d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_138a861b",
         "filename": "releasenotes/notes/remove-os_inherit-option-01a073597cb4e7ac.yaml",
         "patchSetId": 6
