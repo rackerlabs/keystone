@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_14e965e6",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-05T21:56:05Z",
+      "side": 0,
+      "message": "The only thing we\u0027ll have to be careful with here is making sure the shorter name still makes sense from a user perspective. This is because we use the actual method name as output for the user [0]. So not only is it good practice to have sane method names, it\u0027s doubly true here because users depend on them in order to make sense of what ``doctor`` is doing.\n\nOmitting ``minimum`` from the method name all together wouldn\u0027t be bad since we elaborate on it in the doc string:\n\n  def symptom_password_age_should_be_less_then_password_expiration():\n\nMaybe that\u0027s a start?\n\n[0] https://github.com/openstack/keystone/blob/1c60b1539cf63bba79711e237df496dfa094b2c5/keystone/cmd/doctor/__init__.py#L52",
+      "revId": "1c60b1539cf63bba79711e237df496dfa094b2c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
