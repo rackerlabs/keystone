@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_f90b0422",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-12-05T21:19:43Z",
+      "side": 1,
+      "message": "Is there a spec for this already? It seems that this small change has significant implications than need some discussion.",
+      "revId": "290713e51ec0b8051256f5f7b102927dff3627ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_64998b6e",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 8
@@ -48,6 +65,23 @@
       "writtenOn": "2016-12-05T19:53:29Z",
       "side": 1,
       "message": "According to the RFC - we can tighten this even further [0]: \n\n  \u0027pattern\u0027: \u0027^[a-f0-9]+$\u0027\n\nThe current pattern would allow me to create a project ID that doesn\u0027t conform the to the UUID spec, but passes validation [1].\n\n[0] https://tools.ietf.org/html/rfc4122.html#section-3\n[1] http://cdn.pasteraw.com/ntgohgancxl2q7howkmas5wy0f04jli",
+      "revId": "290713e51ec0b8051256f5f7b102927dff3627ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_de41ce64",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-12-05T21:19:43Z",
+      "side": 1,
+      "message": "if \u0027id\u0027 in project:",
       "revId": "290713e51ec0b8051256f5f7b102927dff3627ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
