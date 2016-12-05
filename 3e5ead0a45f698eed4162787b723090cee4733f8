@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_f2116105",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1995,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-05T19:22:33Z",
+      "side": 1,
+      "message": "not adding anything",
+      "range": {
+        "startLine": 1995,
+        "startChar": 10,
+        "endLine": 1995,
+        "endChar": 29
+      },
+      "revId": "3e5ead0a45f698eed4162787b723090cee4733f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_72fe31af",
+        "filename": "keystone/tests/unit/assignment/test_backends.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-05T19:22:33Z",
+      "side": 1,
+      "message": "not adding anything",
+      "range": {
+        "startLine": 2125,
+        "startChar": 10,
+        "endLine": 2125,
+        "endChar": 29
+      },
+      "revId": "3e5ead0a45f698eed4162787b723090cee4733f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
