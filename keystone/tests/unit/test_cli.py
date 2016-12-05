@@ -26,6 +26,7 @@ from testtools import matchers
 
 from keystone.cmd import cli
 from keystone.cmd.doctor import caching
+from keystone.cmd.doctor import database as doc_database
 from keystone.cmd.doctor import federation
 from keystone.common import dependency
 from keystone.common.sql import upgrades
@@ -759,6 +760,39 @@ class DoctorTestCase(unit.TestCase):
         self.config_fixture.config(group='cache',
                                    backend='dogpile.cache.memory')
         self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+
+    def test_symptom_database_connection_is_not_SQLite(self):
+        # Symptom Detected: Database connection is sqlite and debug is disabled
+        self.config_fixture.config(
+            group='database',
+            connection='sqlite+sqlitedr://admin:secret@localhost:1234/mydb')
+        self.config_fixture.config(debug=False)
+        self.assertTrue(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is sqlite and debug enabled
+        self.config_fixture.config(
+            group='database',
+            connection='sqlite+sqlitedr://admin:secret@localhost:1234/mydb')
+        self.config_fixture.config(debug=True)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is MySQL and debug disabled
+        self.config_fixture.config(
+            group='database',
+            connection='mysql+mysqldr://admin:secret@localhost:1234/mydb')
+        self.config_fixture.config(debug=False)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
+
+        # No Symptom Detected: Database connection is MySQL and debug enabled
+        self.config_fixture.config(
+            group='database',
+            connection='mysql+mysqldr://admin:secret@localhost:1234/mydb')
+        self.config_fixture.config(debug=True)
+        self.assertFalse(
+            doc_database.symptom_database_connection_is_not_SQLite())
 
 
 class FederationDoctorTests(unit.TestCase):
