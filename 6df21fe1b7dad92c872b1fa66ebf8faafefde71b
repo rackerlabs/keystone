@@ -93,6 +93,30 @@
       "revId": "6df21fe1b7dad92c872b1fa66ebf8faafefde71b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_394adc26",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-05T21:26:30Z",
+      "side": 1,
+      "message": "That sounds good to me, I will update the other doctor tests currently pending review as well to follow this",
+      "parentUuid": "3a71b18c_9eb756d7",
+      "range": {
+        "startLine": 764,
+        "startChar": 10,
+        "endLine": 764,
+        "endChar": 77
+      },
+      "revId": "6df21fe1b7dad92c872b1fa66ebf8faafefde71b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
