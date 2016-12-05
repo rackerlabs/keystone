@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_f3718a45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:31:40Z",
+      "side": 1,
+      "message": "add:\n\n  implements bp: removed-as-of-ocata\n\nsomewhere here",
+      "revId": "cc98c958a2e7b815db451d35e5b272d7c1237d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_138a861b",
+        "filename": "releasenotes/notes/remove-os_inherit-option-01a073597cb4e7ac.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-05T04:31:40Z",
+      "side": 1,
+      "message": "please add this to the \u0027other\u0027 portion in: https://github.com/openstack/keystone/blob/master/releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml\n\na slight wording change:\n\n- Removed the config option ``[os_inherit] enabled`` as the OS-INHERIT extension is now always enabled.",
+      "revId": "cc98c958a2e7b815db451d35e5b272d7c1237d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
