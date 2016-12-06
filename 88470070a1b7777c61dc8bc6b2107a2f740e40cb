@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_6cec782a",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-06T12:13:45Z",
+      "side": 1,
+      "message": "this can be in another function",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 6
+      },
+      "revId": "88470070a1b7777c61dc8bc6b2107a2f740e40cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_0caea4e5",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-06T12:13:45Z",
+      "side": 1,
+      "message": "I\u0027d separate this in another function",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 71
+      },
+      "revId": "88470070a1b7777c61dc8bc6b2107a2f740e40cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_0c94e440",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-06T12:13:45Z",
+      "side": 1,
+      "message": "add a comment for this function, looks like it is used to ignore when a config file doesn\u0027t exist? Why is this acceptable?",
+      "range": {
+        "startLine": 122,
+        "startChar": 9,
+        "endLine": 122,
+        "endChar": 20
+      },
+      "revId": "88470070a1b7777c61dc8bc6b2107a2f740e40cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
