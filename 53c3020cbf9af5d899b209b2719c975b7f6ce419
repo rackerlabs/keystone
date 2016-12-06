@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_963f08b3",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T20:15:04Z",
+      "side": 1,
+      "message": "I like it because it tests all the combinations between sqlite/non-sqlite connection strings and debug/not-debug",
+      "revId": "53c3020cbf9af5d899b209b2719c975b7f6ce419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
