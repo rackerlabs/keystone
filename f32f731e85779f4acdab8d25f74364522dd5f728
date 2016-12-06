@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_d7a337b0",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-12-06T23:13:32Z",
+      "side": 1,
+      "message": "I\u0027m not aware that sqlite supports users, passwords, network access, or multiple databases... nor is there a Python sqlite driver called sqlitedr :)",
+      "revId": "f32f731e85779f4acdab8d25f74364522dd5f728",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
