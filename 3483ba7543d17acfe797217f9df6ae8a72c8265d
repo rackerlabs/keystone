@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_da89cc27",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-06T05:20:48Z",
+      "side": 1,
+      "message": "It kinda looks like it was supposed to be a symptom?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/cmd/doctor/database.py\n\nIf it is supposed to be, the logic there might need to be changed.",
+      "parentUuid": "3a71b18c_3a29e037",
+      "range": {
+        "startLine": 782,
+        "startChar": 64,
+        "endLine": 782,
+        "endChar": 77
+      },
+      "revId": "3483ba7543d17acfe797217f9df6ae8a72c8265d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_3a5ac02a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
