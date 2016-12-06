@@ -126,6 +126,21 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
     def generate_token_schema(self, domain_scoped=False, project_scoped=False):
         """Return a dictionary of token properties to validate against."""
+        ROLES_SCHEMA = {
+            'type': 'array',
+            'items': {
+                'type': 'object',
+                'properties': {
+                    'id': {'type': 'string', },
+                    'name': {'type': 'string', },
+                    'domain_id': {'type': ['null', ], },
+                },
+                'required': ['id', 'name', ],
+                'additionalProperties': False,
+            },
+            'minItems': 1,
+        }
+
         properties = {
             'audit_ids': {
                 'type': 'array',
@@ -185,19 +200,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         if domain_scoped:
             properties['catalog'] = {'type': 'array'}
-            properties['roles'] = {
-                'type': 'array',
-                'items': {
-                    'type': 'object',
-                    'properties': {
-                        'id': {'type': 'string', },
-                        'name': {'type': 'string', },
-                    },
-                    'required': ['id', 'name', ],
-                    'additionalProperties': False,
-                },
-                'minItems': 1,
-            }
+            properties['roles'] = ROLES_SCHEMA
             properties['domain'] = {
                 'type': 'object',
                 'required': ['id', 'name'],
@@ -210,7 +213,7 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         elif project_scoped:
             properties['is_admin_project'] = {'type': 'boolean'}
             properties['catalog'] = {'type': 'array'}
-            properties['roles'] = {'type': 'array'}
+            properties['roles'] = ROLES_SCHEMA
             properties['is_domain'] = {'type': 'boolean'}
             properties['project'] = {
                 'type': ['object'],
