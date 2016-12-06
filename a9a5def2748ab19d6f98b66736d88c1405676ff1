@@ -46,6 +46,30 @@
       "revId": "a9a5def2748ab19d6f98b66736d88c1405676ff1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_9e0ba823",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 832,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T17:36:09Z",
+      "side": 1,
+      "message": "I followed what is done with role_name and role_id just above. However I agree this looks more correct, thanks Rodrigo",
+      "parentUuid": "3a71b18c_b3e5000a",
+      "range": {
+        "startLine": 832,
+        "startChar": 31,
+        "endLine": 832,
+        "endChar": 62
+      },
+      "revId": "a9a5def2748ab19d6f98b66736d88c1405676ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
