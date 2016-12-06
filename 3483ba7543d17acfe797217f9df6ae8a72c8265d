@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_9a0114b2",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T05:07:47Z",
+      "side": 1,
+      "message": "i agree, i prefer being more verbose for these tests rather than having to re-read the previous check",
+      "parentUuid": "3a71b18c_3a0c803a",
+      "range": {
+        "startLine": 771,
+        "startChar": 8,
+        "endLine": 771,
+        "endChar": 73
+      },
+      "revId": "3483ba7543d17acfe797217f9df6ae8a72c8265d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_3a29e037",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T05:07:47Z",
+      "side": 1,
+      "message": "hmm, i would have thought that having debug enabled would be a symptom.",
+      "range": {
+        "startLine": 782,
+        "startChar": 64,
+        "endLine": 782,
+        "endChar": 77
+      },
+      "revId": "3483ba7543d17acfe797217f9df6ae8a72c8265d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_3a5ac02a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
