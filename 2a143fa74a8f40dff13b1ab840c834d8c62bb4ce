@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_3f3a87e7",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T22:49:00Z",
+      "side": 1,
+      "message": "add some comments here about *why* you are doing this, it\u0027ll help future maintainers",
+      "range": {
+        "startLine": 438,
+        "startChar": 0,
+        "endLine": 439,
+        "endChar": 32
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_5f14a34b",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T22:49:00Z",
+      "side": 1,
+      "message": "you\u0027ll need to mark this for translation with _()",
+      "range": {
+        "startLine": 449,
+        "startChar": 69,
+        "endLine": 449,
+        "endChar": 72
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_2a2c0798",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T22:49:00Z",
+      "side": 1,
+      "message": "suggest naming this: test_database_conflicts",
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_0563bc42",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T22:49:00Z",
+      "side": 1,
+      "message": "probably want to change the user ID before going to the next line",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_450bf47c",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T22:49:00Z",
+      "side": 1,
+      "message": "we probably want to test the name conflicts, not the ID. Also, no need to pass in things as name and ID are defaulted to uuid.\n\n    role_ref \u003d unit.new_role_ref()\n    self.role_api.create_role(role_ref[\u0027name\u0027], role_ref)\n    role_ref[\u0027id\u0027] \u003d some_new_uuid\n\n  try:\n    self.role_api.create_role(role_ref[\u0027name\u0027], role_ref)\n  except:\n     ..",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 28
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
