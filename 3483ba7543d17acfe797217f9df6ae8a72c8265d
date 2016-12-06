@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_95e56539",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-06T05:56:19Z",
+      "side": 1,
+      "message": "The way the symptom is currently written in the link you provided only raises a symptom if the user has their database connection set to sqlite and debug is enabled. In any other case, it will not raise the symptom. Due to\n\"and not CONF.debug\"",
+      "parentUuid": "3a71b18c_da89cc27",
+      "range": {
+        "startLine": 782,
+        "startChar": 64,
+        "endLine": 782,
+        "endChar": 77
+      },
+      "revId": "3483ba7543d17acfe797217f9df6ae8a72c8265d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_3a5ac02a",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
