@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_b78b4967",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T04:18:47Z",
+      "side": 1,
+      "message": "than is the correct choice here",
+      "range": {
+        "startLine": 21,
+        "startChar": 40,
+        "endLine": 21,
+        "endChar": 44
+      },
+      "revId": "ec6f55c134be8e5703c18a0b4fc444c09ee414bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
