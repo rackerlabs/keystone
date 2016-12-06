@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_bee0642a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T17:43:17Z",
+      "side": 1,
+      "message": "(nit) returns",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "28fd030667399795de744953a9e8fe3b20bf3ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_3eec5429",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T17:43:17Z",
+      "side": 1,
+      "message": "(nit) domain",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "28fd030667399795de744953a9e8fe3b20bf3ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_fedf47d3",
         "filename": "api-ref/source/v3/roles.inc",
         "patchSetId": 5
@@ -19,6 +65,23 @@
         "endLine": 87,
         "endChar": 39
       },
+      "revId": "28fd030667399795de744953a9e8fe3b20bf3ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7e7b2c7b",
+        "filename": "api-ref/source/v3/samples/admin/role-assignments-effective-list-include-names-response.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T17:43:17Z",
+      "side": 1,
+      "message": "it\u0027d be nice if this or the next one were inherited to projects",
       "revId": "28fd030667399795de744953a9e8fe3b20bf3ef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
