@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_0fda2b4c",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T02:27:39Z",
+      "side": 1,
+      "message": "nice guard.\n\nyou could alternatively check all of the args, since the 3rd parameters in the handles_conflict wrapper may not always be the resource reference (but it looks like it is most of the time)",
+      "range": {
+        "startLine": 438,
+        "startChar": 15,
+        "endLine": 438,
+        "endChar": 34
+      },
+      "revId": "f940497235204dc1da0f7019f2e6b89e133ca0f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_ef2def46",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-06T02:27:39Z",
+      "side": 1,
+      "message": "what\u0027s the point of this? you\u0027re just checking if it\u0027s not None, and we already default to that, so setting domain_id to None (on the next line) is still OK.",
+      "range": {
+        "startLine": 441,
+        "startChar": 46,
+        "endLine": 441,
+        "endChar": 70
+      },
+      "revId": "f940497235204dc1da0f7019f2e6b89e133ca0f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
