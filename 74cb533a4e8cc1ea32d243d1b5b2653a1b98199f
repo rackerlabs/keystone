@@ -16,6 +16,24 @@
       "revId": "74cb533a4e8cc1ea32d243d1b5b2653a1b98199f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b7b87b12",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-06T23:14:30Z",
+      "side": 1,
+      "message": "I don\u0027t like the idea of automatically creating a bunch of domains when that might not be what people are expecting, which will happen with existing code. Going forward, they can create the 1:1 idp:domain relationship by passing in the domain_id when creating the idp.",
+      "parentUuid": "3a71b18c_7fa6bfae",
+      "revId": "74cb533a4e8cc1ea32d243d1b5b2653a1b98199f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
