@@ -140,6 +140,30 @@
       "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_012f4688",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T14:19:02Z",
+      "side": 1,
+      "message": "I think what Kanika is doing is right. It\u0027s probably confusing because the id_type and id_ pair is a bad naming for the key,value pairs from the role assignment entity.\n\nid_type is a key in the role assignment dict, while id_ is its correspondent value.\n\nIt is just copying the key,value in the case where the key is \u0027inherited_to_projects\u0027, which makes sense to me.",
+      "parentUuid": "3a71b18c_a55b3af5",
+      "range": {
+        "startLine": 1033,
+        "startChar": 58,
+        "endLine": 1033,
+        "endChar": 61
+      },
+      "revId": "58567605533a6bebda694860cf33c3a1c5c780cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
