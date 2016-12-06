@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_becdc467",
+        "filename": "api-ref/source/v3/roles.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T17:46:10Z",
+      "side": 1,
+      "message": "yes it works as key-only, see the test I just wrote at https://review.openstack.org/#/c/407558 as an example",
+      "parentUuid": "3a71b18c_fedf47d3",
+      "range": {
+        "startLine": 87,
+        "startChar": 26,
+        "endLine": 87,
+        "endChar": 39
+      },
+      "revId": "28fd030667399795de744953a9e8fe3b20bf3ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_7e7b2c7b",
         "filename": "api-ref/source/v3/samples/admin/role-assignments-effective-list-include-names-response.json",
         "patchSetId": 5
