@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_7fa6bfae",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-06T21:49:31Z",
+      "side": 1,
+      "message": "This maps many IdPs to one domain.  Since we can do that explicitly, it probably makes more sense for the default to create a new domain.",
+      "revId": "74cb533a4e8cc1ea32d243d1b5b2653a1b98199f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
