@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_e4dfa6d3",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2016-12-06T21:32:01Z",
+      "side": 1,
+      "message": "The value of the [database] connection option being tested here isn\u0027t realistic at all (oslo.db would choke on these values). Instead, realistic examples of the connection variable would be like:\n\n  postgresql+psycopg2://scott:tiger@localhost/mydatabase\n  mysql+mysqlconnector://scott:tiger@localhost/foo\n  sqlite:///foo.db\n  sqlite:///:memory:\n\nSource: http://docs.sqlalchemy.org/en/latest/core/engines.html\n\nI think these tests should be written against somewhat realistic examples.",
+      "revId": "53c3020cbf9af5d899b209b2719c975b7f6ce419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_963f08b3",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 5
