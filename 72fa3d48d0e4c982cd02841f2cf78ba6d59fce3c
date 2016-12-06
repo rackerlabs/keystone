@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_32a1eef8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-06T15:17:28Z",
+      "side": 1,
+      "message": "I can fix this in a followup because it\u0027s a bad naming for when it represents the inherited_to_projects key and its value.",
+      "range": {
+        "startLine": 951,
+        "startChar": 16,
+        "endLine": 951,
+        "endChar": 28
+      },
+      "revId": "72fa3d48d0e4c982cd02841f2cf78ba6d59fce3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
