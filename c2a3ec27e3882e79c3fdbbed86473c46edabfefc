@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_557b7429",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "This is not being used anywhere.",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 28
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7585d0ab",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "This parameter is used to show there is a filter called password_expires_at in the user list call. I suggest rewording this description to show the possible filters, etc be more detailed",
+      "range": {
+        "startLine": 296,
+        "startChar": 0,
+        "endLine": 296,
+        "endChar": 65
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_35ec388f",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "This is not being used anywhere.",
+      "range": {
+        "startLine": 300,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 29
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_cc19c57b",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 5
@@ -13,6 +82,30 @@
       "writtenOn": "2016-12-07T17:26:00Z",
       "side": 1,
       "message": "add {operator} or {comparator} here:\n\npassword_expires_at\u003d{operator}:{timestamp}",
+      "range": {
+        "startLine": 77,
+        "startChar": 50,
+        "endLine": 77,
+        "endChar": 62
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_15a49c06",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a71b18c_cc19c57b",
       "range": {
         "startLine": 77,
         "startChar": 50,
@@ -41,6 +134,70 @@
         "startChar": 39,
         "endLine": 82,
         "endChar": 50
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_75c6b04a",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "yes, at it would be nice to match what the response example gives.\n\n    /v3/users?password_expires_at\u003deq:2016-11-06T15:32:17Z",
+      "parentUuid": "3a71b18c_8cab4dd6",
+      "range": {
+        "startLine": 82,
+        "startChar": 39,
+        "endLine": 82,
+        "endChar": 50
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_753b1039",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "Add an operator or comparator parameter in the .yaml so that it will also be explicit what comparisons are available",
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_3510b8a8",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:37:33Z",
+      "side": 1,
+      "message": "remove this. you may just want to say something like: \"The response contains a list of users, where each user is represented with the parameters detailed below:\"",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 24
       },
       "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
