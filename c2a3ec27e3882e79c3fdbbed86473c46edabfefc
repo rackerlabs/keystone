@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_cc19c57b",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-07T17:26:00Z",
+      "side": 1,
+      "message": "add {operator} or {comparator} here:\n\npassword_expires_at\u003d{operator}:{timestamp}",
+      "range": {
+        "startLine": 77,
+        "startChar": 50,
+        "endLine": 77,
+        "endChar": 62
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_8cab4dd6",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-07T17:26:00Z",
+      "side": 1,
+      "message": "maybe add a timestamp here so we can see what format it should look like.",
+      "range": {
+        "startLine": 82,
+        "startChar": 39,
+        "endLine": 82,
+        "endChar": 50
+      },
+      "revId": "c2a3ec27e3882e79c3fdbbed86473c46edabfefc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
