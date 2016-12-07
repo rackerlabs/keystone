@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_3c117c5e",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T22:10:38Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 207,
+        "startChar": 6,
+        "endLine": 207,
+        "endChar": 13
+      },
+      "revId": "341d80cdce9c749206c6ee9d7d5cc39f32e66869",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
