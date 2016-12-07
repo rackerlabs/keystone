@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_1d24d7c4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1759,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T13:19:12Z",
+      "side": 1,
+      "message": "missing extra assertion here about inherited stuff",
+      "range": {
+        "startLine": 1757,
+        "startChar": 8,
+        "endLine": 1759,
+        "endChar": 41
+      },
+      "revId": "8fe390632587e158773e80233481ae244a4a3b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
