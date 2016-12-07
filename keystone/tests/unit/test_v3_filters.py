@@ -14,10 +14,14 @@
 # under the License.
 
 import datetime
+import json
 
 import freezegun
 from oslo_serialization import jsonutils
 from six.moves import range
+
+from keystone.common import sql
+from keystone.identity.backends import sql_model as model
 
 import keystone.conf
 from keystone.tests import unit
@@ -231,6 +235,86 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
             self.assertEqual(1, len(r.result.get('users')))
             self.assertEqual(user['id'], r.result.get('users')[0]['id'])
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
+
+    def test_list_users_by_password_expires_at(self):
+        """GET /users?password_expires_at={comparator}:{timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter on it successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        before_time = expired_time - datetime.timedelta(days=2)
+        after_time = expired_time + datetime.timedelta(days=2)
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            # eq not null
+            url_by_name = '/users?password_expires_at=eq:%s' % expired_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # eq null
+            url_by_name = '/users?password_expires_at=eq:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
+
+            # neq not null
+            url_by_name = '/users?password_expires_at=neq:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # neq null
+            url_by_name = '/users?password_expires_at=neq:%s' % expired_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
+
+            # lt not null
+            url_by_name = '/users?password_expires_at=lt:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # lt null
+            url_by_name = '/users?password_expires_at=lt:%s' % expired_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
+
+            # lte not null
+            url_by_name = '/users?password_expires_at=lte:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # lt null
+            url_by_name = '/users?password_expires_at=lte:%s' % before_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
+
+            # gt not null
+            url_by_name = '/users?password_expires_at=gt:%s' % before_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # gt null
+            url_by_name = '/users?password_expires_at=gt:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
+
+            # gte not null
+            url_by_name = '/users?password_expires_at=gte:%s' % before_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertTrue(json.loads(r.body.decode('utf-8'))['users'])
+            # gte null
+            url_by_name = '/users?password_expires_at=gte:%s' % after_time
+            r = self.get(url_by_name, auth=self.auth)
+            self.assertFalse(json.loads(r.body.decode('utf-8'))['users'])
 
     def test_inexact_filters(self):
         # Create 20 users
