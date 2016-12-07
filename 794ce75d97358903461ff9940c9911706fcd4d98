@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_70ba3b70",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T20:20:49Z",
+      "side": 1,
+      "message": "rename this to CachingDoctorTests in a separate patch",
+      "range": {
+        "startLine": 718,
+        "startChar": 6,
+        "endLine": 718,
+        "endChar": 20
+      },
+      "revId": "794ce75d97358903461ff9940c9911706fcd4d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_1062e716",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T20:20:49Z",
+      "side": 1,
+      "message": "this tests reads SO much easier now",
+      "range": {
+        "startLine": 720,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 37
+      },
+      "revId": "794ce75d97358903461ff9940c9911706fcd4d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d0a94f26",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T20:20:49Z",
+      "side": 1,
+      "message": "put this in it\u0027s own class:\n\n  class DebugDoctorTests(unit.TestCase):",
+      "range": {
+        "startLine": 752,
+        "startChar": 4,
+        "endLine": 752,
+        "endChar": 49
+      },
+      "revId": "794ce75d97358903461ff9940c9911706fcd4d98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
