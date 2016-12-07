@@ -27,6 +27,7 @@ from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import filtering
+from keystone.tests.unit.identity import test_base
 
 
 CONF = keystone.conf.CONF
@@ -1331,7 +1332,10 @@ class LimitTests(filtering.FilterTests):
         self._test_list_entity_filtered_and_limited('project')
 
 
-class ShadowUsersTests(object):
+class ShadowUsersBackendTests(test_base.ShadowUsersBaseTests):
+    def setUp(self):
+        super(ShadowUsersBackendTests, self).setUp()
+
     def test_create_nonlocal_user_unique_constraint(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user_created = self.shadow_users_api.create_nonlocal_user(user)
@@ -1378,39 +1382,43 @@ class ShadowUsersTests(object):
         self.assertItemsEqual(user_created, user_found)
 
     def test_create_federated_user_unique_constraint(self):
-        federated_dict = unit.new_federated_user_ref()
-        user_dict = self.shadow_users_api.create_federated_user(federated_dict)
+        user_dict = self.shadow_users_api.create_federated_user(
+            self.domain_id, self.federated_user)
         user_dict = self.shadow_users_api.get_user(user_dict["id"])
         self.assertIsNotNone(user_dict["id"])
         self.assertRaises(exception.Conflict,
                           self.shadow_users_api.create_federated_user,
-                          federated_dict)
+                          self.domain_id,
+                          self.federated_user)
+
+    def test_create_federated_user_domain(self):
+        user = self.shadow_users_api.create_federated_user(
+            self.domain_id, self.federated_user)
+        self.assertEqual(user['domain_id'], self.domain_id)
 
     def test_get_federated_user(self):
-        federated_dict = unit.new_federated_user_ref()
         user_dict_create = self.shadow_users_api.create_federated_user(
-            federated_dict)
+            self.domain_id, self.federated_user)
         user_dict_get = self.shadow_users_api.get_federated_user(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"])
+            self.federated_user["idp_id"],
+            self.federated_user["protocol_id"],
+            self.federated_user["unique_id"])
         self.assertItemsEqual(user_dict_create, user_dict_get)
         self.assertEqual(user_dict_create["id"], user_dict_get["id"])
 
     def test_update_federated_user_display_name(self):
-        federated_dict = unit.new_federated_user_ref()
         user_dict_create = self.shadow_users_api.create_federated_user(
-            federated_dict)
+            self.domain_id, self.federated_user)
         new_display_name = uuid.uuid4().hex
         self.shadow_users_api.update_federated_user_display_name(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"],
+            self.federated_user["idp_id"],
+            self.federated_user["protocol_id"],
+            self.federated_user["unique_id"],
             new_display_name)
         user_ref = self.shadow_users_api._get_federated_user(
-            federated_dict["idp_id"],
-            federated_dict["protocol_id"],
-            federated_dict["unique_id"])
+            self.federated_user["idp_id"],
+            self.federated_user["protocol_id"],
+            self.federated_user["unique_id"])
         self.assertEqual(user_ref.federated_users[0].display_name,
                          new_display_name)
         self.assertEqual(user_dict_create["id"], user_ref.id)
@@ -1419,22 +1427,35 @@ class ShadowUsersTests(object):
         self.config_fixture.config(group='security_compliance',
                                    disable_user_account_days_inactive=90)
         now = datetime.datetime.utcnow().date()
-        user_ref = self.identity_api.authenticate(
+        password = uuid.uuid4().hex
+        user = self._create_user(password)
+        user_auth = self.identity_api.authenticate(
             self.make_request(),
-            user_id=self.user_sna['id'],
-            password=self.user_sna['password'])
-        user_ref = self._get_user_ref(user_ref['id'])
+            user_id=user['id'],
+            password=password)
+        user_ref = self._get_user_ref(user_auth['id'])
         self.assertGreaterEqual(now, user_ref.last_active_at)
 
     def test_set_last_active_at_when_config_setting_is_none(self):
         self.config_fixture.config(group='security_compliance',
                                    disable_user_account_days_inactive=None)
-        user_ref = self.identity_api.authenticate(
+        password = uuid.uuid4().hex
+        user = self._create_user(password)
+        user_auth = self.identity_api.authenticate(
             self.make_request(),
-            user_id=self.user_sna['id'],
-            password=self.user_sna['password'])
-        user_ref = self._get_user_ref(user_ref['id'])
+            user_id=user['id'],
+            password=password)
+        user_ref = self._get_user_ref(user_auth['id'])
         self.assertIsNone(user_ref.last_active_at)
+
+    def _create_user(self, password):
+        user = {
+            'name': uuid.uuid4().hex,
+            'domain_id': self.domain_id,
+            'enabled': True,
+            'password': password
+        }
+        return self.identity_api.create_user(user)
 
     def _get_user_ref(self, user_id):
         with sql.session_for_read() as session:
