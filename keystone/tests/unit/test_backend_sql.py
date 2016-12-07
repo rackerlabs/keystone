@@ -225,7 +225,6 @@ class SqlModels(SqlTests):
 
 class SqlIdentity(SqlTests,
                   identity_tests.IdentityTests,
-                  identity_tests.ShadowUsersTests,
                   assignment_tests.AssignmentTests,
                   resource_tests.ResourceTests):
     def test_password_hashed(self):
@@ -630,6 +629,12 @@ class SqlIdentity(SqlTests,
         # users fetched.
         self.assertNotEqual(len(first_call_users), len(second_call_users))
         self.assertEqual(first_call_counter, counter.calls)
+
+
+class SqlShadowUser(SqlTests, identity_tests.ShadowUsersTests):
+    def setUp(self):
+        super(SqlShadowUser, self).setUp()
+        identity_tests.ShadowUsersTests.setUp(self)
 
 
 class SqlTrust(SqlTests, trust_tests.TrustTests):
