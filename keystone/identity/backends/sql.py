@@ -13,7 +13,7 @@
 # under the License.
 
 import datetime
-
+import operator
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -34,6 +34,9 @@ class Identity(base.IdentityDriverBase):
     # config parameter to enable sql to be used as a domain-specific driver.
     def __init__(self, conf=None):
         self.conf = conf
+        self.password_expire = ['password_expires_at',
+                                'password_expires_before',
+                                'password_expires_after']
         super(Identity, self).__init__()
 
     @property
@@ -125,10 +128,40 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _get_user_password_expires(self, session, query, value, operator):
+        return query.filter(sqlalchemy.and_(
+            model.LocalUser.id == model.Password.local_user_id,
+            operator(model.Password.expires_at, value)))
+
+    def _user_password_expires(self, session, query, value):
+        query = query.join(model.Password)
+
+        if 'lt' in value:
+            return self._get_user_password_expires(session, query,
+                                                   value[3:-1], operator.lt)
+        elif 'le' in value:
+            return self._get_user_password_expires(session, query,
+                                                   value[3:-1], operator.le)
+        elif 'gt' in value:
+            return self._get_user_password_expires(session, query,
+                                                   value[3:-1], operator.gt)
+        elif 'ge' in value:
+            return self._get_user_password_expires(session, query,
+                                                   value[3:-1], operator.ge)
+        else:
+            return self._get_user_password_expires(session, query,
+                                                   value, operator.eq)
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            for filter_ in hints.filters:
+                if filter_['name'] in self.password_expire:
+                    query = self._user_password_expires(session, query,
+                                                        filter_['value'])
+                    hints.filters.remove(filter_)
+                    continue
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
