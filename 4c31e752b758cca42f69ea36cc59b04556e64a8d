@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_6538e6d3",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T05:00:38Z",
+      "side": 1,
+      "message": "why not create the table like on line 162?",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 18
+      },
+      "revId": "4c31e752b758cca42f69ea36cc59b04556e64a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_a52e7e89",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T05:00:38Z",
+      "side": 1,
+      "message": "-1 for not including the reasonCode in the table, that would make it much easier for a user to look up what happened.\n\ni\u0027m wondering if we want to put the reasonType instead of the PCI description, thoughts?\n\nI like the reference back to the PCI section though.",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 68
+      },
+      "revId": "4c31e752b758cca42f69ea36cc59b04556e64a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
