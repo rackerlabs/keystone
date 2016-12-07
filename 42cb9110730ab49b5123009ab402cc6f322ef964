@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_97f509cd",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T22:19:21Z",
+      "side": 1,
+      "message": "this can be removed, development.environment is in the same folder as this file",
+      "range": {
+        "startLine": 207,
+        "startChar": 6,
+        "endLine": 207,
+        "endChar": 13
+      },
+      "revId": "42cb9110730ab49b5123009ab402cc6f322ef964",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
