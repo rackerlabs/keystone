@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_7ca2149c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-07T21:56:22Z",
+      "side": 0,
+      "message": "tox was complaining about it. I put a link to the current warnings.",
+      "parentUuid": "3a71b18c_1cbe80d4",
+      "revId": "fc93521ed1fca2e8393cf2e53e0f79a61dec7222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_bc9e6c61",
         "filename": "keystone/common/utils.py",
         "patchSetId": 4
