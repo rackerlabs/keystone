@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_9c1f1eb6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1730,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:49:49Z",
+      "side": 1,
+      "message": "i\u0027d prefer we use the substitution notation:\n\n  user.id\u003d%s\u0027 % (user[\u0027id\u0027])",
+      "range": {
+        "startLine": 1730,
+        "startChar": 52,
+        "endLine": 1730,
+        "endChar": 66
+      },
+      "revId": "d1da8cadccc395731a8628d84ca2b758f2ca90f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_dc62763d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1731,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:49:49Z",
+      "side": 1,
+      "message": "we probably want to assert that the inherited value is set as expected",
+      "range": {
+        "startLine": 1731,
+        "startChar": 8,
+        "endLine": 1731,
+        "endChar": 14
+      },
+      "revId": "d1da8cadccc395731a8628d84ca2b758f2ca90f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_bc1a1ac4",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1737,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:49:49Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 1737,
+        "startChar": 35,
+        "endLine": 1737,
+        "endChar": 50
+      },
+      "revId": "d1da8cadccc395731a8628d84ca2b758f2ca90f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_fc657244",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1738,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:49:49Z",
+      "side": 1,
+      "message": "we probably want to assert that the inherited value is set as expected",
+      "range": {
+        "startLine": 1738,
+        "startChar": 8,
+        "endLine": 1738,
+        "endChar": 14
+      },
+      "revId": "d1da8cadccc395731a8628d84ca2b758f2ca90f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
