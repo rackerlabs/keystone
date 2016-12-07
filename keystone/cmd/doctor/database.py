@@ -26,5 +26,4 @@ def symptom_database_connection_is_not_SQLite():
     """
     return (
         CONF.database.connection is not None
-        and 'sqlite' in CONF.database.connection
-        and not CONF.debug)
+        and 'sqlite' in CONF.database.connection)
