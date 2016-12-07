@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_225c247c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1607,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T04:34:41Z",
+      "side": 1,
+      "message": "call this role?",
+      "range": {
+        "startLine": 1607,
+        "startChar": 56,
+        "endLine": 1607,
+        "endChar": 61
+      },
+      "revId": "812982a45f2a62f557c96f61108c3535811276c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_0259e88d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T04:34:41Z",
+      "side": 1,
+      "message": "remove these lines now that you\u0027re passing in role?",
+      "range": {
+        "startLine": 1616,
+        "startChar": 0,
+        "endLine": 1617,
+        "endChar": 53
+      },
+      "revId": "812982a45f2a62f557c96f61108c3535811276c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
