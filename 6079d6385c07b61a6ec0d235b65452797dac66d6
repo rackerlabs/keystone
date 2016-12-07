@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_014c5b75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T21:21:15Z",
+      "side": 1,
+      "message": "add:\n\n  Related-Bug: 1641621",
+      "revId": "6079d6385c07b61a6ec0d235b65452797dac66d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
