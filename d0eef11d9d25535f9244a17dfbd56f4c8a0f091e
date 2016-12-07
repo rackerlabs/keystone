@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_7c008234",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:53:58Z",
+      "side": 1,
+      "message": "the domain_id of a role can be a string or null",
+      "range": {
+        "startLine": 136,
+        "startChar": 33,
+        "endLine": 136,
+        "endChar": 55
+      },
+      "revId": "d0eef11d9d25535f9244a17dfbd56f4c8a0f091e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
