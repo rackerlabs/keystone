@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_bc33ccf5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T21:43:42Z",
+      "side": 1,
+      "message": "cite the following: https://bugs.launchpad.net/keystone/+bug/1602422",
+      "revId": "d59a2d7f18119194c703ad2b173cdc89d2373f01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
