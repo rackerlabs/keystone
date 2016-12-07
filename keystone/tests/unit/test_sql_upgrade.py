@@ -2088,6 +2088,95 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTrue(self.does_fk_exist('nonlocal_user', 'user_id'))
         self.assertTrue(self.does_fk_exist('nonlocal_user', 'domain_id'))
 
+    def test_migration_015_updated_federated_user_domain(self):
+        def create_domain():
+            table = sqlalchemy.Table('project', self.metadata, autoload=True)
+            domain_id = uuid.uuid4().hex
+            domain = {
+                'id': domain_id,
+                'name': domain_id,
+                'enabled': True,
+                'description': uuid.uuid4().hex,
+                'domain_id': resource_base.NULL_DOMAIN_ID,
+                'is_domain': True,
+                'parent_id': None,
+                'extra': '{}'
+            }
+            table.insert().values(domain).execute()
+            return domain_id
+
+        def create_idp(domain_id):
+            table = sqlalchemy.Table('identity_provider', self.metadata,
+                                     autoload=True)
+            idp_id = uuid.uuid4().hex
+            idp = {
+                'id': idp_id,
+                'domain_id': domain_id,
+                'enabled': True,
+                'description': uuid.uuid4().hex
+            }
+            table.insert().values(idp).execute()
+            return idp_id
+
+        def create_protocol(idp_id):
+            table = sqlalchemy.Table('federation_protocol', self.metadata,
+                                     autoload=True)
+            protocol_id = uuid.uuid4().hex
+            protocol = {
+                'id': protocol_id,
+                'idp_id': idp_id,
+                'mapping_id': uuid.uuid4().hex
+            }
+            table.insert().values(protocol).execute()
+            return protocol_id
+
+        def create_user():
+            table = sqlalchemy.Table('user', self.metadata, autoload=True)
+            user_id = uuid.uuid4().hex
+            user = {'id': user_id, 'enabled': True}
+            table.insert().values(user).execute()
+            return user_id
+
+        def create_federated_user(user_id, idp_id, protocol_id):
+            table = sqlalchemy.Table('federated_user', self.metadata,
+                                     autoload=True)
+            federated_user = {
+                'user_id': user_id,
+                'idp_id': idp_id,
+                'protocol_id': protocol_id,
+                'unique_id': uuid.uuid4().hex,
+                'display_name': uuid.uuid4().hex
+            }
+            table.insert().values(federated_user).execute()
+
+        def assertUserDomain(user_id, domain_id):
+            user = sqlalchemy.Table('user', self.metadata, autoload=True)
+            cols = [user.c.domain_id]
+            filter = user.c.id == user_id
+            sel = sqlalchemy.select(cols).where(filter)
+            domains = sel.execute().fetchone()
+            self.assertEqual(domain_id, domains[0])
+
+        self.expand(14)
+        self.migrate(14)
+        self.contract(14)
+
+        self.expand(15)
+        self.migrate(15)
+
+        # test insert trigger
+        domain_id = create_domain()
+        idp_id = create_idp(domain_id)
+        protocol_id = create_protocol(idp_id)
+        user_id = create_user()
+        create_federated_user(user_id, idp_id, protocol_id)
+        assertUserDomain(user_id, domain_id)
+
+        self.contract(15)
+
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        self.assertFalse(user_table.c.domain_id.nullable)
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
