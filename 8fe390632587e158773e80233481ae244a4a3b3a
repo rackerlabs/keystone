@@ -22,6 +22,30 @@
       "revId": "8fe390632587e158773e80233481ae244a4a3b3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_a803a3bd",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1759,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T13:25:18Z",
+      "side": 1,
+      "message": "We can ensure the inherited flag is present in the result since we call assertRoleAssignmentInListResponse(result, assignment_names) just below and assignment_names contains the inheritance flag (L1743-44)",
+      "parentUuid": "3a71b18c_1d24d7c4",
+      "range": {
+        "startLine": 1757,
+        "startChar": 8,
+        "endLine": 1759,
+        "endChar": 41
+      },
+      "revId": "8fe390632587e158773e80233481ae244a4a3b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
