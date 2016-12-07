@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_1b25ad5b",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:33Z",
+      "side": 1,
+      "message": "Both domains and projects at creation use a private method to print their own custom conflict duplicate message. The name of the object is already displayed to the user so testing domain and project under this class as well.",
+      "revId": "f9afd51873caaeb1e0e628c389114c2f4d9cd784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
