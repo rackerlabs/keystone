@@ -16,6 +16,29 @@
       "revId": "d59a2d7f18119194c703ad2b173cdc89d2373f01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_9c3d30be",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T21:52:52Z",
+      "side": 1,
+      "message": "i think you can remove the ./ bit?",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 8
+      },
+      "revId": "d59a2d7f18119194c703ad2b173cdc89d2373f01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
