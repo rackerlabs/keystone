@@ -144,6 +144,41 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_9bbaac09",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-07T17:16:41Z",
+      "side": 1,
+      "message": "Have you dropped by IRC to talk with anyone about their concerns? How have you been asking for reviews? Have you been helping shorten the review queue by reviewing? All of these are ways to help move code reviews along.",
+      "parentUuid": "3a71b18c_22b9ce79",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_2f807246",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-07T17:16:41Z",
+      "side": 1,
+      "message": "Running coverage on this patch shows that this is never tested.",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_9e6265d7",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 7
@@ -244,6 +279,24 @@
       "side": 1,
       "message": "we assume that the underlying PythonLDAP/LDAPPool libraries correctly use the OPT_NETWORK_TIMEOUT option, infact earlier patch sets of this commit were attempting a bind (but that is more akin to an integration test) and validating just that.\n\nI digress, what good would mocking connect do? Would we just read the value of OPT_NETWORK_TIMEOUT and set it as a manual timeout? What good would that serve us, we already know that OPT_NETWORK_TIMEOUT is set properly (the assertEqual below)",
       "parentUuid": "5a74a57a_09d72b24",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_9151abdb",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-07T17:16:41Z",
+      "side": 1,
+      "message": "I\u0027m sure the underlying libraries use the options correctly, and how they use them isn\u0027t our responsibility to test. My whole reason for suggesting a mock was that you\u0027d be able to perform a negative test by mocking whatever you\u0027re expecting an exception from and ensuring the try/except in your code is doing what it should. Running coverage shows your tests don\u0027t cover the exception you\u0027re introducing in this commit. I can revert the change [0] and the tests still pass [1]. I wouldn\u0027t want to lose your fix because it was lost to regression.\n\n\n[0] http://paste.openstack.org/show/591674/\n[1] http://paste.openstack.org/show/591675/",
+      "parentUuid": "5a74a57a_89225b00",
       "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
