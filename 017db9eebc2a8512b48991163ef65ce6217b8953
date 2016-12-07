@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_00037c0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "/v3/users?password_expires_at\u003d{comparator}:{timestamp}",
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_800f8c2d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "this is not always true, depends on the comparator",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 63
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_201f985c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "{comparator} is one of lt, le, gt ge, and eq to filter in.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 68
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_a6b8282c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -13,6 +76,30 @@
       "writtenOn": "2016-12-07T16:46:26Z",
       "side": 1,
       "message": "Does this need to be changed as well?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 57
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_402494ae",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a71b18c_a6b8282c",
       "range": {
         "startLine": 37,
         "startChar": 0,
@@ -48,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_a061e8d5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a71b18c_863b2c38",
+      "range": {
+        "startLine": 142,
+        "startChar": 14,
+        "endLine": 142,
+        "endChar": 16
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_c61c44c4",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 8
@@ -65,6 +176,23 @@
         "endLine": 148,
         "endChar": 17
       },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_a08f2874",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T18:42:48Z",
+      "side": 1,
+      "message": "Do we want to also filter users that are in a given group AND match the password_expires_at criteria? If so, it also needs tests",
       "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
