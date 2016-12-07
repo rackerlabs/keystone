@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_b7630241",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T12:26:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_1c578eca",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 10
+      },
+      "revId": "72fa3d48d0e4c982cd02841f2cf78ba6d59fce3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_32a1eef8",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
@@ -83,6 +107,30 @@
       "writtenOn": "2016-12-07T03:50:37Z",
       "side": 1,
       "message": "see my remark on the dependent patch, i\u0027d like to see an assertion change here",
+      "range": {
+        "startLine": 1736,
+        "startChar": 8,
+        "endLine": 1739,
+        "endChar": 73
+      },
+      "revId": "72fa3d48d0e4c982cd02841f2cf78ba6d59fce3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_3750d25e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1739,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T12:26:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_bc485ab4",
       "range": {
         "startLine": 1736,
         "startChar": 8,
