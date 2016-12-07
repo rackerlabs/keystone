@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_3bafc995",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_3f3a87e7",
+      "range": {
+        "startLine": 438,
+        "startChar": 0,
+        "endLine": 439,
+        "endChar": 32
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_5f14a34b",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-06T22:49:00Z",
       "side": 1,
       "message": "you\u0027ll need to mark this for translation with _()",
+      "range": {
+        "startLine": 449,
+        "startChar": 69,
+        "endLine": 449,
+        "endChar": 72
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_5b948543",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_5f14a34b",
       "range": {
         "startLine": 449,
         "startChar": 69,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_1baa0d86",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_2a2c0798",
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_0563bc42",
         "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
         "patchSetId": 4
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_fba471ba",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_0563bc42",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_450bf47c",
         "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
         "patchSetId": 4
@@ -99,6 +189,30 @@
       "writtenOn": "2016-12-06T22:49:00Z",
       "side": 1,
       "message": "we probably want to test the name conflicts, not the ID. Also, no need to pass in things as name and ID are defaulted to uuid.\n\n    role_ref \u003d unit.new_role_ref()\n    self.role_api.create_role(role_ref[\u0027name\u0027], role_ref)\n    role_ref[\u0027id\u0027] \u003d some_new_uuid\n\n  try:\n    self.role_api.create_role(role_ref[\u0027name\u0027], role_ref)\n  except:\n     ..",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 28
+      },
+      "revId": "2a143fa74a8f40dff13b1ab840c834d8c62bb4ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7bca2170",
+        "filename": "keystone/tests/unit/common/test_duplicate_objects.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-07T19:15:16Z",
+      "side": 1,
+      "message": "wouldn\u0027t self.role_api.create_role(role_ref[\u0027name\u0027], role_ref) pass the name as the role id? Changing the role_ref[\u0027id\u0027] and passing that as the first argument in create_role will still cause the conflict error and desired message if the role[\u0027name\u0027] inside role_ref matches anything previously created",
+      "parentUuid": "3a71b18c_450bf47c",
       "range": {
         "startLine": 35,
         "startChar": 0,
