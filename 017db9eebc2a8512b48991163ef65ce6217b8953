@@ -22,6 +22,52 @@
       "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_863b2c38",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-12-07T16:56:26Z",
+      "side": 1,
+      "message": "Per [1], this should be \u0027lte\u0027.\n\n[1] http://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html#filtering",
+      "range": {
+        "startLine": 142,
+        "startChar": 14,
+        "endLine": 142,
+        "endChar": 16
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_c61c44c4",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-12-07T16:56:26Z",
+      "side": 1,
+      "message": "Per [1], this should be \u0027gte\u0027\n[1] http://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html#filtering",
+      "range": {
+        "startLine": 148,
+        "startChar": 13,
+        "endLine": 148,
+        "endChar": 17
+      },
+      "revId": "017db9eebc2a8512b48991163ef65ce6217b8953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
