@@ -28,7 +28,7 @@ CONF = cfg.CONF
 
 class ShadowUsers(base.ShadowUsersDriverBase):
     @sql.handle_conflicts(conflict_type='federated_user')
-    def create_federated_user(self, federated_dict):
+    def create_federated_user(self, domain_id, federated_dict):
         user = {
             'id': uuid.uuid4().hex,
             'enabled': True
