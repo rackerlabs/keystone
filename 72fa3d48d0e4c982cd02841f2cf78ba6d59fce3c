@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_1c578eca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:36:19Z",
+      "side": 1,
+      "message": "Closes-Bug",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 10
+      },
+      "revId": "72fa3d48d0e4c982cd02841f2cf78ba6d59fce3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_32a1eef8",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
@@ -13,6 +36,30 @@
       "writtenOn": "2016-12-06T15:17:28Z",
       "side": 1,
       "message": "I can fix this in a followup because it\u0027s a bad naming for when it represents the inherited_to_projects key and its value.",
+      "range": {
+        "startLine": 951,
+        "startChar": 16,
+        "endLine": 951,
+        "endChar": 28
+      },
+      "revId": "72fa3d48d0e4c982cd02841f2cf78ba6d59fce3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_bc4f7a32",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-07T03:36:19Z",
+      "side": 1,
+      "message": "yeah, these are pretty awful",
+      "parentUuid": "3a71b18c_32a1eef8",
       "range": {
         "startLine": 951,
         "startChar": 16,
