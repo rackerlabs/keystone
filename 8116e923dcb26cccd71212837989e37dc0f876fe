@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_49fe9139",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-07T14:30:32Z",
+      "side": 1,
+      "message": "Why are these needed now ?",
+      "revId": "8116e923dcb26cccd71212837989e37dc0f876fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
