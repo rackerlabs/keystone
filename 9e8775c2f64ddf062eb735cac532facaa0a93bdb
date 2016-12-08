@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_f25d3d16",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:18:58Z",
+      "side": 1,
+      "message": "haha",
+      "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_9241693c",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:18:58Z",
+      "side": 1,
+      "message": "These could all be broken out into their own specific tests for the sake of granularity and readability. Especially if we are creating a dedicated test case/class for it.",
+      "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
