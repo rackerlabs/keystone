@@ -34,6 +34,24 @@
       "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f2a8dd79",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:27:22Z",
+      "side": 0,
+      "message": "Ah - I suppose that makes sense, too. That works for me. In either case the doc string should clear up any confusion.",
+      "parentUuid": "3a71b18c_b26d859b",
+      "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
