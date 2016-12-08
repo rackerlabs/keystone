@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_71413239",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1714,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-08T17:05:08Z",
+      "side": 1,
+      "message": "nit: add the inherited_to query param",
+      "range": {
+        "startLine": 1714,
+        "startChar": 40,
+        "endLine": 1714,
+        "endChar": 53
+      },
+      "revId": "aa531a001a31b757fa12412bf0eb84e4c8d67bb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
