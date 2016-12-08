@@ -28,6 +28,7 @@ from keystone.cmd import cli
 from keystone.cmd.doctor import caching
 from keystone.cmd.doctor import debug
 from keystone.cmd.doctor import federation
+from keystone.cmd.doctor import security_compliance
 from keystone.common import dependency
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -785,3 +786,95 @@ class FederationDoctorTests(unit.TestCase):
         self.config_fixture.config(group='saml', keyfile='signing_key.pem')
         self.assertFalse(
             federation.symptom_comma_in_SAML_private_key_file_path())
+
+
+class SecurityComplianceDoctorTests(unit.TestCase):
+
+    def test_symptom_min_pass_age_should_be_less_than_pass_expires_days(self):
+        symptom_name = ("symptom_minimum_password_age_should_be_"
+                        "less_than_password_expires_days")
+        # Symptom Detected: Minimum password age is greater than the password
+        # expires days. Both values are positive integers greater than zero.
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=2)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=1)
+        self.assertTrue(getattr(security_compliance, symptom_name)())
+
+        # Symptom Detected: Minimum password age is equal to the password
+        # expires days. Both values are positive integers greater than zero.
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=1)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=1)
+        self.assertTrue(getattr(security_compliance, symptom_name)())
+
+        # No Symptom Detected: Minimum password age is less than password
+        # expires days. Both values are positive integers greater than zero.
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=1)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=2)
+        self.assertFalse(getattr(security_compliance, symptom_name)())
+
+        # No Symptom Detected: Both values are 0
+        self.config_fixture.config(group='security_compliance',
+                                   minimum_password_age=0)
+        self.config_fixture.config(group='security_compliance',
+                                   password_expires_days=0)
+        self.assertFalse(getattr(security_compliance, symptom_name)())
+
+    def test_symptom_invalid_password_regular_expression(self):
+        # Symptom Detected: Regular expression is invalid
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex='^^(??=.*\d)$')
+        self.assertTrue(
+            security_compliance.symptom_invalid_password_regular_expression())
+
+        # No Symptom Detected: Regular expression is valid
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex='^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+        self.assertFalse(
+            security_compliance.symptom_invalid_password_regular_expression())
+
+        # No Symptom Detected: No regular expression is set
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=None)
+        self.assertFalse(
+            security_compliance.symptom_invalid_password_regular_expression())
+
+    def test_symptom_password_regular_expression_description_not_set(self):
+        # Symptom Detected: Regular expression is set but description is not
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex='^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=None)
+        self.assertTrue(
+            security_compliance.
+            symptom_password_regular_expression_description_not_set())
+
+        # No Symptom Detected: Regular expression and description are set
+        desc = '1 letter, 1 digit, and a minimum length of 7 is required'
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex='^(?=.*\d)(?=.*[a-zA-Z]).{7,}$')
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=desc)
+        self.assertFalse(
+            security_compliance.
+            symptom_password_regular_expression_description_not_set())
+
+        # No Symptom Detected: Regular expression and description are not set
+        self.config_fixture.config(
+            group='security_compliance', password_regex=None)
+        self.config_fixture.config(
+            group='security_compliance', password_regex_description=None)
+        self.assertFalse(
+            security_compliance.
+            symptom_password_regular_expression_description_not_set())
