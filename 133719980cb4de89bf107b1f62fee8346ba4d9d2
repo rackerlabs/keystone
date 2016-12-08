@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_3777a0d5",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T22:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_34415e3a",
+      "range": {
+        "startLine": 79,
+        "startChar": 36,
+        "endLine": 79,
+        "endChar": 54
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_34af9ee4",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 9
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_57725ce4",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T22:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_34af9ee4",
+      "range": {
+        "startLine": 80,
+        "startChar": 55,
+        "endLine": 80,
+        "endChar": 68
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7781188f",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T22:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_7462f6d9",
+      "range": {
+        "startLine": 80,
+        "startChar": 17,
+        "endLine": 80,
+        "endChar": 25
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_f41fe658",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 9
@@ -82,6 +154,30 @@
       "writtenOn": "2016-12-08T21:29:41Z",
       "side": 1,
       "message": "replace with: \"a list of users whose password has expired\"",
+      "range": {
+        "startLine": 84,
+        "startChar": 25,
+        "endLine": 84,
+        "endChar": 56
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b749f090",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T22:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_f41fe658",
       "range": {
         "startLine": 84,
         "startChar": 25,
