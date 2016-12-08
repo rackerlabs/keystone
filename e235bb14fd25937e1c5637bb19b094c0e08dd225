@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_6025e9ac",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-08T14:20:03Z",
+      "side": 1,
+      "message": "remove \"a\"",
+      "range": {
+        "startLine": 117,
+        "startChar": 30,
+        "endLine": 117,
+        "endChar": 32
+      },
+      "revId": "e235bb14fd25937e1c5637bb19b094c0e08dd225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
