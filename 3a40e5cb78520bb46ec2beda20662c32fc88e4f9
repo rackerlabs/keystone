@@ -16,6 +16,24 @@
       "revId": "3a40e5cb78520bb46ec2beda20662c32fc88e4f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_37b967cc",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-08T18:56:55Z",
+      "side": 1,
+      "message": "Yeah, this was mentioned by Samuel in my debug patch that we should have changed the symptom name as well and I agreed with him, but the patch merged before I saw it. In addition to the unit tests, I can change the name in this patch and update the commit message as well",
+      "parentUuid": "3a71b18c_179b8bca",
+      "revId": "3a40e5cb78520bb46ec2beda20662c32fc88e4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
