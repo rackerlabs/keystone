@@ -16,6 +16,52 @@
       "revId": "f5b6912e6828d23eab062273e4aff1d88dfec9bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f1c9b8ad",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-08T21:06:29Z",
+      "side": 1,
+      "message": "testing the conflict is raised based on the ID is weird, cause we generate the ID, it\u0027s not realistic. It\u0027ll happen on name or a combination of name and domain id. Setting up the test like this feels weird to me.",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "f5b6912e6828d23eab062273e4aff1d88dfec9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_314b302d",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-08T21:06:29Z",
+      "side": 1,
+      "message": "As a heads up, we apparently eat the conflict message at the manager level and issue a new conflict: https://github.com/openstack/keystone/blob/1d35792a3d109ded688eb0263cac45646d349bde/keystone/resource/core.py#L203-L208\n\njust for projects! \\o/",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 58
+      },
+      "revId": "f5b6912e6828d23eab062273e4aff1d88dfec9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
