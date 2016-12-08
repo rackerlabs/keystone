@@ -310,6 +310,71 @@ Response Example
    :language: javascript
 
 
+List users in group based on password expiration time
+=====================================================
+
+.. rest_method:: GET /v3/groups/{group_id}/users?password_expires_at={operator}:{timestamp}
+
+List users the belong to a group with a password expirinng in relation 
+to the `timestamp` given based on the `operator`. The operators are lt,
+lte, gt, gte, eq, and neq.
+
+For example:
+- GET /v3/groups/079c578fd99b428ab61fcd4c9bd88ecd/users?password_expires_at=gt:2016-12-08T22:02:00Z
+
+The example would return a list of users that belong to the group with
+id `079c578fd99b428ab61fcd4c9bd88ecd1 and  whose password has expired 
+before the given timestamp `2016-12-08T22:02:00Z`.
+
+Responses will contain a list of users, each represented with the
+response parameters described below.
+
+Response Codes
+--------------
+
+.. rest_status_code:: success status.yaml
+
+   - 200
+
+.. rest_status_code:: error status.yaml
+
+   - 400
+   - 401
+   - 403
+   - 404
+   - 409
+   - 501
+
+Request Parameters
+------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - group_id: group_id_path
+   - operator: operator_query
+   - timestamp: timestamp_query
+
+Response Parameters
+-------------------
+
+.. rest_parameters:: parameters.yaml
+
+   - links: link_collection
+   - default_project_id: default_project_id_response_body
+   - domain_id: domain_id_response_body
+   - enabled: enabled_user_response_body
+   - id: id_user_body
+   - links: links_user
+   - name: user_name_response_body
+   - password_expires_at: password_expires_at
+
+Response Example
+----------------
+
+.. literalinclude:: ./samples/admin/users-in-group-list-password-expired.json
+   :language: javascript
+
+
 Add user to group
 =================
 
