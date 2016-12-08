@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_aee8c117",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T20:40:54Z",
+      "side": 1,
+      "message": "Works for me - we could add a follow on patch to break these two into their own tests. The name is nice and descriptive, but more-so for the first assertion. We could apply the same naming pattern to the second assertion in it\u0027s own test.",
+      "revId": "aa97a9c0b1081216b649dbe741adf02c38c29bec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
