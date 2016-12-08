@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_97b07b8d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:09:22Z",
+      "side": 1,
+      "message": "I kind of like the convention where the unit test name is as descriptive as possible. Where you include what you\u0027re testing, the circumstance, and the desired output. That way when other people read the title of a test, or see it scroll by in their test output, they get a solid idea of exactly what is being tested.\n\nThis almost reads like we *want* SQLite to be the database connection.",
+      "revId": "d1d413d6550b32a2b82086136f7166b4b76529bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_17c70b13",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:09:22Z",
+      "side": 1,
+      "message": "sqlited*?",
+      "revId": "d1d413d6550b32a2b82086136f7166b4b76529bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_3798871b",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:09:22Z",
+      "side": 0,
+      "message": "I don\u0027t mind the original name for this since it was saying we don\u0027t want SQLite. I was more or less making a comment about the how the test read.",
+      "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
