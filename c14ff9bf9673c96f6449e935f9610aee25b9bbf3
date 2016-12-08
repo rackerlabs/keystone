@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_9ff8b8c6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-08T05:39:41Z",
+      "side": 1,
+      "message": "The proposed implementation will just make *all* the options required, we want to make *one* of them required.\n\nI think we need something like this: https://github.com/openstack/python-openstackclient/blob/master/openstackclient/volume/v2/consistency_group.py#L86-L87\n\nso it\u0027ll probably look like:\n\n  parser \u003d super(MappingPurge, cls).add_argument_parser(subparsers)\n  exclusive_group \u003d parser.add_mutually_exclusive_group(required\u003dTrue)\n  exclusive_group.add_argument(\u0027--all\u0027, default\u003dFalse, action\u003d\u0027store_true\u0027,\n        ...\n  exclusive_group.add_argument(--domain-name, default\u003dNone,\n       ...\n\n and so forth.\n\nAdding the `required\u003dTrue` to the mutually exclusive group means that one of the options in the group will need to be specified.",
+      "range": {
+        "startLine": 783,
+        "startChar": 4,
+        "endLine": 784,
+        "endChar": 73
+      },
+      "revId": "c14ff9bf9673c96f6449e935f9610aee25b9bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_bff574cc",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-08T05:39:41Z",
+      "side": 1,
+      "message": "we can remove this guard if the proposed solution is implemented.",
+      "range": {
+        "startLine": 809,
+        "startChar": 0,
+        "endLine": 821,
+        "endChar": 75
+      },
+      "revId": "c14ff9bf9673c96f6449e935f9610aee25b9bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
