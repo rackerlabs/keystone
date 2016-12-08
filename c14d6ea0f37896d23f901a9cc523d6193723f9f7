@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_91c5ee3e",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-08T17:18:03Z",
+      "side": 1,
+      "message": "At this point it will always be enabled. (I know it was like that before)",
+      "range": {
+        "startLine": 248,
+        "startChar": 35,
+        "endLine": 248,
+        "endChar": 50
+      },
+      "revId": "c14d6ea0f37896d23f901a9cc523d6193723f9f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b1f2ea98",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-08T17:18:03Z",
+      "side": 1,
+      "message": "(typo) different",
+      "range": {
+        "startLine": 194,
+        "startChar": 10,
+        "endLine": 194,
+        "endChar": 19
+      },
+      "revId": "c14d6ea0f37896d23f901a9cc523d6193723f9f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
