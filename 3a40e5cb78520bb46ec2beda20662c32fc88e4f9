@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_179b8bca",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T18:45:29Z",
+      "side": 1,
+      "message": "This name is slightly misleading depending on how you read it. The way I initially read it came across to me as \"ensure that the database connection string *isn\u0027t* SQLite\", but in face we\u0027re doing both.\n\nMaybe we change the word to say that a symptom will be raised if SQLite is detected during a doctor run?\n\n  def test_symptom_is_raised_if_database_connection_is_SQLite(self):\n     ...\n\nor \n\n  def test_symptom_is_only_raised_when_database_connection_is_SQLite(self):",
+      "revId": "3a40e5cb78520bb46ec2beda20662c32fc88e4f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
