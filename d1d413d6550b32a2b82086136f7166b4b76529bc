@@ -33,6 +33,29 @@
       "revId": "d1d413d6550b32a2b82086136f7166b4b76529bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d7fcb340",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-08T19:23:18Z",
+      "side": 1,
+      "message": "(typo) SQLite",
+      "range": {
+        "startLine": 757,
+        "startChar": 51,
+        "endLine": 757,
+        "endChar": 58
+      },
+      "revId": "d1d413d6550b32a2b82086136f7166b4b76529bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

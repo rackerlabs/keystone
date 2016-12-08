@@ -16,6 +16,24 @@
       "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b26d859b",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-08T19:23:18Z",
+      "side": 0,
+      "message": "For most of the symptoms I read as what they are something we do not want. E.g:\n\nsymptom_debug_mode_is_enabled\nsymptom_caching_enabled_without_a_backend\nsymptom_comma_in_SAML_public_certificate_path\nsymptom_password_regular_expression_description_not_set\n\nsymptom_database_connection_is_not_SQLite is something we do want, so not in conformity with the others. This is my reasoning, maybe you see it differently.",
+      "parentUuid": "3a71b18c_3798871b",
+      "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
