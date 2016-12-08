@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_34415e3a",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-08T21:29:41Z",
+      "side": 1,
+      "message": "in relation to the `timestamp` given based on the `operator`.",
+      "range": {
+        "startLine": 79,
+        "startChar": 36,
+        "endLine": 79,
+        "endChar": 54
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_34af9ee4",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-08T21:29:41Z",
+      "side": 1,
+      "message": "nit: I would end the list at \"neq.\" Then move \"For example:\" down a line. But this is not a big deal.",
+      "range": {
+        "startLine": 80,
+        "startChar": 55,
+        "endLine": 80,
+        "endChar": 68
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_7462f6d9",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-08T21:29:41Z",
+      "side": 1,
+      "message": "s/operator/operators:/",
+      "range": {
+        "startLine": 80,
+        "startChar": 17,
+        "endLine": 80,
+        "endChar": 25
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f41fe658",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-08T21:29:41Z",
+      "side": 1,
+      "message": "replace with: \"a list of users whose password has expired\"",
+      "range": {
+        "startLine": 84,
+        "startChar": 25,
+        "endLine": 84,
+        "endChar": 56
+      },
+      "revId": "133719980cb4de89bf107b1f62fee8346ba4d9d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
