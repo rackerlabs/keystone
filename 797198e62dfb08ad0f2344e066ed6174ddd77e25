@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_51151647",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_f011c0b0",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 40
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_cb46d94e",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 6
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_710cd242",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_cb46d94e",
+      "range": {
+        "startLine": 77,
+        "startChar": 52,
+        "endLine": 77,
+        "endChar": 62
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_305a5884",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 6
@@ -83,6 +131,24 @@
       "writtenOn": "2016-12-08T16:29:10Z",
       "side": 1,
       "message": "I\u0027m not sure if adding the link to the filtering page in the openstack guides would be appropriate here or not? It could be helpful.\n\nhttp://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html#time-based-filtering-queries",
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_b1066a1e",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_305a5884",
       "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -136,6 +202,54 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_03ffd501",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_d6e03c99",
+      "range": {
+        "startLine": 82,
+        "startChar": 39,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_4309cd2b",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_0b029109",
+      "range": {
+        "startLine": 82,
+        "startChar": 39,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_cbb41937",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 6
@@ -147,6 +261,30 @@
       "writtenOn": "2016-12-08T16:29:10Z",
       "side": 1,
       "message": "same as above concerning the timezone indicator",
+      "range": {
+        "startLine": 85,
+        "startChar": 21,
+        "endLine": 85,
+        "endChar": 47
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_630c093c",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-08T17:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_cbb41937",
       "range": {
         "startLine": 85,
         "startChar": 21,
