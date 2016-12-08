@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_924b292b",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:24:39Z",
+      "side": 1,
+      "message": "This reads like two separate sentences.",
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_89ba0e22",
         "filename": "keystone/tests/unit/test_v3_os_revoke.py",
         "patchSetId": 9
@@ -66,6 +83,24 @@
         "endLine": 157,
         "endChar": 71
       },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_725bedf6",
+        "filename": "keystone/tests/unit/test_v3_os_revoke.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:24:39Z",
+      "side": 1,
+      "message": "++ agreed!",
+      "parentUuid": "9a629dbe_76b46534",
       "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -119,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_32a415b8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:24:39Z",
+      "side": 1,
+      "message": "This will fail if consumer_id is not a key in token. I would suggest trying Steve\u0027s approach. That looks to be the safest.",
+      "parentUuid": "9a629dbe_76e2a530",
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_295bc22f",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
@@ -136,6 +189,24 @@
         "endLine": 151,
         "endChar": 49
       },
+      "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d21a0117",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-08T19:24:39Z",
+      "side": 1,
+      "message": "++ that wouldn\u0027t be a bad idea... the less duplicate paths we have here the better.",
+      "parentUuid": "9a629dbe_295bc22f",
       "revId": "9ea29374c12580a7d1c611a1bf69a7f5629726e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
