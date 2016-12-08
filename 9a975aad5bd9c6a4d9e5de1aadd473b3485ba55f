@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_77b91f79",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-08T19:09:52Z",
+      "side": 1,
+      "message": "Right, we do not use the first element of args anywhere in handle_conflict, but I can throw the end result in another variable to iterate through for peace of mind :)",
+      "parentUuid": "3a71b18c_57dd0341",
+      "revId": "9a975aad5bd9c6a4d9e5de1aadd473b3485ba55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_973f9b24",
         "filename": "keystone/tests/unit/common/test_database_conflicts.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-08T19:01:26Z",
       "side": 1,
       "message": "I think we could probably get by with just inheriting from test_v3.RestfulTestCase since unit.TestCase is inherited through rest.ResfulTestCase anyway: \n\nhttps://github.com/openstack/keystone/blob/bcf5676dc2b7f8bd652a3a98c3ebe6b7a448e9ca/keystone/tests/unit/rest.py#L25",
+      "revId": "9a975aad5bd9c6a4d9e5de1aadd473b3485ba55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d74e73c0",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-08T19:09:52Z",
+      "side": 1,
+      "message": "Oops, totally forgot to remove unit.TestCase after adding test_v3 later when playing around with the tests. Thanks lance, nice catch :)",
+      "parentUuid": "3a71b18c_973f9b24",
       "revId": "9a975aad5bd9c6a4d9e5de1aadd473b3485ba55f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
