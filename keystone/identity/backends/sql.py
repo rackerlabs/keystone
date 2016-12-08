@@ -13,7 +13,7 @@
 # under the License.
 
 import datetime
-
+import operator
 import sqlalchemy
 
 from keystone.common import driver_hints
@@ -125,10 +125,38 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _get_user_password_expires(self, session, query, value, operator):
+        return query.filter(sqlalchemy.and_(
+            model.LocalUser.id == model.Password.local_user_id,
+            operator(model.Password.expires_at, value)))
+
+    def _user_password_expires(self, session, query, value):
+        query = query.join(model.Password)
+        col = 0
+        test = {'lt': operator.lt, 'gt': operator.gt, 'eq': operator.eq,
+                'lte': operator.le, 'gte': operator.ge, 'neq': operator.ne}
+        for i in test.keys():
+            if i in value:
+                col = value.find(':')
+                continue
+        op = test['eq']
+        if col == 2 or col == 3:
+            op = test[value[0:col]]
+            value = value[col + 1:]
+
+        return self._get_user_password_expires(session, query,
+                                               value, op)
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            for filter_ in hints.filters:
+                if 'password_expires_at' in filter_['name']:
+                    query = self._user_password_expires(session, query,
+                                                        filter_['value'])
+                    hints.filters.remove(filter_)
+                    continue
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
@@ -265,6 +293,12 @@ class Identity(base.IdentityDriverBase):
             query = query.join(model.UserGroupMembership)
             query = query.filter(
                 model.UserGroupMembership.group_id == group_id)
+            for filter_ in hints.filters:
+                if 'password_expires_at' in filter_['name']:
+                    query = self._user_password_expires(session, query,
+                                                        filter_['value'])
+                    hints.filters.remove(filter_)
+                    continue
             query = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(u.to_dict()) for u in query]
 

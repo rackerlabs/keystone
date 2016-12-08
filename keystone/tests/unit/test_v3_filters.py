@@ -14,10 +14,14 @@
 # under the License.
 
 import datetime
+import json
 
 import freezegun
 from oslo_serialization import jsonutils
 from six.moves import range
+
+from keystone.common import sql
+from keystone.identity.backends import sql_model as model
 
 import keystone.conf
 from keystone.tests import unit
@@ -231,6 +235,114 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
             self.assertEqual(1, len(r.result.get('users')))
             self.assertEqual(user['id'], r.result.get('users')[0]['id'])
+
+    def _get_user_ref(self, user_id):
+        with sql.session_for_read() as session:
+            return session.query(model.User).get(user_id)
+
+    def _list_users_by_password_expires_at(self, operator, time):
+        url_by_name = '/users?password_expires_at=%s:%s' % (operator, time)
+        return self.get(url_by_name, auth=self.auth)
+
+    def test_list_users_by_password_expires_at(self):
+        """GET /users?password_expires_at={operator}:{timestamp}.
+
+        Test Plan:
+
+        - Create a user with a password expiration timestamp
+        - Ensure we can filter on it successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        before_time = expired_time - datetime.timedelta(days=2)
+        after_time = expired_time + datetime.timedelta(days=2)
+
+        op_assoc = {'eq': [expired_time, after_time],
+                    'neq': [after_time, expired_time],
+                    'lt': [after_time, before_time],
+                    'lte': [after_time, before_time],
+                    'gt': [before_time, after_time],
+                    'gte': [before_time, after_time]}
+
+        self._set_policy({"identity:list_users": []})
+        user_ref = self._get_user_ref(self.user1['id'])
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            for op, times in op_assoc.items():
+                self.assertTrue(json.loads(
+                    self._list_users_by_password_expires_at(
+                        op, times[0]).body.decode('utf-8'))['users'])
+                self.assertFalse(json.loads(
+                    self._list_users_by_password_expires_at(
+                        op, times[1]).body.decode('utf-8'))['users'])
+
+    def _get_domain_fixture(self):
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        return domain
+
+    def _list_users_in_group_by_password_expires_at(self, groupid,
+                                                    operator, time):
+        url_by_name = '/groups/%s/users?password_expires_at=%s:%s' % \
+            (groupid, operator, time)
+        return self.get(url_by_name, auth=self.auth)
+
+    def test_list_users_in_group_by_password_expires_at(self):
+        """GET /groups/{group_id}/users?password_expires_at={comparator}:{timestamp}.
+
+        Test Plan:
+
+        - Create a group and a user with a password expiration timestamp
+        - Ensure we can filter on users in group successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        before_time = expired_time - datetime.timedelta(days=2)
+        after_time = expired_time + datetime.timedelta(days=2)
+
+        op_assoc = {'eq': [expired_time, after_time],
+                    'neq': [after_time, expired_time],
+                    'lt': [after_time, before_time],
+                    'lte': [after_time, before_time],
+                    'gt': [before_time, after_time],
+                    'gte': [before_time, after_time]}
+
+        domain = self._get_domain_fixture()
+        new_group = unit.new_group_ref(domain_id=domain['id'])
+        new_group = self.identity_api.create_group(new_group)
+        # Make sure we get an empty list back on a new group, not an error.
+        user_refs = self.identity_api.list_users_in_group(new_group['id'])
+        self.assertEqual([], user_refs)
+        # Make sure we get the correct users back once they have been added
+        # to the group.
+        new_user = unit.new_user_ref(domain_id=domain['id'])
+        new_user = self.identity_api.create_user(new_user)
+        self.identity_api.add_user_to_group(new_user['id'],
+                                            new_group['id'])
+        user_refs = self.identity_api.list_users_in_group(new_group['id'])
+        user_ref = self._get_user_ref(user_refs[0]['id'])
+        self._set_policy({"identity:list_users_in_group": []})
+
+        with sql.session_for_write() as session:
+            user_ref.password_ref.created_at = created_time
+            user_ref.password_ref.expires_at = expired_time
+            session.add(user_ref)
+
+            for op, times in op_assoc.items():
+                self.assertTrue(json.loads(
+                    self._list_users_in_group_by_password_expires_at(
+                        new_group['id'], op,
+                        times[0]).body.decode('utf-8'))['users'])
+                self.assertFalse(json.loads(
+                    self._list_users_in_group_by_password_expires_at(
+                        new_group['id'], op,
+                        times[1]).body.decode('utf-8'))['users'])
 
     def test_inexact_filters(self):
         # Create 20 users
