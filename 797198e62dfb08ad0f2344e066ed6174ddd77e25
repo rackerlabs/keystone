@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_763f6825",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-08T16:58:53Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "3a71b18c_f011c0b0",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 40
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_cb46d94e",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 6
@@ -76,6 +100,30 @@
       "writtenOn": "2016-12-08T16:29:10Z",
       "side": 1,
       "message": "According to the spec, we would add a Z on the end to indicate UTC time zone:\n\nhttps://github.com/openstack/keystone-specs/blob/master/specs/keystone/ocata/pci-dss-expired-password.rst#examples\nhttps://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators",
+      "range": {
+        "startLine": 82,
+        "startChar": 39,
+        "endLine": 82,
+        "endChar": 65
+      },
+      "revId": "797198e62dfb08ad0f2344e066ed6174ddd77e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d6e03c99",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-08T16:58:53Z",
+      "side": 1,
+      "message": "this also doesn\u0027t look URL safe, think you would need to remove the \".000000\"",
+      "parentUuid": "3a71b18c_0b029109",
       "range": {
         "startLine": 82,
         "startChar": 39,
