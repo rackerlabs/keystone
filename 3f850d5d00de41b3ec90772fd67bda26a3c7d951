@@ -52,6 +52,42 @@
       "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_8dd14efe",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-08T19:56:29Z",
+      "side": 0,
+      "message": "As Samuel mentioned, the method name was changed as well to follow the convention that the rest of them do. i.e. have a descriptive method name that says what the problem is.",
+      "parentUuid": "3a71b18c_f2a8dd79",
+      "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_adcc4a62",
+        "filename": "keystone/cmd/doctor/database.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-08T19:56:29Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "3a71b18c_b26d859b",
+      "revId": "3f850d5d00de41b3ec90772fd67bda26a3c7d951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
