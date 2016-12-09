@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a71b18c_e362a3d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:29:20Z",
+      "side": 1,
+      "message": "Doesn\u0027t it complete the implementation of the bp? If so, please replace with \"Implements: bp pci-dss-notifications\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_6883d2cc",
         "filename": "keystone/identity/core.py",
         "patchSetId": 24
