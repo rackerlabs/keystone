@@ -15,6 +15,7 @@ import uuid
 import keystone.conf
 from keystone import exception
 from keystone.tests import unit
+from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
 
 
@@ -78,3 +79,67 @@ class DuplicateTestCase(test_v3.RestfulTestCase):
                           % group['name'], repr(e))
         else:
             self.fail("Create duplicate group did not raise a conflict")
+
+    def test_policy_duplicate_conflict_gives_name(self):
+        policy_ref = unit.new_policy_ref()
+        self.policy_api.create_policy(policy_ref['id'], policy_ref)
+        try:
+            self.policy_api.create_policy(policy_ref['id'], policy_ref)
+        except exception.Conflict as e:
+            self.assertIn("Duplicate entry found with name %s"
+                          % policy_ref['name'], repr(e))
+        else:
+            self.fail("Create duplicate policy did not raise a conflict")
+
+    def test_credential_duplicate_conflict_gives_name(self):
+        user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        credential = unit.new_credential_ref(user_id=user['id'])
+        self.credential_api.create_credential(credential['id'], credential)
+        try:
+            self.credential_api.create_credential(credential['id'], credential)
+        except exception.Conflict as e:
+            self.assertIn("Duplicate entry found with name %s"
+                          % credential['id'], repr(e))
+        else:
+            self.fail("Create duplicate credential did not raise a conflict")
+
+    def test_trust_duplicate_conflict_gives_name(self):
+        trustor = unit.new_user_ref(domain_id=self.domain_id)
+        trustor = self.identity_api.create_user(trustor)
+        trustee = unit.new_user_ref(domain_id=self.domain_id)
+        trustee = self.identity_api.create_user(trustee)
+        role_ref = unit.new_role_ref()
+        self.role_api.create_role(role_ref['id'], role_ref)
+        trust_ref = unit.new_trust_ref(trustor['id'], trustee['id'])
+        self.trust_api.create_trust(trust_ref['id'], trust_ref, [role_ref])
+        try:
+            self.trust_api.create_trust(trust_ref['id'], trust_ref, [role_ref])
+        except exception.Conflict as e:
+            self.assertIn("Duplicate entry found with name %s"
+                          % trust_ref['id'], repr(e))
+        else:
+            self.fail("Create duplicate trust did not raise a conflict")
+
+    def test_mapping_duplicate_conflict_gives_name(self):
+        self.mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        self.mapping['id'] = uuid.uuid4().hex
+        self.federation_api.create_mapping(self.mapping['id'],
+                                           self.mapping)
+        try:
+            self.federation_api.create_mapping(self.mapping['id'],
+                                               self.mapping)
+        except exception.Conflict as e:
+            self.assertIn("Duplicate entry found with name %s"
+                          % self.mapping['id'], repr(e))
+        else:
+            self.fail("Create duplicate mapping did not raise a conflict")
+
+    def test_region_duplicate_conflict_gives_name(self):
+        region_ref = unit.new_region_ref()
+        self.catalog_api.create_region(region_ref)
+        try:
+            self.catalog_api.create_region(region_ref)
+        except exception.Conflict as e:
+            self.assertIn("Duplicate ID, %s" % region_ref['id'], repr(e))
+        else:
+            self.fail("Create duplicate region did not raise a conflict")

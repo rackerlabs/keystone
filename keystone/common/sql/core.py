@@ -441,6 +441,8 @@ def handle_conflicts(conflict_type='object'):
                 for arg in params:
                     if 'name' in arg:
                         name = arg['name']
+                    elif 'id' in arg:
+                        name = arg['id']
                     if 'domain_id' in arg:
                         domain_id = arg['domain_id']
                 msg = _('Duplicate entry')
