@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_e7cc7663",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-09T17:51:58Z",
+      "side": 1,
+      "message": "Thanks Lance, and yes I have been conversing with some of the folks on this review over IRC",
+      "parentUuid": "3a71b18c_9bbaac09",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_2f807246",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 7
@@ -173,6 +191,24 @@
       "writtenOn": "2016-12-07T17:16:41Z",
       "side": 1,
       "message": "Running coverage on this patch shows that this is never tested.",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_e7d636c2",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-09T17:51:58Z",
+      "side": 1,
+      "message": "right, none of the higher layer code paths explicitly check for this exception (for now) and it would be simply logged. The inent of this fix is to raise the exception instead of stalling indefinitely (or until TCP timeout) as that causes higher layer code paths (or puppet-keystone if configuring ldap identity backend through that) to fail.",
+      "parentUuid": "3a71b18c_2f807246",
       "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -250,6 +286,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_7909ea2b",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-09T17:51:58Z",
+      "side": 1,
+      "message": "Colleen,\n\nYou already have a review out to add anonymous bind if username and password is missing:\nhttps://review.openstack.org/#/c/407561\n\nIf that change goes in then we will always generate SERVER_DOWN exception in get_connection() whether username or password are missing/provided.\n\nI will address Samuel\u0027s concern and just wrap the bind() call in a try/except block.\n\nIs there anything else that you would like for me to add?",
+      "parentUuid": "3a71b18c_ec361de6",
+      "range": {
+        "startLine": 1296,
+        "startChar": 12,
+        "endLine": 1303,
+        "endChar": 34
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_09d72b24",
         "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
         "patchSetId": 7
@@ -297,6 +357,24 @@
       "side": 1,
       "message": "I\u0027m sure the underlying libraries use the options correctly, and how they use them isn\u0027t our responsibility to test. My whole reason for suggesting a mock was that you\u0027d be able to perform a negative test by mocking whatever you\u0027re expecting an exception from and ensuring the try/except in your code is doing what it should. Running coverage shows your tests don\u0027t cover the exception you\u0027re introducing in this commit. I can revert the change [0] and the tests still pass [1]. I wouldn\u0027t want to lose your fix because it was lost to regression.\n\n\n[0] http://paste.openstack.org/show/591674/\n[1] http://paste.openstack.org/show/591675/",
       "parentUuid": "5a74a57a_89225b00",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_0f54281f",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2016-12-09T17:51:58Z",
+      "side": 1,
+      "message": "yes you are right, the test does not cover the exception which is why your tox passed. Since we don\u0027t call bind(), no call to the underlying library is made to raise that exception (I did have that bind() in previous patch sets but that was more akin to integration testing). \n\nI will mock simple_bind_s() to timeout after OPT_NETWORK_TIMEOUT and generate that exception.  I might have a few questions on that as I chug along and will message you on IRC.",
+      "parentUuid": "3a71b18c_9151abdb",
       "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
