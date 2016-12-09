@@ -30,6 +30,7 @@ from keystone.cmd.doctor import caching
 from keystone.cmd.doctor import database as doc_database
 from keystone.cmd.doctor import debug
 from keystone.cmd.doctor import federation
+from keystone.cmd.doctor import ldap
 from keystone.common import dependency
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -874,3 +875,16 @@ class FederationDoctorTests(unit.TestCase):
         self.config_fixture.config(group='saml', keyfile='signing_key.pem')
         self.assertFalse(
             federation.symptom_comma_in_SAML_private_key_file_path())
+
+
+class LdapDoctorTests(unit.TestCase):
+
+    def test_LDAP_user_enabled_emulation_dn_ignored(self):
+        # Symptom Detected: user_enabled_emulation is disabled and
+        # user_enabled_emulation_dn is set
+        self.config_fixture.config(group='ldap', user_enabled_emulation=False)
+        self.config_fixture.config(
+            group='ldap',
+            user_enabled_emulation_dn='cn=enabled_users,dc=example,dc=com')
+        self.assertTrue(
+            ldap.symptom_LDAP_user_enabled_emulation_dn_ignored())
