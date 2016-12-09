@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_b25d627b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T13:53:34Z",
+      "side": 1,
+      "message": "\u003d\u003d\n\nwe don\u0027t want the filtering to work if a filter called password_expires_at_blabla is passed",
+      "range": {
+        "startLine": 155,
+        "startChar": 41,
+        "endLine": 155,
+        "endChar": 43
+      },
+      "revId": "70bb631644846475e4470a9d1a7583e83ba2687e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d2b01e8e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T13:53:34Z",
+      "side": 1,
+      "message": "I guess this should be a \"break\" clause. continue will cause the for clause to continue with the next filter.",
+      "range": {
+        "startLine": 159,
+        "startChar": 20,
+        "endLine": 159,
+        "endChar": 28
+      },
+      "revId": "70bb631644846475e4470a9d1a7583e83ba2687e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_32a6b253",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T13:53:34Z",
+      "side": 1,
+      "message": "same ehre, should be a break",
+      "range": {
+        "startLine": 301,
+        "startChar": 20,
+        "endLine": 301,
+        "endChar": 28
+      },
+      "revId": "70bb631644846475e4470a9d1a7583e83ba2687e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
