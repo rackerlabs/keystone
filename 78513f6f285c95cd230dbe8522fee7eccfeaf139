@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_03d79fed",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:43:15Z",
+      "side": 1,
+      "message": "it\u0027s",
+      "range": {
+        "startLine": 5,
+        "startChar": 75,
+        "endLine": 5,
+        "endChar": 78
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
