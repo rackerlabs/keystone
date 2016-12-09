@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_0cc5193b",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:55Z",
+      "side": 1,
+      "message": "Tell me about it.",
+      "parentUuid": "3a71b18c_f25d3d16",
+      "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_9241693c",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 1
@@ -47,6 +65,42 @@
       "writtenOn": "2016-12-08T19:33:51Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "3a71b18c_9241693c",
+      "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_4cdd5113",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_32633543",
+      "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_2cc0152a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:55Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3a71b18c_9241693c",
       "revId": "9e8775c2f64ddf062eb735cac532facaa0a93bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
