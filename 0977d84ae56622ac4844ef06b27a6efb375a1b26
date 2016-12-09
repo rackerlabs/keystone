@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_15e600b4",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-09T14:15:15Z",
+      "side": 1,
+      "message": "why use this variable instead of a service? Like we do for federation...",
+      "range": {
+        "startLine": 40,
+        "startChar": 10,
+        "endLine": 40,
+        "endChar": 37
+      },
+      "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
