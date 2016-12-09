@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_64705aa5",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2016-12-09T19:30:16Z",
+      "side": 1,
+      "message": "Doesn\u0027t this make the name inaccurate? As it implies equality is ok, but it isn\u0027t.",
+      "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
