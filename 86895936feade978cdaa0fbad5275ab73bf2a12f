@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_52bde3d5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T17:30:11Z",
+      "side": 1,
+      "message": "these var names aren\u0027t really suggestive and do not help understanding the logic",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 12
+      },
+      "revId": "86895936feade978cdaa0fbad5275ab73bf2a12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_92121b08",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T17:30:11Z",
+      "side": 1,
+      "message": "oh wait. I suggested you adding a break here, but ...\n\nHow are we expecting those filters to be combined ?\n\nIf it is like\n\n    /users?password_expires_at\u003dgt:{timestamp1}\u0026password_expires_at\u003dlt:{timestamp2}\n\nIf so, we might want to continue iterating over the filters because there can be one more.\n\nI suggest adding a test for this. In that case you could simply remove this break and leave nothing here, so that the iteration continues.",
+      "range": {
+        "startLine": 159,
+        "startChar": 20,
+        "endLine": 159,
+        "endChar": 25
+      },
+      "revId": "86895936feade978cdaa0fbad5275ab73bf2a12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f2f18fce",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T17:30:11Z",
+      "side": 1,
+      "message": "as suggested in the other comment, please add a test combining filters",
+      "revId": "86895936feade978cdaa0fbad5275ab73bf2a12f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
