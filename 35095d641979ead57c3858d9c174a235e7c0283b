@@ -46,6 +46,30 @@
       "revId": "35095d641979ead57c3858d9c174a235e7c0283b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f5d6e4c1",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T14:15:14Z",
+      "side": 1,
+      "message": "I think so. These here go in a table. Might look too big if we expand them here. What you think Rodrigo?",
+      "parentUuid": "3a71b18c_d57c8822",
+      "range": {
+        "startLine": 259,
+        "startChar": 19,
+        "endLine": 259,
+        "endChar": 47
+      },
+      "revId": "35095d641979ead57c3858d9c174a235e7c0283b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
