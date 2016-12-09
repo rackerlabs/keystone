@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_636e93ca",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-09T18:34:58Z",
+      "side": 1,
+      "message": "I believe when I was first testing this, doing ex.message_format just got me the message without the details. I can double check again and make sure.",
+      "parentUuid": "3a71b18c_6883d2cc",
+      "range": {
+        "startLine": 1298,
+        "startChar": 45,
+        "endLine": 1298,
+        "endChar": 47
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_08e17e9a",
         "filename": "keystone/notifications.py",
         "patchSetId": 24
