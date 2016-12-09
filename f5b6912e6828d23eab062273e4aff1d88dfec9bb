@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_fa6d04cd",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T06:45:18Z",
+      "side": 1,
+      "message": "This is only changing the project[\u0027id\u0027] to avoid having to redundantly create another project and then set the name to the first project. I change the project[\u0027id\u0027] just to show that a project with a different project[\u0027id\u0027] and the same project[\u0027name\u0027] will still raise the duplicate conflict",
+      "parentUuid": "3a71b18c_f1c9b8ad",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 40
+      },
+      "revId": "f5b6912e6828d23eab062273e4aff1d88dfec9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_314b302d",
         "filename": "keystone/tests/unit/common/test_database_conflicts.py",
         "patchSetId": 8
@@ -53,6 +77,30 @@
       "writtenOn": "2016-12-08T21:06:29Z",
       "side": 1,
       "message": "As a heads up, we apparently eat the conflict message at the manager level and issue a new conflict: https://github.com/openstack/keystone/blob/1d35792a3d109ded688eb0263cac45646d349bde/keystone/resource/core.py#L203-L208\n\njust for projects! \\o/",
+      "range": {
+        "startLine": 43,
+        "startChar": 12,
+        "endLine": 43,
+        "endChar": 58
+      },
+      "revId": "f5b6912e6828d23eab062273e4aff1d88dfec9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_5a6358dd",
+        "filename": "keystone/tests/unit/common/test_database_conflicts.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T06:45:18Z",
+      "side": 1,
+      "message": "Yes I found this interesting. I mentioned it in patch set 6 comments and that I was testing projects and domains here anyway even though it wasn\u0027t directly related to handle_conflicts. The conflict message is different but they already had it working so that it giving the name in the error message so I just assert that here :)",
+      "parentUuid": "3a71b18c_314b302d",
       "range": {
         "startLine": 43,
         "startChar": 12,
