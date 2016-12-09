@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_843bb6d0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-09T19:28:38Z",
+      "side": 1,
+      "message": "Tested with both default ex.message and ex.message_format. ex.message causes 10 tests to fail with deprecation warnings about using BaseException.message and ex.message_format causes the details to be left out:\n\nhttp://i.imgur.com/WCkEeYG.png",
+      "parentUuid": "3a71b18c_636e93ca",
+      "range": {
+        "startLine": 1298,
+        "startChar": 45,
+        "endLine": 1298,
+        "endChar": 47
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_08e17e9a",
         "filename": "keystone/notifications.py",
         "patchSetId": 24
@@ -106,6 +130,30 @@
       "writtenOn": "2016-12-09T18:25:04Z",
       "side": 1,
       "message": "(nit) CADF",
+      "range": {
+        "startLine": 499,
+        "startChar": 25,
+        "endLine": 499,
+        "endChar": 29
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_5e124c63",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-09T19:28:38Z",
+      "side": 1,
+      "message": "Done and Done",
+      "parentUuid": "3a71b18c_e8e522a8",
       "range": {
         "startLine": 499,
         "startChar": 25,
