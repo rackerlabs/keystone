@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_35305ce8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T14:04:52Z",
+      "side": 1,
+      "message": "We could reword this name in a way that we can at least call it without causing pep8 to fail (too big)\n\nFollowing that same idea that a symptom is something we don\u0027t want, it could be: \"symptom_minimum_password_age_greater_than_expires_days\" or something like that.\n\nwhat do you think about it ?",
+      "range": {
+        "startLine": 794,
+        "startChar": 25,
+        "endLine": 795,
+        "endChar": 55
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_150440be",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T14:04:52Z",
+      "side": 1,
+      "message": "Why? Are they deactivated this way?",
+      "range": {
+        "startLine": 820,
+        "startChar": 10,
+        "endLine": 820,
+        "endChar": 48
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f51b441a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T14:04:52Z",
+      "side": 1,
+      "message": "is it deactivated ?",
+      "range": {
+        "startLine": 842,
+        "startChar": 10,
+        "endLine": 842,
+        "endChar": 59
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_95ddb044",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T14:04:52Z",
+      "side": 1,
+      "message": "so the feature is deactivated ?",
+      "range": {
+        "startLine": 873,
+        "startChar": 10,
+        "endLine": 873,
+        "endChar": 77
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
