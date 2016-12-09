@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_d369ee8d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-09T21:36:55Z",
+      "side": 1,
+      "message": "nit: I feel these could have more descriptive names. Thoughts?",
+      "range": {
+        "startLine": 951,
+        "startChar": 16,
+        "endLine": 951,
+        "endChar": 26
+      },
+      "revId": "308db6aa2c641ac6641a200e9016a3d1ddbcc738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
