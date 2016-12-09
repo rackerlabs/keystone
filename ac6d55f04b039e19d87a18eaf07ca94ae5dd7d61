@@ -16,6 +16,24 @@
       "revId": "ac6d55f04b039e19d87a18eaf07ca94ae5dd7d61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_f23a7a33",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-09T13:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_ec2544c2",
+      "revId": "ac6d55f04b039e19d87a18eaf07ca94ae5dd7d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
