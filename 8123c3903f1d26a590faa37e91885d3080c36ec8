@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_ec637ddb",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:44Z",
+      "side": 1,
+      "message": "I believe that name would follow the naming convention that has been used for the symptoms so far (symptom name is what caused it to be raised) and it does not sacrifice the full keywords associated with this symptom that the user would go look for after getting the symptom. I like this idea.",
+      "parentUuid": "3a71b18c_35305ce8",
+      "range": {
+        "startLine": 794,
+        "startChar": 25,
+        "endLine": 795,
+        "endChar": 55
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_150440be",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-09T14:04:52Z",
       "side": 1,
       "message": "Why? Are they deactivated this way?",
+      "range": {
+        "startLine": 820,
+        "startChar": 10,
+        "endLine": 820,
+        "endChar": 48
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_6ca4cdb8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:44Z",
+      "side": 1,
+      "message": "Yes, in the event that these are both zero, the symptom check automatically throws False back. In addition, the default values in keystone.conf are both set to 0 which doesn\u0027t put any constraints on how soon the user can switch their password or any constraints on how soon user must switch their password.",
+      "parentUuid": "3a71b18c_150440be",
       "range": {
         "startLine": 820,
         "startChar": 10,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_2c72d549",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:44Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "3a71b18c_f51b441a",
+      "range": {
+        "startLine": 842,
+        "startChar": 10,
+        "endLine": 842,
+        "endChar": 59
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_95ddb044",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-12-09T14:04:52Z",
       "side": 1,
       "message": "so the feature is deactivated ?",
+      "range": {
+        "startLine": 873,
+        "startChar": 10,
+        "endLine": 873,
+        "endChar": 77
+      },
+      "revId": "8123c3903f1d26a590faa37e91885d3080c36ec8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_acb345e8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T16:34:44Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "3a71b18c_95ddb044",
       "range": {
         "startLine": 873,
         "startChar": 10,
