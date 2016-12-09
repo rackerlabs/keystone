@@ -273,6 +273,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_980c0796",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-09T14:33:04Z",
+      "side": 1,
+      "message": "Yes it does. Only question would be how do you feel about describing what lt, lte, gt, etc. in both files? If we are referencing this in groups, I could see only putting it here, but it may be a hassle, albeit minor.",
+      "parentUuid": "3a71b18c_b229e239",
+      "revId": "428f095d948f40639417d77436abf269be862d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_12e8d60f",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 10
