@@ -27,10 +27,12 @@ from testtools import matchers
 from keystone.auth import controllers
 from keystone.cmd import cli
 from keystone.cmd.doctor import caching
+from keystone.cmd.doctor import credential
 from keystone.cmd.doctor import database as doc_database
 from keystone.cmd.doctor import debug
 from keystone.cmd.doctor import federation
 from keystone.common import dependency
+from keystone.common import fernet_utils
 from keystone.common.sql import upgrades
 import keystone.conf
 from keystone import exception
@@ -819,6 +821,34 @@ class CachingDoctorTests(unit.TestCase):
         self.config_fixture.config(group='cache',
                                    backend='dogpile.cache.memory')
         self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+
+
+class CredentialDoctorTests(unit.TestCase):
+
+    def test_credential_and_fernet_key_repositories_match(self):
+        # Symptom Detected: Key repository paths are not unique
+        directory = self.useFixture(fixtures.TempDir()).path
+        self.config_fixture.config(group='credential',
+                                   key_repository=directory)
+        self.config_fixture.config(group='fernet_tokens',
+                                   key_repository=directory)
+        self.assertTrue(credential.symptom_unique_key_repositories())
+
+    def test_credential_and_fernet_key_repositories_are_unique(self):
+        # No Symptom Detected: Key repository paths are unique
+        self.config_fixture.config(group='credential',
+                                   key_repository='/etc/keystone/cred-repo')
+        self.config_fixture.config(group='fernet_tokens',
+                                   key_repository='/etc/keystone/fernet-repo')
+        self.assertFalse(credential.symptom_unique_key_repositories())
+
+    @mock.patch('keystone.common.fernet_utils')
+    def test_usability_of_cred_fernet_key_repo_raised(self, mock_utils):
+        # Symptom Detected:
+        self.config_fixture.config(group='credential', provider='fernet')
+        mock_utils.FernetUtils().validate_key_repository.return_value = False
+        self.assertTrue(
+            credential.symptom_usability_of_credential_fernet_key_repository())
 
 
 class DatabaseDoctorTests(unit.TestCase):
