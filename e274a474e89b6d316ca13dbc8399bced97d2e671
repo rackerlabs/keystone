@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_e881a290",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 0,
+      "message": "unrelated please revert",
+      "range": {
+        "startLine": 685,
+        "startChar": 17,
+        "endLine": 685,
+        "endChar": 30
+      },
+      "revId": "e274a474e89b6d316ca13dbc8399bced97d2e671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_284aba83",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 0,
+      "message": "same here",
+      "revId": "e274a474e89b6d316ca13dbc8399bced97d2e671",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

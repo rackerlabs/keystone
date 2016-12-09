@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_6883d2cc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 1,
+      "message": "isn\u0027t there a ex.message or something like that allowing you to get the message?",
+      "range": {
+        "startLine": 1298,
+        "startChar": 45,
+        "endLine": 1298,
+        "endChar": 47
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_08e17e9a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 1,
+      "message": "(nit) PCI-DSS",
+      "range": {
+        "startLine": 499,
+        "startChar": 54,
+        "endLine": 499,
+        "endChar": 61
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_e8e522a8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 1,
+      "message": "(nit) CADF",
+      "range": {
+        "startLine": 499,
+        "startChar": 25,
+        "endLine": 499,
+        "endChar": 29
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_28ee3a8b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-09T18:25:04Z",
+      "side": 1,
+      "message": "same comment as in previous file. can\u0027t we access the message via an attribute like ex.message ?",
+      "range": {
+        "startLine": 501,
+        "startChar": 49,
+        "endLine": 501,
+        "endChar": 51
+      },
+      "revId": "505283ed9ae4d3e458d07ba9e350b609f8de339e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
