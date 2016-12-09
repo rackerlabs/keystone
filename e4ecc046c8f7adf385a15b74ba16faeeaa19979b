@@ -16,6 +16,24 @@
       "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d8902df0",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2016-12-09T21:15:42Z",
+      "side": 1,
+      "message": "Looking at the naming convention of other symptoms, the point of the long and descriptive names if so that they display to the user just exactly what caused the symptom to be raised. The title of method is part of what gets used to relay the information of the symptom back to the user. Therefore, when this symptom is raised the user will read that the \"...minimum_password_age_greater_than_expires_days\" followed by \n\nMinimum password age should be less than the password expires days.\n\nas do the other symptom methods do",
+      "parentUuid": "3a71b18c_64705aa5",
+      "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
