@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_e8e7e23d",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 14
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-09T18:07:54Z",
+      "side": 1,
+      "message": "need a newline before the list for it to render right:\n\nNow: http://i.imgur.com/8ffY4Os.png\n\nFixed: http://i.imgur.com/neejbau.png",
+      "revId": "c27529f267bc84a7531b788ef3c9364752e9127b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_68caf2a2",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 14
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-09T18:07:54Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c27529f267bc84a7531b788ef3c9364752e9127b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
