@@ -27,6 +27,7 @@ from testtools import matchers
 from keystone.auth import controllers
 from keystone.cmd import cli
 from keystone.cmd.doctor import caching
+from keystone.cmd.doctor import credential
 from keystone.cmd.doctor import database as doc_database
 from keystone.cmd.doctor import debug
 from keystone.cmd.doctor import federation
@@ -819,6 +820,26 @@ class CachingDoctorTests(unit.TestCase):
         self.config_fixture.config(group='cache',
                                    backend='dogpile.cache.memory')
         self.assertFalse(caching.symptom_caching_enabled_without_a_backend())
+
+
+class CredentialDoctorTests(unit.TestCase):
+
+    def test_credential_and_fernet_key_repositories_match(self):
+        # Symptom Detected: Key repository paths are not unique
+        directory = self.useFixture(fixtures.TempDir()).path
+        self.config_fixture.config(group='credential',
+                                   key_repository=directory)
+        self.config_fixture.config(group='fernet_tokens',
+                                   key_repository=directory)
+        self.assertTrue(credential.symptom_unique_key_repositories())
+
+    def test_credential_and_fernet_key_repositories_are_unique(self):
+        # No Symptom Detected: Key repository paths are unique
+        self.config_fixture.config(group='credential',
+                                   key_repository='/etc/keystone/cred-repo')
+        self.config_fixture.config(group='fernet_tokens',
+                                   key_repository='/etc/keystone/fernet-repo')
+        self.assertFalse(credential.symptom_unique_key_repositories())
 
 
 class DatabaseDoctorTests(unit.TestCase):
