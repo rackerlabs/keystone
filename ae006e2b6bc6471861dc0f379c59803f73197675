@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_1a5d3215",
+        "filename": "api-ref/source/v3/groups.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-10T04:35:37Z",
+      "side": 1,
+      "message": "that",
+      "range": {
+        "startLine": 318,
+        "startChar": 11,
+        "endLine": 318,
+        "endChar": 14
+      },
+      "revId": "ae006e2b6bc6471861dc0f379c59803f73197675",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
