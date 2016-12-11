@@ -16,6 +16,24 @@
       "revId": "8116e923dcb26cccd71212837989e37dc0f876fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_1188a9c4",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-12-11T20:24:27Z",
+      "side": 1,
+      "message": "These are needed because now get_connection() always attempts a simple_bind_s(), which will fail with a network timeout error. We would have needed this before if we had set up the config fixture to use a username and password in the [ldap] section. I added a note about this to the commit message.",
+      "parentUuid": "3a71b18c_49fe9139",
+      "revId": "8116e923dcb26cccd71212837989e37dc0f876fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
