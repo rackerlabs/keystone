@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_5c23ac05",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-12T17:24:18Z",
+      "side": 1,
+      "message": "add a note about the logic behind this indexes and the values that are expected. Also, would be nice to have variables representing the indexes values.",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 51
+      },
+      "revId": "a33a3535b5cd9f6783d5c9f0b78399c9ff728e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
