@@ -22,6 +22,30 @@
       "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_d7c1bae5",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-12T06:59:54Z",
+      "side": 1,
+      "message": "I think it would be confusing if we set \"enable_service haproxy\" on all nodes in multi-keystone devstack since there\u0027re many keystone nodes and a single haproxy server.\nAlso haproxy server may be situated not on keystone node. Probably we can do \u0027enable_service haproxy\u0027 just to mark haproxy server and leave MULTI_KEYSTONE variable to mark keystone nodes. What do you think about that, Rodrigo?",
+      "parentUuid": "3a71b18c_15e600b4",
+      "range": {
+        "startLine": 40,
+        "startChar": 10,
+        "endLine": 40,
+        "endChar": 37
+      },
+      "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
