@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_68b09d8c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2016-12-12T21:51:46Z",
+      "side": 1,
+      "message": "I think it would be more pythonic and concise if this used more of python\u0027s builtin string parsing instead of treating it as a character array, something like this:\n\n op, timestamp \u003d value.split(\u0027:\u0027, 1)\n if op in operators:\n   op \u003d operators[op]\n   value \u003d timestamp\n else:\n   op \u003d operators[\u0027eq\u0027]",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 46
+      },
+      "revId": "b8c97e0f326ce0b490cb23f44f783c65cd68d216",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
