@@ -46,6 +46,30 @@
       "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_63eade75",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-12T12:35:53Z",
+      "side": 1,
+      "message": "the lib .sh doesn\u0027t necessarily need to match the service name? correct if I\u0027m wrong... But I\u0027m fine either way, just want to understand when either case is used (env variables vs \"is_service_enabled\")",
+      "parentUuid": "3a71b18c_d7c1bae5",
+      "range": {
+        "startLine": 40,
+        "startChar": 10,
+        "endLine": 40,
+        "endChar": 37
+      },
+      "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
