@@ -117,6 +117,29 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_280f85e2",
+        "filename": "api-ref/source/v3/samples/admin/users-in-group-list-password-expired.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-12T21:33:25Z",
+      "side": 1,
+      "message": "new samples are not needed, this should be returned already, just update the existing ones",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 63
+      },
+      "revId": "1eb38e46e7ac079c1089f6e2e49758d7d43588bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_0552b413",
         "filename": "api-ref/source/v3/users.inc",
         "patchSetId": 16
