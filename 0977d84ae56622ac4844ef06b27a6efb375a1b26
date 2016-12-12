@@ -70,6 +70,30 @@
       "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_492263a4",
+        "filename": "devstack/plugin.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-12T13:13:14Z",
+      "side": 1,
+      "message": "I think that lib .sh may have an arbitrary name. But if there\u0027re any rules on how to name it, could you send me a link, Rodrigo? \n\nRegarging env variables vs \"is_service_enabled\"- I believe that the choice depends on what the plugin actually does. I mean, does it actually enable a service or not.\n\nIn this case we actually will enable haproxy service on one node, but the plugin will perform actions on other nodes as well (on all keystone nodes). That\u0027s why I\u0027m afraid that using is_service_enabled may be confusing.",
+      "parentUuid": "3a71b18c_63eade75",
+      "range": {
+        "startLine": 40,
+        "startChar": 10,
+        "endLine": 40,
+        "endChar": 37
+      },
+      "revId": "0977d84ae56622ac4844ef06b27a6efb375a1b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
