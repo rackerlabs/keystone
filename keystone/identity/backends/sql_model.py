@@ -273,7 +273,7 @@ class NonLocalUser(sql.ModelBase, sql.ModelDictMixin):
     domain_id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), primary_key=True)
     user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
-                                                        ondelete='CASCADE'))
+                         ondelete='CASCADE'), unique=True)
 
 
 class Group(sql.ModelBase, sql.DictBase):
