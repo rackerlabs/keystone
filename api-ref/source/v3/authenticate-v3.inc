@@ -160,6 +160,14 @@ The request body must include a payload that specifies the
 ``password`` authentication method, the credentials, and the
 ``project`` or ``domain`` authorization scope.
 
+A pair of configuration options, ``admin_project_domain_name``
+and ``admin_project_name``, have been added to the ``[resource]``
+section to specify a special ``admin`` project.
+If these are defined, any scoped token issued for that project
+will have an additional identifier ``is_admin_project=true`` added to the token.
+This identifier can then be checked by the policy rules in the policy files
+of the services when evaluating access control policy for an API.
+
 Normal response codes: 201
 
 Error response codes: 413,415,405,404,403,401,400,503,409
