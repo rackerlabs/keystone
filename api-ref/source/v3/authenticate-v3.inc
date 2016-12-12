@@ -356,6 +356,26 @@ Response Parameters
    - X-Auth-Token: X-Auth-Token
 
 
+Authentication with scoped authorization to the admin project
+=============================================================
+
+.. rest_method::  POST /v3/auth/tokens
+
+Relationship: ``http://docs.openstack.org/api/openstack-identity/3/rel/auth_tokens``
+
+A pair of configuration options, ``admin_project_domain_name``
+and ``admin_project_name``, have been added to the ``[resource]``
+section to specify a special ``admin`` project.
+If these are defined, any scoped token issued for that project
+will have an additional identifier ``is_admin_project=true`` added to the token.
+This identifier can then be checked by the policy rules in the policy files
+of the services when evaluating access control policy for an API.
+
+Normal response codes: 201
+
+Error response codes: 413,415,405,404,403,401,400,503,409
+
+
 Validate and show information for token
 =======================================
 
