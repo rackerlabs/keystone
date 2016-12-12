@@ -1351,6 +1351,16 @@ class ShadowUsersTests(object):
         user_ref = self._get_user_ref(new_nonlocal_user['id'])
         self.assertIsNone(user_ref.local_user)
 
+    def test_nonlocal_user_unique_user_id_constraint(self):
+        user_ref = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user1 = self.shadow_users_api.create_nonlocal_user(user_ref)
+        # create 2nd user with the same user_id
+        user2 = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
+        user2['id'] = user1['id']
+        self.assertRaises(exception.Conflict,
+                          self.shadow_users_api.create_nonlocal_user,
+                          user2)
+
     def test_get_user(self):
         user = unit.new_user_ref(domain_id=CONF.identity.default_domain_id)
         user.pop('email')
