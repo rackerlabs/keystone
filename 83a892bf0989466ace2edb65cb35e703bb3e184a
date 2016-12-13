@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_507272ae",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-13T19:45:55Z",
+      "side": 1,
+      "message": "nit: ID reads better",
+      "range": {
+        "startLine": 449,
+        "startChar": 32,
+        "endLine": 449,
+        "endChar": 36
+      },
+      "revId": "83a892bf0989466ace2edb65cb35e703bb3e184a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_d05e8211",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-13T19:45:55Z",
+      "side": 1,
+      "message": "value?",
+      "range": {
+        "startLine": 450,
+        "startChar": 24,
+        "endLine": 450,
+        "endChar": 28
+      },
+      "revId": "83a892bf0989466ace2edb65cb35e703bb3e184a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_d0476249",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-13T19:45:55Z",
+      "side": 1,
+      "message": "nice!",
+      "range": {
+        "startLine": 459,
+        "startChar": 56,
+        "endLine": 460,
+        "endChar": 37
+      },
+      "revId": "83a892bf0989466ace2edb65cb35e703bb3e184a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
