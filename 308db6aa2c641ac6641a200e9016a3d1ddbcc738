@@ -22,6 +22,30 @@
       "revId": "308db6aa2c641ac6641a200e9016a3d1ddbcc738",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_785e87ea",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-13T14:07:20Z",
+      "side": 1,
+      "message": "I can\u0027t think of any descriptive name for these.\n\nThe keys can be role assingment\u0027s 1) role, 2) target (domain or project) or 3) actor (user or group). It\u0027s hard to name it as something that can represent well all those.\n\nDo you have a suggestion?",
+      "parentUuid": "3a71b18c_d369ee8d",
+      "range": {
+        "startLine": 951,
+        "startChar": 16,
+        "endLine": 951,
+        "endChar": 26
+      },
+      "revId": "308db6aa2c641ac6641a200e9016a3d1ddbcc738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
