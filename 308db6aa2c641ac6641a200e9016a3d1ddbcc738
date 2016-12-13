@@ -46,6 +46,30 @@
       "revId": "308db6aa2c641ac6641a200e9016a3d1ddbcc738",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_be6d6706",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-13T14:50:02Z",
+      "side": 1,
+      "message": "think key, value is really good here - the if statements below give a great view what is supposed to be both.",
+      "parentUuid": "1a6eadb0_785e87ea",
+      "range": {
+        "startLine": 951,
+        "startChar": 16,
+        "endLine": 951,
+        "endChar": 26
+      },
+      "revId": "308db6aa2c641ac6641a200e9016a3d1ddbcc738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
