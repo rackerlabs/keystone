@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_44ba81c1",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:13:58Z",
+      "side": 1,
+      "message": ":",
+      "range": {
+        "startLine": 4,
+        "startChar": 66,
+        "endLine": 4,
+        "endChar": 67
+      },
+      "revId": "5a724e1228f2a98b2b406c20f9eae97a04a4f376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_24de6511",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:13:58Z",
+      "side": 1,
+      "message": "too often",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "5a724e1228f2a98b2b406c20f9eae97a04a4f376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
