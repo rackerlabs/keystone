@@ -92,6 +92,30 @@
       "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6b2af37f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T15:57:23Z",
+      "side": 1,
+      "message": "hmm it\u0027s ok, just wanted to know if there was reasoning behind it.",
+      "parentUuid": "1a6eadb0_60c052e1",
+      "range": {
+        "startLine": 152,
+        "startChar": 16,
+        "endLine": 152,
+        "endChar": 23
+      },
+      "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
