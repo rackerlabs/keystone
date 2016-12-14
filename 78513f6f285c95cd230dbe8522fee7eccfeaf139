@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_450608cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-14T15:27:25Z",
+      "side": 1,
+      "message": "An identity provider would be a 1:1 mapping, so it wouldn\u0027t return a list. I\u0027m not clear as to why this is required to handle the partial-bug.",
+      "parentUuid": "1a6eadb0_7c7ac4f2",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 68
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_03d79fed",
         "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
         "patchSetId": 12
