@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_a64a7824",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T19:14:20Z",
+      "side": 1,
+      "message": "if change_password_required_after_reset is set and failed_auth_count is not, we\u0027ll still be resetting the failed_auth_count for that user (since both of them call the same method), which is not needed. and vice-versa\n\nI suggest creating a separate if statement for this. This would also remove the need of checking CONF.security_compliance.change_password_required_after_reset again on L129",
+      "range": {
+        "startLine": 71,
+        "startChar": 12,
+        "endLine": 72,
+        "endChar": 53
+      },
+      "revId": "a2e3013ce85cce441d63a14b69b026298702e3ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
