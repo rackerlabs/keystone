@@ -938,6 +938,11 @@ class DomainConfigManager(manager.Manager):
         'identity': [],
         'ldap': ['password']
     }
+    read_only_options = {
+        'security_compliance': [
+            'password_regex', 'password_regex_description'
+        ]
+    }
 
     def __init__(self):
         super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
@@ -990,14 +995,16 @@ class DomainConfigManager(manager.Manager):
             raise exception.UnexpectedError(exception=msg)
 
         if (group and group not in self.whitelisted_options and
-                group not in self.sensitive_options):
+                group not in self.sensitive_options and
+                group not in self.read_only_options):
             msg = _('Group %(group)s is not supported '
                     'for domain specific configurations') % {'group': group}
             raise exception.InvalidDomainConfig(reason=msg)
 
         if option:
-            if (option not in self.whitelisted_options[group] and option not in
-                    self.sensitive_options[group]):
+            if (option not in self.whitelisted_options.get(group, []) and
+                    option not in self.sensitive_options.get(group, []) and
+                    option not in self.read_only_options.get(group, [])):
                 msg = _('Option %(option)s in group %(group)s is not '
                         'supported for domain specific configurations') % {
                             'group': group, 'option': option}
@@ -1005,6 +1012,12 @@ class DomainConfigManager(manager.Manager):
 
     def _is_sensitive(self, group, option):
         return option in self.sensitive_options[group]
+
+    def _check_password_requirements(self, group, option):
+        return (
+            group in self.read_only_options and
+            option in self.read_only_options[group]
+        )
 
     def _config_to_list(self, config):
         """Build list of options for use by backend drivers."""
@@ -1112,6 +1125,21 @@ class DomainConfigManager(manager.Manager):
 
         """
         self._assert_valid_group_and_option(group, option)
+        if self._check_password_requirements(group, option):
+            if option == 'password_regex':
+                result = {
+                    group: {
+                        option: CONF.security_compliance.password_regex
+                    }
+                }
+            elif option == 'password_regex_description':
+                value = CONF.security_compliance.password_regex_description
+                result = {
+                    group: {
+                        option: value
+                    }
+                }
+            return result
         whitelisted = self.list_config_options(domain_id, group, option)
         if whitelisted:
             return self._list_to_config(whitelisted, req_option=option)
