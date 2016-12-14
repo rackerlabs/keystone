@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_f31b5519",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T17:17:15Z",
+      "side": 1,
+      "message": "maybe do this outside of the method, since it is a side effect or also return the hints.",
+      "range": {
+        "startLine": 147,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 47
+      },
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
