@@ -632,12 +632,15 @@ class RuleProcessor(object):
                         ast.literal_eval(identity_value['group_ids']))
                 except (ValueError, SyntaxError):
                     group_ids.update([identity_value['group_ids']])
+            if 'roles' in identity_value:
+                roles = identity_value['roles']
 
         normalize_user(user)
 
         return {'user': user,
                 'group_ids': list(group_ids),
-                'group_names': group_names}
+                'group_names': group_names,
+                'roles': roles}
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.
@@ -671,6 +674,9 @@ class RuleProcessor(object):
         for k, v in local.items():
             if isinstance(v, dict):
                 new_value = self._update_local_mapping(v, direct_maps)
+            elif isinstance(v, list):
+                new_value = [self._update_local_mapping(item, direct_maps)
+                             for item in v]
             else:
                 try:
                     new_value = v.format(*direct_maps)
