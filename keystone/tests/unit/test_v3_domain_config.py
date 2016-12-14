@@ -457,3 +457,125 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         # Now try a totally invalid option
         url = '/domains/config/ldap/%s/default' % uuid.uuid4().hex
         self.get(url, expected_status=http_client.FORBIDDEN)
+
+    def test_get_security_compliance_config(self):
+        password_regex = uuid.uuid4().hex
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        url = (
+            '/domains/%(domain)s/config/%(group)s' %
+            {
+                'domain': CONF.identity.default_domain_id,
+                'group': group,
+            }
+        )
+        response = self.get(url)
+        expected_response = {
+            'security_compliance': {
+                'password_regex': password_regex,
+                'password_regex_description': password_regex_description
+            }
+        }
+        self.assertEqual(response.result['config'], expected_response)
+
+    def test_get_security_compliance_password_regex(self):
+        password_regex = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        group = 'security_compliance'
+        option = 'password_regex'
+        url = (
+            '/domains/%(domain)s/config/%(group)s/%(option)s' %
+            {
+                'domain': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        response = self.get(url)
+        self.assertEqual(
+            response.result['config']['security_compliance'][option],
+            password_regex
+        )
+
+    def test_get_security_compliance_password_regex_description(self):
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        option = 'password_regex_description'
+        url = (
+            '/domains/%(domain)s/config/%(group)s/%(option)s' %
+            {
+                'domain': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        response = self.get(url)
+        self.assertEqual(
+            response.result['config']['security_compliance'][option],
+            password_regex_description
+        )
+
+    def test_update_security_compliance_password_regex_fails(self):
+        password_regex = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        group = 'security_compliance'
+        option = 'password_regex'
+        url = (
+            '/domains/%s/config/%s/%s' %
+            CONF.identity.default_domain_id,
+            group,
+            option
+        )
+        new_config = {
+            group: {
+                'password_regex': uuid.uuid4().hex
+            }
+        }
+        self.patch(
+            url,
+            body={'config': new_config},
+            expected_status=http_client.FORBIDDEN
+        )
+
+    def test_update_security_compliance_password_regex_description_fails(self):
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        option = 'password_regex_description'
+        url = (
+            '/domains/%s/config/%s/%s' %
+            CONF.identity.default_domain_id,
+            group,
+            option
+        )
+        new_config = {
+            group: {
+                'password_regex_description': uuid.uuid4().hex
+            }
+        }
+        self.patch(
+            url,
+            body={'config': new_config},
+            expected_status=http_client.FORBIDDEN
+        )
