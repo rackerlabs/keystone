@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_64cbfda5",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:09:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_0df51c82",
+      "range": {
+        "startLine": 795,
+        "startChar": 64,
+        "endLine": 795,
+        "endChar": 66
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_6d2cd002",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 25
@@ -59,6 +83,30 @@
       "writtenOn": "2016-12-14T14:02:28Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 820,
+        "startChar": 42,
+        "endLine": 820,
+        "endChar": 68
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_04e40939",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:09:37Z",
+      "side": 1,
+      "message": "++ use the passwrod regex description",
+      "parentUuid": "1a6eadb0_6d2cd002",
       "range": {
         "startLine": 820,
         "startChar": 42,
