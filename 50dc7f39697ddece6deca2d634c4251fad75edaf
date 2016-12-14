@@ -68,6 +68,30 @@
       "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_60c052e1",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-14T15:54:45Z",
+      "side": 1,
+      "message": "I was using this as a reference:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/core.py#L342\n\nI have no problem changing it.",
+      "parentUuid": "1a6eadb0_77065fcf",
+      "range": {
+        "startLine": 152,
+        "startChar": 16,
+        "endLine": 152,
+        "endChar": 23
+      },
+      "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
