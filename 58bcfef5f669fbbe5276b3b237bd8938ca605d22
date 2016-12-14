@@ -93,6 +93,30 @@
       "revId": "58bcfef5f669fbbe5276b3b237bd8938ca605d22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_8322ce50",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-14T18:55:11Z",
+      "side": 1,
+      "message": "This is correct. It also has a notice for if you have README files or something in the directory that you can just ignore the warning.",
+      "parentUuid": "1a6eadb0_1f7a90f1",
+      "range": {
+        "startLine": 976,
+        "startChar": 40,
+        "endLine": 976,
+        "endChar": 62
+      },
+      "revId": "58bcfef5f669fbbe5276b3b237bd8938ca605d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
