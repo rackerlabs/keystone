@@ -28,6 +28,7 @@ from keystone.credential import routers as credential_routers
 from keystone.endpoint_policy import routers as endpoint_policy_routers
 from keystone.federation import routers as federation_routers
 from keystone.i18n import _LW
+from keystone.i18n import _LC
 from keystone.identity import routers as identity_routers
 from keystone.oauth1 import routers as oauth1_routers
 from keystone.policy import routers as policy_routers
@@ -64,7 +65,7 @@ def fail_gracefully(f):
             LOG.debug(e, exc_info=True)
 
             # exception message is printed to all logs
-            LOG.critical(e)
+            LOG.critical(_LC(e))
             sys.exit(1)
 
     return wrapper
