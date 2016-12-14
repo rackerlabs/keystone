@@ -22,6 +22,40 @@
       "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e959a65b",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:04:25Z",
+      "side": 1,
+      "message": "if we only have a single user, how do we know combined filters are working? there should be a user who timestamps are outside the query timestamps",
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_442a817f",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:04:25Z",
+      "side": 1,
+      "message": "this test is trying to be exhaustive, but it\u0027s a bit hard to read too.\n\nI don\u0027t think we need to be exhaustive, just use a few combinations and write a couple of tests that make sense testing the behavior.",
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
