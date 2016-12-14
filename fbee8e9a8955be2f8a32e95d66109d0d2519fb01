@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_bfc0bc7d",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-14T18:28:52Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_e959a65b",
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_442a817f",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 22
@@ -53,6 +71,47 @@
       "writtenOn": "2016-12-14T18:04:25Z",
       "side": 1,
       "message": "this test is trying to be exhaustive, but it\u0027s a bit hard to read too.\n\nI don\u0027t think we need to be exhaustive, just use a few combinations and write a couple of tests that make sense testing the behavior.",
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ff5154d9",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-14T18:28:52Z",
+      "side": 1,
+      "message": "agreed, maybe split it up into multiple tests for each intended behavior, but that may be too much.",
+      "parentUuid": "1a6eadb0_442a817f",
+      "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ff687489",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-14T18:28:52Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 365,
+        "startChar": 0,
+        "endLine": 384,
+        "endChar": 75
+      },
       "revId": "fbee8e9a8955be2f8a32e95d66109d0d2519fb01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
