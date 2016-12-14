@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_6ecbdca5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-14T17:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_f7426f3d",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 56
+      },
+      "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_f7e8afe4",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 20
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-14T13:21:42Z",
       "side": 1,
       "message": "lines 152-158 and 295-301 are exactly the same, why not extract everything to here?",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 133,
+        "endChar": 30
+      },
+      "revId": "50dc7f39697ddece6deca2d634c4251fad75edaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_8ece78b2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2016-12-14T17:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_f7e8afe4",
       "range": {
         "startLine": 133,
         "startChar": 8,
