@@ -1588,3 +1588,27 @@ MAPPING_UNICODE = {
         },
     ],
 }
+
+MAPPING_ROLES = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    },
+                    "roles": [
+                        {"name": "a"},
+                        {"name": "b"},
+                        {"name": "{0}"},
+                    ],
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                }
+            ]
+        },
+    ]
+}
