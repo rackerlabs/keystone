@@ -457,3 +457,197 @@ class DomainConfigTestCase(test_v3.RestfulTestCase):
         # Now try a totally invalid option
         url = '/domains/config/ldap/%s/default' % uuid.uuid4().hex
         self.get(url, expected_status=http_client.FORBIDDEN)
+
+    def test_get_security_compliance_config(self):
+        """Ask for all security compliance configuration options
+
+        Make sure that requests for security compliance information
+        returns whitelisted options.
+        """
+        password_regex = uuid.uuid4().hex
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+            }
+        )
+        response = self.get(url)
+        expected_response = {
+            'security_compliance': {
+                'password_regex': password_regex,
+                'password_regex_description': password_regex_description
+            }
+        }
+        self.assertEqual(response.result['config'], expected_response)
+
+    def test_get_security_compliance_password_regex(self):
+        """Ask for the security compliance password regular expression."""
+        password_regex = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        group = 'security_compliance'
+        option = 'password_regex'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        response = self.get(url)
+        self.assertEqual(
+            response.result['config']['security_compliance'][option],
+            password_regex
+        )
+
+    def test_get_security_compliance_password_regex_description(self):
+        """Ask for the security compliance password regex description."""
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        option = 'password_regex_description'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        response = self.get(url)
+        self.assertEqual(
+            response.result['config']['security_compliance'][option],
+            password_regex_description
+        )
+
+    def test_update_security_compliance_password_regex_fails(self):
+        """Make sure any updates to security compliance options fail."""
+        password_regex = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex=password_regex
+        )
+        group = 'security_compliance'
+        option = 'password_regex'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        new_config = {
+            group: {
+                'password_regex': uuid.uuid4().hex
+            }
+        }
+        self.patch(
+            url,
+            body={'config': new_config},
+            expected_status=http_client.FORBIDDEN
+        )
+
+    def test_update_security_compliance_password_regex_description_fails(self):
+        """Make sure any updates to security compliance options fail."""
+        password_regex_description = uuid.uuid4().hex
+        self.config_fixture.config(
+            group='security_compliance',
+            password_regex_description=password_regex_description
+        )
+        group = 'security_compliance'
+        option = 'password_regex_description'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        new_config = {
+            group: {
+                'password_regex_description': uuid.uuid4().hex
+            }
+        }
+        self.patch(
+            url,
+            body={'config': new_config},
+            expected_status=http_client.FORBIDDEN
+        )
+
+    def test_get_non_whitelisted_security_compliance_option_fails(self):
+        """We should only return specific options from the security section.
+
+        Requests to get anything else should result in a Forbidden exception.
+        """
+        group = 'security_compliance'
+        option = 'lockout_failure_attempts'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        self.get(url, expected_status=http_client.FORBIDDEN)
+
+    def test_update_non_whitelisted_security_compliance_option_fails(self):
+        """Updating security compliance options through the API is not allowed.
+
+        Requests to update anything in the security compliance group through
+        the API should be Forbidden. This ensures that we are covering cases
+        where the option being updated isn't in the white list.
+        """
+        group = 'security_compliance'
+        option = 'lockout_failure_attempts'
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/%(option)s' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': group,
+                'option': option
+            }
+        )
+        new_config = {
+            group: {
+                'lockout_failure_attempts': 1
+            }
+        }
+        self.patch(
+            url,
+            body={'config': new_config},
+            expected_status=http_client.FORBIDDEN
+        )
+
+    def test_delete_security_compliance_group_fails(self):
+        """The security compliance group shouldn't be deleteable."""
+        url = (
+            '/domains/%(domain_id)s/config/%(group)s/' %
+            {
+                'domain_id': CONF.identity.default_domain_id,
+                'group': 'security_compliance',
+            }
+        )
+        self.delete(
+            url,
+            expected_status=http_client.FORBIDDEN
+        )
