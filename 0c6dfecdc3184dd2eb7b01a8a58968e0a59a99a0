@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_8d992c22",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T14:02:28Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of using the exactly \"reason\" here, using a matcher that compares the reasonCode and that \"reasonType\" is not None is enough for me. This way, we can change the message wording without having to update the test. This is just a preference, I\u0027m fine either way.",
+      "range": {
+        "startLine": 747,
+        "startChar": 0,
+        "endLine": 751,
+        "endChar": 56
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0df51c82",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T14:02:28Z",
+      "side": 1,
+      "message": "use a variable here, like you used \"used_ref[\u0027id\u0027]\" previously - it should be same variable to set the config and used here.",
+      "range": {
+        "startLine": 795,
+        "startChar": 64,
+        "endLine": 795,
+        "endChar": 66
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6d2cd002",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T14:02:28Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 820,
+        "startChar": 42,
+        "endLine": 820,
+        "endChar": 68
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0d3c3c2e",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T14:02:28Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 841,
+        "startChar": 54,
+        "endLine": 841,
+        "endChar": 55
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_4d4634c0",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T14:02:28Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 842,
+        "startChar": 56,
+        "endLine": 842,
+        "endChar": 57
+      },
+      "revId": "0c6dfecdc3184dd2eb7b01a8a58968e0a59a99a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
