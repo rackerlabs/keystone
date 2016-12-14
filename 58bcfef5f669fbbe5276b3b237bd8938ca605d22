@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_ae642b49",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T10:54:25Z",
+      "side": 1,
+      "message": "so you get these in the opposite order you mock them just above ?",
+      "range": {
+        "startLine": 961,
+        "startChar": 60,
+        "endLine": 962,
+        "endChar": 69
+      },
+      "revId": "58bcfef5f669fbbe5276b3b237bd8938ca605d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ee8703d5",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T10:54:25Z",
+      "side": 1,
+      "message": "why is this an invalid name and \u0027keystone.domains.conf\u0027 in the test below isn\u0027t ?",
+      "range": {
+        "startLine": 976,
+        "startChar": 40,
+        "endLine": 976,
+        "endChar": 62
+      },
+      "revId": "58bcfef5f669fbbe5276b3b237bd8938ca605d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
