@@ -34,6 +34,24 @@
       "revId": "9583eb13642cc5eed153e8e46680b8a053797f1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e24c53ca",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-14T23:19:30Z",
+      "side": 1,
+      "message": "Agree with Samuel, this info will either need to be copied into \"Token authentication with scoped authorization\" or probably better off in its own section. Another possible idea could be to put this info as an optional response parameter for both sections, then you could include this info there without the duplication here.",
+      "parentUuid": "1a6eadb0_163f08d7",
+      "revId": "9583eb13642cc5eed153e8e46680b8a053797f1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
