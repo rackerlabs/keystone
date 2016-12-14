@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_7c7ac4f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T13:08:22Z",
+      "side": 1,
+      "message": "are we going to have the possibility to list Identity Providers by domain_id? I guess this is required to proper handle the \"Partial-Bug\".",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 68
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_03d79fed",
         "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
         "patchSetId": 12
@@ -13,6 +36,30 @@
       "writtenOn": "2016-12-09T18:43:15Z",
       "side": 1,
       "message": "it\u0027s",
+      "range": {
+        "startLine": 5,
+        "startChar": 75,
+        "endLine": 5,
+        "endChar": 78
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_bc845cd4",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T13:08:22Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a71b18c_03d79fed",
       "range": {
         "startLine": 5,
         "startChar": 75,
