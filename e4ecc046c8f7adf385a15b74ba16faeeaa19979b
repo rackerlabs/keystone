@@ -34,6 +34,47 @@
       "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_7c5f24e5",
+        "filename": "keystone/cmd/doctor/security_compliance.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T13:01:18Z",
+      "side": 1,
+      "message": "Exactly, I have some difficult to understand the method name too, but the explanation given by Richard is perfect.",
+      "parentUuid": "3a71b18c_d8902df0",
+      "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5c00a8aa",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-14T13:01:18Z",
+      "side": 1,
+      "message": "rather have this kind of comments in the beginning of the test as docstrings. Also applies to the other tests here.",
+      "range": {
+        "startLine": 794,
+        "startChar": 0,
+        "endLine": 795,
+        "endChar": 76
+      },
+      "revId": "e4ecc046c8f7adf385a15b74ba16faeeaa19979b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
