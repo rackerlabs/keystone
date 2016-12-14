@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_37b6a23d",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T14:47:33Z",
+      "side": 1,
+      "message": "any reason we do not call self.shadow_users_api.create_nonlocal_user ?",
+      "range": {
+        "startLine": 1363,
+        "startChar": 48,
+        "endLine": 1363,
+        "endChar": 71
+      },
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
