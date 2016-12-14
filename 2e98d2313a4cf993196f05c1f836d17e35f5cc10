@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_83face73",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-14T18:56:32Z",
+      "side": 1,
+      "message": "I\u0027d remove \u0027that_you\u0027 in the test name, it looks strange to me",
+      "range": {
+        "startLine": 947,
+        "startChar": 13,
+        "endLine": 947,
+        "endChar": 22
+      },
+      "revId": "2e98d2313a4cf993196f05c1f836d17e35f5cc10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
