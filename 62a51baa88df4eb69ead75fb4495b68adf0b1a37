@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_334aff26",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T13:34:24Z",
+      "side": 1,
+      "message": "so is \"user.local_user.last_auth_at\" *equals to* \"user.password_ref.created_at\" in the first use ? that should be the reason we are checking with the \u003e operator to know it\u0027s the second use (then should be expired).\n\n\n(nit) the method could\u0027ve just returned all the expression as well",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 136,
+        "endChar": 75
+      },
+      "revId": "62a51baa88df4eb69ead75fb4495b68adf0b1a37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
