@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_9f05927b",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T14:40:03Z",
+      "side": 1,
+      "message": "Actually - I\u0027ve changed my mind on this... Going to remove the class variable in order to just put the url string in the test like every other method.",
+      "revId": "d981992e37cd1a661e1490a18eb8519e4ac76e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
