@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_169ddf09",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T20:02:26Z",
+      "side": 1,
+      "message": "Reasoning here is that domain_specific_drivers_enabled\u003dTrue and domain_configurations_from_database\u003dTrue means we\u0027re using the database correctly, then this symptom won\u0027t be raised. does that make sense to you ?",
+      "parentUuid": "1a6eadb0_96e3afa3",
+      "range": {
+        "startLine": 1046,
+        "startChar": 44,
+        "endLine": 1046,
+        "endChar": 49
+      },
+      "revId": "546b5757d27ec8eb30c10d9583c84a214c23d7ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_d6efe784",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 6
