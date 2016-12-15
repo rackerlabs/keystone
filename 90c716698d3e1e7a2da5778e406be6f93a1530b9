@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_4eb345e9",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T17:41:03Z",
+      "side": 1,
+      "message": "could\u0027ve just added + idp_id at the end of this line",
+      "revId": "90c716698d3e1e7a2da5778e406be6f93a1530b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_aeabf973",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 948,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T17:41:03Z",
+      "side": 1,
+      "message": "this still looks weird to me :)",
+      "range": {
+        "startLine": 948,
+        "startChar": 13,
+        "endLine": 948,
+        "endChar": 21
+      },
+      "revId": "90c716698d3e1e7a2da5778e406be6f93a1530b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
