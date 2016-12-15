@@ -16,6 +16,24 @@
       "revId": "f729b36a9136a4469df042b5ef2e9f9dfb692bee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e5326f0f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2016-12-15T18:40:58Z",
+      "side": 1,
+      "message": "lol, no difference. looks like i did a \u0027git commit -a --amend\u0027 and got changes i didn\u0027t want. i\u0027m making some additional tests for a different patch.",
+      "parentUuid": "1a6eadb0_c5f73357",
+      "revId": "f729b36a9136a4469df042b5ef2e9f9dfb692bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
