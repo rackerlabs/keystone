@@ -15,7 +15,9 @@
 """Main entry point into the Identity service."""
 
 import functools
+import operator
 import os
+import re
 import threading
 import uuid
 
@@ -958,6 +960,64 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def _check_valid_timestamp(self, timestamp):
+        """Validate the timestamp format.
+
+        The regex accepts the following timestamp formats:
+        - YYYY-MM-DD HH:MM:SSZ
+        - YYYY-MM-DDTHH:MM:SSZ
+        - YYYY-MM-DD HH:MM:SS.XXXXXX
+        - YYYY-MM-DDTHH:MM:SS.XXXXXX
+        There can be 1-6 digitss for the microseconds (X).
+
+        This will accept timestamps such as `2017-99-99T99:99:99Z` even
+        though the date/time does not exists.
+
+        Returns True if the timestamp format is valid,
+        otherwise returns False.
+
+        """
+        pattern = re.compile('[1-9]\d{3}\-\d{2}\-\d{2}( |T)'
+                             '\d{2}\:\d{2}\:\d{2}(Z|\.\d{1,6})')
+        return pattern.match(timestamp)
+
+    def _clean_up_expired_password_hints(self, hints):
+        """Clean Up Expired Password Hints.
+
+        Any `password_expires_at` filters on the `list_users` or
+        `list_users_in_group` queries are modified so the call will
+        return valid data.
+
+        The filters `comparator` is changed to the operator specified in
+        the call, otherwise it is assumed to be `equals`. The filters
+        `value` becomes the timestamp specified. Both the operator and
+        timestamp are validated, and will raise a ValidationOperatorError
+        or ValidationTimeStampError exception respectively if invalid.
+
+        """
+        operators = {'lt': operator.lt, 'gt': operator.gt,
+                     'eq': operator.eq, 'lte': operator.le,
+                     'gte': operator.ge, 'neq': operator.ne}
+
+        for filter_ in hints.filters:
+            if 'password_expires_at' == filter_['name']:
+                value = filter_['value']
+                # Split the filters value at the first colon in order to check
+                # if there is an operator specified
+                op, timestamp = value.split(':', 1)
+                if self._check_valid_timestamp(timestamp):
+                    if op in operators:
+                        filter_['comparator'] = operators[op]
+                        filter_['value'] = timestamp
+                    else:
+                        raise exception.ValidationOperatorError()
+                else:
+                    timestamp = filter_['value']
+                    if not self._check_valid_timestamp(timestamp):
+                        raise exception.ValidationTimeStampError()
+                    filter_['comparator'] = operators['eq']
+        return hints
+
     @domains_configured
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
@@ -972,6 +1032,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users(hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
@@ -1257,6 +1318,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users_in_group(entity_id, hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.USER)
