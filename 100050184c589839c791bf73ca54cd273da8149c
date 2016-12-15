@@ -22,6 +22,29 @@
       "revId": "100050184c589839c791bf73ca54cd273da8149c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_8ca80022",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-15T21:08:29Z",
+      "side": 1,
+      "message": "nit: think it would be good to have a separate method to validate the input, but okay as it.",
+      "range": {
+        "startLine": 1159,
+        "startChar": 8,
+        "endLine": 1171,
+        "endChar": 59
+      },
+      "revId": "100050184c589839c791bf73ca54cd273da8149c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
