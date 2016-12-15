@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_c21569e5",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T18:00:18Z",
+      "side": 1,
+      "message": "please remove trailing whitespaces",
+      "range": {
+        "startLine": 4,
+        "startChar": 61,
+        "endLine": 4,
+        "endChar": 62
+      },
+      "revId": "a9c0519a0b4b8d5df2c5002cb8f2e1fcd0163d33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e2d42521",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T18:00:18Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 5,
+        "startChar": 62,
+        "endLine": 5,
+        "endChar": 63
+      },
+      "revId": "a9c0519a0b4b8d5df2c5002cb8f2e1fcd0163d33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
