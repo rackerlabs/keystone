@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_3b5ac42a",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:26:05Z",
+      "side": 1,
+      "message": "we know what the group is: security_compliance",
+      "range": {
+        "startLine": 196,
+        "startChar": 96,
+        "endLine": 196,
+        "endChar": 103
+      },
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5b430042",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:26:05Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 197,
+        "startChar": 96,
+        "endLine": 197,
+        "endChar": 103
+      },
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9b74b836",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:26:05Z",
+      "side": 1,
+      "message": "It would be valuable to create a test where someone from *other domain* is able to read these config (even if they provide the default domain in the URL).",
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_fb320ca6",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:26:05Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 497,
+        "startChar": 24,
+        "endLine": 497,
+        "endChar": 29
+      },
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_db2d5047",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:26:05Z",
+      "side": 1,
+      "message": "admin user",
+      "range": {
+        "startLine": 497,
+        "startChar": 19,
+        "endLine": 497,
+        "endChar": 23
+      },
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
