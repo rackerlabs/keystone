@@ -45,6 +45,23 @@
       "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_4495f384",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T14:14:13Z",
+      "side": 0,
+      "message": "Also, instead of deleting, make sure simple_bind_s is called even if user/passwd are not provided",
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
