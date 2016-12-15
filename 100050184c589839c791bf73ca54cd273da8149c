@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_16aebf80",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-15T19:55:48Z",
+      "side": 1,
+      "message": "I like the fact this is a new API entry so that we don\u0027t need to weaken the existing one",
+      "range": {
+        "startLine": 196,
+        "startChar": 9,
+        "endLine": 196,
+        "endChar": 46
+      },
+      "revId": "100050184c589839c791bf73ca54cd273da8149c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
