@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_fbe3ecd6",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T19:52:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_3b5ac42a",
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_5b430042",
         "filename": "doc/source/policy_mapping.rst",
         "patchSetId": 9
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_1be508db",
+        "filename": "doc/source/policy_mapping.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T19:52:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_5b430042",
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_9b74b836",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 9
@@ -59,6 +95,24 @@
       "writtenOn": "2016-12-15T19:26:05Z",
       "side": 1,
       "message": "It would be valuable to create a test where someone from *other domain* is able to read these config (even if they provide the default domain in the URL).",
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5bcce069",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T19:52:12Z",
+      "side": 1,
+      "message": "Ah - good point. I can look into adding that test.",
+      "parentUuid": "1a6eadb0_9b74b836",
       "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,42 @@
         "endLine": 497,
         "endChar": 23
       },
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3629fb37",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T19:52:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_db2d5047",
+      "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_1624ff5d",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T19:52:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_fb320ca6",
       "revId": "74815966c41626baf344169d0d2e476e7da3afe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
