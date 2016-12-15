@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_c5f73357",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-15T18:36:22Z",
+      "side": 1,
+      "message": "Hmm - what\u0027s the difference between these two? Are they both needed?",
+      "revId": "f729b36a9136a4469df042b5ef2e9f9dfb692bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
