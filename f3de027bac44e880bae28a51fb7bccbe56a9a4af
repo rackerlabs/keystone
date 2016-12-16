@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_116cdb06",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Yes, if not supplied the code creates it, but I think in the docs we want to show it as required. We don\u0027t want the normal practice to be optional, operators should really supply the domain_id.",
+      "parentUuid": "1a6eadb0_db84425f",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 19
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_1bf23a06",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 15
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_113a1be7",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_1bf23a06",
+      "range": {
+        "startLine": 150,
+        "startChar": 7,
+        "endLine": 150,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_3bf536ec",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 15
@@ -59,6 +107,30 @@
       "writtenOn": "2016-12-16T17:06:43Z",
       "side": 1,
       "message": "wrap this in double backticks: ``domain_id``",
+      "range": {
+        "startLine": 151,
+        "startChar": 28,
+        "endLine": 151,
+        "endChar": 37
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5128139a",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_3bf536ec",
       "range": {
         "startLine": 151,
         "startChar": 28,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_6c445649",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Nice, thanks for writing this up. Done.",
+      "parentUuid": "1a6eadb0_3b5c567c",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 35
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_bb4866b4",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
         "patchSetId": 15
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_ac8f4e73",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "I think it should be required in the docs, I just don\u0027t want to give the impression that optional can be a normal practice.",
+      "parentUuid": "1a6eadb0_bb4866b4",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_5bde72dd",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/update-request.json",
         "patchSetId": 15
@@ -151,6 +271,30 @@
       "writtenOn": "2016-12-16T17:06:43Z",
       "side": 1,
       "message": "why make this change? it was fine before, it\u0027s for updating an idp",
+      "range": {
+        "startLine": 3,
+        "startChar": 8,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ac54aec9",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/update-request.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "my mistake, fixed.",
+      "parentUuid": "1a6eadb0_5bde72dd",
       "range": {
         "startLine": 3,
         "startChar": 8,
@@ -255,6 +399,102 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_0c95a231",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_3ba1b646",
+      "range": {
+        "startLine": 6,
+        "startChar": 58,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_4c9b1a66",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_9bfbaa46",
+      "range": {
+        "startLine": 6,
+        "startChar": 28,
+        "endLine": 6,
+        "endChar": 31
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_2c989e69",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_5b059243",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ec914648",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_1b9eba06",
+      "range": {
+        "startLine": 6,
+        "startChar": 42,
+        "endLine": 6,
+        "endChar": 52
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_9ba9ea26",
         "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
         "patchSetId": 15
@@ -266,6 +506,30 @@
       "writtenOn": "2016-12-16T17:06:43Z",
       "side": 1,
       "message": "Add the line:\n\nFederated users that authenticate with the IdP will now be associated with the domain ID specified. If no domain ID is specified, then a domain will be automatically created.",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 73
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6ca616af",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_9ba9ea26",
       "range": {
         "startLine": 7,
         "startChar": 13,
@@ -324,6 +588,54 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_acc3ce36",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_db4c42a0",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0cbcc2b9",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_3b46167b",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 44
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_9b572a25",
         "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
         "patchSetId": 15
@@ -347,6 +659,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_ecdf860a",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_9b572a25",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_4e3dd2c2",
         "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
         "patchSetId": 15
@@ -358,6 +694,30 @@
       "writtenOn": "2016-12-16T17:06:43Z",
       "side": 1,
       "message": "How about:\n\nFor existing Identity Providers (IdPs), a new domain will be automatically created that associated the IdP and the new domain. Each IdP will now have a ``domain_id`` field. The new domain\u0027s ``id`` will be a random UUID. it\u0027s ``name`` will match it\u0027s ``id``. All automatically generated domains will be ``enabled`` by default.",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6c4296af",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T18:14:24Z",
+      "side": 1,
+      "message": "Perfect! Thanks for helping with this.",
+      "parentUuid": "1a6eadb0_4e3dd2c2",
       "range": {
         "startLine": 10,
         "startChar": 27,
