@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_db84425f",
+        "filename": "api-ref/source/v3-ext/federation.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "isn\u0027t this optional? i thought the code creates this if it\u0027s not supplied",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 19
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_1bf23a06",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "wrap this in double backticks: ``domain_id``",
+      "range": {
+        "startLine": 150,
+        "startChar": 7,
+        "endLine": 150,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3bf536ec",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 15
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "wrap this in double backticks: ``domain_id``",
+      "range": {
+        "startLine": 151,
+        "startChar": 28,
+        "endLine": 151,
+        "endChar": 37
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_7b524e68",
         "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
         "patchSetId": 15
@@ -18,6 +87,282 @@
         "startChar": 0,
         "endLine": 152,
         "endChar": 18
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3b5c567c",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "This could use more detail:\n\nThe ID of a domain that is associated with the Identity Provider. Federated users that authenticate with the Identity Provider will be recorded in the domain specified. When creating an Identity Provider, either supply a domain ID or a new domain will be created automatically.",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 35
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_bb4866b4",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "it\u0027s not required according to the impl.",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5bde72dd",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/samples/update-request.json",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "why make this change? it was fine before, it\u0027s for updating an idp",
+      "range": {
+        "startLine": 3,
+        "startChar": 8,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3ba1b646",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "an*",
+      "range": {
+        "startLine": 6,
+        "startChar": 58,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9bfbaa46",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 6,
+        "startChar": 28,
+        "endLine": 6,
+        "endChar": 31
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_1b9eba06",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "to associate",
+      "range": {
+        "startLine": 6,
+        "startChar": 42,
+        "endLine": 6,
+        "endChar": 52
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5b059243",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "recommended",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 16
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9ba9ea26",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "Add the line:\n\nFederated users that authenticate with the IdP will now be associated with the domain ID specified. If no domain ID is specified, then a domain will be automatically created.",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 73
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3b46167b",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "call this Identity Providers (IdP)",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 44
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_db4c42a0",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "remove this line, it\u0027s a repeat of the above",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9b572a25",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "no it won\u0027t, it\u0027ll be a random UUID",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_4e3dd2c2",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:06:43Z",
+      "side": 1,
+      "message": "How about:\n\nFor existing Identity Providers (IdPs), a new domain will be automatically created that associated the IdP and the new domain. Each IdP will now have a ``domain_id`` field. The new domain\u0027s ``id`` will be a random UUID. it\u0027s ``name`` will match it\u0027s ``id``. All automatically generated domains will be ``enabled`` by default.",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 14
       },
       "revId": "f3de027bac44e880bae28a51fb7bccbe56a9a4af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
