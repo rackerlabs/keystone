@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_10a76c0b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T23:21:34Z",
+      "side": 1,
+      "message": "this logic should be in the manager, not the backend. around here: https://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L974\n\ncreate a private function that handles the hints before going to the backend",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 40
+      },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_d06334af",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T23:21:34Z",
+      "side": 1,
+      "message": "This is missing the \"\u003e\" so it\u0027 won\u0027t render correctly. How about...\n\n---\nfeatures:\n  - \u003e\n    [`blueprint pci-dss-query-password-expired-users \u003chttps://blueprints.launchpad.net/keystone/+spec/pci-dss-query-password-expired-users\u003e`_]\n    Added a ``password_expires_at`` query to ``/v3/users`` and ``/v3/groups/{group_id}/users``. The ``password_expires_at`` query is comprised of two parts, an ``operator`` (valid choices listed below) and a ``timestamp`` (of form ``YYYY-MM-DDTHH:mm:ssZ``). The APIs will filter the list of users based on the ``operator`` and ``timestamp`` given. \n\n      * lt - password expires before the timestamp\n      * lte - password expires at or before timestamp\n      * gt - password expires after the timestamp\n      * gte - password expires at or after the timestamp\n      * eq - password expires at the timestamp\n      * neq - password expires not at the timestamp\n\nSee http://developer.openstack.org/api-ref/identity/v3/index.html for more details.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 67
+      },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_b03958a6",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T23:21:34Z",
+      "side": 1,
+      "message": "bullets need to be bumped in 2 spaces",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 49
+      },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
