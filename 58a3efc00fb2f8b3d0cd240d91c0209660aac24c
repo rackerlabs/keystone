@@ -46,6 +46,30 @@
       "revId": "58a3efc00fb2f8b3d0cd240d91c0209660aac24c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_2ab239e5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T21:57:02Z",
+      "side": 1,
+      "message": "i mean...\n\n  federated_dict \u003d {\n                \u0027idp_id\u0027: idp_id,\n                \u0027protocol_id\u0027: protocol_id,\n                \u0027unique_id\u0027: unique_id,\n                \u0027display_name\u0027: display_name\n                \u0027domain_id\u0027: idp[\u0027domain_id\u0027]\n            }",
+      "parentUuid": "1a6eadb0_a292f7f3",
+      "range": {
+        "startLine": 1325,
+        "startChar": 12,
+        "endLine": 1325,
+        "endChar": 15
+      },
+      "revId": "58a3efc00fb2f8b3d0cd240d91c0209660aac24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
