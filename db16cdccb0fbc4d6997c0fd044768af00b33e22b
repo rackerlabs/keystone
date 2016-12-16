@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_27f514ec",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T23:40:46Z",
+      "side": 1,
+      "message": "nit: insert a new line to separate this block from the conditional branches above.",
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_474e903b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T23:40:46Z",
+      "side": 1,
+      "message": "I\u0027d prefer to have this outside the method, so we only call something called \"_record_successful_auth\" if possible (as it was before)",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 18
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_c72e2042",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T23:40:46Z",
+      "side": 1,
+      "message": "I\u0027d continue to keep this in a different method, what do you think?",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 57
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_c7a380b0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T23:40:46Z",
+      "side": 1,
+      "message": "nit: maybe create an inner function called \"is_password_first_use\", or something like that.",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 136,
+        "endChar": 77
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
