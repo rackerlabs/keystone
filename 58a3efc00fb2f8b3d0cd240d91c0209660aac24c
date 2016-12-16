@@ -22,6 +22,30 @@
       "revId": "58a3efc00fb2f8b3d0cd240d91c0209660aac24c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a292f7f3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T19:20:28Z",
+      "side": 1,
+      "message": "Add the idp? You mean like combine into one dictionary?",
+      "parentUuid": "1a6eadb0_425cc37c",
+      "range": {
+        "startLine": 1325,
+        "startChar": 12,
+        "endLine": 1325,
+        "endChar": 15
+      },
+      "revId": "58a3efc00fb2f8b3d0cd240d91c0209660aac24c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
