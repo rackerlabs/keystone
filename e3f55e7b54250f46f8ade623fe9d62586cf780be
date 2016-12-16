@@ -103,6 +103,30 @@
       "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_4e579257",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T17:23:28Z",
+      "side": 1,
+      "message": "This checks all constraints; not specifically uniqueconstraints.",
+      "parentUuid": "1a6eadb0_0e403a06",
+      "range": {
+        "startLine": 445,
+        "startChar": 8,
+        "endLine": 445,
+        "endChar": 29
+      },
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
