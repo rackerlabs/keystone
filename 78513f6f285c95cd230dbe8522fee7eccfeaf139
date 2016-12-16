@@ -93,6 +93,54 @@
       "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9e38fdd4",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T15:18:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_bc845cd4",
+      "range": {
+        "startLine": 5,
+        "startChar": 75,
+        "endLine": 5,
+        "endChar": 78
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_be33f9f4",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T15:18:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_03d79fed",
+      "range": {
+        "startLine": 5,
+        "startChar": 75,
+        "endLine": 5,
+        "endChar": 78
+      },
+      "revId": "78513f6f285c95cd230dbe8522fee7eccfeaf139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
