@@ -199,7 +199,8 @@ class PolicyJsonTestCase(unit.TestCase):
         credentials = {'username': uuid.uuid4().hex, 'token': uuid.uuid4().hex,
                        'project_name': None, 'user_id': uuid.uuid4().hex,
                        'roles': [u'admin'], 'is_admin': True,
-                       'project_id': None, 'domain_id': uuid.uuid4().hex}
+                       'is_admin_project' :True, 'project_id': None,
+                       'domain_id': uuid.uuid4().hex}
 
         standard_policy = unit.dirs.etc('policy.json')
         enforcer = common_policy.Enforcer(CONF, policy_file=standard_policy)
@@ -208,8 +209,8 @@ class PolicyJsonTestCase(unit.TestCase):
 
         domain_policy = unit.dirs.etc('policy.v3cloudsample.json')
         enforcer = common_policy.Enforcer(CONF, policy_file=domain_policy)
-        self.assertRaises(TypeError, enforcer.enforce,
-                          action, target, credentials)
+        result = enforcer.enforce(action, target, credentials)
+        self.assertTrue(result)
 
     def test_all_targets_documented(self):
         # All the targets in the sample policy file must be documented in
