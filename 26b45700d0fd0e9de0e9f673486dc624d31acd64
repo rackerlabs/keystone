@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_04e736ac",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 20
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T21:01:37Z",
+      "side": 1,
+      "message": "what happens if I provide a domain_id already associated with an IdP?",
+      "range": {
+        "startLine": 18,
+        "startChar": 6,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "26b45700d0fd0e9de0e9f673486dc624d31acd64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_245c327c",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 20
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T21:01:37Z",
+      "side": 1,
+      "message": "should include the error returned if the client tries to update the domain_id. I guess it is a 400?",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 31
+      },
+      "revId": "26b45700d0fd0e9de0e9f673486dc624d31acd64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a44842b4",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/parameters.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T21:01:37Z",
+      "side": 1,
+      "message": "this is not very clear to me. This means the user will be created in the domain?",
+      "range": {
+        "startLine": 46,
+        "startChar": 55,
+        "endLine": 46,
+        "endChar": 71
+      },
+      "revId": "26b45700d0fd0e9de0e9f673486dc624d31acd64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_24d352d6",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T21:01:37Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 6,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 63
+      },
+      "revId": "26b45700d0fd0e9de0e9f673486dc624d31acd64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_84e426ac",
+        "filename": "releasenotes/notes/idp_requires_domain_id-5497fb56fe86806d.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T21:01:37Z",
+      "side": 1,
+      "message": "not required, right? Since it creates a new one when not specified?",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "26b45700d0fd0e9de0e9f673486dc624d31acd64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
