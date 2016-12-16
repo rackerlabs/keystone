@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_2418bcd2",
+        "filename": "keystone/common/sql/contract_repo/versions/011_contract_add_domain_id_to_idp.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T16:23:35Z",
+      "side": 1,
+      "message": "Disabled IdP doesn\u0027t necessarily mean the domain should be disabled, right?",
+      "parentUuid": "1a6eadb0_c9f1e196",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 24
+      },
+      "revId": "9c2fca99170969fbc2f0e8167363d83ed1d1634f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_e9485db5",
         "filename": "keystone/federation/core.py",
         "patchSetId": 30
@@ -122,6 +146,30 @@
       "writtenOn": "2016-12-16T16:03:44Z",
       "side": 1,
       "message": "you can use the same value as the one from the idp ref",
+      "range": {
+        "startLine": 75,
+        "startChar": 23,
+        "endLine": 75,
+        "endChar": 27
+      },
+      "revId": "9c2fca99170969fbc2f0e8167363d83ed1d1634f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_04e020cc",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-16T16:23:35Z",
+      "side": 1,
+      "message": "Why? Just because the the idp is disabled, doesn\u0027t mean the domain is disabled.",
+      "parentUuid": "1a6eadb0_69d36dd5",
       "range": {
         "startLine": 75,
         "startChar": 23,
