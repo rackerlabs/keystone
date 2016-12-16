@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_4e9952c3",
+        "filename": "keystone/common/sql/contract_repo/versions/011_contract_user_id_unique_for_nonlocal_user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:12:21Z",
+      "side": 1,
+      "message": "why was this added to the contract repo? we\u0027re adding a new contraint, shouldn\u0027t that go in the expand repo? http://docs.openstack.org/developer/keystone/devref/development_best_practices.html#database-migrations",
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_37b6a23d",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 8
@@ -18,6 +35,52 @@
         "startChar": 48,
         "endLine": 1363,
         "endChar": 71
+      },
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ae4f4632",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:12:21Z",
+      "side": 1,
+      "message": "see comment below",
+      "range": {
+        "startLine": 298,
+        "startChar": 8,
+        "endLine": 298,
+        "endChar": 36
+      },
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0e403a06",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-16T17:12:21Z",
+      "side": 1,
+      "message": "we already had a function for to check constraints?",
+      "range": {
+        "startLine": 445,
+        "startChar": 8,
+        "endLine": 445,
+        "endChar": 29
       },
       "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
