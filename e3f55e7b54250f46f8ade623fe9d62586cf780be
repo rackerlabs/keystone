@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_5199f3c2",
+        "filename": "keystone/common/sql/contract_repo/versions/011_contract_user_id_unique_for_nonlocal_user.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-16T17:37:09Z",
+      "side": 1,
+      "message": "that\u0027s my understanding as well (Ron\u0027s)",
+      "parentUuid": "1a6eadb0_ae99067b",
+      "revId": "e3f55e7b54250f46f8ade623fe9d62586cf780be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_37b6a23d",
         "filename": "keystone/tests/unit/identity/test_backends.py",
         "patchSetId": 8
