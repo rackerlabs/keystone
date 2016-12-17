@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_be4f6290",
+        "filename": "api-ref/source/v3-ext/federation/identity-provider/idp.inc",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-17T13:22:07Z",
+      "side": 1,
+      "message": "I agree with Rodrigo. The docs are not clear on saying the relationship is 1:1 and 409 will raised if the domain is already associated with an IdP.",
+      "revId": "a61970d52d68aa83db6db82ed833e0d043a3cba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
