@@ -272,6 +272,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_7ebeaaae",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-17T12:41:49Z",
+      "side": 1,
+      "message": "Yes, that\u0027s my feeling too, this is not easy to read. In previous patch sets I\u0027ve suggested that there could be many tests instead of one, but much easier to read.\n\ntest_list_users_by_password_expires_at_before\ntest_list_users_by_password_expires_at_after\ntest_list_users_by_password_expires_at_interval\n\nand so on as needed.",
+      "parentUuid": "1a6eadb0_eacf5c26",
+      "range": {
+        "startLine": 286,
+        "startChar": 1,
+        "endLine": 298,
+        "endChar": 71
+      },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_4a24d00b",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 26
