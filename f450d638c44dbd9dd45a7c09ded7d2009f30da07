@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_393fecb4",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1828,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-17T13:52:14Z",
+      "side": 1,
+      "message": "the advantage of the newer is that we don\u0027t need to make different assertions depending on the engine.\n\nhowever it only works for unique constraints.\n\nwe could also keep the does_unique_constraint_exist method and do this if/else logic in there, re-using the existing methods. that way we keep the code cleaner here.",
+      "revId": "f450d638c44dbd9dd45a7c09ded7d2009f30da07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
