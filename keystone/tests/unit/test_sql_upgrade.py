@@ -638,10 +638,12 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
     def test_add_trust_unique_constraint_upgrade(self):
         self.upgrade(86)
-        inspector = reflection.Inspector.from_engine(self.engine)
-        constraints = inspector.get_unique_constraints('trust')
-        constraint_names = [constraint['name'] for constraint in constraints]
-        self.assertIn('duplicate_trust_constraint', constraint_names)
+        table_name = 'trust'
+        constraint = 'duplicate_trust_constraint'
+        if self.engine.name == 'mysql':
+            self.assertTrue(self.does_index_exist(table_name, constraint))
+        else:
+            self.assertTrue(self.does_constraint_exist(table_name, constraint))
 
     def test_add_domain_specific_roles(self):
         """Check database upgraded successfully for domain specific roles.
@@ -658,7 +660,6 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
         self.upgrade(87)
         session = self.sessionmaker()
-        role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
         # Add a role before we upgrade, so we can check that its new domain_id
         # attribute is handled correctly
         role_id = uuid.uuid4().hex
@@ -670,13 +671,14 @@ class SqlLegacyRepoUpgradeTests(SqlMigrateBase):
 
         session = self.sessionmaker()
         self.assertTableColumns('role', ['id', 'name', 'domain_id', 'extra'])
+
         # Check the domain_id has been added to the uniqueness constraint
-        inspector = reflection.Inspector.from_engine(self.engine)
-        constraints = inspector.get_unique_constraints('role')
-        constraint_columns = [
-            constraint['column_names'] for constraint in constraints
-            if constraint['name'] == 'ixu_role_name_domain_id']
-        self.assertIn('domain_id', constraint_columns[0])
+        table_name = 'role'
+        constraint = 'ixu_role_name_domain_id'
+        if self.engine.name == 'mysql':
+            self.assertTrue(self.does_index_exist(table_name, constraint))
+        else:
+            self.assertTrue(self.does_constraint_exist(table_name, constraint))
 
         # Now check our role has its domain_id attribute set correctly
         role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
