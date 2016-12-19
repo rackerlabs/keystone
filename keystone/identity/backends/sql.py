@@ -125,10 +125,22 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _get_unique_id(self, session, query, hints):
+        for filter_ in hints.filters:
+            if 'unique_id' == filter_['name']:
+                value = filter_['value']
+                query = query.filter(sqlalchemy.and_(
+                    model.User.id == model.FederatedUser.user_id,
+                    model.FederatedUser.unique_id == value))
+
+        hints.filters = [x for x in hints.filters if x['name'] != 'unique_id']
+        return query
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            query = self._get_unique_id(session, query, hints)
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
