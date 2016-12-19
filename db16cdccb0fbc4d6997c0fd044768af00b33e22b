@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_379c1569",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-19T23:03:24Z",
+      "side": 1,
+      "message": "I prefer it as, just made the authenticate() method a little cleaner to me. But I could go either way.",
+      "parentUuid": "1a6eadb0_474e903b",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 18
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_c72e2042",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_37c5f55a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-19T23:03:24Z",
+      "side": 1,
+      "message": "I think I started with this being broken up, but wanted to consolidate and do a single database write (as opposed to 2 database writes).",
+      "parentUuid": "1a6eadb0_c72e2042",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 57
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_c7a380b0",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -76,6 +124,30 @@
       "writtenOn": "2016-12-16T23:40:46Z",
       "side": 1,
       "message": "nit: maybe create an inner function called \"is_password_first_use\", or something like that.",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 136,
+        "endChar": 77
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_978169fe",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-19T23:03:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_c7a380b0",
       "range": {
         "startLine": 134,
         "startChar": 11,
