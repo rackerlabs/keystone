@@ -85,6 +85,40 @@
       "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_5c81b64c",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T22:18:09Z",
+      "side": 1,
+      "message": "Bug*",
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_7c867266",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T22:18:09Z",
+      "side": 1,
+      "message": "added*",
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
