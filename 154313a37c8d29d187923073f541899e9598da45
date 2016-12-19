@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_8324e5af",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-19T14:23:19Z",
+      "side": 1,
+      "message": "there are some tools that deploys keystone public endpoint behind 13000, when using haproxy.",
+      "range": {
+        "startLine": 18,
+        "startChar": 63,
+        "endLine": 18,
+        "endChar": 67
+      },
+      "revId": "154313a37c8d29d187923073f541899e9598da45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0331b5ec",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-19T14:23:19Z",
+      "side": 1,
+      "message": "this port is also 13357 in some tools",
+      "range": {
+        "startLine": 19,
+        "startChar": 61,
+        "endLine": 19,
+        "endChar": 65
+      },
+      "revId": "154313a37c8d29d187923073f541899e9598da45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_cc01af3b",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 18
