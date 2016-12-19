@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_685f9475",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "The reason variable is a pycadf object, right? We could elaborate on the docstring here to explicitly say what it is. This might help prevent people from doing something like: \n\n  reason \u003d \u0027Something broke!\u0027\n  _emit(reason\u003dreason)\n\nInstead of using the pycadf library to generate a Reason object.",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a8344c4a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "In the method signature for _emit() `actor_dict` already defaults to None. For the sake of simplicity, I would opt to not specify this at all and let the default in the method signature do it\u0027s thing. Otherwise there could be a slight chance of inconsistency if the default changes in one place but not the other. If for some reason the default in the _emit() method changes, then we\u0027ll have a reason to override it in this methods, if we need to.\n\nThis comment applies to the other methods in this module that call _emit().",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_28203cf7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6894f4e7",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "freezegun is technically considered a third-party library, which we should be able to include in the second stanza of imports (starting at line 20 with fixtures):\n\n  import fixtures\n  import freezegun\n  import mock\n\nLike the examples here [0] we can see the first set of imports is reserved for standard library namespaces, then third-party libraries, and finally imports that are relative to the project (i.e. things within keystone).\n\n[0] http://docs.openstack.org/developer/hacking/#real-world-import-order-examples",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_8b9f8ab3",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "Huh - interesting. This is what drops the time context all together, right? That\u0027s kind of a neat pattern. This is what I\u0027ve had to do in the past in order to get around weird issues with SQLite + freezegun [0]. Specifically when trying to advance the clock in freezegun by hours or days:\n\n  frozen_datetime.tick(delta\u003ddatetime.timedelta(days\u003d2))\n\nThis isn\u0027t really susceptible to that behavior because you\u0027re not using the context manager within freezegun to advance through large chunks of time. I\u0027ll have to keep this one in my back pocket. Thanks!\n\n[0] https://github.com/openstack/keystone/blob/c69df5bea9f27a508102b885ce1647e9e5d789ac/keystone/tests/unit/test_v3_auth.py#L299-L302",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0bc1ba80",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "failed*",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_eb4abe26",
+        "filename": "releasenotes/notes/pci-dss-notifications-808a205a637bac25.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:41:54Z",
+      "side": 1,
+      "message": "specified*",
+      "revId": "e68dd0a5d86aed977ed0c6a55613cd6697414bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
