@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_e5575924",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-12-19T16:33:27Z",
+      "side": 1,
+      "message": "this would be a lot more direct if it uses the inspector, and for MySQL you should get the unique constraint (which is the same thing as the unique index for MySQL).",
+      "revId": "a7cd4cb4d85723ff76b66a40e3e71d319ad578c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_45356df5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-12-19T16:33:27Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "a7cd4cb4d85723ff76b66a40e3e71d319ad578c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e5a91926",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-12-19T16:33:27Z",
+      "side": 1,
+      "message": "SQLAlchemy should report this for MySQL under inspector.get_unique_constraints as well as get_indexes().   In the autoloaded Table, it is likely de-duping these, which suggests changing the above methods to use inspector instead of autoload\u003dTrue would give you more accurate information.",
+      "revId": "a7cd4cb4d85723ff76b66a40e3e71d319ad578c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

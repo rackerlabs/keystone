@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_a50ba12a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2016-12-19T16:33:27Z",
+      "side": 0,
+      "message": "more modern:\n\n    from sqlalchemy import inspect\n    inspector \u003d inspect(self.engine)",
+      "revId": "eac57b81ed8239f9bc8f7a50b599a6dc58060f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
