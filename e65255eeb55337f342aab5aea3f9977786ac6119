@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_ec24a1b0",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T17:25:04Z",
+      "side": 1,
+      "message": "We can use http_client library here, can\u0027t we? If we are just using this as a mapping to make status codes more readable, http_client already does this for us and we use it in our testing [0]. \n\n[0] https://github.com/openstack/keystone/blob/e1e3f2f1ec049e4c96f58c87319b1f8e889bcf9c/keystone/tests/unit/test_v3_auth.py#L179",
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_2c793930",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T17:25:04Z",
+      "side": 1,
+      "message": "Same comment here, unless there is a specific reason we want to maintain the mapping.",
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_6ce4113b",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T17:25:04Z",
+      "side": 1,
+      "message": "For example - we could use http_client here to resemble what we currently do in our unit and functional tests:\n\n  self.assertEqual(http_client.OK, resp.status_code)\n\nThis would probably only make sense for the commonly known status codes, as the keystone/ECP specific ones might not be covered by the http_client library.",
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0c3f1d26",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T17:25:04Z",
+      "side": 1,
+      "message": "We could update this comment to say where we expect to be redirected. This is a nice test and I love the comments. I think we can use this to explain federated authentication flows to other developers (especially new one).",
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
