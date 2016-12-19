@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_a15707c9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T21:59:26Z",
+      "side": 1,
+      "message": "This is a standard library so we should group it with datetime, but keep it isolated from sqlalchemy - since it\u0027s a third-party library:\n\n  import datetime\n  import operator\n\n  import sqlalchemy\n\n  ..",
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_10a76c0b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 26
@@ -19,6 +36,24 @@
         "endLine": 141,
         "endChar": 40
       },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_016fdb92",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T21:59:26Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_10a76c0b",
       "revId": "af15d402b345c7b708478a729e6c2352d675475d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -180,6 +215,23 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_e17bbf27",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T21:59:26Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to reach in to the sql backends here in order to achieve this. We should be able to leverage the configuration object to set password expiration to something short, use freezegun, and the identity API to test this.\n\nThe advantage will be that it is easier to read and maintain.",
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_8a8d08d5",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 26
@@ -220,6 +272,24 @@
         "endLine": 277,
         "endChar": 53
       },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_21f137ce",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T21:59:26Z",
+      "side": 1,
+      "message": "Yep - we should make sure we\u0027re testing the default policy in this case. We wouldn\u0027t want to expose an admin-like feature to unprivileged users.",
+      "parentUuid": "1a6eadb0_caf38071",
       "revId": "af15d402b345c7b708478a729e6c2352d675475d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -336,6 +406,24 @@
         "endLine": 8,
         "endChar": 67
       },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a1e627e6",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T21:59:26Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_d06334af",
       "revId": "af15d402b345c7b708478a729e6c2352d675475d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
