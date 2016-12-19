@@ -22,6 +22,41 @@
       "revId": "e235bb14fd25937e1c5637bb19b094c0e08dd225",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_954ec994",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:00:00Z",
+      "side": 1,
+      "message": "++ agreed. Or we can make \"notifications\" singular and keep \"a\", which I don\u0027t necessarily mind because we reference the \"CADF payload\" in a singular sense. Either way is fine with me though - let\u0027s do this in another patch.",
+      "parentUuid": "3a71b18c_6025e9ac",
+      "revId": "e235bb14fd25937e1c5637bb19b094c0e08dd225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0810e04d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-19T20:00:00Z",
+      "side": 1,
+      "message": "trust* instead of truse?",
+      "revId": "e235bb14fd25937e1c5637bb19b094c0e08dd225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
