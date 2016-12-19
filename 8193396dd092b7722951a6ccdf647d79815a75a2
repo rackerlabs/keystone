@@ -33,6 +33,24 @@
       "revId": "8193396dd092b7722951a6ccdf647d79815a75a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_8c032d76",
+        "filename": "devstack/lib/federation.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-19T17:03:01Z",
+      "side": 1,
+      "message": "it is mainly to not rely on testshib. Ultimately, we want our plugin to deploy both SP and IdP (see [1]) - relying on an external public service can be dangerous, since if the service is down, means our tests are locked.\n\n[1] https://review.openstack.org/#/c/401421/",
+      "parentUuid": "1a6eadb0_29da0b79",
+      "revId": "8193396dd092b7722951a6ccdf647d79815a75a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
