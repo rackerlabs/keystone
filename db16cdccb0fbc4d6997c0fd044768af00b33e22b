@@ -160,6 +160,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_bb49efb9",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-19T23:57:12Z",
+      "side": 1,
+      "message": "just return the whole check.\n\nreturn user.password_ref and not user.password_ref.self_service and\n                user.local_user.last_auth_at and\n                user.local_user.last_auth_at \u003e user.password_ref.created_at",
+      "parentUuid": "1a6eadb0_978169fe",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 136,
+        "endChar": 77
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_5c81b64c",
         "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
         "patchSetId": 16
