@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_b2811bfe",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-19T19:22:57Z",
+      "side": 1,
+      "message": "what is this ?",
+      "range": {
+        "startLine": 22,
+        "startChar": 9,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_d29db75a",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-19T19:22:57Z",
+      "side": 1,
+      "message": "I am not really a fan of these triggers as we don\u0027t test them in our gates :(",
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_02880b70",
         "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
         "patchSetId": 31
@@ -19,6 +59,47 @@
         "endLine": 62,
         "endChar": 38
       },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_52ee07ed",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-19T19:22:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a6eadb0_02880b70",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 38
+      },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_d97a7876",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1868,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-19T19:22:57Z",
+      "side": 1,
+      "message": "it\u0027d be nice to make sure new_idp can be added after contact",
       "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
