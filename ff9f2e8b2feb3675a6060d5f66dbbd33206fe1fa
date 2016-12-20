@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_a615224a",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-20T22:04:28Z",
+      "side": 1,
+      "message": "Hmm - do we have two sections dedicated to third-party imports? The tempest/testtools import below should be third-party along with lxml and six. Maybe something to fix in a follow on patch.",
+      "revId": "ff9f2e8b2feb3675a6060d5f66dbbd33206fe1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
