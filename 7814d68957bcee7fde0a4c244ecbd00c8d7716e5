@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_a19382f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T01:34:35Z",
+      "side": 1,
+      "message": "this has been merged, Depends-On tag is not needed anymore",
+      "revId": "7814d68957bcee7fde0a4c244ecbd00c8d7716e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_485ba687",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 12
@@ -13,6 +30,24 @@
       "writtenOn": "2016-11-08T15:02:05Z",
       "side": 1,
       "message": "it\u0027s not obvious to me why this is here. Add a comment.",
+      "revId": "7814d68957bcee7fde0a4c244ecbd00c8d7716e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_41b9ce78",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T01:34:35Z",
+      "side": 1,
+      "message": "++\n\nis this just to set CONF.profiler options ?",
+      "parentUuid": "9a629dbe_485ba687",
       "revId": "7814d68957bcee7fde0a4c244ecbd00c8d7716e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
