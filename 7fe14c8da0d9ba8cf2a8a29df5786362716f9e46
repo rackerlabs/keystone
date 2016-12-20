@@ -16,6 +16,24 @@
       "revId": "7fe14c8da0d9ba8cf2a8a29df5786362716f9e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_de5e7044",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-20T16:30:54Z",
+      "side": 1,
+      "message": "Yes, I believe so. These exceptions were added by either rderose\u0027s patch sets or this one, and they are specific to the new PCI-DSS events.",
+      "parentUuid": "1a6eadb0_6ea69354",
+      "revId": "7fe14c8da0d9ba8cf2a8a29df5786362716f9e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
