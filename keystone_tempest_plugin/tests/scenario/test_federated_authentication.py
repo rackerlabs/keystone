@@ -14,7 +14,6 @@
 
 from lxml import etree
 from six.moves import http_client
-
 from tempest import config
 from tempest.lib.common.utils import data_utils
 from testtools import skipUnless
