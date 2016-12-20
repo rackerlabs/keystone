@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_19fac7bd",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-20T15:18:37Z",
+      "side": 1,
+      "message": "The note should be somewhere in this section here.",
+      "revId": "6add86193ac9e13b464f8d167408d75350b51491",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_19a487a4",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-20T15:18:37Z",
+      "side": 1,
+      "message": "Headers should only exist as a one-to-one with APIs.\n\nThis is a note about a configuration option. Let\u0027s move it up to the top section.",
+      "range": {
+        "startLine": 359,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 61
+      },
+      "revId": "6add86193ac9e13b464f8d167408d75350b51491",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_f9a26b4a",
+        "filename": "api-ref/source/v3/authenticate-v3.inc",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-20T15:18:37Z",
+      "side": 1,
+      "message": "This is a bit hard to read, it\u0027s too wordy in some parts. How about:\n\nIn v3.7 of the Identity API service, two new configuration options were added: ``[resource] admin_project_name`` and ``[resource] admin_project_domain_name``. The options represent the project that only the cloud administratior should be able to access. When an authentication request for a token scoped to the admin project is processed, it will have an additional field in the token ``{is_admin_project: True}``. The additional field can be used when writing policy rules that evaluate access control to APIs.",
+      "range": {
+        "startLine": 366,
+        "startChar": 0,
+        "endLine": 372,
+        "endChar": 65
+      },
+      "revId": "6add86193ac9e13b464f8d167408d75350b51491",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
