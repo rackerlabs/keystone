@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_2672f249",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-20T21:48:25Z",
+      "side": 0,
+      "message": "We could add another test case here:\n\n  def test_create_idp_with_non_existant_domain_id_fails(self):\n      keys_to_check \u003d list(self.idp_keys)\n      body \u003d self.default_body.copy()\n      body[\u0027description\u0027] \u003d uuid.uuid4().hex\n      body[\u0027domain_id\u0027] \u003d uuid.uuid4().hex\n      # I would assume this to fail since the domain_id key exists\n      # in the reference, so it won\u0027t be populated by the federated manager,\n      # which should allow it to get to the driver, but that would fail because\n      # the constraint for a non-existent domain isn\u0027t true.\n      resp \u003d self._create_default_idp(body\u003dbody)",
+      "revId": "8f038adac7c728d3fd2eb751cd8eb2cb6e209aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
