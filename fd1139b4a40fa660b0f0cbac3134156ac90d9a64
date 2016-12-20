@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_8fe22d00",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T02:25:56Z",
+      "side": 1,
+      "message": "if this is causing a unexpected behavior (since the normalized protocol was not used), a bug should be reported.\n\nyou could just have left the var name as it was (ref) and passed too (to be in consistency with create_protocol)",
+      "range": {
+        "startLine": 198,
+        "startChar": 8,
+        "endLine": 200,
+        "endChar": 70
+      },
+      "revId": "fd1139b4a40fa660b0f0cbac3134156ac90d9a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa6399be_75f44a5a",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
