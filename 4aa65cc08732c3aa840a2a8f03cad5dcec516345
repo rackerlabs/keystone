@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_25a2034c",
+        "filename": "keystone/common/sql/expand_repo/versions/005_add_delegation_tables.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:30:39Z",
+      "side": 1,
+      "message": "add a new line after this",
+      "revId": "4aa65cc08732c3aa840a2a8f03cad5dcec516345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_c5622f16",
+        "filename": "keystone/conf/delegation.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:30:39Z",
+      "side": 1,
+      "message": "so the current behavior is that delegations are infinite, just to check, this is the current behavior, right ?",
+      "revId": "4aa65cc08732c3aa840a2a8f03cad5dcec516345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_e533ab11",
+        "filename": "keystone/delegation/backends/sql_model.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:30:39Z",
+      "side": 1,
+      "message": "this is the most complex  entity we\u0027re adding to keystone, I thought unified redelegation was here to simplify things. if the manager layer is going to be huge with tons of if/else statements to handle specific delegation logic, I don\u0027t see why we can\u0027t keep separate managers but that can share some code",
+      "revId": "4aa65cc08732c3aa840a2a8f03cad5dcec516345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

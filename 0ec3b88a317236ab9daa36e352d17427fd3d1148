@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_85fcb73f",
+        "filename": "keystone/common/sql/contract_repo/versions/005_contract_stub.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:30:39Z",
+      "side": 0,
+      "message": "Why are these using the placeholders, they are reserved for bug fixes that are being backported",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "0ec3b88a317236ab9daa36e352d17427fd3d1148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
