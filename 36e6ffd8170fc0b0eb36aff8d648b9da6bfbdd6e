@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_0a61aba8",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T02:50:14Z",
+      "side": 1,
+      "message": "why does the service role needs to be in the admin project ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 61
+      },
+      "revId": "36e6ffd8170fc0b0eb36aff8d648b9da6bfbdd6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
