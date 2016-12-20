@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_6db690dd",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-20T18:02:33Z",
+      "side": 1,
+      "message": "It was mentioned that we could return a URL if the user\u0027s password had expired so that they could use to change it. Wasn\u0027t sure about how to approach this though (tokenless?)",
+      "range": {
+        "startLine": 426,
+        "startChar": 0,
+        "endLine": 430,
+        "endChar": 49
+      },
+      "revId": "23a5cb10837ce26170d8db58108110849f5b4d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0d3b5c39",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-20T18:02:33Z",
+      "side": 1,
+      "message": "Right now this allows a user to auth with an expired password, but bubbles up to only allow a unscoped token.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 38
+      },
+      "revId": "23a5cb10837ce26170d8db58108110849f5b4d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
