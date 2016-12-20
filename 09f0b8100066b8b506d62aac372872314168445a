@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_016196a8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T01:14:22Z",
+      "side": 1,
+      "message": "This method I think would belong in core.py",
+      "range": {
+        "startLine": 128,
+        "startChar": 4,
+        "endLine": 136,
+        "endChar": 27
+      },
+      "revId": "09f0b8100066b8b506d62aac372872314168445a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
