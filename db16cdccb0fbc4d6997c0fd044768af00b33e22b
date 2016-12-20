@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_476e39ca",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-20T04:57:06Z",
+      "side": 1,
+      "message": "it\u0027ll look cleaner if you do another elif here, like so:\n\n  elif (CONF.security_compliance.change_password_required_after_reset or failed_auth_count):\n    self._record_successful_auth(...)\n\nthis will also result in getting rid of the immediate condition on line 118 that samuel pointed out.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 59
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_474e903b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 16
@@ -226,6 +249,23 @@
         "endLine": 136,
         "endChar": 77
       },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_07ffe101",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-20T04:57:06Z",
+      "side": 1,
+      "message": "i finally don\u0027t have to edit a release note \\o/\n\nmy persistence is paying off",
       "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
