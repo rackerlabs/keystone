@@ -132,7 +132,7 @@ requested password was insufficient.
 
 change_password_required_after_reset = cfg.BoolOpt(
     'change_password_required_after_reset',
-    default=False,
+    default=True,
     help=utils.fmt("""
 If a password was created via an administrative password reset, this feature
 will require users to change their password after the first use. Therefore,
