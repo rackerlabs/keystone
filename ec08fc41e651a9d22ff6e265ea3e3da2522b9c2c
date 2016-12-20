@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_85dbd71a",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1580,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-20T12:22:30Z",
+      "side": 1,
+      "message": "this looks like a crazy rebase error, will rebase again once the previous patch merges!",
+      "range": {
+        "startLine": 1579,
+        "startChar": 0,
+        "endLine": 1580,
+        "endChar": 30
+      },
+      "revId": "ec08fc41e651a9d22ff6e265ea3e3da2522b9c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
