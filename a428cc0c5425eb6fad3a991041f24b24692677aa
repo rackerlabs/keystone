@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_8003c5b7",
+        "filename": "keystone/tests/unit/trust/test_backends.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:39:47Z",
+      "side": 1,
+      "message": "why is this needed ? is it copying?",
+      "range": {
+        "startLine": 173,
+        "startChar": 8,
+        "endLine": 173,
+        "endChar": 44
+      },
+      "revId": "a428cc0c5425eb6fad3a991041f24b24692677aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
