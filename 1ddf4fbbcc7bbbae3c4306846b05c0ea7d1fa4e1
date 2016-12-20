@@ -131,6 +131,54 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_741662f2",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T15:28:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_02880b70",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 38
+      },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_541b261b",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T15:28:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_52ee07ed",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 38
+      },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_d97a7876",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 31
@@ -142,6 +190,24 @@
       "writtenOn": "2016-12-19T19:22:57Z",
       "side": 1,
       "message": "it\u0027d be nice to make sure new_idp can be added after contact",
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_f93eebd8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1868,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T15:28:55Z",
+      "side": 1,
+      "message": "Good suggestion, done.",
+      "parentUuid": "1a6eadb0_d97a7876",
       "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
