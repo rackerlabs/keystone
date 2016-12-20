@@ -71,6 +71,53 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_c48b2c67",
+        "filename": "keystone/conf/identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T01:45:09Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "7a77a97e_060bb87d",
+      "range": {
+        "startLine": 115,
+        "startChar": 10,
+        "endLine": 115,
+        "endChar": 55
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_043a8498",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T01:45:09Z",
+      "side": 1,
+      "message": "this is not right. it does not allow people to list all users as they do today. this is backwards incompatible.",
+      "range": {
+        "startLine": 975,
+        "startChar": 11,
+        "endLine": 975,
+        "endChar": 76
+      },
+      "revId": "ba8d852d992950d866ed230d0665b4640651de72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a77a97e_60f7f4d2",
         "filename": "keystone/identity/core.py",
         "patchSetId": 9
