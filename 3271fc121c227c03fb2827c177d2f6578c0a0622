@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_7b03b8b8",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T13:02:11Z",
+      "side": 1,
+      "message": "I am seeing admin_token_auth being removed from the pipelines in this patch. Is it something I am not seeing ?",
+      "parentUuid": "5a74a57a_9c3b579c",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_1cad8731",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 7
@@ -81,6 +99,24 @@
       "writtenOn": "2016-11-30T15:14:21Z",
       "side": 1,
       "message": "This could cause a problem if tests are run in parallel, since one process could remove the file that another test is about to use. The files should be named uniquely.",
+      "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_1bb724f6",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T13:02:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a74a57a_fcd0cbf9",
       "revId": "3271fc121c227c03fb2827c177d2f6578c0a0622",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
