@@ -208,6 +208,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_4a7f2366",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T02:46:30Z",
+      "side": 1,
+      "message": "yeah, I am okay with this too, just in the case we were doing that separate method I was saying it was not needed",
+      "parentUuid": "1a6eadb0_fef0b568",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 136,
+        "endChar": 77
+      },
+      "revId": "db16cdccb0fbc4d6997c0fd044768af00b33e22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_5c81b64c",
         "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
         "patchSetId": 16
