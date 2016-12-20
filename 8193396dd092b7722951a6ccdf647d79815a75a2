@@ -16,6 +16,24 @@
       "revId": "8193396dd092b7722951a6ccdf647d79815a75a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_cf940eea",
+        "filename": "keystone_tempest_plugin/plugin.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-20T12:18:24Z",
+      "side": 0,
+      "message": "not necessarily, the order being used is the one they appear in config.py, just following it.",
+      "parentUuid": "1a6eadb0_6955e31b",
+      "revId": "8193396dd092b7722951a6ccdf647d79815a75a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
