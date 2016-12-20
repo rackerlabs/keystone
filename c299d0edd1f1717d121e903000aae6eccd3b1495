@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_6090694f",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:41:57Z",
+      "side": 1,
+      "message": "what is this optimistic locking ?",
+      "range": {
+        "startLine": 25,
+        "startChar": 62,
+        "endLine": 26,
+        "endChar": 9
+      },
+      "revId": "c299d0edd1f1717d121e903000aae6eccd3b1495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a0ec41f4",
+        "filename": "keystone/delegation/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:41:57Z",
+      "side": 1,
+      "message": "so the idea is that we share the SQL model but keep different drivers and managers ?",
+      "revId": "c299d0edd1f1717d121e903000aae6eccd3b1495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
