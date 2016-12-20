@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_a462b0d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T01:40:11Z",
+      "side": 1,
+      "message": "does this actually close this bug ? I see what you reported here as being another bug that needs to be reported in launchpad (regression was added in one of the patches in the way to fix #968696, the one which added is_admin_project to tokens).\n\nI suggest you open a new bug report so that we can discuss the validity and severity there, does this makes sense to you ?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "0b535a1ff8dd5ea5dd890bc7cdc67a278fae0e82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
