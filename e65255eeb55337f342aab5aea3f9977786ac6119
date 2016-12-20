@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6eadb0_ef338a11",
+        "filename": "keystone_tempest_plugin/services/identity/v3/saml2_client.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T11:53:48Z",
+      "side": 1,
+      "message": "please add a comment to this. it\u0027s not obvious how the data is structured",
+      "range": {
+        "startLine": 49,
+        "startChar": 32,
+        "endLine": 49,
+        "endChar": 38
+      },
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_ec24a1b0",
         "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
         "patchSetId": 28
@@ -13,6 +36,24 @@
       "writtenOn": "2016-12-19T17:25:04Z",
       "side": 1,
       "message": "We can use http_client library here, can\u0027t we? If we are just using this as a mapping to make status codes more readable, http_client already does this for us and we use it in our testing [0]. \n\n[0] https://github.com/openstack/keystone/blob/e1e3f2f1ec049e4c96f58c87319b1f8e889bcf9c/keystone/tests/unit/test_v3_auth.py#L179",
+      "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_aa18a076",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T11:53:48Z",
+      "side": 1,
+      "message": "++ nice catch Lance",
+      "parentUuid": "1a6eadb0_ec24a1b0",
       "revId": "e65255eeb55337f342aab5aea3f9977786ac6119",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
