@@ -22,6 +22,23 @@
       "revId": "fd13637f9c839a90f1a97b649b71a9bd268971bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_9298691d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-20T17:41:31Z",
+      "side": 1,
+      "message": "Hmm - I\u0027m surprised this wasn\u0027t caught by tests.",
+      "revId": "fd13637f9c839a90f1a97b649b71a9bd268971bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
