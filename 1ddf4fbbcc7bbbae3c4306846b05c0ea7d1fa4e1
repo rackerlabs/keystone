@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_95079c1c",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T03:41:11Z",
+      "side": 1,
+      "message": "To be honest, I copied this from Lance\u0027s patch:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/expand_repo/versions/003_add_key_hash_and_encrypted_blob_to_credential.py#L25\n\n\"State 45000 is a generic state representing an unhandled user-defined exception\"\nhttps://dev.mysql.com/doc/refman/5.7/en/signal.html",
+      "parentUuid": "1a6eadb0_b2811bfe",
+      "range": {
+        "startLine": 22,
+        "startChar": 9,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_d29db75a",
         "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
         "patchSetId": 31
@@ -36,6 +60,24 @@
       "writtenOn": "2016-12-19T19:22:57Z",
       "side": 1,
       "message": "I am not really a fan of these triggers as we don\u0027t test them in our gates :(",
+      "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_1029da89",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-20T03:41:11Z",
+      "side": 1,
+      "message": "Agree, this is taking a very minimal approach in that I\u0027m not updating any data; only making identity_provider read-only during the data migration.",
+      "parentUuid": "1a6eadb0_d29db75a",
       "revId": "1ddf4fbbcc7bbbae3c4306846b05c0ea7d1fa4e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
