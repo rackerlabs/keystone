@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_a046014d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "what is this (functools.partial) buying us?",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 9
+      },
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_80b90531",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "why is this added now ? the whole change in this method seems unrelated",
+      "range": {
+        "startLine": 261,
+        "startChar": 0,
+        "endLine": 261,
+        "endChar": 48
+      },
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_80902597",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "unrelated",
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_40dd2d6f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "this seems weird we need to look at the environment at the manager level",
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_a0e2812d",
+        "filename": "keystone/assignment/role_backends/base.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "why this change?",
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_0041750b",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-20T12:37:36Z",
+      "side": 1,
+      "message": "what is this needed for ?",
+      "revId": "e531aedcf0bba9069e3908c4e4d620a367e8da31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
