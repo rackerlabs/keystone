@@ -904,7 +904,7 @@ dogpile.cache based MongoDB (NoSQL) backend
 -------------------------------------------
 
 The ``dogpile.cache`` based MongoDB backend implementation allows for various MongoDB
-configurations, e.g., standalone, a replica set, sharded replicas, with or without SSL,
+configurations, e.g., standalone, a replica set, shared replicas, with or without SSL,
 use of TTL type collections, etc.
 
 Example of typical configuration for MongoDB backend:
