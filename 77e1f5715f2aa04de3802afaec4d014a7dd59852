@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_cadcc1e6",
+        "filename": "doc/source/devref/development_best_practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2016-12-21T13:12:27Z",
+      "side": 1,
+      "message": "it\u0027s probably better to point at http://docs.openstack.org/project-team-guide/release-management.html#how-to-add-new-release-notes since #managing-release-notes talks a lot about how to add reno release notes to your project, setting in infra, etc",
+      "range": {
+        "startLine": 167,
+        "startChar": 21,
+        "endLine": 167,
+        "endChar": 112
+      },
+      "revId": "77e1f5715f2aa04de3802afaec4d014a7dd59852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
