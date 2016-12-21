@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_b3771dd3",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-21T00:42:58Z",
+      "side": 1,
+      "message": "Add a parameter to these to indicate which repository it is.  Create an enumerated value that, at a minimum has `token` and `credential` as its type.",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_f3819590",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-21T00:42:58Z",
+      "side": 1,
+      "message": "change directory to repository",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_7344a573",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-21T00:42:58Z",
+      "side": 1,
+      "message": "merge this with the create_directory function above.",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_f358b558",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2016-12-21T00:42:58Z",
+      "side": 1,
+      "message": "If you are going to include this, then also have an \"inject key\" and \"extract key\" function.  To start, they can be unimplemented in the default impl, but really this is workflow separate from accessing keys.  Most real deployments can\u0027t do this on the Keystone server, but rather do it as part of config management.",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
