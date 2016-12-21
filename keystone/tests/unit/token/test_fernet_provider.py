@@ -13,6 +13,7 @@
 import base64
 import datetime
 import hashlib
+import mock
 import os
 import uuid
 
@@ -626,6 +627,39 @@ class TestFernetKeyRotation(unit.TestCase):
                 exp_keys.append(next_key_number)
                 next_key_number += 1
                 self.assertEqual(exp_keys, self.keys)
+
+    def test_rotation_disk_write_fail(self):
+        max_active_keys = 5
+
+        self.config_fixture.config(group='fernet_tokens',
+                                   max_active_keys=max_active_keys)
+
+        # Init the key repository
+        self.useFixture(
+            ksfixtures.KeyRepository(
+                self.config_fixture,
+                'fernet_tokens',
+                CONF.fernet_tokens.max_active_keys
+            )
+        )
+
+        # Make sure that the init key repository contains 2 keys
+        self.assertRepositoryState(expected_size=2)
+
+        key_utils = fernet_utils.FernetUtils(
+            CONF.fernet_tokens.key_repository,
+            CONF.fernet_tokens.max_active_keys
+        )
+
+        # Simulate the disk full situation
+        mock_open = mock.mock_open()
+        file_handle = mock_open()
+        file_handle.flush.side_effect = IOError('disk full')
+
+        with mock.patch('keystone.common.fernet_utils.open', mock_open):
+            key_utils.rotate_keys()
+            # Assert that the key repository is unchanged
+            self.assertRepositoryState(expected_size=2)
 
     def test_non_numeric_files(self):
         self.useFixture(
