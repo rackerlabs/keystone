@@ -34,6 +34,24 @@
       "revId": "7fe14c8da0d9ba8cf2a8a29df5786362716f9e46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_134a91ac",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-21T00:34:25Z",
+      "side": 1,
+      "message": "since we have a handful of exceptions related to this, would be more flexible if this was checked in a method.",
+      "parentUuid": "1a6eadb0_de5e7044",
+      "revId": "7fe14c8da0d9ba8cf2a8a29df5786362716f9e46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
