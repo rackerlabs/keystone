@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_1fba90e1",
+        "filename": "keystone/common/sql/data_migration_repo/versions/012_migrate_add_domain_id_to_idp.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "Yeah, all existing idps will get a domain from this update.",
+      "parentUuid": "1a6eadb0_867ca673",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_c6c4de93",
         "filename": "keystone/common/sql/data_migration_repo/versions/012_migrate_add_domain_id_to_idp.py",
         "patchSetId": 34
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-20T21:48:25Z",
       "side": 1,
       "message": "is there anyway to use the resource_api here to create the domain, instead of inserting it manually?",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_ffc31455",
+        "filename": "keystone/common/sql/data_migration_repo/versions/012_migrate_add_domain_id_to_idp.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "That was my first thought, however didn\u0027t see a way of doing it. And this does the trick.",
+      "parentUuid": "1a6eadb0_c6c4de93",
       "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_3f074c82",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_46744e9b",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_66614aa8",
         "filename": "keystone/federation/controllers.py",
         "patchSetId": 34
@@ -64,6 +118,24 @@
       "writtenOn": "2016-12-20T21:48:25Z",
       "side": 1,
       "message": "This will require an api-ref change I think.",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_3f158c9a",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "why? the domain_id is a nullable atribute and I think this would only mean that you can\u0027t change the domain_id once set.",
+      "parentUuid": "1a6eadb0_66614aa8",
       "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_ff723410",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "But I also want to account for if the domain_id is there, but set to None.",
+      "parentUuid": "1a6eadb0_e66d5a9a",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_26ff52ab",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 34
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_3f63cc42",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1864,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_26ff52ab",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_662f8a3e",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 34
@@ -115,6 +223,24 @@
       "writtenOn": "2016-12-20T21:48:25Z",
       "side": 1,
       "message": "We have a constant for this in the resource driver, don\u0027t we?",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_840f3987",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1870,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 1,
+      "message": "Yep, using it now.  Done.",
+      "parentUuid": "1a6eadb0_662f8a3e",
       "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

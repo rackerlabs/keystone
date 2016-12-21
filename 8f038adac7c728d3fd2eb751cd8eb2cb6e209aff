@@ -16,6 +16,24 @@
       "revId": "8f038adac7c728d3fd2eb751cd8eb2cb6e209aff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_bffd1c3d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2016-12-21T03:34:03Z",
+      "side": 0,
+      "message": "Nice!  Thanks, added this test.",
+      "parentUuid": "1a6eadb0_2672f249",
+      "revId": "8f038adac7c728d3fd2eb751cd8eb2cb6e209aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
