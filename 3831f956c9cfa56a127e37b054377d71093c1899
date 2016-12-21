@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_f34995d1",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-21T00:30:10Z",
+      "side": 1,
+      "message": "good catch Steve!",
+      "parentUuid": "1a6eadb0_628f8ccc",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 10
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_a2660427",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
