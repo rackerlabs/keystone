@@ -141,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_b8752dcc",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-21T07:47:33Z",
+      "side": 1,
+      "message": "my -1 is actually for the default file (its only needed for starting at boot time). i\u0027m not sure if we\u0027ve actually setup keystone at this point, or how easy it is to use the CLI to change the endpoints when you\u0027re auth\u0027ing against it at the same time.",
+      "parentUuid": "1a6eadb0_f34995d1",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 10
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_a2660427",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
