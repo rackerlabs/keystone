@@ -165,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_7b32a5a8",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-21T11:34:52Z",
+      "side": 1,
+      "message": "don\u0027t see a problem for this method being called in the \"extra\" phase instead, meaning all services are up and running where I would expect to be able to run openstack commands as we do at [1].\n\nanother option, is patching the \"keystone\" lib at DevStack itself to consider a HA_PROXY URL when generating the KEYSTONE_AUTH_URI settings and starting the service.\n\n[1] https://github.com/openstack/keystone/blob/master/devstack/lib/federation.sh#L90-L98",
+      "parentUuid": "1a6eadb0_b8752dcc",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 10
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_a2660427",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
