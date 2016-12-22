@@ -491,24 +491,14 @@ class CadfNotificationWrapper(object):
             target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             try:
                 result = f(wrapped_self, request, user_id, *args, **kwargs)
-            except (exception.AccountLocked,
-                    exception.PasswordExpired,
-                    exception.PasswordRequirementsValidationError,
-                    exception.PasswordHistoryValidationError,
-                    exception.PasswordAgeValidationError) as ex:
-                # Send a CADF event with a reason for PCI-DSS related
-                # authentication failures
-                audit_reason = reason.Reason(str(ex), str(ex.code))
+            except Exception as ex:
+                # For authentication failure send a CADF event as well
+                # PCI-DSS events will have a reason associated with them
+                audit_reason = self._get_audit_reason(ex)
                 _send_audit_notification(self.action, request.audit_initiator,
                                          taxonomy.OUTCOME_FAILURE,
                                          target, self.event_type,
                                          reason=audit_reason)
-                raise
-            except Exception:
-                # For authentication failure send a CADF event as well
-                _send_audit_notification(self.action, request.audit_initiator,
-                                         taxonomy.OUTCOME_FAILURE,
-                                         target, self.event_type)
                 raise
             else:
                 _send_audit_notification(self.action, request.audit_initiator,
@@ -517,6 +507,12 @@ class CadfNotificationWrapper(object):
                 return result
 
         return wrapper
+
+    def _get_audit_reason(self, ex):
+        if isinstance(ex, (exception.AccountLocked,
+                           exception.PasswordExpired)):
+            return reason.Reason(str(ex), str(ex.code))
+        return None
 
 
 class CadfRoleAssignmentNotificationWrapper(object):
