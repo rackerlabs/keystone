@@ -1,0 +1,9 @@
+---
+features:
+  - Support is now available for shadow mapping. Shadow
+    mapping allows projects and role assignments to be
+    created for a user at the time of federated login, based
+    solely on the mapping. This feature maintains support
+    for existing mappings, but adds some enhancements to the
+    mapping engine to enable auto-provisioning of resources
+    in federated workflows.
