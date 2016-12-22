@@ -218,12 +218,12 @@ oauth_expires_at:
 
     ::
 
-       CCYY-MM-DDThh:mm:ss±hh:mm
+       CCYY-MM-DDThh:mm:ss±hhmm
 
-    The ``±hh:mm`` value, if included, is the time zone as an offset
+    The ``±hhmm`` value, if included, is the time zone as an offset
     from UTC.
 
-    For example, ``2015-08-27T09:49:58-05:00``.
+    For example, ``2015-08-27T09:49:58-0500``.
 
     If the Identity API does not include this attribute or its value is
     ``null``, the token never expires.
