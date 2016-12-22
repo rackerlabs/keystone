@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_725ad6f3",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T08:46:13Z",
+      "side": 1,
+      "message": "Removed this line as well as the next one.",
+      "parentUuid": "1a6eadb0_e2ae3c97",
+      "range": {
+        "startLine": 41,
+        "startChar": 19,
+        "endLine": 41,
+        "endChar": 22
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_42f3709e",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_7714884c",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T08:46:13Z",
+      "side": 1,
+      "message": "Done. Seems that I misunderstood the implication of this option. Thanks!",
+      "parentUuid": "1a6eadb0_42f3709e",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_0296d84b",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
@@ -59,6 +107,30 @@
       "writtenOn": "2016-12-20T13:59:41Z",
       "side": 1,
       "message": "this seems a bit high",
+      "range": {
+        "startLine": 51,
+        "startChar": 22,
+        "endLine": 51,
+        "endChar": 25
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_cccf8e54",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T08:46:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_0296d84b",
       "range": {
         "startLine": 51,
         "startChar": 22,
@@ -189,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "1a6eadb0_96591d38",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T08:46:13Z",
+      "side": 1,
+      "message": "Replaced this with OpenStack CLI commands.",
+      "parentUuid": "1a6eadb0_628f8ccc",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 10
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_a2660427",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
@@ -200,6 +296,30 @@
       "writtenOn": "2016-12-20T13:59:41Z",
       "side": 1,
       "message": "Is this the same failure as https://bugs.launchpad.net/keystone/+bug/1648753 ?",
+      "range": {
+        "startLine": 133,
+        "startChar": 10,
+        "endLine": 133,
+        "endChar": 100
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6eadb0_96b2fde3",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T08:46:13Z",
+      "side": 1,
+      "message": "No. In test_role_create_update_show_list I faced following situation: a role is created by keystone #1, then role is updated by keystone #2 (since haproxy is in round-robin mode). After that we do \"role show\" command which is carried by keystone #1. And keystone #1 cannot see changes made by keystone #2.",
+      "parentUuid": "1a6eadb0_a2660427",
       "range": {
         "startLine": 133,
         "startChar": 10,
