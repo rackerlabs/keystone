@@ -1,0 +1,9 @@
+---
+features:
+  - The federated mapping engine now supports the ability
+    to map federated (shadow) users into local projects,
+    granting them access with local roles. This can be done
+    using a specific mapping syntax. This feature maintains
+    support for existing mappings, but adds some enhancements
+    to the mapping engine to enable auto-provisioning of
+    resources in federated workflows.
