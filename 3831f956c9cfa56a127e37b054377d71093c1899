@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_883a34cc",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2016-12-22T09:04:22Z",
+      "side": 1,
+      "message": "Hi Rodrigo! Grenade multinode job runs only smoke tests for now. But I think that in the long view we can investigate how to deal with federations testing.",
+      "parentUuid": "1a6eadb0_e2a8fcdd",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "3831f956c9cfa56a127e37b054377d71093c1899",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_628f8ccc",
         "filename": "devstack/lib/haproxy.sh",
         "patchSetId": 21
