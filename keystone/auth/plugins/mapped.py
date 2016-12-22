@@ -11,6 +11,7 @@
 # under the License.
 
 import functools
+import uuid
 
 from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
@@ -29,8 +30,8 @@ from keystone import notifications
 METHOD_NAME = 'mapped'
 
 
-@dependency.requires('federation_api', 'identity_api',
-                     'resource_api', 'token_provider_api')
+@dependency.requires('assignment_api', 'federation_api', 'identity_api',
+                     'resource_api', 'token_provider_api', 'role_api')
 class Mapped(base.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):
@@ -66,7 +67,9 @@ class Mapped(base.AuthMethodHandler):
                                   auth_context,
                                   self.resource_api,
                                   self.federation_api,
-                                  self.identity_api)
+                                  self.identity_api,
+                                  self.assignment_api,
+                                  self.role_api)
 
 
 def handle_scoped_token(request, auth_context, token_ref,
@@ -105,7 +108,61 @@ def handle_scoped_token(request, auth_context, token_ref,
 
 
 def handle_unscoped_token(request, auth_payload, auth_context,
-                          resource_api, federation_api, identity_api):
+                          resource_api, federation_api, identity_api,
+                          assignment_api, role_api):
+
+    def shadow_mapping(assignment_api, resource_api, federation_api, role_api,
+                       shadow_projects, idp_id, user):
+        idp_domain_id = federation_api.get_idp(idp_id)['domain_id']
+        # Validate that the roles in the shadow mapping actually exist. If
+        # they don't we should bail early before creating anything.
+        roles = role_api.list_roles()
+        existing_roles = {}
+        for role in roles:
+            existing_roles[role['name']] = role
+
+        for shadow_project in shadow_projects:
+            # This assumes that every shadow mapping that contains a project
+            # also contains roles within that project.
+            for shadow_role in shadow_project['roles']:
+                # The role in the projet mapping must exist in order for it to
+                # be useful.
+                if shadow_role['name'] not in existing_roles:
+                    msg = _('Role %s does not exist.') % role['name']
+                    raise exception.RoleNotFound(msg)
+                role = existing_roles[shadow_role['name']]
+                if (role['domain_id'] is not None and
+                        role['domain_id'] != idp_domain_id):
+                    raise exception.InvalidDomainSpecificRole(
+                        role_name=shadow_role['name'],
+                        identity_provider=idp_id
+                    )
+
+        for shadow_project in shadow_projects:
+            try:
+                # Check and see if the project already exists and if it
+                # does not, try to create it.
+                project = resource_api.get_project_by_name(
+                    shadow_project['name'], idp_domain_id
+                )
+            except exception.ProjectNotFound:
+                project_ref = {
+                    'id': uuid.uuid4().hex,
+                    'name': shadow_project['name'],
+                    'domain_id': idp_domain_id
+                }
+                project = resource_api.create_project(
+                    project_ref['id'],
+                    project_ref
+                )
+
+            shadow_roles = shadow_project['roles']
+            for shadow_role in shadow_roles:
+                assignment_api.create_grant(
+                    existing_roles[shadow_role['name']]['id'],
+                    user_id=user['id'],
+                    project_id=project['id']
+                )
 
     def is_ephemeral_user(mapped_properties):
         return mapped_properties['user']['type'] == utils.UserType.EPHEMERAL
@@ -155,6 +212,18 @@ def handle_unscoped_token(request, auth_payload, auth_context,
             user = identity_api.shadow_federated_user(identity_provider,
                                                       protocol, unique_id,
                                                       display_name)
+
+            if 'projects' in mapped_properties:
+                shadow_mapping(
+                    assignment_api,
+                    resource_api,
+                    federation_api,
+                    role_api,
+                    mapped_properties['projects'],
+                    identity_provider,
+                    user
+                )
+
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
             build_ephemeral_user_context(auth_context, user,
