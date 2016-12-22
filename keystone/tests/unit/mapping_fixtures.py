@@ -1596,11 +1596,49 @@ MAPPING_PROJECTS = {
                 {
                     "user": {
                         "name": "{0}"
+                    }
+                },
+                {
+                    "projects": [
+                        {"name": "Production",
+                         "roles": [{"name": "observer"}]},
+                        {"name": "Staging",
+                         "roles": [{"name": "member"}]},
+                        {"name": "Project for {0}",
+                         "roles": [{"name": "admin"}]},
+                    ],
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "Email",
+                },
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "Employee"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_PROJECTS_WITHOUT_ROLES = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
                     },
                     "projects": [
                         {"name": "a"},
                         {"name": "b"},
-                        {"name": "project for {0}"},
+                        {"name": "Project for {0}"},
                     ],
                 }
             ],
@@ -1610,5 +1648,83 @@ MAPPING_PROJECTS = {
                 }
             ]
         },
+    ]
+}
+
+MAPPING_PROJECTS_WITHOUT_NAME = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    },
+                    "projects": [
+                        {"roles": [{"name": "observer"}]},
+                        {"name": "Staging",
+                         "roles": [{"name": "member"}]},
+                        {"name": "Project for {0}",
+                         "roles": [{"name": "admin"}]},
+                    ]
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                }
+            ]
+        },
+    ]
+}
+
+# NOTE(lbragstad): I'm putting this here because a case was brought up by a
+# reviewer and leaving this in the code should help up generate some discussion
+# around it. How should auto-provisioning work with groups in the mapping? The
+# RuleProcessor utility already has some logic that handles having `group`,
+# `groups`, and `group_ids` in the identity_values. Do we want a mapping
+# similar to what's below where the user is placed in the "Operators" and
+# "Developers" group? If those groups don't exist, do we create them like we do
+# projects? The existing code in the RuleProcessor requires domains to also be
+# in the mapping if only group names are available. Since we are now basing
+# everything off the domain the Identity Provider is registered to, does this
+# still hold true?
+MAPPING_PROJECTS_AND_GROUPS = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                },
+                {
+                    "projects": [
+                        {"name": "Production",
+                         "roles": [{"name": "observer"}]},
+                        {"name": "Staging",
+                         "roles": [{"name": "member"}]},
+                        {"name": "Project for {0}",
+                         "roles": [{"name": "admin"}]},
+                    ]
+                },
+                {
+                    "groups": [
+                        {"name": "Operators"},
+                        {"name": "Developers"}
+                    ]
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "Employee"
+                    ]
+                }
+            ]
+        }
     ]
 }
