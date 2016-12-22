@@ -3015,6 +3015,95 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         return token_resp['user']['id'], unscoped_token
 
 
+class ShadowMappingTests(FederatedTokenTests):
+    """Test class dedicated to auto provisioning.
+
+    A shadow mapping is a mapping that contains extra properties about that
+    specific federated user's situation based on attributes from the assertion.
+    For example, a shadow mapping can tell us that a user should have specific
+    role assignments on certain projects within a domain. When a federated user
+    authenticates, the shadow mapping will create these entities before
+    returning the authenticated response to the user. This test class is
+    dedicated to testing specific aspects of shadow mapping when performing
+    federated authentication.
+    """
+
+    shadow_rules = {
+        'rules': [
+            {
+                'remote': [
+                    {
+                        'type': 'UserName'
+                    },
+                    {
+                        'type': 'Email',
+                    },
+                    {
+                        'type': 'orgPersonType',
+                        'any_one_of': [
+                            'Employee'
+                        ]
+                    }
+                ],
+                'local': [
+                    {
+                        'user': {
+                            'name': '{0}'
+                        }
+                    },
+                    {
+                        'projects': [
+                            {
+                                'name': 'Development project for {0}',
+                                'roles': [
+                                    {
+                                        'name': 'admin'
+                                    }
+                                ]
+                            },
+                            {
+                                'name': 'Staging',
+                                'roles': [
+                                    {
+                                        'name': 'member'
+                                    }
+                                ]
+                            },
+                            {
+                                'name': 'Production',
+                                'roles': [
+                                    {
+                                        'name': 'observer'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+
+    def setUp(self):
+        super(ShadowMappingTests, self).setUp()
+        mapping = self.mapping_ref(rules=self.shadow_rules)
+
+    def test_shadow_mapping_creates_projects(self):
+        pass
+
+    def test_shadow_mapping_create_projects_role_assignments(self):
+        pass
+
+    def test_shadow_mapping_does_not_create_roles(self):
+        pass
+
+    def test_shadow_mapping_does_not_create_domains(self):
+        pass
+
+    def test_shadow_mapping_does_not_create_groups(self):
+        pass
+
+
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'
