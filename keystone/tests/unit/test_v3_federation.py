@@ -1700,6 +1700,62 @@ class MappingCRUDTests(test_v3.RestfulTestCase):
         self.put(url, expected_status=http_client.BAD_REQUEST,
                  body={'mapping': bad_mapping})
 
+    def test_create_shadow_mapping_without_roles_fails(self):
+        # If a mapping contains projects, those projects should also contain
+        # roles so that it's possible to determine which role a user should
+        # have on a project in their mapping.
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        resp = self.put(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_ROLES},
+            expected_status=http_client.BAD_REQUEST
+        )
+
+    def test_update_shadow_mapping_without_roles_fails(self):
+        # If a mapping contains projects, those projects should also contain
+        # roles so that it's possible to determine which role a user should
+        # have on a project in their mapping.
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        resp = self.put(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS},
+            expected_status=http_client.CREATED
+        )
+        self.assertValidMappingResponse(
+            resp, mapping_fixtures.MAPPING_PROJECTS
+        )
+        resp = self.patch(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_ROLES},
+            expected_status=http_client.BAD_REQUEST
+        )
+
+    def test_create_shadow_mapping_without_name_fails(self):
+        # If a mapping contains projects, those projects should have names
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        resp = self.put(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_NAME},
+            expected_status=http_client.BAD_REQUEST
+        )
+
+    def test_update_shadow_mapping_without_name_fails(self):
+        # If a mapping contains projects, those projects should have names
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        resp = self.put(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS},
+            expected_status=http_client.CREATED
+        )
+        self.assertValidMappingResponse(
+            resp, mapping_fixtures.MAPPING_PROJECTS
+        )
+        resp = self.patch(
+            url,
+            body={'mapping': mapping_fixtures.MAPPING_PROJECTS_WITHOUT_NAME},
+            expected_status=http_client.BAD_REQUEST
+        )
+
 
 class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
@@ -3013,6 +3069,129 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         token_resp = r.json_body['token']
         self.assertValidMappedUser(token_resp)
         return token_resp['user']['id'], unscoped_token
+
+
+class ShadowMappingTests(test_v3.RestfulTestCase, FederatedSetupMixin):
+    """Test class dedicated to auto provisioning.
+
+    A shadow mapping is a mapping that contains extra properties about that
+    specific federated user's situation based on attributes from the assertion.
+    For example, a shadow mapping can tell us that a user should have specific
+    role assignments on certain projects within a domain. When a federated user
+    authenticates, the shadow mapping will create these entities before
+    returning the authenticated response to the user. This test class is
+    dedicated to testing specific aspects of shadow mapping when performing
+    federated authentication.
+    """
+
+    def setUp(self):
+        super(ShadowMappingTests, self).setUp()
+        # update the mapping we have already setup to have specific projects
+        # and roles.
+        self.federation_api.update_mapping(
+            self.mapping['id'],
+            mapping_fixtures.MAPPING_PROJECTS
+        )
+
+        # The shadow mapping we're using in these tests contain a role named
+        # `member` and `observer` for the sake of using something other than
+        # `admin`. We'll need to create those before hand, otherwise the
+        # mapping will fail during authentication because the roles defined in
+        # the mapping do not exist yet. The shadow mapping mechanism currently
+        # doesn't support creating roles on-the-fly, but this could change in
+        # the future after we get some feedback from shadow mapping being used
+        # in real deployments.
+        member_role_ref = unit.new_role_ref(name='member')
+        self.member_role = self.role_api.create_role(
+            member_role_ref['id'], member_role_ref
+        )
+        observer_role_ref = unit.new_role_ref(name='observer')
+        self.observer_role = self.role_api.create_role(
+            observer_role_ref['id'], observer_role_ref
+        )
+
+        # This is a mapping of the project name to the role that is suppose to
+        # be assigned to the user on that project from the shadow mapping.
+        self.expected_results = {
+            'Production': 'observer',
+            'Staging': 'member',
+            'Project for tbo': 'admin'
+        }
+
+    def auth_plugin_config_override(self):
+        methods = ['saml2']
+        super(ShadowMappingTests, self).auth_plugin_config_override(methods)
+
+    def load_fixtures(self, fixtures):
+        super(ShadowMappingTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def test_shadow_mapping_creates_projects(self):
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(response.json_body['token'])
+        unscoped_token = response.headers.get('X-Subject-Token')
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        for project in projects:
+            # Ensure that the projects in the mapping were actually created.
+            project = self.resource_api.get_project_by_name(
+                project['name'],
+                self.idp['domain_id']
+            )
+            self.assertIn(project['name'], self.expected_results)
+
+    def test_shadow_mapping_create_projects_role_assignments(self):
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(response.json_body['token'])
+        unscoped_token = response.headers.get('X-Subject-Token')
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        for project in projects:
+            # Ask for a scope token to each project in the mapping. Each token
+            # should contain a different role so let's check that is right,
+            # too.
+            scope = self._scope_request(
+                unscoped_token, 'project', project['id']
+            )
+            response = self.v3_create_token(scope)
+            project_name = response.json_body['token']['project']['name']
+            roles = response.json_body['token']['roles']
+            self.assertEqual(
+                self.expected_results[project_name], roles[0]['name']
+            )
+
+    def test_shadow_mapping_does_not_create_roles(self):
+        # If a role required by the mapping does not exist, then we should fail
+        # the mapping since shadow mapping currently does not support creating
+        # mappings on-the-fly.
+        self.role_api.delete_role(self.observer_role['id'])
+        self.assertRaises(exception.RoleNotFound, self._issue_unscoped_token)
+
+    def test_shadow_mapping_creates_project_in_identity_provider_domain(self):
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(response.json_body['token'])
+        unscoped_token = response.headers.get('X-Subject-Token')
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        for project in projects:
+            self.assertEqual(project['domain_id'], self.idp['domain_id'])
+
+    def test_shadow_mapping_is_idempotent(self):
+        response = self._issue_unscoped_token()
+        self.assertValidMappedUser(response.json_body['token'])
+        unscoped_token = response.headers.get('X-Subject-Token')
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        project_ids = []
+        for project in projects:
+            project_ids.append(project['id'])
+
+        response = self._issue_unscoped_token()
+        unscoped_token = response.headers.get('X-Subject-Token')
+        response = self.get('/auth/projects', token=unscoped_token)
+        projects = response.json_body['projects']
+        for project in projects:
+            self.assertIn(project['id'], project_ids)
 
 
 class JsonHomeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
