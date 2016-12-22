@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_02c5343b",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-22T14:24:16Z",
+      "side": 1,
+      "message": "this new line helped readability, everything was all smushed together",
+      "revId": "d5170d33b20dae9a87de27292a389b1b4689f39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
