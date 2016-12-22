@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_909c2d6b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2016-12-22T00:46:47Z",
+      "side": 0,
+      "message": "These 3 exceptions are actually caught here:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L1296\n\nThat is why I removed them from being caught here.",
+      "range": {
+        "startLine": 496,
+        "startChar": 0,
+        "endLine": 498,
+        "endChar": 56
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
