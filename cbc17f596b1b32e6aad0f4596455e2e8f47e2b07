@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_59c1b72d",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T21:57:19Z",
+      "side": 1,
+      "message": "Maybe better as \"Created new temporary key 0.tmp\"",
+      "range": {
+        "startLine": 160,
+        "startChar": 26,
+        "endLine": 160,
+        "endChar": 43
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_19c72f46",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T21:57:19Z",
+      "side": 1,
+      "message": "\"become\" sounds little strange to me. Because if I saw these messages, I would assume the key was created with message \"Created a new key\".  \n\nRather than \"become\", maybe replace with \"Renamed temporary key 0.tmp to 0\"",
+      "range": {
+        "startLine": 176,
+        "startChar": 22,
+        "endLine": 176,
+        "endChar": 28
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_99931f4f",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T21:57:19Z",
+      "side": 1,
+      "message": "This sentence sounds a little awkward. Instead of \"become\", maybe",
+      "range": {
+        "startLine": 176,
+        "startChar": 22,
+        "endLine": 176,
+        "endChar": 44
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
