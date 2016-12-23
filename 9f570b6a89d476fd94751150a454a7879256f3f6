@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_f8ec452b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-23T04:27:34Z",
+      "side": 0,
+      "message": "it took me way too long to find the duplicate #oldeyes",
+      "range": {
+        "startLine": 296,
+        "startChar": 8,
+        "endLine": 300,
+        "endChar": 70
+      },
+      "revId": "9f570b6a89d476fd94751150a454a7879256f3f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
