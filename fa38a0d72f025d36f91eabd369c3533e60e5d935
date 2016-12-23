@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_55b8b7e5",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:51:53Z",
+      "side": 1,
+      "message": "Why not write the temporary key in /tmp with a random filename. That way there\u0027s less chance of a file name collision.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_552a772d",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:51:53Z",
+      "side": 1,
+      "message": "This isn\u0027t really needed. A flush will be called as part of the close which will happen when outside the scope of the with open context manager.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_d55107da",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:51:53Z",
+      "side": 1,
+      "message": "Generally its better to always do something in the except block, even if its just logging the error.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_d568278a",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:51:53Z",
+      "side": 1,
+      "message": "This LOG info messages are pretty verbose. I\u0027d remove them and focus on logging errors.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_f5d0cb55",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:51:53Z",
+      "side": 1,
+      "message": "mock should come after hashlib to keep alpha sorted order",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
