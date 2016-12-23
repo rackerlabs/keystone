@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_f73e0ad9",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-23T11:42:00Z",
+      "side": 1,
+      "message": "you don\u0027t need these lines, the max active keys by default is 3, since we\u0027re not going past 2 this is not necessary",
+      "range": {
+        "startLine": 632,
+        "startChar": 0,
+        "endLine": 636,
+        "endChar": 0
+      },
+      "revId": "95721f63ec55201b7bf15b4f029926d4b8758ebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
