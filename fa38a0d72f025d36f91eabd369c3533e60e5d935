@@ -84,6 +84,58 @@
       "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_d572e748",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:57:11Z",
+      "side": 1,
+      "message": "Note: this is the source of the pep8 failure\n\n\n2016-12-23 06:17:03.013856 | ./keystone/tests/unit/token/test_fernet_provider.py:18:1: H306  imports not in alphabetical order (uuid, mock)\n2016-12-23 06:17:03.015107 | import mock\n2016-12-23 06:17:03.015128 | ^",
+      "parentUuid": "da4df55a_f5d0cb55",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_d5ee67b3",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:57:11Z",
+      "side": 1,
+      "message": "The __builtin__ module was renamed to builtins in Python3.\n\nTraceback (most recent call last):\n  File \"/home/jenkins/workspace/gate-keystone-python35-db/keystone/tests/unit/token/test_fernet_provider.py\", line 659, in test_rotation_disk_write_fail\n    with mock.patch(\u0027__builtin__.open\u0027, mock_open):\n  File \"/home/jenkins/workspace/gate-keystone-python35-db/.tox/py35/lib/python3.5/site-packages/mock/mock.py\", line 1353, in __enter__\n    self.target \u003d self.getter()\n  File \"/home/jenkins/workspace/gate-keystone-python35-db/.tox/py35/lib/python3.5/site-packages/mock/mock.py\", line 1523, in \u003clambda\u003e\n    getter \u003d lambda: _importer(target)\n  File \"/home/jenkins/workspace/gate-keystone-python35-db/.tox/py35/lib/python3.5/site-packages/mock/mock.py\", line 1206, in _importer\n    thing \u003d __import__(import_path)\nImportError: No module named \u0027__builtin__\u0027",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_b5ae4383",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2016-12-23T07:57:11Z",
+      "side": 1,
+      "message": "Remove this line.  This is the source of the 2nd pep8 error.\n\n2016-12-23 06:17:03.015153 | ./keystone/tests/unit/token/test_fernet_provider.py:665:5: E303 too many blank lines (2)\n2016-12-23 06:17:03.015167 |     def test_non_numeric_files(self):",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
