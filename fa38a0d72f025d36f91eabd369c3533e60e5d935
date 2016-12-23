@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_6b031843",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "Because /tmp and /etc/keystone/fernet-keys may not be in the same filesystem. It is possible to successfully write /tmp/0.tmp and failed to copy to /etc/keystone/fernet-keys.",
+      "parentUuid": "da4df55a_55b8b7e5",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_552a772d",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-23T07:51:53Z",
       "side": 1,
       "message": "This isn\u0027t really needed. A flush will be called as part of the close which will happen when outside the scope of the with open context manager.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_66b8afe6",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "I removed the flush(), and then no exceptions were raised when the disk is full. I guess close() doesn\u0027t automatically call flush(), but I can\u0027t find any reference for that.\n\nAlso, when I mock flush() to raise IOError in the unit test, removing the flush() call also prevent IOError to be raised.\n\nIn conclusion, I think the flush() is necessary.",
+      "parentUuid": "da4df55a_552a772d",
       "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_a6ca976c",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "I see. I will leave some error logs.",
+      "parentUuid": "da4df55a_d55107da",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_d568278a",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2016-12-23T07:51:53Z",
       "side": 1,
       "message": "This LOG info messages are pretty verbose. I\u0027d remove them and focus on logging errors.",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_86cbd352",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "I think it\u0027s good to keep the log since there is a \"Created a new key: /etc/keystone/fernet-keys/0.tmp\" log before it.",
+      "parentUuid": "da4df55a_d568278a",
       "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,42 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_067a83f1",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t run pep8 first.",
+      "parentUuid": "da4df55a_f5d0cb55",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_e6f81f4c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "OK, thanks for the tips.",
+      "parentUuid": "da4df55a_d572e748",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_d5ee67b3",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 2
@@ -122,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_46e9eb7f",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "I will rename it to \"keystone.common.fernet_utils.open\". Thank you.",
+      "parentUuid": "da4df55a_d5ee67b3",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_b5ae4383",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 2
@@ -133,6 +259,24 @@
       "writtenOn": "2016-12-23T07:57:11Z",
       "side": 1,
       "message": "Remove this line.  This is the source of the 2nd pep8 error.\n\n2016-12-23 06:17:03.015153 | ./keystone/tests/unit/token/test_fernet_provider.py:665:5: E303 too many blank lines (2)\n2016-12-23 06:17:03.015167 |     def test_non_numeric_files(self):",
+      "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_a6fe1736",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-23T09:41:30Z",
+      "side": 1,
+      "message": "I will remove it.",
+      "parentUuid": "da4df55a_b5ae4383",
       "revId": "fa38a0d72f025d36f91eabd369c3533e60e5d935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
