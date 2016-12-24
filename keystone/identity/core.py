@@ -958,6 +958,13 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def _check_for_federated_attributes(self, hints):
+        for filter_ in hints.filters:
+            if 'unique_id' == filter_['name']:
+                return self.shadow_users_api.get_federated_users(
+                    hints, filter_['value'])
+        return None
+
     @domains_configured
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
@@ -972,7 +979,9 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_users(hints)
+        ref_list = self._check_for_federated_attributes(hints)
+        if not ref_list:
+            ref_list = driver.list_users(hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
 
