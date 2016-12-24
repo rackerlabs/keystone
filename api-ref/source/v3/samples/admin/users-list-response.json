@@ -12,6 +12,17 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/2844b2a08be147a08ef58317d6471f1f"
             },
+            "federated": [
+                {
+                    "idp_id": "1789d1",
+                    "protocols":[
+                        {
+                            "protocol_id": "sam12",
+                            "unique_id": "jdoe"
+                        }
+                    ]
+                }
+            ]
             "name": "glance",
             "password_expires_at": null
         },
@@ -22,6 +33,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/4ab84ab39de54f4d96eaff8f2145a7cd"
             },
+            "federated" = [],
             "name": "swiftusertest1",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -32,6 +44,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/56696a9a04864d63877a3d06a6f0b24b"
             },
+            "federated" = [],
             "name": "swift",
             "password_expires_at": null
         },
@@ -42,6 +55,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/5acb638d15da44fc8de41b9a4bd41875"
             },
+            "federated" = [],
             "name": "alt_demo",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -52,6 +66,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/7596e862b1af473c8ed6ae99d35b51e3"
             },
+            "federated" = [],
             "name": "demo",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -62,6 +77,17 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/802edb2141b44e77bbde241417450749"
             },
+            "federated": [
+                {
+                    "idp_id": "myidp",
+                    "protocols":[
+                        {
+                            "protocol_id": "mapped",
+                            "unique_id": "nva"
+                        }
+                    ]
+                }
+            ]
             "name": "nova",
             "password_expires_at": null
         },
@@ -72,6 +98,30 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/9aca3883784647fe9aff3a50d922489a"
             },
+            "federated": [
+                {
+                    "idp_id": "swiftidp",
+                    "protocols":[
+                        {
+                            "protocol_id": "saml1",
+                            "unique_id": "swifty"
+                        },
+                        {
+                            "protocol_id": "saml1",
+                            "unique_id": "swiftin"
+                        }
+                    ]
+                },
+                {
+                    "idp_id": "1789d1",
+                    "protocols":[
+                        {
+                            "protocol_id": "sam12",
+                            "unique_id": "jdoe"
+                        }
+                    ]
+                }
+            ]
             "name": "swiftusertest4",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -82,6 +132,17 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/a1251b011f9345e68c2458b841152034"
             },
+            "federated": [
+                {
+                    "idp_id": "13al4",
+                    "protocols":[
+                        {
+                            "protocol_id": "ORG",
+                            "unique_id": "johnswift"
+                        }
+                    ]
+                }
+            ]
             "name": "swiftusertest3",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -92,6 +153,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/a43f46eb318041f6b712143862e3ad70"
             },
+            "federated" = [],
             "name": "neutron",
             "password_expires_at": null
         },
@@ -102,6 +164,17 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/b964a9e51c0046a4a84d3f83a135a97c"
             },
+            "federated": [
+                {
+                    "idp_id": "1as89d1",
+                    "protocols":[
+                        {
+                            "protocol_id": "sam5",
+                            "unique_id": "adminguy"
+                        }
+                    ]
+                }
+            ]
             "name": "admin",
             "password_expires_at": null
         },
@@ -112,6 +185,17 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/dc87e591c0d247d5ac04e873bd8a1646"
             },
+            "federated": [
+                {
+                    "idp_id": "17891",
+                    "protocols":[
+                        {
+                            "protocol_id": "sam8",
+                            "unique_id": "cin"
+                        }
+                    ]
+                }
+            ]
             "name": "cinder",
             "password_expires_at": null
         },
@@ -122,6 +206,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/ed214dc1c2c6468b926c96eca6c8aee9"
             },
+            "federated" = [],
             "name": "glance-swift",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         },
@@ -132,6 +217,7 @@
             "links": {
                 "self": "http://example.com/identity/v3/users/f4f6587b058a4f46a00242549b430d37"
             },
+            "federated" = [],
             "name": "swiftusertest2",
             "password_expires_at": "2016-11-06T15:32:17.000000"
         }
