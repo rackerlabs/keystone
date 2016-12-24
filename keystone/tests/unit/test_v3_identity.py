@@ -14,6 +14,7 @@
 
 import datetime
 import uuid
+import itertools
 
 import fixtures
 import freezegun
@@ -24,11 +25,17 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import controller
+from keystone.common import driver_hints
+from keystone.common import sql
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
+from keystone.identity.backends import base as identity_base
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
+from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
 
 
@@ -984,3 +991,67 @@ class PasswordValidationTestCase(ChangePasswordTestCase):
         self.change_password(password='mypas2',
                              original_password=self.user_ref['password'],
                              expected_status=http_client.BAD_REQUEST)
+
+
+class UserAPITests(test_v3.RestfulTestCase):
+    def _create_user_with_federated_user(self, user, fed_dict):
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(fed_dict)
+            user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
+            user_ref.federated_users.append(federated_ref)
+            session.add(user_ref)
+            return identity_base.filter_user(user_ref.to_dict())
+
+    def setUp(self):
+        super(UserAPITests, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+        # Create the idp
+        self.idp = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        self.federation_api.create_idp(self.idp['id'], self.idp)
+        # Create the mapping
+        self.mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        self.mapping['id'] = uuid.uuid4().hex
+        self.federation_api.create_mapping(self.mapping['id'], self.mapping)
+        # Create the protocol
+        self.protocol = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': self.mapping['id']
+        }
+        self.federation_api.create_protocol(self.idp['id'],
+                                            self.protocol['id'],
+                                            self.protocol)
+        # Create the federated object
+        self.fed_dict = unit.new_federated_user_ref()
+        self.fed_dict['idp_id'] = self.idp['id']
+        self.fed_dict['protocol_id'] = self.protocol['id']
+        self.fed_dict['unique_id'] = "jdoe"
+        # Create the domain_id, user, and federated_user relationship
+        self.domain = unit.new_domain_ref()
+        self.resource_api.create_domain(self.domain['id'], self.domain)
+        self.fed_user = unit.new_user_ref(domain_id=self.domain['id'])
+        self.fed_user = self._create_user_with_federated_user(self.fed_user,
+                                                              self.fed_dict)
+
+    def _test_list_users_with_federated_parameter(self, parameter):
+        # Set the resource url and assert valid response
+        resource_url = ('/users?%s=%s'
+                        % (parameter[0], self.fed_dict[parameter[0]]))
+        for attr in parameter[1:]:
+            resource_url += '&%s=%s' % (attr, self.fed_dict[attr])
+        r = self.get(resource_url)
+        self.assertValidUserListResponse(r, ref=self.fed_user,
+                                         resource_url=resource_url)
+
+    def test_list_user_with_all_possible_federated_queries(self):
+        # Create a permutation to test every possible combination of federated
+        # attributes in the list users query
+        attributes = ['idp_id', 'protocol_id', 'unique_id']
+        for attr in xrange(1, len(attributes)+1):
+            for param in list(itertools.combinations(attributes, attr)):
+                self._test_list_users_with_federated_parameter(param)
