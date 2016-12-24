@@ -205,6 +205,12 @@ group_name_query:
   in: query
   required: false
   type: string
+idp_id_query:
+  description: |
+    Filters the response by an identity provider ID
+  in: query
+  required: false
+  type: string
 include_names_query:
   description: |
     If set to true, then the names of any entities returned will be include as
@@ -334,6 +340,12 @@ project_name_query:
   in: query
   required: false
   type: string
+protocol_id_query:
+  description: |
+    Filters the response by a protocol ID
+  in: query
+  required: false
+  type: string
 role_id_query:
   description: |
     Filters the response by a role ID.
@@ -398,6 +410,12 @@ subtree_as_list:
   required: false
   type: key-only, no value expected
   min_version: 3.4
+unique_id_query:
+  description: |
+    Filters the response by a unique ID
+  in: query
+  required: false
+  type: string
 user_id_query:
   description: |
     Filters the response by a user ID.
@@ -935,6 +953,12 @@ extras:
   in: body
   required: true
   type: object
+federated_object:
+  description: |
+    A list of ``federated`` object, each containing:
+  in: body
+  required: true
+  type: array
 group:
   description: |
     A ``group`` object, containing:
@@ -1047,6 +1071,12 @@ identity:
   in: body
   required: true
   type: object
+idp_id_response_body:
+  description: |
+    The ID of the identity provider for the federated user:
+  in: body
+  required: true
+  type: string
 implies_role_array_body:
   description: |
     An array of implied role objects.
@@ -1413,6 +1443,18 @@ projects:
   in: body
   required: true
   type: array
+protocol_object:
+  description: |
+    A list of ``protocol`` object, each containing:
+  in: body
+  required: true
+  type: array
+protocol_id_response_body:
+  description: |
+    The ID of the protocol:
+  in: body
+  required: true
+  type: string
 region_id:
   description: |
     (Since v3.2) The ID of the region that contains
@@ -1638,6 +1680,12 @@ token:
   in: body
   required: true
   type: object
+unique_id_response_body:
+  description: |
+    A unique ID for the federated user:
+  in: body
+  required: true
+  type: string
 user:
   description: |
     A ``user`` object.

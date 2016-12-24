@@ -1,0 +1,4 @@
+---
+upgrade:
+  - Adds the ability for a user to include the parameters idp_id, protocol_id,
+    and/or unique_id to the API GET call to /v3/users for list_users
