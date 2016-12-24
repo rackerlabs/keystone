@@ -466,6 +466,62 @@ class IdentityTests(object):
             self.assertNotIn('password', user_ref)
         self.assertEqual(expected_user_ids, user_ids)
 
+    def _build_hints(self, hints, filters, fed_dict):
+        if filters and fed_dict:
+            for key in filters:
+                hints.add_filter(key,
+                                 fed_dict[key],
+                                 comparator='equals')
+        return hints
+
+    def _test_list_users_with_attribute(self, filters, federated_dict):
+        # Call list_users while no match exists for the federated user
+        hints = driver_hints.Hints()
+        hints = self._build_hints(hints, filters, federated_dict)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(0, len(users))
+
+        # list_users with a new relational user and federated user
+        hints = self._build_hints(hints, filters, federated_dict)
+        self.shadow_users_api.create_federated_user(federated_dict)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(1, len(users))
+
+    def test_list_users_with_unique_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['unique_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_idp_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['idp_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_protocol_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['protocol_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_unique_id_and_idp_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['unique_id', 'idp_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_unique_id_and_protocol_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['unique_id', 'protocol_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_idp_id_protocol_id(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['idp_id', 'protocol_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
+    def test_list_users_with_all_federated_attributes(self):
+        federated_dict = unit.new_federated_user_ref()
+        filters = ['unique_id', 'idp_id', 'protocol_id']
+        self._test_list_users_with_attribute(filters, federated_dict)
+
     def test_list_groups(self):
         group1 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
         group2 = unit.new_group_ref(domain_id=CONF.identity.default_domain_id)
