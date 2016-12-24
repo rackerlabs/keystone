@@ -24,11 +24,16 @@ from six.moves import http_client
 from testtools import matchers
 
 from keystone.common import controller
+from keystone.common import driver_hints
+from keystone.common import sql
 import keystone.conf
 from keystone.credential.providers import fernet as credential_fernet
 from keystone import exception
+from keystone.identity.backends import base as identity_base
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit import ksfixtures
+from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
 
 
@@ -299,6 +304,68 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Now try with an explicit filter
         resource_url = ('/users?domain_id=%(domain_id)s' %
                         {'domain_id': domain['id']})
+        r = self.get(resource_url)
+        self.assertValidUserListResponse(r, ref=user,
+                                         resource_url=resource_url)
+
+    def test_list_users_with_federated_attributes(self):
+        # Create the idp
+        self.idp = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        self.federation_api.create_idp(self.idp['id'], self.idp)
+        # Create the mapping
+        self.mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        self.mapping['id'] = uuid.uuid4().hex
+        self.federation_api.create_mapping(self.mapping['id'], self.mapping)
+        # Create the protocol
+        protocol = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': self.mapping['id']
+        }
+        self.federation_api.create_protocol(self.idp['id'], protocol['id'],
+                                            protocol)
+        # Create the federated object
+        fed_dict = unit.new_federated_user_ref()
+        fed_dict['idp_id'] = self.idp['id']
+        fed_dict['protocol_id'] = protocol['id']
+        fed_dict['unique_id'] = "jdoe"
+        # Create the domain_id, user, and federated_user relationship
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        user = unit.new_user_ref(domain_id=domain['id'])
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(fed_dict)
+            user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
+            user_ref.federated_users.append(federated_ref)
+            session.add(user_ref)
+            user = identity_base.filter_user(user_ref.to_dict())
+
+        # Verify the user was created
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertDictEqual(user, user_ref)
+        # Verify a list_users can use the fed hint to return the matching user
+        hints = driver_hints.Hints()
+        hints.add_filter('unique_id', fed_dict['unique_id'],
+                         comparator='equals')
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(1, len(users))
+        # Verify that the user created from create_federated_user and the
+        # single user in list_users are the same
+        self.assertDictEqual(user, users[0])
+        # Verify that we can get a federated user from the federated_dict to
+        # ensure that a federated_user was created and there is a corresponding
+        # user that exists. Then verify that the user matches the single user
+        # returned from list_users
+        fed_user = self.shadow_users_api.get_federated_user(
+            fed_dict['idp_id'], fed_dict['protocol_id'], fed_dict['unique_id'])
+        self.assertDictEqual(fed_user, users[0])
+
+        # Set the resource url and assert valid response
+        resource_url = ('/users?unique_id=%s' % str(fed_dict['unique_id']))
         r = self.get(resource_url)
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
