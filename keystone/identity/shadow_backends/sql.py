@@ -12,6 +12,7 @@
 
 import copy
 import datetime
+import sqlalchemy
 import uuid
 
 from oslo_config import cfg
@@ -40,6 +41,33 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             user_ref.federated_users.append(federated_ref)
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
+
+    def _get_federated_users(
+            self, hints, query, idp_id, protocol_id, unique_id):
+        statements = [model.User.id == model.FederatedUser.user_id]
+        if idp_id:
+            statements.append(model.FederatedUser.idp_id == idp_id)
+            hints.filters = [
+                x for x in hints.filters if x['name'] != 'idp_id']
+        if protocol_id:
+            statements.append(model.FederatedUser.protocol_id == protocol_id)
+            hints.filters = [
+                x for x in hints.filters if x['name'] != 'protocol_id']
+        if unique_id:
+            statements.append(model.FederatedUser.unique_id == unique_id)
+            hints.filters = [
+                x for x in hints.filters if x['name'] != 'unique_id']
+
+        query = query.filter(sqlalchemy.and_(*statements))
+        return query
+
+    def get_federated_users(self, hints, idp_id, protocol_id, unique_id):
+        with sql.session_for_read() as session:
+            query = session.query(model.User).outerjoin(model.LocalUser)
+            query = self._get_federated_users(
+                hints, query, idp_id, protocol_id, unique_id)
+            user_refs = sql.filter_limit_query(model.User, query, hints)
+            return [identity_base.filter_user(x.to_dict()) for x in user_refs]
 
     def get_federated_user(self, idp_id, protocol_id, unique_id):
         user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
