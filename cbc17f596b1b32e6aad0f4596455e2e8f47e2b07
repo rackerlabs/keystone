@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_eec0da7e",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-24T03:02:48Z",
+      "side": 1,
+      "message": "I agree.",
+      "parentUuid": "da4df55a_59c1b72d",
+      "range": {
+        "startLine": 160,
+        "startChar": 26,
+        "endLine": 160,
+        "endChar": 43
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_19c72f46",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 6
@@ -59,6 +83,30 @@
       "writtenOn": "2016-12-23T21:57:19Z",
       "side": 1,
       "message": "This sentence sounds a little awkward. Instead of \"become\", maybe",
+      "range": {
+        "startLine": 176,
+        "startChar": 22,
+        "endLine": 176,
+        "endChar": 44
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_6e3b0a9d",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-24T03:02:48Z",
+      "side": 1,
+      "message": "Thank you for the suggestion! I wasn\u0027t sure about the term \"become\" either because I\u0027m not a native English speaker. I will change to \"rename\".\n\nShould I change \"become\" in the function name too?",
+      "parentUuid": "da4df55a_99931f4f",
       "range": {
         "startLine": 176,
         "startChar": 22,
