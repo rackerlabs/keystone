@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_968760d6",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-25T11:46:06Z",
+      "side": 1,
+      "message": "Do you have any good suggestion on that?",
+      "parentUuid": "da4df55a_1308e32b",
+      "range": {
+        "startLine": 166,
+        "startChar": 4,
+        "endLine": 166,
+        "endChar": 36
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_33032711",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 6
@@ -107,6 +131,30 @@
       "writtenOn": "2016-12-25T05:41:14Z",
       "side": 1,
       "message": "delete \"become\" I think.",
+      "range": {
+        "startLine": 167,
+        "startChar": 32,
+        "endLine": 167,
+        "endChar": 38
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_b66e242d",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-25T11:46:06Z",
+      "side": 1,
+      "message": "I will.",
+      "parentUuid": "da4df55a_33032711",
       "range": {
         "startLine": 167,
         "startChar": 32,
@@ -212,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_56641848",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-25T11:46:06Z",
+      "side": 1,
+      "message": "The following rotate_keys() will find no staged key and fail at the rename() @250.\n\nI guess raise an exception in _create_new_tmp_key() will be a good idea.",
+      "parentUuid": "da4df55a_9324d2af",
+      "range": {
+        "startLine": 193,
+        "startChar": 8,
+        "endLine": 193,
+        "endChar": 65
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_1331c2ec",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 6
@@ -223,6 +295,30 @@
       "writtenOn": "2016-12-25T05:41:14Z",
       "side": 1,
       "message": "per my understanding you needn\u0027t change the code this way, you can just raise an exception appropriately if the new key is failed to be created, so that your code in @261 also needn\u0027t.",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 18
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_f64fccba",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 24651
+      },
+      "writtenOn": "2016-12-25T11:46:06Z",
+      "side": 1,
+      "message": "I will use exceptions to control the creation of the staged key. Thanks.",
+      "parentUuid": "da4df55a_1331c2ec",
       "range": {
         "startLine": 235,
         "startChar": 0,
