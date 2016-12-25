@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_dc8587ad",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-25T17:25:47Z",
+      "side": 1,
+      "message": "yes, you replace \"admin_domain_id\" with the actual ID of the domain.\n\nSo in a multi-domain setup, the \"default\" domain would be the admin domain and all other domains (for LDAP and such) will be non-admin domains.",
+      "parentUuid": "da4df55a_399ce5bf",
+      "range": {
+        "startLine": 3,
+        "startChar": 61,
+        "endLine": 3,
+        "endChar": 86
+      },
+      "revId": "ef48072d94f780ebaacee8c3ddf02a68193fa74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_d992f99e",
         "filename": "releasenotes/notes/bug-1547684-911aed68a0d3df17.yaml",
         "patchSetId": 9
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_fc940be3",
+        "filename": "releasenotes/notes/bug-1547684-911aed68a0d3df17.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-25T17:25:47Z",
+      "side": 1,
+      "message": "yes, correct.",
+      "parentUuid": "da4df55a_d992f99e",
+      "range": {
+        "startLine": 5,
+        "startChar": 11,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "ef48072d94f780ebaacee8c3ddf02a68193fa74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_b997f58e",
         "filename": "releasenotes/notes/bug-1547684-911aed68a0d3df17.yaml",
         "patchSetId": 9
@@ -59,6 +107,30 @@
       "writtenOn": "2016-12-25T13:08:09Z",
       "side": 1,
       "message": "why not? shouldn\u0027t the below policy tell us the domain admin token could act as cloud admin?\n\n\"cloud_admin\": \"role:admin and (is_admin_project:True or domain_id:admin_domain_id)\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 17,
+        "endLine": 6,
+        "endChar": 73
+      },
+      "revId": "ef48072d94f780ebaacee8c3ddf02a68193fa74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_5cc0b7e0",
+        "filename": "releasenotes/notes/bug-1547684-911aed68a0d3df17.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-25T17:25:47Z",
+      "side": 1,
+      "message": "right, so we want to allow the \"admin\" on the admin domain to be the cloud admin.\n\nbut we don\u0027t want the \"domain admin\" to be able to be a \"cloud admin\"\n\nThe change we made to https://review.openstack.org/#/c/411563/9/keystone/models/token_model.py fixes that. Because if a \"domain admin\" requested a domain scoped token, it would automatically evaluate the \"is_admin_project:True\" to true !!\n\nThis is not necessary for domain scoped tokens",
+      "parentUuid": "da4df55a_b997f58e",
       "range": {
         "startLine": 6,
         "startChar": 17,
