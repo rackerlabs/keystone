@@ -77,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_a7142c44",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-12-25T17:56:18Z",
+      "side": 1,
+      "message": "I pulled down this patch set to play around today, and added something like this:\n\n        self.assertEqual(\n            0, len(self._list_users_by_password_expires_at(\n                \u0027xx\u0027, self.test_starttime - datetime.timedelta(seconds\u003d1)))\n        )\n\nI noticed bad operator name is ignored, i.e., that test above will pass.  Should it not raise a 400 Bad Request error?",
+      "parentUuid": "1a6eadb0_6aa98c23",
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_2afb147a",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 26
