@@ -49,6 +49,76 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_935bf22d",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-12-25T05:41:14Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da4df55a_59c1b72d",
+      "range": {
+        "startLine": 160,
+        "startChar": 26,
+        "endLine": 160,
+        "endChar": 43
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_1308e32b",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-12-25T05:41:14Z",
+      "side": 1,
+      "message": "Hmm, I think all that\u0027s been done here is rename, the method name confuse me a little.",
+      "range": {
+        "startLine": 166,
+        "startChar": 4,
+        "endLine": 166,
+        "endChar": 36
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_33032711",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-12-25T05:41:14Z",
+      "side": 1,
+      "message": "delete \"become\" I think.",
+      "range": {
+        "startLine": 167,
+        "startChar": 32,
+        "endLine": 167,
+        "endChar": 38
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_19c72f46",
         "filename": "keystone/common/fernet_utils.py",
         "patchSetId": 6
@@ -112,6 +182,52 @@
         "startChar": 22,
         "endLine": 176,
         "endChar": 44
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_9324d2af",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-12-25T05:41:14Z",
+      "side": 1,
+      "message": "What will it be if the new key is failed to be created? your code @110-@112 just return silently, what will the following method ends up with?",
+      "range": {
+        "startLine": 193,
+        "startChar": 8,
+        "endLine": 193,
+        "endChar": 65
+      },
+      "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_1331c2ec",
+        "filename": "keystone/common/fernet_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2016-12-25T05:41:14Z",
+      "side": 1,
+      "message": "per my understanding you needn\u0027t change the code this way, you can just raise an exception appropriately if the new key is failed to be created, so that your code in @261 also needn\u0027t.",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 18
       },
       "revId": "cbc17f596b1b32e6aad0f4596455e2e8f47e2b07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
