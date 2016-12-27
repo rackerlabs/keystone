@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_f2cc186c",
+        "filename": "keystone/tests/unit/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-27T03:49:49Z",
+      "side": 1,
+      "message": "i think we need it here",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 238,
+        "endChar": 66
+      },
+      "revId": "937a1a3037c456cd111cac399f09647a38136b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
