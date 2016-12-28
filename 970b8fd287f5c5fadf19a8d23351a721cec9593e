@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_df32a25d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-28T02:55:10Z",
+      "side": 1,
+      "message": "this doesn\u0027t explain the non-PCI case",
+      "range": {
+        "startLine": 495,
+        "startChar": 18,
+        "endLine": 496,
+        "endChar": 72
+      },
+      "revId": "970b8fd287f5c5fadf19a8d23351a721cec9593e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_bf315e5c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-28T02:55:10Z",
+      "side": 1,
+      "message": "i think this change actually makes things harder to read/understand.\n\na single use private function ideally shouldn\u0027t need to exist; and without knowing the background it future maintainers may wonder why we\u0027re setting audit_reason to None.",
+      "range": {
+        "startLine": 511,
+        "startChar": 0,
+        "endLine": 515,
+        "endChar": 19
+      },
+      "revId": "970b8fd287f5c5fadf19a8d23351a721cec9593e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

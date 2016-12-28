@@ -22,6 +22,30 @@
       "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da4df55a_1fd34a05",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-28T02:55:10Z",
+      "side": 0,
+      "message": "just remove them instead?",
+      "parentUuid": "da4df55a_909c2d6b",
+      "range": {
+        "startLine": 496,
+        "startChar": 0,
+        "endLine": 498,
+        "endChar": 56
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
