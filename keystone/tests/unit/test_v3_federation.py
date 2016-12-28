@@ -2362,7 +2362,7 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
          - Issue unscoped token with ``group``'s id
          - Delete group ``group``
          - Scope token to ``project_all``
-         - Expect HTTP 500 response
+         - Expect HTTP 404 response
 
         """
         # create group and role
@@ -2414,13 +2414,13 @@ class FederatedTokenTests(test_v3.RestfulTestCase, FederatedSetupMixin):
         # delete group
         PROVIDERS.identity_api.delete_group(group['id'])
 
-        # scope token to project_all, expect HTTP 500
+        # scope token to project_all, expect HTTP 404
         scoped_token = self._scope_request(
             token_id, 'project',
             self.project_all['id'])
 
         self.v3_create_token(
-            scoped_token, expected_status=http_client.INTERNAL_SERVER_ERROR)
+            scoped_token, expected_status=http_client.NOT_FOUND)
 
     def test_lists_with_missing_group_in_backend(self):
         """Test a mapping that points to a group that does not exist.
@@ -2942,7 +2942,8 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
     """
 
     def auth_plugin_config_override(self):
-        methods = ['saml2', 'token']
+        # password is required for trusts
+        methods = ['saml2', 'token' 'password']
         super(FederatedUserTests, self).auth_plugin_config_override(methods)
 
     def load_fixtures(self, fixtures, enable_sqlite_foreign_key=False):
@@ -3250,6 +3251,44 @@ class FederatedUserTests(test_v3.RestfulTestCase, FederatedSetupMixin):
 
         # Now we should be able to delete the protocol
         PROVIDERS.federation_api.delete_protocol(self.IDP, protocol['id'])
+
+    def test_trust_usage(self):
+        # create trustee
+        trustee_user = unit.create_user(self.identity_api,
+                                        domain_id=self.domain_id)
+        trustee_user_id = trustee_user['id']
+
+        # authenticate employee
+        user_id, unscoped_token = self._authenticate_via_saml()
+        v3_scope_request = self._scope_request(
+            unscoped_token, 'project',
+            self.proj_employees['id'])
+        r = self.v3_create_token(v3_scope_request,
+                                 expected_status=http_client.CREATED)
+        scoped_token = r.headers['X-Subject-Token']
+
+        # create a trust from employee to trustee
+        ref = unit.new_trust_ref(
+            trustor_user_id=user_id,
+            trustee_user_id=trustee_user_id,
+            project_id=self.proj_employees['id'],
+            role_ids=[self.role_employee['id']])
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref},
+                      token=scoped_token)
+        trust = self.assertValidTrustResponse(r)
+
+        # use the trust
+        # get a v3 trust-scoped token as the trustee
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user_id,
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        r = self.v3_create_token(auth_data)
+        # NOTE(breton): it should be assertValidProjectScopedTokenResponse,
+        # but for some reason it checks for self.role_id which has nothing to
+        # with this test case. That's why assertValidScopedTokenResponse
+        self.assertValidScopedTokenResponse(
+            r, trustee_user)
 
     def _authenticate_via_saml(self):
         r = self._issue_unscoped_token()

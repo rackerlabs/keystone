@@ -17,6 +17,7 @@ from oslo_log import log
 from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
+from keystone import assignment  # TODO(lbragstad): Decouple this dependency
 from keystone.auth import plugins as auth_plugins
 from keystone.auth.plugins import base
 from keystone.common import provider_api
@@ -272,6 +273,41 @@ def handle_unscoped_token(request, auth_payload, resource_api, federation_api,
 
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
+            response_data = build_ephemeral_user_context(
+                user, mapped_properties, identity_provider, protocol)
+
+            # NOTE(breton): at this point we remove the user from all groups
+            # and then add back. This is a workaround for the issue when
+            # trusts don't work with federated user. We cannot simply add users
+            # to groups without removing them, because user's groups might
+            # change and the user will have wrong roles.
+            # The code could also use some optimization, for example, by
+            # creating a new method that would remove a user from all groups,
+            # but we don't do it at this point because we want the change
+            # to be as small and maintainable as possible.
+            # Another issue arises here when we use identity_api to remove
+            # user from group. A revocation is created for this user and all
+            # their previous tokens become revoked. This behaviour is correct
+            # for other types of users, but doesn't apply to our situation.
+            # Because of this we shall remove user from groups without
+            # creating revocations, by modifying them directly in backends.
+            current_groups = identity_api.list_groups_for_user(user_id)
+            _domain_id, user_driver, user_entity_id = (
+                identity_api._get_domain_driver_and_entity_id(user_id))
+            for group in current_groups:
+                _domain_id, group_driver, group_entity_id = (
+                    identity_api._get_domain_driver_and_entity_id(group['id']))
+                identity_api._assert_user_and_group_in_same_backend(
+                    user_entity_id, user_driver, group_entity_id, group_driver)
+                group_driver.remove_user_from_group(user_entity_id,
+                                                    group_entity_id)
+                assignment.COMPUTED_ASSIGNMENTS_REGION.invalidate()
+                # the code above was used from
+                # identity_api.remove_user_from_group. No revocations are
+                # created and no notifications are emitted.
+            for group_id in group_ids:
+                identity_api.add_user_to_group(user_id, group_id)
+
             response_data = build_ephemeral_user_context(
                 user, mapped_properties, identity_provider, protocol)
         else:
