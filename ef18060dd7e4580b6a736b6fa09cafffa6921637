@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_ff5cc67e",
+        "filename": "api-ref/source/v3-ext/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-28T03:04:06Z",
+      "side": 1,
+      "message": "this is actually related to oauth tokens over here: https://github.com/openstack/keystone/blob/master/keystone/oauth1/backends/sql.py#L209-L214\n\nsample output:\n\n\u003e\u003e\u003e import datetime\n\u003e\u003e\u003e from keystone.common import utils\n\u003e\u003e\u003e expiry_date \u003d None\n\u003e\u003e\u003e now \u003d timeutils.utcnow()\n\u003e\u003e\u003e request_token_duration\u003d3600\n\u003e\u003e\u003e future \u003d now + datetime.timedelta(seconds\u003drequest_token_duration)\n\u003e\u003e\u003e expiry_date \u003d utils.isotime(future, subsecond\u003dTrue)\n\u003e\u003e\u003e print expiry_date\n2016-12-28T04:01:24.000000Z",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 212,
+        "endChar": 16
+      },
+      "revId": "ef18060dd7e4580b6a736b6fa09cafffa6921637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
