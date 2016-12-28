@@ -205,6 +205,29 @@
     },
     {
       "key": {
+        "uuid": "da4df55a_bebf8ea8",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2016-12-28T16:44:06Z",
+      "side": 1,
+      "message": "After trying to refactor and debug this a bit, I believe the way this test is written will not handle the parameter `time` without some formatting.  See the following:\n\n   \u003e\u003e\u003e import datetime\n   \u003e\u003e\u003e created_time \u003d datetime.datetime.utcnow()\n   \u003e\u003e\u003e expired_time \u003d created_time + datetime.timedelta(days\u003d1)   \n   \u003e\u003e\u003e url \u003d \u0027/users?password_expires_at\u003d%s\u0027 % expired_time\n   \u003e\u003e\u003e print(url)\n   /users?password_expires_at\u003d2016-12-29 16:37:14.458924\n\nFor one, it puts in the microseconds instead of just a Z.  Also, it adds a space between the date and time instead of a T.",
+      "range": {
+        "startLine": 244,
+        "startChar": 7,
+        "endLine": 244,
+        "endChar": 75
+      },
+      "revId": "af15d402b345c7b708478a729e6c2352d675475d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_6a48accc",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 26
