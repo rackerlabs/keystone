@@ -133,7 +133,7 @@ class TrustV3(controller.V3Controller):
         # Normalize roles
         normalized_roles = self._normalize_role_list(trust.get('roles', []))
         trust['roles'] = normalized_roles
-        self._require_trustor_has_role_in_project(trust)
+        self._require_trustor_has_role_in_project(trust, request)
         trust['expires_at'] = self._parse_expiration_date(
             trust.get('expires_at'))
         trust_id = uuid.uuid4().hex
@@ -147,7 +147,7 @@ class TrustV3(controller.V3Controller):
         self._fill_in_roles(request.context_dict, new_trust)
         return TrustV3.wrap_member(request.context_dict, new_trust)
 
-    def _get_trustor_roles(self, trust):
+    def _get_trustor_roles(self, trust, request):
         original_trust = trust.copy()
         while original_trust.get('redelegated_trust_id'):
             original_trust = self.trust_api.get_trust(
@@ -160,12 +160,29 @@ class TrustV3(controller.V3Controller):
                 user_id=original_trust['trustor_user_id'],
                 project_id=original_trust['project_id'],
                 effective=True, strip_domain_roles=False)
-            return list(set([x['role_id'] for x in assignment_list]))
+            roles = set([x['role_id'] for x in assignment_list])
+            # is original_trustor the same user as a trustor? If yes,
+            # we should use this user's roles too. They might be not
+            # in assignment_list because federated users don't always have
+            # assignments and their roles are calculated from their
+            # membership in groups.
+            # Roles from the context cannot be used here, because it possible
+            # that trustor authenticated with a token scoped to p1, but wants
+            # to create a trust for p2. That's why the assignments need to
+            # be fetched from the database.
+            if (original_trust['trustor_user_id'] == trust['trustor_user_id']
+                and 'group_ids' in request.context_dict):
+                assignment_list = self.assignment_api.get_roles_for_groups(
+                    request.request.context_dict['group_ids'])
+                roles_from_group = set([x['role_id']
+                                        for x in assignment_list])
+                roles += roles_from_group
+            return list(roles)
         else:
             return []
 
-    def _require_trustor_has_role_in_project(self, trust):
-        trustor_roles = self._get_trustor_roles(trust)
+    def _require_trustor_has_role_in_project(self, trust, request):
+        trustor_roles = self._get_trustor_roles(trust, request)
         for trust_role in trust['roles']:
             matching_roles = [x for x in trustor_roles
                               if x == trust_role['id']]

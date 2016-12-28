@@ -203,6 +203,7 @@ class AuthContextMiddleware(auth_token.BaseAuthProtocol):
         request_context.domain_name = auth_context.get('domain_name')
         request_context.user_domain_id = auth_context.get('user_domain_id')
         request_context.roles = auth_context.get('roles')
+        request_context.group_ids = auth_context.get('group_ids')
 
         is_admin_project = auth_context.get('is_admin_project', True)
         request_context.is_admin_project = is_admin_project

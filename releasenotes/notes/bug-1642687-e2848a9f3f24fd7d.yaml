@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    [`bug 1642687 <https://bugs.launchpad.net/keystone/+bug/1642687>`_]
+    All federated users that authenticate with a trusted identity provider
+    will now have a valid ``domain_id`` (that is associated with the
+    identity provider that was used). Adding a ``domain_id`` to all
+    federated users was essential to solving bugs related to federated
+    users being unable to use OpenStack services such as `Murano` and `Heat`.
+    Related bugs: [`bug 1589993 <https://bugs.launchpad.net/keystone/+bug/1589993>`_],
+    [`bug 1627098 <https://bugs.launchpad.net/keystone/+bug/1627098>`_],
+    [`bug 1600366 <https://bugs.launchpad.net/keystone/+bug/1600366>`_].
