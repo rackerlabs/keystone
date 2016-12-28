@@ -157,6 +157,8 @@ def handle_unscoped_token(request, auth_payload, auth_context,
                                                       display_name)
             user_id = user['id']
             group_ids = mapped_properties['group_ids']
+            for group_id in group_ids:
+                identity_api.add_user_to_group(user_id, group_id)
             build_ephemeral_user_context(auth_context, user,
                                          mapped_properties,
                                          identity_provider, protocol)

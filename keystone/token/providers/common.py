@@ -210,8 +210,11 @@ class V3TokenDataHelper(object):
             trustee_user_ref = (self.identity_api.get_user(
                                 trust['trustee_user_id']))
             try:
-                self.resource_api.assert_domain_enabled(
-                    trustor_user_ref['domain_id'])
+                # it is possible that trustor is domainless because he came
+                # from federation
+                if trustor_user_ref['domain_id']:
+                    self.resource_api.assert_domain_enabled(
+                        trustor_user_ref['domain_id'])
             except AssertionError:
                 raise exception.TokenNotFound(_('Trustor domain is disabled.'))
             try:
