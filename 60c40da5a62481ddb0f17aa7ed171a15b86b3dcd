@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_42b914e9",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T19:53:37Z",
+      "side": 1,
+      "message": "I wouldn\u0027t mind actually pointing to some official documentation somewhere on how to do this. I found that as I tested this patch locally that it can be pretty easy to lockout my admin user. For example, if I do the following\n\n - authenticate as an admin, do some arbitrary operations\n - set change_password_after_first_use \u003d true and restart keystone\n - do an `openstack user password set` to reset my password\n\nIf I do any other operation in the third step - i might lose my token and be unable to change my password. The following is another interesting case I noticed:\n\n - authenticate as an admin\n - set change_password_after_first_use \u003d true and restart keystone\n - do an `openstack user password set` to reset my password\n - authenticate normally \n - set change_password_after_first_use \u003d false and restart keystone\n - authenticate normally because the setting is off\n - re-enable change_password_after_first_use and restart keystone\n - I can authenticate repeatedly with my old password \n\nThe last bit seems strange because after toggling the configuration option on and off, it doesn\u0027t seem to reject my password even though I would expect it to after re-enabling the setting. I bring up the documentation bits because a user will have one of two different ways to reset their password after a deployment enables this setting. First they could use either of the following procedures:\n\n - deployment enables change_password_after_first_use\n - user must know when this happens, and the first command they use is `openstack user password set`\n\nOr\n\n - deployment enables change_password_after_first_use\n - user must know when this happens, and the first command they use is `openstack token issue`\n - grab the token from the last request  and change password using something like curl or pass it to openstackclient directly bypassing initial authentication.",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_81205df9",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 24
