@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_81205df9",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T17:07:44Z",
+      "side": 1,
+      "message": "Note that uses in the `password_expires_ignore_user_ids` list won\u0027t be affected by this change (according to the logic in this patch).",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_416d9531",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T17:07:44Z",
+      "side": 1,
+      "message": "nit: Authentication* only because the upper case A doesn\u0027t match the method signature it\u0027s referring to, but I appreciate the switch to complete sentences :)",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_21d6d1c5",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T17:07:44Z",
+      "side": 1,
+      "message": "So - this *doesn\u0027t* fail because the password change was initiated by the user, right? If the password change is forced by an administrator, then the assertion on line 677 would fail?",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e1c049e3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T17:07:44Z",
+      "side": 1,
+      "message": "race conditions with fernet and revocation events (which is important here because we\u0027re creating one with the password change).",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_61ad3931",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T17:07:44Z",
+      "side": 1,
+      "message": "We can add another authentication here to ensure that the new password works after the first use.",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
