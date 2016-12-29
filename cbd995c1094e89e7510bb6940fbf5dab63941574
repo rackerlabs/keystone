@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_86fcf33f",
+        "filename": "keystone/federation/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T16:13:18Z",
+      "side": 1,
+      "message": "Ah for some reason I took this as exposing it through the API.",
+      "parentUuid": "1a6eadb0_3f158c9a",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_e66d5a9a",
         "filename": "keystone/federation/core.py",
         "patchSetId": 34
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "But I also want to account for if the domain_id is there, but set to None.",
       "parentUuid": "1a6eadb0_e66d5a9a",
+      "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e6c05fe3",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T16:13:18Z",
+      "side": 1,
+      "message": "Yep - that should still work:\n\n  Python 2.7.9 (default, Apr  2 2015, 15:33:21) \n  [GCC 4.9.2] on linux2\n  Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n  \u003e\u003e\u003e d \u003d {\u0027domain_id\u0027: None}\n  \u003e\u003e\u003e d\n  {\u0027domain_id\u0027: None}\n  \u003e\u003e\u003e if \u0027domain_id\u0027 in d:\n  ...     print \u0027yes\u0027\n  ... \n  yes",
+      "parentUuid": "1a6eadb0_ff723410",
       "revId": "cbd995c1094e89e7510bb6940fbf5dab63941574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
