@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_a6bbb70d",
+        "filename": "keystone/common/fernet_key_store/backends/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T15:48:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure I agree with this part. A fernet repository is just a set of keys somewhere, and currently that somewhere is on disk. We don\u0027t expect the keys to know what they are suppose to be used for. Instead we leave it to whatever needs the encrypting done. If something needs to have a value encrypted or decrypted, it needs to specifically say which repository it needs to interact with [0] [1]. This makes the fernet token provider responsible for interacting with the repository dedicated to token encryption. The same applies with the fernet credentials provider. The only relationship the current key repository directories have with the system that uses them is the default naming convention (`/etc/keystone/fernet-keys/`, `/etc/keystone/credential-keys/`). But there is nothing stopping someone from swapping those values through config to be something more obscure.\n\nI think having the drivers and keys keep track of what they are encrypting is unnecessary coupling if we already expect manager to interact with the proper key repository.\n\n\n[0] https://github.com/openstack/keystone/blob/686f9d583eaa5f015d6b8b995c2f4243392ffbce/keystone/credential/providers/fernet/core.py#L45-L46\n\n[1] https://github.com/openstack/keystone/blob/686f9d583eaa5f015d6b8b995c2f4243392ffbce/keystone/token/providers/fernet/token_formatters.py#L59-L62",
+      "parentUuid": "1a6eadb0_b3771dd3",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6eadb0_f3819590",
         "filename": "keystone/common/fernet_key_store/backends/base.py",
         "patchSetId": 2
@@ -64,6 +82,23 @@
       "writtenOn": "2016-12-21T00:42:58Z",
       "side": 1,
       "message": "If you are going to include this, then also have an \"inject key\" and \"extract key\" function.  To start, they can be unimplemented in the default impl, but really this is workflow separate from accessing keys.  Most real deployments can\u0027t do this on the Keystone server, but rather do it as part of config management.",
+      "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_262507ab",
+        "filename": "keystone/common/fernet_key_store/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-29T15:48:30Z",
+      "side": 1,
+      "message": "What is going to use this api, other managers? The `keystone-manage` CLI? I can see a use case for other managers to be able to pass something to a separate API to encrypt or decrypt it [0], but I\u0027m not sure if exposing key rotation and repository management in an API is the right approach. I could be missing a use case though. The current approach to our file-based repository management is to call utility functions from `keystone-manage` to make new keys, rename them in rotations, and remove them when necessary. I think allowing other storage mechanisms for fernet keys would consist of making the existing utility methods pluggable through config without exposing their management functions through a manager class, but through `keystone-manage`.\n\nThat way, regardless of the fernet key store backend you have defined in your configuration, you should be able to do `keystone-manage fernet_setup` and get a set of file-based keys (like you do today), or a repository of fernet keys somewhere else.\n\n\n[0] https://github.com/openstack/keystone/blob/686f9d583eaa5f015d6b8b995c2f4243392ffbce/keystone/credential/core.py#L68-L70",
       "revId": "dd194f38a56e5cd4f10adfc8974abda09dfa6962",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
