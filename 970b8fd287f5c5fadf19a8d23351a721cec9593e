@@ -45,6 +45,30 @@
       "revId": "970b8fd287f5c5fadf19a8d23351a721cec9593e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0d5d86e9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-29T13:23:47Z",
+      "side": 1,
+      "message": "agree with most points, but the private function one. Code reuse is not the only case to create private functions/methods.\n\nanother option, that could look more readable is having something like:\n\n  except Exception as ex:\n    audit_reason \u003d None\n    if is_password_management_error(ex):\n      audit_reason \u003d reason.Reason(str(ex), str(ex.code))\n\n    ...",
+      "parentUuid": "da4df55a_bf315e5c",
+      "range": {
+        "startLine": 511,
+        "startChar": 0,
+        "endLine": 515,
+        "endChar": 19
+      },
+      "revId": "970b8fd287f5c5fadf19a8d23351a721cec9593e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

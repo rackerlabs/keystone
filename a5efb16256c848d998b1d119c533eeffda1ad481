@@ -46,6 +46,76 @@
       "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_cdbe1ed4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-29T13:23:47Z",
+      "side": 0,
+      "message": "++",
+      "parentUuid": "da4df55a_1fd34a05",
+      "range": {
+        "startLine": 496,
+        "startChar": 0,
+        "endLine": 498,
+        "endChar": 56
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_4de4ee0c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-29T13:23:47Z",
+      "side": 0,
+      "message": "a possible refactoring is removing this. It is not needed.",
+      "range": {
+        "startLine": 507,
+        "startChar": 18,
+        "endLine": 507,
+        "endChar": 28
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_6dc45240",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2016-12-29T13:23:47Z",
+      "side": 0,
+      "message": "another possible refactoring is to remove this \"else\" - don\u0027t think we want to send a notification for a notification error, right?",
+      "range": {
+        "startLine": 513,
+        "startChar": 12,
+        "endLine": 513,
+        "endChar": 17
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
