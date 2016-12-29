@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_ad083d29",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-29T00:35:14Z",
+      "side": 1,
+      "message": "eek, can\u0027t believe we weren\u0027t doing that",
+      "range": {
+        "startLine": 160,
+        "startChar": 12,
+        "endLine": 161,
+        "endChar": 65
+      },
+      "revId": "8524f1fdb934fdfeed98de71e4241cf4733e54c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
