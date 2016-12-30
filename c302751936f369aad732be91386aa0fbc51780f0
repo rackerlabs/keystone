@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_acdb87ec",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2016-12-30T19:08:59Z",
+      "side": 1,
+      "message": "I had to add this in order to get the projects and the roles from the mapping into the mapped_properties. This is what I think should go into David\u0027s patch eventually.",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
