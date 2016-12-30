@@ -576,6 +576,7 @@ class RuleProcessor(object):
         group_names = list()
         groups_by_domain = dict()
         roles = []
+        projects = []
 
         # if mapping yield no valid identity values, we should bail right away
         # instead of continuing on with a normalized bogus user
@@ -635,13 +636,16 @@ class RuleProcessor(object):
                     group_ids.update([identity_value['group_ids']])
             if 'roles' in identity_value:
                 roles = identity_value['roles']
+            if 'projects' in identity_value:
+                projects = identity_value['projects']
 
         normalize_user(user)
 
         return {'user': user,
                 'group_ids': list(group_ids),
                 'group_names': group_names,
-                'roles': roles}
+                'roles': roles,
+                'projects': projects}
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.
