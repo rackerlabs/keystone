@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_88cb1d72",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2016-12-30T00:39:47Z",
+      "side": 1,
+      "message": "domain IDs of the IdP can\u0027t be updated",
+      "parentUuid": "ba5201f7_a1e4813b",
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_3a43bc43",
         "filename": "keystone/federation/core.py",
         "patchSetId": 35
