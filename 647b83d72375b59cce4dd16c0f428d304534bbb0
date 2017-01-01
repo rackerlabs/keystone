@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_06fd4a3a",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-01T12:19:25Z",
+      "side": 1,
+      "message": "don\u0027t import \"skipUnless\", just import testtools.",
+      "range": {
+        "startLine": 20,
+        "startChar": 22,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "647b83d72375b59cce4dd16c0f428d304534bbb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_c602623e",
+        "filename": "keystone_tempest_plugin/tests/scenario/test_federated_authentication.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-01T12:19:25Z",
+      "side": 1,
+      "message": "these should be grouped with the imports above since they are all third party packages",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "647b83d72375b59cce4dd16c0f428d304534bbb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
