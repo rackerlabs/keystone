@@ -22,6 +22,23 @@
       "revId": "0b535a1ff8dd5ea5dd890bc7cdc67a278fae0e82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3877bb3b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2017-01-02T23:13:58Z",
+      "side": 1,
+      "message": "I don\u0027t see how this is different. When no value is set in the token then auth_token middleware will default the value to True. \n\nThe only value that actually matters here is is_admin_project\u003dFalse.\n\nhttps://github.com/openstack/keystonemiddleware/blob/dfd53e55512cba6a8b7e69ac5bf7bea172dfe6b1/keystonemiddleware/auth_token/_request.py#L63\n\nhttps://github.com/openstack/keystoneauth/blob/014db209d877cfa74f4b2c0de5f081358ab56b7d/keystoneauth1/access/access.py#L609",
+      "revId": "0b535a1ff8dd5ea5dd890bc7cdc67a278fae0e82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
