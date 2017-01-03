@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_97b5b132",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-03T23:04:20Z",
+      "side": 1,
+      "message": "is \"sss\" the pattern for 000000 (6x 0) ? maybe I just not used to that syntax",
+      "range": {
+        "startLine": 924,
+        "startChar": 27,
+        "endLine": 924,
+        "endChar": 30
+      },
+      "revId": "0a7f5ae3cb1c0361e4ae65967510e3679b0e5f6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
