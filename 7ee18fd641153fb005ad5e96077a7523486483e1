@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_2ff4b385",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-03T21:48:18Z",
+      "side": 1,
+      "message": "s/feature/setting\n\nwhat do you think?",
+      "range": {
+        "startLine": 95,
+        "startChar": 18,
+        "endLine": 95,
+        "endChar": 25
+      },
+      "revId": "7ee18fd641153fb005ad5e96077a7523486483e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_6fd79bed",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-03T21:48:18Z",
+      "side": 1,
+      "message": "you can end the sentence here, think this is only repeating stuff that is already clear.",
+      "range": {
+        "startLine": 94,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 11
+      },
+      "revId": "7ee18fd641153fb005ad5e96077a7523486483e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_af15039c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-03T21:48:18Z",
+      "side": 1,
+      "message": "this looks unrelated? don\u0027t see an actual change in the logic here.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 40
+      },
+      "revId": "7ee18fd641153fb005ad5e96077a7523486483e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0f6e0f2f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-03T21:48:18Z",
+      "side": 1,
+      "message": "The following looks more concise to me:\n  \n  if not CONF.security_compliance.password_expires_allow_user_change:\n    raise",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1293,
+        "endChar": 21
+      },
+      "revId": "7ee18fd641153fb005ad5e96077a7523486483e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
