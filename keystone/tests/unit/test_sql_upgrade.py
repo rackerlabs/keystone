@@ -1648,6 +1648,21 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # Upgrade the legacy repository
         self.upgrade()
 
+    def test_out_of_order_upgrade(self):
+        # This will not be an actual test, this is for my purposes to show that
+        # db_sync with zero downtime allows you to upgrade out of order
+        self.expand(1)
+        self.migrate(1)
+        self.contract(1)
+        self.contract(2)
+        expand = upgrades.get_db_version('expand_repo')
+        migrate = upgrades.get_db_version('data_migration_repo')
+        contract = upgrades.get_db_version('contract_repo')
+        if contract > expand and contract > migrate:
+            self.assertTrue(1)
+        else:
+            self.assertTrue(0)
+
     def test_migration_002_password_created_at_not_nullable(self):
         # upgrade each repository to 001
         self.expand(1)
