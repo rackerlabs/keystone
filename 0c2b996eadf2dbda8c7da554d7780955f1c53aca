@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_619faf50",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-03T22:14:05Z",
+      "side": 1,
+      "message": "``domain_id``",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 18
+      },
+      "revId": "0c2b996eadf2dbda8c7da554d7780955f1c53aca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
