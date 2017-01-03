@@ -1,0 +1,9 @@
+---
+upgrade:
+  - The ability to update the `domain_id` for users,
+    groups, and projects has been removed. The behavior
+    was introduced to allow deployers to migrate entities
+    from one domain to another by updating the `domain_id`
+    attribute of an entity. This functionality was deprecated
+    in the Mitaka release is now removed. Domain IDs are now
+    strictly immutable.
