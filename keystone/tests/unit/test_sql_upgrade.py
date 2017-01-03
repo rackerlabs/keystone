@@ -1837,6 +1837,71 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.contract(11)
         self.assertTrue(self.does_unique_constraint_exist(table_name, column))
 
+    def test_protocol_cascade_delete_for_federated_user(self):
+        if self.engine.name == 'sqlite':
+            self.skipTest('sqlite backend does not support foreign keys')
+
+        self.expand(12)
+        self.migrate(12)
+        self.contract(12)
+
+        # This test requires a bit of setup to proper work, first we create an
+        # identity provider, mapping and a protocol. Then, we create a
+        # federated user and delete the protocol. We expect the federated user
+        # to be deleted as well.
+
+        session = self.sessionmaker()
+
+        def _create_protocol():
+            idp = {'id': uuid.uuid4().hex, 'enabled': True}
+            self.insert_dict(session, 'identity_provider', idp)
+
+            mapping = {'id': uuid.uuid4().hex, 'rules': json.dumps([])}
+            self.insert_dict(session, 'mapping', mapping)
+
+            protocol = {'id': uuid.uuid4().hex, 'idp_id': idp['id'],
+                        'mapping_id': mapping['id']}
+
+            protocol_table = sqlalchemy.Table(
+                'federation_protocol', self.metadata, autoload=True)
+            self.insert_dict(session, 'federation_protocol', protocol,
+                             table=protocol_table)
+
+            return protocol, protocol_table
+
+        def _create_federated_user(idp_id, protocol_id):
+            user = {'id': uuid.uuid4().hex}
+            self.insert_dict(session, 'user', user)
+
+            # NOTE(rodrigods): do not set the ID, the engine will do that
+            # for us and we won't need it later.
+            federated_user = {
+                'user_id': user['id'], 'idp_id': idp_id,
+                'protocol_id': protocol_id, 'unique_id': uuid.uuid4().hex}
+            self.insert_dict(session, 'federated_user', federated_user,
+                             table=federated_table)
+
+            return federated_user, federated_table
+
+        protocol, protocol_table = _create_protocol()
+        federated_user, federated_table = _create_federated_user(
+            protocol['id'], protocol['idp_id'])
+
+        # delete the protocol
+        session.execute(
+            protocol_table.delete().where(
+                protocol_table.c.id == protocol['id']))
+
+        # assert the cascade deletion worked
+        federated_users = session.query(federated_table).filter_by(
+            protocol_id=federated_user['protocol_id']).all()
+        self.assertThat(federated_users, matchers.HasLength(0))
+
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        users = session.query(user_table).filter_by(
+            id=federated_user['user_id']).all()
+        self.assertThat(users, matchers.HasLength(0))
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
