@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_d3edb08c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-03T02:17:15Z",
+      "side": 1,
+      "message": "I am not following what is the issue and what we\u0027re fixing here (also pointed out by Lance in a previous patchset).\n\nLooking at the changed code, I don\u0027t see any response extracted to a variable.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "dfeda349d567364a569ce9ca9a3b4df388052560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_13001834",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-03T02:17:15Z",
+      "side": 1,
+      "message": "I do not see how this is related to that bug",
+      "revId": "dfeda349d567364a569ce9ca9a3b4df388052560",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
