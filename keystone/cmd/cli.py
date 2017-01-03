@@ -445,6 +445,13 @@ class DbSync(BaseApp):
                                  'that are no longer required. This command '
                                  'should be run after all keystone nodes are '
                                  'running the new release.'))
+
+        group.add_argument('--check', default=False, action='store_true',
+                           help=('Check that there are not any outstanding '
+                                 'database actions that still need to be '
+                                 'executed. This command can be used to '
+                                 'verify the condition of the current db '
+                                 'state. '))
         return parser
 
     @staticmethod
@@ -453,7 +460,9 @@ class DbSync(BaseApp):
 
         # It is possible to run expand and migrate at the same time,
         # expand needs to run first however.
-        if CONF.command.expand and CONF.command.migrate:
+        if CONF.command.check:
+            upgrades.check()
+        elif CONF.command.expand and CONF.command.migrate:
             upgrades.expand_schema()
             upgrades.migrate_data()
         elif CONF.command.expand:

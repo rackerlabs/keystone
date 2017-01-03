@@ -253,10 +253,65 @@ def offline_sync_database_to_version(version=None):
         contract_schema()
 
 
-def get_db_version():
+def get_db_version(repo=LEGACY_REPO):
     with sql.session_for_read() as session:
         return migration.db_version(
-            session.get_bind(), find_repo(LEGACY_REPO), get_init_version())
+            session.get_bind(), find_repo(repo), get_init_version())
+
+
+def _get_command_state_info(command):
+    repo = None
+    if command is 'expand':
+        repo = EXPAND_REPO
+    elif command is 'migrate':
+        repo = DATA_MIGRATION_REPO
+    elif command is 'contract':
+        repo = CONTRACT_REPO
+
+    current_version = int(six.text_type(get_db_version(repo)))
+    abs_path = find_repo(repo)
+    repo = migrate.versioning.repository.Repository(abs_path)
+    latest_version = int(max(repo.versions.versions))
+    if current_version == latest_version:
+        state = 'Complete'
+    else:
+        state = 'Incomplete'
+
+    return current_version, latest_version, state
+
+
+def check():
+    """Perform checks on the current status of the db_sync commands.
+
+    This is run mannually by the keystone-manage command when a user would like
+    to check the current status of expand, migrate, and contract.
+    """
+    suggestion = ''
+    current, latest, state = _get_command_state_info('expand')
+    print (' {0:^10s} {1:^17s} {2:^16s} {3:^12s}'.format(
+        'Command', 'Current Version', 'Latest Version', 'State', 'Status'))
+    print (' {0:^10s} {1:^17d} {2:^16d} {3:^12s}'.format(
+        'expand', current, latest, state))
+    if 'Incomplete' in state:
+        suggestion = suggestion + 'expand, '
+
+    current, latest, state = _get_command_state_info('migrate')
+    print (' {0:^10s} {1:^17d} {2:^16d} {3:^12s}'.format(
+        'migrate', current, latest, state))
+    if 'Incomplete' in state:
+        suggestion = suggestion + 'migrate, '
+
+    current, latest, state = _get_command_state_info('contract')
+    print (' {0:^10s} {1:^17d} {2:^16d} {3:^12s}'.format(
+        'contract', current, latest, state))
+    if 'Incomplete' in state:
+        suggestion = suggestion + 'contract. '
+
+    if suggestion:
+        print ('You have not completed all db_sync upgrade commands. Run %s' %
+               suggestion)
+        print ('Please refer to '
+               'http://docs.openstack.org/developer/keystone/upgrading.html')
 
 
 def expand_schema():
