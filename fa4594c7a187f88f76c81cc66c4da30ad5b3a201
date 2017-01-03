@@ -22,6 +22,30 @@
       "revId": "fa4594c7a187f88f76c81cc66c4da30ad5b3a201",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_545b512e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-03T17:10:45Z",
+      "side": 1,
+      "message": "this is fine to do in a follow on patch",
+      "parentUuid": "ba5201f7_485e5c77",
+      "range": {
+        "startLine": 318,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 13
+      },
+      "revId": "fa4594c7a187f88f76c81cc66c4da30ad5b3a201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
