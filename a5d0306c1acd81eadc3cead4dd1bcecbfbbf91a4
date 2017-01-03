@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_f7999d6f",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-03T23:19:46Z",
+      "side": 1,
+      "message": "why aren\u0027t fernet_keys and credential_keys defined here, as in the patch on master [1] ?\n\n    fernet_keys\u003d$KEYSTONE_CONF_DIR/fernet-keys\n    credential_keys\u003d$KEYSTONE_CONF_DIR/credential-keys\n\nI believe it is because we are always using the default and fernet was not the default in Newton\n\n[2] https://review.openstack.org/#/c/399472",
+      "revId": "a5d0306c1acd81eadc3cead4dd1bcecbfbbf91a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
