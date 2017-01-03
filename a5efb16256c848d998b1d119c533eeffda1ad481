@@ -164,6 +164,30 @@
       "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_af98a31c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-03T21:49:54Z",
+      "side": 0,
+      "message": "lol, I really think the \"else\" is rather unreadable. Think it is more a personal preference :)",
+      "parentUuid": "ba5201f7_0e4c5541",
+      "range": {
+        "startLine": 513,
+        "startChar": 12,
+        "endLine": 513,
+        "endChar": 17
+      },
+      "revId": "a5efb16256c848d998b1d119c533eeffda1ad481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
