@@ -38,7 +38,9 @@ WARNING::
     all data will be lost.
 """
 
+from cStringIO import StringIO
 import json
+import sys
 import uuid
 
 import migrate
@@ -51,6 +53,7 @@ from sqlalchemy.engine import reflection
 import sqlalchemy.exc
 from testtools import matchers
 
+from keystone.cmd import cli
 from keystone.common import sql
 from keystone.common.sql import upgrades
 import keystone.conf
@@ -1651,10 +1654,60 @@ class VersionTests(SqlMigrateBase):
 class FullMigration(SqlMigrateBase, unit.TestCase):
     """Test complete orchestration between all database phases."""
 
+    class Capturing(list):
+        def __enter__(self):
+            self._stdout = sys.stdout
+            sys.stdout = self._stringio = StringIO()
+            return self
+
+        def __exit__(self, *args):
+            self.extend(self._stringio.getvalue().splitlines())
+            del self._stringio
+            sys.stdout = self._stdout
+
     def setUp(self):
         super(FullMigration, self).setUp()
         # Upgrade the legacy repository
         self.upgrade()
+
+    def test_db_sync_check(self):
+        checker = cli.DbSync()
+        # Assert the correct message gets printed when all commands are on
+        # the same version
+        self.expand(1)
+        self.migrate(1)
+        self.contract(1)
+        with self.Capturing() as output:
+            checker._check_db_sync_status()
+        self.assertIn("All db_sync command versions", output[0])
+
+        # Assert the correct message is printed when expand is farther than
+        # migrate
+        self.expand(2)
+        with self.Capturing() as output:
+            checker._check_db_sync_status()
+        self.assertIn("keystone-manage db_sync --migrate", output[0])
+
+        # Assert the correct message is printed when migrate is farther than
+        # contract
+        self.migrate(2)
+        with self.Capturing() as output:
+            checker._check_db_sync_status()
+        self.assertIn("keystone-manage db_sync --contract", output[0])
+
+        # Assert we once again have all db_synced commands being returned
+        self.contract(2)
+        with self.Capturing() as output:
+            checker._check_db_sync_status()
+        self.assertIn("All db_sync command versions", output[0])
+
+        # Assert we alert operator of a databse out of sync case
+        self.expand(3)
+        self.migrate(3)
+        self.contract(4)
+        with self.Capturing() as output:
+            checker._check_db_sync_status()
+        self.assertIn("Your database is out of sync", output[0])
 
     def test_migration_002_password_created_at_not_nullable(self):
         # upgrade each repository to 001
