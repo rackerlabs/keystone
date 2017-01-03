@@ -49,6 +49,53 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f729b28a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-01-03T13:59:20Z",
+      "side": 1,
+      "message": "i.e, this requires customization. I don\u0027t think folks will necessarily understand that, and if they did then this probably wouldn\u0027t have been terribly useful to them anyway. I suggest that we should remove the right side of this or condition.",
+      "parentUuid": "da4df55a_dc8587ad",
+      "range": {
+        "startLine": 3,
+        "startChar": 61,
+        "endLine": 3,
+        "endChar": 86
+      },
+      "revId": "ef48072d94f780ebaacee8c3ddf02a68193fa74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a21b6a1a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2017-01-03T13:59:20Z",
+      "side": 1,
+      "message": "Yes. Defaulting to True here was always supposed to be temporary, for backward compatibility. Should probably have a deprecation warning. Maybe it already does and that is somewhere else?",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 203,
+        "endChar": 55
+      },
+      "revId": "ef48072d94f780ebaacee8c3ddf02a68193fa74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_d992f99e",
         "filename": "releasenotes/notes/bug-1547684-911aed68a0d3df17.yaml",
         "patchSetId": 9
