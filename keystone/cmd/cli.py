@@ -445,15 +445,48 @@ class DbSync(BaseApp):
                                  'that are no longer required. This command '
                                  'should be run after all keystone nodes are '
                                  'running the new release.'))
+
+        group.add_argument('--check', default=False, action='store_true',
+                           help=('Check that there are not any outstanding '
+                                 'database actions that still need to be '
+                                 'executed. This command can be used to '
+                                 'verify the condition of the current db '
+                                 'state. '))
         return parser
 
-    @staticmethod
-    def main():
-        assert_not_extension(CONF.command.extension)
+    def _get_db_sync_status():
+        info_dict = {
+            'expand':{'name':'expand', 'repo':'expand_repo'},
+            'migrate':{'name':'migrate', 'repo':'data_migration_repo'},
+            'contract':{'name':'contract', 'repo':'contract_repo'}
+        }
+        info_dict = upgrades.check(info_dict)
 
+        suggestion = ''
+        print (' {0:^10s} {1:^17s} {2:^16s} {3:^12s}'.format(
+            'Command', 'Current Version', 'Latest Version', 'State', 'Status'))
+        for cmd in info_dict:
+            print (' {0:^10s} {1:^17d} {2:^16d} {3:^12s}'.format(
+                   cmd['name'], cmd['current'], cmd['latest'], cmd['state']))
+            if 'Incomplete' in cmd['state']:
+                suggestion = suggestion + cmd['name'] + ', '
+
+        if suggestion:
+            print ('You have not completed all db_sync upgrade commands. '
+                   'Run %s' % suggestion)
+            print ('Please refer to http://docs.openstack.org/developer'
+                   '/keystone/upgrading.html')
+
+
+    @staticmethod
+    def main(cls):
+        assert_not_extension(CONF.command.extension)
+        klass = cls()
         # It is possible to run expand and migrate at the same time,
         # expand needs to run first however.
-        if CONF.command.expand and CONF.command.migrate:
+        if CONF.command.check:
+            klass._get_db_sync_status()
+        elif CONF.command.expand and CONF.command.migrate:
             upgrades.expand_schema()
             upgrades.migrate_data()
         elif CONF.command.expand:

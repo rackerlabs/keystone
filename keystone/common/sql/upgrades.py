@@ -253,10 +253,29 @@ def offline_sync_database_to_version(version=None):
         contract_schema()
 
 
-def get_db_version():
+def get_db_version(repo=LEGACY_REPO):
     with sql.session_for_read() as session:
         return migration.db_version(
-            session.get_bind(), find_repo(LEGACY_REPO), get_init_version())
+            session.get_bind(), find_repo(repo), get_init_version())
+
+
+def check(info_dict):
+    """Perform checks on the current status of the db_sync commands.
+
+    This is run mannually by the keystone-manage command when a user would like
+    to check the current status of expand, migrate, and contract.
+    """
+    for cmd in info_dict:
+        cmd['current'] = int(six.text_type(get_db_version(cmd['repo'])))
+        abs_path = find_repo(cmd['repo'])
+        repo = migrate.versioning.repository.Repository(abs_path)
+        cmd['latest'] = int(max(repo.versions.versions))
+        if cmd['current'] == cmd['latest']:
+            cmd['state'] = 'Complete'
+        else:
+            cmd['state'] = 'Incomplete'
+
+    return info_dict
 
 
 def expand_schema():
