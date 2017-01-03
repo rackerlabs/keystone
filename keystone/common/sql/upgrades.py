@@ -253,10 +253,46 @@ def offline_sync_database_to_version(version=None):
         contract_schema()
 
 
-def get_db_version():
+def get_db_version(repo=LEGACY_REPO):
     with sql.session_for_read() as session:
         return migration.db_version(
-            session.get_bind(), find_repo(LEGACY_REPO), get_init_version())
+            session.get_bind(), find_repo(repo), get_init_version())
+
+
+def check():
+    """Perform checks on the current status of the db_sync commands.
+
+    This is run mannually by the keystone-manage command when a user would like
+    to check the current status of expand, migrate, and contract.
+    """
+    expand_version = get_db_version(repo=EXPAND_REPO)
+    migrate_version = get_db_version(repo=DATA_MIGRATION_REPO)
+    contract_version = get_db_version(repo=CONTRACT_REPO)
+    # This will be changed to send to a cli method that will handle the
+    # printing in the future
+    if expand_version == migrate_version == contract_version:
+        return 'All db_sync command versions are upgraded to the same version.'
+    elif expand_version > migrate_version:
+        return ('Expand version is ahead of migrate. Your next step is to'
+                'run keystone-manage db_sync --migrate on the first node '
+                'to forcefully perform data migrations. This process '
+                'will migrate all data from the old schema to the new '
+                'schema while the previous release continues to operate '
+                'normally.')
+    elif migrate_version > contract_version:
+        return ('Migrate version is ahead of contract. Your next step is '
+                'to update your configuration files (/etc/keystone/) on all '
+                ' nodes (except the first node, which you have already '
+                'done) with those corresponding to the latest release. '
+                'Upgrade all keystone nodes to the next release, and '
+                'restart them one at a time. During this step, you will '
+                'have a mix of releases operating side by side, both '
+                'writing to the database. As the next release begins '
+                'writing to the new schema, database triggers will also '
+                'migrate the data to the old schema, keeping both data '
+                'schemas in sync. Run keystone-manage db_sync --contract '
+                'to remove the old schema and all data migration '
+                'triggers.')
 
 
 def expand_schema():
