@@ -635,6 +635,7 @@ class CliDBSyncTestCase(unit.BaseTestCase):
     class FakeConfCommand(object):
         def __init__(self, parent):
             self.extension = False
+            self.check = parent.command_check
             self.expand = parent.command_expand
             self.migrate = parent.command_migrate
             self.contract = parent.command_contract
@@ -645,9 +646,11 @@ class CliDBSyncTestCase(unit.BaseTestCase):
         self.config_fixture = self.useFixture(oslo_config.fixture.Config(CONF))
         self.config_fixture.register_cli_opt(cli.command_opt)
         upgrades.offline_sync_database_to_version = mock.Mock()
+        upgrades.check = mock.Mock()
         upgrades.expand_schema = mock.Mock()
         upgrades.migrate_data = mock.Mock()
         upgrades.contract_schema = mock.Mock()
+        self.command_check = False
         self.command_expand = False
         self.command_migrate = False
         self.command_contract = False
@@ -689,6 +692,13 @@ class CliDBSyncTestCase(unit.BaseTestCase):
             CONF, 'command', self.FakeConfCommand(self)))
         cli.DbSync.main()
         self._assert_correct_call(upgrades.contract_schema)
+
+    def test_db_sync_check(self):
+        self.command_check = True
+        self.useFixture(mockpatch.PatchObject(
+            CONF, 'command', self.FakeConfCommand(self)))
+        cli.DbSync.main()
+        self._assert_correct_call(upgrades.check)
 
 
 class TestMappingPopulate(unit.SQLDriverOverrides, unit.TestCase):
