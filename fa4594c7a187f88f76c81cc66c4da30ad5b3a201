@@ -46,6 +46,24 @@
       "revId": "fa4594c7a187f88f76c81cc66c4da30ad5b3a201",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_14dc62e3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-03T21:18:24Z",
+      "side": 1,
+      "message": "Aha - good point. I\u0027ll remove this in the next patch set.",
+      "parentUuid": "ba5201f7_545b512e",
+      "revId": "fa4594c7a187f88f76c81cc66c4da30ad5b3a201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
