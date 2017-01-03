@@ -445,6 +445,13 @@ class DbSync(BaseApp):
                                  'that are no longer required. This command '
                                  'should be run after all keystone nodes are '
                                  'running the new release.'))
+
+        group.add_argument('--check', default=False, action='store_true',
+                           help=('Check that there are not any outstanding '
+                                 'database actions that still need to be '
+                                 'executed. This command can be used to '
+                                 'verify the condition of the current db '
+                                 'state. '))
         return parser
 
     @staticmethod
