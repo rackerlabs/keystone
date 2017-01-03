@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_0fcb6f54",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-03T21:52:02Z",
+      "side": 1,
+      "message": "Is there any reason why you can\u0027t just use the original variable names (HAPROXY_PUBLIC/ADMIN_FRONTEND), which better describe the value of the variables (rather than using the unfortunately-named destinations for the values)? It would make it easier to understand this script.",
+      "revId": "4c8501ac7e4746fd1dc378ed4fe8be7de5249e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_cf0c0797",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 25
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-03T21:52:02Z",
+      "side": 1,
+      "message": "For example, here\u0027s it\u0027s not clear whether you\u0027re using the public or admin endpoint URL via $AUTH_URI (I have to scroll back up and check which is which).",
+      "revId": "4c8501ac7e4746fd1dc378ed4fe8be7de5249e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0f27ef12",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 25
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-03T21:52:02Z",
+      "side": 1,
+      "message": "If a tempest test fails in this scenario, we should include a reference to the bug report describing the behavior that needs to be addressed so that the workaround can be removed. Without an external reference, this workaround will likely remain here forever.",
+      "revId": "4c8501ac7e4746fd1dc378ed4fe8be7de5249e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
