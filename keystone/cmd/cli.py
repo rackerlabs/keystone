@@ -445,15 +445,51 @@ class DbSync(BaseApp):
                                  'that are no longer required. This command '
                                  'should be run after all keystone nodes are '
                                  'running the new release.'))
+
+        group.add_argument('--check', default=False, action='store_true',
+                           help=('Check that there are no outstanding database'
+                                 ' actions that still need to be executed.'
+                                 ' This command can be used to verify the'
+                                 ' condition of the current database state.'))
         return parser
 
     @staticmethod
     def main():
         assert_not_extension(CONF.command.extension)
-
         # It is possible to run expand and migrate at the same time,
         # expand needs to run first however.
-        if CONF.command.expand and CONF.command.migrate:
+        import pdb; pdb.set_trace()
+        if CONF.command.check:
+            expand_version = upgrades.get_db_version(repo='expand_repo')
+            migrate_version = upgrades.get_db_version(
+                repo='data_migration_repo')
+            contract_version = upgrades.get_db_version(repo='contract_repo')
+            if expand_version == migrate_version == contract_version:
+                print(_('All db_sync command versions are upgraded to the '
+                        'same version.'))
+            elif expand_version > migrate_version:
+                print(_('Expand version is ahead of migrate. Your next step '
+                        'is to run keystone-manage db_sync --migrate on the '
+                        'first node to forcefully perform data migrations. '
+                        'This process will migrate all data from the old '
+                        'schema to the new schema while the previous release '
+                        'continues to operate normally.'))
+            elif migrate_version > contract_version:
+                print(_('Migrate version is ahead of contract. Your next step '
+                        'is to update your configuration files '
+                        '(/etc/keystone/) on all nodes (except the first '
+                        'node, which you have already done) with those '
+                        'corresponding to the latest release. Upgrade all '
+                        'keystone nodes to the next release, and restart them '
+                        'one at a time. During this step, you will have a mix '
+                        'of releases operating side by side, both writing to '
+                        'the database. As the next release begins writing to '
+                        'the new schema, database triggers will also migrate '
+                        'the data to the old schema, keeping both data '
+                        'schemas in sync. Run keystone-manage db_sync '
+                        '--contract to remove the old schema and all data '
+                        'migration triggers.'))
+        elif CONF.command.expand and CONF.command.migrate:
             upgrades.expand_schema()
             upgrades.migrate_data()
         elif CONF.command.expand:

@@ -1656,6 +1656,31 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         # Upgrade the legacy repository
         self.upgrade()
 
+"""
+    def test_db_sync_check(self):
+        # Assert the correct message gets printed when all commands are on
+        # the same version
+        self.expand(1)
+        self.migrate(1)
+        self.contract(1)
+        self.assertIn("All db_sync command versions", upgrades.check())
+
+        # Assert the correct message is printed when expand is farther than
+        # migrate
+        self.expand(2)
+        self.assertIn("keystone-manage db_sync --migrate", upgrades.check())
+
+        # Assert the correct message is printed when migrate is farther than
+        # contract
+        self.migrate(2)
+        self.assertIn("keystone-manage db_sync --contract", upgrades.check())
+
+        # Test we once again have the message that all commands on are on the
+        # same version.
+        self.contract(2)
+        self.assertIn("All db_sync command versions", upgrades.check())
+"""
+
     def test_migration_002_password_created_at_not_nullable(self):
         # upgrade each repository to 001
         self.expand(1)
