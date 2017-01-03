@@ -1,0 +1,4 @@
+---
+features:
+  - Adds the command --check to keystone-manage db_sync to allow the user to
+    check the status of rolling upgrades in the database.
