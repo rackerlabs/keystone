@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_f56a4a80",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T21:09:31Z",
+      "side": 1,
+      "message": "Is hints needed here? I looks like we\u0027re generating a list of something from the filters, but not using it for anything.",
+      "revId": "8ff8ef7ee68e981f66574e3ed5a19d3bd5f1b55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
