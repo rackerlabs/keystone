@@ -51,6 +51,24 @@
       "revId": "7814d68957bcee7fde0a4c244ecbd00c8d7716e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_07934ca4",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 23630
+      },
+      "writtenOn": "2017-01-04T03:11:02Z",
+      "side": 1,
+      "message": "I believe that he want to set this (inside set_external_opts_defaults()):\n\nprofiler.set_defaults(CONF, enabled\u003dFalse, trace_sqlalchemy\u003dFalse)",
+      "parentUuid": "1a6eadb0_41b9ce78",
+      "revId": "7814d68957bcee7fde0a4c244ecbd00c8d7716e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
