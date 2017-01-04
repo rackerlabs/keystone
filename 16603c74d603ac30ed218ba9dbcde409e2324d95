@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_3d62f83e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T23:00:31Z",
+      "side": 1,
+      "message": "Something that might help reviewers is listing the duplicated tests that were removed.",
+      "revId": "16603c74d603ac30ed218ba9dbcde409e2324d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
