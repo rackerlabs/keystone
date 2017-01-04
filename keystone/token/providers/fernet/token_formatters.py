@@ -290,6 +290,8 @@ class BasePayload(object):
         :returns: uuid hex formatted string
 
         """
+        if six.PY3 and isinstance(six.binary_type, uuid_byte_string):
+            uuid_byte_string = uuid_byte_string.decode('utf-8')
         uuid_obj = uuid.UUID(bytes=uuid_byte_string)
         return uuid_obj.hex
 
