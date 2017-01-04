@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_ea942844",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-04T22:20:19Z",
+      "side": 1,
+      "message": "Removing the else causes this to not work properly:\n\nhttp://paste.openstack.org/show/593920/",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1293,
+        "endChar": 21
+      },
+      "revId": "a3a4c00d29c519fcd63dbac99e16f0dcadec1992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
