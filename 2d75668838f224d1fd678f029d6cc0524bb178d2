@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_4a62943f",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-04T22:30:14Z",
+      "side": 1,
+      "message": "Interestingly, I tried to use the already made user_ref in the setup() and moving time forward 3 days to expire the password, but that caused sqlite errors with these tests. Making a new user 3 days in the past avoids this (similar to the pci-dss notification tests)",
+      "range": {
+        "startLine": 839,
+        "startChar": 0,
+        "endLine": 839,
+        "endChar": 73
+      },
+      "revId": "2d75668838f224d1fd678f029d6cc0524bb178d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
