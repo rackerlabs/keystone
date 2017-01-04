@@ -16,6 +16,24 @@
       "revId": "663865dfecb483f0ef6aa48749c0712779033dd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3a2e8143",
+        "filename": "api-ref/source/v2-admin/parameters.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2017-01-04T20:36:25Z",
+      "side": 0,
+      "message": "Keystone always returns Z as the offset.",
+      "parentUuid": "ba5201f7_3a84c15c",
+      "revId": "663865dfecb483f0ef6aa48749c0712779033dd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
