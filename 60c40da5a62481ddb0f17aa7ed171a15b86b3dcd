@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f3a6f151",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T16:15:54Z",
+      "side": 1,
+      "message": "The first case, in my mind, is expected behavior. If you don\u0027t want the admin password to expire, then add it to the ignore list.\n\nFor the second case, toggling the config option off and on, if your last password change was a admin reset, then you should be required to change your password. If that is not the case, then it is a bug. When you say you can repeatedly auth with your old password, was your last password change self-service?",
+      "parentUuid": "ba5201f7_42b914e9",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_81205df9",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-29T17:07:44Z",
       "side": 1,
       "message": "Note that uses in the `password_expires_ignore_user_ids` list won\u0027t be affected by this change (according to the logic in this patch).",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_33679926",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T16:15:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5201f7_81205df9",
       "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_1600c300",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T16:15:54Z",
+      "side": 1,
+      "message": "This is after user create, so admin created the password. The user authenticates; if the user does not change their password, then line 677 would fail, because the next time they auth, the password would be expired. Does that make sense?",
+      "parentUuid": "ba5201f7_21d6d1c5",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e1c049e3",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 24
@@ -81,6 +135,24 @@
       "writtenOn": "2016-12-29T17:07:44Z",
       "side": 1,
       "message": "race conditions with fernet and revocation events (which is important here because we\u0027re creating one with the password change).",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_760d8f36",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T16:15:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5201f7_e1c049e3",
       "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
