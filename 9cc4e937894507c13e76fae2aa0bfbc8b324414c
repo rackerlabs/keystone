@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_c073d5e5",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T15:51:59Z",
+      "side": 1,
+      "message": "Yeah, old code updating an idp shouldn\u0027t be an issue. And correct, the domain cannot be updated with new code.",
+      "parentUuid": "ba5201f7_88cb1d72",
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_3a43bc43",
         "filename": "keystone/federation/core.py",
         "patchSetId": 35
@@ -48,6 +66,30 @@
       "writtenOn": "2016-12-28T03:28:28Z",
       "side": 1,
       "message": "just do this in one easy to read function?\n\ndef create_idp(self, idp_id, idp):\n        if not idp.get(\u0027domain_id\u0027):\n          domain_id \u003d uuid.uuid4().hex\n          desc \u003d \u0027Auto generated federated domain for Identity Provider: \u0027\n          desc +\u003d idp_id\n          domain \u003d {\n              \u0027id\u0027: domain_id,\n              \u0027name\u0027: domain_id,\n              \u0027description\u0027: desc,\n              \u0027enabled\u0027: True\n            }\n            self.resource_api.create_domain(domain[\u0027id\u0027], domain)\n            idp[\u0027domain_id\u0027] \u003d domain_id\n        else:\n            self.resource_api.get_domain(domain_id)\n        return self.driver.create_idp(idp_id, idp)",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 18
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_73a921df",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T15:51:59Z",
+      "side": 1,
+      "message": "I like breaking functions up into small pieces, but see your point",
+      "parentUuid": "da4df55a_3a43bc43",
       "range": {
         "startLine": 66,
         "startChar": 8,
@@ -100,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_e007f919",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T15:51:59Z",
+      "side": 1,
+      "message": "this is just validation to ensure the domain exists.",
+      "parentUuid": "da4df55a_9a46684d",
+      "range": {
+        "startLine": 70,
+        "startChar": 17,
+        "endLine": 70,
+        "endChar": 40
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_3a157c3f",
         "filename": "keystone/federation/core.py",
         "patchSetId": 35
@@ -111,6 +177,30 @@
       "writtenOn": "2016-12-28T03:28:28Z",
       "side": 1,
       "message": "just put this at line 70, why make a one use function",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 47
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b3ab89d5",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T15:51:59Z",
+      "side": 1,
+      "message": "True",
+      "parentUuid": "da4df55a_3a157c3f",
       "range": {
         "startLine": 87,
         "startChar": 8,
