@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_a715f949",
+        "filename": "keystone/common/sql/expand_repo/versions/012_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T22:07:07Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be in the contract repo?",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 73
+      },
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e70b8128",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-04T22:07:07Z",
+      "side": 1,
+      "message": "extra line",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
