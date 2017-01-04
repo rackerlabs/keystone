@@ -46,6 +46,30 @@
       "revId": "0a7f5ae3cb1c0361e4ae65967510e3679b0e5f6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_67807b47",
+        "filename": "api-ref/source/v3/parameters.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2017-01-04T17:25:27Z",
+      "side": 1,
+      "message": "The document I looked at was http://xmpp.org/extensions/xep-0082.html#sect-idp691152 , which says \"fractional second addendum to Time (MAY contain any number of digits)\" -- not sure if we need to say that .sss is going to have 6 digits or that it\u0027s always going to be 0.",
+      "parentUuid": "ba5201f7_0a10b34d",
+      "range": {
+        "startLine": 924,
+        "startChar": 27,
+        "endLine": 924,
+        "endChar": 30
+      },
+      "revId": "0a7f5ae3cb1c0361e4ae65967510e3679b0e5f6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
