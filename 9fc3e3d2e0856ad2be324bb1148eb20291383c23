@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_1d68d486",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:49:08Z",
+      "side": 1,
+      "message": "Technically - I think this is fine since keys is just a list. It\u0027s just a little weird to look at the syntax and figure out what we\u0027re asserting. What we\u0027re doing here is just making sure the first key in the list is actually not empty. If we really wanted to be verbose I guess we could add a comment explaining why the assertion is being made (like, why aren\u0027t we checking the same thing for the second key in the list?). We could also do:\n\n  self.assertIsInstance(keys[0], str)\n\nBut, we could just make our own key assertion function, too\n\n  def assertValidFernetKey(self, key):\n      # ensure the length of the key is greater than 0\n      self.assertGreater(len(keys[0], 0)\n      # ensure the key is actually a string\n      self.assertIsInstance(key, str)\n\nThen this test would turn into:\n\n  keys \u003d key_utils.load_keys()\n  for key in keys:\n      self.assertValidFernetKey(key)\n\nWhich might seem to a little more readable to some.",
+      "revId": "9fc3e3d2e0856ad2be324bb1148eb20291383c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
