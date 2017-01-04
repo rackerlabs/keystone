@@ -290,6 +290,10 @@ class BasePayload(object):
         :returns: uuid hex formatted string
 
         """
+        if uuid_byte_string is not None:
+            if len(uuid_byte_string) != 16:
+                raise ValueError(
+                    '%r is not a 16-char string' % uuid_byte_string)
         uuid_obj = uuid.UUID(bytes=uuid_byte_string)
         return uuid_obj.hex
 
