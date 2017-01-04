@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_7a9d6909",
+        "filename": "api-ref/source/v2/overview.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 20380
+      },
+      "writtenOn": "2017-01-04T20:52:40Z",
+      "side": 1,
+      "message": "nit: there\u0027s another \"next\" here.",
+      "range": {
+        "startLine": 218,
+        "startChar": 25,
+        "endLine": 218,
+        "endChar": 29
+      },
+      "revId": "eb65886faa6b65abcd0748b4ed4a0908f6d883f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
