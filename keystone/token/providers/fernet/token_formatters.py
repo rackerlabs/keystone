@@ -290,6 +290,10 @@ class BasePayload(object):
         :returns: uuid hex formatted string
 
         """
+        if uuid_byte_string is not None:
+            if len(uuid_byte_string) != 16:
+                raise ValueError(
+                    '%r is not a 16-char string' % uuid_byte_string)
         uuid_obj = uuid.UUID(bytes=uuid_byte_string)
         return uuid_obj.hex
 
@@ -428,7 +432,7 @@ class DomainScopedPayload(BasePayload):
             domain_id = cls.convert_uuid_bytes_to_hex(payload[2])
         except ValueError:
             # the default domain ID is configurable, and probably isn't a UUID
-            if payload[2] == CONF.identity.default_domain_id:
+            if payload[2] == six.b(CONF.identity.default_domain_id):
                 domain_id = payload[2]
             else:
                 raise
