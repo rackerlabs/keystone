@@ -25,6 +25,92 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_6a8f582a",
+        "filename": "keystone/common/sql/expand_repo/versions/012_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "Yeah - I would think so. If we remove the foreign key constraint momentarily we have a small slice of time where it\u0027s possible to do things on the federated_table and protocol_table without the constraint being enforced, since we\u0027re not making the tables read only either.\n\nDo we have the ability to do the following with triggers? \n\n- create a new foreign key constraint using a specific name (expand phase)\n- drop the old foreign key constraint (contract phase)\n- rename the new constraint (contract phase)",
+      "parentUuid": "ba5201f7_a715f949",
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8a0abc77",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1843,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "We could upgrade to 11 and assert that we aren\u0027t able to delete protocols because of the inadequate foreign key constraint.",
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8a339c61",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1888,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "nit: if we\u0027re not reusing these we could just leave them inline in the function and use a comment to explain what they are doing.",
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8a81dcc5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2928,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "We can assert here that a new shadow user has been persisted in the backend.",
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_aa5dc07a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2931,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "We can also assert here that the newly created shadow user from line 2928 is no longer here as a result of deleting the protocol. This would be nice because that\u0027s the only difference between the old foreign key constraint and the new one.",
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e70b8128",
         "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
         "patchSetId": 9
@@ -42,6 +128,23 @@
         "endLine": 3,
         "endChar": 5
       },
+      "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0ae40caa",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-04T22:32:50Z",
+      "side": 1,
+      "message": "Does it make sense to include a warning here for deployers? Are there any cases where they need to be extra careful when removing a protocol? Is there a specific workflow where this is valuable?",
       "revId": "ec22012e7e67da267b17f96ae5ece8def78a40b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
