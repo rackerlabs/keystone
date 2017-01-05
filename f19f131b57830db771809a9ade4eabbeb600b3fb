@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_d9c72096",
+        "filename": "keystone_tempest_plugin/tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-05T16:26:00Z",
+      "side": 1,
+      "message": "this change seems unnecessary",
+      "revId": "f19f131b57830db771809a9ade4eabbeb600b3fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
