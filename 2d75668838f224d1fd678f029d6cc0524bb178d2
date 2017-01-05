@@ -22,6 +22,30 @@
       "revId": "2d75668838f224d1fd678f029d6cc0524bb178d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_df18ebd5",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-05T13:15:16Z",
+      "side": 1,
+      "message": "this sounds like that some tests are leaving garbage behind.",
+      "parentUuid": "ba5201f7_4a62943f",
+      "range": {
+        "startLine": 839,
+        "startChar": 0,
+        "endLine": 839,
+        "endChar": 73
+      },
+      "revId": "2d75668838f224d1fd678f029d6cc0524bb178d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
