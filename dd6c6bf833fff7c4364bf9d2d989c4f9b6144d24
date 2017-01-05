@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_e07607d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-05T00:28:17Z",
+      "side": 1,
+      "message": "why the depends on?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "dd6c6bf833fff7c4364bf9d2d989c4f9b6144d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a0707fdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-05T00:28:17Z",
+      "side": 1,
+      "message": "why does this patch depend on this one?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "dd6c6bf833fff7c4364bf9d2d989c4f9b6144d24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
