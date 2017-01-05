@@ -118,6 +118,24 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_17016805",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 24681
+      },
+      "writtenOn": "2017-01-05T19:48:51Z",
+      "side": 1,
+      "message": "Ug, and now I look at it more, there\u0027s a whole world of idiosyncracies in terms of how pycodestyle / pep8 \u0027select\u0027 and \u0027ignore\u0027 work, and how it decides which codes are associated with which checks. Basically, you can pass the codes in as an arg when you call `register_check`; if you don\u0027t, and the check is a function, it will look in the check\u0027s docstring for any string that matches a regex designed to find code-ish strings - ERRORCODE_REGEX \u003d re.compile(r\u0027\\b[A-Z]\\d{3}\\b\u0027) , so best hope you never need more than 999 codes! - and if it gets any matches, it\u0027ll use them as the list of codes.\n\nIf you don\u0027t pass any codes to `register_check`, and the check is a class not a function or the function\u0027s docstring doesn\u0027t contain any codes, then the check will be registered with *no* associated codes - and due to how the \u0027select\u0027 code works, all checks with no associated codes will always be selected if any \u0027select\u0027 value is specified. In fact that whole area in pycodestyle (look at the `StyleGuide.ignore_code` method, if you\u0027re interested) is rather weird and janky and doesn\u0027t seem to know whether it wants the \u0027select\u0027 and \u0027ignore\u0027 options to be iterables or strings.\n\nIn other words, this whole thing is a mess and I hate it all and you may as well just keep your mock certainly in keystone, as no-one\u0027s paying me to spend a week cleaning this up. Now I dug into this stuff even more, I can see that my patch for python-keystoneclient is also slightly incorrect and is only actually working on a technicality (the \u0027all checks with no code are selected if any \u0027select\u0027 value is specified\u0027 technicality, as the check gets registered with no code the way things are currently written). I\u0027ll fix up the patch for python-keystoneclient, but it\u0027d be rather more work to make this change appropriate for keystone and I don\u0027t think I wanna do that work.",
+      "parentUuid": "ba5201f7_316afcee",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
