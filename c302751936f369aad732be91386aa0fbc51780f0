@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_e2d99658",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-05T13:54:00Z",
+      "side": 1,
+      "message": "(nit) I don\u0027t think I\u0027d give this a name and instead use \"shadow_project[\u0027roles\u0027]\" directly in the \u0027for\u0027 statement.",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e2c0b652",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-05T13:54:00Z",
+      "side": 1,
+      "message": "Remove \u0027.keys()\u0027. This will use a keys iterator internally so it\u0027s cleaner looking and slightly faster on Py2.",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_acdb87ec",
         "filename": "keystone/federation/utils.py",
         "patchSetId": 1
@@ -13,6 +47,23 @@
       "writtenOn": "2016-12-30T19:08:59Z",
       "side": 1,
       "message": "I had to add this in order to get the projects and the roles from the mapping into the mapped_properties. This is what I think should go into David\u0027s patch eventually.",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_02585a89",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3149,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-05T13:54:00Z",
+      "side": 1,
+      "message": "You can drop \u0027.keys()\u0027 here too",
       "revId": "c302751936f369aad732be91386aa0fbc51780f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
