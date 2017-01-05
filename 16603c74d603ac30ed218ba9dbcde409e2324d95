@@ -16,6 +16,24 @@
       "revId": "16603c74d603ac30ed218ba9dbcde409e2324d95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_114d1bc4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-05T01:52:36Z",
+      "side": 1,
+      "message": "Ah sorry! Yeah it\u0027s not very clear here, I\u0027ll update this to show it better.",
+      "parentUuid": "ba5201f7_3d62f83e",
+      "revId": "16603c74d603ac30ed218ba9dbcde409e2324d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
