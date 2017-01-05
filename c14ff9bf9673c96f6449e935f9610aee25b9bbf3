@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_9f7ca3b6",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-05T13:21:47Z",
+      "side": 1,
+      "message": "++ without Steve\u0027s suggestion the change is wrong.",
+      "parentUuid": "ba5201f7_3d7bd8f6",
+      "revId": "c14ff9bf9673c96f6449e935f9610aee25b9bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_bff574cc",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 1
