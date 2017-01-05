@@ -16,6 +16,24 @@
       "revId": "8ff8ef7ee68e981f66574e3ed5a19d3bd5f1b55e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_1956085c",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-05T16:33:32Z",
+      "side": 1,
+      "message": "It is needed for filter_limit_query, otherwise, the whole thing does not return the expected query. Inside filter_limit_query it uses hints to check any remaining filters. If it is None then there are no filter limits that it needs to still apply. Basically, we remove the unique_id filter so that it does not use that in the filter_limit_query and mistakenly try to satisfy filters we have already satisfied in the custom query above.",
+      "parentUuid": "ba5201f7_f56a4a80",
+      "revId": "8ff8ef7ee68e981f66574e3ed5a19d3bd5f1b55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
