@@ -58,6 +58,48 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_dc570e58",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 24681
+      },
+      "writtenOn": "2017-01-05T19:08:50Z",
+      "side": 1,
+      "message": "it\u0027s the check\u0027s name/code for pep8/pycodestyle/flake8. It\u0027s already just included as a string in the actual check definition, and like 20 times in the `expected_errors` list. Making it into a variable seems like it would better be done as a separate commit.",
+      "parentUuid": "ba5201f7_5fa23b9a",
+      "range": {
+        "startLine": 42,
+        "startChar": 40,
+        "endLine": 42,
+        "endChar": 44
+      },
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_51b22007",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 24681
+      },
+      "writtenOn": "2017-01-05T19:08:50Z",
+      "side": 1,
+      "message": "So I wrote this change as a patch to python-keystoneclient , which isn\u0027t really the same at all. I don\u0027t know what\u0027s going on with how Steve has adapted my patch.\n\nYou can see my original patch here:\n\nhttps://bugs.launchpad.net/python-keystoneclient/+bug/1652458/+attachment/4796141/+files/0001-Work-with-pep8-and-pycodestyle-don-t-use-pep8-intern.patch\n\nIt\u0027s changing a *specific* test class - TestCheckOsloNamespaceImports - a test that\u0027s particular to this K333 check. I don\u0027t know what the relation is between that file and this one, but the change indeed doesn\u0027t look like it makes much sense when applied to a more *generic* class (which looks like it\u0027s intended to be inherited by various different test classes for different pep8 checks) like this.\n\nWhat the change actually does is construct a pep8 / pycodestyle StyleGuide instance which will only run checks for a test called \u0027K333\u0027 - if you specify the \u0027select\u0027 arg for a StyleGuide instance, it will *only* select checks that match the value - and feed that StyleGuide to the checker, so the checker will only run that check.\n\nI\u0027m not terribly familiar with this code, but just eyeballing it, to make sense in this context, the patch should be adjusted to get the value for the \u0027select\u0027 arg from the checker instance returned by get_checker (rather than hardcoding \u0027K333\u0027).",
+      "parentUuid": "ba5201f7_312d9c95",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
