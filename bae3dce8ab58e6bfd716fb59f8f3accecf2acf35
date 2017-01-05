@@ -22,6 +22,24 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0e1a397d",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-05T18:51:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5201f7_5fa23b9a",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
