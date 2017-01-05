@@ -40,6 +40,24 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_312d9c95",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T18:53:11Z",
+      "side": 1,
+      "message": "I think it a comment could be enough.\n\nSame comment as in https://review.openstack.org/#/c/416829/\n\nIt\u0027s not clear why this replaces the mocking above. The old comment says the mock was needed to reset all the checks and only make available the registered ones in L28",
+      "parentUuid": "ba5201f7_0e1a397d",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
