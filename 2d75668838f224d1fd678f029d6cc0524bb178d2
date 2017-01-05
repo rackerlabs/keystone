@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_95c38d88",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-05T22:39:08Z",
+      "side": 1,
+      "message": "This would allow users to change their password without an authentication token, right?",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 56
+      },
+      "revId": "2d75668838f224d1fd678f029d6cc0524bb178d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_55f685f9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-05T22:39:08Z",
+      "side": 1,
+      "message": "Do you need this? If you are not catching this exception, it will automatically be raised. Likewise, if exception.UserDisabled is thrown:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/sql.py#L67",
+      "range": {
+        "startLine": 1294,
+        "startChar": 8,
+        "endLine": 1295,
+        "endChar": 17
+      },
+      "revId": "2d75668838f224d1fd678f029d6cc0524bb178d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_4a62943f",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 11
