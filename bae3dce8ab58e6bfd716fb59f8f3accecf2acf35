@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_5fa23b9a",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-05T13:12:22Z",
+      "side": 1,
+      "message": "what is this? It is better having a constant/variable to name it.",
+      "range": {
+        "startLine": 42,
+        "startChar": 40,
+        "endLine": 42,
+        "endChar": 44
+      },
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
