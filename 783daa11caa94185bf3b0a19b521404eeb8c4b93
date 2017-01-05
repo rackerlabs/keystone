@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_98af4429",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T23:45:12Z",
+      "side": 1,
+      "message": "these comments are not necessary, code is pretty about the checks",
+      "range": {
+        "startLine": 688,
+        "startChar": 8,
+        "endLine": 690,
+        "endChar": 45
+      },
+      "revId": "783daa11caa94185bf3b0a19b521404eeb8c4b93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
