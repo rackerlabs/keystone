@@ -16,6 +16,24 @@
       "revId": "9fc3e3d2e0856ad2be324bb1148eb20291383c23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_dff46b5c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-05T13:19:23Z",
+      "side": 1,
+      "message": "nice explanation, your custom assertion suggestion looks much better to me.",
+      "parentUuid": "ba5201f7_1d68d486",
+      "revId": "9fc3e3d2e0856ad2be324bb1148eb20291383c23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
