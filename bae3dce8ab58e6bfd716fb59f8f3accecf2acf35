@@ -100,6 +100,24 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_316afcee",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 24681
+      },
+      "writtenOn": "2017-01-05T19:15:08Z",
+      "side": 1,
+      "message": "OK, yeah, I went and looked at the actual checks that derive from this base class, and you\u0027d have to do a bit more work to make this change make sense in this context. You\u0027d need a way to conveniently get the appropriate check codes for each check class (including the ones which can return *multiple* codes, like CheckForAssertingNoneEquality , which produces K003 and K004).\n\nI still don\u0027t understand why Steve took my patch for python-keystoneclient and made it into a patch for keystone, but hey.",
+      "parentUuid": "ba5201f7_51b22007",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
