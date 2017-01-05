@@ -12,7 +12,6 @@
 
 import textwrap
 
-import mock
 import pep8
 
 from keystone.tests.hacking import checks
@@ -35,16 +34,13 @@ class BaseStyleCheck(unit.BaseTestCase):
     def get_fixture(self):
         return hacking_fixtures.HackingCode()
 
-    # We are patching pep8 so that only the check under test is actually
-    # installed.
-    @mock.patch('pep8._checks',
-                {'physical_line': {}, 'logical_line': {}, 'tree': {}})
     def run_check(self, code):
         pep8.register_check(self.get_checker())
 
         lines = textwrap.dedent(code).strip().splitlines(True)
 
-        checker = pep8.Checker(lines=lines)
+        guide = pep8.StyleGuide(select='K333')
+        checker = pep8.Checker(lines=lines, options=guide.options)
         checker.check_all()
         checker.report._deferred_print.sort()
         return checker.report._deferred_print
