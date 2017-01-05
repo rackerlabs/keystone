@@ -136,6 +136,24 @@
       "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_7d6ff52a",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-05T21:22:53Z",
+      "side": 1,
+      "message": "\"I still don\u0027t understand why Steve took my patch for python-keystoneclient and made it into a patch for keystone, but hey.\"\n\nMy bad, I was in a rush to propose patches before logging off for the night. I remembered that we had the same K333 check in keystone (it has since been removed) and blindly replaced where the mock was.",
+      "parentUuid": "ba5201f7_316afcee",
+      "revId": "bae3dce8ab58e6bfd716fb59f8f3accecf2acf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
