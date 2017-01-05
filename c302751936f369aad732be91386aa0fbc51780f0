@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_e8d6c5ef",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-05T21:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_e2d99658",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e2c0b652",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-05T13:54:00Z",
       "side": 1,
       "message": "Remove \u0027.keys()\u0027. This will use a keys iterator internally so it\u0027s cleaner looking and slightly faster on Py2.",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_48fc3172",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-05T21:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_e2c0b652",
       "revId": "c302751936f369aad732be91386aa0fbc51780f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2017-01-05T13:54:00Z",
       "side": 1,
       "message": "You can drop \u0027.keys()\u0027 here too",
+      "revId": "c302751936f369aad732be91386aa0fbc51780f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_2880cdbf",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3149,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-05T21:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_02585a89",
       "revId": "c302751936f369aad732be91386aa0fbc51780f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
