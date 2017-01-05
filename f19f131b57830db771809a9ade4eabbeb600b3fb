@@ -16,6 +16,24 @@
       "revId": "f19f131b57830db771809a9ade4eabbeb600b3fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_bcc08a51",
+        "filename": "keystone_tempest_plugin/tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-05T16:44:47Z",
+      "side": 1,
+      "message": "yeah... but since it is the constructor of the affected class, I\u0027d changed so it is not using a positional argument as a keyword one.",
+      "parentUuid": "ba5201f7_d9c72096",
+      "revId": "f19f131b57830db771809a9ade4eabbeb600b3fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
