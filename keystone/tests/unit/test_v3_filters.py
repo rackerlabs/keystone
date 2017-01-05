@@ -14,10 +14,14 @@
 # under the License.
 
 import datetime
+from six.moves import http_client
 
 import freezegun
+from oslo_config import fixture as config_fixture
 from oslo_serialization import jsonutils
 from six.moves import range
+
+from keystone.common import sql
 
 import keystone.conf
 from keystone.tests import unit
@@ -39,6 +43,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
     def setUp(self):
         """Setup for Identity Filter Test Cases."""
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.tempfile = self.useFixture(temporaryfile.SecureTempFile())
         self.tmpfilename = self.tempfile.file_name
         super(IdentityTestFilteredCase, self).setUp()
@@ -68,13 +73,29 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.domainC['enabled'] = False
         self.resource_api.create_domain(self.domainC['id'], self.domainC)
 
-        # Now create some users, one in domainA and two of them in domainB
-        self.user1 = unit.create_user(self.identity_api,
-                                      domain_id=self.domainA['id'])
-        self.user2 = unit.create_user(self.identity_api,
-                                      domain_id=self.domainB['id'])
-        self.user3 = unit.create_user(self.identity_api,
-                                      domain_id=self.domainB['id'])
+        self.user = unit.create_user(self.identity_api,
+                                     domain_id=self.domainA['id'])
+
+        self.project = unit.new_project_ref(domain_id=self.domainA['id'])
+        self.project_id = self.project['id']
+        self.project = self.resource_api.create_project(self.project_id,
+                                                        self.project)
+
+        self.starttime = datetime.datetime.utcnow()
+        with freezegun.freeze_time(self.starttime):
+            self.config_fixture.config(group='security_compliance',
+                                       password_expires_days=1)
+            # Now create some users, one in domainA and two of them in domainB
+            self.user1 = unit.create_user(self.identity_api,
+                                          domain_id=self.domainA['id'])
+            self.config_fixture.config(group='security_compliance',
+                                       password_expires_days=2)
+            self.user2 = unit.create_user(self.identity_api,
+                                          domain_id=self.domainB['id'])
+            self.config_fixture.config(group='security_compliance',
+                                       password_expires_days=3)
+            self.user3 = unit.create_user(self.identity_api,
+                                          domain_id=self.domainB['id'])
 
         self.role = unit.new_role_ref()
         self.role_api.create_role(self.role['id'], self.role)
@@ -231,6 +252,182 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
             self.assertEqual(1, len(r.result.get('users')))
             self.assertEqual(user['id'], r.result.get('users')[0]['id'])
+
+    def _list_users_by_password_expires_at(
+            self, time, operator=None, expected_status=http_client.OK):
+        url_by_name = '/users?password_expires_at='
+        if operator and time:
+            url_by_name += operator + ':' + str(time)
+        else:
+            url_by_name += str(time)
+        response = self.get(url_by_name, auth=self.auth,
+                            expected_status=expected_status)
+        if expected_status == http_client.OK:
+            return jsonutils.loads(response.body.decode('utf-8'))['users']
+
+    def _list_users_by_multiple_password_expires_at(
+            self, time1, operator1, time2, operator2):
+        url_by_name = (
+            '/users?password_expires_at=%s:%s&password_expires_at=%s:%s' %
+            (operator1, time1, operator2, time2))
+        response = self.get(url_by_name, auth=self.auth)
+        return jsonutils.loads(response.body.decode('utf-8'))['users']
+
+    def _format_timestamp(self, timestamp):
+        return timestamp.strftime("%Y-%m-%dT%H:%M:%S.000000")
+
+    def test_list_users_by_password_expires_at(self):
+        """GET /users?password_expires_at={timestamp}.
+           GET /users?password_expires_at=eq:{timestamp}.
+
+           - Ensures filter on equality functions
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self.assertEqual(1, len(self._list_users_by_password_expires_at(
+            self._format_timestamp(
+                self.starttime + datetime.timedelta(days=2)))))
+        # Same call as above, only explicitly stating equals
+        self.assertEqual(1, len(self._list_users_by_password_expires_at(
+            self._format_timestamp(self.starttime + datetime.timedelta(
+                days=2)), 'eq')))
+
+    def test_list_users_by_password_expires_before(self):
+        """GET /users?password_expires_at=lt:{timestamp}.
+
+           - Ensures filter on equality less than
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self.assertEqual(2, len(self._list_users_by_password_expires_at(
+            self._format_timestamp(self.starttime + datetime.timedelta(
+                days=2, seconds=1)), 'lt')))
+
+    def test_list_users_by_password_expires_after(self):
+        """GET /users?password_expires_at=gt:{timestamp}.
+
+           - Ensures filter on equality greater than
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self.assertEqual(1, len(self._list_users_by_password_expires_at(
+            self._format_timestamp(self.starttime + datetime.timedelta(
+                days=2, seconds=1)), 'gt')))
+
+    def test_list_users_password_expires_interval(self):
+        """GET /users?password_expires_at=lt:{timestamp}&gt:{timestamp}.
+
+           - Ensures filter on and time interval
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self.assertEqual(3, len(
+            self._list_users_by_multiple_password_expires_at(
+                self._format_timestamp(self.starttime), 'gt',
+                self._format_timestamp(self.starttime + datetime.timedelta(
+                    days=3, seconds=1)), 'lt')))
+
+    def test_list_user_password_expires_bad_operator(self):
+        """GET /users?password_expires_at={invalid_operator}:{timestamp}.
+
+           - Ensures a bad operator is caught
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self._list_users_by_password_expires_at(
+            self._format_timestamp(self.starttime), 'bad',
+            expected_status=http_client.BAD_REQUEST)
+
+    def test_list_user_password_expires_bad_timestamp(self):
+        """GET /users?password_expires_at={invalid_timestamp}.
+
+           - Ensures a bad timestamp is caught
+
+        """
+        self._set_policy({"identity:list_users": []})
+        self._list_users_by_password_expires_at(
+            self.starttime.strftime('%S:%M:%ST%Y-%m-%d'),
+            expected_status=http_client.BAD_REQUEST)
+
+    def _get_domain_fixture(self):
+        domain = unit.new_domain_ref()
+        self.resource_api.create_domain(domain['id'], domain)
+        return domain
+
+    def _list_users_in_group_by_password_expires_at(self, groupid,
+                                                    operator, time):
+        url_by_name = '/groups/%s/users?password_expires_at=%s:%s' % \
+            (groupid, operator, time)
+        response = self.get(url_by_name, auth=self.auth)
+        return jsonutils.loads(response.body.decode('utf-8'))['users']
+
+    def _list_users_in_group_multiple_password_expires_at(
+            self, groupid, operator1, time1, operator2, time2):
+        url_by_name = ('/groups/%s/users?password_expires_at=%s:%s&'
+                       'password_expires_at=%s:%s') % (groupid, operator1,
+                                                       time1, operator2, time2)
+        response = self.get(url_by_name, auth=self.auth)
+        return jsonutils.loads(response.body.decode('utf-8'))['users']
+
+    def test_list_users_in_group_by_password_expires_at(self):
+        """GET /groups/{group_id}/users?password_expires_at={comparator}:{timestamp}.
+
+        Test Plan:
+
+        - Create a group and a user with a password expiration timestamp
+        - Ensure we can filter on users in group successfully
+
+        """
+        created_time = datetime.datetime.utcnow()
+        expired_time = created_time + datetime.timedelta(days=1)
+        before_time = expired_time - datetime.timedelta(days=2)
+        after_time = expired_time + datetime.timedelta(days=2)
+        op_assoc = {'eq': [expired_time, after_time],
+                    'ne': [after_time, expired_time],
+                    'lt': [after_time, before_time],
+                    'le': [after_time, before_time],
+                    'gt': [before_time, after_time],
+                    'ge': [before_time, after_time]}
+        two_op_assoc = {'lt': 'gt', 'le': 'ge', 'ne': 'gt'}
+
+        domain = self._get_domain_fixture()
+        new_group = unit.new_group_ref(domain_id=domain['id'])
+        new_group = self.identity_api.create_group(new_group)
+        # Make sure we get an empty list back on a new group, not an error.
+        user_refs = self.identity_api.list_users_in_group(new_group['id'])
+        self.assertEqual([], user_refs)
+        # Make sure we get the correct users back once they have been added
+        # to the group.
+        for i in range(0, 2):
+            new_user = unit.new_user_ref(domain_id=domain['id'])
+            new_user = self.identity_api.create_user(new_user)
+            self.identity_api.add_user_to_group(new_user['id'],
+                                                new_group['id'])
+
+        user_refs = self.identity_api.list_users_in_group(new_group['id'])
+        user1_ref = self._get_user_ref(user_refs[0]['id'])
+        user2_ref = self._get_user_ref(user_refs[1]['id'])
+        self._set_policy({"identity:list_users_in_group": []})
+
+        with sql.session_for_write() as session:
+            user1_ref.password_ref.created_at = created_time
+            user1_ref.password_ref.expires_at = expired_time
+            session.add(user1_ref, user2_ref)
+
+            for op, times in op_assoc.items():
+                user2_ref.password_ref.expires_at = times[1]
+                self.assertEqual(
+                    1, len(self._list_users_in_group_by_password_expires_at(
+                        new_group['id'], op, times[0])))
+                self.assertEqual(
+                    0, len(self._list_users_in_group_by_password_expires_at(
+                        new_group['id'], op, times[1])))
+            for op1, op2 in two_op_assoc.items():
+                user2_ref.password_ref.expires_at = op_assoc[op2][1]
+                self.assertEqual(1, len(
+                    self._list_users_in_group_multiple_password_expires_at(
+                        new_group['id'], op1, op_assoc[op1][0],
+                        op2, op_assoc[op2][0])))
 
     def test_inexact_filters(self):
         # Create 20 users

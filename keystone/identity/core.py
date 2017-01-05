@@ -15,6 +15,7 @@
 """Main entry point into the Identity service."""
 
 import functools
+import operator
 import os
 import threading
 import uuid
@@ -22,6 +23,7 @@ import uuid
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
+from oslo_utils import timeutils
 from pycadf import reason
 
 from keystone import assignment  # TODO(lbragstad): Decouple this dependency
@@ -958,6 +960,29 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def _clean_up_expired_password_hints(self, hints):
+        operators = {'lt': operator.lt, 'gt': operator.gt,
+                     'eq': operator.eq, 'le': operator.le,
+                     'ge': operator.ge, 'ne': operator.ne}
+
+        for filter_ in hints.filters:
+            if 'password_expires_at' == filter_['name']:
+                value = filter_['value']
+                op, timestamp = value.split(':', 1)
+                if op in operators:
+                    filter_['comparator'] = operators[op]
+                    filter_['value'] = timestamp
+                elif op.isalpha():
+                    raise exception.ValidationOperatorError()
+                else:
+                    timestamp = filter_['value']
+                    filter_['comparator'] = operators['eq']
+                try:
+                    timeutils.parse_isotime(timestamp)
+                except ValueError:
+                    raise exception.ValidationTimeStampError()
+        return hints
+
     @domains_configured
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
@@ -972,6 +997,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users(hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
@@ -1257,6 +1283,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users_in_group(entity_id, hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.USER)
