@@ -22,6 +22,30 @@
       "revId": "36e6ffd8170fc0b0eb36aff8d648b9da6bfbdd6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_48da8a18",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-01-05T11:16:26Z",
+      "side": 1,
+      "message": "Just as with the admin role, this is a global assignment, with special privs:  to validate tokens, regardless of the token\u0027s project.",
+      "parentUuid": "1a6eadb0_0a61aba8",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 61
+      },
+      "revId": "36e6ffd8170fc0b0eb36aff8d648b9da6bfbdd6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
