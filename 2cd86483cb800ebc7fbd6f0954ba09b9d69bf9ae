@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_d1fa9042",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T19:19:37Z",
+      "side": 1,
+      "message": "not sure how this refactoring relates to that bug",
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_d1a8d022",
+        "filename": "keystone/common/sql/contract_repo/versions/011_extract_redelegation_data_from_extras.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T19:19:37Z",
+      "side": 1,
+      "message": "these should be updated to 012",
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_9179e8ca",
+        "filename": "keystone/common/sql/data_migration_repo/versions/011_extract_redelegation_data_from_extras.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T19:19:37Z",
+      "side": 1,
+      "message": "this could be removed",
+      "range": {
+        "startLine": 27,
+        "startChar": 39,
+        "endLine": 27,
+        "endChar": 58
+      },
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_31383cef",
+        "filename": "keystone/common/sql/data_migration_repo/versions/011_extract_redelegation_data_from_extras.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T19:19:37Z",
+      "side": 1,
+      "message": "could be replaced by:\n\n    new_values[\u0027redelegated_trust_id\u0027] \u003d extra_dict.pop(\u0027redelegated_trust_id\u0027, None)\n    new_values[\u0027redelegation_count\u0027] \u003d extra_dict.pop(\u0027redelegation_count\u0027, None)",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 22
+      },
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_e3d560b9",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1906,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-05T19:19:37Z",
+      "side": 1,
+      "message": "Nicely tested",
+      "range": {
+        "startLine": 1900,
+        "startChar": 0,
+        "endLine": 1906,
+        "endChar": 59
+      },
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
