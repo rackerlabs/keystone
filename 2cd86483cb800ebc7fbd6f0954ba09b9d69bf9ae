@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_32eeb2ec",
+        "filename": "keystone/common/sql/contract_repo/versions/011_extract_redelegation_data_from_extras.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-05T22:01:24Z",
+      "side": 1,
+      "message": "remove this comment, it\u0027s incorrect",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "2cd86483cb800ebc7fbd6f0954ba09b9d69bf9ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_9179e8ca",
         "filename": "keystone/common/sql/data_migration_repo/versions/011_extract_redelegation_data_from_extras.py",
         "patchSetId": 6
