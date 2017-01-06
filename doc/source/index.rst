@@ -73,9 +73,16 @@ Advanced Topics
 ===============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    federation/federated_identity
+   federation/configure_federation
+   federation/mapping_combinations
+   federation/mellon
+   federation/openidc
+   federation/shibboleth
+   federation/websso
+
 .. toctree::
    :maxdepth: 1
 
@@ -117,6 +124,7 @@ Man Pages
     :maxdepth: 1
 
     man/keystone-manage
+    man/commands
 
 Code Documentation
 ==================
