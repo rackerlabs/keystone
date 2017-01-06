@@ -22,6 +22,40 @@
       "revId": "8c190a1a29dbb17fee044827fc9b651918dfc51e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_398e412e",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-06T17:02:58Z",
+      "side": 1,
+      "message": "These could be pulled into the dictionary that needs them - but we can do that in a follow on and is totally a style thing.",
+      "revId": "8c190a1a29dbb17fee044827fc9b651918dfc51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_5959458d",
+        "filename": "keystone/federation/schema.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-06T17:02:58Z",
+      "side": 1,
+      "message": "The duplication in between these two makes me want to investigate jsd more - https://github.com/dstanek/jsd",
+      "revId": "8c190a1a29dbb17fee044827fc9b651918dfc51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
