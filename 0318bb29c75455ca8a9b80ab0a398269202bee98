@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_6aa1c6f7",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-06T19:26:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_f4383bd5",
+      "revId": "0318bb29c75455ca8a9b80ab0a398269202bee98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_f1520d66",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-06T18:18:05Z",
       "side": 1,
       "message": "I think everything after \"disabled.\" can be removed. It\u0027s redundant.",
+      "revId": "0318bb29c75455ca8a9b80ab0a398269202bee98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8aa42a08",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-06T19:26:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_f1520d66",
       "revId": "0318bb29c75455ca8a9b80ab0a398269202bee98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
