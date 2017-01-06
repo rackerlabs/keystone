@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_5b1852d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-06T21:39:59Z",
+      "side": 1,
+      "message": "this change: 671cb9c5d9dc4d93adc51134faf5fe5fb5e2db26",
+      "range": {
+        "startLine": 14,
+        "startChar": 9,
+        "endLine": 14,
+        "endChar": 38
+      },
+      "revId": "23ee7694ec07172694363ce7f77c25783cef025f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
