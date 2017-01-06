@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_e93884a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T01:32:28Z",
+      "side": 1,
+      "message": "They will as soon as https://review.openstack.org/#/c/399684/ merges",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "8524f1fdb934fdfeed98de71e4241cf4733e54c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_ad083d29",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 1
