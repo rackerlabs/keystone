@@ -22,6 +22,30 @@
       "revId": "2f23a753d4e69128ebe37bcb6609621c48190635",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_dfbd1503",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-06T17:33:05Z",
+      "side": 1,
+      "message": "by whom? :)",
+      "parentUuid": "ba5201f7_101b12cb",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 88
+      },
+      "revId": "2f23a753d4e69128ebe37bcb6609621c48190635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
