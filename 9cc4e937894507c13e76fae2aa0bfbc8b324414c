@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f0920ef5",
+        "filename": "keystone/federation/core.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T16:05:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_0e54eefc",
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4df55a_3a43bc43",
         "filename": "keystone/federation/core.py",
         "patchSetId": 35
@@ -253,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_50691af8",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1899,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T16:05:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6eadb0_0af07990",
+      "range": {
+        "startLine": 1899,
+        "startChar": 42,
+        "endLine": 1899,
+        "endChar": 48
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_6b980cc1",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 35
@@ -276,6 +318,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f0804e8d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T16:05:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_6b980cc1",
+      "range": {
+        "startLine": 883,
+        "startChar": 8,
+        "endLine": 883,
+        "endChar": 49
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_cb01f807",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 35
@@ -287,6 +353,30 @@
       "writtenOn": "2017-01-06T00:36:04Z",
       "side": 1,
       "message": "this is incorrect, should be:\n\n    body[\u0027identity_provider\u0027][\u0027domain_id\u0027] \u003d domain[\u0027id\u0027]\n\nor put this one line above",
+      "range": {
+        "startLine": 961,
+        "startChar": 8,
+        "endLine": 961,
+        "endChar": 40
+      },
+      "revId": "9cc4e937894507c13e76fae2aa0bfbc8b324414c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_d05c2a4d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T16:05:29Z",
+      "side": 1,
+      "message": "Wow, nice catch! Thanks Samuel.",
+      "parentUuid": "ba5201f7_cb01f807",
       "range": {
         "startLine": 961,
         "startChar": 8,
