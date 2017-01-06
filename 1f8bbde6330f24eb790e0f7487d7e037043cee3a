@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_8b88d0c6",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T00:29:13Z",
+      "side": 1,
+      "message": "rule:service_or_admin would be a better default because it won\u0027t break people running on the default and using PKI, for instance.",
+      "range": {
+        "startLine": 179,
+        "startChar": 41,
+        "endLine": 179,
+        "endChar": 55
+      },
+      "revId": "1f8bbde6330f24eb790e0f7487d7e037043cee3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_ebbddc68",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T00:29:13Z",
+      "side": 1,
+      "message": "or rule:service_role\n\nsame reasoning as for policy.json",
+      "revId": "1f8bbde6330f24eb790e0f7487d7e037043cee3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
