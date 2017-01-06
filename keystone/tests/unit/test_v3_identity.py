@@ -194,8 +194,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Query strings are not normalized: so we get all users back (like
         # self.user), not just the ones in the specified domain.
         r = self.get(
-            '/users?domain-id=%s' % domain1['id'])
-        self.assertValidUserListResponse(r, ref=self.user)
+            '/users?domain-id=%s' % domain1['id'],
+            expected_status=http_client.BAD_REQUEST)
         self.assertNotEqual(domain1['id'], self.user['domain_id'])
 
         # When creating a new user, if we move the 'domain_id' into the

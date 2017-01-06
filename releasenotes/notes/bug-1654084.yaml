@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Filtering on invalid resource names now returns 400 Bad Request response,
+    instead of being silently ignored.  This lets the calling client to know
+    the calling query is less than correct, and allows the client to correct
+    the query (rather than ignoring the invalid values).
