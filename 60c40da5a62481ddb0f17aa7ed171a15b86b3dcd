@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_550b168e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T18:14:27Z",
+      "side": 1,
+      "message": "Reworded this somewhat to make it more clear and pointing to documentation.",
+      "parentUuid": "ba5201f7_f3a6f151",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_81205df9",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 24
@@ -83,6 +101,24 @@
       "writtenOn": "2016-12-29T17:07:44Z",
       "side": 1,
       "message": "nit: Authentication* only because the upper case A doesn\u0027t match the method signature it\u0027s referring to, but I appreciate the switch to complete sentences :)",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_d53e2627",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T18:14:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_416d9531",
       "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -159,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_27a9097c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T18:14:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_e1c049e3",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_61ad3931",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 24
@@ -170,6 +224,24 @@
       "writtenOn": "2016-12-29T17:07:44Z",
       "side": 1,
       "message": "We can add another authentication here to ensure that the new password works after the first use.",
+      "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_87fc7573",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-06T18:14:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_61ad3931",
       "revId": "60c40da5a62481ddb0f17aa7ed171a15b86b3dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
