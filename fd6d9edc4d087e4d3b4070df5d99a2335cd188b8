@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_09b4d67d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T14:13:31Z",
+      "side": 1,
+      "message": "Please make explicit what retries on deadlock\n\n    test_delete_user_retries_on_deadlock",
+      "range": {
+        "startLine": 552,
+        "startChar": 8,
+        "endLine": 552,
+        "endChar": 32
+      },
+      "revId": "fd6d9edc4d087e4d3b4070df5d99a2335cd188b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_49817e8e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T14:13:31Z",
+      "side": 1,
+      "message": "you\u0027re passing an invalid user_id and this is making the test fail.\n\nthe delete_user calls get_user to make sure the user exists before deleting.\n\nkeystone.exception.UserNotFound: Could not find user: 787a7e321ec54f4ead2c8d26e24ed2ae",
+      "range": {
+        "startLine": 575,
+        "startChar": 42,
+        "endLine": 575,
+        "endChar": 66
+      },
+      "revId": "fd6d9edc4d087e4d3b4070df5d99a2335cd188b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
