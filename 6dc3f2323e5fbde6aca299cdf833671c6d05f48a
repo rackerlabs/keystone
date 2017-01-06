@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_cbfe58ad",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-06T00:09:22Z",
+      "side": 1,
+      "message": "this change is already gating: https://review.openstack.org/#/c/412500/20/tox.ini",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 14
+      },
+      "revId": "6dc3f2323e5fbde6aca299cdf833671c6d05f48a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
