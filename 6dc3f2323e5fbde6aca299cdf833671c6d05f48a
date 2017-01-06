@@ -22,6 +22,30 @@
       "revId": "6dc3f2323e5fbde6aca299cdf833671c6d05f48a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_81d98859",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-01-06T07:31:07Z",
+      "side": 1,
+      "message": "Done. Rebased after merge of that patch.",
+      "parentUuid": "ba5201f7_cbfe58ad",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 14
+      },
+      "revId": "6dc3f2323e5fbde6aca299cdf833671c6d05f48a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
