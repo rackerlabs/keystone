@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_7716064d",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-06T23:16:55Z",
+      "side": 1,
+      "message": "This seems a bit off, maybe \"This means that\" could be an alternative?",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "7ebd71e3e8c4f2dc42efb52b0c73f2000dce56df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
