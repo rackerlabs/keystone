@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Invalid query strings will now result in a ``400 Bad Request`` response.
+    Invalid query strings will no longer be silently ignored. This change
+    allows clients to know which queries were were written incorrectly.
