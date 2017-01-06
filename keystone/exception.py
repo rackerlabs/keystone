@@ -158,6 +158,12 @@ class ValidationSizeError(Error):
     title = 'Bad Request'
 
 
+class QueryParameterError(Error):
+    message_format = _("Query parameter %(param)s is invalid.")
+    code = 400
+    title = 'Bad Request'
+
+
 class CircularRegionHierarchyError(Error):
     message_format = _("The specified parent region %(parent_region_id)s "
                        "would create a circular region hierarchy.")

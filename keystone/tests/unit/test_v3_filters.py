@@ -17,6 +17,7 @@ import datetime
 
 import freezegun
 from oslo_serialization import jsonutils
+from six.moves import http_client
 from six.moves import range
 
 import keystone.conf
@@ -178,28 +179,56 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assertIn(self.domainA['id'], id_list)
         self.assertIs(True, r.result.get('domains')[0]['enabled'])
 
-    def test_invalid_filter_is_ignored(self):
+    def test_invalid_filter_results_in_400(self):
         """GET /domains?enableds&name=myname.
 
         Test Plan:
 
         - Update policy for no protection on api
         - Filter by name and 'enableds', which does not exist
-        - Assert 'enableds' is ignored
+        - Assert a 400 Bad Request is returned
 
         """
         new_policy = {"identity:list_domains": []}
         self._set_policy(new_policy)
 
         my_url = '/domains?enableds=0&name=%s' % self.domainA['name']
-        r = self.get(my_url, auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        r = self.get(my_url,
+                     auth=self.auth,
+                     expected_status=http_client.BAD_REQUEST)
 
-        # domainA is returned and it is enabled, since enableds=0 is not the
-        # same as enabled=0
-        self.assertEqual(1, len(id_list))
-        self.assertIn(self.domainA['id'], id_list)
-        self.assertIs(True, r.result.get('domains')[0]['enabled'])
+        domains = r.result.get('domains')
+        self.assertIsNone(domains)
+
+        resp_json = jsonutils.loads(r.body)
+        self.assertIn('Query parameter enableds is invalid',
+                      resp_json.get('error', {}).get('message'))
+
+    def test_multiple_invalid_filters_with_first_erroring_with_400(self):
+        """GET /domains?enabled&first_bad_param=name1&second_bad_param=myname2.
+
+        Test Plan:
+
+        - Update policy for no protection on api
+        - Filter by 'enabled', 'first_bad_param' and 'second_bad_param',
+          with the last two not valid filtering parameters.
+        - Assert only the first bad parameter, 'first_bad_param',
+          results in a 400.
+
+        """
+        new_policy = {"identity:list_domains": []}
+        self._set_policy(new_policy)
+
+        url = ('/domains?enabled&first_bad_param=%s&second_bad_param=%s' %
+               (self.domainA['name'], self.domainB['name']))
+        r = self.get(url, auth=self.auth,
+                     expected_status=http_client.BAD_REQUEST)
+
+        resp_json = jsonutils.loads(r.body)
+        self.assertIn('Query parameter first_bad_param is invalid',
+                      resp_json.get('error', {}).get('message'))
+        self.assertNotIn('Query parameter second_bad_param is invalid',
+                         resp_json.get('error', {}).get('message'))
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%.
@@ -318,8 +347,12 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         group = unit.new_group_ref(domain_id=self.domainB['id'])
         group = self.identity_api.create_group(group)
 
+        # Semicolon ; should be treated like &, in this case, we are filtering
+        # on name=x and an unrecognized 'drop table group'.  This should
+        # result in a 400 Bad Request.
         url_by_name = "/users?name=x'; drop table group"
-        r = self.get(url_by_name, auth=self.auth)
+        r = self.get(url_by_name, auth=self.auth,
+                     expected_status=http_client.BAD_REQUEST)
 
         # Check group table is still there...
         url_by_name = "/groups"
