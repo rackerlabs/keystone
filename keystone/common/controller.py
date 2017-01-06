@@ -624,35 +624,34 @@ class V3Controller(wsgi.Application):
                 hints.add_filter(key, value)
                 continue
 
-            # Check if it is an inexact filter
-            for valid_key in supported_filters:
-                # See if this entry in query_dict matches a known key with an
-                # inexact suffix added.  If it doesn't match, then that just
-                # means that there is no inexact filter for that key in this
-                # query.
-                if not key.startswith(valid_key + '__'):
+            # Check if this can be an inexact filter
+            if '__' in key:
+                key, comparator = key.split('__', 1)
+
+                if key in supported_filters:
+
+                    # We map the query-style inexact of, for example:
+                    #
+                    # {'email__contains', 'myISP'}
+                    #
+                    # into a list directive add filter call parameters of:
+                    #
+                    # name = 'email'
+                    # value = 'myISP'
+                    # comparator = 'contains'
+                    # case_sensitive = True
+                    case_sensitive = True
+                    if comparator.startswith('i'):
+                        case_sensitive = False
+                        comparator = comparator[1:]
+                    hints.add_filter(key, value,
+                                     comparator=comparator,
+                                     case_sensitive=case_sensitive)
                     continue
 
-                base_key, comparator = key.split('__', 1)
-
-                # We map the query-style inexact of, for example:
-                #
-                # {'email__contains', 'myISP'}
-                #
-                # into a list directive add filter call parameters of:
-                #
-                # name = 'email'
-                # value = 'myISP'
-                # comparator = 'contains'
-                # case_sensitive = True
-
-                case_sensitive = True
-                if comparator.startswith('i'):
-                    case_sensitive = False
-                    comparator = comparator[1:]
-                hints.add_filter(base_key, value,
-                                 comparator=comparator,
-                                 case_sensitive=case_sensitive)
+            # If we get here, the filter has fallen through all matchings,
+            # raise a 400 Bad Request response.
+            raise exception.QueryParameterError(param=key)
 
         # NOTE(henry-nash): If we were to support pagination, we would pull any
         # pagination directives out of the query_dict here, and add them into
