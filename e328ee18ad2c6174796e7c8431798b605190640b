@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_f5e0472b",
+        "filename": "keystone/common/sql/contract_repo/versions/012_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-06T12:01:09Z",
+      "side": 1,
+      "message": "the test is failing because you are using \"create\" in a `contract` phase.\n\nI guess it\u0027s not possible to create a new one in the expand phase and delete the old one in the contract phase?\n\nYou may have to include this migration in the list of migrations that are exempt [1]\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_sql_banned_operations.py#L226-L244",
+      "range": {
+        "startLine": 31,
+        "startChar": 27,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "e328ee18ad2c6174796e7c8431798b605190640b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
