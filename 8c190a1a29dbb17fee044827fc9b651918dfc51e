@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_e46170d4",
+        "filename": "keystone/common/sql/contract_repo/versions/012_contract_add_domain_id_to_idp.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T17:08:55Z",
+      "side": 1,
+      "message": "(nit) during contract, any rdbms other than postgresql and mysql wil run this, which is different than expanding, see comment there.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "8c190a1a29dbb17fee044827fc9b651918dfc51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_847ee467",
+        "filename": "keystone/common/sql/expand_repo/versions/012_expand_add_domain_id_to_idp.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-06T17:08:55Z",
+      "side": 1,
+      "message": "(nit) during contract, any rdbms other than postgresql and sqlite wil run this, which is different than contract.\n\nI don\u0027t think this would be an issue as we are only supposed to support these 3 ?",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 69
+      },
+      "revId": "8c190a1a29dbb17fee044827fc9b651918dfc51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_3392e04c",
         "filename": "keystone/federation/core.py",
         "patchSetId": 36
