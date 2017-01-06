@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_e76b2f1c",
+        "filename": "releasenotes/notes/invalid-resource-filters-should-error-5ebbac2cce2a821a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-06T19:14:30Z",
+      "side": 1,
+      "message": "Done - will correct this in next patch set.",
+      "parentUuid": "ba5201f7_e77a4f23",
+      "revId": "6ddc96c10ddd29d31495520e3a3fae17d8c329f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_a784c70a",
         "filename": "releasenotes/notes/invalid-resource-filters-should-error-5ebbac2cce2a821a.yaml",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2017-01-06T19:08:41Z",
       "side": 1,
       "message": "the query (rather than ignoring the invalid values).",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "6ddc96c10ddd29d31495520e3a3fae17d8c329f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_07775302",
+        "filename": "releasenotes/notes/invalid-resource-filters-should-error-5ebbac2cce2a821a.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-06T19:14:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_a784c70a",
       "range": {
         "startLine": 7,
         "startChar": 4,
