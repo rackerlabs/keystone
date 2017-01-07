@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_6fcd4665",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-07T20:17:27Z",
+      "side": 1,
+      "message": "ah, dang",
+      "parentUuid": "ba5201f7_c3753432",
+      "range": {
+        "startLine": 76,
+        "startChar": 14,
+        "endLine": 76,
+        "endChar": 15
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e3707842",
         "filename": "doc/source/index.rst",
         "patchSetId": 2
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_8fc8aa56",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-07T20:17:27Z",
+      "side": 1,
+      "message": "will do!",
+      "parentUuid": "ba5201f7_e3707842",
+      "range": {
+        "startLine": 79,
+        "startChar": 14,
+        "endLine": 79,
+        "endChar": 34
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_a37af021",
         "filename": "doc/source/index.rst",
         "patchSetId": 2
@@ -83,6 +131,30 @@
       "writtenOn": "2017-01-07T04:47:01Z",
       "side": 1,
       "message": "this section now renders funny.",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 16
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_4fb242e6",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-07T20:17:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_a37af021",
       "range": {
         "startLine": 126,
         "startChar": 4,
