@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_7b5c2c4b",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "can we add one more test? where two invalid query parameters are used, but we only catch the first one we see?\n\ni\u0027m not advocating to enhance the logic of `build_driver_hints`, I think returning one at a time is fine, i just it noted in a test case that we made a decision to do that. (Unless you have a reason we should scan all query strings?)",
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3b5c647c",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "would be nice to assert the message too:\n\n  self.assertIn(\u0027Query parameter enableds is invalid\u0027, r.body)\n\nor\n\n  resp_json \u003d jsonutils.loads(r.body)\n  self.assertIn(\u0027Query parameter enableds is invalid\u0027,\n                 resp_json.get(\u0027error\u0027, {}).get(\u0027message\u0027))",
+      "range": {
+        "startLine": 200,
+        "startChar": 18,
+        "endLine": 200,
+        "endChar": 26
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_fbf3bc70",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "is there a reason we are treating a semi-colon like an ampersand?\n\nedit, looks like it\u0027s fine: https://www.w3.org/TR/html401/appendix/notes.html#h-B.2.2",
+      "range": {
+        "startLine": 320,
+        "startChar": 10,
+        "endLine": 320,
+        "endChar": 47
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_5bde88dd",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "result*",
+      "range": {
+        "startLine": 322,
+        "startChar": 10,
+        "endLine": 322,
+        "endChar": 17
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_5b05a843",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "this comment needs to be updated",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 64
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_9b80f08c",
+        "filename": "releasenotes/notes/bug-1654084.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T12:22:59Z",
+      "side": 1,
+      "message": "slight re-wording:\n\n  Invalid query strings will now result in a ``400 Bad Request`` response.\n  Invalid query strings will no longer be silently ignored. This change allows\n  clients to know which queries were were written incorrectly.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 56
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
