@@ -22,6 +22,76 @@
       "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_c3753432",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T04:47:01Z",
+      "side": 1,
+      "message": "but now you lose the indentation :)",
+      "parentUuid": "ba5201f7_b44a2c53",
+      "range": {
+        "startLine": 76,
+        "startChar": 14,
+        "endLine": 76,
+        "endChar": 15
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e3707842",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T04:47:01Z",
+      "side": 1,
+      "message": "just add an :orphan: to each of these, it\u0027s a perfectly fine work around if you\u0027re using the files via an :include: directive, which we are.",
+      "range": {
+        "startLine": 79,
+        "startChar": 14,
+        "endLine": 79,
+        "endChar": 34
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a37af021",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-07T04:47:01Z",
+      "side": 1,
+      "message": "this section now renders funny.",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 16
+      },
+      "revId": "a934f6ddaef24d44afdd0203186142bb36f3c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
