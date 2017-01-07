@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_140bed7d",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_7b5c2c4b",
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_3b5c647c",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2017-01-07T12:22:59Z",
       "side": 1,
       "message": "would be nice to assert the message too:\n\n  self.assertIn(\u0027Query parameter enableds is invalid\u0027, r.body)\n\nor\n\n  resp_json \u003d jsonutils.loads(r.body)\n  self.assertIn(\u0027Query parameter enableds is invalid\u0027,\n                 resp_json.get(\u0027error\u0027, {}).get(\u0027message\u0027))",
+      "range": {
+        "startLine": 200,
+        "startChar": 18,
+        "endLine": 200,
+        "endChar": 26
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_54cd7564",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_3b5c647c",
       "range": {
         "startLine": 200,
         "startChar": 18,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_949efd60",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "This one puzzled me for a bit since the code would treat \"drop table group\" as a filter parameter and throws a 400 with this patch set\u0027s change.  Had to go through the RFC to realize ; and \u0026 are treated identically.",
+      "parentUuid": "ba5201f7_fbf3bc70",
+      "range": {
+        "startLine": 320,
+        "startChar": 10,
+        "endLine": 320,
+        "endChar": 47
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_5bde88dd",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 3
@@ -76,6 +142,30 @@
       "writtenOn": "2017-01-07T12:22:59Z",
       "side": 1,
       "message": "result*",
+      "range": {
+        "startLine": 322,
+        "startChar": 10,
+        "endLine": 322,
+        "endChar": 17
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_74e51907",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_5bde88dd",
       "range": {
         "startLine": 322,
         "startChar": 10,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_54ead5db",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_5b05a843",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 64
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_9b80f08c",
         "filename": "releasenotes/notes/bug-1654084.yaml",
         "patchSetId": 3
@@ -122,6 +236,30 @@
       "writtenOn": "2017-01-07T12:22:59Z",
       "side": 1,
       "message": "slight re-wording:\n\n  Invalid query strings will now result in a ``400 Bad Request`` response.\n  Invalid query strings will no longer be silently ignored. This change allows\n  clients to know which queries were were written incorrectly.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 56
+      },
+      "revId": "4e48b7b1e8b30d365bb3b126184eca57574cbf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f4d82955",
+        "filename": "releasenotes/notes/bug-1654084.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-07T18:02:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_9b80f08c",
       "range": {
         "startLine": 4,
         "startChar": 4,
