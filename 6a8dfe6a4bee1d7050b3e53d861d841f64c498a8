@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_00956731",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-08T05:23:47Z",
+      "side": 1,
+      "message": "this comment can go away now :)",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 47
+      },
+      "revId": "6a8dfe6a4bee1d7050b3e53d861d841f64c498a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_20818bfb",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-08T05:23:47Z",
+      "side": 1,
+      "message": "this just calls the new one, why not replace all the wsgi.assert_admin calls with authorization.assert_admin?\n\nmaybe do it in another patch and remove this one?",
+      "range": {
+        "startLine": 284,
+        "startChar": 4,
+        "endLine": 294,
+        "endChar": 49
+      },
+      "revId": "6a8dfe6a4bee1d7050b3e53d861d841f64c498a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
