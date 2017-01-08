@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_29adf79a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-08T10:18:03Z",
+      "side": 1,
+      "message": "I usually set \u0027OS_TEST_DBAPI_ADMIN_CONNECTION\u0027 before executing those testcases in keystone project, the above command does work with oslo.db project (I tried it) but it seems not working in keystone project.\n\n    $ tox -e py27-mysql\n    ERROR: unknown environment \u0027py27-mysql\u0027",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "d0c404a9de03facad1c1bf84e18f0091760d5b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
