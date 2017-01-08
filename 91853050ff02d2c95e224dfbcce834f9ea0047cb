@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_20250b5b",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-08T04:59:32Z",
+      "side": 1,
+      "message": "like on L23, this should use dashes\n\nProject and Endpoint Associations\n----------------------------------",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 33
+      },
+      "revId": "91853050ff02d2c95e224dfbcce834f9ea0047cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_57a7420a",
         "filename": "api-ref/source/v3-ext/ep-filter.inc",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 30,
         "endLine": 215,
         "endChar": 33
+      },
+      "revId": "91853050ff02d2c95e224dfbcce834f9ea0047cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_801eb709",
+        "filename": "api-ref/source/v3-ext/ep-filter.inc",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-08T04:59:32Z",
+      "side": 1,
+      "message": "Since you added a section break for \"Project and Endpoint Associations\" how about you add one before here too?\n\nProject and Endpoint Group Associations\n-----------------------------------------\n\nAnd add a short blurb, blah blah, woof woof",
+      "range": {
+        "startLine": 353,
+        "startChar": 0,
+        "endLine": 353,
+        "endChar": 44
       },
       "revId": "91853050ff02d2c95e224dfbcce834f9ea0047cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
