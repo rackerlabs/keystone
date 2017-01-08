@@ -22,6 +22,30 @@
       "revId": "15f7013213d0bea8fd56e29f46a3a3431f5c0f02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f5f1fc01",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-01-08T17:42:56Z",
+      "side": 0,
+      "message": "yeah, again, circular dependency issues forced some movements.\n\nin general \"utils\" is a bad name for a file.  Its like a garage...collects junk instead of cars.",
+      "parentUuid": "ba5201f7_c0999f7a",
+      "range": {
+        "startLine": 529,
+        "startChar": 0,
+        "endLine": 544,
+        "endChar": 41
+      },
+      "revId": "15f7013213d0bea8fd56e29f46a3a3431f5c0f02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
