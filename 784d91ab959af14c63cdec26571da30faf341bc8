@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_20826bc8",
+        "filename": "keystone/exception.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-08T05:51:53Z",
+      "side": 1,
+      "message": "s/le/lte/: see http://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html#filtering",
+      "range": {
+        "startLine": 139,
+        "startChar": 44,
+        "endLine": 139,
+        "endChar": 46
+      },
+      "revId": "784d91ab959af14c63cdec26571da30faf341bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_4085afcc",
+        "filename": "keystone/exception.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-08T05:51:53Z",
+      "side": 1,
+      "message": "s/ne/neq/",
+      "range": {
+        "startLine": 139,
+        "startChar": 32,
+        "endLine": 139,
+        "endChar": 34
+      },
+      "revId": "784d91ab959af14c63cdec26571da30faf341bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_6070f30b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-08T05:51:53Z",
+      "side": 1,
+      "message": "s/ge/gte/",
+      "range": {
+        "startLine": 139,
+        "startChar": 59,
+        "endLine": 139,
+        "endChar": 61
+      },
+      "revId": "784d91ab959af14c63cdec26571da30faf341bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a0765b03",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-08T05:51:53Z",
+      "side": 1,
+      "message": "le -\u003e lte, ge -\u003e gte, and ne -\u003e neq.  See: http://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html#filtering",
+      "range": {
+        "startLine": 964,
+        "startChar": 22,
+        "endLine": 966,
+        "endChar": 57
+      },
+      "revId": "784d91ab959af14c63cdec26571da30faf341bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
