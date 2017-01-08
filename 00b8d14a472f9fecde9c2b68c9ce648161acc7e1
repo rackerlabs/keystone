@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_80cf9754",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-08T05:31:59Z",
+      "side": 1,
+      "message": "add a comment here or around, i have no idea whats going on or what f_name or input_attr are",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 132,
+        "endChar": 45
+      },
+      "revId": "00b8d14a472f9fecde9c2b68c9ce648161acc7e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
