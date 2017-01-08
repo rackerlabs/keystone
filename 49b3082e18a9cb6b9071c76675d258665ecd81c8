@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_e91daf73",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-08T12:10:02Z",
+      "side": 0,
+      "message": "pls be careful here, we are changing the behavior that we use to think is correct.",
+      "range": {
+        "startLine": 196,
+        "startChar": 1,
+        "endLine": 198,
+        "endChar": 58
+      },
+      "revId": "49b3082e18a9cb6b9071c76675d258665ecd81c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
