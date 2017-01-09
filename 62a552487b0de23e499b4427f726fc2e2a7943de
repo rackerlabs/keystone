@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_c63c4d95",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-09T06:10:12Z",
+      "side": 1,
+      "message": "Hmm, looks like this should be 403 forbidden instead.\n\nkeystone.tests.unit.test_v3_protection.IdentityTestPolicySample.test_list_revoke_events_is_protected\n\n...\n2017-01-09 05:28:40.608831 |       File \"/home/jenkins/workspace/gate-keystone-python27-db-ubuntu-xenial/.tox/py27/local/lib/python2.7/site-packages/webtest/app.py\", line 671, in _check_status\n2017-01-09 05:28:40.608876 |         \"Bad response: %s (not %s)\", res_status, status)\n2017-01-09 05:28:40.608950 |     webtest.app.AppError: Bad response: 403 Forbidden (not 401)",
+      "range": {
+        "startLine": 624,
+        "startChar": 56,
+        "endLine": 624,
+        "endChar": 75
+      },
+      "revId": "62a552487b0de23e499b4427f726fc2e2a7943de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
