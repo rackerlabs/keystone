@@ -16,6 +16,24 @@
       "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_2c35def6",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2017-01-09T18:20:02Z",
+      "side": 1,
+      "message": "(first of all many thanks to Steve M. for keeping the fire going for this review... I was on holidays)\n\nditto. I had it inside common_ldap_intialization since that is where the rest of the LDAP set option magic was being done. Is there a specific concern with having it in there?",
+      "parentUuid": "ba5201f7_500f212e",
+      "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
