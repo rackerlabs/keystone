@@ -133,6 +133,14 @@ class ValidationTimeStampError(Error):
     title = 'Bad Request'
 
 
+class ValidationOperatorError(Error):
+    message_format = _("The given operator is not valid."
+                       " It must be one of the following:"
+                       " 'eq', 'neq', 'lt', 'lte', 'gt', or 'gte'.")
+    code = 400
+    title = 'Bad Request'
+
+
 class ValidationExpirationError(Error):
     message_format = _("The 'expires_at' must not be before now."
                        " The server could not comply with the request"

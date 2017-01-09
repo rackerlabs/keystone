@@ -126,10 +126,23 @@ class Identity(base.IdentityDriverBase):
             session.add(user_ref)
             return base.filter_user(user_ref.to_dict())
 
+    def _user_password_expires(self, session, query, hints):
+        for filter_ in hints.filters:
+            if 'password_expires_at' == filter_['name']:
+                query = query.filter(sqlalchemy.and_(
+                    model.LocalUser.id == model.Password.local_user_id,
+                    filter_['comparator'](model.Password.expires_at,
+                                          filter_['value'])))
+
+        hints.filters = [x for x in hints.filters if x['name'] !=
+                         'password_expires_at']
+        return query, hints
+
     @driver_hints.truncated
     def list_users(self, hints):
         with sql.session_for_read() as session:
             query = session.query(model.User).outerjoin(model.LocalUser)
+            query, hints = self._user_password_expires(session, query, hints)
             user_refs = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(x.to_dict()) for x in user_refs]
 
@@ -263,6 +276,7 @@ class Identity(base.IdentityDriverBase):
             query = query.join(model.UserGroupMembership)
             query = query.filter(
                 model.UserGroupMembership.group_id == group_id)
+            query, hints = self._user_password_expires(session, query, hints)
             query = sql.filter_limit_query(model.User, query, hints)
             return [base.filter_user(u.to_dict()) for u in query]
 
