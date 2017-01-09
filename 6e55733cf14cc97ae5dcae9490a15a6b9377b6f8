@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f0fca773",
+        "filename": "keystone/conf/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:03:43Z",
+      "side": 1,
+      "message": "I added a new config option",
+      "parentUuid": "3a71b18c_2b457816",
+      "range": {
+        "startLine": 527,
+        "startChar": 32,
+        "endLine": 528,
+        "endChar": 79
+      },
+      "revId": "6e55733cf14cc97ae5dcae9490a15a6b9377b6f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_6e822996",
         "filename": "keystone/identity/backends/ldap/common.py",
         "patchSetId": 7
