@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_e38143c4",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:28:45Z",
+      "side": 1,
+      "message": "add a comment about why this is unprotected or someone will inevitably come around and add a @protected decorator",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 279,
+        "endChar": 54
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e30a2378",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:28:45Z",
+      "side": 1,
+      "message": "add a comment about why we\u0027re passing and more importantly *why it\u0027s OK to pass*",
+      "range": {
+        "startLine": 1292,
+        "startChar": 16,
+        "endLine": 1292,
+        "endChar": 20
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_831a37c4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:28:45Z",
+      "side": 1,
+      "message": "add a comment here about what will happen and why we do it",
+      "range": {
+        "startLine": 1294,
+        "startChar": 16,
+        "endLine": 1294,
+        "endChar": 21
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_030e478b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:28:45Z",
+      "side": 0,
+      "message": "undo the white space change",
+      "revId": "663865dfecb483f0ef6aa48749c0712779033dd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_63763307",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T05:28:45Z",
+      "side": 0,
+      "message": "undo the white space change (and the others below)",
+      "revId": "663865dfecb483f0ef6aa48749c0712779033dd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
