@@ -34,6 +34,24 @@
       "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_7df86ec5",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T19:17:26Z",
+      "side": 1,
+      "message": "i thought it was a LDAPHandler specific value, and didn\u0027t need to be in the common portion (which I thought was used for LDAPHandler and PooledLDAPHandler?)",
+      "parentUuid": "ba5201f7_2c35def6",
+      "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
