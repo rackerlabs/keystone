@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_09172c55",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 13
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 363,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 34
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8cdc0a76",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "nit: I like \u0027user_can_change_expired_password\u0027",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 34
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_ecee76b3",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "\u0027changed\u0027 to avoid confusion with admin reset",
+      "range": {
+        "startLine": 251,
+        "startChar": 64,
+        "endLine": 251,
+        "endChar": 69
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e38143c4",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -13,6 +82,30 @@
       "writtenOn": "2017-01-09T05:28:45Z",
       "side": 1,
       "message": "add a comment about why this is unprotected or someone will inevitably come around and add a @protected decorator",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 279,
+        "endChar": 54
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_4c8222ca",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5201f7_e38143c4",
       "range": {
         "startLine": 279,
         "startChar": 4,
@@ -48,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_cc57f224",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "This only works because password expired is the last check in authentication:\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/backends/sql.py#L70\n\nHowever, if the order of this logic changes, e.g. we check password expired before checking if user is disabled, it could have unintended consequences. For example, we could allow a user to change their password even though their account is disabled or locked. Therefore, I think we need a test case to protect us from this scenario.",
+      "parentUuid": "ba5201f7_e30a2378",
+      "range": {
+        "startLine": 1292,
+        "startChar": 16,
+        "endLine": 1292,
+        "endChar": 20
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_831a37c4",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -62,6 +179,29 @@
       "range": {
         "startLine": 1294,
         "startChar": 16,
+        "endLine": 1294,
+        "endChar": 21
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_ec73d613",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-09T18:27:11Z",
+      "side": 1,
+      "message": "I\u0027m not clear why you need this raise",
+      "range": {
+        "startLine": 1293,
+        "startChar": 11,
         "endLine": 1294,
         "endChar": 21
       },
