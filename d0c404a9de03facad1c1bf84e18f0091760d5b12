@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_ebb90acd",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-09T15:46:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_4d9f8e50",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "d0c404a9de03facad1c1bf84e18f0091760d5b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_2dc96a5b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
@@ -60,6 +84,30 @@
       "writtenOn": "2017-01-09T13:26:04Z",
       "side": 1,
       "message": "we have some steps here that needed to be done before running the tests, like exporting OS_DBAPI_ADMIN_CONNECTION. Maybe you can add some details present in the page before the step 2.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 85
+      },
+      "revId": "d0c404a9de03facad1c1bf84e18f0091760d5b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e503f2bc",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-09T15:46:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_2dc96a5b",
       "range": {
         "startLine": 30,
         "startChar": 0,
