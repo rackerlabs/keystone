@@ -52,6 +52,24 @@
       "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_bd573625",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-09T19:33:00Z",
+      "side": 1,
+      "message": "Kam, feel free to pick this back up when you\u0027re back from holidays. I just wanted to add the new config option, rebase and general clean up, sorry if I created a mess :)",
+      "parentUuid": "ba5201f7_7df86ec5",
+      "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
