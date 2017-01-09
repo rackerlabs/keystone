@@ -16,6 +16,24 @@
       "revId": "937a1a3037c456cd111cac399f09647a38136b91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_2951500f",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 24681
+      },
+      "writtenOn": "2017-01-09T17:34:56Z",
+      "side": 0,
+      "message": "yeah, I did look at that one briefly but couldn\u0027t see a better way unfortunately :/ maybe an upstream PR / issue to get more flexible access to the check process...",
+      "parentUuid": "ba5201f7_375e0877",
+      "revId": "937a1a3037c456cd111cac399f09647a38136b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
