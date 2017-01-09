@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_8b2157b7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3031,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T16:31:38Z",
+      "side": 1,
+      "message": "We should add this to the mapping fixture in dstanek\u0027s patch.",
+      "revId": "1ae14f1457800c3239ced06d412ea2b023a412d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
