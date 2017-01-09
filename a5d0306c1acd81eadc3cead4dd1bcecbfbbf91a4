@@ -16,6 +16,24 @@
       "revId": "a5d0306c1acd81eadc3cead4dd1bcecbfbbf91a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f0e020fd",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2017-01-09T09:18:59Z",
+      "side": 1,
+      "message": "Made this patch consistent with master version: https://review.openstack.org/#/c/399472",
+      "parentUuid": "ba5201f7_f7999d6f",
+      "revId": "a5d0306c1acd81eadc3cead4dd1bcecbfbbf91a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
