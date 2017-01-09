@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_487135e0",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T16:31:44Z",
+      "side": 1,
+      "message": "This is going to have to be renamed to projects instead of roles.",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_4b168f56",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 7
@@ -30,6 +47,23 @@
       "writtenOn": "2017-01-09T16:31:17Z",
       "side": 1,
       "message": "expected_projects",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_6bf7d38c",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T16:31:44Z",
+      "side": 1,
+      "message": "We will need to make sure we test that projects are pulled out instead of just roles.",
       "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +98,23 @@
       "writtenOn": "2017-01-09T16:31:17Z",
       "side": 1,
       "message": "projects",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_cb735f14",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T16:31:44Z",
+      "side": 1,
+      "message": "Rename this from roles to projects.",
       "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
