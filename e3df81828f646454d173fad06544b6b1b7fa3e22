@@ -36,6 +36,42 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_51ae3ce8",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_487135e0",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_31a9b8e0",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_0b1c8776",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_4b168f56",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 7
@@ -70,6 +106,42 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_91b8a42c",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_4b168f56",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b1b5a832",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_6bf7d38c",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_360d2e38",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2017-01-09T16:31:17Z",
       "side": 1,
       "message": "MAPPING_PROJECTS",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_71d98083",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1592,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_360d2e38",
       "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +205,42 @@
       "writtenOn": "2017-01-09T16:31:44Z",
       "side": 1,
       "message": "Rename this from roles to projects.",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b1e3e832",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_cb735f14",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_91e6e442",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-09T17:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_f629e68a",
       "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
