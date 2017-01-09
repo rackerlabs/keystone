@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_500f212e",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-09T13:36:23Z",
+      "side": 1,
+      "message": "Why did this get moved out of _common_ldap_initialization and why did it change from ldap.set_option to self.conn.set_option? I think it\u0027s causing the LDAPConnectionTimeoutTest tests to fail (in addition to the FakeLdap class needing an update)",
+      "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
