@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_375e0877",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-09T17:28:50Z",
+      "side": 0,
+      "message": "It would be awesome to get rid of this hack too.",
+      "revId": "937a1a3037c456cd111cac399f09647a38136b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
