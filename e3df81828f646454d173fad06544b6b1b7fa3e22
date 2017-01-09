@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_0b1c8776",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-09T16:31:17Z",
+      "side": 1,
+      "message": "Rename to test_mapping_projects",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_4b168f56",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-09T16:31:17Z",
+      "side": 1,
+      "message": "expected_projects",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_360d2e38",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1592,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-09T16:31:17Z",
+      "side": 1,
+      "message": "MAPPING_PROJECTS",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f629e68a",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-09T16:31:17Z",
+      "side": 1,
+      "message": "projects",
+      "revId": "e3df81828f646454d173fad06544b6b1b7fa3e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
