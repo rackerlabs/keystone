@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_33f29507",
+        "filename": "keystone_tempest_plugin/tests/api/identity/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-09T20:06:11Z",
+      "side": 1,
+      "message": "this should not be needed, change in master doesn\u0027t touch this code \n\nhttps://review.openstack.org/#/c/417030/1/keystone_tempest_plugin/tests/base.py",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 58
+      },
+      "revId": "e49af5384881df463689c723130b748d82c5238c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
