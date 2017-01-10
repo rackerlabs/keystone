@@ -38,6 +38,8 @@ class LdapPoolCommonTestMixin(object):
         # by default use_pool and use_auth_pool is enabled in test pool config
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
+        if 'federated' in user_ref:
+            del user_ref['federated']
         self.assertDictEqual(self.user_foo, user_ref)
 
         handler = common_ldap._get_connection(CONF.ldap.url, use_pool=True)

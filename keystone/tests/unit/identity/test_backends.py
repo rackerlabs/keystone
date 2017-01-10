@@ -119,6 +119,8 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
+        if 'federated' in user_ref:
+            del user_ref['federated']
         self.assertDictEqual(self.user_foo, user_ref)
 
     def test_get_user_returns_required_attributes(self):
@@ -140,8 +142,10 @@ class IdentityTests(object):
         domain_id, driver, entity_id = (
             self.identity_api._get_domain_driver_and_entity_id(ref['id']))
         driver.delete_user(entity_id)
-
-        self.assertDictEqual(ref, self.identity_api.get_user(ref['id']))
+        user_ref = self.identity_api.get_user(ref['id'])
+        if 'federated' in user_ref:
+            del user_ref['federated']
+        self.assertDictEqual(ref, user_ref)
         self.identity_api.get_user.invalidate(self.identity_api, ref['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user, ref['id'])
