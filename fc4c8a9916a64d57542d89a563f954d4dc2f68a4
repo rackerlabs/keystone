@@ -22,6 +22,30 @@
       "revId": "fc4c8a9916a64d57542d89a563f954d4dc2f68a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_0be0bcf9",
+        "filename": "keystone/common/sql/expand_repo/versions/013_user_mfa_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2017-01-10T23:52:45Z",
+      "side": 1,
+      "message": "Effectively a set of auth method combinations a user can auth with.\n\n\"required_auth_plugins\": [\n  [\"password\", \"totp\"],\n  [\"x509\"],\n  [\"password\", \"one-time-backup\"]\n]\n\nAs long as the used/authed methods matches one of those rules, a token is supplied.",
+      "parentUuid": "ba5201f7_810be47c",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 61
+      },
+      "revId": "fc4c8a9916a64d57542d89a563f954d4dc2f68a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
