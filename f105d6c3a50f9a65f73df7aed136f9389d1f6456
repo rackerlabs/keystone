@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_cf25e75c",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T20:10:24Z",
+      "side": 1,
+      "message": "Just to be clear, there is no workaround required anymore for this step? I was reading back through the comments on patch set 25 and it looks like we removed the comment as well as a couple lines of code pertaining to Dolph\u0027s comment.\n\nI want to validate that we don\u0027t have an action item in here somewhere to open a bug and leave a comment. It looks like things are working as expected though.",
+      "revId": "f105d6c3a50f9a65f73df7aed136f9389d1f6456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
