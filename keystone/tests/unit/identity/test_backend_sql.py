@@ -536,6 +536,7 @@ class PasswordExpiresValidationTests(test_backend_sql.SqlTests):
             user_ref.password_ref.created_at = password_created_at
             user_ref.password_ref.expires_at = (
                 user_ref._get_password_expires_at(password_created_at))
+            user_ref.mfa = model.UserMFARules()
             session.add(user_ref)
         return base.filter_user(user_ref.to_dict())
 

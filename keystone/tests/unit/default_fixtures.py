@@ -103,6 +103,8 @@ USERS = [
         'enabled': True,
         'tenants': [BAR_TENANT_ID],
         'email': 'sna@snl.coom',
+        'mfa_rules': [],
+        'mfa_rules_enabled': True,
     }
 ]
 

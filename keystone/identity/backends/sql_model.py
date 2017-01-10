@@ -28,7 +28,8 @@ CONF = keystone.conf.CONF
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id', 'password_expires_at']
+                  'default_project_id', 'password_expires_at', 'mfa_rules',
+                  'mfa_rules_enabled']
     readonly_attributes = ['id', 'password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
@@ -48,6 +49,12 @@ class User(sql.ModelBase, sql.DictBase):
                                      lazy='subquery',
                                      cascade='all,delete-orphan',
                                      backref='user')
+    mfa = orm.relationship('UserMFARules',
+                           uselist=False,
+                           single_parent=True,
+                           lazy='subquery',
+                           cascade='all,delete-orphan',
+                           backref='user')
     created_at = sql.Column(sql.DateTime, nullable=True)
     last_active_at = sql.Column(sql.Date, nullable=True)
 
@@ -200,6 +207,38 @@ class User(sql.ModelBase, sql.DictBase):
     def enabled(cls):
         return User._enabled
 
+    @hybrid_property
+    def mfa_rules(self):
+        if self.mfa:
+            return self.mfa.rules
+        return []
+
+    @mfa_rules.setter
+    def mfa_rules(self, value):
+        if not self.mfa:
+            self.mfa = UserMFARules()
+        self.mfa.rules = value
+
+    @mfa_rules.expression
+    def mfa_rules(cls):
+        return UserMFARules.rules
+
+    @hybrid_property
+    def mfa_rules_enabled(self):
+        if self.mfa:
+            return self.mfa.enabled
+        return True
+
+    @mfa_rules_enabled.setter
+    def mfa_rules_enabled(self, value):
+        if not self.mfa:
+            self.mfa = UserMFARules()
+        self.mfa.enabled = value
+
+    @mfa_rules_enabled.expression
+    def mfa_rules_enabled(cls):
+        return UserMFARules.enabled
+
     def to_dict(self, include_extra_dict=False):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
         if 'default_project_id' in d and d['default_project_id'] is None:
@@ -314,3 +353,14 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
+
+
+class UserMFARules(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'user_mfa_auth_rules'
+    attributes = ['id', 'user_id', 'rules', 'enabled']
+    id = sql.Column(sql.Integer, primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                         ondelete='CASCADE'), nullable=False, unique=True)
+    rules = sql.Column(sql.JsonBlob())
+    enabled = sql.Column(sql.Boolean, nullable=False, default=True,
+                         server_default=sqlalchemy.sql.expression.true())

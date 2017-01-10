@@ -322,6 +322,14 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
+        # Add in the mfa_rules and mfa_rules_enabled values for user_sna
+        # Until LDAP writes are no longer part of Keysgtone tests this is a
+        # work-around for LDAP tests that deal with user_ref matching. LDAP
+        # does not store the mfa_rules or mfa_rules_enabled attributes
+        # directly.
+        self.user_sna['mfa_rules'] = []
+        self.user_sna['mfa_rules_enabled'] = True
+
     def _get_domain_fixture(self):
         """Return the static domain, since domains in LDAP are read-only."""
         return self.resource_api.get_domain(CONF.identity.default_domain_id)
