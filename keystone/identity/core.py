@@ -434,8 +434,9 @@ def exception_translated(exception_type):
 
 @notifications.listener
 @dependency.provider('identity_api')
-@dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
-                     'resource_api', 'revoke_api', 'shadow_users_api')
+@dependency.requires('assignment_api', 'credential_api', 'federation_api',
+                     'id_mapping_api', 'resource_api', 'revoke_api',
+                     'shadow_users_api')
 class Manager(manager.Manager):
     """Default pivot point for the Identity backend.
 
@@ -900,6 +901,26 @@ class Manager(manager.Manager):
                 # backward compatible
                 pass
 
+    def _create_federated_objects_with_user(self, user_dict):
+        user = user_dict.copy()
+        if 'federated' in user and user['federated']:
+            for fed_obj in user['federated']:
+                self.federation_api.get_idp(fed_obj["idp_id"])
+                for protocols in fed_obj['protocols']:
+                    self.federation_api.get_protocol(fed_obj["idp_id"],
+                                                     protocols['protocol_id'])
+                    federated_dict = {
+                        'idp_id': fed_obj['idp_id'],
+                        'protocol_id': protocols['protocol_id'],
+                        'unique_id': protocols['unique_id'],
+                        'display_name': user['name']
+                    }
+                    self.shadow_users_api.create_federated_user_with_user(
+                        user, federated_dict)
+            return user_dict.copy()
+        else:
+            return None
+
     @domains_configured
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
@@ -923,7 +944,9 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
-        ref = driver.create_user(user['id'], user)
+        ref = self._create_federated_objects_with_user(user)
+        if ref is None:
+            ref = driver.create_user(user['id'], user)
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
@@ -934,7 +957,9 @@ class Manager(manager.Manager):
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
+        federated_ref = self.shadow_users_api.get_federated_objects(user_id)
         ref = driver.get_user(entity_id)
+        ref['federated'] = federated_ref
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -1025,6 +1050,8 @@ class Manager(manager.Manager):
                                          old_user_ref['domain_id'])
 
         ref = driver.update_user(entity_id, user)
+        federated_ref = self.shadow_users_api.get_federated_objects(user_id)
+        ref['federated'] = federated_ref
 
         notifications.Audit.updated(self._USER, user_id, initiator)
 
