@@ -41,6 +41,26 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
 
+    def cleanup(self, fed_ref):
+        # Temporarily placed method to clean up dictionary/testing purposes
+        new_ref = {'idp_id': fed_ref['idp_id'], 'protocols':
+                   {'protocol_id': fed_ref['protocol_id'],
+                    'unique_id': fed_ref['unique_id']}}
+        return new_ref
+
+    def get_fed_dict(self, user_id):
+        with sql.session_for_read() as session:
+            query = session.query(model.FederatedUser)
+            query = query.filter(model.FederatedUser.user_id == user_id)
+            fed_objects = []
+            for row in query:
+                m = model.FederatedUser(
+                    idp_id=row.idp_id,
+                    protocol_id=row.protocol_id,
+                    unique_id=row.unique_id)
+                fed_objects.append(self.cleanup(m.to_dict()))
+            return fed_objects
+
     def get_federated_user(self, idp_id, protocol_id, unique_id):
         user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
         return identity_base.filter_user(user_ref.to_dict())

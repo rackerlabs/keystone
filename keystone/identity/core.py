@@ -934,7 +934,9 @@ class Manager(manager.Manager):
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
+        fed_dict = self.shadow_users_api.get_fed_dict(user_id)
         ref = driver.get_user(entity_id)
+        ref['federated'] = fed_dict
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
