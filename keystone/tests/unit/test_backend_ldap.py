@@ -382,6 +382,8 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
+        if 'federated' in user_ref:
+            del user_ref['federated']
         self.assertDictEqual(self.user_foo, user_ref)
 
         driver = self.identity_api._select_identity_driver(

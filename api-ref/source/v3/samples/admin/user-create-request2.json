@@ -1,0 +1,20 @@
+{
+    "user": {
+        "default_project_id": "263fd9",
+        "domain_id": "1789d1",
+        "enabled": true,
+        "federated": [
+            {
+                "idp_id": "1789d1",
+                "protocols": [
+                    {
+                        "protocol_id": "saml2",
+                        "unique_id": "jdoe"
+                    }
+                ]
+            }
+        ],
+        "name": "James Doe",
+        "password": "secretsecret"
+    }
+}

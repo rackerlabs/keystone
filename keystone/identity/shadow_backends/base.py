@@ -19,6 +19,36 @@ import six
 from keystone import exception
 
 
+def filter_federated_object(fed_ref):
+    """Create a new reformatted federated dict using the one passed in.
+
+    When returning federated objects with a user we only need the attributes
+    idp_id, protocol_id, and unique_id. Therefore, we pull these elements out
+    of the fed_ref and create a newly formatted dictionary with the needed
+    information.
+
+    :returns: new_fed_ref
+    """
+    if not fed_ref:
+        return fed_ref
+
+    fed = {}
+    idps = set()
+    import pdb; pdb.set_trace()
+    for fed_dict in fed_ref:
+        if fed_dict['idp_id'] in idps:
+            fed[fed_dict['idp_id']]['protocols'].append(
+                {"protocol_id": fed_dict['protocol_id'],
+                "unique_id": fed_dict['unique_id']})
+        else:
+            fed[fed_dict['idp_id']] = {
+                    "idp_id":fed_dict['idp_id'],
+                    'protocols':[{"protocol_id": fed_dict['protocol_id'],
+                                "unique_id": fed_dict['unique_id']}]}
+            idps.add(fed_dict['idp_id'])
+    return fed
+
+
 @six.add_metaclass(abc.ABCMeta)
 class ShadowUsersDriverBase(object):
     """Interface description for an Shadow Users driver."""

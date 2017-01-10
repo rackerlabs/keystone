@@ -383,6 +383,8 @@ class ResourceTestCase(test_v3.RestfulTestCase,
         self.assertDictEqual(group, r)
         r = self.identity_api.get_user(self.user['id'])
         self.user.pop('password')
+        if 'federated' in r:
+            del r['federated']
         self.assertDictEqual(self.user, r)
         r = self.credential_api.get_credential(credential['id'])
         self.assertDictEqual(credential, r)

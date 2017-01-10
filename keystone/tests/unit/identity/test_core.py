@@ -24,9 +24,58 @@ from keystone import exception
 from keystone import identity
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit import test_v3
 
 
 CONF = keystone.conf.CONF
+
+
+class TestUserWithFederatedAttributes(test_v3.RestfulTestCase):
+    def _create_user_with_federated_user(self, user, fed_dict):
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(fed_dict)
+            user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
+            user_ref.federated_users.append(federated_ref)
+            session.add(user_ref)
+            return identity_base.filter_user(user_ref.to_dict())
+
+    def test_get_users_when_user_has_federated_users(self):
+        # test that the user returns a federated object and that there is only
+        # one returned
+        federated_dict = unit.new_federated_user_ref()
+        user = self.shadow_users_api.create_federated_user(federated_dict)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertTrue('federated' in user_ref)
+        self.assertEqual(1, len(user_ref['federated']))
+        # Verify that all federated attributes are present
+        import pdb; pdb.set_trace()
+        for fed_obj in user_ref['federated']:
+            self.assertTrue('idp_id' in fed_obj)
+            self.assertEqual(federated_dict['idp_id'], fed_obj['idp_id'])
+            self.assertTrue('protocols' in fed_obj)
+            self.assertTrue('protocol_id' in fed_obj['protocols'])
+            self.assertEqual(federated_dict['protocol_id'],
+                             fed_obj['protocols'][0])
+            self.assertTrue('unique_id' in fed_obj['unique_id'])
+            self.assertEqual(federated_dict['unique_id'],
+                             fed_obj['protocols'][0])
+
+
+        # use the user to add another associated federated object and test that
+        # two federated_objects are returned by get_user
+        self._create_user_with_federated_user(user, federated_dict)
+        user_ref2 = self.identity_api.get_user(user['id'])
+        self.assertTrue('federated' in user_ref2)
+        self.assertEqual(2, len(user_ref2['federated']))
+
+        # Create a new user without federated object and verify that federated
+        # object is still returned but that it is an empty list
+        plain_user = self.new_user_ref(
+            domain_id=CONF.identity.default_domain_id)
+        plain_user = self.identity_api.create_user(plain_user)
+        self.assertTrue('federated' in plain_user)
+        self.assertEqual([], plain_user['federated'])
 
 
 class TestDomainConfigs(unit.BaseTestCase):
