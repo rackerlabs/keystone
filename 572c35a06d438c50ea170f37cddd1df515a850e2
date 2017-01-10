@@ -70,6 +70,24 @@
       "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_04827100",
+        "filename": "keystone/identity/backends/ldap/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 21109
+      },
+      "writtenOn": "2017-01-10T21:11:42Z",
+      "side": 1,
+      "message": "thanks Steve for the new connection_timeout option, and your assumption was correct, pool_conn_timeout to apply to PooledLDAPHandler and the new connection_timeout to apply to PythonLDAPHandler.\n\nI am back from holidays. I have to tweak your changes slightly to make them work, as well as add a mock for our UT and then I am hoping we are more or less done.",
+      "parentUuid": "ba5201f7_bd573625",
+      "revId": "572c35a06d438c50ea170f37cddd1df515a850e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
