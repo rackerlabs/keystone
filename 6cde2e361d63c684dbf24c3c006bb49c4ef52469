@@ -33,6 +33,24 @@
       "revId": "6cde2e361d63c684dbf24c3c006bb49c4ef52469",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_1da3ad9f",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T17:45:19Z",
+      "side": 1,
+      "message": "This is something we can address in a follow on patch, too.",
+      "parentUuid": "ba5201f7_3d77913c",
+      "revId": "6cde2e361d63c684dbf24c3c006bb49c4ef52469",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
