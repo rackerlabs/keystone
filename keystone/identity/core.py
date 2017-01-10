@@ -934,7 +934,9 @@ class Manager(manager.Manager):
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
+        federated_ref = self.shadow_users_api.get_federated_objects(user_id)
         ref = driver.get_user(entity_id)
+        ref['federated'] = federated_ref
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
@@ -1018,6 +1020,8 @@ class Manager(manager.Manager):
                                          old_user_ref['domain_id'])
 
         ref = driver.update_user(entity_id, user)
+        federated_ref = self.shadow_users_api.get_federated_objects(user_id)
+        ref['federated'] = federated_ref
 
         notifications.Audit.updated(self._USER, user_id, initiator)
 
