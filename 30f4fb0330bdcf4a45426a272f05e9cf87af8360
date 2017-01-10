@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_339e1508",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T02:27:26Z",
+      "side": 1,
+      "message": "Since we are removing all remaining filters from the hints object, we\u0027re an ensuring that the query we get back from filter_limit_query on line 60 is the same as the query we passed in. In the future we will need to address this behavior *if* we want to be able to query both federated attributes and local user attributes.",
+      "revId": "30f4fb0330bdcf4a45426a272f05e9cf87af8360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_73241dc6",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T02:27:26Z",
+      "side": 1,
+      "message": "user_refs is actually a query here correct? Not a list of results from the sql backend? What if we used `user_query` instead.\n\n  user_query \u003d sql.filter_limit_query(model.User, query, hints)\n  user_refs \u003d identity_base.filter_user(user_query)",
+      "revId": "30f4fb0330bdcf4a45426a272f05e9cf87af8360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
