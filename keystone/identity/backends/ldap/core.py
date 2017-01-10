@@ -322,6 +322,13 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                 values['enabled'] = not orig_enabled
             else:
                 values['enabled'] = self.enabled_default
+
+        # NOTE(notmorgan): MFA Rules are not supported with direct LDAP backing
+        # this is to ensure that testing works as expected until LDAP writes
+        # are removed completely from our test suite outside of .SetUp().
+        values.pop('mfa_rules', None)
+        values.pop('mfa_rules_enabled', None)
+
         values = super(UserApi, self).create(values)
         if self.enabled_mask or (self.enabled_invert and
                                  not self.enabled_emulation):
