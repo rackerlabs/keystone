@@ -16,6 +16,24 @@
       "revId": "d7c241d27b6355f701141fb4c2872f3abeadef25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_907cd7b6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T23:24:39Z",
+      "side": 1,
+      "message": "Yep - i\u0027ve add some validation logic to the mapping schema when we create and update mappings. That should be in the latest patch set.",
+      "parentUuid": "ba5201f7_57a35e9e",
+      "revId": "d7c241d27b6355f701141fb4c2872f3abeadef25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
