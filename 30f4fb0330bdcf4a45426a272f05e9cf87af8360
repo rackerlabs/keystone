@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_a2c8ca75",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-10T14:47:05Z",
+      "side": 1,
+      "message": "This is doing more than just checking for federated attributes, so needs a better name.",
+      "range": {
+        "startLine": 961,
+        "startChar": 8,
+        "endLine": 961,
+        "endChar": 39
+      },
+      "revId": "30f4fb0330bdcf4a45426a272f05e9cf87af8360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a2db6a1a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-10T14:47:05Z",
+      "side": 1,
+      "message": "We\u0027ll need to think through this one, as far returning a single user with a federated object from a list_users call. It makes sense, I\u0027m just a concerned about the inconsistency of the response... It may make more sense to have a separate API instead.",
+      "range": {
+        "startLine": 973,
+        "startChar": 8,
+        "endLine": 975,
+        "endChar": 54
+      },
+      "revId": "30f4fb0330bdcf4a45426a272f05e9cf87af8360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e2d2d233",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-10T14:47:05Z",
+      "side": 1,
+      "message": "Why make this driver call? If there are federated attribute in hints and no users were found, then you would return None; not do a second query.",
+      "range": {
+        "startLine": 996,
+        "startChar": 8,
+        "endLine": 997,
+        "endChar": 47
+      },
+      "revId": "30f4fb0330bdcf4a45426a272f05e9cf87af8360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_339e1508",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 2
