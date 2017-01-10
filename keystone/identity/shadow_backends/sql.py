@@ -41,6 +41,29 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
 
+    @sql.handle_conflicts(conflict_type='federated_user')
+    def create_federated_user_with_user(self, user, federated_dict):
+        del user['federated']
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(federated_dict)
+            user_ref = model.User.from_dict(user)
+            user_ref.created_at = datetime.datetime.utcnow()
+            user_ref.federated_users.append(federated_ref)
+            session.add(user_ref)
+
+    def get_federated_objects(self, user_id):
+        with sql.session_for_read() as session:
+            query = session.query(model.FederatedUser)
+            query = query.filter(model.FederatedUser.user_id == user_id)
+            fed_objects = []
+            for row in query:
+                m = model.FederatedUser(
+                    idp_id=row.idp_id,
+                    protocol_id=row.protocol_id,
+                    unique_id=row.unique_id)
+                fed_objects.append(base.filter_federated_object(m.to_dict()))
+            return fed_objects
+
     def get_federated_user(self, idp_id, protocol_id, unique_id):
         user_ref = self._get_federated_user(idp_id, protocol_id, unique_id)
         return identity_base.filter_user(user_ref.to_dict())
