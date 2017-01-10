@@ -48,6 +48,12 @@ class User(sql.ModelBase, sql.DictBase):
                                      lazy='subquery',
                                      cascade='all,delete-orphan',
                                      backref='user')
+    mfa = orm.relationship('UserMFARules',
+                           uselist=False,
+                           single_parent=True,
+                           lazy='subquery',
+                           cascade='all,delete-orphan',
+                           backref='user')
     created_at = sql.Column(sql.DateTime, nullable=True)
     last_active_at = sql.Column(sql.Date, nullable=True)
 
@@ -314,3 +320,11 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
+
+
+class UserMFARules(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'user_mfa_auth_rules'
+    id = sql.Column(sql.Integer, primary_key=True)
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                         ondelete='CASCADE'), nullable=False, unique=True)
+    rules = sql.Column(sql.JsonBlob())
