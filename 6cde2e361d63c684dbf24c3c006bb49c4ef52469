@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_7dfe79af",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T17:44:32Z",
+      "side": 1,
+      "message": "nit: s/created/returned/",
+      "revId": "6cde2e361d63c684dbf24c3c006bb49c4ef52469",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3d77913c",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T17:44:32Z",
+      "side": 1,
+      "message": "I would opt for including all bad parameter names in the 400 response, instead of just the first one. For the user who has multiple invalid parameters in their query, they have to stumble over each 400 individually.\n\nIf we can provide a response that contains all invalid parameters they can use more of that information to correct their query, instead of fixing one thing then stumbling and fixing the next and stumbling.",
+      "revId": "6cde2e361d63c684dbf24c3c006bb49c4ef52469",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
