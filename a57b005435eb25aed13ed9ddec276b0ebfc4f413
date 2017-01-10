@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_e3f2ca05",
+        "filename": "releasenotes/notes/bug-1654084-00350372f4a1c30c.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-10T18:25:22Z",
+      "side": 1,
+      "message": "We should link to the bug report here as well to provide readers with a little more context if they wish.",
+      "revId": "a57b005435eb25aed13ed9ddec276b0ebfc4f413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
