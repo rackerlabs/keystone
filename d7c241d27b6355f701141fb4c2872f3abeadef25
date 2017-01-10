@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_57a35e9e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-10T14:26:02Z",
+      "side": 1,
+      "message": "what happens if it does not ? KeyError ? we should validate the mapping somehow before this.\n\nAlso, the spec says they\u0027d created: \"If any of those projects or roles do not exist, they must be created by Keystone automatically.\"\n\nhttps://specs.openstack.org/openstack/keystone-specs/specs/keystone/ocata/shadow-mapping.html",
+      "revId": "d7c241d27b6355f701141fb4c2872f3abeadef25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
