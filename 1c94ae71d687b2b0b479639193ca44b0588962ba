@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_3cb321eb",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-10T14:20:39Z",
+      "side": 1,
+      "message": "could add \u0027projects\u0027 to this docstring",
+      "revId": "1c94ae71d687b2b0b479639193ca44b0588962ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
