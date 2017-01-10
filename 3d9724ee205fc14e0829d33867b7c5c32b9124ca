@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_67dc4d47",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "i think you mean request?",
+      "range": {
+        "startLine": 33,
+        "startChar": 15,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_87e13101",
+        "filename": "keystone/auth/plugins/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "same?",
+      "range": {
+        "startLine": 34,
+        "startChar": 14,
+        "endLine": 34,
+        "endChar": 24
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_27b965ed",
+        "filename": "releasenotes/notes/auth-method-handler-interface-17834ba2dde668ae.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "``authenticate``",
+      "range": {
+        "startLine": 4,
+        "startChar": 25,
+        "endLine": 4,
+        "endChar": 37
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a7cd5588",
+        "filename": "releasenotes/notes/auth-method-handler-interface-17834ba2dde668ae.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "``keystone.auth.plugins.base.AuthMethodHandler`` class",
+      "range": {
+        "startLine": 4,
+        "startChar": 48,
+        "endLine": 4,
+        "endChar": 65
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_27a085a5",
+        "filename": "releasenotes/notes/auth-method-handler-interface-17834ba2dde668ae.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "i don\u0027t think you need to give our incompetence as a reason :P",
+      "range": {
+        "startLine": 5,
+        "startChar": 12,
+        "endLine": 5,
+        "endChar": 78
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a7947544",
+        "filename": "releasenotes/notes/auth-method-handler-interface-17834ba2dde668ae.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "the abstract class (``AuthMethodHandler``)",
+      "range": {
+        "startLine": 7,
+        "startChar": 39,
+        "endLine": 7,
+        "endChar": 76
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e7759d32",
+        "filename": "releasenotes/notes/auth-method-handler-interface-17834ba2dde668ae.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-10T05:11:09Z",
+      "side": 1,
+      "message": "The method signature has changed from::\n\n     authenticate(self, context, auth_payload, auth_context):\n\nto::\n\n      authenticate(self, request, auth_payload, auth_context)",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 12,
+        "endChar": 61
+      },
+      "revId": "3d9724ee205fc14e0829d33867b7c5c32b9124ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
