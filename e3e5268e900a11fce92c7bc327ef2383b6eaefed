@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_b63537dc",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-11T14:00:43Z",
+      "side": 1,
+      "message": "Likely yes, but I have no definitive plans.",
+      "parentUuid": "ba5201f7_6b820f02",
+      "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_eb9fdf5c",
         "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
         "patchSetId": 1
@@ -42,6 +60,24 @@
         "endLine": 857,
         "endChar": 73
       },
+      "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a78423b1",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-11T14:00:43Z",
+      "side": 1,
+      "message": "Is the method name not enough? I\u0027ll try to rethink this comment.",
+      "parentUuid": "ba5201f7_eb9fdf5c",
       "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
