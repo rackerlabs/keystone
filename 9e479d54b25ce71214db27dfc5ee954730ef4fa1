@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_86f55eee",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T14:55:30Z",
+      "side": 1,
+      "message": "There is an implicit call to the operators (I marked it below) that without importing the library causes equalities, specifically anything involving equals, to notwork as intended. I\u0027m still looking into potentially better ways around this.",
+      "parentUuid": "ba5201f7_de290939",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_46d61650",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T14:55:30Z",
+      "side": 1,
+      "message": "This is where the operator library is being called.",
+      "range": {
+        "startLine": 135,
+        "startChar": 20,
+        "endLine": 135,
+        "endChar": 41
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_7e881d23",
         "filename": "keystone/identity/core.py",
         "patchSetId": 32
