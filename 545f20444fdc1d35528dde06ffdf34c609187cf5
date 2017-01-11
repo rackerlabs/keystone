@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_923d8a91",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T18:53:38Z",
+      "side": 1,
+      "message": "True - that would work. The only downside would be that we would have already created the project. I opted to have it here so that if the domain_role is outside of the identity provider\u0027s domain, then we bail on everything, instead of creating a project with a role assignment that the user ultimately can\u0027t use.",
+      "parentUuid": "ba5201f7_1b91bcf1",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_d6b0e945",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 8
