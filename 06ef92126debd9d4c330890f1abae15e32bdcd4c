@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_eae50809",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-11T16:59:37Z",
+      "side": 1,
+      "message": "why did you choose \":\" as a separator?\n\nI am asking because we use __ for filtering. For example, in order to filter users that start with \"hello\", we make a query to /users/?name\u003dstartswith__hello.\n\nMaybe we should keep using __ for separator everywhere in keystone?",
+      "range": {
+        "startLine": 23,
+        "startChar": 38,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_aa594037",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-11T16:59:37Z",
+      "side": 1,
+      "message": "why there is no Z in the end? Z stands for Zulu time afaik",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
