@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_a7009967",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-11T16:45:38Z",
+      "side": 1,
+      "message": "so... how does it happen that it doesn\u0027t work without import and works with import? \"# noqa\" is not enough here, could you please add description why this is being imported, what is the root cause and when it can be deleted?\n\nOtherwise we are going to get a lot of reviews removing this.",
+      "parentUuid": "ba5201f7_86f55eee",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_46d61650",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 32
