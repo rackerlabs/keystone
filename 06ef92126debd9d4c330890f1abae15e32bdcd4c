@@ -39,6 +39,29 @@
       "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_76881d72",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-11T17:49:15Z",
+      "side": 1,
+      "message": "Instead of using regex, perhaps we can use oslo_utils\u0027s timeutils.parse_isotime() and check to see if it raises a ValueError.  This feels odd that we are saying 2017-99-99T99:99:99Z is actually valid.",
+      "range": {
+        "startLine": 980,
+        "startChar": 0,
+        "endLine": 982,
+        "endChar": 39
+      },
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
