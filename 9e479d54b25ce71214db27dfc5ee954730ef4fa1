@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_dbcc8dbd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T19:48:30Z",
+      "side": 1,
+      "message": "Testing showed me I was wrong and this can get removed. Not sure what I thought was causing this to be needed.",
+      "parentUuid": "ba5201f7_a7009967",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_46d61650",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 32
