@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_b1228fa1",
+        "filename": "keystone/common/sql/contract_repo/versions/013_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T18:11:19Z",
+      "side": 1,
+      "message": "the auth process remains unaffected, don\u0027t think it relies in this FK.",
+      "parentUuid": "ba5201f7_0f1b41cb",
+      "revId": "5f3aec4f578b799dcd7dd5372f3a9571bf9d293f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_4f3d498e",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 15
@@ -30,6 +48,30 @@
       "writtenOn": "2017-01-11T15:55:20Z",
       "side": 1,
       "message": "Why will this not cause problems for rolling upgrades? The Note above tells me to ask.",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 10
+      },
+      "revId": "5f3aec4f578b799dcd7dd5372f3a9571bf9d293f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_d169d3bf",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T18:11:19Z",
+      "side": 1,
+      "message": "added more details. Basically, since it happens in the same phase, so no time for issues to arise. At least, this is my understanding.",
+      "parentUuid": "ba5201f7_4f3d498e",
       "range": {
         "startLine": 285,
         "startChar": 0,
