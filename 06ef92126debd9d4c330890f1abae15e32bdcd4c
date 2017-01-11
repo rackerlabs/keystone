@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_6c2da945",
+        "filename": "keystone/exception.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T22:53:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_e1f9a281",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_8131b65c",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 33
@@ -94,6 +112,24 @@
       "writtenOn": "2017-01-11T21:46:20Z",
       "side": 1,
       "message": "That is being used by ``filter_[\u0027comparator\u0027]`` at L137.",
+      "parentUuid": "ba5201f7_8131b65c",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8c32cda5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T22:53:08Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "ba5201f7_8131b65c",
       "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -176,6 +212,24 @@
       "side": 1,
       "message": "It would be nice if we could use jsonschema\u0027s built-in support for date-time validation[0]. The thing is that it has a dependency on strict-rfc3339 [1], which is GPL licensed :( \n\nI am on board with Tin\u0027s approach towards finding something to do this validation for us instead of having to maintain an test our own regular expression. Exploring timeutils sounds like a good idea.\n\n[0] https://python-jsonschema.readthedocs.io/en/latest/validate/#validating-formats\n\n[1] https://pypi.python.org/pypi/strict-rfc3339/",
       "parentUuid": "ba5201f7_76881d72",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_cc285536",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-11T22:53:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_fbb15190",
       "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
