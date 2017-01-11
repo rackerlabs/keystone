@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_de290939",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-11T05:33:53Z",
+      "side": 1,
+      "message": "why import if its not used?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_7e881d23",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-11T05:33:53Z",
+      "side": 1,
+      "message": "add a comment / docstring about what we expect a valid timestamp to look like and the behaviour on bad ones (do we let any slide, etc).\n\ni don\u0027t want to look up regex rules every time i see code",
+      "range": {
+        "startLine": 963,
+        "startChar": 8,
+        "endLine": 963,
+        "endChar": 48
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3ea0559f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-11T05:33:53Z",
+      "side": 1,
+      "message": "so does this mean we\u0027ll need to put a space before the \"T\"?",
+      "range": {
+        "startLine": 964,
+        "startChar": 55,
+        "endLine": 964,
+        "endChar": 57
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3ebf75fc",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-11T05:33:53Z",
+      "side": 1,
+      "message": "group this with the other six import",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 33
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_beab6588",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-11T05:33:53Z",
+      "side": 1,
+      "message": "random white space",
+      "range": {
+        "startLine": 9,
+        "startChar": 79,
+        "endLine": 9,
+        "endChar": 80
+      },
+      "revId": "9e479d54b25ce71214db27dfc5ee954730ef4fa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
