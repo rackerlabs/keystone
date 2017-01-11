@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_1b91bcf1",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T18:06:54Z",
+      "side": 1,
+      "message": "another option would be to catch DomainSpecificRoleMismatch and line 161 and transform into InvalidDomainSpecificRole",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 60
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_d6b0e945",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3231,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T18:06:54Z",
+      "side": 1,
+      "message": "nice!",
+      "range": {
+        "startLine": 3230,
+        "startChar": 14,
+        "endLine": 3231,
+        "endChar": 77
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
