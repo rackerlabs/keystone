@@ -49,6 +49,40 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_e1f9a281",
+        "filename": "keystone/exception.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "Since this is a ValidationError, we could remove the need for defining `code` and `title` by inheriting from ValidationError directly:\n\n  class ValidationOperationError(ValidationError):\n      message_format \u003d ...",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8131b65c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this is used anywhere. Can we remove it?",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_aa594037",
         "filename": "keystone/identity/core.py",
         "patchSetId": 33
@@ -83,6 +117,109 @@
         "endLine": 982,
         "endChar": 39
       },
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_fbb15190",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "It would be nice if we could use jsonschema\u0027s built-in support for date-time validation[0]. The thing is that it has a dependency on strict-rfc3339 [1], which is GPL licensed :( \n\nI am on board with Tin\u0027s approach towards finding something to do this validation for us instead of having to maintain an test our own regular expression. Exploring timeutils sounds like a good idea.\n\n[0] https://python-jsonschema.readthedocs.io/en/latest/validate/#validating-formats\n\n[1] https://pypi.python.org/pypi/strict-rfc3339/",
+      "parentUuid": "ba5201f7_76881d72",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_06dcfc71",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "These are some intense assertions. We could improve readability (and reviewablility!) by breaking them into their own well-named variables.",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a13eba88",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "A personal goal of mine when coming up with unit tests names (which I\u0027m terrible at) is to follow a convention I stumbled across in The Art of Unit Testing [1]. I find it useful because it provides reviewers and readers of the test with a bunch of information, just from the test name, which means it\u0027s available in test output, etc... The only downside is that sometimes the names get a bit long, in which case I find it easier to condense the test name to a simpler version of the same message and provide more detail in a doc string.\n\n  def test_{thing_under_test}_{condition}_{result}:\n  def test_list_users_by_password_expires_with_bad_operator_fails(self):\n\n\n[0] http://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html\n[1] https://www.manning.com/books/the-art-of-unit-testing-second-edition",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_c1df3e38",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "We probably don\u0027t need to have a docstring that is exactly the same as the test name, but instead we could use the docstring to explain *why* the behavior in the test is the way it is (if needed of course).",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_01cdc684",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "What\u0027s the reason for the integer in the variable name convention here?",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e17d221d",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T20:45:13Z",
+      "side": 1,
+      "message": "This makes a great docstring title string.",
       "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
