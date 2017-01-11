@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_6b820f02",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T12:10:07Z",
+      "side": 1,
+      "message": "are you going to add a similar test for the remote rules?",
+      "range": {
+        "startLine": 838,
+        "startChar": 8,
+        "endLine": 838,
+        "endChar": 37
+      },
+      "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_eb9fdf5c",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T12:10:07Z",
+      "side": 1,
+      "message": "This is not very clear, I would change this docs to explain what should happen with using the mapping_with_duplicates.",
+      "range": {
+        "startLine": 857,
+        "startChar": 11,
+        "endLine": 857,
+        "endChar": 73
+      },
+      "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
