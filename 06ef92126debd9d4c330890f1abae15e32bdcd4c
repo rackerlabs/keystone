@@ -83,6 +83,47 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_f90b1622",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-11T21:46:20Z",
+      "side": 1,
+      "message": "That is being used by ``filter_[\u0027comparator\u0027]`` at L137.",
+      "parentUuid": "ba5201f7_8131b65c",
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b93d0e91",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-11T21:46:20Z",
+      "side": 1,
+      "message": "Since the topic of \":\" vs. \"__\" came up, would it be better if we do this filtering in https://github.com/openstack/keystone/blob/55755e3bf7c461ceee2bc033657eefb4060453f2/keystone/common/sql/core.py#L276 or https://github.com/openstack/keystone/blob/55755e3bf7c461ceee2bc033657eefb4060453f2/keystone/common/sql/core.py#L317 to generically handle inequality filter vs. doing it just for ``password_expires_at``.",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 30
+      },
+      "revId": "06ef92126debd9d4c330890f1abae15e32bdcd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_aa594037",
         "filename": "keystone/identity/core.py",
         "patchSetId": 33
