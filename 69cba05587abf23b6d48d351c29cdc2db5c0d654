@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_2229018a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T15:57:47Z",
+      "side": 1,
+      "message": "True, I was following the convention (if we could call it that) used by some of the other methods in this module, but passing only shadow_projects makes sense.",
+      "parentUuid": "ba5201f7_4507fa80",
+      "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_6544fe73",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 7
@@ -42,6 +60,24 @@
         "endLine": 120,
         "endChar": 37
       },
+      "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_875e3f43",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T15:57:47Z",
+      "side": 1,
+      "message": "I added some bits to the mapping schema for JSON schema to check to make sure that roles are always populated in the event projects are in the mapping. I don\u0027t think we want roles to be empty when we have projects in the mapping. If this is the case (which I thought I covered) then I think we\u0027d need to revisit the tests to make sure that isn\u0027t happening.",
+      "parentUuid": "ba5201f7_6544fe73",
       "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_22d3c160",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T15:57:47Z",
+      "side": 1,
+      "message": "Ah - this seems like it would be something to add to the validation pieces at the beginning of this method. That way if the role in a mapping belongs to a different domain than the identity provider, we can bail before we create anything.\n\nOn the other hand, emitting that kinda of error at authentication time might not help the user that much. If anything I would think we\u0027d want to have that kind of validation when the operator originally creates the mapping so that users don\u0027t have to deal with an exception they can\u0027t do anything about, that could be a future improvement though.",
+      "parentUuid": "ba5201f7_70411a0b",
+      "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_70267a69",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
@@ -94,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_82546d54",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1706,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T15:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_70267a69",
+      "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_f0f18ace",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
@@ -111,6 +183,24 @@
         "endLine": 3163,
         "endChar": 49
       },
+      "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e249b9b8",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T15:57:47Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "ba5201f7_f0f18ace",
       "revId": "69cba05587abf23b6d48d351c29cdc2db5c0d654",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
