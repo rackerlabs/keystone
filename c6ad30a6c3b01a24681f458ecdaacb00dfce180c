@@ -16,6 +16,47 @@
       "revId": "c6ad30a6c3b01a24681f458ecdaacb00dfce180c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_54bcfcba",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-11T15:40:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba5201f7_a2760a3c",
+      "revId": "c6ad30a6c3b01a24681f458ecdaacb00dfce180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f403300e",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-11T15:40:44Z",
+      "side": 1,
+      "message": "i understand that this is a refactoring, but\n\nthe logic is hard to follow considering the target being set in _handle_member_from_driver. Maybe it should be made more clear in a follow-up?",
+      "range": {
+        "startLine": 229,
+        "startChar": 8,
+        "endLine": 229,
+        "endChar": 45
+      },
+      "revId": "c6ad30a6c3b01a24681f458ecdaacb00dfce180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
