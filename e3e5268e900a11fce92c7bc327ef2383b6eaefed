@@ -81,6 +81,24 @@
       "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_06a5ee45",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-11T15:05:21Z",
+      "side": 1,
+      "message": "yeah, the name would be enough. Got confused by the docstring, actually. Something like \"The local list is squashed and gives preference for the first defined dict\"",
+      "parentUuid": "ba5201f7_a78423b1",
+      "revId": "e3e5268e900a11fce92c7bc327ef2383b6eaefed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
