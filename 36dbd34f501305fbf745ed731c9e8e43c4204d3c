@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_126a6fb3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T23:00:58Z",
+      "side": 1,
+      "message": "filters*",
+      "revId": "36dbd34f501305fbf745ed731c9e8e43c4204d3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b2a1a3fa",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T23:00:58Z",
+      "side": 1,
+      "message": "stored*",
+      "revId": "36dbd34f501305fbf745ed731c9e8e43c4204d3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_324a1327",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-11T23:00:58Z",
+      "side": 1,
+      "message": "The try/except cases here are interest and something tells me they could be simplified but I haven\u0027t been able to put my finger on it yet (unless I\u0027m not reading them properly)... still pondering though.",
+      "revId": "36dbd34f501305fbf745ed731c9e8e43c4204d3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
