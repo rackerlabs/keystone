@@ -16,6 +16,24 @@
       "revId": "f105d6c3a50f9a65f73df7aed136f9389d1f6456",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e13c6dc1",
+        "filename": "devstack/lib/haproxy.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7331
+      },
+      "writtenOn": "2017-01-11T07:42:15Z",
+      "side": 1,
+      "message": "Hi Lance! I opened a bug as Dolph suggested - https://bugs.launchpad.net/keystone/+bug/1654965. Henry Nash helped me to figure out that is was misconfiguration of Keystone in my case. As for multi-keystone I need to have a common memcache that is shared by both nodes. So I added line 116.",
+      "parentUuid": "ba5201f7_cf25e75c",
+      "revId": "f105d6c3a50f9a65f73df7aed136f9389d1f6456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
