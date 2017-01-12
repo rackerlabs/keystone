@@ -16,6 +16,29 @@
       "revId": "1c94ae71d687b2b0b479639193ca44b0588962ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_dd73efb2",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1604,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-12T09:42:05Z",
+      "side": 1,
+      "message": "this should be one scope out to match the spec",
+      "range": {
+        "startLine": 1600,
+        "startChar": 0,
+        "endLine": 1604,
+        "endChar": 22
+      },
+      "revId": "1c94ae71d687b2b0b479639193ca44b0588962ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
