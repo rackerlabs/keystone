@@ -49,6 +49,58 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_e2a5abb5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T13:32:19Z",
+      "side": 1,
+      "message": "I agree. Having create in the name would be important. Also I wonder if this is too big to be nested. Although a nested function has access to the variables defined in the outer scope so you actually don\u0027t need to take any *_api arguments here.",
+      "parentUuid": "ba5201f7_43fa6b44",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_82c4df40",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T13:32:19Z",
+      "side": 1,
+      "message": "suggest: existing_roles \u003d {role[\u0027name\u0027]: role for role in role_api.list_roles()}",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_21ab308b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T13:32:19Z",
+      "side": 1,
+      "message": "I think this comment isn\u0027t needed. The fact that you are just access roles mean you expect them to be there.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e3143f4e",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -205,6 +257,23 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_8193fca2",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T13:32:19Z",
+      "side": 1,
+      "message": "Some messages end with a period and some don\u0027t :-( As a team we should be consistent.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_d6b0e945",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 8
@@ -222,6 +291,23 @@
         "endLine": 3231,
         "endChar": 77
       },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_a1f1e0cf",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T13:32:19Z",
+      "side": 1,
+      "message": "suggest: mapping engine to enable auto-provisioning of resources in",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
