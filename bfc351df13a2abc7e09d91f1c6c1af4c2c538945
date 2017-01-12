@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_22147e4b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1915,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "properly?",
+      "range": {
+        "startLine": 1915,
+        "startChar": 47,
+        "endLine": 1915,
+        "endChar": 53
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_45142c43",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1926,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "this would never be the domain id, use uuid.uuid4().hex",
+      "range": {
+        "startLine": 1926,
+        "startChar": 29,
+        "endLine": 1926,
+        "endChar": 57
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a2006e03",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "now this should be \"resource_base.NULL_DOMAIN_ID\"",
+      "range": {
+        "startLine": 1928,
+        "startChar": 29,
+        "endLine": 1928,
+        "endChar": 33
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e5528012",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1987,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "great test!",
+      "range": {
+        "startLine": 1964,
+        "startChar": 0,
+        "endLine": 1987,
+        "endChar": 63
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a55cf819",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "All federated user entries*",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 28
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_c59bbcc7",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "``protocol``",
+      "range": {
+        "startLine": 5,
+        "startChar": 52,
+        "endLine": 5,
+        "endChar": 60
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_05a224fc",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-12T04:28:21Z",
+      "side": 1,
+      "message": "it used to first authenticate is deleted.",
+      "range": {
+        "startLine": 5,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
