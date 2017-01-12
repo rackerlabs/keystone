@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_f4ec9091",
+        "filename": "keystone/token/persistence/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T21:47:45Z",
+      "side": 1,
+      "message": "Should this be TokenDriverBase then since that\u0027s what TokenDriverV8 was renamed to?",
+      "revId": "81124180e7f5925cf499dfd7899dd42a3594c248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
