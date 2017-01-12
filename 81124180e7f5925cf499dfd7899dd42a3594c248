@@ -16,6 +16,24 @@
       "revId": "81124180e7f5925cf499dfd7899dd42a3594c248",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_9417cc53",
+        "filename": "keystone/token/persistence/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-12T21:50:13Z",
+      "side": 1,
+      "message": "ah so it was just renamed, yeah I\u0027ll add it here then. I need to fix the commit message as well.",
+      "parentUuid": "7a3c09a3_f4ec9091",
+      "revId": "81124180e7f5925cf499dfd7899dd42a3594c248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
