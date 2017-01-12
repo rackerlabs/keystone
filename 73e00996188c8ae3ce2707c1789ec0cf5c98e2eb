@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_2ee94b1b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T19:34:02Z",
+      "side": 1,
+      "message": "yep - they should be within a domain",
+      "parentUuid": "9a57fde8_94f6cbd5",
+      "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_54b9c3e8",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 10
@@ -65,6 +83,24 @@
         "endLine": 140,
         "endChar": 79
       },
+      "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_ceda7f78",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T19:34:02Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a57fde8_54b9c3e8",
       "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -94,6 +130,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_f4be32fe",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T19:34:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_14bbbbc5",
+      "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_f4bb9773",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 10
@@ -111,6 +165,24 @@
         "endLine": 9,
         "endChar": 27
       },
+      "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_345efae9",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T19:34:02Z",
+      "side": 1,
+      "message": "You should add \"word-smith\" to your professional title! ;)\n\nGreat suggestions, thanks!",
+      "parentUuid": "9a57fde8_f4bb9773",
       "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
