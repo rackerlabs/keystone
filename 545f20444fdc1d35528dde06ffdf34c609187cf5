@@ -67,6 +67,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_477204e7",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "As I was writing this, I was really hoping this module had some sort of class structure and I\u0027m surprised that there isn\u0027t one. This seems to be one of the few places in keystone with this type of convention. I\u0027m all for suggestions on making this better!\n\nDavid, what exactly do you mean by not needing any _api arguments? Are you instead suggesting that we pull this utility outside of `handle_unscoped_tokens` and use dependencies to provide the required APIs?",
+      "parentUuid": "9a57fde8_e2a5abb5",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_82c4df40",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -84,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_6add0d70",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_82c4df40",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_21ab308b",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -95,6 +131,24 @@
       "writtenOn": "2017-01-12T13:32:19Z",
       "side": 1,
       "message": "I think this comment isn\u0027t needed. The fact that you are just access roles mean you expect them to be there.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_cabb590d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_21ab308b",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_ca69998d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_e3143f4e",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_a3301209",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -141,6 +213,24 @@
         "endLine": 132,
         "endChar": 53
       },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_4a404957",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "I believe there was a discussion sometime before the implementation started happening to see if that was really something we wanted to do.\n\nI think the main point was that deployers would still have to make policy changes across their deployment in order for the role to be useful, and if they have to do that, it would just make sense for them to create the role, too. This is probably something they\u0027d work out using configuration management. This isn\u0027t the case with projects since we can get the domain ID that they should be in the from the identity provider (thanks to Ron!).\n\nI can propose a patch to amend the spec if everyone is on board with that limitation.",
+      "parentUuid": "9a57fde8_a3301209",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -211,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_d5b93aee",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_c3b3bb98",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_9e058812",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -228,6 +336,24 @@
         "endLine": 162,
         "endChar": 61
       },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_350e0635",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "I could pull this out and give it a reasonable name if that helps.",
+      "parentUuid": "ba5201f7_9e058812",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_55ce2a84",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_1e127857",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_8193fca2",
         "filename": "keystone/exception.py",
         "patchSetId": 8
@@ -268,6 +412,24 @@
       "writtenOn": "2017-01-12T13:32:19Z",
       "side": 1,
       "message": "Some messages end with a period and some don\u0027t :-( As a team we should be consistent.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_95adf28a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "I attempted to follow the convention from DomainSpecificRoleMismatch() and I totally agree. Maybe this is something we can do in a separate string of patches.",
+      "parentUuid": "9a57fde8_8193fca2",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +453,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_d5dcda1a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "They totally can. I can add some assertions here to attempt to grab them before authentication.",
+      "parentUuid": "9a57fde8_646d4632",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_e4c69615",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 8
@@ -302,6 +482,24 @@
       "writtenOn": "2017-01-12T14:23:06Z",
       "side": 1,
       "message": "Does this mean that a user gets a 404? That doesn\u0027t seem right.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_f093ac4d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "It would - but the only way I could think of preventing it would be to have some sort of relationship between the roles and if they are used in the mapping at all. An example might be checking that a role doesn\u0027t exist in a mapping when we delete it, or using a FK relationship.\n\nThoughts?",
+      "parentUuid": "9a57fde8_e4c69615",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +523,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_10fe706b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3179,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_47f844e6",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_87378ce2",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 8
@@ -336,6 +552,24 @@
       "writtenOn": "2017-01-12T14:23:06Z",
       "side": 1,
       "message": "suggest: project_ids \u003d [p[\u0027id\u0027] for p in response.json_body[\u0027projects\u0027]]",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_503f1825",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_87378ce2",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -382,6 +616,24 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_9020a0f9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_6789c8ca",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a57fde8_a1f1e0cf",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 8
@@ -393,6 +645,24 @@
       "writtenOn": "2017-01-12T13:32:19Z",
       "side": 1,
       "message": "suggest: mapping engine to enable auto-provisioning of resources in",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_70517c62",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-12T15:12:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a57fde8_a1f1e0cf",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
