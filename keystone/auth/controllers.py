@@ -514,6 +514,7 @@ class Auth(controller.V3Controller):
         # are specified
         auth_response = {'methods': []}
         for method_name in auth_info.get_method_names():
+            authn_user_id = auth_context.get('user_id')
             method = get_auth_method(method_name)
             resp = method.authenticate(context,
                                        auth_info.get_method_data(method_name),
@@ -521,6 +522,27 @@ class Auth(controller.V3Controller):
             if resp:
                 auth_response['methods'].append(method_name)
                 auth_response[method_name] = resp
+
+            # NOTE(notmorgan): This is checking to be sure that user_id
+            # is not mutated between auth plugins. This is hardening
+            # against bad keystone configuration and/or bad supporting
+            # services. This prevents the last plugin that runs from
+            # being the only source dictating the actual user_id passed
+            # back in the auth context. The 'user_id' should be strictly
+            # none if it has not been populated (handled via dict.get()
+            # method).
+            if (authn_user_id is not None and
+                    authn_user_id != auth_context.get('user_id')):
+                msg = _('Authentication Plugin for %(method_name)s caused '
+                        'a change in `user_id` during authentication '
+                        'processing. Cannot continue authentication with '
+                        'supplied methods %(methods)s. This is likely a '
+                        'misconfiguration of Keystone or a supporting '
+                        'service.') % {
+                    'method_name': method_name,
+                    'methods': auth_info.get_method_names()}
+                LOG.error('msg')
+                raise exception.Unauthorized(msg)
 
         if auth_response["methods"]:
             # authentication continuation required
