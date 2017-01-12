@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a57fde8_e3b3fa08",
+        "filename": "keystone/tests/unit/identity/backends/test_ldap_common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-12T09:39:00Z",
+      "side": 1,
+      "message": "We could be mocking things and adding a negative tests, as pointed out by Lance on patchset 7.",
+      "revId": "2d239cfbc37573f245e6560b42117828b73d19b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
