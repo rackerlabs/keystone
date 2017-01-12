@@ -274,6 +274,74 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_646d4632",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T14:23:06Z",
+      "side": 1,
+      "message": "How do we know that they didn\u0027t already exist?",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_e4c69615",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3168,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T14:23:06Z",
+      "side": 1,
+      "message": "Does this mean that a user gets a 404? That doesn\u0027t seem right.",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_47f844e6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T14:23:06Z",
+      "side": 1,
+      "message": "Should add a docstring saying what exactly is idempotent",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_87378ce2",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3185,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T14:23:06Z",
+      "side": 1,
+      "message": "suggest: project_ids \u003d [p[\u0027id\u0027] for p in response.json_body[\u0027projects\u0027]]",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_d6b0e945",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 8
@@ -291,6 +359,23 @@
         "endLine": 3231,
         "endChar": 77
       },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_6789c8ca",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3231,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-12T14:23:06Z",
+      "side": 1,
+      "message": "/auth/projects",
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
