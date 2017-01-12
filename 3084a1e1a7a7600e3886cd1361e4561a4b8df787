@@ -280,6 +280,30 @@
       "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_9c29119e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T02:37:25Z",
+      "side": 1,
+      "message": "Gotcha, sorry misread this. Makes sense.",
+      "parentUuid": "ba5201f7_3af94cc9",
+      "range": {
+        "startLine": 1293,
+        "startChar": 11,
+        "endLine": 1294,
+        "endChar": 21
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
