@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba5201f7_43fa6b44",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T01:08:35Z",
+      "side": 1,
+      "message": "Would prefer a more descriptive name, such as create_mapping_project_and_roles or something.",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 22
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_e3143f4e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T01:08:35Z",
+      "side": 1,
+      "message": "nit: *project",
+      "range": {
+        "startLine": 128,
+        "startChar": 34,
+        "endLine": 128,
+        "endChar": 40
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_1b91bcf1",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -37,6 +83,75 @@
       "side": 1,
       "message": "True - that would work. The only downside would be that we would have already created the project. I opted to have it here so that if the domain_role is outside of the identity provider\u0027s domain, then we bail on everything, instead of creating a project with a role assignment that the user ultimately can\u0027t use.",
       "parentUuid": "ba5201f7_1b91bcf1",
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_c3b3bb98",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T01:08:35Z",
+      "side": 1,
+      "message": "Why not have a separate method to do this validation?",
+      "range": {
+        "startLine": 117,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 21
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_9e058812",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T01:08:35Z",
+      "side": 1,
+      "message": "confused by this, but it\u0027s late in the day :)",
+      "range": {
+        "startLine": 162,
+        "startChar": 20,
+        "endLine": 162,
+        "endChar": 61
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_1e127857",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T01:08:35Z",
+      "side": 1,
+      "message": "assign_user_mapped_project() maybe...",
+      "range": {
+        "startLine": 217,
+        "startChar": 16,
+        "endLine": 217,
+        "endChar": 30
+      },
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
