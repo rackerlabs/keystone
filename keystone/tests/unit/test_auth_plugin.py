@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import inspect
 import uuid
 
 import mock
@@ -43,6 +44,20 @@ class SimpleChallengeResponse(base.AuthMethodHandler):
             return {"challenge": "What's the name of your high school?"}
 
 
+class SimplePlugin(base.AuthMethodHandler):
+    meth_name = 'simple'
+
+    def authenticate(self, request, auth_payload, auth_context):
+        auth_context['user_id'] = uuid.uuid4().hex
+
+
+class MutateUserIdPlugin(base.AuthMethodHandler):
+    meth_name = 'mutate'
+
+    def authenticate(self, request, auth_payload, auth_context):
+        auth_context['user_id'] = uuid.uuid4().hex
+
+
 class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
     def setUp(self):
         super(TestAuthPlugin, self).setUp()
@@ -69,7 +84,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'test': 'test'}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(auth_data)
-        auth_context = {'extras': {}, 'method_names': []}
+        auth_context = auth.controllers.AuthContext(extras={}, method_names=[])
         try:
             self.api.authenticate(self.make_request(), auth_info, auth_context)
         except exception.AdditionalAuthRequired as e:
@@ -84,7 +99,7 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'response': EXPECTED_RESPONSE}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(auth_data)
-        auth_context = {'extras': {}, 'method_names': []}
+        auth_context = auth.controllers.AuthContext(extras={}, method_names=[])
         self.api.authenticate(self.make_request(), auth_info, auth_context)
         self.assertEqual(DEMO_USER_ID, auth_context['user_id'])
 
@@ -94,12 +109,35 @@ class TestAuthPlugin(unit.SQLDriverOverrides, unit.TestCase):
             'response': uuid.uuid4().hex}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(auth_data)
-        auth_context = {'extras': {}, 'method_names': []}
+        auth_context = auth.controllers.AuthContext(extras={}, method_names=[])
         self.assertRaises(exception.Unauthorized,
                           self.api.authenticate,
                           self.make_request(),
                           auth_info,
                           auth_context)
+
+    def test_no_user_id_mutate_in_auth_plugins(self):
+        methods = [SimplePlugin, MutateUserIdPlugin]
+        method_names = [x.meth_name for x in methods]
+        method_opts = {
+            x.meth_name: '.'.join([inspect.getmodule(x).__name__, x.__name__])
+            for x in methods
+        }
+        self.useFixture(
+            auth_plugins.ConfigAuthPlugins(
+                self.config_fixture,
+                methods=method_names,
+                **method_opts))
+        self.useFixture(auth_plugins.LoadAuthPlugins(*method_names))
+
+        auth_data = {'methods': method_names}
+        for name in method_names:
+            auth_data[name] = {'test': 'test'}
+        auth_data = {'identity': auth_data}
+        auth_info = auth.controllers.AuthInfo.create(auth_data)
+        auth_context = auth.controllers.AuthContext(extras={}, method_names=[])
+        self.assertRaises(exception.Unauthorized, self.api.authenticate,
+                          self.make_request(), auth_info, auth_context)
 
     def test_duplicate_method(self):
         # Having the same method twice doesn't cause load_auth_methods to fail.
@@ -145,9 +183,10 @@ class TestMapped(unit.TestCase):
                 }
             }
             auth_info = auth.controllers.AuthInfo.create(auth_data)
-            auth_context = {'extras': {},
-                            'method_names': [],
-                            'user_id': uuid.uuid4().hex}
+            auth_context = auth.controllers.AuthContext(
+                extras={},
+                method_names=[],
+                user_id=uuid.uuid4().hex)
             self.api.authenticate(request, auth_info, auth_context)
             # make sure Mapped plugin got invoked with the correct payload
             ((context, auth_payload, auth_context),
@@ -162,9 +201,10 @@ class TestMapped(unit.TestCase):
         auth_data[method_name] = {'protocol': method_name}
         auth_data = {'identity': auth_data}
 
-        auth_context = {'extras': {},
-                        'method_names': [],
-                        'user_id': uuid.uuid4().hex}
+        auth_context = auth.controllers.AuthContext(
+            extras={},
+            method_names=[],
+            user_id=uuid.uuid4().hex)
 
         self.useFixture(auth_plugins.LoadAuthPlugins(method_name))
 
