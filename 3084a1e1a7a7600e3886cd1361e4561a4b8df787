@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_994fb4bd",
+        "filename": "keystone/exception.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-12T00:22:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_ecee76b3",
+      "range": {
+        "startLine": 251,
+        "startChar": 64,
+        "endLine": 251,
+        "endChar": 69
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e38143c4",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 13
@@ -165,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "ba5201f7_99d6d4c1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-12T00:22:40Z",
+      "side": 1,
+      "message": "Done, and will do!",
+      "parentUuid": "ba5201f7_cc57f224",
+      "range": {
+        "startLine": 1292,
+        "startChar": 16,
+        "endLine": 1292,
+        "endChar": 20
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_831a37c4",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -199,6 +247,30 @@
       "writtenOn": "2017-01-09T18:27:11Z",
       "side": 1,
       "message": "I\u0027m not clear why you need this raise",
+      "range": {
+        "startLine": 1293,
+        "startChar": 11,
+        "endLine": 1294,
+        "endChar": 21
+      },
+      "revId": "3084a1e1a7a7600e3886cd1361e4561a4b8df787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_3af94cc9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-12T00:22:40Z",
+      "side": 1,
+      "message": "If we don\u0027t want users changing their own expired passwords, then we will float the exception up and send back the 401",
+      "parentUuid": "ba5201f7_ec73d613",
       "range": {
         "startLine": 1293,
         "startChar": 11,
