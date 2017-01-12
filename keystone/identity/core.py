@@ -15,6 +15,7 @@
 """Main entry point into the Identity service."""
 
 import functools
+import operator
 import os
 import threading
 import uuid
@@ -36,6 +37,7 @@ from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
+from oslo_utils import timeutils
 
 
 CONF = keystone.conf.CONF
@@ -958,6 +960,48 @@ class Manager(manager.Manager):
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
 
+    def _clean_up_expired_password_hints(self, hints):
+        """Clean Up Expired Password Hints.
+
+        Any `password_expires_at` filters on the `list_users` or
+        `list_users_in_group` queries are modified so the call will
+        return valid data.
+
+        The filters `comparator` is changed to the operator specified in
+        the call, otherwise it is assumed to be `equals`. The filters
+        `value` becomes the timestamp specified. Both the operator and
+        timestamp are validated, and will raise a ValidationOperatorError
+        or ValidationTimeStampError exception respectively if invalid.
+
+        """
+        operators = {'lt': operator.lt, 'gt': operator.gt,
+                     'eq': operator.eq, 'lte': operator.le,
+                     'gte': operator.ge, 'neq': operator.ne}
+        for filter_ in hints.filters:
+            if 'password_expires_at' == filter_['name']:
+                # Split the filters value at the first colon in order to check
+                # if there is an operator specified
+                op, timestamp = filter_['value'].split(':', 1)
+                try:
+                    timestamp = timeutils.parse_isotime(timestamp)
+                    if op in operators:
+                        filter_['value'] = timestamp
+                        filter_['comparator'] = operators[op]
+                        continue
+                    else:
+                        raise exception.ValidationOperatorError
+                except exception.ValidationOperatorError:
+                    raise
+                except ValueError:
+                    pass
+                try:
+                    filter_['value'] = timeutils.parse_isotime(
+                        filter_['value'])
+                    filter_['comparator'] = operators['eq']
+                except ValueError:
+                    raise exception.ValidationTimeStampError
+        return hints
+
     @domains_configured
     @exception_translated('user')
     def list_users(self, domain_scope=None, hints=None):
@@ -972,6 +1016,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter.
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users(hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_scope, driver, mapping.EntityType.USER)
@@ -1257,6 +1302,7 @@ class Manager(manager.Manager):
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
+        hints = self._clean_up_expired_password_hints(hints)
         ref_list = driver.list_users_in_group(entity_id, hints)
         return self._set_domain_id_and_mapping(
             ref_list, domain_id, driver, mapping.EntityType.USER)
