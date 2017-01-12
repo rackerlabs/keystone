@@ -186,6 +186,24 @@
       "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_f4e552a8",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-12T19:36:03Z",
+      "side": 1,
+      "message": "Haha, that\u0027s stevemar\u0027s job ;)",
+      "parentUuid": "9a57fde8_345efae9",
+      "revId": "73e00996188c8ae3ce2707c1789ec0cf5c98e2eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
