@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_443a0238",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1915,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-12T14:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_22147e4b",
+      "range": {
+        "startLine": 1915,
+        "startChar": 47,
+        "endLine": 1915,
+        "endChar": 53
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_45142c43",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 16
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_643f0626",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1926,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-12T14:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_45142c43",
+      "range": {
+        "startLine": 1926,
+        "startChar": 29,
+        "endLine": 1926,
+        "endChar": 57
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_a2006e03",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 16
@@ -59,6 +107,30 @@
       "writtenOn": "2017-01-12T04:28:21Z",
       "side": 1,
       "message": "now this should be \"resource_base.NULL_DOMAIN_ID\"",
+      "range": {
+        "startLine": 1928,
+        "startChar": 29,
+        "endLine": 1928,
+        "endChar": 33
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_843cea30",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-12T14:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_a2006e03",
       "range": {
         "startLine": 1928,
         "startChar": 29,
@@ -140,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_c47432ff",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-12T14:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_c59bbcc7",
+      "range": {
+        "startLine": 5,
+        "startChar": 52,
+        "endLine": 5,
+        "endChar": 60
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_05a224fc",
         "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
         "patchSetId": 16
@@ -151,6 +247,30 @@
       "writtenOn": "2017-01-12T04:28:21Z",
       "side": 1,
       "message": "it used to first authenticate is deleted.",
+      "range": {
+        "startLine": 5,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "bfc351df13a2abc7e09d91f1c6c1af4c2c538945",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_245a5e84",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-12T14:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_05a224fc",
       "range": {
         "startLine": 5,
         "startChar": 61,
