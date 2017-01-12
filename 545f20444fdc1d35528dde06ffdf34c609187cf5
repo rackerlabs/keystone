@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a57fde8_1e13f15d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-12T09:50:13Z",
+      "side": 1,
+      "message": "++ yeah, this can be too shadowed",
+      "parentUuid": "ba5201f7_43fa6b44",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 22
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_e3143f4e",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -41,6 +65,29 @@
         "startChar": 34,
         "endLine": 128,
         "endChar": 40
+      },
+      "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_a3301209",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-12T09:50:13Z",
+      "side": 1,
+      "message": "Spec says the roles would be created, likewise to the projects.\n\n\"If any of those projects or roles do not exist, they must be created by Keystone automatically.\"\n\nhttps://specs.openstack.org/openstack/keystone-specs/specs/keystone/ocata/shadow-mapping.html",
+      "range": {
+        "startLine": 130,
+        "startChar": 16,
+        "endLine": 132,
+        "endChar": 53
       },
       "revId": "545f20444fdc1d35528dde06ffdf34c609187cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
