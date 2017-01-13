@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_2ca86b1f",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:10:12Z",
+      "side": 1,
+      "message": "Why is this needed? I understand the contract exception, but you are not doing any data migration, so why do you need a data migration exception?",
+      "range": {
+        "startLine": 284,
+        "startChar": 8,
+        "endLine": 291,
+        "endChar": 10
+      },
+      "revId": "2a6093b811374aa913224b13a23811dc559035a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_6731aca2",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 3023,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:10:12Z",
+      "side": 1,
+      "message": "What\u0027s the value of this test, it passes before this change.",
+      "range": {
+        "startLine": 3010,
+        "startChar": 4,
+        "endLine": 3023,
+        "endChar": 69
+      },
+      "revId": "2a6093b811374aa913224b13a23811dc559035a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_67d8cc54",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:10:12Z",
+      "side": 1,
+      "message": "I this correct?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "2a6093b811374aa913224b13a23811dc559035a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_87993871",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:10:12Z",
+      "side": 1,
+      "message": "hmm... the user won\u0027t actually be deleted, only the federated attributes.",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "2a6093b811374aa913224b13a23811dc559035a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
