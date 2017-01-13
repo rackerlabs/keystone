@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_06946ee0",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-13T14:11:35Z",
+      "side": 1,
+      "message": "this bugs me. Why was method_names changed to methods? Why does everything still work?",
+      "range": {
+        "startLine": 1293,
+        "startChar": 63,
+        "endLine": 1293,
+        "endChar": 73
+      },
+      "revId": "3d3c2bf6d860a380abefa96d82caa6581b6ac6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
