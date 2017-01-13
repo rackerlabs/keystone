@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_4da68ec2",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T16:31:26Z",
+      "side": 1,
+      "message": "If it fails, then to me it would be a bug, as it shouldn\u0027t be needed if you are not doing any data migrations.",
+      "parentUuid": "7a3c09a3_efe4923c",
+      "range": {
+        "startLine": 284,
+        "startChar": 8,
+        "endLine": 291,
+        "endChar": 10
+      },
+      "revId": "2a6093b811374aa913224b13a23811dc559035a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_6731aca2",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 18
