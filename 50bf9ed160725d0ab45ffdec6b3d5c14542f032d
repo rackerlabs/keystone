@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a3c09a3_e4a5b3b5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T03:38:49Z",
+      "side": 1,
+      "message": "quack quack",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "50bf9ed160725d0ab45ffdec6b3d5c14542f032d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_2b778ed5",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
@@ -42,6 +65,29 @@
         "startChar": 39,
         "endLine": 538,
         "endChar": 61
+      },
+      "revId": "50bf9ed160725d0ab45ffdec6b3d5c14542f032d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_64cb8373",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T03:38:49Z",
+      "side": 1,
+      "message": "add some comments to this test abourt why were doing it",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 46
       },
       "revId": "50bf9ed160725d0ab45ffdec6b3d5c14542f032d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
