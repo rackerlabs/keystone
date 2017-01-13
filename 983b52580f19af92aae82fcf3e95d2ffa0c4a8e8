@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_a09fe901",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-13T23:21:14Z",
+      "side": 1,
+      "message": "Added this back with the optional parameter to still require a token if one still does not wish to use the new feature.",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 279,
+        "endChar": 42
+      },
+      "revId": "983b52580f19af92aae82fcf3e95d2ffa0c4a8e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
