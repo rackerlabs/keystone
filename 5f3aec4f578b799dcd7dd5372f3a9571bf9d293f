@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_2d2b02ed",
+        "filename": "keystone/common/sql/contract_repo/versions/013_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-13T16:33:22Z",
+      "side": 1,
+      "message": "tried this, seems to work fine",
+      "parentUuid": "ba5201f7_b90a6e88",
+      "revId": "5f3aec4f578b799dcd7dd5372f3a9571bf9d293f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_4f3d498e",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 15
