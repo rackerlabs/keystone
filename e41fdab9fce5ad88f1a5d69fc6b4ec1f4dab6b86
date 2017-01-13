@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_be939aa2",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``keystone.controllers.Auth.authenticate``",
+      "range": {
+        "startLine": 5,
+        "startChar": 39,
+        "endLine": 5,
+        "endChar": 77
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_7e81324a",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``AuthContext``",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 15
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_de906698",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``AuthContext``",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_3eeeca22",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``user_id``",
+      "range": {
+        "startLine": 11,
+        "startChar": 16,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_7ef852e6",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``keystone.controllers.Auth.authenticate``",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 12,
+        "endChar": 70
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_dee7863e",
+        "filename": "releasenotes/notes/bug-1656076-c4422270f73b43b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-13T17:27:44Z",
+      "side": 1,
+      "message": "``AuthContext``",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "e41fdab9fce5ad88f1a5d69fc6b4ec1f4dab6b86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
