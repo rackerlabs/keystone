@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_e76afc19",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:37:25Z",
+      "side": 1,
+      "message": "https://en.wikipedia.org/wiki/Shadow_mapping :)",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_a73ab434",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:37:25Z",
+      "side": 1,
+      "message": "++",
+      "range": {
+        "startLine": 212,
+        "startChar": 16,
+        "endLine": 217,
+        "endChar": 17
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_99952042",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:37:25Z",
+      "side": 1,
+      "message": "I think you need another mapping fixture that has projects and groups, so that we can prove that this works if both are in the mapping.",
+      "range": {
+        "startLine": 1595,
+        "startChar": 12,
+        "endLine": 1600,
+        "endChar": 18
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_797234e7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3103,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-13T15:37:25Z",
+      "side": 1,
+      "message": "Why asserting this is None?",
+      "range": {
+        "startLine": 3103,
+        "startChar": 8,
+        "endLine": 3103,
+        "endChar": 51
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
