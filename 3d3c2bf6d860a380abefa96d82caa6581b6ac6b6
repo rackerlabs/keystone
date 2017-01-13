@@ -22,6 +22,30 @@
       "revId": "3d3c2bf6d860a380abefa96d82caa6581b6ac6b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_cf819691",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-13T16:03:11Z",
+      "side": 1,
+      "message": "This was a mistake/typo. It works because AuthContext is a dict and we explicitly populate method_names in the code path we use it. This is/was suspenders and a belt.",
+      "parentUuid": "7a3c09a3_06946ee0",
+      "range": {
+        "startLine": 1293,
+        "startChar": 63,
+        "endLine": 1293,
+        "endChar": 73
+      },
+      "revId": "3d3c2bf6d860a380abefa96d82caa6581b6ac6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
