@@ -22,6 +22,30 @@
       "revId": "50bf9ed160725d0ab45ffdec6b3d5c14542f032d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_0e14a0f3",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-13T02:15:02Z",
+      "side": 1,
+      "message": "I am always hesitant to issue an ISE when it is in the auth path. This is definitely unauthorized in either case. ISE (Internal Server Error) could be used if that is preferred. I just worry about adding non-auth status codes.",
+      "parentUuid": "7a3c09a3_2b778ed5",
+      "range": {
+        "startLine": 538,
+        "startChar": 39,
+        "endLine": 538,
+        "endChar": 61
+      },
+      "revId": "50bf9ed160725d0ab45ffdec6b3d5c14542f032d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
