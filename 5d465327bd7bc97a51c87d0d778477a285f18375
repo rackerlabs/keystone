@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a71b18c_6e35bed9",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-14T10:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_8da30e9e",
+      "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_4db016de",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-08T20:00:54Z",
       "side": 1,
       "message": "an*",
+      "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_ae2fd686",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-14T10:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_4db016de",
       "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_6f1c0914",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-14T10:53:52Z",
+      "side": 1,
+      "message": "The user can read the message from console rather than go to the log file to check what\u0027s happened, so that it will not mislead us to believe the password that is given is effective.",
+      "parentUuid": "3a71b18c_6d86b2dc",
+      "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a71b18c_eda8027a",
         "filename": "keystone/cmd/cli.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2016-12-08T20:00:54Z",
       "side": 1,
       "message": "an*",
+      "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a71b18c_2e5ae62a",
+        "filename": "keystone/cmd/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2017-01-14T10:53:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a71b18c_eda8027a",
       "revId": "5d465327bd7bc97a51c87d0d778477a285f18375",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
