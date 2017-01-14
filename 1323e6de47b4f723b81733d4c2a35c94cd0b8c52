@@ -48,6 +48,52 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_baa9d17d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-14T14:43:38Z",
+      "side": 1,
+      "message": "These appear unused.",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 28
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_1ab105e2",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-14T14:43:38Z",
+      "side": 1,
+      "message": "These appear unused.",
+      "range": {
+        "startLine": 238,
+        "startChar": 0,
+        "endLine": 239,
+        "endChar": 28
+      },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_99952042",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 11
@@ -124,6 +170,46 @@
       "side": 1,
       "message": "The comment above talks about making sure these are global roles and not domain-scoped roles.",
       "parentUuid": "7a3c09a3_797234e7",
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_7a220903",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3137,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-14T14:43:38Z",
+      "side": 1,
+      "message": "What is the difference between /v3/OS-FEDERATION/projects and /auth/projects? Is this possible because of shadow users or the new shadow mapping features?",
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_9afdf53c",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-14T14:43:38Z",
+      "side": 1,
+      "message": "Should mention the restriction that the projects must be within the identity provider\u0027s domain. It\u0027s what breaks my use case for this.",
+      "range": {
+        "startLine": 4,
+        "startChar": 41,
+        "endLine": 4,
+        "endChar": 55
+      },
       "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
