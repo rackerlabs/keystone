@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_56325d11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T15:23:41Z",
+      "side": 1,
+      "message": "Aha - we could think about changing the name. Maybe something like \"Federated Auto-provisioning\" instead?",
+      "parentUuid": "7a3c09a3_e76afc19",
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_a73ab434",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_1869e38b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T15:23:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_baa9d17d",
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_1ab105e2",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -88,6 +124,24 @@
         "endLine": 239,
         "endChar": 28
       },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_38069fce",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T15:23:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_1ab105e2",
       "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -193,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_f8dc1714",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T15:23:41Z",
+      "side": 1,
+      "message": "There shouldn\u0027t be any difference between those two API. If I recall correctly, the /auth/projects API was modified to handle the cases used by /v3/OS-FEDERATION/auth/projects. So you should be able to use /auth/projects/ with federated tokens.",
+      "parentUuid": "7a3c09a3_7a220903",
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_9afdf53c",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 11
@@ -210,6 +282,24 @@
         "endLine": 4,
         "endChar": 55
       },
+      "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_b8552f51",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T15:23:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_9afdf53c",
       "revId": "1323e6de47b4f723b81733d4c2a35c94cd0b8c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
