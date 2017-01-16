@@ -50,6 +50,23 @@
       "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_e791c0f2",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-16T20:13:13Z",
+      "side": 1,
+      "message": "I think we should be more explicit about saying projects that don\u0027t exist will be created.",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
