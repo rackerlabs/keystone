@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_8170ecdd",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1679,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T19:28:15Z",
+      "side": 1,
+      "message": "Ron had a good comment on the last patch set about adding some cases where groups were also in the mapping. As I started working on implementing it, I had some questions because the RuleProcessor already has some logic around groups in the mappings identity_values. I wanted to add this here so that we could iterate on it in review, and capture whatever we come up with in that discussion.",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
