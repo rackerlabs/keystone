@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_38ebe914",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T21:12:41Z",
+      "side": 1,
+      "message": "Got it - I see what you mean. Creating groups on-the-fly would pose the same issue as creating role assignments. As far as your question goes I would assume that we have that ability now that we have a shadow user implementation. But, in digging through the code I can\u0027t seem to find where we explicitly add shadow users to groups from the mapping. This is confusing since the GET /v3/auth/projects API will return projects that user has access to via a group.\n\nLooking at the implementation of both the Mapped plugin and the GET /v3/auth/projects API makes it clear that we don\u0027t determine the groups a user is a member of from the user_id. Instead the Mapped plugin overrides the user_id and group_ids variables of the auth_context, which seem to be pulled out later and used in GET /v3/auth/projects.\n\nI think this case should be handled as a backwards compatibility fix for shadow users. The Mapped plugin never really took users into account since they were ephemeral. Now that we actually have a reference, we can check the group IDs and build the list of projects a user has access to based on the user id (which now points to a shadow user) and a list of groups that shadow user might be in.",
+      "parentUuid": "7a3c09a3_c77be426",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_470b748e",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 12
@@ -64,6 +82,24 @@
       "writtenOn": "2017-01-16T20:13:13Z",
       "side": 1,
       "message": "I think we should be more explicit about saying projects that don\u0027t exist will be created.",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_7258308b",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-16T21:12:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_e791c0f2",
       "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
