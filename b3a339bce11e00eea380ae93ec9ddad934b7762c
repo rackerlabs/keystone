@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_4127f2b5",
+        "filename": "keystone/tests/unit/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-16T15:32:34Z",
+      "side": 1,
+      "message": "I believe Henry commented on this earlier, but this is not testing if `region` is handled correctly, rather that all key/values are correct (whether or not `region` is present).\n\nSomething along the lines of:\n\n assertNotIn(\u0027region\u0027, response.result[\u0027endpoint\u0027])\n\nmay do the trick.",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 71
+      },
+      "revId": "b3a339bce11e00eea380ae93ec9ddad934b7762c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
