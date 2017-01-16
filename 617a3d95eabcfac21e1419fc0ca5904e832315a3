@@ -16,6 +16,40 @@
       "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_c77be426",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-16T20:10:29Z",
+      "side": 1,
+      "message": "I don\u0027t think you should auto-create them for the same reason that I don\u0027t think we should automatically create roles. How useful is a group with no assignments? The question I have is should be add the user to the group in the database?",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_470b748e",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-16T20:10:29Z",
+      "side": 1,
+      "message": "I would say that we wouldn\u0027t need to require it anymore, but we should still accept it. We should also verify that the domain in the mapping is the same as the one the mapping is assigned to.",
+      "revId": "617a3d95eabcfac21e1419fc0ca5904e832315a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
