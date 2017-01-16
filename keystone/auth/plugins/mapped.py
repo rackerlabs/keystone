@@ -68,6 +68,8 @@ class Mapped(base.AuthMethodHandler):
                                   self.federation_api,
                                   self.identity_api)
 
+        return base.AuthHandlerResponse(status=True, response_body=None)
+
 
 def handle_scoped_token(request, auth_context, token_ref,
                         federation_api, identity_api):

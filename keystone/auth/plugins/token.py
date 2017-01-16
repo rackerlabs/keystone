@@ -51,6 +51,8 @@ class Token(base.AuthMethodHandler):
         else:
             token_authenticate(request, auth_context, token_ref)
 
+        return base.AuthHandlerResponse(status=True, response_body=None)
+
 
 def token_authenticate(request, user_context, token_ref):
     try:
@@ -98,7 +100,6 @@ def token_authenticate(request, user_context, token_ref):
         # TODO(morganfainberg: determine if token 'extras' can be removed
         # from the user_context
         user_context['extras'].update(token_ref.get('extras', {}))
-        user_context['method_names'].extend(token_ref.methods)
 
     except AssertionError as e:
         LOG.error(six.text_type(e))

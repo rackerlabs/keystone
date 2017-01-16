@@ -527,6 +527,9 @@ class Auth(controller.V3Controller):
         # of the attributes set by the plugins. This check to ensure
         # `auth_context` is an instance of AuthContext is extra insurance and
         # will prevent regressions.
+
+        auth_methods = []
+
         if not isinstance(auth_context, AuthContext):
             LOG.error(
                 _LE('`auth_context` passed to the Auth controller '
@@ -542,9 +545,14 @@ class Auth(controller.V3Controller):
         if request.remote_user:
             try:
                 external = get_auth_method('external')
-                external.authenticate(request,
-                                      auth_info,
-                                      auth_context)
+                resp = external.authenticate(request,
+                                             auth_info,
+                                             auth_context)
+                if resp and resp.status:
+                    # NOTE(notmorgan): ``external`` plugin cannot be multi-step
+                    # it is either a plain success/fail.
+                    auth_methods.insert(0, 'external')
+
             except exception.AuthMethodNotSupported:
                 # This will happen there is no 'external' plugin registered
                 # and the container is performing authentication.
@@ -567,8 +575,11 @@ class Auth(controller.V3Controller):
                                        auth_info.get_method_data(method_name),
                                        auth_context)
             if resp:
-                auth_response['methods'].append(method_name)
-                auth_response[method_name] = resp
+                if resp.status:
+                    auth_methods.insert(0, method_name)
+                elif resp.response_body:
+                    auth_response['methods'].append(method_name)
+                    auth_response[method_name] = resp.response_body
 
         if auth_response["methods"]:
             # authentication continuation required
@@ -578,6 +589,12 @@ class Auth(controller.V3Controller):
             msg = _('User not found by auth plugin; authentication failed')
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
+
+        # NOTE(notmorgan): ``method_names`` is 100% controlled by this method
+        # and is not the responsibility of the auth plugin to set. This
+        # ensures all auth plugin names are set in an auth request. Many
+        # plugins would not set their values due to oversight.
+        auth_context['method_names'] = auth_methods
 
     @controller.protected()
     def check_token(self, request):

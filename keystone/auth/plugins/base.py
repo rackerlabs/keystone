@@ -13,10 +13,15 @@
 # under the License.
 
 import abc
+import collections
 
 import six
 
 from keystone import exception
+
+
+AuthHandlerResponse = collections.namedtuple('AuthHandlerResponse',
+                                             'status, response_body')
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -42,13 +47,10 @@ class AuthMethodHandler(object):
         :type auth_context: oslo_context.RequestContext
 
         If successful, plugin must set ``user_id`` in ``auth_context``.
-        ``method_name`` is used to convey any additional authentication methods
-        in case authentication is for re-scoping. For example, if the
-        authentication is for re-scoping, plugin must append the previous
-        method names into ``method_names``. Also, plugin may add any additional
-        information into ``extras``. Anything in ``extras`` will be conveyed in
-        the token's ``extras`` attribute. Here's an example of ``auth_context``
-        on successful authentication::
+        A plugin may add any additional information into ``extras``.
+        Anything in ``extras`` will be conveyed in the token's ``extras`` a
+        ttribute. Here's an example of ``auth_context`` on successful
+        authentication::
 
             {
                 "extras": {},
@@ -88,10 +90,11 @@ class AuthMethodHandler(object):
                 }
             }
 
-        :returns: None if authentication is successful.
-                  Authentication payload in the form of a dictionary for the
-                  next authentication step if this is a multi step
-                  authentication.
+        :returns: AuthHandlerResponse with status set to ``True`` if auth was
+                  successful. If `status` is ``False`` and this is a multi-step
+                  auth, the ``response_body`` can be in a form of a dict for
+                  the next step in authentication.
+
         :raises keystone.exception.Unauthorized: for authentication failure
         """
         raise exception.Unauthorized()
