@@ -33,6 +33,24 @@
       "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_aa3adfe4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-17T21:28:34Z",
+      "side": 1,
+      "message": "ValueError is what is raised here in the case that no operator is provided. Because the split happens in the middle of the date. The try/catch block in the end is what fills in the default operator and instead uses the entire string for parsing the time. This isn\u0027t very obvious at first though. \n\nI spent a brief time thinking about ways this can be rewritten and came up with this http://paste.openstack.org/show/GJh0NsV0fqNM188hy65c/",
+      "parentUuid": "7a3c09a3_8a0b63d5",
+      "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
