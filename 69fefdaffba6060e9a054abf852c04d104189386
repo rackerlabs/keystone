@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_3c5ac42a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-17T19:13:31Z",
+      "side": 1,
+      "message": "federation_api is unused too.",
+      "revId": "69fefdaffba6060e9a054abf852c04d104189386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_9c49f862",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-17T19:13:31Z",
+      "side": 1,
+      "message": "federation_api is unused too.",
+      "revId": "69fefdaffba6060e9a054abf852c04d104189386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
