@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_cfe04ffd",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "remove this, a user shouldn\u0027t have to know what a shadow user is",
+      "range": {
+        "startLine": 4,
+        "startChar": 20,
+        "endLine": 4,
+        "endChar": 30
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_0fced781",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "project specified in the mapping*",
+      "range": {
+        "startLine": 5,
+        "startChar": 37,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_6fbcbbdc",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "nit: use \"does not\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_4fc45f5e",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "link to an example?",
+      "range": {
+        "startLine": 7,
+        "startChar": 40,
+        "endLine": 8,
+        "endChar": 36
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_0f95f73d",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "remove \"some\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 44,
+        "endLine": 9,
+        "endChar": 48
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_ef97cb45",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-17T04:07:52Z",
+      "side": 1,
+      "message": "this is redundant, i expect us to continue supporting things",
+      "range": {
+        "startLine": 8,
+        "startChar": 37,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
