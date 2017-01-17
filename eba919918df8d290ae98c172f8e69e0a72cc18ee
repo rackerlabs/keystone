@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_0a713376",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-17T21:14:33Z",
+      "side": 1,
+      "message": "You don\u0027t need this at all. Just let the exception propagate up naturally.",
+      "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_8a0b63d5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-17T21:14:33Z",
+      "side": 1,
+      "message": "Do we have a test case where the ValueError is actually raised?",
+      "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
