@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_196c379b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-17T20:02:13Z",
+      "side": 1,
+      "message": "use .pop(\u0027region\u0027, None)",
+      "revId": "aae92222aead42b3baf9a5c0644b896378e35868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
