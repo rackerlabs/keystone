@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a3c09a3_1d0fd888",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-17T14:59:10Z",
+      "side": 1,
+      "message": "Does this cause issues of some sort? I actually like the idea of the application failing to start if the required things are not available. I suggested there a while ago, but I still think it would be cool to add a backend \"verify_dependencies()\" method that a backend could override to verify its dependencies. Then at startup we could call that method when initializing the backends.",
+      "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a629dbe_6aa551a0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -30,6 +47,24 @@
       "writtenOn": "2016-11-10T15:25:36Z",
       "side": 1,
       "message": "yes, i will attach it to fernet keys backends very soon.",
+      "parentUuid": "9a629dbe_6aa551a0",
+      "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_3dd0141f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-17T14:59:10Z",
+      "side": 1,
+      "message": "++",
       "parentUuid": "9a629dbe_6aa551a0",
       "revId": "b95591013c9f0ece984863096730aa5e6833bbf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
