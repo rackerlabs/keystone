@@ -54,6 +54,7 @@ class User(sql.ModelBase, sql.DictBase):
     # name property
     @hybrid_property
     def name(self):
+        """Return the current user name."""
         if self.local_user:
             return self.local_user.name
         elif self.nonlocal_user:
@@ -74,36 +75,45 @@ class User(sql.ModelBase, sql.DictBase):
         return LocalUser.name
 
     # password properties
-    @hybrid_property
+    @property
     def password_ref(self):
-        """Return the current password."""
+        """Return the current password ref."""
         if self.local_user and self.local_user.passwords:
             return self.local_user.passwords[-1]
-        return None
+        else:
+            return None
 
     @hybrid_property
     def password(self):
+        """Return the current password."""
         if self.password_ref:
             return self.password_ref.password
-        return None
+        else:
+            return None
 
-    @hybrid_property
+    @property
     def password_created_at(self):
+        """Return when password was created at."""
         if self.password_ref:
             return self.password_ref.created_at
-        return None
+        else:
+            return None
 
-    @hybrid_property
+    @property
     def password_expires_at(self):
+        """Return when password expires at."""
         if self.password_ref:
             return self.password_ref.expires_at
-        return None
+        else:
+            return None
 
-    @hybrid_property
+    @property
     def password_is_expired(self):
+        """Return whether password is expired or not."""
         if self.password_expires_at:
             return datetime.datetime.utcnow() >= self.password_expires_at
-        return False
+        else:
+            return False
 
     @password.setter
     def password(self, value):
@@ -139,6 +149,7 @@ class User(sql.ModelBase, sql.DictBase):
     # domain_id property
     @hybrid_property
     def domain_id(self):
+        """Return user's domain id."""
         if self.local_user:
             return self.local_user.domain_id
         elif self.nonlocal_user:
@@ -159,6 +170,7 @@ class User(sql.ModelBase, sql.DictBase):
     # enabled property
     @hybrid_property
     def enabled(self):
+        """Return whether user is created or not."""
         if self._enabled:
             max_days = (
                 CONF.security_compliance.disable_user_account_days_inactive)
