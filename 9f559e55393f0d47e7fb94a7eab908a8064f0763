@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_53f78f8a",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_cfe04ffd",
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_0fced781",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 13
@@ -42,6 +60,24 @@
         "endLine": 5,
         "endChar": 52
       },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_b37a73ef",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_0fced781",
       "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_536cef34",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_6fbcbbdc",
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_4fc45f5e",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 13
@@ -88,6 +142,24 @@
         "endLine": 8,
         "endChar": 36
       },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_30f036fe",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "I have to refactor the documentation to include some - I\u0027ll link to it when I get a new patch up.",
+      "parentUuid": "7a3c09a3_4fc45f5e",
       "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +206,42 @@
         "endLine": 9,
         "endChar": 33
       },
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_33dda3e0",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "I omitted the last sentence, too.",
+      "parentUuid": "7a3c09a3_ef97cb45",
+      "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_734c8bc8",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-17T15:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_0f95f73d",
       "revId": "9f559e55393f0d47e7fb94a7eab908a8064f0763",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
