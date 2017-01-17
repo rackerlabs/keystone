@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_3c0f2489",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-17T19:33:11Z",
+      "side": 1,
+      "message": "Given that check_protection will become a wrapper around this, _check_protection is a better name.",
+      "parentUuid": "ba5201f7_54bcfcba",
+      "revId": "c6ad30a6c3b01a24681f458ecdaacb00dfce180c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_f403300e",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 10
