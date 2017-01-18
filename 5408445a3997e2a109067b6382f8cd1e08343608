@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_641c6314",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 1,
+      "message": "Why don\u0027t we need this anymore? User IDs should be unique whether or not they are in the user table or the local_user table or the nonlocal_user table, right?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_84f06fcb",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 1,
+      "message": "Does each type of user support the a name attribute? If so, do we need to have a constraint that enforces user names are unique within a domain in order to be backwards compatible?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_64cd435d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 1,
+      "message": "This one doesn\u0027t need a UniqueConstraint like LocalUser does?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_c4c5170b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2044,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 1,
+      "message": "We could add some local and nonlocal users here to test that the migration moves the domain ID to the user table. I think we\u0027re just testing that the triggers work properly (which is good!)",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_c49357ff",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2085,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 1,
+      "message": "This is the same condition for both postgres and sqlite?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

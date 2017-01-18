@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_04347f48",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 0,
+      "message": "We keep this here because it\u0027s testing the attribute is pulled from the User table instead of the LocalUser table, right?",
+      "revId": "4e31ab988e1f37c3d5ceff9e6f4c5e9c0c8310c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_a4456bb4",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T21:47:32Z",
+      "side": 0,
+      "message": "Same comment here.",
+      "revId": "4e31ab988e1f37c3d5ceff9e6f4c5e9c0c8310c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
