@@ -765,7 +765,8 @@ def render_response(body=None, status=None, headers=None, method=None):
 
     resp = webob.Response(body=body,
                           status='%d %s' % status,
-                          headerlist=headers)
+                          headerlist=headers,
+                          content_length=len(body))
 
     if method and method.upper() == 'HEAD':
         # NOTE(morganfainberg): HEAD requests should return the same status
