@@ -352,7 +352,7 @@ class Auth(auth_controllers.Auth):
             src = string.Template(template.read())
 
         subs = {'host': host, 'token': token_id}
-        body = src.substitute(subs)
+        body = src.substitute(subs).encode('utf-8')
         return webob.Response(body=body, status='200',
                               headerlist=headers)
 
