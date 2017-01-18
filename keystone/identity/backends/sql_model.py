@@ -15,7 +15,6 @@
 import datetime
 
 import sqlalchemy
-from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
 
 from keystone.common import sql
@@ -52,7 +51,7 @@ class User(sql.ModelBase, sql.DictBase):
     last_active_at = sql.Column(sql.Date, nullable=True)
 
     # name property
-    @hybrid_property
+    @property
     def name(self):
         """Return the current user name."""
         if self.local_user:
@@ -83,7 +82,7 @@ class User(sql.ModelBase, sql.DictBase):
         else:
             return None
 
-    @hybrid_property
+    @property
     def password(self):
         """Return the current password."""
         if self.password_ref:
@@ -147,7 +146,7 @@ class User(sql.ModelBase, sql.DictBase):
         return Password.password
 
     # domain_id property
-    @hybrid_property
+    @property
     def domain_id(self):
         """Return user's domain id."""
         if self.local_user:
@@ -168,7 +167,7 @@ class User(sql.ModelBase, sql.DictBase):
         return LocalUser.domain_id
 
     # enabled property
-    @hybrid_property
+    @property
     def enabled(self):
         """Return whether user is enabled or not."""
         if self._enabled:
