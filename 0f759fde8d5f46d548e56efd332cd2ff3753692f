@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_dab972cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-18T22:26:32Z",
+      "side": 1,
+      "message": "yep!",
+      "parentUuid": "7a3c09a3_9ae36a33",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 25
+      },
+      "revId": "0f759fde8d5f46d548e56efd332cd2ff3753692f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_fa0d4ee9",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-18T22:13:12Z",
       "side": 1,
       "message": "if accessed via Password.password, I think it will need the password_ref to return an expression, so I think we still need \"hybrid_property\" in line 79. Please correct me if I\u0027m confusing stuff here :)",
+      "range": {
+        "startLine": 90,
+        "startChar": 5,
+        "endLine": 90,
+        "endChar": 20
+      },
+      "revId": "0f759fde8d5f46d548e56efd332cd2ff3753692f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_7a2ebea6",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-18T22:26:32Z",
+      "side": 1,
+      "message": "last time i changed a hybrid_property -\u003e property it blew up in the tests. if L79 needed to be hybrid the tests wouldn\u0027t pass (or it\u0027s untested)",
+      "parentUuid": "7a3c09a3_fa0d4ee9",
       "range": {
         "startLine": 90,
         "startChar": 5,
