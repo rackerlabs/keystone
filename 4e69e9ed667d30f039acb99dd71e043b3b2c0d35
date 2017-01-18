@@ -22,6 +22,30 @@
       "revId": "4e69e9ed667d30f039acb99dd71e043b3b2c0d35",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_9748bcb4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-18T15:55:27Z",
+      "side": 1,
+      "message": "If it still should be hybrid, the note describing why should be above it.",
+      "parentUuid": "7a3c09a3_da1436a1",
+      "range": {
+        "startLine": 86,
+        "startChar": 5,
+        "endLine": 86,
+        "endChar": 20
+      },
+      "revId": "4e69e9ed667d30f039acb99dd71e043b3b2c0d35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
