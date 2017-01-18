@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_7cd95b83",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:42:36Z",
+      "side": 1,
+      "message": "We seem to pull these federated attributes out - but we don\u0027t really use them right away. We tend to pass them around to a couple methods in the shadow user API before we actually care about their values. What if we just detected if they existed in the filters, and if so then we can call the shadow user API? \n\n  def _filter_hints_for_federated_users(self, driver, hints):\n      \"\"\"Conditionally call the shadow user backend based on filter values.\"\"\"\n      federated_attributes \u003d [\u0027idp_id\u0027, \u0027protocol_id\u0027, \u0027unique_id\u0027]\n      for filter_ in hints.filters:\n          if filter_[\u0027name\u0027] in federated_attributes:\n              return self.shadow_users_api.get_federated_users(hints)\n          return driver.list_users(hints)",
+      "revId": "6e9f1d89206a85931563ed294b62becbe4dd1269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_3c5ef376",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:42:36Z",
+      "side": 1,
+      "message": "ditto:\n\n  def _get_federated_users(self, hints, query):\n      statements \u003d [model.User.id \u003d\u003d model.FederatedUser.user_id]\n      for filter_ in hints.filters:\n          if filter_[\u0027name\u0027] \u003d\u003d \u0027idp_id\u0027:\n              statements.append(model.FederatedUser.idp_id \u003d\u003d filter_[\u0027value\u0027])\n              # pop the filter with idp_id out of hints.filters",
+      "revId": "6e9f1d89206a85931563ed294b62becbe4dd1269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_bc9bc371",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:42:36Z",
+      "side": 1,
+      "message": "Then we could shorten this method signature to only the hints, too:\n\n  def get_federated_users(self, hints):\n      ...",
+      "revId": "6e9f1d89206a85931563ed294b62becbe4dd1269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
