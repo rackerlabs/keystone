@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_4cf190cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 37
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2017-01-18T01:33:29Z",
+      "side": 1,
+      "message": "remove the word \u0027single.\u0027 All users should belong to some domain. Better to say there is a required one-to-many relatinship between domain and users.",
+      "revId": "1e827d1a335ce991268f1bd3e08d01e7b80e3334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
