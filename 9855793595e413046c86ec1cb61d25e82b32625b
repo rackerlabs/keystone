@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_ffae2080",
+        "filename": "keystone/exception.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:13:32Z",
+      "side": 1,
+      "message": "nit: This is totally a readability thing - but for some reason when I read this I want to naturally say InvalidOperatorError. ValidationOperatorError sounds like \"Operator\" got misplaced inbetween \"Validation\" and \"Error\". Another possible option would be OperatorValidationError. It\u0027s something with how the noun (Operator) and verb (Validation) are being used together.",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_da0892dc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:13:32Z",
+      "side": 1,
+      "message": "Putting the word \u0027translate\u0027 into the method name here might be a little more descriptive of what the method is actually doing. Clean up seems pretty general for this sense.",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_9a47ea4a",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:13:32Z",
+      "side": 1,
+      "message": "This should be done by a self.user (which I believe is an admin?). If that\u0027s the case, why do we need to loosen the policy for list_users and list_users_by_group?",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_3f0b482d",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:13:32Z",
+      "side": 1,
+      "message": "We should have a comment that describes why this test needs to modify the policy. I assume it fails if the default policy is in place?",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_fa7aae76",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-18T22:13:32Z",
+      "side": 1,
+      "message": "This will be formally documented in the Identity API, right?",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
