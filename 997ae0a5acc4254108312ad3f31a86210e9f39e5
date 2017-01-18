@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_31949f41",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-01-18T01:00:57Z",
+      "side": 1,
+      "message": "user\u0027s username sounds a bit redundant.  maybe just user\u0027s name since even the field is called name",
+      "range": {
+        "startLine": 683,
+        "startChar": 7,
+        "endLine": 683,
+        "endChar": 23
+      },
+      "revId": "997ae0a5acc4254108312ad3f31a86210e9f39e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
