@@ -15,6 +15,7 @@
 import string
 
 from oslo_log import log
+import six
 from six.moves import http_client
 from six.moves import urllib
 import webob
@@ -353,6 +354,8 @@ class Auth(auth_controllers.Auth):
 
         subs = {'host': host, 'token': token_id}
         body = src.substitute(subs)
+        if isinstance(body, six.text_type):
+            body = body.encode('utf-8')
         return webob.Response(body=body, status='200',
                               headerlist=headers)
 

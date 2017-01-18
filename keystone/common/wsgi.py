@@ -762,10 +762,13 @@ def render_response(body=None, status=None, headers=None, method=None):
         return str_headers
 
     headers = _convert_to_str(headers)
+    if isinstance(body, six.text_type):
+        body = body.encode('utf-8')
 
     resp = webob.Response(body=body,
                           status='%d %s' % status,
-                          headerlist=headers)
+                          headerlist=headers,
+                          content_length=len(body))
 
     if method and method.upper() == 'HEAD':
         # NOTE(morganfainberg): HEAD requests should return the same status

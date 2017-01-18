@@ -14,6 +14,7 @@
 # it is only used in support of the PKI/PKIz token providers.
 import functools
 
+import six
 import webob
 
 from keystone.common import controller
@@ -82,6 +83,8 @@ class SimpleCert(controller.V3Controller):
         # NOTE(jamielennox): We construct the webob Response ourselves here so
         # that we don't pass through the JSON encoding process.
         headers = [('Content-Type', 'application/x-pem-file')]
+        if isinstance(body, six.text_type):
+            body = body.encode('utf-8')
         return webob.Response(body=body, headerlist=headers, status="200 OK")
 
     def get_ca_certificate(self, context):
