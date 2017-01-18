@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_03babc6e",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-18T19:52:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_d4fcf474",
+      "range": {
+        "startLine": 94,
+        "startChar": 3,
+        "endLine": 94,
+        "endChar": 7
+      },
+      "revId": "739715c172a3ade47a83908a4822eb6a9f2d6d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_54f1e494",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 26
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_23afb82c",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-18T19:52:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_54f1e494",
+      "range": {
+        "startLine": 115,
+        "startChar": 3,
+        "endLine": 115,
+        "endChar": 7
+      },
+      "revId": "739715c172a3ade47a83908a4822eb6a9f2d6d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_54e484ab",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 26
@@ -59,6 +107,30 @@
       "writtenOn": "2017-01-18T18:45:38Z",
       "side": 1,
       "message": "use http://developer.openstack.org/api-ref/identity/v3/index.html#users instead",
+      "range": {
+        "startLine": 129,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 77
+      },
+      "revId": "739715c172a3ade47a83908a4822eb6a9f2d6d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_63a9c024",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-18T19:52:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_54e484ab",
       "range": {
         "startLine": 129,
         "startChar": 16,
