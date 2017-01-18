@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a3c09a3_48cdd964",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-18T14:50:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_0a713376",
+      "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_8a0b63d5",
         "filename": "keystone/identity/core.py",
         "patchSetId": 36
@@ -65,6 +83,24 @@
       "writtenOn": "2017-01-17T21:38:40Z",
       "side": 1,
       "message": "ValueError is from\n\n the timestamp \u003d timeutils.parse_isotime(timestamp)\n\nparse_isotime(timestamp) raises a ValueError if timestamp is not valid.\nAlso I like Kristi\u0027s changes and am testing them out now.",
+      "parentUuid": "7a3c09a3_aa3adfe4",
+      "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a3c09a3_e8bbe5c1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-18T14:50:04Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7a3c09a3_aa3adfe4",
       "revId": "eba919918df8d290ae98c172f8e69e0a72cc18ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
