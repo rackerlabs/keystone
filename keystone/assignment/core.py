@@ -1141,6 +1141,12 @@ class RoleManager(manager.Manager):
             msg = _('Global role cannot imply a domain-specific role')
             raise exception.InvalidImpliedRole(msg,
                                                role_id=implied_role_id)
+        if (prior_role['domain_id'] and implied_role['domain_id'] and
+                prior_role['domain_id'] != implied_role['domain_id']):
+            msg = _('Domain-specific role cannot imply domain-specific'
+                    'role in a different domain.')
+            raise exception.InvalidImpliedRole(msg,
+                                               role_id=implied_role_id)
         response = self.driver.create_implied_role(
             prior_role_id, implied_role_id)
         COMPUTED_ASSIGNMENTS_REGION.invalidate()
