@@ -66,6 +66,42 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c57c1e23",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_4748522e",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_da6f9d90",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_1d3128a3",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_075d6ae9",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -107,6 +143,42 @@
         "endLine": 128,
         "endChar": 62
       },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_658d2a31",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_075d6ae9",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_256082ce",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_9d1d1812",
       "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -160,6 +232,42 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_05a0e69e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_87695a8e",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e592fa56",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_1dd84853",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_a7b9f6ee",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -201,6 +309,42 @@
         "endLine": 156,
         "endChar": 44
       },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_25740234",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_a7b9f6ee",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_458f4e23",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_bdc81476",
       "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -254,6 +398,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c5f89e7f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Aha - good point. Thanks!",
+      "parentUuid": "5a3905b3_dd9c006c",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e7593e90",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 15
@@ -271,6 +433,24 @@
         "endLine": 3113,
         "endChar": 75
       },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a5d632c3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_e7593e90",
       "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -300,6 +480,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_25a8821f",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_fd8e1c26",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_1dbbe8c5",
         "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
         "patchSetId": 15
@@ -317,6 +515,24 @@
         "endLine": 7,
         "endChar": 65
       },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a00e2032",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T15:16:27Z",
+      "side": 1,
+      "message": "I think that can be implied at this point. I attempted to clarify it though.",
+      "parentUuid": "5a3905b3_1dbbe8c5",
       "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
