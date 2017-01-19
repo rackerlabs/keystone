@@ -141,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_601d1873",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T15:29:00Z",
+      "side": 1,
+      "message": "Changed the name, added table at the end. Keeping the \u0027expand\u0027 for now due to the reason indicated earlier.",
+      "parentUuid": "5a3905b3_13791994",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_64cd435d",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 38
@@ -204,6 +222,24 @@
       "writtenOn": "2017-01-19T01:36:53Z",
       "side": 1,
       "message": "Ah, good point ++",
+      "parentUuid": "7a3c09a3_c4c5170b",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c077acd2",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2044,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T15:29:00Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7a3c09a3_c4c5170b",
       "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
