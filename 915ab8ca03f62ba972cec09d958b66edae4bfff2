@@ -164,6 +164,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_d473e0af",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T20:44:31Z",
+      "side": 1,
+      "message": "I agree that a callback would be better here. When I suggested taking this logic out of the @protected decorator I wasn\u0027t thinking about callbacks at all. My primary motivation was not changing @protected for this.",
+      "parentUuid": "5a3905b3_2e04d1be",
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_ee4ba929",
         "filename": "keystone/common/controller.py",
         "patchSetId": 19
