@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e8ed618c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2898,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T19:26:26Z",
+      "side": 1,
+      "message": "So this technically succeeds when it should be forbidden because roles can\u0027t be implied across domains, right?",
+      "revId": "9005858a0e1a507716db6ee163c6fbc81d85990e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
