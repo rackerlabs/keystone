@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_791225b6",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T20:48:59Z",
+      "side": 1,
+      "message": "nit: This can be done at a separate time, but we could add a description of what we\u0027re doing in this setup. For example:\n\n\"The test environment will consist of a single domain, containing a single project. We\u0027re going to create three users and one group. Each user is going to be given a role assignment on the project and the domain. Two of the three users are going to be placed into the group, which won\u0027t have any role assignments to either the project or the domain.\"",
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8e7ea5e2",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T20:48:59Z",
+      "side": 1,
+      "message": "Can this be accomplished without the context manager? Is the context manager required? Usually when freezegun\u0027s context manager is used we are manually setting the time to specific values during the test. That\u0027s fine if that\u0027s not the case here, I just need to be educated :)\n\n\nhttps://github.com/spulec/freezegun#context-manager",
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_946318b1",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T20:48:59Z",
+      "side": 1,
+      "message": "These are some pretty gnarly nested calls, we could probably experiment with ways to make these more readable in the future.",
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f4961c93",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T20:48:59Z",
+      "side": 1,
+      "message": "We technically know which use this will be since we have them stored in class variables accessible through all the tests. We could do something like: \n\n  self.assertEqual(self.user2[\u0027id\u0027], expire_interval_users[0][\u0027id\u0027])\n\nOr something of that nature. That way we know we\u0027re not only getting the right *number* of entities back in the response, but the ones we expected to get back based on the setup.\n\nThis could be applied to most of these tests.",
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
