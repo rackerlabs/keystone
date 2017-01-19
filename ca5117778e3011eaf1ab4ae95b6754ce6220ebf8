@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_1fd3ca39",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T18:46:48Z",
+      "side": 1,
+      "message": "(nit) not sure i like the word syntax here because the syntax is still json. we\u0027re really just adding new content to the json document",
+      "revId": "ca5117778e3011eaf1ab4ae95b6754ce6220ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_7fb04ef5",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T18:46:48Z",
+      "side": 1,
+      "message": "(nit) maybe say that the remote section semantics have not changed.",
+      "revId": "ca5117778e3011eaf1ab4ae95b6754ce6220ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1f12eab4",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T18:46:48Z",
+      "side": 1,
+      "message": "What is achieved?",
+      "revId": "ca5117778e3011eaf1ab4ae95b6754ce6220ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c23b26ea",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T18:46:48Z",
+      "side": 1,
+      "message": "It would be nice to call out the fact that the group membership is ephemeral.",
+      "revId": "ca5117778e3011eaf1ab4ae95b6754ce6220ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
