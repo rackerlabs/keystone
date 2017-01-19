@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_74ff8c01",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T20:40:30Z",
+      "side": 1,
+      "message": "I don\u0027t see a need to mention any of this, a user shouldn\u0027t need to know about keystone.conf settings or specific headers (maybe)\n\nHow about just:\n\n\"This API can be called directly without authenticating and providing a token in the ``X-Auth-Token`` request header\"",
+      "parentUuid": "5a3905b3_0e947589",
+      "range": {
+        "startLine": 366,
+        "startChar": 5,
+        "endLine": 366,
+        "endChar": 62
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_f3db96eb",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 19
