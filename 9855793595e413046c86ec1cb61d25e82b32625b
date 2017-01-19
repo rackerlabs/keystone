@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_49092095",
+        "filename": "keystone/exception.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-19T17:26:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_ffae2080",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_da0892dc",
         "filename": "keystone/identity/core.py",
         "patchSetId": 37
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-18T22:13:32Z",
       "side": 1,
       "message": "Putting the word \u0027translate\u0027 into the method name here might be a little more descriptive of what the method is actually doing. Clean up seems pretty general for this sense.",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a9f8c47d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-19T17:26:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a3c09a3_da0892dc",
       "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_690c1c95",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-19T17:26:15Z",
+      "side": 1,
+      "message": "See below comment.",
+      "parentUuid": "7a3c09a3_9a47ea4a",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_3f0b482d",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 37
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_291214b5",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-19T17:26:15Z",
+      "side": 1,
+      "message": "Moved the test to a new class since the user data is different from normal filter testing. Also removes the need to mess with the policy.",
+      "parentUuid": "7a3c09a3_3f0b482d",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_fa7aae76",
         "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
         "patchSetId": 37
@@ -81,6 +153,24 @@
       "writtenOn": "2017-01-18T22:13:32Z",
       "side": 1,
       "message": "This will be formally documented in the Identity API, right?",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_695a5c85",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-19T17:26:15Z",
+      "side": 1,
+      "message": "Already merged, see: https://review.openstack.org/#/c/409936/",
+      "parentUuid": "7a3c09a3_fa7aae76",
       "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
