@@ -157,6 +157,29 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_597f29aa",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T20:38:30Z",
+      "side": 1,
+      "message": "may as well set it to True. I can\u0027t imagine people will have \"password_expires_days\" and not want this -- if we go with the config option route",
+      "range": {
+        "startLine": 89,
+        "startChar": 12,
+        "endLine": 89,
+        "endChar": 17
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_ce2b4d2f",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 19
