@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_45374eb0",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-19T15:07:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_7690a196",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 40,
+        "endChar": 69
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_16f83de5",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2017-01-19T06:17:40Z",
       "side": 1,
       "message": "nit: s/data/the data/",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 19
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_45058ec0",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-19T15:07:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_16f83de5",
       "range": {
         "startLine": 41,
         "startChar": 15,
@@ -106,6 +154,30 @@
       "writtenOn": "2017-01-19T13:15:55Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "5a3905b3_76bee100",
+      "range": {
+        "startLine": 278,
+        "startChar": 10,
+        "endLine": 278,
+        "endChar": 22
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c5f97eca",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-19T15:07:42Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "5a3905b3_76bee100",
       "range": {
         "startLine": 278,
