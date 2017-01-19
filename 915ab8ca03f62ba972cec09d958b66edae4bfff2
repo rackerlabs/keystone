@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_f3db96eb",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T19:58:27Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 112,
+        "startChar": 26,
+        "endLine": 112,
+        "endChar": 60
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_b3d10ed0",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T19:58:27Z",
+      "side": 1,
+      "message": "Forgot to update this",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 38
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
