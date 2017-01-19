@@ -20,17 +20,28 @@ Mapping Combinations
 Description
 -----------
 
-Mapping adds a set of rules to map federation attributes to Keystone users and/or
-groups. An Identity Provider has exactly one mapping specified per protocol.
+During the authentication process and IdP will present keystone with a set of user
+attributes about the user that is authenticating. For example, in the SAML2
+flow this comes to keystone in a SAML document.
 
-Mapping objects can be used multiple times by different combinations of Identity
+keystone does not directly deal with the federated attributes in the flow. Instead
+it expects third-party software to handle the federated authentication flow and
+present the federated attributes as environment variables. This is how the
+`Shibboleth` and `Mellon` implementations work.
+
+The mapping format described in this document maps these environment variables
+to a local keystone user. The mapping may also define group membership for
+that user and projects the user can access.
+
+An Identity Provider has exactly one mapping specified per protocol. Mappings
+themselves can be used multiple times by different combinations of Identity
 Provider and Protocol.
 
 -----------
 Definitions
 -----------
 
-A rule hierarchy looks as follows:
+A mapping looks as follows:
 
 .. code-block:: javascript
 
@@ -39,23 +50,116 @@ A rule hierarchy looks as follows:
             {
                 "local": [
                     {
-                        "<user> or <group>"
+                        <user>
+                        [<group>]
+ 			[<project>]
                     }
                 ],
                 "remote": [
                     {
-                        "<condition>"
+                        <match>
+                        [<condition>]
                     }
                 ]
             }
         ]
     }
 
-* `rules`: top-level list of rules.
-* `local`: a rule containing information on what local attributes will be mapped.
-* `remote`: a rule containing information on what remote attributes will be mapped.
-* `<condition>`: contains information on conditions that allow a rule, can only
-  be set in a `remote` rule.
+* `mapping`: a JSON object containing a list of rules.
+* `rules`: a property in the mapping that contains the list of rules.
+* `rule`: a JSON object containing `local` and `remote` properties to define the
+   rule. There is no explicit `rule` property.
+* `local`: a JSON object containing information on what local attributes will be mapped.
+
+  * `<user>`: the local user that will be mapped to the federated user.
+  * `<group>`: (optional) the local groups mapped to the federated user.
+  * `<projects>`: (optional) the local projects mapped to the federated user.
+
+* `remote`: a JSON object containing information on what remote attributes will be mapped.
+
+  * `<match>`: a JSON object that tell the mapping engine what federated attribute
+    to make available for substitution in the local object. There can be one or more
+    of these objects in the `remote` list.
+  * `<condition>`: a JSON object containing conditions that allow a rule. There can be
+    zero or more of these object in the `remote` list.
+
+* `direct mapping`: the mapping engine keeps track of each match and makes them
+  available to the local rule for substitution.
+
+--------------------------
+How Mappings Are Processed
+--------------------------
+
+A mapping is selected by IdP and protocol. We take this mapping and process each
+rule sequentially stopping after the first matched rule. A rule is matched when
+all of its conditions are met.
+
+First we evaluate each condition from the rule's remote property to see if the
+rule is a match. If it is a match we save the data captured by each of the
+matches from the rule's remote property in an ordered list. We call these
+matches `direct mappings` since they can be used in the next step.
+
+Ater the rule is found using the rule's conditions and a list of direct mappings is
+stored, we begin processing the rule's `local` property. Each object in the `local`
+property is collapsed into a single JSON object. For example:
+
+.. code-block:: javascript
+
+    {
+        "local": [
+            {
+                "user": {...}
+            },
+            {
+                "projects": [...]
+            },
+        ]
+    }
+
+becomes:
+
+.. code-block:: javascript
+
+    {
+        "local": {
+            "user": {...}
+            "projects": [...]
+        },
+    }
+
+when the same property exists in the local multiple times the first occurance wins:
+
+.. code-block:: javascript
+
+    {
+        "local": [
+            {
+                "user": {#first#}
+            },
+            {
+                "projects": [...]
+            },
+            {
+                "user": {#second#}
+            },
+        ]
+    }
+
+becomes:
+
+.. code-block:: javascript
+
+    {
+        "local": {
+            "user": {#first#}
+            "projects": [...]
+        },
+    }
+
+We take this JSON object and then recursively process it in order to apply
+the direct mappings. This is simply looking for the pattern `{#}` and
+substituting it with values from the direct mappings list. The direct mapping
+list is zero-indexed.
 
 -------------
 Mapping Rules
