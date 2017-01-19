@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_2dc16d81",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 1,
+      "message": "User IDs will be unique, but now I\u0027m combining it with the domain_id to create a composite foreign key constraint. Thus, user_id + domain_id will still enforce uniqueness in the local_user and nonlocal_user tables. So the current fk is not needed and I don\u0027t think you can have multiple fk constraints on the same column.",
+      "parentUuid": "7a3c09a3_641c6314",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_84f06fcb",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
         "patchSetId": 38
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-18T21:47:32Z",
       "side": 1,
       "message": "Does each type of user support the a name attribute? If so, do we need to have a constraint that enforces user names are unique within a domain in order to be backwards compatible?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ede12500",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 1,
+      "message": "local_user and nonlocal_user have a unique constraint with domain_id, which yes, is needed to be backwards compatible. federated_user has unique_id, that is unique within the IdP. At one point I was trying to generalize this into a single table, but it didn\u0027t work in some scenarios.",
+      "parentUuid": "7a3c09a3_84f06fcb",
       "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_edaf6592",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 1,
+      "message": "No, because local_user has an id as the primary key. Whereas with non_local_user, the domain_id + name is the primary key. Unfortunately, I wasn\u0027t consistent with this when developing shadow users (should have been).",
+      "parentUuid": "7a3c09a3_64cd435d",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_c4c5170b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 38
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_ad08fd92",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2044,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 1,
+      "message": "Ah, good point ++",
+      "parentUuid": "7a3c09a3_c4c5170b",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_c49357ff",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 38
@@ -81,6 +153,24 @@
       "writtenOn": "2017-01-18T21:47:32Z",
       "side": 1,
       "message": "This is the same condition for both postgres and sqlite?",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_0dcaf14f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 2085,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 1,
+      "message": "Yeah, I think so. At least this is how we\u0027ve called the does_constraint_exist method in other migrations. So I just copied that.",
+      "parentUuid": "7a3c09a3_c49357ff",
       "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

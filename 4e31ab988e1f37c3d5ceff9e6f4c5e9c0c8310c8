@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_cd81c9fd",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 0,
+      "message": "The domain_id is in both tables. It\u0027s a foreign key in the local_user table, which does 2 things:\n* Keeps it in sync with the user table\n* Allows us to have a unique constraint on the domain_id + name",
+      "parentUuid": "7a3c09a3_04347f48",
+      "revId": "4e31ab988e1f37c3d5ceff9e6f4c5e9c0c8310c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_a4456bb4",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 38
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-18T21:47:32Z",
       "side": 0,
       "message": "Same comment here.",
+      "revId": "4e31ab988e1f37c3d5ceff9e6f4c5e9c0c8310c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4d76b93f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T01:36:53Z",
+      "side": 0,
+      "message": "Same answer",
+      "parentUuid": "7a3c09a3_a4456bb4",
       "revId": "4e31ab988e1f37c3d5ceff9e6f4c5e9c0c8310c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
