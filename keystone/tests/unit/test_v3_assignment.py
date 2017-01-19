@@ -2781,7 +2781,6 @@ class ImpliedRolesTests(test_v3.RestfulTestCase, test_v3.AssignmentTestMixin,
                                            domain_role['id']),
                  expected_status=http_client.FORBIDDEN)
 
-
 class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
     def setUp(self):
         def create_role(domain_id=None):
@@ -2891,6 +2890,11 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
                           self.domainA_role1['id'],
                           user_id=user['id'],
                           project_id=projectB['id'])
+
+    def test_cross_domain_implied_roles(self):
+        self.put('/roles/%s/implies/%s' % (self.domainA_role1['id'],
+                                           self.domainB_role['id']),
+                 expected_status=http_client.FORBIDDEN)
 
 
 class ListUserProjectsTestCase(test_v3.RestfulTestCase):
