@@ -2893,7 +2893,6 @@ class DomainSpecificRoleTests(test_v3.RestfulTestCase, unit.TestCase):
                           user_id=user['id'],
                           project_id=projectB['id'])
 
-    @utils.wip('This will fail because of bug #1657865.')
     def test_cross_domain_implied_roles(self):
         self.put('/roles/%s/implies/%s' % (self.domainA_role1['id'],
                                            self.domainB_role['id']),
