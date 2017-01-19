@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_1edca211",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T22:09:26Z",
+      "side": 1,
+      "message": "This will load all users in memory. Will this break for big installations? Should this be paginated?",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_be038e72",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T22:09:26Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8bd85255",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T22:09:26Z",
+      "side": 1,
+      "message": "This was confusing when I looked at it since it\u0027s not necessary by itself and only exists for the FK relationships below. I think a comment would be useful.",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
