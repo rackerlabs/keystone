@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_0e947589",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 19
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See comment on config options.",
+      "range": {
+        "startLine": 366,
+        "startChar": 5,
+        "endLine": 366,
+        "endChar": 62
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_f3db96eb",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 19
@@ -41,6 +64,218 @@
         "startChar": 4,
         "endLine": 117,
         "endChar": 38
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6e825954",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "Do not add more config options. This is not needed. Change policy and block the API if you want to disable. The proliferation of config options that can be easily mirrored in policy needs to stop.",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 45
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8e3ce594",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See info about config options. This whole method is not needed if you\u0027re only checking CONF.security_compliance.password_expires_days",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 16
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_2e04d1be",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "This is likely not needed at all, you can simply check in the controller method itself to see if the password change is needed. Drop this completely.\n\nThis is also adding a lot of complexity (the decorator pattern for security) is not a good one in general and we should be moving away from it not adding more especially for a limited use-case such as checking if a single API can be used.",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 18
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ee4ba929",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "Unrelated change, revert",
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ce2b4d2f",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See other comment about config options. If the config option stays is use default this to True. Do not add this config option.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 5
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ee20094c",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_eece4982",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See other comment, revert, add the auth check directly in the controller bit. This API can be generally exempted from a token requirement by having no entry in the policy.json for it.\n\nSimply the API should be open without a token but should require (as it does) the current password and the new password. It should be blocked by policy.json if it is meant to be disabled.",
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4eabdd74",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "See other comments about the additional config option. Without the config option less code is changed less to maintain.",
+      "range": {
+        "startLine": 1289,
+        "startChar": 0,
+        "endLine": 1296,
+        "endChar": 21
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8e094598",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "Specify days\u003d in the constructor, be explicit to avoid oddities where possible.",
+      "range": {
+        "startLine": 842,
+        "startChar": 31,
+        "endLine": 842,
+        "endChar": 46
+      },
+      "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6e1259b6",
+        "filename": "releasenotes/notes/user-can-change-expired-password-516709f9da3de26f.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-19T20:13:05Z",
+      "side": 1,
+      "message": "see comment on config options.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 49
       },
       "revId": "915ab8ca03f62ba972cec09d958b66edae4bfff2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
