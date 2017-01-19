@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_4ed5a641",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T17:15:03Z",
+      "side": 1,
+      "message": "nit: Just my opinion, but I would prefer if this was rephrased as something like \"Much of the design assumes that in most deployments auth backends will be shims in front.. \". The way it is, the sentence looks weird.",
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4ebbe6c4",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T17:15:03Z",
+      "side": 1,
+      "message": "saying \"Identity service itself\", would drive the point more clearly.",
+      "range": {
+        "startLine": 39,
+        "startChar": 61,
+        "endLine": 39,
+        "endChar": 77
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ae544a54",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T17:15:03Z",
+      "side": 1,
+      "message": "\"that are\" isn\u0027t really necessary here.",
+      "range": {
+        "startLine": 40,
+        "startChar": 50,
+        "endLine": 40,
+        "endChar": 58
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6ed182cd",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T17:15:03Z",
+      "side": 1,
+      "message": "manage is repeated twice in the same sentence, you can use handle instead. So it may look something like \"allowing it to also handle all\" (also \"the\" isn\u0027t really necessary if you say all)",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ae89aacc",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T17:15:03Z",
+      "side": 1,
+      "message": "\"the data is instead managed by\"",
+      "range": {
+        "startLine": 41,
+        "startChar": 29,
+        "endLine": 41,
+        "endChar": 53
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
