@@ -16,6 +16,24 @@
       "revId": "9005858a0e1a507716db6ee163c6fbc81d85990e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1ec5823b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2898,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T22:02:56Z",
+      "side": 1,
+      "message": "exactly!",
+      "parentUuid": "5a3905b3_e8ed618c",
+      "revId": "9005858a0e1a507716db6ee163c6fbc81d85990e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
