@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_7c092e95",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T22:58:22Z",
+      "side": 1,
+      "message": "Can an domain specific role imply a global role? Can a global role imply a domain specific role?",
+      "revId": "075ec384dbab22f79e6a8c8bcdaf1b6d37926b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
