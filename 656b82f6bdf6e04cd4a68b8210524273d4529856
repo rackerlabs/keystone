@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_3c1ec6ba",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T23:03:59Z",
+      "side": 1,
+      "message": "Even if a deployer has millions of users, this shouldn\u0027t be an issue on standard hardware. It would just obviously take longer.",
+      "parentUuid": "5a3905b3_1edca211",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_be038e72",
         "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
         "patchSetId": 40
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_9c833acc",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T23:03:59Z",
+      "side": 1,
+      "message": "See response above.",
+      "parentUuid": "5a3905b3_be038e72",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_8bd85255",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 40
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-19T22:09:26Z",
       "side": 1,
       "message": "This was confusing when I looked at it since it\u0027s not necessary by itself and only exists for the FK relationships below. I think a comment would be useful.",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5cbc726c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T23:03:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_8bd85255",
       "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
