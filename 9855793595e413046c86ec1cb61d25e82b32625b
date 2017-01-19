@@ -174,6 +174,24 @@
       "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1323c2be",
+        "filename": "releasenotes/notes/pci-dss-query-password-expired-users-a7c96a3843bb9abc.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T19:54:18Z",
+      "side": 1,
+      "message": "Sweet!",
+      "parentUuid": "5a3905b3_695a5c85",
+      "revId": "9855793595e413046c86ec1cb61d25e82b32625b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
