@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_1d3128a3",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_4748522e",
+      "range": {
+        "startLine": 123,
+        "startChar": 20,
+        "endLine": 124,
+        "endChar": 53
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_075d6ae9",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -53,6 +77,30 @@
       "writtenOn": "2017-01-19T05:16:48Z",
       "side": 1,
       "message": "same comment as above",
+      "range": {
+        "startLine": 128,
+        "startChar": 20,
+        "endLine": 128,
+        "endChar": 62
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9d1d1812",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_075d6ae9",
       "range": {
         "startLine": 128,
         "startChar": 20,
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_1dd84853",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_87695a8e",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 17
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_a7b9f6ee",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -99,6 +171,30 @@
       "writtenOn": "2017-01-19T05:16:48Z",
       "side": 1,
       "message": "don\u0027t think you need to log anything here",
+      "range": {
+        "startLine": 156,
+        "startChar": 16,
+        "endLine": 156,
+        "endChar": 44
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_bdc81476",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "++ the create_grant() should log itself",
+      "parentUuid": "5a3905b3_a7b9f6ee",
       "range": {
         "startLine": 156,
         "startChar": 16,
@@ -134,6 +230,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_dd9c006c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_a72576af",
+      "range": {
+        "startLine": 351,
+        "startChar": 6,
+        "endLine": 351,
+        "endChar": 31
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e7593e90",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 15
@@ -150,6 +270,52 @@
         "startChar": 68,
         "endLine": 3113,
         "endChar": 75
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_fd8e1c26",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "s/mapping/mapping rules",
+      "range": {
+        "startLine": 5,
+        "startChar": 21,
+        "endLine": 5,
+        "endChar": 28
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1dbbe8c5",
+        "filename": "releasenotes/notes/implement-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T13:11:36Z",
+      "side": 1,
+      "message": "maybe: To support this behavior, we added a specific mapping syntax.",
+      "range": {
+        "startLine": 7,
+        "startChar": 52,
+        "endLine": 7,
+        "endChar": 65
       },
       "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
