@@ -20,17 +20,28 @@ Mapping Combinations
 Description
 -----------
 
-Mapping adds a set of rules to map federation attributes to Keystone users and/or
-groups. An Identity Provider has exactly one mapping specified per protocol.
+During the authentication process an IdP will present keystone with a set of user
+attributes about the user that is authenticating. For example, in the SAML2
+flow this comes to keystone in a SAML document.
 
-Mapping objects can be used multiple times by different combinations of Identity
+keystone does not directly deal with the federated attributes in the flow. Instead
+it expects third-party software to handle the federated authentication flow and
+present the federated attributes as environment variables. This is how the
+`Shibboleth` and `Mellon` implementations work.
+
+The mapping format described in this document maps these environment variables
+to a local keystone user. The mapping may also define group membership for
+that user and projects the user can access.
+
+An Identity Provider has exactly one mapping specified per protocol. Mappings
+themselves can be used multiple times by different combinations of Identity
 Provider and Protocol.
 
 -----------
 Definitions
 -----------
 
-A rule hierarchy looks as follows:
+A mapping looks as follows:
 
 .. code-block:: javascript
 
@@ -39,23 +50,127 @@ A rule hierarchy looks as follows:
             {
                 "local": [
                     {
-                        "<user> or <group>"
+                        <user>
+                        [<group>]
+                        [<project>]
                     }
                 ],
                 "remote": [
                     {
-                        "<condition>"
+                        <match>
+                        [<condition>]
                     }
                 ]
             }
         ]
     }
 
-* `rules`: top-level list of rules.
-* `local`: a rule containing information on what local attributes will be mapped.
-* `remote`: a rule containing information on what remote attributes will be mapped.
-* `<condition>`: contains information on conditions that allow a rule, can only
-  be set in a `remote` rule.
+* `mapping`: a JSON object containing a list of rules.
+* `rules`: a property in the mapping that contains the list of rules.
+* `rule`: a JSON object containing `local` and `remote` properties to define
+  the rule. There is no explicit `rule` property.
+* `local`: a JSON object containing information on what local attributes will
+  be mapped. The mapping engine processes this using the `context` (defined
+  below) and the result is a representation of the user from keystone's
+  perspective.
+
+  * `<user>`: the local user that will be mapped to the federated user.
+  * `<group>`: (optional) the local groups mapped to the federated user.
+  * `<projects>`: (optional) the local projects mapped to the federated user.
+
+* `remote`: a JSON object containing information on what remote attributes will be mapped.
+
+  * `<match>`: a JSON object that tells the mapping engine what federated attribute
+    to make available for substitution in the local object. There can be one or more
+    of these objects in the `remote` list.
+  * `<condition>`: a JSON object containing conditions that allow a rule. There can be
+    zero or more of these object in the `remote` list.
+
+* `direct mapping`: the mapping engine keeps track of each match and makes them
+  available to the local rule for substitution.
+* `assertion`: data provided to keystone by the IdP to assert facts
+  (name, groups, etc) about the authenticating user. This is an XML document when
+  using the SAML2 protocol.
+* `mapping context`: the data, represented as key-value pairs, that is used by the
+  mapping engine to turn the `local` object into a representation of the user
+  from keystone's perspective. The mapping context contains the environment of the
+  keystone process and any `direct mapping` values calculated when processing the
+  `remote` list.
+
+--------------------------
+How Mappings Are Processed
+--------------------------
+
+A mapping is selected by IdP and protocol. keystone take this mapping and
+process each rule sequentially stopping after the first matched rule. A rule
+is matched when all of its conditions are met.
+
+First we evaluate each condition from the rule's remote property to see if the
+rule is a match. If it is a match we save the data captured by each of the
+matches from the rule's remote property in an ordered list. We call these
+matches `direct mappings` since they can be used in the next step.
+
+After the rule is found using the rule's conditions and a list of direct mappings is
+stored, we begin processing the rule's `local` property. Each object in the `local`
+property is collapsed into a single JSON object. For example:
+
+.. code-block:: javascript
+
+    {
+        "local": [
+            {
+                "user": {...}
+            },
+            {
+                "projects": [...]
+            },
+        ]
+    }
+
+becomes:
+
+.. code-block:: javascript
+
+    {
+        "local": {
+            "user": {...}
+            "projects": [...]
+        },
+    }
+
+when the same property exists in the local multiple times the first occurrence wins:
+
+.. code-block:: javascript
+
+    {
+        "local": [
+            {
+                "user": {#first#}
+            },
+            {
+                "projects": [...]
+            },
+            {
+                "user": {#second#}
+            },
+        ]
+    }
+
+becomes:
+
+.. code-block:: javascript
+
+    {
+        "local": {
+            "user": {#first#}
+            "projects": [...]
+        },
+    }
+
+We take this JSON object and then recursively process it in order to apply
+the direct mappings. This is simply looking for the pattern `{#}` and
+substituting it with values from the direct mappings list. The direct mapping
+list is zero-indexed.
 
 -------------
 Mapping Rules
@@ -72,9 +187,9 @@ tested with the ``keystone-manage mapping_engine`` command:
     $ keystone-manage mapping_engine --rules <file> --input <file>
 
 .. NOTE::
-    Although the rules file is formated as json the input file of assertion
-    data is formatted as individual lines of key: value pairs,
-    see `keystone-manage mapping_engine --help` for details.
+    Although the rules file is formated as JSON, the input file of assertion
+    data is formatted as individual lines of key: value pairs, see
+    `keystone-manage mapping_engine --help` for details.
 
 
 Mapping Conditions
@@ -668,7 +783,7 @@ between this mapping and the other examples is the addition of a ``projects``
 section within the ``local`` rules. The ``projects`` list supplies a list
 of projects that the federated user will be given access to. The projects
 will be automatically created if they don't exist when the user
-authenticates and the mapping engine has applied values from the assertion
+authenticated and the mapping engine has applied values from the assertion
 and mapped them into the ``local`` rules.
 
 In the above example, an authenticated federated user will be granted the
@@ -764,11 +879,13 @@ Keystone to Keystone
 Keystone to Keystone federation also utilizes mappings, but has some
 differences.
 
-An attribute file (``/etc/shibboleth/attribute-map.xml``) is used to add
-attributes to the Keystone Identity Provider. Attributes look as follows:
+An attribute file (e.g. ``/etc/shibboleth/attribute-map.xml`` in a Shibboleth
+implementation) is used to add attributes to the mapping `context`. Attributes
+look as follows:
 
 .. code-block:: xml
 
+    <!-- example from a K2k Shibboleth implementation -->
     <Attribute name="openstack_user" id="openstack_user"/>
     <Attribute name="openstack_user_domain" id="openstack_user_domain"/>
 
