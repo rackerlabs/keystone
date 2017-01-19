@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_88e218d4",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T21:14:47Z",
+      "side": 1,
+      "message": "nit: Whitespace looks weird.",
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_48c2f034",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-19T21:14:47Z",
+      "side": 1,
+      "message": "typo: /Assignements/Assignments/",
+      "range": {
+        "startLine": 683,
+        "startChar": 2,
+        "endLine": 683,
+        "endChar": 14
+      },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
