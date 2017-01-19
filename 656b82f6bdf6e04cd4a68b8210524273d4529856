@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_372d01a8",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T23:22:46Z",
+      "side": 1,
+      "message": "Is that actually true? Wouldn\u0027t all of the changes commit in one big transaction?",
+      "parentUuid": "5a3905b3_3c1ec6ba",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_be038e72",
         "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
         "patchSetId": 40
