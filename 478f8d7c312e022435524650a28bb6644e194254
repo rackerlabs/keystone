@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e9580c59",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-19T17:36:12Z",
+      "side": 1,
+      "message": "Since the logic is moved out to IdentityPasswordExpiryFilteredTestCase, we can remove this.",
+      "range": {
+        "startLine": 44,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 74
+      },
+      "revId": "478f8d7c312e022435524650a28bb6644e194254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_24ff9b02",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-19T17:36:12Z",
+      "side": 1,
+      "message": "Do we need a check here while L423-L424 do not?",
+      "range": {
+        "startLine": 410,
+        "startChar": 0,
+        "endLine": 410,
+        "endChar": 45
+      },
+      "revId": "478f8d7c312e022435524650a28bb6644e194254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_244ddb72",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 20466
+      },
+      "writtenOn": "2017-01-19T17:36:12Z",
+      "side": 1,
+      "message": "Same as comment above w.r.t. L558-559",
+      "range": {
+        "startLine": 544,
+        "startChar": 8,
+        "endLine": 544,
+        "endChar": 45
+      },
+      "revId": "478f8d7c312e022435524650a28bb6644e194254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
