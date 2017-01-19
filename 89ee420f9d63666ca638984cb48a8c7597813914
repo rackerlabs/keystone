@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_7690a196",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T06:17:40Z",
+      "side": 1,
+      "message": "This sentence looks weird, maybe this could be changed to something like:\n\n\"In the basic case, this data is managed by the Identity service, which allows it to manage all CRUD operations that are associated with this data.\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 40,
+        "endChar": 69
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_16f83de5",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T06:17:40Z",
+      "side": 1,
+      "message": "nit: s/data/the data/",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 19
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_76bee100",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T06:17:40Z",
+      "side": 1,
+      "message": "\"As such, many\"",
+      "range": {
+        "startLine": 278,
+        "startChar": 10,
+        "endLine": 278,
+        "endChar": 22
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_b63689b2",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-19T06:17:40Z",
+      "side": 1,
+      "message": "nice catch here",
+      "range": {
+        "startLine": 465,
+        "startChar": 32,
+        "endLine": 465,
+        "endChar": 33
+      },
+      "revId": "89ee420f9d63666ca638984cb48a8c7597813914",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
