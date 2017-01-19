@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_fa870210",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "will be given* ?",
+      "range": {
+        "startLine": 663,
+        "startChar": 43,
+        "endLine": 663,
+        "endChar": 69
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5a87360f",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "remove this, it happens for literally any mapping",
+      "range": {
+        "startLine": 664,
+        "startChar": 0,
+        "endLine": 666,
+        "endChar": 7
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_baad7a8a",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "remove this with \"an authenticated federated user\"",
+      "range": {
+        "startLine": 666,
+        "startChar": 29,
+        "endLine": 667,
+        "endChar": 35
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5ab576cb",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "``member`` role*",
+      "range": {
+        "startLine": 668,
+        "startChar": 24,
+        "endLine": 668,
+        "endChar": 34
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_bac49a40",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "s/privileges/role",
+      "range": {
+        "startLine": 669,
+        "startChar": 15,
+        "endLine": 669,
+        "endChar": 25
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_badbba1a",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "when*",
+      "range": {
+        "startLine": 671,
+        "startChar": 58,
+        "endLine": 671,
+        "endChar": 60
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_7ad152fb",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "following*",
+      "range": {
+        "startLine": 671,
+        "startChar": 33,
+        "endLine": 671,
+        "endChar": 39
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_fa038274",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 672,
+        "startChar": 0,
+        "endLine": 672,
+        "endChar": 15
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9af51e85",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "associated with the*",
+      "range": {
+        "startLine": 675,
+        "startChar": 45,
+        "endLine": 675,
+        "endChar": 51
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1a7e8ee4",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "* The ``projects`` section in the mapping must also contain a ``roles`` section",
+      "range": {
+        "startLine": 676,
+        "startChar": 2,
+        "endLine": 676,
+        "endChar": 10
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1accce34",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "make this a sub bullet of the first one, and re-write as:\n\n  * The roles defined here must already exist in the deployment",
+      "range": {
+        "startLine": 677,
+        "startChar": 2,
+        "endLine": 677,
+        "endChar": 73
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_3a9fca04",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "does not contain a ``groups`` section",
+      "range": {
+        "startLine": 686,
+        "startChar": 39,
+        "endLine": 686,
+        "endChar": 69
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_7a5eb246",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "this sentence seems out of place, bring it back to the first paragraph after the first mapping, or in your bullet list after the first mapping",
+      "range": {
+        "startLine": 687,
+        "startChar": 17,
+        "endLine": 688,
+        "endChar": 53
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ba2f3aa0",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:00:50Z",
+      "side": 1,
+      "message": "did we have a test for this?",
+      "range": {
+        "startLine": 688,
+        "startChar": 54,
+        "endLine": 690,
+        "endChar": 22
+      },
+      "revId": "c85374dc9beef643a0e306f694cb2486b4d2e47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
