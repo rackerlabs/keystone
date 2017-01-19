@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_140ac826",
+        "filename": "keystone/exception.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T22:59:25Z",
+      "side": 1,
+      "message": "this should really be:\n\n  \"... given operator \u0027%(_op)s\u0027 is not valid... \"\n\nand then pass in the invalid one",
+      "range": {
+        "startLine": 137,
+        "startChar": 28,
+        "endLine": 137,
+        "endChar": 46
+      },
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_791225b6",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 39
