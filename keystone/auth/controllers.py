@@ -128,6 +128,18 @@ class AuthContext(dict):
                 raise exception.Unauthorized(msg)
         return super(AuthContext, self).__setitem__(key, val)
 
+    def update(self, E=None, **F):
+        """Override update to prevent conflicting values."""
+        # NOTE(notmorgan): This will not be nearly as performant as the
+        # use of the built-in "update" method on the dict, however, the
+        # volume of data being changed here is very minimal in most cases
+        # and should not see a significant impact by iterating instead of
+        # explicit setting of values.
+        update_dicts = (E or {}, F or {})
+        for d in update_dicts:
+            for key, val in d.items():
+                self[key] = val
+
 
 @dependency.requires('resource_api', 'trust_api')
 class AuthInfo(object):
@@ -545,14 +557,22 @@ class Auth(controller.V3Controller):
         if request.remote_user:
             try:
                 external = get_auth_method('external')
+                # NOTE(notmorgan): Pass a readonly/Frozen version of the
+                # auth_context to the MethodHandler so that the values are
+                # available. It is expected the response will contain updates
+                # to auth_context in the response_data value (dict). This
+                # effectively eliminates "side effects" when running the auth
+                # path.
                 resp = external.authenticate(request,
-                                             auth_info,
-                                             auth_context)
+                                             auth_info)
                 if resp and resp.status:
                     # NOTE(notmorgan): ``external`` plugin cannot be multi-step
                     # it is either a plain success/fail.
                     auth_context.setdefault(
                         'method_names', []).insert(0, 'external')
+                    # NOTE(notmorgan): All updates to auth_context is handled
+                    # here in the .authenticate method.
+                    auth_context.update(resp.response_data or {})
 
             except exception.AuthMethodNotSupported:
                 # This will happen there is no 'external' plugin registered
@@ -572,13 +592,25 @@ class Auth(controller.V3Controller):
         auth_response = {'methods': []}
         for method_name in auth_info.get_method_names():
             method = get_auth_method(method_name)
+            # NOTE(notmorgan): Pass a readonly/Frozen version of the
+            # auth_context to the MethodHandler so that the values are
+            # available. It is expected the response will contain updates
+            # to auth_context in the response_data value (dict). This
+            # effectively eliminates "side effects" when running the auth
+            # path.
             resp = method.authenticate(request,
-                                       auth_info.get_method_data(method_name),
-                                       auth_context)
+                                       auth_info.get_method_data(method_name))
             if resp:
                 if resp.status:
                     auth_context.setdefault(
                         'method_names', []).insert(0, method_name)
+                    # NOTE(notmorgan): All updates to auth_context is handled
+                    # here in the .authenticate method. If the auth attempt was
+                    # not successful do not update the auth_context
+                    resp_method_names = resp.response_data.pop(
+                        'method_names', [])
+                    auth_context['method_names'].extend(resp_method_names)
+                    auth_context.update(resp.response_data or {})
                 elif resp.response_body:
                     auth_response['methods'].append(method_name)
                     auth_response[method_name] = resp.response_body
