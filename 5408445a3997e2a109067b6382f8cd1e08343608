@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_770c0495",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-19T14:50:10Z",
+      "side": 1,
+      "message": "If the files are the files are not unique, I get the below error, where I\u0027m doing an expand, yet it\u0027s calling the file in the contract repo. This was an issue we had early on when we created the 3 repos.\n\nTraceback (most recent call last):\n  File \"keystone/tests/unit/test_sql_upgrade.py\", line 1964, in test_migration_013_contract_add_domain_id_to_user\n    self.expand(13)\n  File \"keystone/tests/unit/test_sql_upgrade.py\", line 228, in expand\n    self.repos[EXPAND_REPO].upgrade(*args, **kwargs)\n  File \"keystone/common/sql/upgrades.py\", line 63, in upgrade\n    self.schema_.runchange(ver, change, changeset.step)\n  File \"/home/jenkins/workspace/gate-keystone-python27-db-ubuntu-xenial/.tox/py27/local/lib/python2.7/site-packages/migrate/versioning/schema.py\", line 93, in runchange\n    change.run(self.engine, step)\n  File \"/home/jenkins/workspace/gate-keystone-python27-db-ubuntu-xenial/.tox/py27/local/lib/python2.7/site-packages/migrate/versioning/script/py.py\", line 148, in run\n    script_func(engine)\n  File \"/home/jenkins/workspace/gate-keystone-python27-db-ubuntu-xenial/keystone/common/sql/contract_repo/versions/013_add_domain_id_to_user.py\", line 43, in upgrade\n    migrate.UniqueConstraint(user.c.id, user.c.domain_id,\n  File \"/home/jenkins/workspace/gate-keystone-python27-db-ubuntu-xenial/.tox/py27/local/lib/python2.7/site-packages/sqlalchemy/util/_collections.py\", line 212, in __getattr__\n    raise AttributeError(key)\nAttributeError: domain_id",
+      "parentUuid": "5a3905b3_933ee9b6",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_641c6314",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
         "patchSetId": 38
