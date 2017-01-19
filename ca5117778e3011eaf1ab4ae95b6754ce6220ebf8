@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_451bc01b",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-19T18:55:21Z",
+      "side": 1,
+      "message": "Also I forgot to mention that this is not going to make \u0027Roles...\u0027 a sub-list. I\u0027ll also fix that on the next patch.",
+      "revId": "ca5117778e3011eaf1ab4ae95b6754ce6220ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_c23b26ea",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 5
