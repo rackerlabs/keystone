@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_a15a8f81",
+        "filename": "releasenotes/notes/user-can-change-expired-password-516709f9da3de26f.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T22:36:12Z",
+      "side": 1,
+      "message": "protection*",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 26
+      },
+      "revId": "26f147831510ac1d9cf103078576662427f7b094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_21fdbf3a",
+        "filename": "releasenotes/notes/user-can-change-expired-password-516709f9da3de26f.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T22:36:12Z",
+      "side": 1,
+      "message": "from change_user API call -\u003e\n\nfrom the `Self-service change user password` API (``/v3/user/$user_id/password``)",
+      "range": {
+        "startLine": 4,
+        "startChar": 27,
+        "endLine": 4,
+        "endChar": 52
+      },
+      "revId": "26f147831510ac1d9cf103078576662427f7b094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
