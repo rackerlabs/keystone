@@ -1993,6 +1993,20 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             protocol_id=federated_user['protocol_id']).all()
         self.assertThat(federated_users, matchers.HasLength(0))
 
+    def test_migration_014_user_mfa_table_add(self):
+        self.expand(13)
+        self.migrate(13)
+        self.contract(13)
+
+        session = self.sessionmaker()
+        mfa_rules = 'user_mfa_auth_rules'
+        self.assertTableDoesNotExist(mfa_rules)
+        self.expand(14)
+        self.migrate(14)
+        self.contract(14)
+        self.assertTableColumns(mfa_rules,
+                                ['id', 'user_id', 'rules'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
