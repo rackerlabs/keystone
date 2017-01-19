@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_2835a4d9",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T22:54:46Z",
+      "side": 1,
+      "message": "Won\u0027t the users be required to change there password? There shouldn\u0027t be an question in this statement should there?",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_689b2cca",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-19T22:54:46Z",
+      "side": 1,
+      "message": "nit: \"not created via the self-service change password API, will ... \"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
