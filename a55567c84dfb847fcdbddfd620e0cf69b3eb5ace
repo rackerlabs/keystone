@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_be2b8e2f",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T21:59:22Z",
+      "side": 1,
+      "message": "think this isn\u0027t necessary since neither the syntax or semantics have changed. Although I agree the original sentence looks weird.",
+      "range": {
+        "startLine": 660,
+        "startChar": 4,
+        "endLine": 660,
+        "endChar": 13
+      },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_88e218d4",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 1
@@ -13,6 +36,29 @@
       "writtenOn": "2017-01-19T21:14:47Z",
       "side": 1,
       "message": "nit: Whitespace looks weird.",
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5ebaaae2",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T21:59:22Z",
+      "side": 1,
+      "message": "authenticates",
+      "range": {
+        "startLine": 665,
+        "startChar": 1,
+        "endLine": 665,
+        "endChar": 14
+      },
       "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -35,6 +81,53 @@
         "startChar": 2,
         "endLine": 683,
         "endChar": 14
+      },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_dece9a82",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T21:59:22Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_48c2f034",
+      "range": {
+        "startLine": 683,
+        "startChar": 2,
+        "endLine": 683,
+        "endChar": 14
+      },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9eab3289",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-19T21:59:22Z",
+      "side": 1,
+      "message": "this is not \"easy\" to understand if stated like that, is this explained elsewhere in this file?",
+      "range": {
+        "startLine": 684,
+        "startChar": 2,
+        "endLine": 684,
+        "endChar": 29
       },
       "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
