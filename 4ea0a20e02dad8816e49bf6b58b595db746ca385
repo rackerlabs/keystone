@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_27f986c9",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "ugh we need to refactor this, badly",
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4748522e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "log something here so the user can fix their problem:\n\nLOG.error(\u0027Role %s was specified in the mapping but does not exist. All roles specified in a mapping must exist before users authenticate\u0027)",
+      "range": {
+        "startLine": 123,
+        "startChar": 20,
+        "endLine": 124,
+        "endChar": 53
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_075d6ae9",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "same comment as above",
+      "range": {
+        "startLine": 128,
+        "startChar": 20,
+        "endLine": 128,
+        "endChar": 62
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_87695a8e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "Log something here?\n\nLOG.info(\u0027Shadow project %s does not exist, it will be created automatically)",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 17
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a7b9f6ee",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "don\u0027t think you need to log anything here",
+      "range": {
+        "startLine": 156,
+        "startChar": 16,
+        "endLine": 156,
+        "endChar": 44
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a72576af",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "this is a pretty generic name for a very specific exception, \"Invalid\" makes me think of a validation that failed (like a schema validation)\n\nDomainSpecificRoleAndIdPMismatch ?",
+      "range": {
+        "startLine": 351,
+        "startChar": 6,
+        "endLine": 351,
+        "endChar": 31
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e7593e90",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T05:16:48Z",
+      "side": 1,
+      "message": "supposed*",
+      "range": {
+        "startLine": 3113,
+        "startChar": 68,
+        "endLine": 3113,
+        "endChar": 75
+      },
+      "revId": "4ea0a20e02dad8816e49bf6b58b595db746ca385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
