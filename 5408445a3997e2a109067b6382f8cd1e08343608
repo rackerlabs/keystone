@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_933ee9b6",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:32:57Z",
+      "side": 1,
+      "message": "remove \"contract\" from the file name",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_641c6314",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user.py",
         "patchSetId": 38
@@ -66,6 +83,40 @@
       "side": 1,
       "message": "local_user and nonlocal_user have a unique constraint with domain_id, which yes, is needed to be backwards compatible. federated_user has unique_id, that is unique within the IdP. At one point I was trying to generalize this into a single table, but it didn\u0027t work in some scenarios.",
       "parentUuid": "7a3c09a3_84f06fcb",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_b34be558",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:32:57Z",
+      "side": 1,
+      "message": "remove \"migrate\" from the file name",
+      "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_13791994",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-19T13:32:57Z",
+      "side": 1,
+      "message": "remove \"expand\" from the file name,\n\nalso, it should be named \"add_domain_id_to_user_table\"",
       "revId": "5408445a3997e2a109067b6382f8cd1e08343608",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
