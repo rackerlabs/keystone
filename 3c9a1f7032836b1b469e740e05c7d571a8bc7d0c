@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e8928a9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:30:00Z",
+      "side": 1,
+      "message": "Was this backported as a cherry pick? From a stable/review perspective, it would be nice to see what the conflicts were (and I assume there were a few with the numbering convention of the migrations).",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_554b3b87",
+        "filename": "keystone/common/sql/contract_repo/versions/005_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:30:00Z",
+      "side": 1,
+      "message": "Is there no other way to get around creating a FK constraint in the contract phase? We would typically create the proper FK constraint in the expand phase, remove the bad FK constraint in the contract phase and then rename the proper one. Is that workflow available here?",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_95e92383",
+        "filename": "keystone/common/sql/expand_repo/versions/005_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:30:00Z",
+      "side": 1,
+      "message": "Ron just filed a bug report saying that having the same names for migration files can cause some issues [0]. We should rename these to something else so that the expand/migrate/contract phases have unique names so that we don\u0027t hit that issue.\n\n\n[0] https://bugs.launchpad.net/keystone/+bug/1658116",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_352cefaa",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:30:00Z",
+      "side": 1,
+      "message": "This might be a long shot, but is renaming possible with FK constraints?",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
