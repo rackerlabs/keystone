@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_f93447fc",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T02:24:53Z",
+      "side": 1,
+      "message": "No, the update statements are happening for each record; auto-committing via sqlalchemy. And memory-wise, this should be fine. My preference would to not do any batching, but let me know if you feel strongly otherwise.",
+      "parentUuid": "5a3905b3_372d01a8",
+      "revId": "656b82f6bdf6e04cd4a68b8210524273d4529856",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_be038e72",
         "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
         "patchSetId": 40
