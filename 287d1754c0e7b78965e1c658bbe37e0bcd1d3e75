@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_25d5c6b8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:33:31Z",
+      "side": 1,
+      "message": "Looks like this is breaking pep8",
+      "revId": "287d1754c0e7b78965e1c658bbe37e0bcd1d3e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
