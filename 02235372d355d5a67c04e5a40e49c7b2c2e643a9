@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c4687b8a",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-20T05:23:38Z",
+      "side": 1,
+      "message": "I like it!",
+      "parentUuid": "5a3905b3_4ed5a641",
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_4ebbe6c4",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2017-01-19T17:15:03Z",
       "side": 1,
       "message": "saying \"Identity service itself\", would drive the point more clearly.",
+      "range": {
+        "startLine": 39,
+        "startChar": 61,
+        "endLine": 39,
+        "endChar": 77
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_24277f65",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-20T05:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_4ebbe6c4",
       "range": {
         "startLine": 39,
         "startChar": 61,
@@ -88,6 +130,54 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_24de9f3f",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-20T05:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_6ed182cd",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_64e8a7e3",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-20T05:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_ae544a54",
+      "range": {
+        "startLine": 40,
+        "startChar": 50,
+        "endLine": 40,
+        "endChar": 58
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_ae89aacc",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 2
@@ -99,6 +189,30 @@
       "writtenOn": "2017-01-19T17:15:03Z",
       "side": 1,
       "message": "\"the data is instead managed by\"",
+      "range": {
+        "startLine": 41,
+        "startChar": 29,
+        "endLine": 41,
+        "endChar": 53
+      },
+      "revId": "02235372d355d5a67c04e5a40e49c7b2c2e643a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e4a1f7aa",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-20T05:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_ae89aacc",
       "range": {
         "startLine": 41,
         "startChar": 29,
