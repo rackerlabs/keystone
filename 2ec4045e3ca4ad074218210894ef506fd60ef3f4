@@ -22,6 +22,30 @@
       "revId": "2ec4045e3ca4ad074218210894ef506fd60ef3f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e72c994c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T06:01:24Z",
+      "side": 1,
+      "message": "I think this test is me making redundant tests, checking for invalid tokens is done above [1] and with the newest changes, this doesn\u0027t check token validation.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_identity.py#L838",
+      "parentUuid": "5a3905b3_5148cf87",
+      "range": {
+        "startLine": 992,
+        "startChar": 29,
+        "endLine": 992,
+        "endChar": 70
+      },
+      "revId": "2ec4045e3ca4ad074218210894ef506fd60ef3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
