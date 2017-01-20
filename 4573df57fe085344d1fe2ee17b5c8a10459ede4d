@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e81c4a15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:33:47Z",
+      "side": 1,
+      "message": "This doesn\u0027t close this bug does it? The bug report eludes to some additional validation that we could do.",
+      "revId": "4573df57fe085344d1fe2ee17b5c8a10459ede4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
