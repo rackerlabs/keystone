@@ -322,6 +322,13 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
+        # Add in the mfa_rules and mfa_rules_enabled values for user_sna
+        # This whole test is going away once LDAP writes are no longer a
+        # part of Keystone. Until then, this is a work-around for this specific
+        # test.
+        self.user_sna['mfa_rules'] = []
+        self.user_sna['mfa_rules_enabled'] = True
+
     def _get_domain_fixture(self):
         """Return the static domain, since domains in LDAP are read-only."""
         return self.resource_api.get_domain(CONF.identity.default_domain_id)

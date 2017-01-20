@@ -89,6 +89,116 @@ def get_auth_method(method_name):
     return AUTH_METHODS[method_name]
 
 
+@dependency.requires('identity_api')
+class UserMFARulesValidator(object):
+    """Helper object that can validate the MFA Rules."""
+
+    @property
+    def _auth_methods(self):
+        if AUTH_PLUGINS_LOADED:
+            return set(AUTH_METHODS.keys())
+        raise RuntimeError(_('Auth Method Plugins are not loaded.'))
+
+    def check_auth_methods_against_rules(self, user_id, auth_methods):
+        """Validate the MFA rules against the successful auth methods.
+
+        :param user_id: The user's ID (uuid).
+        :type user_id: str
+        :param auth_methods: List of methods that were used for auth
+        :type auth_methods: set
+        :returns: Boolean, ``True`` means rules match and auth may proceed,
+                  ``False`` means rules do not match.
+        """
+        user_ref = self.identity_api.get_user(user_id)
+        try:
+            rules = self.parse_rule_structure(user_ref['mfa_rules'])
+        except ValueError:
+            LOG.error(_LE('Corrupt rule data structure for user %(user_id)s, '
+                          'no rules loaded.'),
+                      {'user_id': user_id})
+            rules = set()
+
+        if not rules or not user_ref.mfa.enabled:
+            # return quickly if the rules are disabled for the user or not set
+            LOG.debug('User MFA Rules not processed for %(user_id)s. '
+                      'Rule list: %(rules)r (Enabled: %(enabled)s).',
+                      {'user_id': user_id,
+                       'rules': user_ref['mfa_rules'],
+                       'enabled': user_ref['mfa_rules_enabled']})
+            return True
+
+        for r in rules:
+            # NOTE(notmorgan): We only check against the actually loaded
+            # auth methods meaning that the keystone administrator may
+            # disable an auth method, and a rule will still pass making it
+            # impossible to accidently lock-out a subset of users with a
+            # bad keystone.conf
+            r_set = r.intersection(self.auth_methods)
+            if auth_methods.issuperset(set(r_set)):
+                # Rule Matches no need to continue, return here.
+                LOG.debug('User %(user_id)s auth methods %(methods)r '
+                          'matched MFA rule %(rule)r. Loaded '
+                          'auth_methods: %(loaded)s',
+                          {'user_id': user_id,
+                           'rule': r_set,
+                           'loaded': self._auth_methods})
+                return True
+
+        LOG.debug('User %(user_id)s auth methods %(methods)r did not match a '
+                  'MFA rule in %(rules)r.',
+                  {'user_id': user_id,
+                   'methods': auth_methods,
+                   'rules': rules})
+        return False
+
+    @staticmethod
+    def parse_rule_structure(rules):
+        """Validate and parse the rule data structure.
+
+        Rule sets must be in the form of list of lists. The lists may not
+        have duplicates and must not be empty. The top-level list may be empty
+        indicating that no rules exist.
+
+        :param rules: The list of rules from the user_ref
+        :type rules: list
+        :returns: set of sets ensuring no duplicated rules.
+        :raises: ValueError
+        """
+        rule_set = set()
+        if not isinstance(rules, list):
+            raise ValueError(_('rules list must be a list of lists, got '
+                               '%(type)s') %
+                             {'type': type(rules)})
+
+        if not rules:
+            # No rules exist.
+            return rule_set
+
+        for r_list in rules:
+            if not isinstance(r_list, list):
+                LOG.info(_LI('Ignoring Rule %(rule)r; rule must be a list of '
+                             'strings.'),
+                         {'type': type(r_list)})
+                continue
+
+            if r_list:
+                # No empty rules are allowed.
+                for item in r_list:
+                    if not isinstance(item, six.string_types):
+                        # Rules may only contain strings for method names
+                        # Reject a rule with non-string values
+                        LOG.info(_LI('Ignoring Rule %(rule)r; rule contains '
+                                     'non-string values.'),
+                                 {'rule': r_list})
+                    else:
+                        # NOTE(notmorgan): Use of sets here ensures no
+                        # duplicate rules and no duplicate elements in the
+                        # rules.
+                        rule_set.add(set(r_list))
+
+        return rule_set
+
+
 class AuthContext(dict):
     """Retrofitting auth_context to reconcile identity attributes.
 
@@ -427,6 +537,7 @@ class Auth(controller.V3Controller):
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         keystone.conf.auth.setup_authentication()
+        self._mfa_rules_validator = UserMFARulesValidator()
 
     def authenticate_for_token(self, request, auth=None):
         """Authenticate user and issue a token."""
@@ -447,10 +558,18 @@ class Auth(controller.V3Controller):
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
-            # the values from auth_info, look at the authoritative values.
-            method_names = auth_context.get('method_names', [])
-            # make sure the list is unique
-            method_names = list(set(method_names))
+            # the values from auth_info, look at the authoritative values. Make
+            # sure the set is unique.
+            method_names_set = set(auth_context.get('method_names', []))
+            method_names = list(method_names_set)
+
+            # Do MFA Rule Validation for the user
+            if not self._mfa_rules_validator.check_auth_methods_against_rules(
+                    auth_context['user_id'], method_names_set):
+                raise exception.InsufficientAuthMethods(
+                    user=auth_context['user_id'],
+                    methods=auth_info.get_method_names())
+
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
 
