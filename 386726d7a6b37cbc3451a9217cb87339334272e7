@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_752f57f6",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T16:20:13Z",
+      "side": 0,
+      "message": "I reverted this locally and ran the tests. Seems like this fixes the issue [0]. \n\nSo - just to clarify. This blows up because \u0027ALL USERS\u0027 has a space in it? We should add a comment that explains the reason behind both the ValueError and SyntaxError exceptions being caught from ast, so it\u0027s easier for others to understand, too.\n\n\n[0] http://cdn.pasteraw.com/1nufvkhkrehrnup552nf1ojk2mpm3s9",
+      "revId": "386726d7a6b37cbc3451a9217cb87339334272e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
