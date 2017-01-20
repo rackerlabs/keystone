@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_5cde0012",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 24
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T17:58:09Z",
+      "side": 1,
+      "message": "yeah, could probably remove the \u0027authenticating and\u0027 part.",
+      "parentUuid": "5a3905b3_d2de616c",
+      "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_b2a9d5e1",
         "filename": "keystone/exception.py",
         "patchSetId": 24
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_bc02846d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T17:58:09Z",
+      "side": 1,
+      "message": "yes, I changed this to be less specific about needing an administrator, with this change it\u0027s no longer needed but still can be done.",
+      "parentUuid": "5a3905b3_b2a9d5e1",
+      "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_12f46984",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 24
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-20T16:05:00Z",
       "side": 1,
       "message": "We could add another assertion here to make sure the user can authenticate with the new password.",
+      "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5c19a087",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T17:58:09Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "5a3905b3_12f46984",
       "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2017-01-20T16:05:00Z",
       "side": 1,
       "message": "If a user attempts to change their password with the wrong original, they should get a straight up 401, right? I\u0027m sure we have tests for that somewhere, but we could document that behavior here, too.\n\n  def test_changing_expired_password_with_wrong_password_fails(self):\n      self.config_fixture.config(\n          group\u003d\u0027security_compliance\u0027,\n          password_expires_days\u003d2\n      )\n      password \u003d self._create_user_with_expired_password()\n      self.change_password(\n          password\u003duuid.uuid4().hex,\n          original_password\u003duuid.uuid4().hex,\n          expected_status\u003dhttp_client.UNAUTHORIZED\n      )",
+      "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9c3ce8e3",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T17:58:09Z",
+      "side": 1,
+      "message": "It\u0027s tested here:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3_identity.py#L904\n\nAlthough we could add a (expired + incorrect) test as well.",
+      "parentUuid": "5a3905b3_72cbed1e",
       "revId": "88ba36a38841e9f66e741e53e13b877390195df1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
