@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_68be9ad5",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T16:34:57Z",
+      "side": 1,
+      "message": "(nit) s/latter/webserver/\n\nJust because it sounds wierd to me...",
+      "revId": "d946235d88cb7b62d2abf7c7c06ea0fbe22926cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_48063ecf",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
@@ -19,6 +36,40 @@
         "endLine": 18,
         "endChar": 36
       },
+      "revId": "d946235d88cb7b62d2abf7c7c06ea0fbe22926cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_68305a9f",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T16:34:57Z",
+      "side": 1,
+      "message": "s/an user/a user/",
+      "revId": "d946235d88cb7b62d2abf7c7c06ea0fbe22926cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_281732ee",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T16:34:57Z",
+      "side": 1,
+      "message": "(nit) i\u0027d s/, if set,//",
       "revId": "d946235d88cb7b62d2abf7c7c06ea0fbe22926cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
