@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_9784c3d4",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "We\u0027re not returning a federated object for list_users, right?",
+      "range": {
+        "startLine": 65,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9713e365",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "nit: I don\u0027t like the name as its not only filtering hints for federated users... Maybe \"handle_federated_hints_and_return_users\" or something. Or, you could break this up. I can be picky about names, so I\u0027m okay as is.",
+      "range": {
+        "startLine": 961,
+        "startChar": 8,
+        "endLine": 961,
+        "endChar": 41
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_57ba5ac1",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "This is not really getting federated users, it\u0027s updating the query filter for the federated attributes. Needs a better name.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 28
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_37a22eaf",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "instead of joining this way, I think it would be more straight forward to do this after line 63:\nquery \u003d query.join(model.FederatedUser)",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 67
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_77a67611",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "What\u0027s with the underscore?",
+      "range": {
+        "startLine": 47,
+        "startChar": 18,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_17aff381",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 14
@@ -13,6 +128,24 @@
       "writtenOn": "2017-01-20T18:08:48Z",
       "side": 1,
       "message": "You could make several additional assertions here to ensure the user returned in the `users` variable is exactly the user we\u0027re expecting.",
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_77e836b5",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T18:32:20Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_17aff381",
       "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
