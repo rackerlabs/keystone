@@ -12,4 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+# NOTE(notmorgan): Import base first, prevents circular dependencies
+from keystone.auth import base  # noqa
 from keystone.auth import controllers  # noqa

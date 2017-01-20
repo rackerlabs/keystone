@@ -22,6 +22,7 @@ from oslo_utils import importutils
 import six
 import stevedore
 
+from keystone.auth import base
 from keystone.auth import schema
 from keystone.common import controller
 from keystone.common import dependency
@@ -427,6 +428,7 @@ class Auth(controller.V3Controller):
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         keystone.conf.auth.setup_authentication()
+        self._mfa_rules_validator = base.UserMFARulesValidator()
 
     def authenticate_for_token(self, request, auth=None):
         """Authenticate user and issue a token."""
@@ -447,10 +449,18 @@ class Auth(controller.V3Controller):
 
             # NOTE(notmorgan): only methods that actually run and succeed will
             # be in the auth_context['method_names'] list. Do not blindly take
-            # the values from auth_info, look at the authoritative values.
-            method_names = auth_context.get('method_names', [])
-            # make sure the list is unique
-            method_names = list(set(method_names))
+            # the values from auth_info, look at the authoritative values. Make
+            # sure the set is unique.
+            method_names_set = set(auth_context.get('method_names', []))
+            method_names = list(method_names_set)
+
+            # Do MFA Rule Validation for the user
+            if not self._mfa_rules_validator.check_auth_methods_against_rules(
+                    auth_context['user_id'], method_names_set):
+                raise exception.InsufficientAuthMethods(
+                    user=auth_context['user_id'],
+                    methods=auth_info.get_method_names())
+
             expires_at = auth_context.get('expires_at')
             token_audit_id = auth_context.get('audit_id')
 
