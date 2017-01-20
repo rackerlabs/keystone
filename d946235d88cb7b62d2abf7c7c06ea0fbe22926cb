@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_2873b24e",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T16:36:01Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_68be9ad5",
+      "revId": "d946235d88cb7b62d2abf7c7c06ea0fbe22926cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_48063ecf",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 1
