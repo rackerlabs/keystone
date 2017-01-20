@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_0d82b294",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:14:04Z",
+      "side": 1,
+      "message": "Really the first two sentences say the \u0027remote\u0027 is the same and the \u0027local\u0027 has differences. Is there a better way to phrase it?",
+      "parentUuid": "5a3905b3_be2b8e2f",
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_88e218d4",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 1
@@ -59,6 +77,42 @@
         "endLine": 665,
         "endChar": 14
       },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_cd898acc",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_88e218d4",
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8d6dc206",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_5ebaaae2",
       "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -112,6 +166,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_cd5eea44",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_dece9a82",
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_9eab3289",
         "filename": "doc/source/federation/mapping_combinations.rst",
         "patchSetId": 1
@@ -129,6 +201,24 @@
         "endLine": 684,
         "endChar": 29
       },
+      "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4d183a85",
+        "filename": "doc/source/federation/mapping_combinations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-20T00:14:04Z",
+      "side": 1,
+      "message": "Not yet, but I\u0027m working on an overhall to make all of this document more sane and accurate.",
+      "parentUuid": "5a3905b3_9eab3289",
       "revId": "a55567c84dfb847fcdbddfd620e0cf69b3eb5ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
