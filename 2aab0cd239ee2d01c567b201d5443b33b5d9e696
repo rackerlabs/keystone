@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_4330d39e",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "nit: neither one of these should be literals (maybe regular double quotes, but they\u0027re not literals of anything).",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_63278f64",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_0317abed",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "By change, I think maybe you meant patch? But in terms of docs, I think this term should really be \"option\" or \"feature\".",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_2835a4d9",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -19,6 +70,142 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_a3e897e3",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "nit: \"at once\" appears awkwardly early in the sentence, IMO.\n\n  could be required to change their password at once.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_23a2e7ae",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "nit: The phrase after the semicolon is not a complete sentence, as a use of a semicolon requires. Instead:\n\n  an administrator would be required to reset their password.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a396d749",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "nit: maybe cut \"plan and\"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e377ff37",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "This implies that this is a requirement: \"you\u0027ll want to add any service users\"\n\nHowever, I think this should be worded with \"may\" and merely use service users as an example.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_43ba93c1",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "Generalize this use case to not refer to service users; it was the original use case, but wording it this way will encourage everyone to configure their service users this way (which is an anti-pattern) and discourage use of this feature for other legitimate use cases that we have not yet heard about.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c3cda35e",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "I\u0027m not sure this needs to be a warning, but it should definitely be generalized for all users as well. **Maybe** call out service users as an example?",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8302bb6d",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "s/This feature would require/Enabling this option requires/\n\ns/for first time use/upon first use/",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_2313c7b9",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "\"the change password API (self-service)\" is a little \"inside baseball\" for keystoners -- use terminology that operators will understand instead.\n\nAlso, \"new and existing users\" is just \"all users\", right?",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_689b2cca",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 28
@@ -30,6 +217,142 @@
       "writtenOn": "2017-01-19T22:54:46Z",
       "side": 1,
       "message": "nit: \"not created via the self-service change password API, will ... \"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_03740bfb",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "\"depends on\" -\u003e \"is only applicable with/when using/whatever\"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4399b31e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "\"service users should\" -\u003e \"users may be\"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c3acc337",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "Remove \"for service accounts\" (it\u0027s redundant with the first part of the sentence, even after the above edit.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a37897c5",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "That link is sort of relevant to the entire group of options. Is it possible to add documentation for the entire config group/section that would appear at the top, rather than attached to a specific option?",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_037ecbad",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "The order of options matters as this is also the order in which they are rendered in documentation. I feel like this belongs with \"minimum password age\", as they\u0027re both kinda sort of related options.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e330df03",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "This is an interesting behavior... I assume this design decision was discussed and documented somewhere? Personally, if my password is truly expired, I\u0027d expect an administrator to have to intervene to reset it for me. I wouldn\u0027t expect a self-service password change to work, as I\u0027d expect to be completely locked out.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_83163b53",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "Good tests all around!",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f6197f7a",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-01-20T22:18:28Z",
+      "side": 1,
+      "message": "I liked \"coordinated\" from the other doc.",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
