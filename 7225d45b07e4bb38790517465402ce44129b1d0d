@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c4c07b2d",
+        "filename": "keystone/common/sql/contract_repo/versions/015_contract_updated_federated_user_domain.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "This is still needed as the migration files need to be unique. Otherwise, it causes an error due to caching.",
+      "parentUuid": "5a3905b3_1352f913",
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_f34c8d78",
         "filename": "keystone/common/sql/data_migration_repo/versions/015_migrate_updated_federated_user_domain.py",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_24e85fb4",
+        "filename": "keystone/common/sql/data_migration_repo/versions/015_migrate_updated_federated_user_domain.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "This is still needed as the migration files need to be unique. Otherwise, it causes an error due to caching.",
+      "parentUuid": "5a3905b3_f34c8d78",
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_b36cc59d",
         "filename": "keystone/common/sql/data_migration_repo/versions/015_migrate_updated_federated_user_domain.py",
         "patchSetId": 14
@@ -47,6 +83,30 @@
       "writtenOn": "2017-01-19T13:43:19Z",
       "side": 1,
       "message": "call this new_domain_id_ref?",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_c4eebbb3",
+        "filename": "keystone/common/sql/data_migration_repo/versions/015_migrate_updated_federated_user_domain.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "Too long of name, causes ugly line wrapping :)",
+      "parentUuid": "5a3905b3_b36cc59d",
       "range": {
         "startLine": 30,
         "startChar": 8,
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_6440a7a6",
+        "filename": "keystone/common/sql/data_migration_repo/versions/015_migrate_updated_federated_user_domain.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_f830ea09",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_d33151ee",
         "filename": "keystone/common/sql/expand_repo/versions/015_expand_updated_federated_user_domain.py",
         "patchSetId": 14
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_a421affd",
+        "filename": "keystone/common/sql/expand_repo/versions/015_expand_updated_federated_user_domain.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "This is still needed as the migration files need to be unique. Otherwise, it causes an error due to caching.",
+      "parentUuid": "5a3905b3_d33151ee",
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_f38e4d26",
         "filename": "keystone/identity/shadow_backends/base.py",
         "patchSetId": 14
@@ -110,6 +212,30 @@
       "writtenOn": "2017-01-19T13:43:19Z",
       "side": 1,
       "message": "of the identity provider, that will be used for the federated user*",
+      "range": {
+        "startLine": 30,
+        "startChar": 40,
+        "endLine": 30,
+        "endChar": 52
+      },
+      "revId": "7225d45b07e4bb38790517465402ce44129b1d0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_04cb631f",
+        "filename": "keystone/identity/shadow_backends/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-20T05:38:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_f38e4d26",
       "range": {
         "startLine": 30,
         "startChar": 40,
