@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_17aff381",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-20T18:08:48Z",
+      "side": 1,
+      "message": "You could make several additional assertions here to ensure the user returned in the `users` variable is exactly the user we\u0027re expecting.",
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
