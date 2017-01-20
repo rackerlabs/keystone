@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_efb1b990",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-20T14:28:50Z",
+      "side": 1,
+      "message": "Remove the trailing whitespace.",
+      "range": {
+        "startLine": 281,
+        "startChar": 50,
+        "endLine": 281,
+        "endChar": 51
+      },
+      "revId": "a70340ae60340ff1ca764934525639488507bc3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
