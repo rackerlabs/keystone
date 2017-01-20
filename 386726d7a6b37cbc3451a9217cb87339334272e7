@@ -16,6 +16,47 @@
       "revId": "386726d7a6b37cbc3451a9217cb87339334272e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1a00f7a9",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-01-20T18:53:06Z",
+      "side": 0,
+      "message": "Yes, the error is rather strange, but here\u0027s a simple example that blows up with SyntaxError:\n\nimport ast\nast.literal_eval(\u0027ALL USERS\u0027)\n\nRemoving the space results in just a ValueError.\n\nI can go ahead and add a comment.  Note, this is consistent with the except below for group_ids.",
+      "parentUuid": "5a3905b3_752f57f6",
+      "revId": "386726d7a6b37cbc3451a9217cb87339334272e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_dacaef6d",
+        "filename": "keystone/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-01-20T18:53:06Z",
+      "side": 0,
+      "message": "here",
+      "range": {
+        "startLine": 634,
+        "startChar": 36,
+        "endLine": 634,
+        "endChar": 47
+      },
+      "revId": "386726d7a6b37cbc3451a9217cb87339334272e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
