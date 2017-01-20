@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_5148cf87",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-20T05:00:57Z",
+      "side": 1,
+      "message": "hmm, this is now returning: 204 No Content -- i wonder if in the change to the controller based validation we are forgetting to invalidate user tokens?",
+      "range": {
+        "startLine": 992,
+        "startChar": 29,
+        "endLine": 992,
+        "endChar": 70
+      },
+      "revId": "2ec4045e3ca4ad074218210894ef506fd60ef3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
