@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_c7c07d2d",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T06:06:04Z",
+      "side": 1,
+      "message": "With removing the config setting, this test is really a duplicate of \"test_changing_password_with_incorrect_password_fails\"",
+      "range": {
+        "startLine": 958,
+        "startChar": 8,
+        "endLine": 958,
+        "endChar": 44
+      },
+      "revId": "2ec4045e3ca4ad074218210894ef506fd60ef3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_5148cf87",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 23
