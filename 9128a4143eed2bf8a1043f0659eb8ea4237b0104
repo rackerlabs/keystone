@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_57c09ae0",
+        "filename": "api-ref/source/v3/users.inc",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-20T18:51:14Z",
+      "side": 1,
+      "message": "whoops, got tunnel vision with the other federated stuff I am working on which will need this in the future",
+      "parentUuid": "5a3905b3_9784c3d4",
+      "range": {
+        "startLine": 65,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_9713e365",
         "filename": "keystone/identity/core.py",
         "patchSetId": 14
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-20T18:32:20Z",
       "side": 1,
       "message": "nit: I don\u0027t like the name as its not only filtering hints for federated users... Maybe \"handle_federated_hints_and_return_users\" or something. Or, you could break this up. I can be picky about names, so I\u0027m okay as is.",
+      "range": {
+        "startLine": 961,
+        "startChar": 8,
+        "endLine": 961,
+        "endChar": 41
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f707c619",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-20T18:51:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_9713e365",
       "range": {
         "startLine": 961,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_1a8d577b",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-20T18:51:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_57ba5ac1",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 28
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_37a22eaf",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 14
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_5aed1f24",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-20T18:51:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_37a22eaf",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 67
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_77a67611",
         "filename": "keystone/identity/shadow_backends/sql.py",
         "patchSetId": 14
@@ -105,6 +201,30 @@
       "writtenOn": "2017-01-20T18:32:20Z",
       "side": 1,
       "message": "What\u0027s with the underscore?",
+      "range": {
+        "startLine": 47,
+        "startChar": 18,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "9128a4143eed2bf8a1043f0659eb8ea4237b0104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ba97e38e",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-20T18:51:14Z",
+      "side": 1,
+      "message": "filter is already a keyword",
+      "parentUuid": "5a3905b3_77a67611",
       "range": {
         "startLine": 47,
         "startChar": 18,
