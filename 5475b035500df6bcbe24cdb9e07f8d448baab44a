@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_4cee5bed",
+        "filename": "keystone/exception.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-20T14:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_140ac826",
+      "range": {
+        "startLine": 137,
+        "startChar": 28,
+        "endLine": 137,
+        "endChar": 46
+      },
+      "revId": "5475b035500df6bcbe24cdb9e07f8d448baab44a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_791225b6",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 39
