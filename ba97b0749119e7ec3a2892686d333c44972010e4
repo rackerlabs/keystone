@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e3bab26d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-20T15:55:39Z",
+      "side": 1,
+      "message": "Yeah, \u0027handle\u0027 works better here than another \u0027manage\u0027, I like it.",
+      "range": {
+        "startLine": 40,
+        "startChar": 27,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
