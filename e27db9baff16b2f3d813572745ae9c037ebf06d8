@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_d1256409",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 41
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-21T11:34:51Z",
+      "side": 1,
+      "message": "nit: are",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_606bfcf1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 41
@@ -82,6 +105,30 @@
       "writtenOn": "2017-01-21T06:01:24Z",
       "side": 1,
       "message": "it might be easier for you to use this function to return the URL, then in the individual test just call the URL and assert whatever you want\n\n  test_foo:\n    url \u003d _list_users_by_password_expires_at(time, op)\n    self.get(url, expected_status\u003d400)\n\n  test_bar:\n    url \u003d _list_users_by_password_expires_at(time, op)\n    resp \u003d self.get(url)\n    assert stuff from resp",
+      "range": {
+        "startLine": 418,
+        "startChar": 8,
+        "endLine": 420,
+        "endChar": 47
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_11736c16",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-21T11:34:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_60421c6a",
       "range": {
         "startLine": 418,
         "startChar": 8,
