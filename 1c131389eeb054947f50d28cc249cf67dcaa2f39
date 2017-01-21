@@ -46,6 +46,30 @@
       "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_83ae3296",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T07:10:57Z",
+      "side": 1,
+      "message": "Nevermind my second comment, I\u0027m just blind and can\u0027t read at 11pm at night.",
+      "parentUuid": "5a3905b3_23bc9edb",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 126,
+        "endChar": 79
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
