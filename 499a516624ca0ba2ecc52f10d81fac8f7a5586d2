@@ -22,6 +22,30 @@
       "revId": "499a516624ca0ba2ecc52f10d81fac8f7a5586d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6967604d",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-21T17:19:23Z",
+      "side": 1,
+      "message": "Sounds good Steve. I first tried to do this in a single update statement (update from select), but ran into table locking issues. I\u0027d also add that this isn\u0027t the first time that we\u0027ve done this:\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/093_migrate_domains_to_projects.py#L111",
+      "parentUuid": "5a3905b3_e0e36ca2",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 59
+      },
+      "revId": "499a516624ca0ba2ecc52f10d81fac8f7a5586d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
