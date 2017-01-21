@@ -22,6 +22,29 @@
       "revId": "2e7f98fb3f2b91ec074f08decb0b630fc2e3fbff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1d1aa37d",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T04:32:38Z",
+      "side": 1,
+      "message": "Until LDAP writes are not longer part of Keystone,",
+      "range": {
+        "startLine": 326,
+        "startChar": 9,
+        "endLine": 327,
+        "endChar": 38
+      },
+      "revId": "2e7f98fb3f2b91ec074f08decb0b630fc2e3fbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
