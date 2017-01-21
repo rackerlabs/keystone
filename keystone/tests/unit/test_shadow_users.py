@@ -13,12 +13,16 @@
 import uuid
 
 from keystone.tests import unit
+from keystone.tests.unit.identity.shadow_users import test_backend
+from keystone.tests.unit.identity.shadow_users import test_core
 from keystone.tests.unit.ksfixtures import database
 
 
-class ShadowUsersBaseTests(unit.TestCase):
+class ShadowUsersTestsRon(unit.TestCase,
+                          test_backend.ShadowUsersBackendTests,
+                          test_core.ShadowUsersCoreTests):
     def setUp(self):
-        super(ShadowUsersBaseTests, self).setUp()
+        super(ShadowUsersTestsRon, self).setUp()
         self.useFixture(database.Database())
         self.load_backends()
         self.idp = {
