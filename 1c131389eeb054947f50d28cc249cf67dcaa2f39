@@ -22,6 +22,30 @@
       "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_23bc9edb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T07:09:01Z",
+      "side": 1,
+      "message": "This option is also not defined afaict, meaning this is also not tested properly if it passes CI.",
+      "parentUuid": "5a3905b3_83e0f2fb",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 126,
+        "endChar": 79
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
