@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_606bfcf1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T06:01:24Z",
+      "side": 1,
+      "message": "nice job overall here!",
+      "range": {
+        "startLine": 963,
+        "startChar": 8,
+        "endLine": 963,
+        "endChar": 41
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_008f98cc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T06:01:24Z",
+      "side": 1,
+      "message": "great docstring",
+      "range": {
+        "startLine": 970,
+        "startChar": 8,
+        "endLine": 974,
+        "endChar": 70
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a0b24492",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T06:01:24Z",
+      "side": 1,
+      "message": "s/Dates are usually/password_expires_at must be",
+      "range": {
+        "startLine": 982,
+        "startChar": 18,
+        "endLine": 982,
+        "endChar": 35
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_60421c6a",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T06:01:24Z",
+      "side": 1,
+      "message": "it might be easier for you to use this function to return the URL, then in the individual test just call the URL and assert whatever you want\n\n  test_foo:\n    url \u003d _list_users_by_password_expires_at(time, op)\n    self.get(url, expected_status\u003d400)\n\n  test_bar:\n    url \u003d _list_users_by_password_expires_at(time, op)\n    resp \u003d self.get(url)\n    assert stuff from resp",
+      "range": {
+        "startLine": 418,
+        "startChar": 8,
+        "endLine": 420,
+        "endChar": 47
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
