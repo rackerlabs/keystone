@@ -55,6 +55,10 @@ DN_ONLY = ['1.1']
 
 _utf8_encoder = codecs.getencoder('utf-8')
 
+# FIXME(knikolla): This toggle enable writing to the LDAP backend
+# It is only present because all of our tests depend being able to write
+WRITEABLE = False
+
 
 def utf8_encode(value):
     """Encode a basestring to UTF-8.
@@ -1195,15 +1199,6 @@ class BaseLdap(object):
             self.ldap_filter = getattr(conf.ldap,
                                        ldap_filter) or self.DEFAULT_FILTER
 
-            allow_create = '%s_allow_create' % self.options_name
-            self.allow_create = getattr(conf.ldap, allow_create)
-
-            allow_update = '%s_allow_update' % self.options_name
-            self.allow_update = getattr(conf.ldap, allow_update)
-
-            allow_delete = '%s_allow_delete' % self.options_name
-            self.allow_delete = getattr(conf.ldap, allow_delete)
-
             member_attribute = '%s_member_attribute' % self.options_name
             self.member_attribute = getattr(conf.ldap, member_attribute, None)
 
@@ -1386,21 +1381,6 @@ class BaseLdap(object):
                     obj[k] = None
 
         return obj
-
-    def check_allow_create(self):
-        if not self.allow_create:
-            action = _('LDAP %s create') % self.options_name
-            raise exception.ForbiddenAction(action=action)
-
-    def check_allow_update(self):
-        if not self.allow_update:
-            action = _('LDAP %s update') % self.options_name
-            raise exception.ForbiddenAction(action=action)
-
-    def check_allow_delete(self):
-        if not self.allow_delete:
-            action = _('LDAP %s delete') % self.options_name
-            raise exception.ForbiddenAction(action=action)
 
     def affirm_unique(self, values):
         if values.get('name') is not None:

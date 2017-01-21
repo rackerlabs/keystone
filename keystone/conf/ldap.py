@@ -259,36 +259,6 @@ The LDAP attribute mapped to a user's default_project_id in keystone. This is
 most commonly used when keystone has write access to LDAP.
 """))
 
-user_allow_create = cfg.BoolOpt(
-    'user_allow_create',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to create users in the LDAP server.
-"""))
-
-user_allow_update = cfg.BoolOpt(
-    'user_allow_update',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to update users in the LDAP server.
-"""))
-
-user_allow_delete = cfg.BoolOpt(
-    'user_allow_delete',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to delete users in the LDAP server.
-"""))
-
 user_enabled_emulation = cfg.BoolOpt(
     'user_enabled_emulation',
     default=False,
@@ -394,36 +364,6 @@ group_attribute_ignore = cfg.ListOpt(
     help=utils.fmt("""
 List of group attributes to ignore on create and update. or whether a specific
 group attribute should be filtered for list or show group.
-"""))
-
-group_allow_create = cfg.BoolOpt(
-    'group_allow_create',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to create groups in the LDAP server.
-"""))
-
-group_allow_update = cfg.BoolOpt(
-    'group_allow_update',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to update groups in the LDAP server.
-"""))
-
-group_allow_delete = cfg.BoolOpt(
-    'group_allow_delete',
-    default=True,
-    deprecated_for_removal=True,
-    deprecated_reason=_DEPRECATED_LDAP_WRITE,
-    deprecated_since=versionutils.deprecated.MITAKA,
-    help=utils.fmt("""
-If enabled, keystone is allowed to delete groups in the LDAP server.
 """))
 
 group_additional_attribute_mapping = cfg.ListOpt(
@@ -605,9 +545,6 @@ ALL_OPTS = [
     user_enabled_default,
     user_attribute_ignore,
     user_default_project_id_attribute,
-    user_allow_create,
-    user_allow_update,
-    user_allow_delete,
     user_enabled_emulation,
     user_enabled_emulation_dn,
     user_enabled_emulation_use_group_config,
@@ -621,9 +558,6 @@ ALL_OPTS = [
     group_members_are_ids,
     group_desc_attribute,
     group_attribute_ignore,
-    group_allow_create,
-    group_allow_update,
-    group_allow_delete,
     group_additional_attribute_mapping,
     group_ad_nesting,
     tls_cacertfile,

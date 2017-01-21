@@ -379,37 +379,6 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
                           self.identity_api.get_user,
                           user['id'])
 
-    def test_configurable_forbidden_user_actions(self):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.allow_create = False
-        driver.user.allow_update = False
-        driver.user.allow_delete = False
-
-        user = self.new_user_ref(domain_id=CONF.identity.default_domain_id)
-        self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.create_user,
-                          user)
-
-        self.user_foo['password'] = u'fäképass2'
-        self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.update_user,
-                          self.user_foo['id'],
-                          self.user_foo)
-
-        self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.delete_user,
-                          self.user_foo['id'])
-
-    def test_configurable_forbidden_create_existing_user(self):
-        driver = self.identity_api._select_identity_driver(
-            CONF.identity.default_domain_id)
-        driver.user.allow_create = False
-
-        self.assertRaises(exception.ForbiddenAction,
-                          self.identity_api.create_user,
-                          self.user_foo)
-
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
