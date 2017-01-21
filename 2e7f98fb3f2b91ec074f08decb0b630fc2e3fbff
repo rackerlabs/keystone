@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_dd01fbb0",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T03:25:30Z",
+      "side": 1,
+      "message": "This should already be a set and does not need to be cast *again* into a set.",
+      "range": {
+        "startLine": 137,
+        "startChar": 39,
+        "endLine": 137,
+        "endChar": 49
+      },
+      "revId": "2e7f98fb3f2b91ec074f08decb0b630fc2e3fbff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
