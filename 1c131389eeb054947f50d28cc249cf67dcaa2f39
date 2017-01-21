@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_03724249",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T07:16:53Z",
+      "side": 1,
+      "message": "It is far, far, far better to make this an attribute on the user (metadata) of some sort unless this is strictly designed to avoid the reset for a user when enabling the feature.\n\nI still will advocate that the design is poor because it is encoding user_ids in the config. It is much better to have attributes on the user as that can be changed without another restart of keystone. This means (potentially) all service accounts must have manual intervention *or* a restart of keystone to ensure passwords are not immediately expired upon login.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 104
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_83e0f2fb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 31
