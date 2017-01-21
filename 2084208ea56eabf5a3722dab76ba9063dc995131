@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_20df340e",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:34:41Z",
+      "side": 1,
+      "message": "this still seems funny to me, i feel like we can come up with a better way to do this, why not remove the federation hints if they appear at the end of the loop? in one shot.\n\nanyway, i appreciate the comment.",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 54,
+        "endChar": 30
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_60fcdc72",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:34:41Z",
+      "side": 1,
+      "message": "create a new test class and turn this into setupClass",
+      "range": {
+        "startLine": 313,
+        "startChar": 8,
+        "endLine": 345,
+        "endChar": 64
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e0d9ac23",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:34:41Z",
+      "side": 1,
+      "message": "this is all testing the backend and can be removed or moved to test_backends.py",
+      "range": {
+        "startLine": 347,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 48
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_20065486",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:34:41Z",
+      "side": 1,
+      "message": "yes, more of these please, where the query string is idp and protocol, and a combination of them, and a correct value with an incorrect value.\n\nalso, add more than one user and one idp and one protocol",
+      "range": {
+        "startLine": 368,
+        "startChar": 8,
+        "endLine": 368,
+        "endChar": 75
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_00eeb8b3",
+        "filename": "releasenotes/notes/extending_federated_attributes_to_list_users.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:34:41Z",
+      "side": 1,
+      "message": "Close...\n\n - Added new filters (``idp_id``, ``protocol_id``, and ``unique_id``) for the list user API (``GET /v3/users``).",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 68
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
