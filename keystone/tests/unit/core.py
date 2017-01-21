@@ -64,6 +64,8 @@ ROOTDIR = os.path.normpath(os.path.join(TESTSDIR, '..', '..', '..'))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 
+ks_ldap.WRITEABLE = True
+
 
 def _calc_tmpdir():
     env_val = os.environ.get('KEYSTONE_TEST_TEMP_DIR')

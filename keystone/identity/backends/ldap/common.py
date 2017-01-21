@@ -55,6 +55,10 @@ DN_ONLY = ['1.1']
 
 _utf8_encoder = codecs.getencoder('utf-8')
 
+# FIXME(knikolla): This toggle enable writing to the LDAP backend
+# It is only present because all of our tests depend being able to write
+WRITEABLE = False
+
 
 def utf8_encode(value):
     """Encode a basestring to UTF-8.
