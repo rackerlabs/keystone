@@ -23,7 +23,6 @@ import keystone.conf
 from keystone import exception
 from keystone import identity
 from keystone.tests import unit
-from keystone.tests.unit.identity import test_base
 from keystone.tests.unit.ksfixtures import database
 
 
@@ -177,51 +176,3 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
-
-
-class ShadowUsersCoreTests(test_base.ShadowUsersBaseTests):
-    def setUp(self):
-        super(ShadowUsersCoreTests, self).setUp()
-
-    def test_shadow_federated_user(self):
-        user = self.identity_api.shadow_federated_user(
-            self.federated_user['idp_id'],
-            self.federated_user['protocol_id'],
-            self.federated_user['unique_id'],
-            self.federated_user['display_name'])
-        self.assertIsNotNone(user['id'])
-        self.assertEqual(5, len(user.keys()))
-        self.assertIsNotNone(user['name'])
-        self.assertIsNone(user['password_expires_at'])
-        self.assertIsNotNone(user['domain_id'])
-        # NOTE(breton): below, attribute `enabled` is explicitly tested to be
-        # equal True. assertTrue should not be used, because it converts
-        # the passed value to bool().
-        self.assertEqual(True, user['enabled'])
-
-    def test_shadow_existing_federated_user(self):
-
-        # introduce the user to keystone for the first time
-        shadow_user1 = self.identity_api.shadow_federated_user(
-            self.federated_user['idp_id'],
-            self.federated_user['protocol_id'],
-            self.federated_user['unique_id'],
-            self.federated_user['display_name'])
-        self.assertEqual(self.federated_user['display_name'],
-                         shadow_user1['name'])
-
-        # shadow the user again, with another name to invalidate the cache
-        # internally, this operation causes request to the driver. It should
-        # not fail.
-        self.federated_user['display_name'] = uuid.uuid4().hex
-        shadow_user2 = self.identity_api.shadow_federated_user(
-            self.federated_user['idp_id'],
-            self.federated_user['protocol_id'],
-            self.federated_user['unique_id'],
-            self.federated_user['display_name'])
-        self.assertEqual(self.federated_user['display_name'],
-                         shadow_user2['name'])
-        self.assertNotEqual(shadow_user1['name'], shadow_user2['name'])
-
-        # The shadowed users still share the same unique ID.
-        self.assertEqual(shadow_user1['id'], shadow_user2['id'])
