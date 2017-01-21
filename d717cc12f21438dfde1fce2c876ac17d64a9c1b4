@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_128c4a7e",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T14:47:54Z",
+      "side": 1,
+      "message": "this can get (re)moved too",
+      "range": {
+        "startLine": 96,
+        "startChar": 3,
+        "endLine": 99,
+        "endChar": 23
+      },
+      "revId": "d717cc12f21438dfde1fce2c876ac17d64a9c1b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
