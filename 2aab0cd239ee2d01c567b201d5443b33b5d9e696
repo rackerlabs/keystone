@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_600dbce7",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_4330d39e",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_63278f64",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_8012a807",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_63278f64",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_0317abed",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-20T22:18:28Z",
       "side": 1,
       "message": "By change, I think maybe you meant patch? But in terms of docs, I think this term should really be \"option\" or \"feature\".",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a0fb24c0",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "\"feature\"",
+      "parentUuid": "5a3905b3_0317abed",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_202e5443",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "tweaked this",
+      "parentUuid": "5a3905b3_a3e897e3",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_23a2e7ae",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_403360ab",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "this is no longer the case, expired passwords can be self-service now",
+      "parentUuid": "5a3905b3_23a2e7ae",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_a396d749",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -115,6 +205,24 @@
       "writtenOn": "2017-01-20T22:18:28Z",
       "side": 1,
       "message": "nit: maybe cut \"plan and\"",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6024dc5f",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_a396d749",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_40da804d",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_43ba93c1",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_c3cda35e",
         "filename": "doc/source/security_compliance.rst",
         "patchSetId": 28
@@ -166,6 +292,24 @@
       "writtenOn": "2017-01-20T22:18:28Z",
       "side": 1,
       "message": "I\u0027m not sure this needs to be a warning, but it should definitely be generalized for all users as well. **Maybe** call out service users as an example?",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a0e964e8",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "i\u0027d prefer this as a warning, feel free to tweak the wording if you want dolph",
+      "parentUuid": "5a3905b3_c3cda35e",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +452,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_a097a446",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_037ecbad",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e330df03",
         "filename": "keystone/identity/core.py",
         "patchSetId": 28
@@ -319,6 +481,24 @@
       "writtenOn": "2017-01-20T22:18:28Z",
       "side": 1,
       "message": "This is an interesting behavior... I assume this design decision was discussed and documented somewhere? Personally, if my password is truly expired, I\u0027d expect an administrator to have to intervene to reset it for me. I wouldn\u0027t expect a self-service password change to work, as I\u0027d expect to be completely locked out.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_009b1873",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "no, gage had a patch to override this behaviour, see https://github.com/openstack/keystone/commit/3ae73b67522bf388a0fdcecceb662831d853a313\n\ni don\u0027t want to bother an admin if 50000 people are locked out",
+      "parentUuid": "5a3905b3_e330df03",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -353,6 +533,24 @@
       "writtenOn": "2017-01-20T22:18:28Z",
       "side": 1,
       "message": "I liked \"coordinated\" from the other doc.",
+      "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_00723849",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-8ec5a74af242b547.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_f6197f7a",
       "revId": "2aab0cd239ee2d01c567b201d5443b33b5d9e696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
