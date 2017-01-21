@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_bf741a68",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-21T20:26:15Z",
+      "side": 1,
+      "message": "While agree with you that there are better design options, password_expires_ignore_user_ids config setting was already in place for ignoring expired passwords:\nhttps://github.com/openstack/keystone/blob/master/keystone/conf/security_compliance.py#L78\n\nhttps://github.com/openstack/keystone/blob/master/doc/source/security_compliance.rst",
+      "parentUuid": "5a3905b3_03724249",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 104
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_83e0f2fb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 31
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "Nevermind my second comment, I\u0027m just blind and can\u0027t read at 11pm at night.",
       "parentUuid": "5a3905b3_23bc9edb",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 126,
+        "endChar": 79
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5f65f6b2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-21T20:26:15Z",
+      "side": 1,
+      "message": "While agree with you that there are better design options for this, the password_expires_ignore_user_ids config setting was already in place; not introduce with this patch:\nhttps://github.com/openstack/keystone/blob/master/keystone/conf/security_compliance.py#L78",
+      "parentUuid": "5a3905b3_83e0f2fb",
       "range": {
         "startLine": 126,
         "startChar": 21,
