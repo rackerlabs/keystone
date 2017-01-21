@@ -93,6 +93,29 @@
       "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_23065e86",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T07:28:50Z",
+      "side": 1,
+      "message": "NIT: Unrelated change (this should have been in the self-service password change on expired review.",
+      "range": {
+        "startLine": 1289,
+        "startChar": 0,
+        "endLine": 1290,
+        "endChar": 72
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
