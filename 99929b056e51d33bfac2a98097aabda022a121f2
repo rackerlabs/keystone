@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_6a867c14",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T01:24:09Z",
+      "side": 1,
+      "message": "ldap tests that deal with user updates.",
+      "range": {
+        "startLine": 327,
+        "startChar": 66,
+        "endLine": 328,
+        "endChar": 15
+      },
+      "revId": "99929b056e51d33bfac2a98097aabda022a121f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
