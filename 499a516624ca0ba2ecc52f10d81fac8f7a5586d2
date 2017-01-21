@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e0e36ca2",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T05:48:34Z",
+      "side": 1,
+      "message": "this and the one below still scare me a bit, adding MikeBayer to the review since he\u0027s the SME in all things sqlalchemry",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 59
+      },
+      "revId": "499a516624ca0ba2ecc52f10d81fac8f7a5586d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
