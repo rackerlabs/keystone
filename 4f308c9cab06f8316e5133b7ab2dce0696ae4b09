@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_df7646d6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-21T22:01:32Z",
+      "side": 1,
+      "message": "reference bp/removed-as-of-ocata\n\n  implements bp/removed-as-of-ocata",
+      "revId": "4f308c9cab06f8316e5133b7ab2dce0696ae4b09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
