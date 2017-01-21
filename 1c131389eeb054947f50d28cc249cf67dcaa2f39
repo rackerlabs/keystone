@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_83e0f2fb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-21T07:03:35Z",
+      "side": 1,
+      "message": "This is a bad design. This should not be a list of UIDs, it should be an attribute on the user. This requires a restart of keystone once a user_id is generated to apply as an ignored user.\n\nPlease stop designing options like this. I know this is a late -1 but... -1",
+      "range": {
+        "startLine": 126,
+        "startChar": 21,
+        "endLine": 126,
+        "endChar": 79
+      },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
