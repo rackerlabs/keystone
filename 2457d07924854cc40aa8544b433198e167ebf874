@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_5ff5f654",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1761,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-21T21:52:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_dcaf3428",
+      "range": {
+        "startLine": 1756,
+        "startChar": 0,
+        "endLine": 1761,
+        "endChar": 27
+      },
+      "revId": "2457d07924854cc40aa8544b433198e167ebf874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_7f81d2c2",
         "filename": "keystone/tests/unit/ksfixtures/ldapdb.py",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-21T21:27:53Z",
       "side": 1,
       "message": "at first glance we should probably be enabling write instead of disabling it",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 37
+      },
+      "revId": "2457d07924854cc40aa8544b433198e167ebf874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_1fe1ae9a",
+        "filename": "keystone/tests/unit/ksfixtures/ldapdb.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-21T21:52:44Z",
+      "side": 1,
+      "message": "The setUp of the test (line 29), enables write by setting writeable to true. This is added to cleanup, so it is executed after the test has run, and it sets it back to nonwriteable which is the default.",
+      "parentUuid": "5a3905b3_7f81d2c2",
       "range": {
         "startLine": 37,
         "startChar": 8,
