@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_55a317b2",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-22T01:48:15Z",
+      "side": 1,
+      "message": "nit: Needs a better name",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 129,
+        "endChar": 30
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_606bfcf1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 41
