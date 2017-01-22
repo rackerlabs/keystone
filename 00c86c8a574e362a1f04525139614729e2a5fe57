@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_f5c9635a",
+        "filename": "keystone/identity/backends/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-22T02:02:43Z",
+      "side": 1,
+      "message": "Don\u0027t wrap this in this manner, just add at the top of each method (instead of doing the _\u003cblah\u003e call if common_ldap.WRITABLE a simple method that raises forbidden if common_ldap.WRITABLE is not True and call it at the top of each of the methods:\n\n  def _ldap_write_disallow(self):\n    if not common_ldap.WRITABLE:\n      raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)\n\nLess code change and same net effect.\n\nThis change is fine as-is, but I dislike the almost copy/pasted code for each of the methods, if we can avoid doing that, it would be better.\n\nAnother method would be to update the handlers from keystone.identity.backends.ldap.common to block writes when common_ldap.WRITABLE is false.",
+      "range": {
+        "startLine": 145,
+        "startChar": 4,
+        "endLine": 150,
+        "endChar": 67
+      },
+      "revId": "00c86c8a574e362a1f04525139614729e2a5fe57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_75965340",
+        "filename": "keystone/tests/unit/ksfixtures/ldapdb.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-22T02:02:43Z",
+      "side": 1,
+      "message": "Ideally this and the code below should be rolled into it\u0027s own context manager.\n\nThis would then be added around tests that are doing LDAP writes in setup (outside of setUp(), which in itself, is wrong).\n\nIt would work something like:\n\n  with LDAPWrite():\n    \u003cdo write operations\u003e\n    ...\n  rest_of_test that doesn\u0027t cause writes.\n\nThis has the added benefit of ensuring a test isn\u0027t by side effect writing to LDAP except explicitly in the wrapped context.\n\n\nThis change is fine as it is, the context manager can be an improvement added as a follow up.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 36
+      },
+      "revId": "00c86c8a574e362a1f04525139614729e2a5fe57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
