@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_2b47084c",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-22T04:00:55Z",
+      "side": 1,
+      "message": "OOPs! this should be on \"attributes\" not \"read-only\"",
+      "revId": "10d9876d9a5cb1c491613c5ac17df78870d4c1fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
