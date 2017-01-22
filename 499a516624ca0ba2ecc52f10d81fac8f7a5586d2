@@ -46,6 +46,30 @@
       "revId": "499a516624ca0ba2ecc52f10d81fac8f7a5586d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_74ff2baa",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-22T18:39:49Z",
+      "side": 1,
+      "message": "Changed this to a select statement:\nfor user in sel.execute()\n\nSo now it would not all be pulled into memory as a list (cursor instead) and thus, not a problem for big installations.\n\nPlease take a look at the latest patch when you have time.",
+      "parentUuid": "5a3905b3_e0e36ca2",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 59
+      },
+      "revId": "499a516624ca0ba2ecc52f10d81fac8f7a5586d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
