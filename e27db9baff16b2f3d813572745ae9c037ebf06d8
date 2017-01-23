@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_67a597a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 41
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-23T15:48:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_d1256409",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_55a317b2",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 41
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "++ maybe something like \"_create_password_expires_query\"",
       "parentUuid": "5a3905b3_55a317b2",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 129,
+        "endChar": 30
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_0796933e",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-23T15:48:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_4b2e1444",
       "range": {
         "startLine": 129,
         "startChar": 8,
@@ -141,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_e790a745",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-23T15:48:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_a0b24492",
+      "range": {
+        "startLine": 982,
+        "startChar": 18,
+        "endLine": 982,
+        "endChar": 35
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_60421c6a",
         "filename": "keystone/tests/unit/test_v3_filters.py",
         "patchSetId": 41
@@ -200,6 +272,30 @@
       "side": 1,
       "message": "thinking about this more, i\u0027d really like to see this suggestions fixed, so we don\u0027t forget about it. it\u0027s the way we write most of our tests",
       "parentUuid": "5a3905b3_11736c16",
+      "range": {
+        "startLine": 418,
+        "startChar": 8,
+        "endLine": 420,
+        "endChar": 47
+      },
+      "revId": "e27db9baff16b2f3d813572745ae9c037ebf06d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_27ae2f81",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 22604
+      },
+      "writtenOn": "2017-01-23T15:48:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_6b33d0ab",
       "range": {
         "startLine": 418,
         "startChar": 8,
