@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_794c7c9e",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-23T06:22:05Z",
+      "side": 1,
+      "message": "i think you don\u0027t need this",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 55
+      },
+      "revId": "061cf2f9cf02bc3226849e1727f793b248bccecf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_d9473075",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-23T06:22:05Z",
+      "side": 1,
+      "message": "i think you don\u0027t need this",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 43
+      },
+      "revId": "061cf2f9cf02bc3226849e1727f793b248bccecf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
