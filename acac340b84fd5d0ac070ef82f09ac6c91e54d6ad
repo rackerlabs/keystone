@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_29c43d3e",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:36:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_151ddc65",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_3d3e40da",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -213,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_096ce133",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:36:54Z",
+      "side": 1,
+      "message": "Changed this to doing it as a transaction. Thanks Mike.",
+      "parentUuid": "5a3905b3_95d0ecca",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_783d358e",
         "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -300,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_a48214c6",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:36:54Z",
+      "side": 1,
+      "message": "Done, just not explicitly naming at this point. It hasn\u0027t been a practice in Keystone to name constraints in the model modules. However, they are typically given names in the migration files. I\u0027ll propose a different patch to address this.",
+      "parentUuid": "5a3905b3_38156de4",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_38fe4dae",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -317,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_e4709c0d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:36:54Z",
+      "side": 1,
+      "message": "reason above.",
+      "parentUuid": "5a3905b3_38fe4dae",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_b8287d34",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -328,6 +400,24 @@
       "writtenOn": "2017-01-23T16:58:01Z",
       "side": 1,
       "message": "I\u0027d not use unique\u003dTrue and use UniqueConstraint instead for clarity/consistency/explicit naming",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_0453e86b",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:36:54Z",
+      "side": 1,
+      "message": "Done, but not explicitly naming.",
+      "parentUuid": "5a3905b3_b8287d34",
       "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
