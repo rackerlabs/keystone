@@ -61,6 +61,7 @@ OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
 Boolean = sql.Boolean
 Text = sql.Text
+Binary = sql.LargeBinary
 UniqueConstraint = sql.UniqueConstraint
 PrimaryKeyConstraint = sql.PrimaryKeyConstraint
 joinedload = sql.orm.joinedload
