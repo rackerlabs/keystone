@@ -285,6 +285,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_43379cfe",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T23:12:10Z",
+      "side": 1,
+      "message": "True, but I\u0027m happy with doing a transaction, as opposed to batching. Unless, you see a problem with that approach.",
+      "parentUuid": "5a3905b3_c3d9ccf4",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_783d358e",
         "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
         "patchSetId": 46
