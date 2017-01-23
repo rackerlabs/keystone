@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_8f3291a5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 20380
+      },
+      "writtenOn": "2017-01-23T18:32:35Z",
+      "side": 1,
+      "message": "¯\\_(ツ)_/¯",
+      "range": {
+        "startLine": 284,
+        "startChar": 79,
+        "endLine": 284,
+        "endChar": 84
+      },
+      "revId": "3a5ae32d847ec0b31883346823aa5bb1e202eb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
