@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_d1ec4df5",
+        "filename": "keystone/common/sql/expand_repo/versions/015_expand_add_user_ignore_password_expiry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T15:27:25Z",
+      "side": 1,
+      "message": "Lets add the new column to the local_user table instead, as this is only relevant to local users (sql identity backend).",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "061cf2f9cf02bc3226849e1727f793b248bccecf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_794c7c9e",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 1
@@ -89,6 +112,29 @@
         "startChar": 0,
         "endLine": 83,
         "endChar": 43
+      },
+      "revId": "061cf2f9cf02bc3226849e1727f793b248bccecf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_31ae7181",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T15:27:25Z",
+      "side": 1,
+      "message": "Again, this belongs in the local_user table; you could make it a hybrid property if you need to expose within the user object.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 27
       },
       "revId": "061cf2f9cf02bc3226849e1727f793b248bccecf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
