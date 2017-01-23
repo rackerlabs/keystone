@@ -165,8 +165,7 @@ class Identity(base.IdentityDriverBase):
         return self._update_user(user_id, user)
 
     def delete_user(self, user_id):
-        self._disallow_write()
-        self._delete_user(user_id)
+        raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
 
     def change_password(self, user_id, new_password):
         raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
@@ -188,8 +187,7 @@ class Identity(base.IdentityDriverBase):
         return self._update_group(group_id, group)
 
     def delete_group(self, group_id):
-        self._disallow_write()
-        return self._delete_group(group_id)
+        raise exception.Forbidden(READ_ONLY_LDAP_ERROR_MESSAGE)
 
     # Test implementations
     def _create_user(self, user_id, user):
@@ -217,26 +215,6 @@ class Identity(base.IdentityDriverBase):
         self.user.update(user_id, user, old_obj)
         return self.user.get_filtered(user_id)
 
-    def _delete_user(self, user_id):
-        msg = _DEPRECATION_MSG % "delete_user"
-        versionutils.report_deprecated_feature(LOG, msg)
-        user = self.user.get(user_id)
-        user_dn = user['dn']
-        groups = self.group.list_user_groups(user_dn)
-        for group in groups:
-            group_ref = self.group.get(group['id'], '*')  # unfiltered
-            group_dn = group_ref['dn']
-            try:
-                super(GroupApi, self.group).remove_member(user_dn, group_dn)
-            except ldap.NO_SUCH_ATTRIBUTE:
-                msg = ('User %(user)s was not removed from group %(group)s '
-                       'because the relationship was not found')
-                LOG.warning(msg, {'user': user_id, 'group': group['id']})
-
-        if hasattr(user, 'tenant_id'):
-            self.project.remove_user(user.tenant_id, user_dn)
-        self.user.delete(user_id)
-
     def _create_group(self, group_id, group):
         msg = _DEPRECATION_MSG % "create_group"
         versionutils.report_deprecated_feature(LOG, msg)
@@ -246,11 +224,6 @@ class Identity(base.IdentityDriverBase):
         msg = _DEPRECATION_MSG % "update_group"
         versionutils.report_deprecated_feature(LOG, msg)
         return common_ldap.filter_entity(self.group.update(group_id, group))
-
-    def _delete_group(self, group_id):
-        msg = _DEPRECATION_MSG % "delete_group"
-        versionutils.report_deprecated_feature(LOG, msg)
-        return self.group.delete(group_id)
 
     def _add_user_to_group(self, user_id, group_id):
         msg = _DEPRECATION_MSG % "add_user_to_group"
@@ -417,16 +390,6 @@ class GroupApi(common_ldap.BaseLdap):
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
         return super(GroupApi, self).create(data)
-
-    def delete(self, group_id):
-        # TODO(spzala): this is only placeholder for group and domain
-        # role support which will be added under bug 1101287
-
-        group_ref = self.get(group_id)
-        group_dn = group_ref['dn']
-        if group_dn:
-            self._delete_tree_nodes(group_dn, ldap.SCOPE_ONELEVEL)
-        super(GroupApi, self).delete(group_id)
 
     def update(self, group_id, values):
         old_obj = self.get(group_id)
