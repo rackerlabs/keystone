@@ -34,6 +34,29 @@
       "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_4a4977b6",
+        "filename": "keystone/common/sql/expand_repo/versions/016_expand_lockout_ignore.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T19:02:50Z",
+      "side": 1,
+      "message": "Move this column to the local_user table.",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
