@@ -169,6 +169,20 @@ class Identity(base.IdentityDriverBase):
             for attr in model.User.attributes:
                 if attr not in model.User.readonly_attributes:
                     setattr(user_ref, attr, getattr(new_user, attr))
+
+            # Set the resource options for user in the Attribute Mapping.
+            for r_opt_cc in new_user.options:
+                r_opt = new_user.options[r_opt_cc]
+                if r_opt.option_value is None:
+                    # Delete any option set explicitly to None, ignore unset
+                    # options.
+                    user_ref.options.pop(r_opt_cc, None)
+                else:
+                    # Set any options on the user_ref itself.
+                    user_ref.options[r_opt_cc] = model.UserOptions(
+                        option_id=r_opt.option_id,
+                        option_value=r_opt.option_value)
+
             user_ref.extra = new_user.extra
             return base.filter_user(
                 user_ref.to_dict(include_extra_dict=True))
