@@ -67,6 +67,7 @@ _user_options = {
     'type': 'object',
     'properties': {
         ro.IGNORE_CHANGE_PASSWORD_OPT.option_name: parameter_types.boolean,
+        ro.IGNORE_LOCKOUT_ATTEMPT_OPT.option_name: parameter_types.boolean
     },
     'additionalProperties': False
 }
