@@ -16,6 +16,24 @@
       "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6a02b30b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/016_migrate_lockout_ignore.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T18:47:53Z",
+      "side": 1,
+      "message": "Setting to True for all user IDs currently in the ignore user configuration setting (line 24 and 29). So migrating that data to this new field.",
+      "parentUuid": "5a3905b3_e9ea35da",
+      "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
