@@ -17,9 +17,11 @@ import datetime
 import sqlalchemy
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import orm
+from sqlalchemy.orm import collections
 
 from keystone.common import sql
 import keystone.conf
+from keystone.identity.backends import identity_resource_options as iro
 
 
 CONF = keystone.conf.CONF
@@ -31,10 +33,18 @@ class User(sql.ModelBase, sql.DictBase):
                   'default_project_id', 'password_expires_at', 'mfa_rules',
                   'mfa_rules_enabled']
     readonly_attributes = ['id', 'password_expires_at']
+    _resource_options_registry = iro.USER_OPTIONS_REGISTRY
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
+    options = orm.relationship(
+        'UserOptions',
+        single_parent=True,
+        cascade='all,delete,delete-orphan',
+        lazy='subquery',
+        backref='user',
+        collection_class=collections.attribute_mapped_collection('option_id'))
     local_user = orm.relationship('LocalUser', uselist=False,
                                   single_parent=True, lazy='subquery',
                                   cascade='all,delete-orphan', backref='user')
@@ -243,6 +253,9 @@ class User(sql.ModelBase, sql.DictBase):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
         if 'default_project_id' in d and d['default_project_id'] is None:
             del d['default_project_id']
+        for opt in self._resource_options_registry.options:
+            if opt.option_id in self.options:
+                d['opt.option_name'] = self.options[opt.option_id]
         return d
 
     @classmethod
@@ -258,10 +271,22 @@ class User(sql.ModelBase, sql.DictBase):
 
         """
         new_dict = user_dict.copy()
+        resource_options = {}
         password_expires_at_key = 'password_expires_at'
         if password_expires_at_key in user_dict:
             del new_dict[password_expires_at_key]
-        return super(User, cls).from_dict(new_dict)
+        for opt in cls._resource_options_registry.options:
+            if opt.option_name in new_dict:
+                opt_value = new_dict.pop(opt.option_name)
+                opt.validate(opt_value)
+                resource_options[opt.option_id] = opt_value
+        user_obj = super(User, cls).from_dict(new_dict)
+        for opt_cc, opt_value in resource_options.items():
+            if opt_value is None:
+                user_obj.options.pop(opt_cc, None)
+            else:
+                user_obj[opt_cc] = opt_value
+        return user_obj
 
 
 class LocalUser(sql.ModelBase, sql.DictBase):
@@ -364,3 +389,14 @@ class UserMFARules(sql.ModelBase, sql.ModelDictMixin):
     rules = sql.Column(sql.JsonBlob())
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
+
+
+class UserOptions(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'user_options'
+    attributes = ['user_id', 'option_id', 'option_value']
+    user_id = sql.Column(sql.String(64), sql.ForeignKey('user.id',
+                         ondelete='CASCADE'), nullable=False,
+                         primary_key=True)
+    option_id = sql.Column(sql.String(4), nullable=False,
+                           primary_key=True)
+    option_value = sql.Column(sql.JsonBlob, nullable=True)

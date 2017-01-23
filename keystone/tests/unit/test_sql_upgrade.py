@@ -2006,6 +2006,19 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(mfa_rules,
                                 ['id', 'user_id', 'rules', 'enabled'])
 
+    def test_migration_015_add_user_options(self):
+        self.expand(14)
+        self.migrate(14)
+        self.contract(14)
+
+        user_options = 'user_options'
+        self.assertTableDoesNotExist(user_options)
+        self.expand(15)
+        self.migrate(15)
+        self.contract(15)
+        self.assertTableColumns(user_options,
+                                ['user_id', 'option_id', 'option_value'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
