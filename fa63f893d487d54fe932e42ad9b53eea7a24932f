@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e8ea2673",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-23T21:54:08Z",
+      "side": 0,
+      "message": "Thoughts on this? Why would test_list_groups_for_user also test the delete functionality?",
+      "revId": "fa63f893d487d54fe932e42ad9b53eea7a24932f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
