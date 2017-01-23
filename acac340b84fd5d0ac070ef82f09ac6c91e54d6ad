@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_5db22c95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 46
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "note here for clarity that you are creating a UNIQUE constraint on user (id, domain_id) otherwise this composite FK would not be possible.  Why is the PK of user not (id, domain_id) ?",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_552f643e",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "stylistically, I\u0027d have made a drop_trigger() function and used oslo.db\u0027s dispatch_for() feature: http://docs.openstack.org/developer/oslo.db/api/oslo_db.sqlalchemy.utils.html#oslo_db.sqlalchemy.utils.DialectFunctionDispatcher.dispatch_for   would greatly reduce the verbosity here",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_151ddc65",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "this is hard to read, why not assign the variable in one statement ?  \n\n\tdrop_nonlocal_user_insert_trigger \u003d (\n\t    \u0027DROP TRIGGER nonlocal_user_after_insert_trigger \u0027\n\t    \u0027on nonlocal_user;\n\t)",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_3d3e40da",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "keystone not using naming conventions for constraints?",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_95d0ecca",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "iterating through a SELECT and running an UPDATE for every row should really be in a transaction:\n\n    with migrate_engine.begin() as conn:\n        for user in conn.execute(sel):\n            values \u003d {\u0027domain_id\u0027: user[\u0027domain_id\u0027]}\n            stmt \u003d user_table.update().where(\n                user_table.c.id \u003d\u003d user[\u0027id\u0027]).values(values)\n            conn.execute(stmt)\n\nbut also, how many rows are we talking about for this table?   doing an UPDATE for every row in a SELECT suggests a single UPDATE that could do the whole thing with a correlated SELECT, should be much faster:\n\n    UPDATE user_table SET domain_id\u003d\n    (SELECT domain_id FROM child_user_table WHERE user_id\u003duser_table.id)\n    WHERE user_table.domain_id IS NULL",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_783d358e",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "no easy win for the verbosity here.  would be nice if we had some trigger-creation utilities but that\u0027s out of scope for this.",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_d8fc69ba",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "does the \"Base.metadata\" have a naming_convention dictionary in place?  otherwise giving constraints explicit names would be handy",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_38156de4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "I\u0027d not use unique\u003dTrue and use UniqueConstraint for clarity/consistency/explicit naming",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_38fe4dae",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "same w/ naming here",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_b8287d34",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T16:58:01Z",
+      "side": 1,
+      "message": "I\u0027d not use unique\u003dTrue and use UniqueConstraint instead for clarity/consistency/explicit naming",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
