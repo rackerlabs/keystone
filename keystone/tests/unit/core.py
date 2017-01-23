@@ -746,7 +746,12 @@ class TestCase(BaseTestCase):
                 try:
                     existing_user = getattr(self, 'user_%s' % user['id'], None)
                     if existing_user is not None:
-                        self.identity_api.delete_user(existing_user['id'])
+                        try:
+                            self.identity_api.delete_user(existing_user['id'])
+                        except exception.Forbidden:
+                            # Note(knikolla): Some backends such as LDAP are
+                            # read only.
+                            pass
                 except exception.UserNotFound:
                     pass
 
