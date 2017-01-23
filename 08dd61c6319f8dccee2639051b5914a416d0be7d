@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_21cd3185",
+        "filename": "keystone/common/sql/data_migration_repo/versions/016_migrate_lockout_ignore.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-23T19:40:11Z",
+      "side": 1,
+      "message": "Makes sense. Thanks.",
+      "parentUuid": "5a3905b3_6a02b30b",
+      "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_4a4977b6",
         "filename": "keystone/common/sql/expand_repo/versions/016_expand_lockout_ignore.py",
         "patchSetId": 1
