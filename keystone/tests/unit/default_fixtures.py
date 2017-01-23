@@ -67,7 +67,8 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'password',
         'tenants': [],
-        'enabled': True
+        'enabled': True,
+        'ignore_password_expiry': False,
     },
     {
         'id': 'foo',
@@ -77,6 +78,7 @@ USERS = [
         'tenants': [BAR_TENANT_ID],
         'enabled': True,
         'email': 'foo@bar.com',
+        'ignore_password_expiry': False,
     }, {
         'id': 'two',
         'name': 'TWO',
@@ -86,6 +88,7 @@ USERS = [
         'default_project_id': BAZ_TENANT_ID,
         'tenants': [BAZ_TENANT_ID],
         'email': 'two@three.com',
+        'ignore_password_expiry': False,
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
@@ -95,6 +98,7 @@ USERS = [
         'default_project_id': BAZ_TENANT_ID,
         'tenants': [BAZ_TENANT_ID],
         'email': 'bad@guy.com',
+        'ignore_password_expiry': False,
     }, {
         'id': 'sna',
         'name': 'SNA',
@@ -105,6 +109,7 @@ USERS = [
         'email': 'sna@snl.coom',
         'mfa_rules': [],
         'mfa_rules_enabled': True,
+        'ignore_password_expiry': False,
     }
 ]
 

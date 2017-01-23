@@ -137,7 +137,8 @@ class SqlModels(SqlTests):
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None),
                 ('created_at', sql.DateTime, None),
-                ('last_active_at', sqlalchemy.Date, None))
+                ('last_active_at', sqlalchemy.Date, None),
+                ('ignore_password_expiry', sqlalchemy.Boolean, False))
         self.assertExpectedSchema('user', cols)
 
     def test_local_user_model(self):

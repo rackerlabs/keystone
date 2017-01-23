@@ -2006,6 +2006,23 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
         self.assertTableColumns(mfa_rules,
                                 ['id', 'user_id', 'rules', 'enabled'])
 
+    def test_migration_015_ignore_password_expire_column_add_to_user(self):
+        self.expand(14)
+        self.migrate(14)
+        self.contract(14)
+        user = 'user'
+        self.assertTableColumns(user,
+                                ['id', 'enabled', 'extra',
+                                 'default_project_id', 'created_at',
+                                 'last_active_at'])
+        self.expand(15)
+        self.migrate(15)
+        self.contract(15)
+        self.assertTableColumns(user,
+                                ['id', 'enabled', 'extra',
+                                 'default_project_id', 'created_at',
+                                 'last_active_at', 'ignore_password_expiry'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture

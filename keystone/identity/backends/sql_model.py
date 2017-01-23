@@ -29,12 +29,15 @@ class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id', 'password_expires_at', 'mfa_rules',
-                  'mfa_rules_enabled']
+                  'mfa_rules_enabled', 'ignore_password_expiry']
     readonly_attributes = ['id', 'password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     default_project_id = sql.Column(sql.String(64))
+    _ignore_password_expiry = sql.Column(
+        'ignore_password_expiry', sql.Boolean, default=False, nullable=False,
+        server_default=sqlalchemy.sql.expression.false())
     local_user = orm.relationship('LocalUser', uselist=False,
                                   single_parent=True, lazy='subquery',
                                   cascade='all,delete-orphan', backref='user')
@@ -142,8 +145,7 @@ class User(sql.ModelBase, sql.DictBase):
 
     def _get_password_expires_at(self, created_at):
         expires_days = CONF.security_compliance.password_expires_days
-        ignore_list = CONF.security_compliance.password_expires_ignore_user_ids
-        if expires_days and (self.id not in ignore_list):
+        if expires_days and not self.ignore_password_expiry:
             expired_date = (created_at + datetime.timedelta(days=expires_days))
             return expired_date.replace(microsecond=0)
         return None
@@ -174,6 +176,20 @@ class User(sql.ModelBase, sql.DictBase):
     @domain_id.expression
     def domain_id(cls):
         return LocalUser.domain_id
+
+    @property
+    def ignore_password_expiry(self):
+        if (self.id in
+                CONF.security_compliance.password_expires_ignore_user_ids):
+            # NOTE(notmorgan): This option is deprecated and subject to
+            # removal in a future release, for now this guarantees the value
+            # in the config option is followed.
+            return True
+        return bool(self._ignore_password_expiry)
+
+    @ignore_password_expiry.setter
+    def ignore_password_expiry(self, value):
+        self._ignore_password_expiry = bool(value)
 
     # NOTE(stevemar): we use a hybrid property here because we leverage the
     # expression method, see `@enabled.expression` and `User._enabled` below.

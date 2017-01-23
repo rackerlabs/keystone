@@ -11,6 +11,7 @@
 # under the License.
 
 from oslo_config import cfg
+from oslo_log import versionutils
 
 from keystone.conf import utils
 
@@ -77,6 +78,16 @@ the `[identity] driver`.
 
 password_expires_ignore_user_ids = cfg.ListOpt(
     'password_expires_ignore_user_ids',
+    deprecated_name='password_expires_ignore_user_ids',
+    deprecated_for_removal=True,
+    deprecated_group='security_compliance',
+    deprecated_reason=utils.fmt("""
+Functionality added as a per-user attribute "ignore_password_expiry" in Ocata.
+Each user that should ignore password expiry should have the value set to
+"true" with an "update_user" call. This avoids the need to restart keystone to
+adjust the users that ignore password expiry.
+"""),
+    deprecated_since=versionutils.deprecated.OCATA,
     default=[],
     help=utils.fmt("""
 Comma separated list of user IDs to be ignored when checking if a password
