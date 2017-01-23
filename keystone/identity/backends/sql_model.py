@@ -160,6 +160,29 @@ class User(sql.ModelBase, sql.DictBase):
         return Password.password
 
     # NOTE(stevemar): we use a hybrid property here because we leverage the
+    # expression method, see `@domain_id.expression` and `LocalUser.domain_id`
+    # below.
+    @hybrid_property
+    def domain_id(self):
+        """Return user's domain id."""
+        if self.local_user:
+            return self.local_user.domain_id
+        elif self.nonlocal_user:
+            return self.nonlocal_user.domain_id
+        else:
+            return None
+
+    @domain_id.setter
+    def domain_id(self, value):
+        if not self.local_user:
+            self.local_user = LocalUser()
+        self.local_user.domain_id = value
+
+    @domain_id.expression
+    def domain_id(cls):
+        return LocalUser.domain_id
+
+    # NOTE(stevemar): we use a hybrid property here because we leverage the
     # expression method, see `@enabled.expression` and `User._enabled` below.
     @hybrid_property
     def enabled(self):

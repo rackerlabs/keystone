@@ -56,6 +56,16 @@ driver`.
 lockout_ignored_user_ids = cfg.ListOpt(
     'lockout_ignored_user_ids',
     default=[],
+    deprecated_name='lockout_ignored_user_ids',
+    deprecated_for_removal=True,
+    deprecated_group='security_compliance',
+    deprecated_reason=utils.fmt("""
+Functionality added as a per-user attribute "ignore_password_lockout" in Ocata.
+Each user that should ignore password lockout should have the value set to
+"true" with an "update_user" call. This avoids the need to restart keystone to
+adjust the users that ignore password lockouts.
+"""),
+    deprecated_since=versionutils.deprecated.OCATA,
     help=utils.fmt("""
 Comma separated list of user IDs to be ignored when checking if a user should
 be locked out based on failed authentication attempts. Thus, users in this list
