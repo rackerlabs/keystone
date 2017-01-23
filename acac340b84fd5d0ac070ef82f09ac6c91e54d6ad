@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_98e741ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 46
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "Yes, creating the unique constraint for the composite fk. The reason the pk is not (id, domain_id) is for current referential integrity, which is based on the id.",
+      "parentUuid": "5a3905b3_5db22c95",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_552f643e",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_9b081b2a",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a3905b3_151ddc65",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_3d3e40da",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -64,6 +100,24 @@
       "writtenOn": "2017-01-23T16:58:01Z",
       "side": 1,
       "message": "keystone not using naming conventions for constraints?",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9b6d7bce",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "No, not guaranteed.",
+      "parentUuid": "5a3905b3_3d3e40da",
       "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_bbccf7bb",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "Tried single update first and ran into table locking when running tests. I\u0027ll change it to a transaction. Thanks Mike.",
+      "parentUuid": "5a3905b3_95d0ecca",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_783d358e",
         "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_bb431712",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "Yeah, totally agree.",
+      "parentUuid": "5a3905b3_783d358e",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_d8fc69ba",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 46
@@ -115,6 +205,24 @@
       "writtenOn": "2017-01-23T16:58:01Z",
       "side": 1,
       "message": "does the \"Base.metadata\" have a naming_convention dictionary in place?  otherwise giving constraints explicit names would be handy",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9b257b5d",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-23T17:13:26Z",
+      "side": 1,
+      "message": "Agree, but not that I am aware of.",
+      "parentUuid": "5a3905b3_d8fc69ba",
       "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
