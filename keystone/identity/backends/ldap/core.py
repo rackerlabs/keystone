@@ -330,6 +330,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         values.pop('mfa_rules', None)
         values.pop('mfa_rules_enabled', None)
         values.pop('ignore_password_expiry', None)
+        values.pop('ignore_password_lockout', None)
 
         values = super(UserApi, self).create(values)
         if self.enabled_mask or (self.enabled_invert and

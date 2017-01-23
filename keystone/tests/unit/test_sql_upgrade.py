@@ -2023,6 +2023,24 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
                                  'default_project_id', 'created_at',
                                  'last_active_at', 'ignore_password_expiry'])
 
+    def test_migration_016_ignore_password_lockout_column_add_to_user(self):
+        self.expand(15)
+        self.migrate(15)
+        self.contract(15)
+        user = 'user'
+        self.assertTableColumns(user,
+                                ['id', 'enabled', 'extra',
+                                 'default_project_id', 'created_at',
+                                 'last_active_at', 'ignore_password_expiry'])
+        self.expand(16)
+        self.migrate(16)
+        self.contract(16)
+        self.assertTableColumns(user,
+                                ['id', 'enabled', 'extra',
+                                 'default_project_id', 'created_at',
+                                 'last_active_at', 'ignore_password_expiry',
+                                 'ignore_password_lockout'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture

@@ -329,6 +329,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
         self.user_sna['mfa_rules'] = []
         self.user_sna['mfa_rules_enabled'] = True
         self.user_sna['ignore_password_expiry'] = False
+        self.user_sna['ignore_password_lockout'] = False
 
     def _get_domain_fixture(self):
         """Return the static domain, since domains in LDAP are read-only."""

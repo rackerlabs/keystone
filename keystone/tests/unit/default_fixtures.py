@@ -69,6 +69,7 @@ USERS = [
         'tenants': [],
         'enabled': True,
         'ignore_password_expiry': False,
+        'ignore_password_lockout': False,
     },
     {
         'id': 'foo',
@@ -79,6 +80,7 @@ USERS = [
         'enabled': True,
         'email': 'foo@bar.com',
         'ignore_password_expiry': False,
+        'ignore_password_lockout': False,
     }, {
         'id': 'two',
         'name': 'TWO',
@@ -89,6 +91,7 @@ USERS = [
         'tenants': [BAZ_TENANT_ID],
         'email': 'two@three.com',
         'ignore_password_expiry': False,
+        'ignore_password_lockout': False,
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
@@ -99,6 +102,7 @@ USERS = [
         'tenants': [BAZ_TENANT_ID],
         'email': 'bad@guy.com',
         'ignore_password_expiry': False,
+        'ignore_password_lockout': False,
     }, {
         'id': 'sna',
         'name': 'SNA',
@@ -110,6 +114,7 @@ USERS = [
         'mfa_rules': [],
         'mfa_rules_enabled': True,
         'ignore_password_expiry': False,
+        'ignore_password_lockout': False,
     }
 ]
 

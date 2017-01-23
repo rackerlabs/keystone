@@ -194,7 +194,7 @@ class TestShadowUsers(unit.TestCase):
                                                     fed_user['display_name'])
         )
         self.assertIsNotNone(user['id'])
-        self.assertEqual(8, len(user.keys()))
+        self.assertEqual(9, len(user.keys()))
         self.assertIsNotNone(user['name'])
         self.assertIsNone(user['password_expires_at'])
         self.assertIsNone(user['domain_id'])

@@ -29,7 +29,8 @@ class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id', 'password_expires_at', 'mfa_rules',
-                  'mfa_rules_enabled', 'ignore_password_expiry']
+                  'mfa_rules_enabled', 'ignore_password_expiry',
+                  'ignore_password_lockout']
     readonly_attributes = ['id', 'password_expires_at']
     id = sql.Column(sql.String(64), primary_key=True)
     _enabled = sql.Column('enabled', sql.Boolean)
@@ -37,6 +38,9 @@ class User(sql.ModelBase, sql.DictBase):
     default_project_id = sql.Column(sql.String(64))
     _ignore_password_expiry = sql.Column(
         'ignore_password_expiry', sql.Boolean, default=False, nullable=False,
+        server_default=sqlalchemy.sql.expression.false())
+    _ignore_password_lockout = sql.Column(
+        'ignore_password_lockout', sql.Boolean, default=False, nullable=False,
         server_default=sqlalchemy.sql.expression.false())
     local_user = orm.relationship('LocalUser', uselist=False,
                                   single_parent=True, lazy='subquery',
@@ -176,6 +180,20 @@ class User(sql.ModelBase, sql.DictBase):
     @domain_id.expression
     def domain_id(cls):
         return LocalUser.domain_id
+
+    @property
+    def ignore_password_lockout(self):
+        if (self.id in
+                CONF.security_compliance.lockout_ignored_user_ids):
+            # NOTE(notmorgan): This option is deprecated and subject to
+            # removal in a future release, for now this guarantees the value
+            # in the config option is followed.
+            return True
+        return bool(self._ignore_password_lockout)
+
+    @ignore_password_lockout.setter
+    def ignore_password_lockout(self, value):
+        self._ignore_password_lockout = bool(value)
 
     @property
     def ignore_password_expiry(self):
