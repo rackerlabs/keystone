@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_98d3cf03",
+        "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-23T17:39:45Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 4,
+        "startChar": 57,
+        "endLine": 4,
+        "endChar": 72
+      },
+      "revId": "0f0133d0e16778b67d2f7bf0fe3c0bd214295358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
