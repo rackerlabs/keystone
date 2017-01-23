@@ -267,6 +267,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c3d9ccf4",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T23:05:16Z",
+      "side": 1,
+      "message": "well, that paste shows you running an INSERT statement, you\u0027re saying that INSERT failed because it tried to run while you ran this UPDATE elsewhere, right?  that would make sense.   thousands is not terrible although you could run the UPDATE against a batch of say 1000 rows at a time which would decrease the Python overhead to a significant degree, though not the number of round trips.",
+      "parentUuid": "5a3905b3_be9b0565",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_783d358e",
         "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
         "patchSetId": 46
@@ -366,6 +384,24 @@
       "side": 1,
       "message": "Done, just not explicitly naming at this point. It hasn\u0027t been a practice in Keystone to name constraints in the model modules. However, they are typically given names in the migration files. I\u0027ll propose a different patch to address this.",
       "parentUuid": "5a3905b3_38156de4",
+      "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a305a046",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2017-01-23T23:05:16Z",
+      "side": 1,
+      "message": "well right as long as the name gets into the DB, is the main thing.",
+      "parentUuid": "5a3905b3_a48214c6",
       "revId": "acac340b84fd5d0ac070ef82f09ac6c91e54d6ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
