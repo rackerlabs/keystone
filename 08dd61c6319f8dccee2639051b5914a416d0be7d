@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_e9ea35da",
+        "filename": "keystone/common/sql/data_migration_repo/versions/016_migrate_lockout_ignore.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-23T17:55:18Z",
+      "side": 1,
+      "message": "Why are we setting it to \u0027True\u0027 for all existing users and \u0027False\u0027 as default for new users?",
+      "revId": "08dd61c6319f8dccee2639051b5914a416d0be7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
