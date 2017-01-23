@@ -1993,6 +1993,19 @@ class FullMigration(SqlMigrateBase, unit.TestCase):
             protocol_id=federated_user['protocol_id']).all()
         self.assertThat(federated_users, matchers.HasLength(0))
 
+    def test_migration_015_add_user_options(self):
+        self.expand(13)
+        self.migrate(13)
+        self.contract(13)
+
+        user_options = 'user_options'
+        self.assertTableDoesNotExist(user_options)
+        self.expand(14)
+        self.migrate(14)
+        self.contract(14)
+        self.assertTableColumns(user_options,
+                                ['user_id', 'option_id', 'option_value'])
+
 
 class MySQLOpportunisticFullMigration(FullMigration):
     FIXTURE = test_base.MySQLOpportunisticFixture
