@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_23cd3185",
+        "filename": "keystone/identity/shadow_backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-23T22:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_20df340e",
+      "range": {
+        "startLine": 51,
+        "startChar": 16,
+        "endLine": 54,
+        "endChar": 30
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_60fcdc72",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 23
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-21T05:34:41Z",
       "side": 1,
       "message": "create a new test class and turn this into setupClass",
+      "range": {
+        "startLine": 313,
+        "startChar": 8,
+        "endLine": 345,
+        "endChar": 64
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_63c3b957",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-23T22:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_60fcdc72",
       "range": {
         "startLine": 313,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c3aaad84",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-23T22:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_e0d9ac23",
+      "range": {
+        "startLine": 347,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 48
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_20065486",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 23
@@ -82,6 +154,30 @@
       "writtenOn": "2017-01-21T05:34:41Z",
       "side": 1,
       "message": "yes, more of these please, where the query string is idp and protocol, and a combination of them, and a correct value with an incorrect value.\n\nalso, add more than one user and one idp and one protocol",
+      "range": {
+        "startLine": 368,
+        "startChar": 8,
+        "endLine": 368,
+        "endChar": 75
+      },
+      "revId": "2084208ea56eabf5a3722dab76ba9063dc995131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_e3ade99b",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 18464
+      },
+      "writtenOn": "2017-01-23T22:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3905b3_20065486",
       "range": {
         "startLine": 368,
         "startChar": 8,
