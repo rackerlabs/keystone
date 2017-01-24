@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_3c29abe6",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:37:23Z",
+      "side": 1,
+      "message": "Should the user.domain_id be change to not nullable in here?",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e10a1cd1",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
         "patchSetId": 48
@@ -37,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_3042afae",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:37:23Z",
+      "side": 1,
+      "message": "I think the risk here is really low. There would have to be a bug in the code or manual SQL inserts to trigger a race here.  The triggers should help with the bug since they control the data being inserted.",
+      "parentUuid": "5a3905b3_3c98cb77",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_b61a1c7b",
         "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
         "patchSetId": 48
@@ -66,6 +101,40 @@
       "side": 1,
       "message": "Correct",
       "parentUuid": "5a3905b3_b61a1c7b",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9c29bf9d",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:37:23Z",
+      "side": 1,
+      "message": "Based on the recent IRC conversations do we still need to worry about trying to change the domain on an existing user?",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_dce267d4",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:37:23Z",
+      "side": 1,
+      "message": "Why is this nullable here?",
       "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
