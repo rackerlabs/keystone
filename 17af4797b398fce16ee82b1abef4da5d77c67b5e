@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_3c98cb77",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:17:32Z",
+      "side": 1,
+      "message": "No, I can\u0027t create the new one before deleting the old one, as you can\u0027t have multiple fk constraints for the same column.",
+      "parentUuid": "5a3905b3_e10a1cd1",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_b61a1c7b",
         "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
         "patchSetId": 48
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-24T15:05:43Z",
       "side": 1,
       "message": "So this updates all domain_ids using a single transaction because we\u0027re executing it on the connection level (as opposed to the statement level)?",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_9c99bf7b",
+        "filename": "keystone/common/sql/data_migration_repo/versions/014_migrate_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:17:32Z",
+      "side": 1,
+      "message": "Correct",
+      "parentUuid": "5a3905b3_b61a1c7b",
       "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
