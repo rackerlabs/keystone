@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_f67ae475",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T14:45:36Z",
+      "side": 1,
+      "message": "Because I want to be able to take the federated_dict and convert it to a federated object without having to pop data out. The only issue is, is that we are changing the base class interface, but I think there would be minimal to no impact on operators, as I would be surprised if anyone implemented a custom backend for shadow users.",
+      "parentUuid": "5a3905b3_205d1915",
+      "range": {
+        "startLine": 1333,
+        "startChar": 12,
+        "endLine": 1338,
+        "endChar": 13
+      },
+      "revId": "3cccd8c27e8550261338e94e008271f341f12889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_c0b2954b",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2017-01-24T05:48:23Z",
       "side": 1,
       "message": "for completeness you can test to see that the federated user\u0027s domain is set to None",
+      "range": {
+        "startLine": 2184,
+        "startChar": 8,
+        "endLine": 2186,
+        "endChar": 74
+      },
+      "revId": "3cccd8c27e8550261338e94e008271f341f12889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5693b85a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2186,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T14:45:36Z",
+      "side": 1,
+      "message": "Good catch, thanks. Done.",
+      "parentUuid": "5a3905b3_c0b2954b",
       "range": {
         "startLine": 2184,
         "startChar": 8,
