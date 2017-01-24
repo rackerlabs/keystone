@@ -49,6 +49,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_56f738d2",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:00:33Z",
+      "side": 1,
+      "message": "Why not use a better alternative then? Maybe we need to go back in and fix the old setting at some point.",
+      "parentUuid": "5a3905b3_bf741a68",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_83e0f2fb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 31
@@ -144,6 +162,23 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_6138ecd3",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:00:33Z",
+      "side": 1,
+      "message": "Is it actually possible to not have a user.password_ref if you\u0027ve gotten this far in the flow?",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_23065e86",
         "filename": "keystone/identity/core.py",
         "patchSetId": 31
@@ -161,6 +196,23 @@
         "endLine": 1290,
         "endChar": 72
       },
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_21f504ec",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:00:33Z",
+      "side": 1,
+      "message": "At this point is the user required to change their password?",
       "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
