@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_c12d20ff",
+        "filename": "keystone/tests/unit/identity/shadow_users/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:08:48Z",
+      "side": 1,
+      "message": "What are these asserts actually checking? The basic user create?",
+      "revId": "bab2e56acd9de1d5ce4bfa874a55439b3966e454",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
