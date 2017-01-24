@@ -67,6 +67,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_410f7036",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:10:09Z",
+      "side": 1,
+      "message": "Morgan, I believe, is working on that. I didn\u0027t see this as a huge design flaw when I started this, so didn\u0027t think to change it. And it can certainly be changed later.",
+      "parentUuid": "5a3905b3_56f738d2",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_83e0f2fb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 31
@@ -179,6 +197,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_41577057",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:10:09Z",
+      "side": 1,
+      "message": "Users don\u0027t have to have a password defined, correct?",
+      "parentUuid": "5a3905b3_6138ecd3",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_23065e86",
         "filename": "keystone/identity/core.py",
         "patchSetId": 31
@@ -213,6 +249,24 @@
       "writtenOn": "2017-01-24T15:00:33Z",
       "side": 1,
       "message": "At this point is the user required to change their password?",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_81fb1846",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:10:09Z",
+      "side": 1,
+      "message": "Yes, at first auth.",
+      "parentUuid": "5a3905b3_21f504ec",
       "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
