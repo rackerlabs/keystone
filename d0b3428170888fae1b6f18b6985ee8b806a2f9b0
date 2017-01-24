@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_2498ad77",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_user_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-24T16:23:54Z",
+      "side": 1,
+      "message": "Note to reviewers, the value is not indexed. For filtering on the value (long term future planning) it is assumed you\u0027re already narrowing the search to subsets of users with the option set, often times the option wont be set unless relevant settings (such as \"true\") is the value. A value mirroring the default behavior is not as likely to be set.",
+      "revId": "d0b3428170888fae1b6f18b6985ee8b806a2f9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_c46369af",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 3
