@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_627ac989",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:25:22Z",
+      "side": 1,
+      "message": "add nullable\u003dFalse to match the schema",
+      "range": {
+        "startLine": 364,
+        "startChar": 4,
+        "endLine": 364,
+        "endChar": 38
+      },
+      "revId": "6a409c4cee7175e883edb9a353ae4d5af3c6ad83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_02b9052e",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:25:22Z",
+      "side": 1,
+      "message": "these attributes will now be printed on user show and user list, i know they are additive, but it wasn\u0027t clear to me in the spec that they would be added, just confirming that this is something we want to do and not pop these attributes",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 116,
+        "endChar": 37
+      },
+      "revId": "6a409c4cee7175e883edb9a353ae4d5af3c6ad83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_62880972",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:25:22Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 325,
+        "startChar": 64,
+        "endLine": 325,
+        "endChar": 72
+      },
+      "revId": "6a409c4cee7175e883edb9a353ae4d5af3c6ad83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_827b357a",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:25:22Z",
+      "side": 1,
+      "message": "keystone*",
+      "range": {
+        "startLine": 326,
+        "startChar": 50,
+        "endLine": 326,
+        "endChar": 59
+      },
+      "revId": "6a409c4cee7175e883edb9a353ae4d5af3c6ad83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
