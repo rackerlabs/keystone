@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_2aaf8695",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T21:31:06Z",
+      "side": 1,
+      "message": "as per the docs, as of 0.6.0: \n\nIn order to allow existing installations of dogpile.core as a separate package to remain unaffected, the .core package has been retired within dogpile.cache directly; the Lock class is now available directly as dogpile.Lock and the additional dogpile.core constructs are under the dogpile.util namespace.\n\nhttp://dogpilecache.readthedocs.io/en/latest/changelog.html#change-0.6.0",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 37
+      },
+      "revId": "2518ca817a8ed837dc02bb8043b97924ec124473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
