@@ -213,11 +213,11 @@ class Catalog(base.CatalogDriverBase):
             return ref.to_dict()
 
     # Endpoints
-    def create_endpoint(self, endpoint_id, endpoint_ref):
-        new_endpoint = Endpoint.from_dict(endpoint_ref)
+    def create_endpoint(self, endpoint_id, endpoint):
         with sql.session_for_write() as session:
-            session.add(new_endpoint)
-            return new_endpoint.to_dict()
+            endpoint_ref = Endpoint.from_dict(endpoint)
+            session.add(endpoint_ref)
+            return endpoint_ref.to_dict()
 
     def delete_endpoint(self, endpoint_id):
         with sql.session_for_write() as session:

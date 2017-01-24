@@ -737,3 +737,46 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
             for password_ref in user_ref.local_user.passwords:
                 password_ref.created_at = password_create_at - slightly_less
             latest_password.created_at = password_create_at
+
+
+class ChangePasswordRequiredAfterFirstUse(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(ChangePasswordRequiredAfterFirstUse, self).setUp()
+        self.initial_password = uuid.uuid4().hex
+        self.user_dict = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': self.initial_password
+        }
+        self.user = self.identity_api.create_user(self.user_dict)
+
+    def assertPasswordExpiresAfterFirstAuth(self, user_id, password):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+        self.assertRaises(exception.PasswordExpired,
+                          self.identity_api.authenticate,
+                          self.make_request(),
+                          user_id=user_id,
+                          password=password)
+
+    def assertPasswordDoesNotExpireAtNextAuth(self, user_id, password):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+
+    def test_user_can_auth_and_change_password(self):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=self.user['id'],
+                                       password=self.initial_password)
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          self.user['id'],
+                                          self.initial_password,
+                                          new_password)
+        self.assertPasswordDoesNotExpireAtNextAuth(self.user['id'],
+                                                   new_password)
