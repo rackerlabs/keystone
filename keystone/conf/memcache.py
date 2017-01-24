@@ -15,20 +15,6 @@ from oslo_config import cfg
 from keystone.conf import utils
 
 
-servers = cfg.ListOpt(
-    'servers',
-    default=['localhost:11211'],
-    help=utils.fmt("""
-Comma-separated list of memcached servers in the format of
-`host:port,host:port` that keystone should use for the `memcache` token
-persistence provider and other memcache-backed KVS drivers. This configuration
-value is NOT used for intermediary caching between keystone and other backends,
-such as SQL and LDAP (for that, see the `[cache]` section). Multiple keystone
-servers in the same deployment should use the same set of memcached servers to
-ensure that data (such as UUID tokens) created by one node is available to the
-others.
-"""))
-
 dead_retry = cfg.IntOpt(
     'dead_retry',
     default=5 * 60,
@@ -72,7 +58,6 @@ connection. This is used by the key value store system.
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
-    servers,
     dead_retry,
     socket_timeout,
     pool_maxsize,
