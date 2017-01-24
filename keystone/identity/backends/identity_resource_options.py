@@ -14,7 +14,9 @@ from keystone.common import resource_options
 
 
 USER_OPTIONS_REGISTRY = resource_options.ResourceOptionRegistry('USER')
-USER_OPTIONS_LIST = []
+USER_OPTIONS_LIST = [
+    resource_options.ResourceOption('1000', 'allow_password_expires')
+]
 
 
 # NOTE(notmorgan): wrap this in a function for testing purposes.
