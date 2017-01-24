@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_9348cdb4",
+        "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:51:26Z",
+      "side": 1,
+      "message": "Because you can\u0027t change the domain? We still allow domain changes, as it just logs a warning. But happy to take this out if it\u0027s not needed. However, at this point it\u0027s not hurting anything by keeping it.",
+      "parentUuid": "5a3905b3_9c29bf9d",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_dce267d4",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 48
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "I just saw why in your federation review.",
       "parentUuid": "5a3905b3_dce267d4",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_33eab9db",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T15:51:26Z",
+      "side": 1,
+      "message": "Yeah, so once the domain is set for federated users, it will be set now for all users. And really it shouldn\u0027t be nullable, as all users should belong to a domain.",
+      "parentUuid": "5a3905b3_f3075115",
       "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
