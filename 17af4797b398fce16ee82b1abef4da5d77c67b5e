@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_13221da3",
+        "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:42:12Z",
+      "side": 1,
+      "message": "I just saw why in your federation review.",
+      "parentUuid": "5a3905b3_3c29abe6",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e10a1cd1",
         "filename": "keystone/common/sql/contract_repo/versions/014_contract_add_domain_id_to_user_table.py",
         "patchSetId": 48
@@ -135,6 +153,24 @@
       "writtenOn": "2017-01-24T15:37:23Z",
       "side": 1,
       "message": "Why is this nullable here?",
+      "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f3075115",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 48
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T15:42:12Z",
+      "side": 1,
+      "message": "I just saw why in your federation review.",
+      "parentUuid": "5a3905b3_dce267d4",
       "revId": "17af4797b398fce16ee82b1abef4da5d77c67b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
