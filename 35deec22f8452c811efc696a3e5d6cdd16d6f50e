@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_4f914452",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T21:15:18Z",
+      "side": 0,
+      "message": "(nit) suggest renaming to something like \u0027test_cannot_move_user_between_domains\u0027",
+      "revId": "35deec22f8452c811efc696a3e5d6cdd16d6f50e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_cf8b741d",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-24T21:15:18Z",
+      "side": 0,
+      "message": "Similar comment here.",
+      "revId": "35deec22f8452c811efc696a3e5d6cdd16d6f50e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
