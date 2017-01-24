@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_65a733bd",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T05:24:10Z",
+      "side": 1,
+      "message": "this can go on one line now",
+      "range": {
+        "startLine": 162,
+        "startChar": 12,
+        "endLine": 163,
+        "endChar": 45
+      },
+      "revId": "bff3bd9c36a80862923e5bcb0ab4a5b410a46f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_85aa5f83",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T05:24:10Z",
+      "side": 1,
+      "message": "this can go on one line now",
+      "range": {
+        "startLine": 188,
+        "startChar": 12,
+        "endLine": 189,
+        "endChar": 45
+      },
+      "revId": "bff3bd9c36a80862923e5bcb0ab4a5b410a46f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
