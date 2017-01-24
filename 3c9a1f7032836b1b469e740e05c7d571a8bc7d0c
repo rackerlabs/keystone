@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c271af0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-24T11:04:46Z",
+      "side": 1,
+      "message": "yes... don\u0027t remember having any conflicts",
+      "parentUuid": "5a3905b3_e8928a9e",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_554b3b87",
         "filename": "keystone/common/sql/contract_repo/versions/005_protocol_cascade_delete_for_federated_user.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-20T16:30:00Z",
       "side": 1,
       "message": "Is there no other way to get around creating a FK constraint in the contract phase? We would typically create the proper FK constraint in the expand phase, remove the bad FK constraint in the contract phase and then rename the proper one. Is that workflow available here?",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_029bb718",
+        "filename": "keystone/common/sql/contract_repo/versions/005_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-24T11:04:46Z",
+      "side": 1,
+      "message": "right... I tried this in the original bug fix, but didn\u0027t get around some limitations we have around FKConstraints - Boris tested this in a real environment and seemed to work.",
+      "parentUuid": "5a3905b3_554b3b87",
       "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_e2beab63",
+        "filename": "keystone/common/sql/expand_repo/versions/005_protocol_cascade_delete_for_federated_user.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-24T11:04:46Z",
+      "side": 1,
+      "message": "will rename the migrations files, thanks!",
+      "parentUuid": "5a3905b3_95e92383",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_352cefaa",
         "filename": "keystone/tests/unit/test_sql_banned_operations.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2017-01-20T16:30:00Z",
       "side": 1,
       "message": "This might be a long shot, but is renaming possible with FK constraints?",
+      "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_82aec72b",
+        "filename": "keystone/tests/unit/test_sql_banned_operations.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-24T11:04:46Z",
+      "side": 1,
+      "message": "it is not :(",
+      "parentUuid": "5a3905b3_352cefaa",
       "revId": "3c9a1f7032836b1b469e740e05c7d571a8bc7d0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
