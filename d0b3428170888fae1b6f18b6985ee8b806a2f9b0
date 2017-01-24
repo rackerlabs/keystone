@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3905b3_844881b4",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-24T16:28:26Z",
+      "side": 1,
+      "message": "maybe should rename to get_option_by_id, fourcc is not used anywhere else (since it is not intuative what a FourCC is -\u003e 4 character code id)",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 28
+      },
+      "revId": "d0b3428170888fae1b6f18b6985ee8b806a2f9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_2498ad77",
         "filename": "keystone/common/sql/expand_repo/versions/014_expand_add_user_options.py",
         "patchSetId": 3
