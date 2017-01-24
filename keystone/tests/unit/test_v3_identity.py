@@ -1031,7 +1031,7 @@ class PasswordValidationTestCase(ChangePasswordTestCase):
                              expected_status=http_client.BAD_REQUEST)
 
 
-class UserAPITests(test_v3.RestfulTestCase):
+class UserFederatedAttributesTests(test_v3.RestfulTestCase):
     def _create_federated_attributes(self):
         # Create the idp
         idp = {
