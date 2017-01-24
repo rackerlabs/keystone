@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_ef8782b2",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:11:44Z",
+      "side": 1,
+      "message": "This is very generic, should be something like:\n\n  ListUserFederatedAttributeTests",
+      "range": {
+        "startLine": 995,
+        "startChar": 6,
+        "endLine": 995,
+        "endChar": 18
+      },
+      "revId": "19c6530b1a95634f6cd399c98127fca60687f0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_8f435e6b",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:11:44Z",
+      "side": 1,
+      "message": "i think, for tests, its probably better to be verbose and list the 7 combinations, but can be done in another patch",
+      "range": {
+        "startLine": 1088,
+        "startChar": 8,
+        "endLine": 1094,
+        "endChar": 69
+      },
+      "revId": "19c6530b1a95634f6cd399c98127fca60687f0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
