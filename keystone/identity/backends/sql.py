@@ -182,6 +182,12 @@ class Identity(base.IdentityDriverBase):
                         option_id=r_opt.option_id,
                         option_value=r_opt.option_value)
 
+            # Cleanup any lingering options that no longer are defined
+            option_ids = model.User.resource_options_registry.option_ids
+            for cc in list(user_ref.options):
+                if cc not in option_ids:
+                    model.User.options.pop(cc, None)
+
             user_ref.extra = new_user.extra
             return base.filter_user(
                 user_ref.to_dict(include_extra_dict=True))

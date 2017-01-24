@@ -77,7 +77,7 @@ class UserResourceOptionsTests(test_backend_sql.SqlTests):
         new_ref = self.identity_api.update_user(user['id'], user)
         self.assertNotIn(self.option1.option_name, new_ref)
 
-    def test_user_add_option_leaves_existing_option_values(self):
+    def test_user_add_delete_option_leaves_existing_option_values(self):
         user = self._create_user(self._get_user_dict())
 
         opt_value = uuid.uuid4().hex
