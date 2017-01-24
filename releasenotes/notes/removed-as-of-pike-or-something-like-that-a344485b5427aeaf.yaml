@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    All key-value-store code, options, and documentation has been removed as
+    of the Pike release.
