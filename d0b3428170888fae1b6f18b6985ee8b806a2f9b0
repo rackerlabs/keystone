@@ -253,6 +253,52 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_2c7b262b",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-24T21:17:00Z",
+      "side": 1,
+      "message": "nit: following your comment about not using cc, opt_id should be used here.",
+      "range": {
+        "startLine": 245,
+        "startChar": 16,
+        "endLine": 245,
+        "endChar": 18
+      },
+      "revId": "d0b3428170888fae1b6f18b6985ee8b806a2f9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_ec7afe76",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-24T21:17:00Z",
+      "side": 1,
+      "message": "As rderose pointed out, table name and class name should be in singular.",
+      "range": {
+        "startLine": 341,
+        "startChar": 6,
+        "endLine": 341,
+        "endChar": 17
+      },
+      "revId": "d0b3428170888fae1b6f18b6985ee8b806a2f9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_c46369af",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 3
