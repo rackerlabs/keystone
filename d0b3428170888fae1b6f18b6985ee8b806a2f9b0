@@ -89,6 +89,29 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_27c3468c",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-24T19:21:12Z",
+      "side": 1,
+      "message": "Any options not in the registry should be dropped here as well with a pop. (future patchset or followup enhancement)",
+      "range": {
+        "startLine": 178,
+        "startChar": 20,
+        "endLine": 178,
+        "endChar": 56
+      },
+      "revId": "d0b3428170888fae1b6f18b6985ee8b806a2f9b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_1095aa87",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 3
