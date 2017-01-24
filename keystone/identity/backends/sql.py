@@ -116,6 +116,17 @@ class Identity(base.IdentityDriverBase):
             user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_at = None
 
+    def _set_password_expired(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.password_ref.expires_at = datetime.datetime.utcnow()
+
+    def _change_password_required(self, user):
+        return (
+            CONF.security_compliance.change_password_after_first_use and
+            user.password_ref and
+            not user.password_ref.self_service)
+
     # user crud
 
     @sql.handle_conflicts(conflict_type='user')
