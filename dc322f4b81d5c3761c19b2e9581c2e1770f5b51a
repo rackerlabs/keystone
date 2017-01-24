@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_85afbf7b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T05:31:07Z",
+      "side": 1,
+      "message": "maybe put this in another module?",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 36
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_05dbcf1b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T05:31:07Z",
+      "side": 1,
+      "message": "this is too very chatty, \"User MFA Rules\" shows up 570 times in http://logs.openstack.org/48/423548/5/check/gate-tempest-dsvm-neutron-full-ubuntu-xenial/3a6f046/logs/apache/keystone.txt.gz",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 65
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
