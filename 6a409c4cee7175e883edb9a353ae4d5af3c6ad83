@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_c544674b",
+        "filename": "keystone/tests/unit/identity/backends/test_base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 10420
+      },
+      "writtenOn": "2017-01-24T05:04:08Z",
+      "side": 1,
+      "message": "I think having them as part of show and list is a good thing.\n\nHaving them allows much easier auditing, rather than needing to check each user separately after a user list.\n\nIf you have admin, you can get at them anyway, and if you are looking at your own user, nothing wrong with seeing your own rules.",
+      "parentUuid": "5a3905b3_02b9052e",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 116,
+        "endChar": 37
+      },
+      "revId": "6a409c4cee7175e883edb9a353ae4d5af3c6ad83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_62880972",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 9
