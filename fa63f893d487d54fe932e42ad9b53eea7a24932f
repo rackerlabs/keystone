@@ -16,6 +16,24 @@
       "revId": "fa63f893d487d54fe932e42ad9b53eea7a24932f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_2218c174",
+        "filename": "keystone/tests/unit/identity/test_backends.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-24T04:17:27Z",
+      "side": 0,
+      "message": "it\u0027s not testing delete, it was testing remove_user_from_group -- so the number of users goes down as well.\n\nsafe to remove since remove/add_user_from_group will not be supported in R/O mode",
+      "parentUuid": "5a3905b3_e8ea2673",
+      "revId": "fa63f893d487d54fe932e42ad9b53eea7a24932f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
