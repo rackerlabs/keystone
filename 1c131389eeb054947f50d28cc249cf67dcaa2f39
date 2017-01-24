@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_6248dccd",
+        "filename": "doc/source/security_compliance.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-24T19:49:25Z",
+      "side": 1,
+      "message": "@Rodrigo we\u0027d be adding new attributes to user, so we would need to change the API to add those attributes to the request and response.",
+      "parentUuid": "5a3905b3_e255acfa",
+      "revId": "1c131389eeb054947f50d28cc249cf67dcaa2f39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_83e0f2fb",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 31
