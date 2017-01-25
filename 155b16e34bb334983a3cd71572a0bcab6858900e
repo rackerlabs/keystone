@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_a83e16b6",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "Couldn\u0027t this be a method of ref so is doesn\u0027t have to reach into it\u0027s internals? Seems like it fits right along side {to,from}_dict.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e8465ebe",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "(nit) .keys() is redundant",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a8f616d5",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "(nit) any reason to use identity_ in the filename? That seems redundant.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_25bb2fc6",
         "filename": "keystone/identity/backends/identity_resource_options.py",
         "patchSetId": 6
@@ -13,6 +64,109 @@
       "writtenOn": "2017-01-25T20:54:17Z",
       "side": 1,
       "message": "This is intentionally here. It ensures we iterate when option lists are evaluated. It is not expected to be used in practice but is important for the framework. We can delete it once we have a real options list (or leave it).\n\nThis has resulted in catching a number of errors in the base construct by forcing normal unit tests to iterate on options even if none are set.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_28d86653",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "If you would possibly delete it then why not put it in the register function so that it is properly scoped?",
+      "parentUuid": "3a461143_25bb2fc6",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_289a2615",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "Was setattr needed here instead of explicitly setting the attribute?",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3b098e2d",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "(nit) newline",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1b877262",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "You could just use the public `options` property.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bb1ade15",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "None of these tests use get_user to see what comes back. Should we ensure that is also working properly?",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_7b4b162c",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T21:39:42Z",
+      "side": 1,
+      "message": "(nit) Couldn\u0027t you just create a new registry here instead of clearing the existing one?",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
