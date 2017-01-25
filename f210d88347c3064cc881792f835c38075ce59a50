@@ -158,6 +158,24 @@
       "revId": "f210d88347c3064cc881792f835c38075ce59a50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3e997c6f",
+        "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T22:06:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_485a1285",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
