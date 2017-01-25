@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_7eddc46f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-25T21:58:19Z",
+      "side": 1,
+      "message": "That makes sense - just making sure the triggers are being used :)",
+      "parentUuid": "3a461143_9b48c22f",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_485a1285",
         "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
         "patchSetId": 15
