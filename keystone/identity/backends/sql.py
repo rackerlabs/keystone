@@ -54,24 +54,31 @@ class Identity(base.IdentityDriverBase):
 
     # Identity interface
     def authenticate(self, user_id, password):
-        with sql.session_for_read() as session:
-            try:
+        try:
+            with sql.session_for_read() as session:
                 user_ref = self._get_user(session, user_id)
-            except exception.UserNotFound:
-                raise AssertionError(_('Invalid user / password'))
-        if self._is_account_locked(user_id, user_ref):
-            raise exception.AccountLocked(user_id=user_id)
-        elif not self._check_password(password, user_ref):
-            self._record_failed_auth(user_id)
+                if self._is_account_locked(user_id, user_ref):
+                    raise exception.AccountLocked(user_id=user_id)
+                elif not self._check_password(password, user_ref):
+                    raise AssertionError(_('Invalid user / password'))
+                elif not user_ref.enabled:
+                    raise exception.UserDisabled(user_id=user_id)
+                elif user_ref.password_is_expired:
+                    raise exception.PasswordExpired(user_id=user_id)
+                failed_auth_count = user_ref.local_user.failed_auth_count
+                user_dict = base.filter_user(user_ref.to_dict())
+            # successful auth
+            if failed_auth_count:
+                self._reset_failed_auth(user_id)
+            return user_dict
+        except exception.UserNotFound:
             raise AssertionError(_('Invalid user / password'))
-        elif not user_ref.enabled:
-            raise exception.UserDisabled(user_id=user_id)
-        elif user_ref.password_is_expired:
-            raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
-        if user_ref.local_user.failed_auth_count:
+        except exception.AccountLocked:
             self._reset_failed_auth(user_id)
-        return base.filter_user(user_ref.to_dict())
+            raise
+        except AssertionError:
+            self._record_failed_auth(user_id)
+            raise
 
     def _is_account_locked(self, user_id, user_ref):
         """Check if the user account is locked.
@@ -97,8 +104,6 @@ class Identity(base.IdentityDriverBase):
                 last_failure = user_ref.local_user.failed_auth_at
                 if (last_failure + delta) > datetime.datetime.utcnow():
                     return True
-                else:
-                    self._reset_failed_auth(user_id)
         return False
 
     def _record_failed_auth(self, user_id):
