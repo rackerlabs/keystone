@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_084aca83",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T21:37:11Z",
+      "side": 1,
+      "message": "Ah, good point.",
+      "parentUuid": "3a461143_28e226d6",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a8f53684",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9b48c22f",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T21:37:11Z",
+      "side": 1,
+      "message": "Yeah, ln 2193 is adding the user to specifically test the trigger. Are you thinking that migrate could update the domain_id before the trigger? That may be possible, but migrate is called before the user is created...",
+      "parentUuid": "3a461143_a8f53684",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_485a1285",
         "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-25T21:23:31Z",
       "side": 1,
       "message": "Another side effect is that all federated users now belong to the domain that the Identity Provider is registered to, right?",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_fbd2a633",
+        "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T21:37:11Z",
+      "side": 1,
+      "message": "Ah, true.",
+      "parentUuid": "3a461143_485a1285",
       "revId": "f210d88347c3064cc881792f835c38075ce59a50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
