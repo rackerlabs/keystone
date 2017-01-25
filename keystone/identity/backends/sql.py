@@ -59,19 +59,19 @@ class Identity(base.IdentityDriverBase):
                 user_ref = self._get_user(session, user_id)
             except exception.UserNotFound:
                 raise AssertionError(_('Invalid user / password'))
-        if self._is_account_locked(user_id, user_ref):
-            raise exception.AccountLocked(user_id=user_id)
-        elif not self._check_password(password, user_ref):
-            self._record_failed_auth(user_id)
-            raise AssertionError(_('Invalid user / password'))
-        elif not user_ref.enabled:
-            raise exception.UserDisabled(user_id=user_id)
-        elif user_ref.password_is_expired:
-            raise exception.PasswordExpired(user_id=user_id)
-        # successful auth, reset failed count if present
-        if user_ref.local_user.failed_auth_count:
-            self._reset_failed_auth(user_id)
-        return base.filter_user(user_ref.to_dict())
+            if self._is_account_locked(user_id, user_ref):
+                raise exception.AccountLocked(user_id=user_id)
+            elif not self._check_password(password, user_ref):
+                self._record_failed_auth(user_id)
+                raise AssertionError(_('Invalid user / password'))
+            elif not user_ref.enabled:
+                raise exception.UserDisabled(user_id=user_id)
+            elif user_ref.password_is_expired:
+                raise exception.PasswordExpired(user_id=user_id)
+            # successful auth, reset failed count if present
+            if user_ref.local_user.failed_auth_count:
+                self._reset_failed_auth(user_id)
+            return base.filter_user(user_ref.to_dict())
 
     def _is_account_locked(self, user_id, user_ref):
         """Check if the user account is locked.
