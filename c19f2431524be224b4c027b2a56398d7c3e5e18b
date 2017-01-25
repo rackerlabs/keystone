@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_3eb09cdd",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-25T22:06:59Z",
+      "side": 1,
+      "message": "++ thanks!",
+      "revId": "c19f2431524be224b4c027b2a56398d7c3e5e18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_dec15830",
+        "filename": "releasenotes/notes/shadow-users-backend-driver-has-changed-c7ab1c9be152db20.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-25T22:06:59Z",
+      "side": 1,
+      "message": "++",
+      "revId": "c19f2431524be224b4c027b2a56398d7c3e5e18b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
