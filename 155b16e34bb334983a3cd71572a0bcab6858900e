@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_25bb2fc6",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T20:54:17Z",
+      "side": 1,
+      "message": "This is intentionally here. It ensures we iterate when option lists are evaluated. It is not expected to be used in practice but is important for the framework. We can delete it once we have a real options list (or leave it).\n\nThis has resulted in catching a number of errors in the base construct by forcing normal unit tests to iterate on options even if none are set.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
