@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_be1d6c68",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "This was moved here because we have a lot of cases we override to_dict. I expect this to be re-used and copy/pasting code is icky.",
+      "parentUuid": "3a461143_a83e16b6",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_e8465ebe",
         "filename": "keystone/common/resource_options.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9e37d0e2",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "attribute mapper works slightly differently than normal dictionaries. I found this was required.",
+      "parentUuid": "3a461143_e8465ebe",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a8f616d5",
         "filename": "keystone/identity/backends/identity_resource_options.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-25T21:39:42Z",
       "side": 1,
       "message": "(nit) any reason to use identity_ in the filename? That seems redundant.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_5e5c8825",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "Mostly to avoid needing __absolute__ imports",
+      "parentUuid": "3a461143_a8f616d5",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_fe7374b2",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "The option is what the comment was about, not the list itself.",
+      "parentUuid": "3a461143_28d86653",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_289a2615",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 6
@@ -99,6 +171,24 @@
       "writtenOn": "2017-01-25T21:39:42Z",
       "side": 1,
       "message": "Was setattr needed here instead of explicitly setting the attribute?",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_7eaf84e3",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "I tend to use setattr when dealing with the models, we do similar things in the actual update methods rather than just doing:\n\u003cobj_ref\u003e.\u003cattr\u003e \u003d \u003cvalue\u003e\n\nI am following similar suit.",
+      "parentUuid": "3a461143_289a2615",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9e9350a3",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "If we are enforcing a new line here, it should be part of flake8 checks. Can be fixed in next (or followup)",
+      "parentUuid": "3a461143_3b098e2d",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1b877262",
         "filename": "keystone/tests/unit/common/test_resource_options_common.py",
         "patchSetId": 6
@@ -133,6 +241,24 @@
       "writtenOn": "2017-01-25T21:39:42Z",
       "side": 1,
       "message": "You could just use the public `options` property.",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_fe81b44e",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "True. Fixed in next (or in followup)",
+      "parentUuid": "3a461143_1b877262",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -156,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_fecff4b0",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "Will be added in next patch or followup.",
+      "parentUuid": "3a461143_bb1ade15",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_7b4b162c",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 6
@@ -167,6 +311,24 @@
       "writtenOn": "2017-01-25T21:39:42Z",
       "side": 1,
       "message": "(nit) Couldn\u0027t you just create a new registry here instead of clearing the existing one?",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1ed5a042",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T21:59:06Z",
+      "side": 1,
+      "message": "Registry is a class-attribute for the model, we could replace it, but I opted to keep the same object and offer a clear instead. Not opposed.",
+      "parentUuid": "3a461143_7b4b162c",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
