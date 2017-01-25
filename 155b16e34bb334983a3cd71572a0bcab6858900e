@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_190a1ad3",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T22:28:56Z",
+      "side": 1,
+      "message": "ah, that\u0027s a bummer, but it\u0027s the bed we made.",
+      "parentUuid": "3a461143_be1d6c68",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_e8465ebe",
         "filename": "keystone/common/resource_options.py",
         "patchSetId": 6
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_79207e4a",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T22:28:56Z",
+      "side": 1,
+      "message": "Your already doing absolute imports here or is it somewhere else you are worried about?",
+      "parentUuid": "3a461143_5e5c8825",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_25bb2fc6",
         "filename": "keystone/identity/backends/identity_resource_options.py",
         "patchSetId": 6
@@ -160,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_39b436f1",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T22:28:56Z",
+      "side": 1,
+      "message": "Ah, i see.",
+      "parentUuid": "3a461143_fe7374b2",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_289a2615",
         "filename": "keystone/identity/backends/sql_model.py",
         "patchSetId": 6
@@ -189,6 +243,24 @@
       "side": 1,
       "message": "I tend to use setattr when dealing with the models, we do similar things in the actual update methods rather than just doing:\n\u003cobj_ref\u003e.\u003cattr\u003e \u003d \u003cvalue\u003e\n\nI am following similar suit.",
       "parentUuid": "3a461143_289a2615",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f9870e10",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T22:28:56Z",
+      "side": 1,
+      "message": "fair enough. i don\u0027t feel strong either way. it was just unclear if you were doing some magic or not",
+      "parentUuid": "3a461143_7eaf84e3",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -329,6 +401,24 @@
       "side": 1,
       "message": "Registry is a class-attribute for the model, we could replace it, but I opted to keep the same object and offer a clear instead. Not opposed.",
       "parentUuid": "3a461143_7b4b162c",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_59b582cb",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-25T22:28:56Z",
+      "side": 1,
+      "message": "I was just thinking about the extra code that shouldn\u0027t be used in production. I typically like code that is only used in tests to be in the test code.",
+      "parentUuid": "3a461143_1ed5a042",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
