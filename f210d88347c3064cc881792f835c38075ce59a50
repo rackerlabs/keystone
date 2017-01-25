@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_dbefaaae",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T22:04:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_28e226d6",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a8f53684",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 15
@@ -83,6 +101,24 @@
       "writtenOn": "2017-01-25T21:58:19Z",
       "side": 1,
       "message": "That makes sense - just making sure the triggers are being used :)",
+      "parentUuid": "3a461143_9b48c22f",
+      "revId": "f210d88347c3064cc881792f835c38075ce59a50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_db1deabe",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-25T22:04:18Z",
+      "side": 1,
+      "message": "Added another test, so that I\u0027m creating a user before expand and migrate. Done.",
       "parentUuid": "3a461143_9b48c22f",
       "revId": "f210d88347c3064cc881792f835c38075ce59a50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
