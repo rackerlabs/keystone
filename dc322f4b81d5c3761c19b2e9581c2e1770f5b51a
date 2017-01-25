@@ -45,6 +45,99 @@
       "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1b8947cb",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-25T14:52:53Z",
+      "side": 1,
+      "message": "On one hand, i think that keystone is not logging enough and debug log might be handy.\n\nOn the other, this is useless here. It won\u0027t help in production and in debugging it will just show what we can easily lookup.",
+      "parentUuid": "5a3905b3_05dbcf1b",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 65
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_5bdbcf1b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-25T14:52:53Z",
+      "side": 1,
+      "message": "i think this is not necessary. It\u0027s python after all.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 51
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_db6c1f0b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-25T14:52:53Z",
+      "side": 1,
+      "message": "same here.\n\nThese checks should happen on rule list creation, not when it is used.",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 48
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3b5b6356",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2017-01-25T14:52:53Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 187,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 62
+      },
+      "revId": "dc322f4b81d5c3761c19b2e9581c2e1770f5b51a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
