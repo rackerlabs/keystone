@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_0aee3a22",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T23:48:11Z",
+      "side": 1,
+      "message": "Comment added for clarity.",
+      "parentUuid": "3a461143_9e37d0e2",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a8f616d5",
         "filename": "keystone/identity/backends/identity_resource_options.py",
         "patchSetId": 6
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "Your already doing absolute imports here or is it somewhere else you are worried about?",
       "parentUuid": "3a461143_5e5c8825",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_6a689ebb",
+        "filename": "keystone/identity/backends/identity_resource_options.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T23:48:11Z",
+      "side": 1,
+      "message": "Fixed in next.",
+      "parentUuid": "3a461143_79207e4a",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -419,6 +455,24 @@
       "side": 1,
       "message": "I was just thinking about the extra code that shouldn\u0027t be used in production. I typically like code that is only used in tests to be in the test code.",
       "parentUuid": "3a461143_1ed5a042",
+      "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_8ac14a83",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-25T23:48:11Z",
+      "side": 1,
+      "message": "I guess tests could just muck with the private object, it\u0027s a bit more fair game on that front.",
+      "parentUuid": "3a461143_59b582cb",
       "revId": "155b16e34bb334983a3cd71572a0bcab6858900e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
