@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_cfe621e8",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-25T13:26:17Z",
+      "side": 1,
+      "message": "what is \"this\"? Maybe explicitly say \"to_dict\"",
+      "range": {
+        "startLine": 52,
+        "startChar": 27,
+        "endLine": 52,
+        "endChar": 31
+      },
+      "revId": "6f1079586e583849676e6c776092b438e72660d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
