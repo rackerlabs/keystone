@@ -902,6 +902,10 @@ class Manager(manager.Manager):
                 # backward compatible
                 pass
 
+    def _create_federated_objects_with_user(self, user, driver):
+        user_ref = user.copy()
+        return driver.create_user(user['id'], user)
+
     @domains_configured
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
@@ -925,7 +929,9 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
-        ref = driver.create_user(user['id'], user)
+        ref = self._create_federated_objects_with_user(user, driver)
+        if 'federated' not in ref:
+            ref['federated'] = []
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
