@@ -15,19 +15,16 @@ from keystone.common import resource_options
 
 USER_OPTIONS_REGISTRY = resource_options.ResourceOptionRegistry('USER')
 
-# NOTE(notmorgan): This placeholder options can be removed once more
-# options are populated. This forces iteration on possible options for
-# complete test purposes in unit/functional/gate tests outside of the
-# explicit test cases that test resource options. This option is never
-# expected to be set.
-_placeholder_opt = resource_options.ResourceOption('_TST', '__PLACEHOLDER__')
+
+password_expiry_opt = resource_options.ResourceOption('1000',
+                                                      'ignore_password_expiry')
 
 
 # NOTE(notmorgan): wrap this in a function for testing purposes.
 # This is called on import by design.
 def register_user_options():
     for opt in [
-        _placeholder_opt,
+        password_expiry_opt,
     ]:
         USER_OPTIONS_REGISTRY.register_option(opt)
 
