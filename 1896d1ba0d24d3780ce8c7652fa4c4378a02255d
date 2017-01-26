@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_d63cd831",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-26T01:56:29Z",
+      "side": 1,
+      "message": "nit: Option names",
+      "range": {
+        "startLine": 185,
+        "startChar": 26,
+        "endLine": 185,
+        "endChar": 36
+      },
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_706eccca",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 8
