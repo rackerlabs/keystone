@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_799be972",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "I don\u0027t think this is true. It appears that the first auth is successful and it forces a password change after that.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f6a8c6dd",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 5
@@ -19,6 +36,92 @@
         "endLine": 139,
         "endChar": 31
       },
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_b902b107",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "++ This sentence doesn\u0027t read right.",
+      "parentUuid": "3a461143_f6a8c6dd",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_393de1bb",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "(nit) i usually like ending each element of a list with a comma, even if it\u0027s the last one.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_798cc97f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "You could use the constant here.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_99d09555",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "I hate that this has to use private instance attributes",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f9a2794a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 1,
+      "message": "Is this selecting all of a user\u0027s options in order to find one?",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

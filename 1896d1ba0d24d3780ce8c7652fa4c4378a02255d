@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_f97fd963",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-26T21:14:40Z",
+      "side": 0,
+      "message": "It would be nice if \u0027ignore_password_expiry\u0027 was a constant so the string isn\u0027t all over the code.",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
