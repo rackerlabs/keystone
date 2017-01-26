@@ -73,6 +73,8 @@ class Identity(base.IdentityDriverBase):
         # successful auth, reset failed count if present
         if user_ref.local_user.failed_auth_count:
             self._reset_failed_auth(user_id)
+        if self._change_password_required(user_ref):
+            self._set_password_expired(user_id)
         return user_dict
 
     def _is_account_locked(self, user_id, user_ref):
@@ -116,6 +118,25 @@ class Identity(base.IdentityDriverBase):
             user_ref = session.query(model.User).get(user_id)
             user_ref.local_user.failed_auth_count = 0
             user_ref.local_user.failed_auth_at = None
+
+    def _set_password_expired(self, user_id):
+        with sql.session_for_write() as session:
+            user_ref = session.query(model.User).get(user_id)
+            user_ref.password_ref.expires_at = datetime.datetime.utcnow()
+
+    def _change_password_required(self, user):
+        ignore_option = (user.resource_options_registry
+                             .get_option_by_name('ignore_password_expiry'))
+        user_options = user._resource_option_mapper
+        ignore_password_expiry = False
+        if (ignore_option.option_id in user_options and
+                user_options[ignore_option.option_id].option_value is True):
+            ignore_password_expiry = True
+        return (
+            CONF.security_compliance.change_password_after_first_use and
+            not ignore_password_expiry and
+            user.password_ref and
+            not user.password_ref.self_service)
 
     # user crud
 

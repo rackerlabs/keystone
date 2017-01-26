@@ -62,6 +62,14 @@ user_update_v2 = {
 
 # Schema for Identity v3 API
 
+_user_options = {
+    'type': 'object',
+    'properties': {
+        'ignore_password_expiry': parameter_types.boolean,
+    },
+    'additionalProperties': False
+}
+
 _user_properties = {
     'default_project_id': validation.nullable(parameter_types.id_string),
     'description': validation.nullable(parameter_types.description),
@@ -70,7 +78,8 @@ _user_properties = {
     'name': _identity_name,
     'password': {
         'type': ['string', 'null']
-    }
+    },
+    'options': _user_options
 }
 
 user_create = {
