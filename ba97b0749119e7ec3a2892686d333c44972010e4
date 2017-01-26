@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_370424bf",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-26T13:02:54Z",
+      "side": 1,
+      "message": "the \u0027of\u0027 was unnecessarily deleted",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e3bab26d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 4
@@ -18,6 +41,75 @@
         "startChar": 27,
         "endLine": 40,
         "endChar": 33
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_57c61068",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-26T13:02:54Z",
+      "side": 1,
+      "message": "should probably add the comma back here",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 7
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_97bb18c4",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-26T13:02:54Z",
+      "side": 1,
+      "message": "this is awkward phrasing, I\u0027m not sure \"backending\" is even a word, might as well fix it up as long as we\u0027re here",
+      "range": {
+        "startLine": 42,
+        "startChar": 50,
+        "endLine": 42,
+        "endChar": 68
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_77bcec6c",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 8482
+      },
+      "writtenOn": "2017-01-26T13:02:54Z",
+      "side": 1,
+      "message": "I think the original phrasing was more correct - (users|groups) relate to (projects|domains)",
+      "range": {
+        "startLine": 292,
+        "startChar": 71,
+        "endLine": 293,
+        "endChar": 42
       },
       "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
