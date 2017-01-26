@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_22c5c13b",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-26T14:20:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_370424bf",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3905b3_e3bab26d",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 4
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_c2ecfdc9",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-26T14:20:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_57c61068",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 7
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_97bb18c4",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 4
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_622b49ec",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-26T14:20:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_97bb18c4",
+      "range": {
+        "startLine": 42,
+        "startChar": 50,
+        "endLine": 42,
+        "endChar": 68
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_77bcec6c",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 4
@@ -105,6 +177,30 @@
       "writtenOn": "2017-01-26T13:02:54Z",
       "side": 1,
       "message": "I think the original phrasing was more correct - (users|groups) relate to (projects|domains)",
+      "range": {
+        "startLine": 292,
+        "startChar": 71,
+        "endLine": 293,
+        "endChar": 42
+      },
+      "revId": "ba97b0749119e7ec3a2892686d333c44972010e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1d1e6663",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 16157
+      },
+      "writtenOn": "2017-01-26T14:20:21Z",
+      "side": 1,
+      "message": "Ah, I get it now. Fixed. Let me know if this is too verbose.",
+      "parentUuid": "3a461143_77bcec6c",
       "range": {
         "startLine": 292,
         "startChar": 71,
