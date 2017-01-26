@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_5799bf6d",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-26T05:57:09Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a461143_054c646f",
+      "range": {
+        "startLine": 18,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 63
+      },
+      "revId": "14f530b88163eb9942ac35a1ac39994bcd398b16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_653c4894",
         "filename": "keystone/identity/backends/resource_options.py",
         "patchSetId": 3
