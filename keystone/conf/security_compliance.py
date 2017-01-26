@@ -130,6 +130,19 @@ configuration variable will be returned to users to explain why their
 requested password was insufficient.
 """))
 
+change_password_upon_first_use = cfg.BoolOpt(
+    'change_password_upon_first_use',
+    default=False,
+    help=utils.fmt("""
+Enabling this option requires users to change their password upon first use.
+This means that new users or users that have had their passwords reset by an
+administrator, will be required to change their password before accessing any
+services. To ignore this check for specific users, such as service users, set
+the `options` attribute `ignore_password_expiry` for the user via the API. This
+feature is disabled by default. This feature is only applicable with the `sql`
+backend for the `[identity] driver`.
+"""))
+
 
 GROUP_NAME = __name__.split('.')[-1]
 ALL_OPTS = [
@@ -143,6 +156,7 @@ ALL_OPTS = [
     minimum_password_age,
     password_regex,
     password_regex_description,
+    change_password_upon_first_use
 ]
 
 
