@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_b303c172",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "Where is the option key handled?",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_13e655b4",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "we could use:\n\n  % len(option_id))",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f3ff0932",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "We could also output the exact type here - which might make it easier to understand the message:\n\n  \u0027Got %r\u0027) % type(option_name))",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_d63cd831",
         "filename": "keystone/common/resource_options.py",
         "patchSetId": 8
@@ -72,6 +123,40 @@
     },
     {
       "key": {
+        "uuid": "3a461143_6ed5f241",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "We are protected from cases where bad things happen between the two updates because we\u0027re operating from within a context manager, right?\n\nIf something updates the UserOption table, but doesn\u0027t properly update the User table, the context manager should roll things back?",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_0ea0ee9e",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "OH! The option_id is the actual key... For some reason I was thinking option_id was an ID assigned by keystone, not the actual property key.",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_df4bf629",
         "filename": "keystone/tests/unit/core.py",
         "patchSetId": 8
@@ -83,6 +168,23 @@
       "writtenOn": "2017-01-26T13:51:58Z",
       "side": 1,
       "message": "nice",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_2ee3eaa4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T15:40:11Z",
+      "side": 1,
+      "message": "Why do we limit option keys to only being 4 characters in length? Can we guarantee that gives us enough uniqueness?",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
