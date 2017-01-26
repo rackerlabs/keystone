@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_1eb1f5e1",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T17:28:53Z",
+      "side": 1,
+      "message": "I wanted to be specific what was actually sent, not just the length.",
+      "parentUuid": "3a461143_13e655b4",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f3ff0932",
         "filename": "keystone/common/resource_options.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2017-01-26T15:40:11Z",
       "side": 1,
       "message": "We could also output the exact type here - which might make it easier to understand the message:\n\n  \u0027Got %r\u0027) % type(option_name))",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9ec5e53d",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T17:28:53Z",
+      "side": 1,
+      "message": "\u0027r\u0027 is repr and should include type.",
+      "parentUuid": "3a461143_f3ff0932",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9edc0514",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T17:28:53Z",
+      "side": 1,
+      "message": "Ideally it should be all handled within a transaction afaik, that is the default behavior within the context",
+      "parentUuid": "3a461143_6ed5f241",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_0ea0ee9e",
         "filename": "keystone/tests/unit/common/test_resource_options_common.py",
         "patchSetId": 8
@@ -151,6 +205,24 @@
       "writtenOn": "2017-01-26T15:40:11Z",
       "side": 1,
       "message": "OH! The option_id is the actual key... For some reason I was thinking option_id was an ID assigned by keystone, not the actual property key.",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_de2bede9",
+        "filename": "keystone/tests/unit/common/test_resource_options_common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T17:28:53Z",
+      "side": 1,
+      "message": "Yep!",
+      "parentUuid": "3a461143_0ea0ee9e",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -185,6 +257,24 @@
       "writtenOn": "2017-01-26T15:40:11Z",
       "side": 1,
       "message": "Why do we limit option keys to only being 4 characters in length? Can we guarantee that gives us enough uniqueness?",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9e7885f4",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T17:28:53Z",
+      "side": 1,
+      "message": "This should make for 81450625 combinations [some will suck] assuming only printing ascii characters for each resource type.",
+      "parentUuid": "3a461143_2ee3eaa4",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
