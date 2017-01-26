@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_df1684f0",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T19:23:11Z",
+      "side": 1,
+      "message": "That works, too.",
+      "parentUuid": "3a461143_1eb1f5e1",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f3ff0932",
         "filename": "keystone/common/resource_options.py",
         "patchSetId": 8
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "\u0027r\u0027 is repr and should include type.",
       "parentUuid": "3a461143_f3ff0932",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bf1b781a",
+        "filename": "keystone/common/resource_options.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T19:23:11Z",
+      "side": 1,
+      "message": "Aha - nice!",
+      "parentUuid": "3a461143_9ec5e53d",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -188,6 +224,24 @@
       "side": 1,
       "message": "Ideally it should be all handled within a transaction afaik, that is the default behavior within the context",
       "parentUuid": "3a461143_6ed5f241",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_5fe1b4fd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T19:23:11Z",
+      "side": 1,
+      "message": "Cool - wfm",
+      "parentUuid": "3a461143_9edc0514",
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
