@@ -77,6 +77,29 @@
     },
     {
       "key": {
+        "uuid": "3a461143_3c914f53",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 16465
+      },
+      "writtenOn": "2017-01-26T21:27:47Z",
+      "side": 1,
+      "message": "You don\u0027t have to use numbers here. I think we should stick to abbreviations or something more meaningful.",
+      "range": {
+        "startLine": 18,
+        "startChar": 37,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_798cc97f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
