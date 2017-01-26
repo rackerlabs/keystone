@@ -19,12 +19,15 @@ import uuid
 import mock
 from oslo_config import fixture as config_fixture
 
+from keystone.common import sql
 import keystone.conf
 from keystone import exception
 from keystone import identity
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
-
+from keystone.tests.unit import mapping_fixtures
+from keystone.tests.unit import test_v3
 
 CONF = keystone.conf.CONF
 
@@ -228,3 +231,86 @@ class TestShadowUsers(unit.TestCase):
 
         # The shadowed users still share the same unique ID.
         self.assertEqual(shadow_user1['id'], shadow_user2['id'])
+
+
+class TestUserWithFederatedUser(test_v3.RestfulTestCase):
+    def _create_federated_attributes(self):
+        # Create the idp
+        idp = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        self.federation_api.create_idp(idp['id'], idp)
+        # Create the mapping
+        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping['id'] = uuid.uuid4().hex
+        self.federation_api.create_mapping(mapping['id'], mapping)
+        # Create the protocol
+        protocol = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': mapping['id']
+        }
+        self.federation_api.create_protocol(idp['id'],
+                                            protocol['id'],
+                                            protocol)
+        return idp, protocol
+
+    def _create_federated_user(self, fed_dict):
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(fed_dict)
+            session.add(federated_ref)
+
+    def setUp(self):
+        super(TestUserWithFederatedUser, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+        # Create user
+        self.domain = unit.new_domain_ref()
+        self.domain = self.resource_api.create_domain(self.domain['id'],
+                                                      self.domain)
+        self.user = unit.new_user_ref(domain_id=self.domain['id'])
+        self.user = self.identity_api.create_user(self.user)
+        # Create federated attributes
+        self.idp, self.protocol = self._create_federated_attributes()
+        self.fed_dict = unit.new_federated_user_ref()
+        self.fed_dict['idp_id'] = self.idp['id']
+        self.fed_dict['protocol_id'] = self.protocol['id']
+        self.fed_dict['unique_id'] = "jdoe"
+        self.fed_dict['user_id'] = self.user['id']
+        self._create_federated_user(self.fed_dict)
+
+    def test_get_users_when_user_has_federated_users(self):
+        # test that the user returns a federated object and that there is only
+        # one returned
+        user_ref = self.identity_api.get_user(self.user['id'])
+        self.assertTrue('federated' in user_ref)
+        self.assertEqual(1, len(user_ref['federated']))
+        # Verify that all federated attributes are present
+        for fed_obj in user_ref['federated']:
+            self.assertTrue('idp_id' in fed_obj)
+            self.assertEqual(self.fed_dict['idp_id'], fed_obj['idp_id'])
+            self.assertTrue('protocols' in fed_obj)
+            self.assertTrue('protocol_id' in fed_obj['protocols'][0])
+            self.assertEqual(self.fed_dict['protocol_id'],
+                             fed_obj['protocols'][0]['protocol_id'])
+            self.assertTrue('unique_id' in fed_obj['protocols'][0])
+            self.assertEqual(self.fed_dict['unique_id'],
+                             fed_obj['protocols'][0]['unique_id'])
+
+        # use the same user to add another associated federated object and test
+        # the backend method directly. It should now contain two federated
+        # objects instead of one.
+        federated_dict = unit.new_federated_user_ref()
+        federated_dict['user_id'] = self.user['id']
+        self._create_federated_user(federated_dict)
+        user_ref = self.shadow_users_api.get_federated_objects(self.user['id'])
+        self.assertEqual(2, len(user_ref))
+
+        # Create a new user without federated object and verify that federated
+        # object is still returned but that it is an empty list
+        plain_user = unit.new_user_ref(domain_id=self.domain['id'])
+        plain_user = self.identity_api.create_user(plain_user)
+        plain_user = self.identity_api.get_user(plain_user['id'])
+        self.assertTrue('federated' in plain_user)
+        self.assertEqual([], plain_user['federated'])
