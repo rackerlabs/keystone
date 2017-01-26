@@ -23,6 +23,7 @@ import keystone.conf
 from keystone import exception
 from keystone.identity.backends import base
 from keystone.identity.backends import resource_options as iro
+from keystone.identity.backends import resource_options_constants as constants
 from keystone.identity.backends import sql_model as model
 from keystone.tests.unit import test_backend_sql
 
@@ -806,3 +807,77 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
             for password_ref in user_ref.local_user.passwords:
                 password_ref.created_at = password_create_at - slightly_less
             latest_password.created_at = password_create_at
+
+
+class ChangePasswordRequiredAfterFirstUse(test_backend_sql.SqlTests):
+    def setUp(self):
+        super(ChangePasswordRequiredAfterFirstUse, self).setUp()
+        self.config_fixture.config(
+            group='security_compliance',
+            change_password_after_first_use=True)
+        self.initial_password = uuid.uuid4().hex
+        self.user_dict = {
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'enabled': True,
+            'password': self.initial_password
+        }
+        self.user = self.identity_api.create_user(self.user_dict)
+
+    def assertPasswordIsExpired(self, user_id, password):
+        self.assertRaises(exception.PasswordExpired,
+                          self.identity_api.authenticate,
+                          self.make_request(),
+                          user_id=user_id,
+                          password=password)
+
+    def assertPasswordIsNotExpired(self, user_id, password):
+        self.identity_api.authenticate(self.make_request(),
+                                       user_id=user_id,
+                                       password=password)
+
+    def test_password_expired_after_create(self):
+        self.assertPasswordIsExpired(self.user['id'], self.initial_password)
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          self.user['id'],
+                                          self.initial_password,
+                                          new_password)
+        self.assertPasswordIsNotExpired(self.user['id'], new_password)
+
+    def test_password_expired_after_reset(self):
+        # admin reset
+        admin_password = uuid.uuid4().hex
+        self.user['password'] = admin_password
+        self.identity_api.update_user(self.user['id'], self.user)
+        # password expired
+        self.assertPasswordIsExpired(self.user['id'], admin_password)
+        # self-service password change
+        new_password = uuid.uuid4().hex
+        self.identity_api.change_password(self.make_request(),
+                                          self.user['id'],
+                                          admin_password,
+                                          new_password)
+        self.assertPasswordIsNotExpired(self.user['id'], new_password)
+
+    def test_password_not_expired_when_feature_disabled(self):
+        self.config_fixture.config(
+            group='security_compliance',
+            change_password_after_first_use=False)
+        # admin reset
+        admin_password = uuid.uuid4().hex
+        self.user['password'] = admin_password
+        self.identity_api.update_user(self.user['id'], self.user)
+        # password expired
+        self.assertPasswordIsNotExpired(self.user['id'], admin_password)
+
+    def test_password_not_expired_for_ignore_user(self):
+        # ignore password expiry by setting the user options attribute
+        self.user['options'][constants.IGNORE_PASSWORD_EXPIRY] = True
+        self.identity_api.update_user(self.user['id'], self.user)
+        # admin reset
+        admin_password = uuid.uuid4().hex
+        self.user['password'] = admin_password
+        self.identity_api.update_user(self.user['id'], self.user)
+        # user id should be ignored for this check
+        self.assertPasswordIsNotExpired(self.user['id'], admin_password)
