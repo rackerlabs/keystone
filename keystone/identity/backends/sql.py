@@ -25,6 +25,7 @@ import keystone.conf
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import base
+from keystone.identity.backends import resource_options_constants as constants
 from keystone.identity.backends import sql_model as model
 
 
@@ -124,12 +125,30 @@ class Identity(base.IdentityDriverBase):
         user = utils.hash_user_password(user)
         with sql.session_for_write() as session:
             user_ref = model.User.from_dict(user)
+            if self._change_password_required(user_ref):
+                user_ref.password_ref.expires_at = datetime.datetime.utcnow()
             user_ref.created_at = datetime.datetime.utcnow()
             session.add(user_ref)
             # Set resource options passed on creation
             resource_options.resource_options_ref_to_mapper(
                 user_ref, model.UserOption)
             return base.filter_user(user_ref.to_dict())
+
+    def _change_password_required(self, user):
+        return (
+            CONF.security_compliance.change_password_after_first_use and
+            not self._ignore_password_expiry(user)
+        )
+
+    def _ignore_password_expiry(self, user):
+        ignore_option = (
+            user.resource_options_registry
+                .get_option_by_name(constants.IGNORE_PASSWORD_EXPIRY))
+        user_options = user._resource_option_mapper
+        return (
+            ignore_option.option_id in user_options and
+            user_options[ignore_option.option_id].option_value is True
+        )
 
     def _create_password_expires_query(self, session, query, hints):
         for filter_ in hints.filters:
@@ -201,6 +220,9 @@ class Identity(base.IdentityDriverBase):
             # Move options into the proper attribute mapper construct
             resource_options.resource_options_ref_to_mapper(
                 user_ref, model.UserOption)
+
+            if 'password' in user and self._change_password_required(user_ref):
+                user_ref.password_ref.expires_at = datetime.datetime.utcnow()
 
             user_ref.extra = new_user.extra
             return base.filter_user(

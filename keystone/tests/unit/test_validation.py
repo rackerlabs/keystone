@@ -1781,6 +1781,52 @@ class UserValidationTestCase(unit.BaseTestCase):
                               self.update_user_validator.validate,
                               request_to_validate)
 
+    def test_user_create_with_options_ignore_password_expiry(self):
+        request_to_validate = {
+            'name': self.user_name,
+            'options': {
+                'ignore_password_expiry': True
+            }
+        }
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_user_create_succeeds_with_empty_options(self):
+        request_to_validate = {
+            'name': self.user_name,
+            'options': {}
+        }
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_user_create_options_ignore_password_expiry_fails_wrong_type(self):
+        request_to_validate = {
+            'name': self.user_name,
+            'options': {
+                'ignore_password_expiry': 'whatever'
+            }
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_user_create_options_fails_invalid_name(self):
+        request_to_validate = {
+            'name': self.user_name,
+            'options': {
+                'whatever': True
+            }
+        }
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_user_update_with_options_ignore_password_expiry(self):
+        request_to_validate = {
+            'options': {
+                'ignore_password_expiry': False
+            }
+        }
+        self.update_user_validator.validate(request_to_validate)
+
 
 class GroupValidationTestCase(unit.BaseTestCase):
     """Test for V3 Group API validation."""

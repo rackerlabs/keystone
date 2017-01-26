@@ -975,6 +975,28 @@ class UserSelfServiceChangingPasswordsTestCase(ChangePasswordTestCase):
                              original_password=password,
                              expected_status=http_client.UNAUTHORIZED)
 
+    def test_change_password_required_upon_first_use(self):
+        self.config_fixture.config(group='security_compliance',
+                                   change_password_after_first_use=True)
+
+        # admin reset
+        reset_password = uuid.uuid4().hex
+        user_password = {'password': reset_password}
+        self.identity_api.update_user(self.user_ref['id'], user_password)
+
+        # attempt to authenticate with admin reset password
+        self.get_request_token(reset_password,
+                               expected_status=http_client.UNAUTHORIZED)
+
+        # self-service change password
+        new_password = uuid.uuid4().hex
+        self.change_password(password=new_password,
+                             original_password=reset_password,
+                             expected_status=http_client.NO_CONTENT)
+
+        # authenticate with the new password
+        self.token = self.get_request_token(new_password, http_client.CREATED)
+
 
 class PasswordValidationTestCase(ChangePasswordTestCase):
 
