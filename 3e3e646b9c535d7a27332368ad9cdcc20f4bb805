@@ -222,6 +222,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_1fcba554",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T21:47:59Z",
+      "side": 1,
+      "message": "The key is the resource_option_mapper is super touchy, i wouldn\u0027t be opposed to implementing a .get_option() on the model to make this go away.",
+      "parentUuid": "3a461143_99d09555",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f9a2794a",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
