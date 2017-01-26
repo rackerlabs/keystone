@@ -1150,3 +1150,27 @@ class UserFederatedAttributesTests(test_v3.RestfulTestCase):
     def test_list_users_with_all_federated_attributes(self):
         attribute = ['idp_id', 'protocol_id', 'unique_id']
         self._test_list_users_with_federated_parameter(attribute)
+
+    def test_create_user_with_federated_attributes(self):
+        """Call ``POST /users``."""
+        idp, protocol = self._create_federated_attributes()
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['federated'] = [
+            {
+                'idp_id': idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': protocol['id'],
+                        'unique_id': 'ravelar'
+                    }
+                ]
+            }
+        ]
+        r = self.post(
+            '/users',
+            body={'user': ref})
+        user = r.result['user'].copy()
+        ref['id'] = user['id']
+        del user['links']
+        self.assertEqual(user, ref)
+        self.assertValidUserResponse(r, ref)

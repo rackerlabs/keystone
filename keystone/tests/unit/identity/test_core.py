@@ -19,11 +19,15 @@ import uuid
 import mock
 from oslo_config import fixture as config_fixture
 
+from keystone.common import sql
 import keystone.conf
 from keystone import exception
 from keystone import identity
+from keystone.identity.backends import sql_model as model
 from keystone.tests import unit
 from keystone.tests.unit.ksfixtures import database
+from keystone.tests.unit import mapping_fixtures
+from keystone.tests.unit import test_v3
 
 
 CONF = keystone.conf.CONF
@@ -176,3 +180,83 @@ class TestDatabaseDomainConfigs(unit.TestCase):
         self.assertEqual(CONF.ldap.suffix, res.ldap.suffix)
         self.assertEqual(CONF.ldap.use_tls, res.ldap.use_tls)
         self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
+
+
+class TestUserWithFederatedUser(test_v3.RestfulTestCase):
+    def _create_federated_attributes(self):
+        # Create the idp
+        idp = {
+            'id': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        self.federation_api.create_idp(idp['id'], idp)
+        # Create the mapping
+        mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
+        mapping['id'] = uuid.uuid4().hex
+        self.federation_api.create_mapping(mapping['id'], mapping)
+        # Create the protocol
+        protocol = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': mapping['id']
+        }
+        self.federation_api.create_protocol(idp['id'],
+                                            protocol['id'],
+                                            protocol)
+        return idp, protocol
+
+    def _create_federated_user(self, fed_dict):
+        with sql.session_for_write() as session:
+            federated_ref = model.FederatedUser.from_dict(fed_dict)
+            session.add(federated_ref)
+
+    def setUp(self):
+        super(TestUserWithFederatedUser, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+        # Create user
+        self.domain = unit.new_domain_ref()
+        self.domain = self.resource_api.create_domain(self.domain['id'],
+                                                      self.domain)
+        self.user = unit.new_user_ref(domain_id=self.domain['id'])
+        self.user = self.identity_api.create_user(self.user)
+        # Create federated attributes
+        self.idp, self.protocol = self._create_federated_attributes()
+        self.fed_dict = unit.new_federated_user_ref()
+        self.fed_dict['idp_id'] = self.idp['id']
+        self.fed_dict['protocol_id'] = self.protocol['id']
+        self.fed_dict['unique_id'] = "jdoe"
+        self.fed_dict['user_id'] = self.user['id']
+        self._create_federated_user(self.fed_dict)
+
+    def test_create_user_with_federated_attributes(self):
+        user = unit.new_user_ref(domain_id=self.domain['id'])
+        user['federated'] = [
+            {
+                'idp_id': self.idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': self.protocol['id'],
+                        'unique_id': 'ravelar'
+                    }
+                ]
+            }
+        ]
+        # Test that there are no current federated_users that match out users
+        # federated object and create the user
+        self.assertRaises(exception.UserNotFound,
+                          self.shadow_users_api.get_federated_user,
+                          self.idp['id'],
+                          self.protocol['id'],
+                          'ravelar')
+        # A user id is created for the user dictionary in create_user
+        del user['id']
+        ref = self.identity_api.create_user(user)
+        user['id'] = ref['id']
+        # Test that the user and federated object now exists
+        self.assertEqual(user, ref)
+        fed_user = self.shadow_users_api.get_federated_user(
+            self.idp['id'],
+            self.protocol['id'],
+            'ravelar')
+        self.assertIsNotNone(fed_user)

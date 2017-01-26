@@ -902,6 +902,26 @@ class Manager(manager.Manager):
                 # backward compatible
                 pass
 
+    def _create_federated_objects_with_user(self, user, driver):
+        user_ref = user.copy()
+        if 'federated' in user_ref and user_ref['federated']:
+            for fed_obj in user_ref['federated']:
+                self.federation_api.get_idp(fed_obj["idp_id"])
+                for protocols in fed_obj['protocols']:
+                    self.federation_api.get_protocol(fed_obj["idp_id"],
+                                                     protocols['protocol_id'])
+                    federated_dict = {
+                        'idp_id': fed_obj['idp_id'],
+                        'protocol_id': protocols['protocol_id'],
+                        'unique_id': protocols['unique_id'],
+                        'display_name': user['name']
+                    }
+                    self.shadow_users_api.create_federated_user(
+                        user_ref['domain_id'], federated_dict, user=user_ref)
+            return user
+        else:
+            return driver.create_user(user['id'], user)
+
     @domains_configured
     @exception_translated('user')
     def create_user(self, user_ref, initiator=None):
@@ -925,7 +945,9 @@ class Manager(manager.Manager):
         # the underlying driver so that it could conform to rules set down by
         # that particular driver type.
         user['id'] = uuid.uuid4().hex
-        ref = driver.create_user(user['id'], user)
+        ref = self._create_federated_objects_with_user(user, driver)
+        if 'federated' not in ref:
+            ref['federated'] = []
         notifications.Audit.created(self._USER, user['id'], initiator)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.USER)
