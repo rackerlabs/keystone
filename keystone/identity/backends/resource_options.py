@@ -21,6 +21,7 @@ USER_OPTIONS_LIST = [
     # explicit test cases that test resource options. This option is never
     # expected to be set.
     resource_options.ResourceOption('_TST', '__PLACEHOLDER__'),
+    resource_options.ResourceOption('1000', 'ignore_password_expiry')
 ]
 
 
