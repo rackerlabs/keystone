@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_1f1e73ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-26T03:38:13Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "e7d59d6d647b4b5499cbde4bf49217e65d1073c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_fff28799",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-26T03:38:13Z",
+      "side": 1,
+      "message": "What happens when the mapping changes, such as changing the groups? Will we remove group membership?",
+      "range": {
+        "startLine": 261,
+        "startChar": 12,
+        "endLine": 262,
+        "endChar": 65
+      },
+      "revId": "e7d59d6d647b4b5499cbde4bf49217e65d1073c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
