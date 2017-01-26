@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_137d6e6e",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-26T17:01:58Z",
+      "side": 1,
+      "message": "Should capitalize \u0027Identity\u0027\n\nhttps://governance.openstack.org/tc/reference/service-project-naming.html",
+      "range": {
+        "startLine": 42,
+        "startChar": 54,
+        "endLine": 42,
+        "endChar": 62
+      },
+      "revId": "b527c2389860ff9a445e9043daf1d462440a7df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a7029c09",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 5
@@ -13,6 +36,30 @@
       "writtenOn": "2017-01-26T16:06:08Z",
       "side": 1,
       "message": "wouldn\u0027t this be frontend than? Because LDAP is the backend, not the identity service.",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 9
+      },
+      "revId": "b527c2389860ff9a445e9043daf1d462440a7df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_13a64e10",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 21420
+      },
+      "writtenOn": "2017-01-26T17:01:58Z",
+      "side": 1,
+      "message": "++, could possible change it to say \"... when LDAP acts as a backend for the Identity service.\" or just s/backend/frontend as it is now",
+      "parentUuid": "3a461143_a7029c09",
       "range": {
         "startLine": 43,
         "startChar": 2,
