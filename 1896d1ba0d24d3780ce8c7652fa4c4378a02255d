@@ -16,6 +16,24 @@
       "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_7cb5972f",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 0,
+      "message": "I agreed, but I wonder where it should live. I don\u0027t really like the idea of creating another constants module for something we might be able to derive from the registered configuration option. Especially since we will be using options to deprecate other configuration options (ignore password users for example).",
+      "parentUuid": "3a461143_f97fd963",
+      "revId": "1896d1ba0d24d3780ce8c7652fa4c4378a02255d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

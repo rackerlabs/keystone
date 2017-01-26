@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_7954c920",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "Isn\u0027t this by design so that users can use first auth as an opportunity to get a new token to change their password with?",
+      "parentUuid": "3a461143_799be972",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f6a8c6dd",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 5
@@ -54,6 +72,23 @@
       "side": 1,
       "message": "++ This sentence doesn\u0027t read right.",
       "parentUuid": "3a461143_f6a8c6dd",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3908812d",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "I thought previous iterations has wording that operators need to be careful enabling this, with a strong emphasis on coordinating it with users.",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +135,23 @@
     },
     {
       "key": {
+        "uuid": "3a461143_79c0492b",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "This there a convention for \u00271000\u0027? If there is we should document it in our developer documentation.\n\nThis is why I would opt for something *not* abbreviated. Even if we only need 4 characters, it makes things easier for maintainers.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_798cc97f",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -111,6 +163,24 @@
       "writtenOn": "2017-01-26T21:14:40Z",
       "side": 1,
       "message": "You could use the constant here.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bcec5f2a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a461143_798cc97f",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +204,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9cd08355",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "Yeah, whenever I have to do this, it makes me feel like I\u0027m doing something I shouldn\u0027t be. Not because python doesn\u0027t allow it, but because the convention suggests it should be private.",
+      "parentUuid": "3a461143_99d09555",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f9a2794a",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 5
@@ -151,6 +239,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_dc584bfd",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "What about something:\n\n  if user_options.get(ignore_option.option_id).option_value:\n\nNot sure if that works though (?).",
+      "parentUuid": "3a461143_f9a2794a",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_3c36afe7",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 5
@@ -162,6 +268,91 @@
       "writtenOn": "2017-01-26T21:18:38Z",
       "side": 1,
       "message": "Could use the constant here too.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_fce0a7fc",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "I know we have a self.user somewhere else, too. To avoid confusing, we could use another name.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bcb9bfcd",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "I\u0027m sure this would be backwards incompatible in some way, but it would be nice if there was *something* about this request the signified that the next auth was going to fail.",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bc2e1ff8",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "We don\u0027t need to use freezegun here? Is this because we are interacting with the identity API directly and not going through the token provider, which will compare the issued_at time of the token to the revocation list?",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_3c506f5e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1004,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "We must need clock controller here because the token provider API is checking issued_at times of the token against the revocation event\u0027s issued_before times (which should be when the password is changed).",
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bcbfff5e",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1815,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-26T21:36:28Z",
+      "side": 1,
+      "message": "This fails because `whatever` isn\u0027t registered as an option, right?",
       "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
