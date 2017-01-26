@@ -22,6 +22,52 @@
       "revId": "14f530b88163eb9942ac35a1ac39994bcd398b16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_653c4894",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T04:58:08Z",
+      "side": 1,
+      "message": "If you would like to use a non-int string, you can, as shown above. In either case make sure you always reference this option object when looking up the data in the mapper or when inspecting the user\u0027s option dict. ID is:\n\n  option_obj_instance.option_id\n\nName is:\n\n  option_obj_instance.option_name\n\n\nYou may want a validator for this as well that ensures the value is a boolean:\n\n  def _boolean_validator(value):\n    \u003ccheck is boolean and raise if not\u003e\n\nthen\n\n  resource_options.ResourceOption(\u00271000\u0027, \u0027ignore_password_expiry\u0027, _boolean_validator)",
+      "range": {
+        "startLine": 24,
+        "startChar": 36,
+        "endLine": 24,
+        "endChar": 42
+      },
+      "revId": "14f530b88163eb9942ac35a1ac39994bcd398b16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_65a0c8f5",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-26T04:58:08Z",
+      "side": 1,
+      "message": "suggest referencing the option.option_id (in identity.resource_options or via the registry) rather than magic numbers/strings here.\n\nIt ensures that we\u0027re using the same ID/Name that the rest of the system is. As terrible as it would be if the option id/name changed, if it does change you\u0027ll follow that value.",
+      "range": {
+        "startLine": 131,
+        "startChar": 45,
+        "endLine": 131,
+        "endChar": 51
+      },
+      "revId": "14f530b88163eb9942ac35a1ac39994bcd398b16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
