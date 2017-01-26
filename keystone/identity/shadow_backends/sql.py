@@ -18,6 +18,7 @@ import uuid
 from oslo_config import cfg
 
 from keystone.common import sql
+from keystone.common import utils
 from keystone import exception
 from keystone.identity.backends import base as identity_base
 from keystone.identity.backends import sql_model as model
@@ -29,12 +30,15 @@ CONF = cfg.CONF
 
 class ShadowUsers(base.ShadowUsersDriverBase):
     @sql.handle_conflicts(conflict_type='federated_user')
-    def create_federated_user(self, domain_id, federated_dict):
-        user = {
-            'id': uuid.uuid4().hex,
-            'domain_id': domain_id,
-            'enabled': True
-        }
+    def create_federated_user(self, domain_id, federated_dict, user=None):
+        if user is None:
+            user = {
+                'id': uuid.uuid4().hex,
+                'domain_id': domain_id,
+                'enabled': True
+            }
+        else:
+            user = utils.hash_user_password(user)
         with sql.session_for_write() as session:
             federated_ref = model.FederatedUser.from_dict(federated_dict)
             user_ref = model.User.from_dict(user)
@@ -42,6 +46,12 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             user_ref.federated_users.append(federated_ref)
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
+
+    @sql.handle_conflicts(conflict_type='federated_user')
+    def create_federated_object(self, fed_dict):
+        with sql.session_for_write() as session:
+            fed_ref = model.FederatedUser.from_dict(fed_dict)
+            session.add(fed_ref)
 
     def _update_query_with_federated_statements(self, hints, query):
         statements = []

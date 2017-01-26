@@ -161,7 +161,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``POST /users`` with admin token and domain id."""
         ref = unit.new_user_ref(domain_id=self.domain_id)
         self.post('/users', body={'user': ref}, token=self.get_admin_token(),
-                  expected_status=http_client.CREATED)
+                  expected_status=http_client.created)
 
     def test_user_management_normalized_keys(self):
         """Illustrate the inconsistent handling of hyphens in keys.
@@ -1150,3 +1150,42 @@ class UserFederatedAttributesTests(test_v3.RestfulTestCase):
     def test_list_users_with_all_federated_attributes(self):
         attribute = ['idp_id', 'protocol_id', 'unique_id']
         self._test_list_users_with_federated_parameter(attribute)
+
+    def test_create_user_with_federated_attributes(self):
+        """Call ``POST /users``."""
+        idp, protocol = self._create_federated_attributes()
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['federated'] = [
+            {
+                'idp_id': idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': protocol['id'],
+                        'unique_id': 'ravelar'
+                    }
+                ]
+            }
+        ]
+        r = self.post(
+            '/users',
+            body={'user': ref})
+        user = r.result['user'].copy()
+        self.assertEqual(user['name'], ref['name'])
+        self.assertEqual(user['federated'], ref['federated'])
+        self.assertValidUserResponse(r, ref)
+
+        idp, protocol = self._create_federated_attributes()
+        ref = unit.new_user_ref(domain_id=self.domain_id)
+        ref['federated'] = [
+            {
+                'idp_id': idp['id'],
+                'protocols': [
+                    {
+                        'protocol_id': protocol['id'],
+                        'unique_id': 'jdoe'
+                    }
+                ]
+            }
+        ]
+        self.post('/users', body={'user': ref}, token=self.get_admin_token(),
+                  expected_status=http_client.CREATED)
