@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_f6a8c6dd",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2017-01-26T20:37:05Z",
+      "side": 1,
+      "message": "two verbs in this phrase, \"specified\" and \"set\"",
+      "range": {
+        "startLine": 138,
+        "startChar": 11,
+        "endLine": 139,
+        "endChar": 31
+      },
+      "revId": "3e3e646b9c535d7a27332368ad9cdcc20f4bb805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
