@@ -18,7 +18,7 @@ from keystone.conf import utils
 
 default_domain_id = cfg.StrOpt(
     'default_domain_id',
-    default='default',
+    default='00000000000000000000000000000000',
     help=utils.fmt("""
 This references the domain to use for all Identity API v2 requests (which are
 not aware of domains). A domain with this ID can optionally be created for you

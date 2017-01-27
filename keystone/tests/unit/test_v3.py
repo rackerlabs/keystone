@@ -30,11 +30,12 @@ from keystone import exception
 from keystone import middleware
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
+from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import rest
 
 
 CONF = keystone.conf.CONF
-DEFAULT_DOMAIN_ID = 'default'
+DEFAULT_DOMAIN_ID = default_fixtures.DEFAULT_DOMAIN_ID
 
 TIME_FORMAT = unit.TIME_FORMAT
 

@@ -20,7 +20,8 @@ BAR_TENANT_ID = uuid.uuid4().hex
 BAZ_TENANT_ID = uuid.uuid4().hex
 MTU_TENANT_ID = uuid.uuid4().hex
 SERVICE_TENANT_ID = uuid.uuid4().hex
-DEFAULT_DOMAIN_ID = 'default'
+DEFAULT_DOMAIN_ID = '00000000000000000000000000000000'
+ADMIN_ROLE_ID = uuid.uuid4().hex
 
 TENANTS = [
     {
@@ -62,7 +63,7 @@ TENANTS = [
 USERS = [
     # NOTE(morganfainberg): Admin user for replacing admin_token_auth
     {
-        'id': 'reqadmin',
+        'id': uuid.uuid4().hex,
         'name': 'REQ_ADMIN',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'password',
@@ -70,7 +71,7 @@ USERS = [
         'enabled': True
     },
     {
-        'id': 'foo',
+        'id': uuid.uuid4().hex,
         'name': 'FOO',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'foo2',
@@ -78,7 +79,7 @@ USERS = [
         'enabled': True,
         'email': 'foo@bar.com',
     }, {
-        'id': 'two',
+        'id': uuid.uuid4().hex,
         'name': 'TWO',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
@@ -87,7 +88,7 @@ USERS = [
         'tenants': [BAZ_TENANT_ID],
         'email': 'two@three.com',
     }, {
-        'id': 'badguy',
+        'id': uuid.uuid4().hex,
         'name': 'BadGuy',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
@@ -96,7 +97,7 @@ USERS = [
         'tenants': [BAZ_TENANT_ID],
         'email': 'bad@guy.com',
     }, {
-        'id': 'sna',
+        'id': uuid.uuid4().hex,
         'name': 'SNA',
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'snafu',
@@ -108,11 +109,11 @@ USERS = [
 
 ROLES = [
     {
-        'id': 'admin',
+        'id': ADMIN_ROLE_ID,
         'name': 'admin',
         'domain_id': None,
     }, {
-        'id': 'member',
+        'id': uuid.uuid4().hex,
         'name': 'Member',
         'domain_id': None,
     }, {
@@ -120,19 +121,19 @@ ROLES = [
         'name': '_member_',
         'domain_id': None,
     }, {
-        'id': 'other',
+        'id': uuid.uuid4().hex,
         'name': 'Other',
         'domain_id': None,
     }, {
-        'id': 'browser',
+        'id': uuid.uuid4().hex,
         'name': 'Browser',
         'domain_id': None,
     }, {
-        'id': 'writer',
+        'id': uuid.uuid4().hex,
         'name': 'Writer',
         'domain_id': None,
     }, {
-        'id': 'service',
+        'id': uuid.uuid4().hex,
         'name': 'Service',
         'domain_id': None,
     }
@@ -143,7 +144,7 @@ ROLE_ASSIGNMENTS = [
     {
         'user': 'reqadmin',
         'tenant_id': SERVICE_TENANT_ID,
-        'role_id': 'admin'
+        'role_id': ADMIN_ROLE_ID
     },
 ]
 
