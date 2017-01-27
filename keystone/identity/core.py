@@ -1041,6 +1041,21 @@ class Manager(manager.Manager):
             if new_ref['domain_id'] != orig_ref['domain_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
+    def _handle_federated_attribute_update(self, user, driver, entity_id):
+        user_ref = user.copy()
+        if 'federated' in user_ref:
+            del user['federated']
+            user = driver.update_user(entity_id, user)
+            if user_ref['federated']:
+                self._validate_federated_objects(user_ref['federated'])
+                self.shadow_users_api.delete_federated_objects(user_ref['id'])
+                self._create_federated_objects(user_ref)
+                return user_ref
+            else:
+                user['federated'] = self.
+                    shadow_users_api.get_federated_objects(user['id'])
+                return user
+
     @domains_configured
     @exception_translated('user')
     def update_user(self, user_id, user_ref, initiator=None):
@@ -1071,8 +1086,9 @@ class Manager(manager.Manager):
         self.get_user_by_name.invalidate(self, old_user_ref['name'],
                                          old_user_ref['domain_id'])
 
+        ref = _handle_federated_attribute_update(
+            self, user, driver, entity_id)
         ref = driver.update_user(entity_id, user)
-
         notifications.Audit.updated(self._USER, user_id, initiator)
 
         enabled_change = ((user.get('enabled') is False) and

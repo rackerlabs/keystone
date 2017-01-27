@@ -43,6 +43,14 @@ class ShadowUsers(base.ShadowUsersDriverBase):
             session.add(user_ref)
             return identity_base.filter_user(user_ref.to_dict())
 
+    def delete_federated_objects(self, user_id):
+        with sql.session_for_write() as session:
+            fed_obj = 
+            q = session.query(model.FederatedUser)
+            q = q.filter_by(user_id=user_id)
+            q.delete(False)
+            session.delete(fed_obj)
+
     def _update_query_with_federated_statements(self, hints, query):
         statements = []
         for filter_ in hints.filters:
