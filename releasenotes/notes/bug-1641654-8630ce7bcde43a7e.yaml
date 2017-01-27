@@ -1,0 +1,8 @@
+---
+features:
+  - >
+    [`bug 1641654 <https://bugs.launchpad.net/keystone/+bug/1641654>`_]
+    The `healthcheck` middleware from `oslo.middleware` has been added to the
+    keystone application pipelines by default. This middleware provides a common
+    method to check the health of a particular application provided by keystone.
+    Refer to the example application pipeline provided ``keystone-paste.ini``.
