@@ -26,7 +26,7 @@ from keystone.tests.unit import rest
 from keystone.tests.unit.schema import v2
 
 CONF = keystone.conf.CONF
-
+DEFAULT_DOMAIN_ID = default_fixtures.DEFAULT_DOMAIN_ID
 
 class CoreApiTests(object):
     def assertValidError(self, error):
@@ -1434,7 +1434,7 @@ class TestFernetTokenProviderV2(RestfulTestCase):
         return {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'description': uuid.uuid4().hex,
-                'domain_id': 'default',
+                'domain_id': DEFAULT_DOMAIN_ID,
                 'enabled': True}
 
     def config_overrides(self):
