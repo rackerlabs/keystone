@@ -81,8 +81,3 @@ class TestTestCase(unit.TestCase):
         self.assertThat(
             lambda: warnings.warn('test sa warning error', exc.SAWarning),
             matchers.raises(exc.SAWarning))
-
-    def test_deprecation_warnings_are_raised_as_exceptions_in_tests(self):
-        self.assertThat(
-            lambda: warnings.warn('this is deprecated', DeprecationWarning),
-            matchers.raises(DeprecationWarning))
