@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_a56a54b1",
+        "filename": "keystone/identity/backends/resource_options.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:50:13Z",
+      "side": 1,
+      "message": "nope, thanks",
+      "parentUuid": "3a461143_1c0705cb",
+      "revId": "bcc07896496512d46f055aea855a8cea9029a2b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1c2e2543",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_259d84bc",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:50:13Z",
+      "side": 1,
+      "message": "hmm, probably...",
+      "parentUuid": "3a461143_1c2e2543",
+      "revId": "bcc07896496512d46f055aea855a8cea9029a2b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1cd5451b",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2017-01-27T21:08:05Z",
       "side": 1,
       "message": "Is this class from the earlier review of `change_password_upon_first_use`?",
+      "revId": "bcc07896496512d46f055aea855a8cea9029a2b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e549bc61",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:50:13Z",
+      "side": 1,
+      "message": "yep, copy pasta",
+      "parentUuid": "3a461143_1cd5451b",
       "revId": "bcc07896496512d46f055aea855a8cea9029a2b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
