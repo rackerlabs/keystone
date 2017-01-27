@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_026fba2b",
+        "filename": "releasenotes/notes/bp-password-expires-validation-4b32fe7032595932.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-27T10:58:50Z",
+      "side": 1,
+      "message": "PCI can be enabled without the \"password_expires_at\" setting",
+      "range": {
+        "startLine": 6,
+        "startChar": 28,
+        "endLine": 6,
+        "endChar": 50
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_82ef2a86",
+        "filename": "releasenotes/notes/bp-pci-dss-password-requirements-api-87bc724b2aa554f7.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-27T10:58:50Z",
+      "side": 1,
+      "message": "same as the previous comment, PCI have lots of settings that can be independently enabled.",
+      "range": {
+        "startLine": 6,
+        "startChar": 60,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_02797ac8",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-27T10:58:50Z",
+      "side": 1,
+      "message": "not related: I was hoping to have a functional tests for this before we claiming support. I remember Lance was working on them, though.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
