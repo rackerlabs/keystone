@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_a7743f9c",
+        "filename": "keystone/identity/backends/resource_options_constants.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T04:31:08Z",
+      "side": 1,
+      "message": "probably doesn\u0027t belong in backends, maybe one higher?",
+      "revId": "91557f50976d47ab4021cfe33e4a1f2c43d8b17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_67917799",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T04:31:08Z",
+      "side": 1,
+      "message": "ugh to single-use functions, just make one with a short-circuit instead\n\ndef _change_password_required(self, user):\n        if CONF.security_compliance.change_password_after_first_use\n            return True\n        else:\n             ignore_option \u003d (\n                 user.resource_options_registry\n                .get_option_by_name(constants.IGNORE_PASSWORD_EXPIRY))\n             user_options \u003d user._resource_option_mapper\n        return not (ignore_option.option_id in user_options and\n            user_options[ignore_option.option_id].option_value is True)",
+      "range": {
+        "startLine": 137,
+        "startChar": 4,
+        "endLine": 151,
+        "endChar": 9
+      },
+      "revId": "91557f50976d47ab4021cfe33e4a1f2c43d8b17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
