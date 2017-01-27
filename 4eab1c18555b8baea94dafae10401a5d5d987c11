@@ -16,6 +16,24 @@
       "revId": "4eab1c18555b8baea94dafae10401a5d5d987c11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a515f440",
+        "filename": "keystone/common/context.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T22:46:57Z",
+      "side": 0,
+      "message": "olso.context made accessing user, tenant, etc. a deprecation warning and that causes our tests to fail. So we are blocking the gate for other projects.",
+      "parentUuid": "3a461143_426a86ef",
+      "revId": "4eab1c18555b8baea94dafae10401a5d5d987c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
