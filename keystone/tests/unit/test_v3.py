@@ -34,7 +34,6 @@ from keystone.tests.unit import rest
 
 
 CONF = keystone.conf.CONF
-DEFAULT_DOMAIN_ID = 'default'
 
 TIME_FORMAT = unit.TIME_FORMAT
 
@@ -273,14 +272,15 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
         self.load_sample_data()
 
     def _populate_default_domain(self):
+        default_domain_id = CONF.identity.default_domain_id
         try:
-            self.resource_api.get_domain(DEFAULT_DOMAIN_ID)
+            self.resource_api.get_domain(default_domain_id)
         except exception.DomainNotFound:
             domain = unit.new_domain_ref(
                 description=(u'The default domain'),
-                id=DEFAULT_DOMAIN_ID,
+                id=default_domain_id,
                 name=u'Default')
-            self.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
+            self.resource_api.create_domain(default_domain_id, domain)
 
     def load_sample_data(self, create_region_and_endpoints=True):
         self._populate_default_domain()
@@ -299,14 +299,14 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         self.default_domain_project_id = uuid.uuid4().hex
         self.default_domain_project = unit.new_project_ref(
-            domain_id=DEFAULT_DOMAIN_ID)
+            domain_id=CONF.identity.default_domain_id)
         self.default_domain_project['id'] = self.default_domain_project_id
         self.resource_api.create_project(self.default_domain_project_id,
                                          self.default_domain_project)
 
         self.default_domain_user = unit.create_user(
             self.identity_api,
-            domain_id=DEFAULT_DOMAIN_ID)
+            domain_id=CONF.identity.default_domain_id)
         self.default_domain_user_id = self.default_domain_user['id']
 
         # create & grant policy.json's default role for admin_required
@@ -324,8 +324,9 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
 
         # Create "req_admin" user for simulating a real user instead of the
         # admin_token_auth middleware
-        self.user_reqadmin = unit.create_user(self.identity_api,
-                                              DEFAULT_DOMAIN_ID)
+        self.user_reqadmin = unit.create_user(
+            self.identity_api,
+            CONF.identity.default_domain_id)
         self.assignment_api.add_role_to_user_and_project(
             self.user_reqadmin['id'],
             self.default_domain_project_id,

@@ -125,10 +125,10 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         bootstrap.do_bootstrap()
         project = bootstrap.resource_manager.get_project_by_name(
             bootstrap.project_name,
-            'default')
+            CONF.identity.default_domain_id)
         user = bootstrap.identity_manager.get_user_by_name(
             bootstrap.username,
-            'default')
+            CONF.identity.default_domain_id)
         role = bootstrap.role_manager.get_role(bootstrap.role_id)
         role_list = (
             bootstrap.assignment_manager.get_roles_for_user_and_project(
@@ -243,7 +243,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         # Completely lock the user out.
         user_id = bootstrap.identity_manager.get_user_by_name(
             bootstrap.username,
-            'default')['id']
+            CONF.identity.default_domain_id)['id']
         bootstrap.identity_manager.update_user(
             user_id,
             {'enabled': False,

@@ -321,8 +321,9 @@ class TestTrustOperations(test_v3.RestfulTestCase):
 
     def test_v3_v2_intermix_project_not_in_default_domain_failed(self):
         # create a trustee in default domain to delegate stuff to
+        default_domain_id = CONF.identity.default_domain_id
         trustee_user = unit.create_user(self.identity_api,
-                                        domain_id=test_v3.DEFAULT_DOMAIN_ID)
+                                        domain_id=default_domain_id)
         trustee_user_id = trustee_user['id']
 
         # create a new trust

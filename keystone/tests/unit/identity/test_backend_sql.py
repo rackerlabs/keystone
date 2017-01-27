@@ -458,7 +458,7 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
                                    unique_last_password_count=self.max_cnt)
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': 'default',
+            'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
         }
         user = self.identity_api.create_user(user)
@@ -469,7 +469,7 @@ class PasswordHistoryValidationTests(test_backend_sql.SqlTests):
     def _create_user(self, password):
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': 'default',
+            'domain_id': CONF.identity.default_domain_id,
             'enabled': True,
             'password': password
         }
