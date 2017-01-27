@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_a4550151",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T18:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_a473417f",
+      "range": {
+        "startLine": 137,
+        "startChar": 61,
+        "endLine": 137,
+        "endChar": 75
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_e4c9c979",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 15
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_044b35b1",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T18:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_e4f2a9d1",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 9
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_64831905",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 15
@@ -82,6 +130,30 @@
       "writtenOn": "2017-01-27T17:57:31Z",
       "side": 1,
       "message": "s/ attribute `ignore_password_expiry`/  attribute `ignore_password_expiry` to `True` for the desired user via the update user API.",
+      "range": {
+        "startLine": 141,
+        "startChar": 13,
+        "endLine": 141,
+        "endChar": 48
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e49469e3",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T18:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_64831905",
       "range": {
         "startLine": 141,
         "startChar": 13,
@@ -122,6 +194,30 @@
       "writtenOn": "2017-01-27T17:57:31Z",
       "side": 1,
       "message": "s/in ``keystone.conf``/ to ``True``\n\ni think the square brackets are enough to indicate keystone.conf needs to be changed, we\u0027ve been doing that in many places",
+      "range": {
+        "startLine": 8,
+        "startChar": 61,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "5deea27bbf92ae06e30a93263000dfd7580a64f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_973bd5d0",
+        "filename": "releasenotes/notes/pci-force-password-change-after-reset-ca22c216ec26cc9b.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T18:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_640a3923",
       "range": {
         "startLine": 8,
         "startChar": 61,
