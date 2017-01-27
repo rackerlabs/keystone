@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_0c729aad",
+        "filename": "keystone/conf/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-27T03:24:11Z",
+      "side": 1,
+      "message": "We could substitute O for Ocata and P for Pike since we know the release names. But - it won\u0027t be around too long.",
+      "revId": "c2fdd3b3bfbc089df14c9b1457282e0c7cb74475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
