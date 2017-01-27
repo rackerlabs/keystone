@@ -60,6 +60,48 @@
     },
     {
       "key": {
+        "uuid": "3a461143_d9b12091",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_88baf3be",
+      "range": {
+        "startLine": 134,
+        "startChar": 5,
+        "endLine": 134,
+        "endChar": 36
+      },
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f9ac1c37",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_be451a18",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_be5c3aee",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 9
@@ -71,6 +113,24 @@
       "writtenOn": "2017-01-27T13:24:24Z",
       "side": 1,
       "message": "reset by admin",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_19ac8833",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_be5c3aee",
       "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -94,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_9945d871",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_1ef38ed7",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_7ef2d270",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 9
@@ -111,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_d4148545",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "When you change the password, you create a new password which is not affected by create user, so it would show that reset creates a password that is expired.",
+      "parentUuid": "3a461143_7ef2d270",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1e954edd",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 9
@@ -122,6 +218,24 @@
       "writtenOn": "2017-01-27T13:24:24Z",
       "side": 1,
       "message": "Can both of these updates be done at once?",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_345f890f",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T14:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_1e954edd",
       "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
