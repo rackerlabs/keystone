@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_c8cf907d",
+        "filename": "releasenotes/notes/bp-password-expires-validation-4b32fe7032595932.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "s/under/in/\n\nI also don\u0027t like the field/dictionary terminology. In JSON we have objects and properties.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_026fba2b",
         "filename": "releasenotes/notes/bp-password-expires-validation-4b32fe7032595932.yaml",
         "patchSetId": 1
@@ -19,6 +36,24 @@
         "endLine": 6,
         "endChar": 50
       },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_68a5bcb3",
+        "filename": "releasenotes/notes/bp-password-expires-validation-4b32fe7032595932.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a461143_026fba2b",
       "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +123,142 @@
     },
     {
       "key": {
+        "uuid": "3a461143_88b108e4",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "Should \u0027federated users\u0027 be in ``?",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_28c1f42e",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "Should \u0027identity provider\u0027 be in ``?",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e8f44c88",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "s/done/triggered/ or something else",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_08319805",
+        "filename": "releasenotes/notes/bug-1561054-dbe88b552a936a05.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "I think this should be uuid and not UUID.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a83fa4d4",
+        "filename": "releasenotes/notes/bug-1561054-dbe88b552a936a05.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem like the correct link. Is http://docs.openstack.org/developer/keystone/configuration.html#encryption-keys-for-fernet-tokens better?",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_63279db6",
+        "filename": "releasenotes/notes/bug-1622310-c501cf77437fdfa6.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "s/update their code/be updated/ - code doesn\u0027t update itself...yet",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c3ce91b3",
+        "filename": "releasenotes/notes/bug-1641645-516709f9da3de26f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "I\u0027m not sure that the sentences here makes sense. Really something in here should say something like \u0027A user can present their existing password and new password without a token to change their password.\u0027",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c345b117",
+        "filename": "releasenotes/notes/bug-1641654-8630ce7bcde43a7e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "What is \u0027a particular application provided by keystone\u0027?",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_4f272ab6",
         "filename": "releasenotes/notes/bug-1642348-83d4c86ad3984d75.yaml",
         "patchSetId": 1
@@ -111,6 +282,91 @@
     },
     {
       "key": {
+        "uuid": "3a461143_c3b851e8",
+        "filename": "releasenotes/notes/bug-1642348-83d4c86ad3984d75.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "exempt",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c39db15a",
+        "filename": "releasenotes/notes/bug-1642687-5497fb56fe86806d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "This is only true if a domain is not provided as stated in the fixes section.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_63131db9",
+        "filename": "releasenotes/notes/bug-1642687-c7ab1c9be152db20.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "Again...this must some advanced code to rewrite itself :-P",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c3a3f14d",
+        "filename": "releasenotes/notes/bug-1642687-c7ab1c9be152db20.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "Other notes in here use `identity provides` and i think one just said identity provider. We should come up with a style guide of sorts to make it consistent.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_6364fd21",
+        "filename": "releasenotes/notes/bug-1642692-d669c8fcf9e171d9.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "This seems pretty harsh",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_2f8d7e7b",
         "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
         "patchSetId": 1
@@ -128,6 +384,23 @@
         "endLine": 44,
         "endChar": 54
       },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_833569f8",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "update",
       "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +447,57 @@
         "endLine": 52,
         "endChar": 48
       },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e3262dcd",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "update",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_831c8978",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "Why remove this?",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a3134565",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:00:24Z",
+      "side": 1,
+      "message": "or this.",
       "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
