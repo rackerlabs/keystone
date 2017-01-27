@@ -149,10 +149,21 @@ class User(sql.ModelBase, sql.DictBase):
 
     def _get_password_expires_at(self, created_at):
         expires_days = CONF.security_compliance.password_expires_days
+        # NOTE(notmorgan): This option is deprecated and subject to removal
+        # in a future release.
         ignore_list = CONF.security_compliance.password_expires_ignore_user_ids
-        if expires_days and (self.id not in ignore_list):
-            expired_date = (created_at + datetime.timedelta(days=expires_days))
-            return expired_date.replace(microsecond=0)
+        # Get the IGNORE_PASSWORD_EXPIRY_OPT value from the user's
+        # option_mapper.
+
+        ignore_pw_expiry = getattr(
+            self.get_resource_option(iro.IGNORE_PASSWORD_EXPIRY_OPT.option_id),
+            'option_value',
+            False)
+        if (self.id not in ignore_list) and not ignore_pw_expiry:
+            if expires_days:
+                expired_date = (created_at +
+                                datetime.timedelta(days=expires_days))
+                return expired_date.replace(microsecond=0)
         return None
 
     @password.expression
