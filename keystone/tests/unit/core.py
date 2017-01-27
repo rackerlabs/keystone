@@ -49,6 +49,7 @@ import keystone.conf
 from keystone import exception
 from keystone.identity.backends.ldap import common as ks_ldap
 from keystone import notifications
+from keystone.tests.unit import default_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.version import controllers
 from keystone.version import service
@@ -626,6 +627,10 @@ class TestCase(BaseTestCase):
                 'keystone.notifications=INFO',
                 'keystone.identity.backends.ldap.common=INFO',
             ])
+        self.config_fixture.config(
+            group='identity',
+            default_domain_id=default_fixtures.DEFAULT_DOMAIN_ID
+        )
         self.useFixture(
             ksfixtures.KeyRepository(
                 self.config_fixture,
@@ -713,7 +718,7 @@ class TestCase(BaseTestCase):
                     rv = self.resource_api.get_domain(domain['id'])
                 except exception.NotImplemented:
                     rv = domain
-                attrname = 'domain_%s' % domain['id']
+                attrname = 'domain_%s' % domain['name']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
 
@@ -736,7 +741,7 @@ class TestCase(BaseTestCase):
                     rv = self.role_api.create_role(role['id'], role)
                 except exception.Conflict:
                     rv = self.role_api.get_role(role['id'])
-                attrname = 'role_%s' % role['id']
+                attrname = 'role_%s' % role['name']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
 
@@ -744,7 +749,9 @@ class TestCase(BaseTestCase):
                 user_copy = user.copy()
                 tenants = user_copy.pop('tenants')
                 try:
-                    existing_user = getattr(self, 'user_%s' % user['id'], None)
+                    existing_user = getattr(self,
+                                            'user_%s' % user['name'],
+                                            None)
                     if existing_user is not None:
                         self.identity_api.delete_user(existing_user['id'])
                 except exception.UserNotFound:
@@ -766,7 +773,7 @@ class TestCase(BaseTestCase):
                 # Use the ID from the fixture as the attribute name, so
                 # that our tests can easily reference each user dict, while
                 # the ID in the dict will be the real public ID.
-                attrname = 'user_%s' % user['id']
+                attrname = 'user_%s' % user['name']
                 setattr(self, attrname, user_copy)
                 fixtures_to_cleanup.append(attrname)
 
