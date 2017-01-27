@@ -487,6 +487,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_de5f463f",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:25:43Z",
+      "side": 1,
+      "message": "Ignore this, I was thinking it was something else.",
+      "parentUuid": "3a461143_831c8978",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_a3134565",
         "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
         "patchSetId": 1
@@ -498,6 +516,24 @@
       "writtenOn": "2017-01-27T13:00:24Z",
       "side": 1,
       "message": "or this.",
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1e5aae4f",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:25:43Z",
+      "side": 1,
+      "message": "Same here",
+      "parentUuid": "3a461143_a3134565",
       "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
