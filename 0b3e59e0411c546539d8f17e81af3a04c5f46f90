@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_956e6d2d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-27T19:17:36Z",
+      "side": 1,
+      "message": "As said in IRC, this should be a hard-set value like \"Epoch start\" (Dec 1969) or similar. A value that has no business every being valid. UTCNow could result in auth possibilities based upon NTP drive, hard clock shifts in an update/fix, etc.\n\nWe could also explicitly validate the time instead of just \u003e Now, something like\n\nIf not \u003d\u003d specified time and \u003c\u003d Now.\n\nthis doesn\u0027t need to be changed here, but perhaps a followup patch",
+      "range": {
+        "startLine": 129,
+        "startChar": 51,
+        "endLine": 129,
+        "endChar": 77
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_b5fe0936",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-27T19:17:36Z",
+      "side": 1,
+      "message": "Cool. I\u0027ll do an update for the options (future) that lets you evaluate the value directly with an __eq__ and with the is-true magic method.\n\nNo change needed here, just an additional thing that will make this type of code better in the future.",
+      "range": {
+        "startLine": 142,
+        "startChar": 20,
+        "endLine": 142,
+        "endChar": 64
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f5f8914b",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-27T19:17:36Z",
+      "side": 1,
+      "message": "See above.",
+      "range": {
+        "startLine": 216,
+        "startChar": 51,
+        "endLine": 216,
+        "endChar": 77
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_f58fb1c9",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-27T19:17:36Z",
+      "side": 1,
+      "message": "Are we allowing None here? or in a followup?",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 75
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
