@@ -20,7 +20,7 @@ from keystone.identity import generator
 class Generator(generator.IDGenerator):
 
     def generate_public_ID(self, mapping):
-        m = hashlib.sha256()
+        m = hashlib.md5()
         for key in sorted(mapping.keys()):
             m.update(mapping[key].encode('utf-8'))
         return m.hexdigest()

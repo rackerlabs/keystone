@@ -46,6 +46,10 @@ from keystone.tests.unit.utils import wip
 
 CONF = keystone.conf.CONF
 
+ADMIN_ROLE_ID = default_fixtures.ADMIN_ROLE_ID
+MEMBER_ROLE_ID = default_fixtures.MEMBER_ROLE_ID
+OTHER_ROLE_ID = default_fixtures.OTHER_ROLE_ID
+
 
 def _assert_backends(testcase, **kwargs):
 
@@ -435,7 +439,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
     def test_remove_role_grant_from_user_and_project(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
@@ -443,7 +447,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.delete_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
@@ -452,7 +456,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
                           self.assignment_api.delete_grant,
                           user_id=self.user_foo['id'],
                           project_id=self.tenant_baz['id'],
-                          role_id='member')
+                          role_id=MEMBER_ROLE_ID)
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
         new_domain = self._get_domain_fixture()
@@ -471,7 +475,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          project_id=self.tenant_bar['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
@@ -480,7 +484,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          project_id=self.tenant_bar['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
@@ -489,7 +493,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
                           project_id=self.tenant_bar['id'],
-                          role_id='member')
+                          role_id=MEMBER_ROLE_ID)
 
     def test_get_and_remove_role_grant_by_group_and_domain(self):
         # TODO(henry-nash): We should really rewrite the tests in
@@ -511,7 +515,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          domain_id=new_domain['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
@@ -520,7 +524,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
                                          domain_id=new_domain['id'],
-                                         role_id='member')
+                                         role_id=MEMBER_ROLE_ID)
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
@@ -529,7 +533,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
                           domain_id=new_domain['id'],
-                          role_id='member')
+                          role_id=MEMBER_ROLE_ID)
 
     def test_list_projects_for_user(self):
         domain = self._get_domain_fixture()
@@ -659,10 +663,10 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         self.assignment_api.create_grant(user_id=new_user['id'],
                                          project_id=new_project['id'],
-                                         role_id='other')
+                                         role_id=OTHER_ROLE_ID)
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          project_id=new_project['id'],
-                                         role_id='admin')
+                                         role_id=ADMIN_ROLE_ID)
 
         # Read back the list of assignments - check it is gone up by 2
         after_assignments = len(self.assignment_api.list_role_assignments())
@@ -935,7 +939,7 @@ class BaseLDAPIdentity(IdentityTests, AssignmentTests, ResourceTests):
 
         # Grant the user a role on a project.
 
-        role_id = 'member'
+        role_id = MEMBER_ROLE_ID
         project_id = self.tenant_baz['id']
 
         self.assignment_api.create_grant(role_id, user_id=public_user_id,
@@ -1622,7 +1626,7 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
         users = self.identity_api.list_users()
         self.assertEqual(len(default_fixtures.USERS), len(users))
         user_ids = set(user['id'] for user in users)
-        expected_user_ids = set(getattr(self, 'user_%s' % user['id'])['id']
+        expected_user_ids = set(getattr(self, 'user_%s' % user['name'])['id']
                                 for user in default_fixtures.USERS)
         for user_ref in users:
             self.assertNotIn('dn', user_ref)
@@ -2368,7 +2372,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
                 CONF.identity.default_domain_id))
         self.assertEqual(len(default_fixtures.USERS) + 1, len(users))
         user_ids = set(user['id'] for user in users)
-        expected_user_ids = set(getattr(self, 'user_%s' % user['id'])['id']
+        expected_user_ids = set(getattr(self, 'user_%s' % user['name'])['id']
                                 for user in default_fixtures.USERS)
         expected_user_ids.add(self.users['user0']['id'])
         for user_ref in users:
@@ -2515,7 +2519,8 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, unit.SQLDriverOverrides,
         self.identity_api.list_users(
             domain_scope=self.domains['domain1']['id'])
         # ...and now check the domain configs have been set up
-        self.assertIn('default', self.identity_api.domain_configs)
+        self.assertIn(CONF.identity.default_domain_id,
+                      self.identity_api.domain_configs)
         self.assertIn(self.domains['domain1']['id'],
                       self.identity_api.domain_configs)
         self.assertIn(self.domains['domain2']['id'],
@@ -2854,7 +2859,7 @@ class DomainSpecificLDAPandSQLIdentity(
             assignment='sql',
             identity={
                 None: 'ldap',
-                'default': 'ldap',
+                CONF.identity.default_domain_id: 'ldap',
                 self.domains['domain1']['id']: 'sql',
             },
             resource='sql')
@@ -2900,7 +2905,7 @@ class DomainSpecificLDAPandSQLIdentity(
                 CONF.identity.default_domain_id))
         self.assertEqual(len(default_fixtures.USERS) + 1, len(users))
         user_ids = set(user['id'] for user in users)
-        expected_user_ids = set(getattr(self, 'user_%s' % user['id'])['id']
+        expected_user_ids = set(getattr(self, 'user_%s' % user['name'])['id']
                                 for user in default_fixtures.USERS)
         expected_user_ids.add(self.users['user0']['id'])
         for user_ref in users:

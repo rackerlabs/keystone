@@ -87,6 +87,7 @@ class RestfulTestCase(unit.TestCase):
         # sets environ['REMOTE_ADDR']
         kwargs.setdefault('remote_addr', 'localhost')
 
+        #TODO This is throwing a uuid warning
         response = app.request(path, headers=headers,
                                status=expected_status, body=body,
                                **kwargs)
@@ -222,8 +223,8 @@ class RestfulTestCase(unit.TestCase):
         return self._get_token({
             'auth': {
                 'passwordCredentials': {
-                    'username': self.user_reqadmin['name'],
-                    'password': self.user_reqadmin['password']
+                    'username': self.user_req_admin['name'],
+                    'password': self.user_req_admin['password']
                 },
                 'tenantId': default_fixtures.SERVICE_TENANT_ID
             }
