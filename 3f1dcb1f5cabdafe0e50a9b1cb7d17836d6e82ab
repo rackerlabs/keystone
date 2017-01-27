@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a461143_9e6f7ec4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "You don\u0027t need this for changes in the same repository. It\u0027s meant for cross repository relationships.",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_88baf3be",
         "filename": "keystone/conf/security_compliance.py",
         "patchSetId": 9
@@ -19,6 +36,92 @@
         "endLine": 134,
         "endChar": 36
       },
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_be451a18",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "s/after/before/ or s/after/upon/ ?",
+      "parentUuid": "3a461143_88baf3be",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_be5c3aee",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "reset by admin",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1ef38ed7",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "(nit) \u0027else\u0027 isn\u0027t needed as you can just tab over the remain statements in this method",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_7ef2d270",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t prove that reset works. As shown in the previous test the user is created in this state. You should change the password first (and prove auth works) so that we can be sure that reset expires the password.",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1e954edd",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T13:24:24Z",
+      "side": 1,
+      "message": "Can both of these updates be done at once?",
       "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
