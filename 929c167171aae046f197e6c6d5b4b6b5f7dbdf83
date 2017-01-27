@@ -62,6 +62,121 @@
       "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_779cbec0",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T11:18:34Z",
+      "side": 1,
+      "message": "It could be good to explicitly mention `projects` and `role assignments`",
+      "range": {
+        "startLine": 6,
+        "startChar": 28,
+        "endLine": 6,
+        "endChar": 38
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_4f272ab6",
+        "filename": "releasenotes/notes/bug-1642348-83d4c86ad3984d75.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T11:18:34Z",
+      "side": 1,
+      "message": "hmm since this option was also added this cycle, do we really need to deprecate it in favor of in-code configs ? can\u0027t we just replace since it\u0027s been no major version with it ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 45,
+        "endLine": 5,
+        "endChar": 69
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_2f8d7e7b",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T11:18:34Z",
+      "side": 1,
+      "message": "if would be worth it to mention the signature of this method",
+      "range": {
+        "startLine": 44,
+        "startChar": 40,
+        "endLine": 44,
+        "endChar": 54
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_0fe9a214",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T11:18:34Z",
+      "side": 1,
+      "message": "(nit) issuance",
+      "range": {
+        "startLine": 51,
+        "startChar": 18,
+        "endLine": 51,
+        "endChar": 27
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_0fc0c27a",
+        "filename": "releasenotes/notes/removed-as-of-ocata-436bb4b839e74494.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T11:18:34Z",
+      "side": 1,
+      "message": "same here, would be nice to have the method\u0027s signature described",
+      "range": {
+        "startLine": 52,
+        "startChar": 37,
+        "endLine": 52,
+        "endChar": 48
+      },
+      "revId": "929c167171aae046f197e6c6d5b4b6b5f7dbdf83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
