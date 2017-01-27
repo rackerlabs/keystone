@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_da3bcf36",
+        "filename": "releasenotes/notes/bp-shadow-mapping-06fc7c71a401d707.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:36:40Z",
+      "side": 1,
+      "message": "backstick is after the comma :(",
+      "range": {
+        "startLine": 9,
+        "startChar": 70,
+        "endLine": 9,
+        "endChar": 72
+      },
+      "revId": "31e08fb16e6db39763538401022c5b65bb71362f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
