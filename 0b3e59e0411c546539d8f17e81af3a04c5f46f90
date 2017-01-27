@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_90b03b45",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T19:25:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a461143_b5fe0936",
+      "range": {
+        "startLine": 142,
+        "startChar": 20,
+        "endLine": 142,
+        "endChar": 64
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_f5f8914b",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 18
@@ -82,6 +106,30 @@
       "writtenOn": "2017-01-27T19:17:36Z",
       "side": 1,
       "message": "Are we allowing None here? or in a followup?",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 75
+      },
+      "revId": "0b3e59e0411c546539d8f17e81af3a04c5f46f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_90975b8f",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T19:25:36Z",
+      "side": 1,
+      "message": "No, we\u0027re not allowing None. We could change this in a follow up if we decide to allow users to unset the option.",
+      "parentUuid": "3a461143_f58fb1c9",
       "range": {
         "startLine": 69,
         "startChar": 8,
