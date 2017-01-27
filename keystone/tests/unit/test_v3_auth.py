@@ -858,8 +858,9 @@ class TokenAPITests(object):
         self.config_fixture.config(group='resource',
                                    project_name_url_safe='off')
         unsafe_name = 'i am not / safe'
-        project = unit.new_project_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID,
-                                       name=unsafe_name)
+        project = unit.new_project_ref(
+            domain_id=CONF.identity.default_domain_id,
+            name=unsafe_name)
         self.resource_api.create_project(project['id'], project)
         role_member = unit.new_role_ref()
         self.role_api.create_role(role_member['id'], role_member)
@@ -870,7 +871,7 @@ class TokenAPITests(object):
             user_id=self.user['id'],
             password=self.user['password'],
             project_name=project['name'],
-            project_domain_id=test_v3.DEFAULT_DOMAIN_ID)
+            project_domain_id=CONF.identity.default_domain_id)
 
         # Since name url restriction is off, we should be able to authenticate
         self.v3_create_token(auth_data)
@@ -2030,7 +2031,7 @@ class TokenAPITests(object):
         project1 = unit.new_project_ref(domain_id=domain1['id'])
         self.resource_api.create_project(project1['id'], project1)
         user_foo = unit.create_user(self.identity_api,
-                                    domain_id=test_v3.DEFAULT_DOMAIN_ID)
+                                    CONF.identity.default_domain_id)
         role_member = unit.new_role_ref()
         self.role_api.create_role(role_member['id'], role_member)
         role_admin = unit.new_role_ref()
@@ -2065,7 +2066,7 @@ class TokenAPITests(object):
         # Get a scoped token for the project
         auth_data = self.build_authentication_request(
             username=user_foo['name'],
-            user_domain_id=test_v3.DEFAULT_DOMAIN_ID,
+            user_domain_id=CONF.identity.default_domain_id,
             password=user_foo['password'],
             project_name=project1['name'],
             project_domain_id=domain1['id'])
@@ -4328,7 +4329,7 @@ class TrustAPIBehavior(test_v3.RestfulTestCase):
         # create a sub-trustee user
         sub_trustee_user = unit.create_user(
             self.identity_api,
-            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+            domain_id=CONF.identity.default_domain_id)
         sub_trustee_user_id = sub_trustee_user['id']
 
         # create a new role

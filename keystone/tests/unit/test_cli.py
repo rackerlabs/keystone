@@ -49,6 +49,7 @@ from keystone.tests.unit.ksfixtures import ldapdb
 
 
 CONF = keystone.conf.CONF
+DEFAULT_DOMAIN_ID = default_fixtures.DEFAULT_DOMAIN_ID
 
 
 class CliTestCase(unit.SQLDriverOverrides, unit.TestCase):
@@ -125,10 +126,10 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         bootstrap.do_bootstrap()
         project = bootstrap.resource_manager.get_project_by_name(
             bootstrap.project_name,
-            'default')
+            DEFAULT_DOMAIN_ID)
         user = bootstrap.identity_manager.get_user_by_name(
             bootstrap.username,
-            'default')
+            DEFAULT_DOMAIN_ID)
         role = bootstrap.role_manager.get_role(bootstrap.role_id)
         role_list = (
             bootstrap.assignment_manager.get_roles_for_user_and_project(
@@ -243,7 +244,7 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         # Completely lock the user out.
         user_id = bootstrap.identity_manager.get_user_by_name(
             bootstrap.username,
-            'default')['id']
+            DEFAULT_DOMAIN_ID)['id']
         bootstrap.identity_manager.update_user(
             user_id,
             {'enabled': False,
