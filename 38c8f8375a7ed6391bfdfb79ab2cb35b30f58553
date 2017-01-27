@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_ba8a83bd",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "the specific user\u0027s `options` attribute ....\n\nwould sound clearer to me, I had a hard time reading this :)",
+      "range": {
+        "startLine": 141,
+        "startChar": 3,
+        "endLine": 141,
+        "endChar": 4
+      },
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1d48f15a",
+        "filename": "keystone/identity/backends/resource_options_constants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "this looks weird to have a file to just hold constants, I\u0027ve never seen this in Python :(\n\nhowever I do not have any suggestions, I was going to suggest you declared the name hardcoded when defining the option in resource_options.py .\n\nhowever you need the names in other places to retrieve the config option by name :(",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_1d69d18b",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "add this before the admin reset: \n\n    self.assertPasswordIsNotExpired(self.user[\u0027id\u0027], self.initial_password)",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bdfa7dbb",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "add this before the admin reset: \n\n    self.assertPasswordIsNotExpired(self.user[\u0027id\u0027], self.initial_password)",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_9d806148",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "great test, very easy to read",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_7df495f1",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1811,
+      "author": {
+        "id": 17860
+      },
+      "writtenOn": "2017-01-27T14:54:15Z",
+      "side": 1,
+      "message": "option",
+      "range": {
+        "startLine": 1811,
+        "startChar": 47,
+        "endLine": 1811,
+        "endChar": 51
+      },
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
