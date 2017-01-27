@@ -76,6 +76,40 @@
     },
     {
       "key": {
+        "uuid": "3a461143_c073e07e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-27T15:16:57Z",
+      "side": 1,
+      "message": "If we do add another test that exercises the create path - we could update the name of this to be more specific:\n\n  def test_change_password_required_after_admin_updates_user(self):\n      ...\n  def test_change_password_required_after_create_user(self):\n      ...",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e0c0dc7e",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2017-01-27T15:16:57Z",
+      "side": 1,
+      "message": "We could add this same test but change this to create_user.",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_9d806148",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 11
