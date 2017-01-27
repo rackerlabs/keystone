@@ -197,7 +197,7 @@ class UserResourceOptionTests(test_backend_sql.SqlTests):
     def _get_user_dict(self):
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': uuid.uuid4().hex
         }
@@ -304,7 +304,7 @@ class DisableInactiveUserTests(test_backend_sql.SqlTests):
     def _get_user_dict(self, password):
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': password
         }
@@ -507,7 +507,7 @@ class LockingOutUserTests(test_backend_sql.SqlTests):
         self.password = uuid.uuid4().hex
         user_dict = {
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': self.password
         }
@@ -727,7 +727,7 @@ class PasswordExpiresValidationTests(test_backend_sql.SqlTests):
         test_user_dict = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': password
         }
@@ -815,7 +815,7 @@ class MinimumPasswordAgeTests(test_backend_sql.SqlTests):
     def _create_new_user(self, password):
         user = {
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': password
         }
@@ -845,7 +845,7 @@ class ChangePasswordRequiredAfterFirstUse(test_backend_sql.SqlTests):
             change_password_upon_first_use=change_password_upon_first_use)
         user_dict = {
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'domain_id': 'default',
             'enabled': True,
             'password': password
         }
