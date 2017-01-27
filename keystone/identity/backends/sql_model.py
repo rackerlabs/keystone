@@ -149,10 +149,22 @@ class User(sql.ModelBase, sql.DictBase):
 
     def _get_password_expires_at(self, created_at):
         expires_days = CONF.security_compliance.password_expires_days
+        # NOTE(notmorgan): This option is deprecated and subject to removal
+        # in a future release.
         ignore_list = CONF.security_compliance.password_expires_ignore_user_ids
-        if expires_days and (self.id not in ignore_list):
-            expired_date = (created_at + datetime.timedelta(days=expires_days))
-            return expired_date.replace(microsecond=0)
+        # Get the IGNORE_PASSWORD_EXPIRY_OPT value from the user's
+        # option_mapper. the use of getattr is here to ensure we get either get
+        # the real value (assigned in option_value attribute) or an explicit
+        # False in the case the option does not exist.
+
+        ignore_pw_expiry = self.get_resource_option(
+            iro.IGNORE_PASSWORD_EXPIRY_OPT.option_id)
+        if ((self.id not in ignore_list) and (
+                ignore_pw_expiry and not ignore_pw_expiry.option_value)):
+            if expires_days:
+                expired_date = (created_at +
+                                datetime.timedelta(days=expires_days))
+                return expired_date.replace(microsecond=0)
         return None
 
     @password.expression
