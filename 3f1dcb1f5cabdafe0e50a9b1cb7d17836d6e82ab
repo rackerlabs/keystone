@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_88baf3be",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2017-01-27T06:49:53Z",
+      "side": 1,
+      "message": "I think this name is incorrect now, perhaps the commit message and everything else needs to be updated to reflect the new code saying it is on admin set.",
+      "range": {
+        "startLine": 134,
+        "startChar": 5,
+        "endLine": 134,
+        "endChar": 36
+      },
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
