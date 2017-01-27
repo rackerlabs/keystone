@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_e27ff2a8",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:43:52Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 81,
+        "startChar": 4,
+        "endLine": 81,
+        "endChar": 55
+      },
+      "revId": "51a1ad6ab4bb7ba95675afbcfe8833b5bf22fcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_c27676d6",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:43:52Z",
+      "side": 1,
+      "message": "don\u0027t need this, it\u0027s only if you\u0027re moving the option to a new group",
+      "range": {
+        "startLine": 83,
+        "startChar": 4,
+        "endLine": 83,
+        "endChar": 43
+      },
+      "revId": "51a1ad6ab4bb7ba95675afbcfe8833b5bf22fcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_a2608a02",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:43:52Z",
+      "side": 1,
+      "message": "want to mention when it will be removed? i\u0027m OK with removing it in Pike or Queens",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 21
+      },
+      "revId": "51a1ad6ab4bb7ba95675afbcfe8833b5bf22fcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_823e2ed8",
+        "filename": "keystone/identity/backends/sql_model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2017-01-27T22:43:52Z",
+      "side": 1,
+      "message": "we need a deprecation message if len(ignore_list) is \u003e 0",
+      "range": {
+        "startLine": 154,
+        "startChar": 8,
+        "endLine": 154,
+        "endChar": 79
+      },
+      "revId": "51a1ad6ab4bb7ba95675afbcfe8833b5bf22fcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
