@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a461143_7da01544",
+        "filename": "keystone/conf/security_compliance.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_ba8a83bd",
+      "range": {
+        "startLine": 141,
+        "startChar": 3,
+        "endLine": 141,
+        "endChar": 4
+      },
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1d48f15a",
         "filename": "keystone/identity/backends/resource_options_constants.py",
         "patchSetId": 11
@@ -36,6 +60,24 @@
       "writtenOn": "2017-01-27T14:54:15Z",
       "side": 1,
       "message": "this looks weird to have a file to just hold constants, I\u0027ve never seen this in Python :(\n\nhowever I do not have any suggestions, I was going to suggest you declared the name hardcoded when defining the option in resource_options.py .\n\nhowever you need the names in other places to retrieve the config option by name :(",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_ddaca937",
+        "filename": "keystone/identity/backends/resource_options_constants.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "https://github.com/openstack/keystone/blob/master/keystone/federation/constants.py",
+      "parentUuid": "3a461143_1d48f15a",
       "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_2e4e556f",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_1d69d18b",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_bdfa7dbb",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 11
@@ -70,6 +130,24 @@
       "writtenOn": "2017-01-27T14:54:15Z",
       "side": 1,
       "message": "add this before the admin reset: \n\n    self.assertPasswordIsNotExpired(self.user[\u0027id\u0027], self.initial_password)",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_6e585d33",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_bdfa7dbb",
       "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_a9d23ffe",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_c073e07e",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_e0c0dc7e",
         "filename": "keystone/tests/unit/test_v3_identity.py",
         "patchSetId": 11
@@ -104,6 +200,24 @@
       "writtenOn": "2017-01-27T15:16:57Z",
       "side": 1,
       "message": "We could add this same test but change this to create_user.",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e9dc4714",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_e0c0dc7e",
       "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -127,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_09d8b31c",
+        "filename": "keystone/tests/unit/test_v3_identity.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Thanks :)",
+      "parentUuid": "3a461143_9d806148",
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_7df495f1",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 11
@@ -138,6 +270,30 @@
       "writtenOn": "2017-01-27T14:54:15Z",
       "side": 1,
       "message": "option",
+      "range": {
+        "startLine": 1811,
+        "startChar": 47,
+        "endLine": 1811,
+        "endChar": 51
+      },
+      "revId": "38c8f8375a7ed6391bfdfb79ab2cb35b30f58553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_bd5fdd3f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1811,
+      "author": {
+        "id": 18338
+      },
+      "writtenOn": "2017-01-27T16:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a461143_7df495f1",
       "range": {
         "startLine": 1811,
         "startChar": 47,
