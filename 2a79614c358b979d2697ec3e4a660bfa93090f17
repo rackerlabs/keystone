@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_9d306ba0",
+        "filename": "keystone/tests/unit/contrib/federation/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2017-01-27T11:02:10Z",
+      "side": 1,
+      "message": "would prefer to have them inside the tests since they are not reused elsewhere - this would also ease to read the tests.",
+      "range": {
+        "startLine": 831,
+        "startChar": 1,
+        "endLine": 876,
+        "endChar": 5
+      },
+      "revId": "2a79614c358b979d2697ec3e4a660bfa93090f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
