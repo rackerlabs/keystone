@@ -225,6 +225,24 @@
     },
     {
       "key": {
+        "uuid": "3a461143_da502f61",
+        "filename": "keystone/tests/unit/identity/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2017-01-27T14:38:52Z",
+      "side": 1,
+      "message": "That\u0027s only because the implementation is correct now. I can change that and this test may still pass (depending on what i do).",
+      "parentUuid": "3a461143_d4148545",
+      "revId": "3f1dcb1f5cabdafe0e50a9b1cb7d17836d6e82ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a461143_1e954edd",
         "filename": "keystone/tests/unit/identity/test_backend_sql.py",
         "patchSetId": 9
