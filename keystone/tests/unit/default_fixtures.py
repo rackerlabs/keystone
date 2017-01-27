@@ -20,7 +20,9 @@ BAR_TENANT_ID = uuid.uuid4().hex
 BAZ_TENANT_ID = uuid.uuid4().hex
 MTU_TENANT_ID = uuid.uuid4().hex
 SERVICE_TENANT_ID = uuid.uuid4().hex
-DEFAULT_DOMAIN_ID = 'default'
+DEFAULT_DOMAIN_ID = uuid.uuid4().hex
+ROLE_ID = uuid.uuid4().hex
+ADMIN_ROLE_ID = '1234567890abcdef1234567890abcdef'
 
 TENANTS = [
     {
@@ -108,11 +110,11 @@ USERS = [
 
 ROLES = [
     {
-        'id': 'admin',
+        'id': ADMIN_ROLE_ID,
         'name': 'admin',
         'domain_id': None,
     }, {
-        'id': 'member',
+        'id': ROLE_ID,
         'name': 'Member',
         'domain_id': None,
     }, {
@@ -120,19 +122,19 @@ ROLES = [
         'name': '_member_',
         'domain_id': None,
     }, {
-        'id': 'other',
+        'id': ROLE_ID,
         'name': 'Other',
         'domain_id': None,
     }, {
-        'id': 'browser',
+        'id': ROLE_ID,
         'name': 'Browser',
         'domain_id': None,
     }, {
-        'id': 'writer',
+        'id': ROLE_ID,
         'name': 'Writer',
         'domain_id': None,
     }, {
-        'id': 'service',
+        'id': ROLE_ID,
         'name': 'Service',
         'domain_id': None,
     }
